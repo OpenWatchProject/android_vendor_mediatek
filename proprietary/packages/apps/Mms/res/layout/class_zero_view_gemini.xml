@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.android.mms.ui.ClassZeroView xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent" 
+	android:layout_height="wrap_content"
+	android:paddingBottom="5dip" 
+	android:paddingLeft="20dip"
+	android:paddingRight="20dip"
+	android:orientation="vertical">
+	<ScrollView android:layout_width="match_parent"
+	android:layout_height="wrap_content" android:id="@+id/body_scroll">
+	<LinearLayout android:id="@+id/view_parent"
+		android:layout_width="match_parent" 
+		android:layout_height="wrap_content"
+		android:orientation="vertical">
+		<TextView android:id="@+id/body" 
+		    android:layout_width="match_parent"
+			android:layout_height="wrap_content" 
+			android:textAppearance="?android:attr/textAppearanceMedium"
+			android:textColor="@android:color/black"
+			android:singleLine="false"
+			android:layout_alignParentLeft="true"
+			android:paddingRight="10dip"
+			android:layout_marginTop="5dip"
+			android:layout_alignWithParentIfMissing="true" />
+     <LinearLayout
+            android:id="@+id/sim_info_linear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:visibility="gone" >
+		<TextView android:id="@+id/wpms_timestamp"
+			android:layout_width="wrap_content" 
+			android:layout_height="wrap_content"
+            android:maxWidth="66dip"
+            android:ellipsize="middle"
+            android:singleLine="true"
+            android:textColor="#555555"
+            android:textSize="14sp"
+            android:linksClickable="false"
+            android:paddingLeft="2dip"
+            android:layout_gravity="left" />
+	</LinearLayout>
+</LinearLayout>
+</ScrollView>
+	
+
+</com.android.mms.ui.ClassZeroView>

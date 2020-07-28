@@ -1,0 +1,32 @@
+libdrmctaplugin_test of Drm features, including test cta5 normal/multimedia file encrypt/decrypt,
+normal/multimedia file change password, normal/multimedia file cancel encrypt/decrypt, and test
+whether it is a cta5 file.
+
+This library is pre-built by MediaTek internal.
+
+WHAT IT DOES?
+=============
+drmmtkutiltest tests the function of drmmtkutil.
+
+HOW IT WAS BUILT?
+==================
+It needs the following library from AOSP:
+1. libcrypto.so
+2. libcutils.so
+3. libdl.so
+4. liblog.so
+5. libstagefright_foundation.so
+6. libstlport.so
+7. libutils.so
+
+and the following libs from MediaTek:
+1. libdrmmtkutil.so
+
+All source/dependency modules of this module are already put in
+'system/lib' folder.
+
+HOW TO USE IT?
+==============
+Ensure the main function of ctaplugin is right.
+
+All the source code of this library were written by MediaTek co..

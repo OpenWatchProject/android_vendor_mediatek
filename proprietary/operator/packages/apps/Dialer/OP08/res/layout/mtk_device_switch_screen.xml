@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dip"
+        android:layout_marginRight="5dip"
+        android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/switchProgress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:layout_marginLeft="25dip"
+        android:visibility="gone" >
+
+        <ProgressBar
+            android:id="@+id/pbHeaderProgress"
+            style="?android:attr/indeterminateProgressStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/device_switch_progress" >
+        </ProgressBar>
+
+        <TextView android:id="@+id/progress_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/device_switch_progress"
+            android:textStyle="bold"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:singleLine="true"
+            android:gravity="center_horizontal"
+            android:layout_below="@+id/pbHeaderProgress"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:layout_marginTop="15dip"
+    android:layout_marginLeft="5dip"
+    android:layout_marginRight="5dip"
+    android:id="@+id/all_my_device_layout" >
+
+        <TextView android:id="@+id/all_my_devices"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/all_my_devices"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:singleLine="true"
+        android:layout_marginTop="3dip"
+        android:clickable="true"
+        android:textStyle="bold"
+        android:ellipsize="marquee"/>
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/under_line"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/all_my_device_layout"
+        android:layout_marginLeft="2dp"
+        android:layout_marginRight="2dp"
+        android:background="@*android:drawable/list_divider_holo_light" />
+
+    <ListView android:id="@+id/device_switch_list"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="1dip"
+            android:layout_marginLeft="5dip"
+            android:layout_marginRight="5dip"
+            android:layout_below="@+id/all_my_device_layout"
+            android:orientation="vertical"/>
+     <TextView
+                android:id="@android:id/empty"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/no_allowed_device_present"
+                android:layout_marginLeft="25dip"
+                android:layout_marginTop="10dip"
+                android:gravity="center"
+                android:visibility="gone"/>
+
+</RelativeLayout>

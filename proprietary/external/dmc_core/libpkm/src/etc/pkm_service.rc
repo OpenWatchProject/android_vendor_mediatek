@@ -1,0 +1,14 @@
+# MTK platform .rc configure
+
+service pkm_service /vendor/bin/pkm_service
+    class core
+    user system
+    group system inet net_admin net_raw
+    capabilities NET_ADMIN NET_RAW
+    disabled
+
+on property:vendor.diagnostic.packetmonitor=0
+    stop pkm_service
+
+on property:vendor.diagnostic.packetmonitor=1
+    start pkm_service

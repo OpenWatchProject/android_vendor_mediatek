@@ -1,0 +1,18 @@
+ImsService.apk is a service to provide IMS functionalities like volte, vilte, SS over LTE, WFC.
+
+WHAT IT DOES?
+=============
+ImsService.apk contains
+ - ImsService handle IMS power on/off or registration event.
+ - IMS OEM implementation files handle volte, vilte, ss over LTE or WFC functionalities.
+ - IMSA make the connection with volte processes to dispatch messages to related modules.
+
+HOW IT WAS BUILT?
+==================
+ImsService.apk is built from MTK internal build process if IMS feature is enable.
+
+HOW TO USE IT?
+==============
+It's a persist APK. It will launch by AMS and create ImsService why application oncreat function
+is called. When ImsService is avaiable it will enable/disable IMS from volte setting to
+register/de-register to server and provide the IMS features.

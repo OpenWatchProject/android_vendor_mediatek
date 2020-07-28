@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/pano_frame_layout"
+        style="@style/PanoPreviewLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:layout_weight="1">
+     <include layout="@layout/pano_preview_indicator"
+             android:layout_width="match_parent"
+               android:layout_height="match_parent" />
+     <com.mediatek.camera.common.widget.RotateLayout
+         android:id="@+id/on_screen_progress"
+         android:layout_height="match_parent"
+         android:layout_width="match_parent" >
+         <RelativeLayout 
+                 android:layout_height="match_parent"
+                 android:layout_width="match_parent" >    
+             <include layout="@layout/progress_indicator"
+                     android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                     android:layout_alignParentBottom="true"
+                     android:layout_centerHorizontal = "true"
+                     android:layout_marginBottom = "40dp" />
+         </RelativeLayout>
+     </com.mediatek.camera.common.widget.RotateLayout>
+</RelativeLayout>

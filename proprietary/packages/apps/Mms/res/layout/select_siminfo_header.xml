@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:background="@android:color/white"
+    android:layout_height="45dip">
+
+    <TextView android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="44dip"
+        android:layout_marginLeft="15dip"
+        android:gravity="center_vertical"
+        android:textColor="#87CEFA"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:singleLine="true"
+        android:ellipsize="none"
+        android:requiresFadingEdge="horizontal"
+        android:text="@string/sim_selected_dialog_title" />
+     <TextView android:id="@+id/line"
+        android:layout_width="match_parent"
+        android:layout_height="1dip"
+        android:layout_alignParentBottom = "true"
+        android:background ="#87CEFA"/>
+</RelativeLayout>

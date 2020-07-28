@@ -1,0 +1,15 @@
+WHAT IT DOES?
+=============
+libpq_cust contains the customization parameters of MediaTek Picture Quality.
+
+HOW IT WAS BUILT?
+==================
+It needs the following library from AOSP:
+1.  libcutils.so
+
+HOW TO USE IT?
+==============
+Modify cust_color.cpp for color parameters, will be linked into libpq_cust.so.
+Modify cust_tdshp.cpp for sharpness parameters, will be linked into libpq_cust.so.
+Modify cust_pqdc.cpp for Dynamic Contrast parameters, will be linked into libpq_cust.so.
+Modify cust_pqds.cpp for Dynamic Sharpness parameters, will be linked into libpq_cust.so.

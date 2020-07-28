@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/pano_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:visibility="gone" >
+
+        <com.mediatek.camera.ui.UIRotateLayout
+            android:id="@+id/center_indicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layoutDirection="ltr"
+            android:visibility="gone" >
+            <LinearLayout
+                android:id="@+id/arrows_indicator"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:id="@+id/arrows_dot_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/ic_dot_3" />
+    
+                <ImageView
+                    android:id="@+id/arrows_dot_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/ic_dot_3" />
+    
+                <ImageView
+                    android:id="@+id/arrows_dot_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/ic_dot_3" />
+                <ImageView
+                    android:id="@+id/arrows_dot_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/ic_dot_3" />
+                <ImageView
+                    android:id="@+id/arrows_dot_5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/ic_dot_3" />
+                <ImageView
+                    android:id="@+id/arrows_dot_6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/ic_dot_3" />
+                <ImageView
+                    android:id="@+id/arrows_dot_7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/ic_dot_3" />
+                <ImageView
+                    android:id="@+id/arrows_dot_8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/ic_dot_3" />
+                <ImageView
+                    android:id="@+id/arrows_dot_9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/ic_dot_3" />
+                <ImageView
+                    android:id="@+id/arrows_dot_10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/ic_dot_3" />
+                <ImageView
+                    android:id="@+id/arrows_indicator_arrow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/ic_arrows_2" />
+            </LinearLayout>
+        </com.mediatek.camera.ui.UIRotateLayout>
+        
+        <com.mediatek.camera.ui.UIRotateLayout
+            android:id="@+id/static_center_indicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:visibility="gone" >
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/ic_arrows_line_collimated" />
+            </LinearLayout>
+        </com.mediatek.camera.ui.UIRotateLayout>
+
+        <LinearLayout android:id="@+id/pano_left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center_vertical"
+            android:layoutDirection="ltr"
+            android:orientation="horizontal"
+            style="@style/IndicatorLeft">
+
+            <ImageView
+                android:id="@+id/pano_arrows_left"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/ic_arrows_3" />
+
+            <ImageView
+                android:id="@+id/pano_left_dot_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/ic_dot_3" />
+
+            <ImageView
+                android:id="@+id/pano_left_dot_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/ic_dot_3" />
+
+            <ImageView
+                android:id="@+id/pano_left_dot_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/ic_dot_3" />
+        </LinearLayout>
+
+        <LinearLayout android:id="@+id/pano_right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center_vertical"
+            android:layoutDirection="ltr"
+            android:orientation="horizontal"
+            style="@style/IndicatorRight">
+
+            <ImageView
+                android:id="@+id/pano_right_dot_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/ic_dot_3" />
+
+            <ImageView
+                android:id="@+id/pano_right_dot_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/ic_dot_3" />
+
+            <ImageView
+                android:id="@+id/pano_right_dot_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/ic_dot_3" />
+
+            <ImageView
+                android:id="@+id/pano_arrows_right"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/ic_arrows_2" />
+        </LinearLayout>
+
+        <LinearLayout android:id="@+id/pano_up"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center_horizontal"
+            android:orientation="vertical"
+            android:layoutDirection="ltr"
+            style="@style/IndicatorUp">
+
+            <ImageView
+                android:id="@+id/pano_arrows_up"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:src="@drawable/ic_arrows_1" />
+
+            <ImageView
+                android:id="@+id/pano_up_dot_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:src="@drawable/ic_dot_3_vertical" />
+
+            <ImageView
+                android:id="@+id/pano_right_dot_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:src="@drawable/ic_dot_3_vertical" />
+
+            <ImageView
+                android:id="@+id/pano_right_dot_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:src="@drawable/ic_dot_3_vertical" />
+        </LinearLayout>
+
+        <LinearLayout android:id="@+id/pano_down"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center_horizontal"
+            android:layoutDirection="ltr"
+            style="@style/IndicatorBottom"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/pano_bottom_dot_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:src="@drawable/ic_dot_3_vertical" />
+
+            <ImageView
+                android:id="@+id/pano_bottom_dot_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:src="@drawable/ic_dot_3_vertical" />
+
+            <ImageView
+                android:id="@+id/pano_bottom_dot_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:src="@drawable/ic_dot_3_vertical" />
+
+            <ImageView
+                android:id="@+id/pano_arrows_bottom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:src="@drawable/ic_arrows_0" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <com.mediatek.camera.mode.panorama.NaviLineImageView
+        android:id="@+id/navi_line"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_arrows_line"
+        android:visibility="gone" />
+
+</RelativeLayout>

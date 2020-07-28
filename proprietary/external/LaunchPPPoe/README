@@ -1,0 +1,23 @@
+This module creates the modue--launchpppoe.
+
+WHAT IT DOES?
+=============
+It will call two deamons---pppd and pppoe to complete communication with each other. It is only for EVDO project to surf the net 
+
+HOW IT WAS BUILT?
+==================
+It needs the following shared library from AOSP:
+
+libcutils, libnetutils
+
+
+All source/dependency modules of this module are already put in
+'system/core/include/netutils/' folder.
+
+HOW TO USE IT?
+==============
+
+It will be invoked by property.In init.rc, when booting up, there will be a service called pppoe_wlan creating.If users want to connect with telecommunication networks, framework will set property, then launchpppoe starts to run
+
+ALL source code is written by MediaTek.  
+

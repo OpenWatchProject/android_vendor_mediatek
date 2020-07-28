@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <!-- EF_CFIS -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/cfu_efcfis_description_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dip"
+            android:text="SIM EF_CFIS: " />
+
+        <TextView
+            android:id="@+id/cfu_efcfis_status_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dip" />
+    </LinearLayout>
+
+    <!-- EF_CFF_CPHS -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/cfu_efcff_cphs_description_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SIM EF_CFF_CPHS: "
+            android:layout_margin="10dip" />
+
+        <TextView
+            android:id="@+id/cfu_efcff_cphs_status_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dip" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/cfu_refresh_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textAllCaps="false"
+        android:text="Refresh" />
+</LinearLayout>

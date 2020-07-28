@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/* //device/apps/common/assets/res/any/strings.xml
+**
+** Copyright 2006, The Android Open Source Project
+**
+** Licensed under the Apache License, Version 2.0 (the "License");
+** you may not use this file except in compliance with the License.
+** You may obtain a copy of the License at
+**
+**     http://www.apache.org/licenses/LICENSE-2.0
+**
+** Unless required by applicable law or agreed to in writing, software
+** distributed under the License is distributed on an "AS IS" BASIS,
+** WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+** See the License for the specific language governing permissions and
+** limitations under the License.
+*/
+--><resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <string name="badPin2">Vecais ievadītais PIN2 nav pareizs.</string>
+    <string name="badPuk2">Ievadītais PUK2 nav pareizs.</string>
+
+    <string name="checkPwdLen">Pārbaudiet, vai parole ir no 4 līdz 8 rakstzīmēm.</string>
+
+    <string name="pinNotEnabled">Pirms maināt to, iespējojiet PIN.</string>
+
+    <string name="puk1Blocked">PIN ir bloķēts.</string>
+
+    <string name="puk2Blocked">PIN2 ir bloķēts.</string>
+
+    <string name="fdnFailMmi">FDN pārbaudes kļūda.</string>
+
+    <string name="callBarringFailMmi">Izsaukšanas aizlieguma kļūda.</string>
+    <string name="Pin2Mmi">PIN2 maiņa</string>
+    <string name="PukMmi">Atbloķēt PIN</string>
+    <string name="Puk2Mmi">Atbloķēt PIN2</string>
+
+    <string name="serviceProvisioned">Pakalpojuma nodrošināts.</string>
+
+    <string name="serviceUnknown">Savienojuma problēma vai nederīgs MMI kods.</string>
+    <string name="cfServiceNotForwarded">Nav pāradresēts</string>
+
+    <string name="invalidPuk">Ievadiet 8 ciparus.</string>
+
+    <string name="invalid_imei">Nederīgs IMEI</string>
+    <string name="same_imei">Tas pats IMEI</string>
+
+    <string name="oper_long_46000">CMCC</string>
+    <string name="oper_long_46001">CU</string>
+    <string name="oper_long_46003">China Telecom</string>    
+    <string name="oper_long_46601">Far EasTone</string>
+    <string name="oper_long_46692">Chunghwa Telecom</string>
+    <string name="oper_long_46697">Taiwan Mobile</string>
+    <string name="oper_long_99998">Android1</string>
+    <string name="oper_long_99999">Android</string>
+
+    <string name="oper_short_46000">CMCC</string>
+    <string name="oper_short_46001">CU-GSM</string>
+    <string name="oper_short_46003">China Telecom</string>    
+    <string name="oper_short_46601">FET</string>
+    <string name="oper_short_46692">Chunghwa</string>
+    <string name="oper_short_46697">TWN</string>
+    <string name="oper_short_99997">AD1</string>
+    <string name="oper_short_99999">AD</string>
+
+    <string name="sim_close">SIM kartes aizvēršana</string>
+
+    <string name="serviceClassVideo">Video</string>
+
+  <string name="free_memory_btn">"Brīva vieta"</string>
+
+  <string name="contact_widget_loading">Ielādē\u2026</string>
+
+   <string name="media_controller_buffering">"Notiek ievietošana buferī %d%%..."</string>
+   <string name="media_controller_live">"Tiešraide"</string>
+   <string name="media_controller_playing">"Atskaņošana"</string>
+   <string name="media_controller_connecting">"Veido savienojumu..."</string>
+
+   <string name="VideoView_error_text_bad_file">"Bojāts fails, šo video nevar demonstrēt."</string>
+   <string name="VideoView_error_text_cannot_connect_to_server">"Nevar izveidot savienojumu ar serveri."</string>
+   <string name="VideoView_error_text_type_not_supported">"Multivides faila tips netiek atbalstīts."</string>
+   <string name="VideoView_error_text_drm_not_supported">"Ar DRM aizsargāts, šo video nevar demonstrēt."</string>
+   <string name="VideoView_error_text_invalid_connection">"Nederīgs savienojums. (403 aizliegts)"</string>
+
+    <string name="new_sim">Jauna SIM karte</string>
+
+    <string name="delete">Dzēst</string>
+
+    <string name="searching_simcard">Nosaka...</string>
+
+    <string name="low_internal_storage_view_title">Iekšējā atmiņa ir gandrīz pilna</string>
+    <string name="deleteMails">Dzēst e-pasta ziņojumus</string>
+
+    <string name="drm_protection_status">Aizsardzības statuss:</string>
+    <string name="drm_can_forward">Var pāradresēt.</string>
+    <string name="drm_can_not_forward">Nevar pāradresēt.</string>
+    <string name="drm_no_limitation">Nav ierobežojumu.</string>
+    <string name="drm_no_license">Nav pieejamas DRM licences.</string>
+    <string name="drm_begin">Sākums:</string>
+    <string name="drm_end">Beigas:</string>
+    <string name="drm_use_left">Atlikušais skaits:</string>
+    <string name="drm_protectioninfo_renew">Atjaunot</string>
+    <string name="drm_protectioninfo_title">Aizsardzības informācija</string>
+    <string name="drm_licenseacquisition_title">DRM licences iegāde</string>
+    <string name="drm_licenseacquisition_message">%1$s nav pieejama DRM licence. Varat nospiest pogu Atjaunot, lai iegādātos DRM licenci.</string>
+    <string name="drm_toast_license_expired">DRM licences termiņš ir beidzies.</string>
+    <string name="drm_forwardforbidden_title">Pāradresācija aizliegta</string>
+    <string name="drm_forwardforbidden_message">Dažus aizsargātos failus nevar pārsūtīt.</string>
+    <string name="drm_license_install_success">DRM licences instalācija ir veiksmīga.</string>
+    <string name="drm_license_install_fail">DRM licences instalācija neizdevās.</string>
+    <string name="drm_secure_timer_title">Nederīgs DRM drošības pulkstenis</string>
+    <string name="drm_secure_timer_message">Nevarat izmantot ar DRM aizsargātus failus. Nodrošiniet, lai būtu pieejams datu savienojums.</string>
+    <string name="drm_consume_title">Izmantot DRM tiesības</string>
+    <string name="drm_consume_message">Darbība izmantos DRM tiesības.</string>
+
+    <string name="virtual_sim_on_slot1">Virtuālā 1. SIM IESLĒGTA</string>
+    <string name="virtual_sim_on_slot2">Virtuālā 2. SIM IESLĒGTA</string>
+    <string name="virtual_sim_on_slot3">Virtuālā 3. SIM IESLĒGTA</string>
+    <string name="virtual_sim_on_slot4">Virtuālā 4. SIM IESLĒGTA</string>
+    <string name="virtual_sim_on">Virtuālā SIM IESLĒGTA</string>
+
+    <string name="sim_missing_slot1">1. atvere: SIM karte nav noteikta</string>
+    <string name="sim_missing_slot2">2. atvere: SIM karte nav noteikta</string>
+    <string name="sim_missing_slot3">3. atvere: SIM karte nav noteikta</string>
+    <string name="sim_missing_slot4">4. atvere: SIM karte nav noteikta</string>
+    <string name="sim_missing">SIM karte nav noteikta</string>
+    <string name="sim_missing_detail">Pārbaudiet, vai SIM karte ir gatava</string>
+    <string name="sim_missing_slot1_card">1. atvere: nav noteikta karte</string>
+    <string name="sim_missing_slot2_card">2. atvere: nav noteikta karte</string>
+    <string name="sim_missing_card">Nav noteikta karte</string>
+    <string name="sim_missing_detail_card">Pārbaudiet, vai karte ir gatava</string>
+
+    <string name="url_dialog_choice_title">Īsziņas</string>
+    <string name="url_dialog_choice_message">Tiks atvērts pārlūks. Vai turpināt?</string>
+
+    <string name="deleteMail">Dublējiet e-pasta ziņas un atbrīvojiet atmiņas vietu</string>    
+
+    <string name="storage_withsd">Tālruņa atmiņā nepietiek vietas. Atbrīvojiet nedaudz vietas vai iestatījumos mainiet iestatījumu pēc noklusējuma rakstīt diskā.</string>
+    <string name="storage_withoutsd">Tālruņa atmiņā nepietiek vietas. Atbrīvojiet atmiņas vietu vai ievietojiet SD karti.</string>
+    <string name="storage_sd">SD kartē nepietiek vietas. Atbrīvojiet nedaudz vietas vai iestatījumos mainiet iestatījumu pēc noklusējuma rakstīt diskā.</string>   
+    <string name="usb_ums_notification_title">Pievienota kā USB atmiņas ierīce</string>
+
+    <string name="usb_charging_notification_title">Tikai USB uzlāde</string>
+
+    <string name="gps_time_sync_fail_str">Neizdevās iegūt GPS nodrošināto laiku</string>
+
+    <string name="invalid_card">Nederīga karte</string>
+
+    <string name="RejectCauseTitle">Tīkla noraidīšanas iemesls</string>
+
+    <string name="MMRejectCause2">SIM nenodrošina MM #2</string>
+
+    <string name="MMRejectCause3">SIM neatļauj MM #3</string>
+
+    <string name="MMRejectCause5">Zvans neizdevās MM #5</string>
+
+    <string name="MMRejectCause6">Tālrunis nav atļauts MM #6</string>    
+
+    <string name="MMRejectCause13">Tikai SOS/ārkārtas zvani</string>
+
+    <string name="tethered_notification_message_for_hotspot"><xliff:g id="connected">%1$d</xliff:g> savienots(-i), <xliff:g id="blocked">%2$d</xliff:g> bloķēts(-i)</string>
+    <string name="tethered_notification_message_bandwidth_set">Joslas platums ir iestatīts</string>
+
+    <string name="default_wallpaper_name">Noklusējums</string>
+
+    <string name="description_direction_right">Slidiniet pa labi, lai atmestu</string>
+
+    <string name="description_direction_left">Slidiniet pa kreisi, lai atliktu</string>
+
+    <string name="description_direction_up">Slidiniet augšup, lai atmestu</string>
+
+    <string name="description_direction_down">Slidiniet lejup, lai atliktu</string>
+
+    <string name="press_color_to_apply">Lai piemērotu, nospiediet uz krāsas</string>
+    <string name="color_picker_select">-&gt;</string>
+
+    <string name="wifi_display_bt_hdmi_off_wfd_on">Ieslēdzot bezvadu displeju, HDMI tiks izslēgts. Vai vēlaties turpināt?</string> 
+
+    <string name="wifi_display_wfd_off_hdmi_on">Ieslēdzot HDMI, bezvadu displejs tiks izslēgts. Vai vēlaties turpināt?</string> 
+
+    <string name="wifi_display_wifi_p2p_disconnect_wfd_connect">Pievienojot bezvadu displeja ierīci, pašreizējais Wi-Fi Direct savienojums tiks atvienots. Vai vēlaties turpināt?</string>
+
+    <string name="wifi_display_unstable_connection">Nestabils savienojums</string>
+
+    <string name="wifi_display_connection_is_not_steady">Pašreizējais bezvadu displeja savienojums nav nepārtraukts.</string>
+
+    <string name="wifi_display_unstable_suggestion">Pašreizējais bezvadu displeja savienojums nav nepārtraukts, mēģiniet pietuvināt displeja ierīcei.</string>
+
+    <string name="wifi_display_reconnect">Atkārtoti izveidot savienojumu</string> 
+
+    <string name="wifi_display_disconnect_then_reconnect">Attālais displejs atvienots. Vai vēlaties savienot vēlreiz?</string> 
+
+    <string name="wifi_display_disconnected">Bezvadu displejs atvienots.</string>
+
+    <string name="wifi_wps_failed_overlap">Noteikta cita WPS sesija. Pēc dažām minūtēm mēģiniet vēlreiz.</string>
+
+    <string name="wifi_p2p_frequency_conflict_message">Tālrunis uz laiku tiks atvienots no Wi-Fi, kamēr tas ir pievienots <xliff:g id="device_name">%1$s</xliff:g> (tikai tad, ja maina kanāla joslu un ID pašreizējiem Wi-Fi piekļuves punktiem uz <xliff:g id="oper_freq">%2$s</xliff:g>)</string>
+
+    <string name="wifi_display_wfd_and_wifi_are_turned_on">Bezvadu displejs un Wi-Fi ir ieslēgts.</string>
+
+    <string name="wifi_display_sound_path_reminder">Multivides skaņa tiks atskaņota austiņās.</string>  
+
+    <string name="wifi_display_change_resolution_reminder">Mainot izšķirtspēju, automātiski tiks atkārtoti izveidots savienojums ar bezvadu displeju.</string>  
+
+    <string name="wifi_display_do_not_remind_again">Vairs neatgādināt.</string>
+    <string name="wifi_display_wait_connection">Gaida savienojumu ielūgumus no citām ierīcēm.</string>
+    <string name="wifi_display_confirm_connection">vēlas veidot savienojumu ar jums.</string>
+    <string name="wifi_display_build_connection">Veido savienojumu.</string>
+
+    <string name="sdcard_ready_title">SD karte gatava</string>
+    <string name="sdcard_select_default_path">Vai vēlaties mainīt noklusējuma ierakstīšanas disku?</string>
+    <string name="sdcard_default_path_change">Noklusējuma ierakstīšanas disks mainīts.</string>
+    <string name="usb_storage_ready_title">Ārējā USB atmiņas ierīce gatava</string>
+
+    <string name="headset_pin_recognition">Austiņas nav saderīgas ar tālruni. Mēģiniet kādas citas.</string>
+
+    <string name="usb_autorun_cdrom_notification_title">Pievienot kā automātiskās palaišanas cdrom.</string>
+
+    <string name="ct_net_name">"CTNET"</string>
+    <string name="ct_wap_name">"CTWAP"</string>    
+
+    <string name="hdmi_notification_title">Pievienots HDMI kabelis</string>
+    <string name="hdmi_notification_content">Noklikšķiniet, lai konfigurētu HDMI</string>
+    <string name="hdmi_hdvideo_toast">HDMI nevar demonstrēt 4K video, savienojums tiks pārtraukts.</string>
+    <string name="hdmi_mutex_call_content">Diemžēl HDMI pārtraukts pašreizējā zvana dēļ.</string>
+    <string name="hdmi_audio_output">Audio izvade</string>
+    <string name="hdmi_audio_output_stereo">Stereo</string>
+    <string name="hdmi_audio_output_multi_channel">Vairāku kanālu</string>
+
+    <string name="aerr_application_lowstorage">Iekšējā krātuve drīz būs pilna, lietojumprogramma tiks apturēta. Atbrīvojiet vietu diskā un mēģiniet vēlreiz.</string>
+    <string name="aerr_process_lowstorage">Iekšējā krātuve drīz būs pilna, process tiks apturēts. Atbrīvojiet vietu diskā un mēģiniet vēlreiz.</string>
+    <string name="low_storage_warning_message">Atbrīvojiet nedaudz vietas, vai dažas lietojumprogrammas un sistēmas funkcijas var nedarboties pareizi.</string>
+
+    <string name="wifi_display_wifi_ap_affects_quality">Pašreizējais Wi-Fi AP var ietekmēt bezvadu displeja kvalitāti.</string>
+    <string name="data_conn_only">Tikai datu savienojums</string>
+
+    <string name="Special_Card_Type_Title_Lte_Not_Available">LTE tīkls nav pieejams.</string>
+    <string name="Suggest_To_Change_USIM">Ieteicams nomainīt uz 4G SIM karti.</string>
+    <string name="confirm_flight_mode_title">Lidojuma režīms ieslēgts</string>
+    <string name="confirm_flight_mode_msg">Lai lietotu numuru, vispirms izslēdziet lidojuma režīmu.</string>
+    <string name="confirm_radio_title">SIM karte izslēgta</string>
+    <string name="confirm_radio_msg">Lai lietotu numuru, vispirms ieslēdziet to.</string>
+    <string name="confirm_flight_mode_radio_title">Lidojuma režīms ir ieslēgts un SIM karte izslēgta</string>
+    <string name="confirm_flight_mode_radio_msg">Lai lietotu numuru, vispirms izslēdziet lidojuma režīmu un ieslēdziet SIM karti.</string>
+    <string name="confirm_unlock_msg">Atlasītā SIM karte tagad ir bloķēta. Vispirms atbloķējiet to.</string>
+    <string name="confirm_roaming_msg">SIM karte veic viesabonēšanu. Vai turpināt?</string>
+    <string name="confirm_button_turn_off">Izslēgt</string>
+
+    <string name="media_info_audio_not_supported">"Neizdevās atskaņot audio."</string>
+    <string name="media_info_video_not_supported">"Šis video netiek atbalstīts."</string>
+    <string name="save_password_label">"Apstiprināt"</string>
+    <string name="save_password_message">"Vai vēlaties, lai pārlūkprogrammā tiktu saglabāta šī parole?"</string>
+    <string name="save_password_notnow">"Ne tagad"</string>
+    <string name="save_password_remember">"Atcerēties"</string>
+    <string name="save_password_never">"Nekad"</string>
+
+    <string name="confirm_unlock_title">SIM bloķēta</string>
+    <string name="confirm_roaming_title">Viesabonēšanas brīdinājums</string>
+    <string name="confirm_button_ok">"Labi"</string>
+    <string name="confirm_button_cancel">"Atcelt"</string>
+    <string name="confirm_button_unlock">"Atbloķēt"</string>
+    <string name="confirm_button_turn_on">"Ieslēgt"</string>
+    <string name="confirm_button_yes">"Jā"</string>
+    <string name="confirm_button_no">"Nē"</string>
+    <string name="Default_Account_Selection_Content">Noklusējuma konta atlase</string>
+    <string name="network_forbidden">aizliegts</string>
+
+    <string name="account_always_ask_title">"Vaicāt katru reizi"</string>
+    <string name="permlab_wake_device_sensorhub" product="tablet">aktivizēt planšetdatoru</string>
+    <string name="permlab_wake_device_sensorhub" product="default">aktivizēt tālruni</string>
+    <string name="permdesc_wake_device_sensorhub" product="tablet">Ļauj lietotnei aktivizēt planšetdatoru, kad tas ir aizturētā režīmā, izmantojot sensoru mezglu.</string>
+    <string name="permdesc_wake_device_sensorhub" product="default">Ļauj lietotnei aktivizēt tālruni, kad tas ir aizturētā režīmā, izmantojot sensoru mezglu.</string>
+    <string name="lockscreen_pin_too_many_failed_attempts_dialog_message"><xliff:g id="number">%d</xliff:g> reizes ievadījāt nepareizu PIN. \n\n<xliff:g id="number">%d</xliff:g> sekunžu laikā mēģiniet vēlreiz.</string>
+    <string name="lockscreen_password_too_many_failed_attempts_dialog_message"><xliff:g id="number">%d</xliff:g> reizes ievadījāt nepareizu paroli. \n\n<xliff:g id="number">%d</xliff:g> sekunžu laikā mēģiniet vēlreiz.</string>
+    <string name="wifi_display_connected_to_wifi_network">Pievienots Wi-Fi tīklam <xliff:g id="wifi_ap_name">%1$s</xliff:g>.</string>
+    <string name="wifi_display_wifi_network_disconnected">Wi-Fi tīkls <xliff:g id="wifi_ap_name">%1$s</xliff:g> atvienots.</string>
+    <string name="wifi_display_channel_confliction">Kanālu konflikti</string>
+    <string name="wifi_display_wifi_network_cannot_coexist">Pašreizējais Wi-Fi nevar līdzās pastāvēt ar apraides ekrāna savienojumu.</string>
+    <string name="permdesc_receiveCbSms">Ļauj lietojumprogrammām saņemt un apstrādāt CB īsziņas. Ļaunprātīgas lietojumprogrammas var pārraudzīt ziņojumus vai dzēst tās neparādot.</string>
+    <string name="permdesc_receiveDmRegisterSms">Ļauj lietojumprogrammām saņemt un apstrādāt DM Register īsziņas. Jebkurai lietojumprogrammai, izņemot DM APP, tas nav jālieto</string>
+    <string name="drm_first_time_use">Šī ir pirmā lietošanas reize.</string>
+    <string name="drm_use_now">Vai lietot tūlīt?</string>
+    <string name="drm_consume_interval">Šis fails būs pieejams %1$s pēc tā lietošanas.</string>
+    <string name="drm_effective_duration">Efektīvais ilgums:</string>
+    <string name="drm_expire_dialog_future">Derīgais periods:</string>
+    <string name="validity_period" msgid="8818886137545983110">"Derīgums:"</string>
+</resources>

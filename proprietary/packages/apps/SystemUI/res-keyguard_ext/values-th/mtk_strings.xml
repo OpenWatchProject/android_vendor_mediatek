@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/* //device/apps/common/assets/res/any/strings.xml
+**
+** Copyright 2006, The Android Open Source Project
+**
+** Licensed under the Apache License, Version 2.0 (the "License");
+** you may not use this file except in compliance with the License.
+** You may obtain a copy of the License at
+**
+**     http://www.apache.org/licenses/LICENSE-2.0
+**
+** Unless required by applicable law or agreed to in writing, software
+** distributed under the License is distributed on an "AS IS" BASIS,
+** WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+** See the License for the specific language governing permissions and
+** limitations under the License.
+*/
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- Telephony -->
+    <string name="invalidPuk">ป้อนตัวเลข 8 ตัว</string>
+    <string name="keyguard_password_enter_new_pin_code">ป้อน PIN ใหม่</string>
+    <string name="keyguard_password_Confirm_pin_code">ยืนยัน PIN ใหม่</string>
+    <string name="sim_permanently_locked">การป้อนรหัส PUK ที่ไม่ถูกต้องมากกว่า 10 ครั้ง ทำให้ SIM การ์ดถูกล็อคอย่างถาวร</string>
+    <string name="retries_left">เหลือ: <xliff:g id="number">%d</xliff:g></string>
+    <string name="simlock_slot_locked_message">"สล็อตถูกล็อคถาวร"</string>
+    <string name="simlock_entersimmelock">"ป้อน SIM ME ล็อค"</string>
+    <string name="slot_id">ช่องเสียบ <xliff:g id="number">%d</xliff:g>:</string>
+    <string name="new_simcard">การ์ด SIM ใหม่</string>
+    <string name="lockscreen_missing_sim_dialog_message">"SIM การ์ดไม่ได้เสียบอยู่ โปรดตรวจดูให้แน่ใจว่า SIM การ์ดเสียบอยู่อย่างแน่นหนา"</string>
+    <string name="sim_card_changed_dialog_title">เปลี่ยนซิมการ์ดแล้ว</string>
+    <string name="change_setting_for_onenewsim">ตรวจพบ SIM ใหม่
+ขณะนี้การตั้งค่า SIM เริ่มต้นคือ:</string>
+    <string name="change_setting_for_twonewsim">ตรวจพบ SIM ใหม่
+ขณะนี้การตั้งค่า SIM เริ่มต้นคือ:</string>
+    <string name="sim_card_removed">นำซิมการ์ดออกแล้ว</string>
+    <string name="sim_card_swapped">สลับซิมการ์ดแล้ว</string>
+    <string name="change_settings">เปลี่ยน</string>
+    <string name="keyguard_sms">SMS:</string>
+    <string name="keyguard_data">การเชื่อมต่อข้อมูล:</string>
+    <string name="dismiss">ยกเลิก</string>
+    <string name="keyguard_wrong_code_input">รหัสผิด.</string>
+    <string name="keyguard_code_length_prompt">ป้อนตัวเลข 4-8 ตัว.</string>
+    <string name="keyguard_code_donnot_mismatch">ไม่ตรง.</string>
+    <string name="network_searching">กำลังค้นหาเครือข่ายใหม่</string>
+    <string name="searching_simcard">Detecting...</string>
+    <string name="keyguard_close">ปิด</string>
+    <string name="default_sim_setting_prompt">ขณะนี้การตั้งค่า SIM เริ่มต้นคือ:</string>
+    <string name="invalid_sim_title">SIM การ์ดไม่ถูกต้อง</string>
+    <string name="invalid_sim_message">ไม่รู้จัก UIM/SIM การ์ด</string>
+    <!-- Tablet -->
+    <string name="sd_accessing_swtich_user_title">สลับผู้ใช้?</string>
+    <string name="sd_accessing_swtich_user_message">ข้อมูลที่ยังไม่บันทึกทั้งหมดในบัญชีเจ้าของจะหายไป หรือเสียหาย</string>
+    <!-- Misc -->
+    <string name="ppl_prompt">โปรดป้อนรหัสผ่านการป้องกันความเป็นส่วนตัวเพื่อปลดล็อค</string>
+    <string name="kg_emergency_call_label">โทรฉุกเฉิน</string>
+    <string name="kg_detecting_simcard">กำลังตรวจจับ...</string>
+    <string name="kg_new_simcard">การ์ด SIM ใหม่</string>
+    <string name="kg_slot_id">ช่องเสียบ <xliff:g id="number">%d</xliff:g>:\u0020</string>
+</resources>

@@ -1,0 +1,11 @@
+Application for that the thermal driver controls the network throughput
+
+WHAT IT DOES?
+=============
+THERMAL waits for the command from kernel driver.
+And limits the up/down link throughput of the specified network interface 
+following the command.
+
+HOW IT WAS BUILT?
+==================
+It needs to add this module into the PRODUCT_PACKAGES.

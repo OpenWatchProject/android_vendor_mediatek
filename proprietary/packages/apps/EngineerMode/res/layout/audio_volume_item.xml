@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <Spinner
+            android:id="@+id/audio_volume_scene_spinner"
+            android:layout_width="240dip"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dip"
+            android:layout_marginTop="10dip"
+            android:visibility="gone">
+        </Spinner>
+        <Spinner
+            android:id="@+id/audio_volume_spinner1"
+            android:layout_width="240dip"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dip"
+            android:layout_marginTop="10dip" >
+        </Spinner>
+        <Spinner
+            android:id="@+id/audio_volume_spinner2"
+            android:layout_width="240dip"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dip"
+            android:layout_marginTop="10dip" >
+        </Spinner>
+        <Spinner
+            android:id="@+id/audio_volume_spinner3"
+            android:layout_width="240dip"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dip"
+            android:layout_marginTop="10dip"
+            android:visibility="gone">
+        </Spinner>
+        <LinearLayout
+            android:id="@+id/layout_text1"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginLeft="20dip">
+            <TextView
+                android:id="@+id/audio_volume_text1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" 
+                android:text="@string/audio_volume_ul_gain"/>
+            <EditText android:id="@+id/audio_volume_edittext1"
+                android:layout_marginLeft="10dip"
+                android:inputType="number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/layout_text2"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginLeft="20dip">
+            <TextView
+                android:id="@+id/audio_volume_text2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/audio_volume_sidetone_gain"/>
+            <EditText android:id="@+id/audio_volume_edittext2"
+                android:layout_marginLeft="10dip"
+                android:inputType="number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+        <TextView
+            android:id="@+id/table_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/audio_volume_dl_gain"
+            android:layout_marginLeft="20dip"
+            android:layout_marginTop="20dip"/>
+        <TableLayout
+            android:id="@+id/dl_table"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dip"/>
+        <Button
+            android:id="@+id/btn_set"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/audio_volume_set"/>
+    </LinearLayout>
+</ScrollView>

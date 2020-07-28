@@ -1,0 +1,33 @@
+This directory contains WIFI libwifitest.so library
+
+
+WHAT IT DOES?
+=============
+It provide WIFI LGE feature, which allow read and write WIFI items by AT command.
+
+
+HOW IT WAS BUILT?
+==================
+It needs the following libs from AOSP:
+1.  libc.so
+
+and the following libs from MediaTek:
+1. libnvram.so
+
+
+All source/dependency modules of this module are already put in
+'hardware/mediatek/wlan/libwifitest' 'vendor/mediatek/proprietary/external/atcid' folder.
+
+
+HOW TO USE IT?
+==============
+Files in this directory is used to generate a library which's name is 'libwifitest.so'
+
+
+WIFI Tool
+The lib  'libwifitest.so' is loaded when SP LGE MTK_TC1_FEATURE macro enabled,
+all WIFI opertations will call LGE_RFT_xxx API, then it calls IOCtl to access WIFI driver data.
+
+
+All the source code of this library were written by MediaTek co..
+

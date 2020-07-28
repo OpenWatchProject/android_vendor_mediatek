@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout_auto_test"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:stretchColumns="1" >
+
+        <TableRow>
+            <TextView
+                style="@style/style_table_left"
+                android:layout_width="0px"
+                android:layout_weight="1"
+                android:text="@string/gps_test_times" >
+            </TextView>
+            <EditText
+                android:id="@+id/et_gps_test_times"
+                android:layout_width="0px"
+                android:layout_weight="1"
+                android:inputType="number"
+                android:maxLength="3" >
+            </EditText>
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                style="@style/style_table_left"
+                android:layout_width="0px"
+                android:layout_weight="1"
+                android:text="@string/gps_test_interval" >
+            </TextView>
+
+            <EditText
+                android:id="@+id/et_gps_test_interval"
+                android:layout_width="0px"
+                android:layout_weight="1"
+                android:inputType="number"
+                android:maxLength="3" >
+            </EditText>
+        </TableRow>
+        <TableRow>
+            <TextView
+                style="@style/style_table_left"
+                android:layout_width="0px"
+                android:layout_weight="1"
+                android:text="@string/start_type_text" >
+            </TextView>
+            <Spinner
+                android:id="@+id/start_type_Spinner"
+                android:layout_width="0px"
+                android:layout_weight="1">
+            </Spinner>
+        </TableRow>
+        <TableRow>
+            <TextView
+                style="@style/style_table_left"
+                android:layout_width="0px"
+                android:layout_weight="1"
+                android:text="@string/true_Latitude" >
+            </TextView>
+
+            <EditText
+                android:id="@+id/et_latitude"
+                android:layout_width="0px"
+                android:layout_weight="1"
+                android:inputType="numberDecimal|numberSigned">
+            </EditText>
+        </TableRow>
+        <TableRow>
+            <TextView
+                style="@style/style_table_left"
+                android:layout_width="0px"
+                android:layout_weight="1"
+                android:text="@string/true_Longitude" >
+            </TextView>
+
+            <EditText
+                android:id="@+id/et_longitude"
+                android:layout_width="0px"
+                android:layout_weight="1"
+                android:inputType="numberDecimal|numberSigned">
+            </EditText>
+        </TableRow>
+
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+            <CheckBox
+                android:id="@+id/cb_need_3d_fix"
+                android:layout_width="0px"
+                android:layout_weight="4"
+                android:layout_height="wrap_content"
+                android:text="@string/need_3d_fix" >
+            </CheckBox>
+
+            <Button
+                android:id="@+id/btn_gps_test_start"
+                android:layout_width="0px"
+                android:layout_weight="3"
+                android:layout_height="wrap_content"
+                android:text="@string/gps_test_start" >
+            </Button>
+
+            <Button
+                android:id="@+id/btn_gps_test_stop"
+                android:layout_width="0px"
+                android:layout_weight="3"
+                android:layout_height="wrap_content"
+                android:text="@string/gps_test_stop" >
+            </Button>
+        </LinearLayout>
+
+        <View
+            android:layout_height="2dip"
+            android:background="@color/gray" >
+        </View>
+
+        <TableRow>
+            <TextView
+                style="@style/style_table_left"
+                android:layout_width="0px"
+                android:layout_weight="1"
+                android:text="@string/gps_test_current_times" >
+            </TextView>
+
+            <TextView
+                android:id="@+id/tv_current_times"
+                android:layout_width="0px"
+                android:layout_weight="1" >
+            </TextView>
+        </TableRow>
+
+        <View
+            android:layout_height="1dip"
+            android:background="@color/light_gray" >
+        </View>
+
+        <TableRow>
+            <TextView
+                style="@style/style_table_left"
+                android:layout_width="0px"
+                android:layout_weight="1"
+                android:text="@string/reconnect_countdown" >
+            </TextView>
+
+            <TextView
+                android:id="@+id/tv_reconnect_countdown"
+                android:layout_width="0px"
+                android:layout_weight="1" >
+            </TextView>
+        </TableRow>
+
+        <View
+            android:layout_height="1dip"
+            android:background="@color/gray" >
+        </View>
+
+        <TableRow>
+            <TextView
+                style="@style/style_table_left"
+                android:layout_width="0px"
+                android:layout_weight="1"
+                android:text="@string/percent_68_ttff" >
+            </TextView>
+
+            <TextView
+                android:id="@+id/tv_percent_68_ttff"
+                android:layout_width="0px"
+                android:layout_weight="1" >
+            </TextView>
+        </TableRow>
+
+        <View
+            android:layout_height="1dip"
+            android:background="@color/light_gray" >
+        </View>
+
+        <TableRow>
+            <TextView
+                style="@style/style_table_left"
+                android:layout_width="0px"
+                android:layout_weight="1"
+                android:text="@string/percent_95_ttff" >
+            </TextView>
+
+            <TextView
+                android:id="@+id/tv_percent_95_ttff"
+                android:layout_width="0px"
+                android:layout_weight="1" >
+            </TextView>
+        </TableRow>
+
+        <View
+            android:layout_height="1dip"
+            android:background="@color/light_gray" >
+        </View>
+
+        <TableRow>
+            <TextView
+                style="@style/style_table_left"
+                android:layout_width="0px"
+                android:layout_weight="1"
+                android:text="@string/last_ttff" >
+            </TextView>
+
+            <TextView
+                android:id="@+id/tv_last_ttff"
+                android:layout_width="0px"
+                android:layout_weight="1" >
+            </TextView>
+        </TableRow>
+
+        <View
+            android:layout_height="1dip"
+            android:background="@color/light_gray" >
+        </View>
+
+        <TableRow>
+
+            <TextView
+                style="@style/style_table_left"
+                android:layout_width="0px"
+                android:layout_weight="1"
+                android:text="@string/max_ttff" >
+            </TextView>
+
+            <TextView
+                android:id="@+id/tv_max_ttff"
+                android:layout_width="0px"
+                android:layout_weight="1" >
+            </TextView>
+        </TableRow>
+        <View
+            android:layout_height="1dip"
+            android:background="@color/light_gray" >
+        </View>
+        <TableRow>
+            <TextView
+                style="@style/style_table_left"
+                android:layout_width="0px"
+                android:layout_weight="1"
+                android:text="@string/mean_ttff" >
+            </TextView>
+
+            <TextView
+                android:id="@+id/tv_mean_ttff"
+                android:layout_width="0px"
+                android:layout_weight="1" >
+            </TextView>
+        </TableRow>
+
+        <View
+            android:layout_height="1dip"
+            android:background="@color/gray" >
+        </View>
+        <TableRow>
+            <TextView
+                style="@style/style_table_left"
+                android:layout_width="0px"
+                android:layout_weight="1"
+                android:text="@string/percent_68_cep" >
+            </TextView>
+            <TextView
+                android:id="@+id/tv_percent_68_cep"
+                android:layout_width="0px"
+                android:layout_weight="1" >
+            </TextView>
+        </TableRow>
+        <View
+            android:layout_height="1dip"
+            android:background="@color/light_gray" >
+        </View>
+        <TableRow>
+            <TextView
+                style="@style/style_table_left"
+                android:layout_width="0px"
+                android:layout_weight="1"
+                android:text="@string/percent_95_cep" >
+            </TextView>
+            <TextView
+                android:id="@+id/tv_percent_95_cep"
+                android:layout_width="0px"
+                android:layout_weight="1" >
+            </TextView>
+        </TableRow>
+        <View
+            android:layout_height="1dip"
+            android:background="@color/light_gray" >
+        </View>
+        <TableRow>
+            <TextView
+                style="@style/style_table_left"
+                android:layout_width="0px"
+                android:layout_weight="1"
+                android:text="@string/last_cep" >
+            </TextView>
+            <TextView
+                android:id="@+id/tv_last_cep"
+                android:layout_width="0px"
+                android:layout_weight="1" >
+            </TextView>
+        </TableRow>
+        <View
+            android:layout_height="1dip"
+            android:background="@color/light_gray" >
+        </View>
+        <TableRow>
+            <TextView
+                style="@style/style_table_left"
+                android:layout_width="0px"
+                android:layout_weight="1"
+                android:text="@string/max_cep" >
+            </TextView>
+            <TextView
+                android:id="@+id/tv_max_cep"
+                android:layout_width="0px"
+                android:layout_weight="1" >
+            </TextView>
+        </TableRow>
+        <View
+            android:layout_height="1dip"
+            android:background="@color/light_gray" >
+        </View>
+        <TableRow>
+            <TextView
+                style="@style/style_table_left"
+                android:layout_width="0px"
+                android:layout_weight="1"
+                android:text="@string/mean_cep" >
+            </TextView>
+            <TextView
+                android:id="@+id/tv_mean_cep"
+                android:layout_width="0px"
+                android:layout_weight="1" >
+            </TextView>
+        </TableRow>
+        <View
+            android:layout_height="1dip"
+            android:background="@color/gray" >
+        </View>
+    </TableLayout>
+</ScrollView>

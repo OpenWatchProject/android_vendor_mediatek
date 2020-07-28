@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+**
+** Copyright 2014, The Android Open Source Project
+**
+** Licensed under the Apache License, Version 2.0 (the "License");
+** you may not use this file except in compliance with the License.
+** You may obtain a copy of the License at
+**
+**     http://www.apache.org/licenses/LICENSE-2.0
+**
+** Unless required by applicable law or agreed to in writing, software
+** distributed under the License is distributed on an "AS IS" BASIS,
+** WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+** See the License for the specific language governing permissions and
+** limitations under the License.
+*/
+-->
+
+<merge xmlns:latin="http://schemas.android.com/apk/res/com.android.inputmethod.latin">
+    <!-- U+0994: "ঔ" BENGALI LETTER AU
+         U+09CC: "ৌ" BENGALI VOWEL SIGN AU
+         U+09E7: "১" BENGALI DIGIT ONE -->
+    <Key
+        latin:keySpec="&#x1C5D;"
+        latin:keyHintLabel="&#x1C51;"
+        latin:additionalMoreKeys="&#x1C7B;,&#x1C51;,1" />
+    <!-- U+0990: "ঐ" BENGALI LETTER AI
+         U+09C8: "ৈ" BENGALI VOWEL SIGN AI
+         U+09E8: "২" BENGALI DIGIT TWO -->
+    <Key
+        latin:keySpec="&#x1C72;"
+        latin:keyHintLabel="&#x1C52;"
+        latin:additionalMoreKeys="&#x1C7C;,&#x1C52;,2" />
+    <!-- U+0986: "আ" BENGALI LETTER AA
+         U+09BE: "া" BENGALI VOWEL SIGN AA
+         U+09E9: "৩" BENGALI DIGIT THREE -->
+    <Key
+        latin:keySpec="&#x1C5F;"
+        latin:keyHintLabel="&#x1C53;"
+        latin:additionalMoreKeys="&#x1C7A;,&#x1C53;,3" />
+    <!-- U+0988: "ঈ" BENGALI LETTER II
+         U+09C0: "ী" BENGALI VOWEL SIGN II
+         U+09EA: "৪" BENGALI DIGIT FOUR -->
+    <Key
+        latin:keySpec="&#x1C67;"
+        latin:keyHintLabel="&#x1C54;"
+        latin:additionalMoreKeys="&#x1C79;,&#x1C54;,4" />
+    <!-- U+098A: "ঊ" BENGALI LETTER UU
+         U+09C2: "ূ" BENGALI VOWEL SIGN UU
+         U+09EB: "৫" BENGALI DIGIT FIVE -->
+    <Key
+        latin:keySpec="&#x1C75;"
+        latin:keyHintLabel="&#x1C55;"
+        latin:additionalMoreKeys="&#x1C55;,5" />
+    <!-- U+09AC: "ব" BENGALI LETTER BA
+         U+09AD: "ভ" BENGALI LETTER BHA
+         U+09EC: "৬" BENGALI DIGIT SIX -->
+   <Key
+        latin:keySpec="&#x1C66;"
+        latin:keyHintLabel="&#x1C56;"
+        latin:additionalMoreKeys="&#x1C56;,6" />
+    <!-- U+09B9: "হ" BENGALI LETTER HA
+         U+09ED: "৭" BENGALI DIGIT SEVEN -->
+    <Key
+        latin:keySpec="&#x1C5C;"
+        latin:keyHintLabel="&#x1C57;"
+        latin:additionalMoreKeys="&#x1C57;,7" />
+    <!-- U+0997: "গ" BENGALI LETTER GA
+         U+0998: "ঘ" BENGALI LETTER GHA
+         U+09EE: "৮" BENGALI DIGIT EIGHT -->
+   <Key
+        latin:keySpec="&#x1C6B;"
+        latin:moreKeys="&#x1C5B;"
+        latin:keyHintLabel="&#x1C58;"
+        latin:additionalMoreKeys="&#x1C58;,8" />
+    <!-- U+09A6: "দ" BENGALI LETTER DA
+         U+09A7: "ধ" BENGALI LETTER DHA
+         U+09EF: "৯" BENGALI DIGIT NINE -->
+    <Key
+        latin:keySpec="&#x1C61;"
+        latin:keyHintLabel="&#x1C59;"
+        latin:additionalMoreKeys="&#x1C59;,9" />
+    <!-- U+099C: "জ" BENGALI LETTER JA
+         U+099D: "ঝ" BENGALI LETTER JHA
+         U+099C/U+09CD/U+099E: "জ্ঞ" BENGALI LETTER JA/BENGALI SIGN VIRAMA/BENGALI LETTER NYA
+         U+09E6: "০" BENGALI DIGIT ZERO -->
+    <Key
+        latin:keySpec="&#x1C70;"
+        latin:keyHintLabel="&#x1C50;"
+        latin:additionalMoreKeys="&#x1C50;,0" />
+    <!-- U+09A1: "ড" BENGALI LETTER DDA
+         U+09A1/U+09BC: "ড়" BENGALI LETTER DDA/BENGALI SIGN NUKTA -->
+         
+    <Key
+        latin:keySpec="&#x1C7D;"
+        latin:moreKeys="&#x1C7D;&#x1C6C;" />
+</merge>

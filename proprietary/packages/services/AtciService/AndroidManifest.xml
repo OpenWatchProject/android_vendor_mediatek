@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+      package="com.mediatek.atci.service"
+      android:sharedUserId="android.uid.system"
+      android:versionCode="1"
+      android:versionName="1.0">
+
+    <permission
+        android:name="com.mediatek.atci.service.PERMISSION.START"
+        android:label="start AtciServic permission"
+        android:protectionLevel="signatureOrSystem"/>
+
+    <application android:label="Atci_service" android:launchMode="singleInstance">
+        <receiver android:name="com.mediatek.atci.service.AtciIntentReceiver"
+            android:permission="com.mediatek.atci.service.PERMISSION.START">
+            <intent-filter>
+                <action android:name="com.mediatek.atci.service.startup" />
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <category android:name="android.intent.category.HOME" />
+            </intent-filter>
+        </receiver>
+
+        <service android:name="com.mediatek.atci.service.AtciService"
+            android:exported="false" />
+
+        <service android:name="com.mediatek.atci.service.AtciImsService"
+            android:process="com.android.phone"
+            android:exported="false"
+            android:directBootAware="true">
+        </service>
+    </application>
+
+    <permission android:name="com.mediatek.permission.SUPPLEMENTARY_SERVICE_UT_TEST"
+        android:protectionLevel="signature"/>
+
+    <uses-permission android:name="android.permission.BLUETOOTH"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.CALL_PRIVILEGED" />
+    <uses-permission android:name="android.permission.READ_PRIVILEGED_PHONE_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+
+    <protected-broadcast android:name="android.intent.action.ACTION_SUPPLEMENTARY_SERVICE_UT_TEST" />
+    <protected-broadcast android:name="mediatek.intent.action.ATCTION_ATCI_IMS_COMMAND" />
+</manifest>

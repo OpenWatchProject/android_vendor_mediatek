@@ -1,0 +1,21 @@
+This module creates the clientapi proxy for Sip services for clientapi
+
+
+
+
+WHAT IT DOES?
+=============
+volte_clientapi help the clientapi application use volte for Single registrtaion and sending SIP messages
+in case of VoLTE network is available.
+
+HOW IT WAS BUILT?
+==================
+It needs the following library of MediaTek::
+
+volte_core volte_xdmc libc libcutils libdl
+
+
+HOW TO USE IT?
+==============
+
+volte_clientapi is enabled and disabled by clientapi based on the library permission and logic that volte network is available or not.

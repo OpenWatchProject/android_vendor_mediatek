@@ -1,0 +1,28 @@
+This executable file is used to do unit test for libsysenv.
+
+WHAT IT DOES?
+=============
+Read or write data to or from storage.
+
+HOW IT WAS BUILT?
+==================
+It needs the following library from AOSP:
+1. liblog.so
+
+and the following libs from MediaTek:
+1. libsysenv.so
+
+[Build Method]
+mmm vendor/mediatek/proprietary/external/libsysenv/libsysenvTest
+
+HOW TO USE IT?
+==============
+Run "sysenv_test" with the following parameters:
+1. read_rw <name> : read <name> setting from area "rw"
+2. read_ro <name> : read <name> setting from area "ro"
+3. write_rw <name> <val>: write name=val into area "rw"
+4. write_ro <name> <val>: write name=val into area "ro"
+5. delete_rw <name> : remove setting for <name> in area "rw"
+6. delete_ro <name> : remove setting for <name> in area "ro"
+7. all_rw : print all items in area "rw"
+8. all_ro : print all items in area "ro"

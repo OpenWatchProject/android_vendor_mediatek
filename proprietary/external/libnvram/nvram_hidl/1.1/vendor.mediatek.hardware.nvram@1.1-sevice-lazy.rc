@@ -1,0 +1,8 @@
+service nvram-hidl-1-1 /vendor/bin/hw/vendor.mediatek.hardware.nvram@1.1-service-lazy
+    interface vendor.mediatek.hardware.nvram@1.0::INvram default
+    interface vendor.mediatek.hardware.nvram@1.1::INvram default
+    class hal
+    user root
+    group system bluetooth media audio radio
+    oneshot
+    disabled

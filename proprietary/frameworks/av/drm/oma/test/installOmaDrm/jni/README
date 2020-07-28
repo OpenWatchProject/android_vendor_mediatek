@@ -1,0 +1,27 @@
+librecoveryomadrm_jni of Drm test features, including jni module of recovering drm msg .
+
+WHAT IT DOES?
+=============
+librecoveryomadrm_jni will be used by drm test, it is jni module of recovering drm msg.
+
+HOW IT WAS BUILT?
+==================
+It needs the following library from AOSP:
+1. libandroid_runtime.so
+2. libdrmframework.so
+3. libutils.so
+4. libcrypto.so
+5. libnativehelper.so
+6. libbinder.so
+7. libdl.so
+8. libcutils.so
+
+and the following libs from MediaTek:
+1. libdrmmtkutil.so
+
+All source/dependency modules of this module are already put in
+'system/framework' folder.
+
+HOW TO USE IT?
+==============
+librecoveryomadrm_jni provides jni module of drm recover test.

@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="8dip" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical" >
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dip"
+            android:text="@string/ctia_title"
+            android:textSize="18dip" />
+
+        <CheckBox
+            android:id="@+id/enable_checkbox"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/ctia_checkbox" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="4dip"
+            android:layout_marginTop="4dip"
+            android:text="@string/ctia_rate"
+            android:textSize="12dip" />
+
+        <Spinner
+            android:id="@+id/rate_spinner"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="4dip"
+            android:layout_marginTop="4dip"
+            android:text="@string/ctia_flag"
+            android:textSize="16dip" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginLeft="4dip" >
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginTop="4dip"
+                android:text="@string/ctia_id"
+                android:textSize="12dip" />
+
+            <EditText
+                android:id="@+id/idedittext"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginTop="4dip"
+                android:maxLength="8"
+                android:singleLine="true"
+                android:maxWidth="96dip"
+                android:minWidth="96dip"
+                android:text="@string/ctia_default_val"
+                android:textSize="12dip" />
+
+        </LinearLayout>
+
+       <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginLeft="4dip" >
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginTop="4dip"
+                android:text="@string/ctia_value"
+                android:textSize="12dip" />
+
+            <EditText
+                android:id="@+id/valedittext"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginTop="4dip"
+                android:maxLength="8"
+                android:singleLine="true"
+                android:maxWidth="96dip"
+                android:minWidth="96dip"
+                android:text="@string/ctia_default_val"
+                android:textSize="12dip" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/set_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dip"
+                android:minWidth="100dip"
+                android:text="@string/ctia_btn_set"
+                android:textSize="14dip" />
+
+            <Button
+                android:id="@+id/get_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="18dip"
+                android:minWidth="100dip"
+                android:text="@string/ctia_btn_get"
+                android:textSize="14dip" />
+        </LinearLayout>
+
+        <CheckBox
+            android:id="@+id/enable_dump_checkbox"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/ctia_dump_checkbox" />
+
+        <CheckBox
+            android:id="@+id/enable_dump_counter_checkbox"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/ctia_counter_checkbox" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="4dip"
+            android:layout_marginTop="4dip"
+            android:text="@string/ctia_interval"
+            android:textSize="16dip" />
+
+        <EditText
+            android:id="@+id/interval_edittext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="4dip"
+            android:layout_marginTop="4dip"
+            android:inputType="number"
+            android:maxLength="3"
+            android:singleLine="true"
+            android:maxWidth="48dip"
+            android:minWidth="48dip"
+            android:textSize="16dip" />
+    </LinearLayout>
+
+</ScrollView>

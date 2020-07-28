@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+    <CheckBox
+        android:id="@+id/cbOmxVenc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:text="@string/video_log_omx_venc" />
+    <CheckBox
+        android:id="@+id/cbOmxVdec"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:text="@string/video_log_omx_vdec" />
+    <CheckBox
+        android:id="@+id/cbVdecDriver"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:text="@string/video_log_vdec_driver" />
+    <CheckBox
+        android:id="@+id/cbSvp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:text="@string/video_log_svp" />
+    <CheckBox
+        android:id="@+id/cbOmxCore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:text="@string/video_log_omx_core" />
+    <CheckBox
+        android:id="@+id/cbVencDriver"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:text="@string/video_log_venc_driver" />
+</LinearLayout>

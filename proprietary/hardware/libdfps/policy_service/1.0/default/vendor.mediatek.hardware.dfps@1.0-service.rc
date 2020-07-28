@@ -1,0 +1,5 @@
+service dfps-1-0 /vendor/bin/hw/vendor.mediatek.hardware.dfps@1.0-service
+    class hal
+    user system
+    group graphics drmrpc
+    capabilities SYS_NICE

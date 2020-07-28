@@ -1,0 +1,30 @@
+This directory contains meta_adc library
+
+
+WHAT IT DOES?
+=============
+It provides adc api for meta mode test,which to verify adc funcion.
+
+HOW IT WAS BUILT?
+==================
+
+and the following libs from MediaTek:
+1. libft
+
+All source/dependency modules of this module are already put in
+'vendor/mediatek/proprietary/platform/${CHIP_NAME}/external/meta/ADC' folder.
+
+
+HOW TO USE IT?
+==============
+
+Files in this directory is used to
+generate a library which's name is 'meta_adc_old'
+
+
+
+The lib 'meta_adc_old' is loaded when meta_tst and related libs,
+which for doing format or detect test.
+
+All the source code of this library were written by MediaTek co..
+

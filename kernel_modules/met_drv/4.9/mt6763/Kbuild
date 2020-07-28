@@ -1,0 +1,34 @@
+MET_PLF := $(MTK_PLATFORM)
+
+ccflags-y += -DMET_CHIP_USE
+ccflags-y += -DEMI_EBL_SUPPORT
+met-y += $(MTK_PLATFORM)/chip_plf_init.o
+
+################################################################################
+# MET_VCOREDVFS
+################################################################################
+# for mtk_vcorefs_manager.h
+ifneq ("$(wildcard $(MET_VCOREDVFS_INC)/mtk_vcorefs_manager.h)","")
+    ccflags-y += -I$(MET_VCOREDVFS_INC)/
+else
+    $(info ======== Missing $(MET_VCOREDVFS_INC)/mtk_vcorefs_manager.h ========)
+    $(info ======== disable MET_VCOREDVFS ========)
+endif
+
+# for mtk_vcorefs_governor.h
+ifneq ("$(wildcard $(MET_VCOREDVFS_INC)/mtk_vcorefs_governor.h)","")
+    ccflags-y += -I$(MET_VCOREDVFS_INC)
+else
+    $(info ======== Missing $(MET_VCOREDVFS_INC)/mtk_vcorefs_governor.h ========)
+    $(info ======== disable MET_VCOREDVFS ========)
+endif
+
+# for helio-dvfsrc.h
+ifneq ("$(wildcard $(srctree)/drivers/devfreq/helio-dvfsrc.h)","")
+    ccflags-y += -I$(srctree)/drivers/devfreq/
+else
+    $(info ======== Missing $(srctree)/drivers/devfreq/helio-dvfsrc.h ========)
+    $(info ======== disable MET_VCOREDVFS ========)
+endif
+
+met-y += $(MTK_PLATFORM)/met_vcoredvfs.o

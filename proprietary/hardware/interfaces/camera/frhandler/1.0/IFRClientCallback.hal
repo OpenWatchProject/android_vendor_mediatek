@@ -1,0 +1,48 @@
+
+package vendor.mediatek.hardware.camera.frhandler@1.0;
+
+import android.hardware.camera.common@1.0::types;
+
+import types;
+
+/**
+ * This HAL interface communicates asynchronous results from SecureCamera
+ * in response to secure buffer callback
+ */
+interface IFRClientCallback {
+    /**
+     * Sent when secure camera produces a newly filled buffer and is ready to be consumed.
+     *
+     * @param status The status code for this operation. If not OK, then
+     *     buffer and stride must not be used.
+     * @param bufferId A unique ID for the returned buffer.
+     * @return buffer A handle to the buffer to be read from.
+     *     Must be non-null if the bufferId has not been seen by HAL before.
+     *     Must be null if the bufferId is seen before.
+     *     SecureCamera HAL client must keep track of the bufferId to actual buffer handle mapping.
+     * @return stride The stride between two rows of pixels in this buffer.
+     */
+/*    oneway onFRClientCallback(int32_t fr_cmd_id, int32_t errCode, handle param); */
+
+/*  ex1: fr buffer callback */
+/*      cmd_fr_ir1_buf, ok/false, {bufferId, buffer, Stream stream} */
+/*      cmd_fr_ir2_buf, ok/false, {bufferId, buffer, Stream stream} */
+/*      cmd_fr_depth_buf, ok/false, {bufferId, buffer, Stream stream} */
+
+/*  ex2: fr registration */
+/*      cmd_fr_saveFeature, ok/false, null */
+
+/*  ex3: fr comparison */
+/*      cmd_fr_compare, ok/false, null */
+
+/*  ex4: display buffer */
+/*      cmd_fr_display_rgb, ok/false, {bufferId, buffer, Stream stream} */
+
+
+/* method-1:  */
+    oneway onFRClientCallback(int32_t fr_cmd_id, int32_t errCode, FRCbParam param);
+/* method-2:  */
+/*    oneway onFRClientCallback(int32_t fr_cmd_id, int32_t errCode, int64_t bufferId, handle buffer, Stream stream); */
+};
+
+

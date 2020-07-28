@@ -1,0 +1,46 @@
+
+
+# Stk plugin @{
+-keep class com.mediatek.stk.pluginclib.** { *; }
+-keep class com.mediatek.stk.ext.** { *; }
+# @}
+
+# Settings plugin @{
+-keep class com.mediatek.settings.plugin.** { *; }
+-keep class com.mediatek.settings.ext.** { *; }
+# @}
+
+# Keyguard plugin @{
+-keep class com.mediatek.keyguard.plugin.** { *; }
+# @}
+
+# Dialer plugin @{
+-keep class com.mediatek.dialer.plugin.** { *; }
+-keep class com.mediatek.dialer.ext.** { *; }
+# @}
+
+# SystemUI plugin @{
+-keep class com.mediatek.systemui.plugin.** { *; }
+# @}
+
+# Mms plugin @{
+-keep class com.mediatek.mms.plugin.** { *; }
+# @}
+
+# Incallui plugin @{
+-keep class com.mediatek.incallui.plugin.** { *; }
+-keep class com.mediatek.incallui.ext.** { *; }
+# @}
+
+# Telecom plugin @{
+-keep class com.mediatek.telecom.plugin.** { *; }
+-keep class com.mediatek.telecom.ext.** { *; }
+# @}
+
+# Phone plugin @{
+-keep class com.mediatek.phone.plugin.** { *; }
+-keep class com.mediatek.phone.ext.** { *; }
+# @}
+
+-dontwarn com.mediatek.op09.plugin.**
+-ignorewarnings

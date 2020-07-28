@@ -1,0 +1,38 @@
+cc_prebuilt_library_static {
+    arch: {
+        arm: {
+            cortex_a53: {
+                srcs: [
+                    "arm_armv8-a_cortex-a53/vendor.mediatek.hardware.dplanner@2.0-impl.a",
+                ],
+            },
+            cortex_a55: {
+                srcs: [
+                    "arm_armv8-2a_cortex-a55/vendor.mediatek.hardware.dplanner@2.0-impl.a",
+                ],
+            },
+            cortex_a7: {
+                srcs: [
+                    "arm_armv7-a-neon_cortex-a7/vendor.mediatek.hardware.dplanner@2.0-impl.a",
+                ],
+            },
+        },
+        arm64: {
+            cortex_a53: {
+                srcs: [
+                    "arm64_armv8-a_cortex-a53/vendor.mediatek.hardware.dplanner@2.0-impl.a",
+                ],
+            },
+            cortex_a55: {
+                srcs: [
+                    "arm64_armv8-2a_cortex-a55/vendor.mediatek.hardware.dplanner@2.0-impl.a",
+                ],
+            },
+        },
+    },
+    compile_multilib: "both",
+    name: "vendor.mediatek.hardware.dplanner@2.0-impl@MTK,smart_phone",
+    relative_install_path: "hw",
+    vendor: true,
+}
+

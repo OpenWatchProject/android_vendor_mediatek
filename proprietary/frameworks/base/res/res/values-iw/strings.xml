@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+/* //device/apps/common/assets/res/any/strings.xml
+**
+** Copyright 2006, The Android Open Source Project
+**
+** Licensed under the Apache License, Version 2.0 (the "License");
+** you may not use this file except in compliance with the License.
+** You may obtain a copy of the License at
+**
+**     http://www.apache.org/licenses/LICENSE-2.0
+**
+** Unless required by applicable law or agreed to in writing, software
+** distributed under the License is distributed on an "AS IS" BASIS,
+** WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+** See the License for the specific language governing permissions and
+** limitations under the License.
+*/
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">  
+
+    <string name="badPin2">ה-PIN2 הישן שהקלדת שגוי.</string>  
+    <string name="badPuk2">ה-PUK2 שהקלדת שגוי.</string>  
+    <string name="checkPwdLen">ודא שהסיסמה באורך 4 עד 8 ספרות.</string>  
+    <string name="pinNotEnabled">הפוך את ה-PIN לזמין לפני שינויו.</string>  
+    <string name="puk1Blocked">ה-PIN חסום.</string>  
+    <string name="puk2Blocked">ה-PIN2 חסום.</string>  
+    <string name="fdnFailMmi">נכשל בבדיקת FDN.</string>  
+    <string name="callBarringFailMmi">נכשל בחסימת שיחות.</string>  
+    <string name="Pin2Mmi">שינוי PIN2</string>  
+    <string name="PukMmi">בטל חסימת PIN</string>  
+    <string name="Puk2Mmi">בטל חסימת PIN2</string>  
+    <string name="serviceProvisioned">השירות הוקצה.</string>  
+    <string name="serviceUnknown">בעיית חיבור או קוד MMI לא חוקי.</string>  
+    <string name="cfServiceNotForwarded">לא הועברה</string>  
+
+    <string name="invalidPuk">הזן 8 ספרות.</string>  
+
+    <string name="invalid_imei">IMEI לא חוקי</string>  
+    <string name="same_imei">IMEI זהה</string>  
+    <string name="oper_long_46000">China Mobile</string>  
+    <string name="oper_long_46001">China Unicom</string>  
+    <string name="oper_long_46003">China Telecom</string>  
+    <string name="oper_long_46601">Far EasTone</string>  
+    <string name="oper_long_46692">Chunghwa Telecom</string>  
+    <string name="oper_long_46697">Taiwan Mobile</string>  
+    <string name="oper_long_99998">Android1</string>  
+    <string name="oper_long_99999">Android</string>  
+    <string name="oper_short_46000">CMCC</string>  
+    <string name="oper_short_46001">CU-GSM</string>  
+    <string name="oper_short_46003">China Telecom</string>  
+    <string name="oper_short_46601">FET</string>  
+    <string name="oper_short_46692">Chunghwa</string>  
+    <string name="oper_short_46697">TWN</string>  
+    <string name="oper_short_99997">AD1</string>  
+    <string name="oper_short_99999">AD</string>  
+
+    <string name="sim_close">כרטיס SIM סגור</string>  
+
+    <string name="serviceClassVideo">וידאו</string>  
+
+    <string name="free_memory_btn">"שטח פנוי"</string>  
+
+    <string name="contact_widget_loading">טוען\u2026</string>  
+
+    <string name="media_controller_buffering">"אוגר %d%%..."</string>  
+    <string name="media_controller_live">"חי"</string>  
+    <string name="media_controller_playing">"מפעיל"</string>  
+    <string name="media_controller_connecting">"מתחבר..."</string>  
+
+    <string name="VideoView_error_text_bad_file">"הקובץ פגום, לא ניתן להפעיל את הסרטון."</string>  
+    <string name="VideoView_error_text_cannot_connect_to_server">"לא ניתן להתחבר לשרת."</string>  
+    <string name="VideoView_error_text_type_not_supported">"סוג קובץ המדיה אינו נתמך."</string>  
+    <string name="VideoView_error_text_drm_not_supported">"הגנת DRM, לא ניתן להפעיל את הסרטון."</string>  
+    <string name="VideoView_error_text_invalid_connection">"חיבור לא חוקי. (403 אסור)"</string>  
+
+    <string name="new_sim">SIM חדש</string>  
+
+    <string name="delete">מחק</string>  
+
+    <string name="searching_simcard">מזהה...</string>  
+
+    <string name="lockscreen_pin_too_many_failed_attempts_dialog_message">הזנת PIN שגוי 
+        <xliff:g id="number">%d</xliff:g> פעמים. \n\nנסה שוב בעוד 
+        <xliff:g id="number">%d</xliff:g> שניות.
+    </string>  
+    <string name="lockscreen_password_too_many_failed_attempts_dialog_message">הזנת סיסמה שגויה 
+        <xliff:g id="number">%d</xliff:g> פעמים. \n\nנסה שוב בעוד 
+        <xliff:g id="number">%d</xliff:g> שניות.
+    </string>
+
+    <string name="drm_protection_status">סטטוס הגנה:</string>  
+    <string name="drm_can_forward">ניתן להעביר.</string>  
+    <string name="drm_can_not_forward">לא ניתן להעביר.</string>  
+    <string name="drm_no_limitation">אין מגבלה.</string>  
+    <string name="drm_no_license">אין רישיון DRM זמין.</string>  
+    <string name="drm_begin">התחלה:</string>  
+    <string name="drm_end">סיום:</string>  
+    <string name="drm_use_left">פעמים שנותרו:</string>  
+    <string name="drm_protectioninfo_renew">חדש</string>  
+    <string name="drm_protectioninfo_title">פרטי הגנה</string>  
+    <string name="drm_licenseacquisition_title">קבלת רישיון DRM</string>  
+    <string name="drm_licenseacquisition_message">ל- %1$s אין כל רשיון DRM זמין. באפשרותך ללחוץ על הכפתור "רענון" כדי לרכוש רשיון DRM.</string> 
+    <string name="drm_toast_license_expired">רישיון DRM פקע.</string>  
+    <string name="drm_forwardforbidden_title">ההעברה אסורה</string>  
+    <string name="drm_forwardforbidden_message">לא ניתן להעביר חלק מהקבצים המוגנים.</string>  
+    <string name="drm_license_install_success">התקנת רישיון DRM הצליחה.</string>  
+    <string name="drm_license_install_fail">התקנת רישיון DRM נכשלה.</string>  
+    <string name="drm_secure_timer_title">שעון מאובטח של DRM אינו חוקי</string>  
+    <string name="drm_secure_timer_message">לא ניתן להשתמש בקבצים המוגנים ב-DRM. ודא שחיבור הנתונים זמין.</string>  
+    <string name="drm_consume_title">זכויות DRM של צרכנים</string>  
+    <string name="drm_consume_message">פעולתך תבטל את זכויות DRM.</string>  
+
+    <string name="sim_missing_slot1">חריץ 1: לא זוהה כרטיס SIM</string>  
+    <string name="sim_missing_slot2">חריץ 2: לא זוהה כרטיס SIM</string>  
+    <string name="sim_missing">לא זוהה כרטיס SIM</string>  
+    <string name="sim_missing_detail">ודא שכרטיס ה-SIM מוכן לשימוש</string> 
+
+    <string name="url_dialog_choice_title">הודעות</string>  
+    <string name="url_dialog_choice_message">פעולה זו תפתח את הדפדפן, להמשיך?</string>  
+
+    <string name="deleteMail">גבה את הודעות הדוא"ל והוצא את התקן האחסון</string>  
+
+    <string name="storage_withsd">לטלפון אין מספיק שטח אחסון. פנה שטח אחסון או שנה את ברירת המחדל של כתיבה לכונן בהגדרות.</string>  
+    <string name="storage_withoutsd">לטלפון אין מספיק שטח אחסון. פנה שטח אחסון או הכנס כרטיס SD.</string>  
+    <string name="storage_sd">אין מספיק שטח אחסון בכרטיס ה-SD. פנה שטח אחסון או שנה את ברירת המחדל של כתיבה לכונן בהגדרות.</string>  
+    <string name="usb_ums_notification_title">מחובר כהתקן USB</string>  
+    <string name="usb_charging_notification_title">טעינת USB בלבד</string>  
+    <string name="gps_time_sync_fail_str">השגת שעה מה-GPS נכשלה</string>   
+
+    <string name="tethered_notification_message_for_hotspot">
+        <xliff:g id="connected">%1$d</xliff:g> מחוברים, 
+        <xliff:g id="blocked">%2$d</xliff:g> חסומים
+    </string>
+    <string name="tethered_notification_message_bandwidth_set">רוחב הפס הוגדר</string>
+    <string name="default_wallpaper_name">"ברירת מחדל"</string> 
+    <!-- voice unlock start -->
+    <!-- voice unlock end -->
+
+    <string name="wifi_display_bt_hdmi_off_wfd_on">כאשר תפעיל את התצוגה האלחוטית, תקשורת Bluetooth ו-HDMI תכובה. האם להמשיך?</string> 
+    <string name="wifi_display_wfd_off_hdmi_on">התצוגה האלחוטית תכבה כאשר תפעיל את HDMI. האם להמשיך?</string> 
+
+    <string name="wifi_display_wifi_p2p_disconnect_wfd_connect">חיבור ה-Wi-Fi הישיר הנוכחי ינותק כשתחבר את התקן התצוגה האלחוטי. האם ברצונך להמשיך?</string> 
+    <string name="wifi_display_unstable_connection">חיבור לא יציב</string>
+    <string name="wifi_display_connection_is_not_steady">החיבור הנוכחי של התצוגה האלחוטית אינו יציב.</string>
+    <string name="wifi_display_unstable_suggestion">החיבור הנוכחי של התצוגה האלחוטית אינו יציב, נסה להתקרב אל ההתקן המציג.</string>
+    <string name="wifi_display_reconnect">התחבר מחדש</string>
+    <string name="wifi_display_disconnect_then_reconnect">התצוגה האלחוטית מנותקת. האם ברצונך להתחבר מחדש?</string> 
+    <string name="wifi_display_disconnected">התצוגה האלחוטית מנותקת.</string>
+    <string name="wifi_wps_failed_overlap">"אותרה פעילות WPS נוספת באתר. נסה שוב בעוד מספר דקות."</string>
+    <string name="wifi_p2p_frequency_conflict_message">הטלפון יתנתק זמנית מרשת ה-Wi-Fi כשהוא מחובר ל-<xliff:g id="device_name">%1$s</xliff:g> (רק אם מחליפים תחום תדרים ומזהה של נקודות הגישה הנוכחיות של ה-Wi-Fi ל-<xliff:g id="oper_freq">%2$s</xliff:g>)</string>
+    <string name="wifi_display_wfd_and_wifi_are_turned_on">התצוגה האלחוטית וה-Wi-Fi מופעלים.</string>
+    <string name="wifi_display_sound_path_reminder">צלילי המולטימדיה לא יושמעו מהאזניות.</string>  
+    <string name="wifi_display_change_resolution_reminder">שינוי הרזולוציה יחבר מחדש אוטומטית את התצוגה האלחוטית.</string>  
+    <string name="wifi_display_do_not_remind_again">אל תזכיר לי שוב.</string>
+    <string name="wifi_display_wifi_ap_affects_quality">ה-AP של ה-Wi-Fi הנוכחית עשוי לפגוע באיכות בצג האלחוטי.</string>
+    <string name="wifi_display_wait_connection">ממתין להזמנות התחברות מהתקנים נוספים.</string>
+    <string name="wifi_display_confirm_connection">רוצה ליצור התחברות עמך.</string>
+    <string name="wifi_display_build_connection">יוצר התחברות.</string>
+
+    <!-- Add for AT&T to show toast when pass pin/puk lock -->
+    <!-- MountService start -->
+    <string name="sdcard_ready_title">כרטיס ה-SD מוכן</string>
+    <string name="sdcard_select_default_path">האם להחליף את כונן הכתיבה המוגדר כברירת מחדל?</string>
+    <string name="sdcard_default_path_change">דיסק הכתיבה המוגדר כברירת מחדל השתנה.</string>
+    <string name="usb_storage_ready_title">התקן האחסון החיצוני מסוג USB מוכן</string>
+    <!-- MountService end -->
+
+    <string name="invalid_card">כרטיס לא תקין</string>
+
+    <string name="hdmi_notification_title">כבל HDMI מחובר</string>  
+    <string name="hdmi_notification_content">לחץ כדי לקבוע תצורת HDMI</string>
+    <string name="hdmi_hdvideo_toast">HDMI לא מסוגל להפעיל וידאו 4K, החיבור ינותק.</string>
+    <string name="hdmi_mutex_call_content">מצטערים, HDMI הופסק בשל שיחת הטלפון הנוכחית.</string>
+    <string name="hdmi_audio_output">פלט שמע</string>
+    <string name="hdmi_audio_output_stereo">סטריאו</string>
+    <string name="hdmi_audio_output_multi_channel">רב ערוצי</string>
+
+    <!-- VolumePanel -->
+
+    <!-- Low Storage -->
+    <string name="aerr_application_lowstorage">האחסון הפנימי נגמר, היישום יופסק. פנה מקום ונסה שוב.</string>
+    <string name="aerr_process_lowstorage">האחסון הפנימי נגמר, התהליך הופסק. פנה מקום ונסה שוב.</string>
+    <string name="low_internal_storage_view_title">האחסון הפנימי נגמר.</string>
+    <string name="deleteMails">מחק הודעות דוא"ל</string>
+    <string name="low_storage_warning_message">פנה מקום, אחרת חלק מהיישומים ופונקצית המערכת לא יפעלו כהלכה.</string>
+
+    <!-- KK translation task -->
+    <string name="virtual_sim_on_slot1">SIM וירטואלי 1 פועל</string>
+    <string name="virtual_sim_on_slot2">SIM וירטואלי 2 פועל</string>
+    <string name="virtual_sim_on_slot3">SIM וירטואלי 3 פועל</string>
+    <string name="virtual_sim_on_slot4">SIM וירטואלי 4 פועל</string>
+    <string name="virtual_sim_on">SIM וירטואלי פועל</string>
+    <string name="RejectCauseTitle">גורם לדחיית רשת</string>
+    <string name="MMRejectCause2">SIM לא הוקצה ‏MM #2</string>
+    <string name="MMRejectCause3">SIM לא הותר MM #3</string>
+    <string name="MMRejectCause5">השיחה נכשלה MM #5</string>
+    <string name="MMRejectCause6">הטלפון לא הותר MM #6</string>
+    <string name="MMRejectCause13">שיחות חירום/SOS בלבד</string>
+
+    <string name="press_color_to_apply">"לחץ על 'צבע' כדי להחיל"</string>
+    <string name="sim_missing_slot3">חריץ 3: לא זוהה כרטיס SIM</string>
+    <string name="sim_missing_slot4">חריץ 4: לא זוהה כרטיס SIM</string>
+    <string name="sim_missing_slot1_card">חריץ 1: לא זוהה כרטיס</string>
+    <string name="sim_missing_slot2_card">חריץ 2: לא זוהה כרטיס</string>
+    <string name="sim_missing_card">לא זוהה כרטיס</string>
+    <string name="sim_missing_detail_card">ודא שהכרטיס מוכן</string>
+
+    <string name="description_direction_right">"החלק ימינה כדי לסגור"</string>
+    <string name="description_direction_left">"החלק שמאלה כדי להעביר למצב נמנום"</string>
+    <string name="description_direction_up">"החלק מעלה כדי לסגור"</string>
+    <string name="description_direction_down">"החלק מטה כדי להעביר למצב נמנום"</string>
+    <string name="headset_pin_recognition">האוזניות שלך לא תואמות לטלפון. נסה אוזניות אחרות</string>
+
+    <string name="usb_autorun_cdrom_notification_title">מחובר ככונן תקליטורים בעל הפעלה אוטומטית</string>
+    <string name="ct_net_name">"CTNET"</string>
+    <string name="ct_wap_name">"CTWAP"</string>
+
+    <string name="data_conn_only">חיבור לרשת נתונים בלבד</string>
+
+    <string name="Special_Card_Type_Title_Lte_Not_Available">אין רשת LTE זמינה.</string>
+    <string name="Suggest_To_Change_USIM">מומלץ להחליף לכרטיס SIM של 4G.</string>
+    <string name="confirm_flight_mode_title">מצב טיסה פועל</string>
+    <string name="confirm_flight_mode_msg">כדי להשתמש במספר הזה, כבה את מצב טיסה.</string>
+    <string name="confirm_radio_title">כרטיס SIM כבוי</string>
+    <string name="confirm_radio_msg">כדי להשתמש במספר הזה, הדלק אותו.</string>
+    <string name="confirm_flight_mode_radio_title">מצב טיסה פועל וכרטיס SIM כבוי</string>
+    <string name="confirm_flight_mode_radio_msg">כדי להשתמש במספר הזה, כבה את מצב טיסה והדלק את כרטיס ה-SIM.</string>
+    <string name="confirm_unlock_msg">כרטיס ה-SIM שנבחר נעול. פתח את הנעילה.</string>
+    <string name="confirm_roaming_msg">כרטיס ה-SIM נמצא בנדידה. האם להמשיך להשתמש בו?</string>
+    <string name="confirm_button_turn_off">כיבוי</string>
+    <string name="media_info_audio_not_supported">"השמעת השמע נכשלה."</string>
+    <string name="media_info_video_not_supported">"הסרטון הזה אינו נתמך."</string>
+    <string name="save_password_label">"אשר"</string>
+    <string name="save_password_message">"האם ברצונך שהדפדפן יזכור סיסמה זו?"</string>
+    <string name="save_password_notnow">"לא כעת"</string>
+    <string name="save_password_remember">"זכור"</string>
+    <string name="save_password_never">"לעולם לא"</string>
+    <string name="confirm_unlock_title">SIM ננעל</string>
+    <string name="confirm_roaming_title">אזהרת נדידה</string>
+    <string name="confirm_button_ok">"אישור"</string>
+    <string name="confirm_button_cancel">"בטל"</string>
+    <string name="confirm_button_unlock">"בטל נעילה"</string>
+    <string name="confirm_button_turn_on">"הפעל"</string>
+    <string name="confirm_button_yes">"כן"</string>
+    <string name="confirm_button_no">לא</string>
+    <string name="Default_Account_Selection_Content">בחירת חשבון ברירת מחדל</string>
+    <string name="network_forbidden">אסור</string>
+
+    <string name="account_always_ask_title">"שאל בכל פעם"</string>
+    <string name="permlab_wake_device_sensorhub" product="tablet">הער את מחשב הלוח</string>
+    <string name="permlab_wake_device_sensorhub" product="default">הער את הטלפון</string>
+    <string name="permdesc_wake_device_sensorhub" product="tablet">מאפשר לאפליקציה להעיר את מחשב הלוח כשהוא מושהה באמצעות החיישנים.</string>
+    <string name="permdesc_wake_device_sensorhub" product="default">מאפשר לאפליקציה להעיר את הטלפון כשהוא מושהה באמצעות החיישנים.</string>
+    <string name="wifi_display_connected_to_wifi_network">מחובר לרשת ה-Wi-Fi ‏<xliff:g id="wifi_ap_name">%1$s</xliff:g>.</string>
+    <string name="wifi_display_wifi_network_disconnected">רשת ה-Wi-Fi ‏<xliff:g id="wifi_ap_name">%1$s</xliff:g> מנותקת.</string>
+    <string name="wifi_display_channel_confliction">התנגשות ערוצים</string>
+    <string name="wifi_display_wifi_network_cannot_coexist">רשת ה-Wi-Fi ‏הנוכחית לא יכולה לפעול עם המסך המוקרן.</string>
+    <string name="permdesc_receiveCbSms">מתירה ליישום לקבל ולעבד הודעות CB SMS. יישומים זדוניים עלולים לנטר את ההודעות שלך או למחוק אותן בלי שתראה אותן.</string>
+    <string name="permdesc_receiveDmRegisterSms">מתירה ליישום לקבל ולעבד הודעות SMS לרישום DM. אף יישום אחר למעט DM APP לא אמור להשתמש בזה</string>
+    <string name="drm_first_time_use">זהו השימוש הראשון.</string>
+    <string name="drm_use_now">להשתמש בזה כעת?</string>
+    <string name="drm_consume_interval">קובץ זה יהיה זמין תוך %1$s לאחר שתתחיל להשתמש בו.</string>
+    <string name="drm_effective_duration">משך בפועל:</string>
+    <string name="drm_expire_dialog_future">תקופת תוקף:</string>
+</resources>

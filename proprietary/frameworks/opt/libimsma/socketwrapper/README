@@ -1,0 +1,19 @@
+WHAT IT DOES?
+=============
+This module is provided for Video RTP/RTCP Socket Interface.
+
+HOW IT WAS BUILT?
+==================
+It needs the following library from AOSP:
+libhardware, libhardware_legacy(keep processor awake when data is transfering)
+libnetd_client(routing setting)
+
+And the following library from Mediatek:
+
+
+HOW TO USE IT?
+==============
+SocketWrapper is a library for transfering video RTP/RTCP between vtservice and wifi/4G network interfaces.
+The source code for this module were written by MediaTek and dedicated for Mediatek usage.
+There is no open API for public usage.
+

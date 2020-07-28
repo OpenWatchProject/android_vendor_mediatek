@@ -1,0 +1,16 @@
+##
+#
+# volte_rcs_ua specific system properties
+#
+on property:sys.boot_completed=1
+        start volte_rcs_ua
+
+#
+# volte_rcs_ua specific system service and socket information
+#
+service volte_rcs_ua /vendor/bin/volte_rcs_ua
+    class hal
+    socket rcs_ua_proxy stream 666 root system
+    user system
+    group system log inet radio
+    disabled

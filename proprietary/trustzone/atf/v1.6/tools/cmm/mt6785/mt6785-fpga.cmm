@@ -1,0 +1,138 @@
+;*****************************************************************************
+;  Copyright Statement:
+;  --------------------
+;  This software is protected by Copyright and the information contained
+;  herein is confidential. The software may not be copied and the information
+;  contained herein may not be used or disclosed except with the written
+;  permission of MediaTek Inc. (C) 2011
+;
+;*****************************************************************************
+;;================================================
+;; PURPOSE:     FPGA Bring Up
+;; CREATE_DATE: 2018/12/3
+;; NOTE:
+;;================================================
+; Specify Core Number
+;=================================================
+&NR_CPUS=1
+; cluster 0 corebase: 0x8007000, 0x8007200, 0x8007400, 0x8007600
+; cluster 1 corebase: 0x8009000, 0x8009200, 0x8009400, 0x8009600
+
+;=================================================
+; Initialize CPU
+;=================================================
+SYStem.RESet;
+SYStem.Option ENRESET ON;
+SYStem.Option ResBreak OFF;
+SYStem.Option WaitReset 100.ms;
+
+SYStem.JtagClock 10.MHz;
+
+SYStem.CPU Ananke;
+
+if &NR_CPUS==1
+(
+    SYStem.CONFIG CORENUMBER 1;
+	SYStem.CONFIG COREBASE 0x8E010000;
+	SYStem.CONFIG CTIBASE 0x8E020000;
+)
+else
+(
+    ;SYSTEM.CONFIG CORENUMBER 8;
+    ;SYStem.CONFIG COREBASE 0x8E010000 0x8E110000 0x8E210000 0x8E310000 0x8E410000 0x8E510000 0x8E610000 0x8E710000;
+    ;SYStem.CONFIG CTIBASE  0x8E020000 0x8E120000 0x8E220000 0x8E320000 0x8E420000 0x8E520000 0x8E620000 0x8E720000;
+    SYSTEM.CONFIG CORENUMBER 2;
+    SYStem.CONFIG COREBASE 0x8E010000 0x8E610000 ;
+    SYStem.CONFIG CTIBASE  0x8E020000 0x8E620000;
+)
+
+;=================================================
+; Attach and Stop CPU
+;=================================================
+SYSTEM.UP
+
+SETUP.IMASKHLL ON
+SETUP.IMASKASM ON
+
+;=================================================
+; Initialize EMI
+;=================================================
+&init_emi=1 ; 0: not init
+            ; 1: init
+IF &init_emi==1
+(
+    do mt6785_FPGA_DDR_1GB.cmm
+)
+;=================================================
+; register
+;=================================================
+&RGU=0x10007000
+
+;=================================================
+; disable wdt (debug purpose)
+;=================================================
+D.S SD:&RGU+0x0000 %LE %LONG 0x22000064
+
+; for pmic power latch (RGU + 0xA4)
+D.S SD:&RGU+0x00A4 %LE %LONG 0x66000001
+
+;=================================================
+; L3C share sram init
+;=================================================
+; Turn off MMU
+;D.S C15:0x1 0x00C50838
+
+; L3C share enable
+D.S SD:0x0C53C8D0 %LE %LONG 0x00070300
+
+;=================================================
+; Load images
+;=================================================
+print "loading pre-loader image"
+;D.LOAD.BINARY ../../../../../../../../../out/target/product/fpga6785_64/obj/PRELOADER_OBJ/bin/preloader_fpga6785_64_NO_GFH.bin 0x00201000 /noclear
+;d.load.elf ../../../../../../../../../out/target/product/fpga6785_64/obj/PRELOADER_SBOOT_DIS_OBJ/bin/preloader_fpga6785_64_SBOOT_DIS.elf  /noclear
+d.load.elf ../../../../../../../../../out/target/product/fpga6785_64/obj/PRELOADER_OBJ/bin/preloader_fpga6785_64.elf  /noclear
+
+print "loading lk image"
+; normal virsion lk
+D.LOAD.BINARY ../../../../../../../../../out/target/product/fpga6785_64/obj/BOOTLOADER_OBJ/build-fpga6785_64/lk-no-mtk-header.bin 0x4C400000 /noclear
+
+; simple uart log in lk
+;D.LOAD.BINARY simple_uart_log_lk-no-mtk-header.bin 0x4C400000 /noclear
+
+print "Load ATF ELF..."
+d.load.elf ../../../../../../../../../out/target/product/fpga6785_64/trustzone/ATF_OBJ/debug/bl31/bl31.elf /noclear
+
+r.s pc 0x00201000
+
+;=================================================
+; Load symbol
+;=================================================
+print "Load ATF ELF Symbol..."
+Y.SPATH.RESET ; reset all source path
+Y.SPATH.SRD ../../../bl31
+Y.SPATH.SRD ../../../plat/mediatek/mt6785
+Y.SPATH.SRD ../../../services/spd/tspd
+Y.SPATH.SRD ../../../services/std_svc/psci
+Y.SPATH.SRD ../../../lib/aarch64
+
+;=================================================
+; Set Break Point
+;=================================================
+; set_hw_breakpoint_by_def
+; setting attribute of breakpoints
+Break.Select Program OnChip
+Break.Select Hll OnChip
+Break.Select Spot OnChip
+Break.Select Read OnChip
+Break.Select Write OnChip
+
+;b.s bl31_entrypoint
+;b.s bl31_main
+b.s 0x4CE01000
+b.s 0x4C400000
+
+R.S T 0
+;winclear
+d.l
+enddo

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical">
+    <CheckBox android:text="@string/allow_all_devices"
+            android:id="@+id/allow_all_devices_checkBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dip"
+            android:layout_marginLeft="6dip"
+            android:layout_marginBottom="7dip" />
+
+    <TextView android:id="@+id/list_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/allowed_device_list"
+            android:textStyle="bold"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:singleLine="true"
+            android:layout_marginTop="5dip"
+            android:ellipsize="marquee"
+            android:background="@color/dark_grey_color"
+            android:layout_below="@+id/allow_all_devices_checkBox" />
+
+    <ListView android:id="@+id/allowed_device_list"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_below="@+id/list_header"
+            android:layout_above="@+id/button_layout"/>
+        <TextView
+                android:id="@android:id/empty"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/no_allowed_device_present"
+                android:layout_marginLeft="10dip"
+                android:layout_marginTop="3dip"
+                android:layout_below="@+id/list_header" />
+
+    <RelativeLayout android:id="@+id/button_layout"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_alignParentBottom="true" >
+        <Button android:layout_width="wrap_content"
+                android:layout_height="40dip"
+                android:text="@string/add"
+                android:id="@+id/add"
+                android:layout_marginLeft="20dip"
+                android:layout_marginRight="20dip"
+                android:layout_marginBottom="10dip"
+                android:background="#459384"
+                android:layout_alignParentLeft="true"/>
+
+        <Button
+                android:layout_width="wrap_content"
+                android:layout_height="40dip"
+                android:text="@string/delete"
+                android:id="@+id/delete"
+                android:layout_marginLeft="20dip"
+                android:layout_marginRight="20dip"
+                android:layout_marginBottom="10dip"
+                android:background="#459384"
+                android:layout_alignParentRight="true"/>
+    </RelativeLayout>
+</RelativeLayout>

@@ -1,0 +1,250 @@
+/* Copyright Statement:
+ *
+ * This software/firmware and related documentation ("MediaTek Software") are
+ * protected under relevant copyright laws. The information contained herein
+ * is confidential and proprietary to MediaTek Inc. and/or its licensors.
+ * Without the prior written permission of MediaTek inc. and/or its licensors,
+ * any reproduction, modification, use or disclosure of MediaTek Software,
+ * and information contained herein, in whole or in part, shall be strictly prohibited.
+ */
+/* MediaTek Inc. (C) 2010. All rights reserved.
+ *
+ * BY OPENING THIS FILE, RECEIVER HEREBY UNEQUIVOCALLY ACKNOWLEDGES AND AGREES
+ * THAT THE SOFTWARE/FIRMWARE AND ITS DOCUMENTATIONS ("MEDIATEK SOFTWARE")
+ * RECEIVED FROM MEDIATEK AND/OR ITS REPRESENTATIVES ARE PROVIDED TO RECEIVER ON
+ * AN "AS-IS" BASIS ONLY. MEDIATEK EXPRESSLY DISCLAIMS ANY AND ALL WARRANTIES,
+ * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE OR NONINFRINGEMENT.
+ * NEITHER DOES MEDIATEK PROVIDE ANY WARRANTY WHATSOEVER WITH RESPECT TO THE
+ * SOFTWARE OF ANY THIRD PARTY WHICH MAY BE USED BY, INCORPORATED IN, OR
+ * SUPPLIED WITH THE MEDIATEK SOFTWARE, AND RECEIVER AGREES TO LOOK ONLY TO SUCH
+ * THIRD PARTY FOR ANY WARRANTY CLAIM RELATING THERETO. RECEIVER EXPRESSLY ACKNOWLEDGES
+ * THAT IT IS RECEIVER'S SOLE RESPONSIBILITY TO OBTAIN FROM ANY THIRD PARTY ALL PROPER LICENSES
+ * CONTAINED IN MEDIATEK SOFTWARE. MEDIATEK SHALL ALSO NOT BE RESPONSIBLE FOR ANY MEDIATEK
+ * SOFTWARE RELEASES MADE TO RECEIVER'S SPECIFICATION OR TO CONFORM TO A PARTICULAR
+ * STANDARD OR OPEN FORUM. RECEIVER'S SOLE AND EXCLUSIVE REMEDY AND MEDIATEK'S ENTIRE AND
+ * CUMULATIVE LIABILITY WITH RESPECT TO THE MEDIATEK SOFTWARE RELEASED HEREUNDER WILL BE,
+ * AT MEDIATEK'S OPTION, TO REVISE OR REPLACE THE MEDIATEK SOFTWARE AT ISSUE,
+ * OR REFUND ANY SOFTWARE LICENSE FEES OR SERVICE CHARGE PAID BY RECEIVER TO
+ * MEDIATEK FOR SUCH MEDIATEK SOFTWARE AT ISSUE.
+ *
+ * The following software/firmware and/or related documentation ("MediaTek Software")
+ * have been modified by MediaTek Inc. All revisions are subject to any receiver's
+ * applicable license agreements with MediaTek Inc.
+ */
+
+/********************************************************************************************
+ *     LEGAL DISCLAIMER
+ *
+ *     (Header of MediaTek Software/Firmware Release or Documentation)
+ *
+ *     BY OPENING OR USING THIS FILE, BUYER HEREBY UNEQUIVOCALLY ACKNOWLEDGES AND AGREES
+ *     THAT THE SOFTWARE/FIRMWARE AND ITS DOCUMENTATIONS ("MEDIATEK SOFTWARE") RECEIVED
+ *     FROM MEDIATEK AND/OR ITS REPRESENTATIVES ARE PROVIDED TO BUYER ON AN "AS-IS" BASIS
+ *     ONLY. MEDIATEK EXPRESSLY DISCLAIMS ANY AND ALL WARRANTIES, EXPRESS OR IMPLIED,
+ *     INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR
+ *     A PARTICULAR PURPOSE OR NONINFRINGEMENT. NEITHER DOES MEDIATEK PROVIDE ANY WARRANTY
+ *     WHATSOEVER WITH RESPECT TO THE SOFTWARE OF ANY THIRD PARTY WHICH MAY BE USED BY,
+ *     INCORPORATED IN, OR SUPPLIED WITH THE MEDIATEK SOFTWARE, AND BUYER AGREES TO LOOK
+ *     ONLY TO SUCH THIRD PARTY FOR ANY WARRANTY CLAIM RELATING THERETO. MEDIATEK SHALL ALSO
+ *     NOT BE RESPONSIBLE FOR ANY MEDIATEK SOFTWARE RELEASES MADE TO BUYER'S SPECIFICATION
+ *     OR TO CONFORM TO A PARTICULAR STANDARD OR OPEN FORUM.
+ *
+ *     BUYER'S SOLE AND EXCLUSIVE REMEDY AND MEDIATEK'S ENTIRE AND CUMULATIVE LIABILITY WITH
+ *     RESPECT TO THE MEDIATEK SOFTWARE RELEASED HEREUNDER WILL BE, AT MEDIATEK'S OPTION,
+TO REVISE OR REPLACE THE MEDIATEK SOFTWARE AT ISSUE, OR REFUND ANY SOFTWARE LICENSE
+ *     FEES OR SERVICE CHARGE PAID BY BUYER TO MEDIATEK FOR SUCH MEDIATEK SOFTWARE AT ISSUE.
+ *
+ *     THE TRANSACTION CONTEMPLATED HEREUNDER SHALL BE CONSTRUED IN ACCORDANCE WITH THE LAWS
+ *     OF THE STATE OF CALIFORNIA, USA, EXCLUDING ITS CONFLICT OF LAWS PRINCIPLES.
+ ************************************************************************************************/
+#ifndef _MTK_HRD_H
+#define _MTK_HRD_H
+
+#include "MTKHrdType.h"
+#include "MTKHrdErrCode.h"
+//#define HRD_DEBUG
+
+typedef enum
+{
+    HRD_STATE_STANDBY,
+    HRD_STATE_INIT,
+    HRD_STATE_PROC,
+    HRD_STATE_FINISH,
+    HRD_STATE_IDLE
+}HRD_STATE_ENUM;
+
+typedef enum
+{
+    HRD_PROCESS_OK,
+    HRD_PROCESS_ERROR_STATE,
+    HRD_PROCESS_WRONG_MEMORY
+} HRD_ERROR_ENUM;
+
+typedef enum
+{
+    HRD_FEATURE_BEGIN = 0,
+    HRD_FEATURE_SET_PROC_INFO,
+    HRD_FEATURE_GET_PROC_INFO,
+    HRD_FEATURE_SET_WORK_BUF_INFO,
+    HRD_FEATURE_GET_RESULT_INFO,
+    HRD_FEATURE_SAVE_LOG,
+    HRD_FEATURE_REGISTER_CALLBACK,
+    HRD_FEATURE_UNREGISTER_CALLBACK,
+    HRD_FEATURE_MAX
+}    HRD_FEATURE_ENUM;
+
+typedef enum
+{
+    HRD_YUV444_Planar = 0,
+    HRD_YUV444_Packed,
+    HRD_YUV422_Planar,
+    HRD_YUV422_Packed,
+    HRD_YUV420_Planar,
+    HRD_YUV420_NV21,
+    HRD_RAW10bit_BayerID3
+} HRD_IMAGE_FORMAT_ENUM;
+
+typedef enum
+{
+    HRD_PROC_MODE_ADULT = 0,
+    HRD_PROC_MODE_BABY,
+    HRD_PROC_MODE_ADULT_FINGER,
+    HRD_PROC_MODE_BABY_FINGER,
+    HRD_PROC_MODE_UNKNOWN
+} HRD_PROC_MODE_ENUM;
+
+typedef enum
+{
+    HRD_DETECT_MODE_CONTINUOUS= 0,
+    HRD_DETECT_MODE_ONE_SHOT,
+    HRD_DETECT_MODE_UNKNOWN
+} HRD_DETECT_MODE_ENUM;
+
+typedef enum
+{
+    HRD_STOP_TYPE_NORMAL = 0,
+    HRD_STOP_TYPE_LARGE_MOTION,
+    HRD_STOP_TYPE_LARGE_SAD,
+    HRD_STOP_TYPE_BAD_QUALITY,
+    HRD_STOP_TYPE_FACE_TOO_SMALL,
+    HRD_STOP_TYPE_OTHER
+} HRD_STOP_TYPE_ENUM;
+
+typedef enum
+{
+    HRD_ALGO_STATE_INITIAL = 0,
+    HRD_ALGO_STATE_NEEDROI,
+    HRD_ALGO_STATE_ESTIMATION,
+    HRD_ALGO_STATE_IDLE
+}HRD_ALGO_STATE_ENUM;
+
+typedef struct
+{
+    void* extMemStartAddr; //working buffer start address
+    MUINT32 extMemSize;
+} HRD_SET_WORKING_BUFFER_STRUCT, *P_HRD_SET_WORKING_BUFFER_STRUCT;
+
+typedef struct
+{
+    MINT32 OneShotSeconds; //5~20, default:20
+    MINT32 GoodQualityTh; //0~1024, default:350
+    MINT32 LargeSadResetTh; //0~128, default:20
+    MINT32 LargeMoveResetTh; //0~32, default:4
+    MINT32 MinFaceSize;    //    >=64, default: 64
+}HRD_TUNING_PARA_STRUCT, *P_HRD_TUNING_PARA_STRUCT;
+
+typedef struct
+{
+    HRD_TUNING_PARA_STRUCT HrdTuningData;
+    HRD_IMAGE_FORMAT_ENUM ImgFmt;
+    MUINT16 ImageWidth;
+    MUINT16 ImageHeight;
+    MBOOL debug;
+} HRD_INIT_STRUCT, *P_HRD_INIT_INFO_STRUCT;
+
+
+typedef struct
+{
+    MINT32 FaceX0;               // up-left x pos (0~width)
+    MINT32 FaceY0;               // up-left y pos (0~Height)
+    MINT32 FaceX1;               // down-right x pos(0~width)
+    MINT32 FaceY1;               // down-right y pos(0~Height)
+       HRD_DETECT_MODE_ENUM DetectMode;  //one-shot , continuous
+       HRD_PROC_MODE_ENUM ProcMode;
+}HRD_SET_PROC_INFO_STRUCT, *P_HRD_SET_PROC_INFO_STRUCT;
+
+typedef struct
+{
+    MUINT32 ExtMemSize; //working buffer size
+}HRD_GET_PROC_INFO_STRUCT, *P_HRD_GET_PROC_INFO_STRUCT;
+
+typedef struct
+{
+    MINT32 x1, y1;    //    top-left coordinate
+    MINT32 x2, y2;    //    bottom-right coordinate
+} HRD_ROI_STRUCT,*P_HRD_ROI_STRUCT;
+
+typedef struct
+{
+    HRD_ALGO_STATE_ENUM procState;
+
+    MINT32 timeStamp;
+    MINT32 heartRateValue;
+    MINT32 heartRateQuality;
+    MINT32 heartRateIsValid;
+    MINT32 heartRateValue_PostProcessed;
+
+    MINT32 heartRateDetectProgressPercentage;
+
+    MINT32 heartRateHaveROI;
+    HRD_ROI_STRUCT heartRateROI;
+    MINT32 aiWaveform[256];
+
+    HRD_STOP_TYPE_ENUM stopType;
+
+}HRD_RESULT_INFO_STRUCT, *P_HRD_RESULT_INFO_STRUCT;
+
+
+#define HRD_CALLBACK_TYPE
+typedef void (HRD_CALLBACK_TYPE *HRD_CALLBACK_START)(HRD_RESULT_INFO_STRUCT hrd_result_info);
+typedef void (HRD_CALLBACK_TYPE *HRD_CALLBACK_UPDATE)(HRD_RESULT_INFO_STRUCT hrd_result_info);
+typedef void (HRD_CALLBACK_TYPE *HRD_CALLBACK_RESET)(HRD_RESULT_INFO_STRUCT hrd_result_info);
+typedef void (HRD_CALLBACK_TYPE *HRD_CALLBACK_STOP)(HRD_RESULT_INFO_STRUCT hrd_result_info);
+
+typedef struct
+{
+    HRD_CALLBACK_START cb_start;
+    HRD_CALLBACK_UPDATE cb_update;
+    HRD_CALLBACK_RESET cb_reset;
+    HRD_CALLBACK_STOP cb_stop;
+}HRD_REGISTER_CALLBACK_INFO_STRUCT, *P_HRD_REGISTER_CALLBACK_INFO_STRUCT;
+
+typedef struct
+{
+    HRD_CALLBACK_START cb_start;
+    HRD_CALLBACK_UPDATE cb_update;
+    HRD_CALLBACK_RESET cb_reset;
+    HRD_CALLBACK_STOP cb_stop;
+}HRD_UNREGISTER_CALLBACK_INFO_STRUCT, *P_HRD_UNREGISTER_CALLBACK_INFO_STRUCT;
+
+class MTKHrd
+{
+public:
+    static MTKHrd* createInstance();
+    virtual void   destroyInstance(MTKHrd* obj) = 0;
+
+    virtual ~MTKHrd(){};
+    // Process Control
+    virtual MRESULT HrdInit(void* InitInData);
+    virtual MRESULT HrdMain(void* SrcBufferAddr,MUINT32 timeStamp);    // START
+    virtual MRESULT HrdReset();   //Reset
+
+    // Feature Control
+    virtual MRESULT HrdFeatureCtrl(MUINT32 FeatureID, void* pParaIn, void* pParaOut);
+
+private:
+};
+
+
+#endif

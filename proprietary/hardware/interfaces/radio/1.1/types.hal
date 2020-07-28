@@ -1,0 +1,289 @@
+/*
+ * Copyright (C) 2016 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+package vendor.mediatek.hardware.radio@1.1;
+
+import android.hardware.radio@1.0::types;
+
+enum MtkApnTypes : android.hardware.radio@1.0::ApnTypes {
+    DM = 1 << 10,                       // APN type for DM
+    WAP = 1 << 11,                      // APN type for WAP
+    NET = 1 << 12,                      // APN type for NET
+    CMMAIL = 1 << 13,                   // APN type for CMMAIL
+    TETHERING = 1 << 14,                // APN type for TETHERING
+    RCSE = 1 << 15,                     // APN type for RCSE
+    XCAP = 1 << 16,                     // APN type for XCAP
+    RCS = 1 << 17,                      // APN type for RCS
+    BIP = 1 << 18,                      // APN type for BIP
+    VSIM = 1 << 19,                     // APN type for VSIM
+
+    MTKALL = ALL | DM | WAP | NET | CMMAIL | TETHERING | RCSE | XCAP | RCS | BIP | VSIM,
+};
+
+/**
+ * Structure for RIL_UNSOL_INCOMING_CALL_INDICATION.
+ */
+struct IncomingCallNotification {
+    string callId;                        // integer type call ID
+    string number;                        // string type phone number of format specified by <type>
+    string type;                          // type of address octet in integer format
+                                          // (refer GSM 04.08 [8] subclause 10.5.4.7)
+    string callMode;                      // 0 voice, 1 data, 9 unknown
+                                          // 3 voice followed by data, voice mode
+                                          // 4 alternating voice/data, voice mode
+                                          // 6 voice followed by data, data mode
+                                          // 7 alternating voice/data, data mode
+    string seqNo;                         // integer type sequence number piggybacked from incoming call URC
+    string redirectNumber;                // redirecting number (refer to TS 24.008 10.5.4.21b)
+};
+
+/**
+ * Structure for RIL_UNSOL_CIPHER_INDICATION.
+ */
+struct CipherNotification {
+    string simCipherStatus;               // 0 not show indication; 1 show indication
+    string sessionStatus;                 // 0 no connection; 1 has connection
+    string csStatus;                      // 0 no cipher; 1 has cipher; 255 unknown
+    string psStatus;                      // 0 no cipher; 1 has cipher; 255 unknown
+};
+
+/**
+ * Structure for RIL_UNSOL_CRSS_NOTIFICATION.
+ */
+struct CrssNotification {
+    int32_t code;                         // 0: +CCWA
+                                          // 1: +CDIP
+                                          // 2: +CLIP
+                                          // 3: +COLP
+    int32_t type;                         // type of address octet in integer format
+                                          // (refer GSM 04.08 [8] subclause 10.5.4.7)
+    string number;                        // string type phone number of format specified by <type>
+    string alphaid;                       // optional string type alphanumeric representation of <number>
+                                          // corresponding to the entry found in phonebook;
+    int32_t cli_validity;                 // CLI validity value,
+                                          // 0: PRESENTATION_ALLOWED,
+                                          // 1: PRESENTATION_RESTRICTED,
+                                          // 2: PRESENTATION_UNKNOWN
+};
+
+// Response struct used in responseQueryAvailableNetworksWithAct
+struct OperatorInfoWithAct {
+    OperatorInfo base;
+    string lac;
+    string act;
+};
+
+// IMS-Conference-Dial
+struct ConferenceDial {
+    android.hardware.radio@1.0::Clir clir;
+    bool isVideoCall;
+    vec<string> dialNumbers;                 // Vector of participant dial numbers
+};
+
+// SMS-START
+struct SmsParams {
+    int32_t format; // The format of validity period
+    int32_t vp;     // The value of validity period. as defined in TS 23.040 [6].
+    int32_t pid;    // Protocol Identifier. as defined in TS 23.040 [6].
+    int32_t dcs;    // Data Coding Scheme. as defined in TS 23.038 [5].
+};
+
+struct EtwsNotification {
+    int32_t warningType;  // The warning type of the ETWS Primary Notification message.
+                          // as defined in TS 123.041 9.4.1.3.5
+    int32_t messageId;    // The source and type of the ETWS Primary Notification message.
+                          // as defined in TS 123.041 9.4.1.3.4
+    int32_t serialNumber; // as defined in TS 123.041 9.4.1.3.3
+    string plmnId;        // Network PLMN
+    string securityInfo;  // The warning security information of the
+                          // Earthquake and Tsunami Warning System Primary Notification message.
+                          // as defined in TS 123.041 9.4.1.3.6
+} ;
+
+struct SmsMemStatus {
+    int32_t used;  // The number of messages in the storage currently.
+    int32_t total; // Maximum number can be stored in the storage.
+};
+// SMS-END
+
+struct MtkSetupDataCallResult {
+    android.hardware.radio@1.0::SetupDataCallResult dcr;
+    int32_t rat;
+};
+
+struct MtkDataProfileInfo {
+    android.hardware.radio@1.0::DataProfileInfo dpi;
+    int32_t inactiveTimer;
+};
+
+// PHB START
+struct PhbEntryStructure {
+    int32_t type;                  /* type of the entry, refer to RIL_PhbStorageType */
+    int32_t index;                 /* the stored index of the entry */
+    string number;                 /* the phone number */
+    int32_t ton;                   /* type of the number */
+    string alphaId;                /* the alpha ID, using Hexdecimal coding method */
+};
+
+struct PhbEntryExt {
+    int32_t index;                 // values in the range of location numbers of phonebook memory
+    string number;                 // phone number of format <type>
+    int32_t type;                  // type of address octet in integer format; default 145 when number include "+", otherwise 129
+    string text;                   // associated with the number
+    int32_t hidden;                // 0
+    string group;                  // indicating a group the entry may belong to
+    string adnumber;               // an additional number of format<adtype>
+    int32_t adtype;                //
+    string secondtext;             // a second text field associated with the number
+    string email;                  // email field
+};
+
+struct PhbMemStorageResponse {
+    string storage;
+    int32_t used;
+    int32_t total;
+};
+// PHB END
+
+// MTK-START: SIM GBA
+struct SimAuthStructure {
+    int32_t sessionId;
+    int32_t mode;
+    string param1;
+    string param2;
+    int32_t tag;
+};
+// MTK-END
+
+/* Structure for RIL_UNSOL_CALL_FORWARDING */
+struct CfuStatusNotification {
+    int32_t status;   // 0 hide CFU icon
+                      // 1 show CFU icon
+    int32_t lineId;   // Line ID
+};
+
+/* Structure for RIL_UNSOL_PCO_DATA_AFTER_ATTACHED */
+struct PcoDataAttachedInfo {
+    int32_t cid;                          // Context ID, uniquely identifies this call
+    string apnName;                       // APN name
+    string bearerProto;                   // One of the PDP_type values in TS 27.007 section 10.1.1.
+                                          // For example, "IP", "IPV6", "IPV4V6"
+    int32_t pcoId;                        // The protocol ID for this box. Note that only IDs from
+                                          // FF00H - FFFFH are accepted. If more than one is
+                                          // included from the network, multiple calls must be made
+                                          // to send all of them.
+    vec<uint8_t> contents;                // Carrier-defined content. It is binary, opaque and
+                                          // loosely defined in LTE Layer 3 spec 24.008
+};
+
+// External SIM [START]
+struct VsimMessage {
+    uint32_t transactionId;
+    uint32_t messageId;
+    uint32_t slotId;
+    uint32_t length;
+};
+
+struct VsimEvent {
+    uint32_t transactionId;
+    uint32_t eventId;
+    uint32_t simType; //0: local sim, 1: remote sim
+};
+
+struct VsimOperationEvent {
+    uint32_t transactionId;
+    uint32_t eventId; //0: ATR, 1: APDU
+    int32_t result; // 0: successful, < 0: error cause
+    uint32_t dataLength;
+    string data;  // It is ATR in case of reset response, APDU incase of APDU request
+};
+// External SIM [END]
+
+// See also com.android.internal.telephony.gsm.CallForwardInfo
+struct CallForwardInfoEx {
+    CallForwardInfoStatus status;         // For queryCallForwardStatus()
+                                          // status is DISABLE (Not used by vendor code currently)
+                                          // For setCallForward():
+                                          // status must be
+                                          // DISABLE, ENABLE, INTERROGATE, REGISTRATION, ERASURE
+    int32_t reason;                       // from TS 27.007 7.11 "reason"
+    int32_t serviceClass;                 // From 27.007 +CCFC/+CLCK "class"
+                                          // See table for Android mapping from
+                                          // MMI service code
+                                          // 0 means user doesn't input class
+    int32_t toa;                          // "type" from TS 27.007 7.11
+    string number;                        // "number" from TS 27.007 7.11.
+    int32_t timeSeconds;
+    string timeSlotBegin;
+    string timeSlotEnd;
+};
+
+/// Ims Data Framework {@
+struct Qos {
+    int32_t qci;
+    int32_t dlGbr;
+    int32_t ulGbr;
+    int32_t dlMbr;
+    int32_t ulMbr;
+};
+
+struct PktFilter {
+    int32_t id;
+    int32_t precedence;
+    int32_t direction;
+    int32_t networkPfIdentifier;
+    int32_t bitmap;
+    string address;
+    string mask;
+    int32_t protocolNextHeader;
+    int32_t localPortLow;
+    int32_t localPortHigh;
+    int32_t remotePortLow;
+    int32_t remotePortHigh;
+    int32_t spi;
+    int32_t tos;
+    int32_t tosMask;
+    int32_t flowLabel;
+};
+
+struct TftParameter {
+    int32_t linkedPfNumber;
+    vec<int32_t> linkedPfList;
+};
+
+struct Tft {
+    int32_t operation;
+    int32_t pfNumber;
+    vec<PktFilter> pfList;
+    TftParameter tftParameter;
+};
+
+struct DedicateDataCall {
+    int32_t ddcId;
+    int32_t interfaceId;
+    int32_t primaryCid;
+    int32_t cid;
+    int32_t active;
+    int32_t signalingFlag;
+    int32_t bearerId;
+    int32_t failCause;
+    int32_t hasQos;
+    Qos     qos;
+    int32_t hasTft;
+    Tft     tft;
+    int32_t hasPcscf;
+    string  pcscf;
+};
+/// @}

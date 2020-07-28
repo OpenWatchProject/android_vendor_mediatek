@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/add_lock_file"
+        android:enabled="false"
+        android:icon="@drawable/ic_dataprotection_add_file"
+        android:showAsAction="always"
+        android:title="@string/add_file"/>
+    <item
+        android:id="@+id/edit"
+        android:enabled="false"
+        android:icon="@drawable/ic_dataprotection_edit"
+        android:showAsAction="always"
+        android:title="@string/enter_edit"/>
+    <item
+        android:id="@+id/change_pattern"
+        android:enabled="false"
+        android:showAsAction="never"
+        android:title="@string/change_pattern"/>
+    <item
+        android:id="@+id/unlock_history"
+        android:enabled="false"
+        android:showAsAction="never"
+        android:title="@string/opt_unlock_history"/>
+    <item
+        android:id="@+id/decrypt_fail_history"
+        android:enabled="false"
+        android:showAsAction="never"
+        android:title="@string/opt_decrypt_fail_history"/>
+
+</menu>

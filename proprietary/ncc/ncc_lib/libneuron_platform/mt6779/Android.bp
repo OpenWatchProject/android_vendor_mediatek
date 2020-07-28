@@ -1,0 +1,25 @@
+cc_prebuilt_library_shared {
+    arch: {
+        arm64: {
+            shared_libs: [
+                "libbase",
+                "libdl",
+                "libutils",
+                "liblog",
+                "libion",
+                "libion_mtk",
+                "libcutils",
+                "libvpu",
+            ],
+            srcs: [
+                "arm64/libneuron_platform.so",
+            ],
+        },
+    },
+    name: "libneuron_platform@MTK,mt6779",
+    proprietary: true,
+    strip: {
+        none: true,
+    },
+}
+

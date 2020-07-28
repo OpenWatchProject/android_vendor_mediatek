@@ -1,0 +1,59 @@
+do project.cmm
+
+system.reset
+SYSTEM.OPTION ENRESET ON
+SYStem.Option ResBreak OFF
+SYStem.Option WaitReset OFF
+SYStem.JtagClock 5.MHz
+SYStem.CPU CORTEXA7;
+SYSTEM.CONFIG CORENUMBER 1;
+SYSTEM.MULTICORE COREBASE APB:0x80070000
+
+SYStem.Up
+MMU.OFF
+
+SETUP.IMASKHLL ON
+SETUP.IMASKASM ON
+
+; disable DABORT and PABORT breakpoint
+tronchip.set dabort off
+tronchip.set pabort off
+tronchip.set undef off
+tronchip.set irq off
+
+;;->
+;;-> <<< COMMON SCRIPT FOOTER >>>
+;;-> @ Set default breakpoints to HW
+Break.SELect Program OnChip
+Break.SELect Read OnChip
+Break.SELect Write OnChip
+
+do wdt.cmm
+
+print "loading lk symbol"
+
+&LittleKernelPATH="../../../../../../out/target/product/&project/obj/BOOTLOADER_OBJ/build-&project"
+;d.load.elf &LittleKernelPATH/lk /gnu /nocode
+
+Y.SPATH.RESET ; reset all source path
+
+print "Loading Little kernel symbols..."
+sYmbol.SourcePATH.RESet
+&searchStr="/alps/"
+&pathlen=STRing.SCAN(OS.PWD(),"&searchStr",0)+STRing.LEN("&searchStr")-1
+&alpsPath=STRing.MID(OS.PWD(), 0, &pathlen)
+Data.LOAD.Elf &LittleKernelPATH/lk /gnu /nocode /StripPART "&searchStr" /PATH "&alpsPath"
+
+Break.Delete
+B.set kmain
+go
+while ISRUN()
+(
+)
+print "[INFO][MAIN] Watchdog Disabled"
+
+d.s c:0x10007000 %le %long 0x22000064
+
+d.l
+
+enddo

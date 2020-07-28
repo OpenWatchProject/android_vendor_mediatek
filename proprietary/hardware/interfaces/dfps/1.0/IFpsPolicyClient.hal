@@ -1,0 +1,17 @@
+package vendor.mediatek.hardware.dfps@1.0;
+
+import IFpsPolicy;
+
+interface IFpsPolicyClient {
+
+    regPolicy(IFpsPolicy policy, string name, FpsPolicyInfo info) generates (Error error, int32_t receiveFd);
+
+    unregPolicy(uint64_t sequence) generates (Error error);
+
+    setFps(FpsPolicyInfo info) generates (Error error);
+
+    getPanelInfo() generates (Error error, PanelInfo info);
+
+    getFpsRange(FpsRange range) generates (Error error, FpsRange range);
+
+};

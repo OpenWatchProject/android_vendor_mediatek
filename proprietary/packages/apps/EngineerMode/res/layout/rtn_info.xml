@@ -1,0 +1,388 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+    <TableLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:addStatesFromChildren="true"
+        android:orientation="horizontal"
+        android:visibility="visible">
+
+        <TableRow
+            android:id="@+id/mobile_num_row"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" >
+
+            <TextView
+                android:id="@+id/editText17"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:textSize="20sp"
+                android:inputType="textPersonName"
+                android:text="@string/rtn_mobile_num" />
+
+            <TextView
+                android:id="@+id/editText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:textSize="20sp"
+                android:inputType="textPersonName"
+                android:text="@string/rtn_mobile_num_val" />
+
+        </TableRow>
+        <TableRow
+            android:layout_width="wrap_content"
+            android:id="@+id/msid_imsi_row"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/editText_imsi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:textSize="20sp"
+                android:inputType="textPersonName"
+                android:text="@string/rtn_msid_imsi" />
+
+            <TextView
+                android:id="@+id/editText_imsi_val"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:textSize="20sp"
+                android:inputType="textPersonName"
+                android:text="@string/rtn_mobile_num_val" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:id="@+id/sw_version_row"
+            android:layout_height="match_parent" >
+
+            <TextView
+                android:id="@+id/editText18"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:textSize="20sp"
+                android:inputType="textPersonName"
+                android:text="@string/rtn_sw_version" />
+
+            <TextView
+                android:id="@+id/editText2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:textSize="20sp"
+                android:inputType="textPersonName" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:id="@+id/os_version_row"
+            android:layout_height="match_parent" >
+
+            <TextView
+                android:id="@+id/editText19"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:textSize="20sp"
+                android:inputType="textPersonName"
+                android:text="@string/rtn_os_version" />
+
+            <TextView
+                android:id="@+id/editText5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:textSize="20sp"
+                android:inputType="textPersonName"/>
+        </TableRow>
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:id="@+id/radio_version_row"
+            android:layout_height="match_parent" >
+
+            <TextView
+                android:id="@+id/editText25"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:inputType="textPersonName"
+                android:textSize="20sp"
+				android:text="@string/rtn_radio_version" />
+
+            <TextView
+                android:id="@+id/editText6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:textSize="10sp"
+                android:inputType="textPersonName"/>
+        </TableRow>
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:id="@+id/hw_version_row"
+            android:layout_height="match_parent" >
+
+            <TextView
+                android:id="@+id/editText20"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:inputType="textPersonName"
+                android:textSize="20sp"
+				android:text="@string/rtn_hw_version" />
+
+            <TextView
+                android:id="@+id/editText7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:textSize="20sp"
+                android:inputType="textPersonName"/>
+        </TableRow>
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:id="@+id/PRL_row"
+            android:layout_height="match_parent" >
+
+            <TextView
+                android:id="@+id/editText22"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:inputType="textPersonName"
+                android:textSize="20sp"
+				android:text="@string/rtn_prl" />
+
+            <TextView
+                android:id="@+id/editText8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:inputType="textPersonName"
+                android:textSize="20sp"
+				android:text="@string/rtn_prl_val" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:id="@+id/life_timer_row"
+            android:layout_height="match_parent" >
+
+            <TextView
+                android:id="@+id/editText23"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:inputType="textPersonName"
+                android:textSize="20sp"
+				android:text="@string/rtn_life_timer"/>
+
+            <TextView
+                android:id="@+id/editText9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:inputType="textPersonName"
+                android:textSize="20sp"
+                android:text="@string/rtn_life_timer_val" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:id="@+id/life_calls_row"
+            android:layout_height="match_parent" >
+
+            <TextView
+                android:id="@+id/editText26"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:inputType="textPersonName"
+                android:textSize="20sp"
+				android:text="@string/rtn_life_calls" />
+
+            <TextView
+                android:id="@+id/editText10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:inputType="textPersonName"
+                android:textSize="20sp"
+				android:text="@string/rtn_life_calls_val" />
+        </TableRow>
+        <TableRow
+            android:layout_width="wrap_content"
+            android:id="@+id/life_data_row"
+            android:layout_height="match_parent" >
+
+            <TextView
+                android:id="@+id/editText27"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:inputType="textPersonName"
+                android:textSize="20sp"
+				android:text="@string/rtn_life_data" />
+
+            <TextView
+                android:id="@+id/editText11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:inputType="textPersonName"
+                android:textSize="20sp"
+				android:text="@string/rtn_life_data_val" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:id="@+id/recoditioned_status_row"
+            android:layout_height="match_parent" >
+
+            <TextView
+                android:id="@+id/editText28"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:inputType="textPersonName"
+                android:textSize="20sp"
+				android:text="@string/rtn_reconditioned_status" />
+
+            <TextView
+                android:id="@+id/editText12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:inputType="textPersonName"
+                android:textSize="20sp"
+				android:text="@string/rtn_reconditioned_status_val" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:id="@+id/reconditioned_date_row"
+            android:layout_height="match_parent" >
+
+            <TextView
+                android:id="@+id/editText29"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:inputType="textPersonName"
+                android:textSize="20sp"
+				android:text="@string/rtn_reconditioned_date" />
+
+            <TextView
+                android:id="@+id/editText13"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:inputType="textPersonName"
+                android:textSize="20sp"
+				android:text="@string/rtn_mm_dd_yy" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:id="@+id/esn_meid_imei_row"
+            android:layout_height="match_parent" >
+
+            <TextView
+                android:id="@+id/editText30"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:inputType="textPersonName"
+                android:textSize="20sp"
+				android:text="@string/rtn_esn_meid_imei" />
+            <TextView
+                android:id="@+id/editText14"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:inputType="textPersonName"
+                android:textSize="20sp"
+				android:text="@string/rtn_esn_meid_imei_val" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:id="@+id/activation_date_row"
+            android:layout_height="match_parent" >
+
+            <TextView
+                android:id="@+id/editText31"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:inputType="textPersonName"
+                android:textSize="20sp"
+				android:text="@string/rtn_activation_date" />
+
+            <TextView
+                android:id="@+id/editText15"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:inputType="textPersonName"
+                android:textSize="20sp"
+				android:text="@string/rtn_mm_dd_yy" />
+        </TableRow>
+        <TableRow
+            android:layout_width="wrap_content"
+            android:id="@+id/date_of_manufacture_row"
+            android:layout_height="match_parent" >
+
+            <TextView
+                android:id="@+id/editText32"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:inputType="textPersonName"
+                android:textSize="20sp"
+                android:text="@string/rtn_date_of_manufacture" />
+
+            <TextView
+                android:id="@+id/editText33"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:inputType="textPersonName"
+                android:textSize="20sp"
+                android:text="@string/rtn_mm_dd_yy" />
+        </TableRow>
+        <TableRow
+            android:layout_width="wrap_content"
+            android:id="@+id/last_rtn_date_row"
+            android:layout_height="match_parent" >
+
+            <TextView
+                android:id="@+id/editText34"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:inputType="textPersonName"
+                android:textSize="20sp"
+                android:text="@string/rtn_lastdate" />
+
+            <TextView
+                android:id="@+id/editText35"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:inputType="textPersonName"
+                android:textSize="20sp"
+                android:text="@string/rtn_mm_dd_yy" />
+        </TableRow>
+    </TableLayout>
+

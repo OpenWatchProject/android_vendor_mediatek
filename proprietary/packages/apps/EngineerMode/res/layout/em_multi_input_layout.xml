@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" 
+    android:orientation="vertical">
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/rsrp_sinr_strong_config"
+            android:textSize="15sp" />
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" 
+            android:layout_marginLeft="8dip"
+            android:layout_marginRight="8dip">
+            <EditText android:id="@+id/strong_point1_x_edit"
+                android:layout_height="wrap_content"
+                android:layout_width="90dip"
+                android:textSize="14sp"/>
+            <EditText android:id="@+id/strong_point1_y_edit"
+                android:layout_height="wrap_content"
+                android:layout_width="90dip"
+                android:textSize="14sp"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" 
+            android:layout_marginLeft="8dip"
+            android:layout_marginRight="8dip">
+            <EditText android:id="@+id/strong_point2_x_edit"
+                android:layout_height="wrap_content"
+                android:layout_width="90dip"
+                android:textSize="14sp"/>
+            <EditText android:id="@+id/strong_point2_y_edit"
+                android:layout_height="wrap_content"
+                android:layout_width="90dip"
+                android:textSize="14sp"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" 
+            android:layout_marginLeft="8dip"
+            android:layout_marginRight="8dip">
+            <EditText android:id="@+id/strong_point3_x_edit"
+                android:layout_height="wrap_content"
+                android:layout_width="90dip"
+                android:textSize="14sp"/>
+            <EditText android:id="@+id/strong_point3_y_edit"
+                android:layout_height="wrap_content"
+                android:layout_width="90dip"
+                android:textSize="14sp"/>
+        </LinearLayout>
+        
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/rsrp_sinr_mediumweak_config"
+            android:textSize="15sp" />
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" 
+            android:layout_marginLeft="8dip"
+            android:layout_marginRight="8dip">
+            <EditText android:id="@+id/mediumweak_point1_x_edit"
+                android:layout_height="wrap_content"
+                android:layout_width="90dip"
+                android:textSize="14sp"/>
+            <EditText android:id="@+id/mediumweak_point1_y_edit"
+                android:layout_height="wrap_content"
+                android:layout_width="90dip"
+                android:textSize="14sp"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" 
+            android:layout_marginLeft="8dip"
+            android:layout_marginRight="8dip">
+            <EditText android:id="@+id/mediumweak_point2_x_edit"
+                android:layout_height="wrap_content"
+                android:layout_width="90dip"
+                android:textSize="14sp"/>
+            <EditText android:id="@+id/mediumweak_point2_y_edit"
+                android:layout_height="wrap_content"
+                android:layout_width="90dip"
+                android:textSize="14sp"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" 
+            android:layout_marginLeft="8dip"
+            android:layout_marginRight="8dip">
+            <EditText android:id="@+id/mediumweak_point3_x_edit"
+                android:layout_height="wrap_content"
+                android:layout_width="90dip"
+                android:textSize="14sp"/>
+            <EditText android:id="@+id/mediumweak_point3_y_edit"
+                android:layout_height="wrap_content"
+                android:layout_width="90dip"
+                android:textSize="14sp"/>
+        </LinearLayout>
+        
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/rsrp_sinr_weak_config"
+            android:textSize="15sp" />
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" 
+            android:layout_marginLeft="8dip"
+            android:layout_marginRight="8dip">
+            <EditText android:id="@+id/weak_point1_x_edit"
+                android:layout_height="wrap_content"
+                android:layout_width="90dip"
+                android:textSize="14sp"/>
+            <EditText android:id="@+id/weak_point1_y_edit"
+                android:layout_height="wrap_content"
+                android:layout_width="90dip"
+                android:textSize="14sp"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" 
+            android:layout_marginLeft="8dip"
+            android:layout_marginRight="8dip">
+            <EditText android:id="@+id/weak_point2_x_edit"
+                android:layout_height="wrap_content"
+                android:layout_width="90dip"
+                android:textSize="14sp"/>
+            <EditText android:id="@+id/weak_point2_y_edit"
+                android:layout_height="wrap_content"
+                android:layout_width="90dip"
+                android:textSize="14sp"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" 
+            android:layout_marginLeft="8dip"
+            android:layout_marginRight="8dip">
+            <EditText android:id="@+id/weak_point3_x_edit"
+                android:layout_height="wrap_content"
+                android:layout_width="90dip"
+                android:textSize="14sp"/>
+            <EditText android:id="@+id/weak_point3_y_edit"
+                android:layout_height="wrap_content"
+                android:layout_width="90dip"
+                android:textSize="14sp"/>
+        </LinearLayout>
+            
+        <View 
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@android:color/darker_gray"/>
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" 
+            android:layout_marginLeft="12dip"
+            android:layout_marginRight="12dip">           
+        <Button android:id="@+id/em_multi_input_ok_btn"
+            android:layout_width="110dip"
+            android:layout_height="wrap_content"
+            android:text="@android:string/ok"/>
+        <Button android:id="@+id/em_multi_input_cancel_btn"
+            android:layout_width="110dip"
+            android:layout_height="wrap_content"
+            android:text="@android:string/cancel"/>
+        </LinearLayout>
+
+</LinearLayout>

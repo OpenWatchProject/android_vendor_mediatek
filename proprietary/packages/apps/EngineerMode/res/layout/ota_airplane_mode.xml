@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+              android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/airplan_simcard_status"/>
+
+        <TextView
+            android:id="@+id/airplan_simcard_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/airplane_time_last"/>
+
+        <EditText
+            android:id="@+id/airplane_time_last"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="@string/airplane_time_default_second"
+            android:inputType="numberDecimal"/>
+
+        <Button
+            android:id="@+id/airplane_time_last_set"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/airplane_time_last_set"/>
+    </LinearLayout>
+
+
+    <CheckBox
+        android:id="@+id/airplane_enable"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checked="false"
+        android:text="@string/airplane_enable"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="10dp"
+        android:background="#FF909090">
+    </View>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/airplane_count"/>
+
+        <TextView
+            android:id="@+id/airplane_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="10dp"
+        android:background="#FF909090">
+    </View>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/airplane_status"/>
+
+        <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/airplane_network_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </ScrollView>
+    </LinearLayout>
+</LinearLayout>
+
+

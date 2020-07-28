@@ -1,0 +1,7 @@
+package vendor.mediatek.hardware.dfps@1.0;
+
+interface IVsyncCallback {
+
+    onSwVsyncChange(int32_t mode, int32_t fps);
+
+};

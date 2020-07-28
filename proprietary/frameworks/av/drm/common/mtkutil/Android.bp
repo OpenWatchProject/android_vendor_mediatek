@@ -1,0 +1,92 @@
+//
+// Copyright (C) 2010 The Android Open Source Project
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//      http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+//
+
+
+cc_library_shared {
+
+    srcs: [
+        "ByteBuffer.cpp",
+        "CipherFileUtil.cpp",
+        "CryptoHelper.cpp",
+        "DrmDef.cpp",
+        "DrmMetaKey.cpp",
+        "DrmMtkUtil.cpp",
+        "DrmMtkWVUtil.cpp",
+        "DrmUtil.cpp",
+        "StrUtil.cpp",
+        "DrmRequestType.cpp",
+        "cta/DrmCtaUtil.cpp",
+        "cta/Cta5File.cpp",
+        "cta/Cta5NormalFile.cpp",
+        "cta/Cta5FileFactory.cpp",
+        "cta/cta-multimedia/DrmCtaMultiMediaUtil.cpp",
+        "cta/cta-multimedia/Cta5CommonMultimediaFile.cpp",
+        "cta/cta-multimedia/Cta5MPEGFile.cpp",
+        "cta/cta-multimedia/Cta5AVIFile.cpp",
+        "cta/cta-multimedia/Cta5ASFFile.cpp",
+        "cta/cta-multimedia/Cta5MatroskaFile.cpp",
+        "cta/cta-multimedia/Cta5APEFile.cpp",
+        "cta/cta-multimedia/Cta5FLACFile.cpp",
+        "cta/cta-multimedia/Cta5WAVFile.cpp",
+        "cta/cta-multimedia/Cta5FLVFile.cpp",
+    ],
+
+    name: "libdrmmtkutil",
+    owner: "mtk",
+
+    include_dirs: [
+        "frameworks/av" + "/drm/libdrmframework/include",
+        //"frameworks/av" + "/drm/libdrmframework/plugins/common/include",
+        "frameworks/av" + "/drm/libdrmframework/plugins/common/util/include",
+        "frameworks/av" + "/include",
+        "frameworks/native/include",
+        "frameworks/av/media/libstagefright/include",
+        "vendor/mediatek/proprietary" + "/frameworks/av/drm/include",
+        "external/libvpx/libwebm/mkvparser",
+        "external/libxml2/include",
+        "bionic",
+        "system/core/base/include",
+    ],
+    local_include_dirs: [
+        "include",
+        "cta",
+        "cta/cta-multimedia",
+    ],
+
+    shared_libs: [
+        "libandroidicu",
+        "libutils",
+        "libcutils",
+        "libdl",
+        "liblog",
+        "libcrypto",
+        "libdrmmtkwhitelist",
+    ],
+
+    static_libs: [
+        "libxml2_ndk",
+        "libssl",
+        "libdrmframeworkcommon",
+        "libwebm",
+    ],
+
+    sanitize: {
+        cfi: true,
+        diag: {
+            cfi: true,
+        },
+    },
+}

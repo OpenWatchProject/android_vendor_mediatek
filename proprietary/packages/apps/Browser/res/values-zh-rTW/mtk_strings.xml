@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2007 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+  
+          http://www.apache.org/licenses/LICENSE-2.0
+  
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="sitenavigation_add">新增網站</string>  
+    <string name="tab_site_navigation">"網站導覽"</string>  
+    <string-array name="pref_homepage_choices_site_navigation"> 
+        <item msgid="844041670142910837">"目前網頁"</item>  
+        <item msgid="4430498748295169195">"空白網頁"</item>  
+        <item msgid="5747608191946904074">"預設網頁"</item>  
+        <item msgid="6092441301001006473">"常用網站"</item>  
+        <item>"網站導覽"</item>  
+        <item msgid="6569304572171444894">"其他"</item> 
+    </string-array>  
+    <string name="home">首頁</string>
+    <string name="close">關閉</string>  
+    <string name="option">選項</string>  
+    <string name="minimize">極小化</string>
+    <string name="quit">結束</string>
+    <string name="pref_download_title">下載設定</string>  
+    <string name="pref_extras_set_download_directory_title">設定下載目錄</string>
+    <string name="duplicated_bookmark">重複的書籤</string>
+    <string name="duplicated_bookmark_warning">書籤重複或已有相同的名稱或位置存在，是否覆寫？ </string>
+    <string name="pref_content_search_engine_consistency">搜尋引擎一致性</string>  
+    <string name="pref_search_engine_unify">統一搜尋引擎</string>
+    <string name="pref_search_engine_unify_summary">套用搜尋引擎變更到 QuickSearchBox</string>
+    <string name="permlab_readHomepage">用瀏覽器讀首頁</string>
+    <string name="permdesc_readHomepage">可以在沒有您的允許下，許可應用程式自動讀取瀏覽器首頁的資訊。</string>
+    <string name="permlab_writeHomepage">修改瀏覽器首頁</string>
+    <string name="permdesc_writeHomepage">可以在沒有您的允許下，許可應用程式自動修改瀏覽器首頁的資訊。</string>
+    <string name="duplicated_folder_warning">資料夾名稱重複。</string>
+    <string name="download_or_open_content">您要選擇哪一個作業？</string>
+    <string name="save_content">儲存</string>  
+    <string name="open_content">"開啟"</string>
+    <string name="no_voice_search_alert_dialog_title">語音搜尋</string>
+    <string name="no_voice_search_alert_dialog_msg">語音搜尋應用程式尚未安裝，因此不可用。請先安裝相關軟體。 </string>
+    <string name="add">"新增"</string>  
+    <string name="max_input_browser_search">您的輸入已經達到最大上限。</string>  
+    <string name="bookmarks_history">書籤/歷史</string>  
+    <string name="download_path_unavailable_dlg_title">下載目錄不可用</string>
+    <string name="download_path_unavailable_dlg_msg">請修改瀏覽器的下載目錄</string>  
+    <string name="delete">刪除</string>  
+    <string name="edit">編輯</string>  
+    <string name="delete_site_navigation_msg">刪除此一項目？</string>
+    <string name="site_navigation_name">名稱</string>  
+    <string name="site_navigation_address">位址</string>  
+    <string name="website_needs_title">"網站必須有名稱。"</string>
+    <string name="website_needs_url">"網站必須要有位置。"</string>  
+    <string name="site_navigation_cannot_save_url">此 URL 不會是網站。</string>  
+    <string name="add_site_navigation">新增網站</string>  
+    <string name="edit_site_navigation">編輯網站導覽</string>  
+    <string name="site_navigation_edit_button">編輯</string>  
+    <string name="save_webpage">儲存</string>  
+    <string name="duplicate_site_navigation_url">URL 重複。</string>
+    <string name="max_input_browser_search_title">輸入限制</string>
+    <string name="max_input_browser_search_button">確定</string>  
+    <string name="save_bookmark">儲存書籤</string> 
+    <!-- M: Bottom bar strings -> -->
+    <string name="tabs">分頁</string>
+
+    <!-- M: Dialog informing the user that opening the saved page has failed -->
+    <string name="open_saved_page_failed">無法打開已儲存網頁。</string>
+    <!-- M: add for save page -->
+    <string name="saved_page_failed">無法儲存網頁。</string>
+    <string name="saved_page_complete">下載完成。</string>
+    <string name="saved_page_fail">"無法儲存"</string>
+    <string name="create_folder_fail">無法新建儲存頁面資料夾。</string>
+    <string name="saving_page">正在儲存網頁</string>
+    
+    <string name="delete_folder_warning">刪除資料夾 "<xliff:g id="bookmark">%s</xliff:g>"?</string>
+    <string name="pref_content_landscape_only">限水平顯示</string>
+    <string name="pref_content_landscape_only_summary">限於較寬的水平方向螢幕顯示</string>
+    <string-array name="pref_op02_text_encoding_choices">
+        <item>自動檢測 </item>
+        <item>拉丁文-1 (ISO-8859-1)</item>
+        <item>Unicode (UTF-8)</item>
+        <item>Unicode (UTF-16)</item>
+        <item>中文 (GB2312)</item>
+        <item>中文 (GBK)</item>
+        <item>中文 (Big5)</item>
+        <item>日文 (ISO-2022-JP)</item>
+        <item>日文 (SHIFT_JIS)</item>
+        <item>日文 (EUC-JP)</item>
+        <!-- No need to translate a EUC-KR part, and there is no string length limits. -->
+        <item>韓文 (EUC-KR)</item>
+        <!-- TODO: We should add a lot more encodings.  -->
+    </string-array>
+    <string name="duplicate_site_navigation_title">重複的標籤</string>
+    <string name="download_pending_with_file_size">開始下載。檔案大小為：</string>
+    <string-array name="pref_default_font_family_choices">
+        <item>Sans-serif</item>
+        <item>Serif</item>
+        <item>Monospace</item>
+    </string-array>
+    <string name="sms_received">來自 <xliff:g id="text">%s</xliff:g> 的訊息</string>
+    <string name="dialog_title">變更數據連接</string>
+    <string name="pref_default_font_family">字體</string>
+    <string name="low_storage_dialog_title_on_extra">注意</string>
+    <string name="low_storage_dialog_msg_on_extra">外置儲存空間不足，無法立即下載。</string>
+    <string name="low_storage_dialog_title_on_external">注意</string>
+    <string name="wifi_failover_gprs_content"> WiFi 不可用，改連接行動網路？</string>
+    <string name="pref_default_font_family_dialogtitle">字體</string>
+    <string name="low_storage_dialog_msg_on_external">手機儲存空間不足，無法立即下載。</string>
+    <string name="make_primary">不要再顯示本提醒。</string>
+    <string name="contextmenu_savelinkbookmark">"將連結保存為書籤"</string>
+    <string name="need_login_email">請先註冊電子郵件帳號。</string>
+    <string name="folder_needs_title">"您必須為資料夾命名"</string>
+    <string name="denied_required_permission">"權限不足。請從 \"設定\" &gt; \"應用程式\" 修改權限。"</string>
+</resources>

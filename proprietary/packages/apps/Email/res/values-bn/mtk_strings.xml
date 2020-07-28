@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Copyright Statement:
+
+    This software/firmware and related documentation ("MediaTek Software") are
+    protected under relevant copyright laws. The information contained herein
+    is confidential and proprietary to MediaTek Inc. and/or its licensors.
+    Without the prior written permission of MediaTek inc. and/or its licensors,
+    any reproduction, modification, use or disclosure of MediaTek Software,
+    and information contained herein, in whole or in part, shall be strictly prohibited.
+
+    MediaTek Inc. (C) 2012. All rights reserved.
+
+    BY OPENING THIS FILE, RECEIVER HEREBY UNEQUIVOCALLY ACKNOWLEDGES AND AGREES
+    THAT THE SOFTWARE/FIRMWARE AND ITS DOCUMENTATIONS ("MEDIATEK SOFTWARE")
+    RECEIVED FROM MEDIATEK AND/OR ITS REPRESENTATIVES ARE PROVIDED TO RECEIVER ON
+    AN "AS-IS" BASIS ONLY. MEDIATEK EXPRESSLY DISCLAIMS ANY AND ALL WARRANTIES,
+    EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF
+    MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE OR NONINFRINGEMENT.
+    NEITHER DOES MEDIATEK PROVIDE ANY WARRANTY WHATSOEVER WITH RESPECT TO THE
+    SOFTWARE OF ANY THIRD PARTY WHICH MAY BE USED BY, INCORPORATED IN, OR
+    SUPPLIED WITH THE MEDIATEK SOFTWARE, AND RECEIVER AGREES TO LOOK ONLY TO SUCH
+    THIRD PARTY FOR ANY WARRANTY CLAIM RELATING THERETO. RECEIVER EXPRESSLY ACKNOWLEDGES
+    THAT IT IS RECEIVER'S SOLE RESPONSIBILITY TO OBTAIN FROM ANY THIRD PARTY ALL PROPER LICENSES
+    CONTAINED IN MEDIATEK SOFTWARE. MEDIATEK SHALL ALSO NOT BE RESPONSIBLE FOR ANY MEDIATEK
+    SOFTWARE RELEASES MADE TO RECEIVER'S SPECIFICATION OR TO CONFORM TO A PARTICULAR
+    STANDARD OR OPEN FORUM. RECEIVER'S SOLE AND EXCLUSIVE REMEDY AND MEDIATEK'S ENTIRE AND
+    CUMULATIVE LIABILITY WITH RESPECT TO THE MEDIATEK SOFTWARE RELEASED HEREUNDER WILL BE,
+    AT MEDIATEK'S OPTION, TO REVISE OR REPLACE THE MEDIATEK SOFTWARE AT ISSUE,
+    OR REFUND ANY SOFTWARE LICENSE FEES OR SERVICE CHARGE PAID BY RECEIVER TO
+    MEDIATEK FOR SUCH MEDIATEK SOFTWARE AT ISSUE.
+
+    The following software/firmware and/or related documentation ("MediaTek Software")
+    have been modified by MediaTek Inc. All revisions are subject to any receiver's
+    applicable license agreements with MediaTek Inc.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">  
+    <string name="not_add_more_text">"আরো লেখা যোগ করতে পারেনি"</string>  
+    <!-- message compose add attachment -->  
+    <string name="attach_image">ছবি</string>  
+    <string name="attach_video">ভিডিও</string>  
+    <string name="attach_sound">গান</string>  
+    <string name="attach_contact">পরিচিতজন</string>  
+    <string name="attach_file">ফাইল</string>  
+    <string name="attach_calender">ক্যালেন্ডার</string>  
+    <string name="attach_error_occurred">কোন অ্যাপ্লিকেশন এ ধরনের সংযুক্তি সমর্থন করে না।</string>  
+    <!-- Toast for telling user the email service stopped when low storage -->  
+    <string name="low_storage_service_stop">স্টোরেজ কম থাকার কারণে ইমেইল সেবা বন্ধ হয়ে গেছে</string>  
+    <!-- Toast for hint user to delete unused emails to reclaim storage -->  
+    <string name="low_storage_hint_delete_mail">স্টোরেজ পুনরুদ্ধার করার জন্য আপনি অব্যবহৃত ইমেইল বা অ্যাপ্লিকেশন মুছে ফেলতে পারেন</string>  
+    <!-- Toast for telling user the email service started when storage ok-->  
+    <string name="low_storage_service_start">ইমেইল সেবা পুনরায় চালু হয়েছে কারণ এখন পর্যাপ্ত স্টোরেজ রয়েছে</string>  
+    <!-- Toast for telling user can not download attachment due to low storage -->  
+    <string name="low_storage_attachment_cannot_download">স্টোরেজ কম থাকার কারণে সংযুক্তি ডাউনলোড করতে পারেনি</string>  
+    <!-- Toast for telling user can not view attachment due to low storage -->  
+    <string name="low_storage_attachment_cannot_view">স্টোরেজ কম থাকার কারণে সংযুক্তি দেখতে পারেনি</string>  
+    <!-- Download remaining of the message when view a partial downloaded message -->  
+    <string name="download_remaining">অবশিষ্ট ডাউনলোড</string>  
+    <string name="downloading_remaining">লোড হচ্ছে ...</string>  
+    <!-- Dialog title when user syncing manually without active network -->  
+    <string name="unable_to_connect">সংযুক্ত করতে ব্যর্থ</string>  
+    <!-- Dialog text when user syncing manually without active network  -->  
+    <string name="need_connection_prompt">" এই অ্যাপ্লিকেশন ব্যবহারের জন্য আপনার একটি নেটওয়ার্ক সংযোগ প্রয়োজন। সেটিং থেকে মোবাইল নেটওয়ার্ক বা ওয়াইফাই চালু করুন।"</string> 
+    <!-- Dialog text when user syncing manually without active wifi network  -->
+    <string name="need_wifi_connection_prompt">"এই অ্যাপ্লিকেশনটি ব্যবহার করার জন্য আপনার একটি নেটওয়ার্ক সংযোগ প্রয়োজন। সেটিংয়ে ওয়াই-ফাই চালু করুন।"</string> 
+    <!-- Button text in the connection alert dialog -->  
+    <string name="connection_settings">"সেটিং"</string>  
+    <!-- limit of attachment number, when share more than 100+ attachments -->  
+    <string name="too_many_attachments">অনেক বেশি সংযুক্তি যোগ করতে পারছি না। কেবল প্রথম 
+        <xliff:g id="currentCount">%1$d</xliff:g> সংযুক্তিগুলো যোগ করা হবে।
+    </string>  
+    <!-- limit of attachment number, when the current number >100 -->  
+    <string name="not_add_more_attachments">আরও সংযুক্তি যোগ করতে পারেনি। 
+        <xliff:g id="maxLimit">%1$d</xliff:g> পর্যন্ত সংযুক্তি যোগ করা যাবে।
+    </string>  
+    <string name="attachment_overflow">সংযুক্তি বেশি হয়ে গেছে</string>  
+    <!-- String which used to show toast when some attachment cannot be attached -->  
+    <string name="cannot_add_this_attachment">এই সংযুক্তি যোগ করতে পারেনি</string>  
+    <string name="loading_attachment">সংযুক্তি লোড করা হচ্ছে...</string> 
+    <!-- Open eml message -->  
+    <string name="open_message_parsing">বার্তা পার্স করা হচ্ছে...</string>  
+    <string name="open_message_update_db">ডাটাবেইস আপডেট করা হচ্ছে...</string>  
+    <string name="open_message_update_ui">বার্তা লোড করা হচ্ছে...</string>  
+    <string name="please_wait">একশন চলছে। অপেক্ষা করুন...</string> 
+    <string name="delete_message_dialog_title">বার্তা মুছে ফেলুন।</string>  
+    <string name="delete_message_confirm">এই বার্তা মুছে ফেলবেন?</string> 
+    <string name="attachment_info_deleted">"এই সংযুক্তি সংরক্ষণ করা যাবে না বা খোলা যাবে না কারণ এই সংযুক্তি হয়ত মুছে ফেলা হয়েছে।"</string>  
+    <string name="send_failed_ticker"> 
+        <xliff:g id="account_name">%s</xliff:g> ইমেইল পাঠানো ব্যর্থ।
+    </string>  
+    <!-- Notification title when email sent fails [CHAR LIMIT=30]-->  
+    <string name="send_failed_title">ইমেইল পাঠানো ব্যর্থ হয়েছে</string>  
+    <string name="always_bcc_myself">সবসময় আমাকে বিসিসি করুন</string>  
+    <string name="always_bcc_myself_summary">লেখা, উত্তরদান ও ফরোয়ার্ড করার সময় সবসময় আমাকে বিসিসি করুন</string> 
+    <string name="remote_search_failed">সার্ভার অনুসন্ধান ব্যর্থ হয়েছে!</string>
+    <string name="searching_on_server">সার্ভারে খোঁজ করুন</string>  
+    <string name="searching_on_server_title">সার্ভারে \" 
+        <xliff:g id="account_name">%s</xliff:g>\" খোঁজ করুন
+    </string>  
+    <string name="search_field_subject">বিষয়</string>  
+    <string name="search_field_receiver">প্রাপক</string>  
+    <string name="search_field_sender">প্রেরক</string>  
+    <string name="search_field_body">প্রধান অংশ</string>  
+    <string name="search_field_all">সব</string>
+    <string name="searching_all_fields_on_sever">সার্ভারে সবগুলো বিষয় অনুসন্ধান করুন</string>
+    <string name="select_all">সব নির্বাচন করুন</string>
+    <string name="deselect_all">সব নির্বাচনমুক্ত করুন</string>
+
+    <string name="vip_settings">ভিআইপি সেটিং</string>  
+    <string name="vip_members">ভিআইপি সদস্য</string>  
+    <string name="vip_notifications">ভিআইপি নোটিফিকেশন</string>  
+    <string name="vip_settings_notify_summary">ভিআইপি ইমেইল যখন আসবে তখন সিস্টেমে নোটিফাই করবে</string>  
+    <string name="vip_members_count">ভিআইপি সদস্য (<xliff:g example="2">%1$d</xliff:g>)</string>  
+    <string name="vip_remove_title">ভিআইপি থেকে সরান</string>
+    <string name="vip_remove_prompt"><xliff:g example="2">%1$s</xliff:g> ভিআইপি সদস্য হতে মুছে ফেলা হবে</string>  
+    <string name="not_add_duplicate_vip">নকল পরিচিতিজন ভিআইপি তালিকায় যোগ করা হবে না।</string>  
+    <string name="vip_settings_ringtone">রিংটোন বাছাই করুন</string>  
+    <string name="vip_settings_vibrate_label">ভাইব্রেট করুন</string>  
+    <string name="vip_settings_vibrate_summary">ভিআইপি ইমেইল যখন আসবে তখন কম্পনও হবে</string>  
+    <string name="global_search_label">ইমেইল</string>  
+    <string name="global_search_hint">ইমেইল অনুসন্ধান করুন</string>  
+    <string name="global_search_description">প্রেরক, বিষয়, ও প্রধান অংশ</string>  
+    <string name="account_settings_oof_time_alert">বর্তমান সময়ের চেয়ে দেরিতে হওয়া উচিত।</string> 
+    <string name="account_settings_oof_label">অফিসে নেই</string>  
+    <string name="account_settings_oof_unchecked_summary">আমি এখন অফিসে</string>  
+    <string name="account_settings_oof_checked_summary">আমি এখন অফিসে নেই</string>  
+    <string name="account_settings_oof_from_label">থেকে</string>  
+    <string name="account_settings_oof_to_label">প্রতি</string>  
+    <string name="account_settings_oof_auto_reply_label">অফিসে না থাকাকালীন স্বয়ংক্রিয় জবাব</string>  
+    <string name="account_settings_oof_auto_reply_summary">প্রত্যেক প্রেরককে স্বয়ংক্রিয়ভাবে বার্তার জবাব পাঠান</string>  
+    <string name="account_settings_oof_external_server_label">বাহ্যিক সার্ভারে স্বয়ংক্রিয় জবাব পাঠান</string>  
+    <string name="account_settings_oof_get_status">সার্ভার থেকে স্ট্যাটাস পাওয়া যাচ্ছে</string>  
+    <string name="account_settings_oof_save_sets">সার্ভারে সেটিং সংরক্ষণ করা হচ্ছে</string>  
+    <string name="account_settings_oof_get_status_fail">স্ট্যাটাস পেতে অক্ষম</string>
+    <string name="account_settings_oof_get_status_fail_summary">এ মূহুর্তে সার্ভার থেকে স্ট্যাটাস পেতে অক্ষম। পরবর্তীতে এটি আবারও চেষ্টা করুন।</string>
+    <string name="account_settings_oof_cancel">সংরক্ষণ না করেই?</string>  
+    <string name="account_settings_oof_cancel_summary">সব পরিবর্তন বাতিল করা হবে।</string>  
+    <string name="account_settings_oof_save_fail">সংরক্ষণ করতে অক্ষম</string>  
+    <string name="account_settings_oof_save_fail_summary">সার্ভারে সেটিং সংরক্ষণ করতে অক্ষম। সার্ভার হয়ত নাও পাওয়া যেতে পারে, বা আপনার স্বয়ংক্রিয় জবাব  সার্ভারের সীমা অতিক্রম করে যেতে পারে, বা আপনার ডিভাইসের তারিখ বা সময় ভুল থাকতে পারে। </string>  
+    <string name="account_setup_options_mail_check_frequency_smartpush">স্পার্ট পুশ</string>
+    <string name="smart_push_alert_dialog_title">পাওয়ার সংরক্ষণ অপশন</string>
+    <string name="smart_push_alert_dialog_message">" পাওয়ার সংরক্ষণের জন্য নতুন ইমেইল এসেছে কিনা তা বেশি ঘন ঘন চেক না করা। এই মোড ব্যবহার অব্যাহত রাখলে ইমেইল আরো সময়মত পাওয়া যাবে।\n\nআপনি সেটিংয়ে গিয়ে যে কোন সময় এটি পরিবর্তন করতে পারবেন।"</string>
+    <string name="not_add_more_recipients">এক বারে <xliff:g id="maxLimit">%1$d</xliff:g> এর বেশি প্রাপক যোগ করা যাবে না।</string>
+    <string name="vip_choose_contact">ভিআইপি-তে যোগ করুন</string>
+    <string name="can_not_add_vip_over_99">৯৯ এর ওপরে ভিআইপি সদস্য যোগ করা যাবে না</string>
+    <string name="no_application_response">অ্যাপ্লিকেশন নিষ্ক্রিয় করা হয়েছে</string>
+    <string name="vip_emails_from_accounts_fmt"><xliff:g id="vipAccountCount">%d</xliff:g> একাউন্ট থেকে ইমেইল</string>
+    <string name="notification_multiple_new_vip_messages_fmt"><xliff:g example="2">%1$d</xliff:g> নতুন ভিআইপি ইমেইল</string>
+    <string name="send_attachment_fail">সংযুক্তি পাঠাতে ব্যর্থ।</string>
+    <string name="cannot_move_multiple_mailbox_toast">কিছু কিছু ইমেইল সরানোর প্রক্রিয়ায় আছে, পরে আবার চেষ্টা করুন।</string>
+    <string name="certificate_request_ssl">ক্লায়েন্ট সনদ অবশ্যই নিরাপত্তা সংযোগ ব্যবহার করবে।</string>
+    <string name="auto_clear_cache_title">স্বয়ংক্রিয়ভাবে ক্যাশ মুছে ফেলুন</string>
+    <string name="auto_clear_cache_description">স্থানীয়ভাবে ক্যাশ করা সংযুক্তি নিয়মিতভাবে মুছুন</string>
+    <string name="edit_quoted_dialog_title">সবোর্চ্চ ক্যারেকটার</string>
+    <string name="edit_quoted_not_append_all">ক্যারেকটার সর্বোচ্চ নম্বরে পৌছেছে। কিছু পুরাতন বিষয়বস্তু হারিয়ে যাবে, অব্যাহত রাখবেন?</string>
+    <string name="single_message_view_attachment_saved">সংযুক্তি <xliff:g id="filename">%s</xliff:g> তে সংরক্ষণ করা হয়েছে</string>
+    <string name="choose_attachment_dialog_title">সংযুক্তি বাছাই করুন</string>
+    <string name="message_compose_error_invalid_email">কিছু ইমেইল ঠিকানা অকার্যকর।</string>  
+    <string name="extension_choose_provider_title">একজন মেইল প্রদানকারী বাছাই করুন</string>
+    <string name="message_view_status_sdcard_not_enough">এসডি কার্ডে সংযুক্তি সংরক্ষণের মত পর্যাপ্ত জায়গা নেই।</string>
+    <string name="message_body_too_large">বার্তাটি অনেক বেশি বড় হওয়ায় পুরো কনটেন্ট লোড করা যাচ্ছে না।</string>
+</resources>

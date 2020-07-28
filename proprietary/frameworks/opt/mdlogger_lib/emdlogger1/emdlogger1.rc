@@ -1,0 +1,14 @@
+on post-fs-data
+    mkdir /data/mdlog 0775 system system
+    mkdir /data/ramdump 0775 shell system
+    mkdir /data/debuglogger 0770 shell log
+
+service emdlogger1 /system/bin/emdlogger1
+    class main
+    user shell
+    group log system shell radio sdcard_rw inet sdcard_r media_rw
+    disabled
+    oneshot
+
+on property:vold.decrypt=trigger_restart_framework
+    start emdlogger1

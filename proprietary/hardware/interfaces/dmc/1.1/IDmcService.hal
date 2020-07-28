@@ -1,0 +1,8 @@
+package vendor.mediatek.hardware.dmc@1.1;
+
+import vendor.mediatek.hardware.dmc@1.0::IDmcService;
+import vendor.mediatek.hardware.dmc@1.0::types;
+
+interface IDmcService extends @1.0::IDmcService {
+    queryEventAsync(SID sessionId, SIMID simId, dmcObjectId_t objectId) generates (dmcResult_e ret);
+};

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <ListView
+        android:id="@+id/log_listview"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+    </ListView>
+
+    <LinearLayout
+        android:id="@+id/driver_log_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dip"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="130dip"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dip"
+            android:text="@string/wifi_log_switch_driver" >
+        </TextView>
+        <Spinner
+            android:id="@+id/driver_log_spinner"
+            android:layout_width="320dip"
+            android:layout_height="wrap_content"
+            android:entries="@array/wifi_log_level_driver" >
+        </Spinner>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/fw_log_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dip"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="130dip"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dip"
+            android:text="@string/wifi_log_switch_fw" >
+        </TextView>
+        <Spinner
+            android:id="@+id/fw_log_spinner"
+            android:layout_width="320dip"
+            android:layout_height="wrap_content"
+            android:entries="@array/wifi_log_level_driver" >
+        </Spinner>
+    </LinearLayout>
+</LinearLayout>

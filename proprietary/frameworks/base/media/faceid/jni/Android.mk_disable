@@ -1,0 +1,37 @@
+LOCAL_PATH := $(call my-dir)
+
+include $(CLEAR_VARS)
+
+#ifeq ($(strip $()), yes)
+
+-include $(TOP)/$(MTK_PATH_SOURCE)/hardware/mtkcam/mtkcam.mk
+
+LOCAL_MODULE := libfr_jni
+#LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_OWNER := mtk
+
+LOCAL_ADDITIONAL_DEPENDENCIES := $(LOCAL_PATH)/Android.mk
+
+MTK_PATH_CAM := $(MTK_PATH_SOURCE)/hardware/mtkcam
+
+LOCAL_SRC_FILES := com_mediatek_fr_hal_jni.cpp
+
+LOCAL_C_INCLUDES := \
+    $(MTK_PATH_CAM)/include \
+    $(TOP)/libnativehelper/include \
+    $(TOP)/system/core/include
+
+LOCAL_SHARED_LIBRARIES := \
+        liblog \
+        libutils \
+        libhidlbase \
+        libhidltransport \
+        vendor.mediatek.hardware.camera.frhandler@1.0 \
+        libandroid_runtime
+
+LOCAL_C_INCLUDES += $(MTK_PATH_SOURCE)/hardware/mtkcam/main/hal/frhandler
+
+include $(BUILD_SHARED_LIBRARY)
+
+#endif
+

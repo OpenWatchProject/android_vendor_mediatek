@@ -1,0 +1,17 @@
+WHAT IT DOES?
+=============
+This is using to decode the jpeg format data to YV12 format data. And
+draw the YV12 format data to a surface.
+
+
+HOW IT WAS BUILT?
+==================
+Build command:mmm vendor/mediatek/proprietary/packages/apps/Camera2/
+common/src/com/mediatek/camera/common/jpeg/jni_jpegdecoder
+
+
+HOW TO USE IT?
+==============
+You can create a JpegDecoder class instance by inputting the
+SurfaceTexture object that you want the YV12 format data to draw on,
+then input the jpeg data to decode it to surface.

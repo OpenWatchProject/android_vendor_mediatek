@@ -1,0 +1,400 @@
+#include "tinysys_config.h"
+#include "overlay_sensor.h"
+#ifdef CFG_CACHE_SUPPORT
+#include "cache_ld.h"
+#endif
+
+/* Entry Point */
+ENTRY(Reset_Handler)
+
+/* Generate a link error if heap and stack don't fit into RAM */
+_Min_Heap_Size = 0x0;      /* required amount of heap  */
+_Min_Stack_Size = 0x800; /* required amount of stack for MSP*/
+
+_Max_DO_WS_Size = 0x32000;  /* Maximum size of dynamic object workspace */
+_Cur_DO_WS_Size = @@_Cur_DO_WS_Size@@;  /* This size should be replaced with largest DO size at build time */
+__RTOS_segment_start__ = ORIGIN(RTOS);
+__RTOS_segment_end__ = __RTOS_segment_start__ + LENGTH(RTOS);
+
+/* Define output sections */
+SECTIONS {
+.isr_vector :
+    {
+        . = ALIGN(4);
+        KEEP(*(.isr_vector)) /* Startup code */
+        . = ALIGN(4);
+    } > RTOS
+
+.dbginfo :
+  {
+    . = ALIGN(4);
+    KEEP(*(.data.dbginfo))
+    . = ALIGN(4);
+  } > RTOS
+
+#ifdef CFG_CACHE_SUPPORT
+.sram_region :
+    {
+        . = ALIGN(4);
+        *(.sram_except_func)
+        *(.sram_except_ro)
+        *(.sram_except_rw)
+        *(.sram_except_bss)
+        *(.sram_except_variable)
+        . = ALIGN(4);
+    } > RTOS
+
+.dram_region CFG_L1C_DRAM_ADDR:
+    AT(CFG_L1C_DRAM_ADDR)
+    {
+        __dram_start = .;
+#ifdef CACHE_BARO_TEXT
+       CACHE_BARO_TEXT
+#endif
+#ifdef  CACHE_MAGNETOMETER_TEXT
+        CACHE_MAGNETOMETER_TEXT
+#endif
+#ifdef  CACHE_ALS_TEXT
+        CACHE_ALS_TEXT
+#endif
+#ifdef  CACHE_FUSION_TEXT
+        CACHE_FUSION_TEXT
+#endif
+#ifdef  CACHE_GESTURE_TEXT
+        CACHE_GESTURE_TEXT
+#endif
+#ifdef CACHE_PEDOMETER_TEXT
+        CACHE_PEDOMETER_TEXT
+#endif
+#ifdef  CACHE_ALS_TEXT
+        CACHE_ALS_TEXT
+#endif
+#ifdef  CACHE_ACTIVITY_TEXT
+        CACHE_ACTIVITY_TEXT
+#endif
+#ifdef  CACHE_VOW_TEXT
+        CACHE_VOW_TEXT
+#endif
+#ifdef  CACHE_SMARTPA_TEXT
+        CACHE_SMARTPA_TEXT
+#endif
+#ifdef  CACHE_FLAT_TEXT
+        CACHE_FLAT_TEXT
+#endif
+#ifdef  CACHE_IN_POCKET_TEXT
+        CACHE_IN_POCKET_TEXT
+#endif
+#ifdef  CACHE_PEDOMETER_TEXT
+        CACHE_PEDOMETER_TEXT
+#endif
+#ifdef  CACHE_STATIONARY_TEXT
+        CACHE_STATIONARY_TEXT
+#endif
+#ifdef  CACHE_WAKEUP_TEXT
+        CACHE_WAKEUP_TEXT
+#endif
+#ifdef  CACHE_WIN_ORIENTATION_TEXT
+        CACHE_WIN_ORIENTATION_TEXT
+#endif
+        *(.dram_region_func)
+        __dram_data_start = .;
+
+#ifdef  CACHE_MAGNETOMETER_DATA
+        CACHE_MAGNETOMETER_DATA
+#endif
+
+#ifdef  CACHE_VOW_DATA
+        CACHE_VOW_DATA
+#endif
+#ifdef  CACHE_SMARTPA_DATA
+        CACHE_SMARTPA_DATA
+#endif
+        *(.dram_region_data)
+        *(.dram_region*)
+        __dram_end = .;
+    } > DRAM
+
+    /* align cache line size */
+    . = ALIGN(32);
+    __dram_backup_start = .;
+    __dram_backup_start_lda = ABSOLUTE(.);
+    /* reserve dram backup region */
+    __next_start = __dram_backup_start_lda + SIZEOF(.dram_region);
+#else
+    __next_start = 0x80000;
+#endif
+
+#ifdef CFG_OVERLAY_INIT_SUPPORT
+    __overlay_ws_01_start_lda = __next_start;
+    /* overlay image define */
+OVERLAY __overlay_ws_01_start :
+    NOCROSSREFS AT(__overlay_ws_01_start_lda)
+    {
+        OVERLAY0
+    }
+    __overlay_ws_01_end = ABSOLUTE(.);
+OVERLAY __overlay_ws_01_end :
+    NOCROSSREFS
+    {
+        OVERLAY1
+    }
+    __overlay_ws_02_end = ABSOLUTE(.);
+OVERLAY __overlay_ws_02_end :
+    NOCROSSREFS
+    {
+        OVERLAY2
+    }
+    __overlay_ws_03_end = ABSOLUTE(.);
+OVERLAY __overlay_ws_03_end :
+    NOCROSSREFS
+    {
+        OVERLAY3
+    }
+    __overlay_ws_04_end = ABSOLUTE(.);
+OVERLAY __overlay_ws_04_end :
+    NOCROSSREFS
+    {
+        OVERLAY4
+    }
+    __overlay_ws_05_end = ABSOLUTE(.);
+OVERLAY __overlay_ws_05_end :
+    NOCROSSREFS
+    {
+        #ifdef OVERLAY5
+        OVERLAY5
+        #endif  // OVERLAY5
+    }
+    __overlay_ws_06_end = ABSOLUTE(.);
+OVERLAY __overlay_ws_06_end :
+    NOCROSSREFS
+    {
+        #ifdef OVERLAY6
+        OVERLAY6
+        #endif  // OVERLAY6
+    }
+    __overlay_ws_07_end = ABSOLUTE(.);
+OVERLAY __overlay_ws_07_end :
+    NOCROSSREFS
+    {
+        #ifdef OVERLAY7
+        OVERLAY7
+        #endif  // OVERLAY7
+    }
+    __overlay_ws_08_end = ABSOLUTE(.);
+OVERLAY __overlay_ws_08_end :
+    NOCROSSREFS
+    {
+        #ifdef OVERLAY8
+        OVERLAY8
+        #endif  // OVERLAY8
+    }
+    __overlay_ws_09_end = ABSOLUTE(.);
+OVERLAY __overlay_ws_09_end :
+    NOCROSSREFS
+    {
+        #ifdef OVERLAY9
+        OVERLAY9
+        #endif  // OVERLAY9
+    }
+    __overlay_ws_10_end = ABSOLUTE(.);
+    /*overlay image end */
+#endif
+    /* The startup code goes first into RTOS */
+
+.bl :
+    {
+        BL = ABSOLUTE(.);
+        KEEP(*(.blvec)) ;
+        *(.bltext) *(.bltext.*) ;
+        *(.blrodata) *(.blrodata.*) ;
+        . = ALIGN(4);
+        __pubkeys_start = ABSOLUTE(.);
+        KEEP(*(.pubkeys)) ;
+        __pubkeys_end = ABSOLUTE(.);
+        . = ALIGN(4);
+    } > RTOS
+.eedata :
+    {
+        . = ALIGN(4);
+        __eedata_start = ABSOLUTE(.);
+        KEEP(*(.eedata)) ;
+        __eedata_end = ABSOLUTE(.);
+        /* make sure it is all full of 0xFFs */
+        /*   . = LENGTH(eedata) - 1; */
+        BYTE(0xff) ;
+    } > RTOS = 0xff
+    /* The program code and other data goes into  RTOS*/
+.text :
+    {
+
+        . = ALIGN(4);
+        *(.text)           /* .text sections (code) */
+        *(.text*)          /* .text* sections (code) */
+        @@Keep_Symbols@@
+        *(.rodata)         /* .rodata sections (constants, strings, etc.) */
+        *(.rodata*)        /* .rodata* sections (constants, strings, etc.) */
+        . = ALIGN(8);
+        __internal_app_start = ABSOLUTE(.);
+        KEEP(*(.internal_app_init)) ;
+        __internal_app_end = ABSOLUTE(.);
+        . = ALIGN(4);
+        KEEP(*(.scp_exported_funcs))
+        *(.glue_7)         /* glue arm to thumb code */
+        *(.glue_7t)        /* glue thumb to arm code */
+        *(.eh_frame)
+        __commands_start = .;
+        KEEP(*(.commands))
+        __commands_end = .;
+
+
+        KEEP(*(.init))
+        KEEP(*(.fini))
+
+        . = ALIGN(4);
+        _etext = .;        /* define a global symbols at end of code */
+        _exit = .;
+    } > RTOS
+
+
+.ARM.extab   :
+    { *(.ARM.extab* .gnu.linkonce.armextab.*) } > RTOS
+.ARM :
+    {
+        __exidx_start = .;
+        *(.ARM.exidx*)
+        __exidx_end = .;
+    } > RTOS
+
+.preinit_array     :
+    {
+        PROVIDE_HIDDEN(__preinit_array_start = .);
+        KEEP(*(.preinit_array*))
+        PROVIDE_HIDDEN(__preinit_array_end = .);
+    } > RTOS
+.init_array :
+    {
+        PROVIDE_HIDDEN(__init_array_start = .);
+        KEEP(*(SORT(.init_array.*)))
+        KEEP(*(.init_array*))
+        PROVIDE_HIDDEN(__init_array_end = .);
+    } > RTOS
+.fini_array :
+    {
+        PROVIDE_HIDDEN(__fini_array_start = .);
+        KEEP(*(.fini_array*))
+        KEEP(*(SORT(.fini_array.*)))
+        PROVIDE_HIDDEN(__fini_array_end = .);
+    } > RTOS
+
+    ASSERT(. < CFG_TEXT_LIMIT_SIZE, "*** linking error: text size over CFG_TEXT_LIMIT_SIZE!")
+
+    /* used by the startup to initialize data */
+    _sidata = .;
+
+    /* Initialized data sections goes into RAM, load LMA copy after code */
+.data :
+    {
+        . = ALIGN(4);
+        __data_start = ABSOLUTE(.);
+        _sdata = .;        /* create a global symbol at data start */
+        *(.data)           /* .data sections */
+        *(.data*)          /* .data* sections */
+
+        . = ALIGN(4);
+        __module_start = .;
+        KEEP(*(.module_init*))
+        __module_end = .;
+        . = ALIGN(4);
+#ifdef CFG_OVERLAY_INIT_SUPPORT
+        __overlay_struct_start = .;
+        KEEP(*(.overlay_init*))
+        __overlay_struct_end = .;
+        . = ALIGN(4);
+#endif
+        __cust_alsps_start = .;
+        KEEP(*(.cust_alsps*))
+        __cust_alsps_end = .;
+        . = ALIGN(4);
+        __cust_accGyro_start = .;
+        KEEP(*(.cust_accGyro*))
+        __cust_accGyro_end = .;
+        . = ALIGN(4);
+        __cust_baro_start = .;
+        KEEP(*(.cust_baro*))
+        __cust_baro_end = .;
+        . = ALIGN(4);
+        __cust_mag_start = .;
+        KEEP(*(.cust_mag*))
+        __cust_mag_end = .;
+        . = ALIGN(4);
+        __cust_sar_start = .;
+        KEEP(*(.cust_sar*))
+        __cust_sar_end = .;
+        . = ALIGN(4);
+        _edata = .;        /* define a global symbol at data end */
+        __data_end = ABSOLUTE(.);
+    } > RTOS
+
+    /* Uninitialized data section */
+    . = ALIGN(4);
+.bss :
+    {
+        /* This is used by the startup in order to initialize the .bss secion */
+        _sbss = .;         /* define a global symbol at bss start */
+        __bss_start__ = _sbss;
+        *(.bss)
+        *(.bss*)
+        *(COMMON)
+
+        . = ALIGN(4);
+        _ebss = .;         /* define a global symbol at bss end */
+        __bss_end__ = _ebss;
+    } > RTOS
+
+    /* kernel_heap_stack section, used to check that there is enough RAM left */
+._kernel_heap_stack :
+    {
+        . = ALIGN(4);
+        PROVIDE(end = .);
+        PROVIDE(_end = .);
+        . = . + _Min_Heap_Size;
+        . = . + _Min_Stack_Size;
+        . = ALIGN(8);
+        _estack = .; /* Highest address of the MSP stack */
+    } > RTOS
+
+    ASSERT(_Cur_DO_WS_Size <= _Max_DO_WS_Size, "Exceed maximum dynamic object size")
+    .do_ws ALIGN(0x10) : /* make sure start address of .do_ws is 16-bytes aligned */
+    {
+        __do_ws_start = ABSOLUTE(.);
+        . = . + _Cur_DO_WS_Size;
+        . = ALIGN(4);
+        __do_ws_end = ABSOLUTE(.);
+    } > RTOS
+
+    . = ALIGN(4);
+    .share(NOLOAD) :
+    {
+        _sshare = .;
+        * (.share)
+        . = ALIGN(4);
+        _eshare = .;
+    } > RTOS
+#ifdef CFG_OVERLAY_INIT_SUPPORT
+    . = ALIGN(16);
+    __overlay_ws_01_start = .;
+#endif
+    _code_end = .;
+    __data_data = LOADADDR(.data);
+#ifdef CFG_OVERLAY_INIT_SUPPORT
+    ASSERT(__overlay_ws_10_end < __RTOS_segment_end__, "*** linking error: over sram size!")
+#else
+    ASSERT(_code_end < __RTOS_segment_end__, "*** linking error: over sram size!")
+#endif
+}
+
+/* stack_tip & share_start should be useless before CHRE 1.5 */
+__stack_top = 0;
+__shared_start = _SCP_IPC_SHARE_BUFFER_ADDR;
+__shared_end = _SCP_IPC_SHARE_BUFFER_ADDR;
+__app_start = __data_data + __data_end - __data_start;

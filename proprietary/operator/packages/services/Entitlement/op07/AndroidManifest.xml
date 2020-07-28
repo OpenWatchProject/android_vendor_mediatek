@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.mediatek.entitlement"
+    xmlns:tools="http://schemas.android.com/tools">
+    <uses-sdk android:targetSdkVersion="29" android:minSdkVersion="9"/>
+
+    <uses-permission android:name="android.permission.READ_PRIVILEGED_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_SECURE_SETTINGS" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.MODIFY_PHONE_STATE" />
+    <uses-permission android:name="com.mediatek.permission.show.entitlement" />
+    <uses-permission android:name="com.mediatek.entitlement.fcm.permission" />
+    <uses-permission android:name="com.mediatek.permission.entitlement.FCM_BROADCAST" />
+
+    <protected-broadcast android:name="com.mediatek.entitlement.ACTION_PROVISIONING_PENDING" />
+    <protected-broadcast android:name="com.mediatek.entitlement.ACTION_ENTITLEMENT_CHECK" />
+    <protected-broadcast android:name="com.mediatek.entitlement.ACTION_REQUEST_FCM_TOKEN" />
+
+    <permission android:name="com.mediatek.permission.show.entitlement"
+        android:protectionLevel="signatureOrSystem">
+    </permission>
+
+    <permission android:name="com.mediatek.permission.entitlement.FCM_BROADCAST"
+        android:protectionLevel="signatureOrSystem">
+    </permission>
+
+    <application
+        android:name=".EntitlementApp"
+        android:allowBackup="true"
+        android:persistent="true"
+        android:directBootAware="true">
+
+        <service
+            android:name="com.mediatek.entitlement.EntitlementService"
+            android:permission="com.mediatek.permission.show.entitlement"
+            android:exported="true"
+            android:enabled="true">
+        </service>
+
+    </application>
+
+</manifest>

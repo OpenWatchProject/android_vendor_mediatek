@@ -1,0 +1,81 @@
+cc_prebuilt_library_shared {
+    arch: {
+        arm: {
+            cortex_a53: {
+                shared_libs: [
+                    "libcutils",
+                    "libutils",
+                    "liblog",
+                    "libdl",
+                    "libsync",
+                    "libnativewindow",
+                ],
+                srcs: [
+                    "arm_armv8-a_cortex-a53/libged_sys.so",
+                ],
+            },
+            cortex_a55: {
+                shared_libs: [
+                    "libcutils",
+                    "libutils",
+                    "liblog",
+                    "libdl",
+                    "libsync",
+                    "libnativewindow",
+                ],
+                srcs: [
+                    "arm_armv8-2a_cortex-a55/libged_sys.so",
+                ],
+            },
+            cortex_a7: {
+                shared_libs: [
+                    "libcutils",
+                    "libutils",
+                    "liblog",
+                    "libdl",
+                    "libsync",
+                    "libnativewindow",
+                ],
+                srcs: [
+                    "arm_armv7-a-neon_cortex-a7/libged_sys.so",
+                ],
+            },
+        },
+        arm64: {
+            cortex_a53: {
+                shared_libs: [
+                    "libcutils",
+                    "libutils",
+                    "liblog",
+                    "libdl",
+                    "libsync",
+                    "libnativewindow",
+                ],
+                srcs: [
+                    "arm64_armv8-a_cortex-a53/libged_sys.so",
+                ],
+            },
+            cortex_a55: {
+                shared_libs: [
+                    "libcutils",
+                    "libutils",
+                    "liblog",
+                    "libdl",
+                    "libsync",
+                    "libnativewindow",
+                ],
+                srcs: [
+                    "arm64_armv8-2a_cortex-a55/libged_sys.so",
+                ],
+            },
+        },
+    },
+    export_include_dirs: [
+        "include",
+    ],
+    name: "libged_sys@MTK,smart_phone",
+    strip: {
+        none: true,
+    },
+}
+

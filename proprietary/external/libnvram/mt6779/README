@@ -1,0 +1,33 @@
+This directory contains NvRAM libnvram_platform interface, which defines the interface of
+libnvram_platform and is used to build a libnvram_platform shared library.
+
+
+WHAT IT DOES?
+=============
+ It defines NvRAM platform info for this board(MT6582).
+
+HOW IT WAS BUILT?
+==================
+
+It needs the following libs from AOSP:
+1.  libc.so
+2.  libcutils.so
+
+and the following libs from MediaTek:
+1.libnvram.so
+
+All source/dependency modules of this module are already put in
+'vendor/mediatek/libs' folder.
+
+
+HOW TO USE IT?
+==============
+
+Files in this directory is used to
+generate a shared library 'libnvram_platform.so'.
+
+The shared library 'libnvram_platform.so' is called by
+'libnvram.so','libfile_op.so' etc, which can handle NvRAM partiton layout or platform specific info.
+
+
+All the source code of this library were written by MediaTek co..

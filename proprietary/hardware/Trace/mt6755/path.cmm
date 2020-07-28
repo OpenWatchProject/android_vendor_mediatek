@@ -1,0 +1,7 @@
+global &alpsPath &searchVendorStr &vendorPath
+
+&searchVendorStr="vendor"
+&pathlen=STRing.SCAN(OS.PWD(),"&searchVendorStr",0)-1
+&alpsPath=STRing.MID(OS.PWD(), 0, &pathlen)
+&vendorPath="&alpsPath\&searchVendorStr"
+

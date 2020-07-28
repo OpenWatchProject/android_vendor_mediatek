@@ -1,0 +1,26 @@
+This executable file is used to show a special picture at boot phase.
+
+WHAT IT DOES?
+=============
+Show the second boot logo
+
+HOW IT WAS BUILT?
+==================
+It needs the following library from AOSP:
+1. libcutils.so
+2. libutils.so
+3. libc.so
+4. libstdc++.so
+5. libdl.so
+6. liblog.so
+7. libz.so
+
+and the following libs from MediaTek:
+1. libshowlogo.so
+
+[Build Method]
+mmm vendor/mediatek/proprietary/external/boot_logo_updater
+
+HOW TO USE IT?
+==============
+Defined at init.rc and activated by init process.

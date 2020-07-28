@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--* Copyright Statement:
+ *
+ * This software/firmware and related documentation ("MediaTek Software") are
+ * protected under relevant copyright laws. The information contained herein
+ * is confidential and proprietary to MediaTek Inc. and/or its licensors.
+ * Without the prior written permission of MediaTek inc. and/or its licensors,
+ * any reproduction, modification, use or disclosure of MediaTek Software,
+ * and information contained herein, in whole or in part, shall be strictly prohibited.
+ *
+ * MediaTek Inc. (C) 2017 All rights reserved.
+ *
+ * BY OPENING THIS FILE, RECEIVER HEREBY UNEQUIVOCALLY ACKNOWLEDGES AND AGREES
+ * THAT THE SOFTWARE/FIRMWARE AND ITS DOCUMENTATIONS ("MEDIATEK SOFTWARE")
+ * RECEIVED FROM MEDIATEK AND/OR ITS REPRESENTATIVES ARE PROVIDED TO RECEIVER ON
+ * AN "AS-IS" BASIS ONLY. MEDIATEK EXPRESSLY DISCLAIMS ANY AND ALL WARRANTIES,
+ * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE OR NONINFRINGEMENT.
+ * NEITHER DOES MEDIATEK PROVIDE ANY WARRANTY WHATSOEVER WITH RESPECT TO THE
+ * SOFTWARE OF ANY THIRD PARTY WHICH MAY BE USED BY, INCORPORATED IN, OR
+ * SUPPLIED WITH THE MEDIATEK SOFTWARE, AND RECEIVER AGREES TO LOOK ONLY TO SUCH
+ * THIRD PARTY FOR ANY WARRANTY CLAIM RELATING THERETO. RECEIVER EXPRESSLY ACKNOWLEDGES
+ * THAT IT IS RECEIVER'S SOLE RESPONSIBILITY TO OBTAIN FROM ANY THIRD PARTY ALL PROPER LICENSES
+ * CONTAINED IN MEDIATEK SOFTWARE. MEDIATEK SHALL ALSO NOT BE RESPONSIBLE FOR ANY MEDIATEK
+ * SOFTWARE RELEASES MADE TO RECEIVER'S SPECIFICATION OR TO CONFORM TO A PARTICULAR
+ * STANDARD OR OPEN FORUM. RECEIVER'S SOLE AND EXCLUSIVE REMEDY AND MEDIATEK'S ENTIRE AND
+ * CUMULATIVE LIABILITY WITH RESPECT TO THE MEDIATEK SOFTWARE RELEASED HEREUNDER WILL BE,
+ * AT MEDIATEK'S OPTION, TO REVISE OR REPLACE THE MEDIATEK SOFTWARE AT ISSUE,
+ * OR REFUND ANY SOFTWARE LICENSE FEES OR SERVICE CHARGE PAID BY RECEIVER TO
+ * MEDIATEK FOR SUCH MEDIATEK SOFTWARE AT ISSUE.
+ *
+ * The following software/firmware and/or related documentation ("MediaTek Software")
+ * have been modified by MediaTek Inc. All revisions are subject to any receiver's
+ * applicable license agreements with MediaTek Inc.
+ */  -->
+
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <!--Wifi Settings String start-->
+    <string name="wifi_security_cmcc">Security</string>
+    <string name="proxy_exclusionlist_label_cmcc">Bypass proxy for</string>
+    <string name="wifi_priority_label">Priority</string>
+    <string name="status_unavailable">Unavailable</string>
+    <string name="wifi_gateway">Gateway</string>
+    <string name="wifi_network_netmask">Netmask</string>
+    <string name="wifi_connect_type_title">Set network connection method</string>
+    <string name="wifi_signal_found_msg">Current connection signal is weak, would you like to use another WLAN network?</string>
+    <string name="wifi_priority_type_title">Set AP priority manually</string>
+    <string name="wifi_priority_type_summary">Allow to set priority for each access point manually</string>
+    <string name="wifi_priority_settings_title">AP priority settings</string>
+    <string name="wifi_priority_settings_summary">Click to set priority of each access point</string>
+    <string name="wifi_priority_changed">Priority old value=<xliff:g id="old_value">%s</xliff:g>,new value=<xliff:g id="new_value">%s</xliff:g></string>
+    <string name="wifi_priority_settings_label">Priority settings</string>
+    <string name="wifi_priority_missing_app">No app was found to handle this action.</string>
+    <string name="wifi_configured_ap_list">Remembered access point list</string>
+
+    <string name="confirm_title">Confirm</string>
+    <string name="msg_wlan_signal_found">Found WLAN signal %s, would you like to use this WLAN network? Using this network will interrupt the data service partially.</string>
+    <string name="msg_wlan_signal_found_manul">Found WLAN signal, would you like to use this WLAN network?</string>
+    <string name="gemini_default_sim_auto">Auto</string>
+    <string name="wifi_settings">Wi\u2011Fi</string>
+    <string name="wifi_menu_disconnect">Disconnect from network</string>
+    <string name="flight_mode_title">Turn on Airplane mode</string>
+    <string name="msg_flight_mode_notify">To use connectivity features such as Wi-Fi during the Airplane mode, turn them on manually in Settings or on the notification panel.</string>
+    <string name="mark_no_remind">Do not remind me again</string>
+    <string name="setting_remind_title">Reminder</string>
+    <string name="msg_wifi_hotspot_notify">Data connection is still off. Turn it on can make portable Wi-Fi hotspot work efficiently.</string>
+    <string name="wifi_disconnect">Disconnect</string>
+    <string name="wifi_reminder_frequency_title">Reminder frequency</string>
+    <string name="wifi_cmcc_costs_title">Wi-Fi costs reminder</string>
+    <string name="wifi_cmcc_costs_msg">Wi-Fi traffic costs may happen when CMCC Wi-Fi AP connected.</string>
+    <string name="wifi_count_down_sec">(Auto close after <xliff:g id="time_sec">%1$s</xliff:g> seconds.)</string>
+    <!--Wifi Settings String End-->
+
+    <!-- Change data connection -->
+    <string name="change_data_conn_title">Change data connection</string>
+    <string name="change_data_conn_message">" is not availible now, change the default data connection to "</string>
+    <string name="change_data_conn_progress_message">"Please wait..."</string>
+    <string name="change_data_conn_alert_volte">"4G services including VoLTE will be not available. Would you like to continue?"</string>
+    <string name="change_data_conn_alert_rcs">"4G services including RCS will be not available. Would you like to continue?"</string>
+    <string name="change_data_conn_alert">"4G services including VoLTE and RCS will be not available. Would you like to continue?"</string>
+    <string name="data_switch_started">Switching data SIM, this may take up to a minute...</string>
+
+    <string name="privacy_settings">Reset</string>
+    <string name="configed_access_points">Credible access points</string>
+    <string name="new_access_points">Unknown access points</string>
+
+    <!--CMCC DM setting String begin-->
+    <string name="cmcc_dm_settings_title">Device Management Permission</string>
+    <string name="cmcc_dm_settings_enable_summary">Enable auto boot</string>
+    <string name="cmcc_dm_settings_disable_summary">Disable auto boot</string>
+    <!--CMCC DM setting String End-->
+    <!--Agps String begin-->
+    <string name="agps_settings_title">A-GPS settings</string>
+    <string name="gps_settings_title">GPS settings</string>
+    <string name="location_settings_title">Location access</string>
+
+    <string name="agps_OK">OK</string>
+    <string name="agps_enable_confirm_title">A-GPS Enable Confirm</string>
+    <string name="agps_enable_confirm">A-GPS needs a wireless data connection to acquire the assistant data that may cause extra fees. Are you sure to turn on the A-GPS?</string>
+    <string name="agps_enable_confirm_allow">Continue</string>
+    <string name="agps_enable_confirm_deny">Cancel</string>
+    <string name="agps_settings_enable">A-GPS</string>
+    <string name="agps_settings_enable_on">GPS can speed up the fixed time of location with assistant data via wireless data connection</string>
+    <string name="agps_settings_enable_off">Use assistant data to speed up the fixed time of location with GPS</string>
+    <string name="agps_settings_eng_enable">A-GPS settings</string>
+    <string name="agps_settings_eng_summary">Set up A-GPS settings</string>
+    <string name="Network_Initiate">Network Request</string>
+    <string name="Network_Initiate_Summary_on">Allow network to request position</string>
+    <string name="Network_Initiate_Summary_off">Deny network to request position</string>
+    <string name="Network_Used">Network Used</string>
+    <string name="AgpsHelp_Category">Help</string>
+    <string name="about_agps_title">About A-GPS</string>
+    <string name="about_agps_message">\t A-GPS (Assisted-GPS) is the system that can improve the startup performance and time-to-first-fix (TTFF) of GPS satellites.
+    \n\t An A-GPS capable device can connect to location servers to acquire the assist data through mobile network data connection.
+    \n\t Notice that the data traffic may cause extra fees under network roaming conditions. Please contact with your operators for the details.</string>
+    <string name="Network_Local_and_Roaming_Summary">Use A-GPS both under home and roaming network</string>
+    <string name="Network_Only_Local_Summary">Use A-GPS only under home network</string>
+    <string name="Network_Roaming_dialog_title">Attention</string>
+    <string name="Network_Roaming_dialog_content">If the network under roaming condition, A-GPS data traffic may cause extra roaming fees.</string>
+    <!--Agps String end-->
+
+    <!-- Do not translate. About phone, status item title -->
+    <string name="status_imei" translatable="false">IMEI</string>
+    <!-- Do not translate. About phone, status item title -->
+    <string name="status_imei_sv" translatable="false">IMEI SV</string>
+
+    <!--add default_data_switch_err_msg1 Start-->
+    <string name="default_data_switch_err_msg1">Can not switch preferred SIM for cellular data during the call.</string>
+    <!--add default_data_switch_err_msg1 End-->
+
+    <!--Application Settings String Start-->
+    <string name="launch_main_label">Launch application</string>
+    <string name="launch_main">Launch the application by main activity</string>
+    <!--Application Settings String End-->
+
+    <string name="lock_screen_type">Quick screen off</string>
+
+    <string name="menu_stats_refresh">Refresh</string>
+
+    <string name="model_summary">Model&#58; %1$s</string>
+
+    <string name="data_service_summary">When non-data SIM is in VoLTE call, it will be used for data service.</string>
+    <string name="data_service_prompt">When non-data SIM is in VoLTE call, it will be used for data service. This will lead to extra data usage of the SIM.</string>
+
+</resources>

@@ -1,0 +1,12 @@
+cc_prebuilt_library_static {
+    name: "libamr_mtk",
+    proprietary: true,
+    owner: "mtk",
+    arch: {
+        arm: {
+            srcs: ["libamr_mtk.a"],
+        },
+    },
+    export_include_dirs: ["."],
+    compile_multilib: "32",
+}

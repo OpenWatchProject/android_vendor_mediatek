@@ -1,0 +1,43 @@
+<?xml version="1.0" ?>
+<config>
+	<conf check_path="/sys/class/rt5509_cal/rt5509.0/calibrated"
+	      param_path="/sys/bus/platform/devices/rt5509_param.0/prop_param"
+	      param_file="/system/vendor/etc/smartpa_param/rt5509_param">
+			<ctl name="Speaker Protection" val="0"></ctl>
+	</conf>
+
+	<scenario name = "init">
+		<ctl name="I2SDOR Mux" val="4"></ctl>
+		<ctl name="I2S Mux" val="1"></ctl>
+	</scenario>
+	<scenario name = "deinit" />
+	<scenario name="speaker_on_normal">
+		<ctl name="I2S Mux" val="0"></ctl>
+		<ctl name="Ext_DO_Enable" val="1"></ctl>
+	</scenario>
+	<scenario name="speaker_on_ringtone">
+		<ctl name="I2S Mux" val="0"></ctl>
+		<ctl name="Ext_DO_Enable" val="1"></ctl>
+	</scenario>
+	<scenario name="speaker_on_phonecall">
+		<ctl name="I2S Mux" val="0"></ctl>
+		<!-- reserved <ctl name="RLR Func" val="1"></ctl> -->
+		<!-- gain per step 3db, starting from 0dB, maximum is 21dB -->
+		<!-- <ctl name="ALC Fixed Gain" val="0"></ctl> -->
+		<ctl name="Ext_DO_Enable" val="1"></ctl>
+	</scenario>
+	<scenario name="speaker_on_voip">
+		<ctl name="I2S Mux" val="0"></ctl>
+		<!-- reserved <ctl name="RLR Func" val="1"></ctl> -->
+		<!-- gain per step 3db, starting from 0dB, maximum is 21dB -->
+		<!-- <ctl name="ALC Fixed Gain" val="0"></ctl> -->
+		<ctl name="Ext_DO_Enable" val="1"></ctl>
+	</scenario>
+	<scenario name="receiver_on_phonecall" />
+	<scenario name="receiver_on_voip" />
+	<scenario name="amp_off">
+		<!-- reserved <ctl name="RLR Func" val="0"></ctl> -->
+		<ctl name="Ext_DO_Enable" val="0"></ctl>
+		<ctl name="I2S Mux" val="1"></ctl>
+	</scenario>
+</config>

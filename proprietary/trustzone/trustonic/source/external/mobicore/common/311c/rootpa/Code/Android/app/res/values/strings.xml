@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="description_oempermission">
+        This permission allows the application to remove the root container that is used by the secure OS (Mobicore).
+        Removing the root container disables all the installed secure applications that are running on the secure OS
+        so that they can not be executed before the rootcontainer and the applications are re-installed. Secure application
+        is an application that is not running on the secure OS (Mobicore) rather than on the main os (Android).
+        Android application the communites with it in order to perform some security critical tasks.
+    </string>
+    <string name="description_developerpermission">
+        This permission allows the application to install a secure application that is not controlled by any TSM (trusted service manager)
+        and thus can only be removed by uninstalling (this) application that installed it. Secure application is an application that is not
+        running on the secure OS (Mobicore) rather than on the main os (Android).  Android application the communites with it in order
+        to perform some security critical tasks.
+    </string>
+</resources>

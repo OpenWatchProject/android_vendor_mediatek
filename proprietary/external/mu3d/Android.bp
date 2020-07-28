@@ -1,0 +1,29 @@
+
+
+// Build the target version
+cc_binary {
+
+    srcs: [
+        "auto_test_cmd.c",
+        "cli_input.c",
+        "cli_parser.c",
+        "dev_test_cmd.c",
+        "hub_test_cmd.c",
+        "main.c",
+        "ring_test_cmd.c",
+        "stress_test_cmd.c",
+        "cli_command.c",
+        "cli_modulecmd.c",
+        "dbg_cmd.c",
+        "hcd_test_cmd.c",
+        "loop_test_cmd.c",
+        "power_test_cmd.c",
+        "slot_test_cmd.c",
+    ],
+
+    name: "ts_mu3d",
+    proprietary: true,
+    owner: "mtk",
+    //LOCAL_CFLAGS += -DDEBUG_TS_MU3D
+
+}

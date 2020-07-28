@@ -1,0 +1,90 @@
+MFNR core module: BSS v1.1
+
+
+WHAT IT DOES?
+=============
+
+BSS (Best Shot Select) is an algorithm to select the best reference frame for
+blending in N frames. This module is a control flow module to control an
+algorithm BSS.
+
+
+HOW IT WAS BUILT?
+==================
+
+You cannot partial build this module only, but to build libmfllcore indeed.
+
+libmfllcore partial build path:
+
+    feature/common/mfnr/Android.mk
+
+Library dependency:
+  AOSP:
+  - libutils.so
+  - libcutils.so
+  - libstdc++.so
+
+  MTK:
+  - libcamalgo.so
+  - libmtkcam_modulehelper.so
+  - libmfllnvram.a
+  - libmfllexifinfo.a
+
+
+HOW TO USE IT?
+==============
+
+Create an IMfllBss instance by invoking
+
+    IMfllBss::createInstance();
+
+and IMfllBss module needs:
+
+1. IMfllNvram module to provide NVRAM information
+2. IMfllCore instance to saves debug information
+
+Thereforce, caller has to provide IMfllNvram and IMfllCore to IMfllBss.
+
+IMfllBss takes images and GVM (Global Motion Vector) information and calculate,
+generate an new order of the input images.
+
+e.g.:
+
+    sp<IMfllBss> spBss = IMfllBss::createInstance();
+    if (spBss.get() == NULL) {
+        ERROR_LOG("create IMfllBss instance failed");
+        return MfllErr_UnexpectedError;
+    }
+
+    // gives IMfllCore pointer
+    spBss->setMfllCore(spCore);
+
+    // init IMfllBss module with an IMfllNvram
+    spBss->init(spNvramProvider);
+
+    // do BSS
+    auto err = spBss->bss(vImages, vGmvs);
+    if (err != MfllErr_Ok) {
+        ERROR_LOG("bss returns error with code %x", err);
+        return err;
+    }
+
+- v1.1
+   Introduced to two new arguments
+     - Bightness threshold
+     - Sharpness threshold
+
+- v1.0
+  The first version of BSS
+
+
+* This module will be compiled as a static libary and be used by libmfllcore,
+  which means you can only use the interfaces defined in:
+
+      feature/include/common/mfnr/IMfllBss.h
+
+  by linking shared libary
+
+      libmfllcore.so
+
+*** All the source code of this program were written by MediaTek co. ***

@@ -1,0 +1,110 @@
+/*
+ * Copyright (C) 2016 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package vendor.mediatek.hardware.pq@2.0;
+
+/**
+ * Return value of PQService, it should return OK on success.
+ */
+enum Result : int32_t {
+    OK,
+    NOT_INITIALIZED,
+    INVALID_ARGUMENTS,
+    INVALID_STATE,
+    NOT_SUPPORTED
+};
+
+/**
+ * Enum of PQ Features, user may get/set switch of Feature
+ * by using IPictureQuality::setFeatureSwitch & IPictureQuality::getFeatureSwitch.
+ */
+enum PQFeatureID : int32_t {
+    DISPLAY_COLOR,
+    CONTENT_COLOR,
+    CONTENT_COLOR_VIDEO,
+    SHARPNESS,
+    DYNAMIC_CONTRAST,
+    DYNAMIC_SHARPNESS,
+    DISPLAY_CCORR,
+    DISPLAY_GAMMA,
+    DISPLAY_OVER_DRIVE,
+    ISO_ADAPTIVE_SHARPNESS,
+    ULTRA_RESOLUTION,
+    VIDEO_HDR,
+    PQ_FEATURE_MAX,
+};
+
+
+/**
+ * Structure of Disp Color demo window settings.
+ */
+struct dispPQWinParams {
+    int32_t split_en;
+    int32_t start_x;
+    int32_t start_y;
+    int32_t end_x;
+    int32_t end_y;
+};
+
+/**
+ * Structure of Disp Color index
+ */
+struct dispPQIndexParams {
+    uint32_t u4SHPGain;
+    uint32_t u4SatGain;
+    uint32_t u4PartialY;
+    uint32_t[4] u4HueAdj;
+    uint32_t[4] u4SatAdj;
+    uint32_t u4Contrast;
+    uint32_t u4Brightness;
+    uint32_t u4Ccorr;
+    uint32_t u4ColorLUT;
+};
+
+/**
+ * Enum of Disp PQ Ioctl request
+ */
+enum ioctlRequest : uint32_t {
+    IOCTL_WRITE_REG,
+    IOCTL_READ_REG,
+    IOCTL_MUTEX_CONTROL,
+    IOCTL_WRITE_SW_REG,
+    IOCTL_READ_SW_REG
+};
+
+/**
+ * Structure of Disp PQ Ioctl parameters
+ */
+struct dispPQIoctlParams {
+    ioctlRequest request;
+    uint32_t reg;
+    uint32_t val;
+    uint32_t mask;
+};
+
+/**
+ * Structure of DC
+ */
+struct display_dc {
+    uint32_t[12][53] entry;
+};
+
+/**
+ * Structure of Global PQ Index
+ */
+struct globalPQIndex_t {
+    display_dc dcindex;
+};

@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    >
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:gravity="left">
+
+<View          android:layout_height="1dip" android:layout_width="fill_parent" android:background="#FF909090"/>
+
+<LinearLayout
+    android:id="@+id/linearLayout1"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent" >
+
+    <ToggleButton
+        android:id="@+id/Button_StartGPS"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textOff="@string/gps_off"
+        android:textOn="@string/gps_on"
+        android:textSize="15dp" />
+
+    <Button
+        android:id="@+id/Button_Once"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/delete"
+        android:textSize="15dp" />
+
+    <Button
+        android:id="@+id/Button_ChangeRefLatLng"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/ref_latlng"
+        android:textSize="15dp" />
+
+</LinearLayout>
+
+
+<LinearLayout
+    android:id="@+id/linearLayout4"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
+
+    <Button
+        android:id="@+id/Button_GpsMode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/gps_mode"
+        android:textSize="15dp" />
+
+    <TextView
+        android:id="@+id/TextView_DeleteAidingData"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:width="250dp"
+        android:textSize="15dp"/>
+
+</LinearLayout>
+
+
+<LinearLayout
+    android:id="@+id/linearLayout2"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
+
+    <ToggleButton
+        android:id="@+id/Button_Stress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textOff="@string/stress_off"
+        android:textOn="@string/stress_on"
+        android:textSize="15dp" />
+
+    <TextView
+        android:id="@+id/TextView_Loop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:width="200dp"
+        android:textSize="15dp"/>
+
+</LinearLayout>
+
+<LinearLayout
+    android:id="@+id/linearLayout3"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
+
+    <CheckBox
+        android:id="@+id/CheckBox_LogNmea"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checked="false"
+        android:text="@string/log_nmea"
+        android:textSize="15dp"/>
+    <CheckBox
+        android:id="@+id/CheckBox_LogToSdcard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checked="false"
+        android:text="@string/log_to_sdcard"
+        android:textSize="15dp"/>
+</LinearLayout>
+
+<LinearLayout
+    android:id="@+id/linearLayout5"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
+
+    <CheckBox
+        android:id="@+id/CheckBox_LowPowerMode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checked="false"
+        android:text="@string/low_power_mode"
+        android:textSize="15dp"/>
+    <CheckBox
+        android:id="@+id/CheckBox_SingleShot"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checked="false"
+        android:text="@string/single_shot"
+        android:textSize="15dp"/>
+    <Button
+        android:id="@+id/Button_ClearLog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/clear_log"
+        android:textSize="15dp" />
+</LinearLayout>
+
+
+<View          android:layout_height="1dip" android:layout_width="fill_parent" android:background="#FF909090"/>
+
+
+<TextView     android:layout_width="fill_parent" android:layout_height="wrap_content" android:id="@+id/TextView_0" android:textSize="15dp"/>
+<View          android:layout_height="1dip" android:layout_width="fill_parent" android:background="#FF909090"/>
+<TextView     android:layout_width="fill_parent" android:layout_height="wrap_content" android:id="@+id/TextView_1" android:textSize="15dp"/>
+<View          android:layout_height="1dip" android:layout_width="fill_parent" android:background="#FF909090"/>
+<TextView     android:layout_width="fill_parent" android:layout_height="wrap_content" android:id="@+id/TextView_2" android:textSize="15dp"/>
+<View          android:layout_height="1dip" android:layout_width="fill_parent" android:background="#FF909090"/>
+<TextView     android:layout_width="fill_parent" android:layout_height="wrap_content" android:id="@+id/TextView_3" android:textSize="13dp"/>
+<View          android:layout_height="1dip" android:layout_width="fill_parent" android:background="#FF909090"/>
+<TextView     android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/TextView_4"/>
+<View          android:layout_height="1dip" android:layout_width="fill_parent" android:background="#FF909090"/>
+<TextView     android:layout_width="fill_parent" android:layout_height="wrap_content" android:id="@+id/TextView_5"/>
+
+
+<View          android:layout_height="1dip" android:layout_width="fill_parent" android:background="#FF909090"/>
+
+
+
+<TextView        android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/stress_test_settings"  android:textColor="#ff00ff" android:textSize="20dp" android:textStyle="bold"/>
+
+<LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent" >
+<TextView        android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/TextView_NumOfLoop" android:text="@string/num_of_fix" android:width="230dp" android:textSize="15dp"/>
+<EditText        android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/EditText_NumOfLoop" android:width="100dp" android:maxLength="3" android:inputType="number" android:textSize="18dp"/>
+</LinearLayout>
+<LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent" >
+<TextView        android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/TextView_Delay2" android:text="@string/delay_before_deleting_data" android:width="230dp" android:textSize="15dp"/>
+<EditText        android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/EditText_Delay2" android:width="100dp" android:maxLength="3" android:inputType="number" android:textSize="18dp"/>
+</LinearLayout>
+<LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent" >
+<TextView        android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/TextView_Delay1" android:text="@string/delay_before_starting_gps" android:width="230dp" android:textSize="15dp"/>
+<EditText        android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/EditText_Delay1" android:width="100dp" android:maxLength="3" android:inputType="number" android:textSize="18dp"/>
+</LinearLayout>
+<LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent" >
+<TextView        android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/TextView_Delay3" android:text="@string/session_timeout" android:width="230dp" android:textSize="15dp"/>
+<EditText        android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/EditText_Delay3" android:width="100dp" android:maxLength="3" android:inputType="number" android:textSize="18dp"/>
+</LinearLayout>
+<LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent" >
+<TextView        android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/TextView_Delay4" android:text="@string/delay_before_stopping_gps" android:width="230dp" android:textSize="15dp"/>
+<EditText        android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/EditText_Delay4" android:width="100dp" android:maxLength="3" android:inputType="number" android:textSize="18dp"/>
+</LinearLayout>
+
+<LinearLayout android:layout_width="wrap_content" android:layout_height="match_parent" android:orientation="vertical" >
+<CheckBox android:id="@+id/checkBox_switchDeleteToFirst" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/delete_aiding_data_first" />
+</LinearLayout>
+
+<View          android:layout_height="1dip" android:layout_width="fill_parent" android:background="#FF909090"/>
+<LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent" >
+<TextView        android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/black_list"  android:textColor="#ff00ff" android:textSize="20dp" android:textStyle="bold"/>
+</LinearLayout>
+
+<LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent" >
+<CheckBox android:id="@+id/checkBox_BlockGpsSatellites" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/block_gps_satellites" />
+<TextView android:id="@+id/TextView_BlockGps" style="@style/info_state_value" android:width="150dp" android:ellipsize="end" android:lines="1"/>
+</LinearLayout>
+
+<LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent" >
+<CheckBox android:id="@+id/checkBox_BlockGlonassSatellites" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/block_glonass_satellites" />
+<TextView android:id="@+id/TextView_BlockGlonass" style="@style/info_state_value" android:width="150dp" android:ellipsize="end" android:lines="1"/>
+</LinearLayout>
+
+<LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent" >
+<CheckBox android:id="@+id/checkBox_BlockBeidouSatellites" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/block_beidou_satellites" />
+<TextView android:id="@+id/TextView_BlockBeidou" style="@style/info_state_value" android:width="150dp" android:ellipsize="end" android:lines="1"/>
+</LinearLayout>
+
+<LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent" >
+<CheckBox android:id="@+id/checkBox_BlockGalileoSatellites" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/block_galileo_satellites" />
+<TextView android:id="@+id/TextView_BlockGalileo" style="@style/info_state_value" android:width="150dp" android:ellipsize="end" android:lines="1"/>
+</LinearLayout>
+
+
+<View          android:layout_height="1dip" android:layout_width="fill_parent" android:background="#FF909090"/>
+<TextView        android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/Information"  android:textColor="#ff00ff" android:textSize="20dp" android:textStyle="bold"/>
+
+ <LinearLayout style="@style/entry_layout">
+     <TextView android:text="@string/has_almanac" style="@style/info_label" />
+     <TextView android:id="@+id/TextView_HasAlmanacValue" style="@style/info_state_value" />
+ </LinearLayout>
+
+ <LinearLayout style="@style/entry_layout">
+     <TextView android:text="@string/almanac_date" style="@style/info_label" />
+     <TextView android:id="@+id/TextView_AlmanacDateValue" style="@style/info_state_value" />
+ </LinearLayout>
+
+ <LinearLayout style="@style/entry_layout">
+     <TextView android:text="@string/year_of_gnss_hw" style="@style/info_label" />
+     <TextView android:id="@+id/TextView_YearOfGnssHwValue" style="@style/info_state_value" />
+ </LinearLayout>
+
+ <LinearLayout style="@style/entry_layout">
+     <TextView android:text="@string/gnss_hw_name" style="@style/info_label" />
+     <TextView android:id="@+id/TextView_GnssHwNameValue" style="@style/info_state_value" />
+ </LinearLayout>
+</LinearLayout>
+</ScrollView>

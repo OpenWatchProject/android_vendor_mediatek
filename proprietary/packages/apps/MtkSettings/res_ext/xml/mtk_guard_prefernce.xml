@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+        <!-- Domestic roaming settings. -->
+    <PreferenceCategory android:title="@string/domestic_roaming_alert"
+                        android:key="domestic_roaming_guard">
+
+        <SwitchPreference android:key="domestic_voice_roaming_guard"
+                          android:title="@string/voice_roaming_alert"/>
+
+
+        <SwitchPreference android:key="domestic_data_roaming_guard"
+                          android:title="@string/data_roaming_alert"/>
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/international_roaming_alert"
+                        android:key="international_roaming_guard">
+
+        <SwitchPreference android:key="international_voice_roaming_guard"
+                          android:title="@string/voice_roaming_alert"
+                          android:defaultValue="true"/>
+
+
+        <SwitchPreference android:key="international_data_roaming_guard"
+                          android:title="@string/data_roaming_alert"/>
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

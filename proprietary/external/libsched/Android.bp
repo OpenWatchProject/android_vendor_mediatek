@@ -1,0 +1,14 @@
+cc_library_static {
+    srcs: ["libsched.c"],
+    name: "libsched",
+    proprietary: true,
+    owner: "mtk",
+    shared_libs: [
+        "libcutils",
+        "libc",
+    ],
+    header_libs: [
+        "device_kernel_headers",
+    ],
+    cflags: ["-g"],
+}

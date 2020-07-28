@@ -1,0 +1,223 @@
+// ProtoBuf definition of the protocol for client lib <-> proxy communication
+syntax = "proto2";
+
+package trustonic;
+option optimize_for = LITE_RUNTIME;
+
+enum LoginType {
+    TEE_PROXY_LOGIN_PUBLIC = 0;
+    TEE_PROXY_LOGIN_USER = 1;
+    TEE_PROXY_LOGIN_GROUP = 2;
+    TEE_PROXY_LOGIN_APPLICATION = 4;
+    TEE_PROXY_LOGIN_USER_APPLICATION = 5;
+    TEE_PROXY_LOGIN_GROUP_APPLICATION = 6;
+}
+
+message EmptyMessage {
+}
+
+message OpenDeviceResponse {
+    required uint32             result = 1;
+}
+
+message OpenSessionRequest {
+    required bytes              uuid = 1;       // 16 bytes
+    required bool               is_gp_uuid = 2;
+    optional bytes              tci = 3;        // initial TCI contents (v3)
+    required LoginType          login_type = 4;
+    required bytes              login_data = 5; // 16 bytes
+    optional uint64             tci_va = 13;    // TCI address (v4)
+    optional uint32             tci_len = 14;   // TCI length (v4)
+}
+
+message OpenSessionResponse {
+    required uint32             id = 1;
+}
+
+message OpenTrustletRequest {
+    required uint32             spid = 1;
+    required bytes              trustapp = 2;   // Trusted Application binary
+    optional bytes              tci = 3;        // initial TCI contents (v3)
+    optional uint64             tci_va = 13;    // TCI address (v4)
+    optional uint32             tci_len = 14;   // TCI length (v4)
+}
+
+message CloseSessionRequest {
+    required uint32             id = 1;
+}
+
+message NotifyRequest {
+    required uint32             sid = 1;
+    optional bytes              tci = 2;        // updated TCI contents
+    message Buffers {
+        required uint64         sva = 1;
+        required bytes          data = 2;
+    }
+    repeated Buffers            buffers = 3;    // Expect 0 to 4
+}
+
+message WaitNotificationRequest {
+    required uint32             sid = 1;
+    required sint32             timeout = 2;
+    required bool               partial = 3;
+}
+
+message WaitNotificationResponse {
+    optional bytes              tci = 1;        // updated TCI contents
+    message Buffers {
+        required uint64         sva = 1;
+        required bytes          data = 2;
+    }
+    repeated Buffers            buffers = 2;    // Expect 0 to 4
+}
+
+// No message needed for malloc/free
+
+message MapRequest {
+    required uint32             sid = 1;
+    message Buffers {
+        optional uint64         va = 3;     // (v4, required)
+        required uint32         len = 1;
+        required uint32         flags = 2;
+    }
+    repeated Buffers            buffers = 2;    // Expect 0 to 4
+}
+
+message MapResponse {
+    message Buffers {
+        required uint64         sva = 1;
+    }
+    repeated Buffers            buffers = 1;    // Expect 0 to 4
+}
+
+message UnmapRequest {
+    required uint32             sid = 1;
+    message Buffers {
+        optional uint64         va = 2;     // (v4, required)
+        optional uint32         len = 3;    // (v4, required)
+        required uint64         sva = 1;
+    }
+    repeated Buffers            buffers = 2;    // Expect 1 to 4
+}
+
+message GetErrorRequest {
+    required uint32             sid = 1;
+}
+
+message GetErrorResponse {
+    required sint32             exit_code = 1;
+}
+
+message GetVersionResponse {
+    required string             product_id = 1;
+    required uint32             mci = 2;
+    required uint32             so = 3;
+    required uint32             mclf = 4;
+    required uint32             container = 5;
+    required uint32             mc_config = 6;
+    required uint32             tl_api = 7;
+    required uint32             dr_api = 8;
+    required uint32             nwd = 9;
+    required uint32             flags = 10;
+}
+
+// GP structures
+
+message GpValue {
+    required uint32             a = 1;
+    required uint32             b = 2;
+}
+
+message GpTempMemref {
+    optional uint64             buffer = 1;     // Only v4, only sent to server
+    optional uint64             size = 2;       // Only sent back if changed
+    optional bytes              contents = 4;   // Only v3
+}
+
+message GpSharedMemory {
+    optional uint64             buffer = 1;     // Only v4, only sent to server
+    optional uint64             size = 2;       // Only sent back if changed
+    optional uint32             flags = 3;      // Only sent to server
+    optional bytes              contents = 4;   // Only v3
+}
+
+message GpRegisteredMemref {
+    optional GpSharedMemory     parent = 1;
+    optional uint64             size = 2;       // Only sent back if changed
+    optional uint64             offset = 3;
+}
+
+message GpParam {
+    optional GpTempMemref       tmpref = 1;
+    optional GpRegisteredMemref memref = 2;
+    optional GpValue            value = 3;
+}
+
+message GpOperation {
+    required uint32             started = 1;
+    required uint32             param_types = 2;
+    repeated GpParam            params = 3;     // Must be 4
+}
+
+message GpInitializeContextRequest {
+    optional bytes              name = 1;
+}
+
+message GpInitializeContextResponse {
+    required uint32             return_value = 1;
+}
+
+message GpRegisterSharedMemoryRequest {
+    required GpSharedMemory     sharedmem = 1;
+}
+
+message GpRegisterSharedMemoryResponse {
+    required uint32             return_value = 1;
+}
+
+message GpAllocateSharedMemoryRequest {
+    required GpSharedMemory     sharedmem = 1;
+}
+
+message GpAllocateSharedMemoryResponse {
+    optional GpSharedMemory     sharedmem = 1;
+    required uint32             return_value = 2;
+}
+
+message GpReleaseSharedMemoryRequest {
+    required GpSharedMemory     sharedmem = 1;
+}
+
+message GpOpenSessionRequest {
+    required bytes              uuid = 1;       // 16 bytes
+    required LoginType          login_type = 2;
+    optional bytes              login_data = 3; // 16 bytes
+    optional GpOperation        operation = 4;
+}
+
+message GpOpenSessionResponse {
+    optional GpOperation        operation = 1;
+    optional uint32             session_id = 2;
+    required uint32             return_origin = 3;
+    required uint32             return_value = 4;
+}
+
+message GpCloseSessionRequest {
+    required uint32             session_id = 1;
+}
+
+message GpInvokeCommandRequest {
+    optional GpOperation        operation = 1;
+    required uint32             session_id = 2;
+    required uint32             command_id = 3;
+}
+
+message GpInvokeCommandResponse {
+    optional GpOperation        operation = 1;
+    required uint32             return_origin = 2;
+    required uint32             return_value = 3;
+}
+
+message GpRequestCancellationRequest {
+    required uint32             started = 1;
+}

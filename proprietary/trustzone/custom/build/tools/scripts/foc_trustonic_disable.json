@@ -1,0 +1,52 @@
+{
+    "android": {
+        "CONFIG": "device/mediatekprojects/${PROJECT}/ProjectConfig.mk",
+        "OPTIONS": {
+            "MTK_TEE_SUPPORT": "no",
+            "TRUSTONIC_TEE_SUPPORT": "no"
+        }
+    },
+    "preloader": {
+        "CONFIG": "vendor/mediatek/proprietary/bootable/bootloader/preloader/custom/${PROJECT}/${PROJECT}.mk",
+        "OPTIONS": {
+            "MTK_TEE_SUPPORT": "no",
+            "TRUSTONIC_TEE_SUPPORT": "no"
+        }
+    },
+    "lk": {
+        "CONFIG": "vendor/mediatek/proprietary/bootable/bootloader/lk/project/${PROJECT}.mk",
+        "OPTIONS": {
+            "TRUSTONIC_TEE_SUPPORT": "no"
+        }
+    },
+    "tlk-project": {
+        "CONFIG": "trusty/vendor/mediatek/proprietary/project/${PROJECT}.mk",
+        "OPTIONS": {
+        }
+    },
+    "tlk-platform": {
+        "CONFIG": "trusty/vendor/mediatek/proprietary/platform/${PLATFORM}/rules.mk",
+        "OPTIONS": {
+        }
+    },
+    "trustzone": {
+        "CONFIG": "vendor/mediatek/proprietary/trustzone/custom/build/project/${PROJECT}.mk",
+        "OPTIONS": {
+            "MTK_TEE_SUPPORT": "no",
+            "TRUSTONIC_TEE_SUPPORT": "no"
+        }
+    },
+    "kernel-debug": {
+        "CONFIG": "${KERNEL}/arch/${ARCH}/configs/${PROJECT}_debug_defconfig",
+        "OPTIONS": {
+            "CONFIG_TRUSTONIC_TEE_SUPPORT": "is not set"
+        }
+    },
+    "kernel": {
+        "CONFIG": "${KERNEL}/arch/${ARCH}/configs/${PROJECT}_defconfig",
+        "OPTIONS": {
+            "CONFIG_TRUSTONIC_TEE_SUPPORT": "is not set"
+        }
+    }
+}
+

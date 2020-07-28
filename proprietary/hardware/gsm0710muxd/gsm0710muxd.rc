@@ -1,0 +1,7 @@
+service vendor.gsm0710muxd /vendor/bin/gsm0710muxd -s /dev/ttyC0 -f 512 -n 8 -m basic
+    class main
+    user root
+    group radio cache inet misc
+    disabled
+    oneshot
+

@@ -1,0 +1,16 @@
+
+#VIA RILD service
+service vendor.viarild /vendor/bin/viarild -l libviatelecom-withuim-ril.so -- -d /dev/ttySDIO4
+    class main
+    socket rild-via stream 660 radio radio
+    socket msap_c2k_socket1 stream 660 radio radio
+    socket msap_c2k_socket2 stream 660 radio radio
+    socket msap_c2k_socket3 stream 660 radio radio
+    socket msap_c2k_socket4 stream 660 radio radio
+    socket rpc stream 660 radio system
+    socket rildc-debug stream 660 radio system
+    socket rild-ctclient stream 660 radio system
+    socket rild-atci-c2k stream 660 radio system
+    group radio cache inet misc audio sdcard_r sdcard_rw log system
+    disabled
+    oneshot

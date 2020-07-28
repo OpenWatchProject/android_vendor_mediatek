@@ -1,0 +1,81 @@
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    >
+<LinearLayout
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:gravity="left"
+    >
+
+<!-- Debug -->
+<LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent" android:gravity="left">
+<ToggleButton android:id="@+id/Button_StartTest" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textOff="@string/start_test_off" android:textOn="@string/start_test_on" android:textSize="15sp" />
+<Button       android:id="@+id/Button_Continue" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/continue_test" android:textSize="15sp" />
+</LinearLayout>
+
+<View			android:layout_height="1dip" android:layout_width="fill_parent" android:background="#FF909090"/>
+
+
+<LinearLayout	android:id="@+id/LinearLayout_Settings" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent" android:gravity="left">
+
+<LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent" android:gravity="left">
+<Button           android:id="@+id/Button_Loops" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/loops" android:textSize="15sp"/>
+<TextView		  android:id="@+id/TextView_Loops" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+</LinearLayout>
+
+<LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent" android:gravity="left">
+<Button           android:id="@+id/Button_EndCallDuration" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/end_call" android:textSize="15sp"/>
+<TextView		  android:id="@+id/TextView_EndCallDuration" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+</LinearLayout>
+
+<LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent" android:gravity="left">
+<Button           android:id="@+id/Button_PhoneCallDuration" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/phone_call" android:textSize="15sp"/>
+<TextView		  android:id="@+id/TextView_PhoneCallDuration" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+</LinearLayout>
+
+<LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent" android:gravity="left">
+<TextView		android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/delete" android:textColor="#ff00ff" android:textSize="20sp" android:textStyle="bold"/>
+<RadioGroup 	android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="horizontal">
+<RadioButton	android:id="@+id/RadioButton_Hot" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/hot" android:textSize="15sp"/>
+<RadioButton	android:id="@+id/RadioButton_Warm" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/warm" android:textSize="15sp"/>
+<RadioButton	android:id="@+id/RadioButton_Cold" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/cold" android:textSize="15sp"/>
+<RadioButton	android:id="@+id/RadioButton_Full" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/full" android:textSize="15sp"/>
+</RadioGroup>
+</LinearLayout>
+
+
+<LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent" android:gravity="left">
+<TextView		android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/phone" android:textColor="#ff00ff" android:textSize="20sp" android:textStyle="bold"/>
+<RadioGroup 	android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="horizontal">
+<RadioButton	android:id="@+id/RadioButton_Phone_911" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/phone_911" android:textSize="15sp"/>
+<RadioButton	android:id="@+id/RadioButton_Phone_8378911" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/phone_8378911" android:textSize="15sp"/>
+<RadioButton	android:id="@+id/RadioButton_Phone_Edit" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/phone_edit" android:textSize="15sp"/>
+</RadioGroup>
+</LinearLayout>
+
+<CheckBox android:id="@+id/CheckBox_BreakLoopWhenError" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/break_loop_when_error" android:textSize="15sp"/>
+<CheckBox android:id="@+id/CheckBox_SpeakerEnable" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/speaker_enable" android:textSize="15sp"/>
+<LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent" android:gravity="left|top">
+   <CheckBox android:id="@+id/CheckBox_SpeakerDisable" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/speaker_disable" android:textSize="15sp"/>
+   <Button    android:id="@+id/button_IncreaseTime" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/plus" android:textSize="14sp" android:layout_weight="1"/>
+   <Button    android:id="@+id/button_DecreaseTime" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/minus" android:textSize="14sp" android:layout_weight="1"/>
+</LinearLayout>
+
+<EditText		android:id="@+id/EditText_PhoneEdit" android:layout_width="wrap_content" android:layout_height="wrap_content" android:width="200dp" android:maxLength="100" android:inputType="phone" android:textSize="18sp"/>
+
+<View			android:layout_height="1dip" android:layout_width="fill_parent" android:background="#FF909090"/>
+<TextView		android:id="@+id/TextView_Info" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+
+<View	android:paddingTop = "5dp" android:layout_height="1dip" android:layout_width="fill_parent" android:background="#FF909090"/>
+
+
+<TextView		android:id="@+id/TextView_Info" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+
+</LinearLayout> <!-- LinearLayout_Settings -->
+
+</LinearLayout>
+</ScrollView>

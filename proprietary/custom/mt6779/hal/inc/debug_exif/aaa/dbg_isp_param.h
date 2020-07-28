@@ -1,0 +1,1807 @@
+/* Copyright Statement:
+ *
+ * This software/firmware and related documentation ("MediaTek Software") are
+ * protected under relevant copyright laws. The information contained herein
+ * is confidential and proprietary to MediaTek Inc. and/or its licensors.
+ * Without the prior written permission of MediaTek inc. and/or its licensors,
+ * any reproduction, modification, use or disclosure of MediaTek Software,
+ * and information contained herein, in whole or in part, shall be strictly prohibited.
+ */
+/* MediaTek Inc. (C) 2010. All rights reserved.
+ *
+ * BY OPENING THIS FILE, RECEIVER HEREBY UNEQUIVOCALLY ACKNOWLEDGES AND AGREES
+ * THAT THE SOFTWARE/FIRMWARE AND ITS DOCUMENTATIONS ("MEDIATEK SOFTWARE")
+ * RECEIVED FROM MEDIATEK AND/OR ITS REPRESENTATIVES ARE PROVIDED TO RECEIVER ON
+ * AN "AS-IS" BASIS ONLY. MEDIATEK EXPRESSLY DISCLAIMS ANY AND ALL WARRANTIES,
+ * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE OR NONINFRINGEMENT.
+ * NEITHER DOES MEDIATEK PROVIDE ANY WARRANTY WHATSOEVER WITH RESPECT TO THE
+ * SOFTWARE OF ANY THIRD PARTY WHICH MAY BE USED BY, INCORPORATED IN, OR
+ * SUPPLIED WITH THE MEDIATEK SOFTWARE, AND RECEIVER AGREES TO LOOK ONLY TO SUCH
+ * THIRD PARTY FOR ANY WARRANTY CLAIM RELATING THERETO. RECEIVER EXPRESSLY ACKNOWLEDGES
+ * THAT IT IS RECEIVER'S SOLE RESPONSIBILITY TO OBTAIN FROM ANY THIRD PARTY ALL PROPER LICENSES
+ * CONTAINED IN MEDIATEK SOFTWARE. MEDIATEK SHALL ALSO NOT BE RESPONSIBLE FOR ANY MEDIATEK
+ * SOFTWARE RELEASES MADE TO RECEIVER'S SPECIFICATION OR TO CONFORM TO A PARTICULAR
+ * STANDARD OR OPEN FORUM. RECEIVER'S SOLE AND EXCLUSIVE REMEDY AND MEDIATEK'S ENTIRE AND
+ * CUMULATIVE LIABILITY WITH RESPECT TO THE MEDIATEK SOFTWARE RELEASED HEREUNDER WILL BE,
+ * AT MEDIATEK'S OPTION, TO REVISE OR REPLACE THE MEDIATEK SOFTWARE AT ISSUE,
+ * OR REFUND ANY SOFTWARE LICENSE FEES OR SERVICE CHARGE PAID BY RECEIVER TO
+ * MEDIATEK FOR SUCH MEDIATEK SOFTWARE AT ISSUE.
+ *
+ * The following software/firmware and/or related documentation ("MediaTek Software")
+ * have been modified by MediaTek Inc. All revisions are subject to any receiver's
+ * applicable license agreements with MediaTek Inc.
+ */
+
+/********************************************************************************************
+ *     LEGAL DISCLAIMER
+ *
+ *     (Header of MediaTek Software/Firmware Release or Documentation)
+ *
+ *     BY OPENING OR USING THIS FILE, BUYER HEREBY UNEQUIVOCALLY ACKNOWLEDGES AND AGREES
+ *     THAT THE SOFTWARE/FIRMWARE AND ITS DOCUMENTATIONS ("MEDIATEK SOFTWARE") RECEIVED
+ *     FROM MEDIATEK AND/OR ITS REPRESENTATIVES ARE PROVIDED TO BUYER ON AN "AS-IS" BASIS
+ *     ONLY. MEDIATEK EXPRESSLY DISCLAIMS ANY AND ALL WARRANTIES, EXPRESS OR IMPLIED,
+ *     INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR
+ *     A PARTICULAR PURPOSE OR NONINFRINGEMENT. NEITHER DOES MEDIATEK PROVIDE ANY WARRANTY
+ *     WHATSOEVER WITH RESPECT TO THE SOFTWARE OF ANY THIRD PARTY WHICH MAY BE USED BY,
+ *     INCORPORATED IN, OR SUPPLIED WITH THE MEDIATEK SOFTWARE, AND BUYER AGREES TO LOOK
+ *     ONLY TO SUCH THIRD PARTY FOR ANY WARRANTY CLAIM RELATING THERETO. MEDIATEK SHALL ALSO
+ *     NOT BE RESPONSIBLE FOR ANY MEDIATEK SOFTWARE RELEASES MADE TO BUYER'S SPECIFICATION
+ *     OR TO CONFORM TO A PARTICULAR STANDARD OR OPEN FORUM.
+ *
+ *     BUYER'S SOLE AND EXCLUSIVE REMEDY AND MEDIATEK'S ENTIRE AND CUMULATIVE LIABILITY WITH
+ *     RESPECT TO THE MEDIATEK SOFTWARE RELEASED HEREUNDER WILL BE, AT MEDIATEK'S OPTION,
+TO REVISE OR REPLACE THE MEDIATEK SOFTWARE AT ISSUE, OR REFUND ANY SOFTWARE LICENSE
+ *     FEES OR SERVICE CHARGE PAID BY BUYER TO MEDIATEK FOR SUCH MEDIATEK SOFTWARE AT ISSUE.
+ *
+ *     THE TRANSACTION CONTEMPLATED HEREUNDER SHALL BE CONSTRUED IN ACCORDANCE WITH THE LAWS
+ *     OF THE STATE OF CALIFORNIA, USA, EXCLUDING ITS CONFLICT OF LAWS PRINCIPLES.
+ ************************************************************************************************/
+#ifndef _DBG_ISP_PARAM_H_
+#define _DBG_ISP_PARAM_H_
+/*******************************************************************************
+*
+*******************************************************************************/
+#include "../dbg_id_param.h"
+
+
+
+namespace NSIspExifDebug
+{
+
+#define P1_START_ADDR_COUNT 0
+#define P2_START_ADDR_COUNT 1024
+#define P1_BUFFER_SIZE 4275
+#define P2_BUFFER_SIZE 6700
+#define P1_REG_SIZE 5500
+#define P2_REG_SIZE 10000
+#define LTM_DEBUG_TAG_SIZE 393
+
+#define MFB_BUFFER_SIZE 60
+
+enum { IspDebugTagVersion = ((0 <<16) | 7)};
+
+#define ISP_DEBUG_TAG_VERSION_DP (IspDebugTagVersion)
+
+enum IspDebugTagID
+{
+    // BEGIN_OF_EXIF_TAG
+    IspTagVersion,
+    UniqueKey,
+    // Mapping_Info
+    M_P1_Profile,
+    M_P1_SensorMode,
+    M_P1_FrontalBin,
+    M_P1_TargetSize,
+    M_P1_Flash,
+    M_P1_APP,
+    M_P1_FaceDetection,
+    M_P1_DriverIC,
+    M_P1_Custom_00,
+    M_P1_Custom_01,
+    M_P1_ZoomIdx,
+    M_P1_LV_Idx,
+    M_P1_CT_Idx,
+    ATMS_SCENARIO_IDX_P1,
+    M_P2_Profile,
+    M_P2_SensorMode,
+    M_P2_FrontalBin,
+    M_P2_TargetSize,
+    M_P2_Flash,
+    M_P2_APP,
+    M_P2_FaceDetection,
+    M_P2_DriverIC,
+    M_P2_Custom_00,
+    M_P2_Custom_01,
+    M_P2_ZoomIdx,
+    M_P2_LV_Idx,
+    M_P2_CT_Idx,
+    ATMS_SCENARIO_IDX_P2,
+
+    //  RAWIspCamInfo
+    isHDR_P1,
+    SceneIdx_P1,
+    UPPER_CT_IDX_P1,
+    LOWER_CT_IDX_P1,
+    UPPER_LV_IDX_P1,
+    LOWER_LV_IDX_P1,
+    ZoomRatio_x100_P1,
+    ShadingIdx_P1,
+    Custom_Interp_P1,
+    isHDR_P2,
+    SceneIdx_P2,
+    UPPER_CT_IDX_P2,
+    LOWER_CT_IDX_P2,
+    UPPER_LV_IDX_P2,
+    LOWER_LV_IDX_P2,
+    ZoomRatio_x100_P2,
+    ShadingIdx_P2,
+    Custom_Interp_P2,
+    //Local member
+    Adb_Interp,
+    Color_Method,
+    // Opermode
+    EOperMode,
+    // Effect
+    EffectMode_P2,
+    // UserSelectLevel
+    EdgeIdx_P2,
+    HueIdx_P2,
+    SatIdx_P2,
+    BrightIdx_P2,
+    ContrastIdx_P2,
+    //
+    SensorDev,
+    SensorRawFmt,
+    SensorIdx,
+    SensorTG,
+    P1_Path,
+    //
+    HighQCap_P2,
+    //TBD
+    CCU_DGN_Enable,
+    CCU_LTM_Enable,
+    CCU_HLR_Enable,
+
+    //AE Info
+    AE_INFO_EXP_TIME_P1,
+    AE_INFO_SEN_GAIN_P1,
+    AE_INFO_ISP_GAIN_P1,
+    AE_INFO_REAL_ISO_P1,
+    AE_INFO_GAIN_x100_P1,
+    AE_INFO_EXP_TIME_P2,
+    AE_INFO_AFE_GAIN_P2,
+    AE_INFO_ISP_GAIN_P2,
+    AE_INFO_REAL_ISO_P2,
+    AE_INFO_GAIN_x100_P2,
+    AE_INFO_LV_x10,
+    //
+    //AWB_INFO
+    AWB_INFO_CURRENT_GAIN_R_P1,
+    AWB_INFO_CURRENT_GAIN_G_P1,
+    AWB_INFO_CURRENT_GAIN_B_P1,
+    AWB_INFO_CT_P1,
+    AWB_INFO_WB_GAIN_R_P1,
+    AWB_INFO_WB_GAIN_G_P1,
+    AWB_INFO_WB_GAIN_B_P1,
+    AWB_INFO_CURRENT_GAIN_R_P2,
+    AWB_INFO_CURRENT_GAIN_G_P2,
+    AWB_INFO_CURRENT_GAIN_B_P2,
+    AWB_INFO_CT_P2,
+    AWB_INFO_WB_GAIN_R_P2,
+    AWB_INFO_WB_GAIN_G_P2,
+    AWB_INFO_WB_GAIN_B_P2,
+    //
+    //P1 YUV Size Info
+    TG_Size_W_P1YUV,
+    TG_Size_H_P1YUV,
+    FBinOnOff_P1YUV,
+    RRZ_In_Size_W_P1YUV,
+    RRZ_In_Size_H_P1YUV,
+
+    //Size Info
+    TG_Size_W,
+    TG_Size_H,
+    FBinOnOff,
+    RRZOnOff,
+    RRZ_In_Size_W,
+    RRZ_In_Size_H,
+    RRZ_Crop_Ofst_X,
+    RRZ_Crop_Ofst_Y,
+    RRZ_Crop_Size_W,
+    RRZ_Crop_Size_H,
+    RRZ_Out_W,
+    RRZ_Out_H,
+    //
+    //
+    FrontBin_ByLCS,
+    QBin_Rto_ByLCS,
+    //
+    //Metadata
+    Meta_PureRaw,
+    Meta_PGNEnable,
+    Meta_ByPassLCE,
+    Meta_ByPassNR,
+    Meta_UpdateMode,
+    Meta_P2InFmt,
+    //
+    BPCBuffer,
+    LCEBuffer,
+    DCEBuffer,
+    //  P1 Index
+    IDX_OBC_LOWER_P1,
+    IDX_OBC_UPPER_P1,
+    IDX_BPC_LOWER_P1,
+    IDX_BPC_UPPER_P1,
+    IDX_CT_LOWER_P1,
+    IDX_CT_UPPER_P1,
+    IDX_PDC_LOWER_P1,
+    IDX_PDC_UPPER_P1,
+    IDX_DM_LOWER_P1,
+    IDX_DM_UPPER_P1,
+    IDX_GMA_P1,
+    IDX_YNRS_LOWER_P1,
+    IDX_YNRS_UPPER_P1,
+    IDX_YNRS_TBL_LOWER_P1,
+    IDX_YNRS_TBL_UPPER_P1,
+    // P2 Index
+    IDX_OBC_LOWER_P2,
+    IDX_OBC_UPPER_P2,
+    IDX_BPC_LOWER_P2,
+    IDX_BPC_UPPER_P2,
+    IDX_CT_LOWER_P2,
+    IDX_CT_UPPER_P2,
+    IDX_PDC_LOWER_P2,
+    IDX_PDC_UPPER_P2,
+    IDX_DM_LOWER_P2,
+    IDX_DM_UPPER_P2,
+    IDX_YNR_LOWER_P2,
+    IDX_YNR_UPPER_P2,
+    IDX_YNR_TBL_LOWER_P2,
+    IDX_YNR_TBL_UPPER_P2,
+    IDX_CNR_LOWER_P2,
+    IDX_CNR_UPPER_P2,
+    IDX_CCR_LOWER_P2,
+    IDX_CCR_UPPER_P2,
+    IDX_ABF_LOWER_P2,
+    IDX_ABF_UPPER_P2,
+    IDX_EE_LOWER_P2,
+    IDX_EE_UPPER_P2,
+    IDX_NR3D_LOWER_P2,
+    IDX_NR3D_UPPER_P2,
+    IDX_MFB_LOWER_P2,
+    IDX_MFB_UPPER_P2,
+    IDX_MIX_LOWER_P2,
+    IDX_MIX_UPPER_P2,
+
+    //
+    // CCM Weight
+    SMOOTH_CCM_Ver,
+    IDX_CCM_LOWER_LV_P1,
+    IDX_CCM_UPPER_LV_P1,
+    SMOOTH_CCM_CT_valid_NUM_UPPER_P1,
+    SMOOTH_CCM_CT_valid_NUM_LOWER_P1,
+    SMOOTH_CCM_Coef_UPPER_0_P1,
+    SMOOTH_CCM_Coef_UPPER_1_P1,
+    SMOOTH_CCM_Coef_UPPER_2_P1,
+    SMOOTH_CCM_Coef_LOWER_0_P1,
+    SMOOTH_CCM_Coef_LOWER_1_P1,
+    SMOOTH_CCM_Coef_LOWER_2_P1,
+    IDX_CCM_LOWER_LV_P2,
+    IDX_CCM_UPPER_LV_P2,
+    SMOOTH_CCM_CT_valid_NUM_UPPER_P2,
+    SMOOTH_CCM_CT_valid_NUM_LOWER_P2,
+    SMOOTH_CCM_Coef_UPPER_0_P2,
+    SMOOTH_CCM_Coef_UPPER_1_P2,
+    SMOOTH_CCM_Coef_UPPER_2_P2,
+    SMOOTH_CCM_Coef_LOWER_0_P2,
+    SMOOTH_CCM_Coef_LOWER_1_P2,
+    SMOOTH_CCM_Coef_LOWER_2_P2,
+
+    //
+    SMOOTH_COLOR_Ver,
+    IDX_COLOR_UPPER_LV_UPPER_CT,
+    IDX_COLOR_LOWER_LV_UPPER_CT,
+    IDX_COLOR_UPPER_LV_LOWER_CT,
+    IDX_COLOR_LOWER_LV_LOWER_CT,
+    IDX_COLOR_PARAM_IDX,
+
+    //
+    // adaptive Gamma
+    IDX_GMA_P2,
+    SW_GMA_GMAMode,
+    SW_GMA_FaceGMAFlag,
+    SW_GMA_ChipVersion,
+    SW_GMA_MainVersion,
+    SW_GMA_SubVersion,
+    SW_GMA_SystemVersion,
+    SW_GMA_EVRatio,
+    SW_GMA_LowContrastThr,
+    SW_GMA_LowContrastRatio,
+    SW_GMA_LowContrastSeg,
+    SW_GMA_Contrast,
+    SW_GMA_Contrast_L,
+    SW_GMA_Contrast_H,
+    SW_GMA_HdrContrastWeight,
+    SW_GMA_EVContrastY,
+    SW_GMA_ContrastY_L,
+    SW_GMA_ContrastY_H,
+    SW_GMA_NightContrastWeight,
+    SW_GMA_LV,
+    SW_GMA_LV_L,
+    SW_GMA_LV_H,
+    SW_GMA_HdrLVWeight,
+    SW_GMA_NightLVWeight,
+    SW_GMA_SmoothEnable,
+    SW_GMA_SmoothSpeed,
+    SW_GMA_SmoothWaitAE,
+    SW_GMA_GMACurveEnable,
+    SW_GMA_CenterPt,
+    SW_GMA_LowCurve,
+    SW_GMA_SlopeL,
+    SW_GMA_FlareEnable,
+    SW_GMA_FlareOffset,
+    //
+    //dynamic LCE
+    IDX_LCE,
+    SW_LCE_ChipVersion,
+    SW_LCE_MainVersion,
+    SW_LCE_SubVersion,
+    SW_LCE_SystemVersion,
+    SW_LCE_PatchVersion,
+    SW_LCE_LV,
+    SW_LCE_LVIdx_L,
+    SW_LCE_LVIdx_H,
+    SW_LCE_CurrDR,
+    SW_LCE_DRIdx_L,
+    SW_LCE_DRIdx_H,
+    SW_LCE_DiffRangeIdx_L,
+    SW_LCE_DiffRangeIdx_H,
+    SW_LCE_LumaTarget,
+    SW_LCE_FlatTarget,
+    SW_LCE_LumaProb,
+    SW_LCE_FlatProb,
+    SW_LCE_LumaFlatProb,
+    SW_LCE_LumaFlatTarget,
+    SW_LCE_LVTarget,
+    SW_LCE_BrightAvg,
+    SW_LCE_LVProb,
+    SW_LCE_DStrengthLevel,
+    SW_LCE_BStrengthLevel,
+    SW_LCE_FinalTarget,
+    SW_LCE_FinalDStrength,
+    SW_LCE_FinalBStrength,
+    SW_LCE_P0,
+    SW_LCE_P1,
+    SW_LCE_P50,
+    SW_LCE_P250,
+    SW_LCE_P500,
+    SW_LCE_P750,
+    SW_LCE_P950,
+    SW_LCE_P999,
+    SW_LCE_O0,
+    SW_LCE_O1,
+    SW_LCE_O50,
+    SW_LCE_O250,
+    SW_LCE_O500,
+    SW_LCE_O750,
+    SW_LCE_O950,
+    SW_LCE_O999,
+    SW_LCE_CenMaxSlope,
+    SW_LCE_CenMinSlope,
+    SW_LCE_LCE_FD_Enable,
+    SW_LCE_FaceNum,
+    SW_LCE_FDXLow,
+    SW_LCE_FDXHi,
+    SW_LCE_FDYLow,
+    SW_LCE_FDYHi,
+    SW_LCE_LCSXLow,
+    SW_LCE_LCSXHi,
+    SW_LCE_LCSYLow,
+    SW_LCE_LCSYHi,
+    SW_LCE_FaceLoBound,
+    SW_LCE_FaceHiBound,
+    SW_LCE_ctrlPoint_f0,
+    SW_LCE_ctrlPoint_f1,
+    SW_LCE_FDY,
+    SW_LCE_MeterFDTarget,
+    SW_LCE_MeterFDLinkTarget,
+    SW_LCE_AEGain,
+    SW_LCE_Face_AELinkEnable,
+    SW_LCE_MaxAEGain,
+    SW_LCE_IsFrontLight,
+    SW_LCE_AETouchEnable,
+    SW_LCE_FaceAEEnable,
+    SW_LCE_OriP0,
+    SW_LCE_OriP1,
+    SW_LCE_OriP50,
+    SW_LCE_OriP250,
+    SW_LCE_OriP500,
+    SW_LCE_OriP750,
+    SW_LCE_OriP950,
+    SW_LCE_OriP999,
+    SW_LCE_OriO0,
+    SW_LCE_OriO1,
+    SW_LCE_OriO50,
+    SW_LCE_OriO250,
+    SW_LCE_OriO500,
+    SW_LCE_OriO750,
+    SW_LCE_OriO950,
+    SW_LCE_OriO999,
+    SW_LCE_FaceP0,
+    SW_LCE_FaceP1,
+    SW_LCE_FaceP50,
+    SW_LCE_FaceP250,
+    SW_LCE_FaceP500,
+    SW_LCE_FaceP750,
+    SW_LCE_FaceP950,
+    SW_LCE_FaceP999,
+    SW_LCE_FaceO0,
+    SW_LCE_FaceO1,
+    SW_LCE_FaceO50,
+    SW_LCE_FaceO250,
+    SW_LCE_FaceO500,
+    SW_LCE_FaceO750,
+    SW_LCE_FaceO950,
+    SW_LCE_FaceO999,
+    SW_LCE_FaceSmothLinkEnable,
+    SW_LCE_FaceState,
+    SW_LCE_FaceRobustCnt,
+    SW_LCE_FaceRobustTrustCnt,
+    SW_LCE_NonRobustFaceCnt,
+    SW_LCE_FaceLCEStable,
+    SW_LCE_FaceStableCnt,
+    SW_LCE_FaceStableInThd,
+    SW_LCE_FaceStableOutThd,
+    SW_LCE_NeedFaceProtection,
+    SW_LCE_NeedFaceGain,
+    SW_LCE_FaceProtectMode,
+    SW_LCE_SmoothEnable,
+    SW_LCE_LCEPosSpeed,
+    SW_LCE_LCENegSpeed,
+    SW_LCE_LCECrosSpeed,
+    SW_LCE_LCESpeed4AEStable,
+    SW_LCE_DStrengthRatio,
+    SW_LCE_BStrengthRatio,
+    SW_LCE_CurrMaxLceGain,
+    SW_LCE_MaxFinalTarget,
+    SW_LCE_LumaMean,
+    SW_LCE_FlatMean,
+    SW_LCE_DSTDIndex,
+    SW_LCE_DarkSkyProtEnable,
+    SW_LCE_DarkFlatY,
+    SW_LCE_DarkFlatRatio,
+    SW_LCE_FlatLVRatio,
+    SW_LCE_BypassLCE,
+    SW_LCE_IncorrectLCSO,
+    SW_LCE_GCEP0,
+    SW_LCE_GCEP1,
+    SW_LCE_GCEP50,
+    SW_LCE_GCEP250,
+    SW_LCE_GCEP500,
+    SW_LCE_GCEP750,
+    SW_LCE_GCEP950,
+    SW_LCE_GCEP999,
+    SW_LCE_GCEO0,
+    SW_LCE_GCEO1,
+    SW_LCE_GCEO50,
+    SW_LCE_GCEO250,
+    SW_LCE_GCEO500,
+    SW_LCE_GCEO750,
+    SW_LCE_GCEO950,
+    SW_LCE_GCEO999,
+    SW_LCE_AEMagicNum,
+
+    //DCE
+    IDX_DCE,
+	SW_DCE_chip_version,
+    SW_DCE_main_version,
+    SW_DCE_sub_version,
+    SW_DCE_system_version,
+    SW_DCE_lv_idx_l,
+    SW_DCE_lv_idx_h,
+    SW_DCE_dr_idx_l,
+    SW_DCE_dr_idx_h,
+    SW_DCE_dce_flat_ratio_thd_l,
+    SW_DCE_dce_flat_ratio_thd_h,
+    SW_DCE_dce_smooth_speed,
+    SW_DCE_dce_p1,
+    SW_DCE_dce_p2,
+    SW_DCE_dce_p3,
+    SW_DCE_dce_p4,
+    SW_DCE_dce_p5,
+    SW_DCE_dce_p6,
+    SW_DCE_dce_p7,
+    SW_DCE_dce_p8,
+    SW_DCE_dce_p9,
+    SW_DCE_dce_p10,
+    SW_DCE_dce_p11,
+    SW_DCE_dce_p12,
+    SW_DCE_dce_p13,
+    SW_DCE_dce_p14,
+    SW_DCE_dce_p15,
+    SW_DCE_dce_p16,
+    SW_DCE_dce_p17,
+    SW_DCE_dce_p18,
+    SW_DCE_dce_p19,
+    SW_DCE_dce_p20,
+    SW_DCE_dce_p21,
+    SW_DCE_dce_p22,
+    SW_DCE_dce_p23,
+    SW_DCE_dce_p24,
+    SW_DCE_dce_p25,
+    SW_DCE_dce_p26,
+    SW_DCE_dce_p27,
+    SW_DCE_dce_p28,
+    SW_DCE_dce_p29,
+    SW_DCE_dce_p30,
+    SW_DCE_dce_p31,
+    SW_DCE_dce_p32,
+    SW_DCE_dce_p33,
+    SW_DCE_dce_p34,
+    SW_DCE_dce_p35,
+    SW_DCE_dce_p36,
+    SW_DCE_dce_p37,
+    SW_DCE_dce_p38,
+    SW_DCE_dce_p39,
+    SW_DCE_dce_p40,
+    SW_DCE_dce_p41,
+    SW_DCE_dce_p42,
+    SW_DCE_dce_p43,
+    SW_DCE_dce_p44,
+    SW_DCE_dce_p45,
+    SW_DCE_dce_p46,
+    SW_DCE_dce_p47,
+    SW_DCE_dce_p48,
+    SW_DCE_dce_p49,
+    SW_DCE_dce_p50,
+    SW_DCE_dce_p51,
+    SW_DCE_dce_p52,
+    SW_DCE_dce_p53,
+    SW_DCE_dce_p54,
+    SW_DCE_dce_p55,
+    SW_DCE_dce_p56,
+    SW_DCE_dce_p57,
+    SW_DCE_dce_p58,
+    SW_DCE_dce_p59,
+    SW_DCE_dce_p60,
+    SW_DCE_dce_p61,
+    SW_DCE_dce_p62,
+    SW_DCE_dce_p63,
+    SW_DCE_dce_p64,
+    SW_DCE_flare_offset,
+    SW_DCE_flare_gain,
+    SW_DCE_dce_pt0,
+    SW_DCE_dce_pt1,
+    SW_DCE_dce_pt2,
+    SW_DCE_dce_pt3,
+    SW_DCE_dce_sub_hist1_height_max,
+    SW_DCE_dce_sub_hist1_height_min,
+    SW_DCE_dce_plat1,
+    SW_DCE_dce_sub_hist2_height_max,
+    SW_DCE_dce_sub_hist2_height_min,
+    SW_DCE_dce_plat2,
+    SW_DCE_dce_sub_hist3_height_max,
+    SW_DCE_dce_sub_hist3_height_min,
+    SW_DCE_dce_plat3,
+    SW_DCE_dce_str1,
+    SW_DCE_dce_str2,
+    SW_DCE_dce_str3,
+    SW_DCE_dce_flat_prot_flag1,
+    SW_DCE_dce_flat_prot_flag2,
+    SW_DCE_dce_flat_prot_flag3,
+    SW_DCE_dces_en,
+    SW_DCE_get_default,
+    SW_DCE_dce_slope_max,
+    SW_DCE_smooth_speed,
+    SW_DCE_dce_flat_prot_flag,
+
+    //LTM
+	IDX_LTM,
+	SW_LTM_ChipVersion,
+    SW_LTM_MainVersion,
+    SW_LTM_SubVersion,
+    SW_LTM_SystemVersion,
+    SW_LTM_LTMS_CT,
+	SW_LTM_LV,
+	SW_LTM_STABLE,
+	SW_LTM_FACE_NUM,
+    SW_LTM_GLOBAL_CT,
+    SW_LTM_GLOBAL_TP,
+    SW_LTM_GLOBAL_MP,
+	SW_LTM_FACE_PROTECT_NUM,
+	SW_LTM_FACE_CHECK_FLAG,
+	SW_LTM_FACE_AREA_0_LEFT,
+	SW_LTM_FACE_AREA_1_LEFT,
+	SW_LTM_FACE_AREA_2_LEFT,
+	SW_LTM_FACE_AREA_3_LEFT,
+	SW_LTM_FACE_AREA_4_LEFT,
+	SW_LTM_FACE_AREA_5_LEFT,
+	SW_LTM_FACE_AREA_6_LEFT,
+	SW_LTM_FACE_AREA_7_LEFT,
+	SW_LTM_FACE_AREA_8_LEFT,
+	SW_LTM_FACE_AREA_0_RIGHT,
+	SW_LTM_FACE_AREA_1_RIGHT,
+	SW_LTM_FACE_AREA_2_RIGHT,
+	SW_LTM_FACE_AREA_3_RIGHT,
+	SW_LTM_FACE_AREA_4_RIGHT,
+	SW_LTM_FACE_AREA_5_RIGHT,
+	SW_LTM_FACE_AREA_6_RIGHT,
+	SW_LTM_FACE_AREA_7_RIGHT,
+	SW_LTM_FACE_AREA_8_RIGHT,
+	SW_LTM_FACE_AREA_0_TOP,
+	SW_LTM_FACE_AREA_1_TOP,
+	SW_LTM_FACE_AREA_2_TOP,
+	SW_LTM_FACE_AREA_3_TOP,
+	SW_LTM_FACE_AREA_4_TOP,
+	SW_LTM_FACE_AREA_5_TOP,
+	SW_LTM_FACE_AREA_6_TOP,
+	SW_LTM_FACE_AREA_7_TOP,
+	SW_LTM_FACE_AREA_8_TOP,
+	SW_LTM_FACE_AREA_0_BOTTOM,
+	SW_LTM_FACE_AREA_1_BOTTOM,
+	SW_LTM_FACE_AREA_2_BOTTOM,
+	SW_LTM_FACE_AREA_3_BOTTOM,
+	SW_LTM_FACE_AREA_4_BOTTOM,
+	SW_LTM_FACE_AREA_5_BOTTOM,
+	SW_LTM_FACE_AREA_6_BOTTOM,
+	SW_LTM_FACE_AREA_7_BOTTOM,
+	SW_LTM_FACE_AREA_8_BOTTOM,
+	SW_LTM_FACE_MAP_0_0,
+	SW_LTM_FACE_MAP_0_1,
+	SW_LTM_FACE_MAP_0_2,
+	SW_LTM_FACE_MAP_0_3,
+	SW_LTM_FACE_MAP_0_4,
+	SW_LTM_FACE_MAP_0_5,
+	SW_LTM_FACE_MAP_0_6,
+	SW_LTM_FACE_MAP_0_7,
+	SW_LTM_FACE_MAP_0_8,
+	SW_LTM_FACE_MAP_0_9,
+	SW_LTM_FACE_MAP_0_10,
+	SW_LTM_FACE_MAP_0_11,
+	SW_LTM_FACE_MAP_1_0,
+	SW_LTM_FACE_MAP_1_1,
+	SW_LTM_FACE_MAP_1_2,
+	SW_LTM_FACE_MAP_1_3,
+	SW_LTM_FACE_MAP_1_4,
+	SW_LTM_FACE_MAP_1_5,
+	SW_LTM_FACE_MAP_1_6,
+	SW_LTM_FACE_MAP_1_7,
+	SW_LTM_FACE_MAP_1_8,
+	SW_LTM_FACE_MAP_1_9,
+	SW_LTM_FACE_MAP_1_10,
+	SW_LTM_FACE_MAP_1_11,
+	SW_LTM_FACE_MAP_2_0,
+	SW_LTM_FACE_MAP_2_1,
+	SW_LTM_FACE_MAP_2_2,
+	SW_LTM_FACE_MAP_2_3,
+	SW_LTM_FACE_MAP_2_4,
+	SW_LTM_FACE_MAP_2_5,
+	SW_LTM_FACE_MAP_2_6,
+	SW_LTM_FACE_MAP_2_7,
+	SW_LTM_FACE_MAP_2_8,
+	SW_LTM_FACE_MAP_2_9,
+	SW_LTM_FACE_MAP_2_10,
+	SW_LTM_FACE_MAP_2_11,
+	SW_LTM_FACE_MAP_3_0,
+	SW_LTM_FACE_MAP_3_1,
+	SW_LTM_FACE_MAP_3_2,
+	SW_LTM_FACE_MAP_3_3,
+	SW_LTM_FACE_MAP_3_4,
+	SW_LTM_FACE_MAP_3_5,
+	SW_LTM_FACE_MAP_3_6,
+	SW_LTM_FACE_MAP_3_7,
+	SW_LTM_FACE_MAP_3_8,
+	SW_LTM_FACE_MAP_3_9,
+	SW_LTM_FACE_MAP_3_10,
+	SW_LTM_FACE_MAP_3_11,
+	SW_LTM_FACE_MAP_4_0,
+	SW_LTM_FACE_MAP_4_1,
+	SW_LTM_FACE_MAP_4_2,
+	SW_LTM_FACE_MAP_4_3,
+	SW_LTM_FACE_MAP_4_4,
+	SW_LTM_FACE_MAP_4_5,
+	SW_LTM_FACE_MAP_4_6,
+	SW_LTM_FACE_MAP_4_7,
+	SW_LTM_FACE_MAP_4_8,
+	SW_LTM_FACE_MAP_4_9,
+	SW_LTM_FACE_MAP_4_10,
+	SW_LTM_FACE_MAP_4_11,
+	SW_LTM_FACE_MAP_5_0,
+	SW_LTM_FACE_MAP_5_1,
+	SW_LTM_FACE_MAP_5_2,
+	SW_LTM_FACE_MAP_5_3,
+	SW_LTM_FACE_MAP_5_4,
+	SW_LTM_FACE_MAP_5_5,
+	SW_LTM_FACE_MAP_5_6,
+	SW_LTM_FACE_MAP_5_7,
+	SW_LTM_FACE_MAP_5_8,
+	SW_LTM_FACE_MAP_5_9,
+	SW_LTM_FACE_MAP_5_10,
+	SW_LTM_FACE_MAP_5_11,
+	SW_LTM_FACE_MAP_6_0,
+	SW_LTM_FACE_MAP_6_1,
+	SW_LTM_FACE_MAP_6_2,
+	SW_LTM_FACE_MAP_6_3,
+	SW_LTM_FACE_MAP_6_4,
+	SW_LTM_FACE_MAP_6_5,
+	SW_LTM_FACE_MAP_6_6,
+	SW_LTM_FACE_MAP_6_7,
+	SW_LTM_FACE_MAP_6_8,
+	SW_LTM_FACE_MAP_6_9,
+	SW_LTM_FACE_MAP_6_10,
+	SW_LTM_FACE_MAP_6_11,
+	SW_LTM_FACE_MAP_7_0,
+	SW_LTM_FACE_MAP_7_1,
+	SW_LTM_FACE_MAP_7_2,
+	SW_LTM_FACE_MAP_7_3,
+	SW_LTM_FACE_MAP_7_4,
+	SW_LTM_FACE_MAP_7_5,
+	SW_LTM_FACE_MAP_7_6,
+	SW_LTM_FACE_MAP_7_7,
+	SW_LTM_FACE_MAP_7_8,
+	SW_LTM_FACE_MAP_7_9,
+	SW_LTM_FACE_MAP_7_10,
+	SW_LTM_FACE_MAP_7_11,
+	SW_LTM_FACE_MAP_8_0,
+	SW_LTM_FACE_MAP_8_1,
+	SW_LTM_FACE_MAP_8_2,
+	SW_LTM_FACE_MAP_8_3,
+	SW_LTM_FACE_MAP_8_4,
+	SW_LTM_FACE_MAP_8_5,
+	SW_LTM_FACE_MAP_8_6,
+	SW_LTM_FACE_MAP_8_7,
+	SW_LTM_FACE_MAP_8_8,
+	SW_LTM_FACE_MAP_8_9,
+	SW_LTM_FACE_MAP_8_10,
+	SW_LTM_FACE_MAP_8_11,
+	SW_LTM_FACE_BRIGHT_TONE_PROTECT_VALUE0,
+	SW_LTM_FACE_BRIGHT_TONE_PROTECT_VALUE1,
+	SW_LTM_FACE_BRIGHT_TONE_PROTECT_VALUE2,
+	SW_LTM_FACE_BRIGHT_TONE_PROTECT_VALUE3,
+	SW_LTM_FACE_BRIGHT_TONE_PROTECT_VALUE4,
+	SW_LTM_FACE_BRIGHT_TONE_PROTECT_VALUE5,
+	SW_LTM_FACE_BRIGHT_TONE_PROTECT_VALUE6,
+	SW_LTM_FACE_BRIGHT_TONE_PROTECT_VALUE7,
+	SW_LTM_FACE_BRIGHT_TONE_PROTECT_VALUE8,
+	SW_LTM_FACE_SMOOTH_STATE,
+	SW_LTM_FACE_NON_ROBUST_CNT,
+	SW_LTM_FACE_LAST_ROBUST_FACE_TP,
+	SW_LTM_FACE_LTM_LOCK_RESULT,
+	SW_LTM_FACE_AE_STABLE,
+	SW_LTM_FACE_AE_EN,
+	SW_LTM_FACE_STATE_FROM_AE,
+	SW_LTM_FACE_ROBUST_CNT,
+	SW_LTM_FACE_ROBUST_TRUST_CNT,
+	SW_LTM_FACE_LOST_AE_LOCK_MAX_CNT,
+	SW_LTM_FACE_LOST_AE_TS_FRAME_NUM,
+	SW_LTM_FACE_AE_NON_ROBUST_TIMEOUT,
+	SW_LTM_FACE_AE_NON_ROUBST_LOCK_FLAG,
+	SW_LTM_FACE_SPATIAL_BG_TO_FACE_TPDIFF_X1,
+	SW_LTM_FACE_SPATIAL_BG_TO_FACE_TPDIFF_X2,
+	SW_LTM_FACE_SPATIAL_BG_TO_FACE_WEIGHT_Y1,
+	SW_LTM_FACE_SPATIAL_BG_TO_FACE_WEIGHT_Y2,
+	SW_LTM_FACE_SPATIAL_FACE_TO_BG_TPDIFF_X1,
+	SW_LTM_FACE_SPATIAL_FACE_TO_BG_TPDIFF_X2,
+	SW_LTM_FACE_SPATIAL_FACE_TO_BG_WEIGHT_Y1,
+	SW_LTM_FACE_SPATIAL_FACE_TO_BG_WEIGHT_Y2,
+	SW_LTM_LOCAL_TP_RESULT_0_0,
+	SW_LTM_LOCAL_TP_RESULT_0_1,
+	SW_LTM_LOCAL_TP_RESULT_0_2,
+	SW_LTM_LOCAL_TP_RESULT_0_3,
+	SW_LTM_LOCAL_TP_RESULT_0_4,
+	SW_LTM_LOCAL_TP_RESULT_0_5,
+	SW_LTM_LOCAL_TP_RESULT_0_6,
+	SW_LTM_LOCAL_TP_RESULT_0_7,
+	SW_LTM_LOCAL_TP_RESULT_0_8,
+	SW_LTM_LOCAL_TP_RESULT_0_9,
+	SW_LTM_LOCAL_TP_RESULT_0_10,
+	SW_LTM_LOCAL_TP_RESULT_0_11,
+	SW_LTM_LOCAL_TP_RESULT_1_0,
+	SW_LTM_LOCAL_TP_RESULT_1_1,
+	SW_LTM_LOCAL_TP_RESULT_1_2,
+	SW_LTM_LOCAL_TP_RESULT_1_3,
+	SW_LTM_LOCAL_TP_RESULT_1_4,
+	SW_LTM_LOCAL_TP_RESULT_1_5,
+	SW_LTM_LOCAL_TP_RESULT_1_6,
+	SW_LTM_LOCAL_TP_RESULT_1_7,
+	SW_LTM_LOCAL_TP_RESULT_1_8,
+	SW_LTM_LOCAL_TP_RESULT_1_9,
+	SW_LTM_LOCAL_TP_RESULT_1_10,
+	SW_LTM_LOCAL_TP_RESULT_1_11,
+	SW_LTM_LOCAL_TP_RESULT_2_0,
+	SW_LTM_LOCAL_TP_RESULT_2_1,
+	SW_LTM_LOCAL_TP_RESULT_2_2,
+	SW_LTM_LOCAL_TP_RESULT_2_3,
+	SW_LTM_LOCAL_TP_RESULT_2_4,
+	SW_LTM_LOCAL_TP_RESULT_2_5,
+	SW_LTM_LOCAL_TP_RESULT_2_6,
+	SW_LTM_LOCAL_TP_RESULT_2_7,
+	SW_LTM_LOCAL_TP_RESULT_2_8,
+	SW_LTM_LOCAL_TP_RESULT_2_9,
+	SW_LTM_LOCAL_TP_RESULT_2_10,
+	SW_LTM_LOCAL_TP_RESULT_2_11,
+	SW_LTM_LOCAL_TP_RESULT_3_0,
+	SW_LTM_LOCAL_TP_RESULT_3_1,
+	SW_LTM_LOCAL_TP_RESULT_3_2,
+	SW_LTM_LOCAL_TP_RESULT_3_3,
+	SW_LTM_LOCAL_TP_RESULT_3_4,
+	SW_LTM_LOCAL_TP_RESULT_3_5,
+	SW_LTM_LOCAL_TP_RESULT_3_6,
+	SW_LTM_LOCAL_TP_RESULT_3_7,
+	SW_LTM_LOCAL_TP_RESULT_3_8,
+	SW_LTM_LOCAL_TP_RESULT_3_9,
+	SW_LTM_LOCAL_TP_RESULT_3_10,
+	SW_LTM_LOCAL_TP_RESULT_3_11,
+	SW_LTM_LOCAL_TP_RESULT_4_0,
+	SW_LTM_LOCAL_TP_RESULT_4_1,
+	SW_LTM_LOCAL_TP_RESULT_4_2,
+	SW_LTM_LOCAL_TP_RESULT_4_3,
+	SW_LTM_LOCAL_TP_RESULT_4_4,
+	SW_LTM_LOCAL_TP_RESULT_4_5,
+	SW_LTM_LOCAL_TP_RESULT_4_6,
+	SW_LTM_LOCAL_TP_RESULT_4_7,
+	SW_LTM_LOCAL_TP_RESULT_4_8,
+	SW_LTM_LOCAL_TP_RESULT_4_9,
+	SW_LTM_LOCAL_TP_RESULT_4_10,
+	SW_LTM_LOCAL_TP_RESULT_4_11,
+	SW_LTM_LOCAL_TP_RESULT_5_0,
+	SW_LTM_LOCAL_TP_RESULT_5_1,
+	SW_LTM_LOCAL_TP_RESULT_5_2,
+	SW_LTM_LOCAL_TP_RESULT_5_3,
+	SW_LTM_LOCAL_TP_RESULT_5_4,
+	SW_LTM_LOCAL_TP_RESULT_5_5,
+	SW_LTM_LOCAL_TP_RESULT_5_6,
+	SW_LTM_LOCAL_TP_RESULT_5_7,
+	SW_LTM_LOCAL_TP_RESULT_5_8,
+	SW_LTM_LOCAL_TP_RESULT_5_9,
+	SW_LTM_LOCAL_TP_RESULT_5_10,
+	SW_LTM_LOCAL_TP_RESULT_5_11,
+	SW_LTM_LOCAL_TP_RESULT_6_0,
+	SW_LTM_LOCAL_TP_RESULT_6_1,
+	SW_LTM_LOCAL_TP_RESULT_6_2,
+	SW_LTM_LOCAL_TP_RESULT_6_3,
+	SW_LTM_LOCAL_TP_RESULT_6_4,
+	SW_LTM_LOCAL_TP_RESULT_6_5,
+	SW_LTM_LOCAL_TP_RESULT_6_6,
+	SW_LTM_LOCAL_TP_RESULT_6_7,
+	SW_LTM_LOCAL_TP_RESULT_6_8,
+	SW_LTM_LOCAL_TP_RESULT_6_9,
+	SW_LTM_LOCAL_TP_RESULT_6_10,
+	SW_LTM_LOCAL_TP_RESULT_6_11,
+	SW_LTM_LOCAL_TP_RESULT_7_0,
+	SW_LTM_LOCAL_TP_RESULT_7_1,
+	SW_LTM_LOCAL_TP_RESULT_7_2,
+	SW_LTM_LOCAL_TP_RESULT_7_3,
+	SW_LTM_LOCAL_TP_RESULT_7_4,
+	SW_LTM_LOCAL_TP_RESULT_7_5,
+	SW_LTM_LOCAL_TP_RESULT_7_6,
+	SW_LTM_LOCAL_TP_RESULT_7_7,
+	SW_LTM_LOCAL_TP_RESULT_7_8,
+	SW_LTM_LOCAL_TP_RESULT_7_9,
+	SW_LTM_LOCAL_TP_RESULT_7_10,
+	SW_LTM_LOCAL_TP_RESULT_7_11,
+	SW_LTM_LOCAL_TP_RESULT_8_0,
+	SW_LTM_LOCAL_TP_RESULT_8_1,
+	SW_LTM_LOCAL_TP_RESULT_8_2,
+	SW_LTM_LOCAL_TP_RESULT_8_3,
+	SW_LTM_LOCAL_TP_RESULT_8_4,
+	SW_LTM_LOCAL_TP_RESULT_8_5,
+	SW_LTM_LOCAL_TP_RESULT_8_6,
+	SW_LTM_LOCAL_TP_RESULT_8_7,
+	SW_LTM_LOCAL_TP_RESULT_8_8,
+	SW_LTM_LOCAL_TP_RESULT_8_9,
+	SW_LTM_LOCAL_TP_RESULT_8_10,
+	SW_LTM_LOCAL_TP_RESULT_8_11,
+	SW_LTM_LOCAL_CT_RESULT_0_0,
+	SW_LTM_LOCAL_CT_RESULT_0_1,
+	SW_LTM_LOCAL_CT_RESULT_0_2,
+	SW_LTM_LOCAL_CT_RESULT_0_3,
+	SW_LTM_LOCAL_CT_RESULT_0_4,
+	SW_LTM_LOCAL_CT_RESULT_0_5,
+	SW_LTM_LOCAL_CT_RESULT_0_6,
+	SW_LTM_LOCAL_CT_RESULT_0_7,
+	SW_LTM_LOCAL_CT_RESULT_0_8,
+	SW_LTM_LOCAL_CT_RESULT_0_9,
+	SW_LTM_LOCAL_CT_RESULT_0_10,
+	SW_LTM_LOCAL_CT_RESULT_0_11,
+	SW_LTM_LOCAL_CT_RESULT_1_0,
+	SW_LTM_LOCAL_CT_RESULT_1_1,
+	SW_LTM_LOCAL_CT_RESULT_1_2,
+	SW_LTM_LOCAL_CT_RESULT_1_3,
+	SW_LTM_LOCAL_CT_RESULT_1_4,
+	SW_LTM_LOCAL_CT_RESULT_1_5,
+	SW_LTM_LOCAL_CT_RESULT_1_6,
+	SW_LTM_LOCAL_CT_RESULT_1_7,
+	SW_LTM_LOCAL_CT_RESULT_1_8,
+	SW_LTM_LOCAL_CT_RESULT_1_9,
+	SW_LTM_LOCAL_CT_RESULT_1_10,
+	SW_LTM_LOCAL_CT_RESULT_1_11,
+	SW_LTM_LOCAL_CT_RESULT_2_0,
+	SW_LTM_LOCAL_CT_RESULT_2_1,
+	SW_LTM_LOCAL_CT_RESULT_2_2,
+	SW_LTM_LOCAL_CT_RESULT_2_3,
+	SW_LTM_LOCAL_CT_RESULT_2_4,
+	SW_LTM_LOCAL_CT_RESULT_2_5,
+	SW_LTM_LOCAL_CT_RESULT_2_6,
+	SW_LTM_LOCAL_CT_RESULT_2_7,
+	SW_LTM_LOCAL_CT_RESULT_2_8,
+	SW_LTM_LOCAL_CT_RESULT_2_9,
+	SW_LTM_LOCAL_CT_RESULT_2_10,
+	SW_LTM_LOCAL_CT_RESULT_2_11,
+	SW_LTM_LOCAL_CT_RESULT_3_0,
+	SW_LTM_LOCAL_CT_RESULT_3_1,
+	SW_LTM_LOCAL_CT_RESULT_3_2,
+	SW_LTM_LOCAL_CT_RESULT_3_3,
+	SW_LTM_LOCAL_CT_RESULT_3_4,
+	SW_LTM_LOCAL_CT_RESULT_3_5,
+	SW_LTM_LOCAL_CT_RESULT_3_6,
+	SW_LTM_LOCAL_CT_RESULT_3_7,
+	SW_LTM_LOCAL_CT_RESULT_3_8,
+	SW_LTM_LOCAL_CT_RESULT_3_9,
+	SW_LTM_LOCAL_CT_RESULT_3_10,
+	SW_LTM_LOCAL_CT_RESULT_3_11,
+	SW_LTM_LOCAL_CT_RESULT_4_0,
+	SW_LTM_LOCAL_CT_RESULT_4_1,
+	SW_LTM_LOCAL_CT_RESULT_4_2,
+	SW_LTM_LOCAL_CT_RESULT_4_3,
+	SW_LTM_LOCAL_CT_RESULT_4_4,
+	SW_LTM_LOCAL_CT_RESULT_4_5,
+	SW_LTM_LOCAL_CT_RESULT_4_6,
+	SW_LTM_LOCAL_CT_RESULT_4_7,
+	SW_LTM_LOCAL_CT_RESULT_4_8,
+	SW_LTM_LOCAL_CT_RESULT_4_9,
+	SW_LTM_LOCAL_CT_RESULT_4_10,
+	SW_LTM_LOCAL_CT_RESULT_4_11,
+	SW_LTM_LOCAL_CT_RESULT_5_0,
+	SW_LTM_LOCAL_CT_RESULT_5_1,
+	SW_LTM_LOCAL_CT_RESULT_5_2,
+	SW_LTM_LOCAL_CT_RESULT_5_3,
+	SW_LTM_LOCAL_CT_RESULT_5_4,
+	SW_LTM_LOCAL_CT_RESULT_5_5,
+	SW_LTM_LOCAL_CT_RESULT_5_6,
+	SW_LTM_LOCAL_CT_RESULT_5_7,
+	SW_LTM_LOCAL_CT_RESULT_5_8,
+	SW_LTM_LOCAL_CT_RESULT_5_9,
+	SW_LTM_LOCAL_CT_RESULT_5_10,
+	SW_LTM_LOCAL_CT_RESULT_5_11,
+	SW_LTM_LOCAL_CT_RESULT_6_0,
+	SW_LTM_LOCAL_CT_RESULT_6_1,
+	SW_LTM_LOCAL_CT_RESULT_6_2,
+	SW_LTM_LOCAL_CT_RESULT_6_3,
+	SW_LTM_LOCAL_CT_RESULT_6_4,
+	SW_LTM_LOCAL_CT_RESULT_6_5,
+	SW_LTM_LOCAL_CT_RESULT_6_6,
+	SW_LTM_LOCAL_CT_RESULT_6_7,
+	SW_LTM_LOCAL_CT_RESULT_6_8,
+	SW_LTM_LOCAL_CT_RESULT_6_9,
+	SW_LTM_LOCAL_CT_RESULT_6_10,
+	SW_LTM_LOCAL_CT_RESULT_6_11,
+	SW_LTM_LOCAL_CT_RESULT_7_0,
+	SW_LTM_LOCAL_CT_RESULT_7_1,
+	SW_LTM_LOCAL_CT_RESULT_7_2,
+	SW_LTM_LOCAL_CT_RESULT_7_3,
+	SW_LTM_LOCAL_CT_RESULT_7_4,
+	SW_LTM_LOCAL_CT_RESULT_7_5,
+	SW_LTM_LOCAL_CT_RESULT_7_6,
+	SW_LTM_LOCAL_CT_RESULT_7_7,
+	SW_LTM_LOCAL_CT_RESULT_7_8,
+	SW_LTM_LOCAL_CT_RESULT_7_9,
+	SW_LTM_LOCAL_CT_RESULT_7_10,
+	SW_LTM_LOCAL_CT_RESULT_7_11,
+	SW_LTM_LOCAL_CT_RESULT_8_0,
+	SW_LTM_LOCAL_CT_RESULT_8_1,
+	SW_LTM_LOCAL_CT_RESULT_8_2,
+	SW_LTM_LOCAL_CT_RESULT_8_3,
+	SW_LTM_LOCAL_CT_RESULT_8_4,
+	SW_LTM_LOCAL_CT_RESULT_8_5,
+	SW_LTM_LOCAL_CT_RESULT_8_6,
+	SW_LTM_LOCAL_CT_RESULT_8_7,
+	SW_LTM_LOCAL_CT_RESULT_8_8,
+	SW_LTM_LOCAL_CT_RESULT_8_9,
+	SW_LTM_LOCAL_CT_RESULT_8_10,
+	SW_LTM_LOCAL_CT_RESULT_8_11,
+
+    IDX_HLR,
+	SW_HLR_ChipVersion,
+	SW_HLR_MainVersion,
+	SW_HLR_SubVersion,
+	SW_HLR_SystemVersion,
+	SW_HLR_VERSION,
+	SW_HLR_CAM_ID,
+	SW_HLR_MASTER_CAM_ID,
+	SW_HLR_ALGO_SCENE_LV,
+	SW_HLR_ALGO_SCENE_CCT,
+	SW_HLR_LTM_CLIP_TH,
+	SW_HLR_HDR_RATIO,
+	SW_HLR_DGN_GR,
+	SW_HLR_DGN_GB,
+	SW_HLR_DGN_R,
+	SW_HLR_DGN_B,
+	SW_HLR_MODE,
+	//START OF NVRAM
+	SW_HLR_SAT_0,
+	SW_HLR_SAT_1,
+	SW_HLR_SAT_2,
+	SW_HLR_SAT_3,
+	SW_HLR_SAT_4,
+	SW_HLR_SAT_5,
+	SW_HLR_SAT_6,
+	SW_HLR_SAT_7,
+	SW_HLR_NODE_0,
+	SW_HLR_NODE_1,
+	SW_HLR_NODE_2,
+	SW_HLR_NODE_3,
+	SW_HLR_NODE_4,
+	SW_HLR_NODE_5,
+	SW_HLR_NODE_6,
+	SW_HLR_NODE_7,
+	SW_HLR_BLD_HIGH_SWO,
+	SW_HLR_BLD_LOW_SWO,
+	SW_HLR_PRT_HIGH_SWO,
+	SW_HLR_PRT_LOW_SWO,
+	SW_HLR_PRT_EN_SWO,
+	SW_HLR_SLP_0,
+	SW_HLR_SLP_1,
+	SW_HLR_SLP_2,
+	SW_HLR_SLP_3,
+	SW_HLR_SLP_4,
+	SW_HLR_SLP_5,
+	SW_HLR_MAX_RAT,
+	SW_HLR_BLUE_PRT_STR,
+	SW_HLR_RED_PRT_STR,
+	SW_HLR_SLP_6,
+	SW_HLR_BLD_FG,
+	SW_HLR_BLD_HIGH,
+	SW_HLR_BLD_SLP,
+	SW_HLR_PRT_TH,
+	SW_HLR_PRT_SLP,
+	SW_HLR_PRT_EN,
+	SW_HLR_CLIP_VAL,
+	SW_HLR_OFF_CLIP_VAL,
+	SW_HLR_EFCT_ON,
+	SW_HLR_TILE_EDGE,
+	SW_HLR_TDR_WD,
+	SW_HLR_TDR_HT,
+	SW_HLR_R1_EN,
+	SW_HLR_D1_EN,
+	SW_HLR_R1_LKMSB,
+	SW_HLR_D1_LKMSB,
+	SW_HLR_R1_LKMODE,
+	SW_HLR_D1_LKMODE,
+	SW_HLR_RESERV_A,
+
+    IDX_FW_YNR_LCE_LOWER,
+    IDX_FW_YNR_LCE_UPPER,
+    FW_YNR_VER,
+    FW_YNR_TC_LINK_STR,
+    FW_YNR_TC_LUMA_LINK_STR,
+    FW_YNR_CE_LINK_STR,
+    FW_YNR_GAIN_CLIP_HI,
+    FW_YNR_GAIN_CLIP_LO,
+    FW_YNR_GAMMA_SMOOTH,
+    FW_YNR_P1_GAIN,
+    FW_YNR_P50_GAIN,
+    FW_YNR_P250_GAIN,
+    FW_YNR_P500_GAIN,
+    FW_YNR_P750_GAIN,
+    FW_YNR_P950_GAIN,
+    FW_YNR_DCE_LINK_STR,
+    FW_YNR_DCE_GAIN_CLIP_HI,
+    FW_YNR_DCE_GAIN_CLIP_LO,
+    FW_YNR_LINK_BASE_GAIN,
+    FW_YNR_RSV1,
+    FW_YNR_RSV2,
+
+    IDX_FW_YNR_FD_LOWER,
+    IDX_FW_YNR_FD_UPPER,
+    FW_YNR_FD_MAP_WIDTH,
+    FW_YNR_FD_MAP_HEIGHT,
+    FW_YNR_FD_TBL_EN,
+    FW_YNR_FD_TBL_M_GAIN,
+    FW_YNR_FD_TBL_F_GAIN,
+    FW_YNR_FD_TBL_Y_GAIN,
+    FW_YNR_FD_TBL_U_GAIN,
+    FW_YNR_FD_TBL_V_GAIN,
+    FW_YNR_FD_TBL_Y_Range,
+    FW_YNR_FD_TBL_U_Range,
+    FW_YNR_FD_TBL_V_Range,
+    FW_YNR_FD_MAP_EN,
+    FW_YNR_FD_MAP_MAX_GAIN,
+    FW_YNR_FD_MAP_M_GAIN,
+    FW_YNR_FD_MAP_F_GAIN,
+    FW_YNR_FD_MAP_W_R,
+    FW_YNR_FD_MAP_H_R,
+    FW_YNR_FD_MAP_DOWN,
+    FW_YNR_FD_MAP_Y_RANGE,
+    FW_YNR_FD_MAP_U_RANGE,
+    FW_YNR_FD_MAP_V_RANGE,
+    FW_YNR_FD_MAP_EYES_EN,
+    FW_YNR_FD_MAP_EYES_SIZE_R,
+    FW_YNR_FD_MAP_EYES_CV_TH0,
+    FW_YNR_FD_MAP_EYES_CV_TH1,
+    FW_YNR_FD_MAP_SIZE_TH0,
+    FW_YNR_FD_MAP_SIZE_TH1,
+    FW_YNR_FD_MAP_SIZE_GAIN1,
+    FW_YNR_FD_MAP_GENDER_BAL_EN,
+    FW_YNR_FD_MAP_U_GAIN,
+    FW_YNR_FD_RSV10,
+    FW_YNR_FD_RSV11,
+    FW_YNR_FD_RSV12,
+    FW_YNR_FD_RSV13,
+    FW_YNR_FD_RSV14,
+    FW_YNR_FD_RSV15,
+    FW_YNR_FD_RSV16,
+    FW_YNR_FD_RSV17,
+    FW_YNR_FD_RSV18,
+    FW_YNR_FD_RSV19,
+    FW_YNR_FD_RSV20,
+    FW_YNR_FD_RSV21,
+    FW_YNR_FD_RSV22,
+    FW_YNR_FD_RSV23,
+    FW_YNR_FD_RSV24,
+    FW_YNR_FD_RSV25,
+    FW_YNR_FD_RSV26,
+
+    ISO_THRESHOLD_ENABLE,
+    ISO_THRESHOLD,
+    ISO_THRESHOLD_PREVIOUS_ISO,
+    FACE_NUM,
+    FACE_GENDER_NUM,
+    FACE_LandmarkNum,
+
+    FACE_1_1,
+    FACE_1_2,
+    FACE_1_3,
+    FACE_1_4,
+    FACE_1_5,
+    FACE_1_fld_GenderLabel,
+    FACE_1_fld_GenderInfo,
+    FACE_1_fld_rip,
+    FACE_1_fld_rop,
+    FACE_1_rect_1,
+    FACE_1_rect_2,
+    FACE_1_rect_3,
+    FACE_1_rect_4,
+    FACE_1_Face_Leye_1,
+    FACE_1_Face_Leye_2,
+    FACE_1_Face_Leye_3,
+    FACE_1_Face_Leye_4,
+    FACE_1_Face_Reye_1,
+    FACE_1_Face_Reye_2,
+    FACE_1_Face_Reye_3,
+    FACE_1_Face_Reye_4,
+    FACE_1_Landmark_CV,
+
+
+    FACE_2_1,
+    FACE_2_2,
+    FACE_2_3,
+    FACE_2_4,
+    FACE_2_5,
+    FACE_2_fld_GenderLabel,
+    FACE_2_fld_GenderInfo,
+    FACE_2_fld_rip,
+    FACE_2_fld_rop,
+    FACE_2_rect_1,
+    FACE_2_rect_2,
+    FACE_2_rect_3,
+    FACE_2_rect_4,
+    FACE_2_Face_Leye_1,
+    FACE_2_Face_Leye_2,
+    FACE_2_Face_Leye_3,
+    FACE_2_Face_Leye_4,
+    FACE_2_Face_Reye_1,
+    FACE_2_Face_Reye_2,
+    FACE_2_Face_Reye_3,
+    FACE_2_Face_Reye_4,
+    FACE_2_Landmark_CV,
+
+    FACE_3_1,
+    FACE_3_2,
+    FACE_3_3,
+    FACE_3_4,
+    FACE_3_5,
+    FACE_3_fld_GenderLabel,
+    FACE_3_fld_GenderInfo,
+    FACE_3_fld_rip,
+    FACE_3_fld_rop,
+    FACE_3_rect_1,
+    FACE_3_rect_2,
+    FACE_3_rect_3,
+    FACE_3_rect_4,
+    FACE_3_Face_Leye_1,
+    FACE_3_Face_Leye_2,
+    FACE_3_Face_Leye_3,
+    FACE_3_Face_Leye_4,
+    FACE_3_Face_Reye_1,
+    FACE_3_Face_Reye_2,
+    FACE_3_Face_Reye_3,
+    FACE_3_Face_Reye_4,
+    FACE_3_Landmark_CV,
+
+    FACE_4_1,
+    FACE_4_2,
+    FACE_4_3,
+    FACE_4_4,
+    FACE_4_5,
+    FACE_4_fld_GenderLabel,
+    FACE_4_fld_GenderInfo,
+    FACE_4_fld_rip,
+    FACE_4_fld_rop,
+    FACE_4_rect_1,
+    FACE_4_rect_2,
+    FACE_4_rect_3,
+    FACE_4_rect_4,
+    FACE_4_Face_Leye_1,
+    FACE_4_Face_Leye_2,
+    FACE_4_Face_Leye_3,
+    FACE_4_Face_Leye_4,
+    FACE_4_Face_Reye_1,
+    FACE_4_Face_Reye_2,
+    FACE_4_Face_Reye_3,
+    FACE_4_Face_Reye_4,
+    FACE_4_Landmark_CV,
+
+    FACE_5_1,
+    FACE_5_2,
+    FACE_5_3,
+    FACE_5_4,
+    FACE_5_5,
+    FACE_5_fld_GenderLabel,
+    FACE_5_fld_GenderInfo,
+    FACE_5_fld_rip,
+    FACE_5_fld_rop,
+    FACE_5_rect_1,
+    FACE_5_rect_2,
+    FACE_5_rect_3,
+    FACE_5_rect_4,
+    FACE_5_Face_Leye_1,
+    FACE_5_Face_Leye_2,
+    FACE_5_Face_Leye_3,
+    FACE_5_Face_Leye_4,
+    FACE_5_Face_Reye_1,
+    FACE_5_Face_Reye_2,
+    FACE_5_Face_Reye_3,
+    FACE_5_Face_Reye_4,
+    FACE_5_Landmark_CV,
+
+    //  Common
+    COMM_00,
+    COMM_01,
+    COMM_02,
+    COMM_03,
+    COMM_04,
+    COMM_05,
+    COMM_06,
+    COMM_07,
+    COMM_08,
+    COMM_09,
+    COMM_10,
+    COMM_11,
+    COMM_12,
+    COMM_13,
+    COMM_14,
+    COMM_15,
+    COMM_16,
+    COMM_17,
+    COMM_18,
+    COMM_19,
+    COMM_20,
+    COMM_21,
+    COMM_22,
+    COMM_23,
+    COMM_24,
+    COMM_25,
+    COMM_26,
+    COMM_27,
+    COMM_28,
+    COMM_29,
+    COMM_30,
+    COMM_31,
+    COMM_32,
+    COMM_33,
+    COMM_34,
+    COMM_35,
+    COMM_36,
+    COMM_37,
+    COMM_38,
+    COMM_39,
+    COMM_40,
+    COMM_41,
+    COMM_42,
+    COMM_43,
+    COMM_44,
+    COMM_45,
+    COMM_46,
+    COMM_47,
+    COMM_48,
+    COMM_49,
+    COMM_50,
+    COMM_51,
+    COMM_52,
+    COMM_53,
+    COMM_54,
+    COMM_55,
+    COMM_56,
+    COMM_57,
+    COMM_58,
+    COMM_59,
+    COMM_60,
+    COMM_61,
+    COMM_62,
+    COMM_63,
+    //END_OF_EXIF_TAG
+    //
+};
+
+enum
+{
+    //  Common
+    COMM_Begin              =   COMM_00,
+    //
+    //
+    TagID_Total_Num         =   COMM_63 + 1
+};
+
+struct IspDebugTag
+{
+    MINT32     u4Val;
+};
+
+typedef struct P1RegInfo_Dump
+{
+    MUINT32         u4TableSize;
+    MUINT32         u4HwVersion;
+    MUINT32         regData[P1_REG_SIZE];
+}P1RegInfo_Dump_T;
+
+typedef struct P2RegInfo_Dump
+{
+    MUINT32         u4TableSize;
+    MUINT32         u4HwVersion;
+    MUINT32         regData[P2_REG_SIZE];
+}P2RegInfo_Dump_T;
+
+typedef struct IspExifDebugInfo
+{
+    struct  Header
+    {
+        MUINT32     u4KeyID;
+        MUINT32     u4ModuleCount;
+        MUINT32     u4DebugInfoOffset;
+        MUINT32     u4P1RegInfoOffset;
+        MUINT32     u4P2RegInfoOffset;
+        MUINT32     u4MFBRegInfoOffset;
+    }   hdr;
+
+    struct IspDebugInfo
+    {
+        IspDebugTag     tags[TagID_Total_Num];
+    } debugInfo;
+
+    struct P1RegInfo
+    {
+        MUINT32         u4TableSize;
+        MUINT32         u4HwVersion;
+        MUINT32         regData[P1_BUFFER_SIZE];
+    } P1RegInfo;
+
+    struct P2RegInfo
+    {
+        MUINT32         u4TableSize;
+        MUINT32         u4HwVersion;
+        MUINT32         regDataP2[P2_BUFFER_SIZE];
+    } P2RegInfo;
+
+    struct MFBRegInfo
+    {
+        MUINT32         u4TableSize;
+        MUINT32         u4HwVersion;
+        MUINT32         regDataMFB[MFB_BUFFER_SIZE];
+    } MFBRegInfo;
+
+} IspExifDebugInfo_T;
+
+
+struct IspGmaInfo
+{
+    MINT32 i4GMAMode;
+    MINT32 i4FaceGMAFlag;
+    MINT32 i4GmaProfile;
+    MINT32 i4ChipVersion;
+    MINT32 i4MainVersion;
+    MINT32 i4SubVersion;
+    MINT32 i4SystemVersion;
+    MINT32 u4EVRatio;
+    MINT32 i4LowContrastThr;
+    MINT32 i4LowContrastRatio;
+    MINT32 i4LowContrastSeg;
+    MINT32 i4Contrast;
+    MINT32 i4Contrast_L;
+    MINT32 i4Contrast_H;
+    MINT32 i4HdrContrastWeight;
+    MINT32 i4EVContrastY;
+    MINT32 i4ContrastY_L;
+    MINT32 i4ContrastY_H;
+    MINT32 i4NightContrastWeight;
+    MINT32 i4LV;
+    MINT32 i4LV_L;
+    MINT32 i4LV_H;
+    MINT32 i4HdrLVWeight;
+    MINT32 i4NightLVWeight;
+    MINT32 i4SmoothEnable;
+    MINT32 i4SmoothSpeed;
+    MINT32 i4SmoothWaitAE;
+    MINT32 i4GMACurveEnable;
+    MINT32 i4CenterPt;
+    MINT32 i4LowCurve;
+    MINT32 i4SlopeL;
+    MINT32 i4FlareEnable;
+    MINT32 i4FlareOffset;
+};/* GmaInfo;*/
+
+struct IspLceInfo
+{
+    MINT32 i4ChipVersion;
+    MINT32 i4MainVersion;
+    MINT32 i4SubVersion;
+    MINT32 i4SystemVersion;
+    MINT32 i4PatchVersion;
+
+    MINT32 i4LV;
+    MINT32 i4LVIdx_L;
+    MINT32 i4LVIdx_H;
+    MINT32 i4CurrDR;
+    MINT32 i4DRIdx_L;
+    MINT32 i4DRIdx_H;
+    MINT32 i4DiffRangeIdx_L;
+    MINT32 i4DiffRangeIdx_H;
+
+    MINT32 i4LumaTarget;
+    MINT32 i4FlatTarget;
+    MINT32 i4LumaProb;
+    MINT32 i4FlatProb;
+    MINT32 i4LumaFlatProb;
+    MINT32 i4LumaFlatTarget;
+    MINT32 i4LVTarget;
+    MINT32 i4BrightAvg;
+    MINT32 i4LVProb;
+    MINT32 i4DStrengthLevel;
+    MINT32 i4BStrengthLevel;
+    MINT32 i4FinalTarget;
+    MINT32 i4FinalDStrength;
+    MINT32 i4FinalBStrength;
+
+    MINT32 i4P0;
+    MINT32 i4P1;
+    MINT32 i4P50;
+    MINT32 i4P250;
+    MINT32 i4P500;
+    MINT32 i4P750;
+    MINT32 i4P950;
+    MINT32 i4P999;
+    MINT32 i4O0;
+    MINT32 i4O1;
+    MINT32 i4O50;
+    MINT32 i4O250;
+    MINT32 i4O500;
+    MINT32 i4O750;
+    MINT32 i4O950;
+    MINT32 i4O999;
+    MINT32 i4CenMaxSlope;
+    MINT32 i4CenMinSlope;
+
+    MINT32 i4LCE_FD_Enable;
+    MINT32 i4FaceNum;
+    MINT32 i4FDXLow;
+    MINT32 i4FDXHi;
+    MINT32 i4FDYLow;
+    MINT32 i4FDYHi;
+    MINT32 i4LCSXLow;
+    MINT32 i4LCSXHi;
+    MINT32 i4LCSYLow;
+    MINT32 i4LCSYHi;
+    MINT32 i4FaceLoBound;
+    MINT32 i4FaceHiBound;
+    MINT32 i4ctrlPoint_f0;
+    MINT32 i4ctrlPoint_f1;
+    MINT32 i4FDY;
+    MINT32 i4MeterFDTarget;
+    MINT32 i4MeterFDLinkTarget;
+    MINT32 i4AEGain;
+    MINT32 i4FaceAELCELinkEnable;
+    MINT32 i4MaxAEGain;
+    MBOOL bIsFrontLight;
+    MBOOL bAETouchEnable;
+    MBOOL bFaceAEEnable;
+    MINT32 i4OriP0;
+    MINT32 i4OriP1;
+    MINT32 i4OriP50;
+    MINT32 i4OriP250;
+    MINT32 i4OriP500;
+    MINT32 i4OriP750;
+    MINT32 i4OriP950;
+    MINT32 i4OriP999;
+    MINT32 i4OriO0;
+    MINT32 i4OriO1;
+    MINT32 i4OriO50;
+    MINT32 i4OriO250;
+    MINT32 i4OriO500;
+    MINT32 i4OriO750;
+    MINT32 i4OriO950;
+    MINT32 i4OriO999;
+    MINT32 i4FaceP0;
+    MINT32 i4FaceP1;
+    MINT32 i4FaceP50;
+    MINT32 i4FaceP250;
+    MINT32 i4FaceP500;
+    MINT32 i4FaceP750;
+    MINT32 i4FaceP950;
+    MINT32 i4FaceP999;
+    MINT32 i4FaceO0;
+    MINT32 i4FaceO1;
+    MINT32 i4FaceO50;
+    MINT32 i4FaceO250;
+    MINT32 i4FaceO500;
+    MINT32 i4FaceO750;
+    MINT32 i4FaceO950;
+    MINT32 i4FaceO999;
+
+    MBOOL bFaceSmoothLinkEnable;
+    MUINT32 u4FaceState;
+    MUINT32 u4FaceRobustCnt;
+    MUINT32 u4FaceRobustTrustCnt;
+    MUINT32 u4NonRobustFaceCnt;
+    MBOOL bFaceLCEStable;
+    MUINT32 u4FaceStableCnt;
+    MUINT32 u4FaceInStableThd;
+    MUINT32 u4FaceOutStableThd;
+    MUINT32 u4NeedFaceProtection;
+    MUINT32 u4NeedFaceGain;
+    MUINT32 u4FaceProtectMode;
+
+    MINT32 i4SmoothEnable;
+    MINT32 i4LCEPosSpeed;
+    MINT32 i4LCENegSpeed;
+    MINT32 i4LCECrosSpeed;
+    MINT32 i4LCESpeed4AEStable;
+
+    MINT32 i4DStrengthRatio;
+    MINT32 i4BStrengthRatio;
+    MINT32 i4CurrMaxLceGain;
+    MINT32 i4MaxFinalTarget;
+    MINT32 i4LumaMean;
+    MINT32 i4FlatMean;
+    MINT32 i4DSTDIndex;
+    MBOOL  bDarkSkyProtectEnable;
+    MINT32 i4DarkFlatY;
+    MINT32 i4DarkFlatRatio;
+    MINT32 i4FlatLVRatio;
+    MBOOL  bBypassLCE;
+    MBOOL  bIncorrectLCSO;
+    MINT32 i4GCEP0;
+    MINT32 i4GCEP1;
+    MINT32 i4GCEP50;
+    MINT32 i4GCEP250;
+    MINT32 i4GCEP500;
+    MINT32 i4GCEP750;
+    MINT32 i4GCEP950;
+    MINT32 i4GCEP999;
+    MINT32 i4GCEO0;
+    MINT32 i4GCEO1;
+    MINT32 i4GCEO50;
+    MINT32 i4GCEO250;
+    MINT32 i4GCEO500;
+    MINT32 i4GCEO750;
+    MINT32 i4GCEO950;
+    MINT32 i4GCEO999;
+    MINT32 i4AEMagicNum;
+
+};
+
+struct IspDceInfo
+{
+    MINT32 chip_version;
+    MINT32 main_version;
+    MINT32 sub_version;
+    MINT32 system_version;
+
+    MINT32 lv_idx_l;
+    MINT32 lv_idx_h;
+    MINT32 dr_idx_l;
+    MINT32 dr_idx_h;
+    MINT32 dce_flat_ratio_thd_l;
+    MINT32 dce_flat_ratio_thd_h;
+    MINT32 dce_smooth_speed;
+
+    MINT32 dce_p1;
+    MINT32 dce_p2;
+    MINT32 dce_p3;
+    MINT32 dce_p4;
+    MINT32 dce_p5;
+    MINT32 dce_p6;
+    MINT32 dce_p7;
+    MINT32 dce_p8;
+    MINT32 dce_p9;
+    MINT32 dce_p10;
+    MINT32 dce_p11;
+    MINT32 dce_p12;
+    MINT32 dce_p13;
+    MINT32 dce_p14;
+    MINT32 dce_p15;
+    MINT32 dce_p16;
+    MINT32 dce_p17;
+    MINT32 dce_p18;
+    MINT32 dce_p19;
+    MINT32 dce_p20;
+    MINT32 dce_p21;
+    MINT32 dce_p22;
+    MINT32 dce_p23;
+    MINT32 dce_p24;
+    MINT32 dce_p25;
+    MINT32 dce_p26;
+    MINT32 dce_p27;
+    MINT32 dce_p28;
+    MINT32 dce_p29;
+    MINT32 dce_p30;
+    MINT32 dce_p31;
+    MINT32 dce_p32;
+    MINT32 dce_p33;
+    MINT32 dce_p34;
+    MINT32 dce_p35;
+    MINT32 dce_p36;
+    MINT32 dce_p37;
+    MINT32 dce_p38;
+    MINT32 dce_p39;
+    MINT32 dce_p40;
+    MINT32 dce_p41;
+    MINT32 dce_p42;
+    MINT32 dce_p43;
+    MINT32 dce_p44;
+    MINT32 dce_p45;
+    MINT32 dce_p46;
+    MINT32 dce_p47;
+    MINT32 dce_p48;
+    MINT32 dce_p49;
+    MINT32 dce_p50;
+    MINT32 dce_p51;
+    MINT32 dce_p52;
+    MINT32 dce_p53;
+    MINT32 dce_p54;
+    MINT32 dce_p55;
+    MINT32 dce_p56;
+    MINT32 dce_p57;
+    MINT32 dce_p58;
+    MINT32 dce_p59;
+    MINT32 dce_p60;
+    MINT32 dce_p61;
+    MINT32 dce_p62;
+    MINT32 dce_p63;
+    MINT32 dce_p64;
+
+    MINT32 flare_offset;
+	MINT32 flare_gain;
+
+	MINT32 dce_pt0;
+	MINT32 dce_pt1;
+	MINT32 dce_pt2;
+	MINT32 dce_pt3;
+
+	MINT32 dce_sub_hist1_height_max;
+	MINT32 dce_sub_hist1_height_min;
+	MINT32 dce_plat1;
+
+	MINT32 dce_sub_hist2_height_max;
+	MINT32 dce_sub_hist2_height_min;
+	MINT32 dce_plat2;
+
+	MINT32 dce_sub_hist3_height_max;
+	MINT32 dce_sub_hist3_height_min;
+	MINT32 dce_plat3;
+
+
+
+	MINT32 dce_str1;
+	MINT32 dce_str2;
+	MINT32 dce_str3;
+
+	MINT32 dce_flat_prot_flag1;
+	MINT32 dce_flat_prot_flag2;
+	MINT32 dce_flat_prot_flag3;
+
+
+	MINT32 dces_en;
+	MINT32 get_default;
+	MINT32 dce_slope_max;
+	MINT32 smooth_speed;
+	MINT32 dce_flat_prot_flag;
+
+};
+
+
+
+};  //  namespace NSIspExifDebug
+/*******************************************************************************
+*
+*******************************************************************************/
+namespace NSIspTuning
+{
+
+
+/*******************************************************************************
+*
+*******************************************************************************/
+template <MUINT32 total_module, MUINT32 tag_module>
+struct ModuleNum
+{
+/*
+    |   8  |       8      |   8  |     8      |
+    | 0x00 | total_module | 0x00 | tag_module |
+*/
+    enum
+    {
+        val = ((total_module & 0xFF) << 16) | ((tag_module & 0xFF))
+    };
+};
+
+
+template <MUINT32 module_id, MUINT32 tag_id, MUINT32 line_keep = 0>
+struct ModuleTag
+{
+/*
+    |     8     |      1    |   7  |    16    |
+    | module_id | line_keep | 0x00 |  tag_id  |
+*/
+    enum
+    {
+        val = ((module_id & 0xFF) << 24)
+            | ((line_keep & 0x01) << 23)
+            | ((tag_id  & 0xFFFF) << 0)
+    };
+};
+
+
+inline MUINT32 getModuleTag(MUINT32 module_id, MUINT32 tag_id, MUINT32 line_keep = 0)
+{
+/*
+    |     8     |      1    |   7  |    16    |
+    | module_id | line_keep | 0x00 |  tag_id  |
+*/
+    return  ((module_id & 0xFF) << 24)
+          | ((line_keep & 0x01) << 23)
+          | ((tag_id  & 0xFFFF) << 0)
+            ;
+}
+
+
+enum { EModuleID_IspDebug = 0x0004 };
+template <MUINT32 tag_id, MUINT32 line_keep = 0>
+struct IspTag
+{
+    enum { val = ModuleTag<EModuleID_IspDebug, tag_id, line_keep>::val };
+};
+
+
+inline MUINT32 getIspTag(MUINT32 tag_id, MUINT32 line_keep = 0)
+{
+    return  getModuleTag(EModuleID_IspDebug, tag_id, line_keep);
+}
+
+
+//  Default of IspExifDebugInfo::Header
+static NSIspExifDebug::IspExifDebugInfo::Header const g_rIspExifDebugInfoHdr =
+{
+    .u4KeyID=            ISP_DEBUG_KEYID,
+    .u4ModuleCount=      ModuleNum<3, 1>::val,
+    .u4DebugInfoOffset=  sizeof(NSIspExifDebug::IspExifDebugInfo::Header),
+    .u4P1RegInfoOffset=  sizeof(NSIspExifDebug::IspExifDebugInfo::Header) + sizeof(NSIspExifDebug::IspExifDebugInfo::IspDebugInfo),
+    .u4P2RegInfoOffset=  sizeof(NSIspExifDebug::IspExifDebugInfo::Header) + sizeof(NSIspExifDebug::IspExifDebugInfo::IspDebugInfo) + sizeof(NSIspExifDebug::IspExifDebugInfo::P1RegInfo),
+    .u4MFBRegInfoOffset=  sizeof(NSIspExifDebug::IspExifDebugInfo::Header) + sizeof(NSIspExifDebug::IspExifDebugInfo::IspDebugInfo) + sizeof(NSIspExifDebug::IspExifDebugInfo::P1RegInfo)
+                          + sizeof(NSIspExifDebug::IspExifDebugInfo::P2RegInfo)
+};
+
+};  //  namespace NSIspExifDebug
+#endif // _DBG_ISP_PARAM_H_
+

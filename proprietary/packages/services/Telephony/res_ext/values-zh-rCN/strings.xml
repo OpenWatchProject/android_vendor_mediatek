@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2007 The Android Open Source Project
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+          http://www.apache.org/licenses/LICENSE-2.0
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="incall_status_dialed_mmi" msgid="3672498861336189563">"正在启动 MMI 序列..."</string>
+    <string name="dual_mic_title">"降噪"</string>
+    <string name="dual_mic_summary">通话过程中降低您的背景噪音</string>
+
+    <!-- Add For FDN -->
+    <string name="fdn_errorcode_unknown_info">操作失败，发生了未知错误，请稍候再试。</string>
+    <string name="fdn_errorcode_number_info">操作失败，联系人号码太长。</string>
+    <string name="fdn_errorcode_name_info">操作失败，联系人姓名太长。</string>
+    <string name="fdn_errorcode_storage_info">操作失败，存储空间已满。</string>
+    <string name="fdn_errorcode_phb_info">操作失败，电话簿忙碌中，请稍候再试。</string>
+    <string name="fdn_errorcode_pin2_info">操作失败，无效的 PIN2 码。</string>
+    <string name="fdn_contact_number_invalid">联系人号码无效。</string>
+    <string name="fdn_phone_book_busy">"电话簿忙碌中，请稍候再试。"</string>
+    <string name="fdn_puk_need_tips">PIN2码已被锁定。请更改PIN2码并重试！</string>
+    <string name="retries_left">"剩余"<xliff:g id="number">%d</xliff:g>"次"</string>
+
+    <!-- Add for [VoLTE_conference] -->
+    <string name="volte_is_adding_participants">正在添加会议成员，请稍候...</string>
+    <string name="volte_fail_to_invit_participants">部分成员加入会议失败.</string>
+    <string name="volte_conf_member_reach_max">会议已经满员</string>
+
+    <!-- Add for [VoLTE_SS] Roaming-->
+    <string name="volte_ss_not_available_tips">请打开<xliff:g id="sub_nacme">%s</xliff:g>的数据连接以完成操作。</string>
+    <string name="volte_ss_not_available_tips_data">请打开<xliff:g id="sub_nacme">%s</xliff:g>的数据连接以完成操作。</string>
+    <string name="volte_ss_not_available_tips_roaming">请打开<xliff:g id="sub_nacme">%s</xliff:g>的数据漫游以完成操作。</string>
+    <string name="volte_ss_not_available_tips_data_roaming">请打开<xliff:g id="sub_nacme">%s</xliff:g>的数据连接和数据漫游以完成操作。</string>
+    <string name="volte_ss_not_available_tips_data_traffic">临时使用<xliff:g id="sub_name">%s</xliff:g>数据并产生少量数据流量。是否继续？</string>
+
+    <!-- support for C2K Call Settings -->
+    <string name="cdma_labelCFU">"无条件呼叫转移"</string>
+    <string name="cdma_labelCFB">"遇忙呼叫转移"</string>
+    <string name="cdma_labelCFNRy">"无应答呼叫转移"</string>
+    <string name="cdma_labelCFNRc">"无法接通呼叫转移"</string>
+    <string name="cdma_labelCFNRc_cta">"隐含呼叫转移"</string>
+    <string name="cdma_labelCFC">取消所有呼叫转移</string>
+    <string name="cdma_cnir_title">主叫号码识别限制</string>
+    <string name="cdma_cnir_turnoff">关闭主叫号码识别限制</string>
+    <string name="cdma_cnir_turnon">开启主叫号码识别限制</string>
+
+    <!-- Add for VILTE -->
+    <string name="vilte_srvcc_tip">网络原因，切换至语音通话。</string>
+    <string name="vilte_to_voice_call">切换为语音电话</string>
+
+    <!-- for ViLTE SS @{ -->
+    <string name="labelCFVoice">语音通话来电转接</string>
+    <string name="actionBarCFVoice">语音通话来电转接 (<xliff:g id="subscriptionlabel" example="Verizon">%s</xliff:g>)</string>
+    <string name="labelCFVideo">视频通话来电转接</string>
+    <string name="actionBarCFVideo">视频通话来电转接 (<xliff:g id="subscriptionlabel" example="Verizon">%s</xliff:g>)</string>
+    <string name="labelCBVoice">语音通话呼叫限制</string>
+    <string name="actionBarCBVoice">语音通话呼叫限制 (<xliff:g id="subscriptionlabel" example="Verizon">%s</xliff:g>)</string>
+    <string name="labelCBVideo">视频通话呼叫限制</string>
+    <string name="actionBarCBVideo">视频通话呼叫限制 (<xliff:g id="subscriptionlabel" example="Verizon">%s</xliff:g>)</string>
+    <!-- @} -->
+
+    <!-- CT VOLTE -->
+    <string name="alert_turn_off_volte">请关闭VoLTE以完成操作。</string>
+    <string name="alert_volte_no_service"><xliff:g id="sub_name">%s</xliff:g>当前无VoLTE服务，该卡无法正常通话，是否将该卡VoLTE功能关闭？</string>
+</resources>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    id="PQTool"
+    name="PQTool"
+    require-plugin-id="Roots"
+    version="2"
+    xmlns="http://www.plugin.com"
+    xsi:schemaLocation="http://www.plugin.com ../../../plugin/assets/plugin.xsd" >
+    <extension
+        id="PQTool"
+        name="@string/app_name"
+        class="com.mediatek.galleryfeature.pq.PQToolActionBar"
+        icon="@drawable/m_pq_content"
+        plugin-id="Gallery2Root"
+        point-id="IActionBar" >
+    </extension>
+</plugin>

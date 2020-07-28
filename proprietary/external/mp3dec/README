@@ -1,0 +1,31 @@
+static Library of MTK libmp3dec_mtk, including mp3 swip related file.
+
+This library is pre-built by MediaTek internal.
+
+
+WHAT IT DOES?
+=============
+libmp3dec_mtk contains MediaTek developed mp3 swip.  
+Without it, mp3 will not decode.
+
+HOW IT WAS BUILT?
+==================
+It needs the following library from AOSP:              
+1.libmp3dec.so 
+2.libmp3frmlen.so 
+3.libdrvb.a         
+     
+
+and the following libs from MediaTek:
+
+
+All source/dependency modules of this module are already put in
+'alps/vendor/mediatek/proprietary/external/mp3dec' folder.
+
+HOW TO USE IT?
+==============
+
+Provide decode for omx component  
+
+
+All the source code of this library were written by MediaTek co..

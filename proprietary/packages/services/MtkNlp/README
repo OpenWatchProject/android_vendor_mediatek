@@ -1,0 +1,18 @@
+The Android Package 'MtkNlp.apk' is a Service on MediaTek's
+platforms to provide Mtk NLP proxy functions.
+
+WHAT IT DOES?
+=============
+The Android Package 'MtkNlp.apk' is the implementation that provides
+Nlp auto switch functions. It is as a proxy which passes the network
+location requests to different vendor NLP.
+
+HOW IT WAS BUILT?
+==================
+It needs the following library from AOSP:
+com.android.location.provider
+
+HOW TO USE IT?
+==============
+The Android Package 'MtkNlp.apk' is automatically bound by location framework.
+

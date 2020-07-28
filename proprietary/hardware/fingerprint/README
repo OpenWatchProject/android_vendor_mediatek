@@ -1,0 +1,18 @@
+This directory contains fingerprint hal API.
+
+
+WHAT IT DOES?
+=============
+It provide api to fingerprint service and TEE OS.
+
+HOW IT WAS BUILT?
+==================
+It needs the following libs from AOSP:
+1.  libbinder
+2.  libutils
+3.  liblog
+
+HOW TO USE IT?
+==============
+Files in this directory is used to generate a shared library 'fingerprint.(platform).so'.
+Modules who wants to use these fingerprint funtions must link this lib.

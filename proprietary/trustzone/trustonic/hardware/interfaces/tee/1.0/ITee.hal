@@ -1,0 +1,156 @@
+/*
+ * Copyright (c) 2013-2018 TRUSTONIC LIMITED
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions are met:
+ *
+ * 1. Redistributions of source code must retain the above copyright notice,
+ *    this list of conditions and the following disclaimer.
+ *
+ * 2. Redistributions in binary form must reproduce the above copyright
+ *    notice, this list of conditions and the following disclaimer in the
+ *    documentation and/or other materials provided with the distribution.
+ *
+ * 3. Neither the name of the TRUSTONIC LIMITED nor the names of its
+ *    contributors may be used to endorse or promote products derived from
+ *    this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+ * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED
+ * TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+ * PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR
+ * CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+ * EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+ * PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;
+ * OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+ * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+ * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
+ * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ */
+
+package vendor.trustonic.tee@1.0;
+
+import  vendor.trustonic.tee@1.0::ITeeCallback;
+
+interface ITee {
+    // Maintenance
+
+    // On connect, TeeService shall ask to start clean
+    flushAll();
+
+    // Client gone, cleanup
+    flushPid(int32_t client_pid);
+
+    // GP
+
+    enum LoginType : uint32_t {
+        TEE_PROXY_LOGIN_PUBLIC = 0,
+        TEE_PROXY_LOGIN_USER = 1,
+        TEE_PROXY_LOGIN_GROUP = 2,
+        TEE_PROXY_LOGIN_APPLICATION = 4,
+        TEE_PROXY_LOGIN_USER_APPLICATION = 5,
+        TEE_PROXY_LOGIN_GROUP_APPLICATION = 6,
+    };
+
+    struct GpSharedMemory {
+        uint64_t reference;
+        memory buffer;
+        uint64_t size;
+        uint32_t flags;
+    };
+
+    struct Operation {
+        uint64_t reference;
+        struct Param {
+            uint32_t type;
+            uint32_t value_a;
+            uint32_t value_b;
+            bool has_buffer;
+            uint64_t reference;
+            memory buffer;
+            uint64_t size;
+            uint32_t flags;
+            uint64_t window_offset;
+            uint64_t window_size;
+        };
+
+        uint32_t started;
+        Param[4] params;
+    };
+
+    TEEC_InitializeContext(int32_t client_pid, uint64_t context, string name,
+                           bool has_name)
+    generates(uint32_t return_value);
+
+    TEEC_FinalizeContext(int32_t client_pid, uint64_t context);
+
+    TEEC_RegisterSharedMemory(int32_t client_pid, uint64_t context,
+                              GpSharedMemory shr_mem)
+    generates(uint32_t return_value);
+
+    TEEC_ReleaseSharedMemory(int32_t client_pid, uint64_t context,
+                             GpSharedMemory shr_mem);
+
+    TEEC_OpenSession(int32_t client_pid, uint64_t context, uint64_t session,
+                     vec<uint8_t> uuid, LoginType login_type,
+                     vec<uint8_t> login_data, Operation operation)
+    generates(uint32_t return_value, uint32_t return_origin, uint32_t id,
+              Operation operation);
+
+    TEEC_CloseSession(int32_t client_pid, uint64_t context,
+                      uint64_t session);
+
+    TEEC_InvokeCommand(int32_t client_pid, uint64_t context,
+                       uint64_t session, uint32_t cmd_id,
+                       Operation operation)
+    generates(uint32_t return_value, uint32_t return_origin,
+              Operation operation);
+
+    TEEC_RequestCancellation(int32_t client_pid, uint64_t context,
+                             uint64_t session, uint64_t operation);
+
+    // MC
+
+    mcOpenDevice(int32_t client_pid)
+    generates(uint32_t mc_result);
+
+    mcCloseDevice(int32_t client_pid)
+    generates(uint32_t mc_result);
+
+    mcOpenSession(int32_t client_pid, vec<uint8_t> uuid, memory tci,
+                  uint32_t tci_len)
+    generates(uint32_t mc_result, uint32_t id);
+
+    mcOpenTrustlet(int32_t client_pid, uint32_t spid, memory ta, uint32_t ta_len,
+                   memory tci, uint32_t tci_len)
+    generates(uint32_t mc_result, uint32_t id);
+
+    mcCloseSession(int32_t client_pid, uint32_t id)
+    generates(uint32_t mc_result);
+
+    mcNotify(int32_t client_pid, uint32_t id)
+    generates(uint32_t mc_result);
+
+    mcWaitNotification(int32_t client_pid, uint32_t id, int32_t timeout,
+                       bool partial)
+    generates(uint32_t mc_result);
+
+    mcMap(int32_t client_pid, uint32_t id, memory buf, uint32_t buf_len)
+    generates(uint32_t mc_result, uint64_t reference);
+
+    mcUnmap(int32_t client_pid, uint32_t id, uint64_t reference)
+    generates(uint32_t mc_result);
+
+    mcGetSessionErrorCode(int32_t client_pid, uint32_t id)
+    generates(uint32_t mc_result, int32_t exit_code);
+
+    mcGetMobiCoreVersion(int32_t client_pid)
+    generates(uint32_t mc_result, string product_id, uint32_t mci, uint32_t so,
+              uint32_t mclf, uint32_t container, uint32_t mc_config,
+              uint32_t tl_api, uint32_t dr_api, uint32_t cmp);
+
+
+    // Callback used for NWd buffer allocation (TUI) 
+    registerTeeCallback(ITeeCallback callback);
+};

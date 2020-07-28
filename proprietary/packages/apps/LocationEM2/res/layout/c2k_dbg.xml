@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+<LinearLayout
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:gravity="left"
+    >
+
+
+<LinearLayout    android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent" android:gravity="left">
+<ToggleButton    android:id="@+id/toggleButton_C2kDbg" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textOff="@string/c2kdbg_off" android:textOn="@string/c2kdbg_on" android:textSize="13sp"/>
+<Button    android:id="@+id/button_Call" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/call_state" android:textSize="13sp" />
+</LinearLayout>
+
+<View          android:layout_height="1dip" android:layout_width="fill_parent" android:background="#FF909090"/>
+ <LinearLayout style="@style/entry_layout">
+     <TextView android:text="@string/c2k_location" style="@style/info_label_12" />
+     <TextView android:id="@+id/TextC2k_LocationValue" style="@style/info_state_value_12" />
+ </LinearLayout>
+ <LinearLayout style="@style/entry_layout">
+     <TextView android:text="@string/c2k_timestamp" style="@style/info_label_12" />
+     <TextView android:id="@+id/TextC2k_TimeStampValue" style="@style/info_state_value_12" />
+ </LinearLayout>
+ <LinearLayout style="@style/entry_layout">
+     <TextView android:text="@string/c2k_h_velocity" style="@style/info_label_12" />
+     <TextView android:id="@+id/TextC2k_HVelocityValue" style="@style/info_state_value_12" />
+ </LinearLayout>
+ <LinearLayout style="@style/entry_layout">
+     <TextView android:text="@string/c2k_v_velocity" style="@style/info_label_12" />
+     <TextView android:id="@+id/TextC2k_VVelocityValue" style="@style/info_state_value_12" />
+ </LinearLayout>
+ <LinearLayout style="@style/entry_layout">
+     <TextView android:text="@string/c2k_heading" style="@style/info_label_12" />
+     <TextView android:id="@+id/TextC2k_HeadingValue" style="@style/info_state_value_12" />
+ </LinearLayout>
+ <LinearLayout style="@style/entry_layout">
+     <TextView android:text="@string/c2k_height" style="@style/info_label_12" />
+     <TextView android:id="@+id/TextC2k_HeightValue" style="@style/info_state_value_12"/>
+ </LinearLayout>
+ <LinearLayout style="@style/entry_layout">
+     <TextView android:text="@string/c2k_uncertainty_angle" style="@style/info_label_12" />
+     <TextView android:id="@+id/TextC2k_UncAngleValue" style="@style/info_state_value_12" />
+ </LinearLayout>
+ <LinearLayout style="@style/entry_layout">
+     <TextView android:text="@string/c2k_uncertainty_along_perp" style="@style/info_label_12" />
+     <TextView android:id="@+id/TextC2k_UncAlongPerpValue" style="@style/info_state_value_12" />
+ </LinearLayout>
+ <LinearLayout style="@style/entry_layout">
+     <TextView android:text="@string/c2k_uncertainty_ver" style="@style/info_label_12" />
+     <TextView android:id="@+id/TextC2k_UncVerValue" style="@style/info_state_value_12" />
+ </LinearLayout>
+ <LinearLayout style="@style/entry_layout">
+     <TextView android:text="@string/c2k_sid_nid_baseid" style="@style/info_label_12" />
+     <TextView android:id="@+id/TextC2k_SidNidBaseIdValue" style="@style/info_state_value_12" />
+ </LinearLayout>
+ <LinearLayout style="@style/entry_layout">
+     <TextView android:text="@string/c2k_ref_pn" style="@style/info_label_12" />
+     <TextView android:id="@+id/TextC2k_RefPnValue" style="@style/info_state_value_12" />
+ </LinearLayout>
+ <LinearLayout style="@style/entry_layout">
+     <TextView android:text="@string/c2k_base_location" style="@style/info_label_12" />
+     <TextView android:id="@+id/TextC2k_BaseLocationValue" style="@style/info_state_value_12" />
+ </LinearLayout>
+
+<View          android:layout_height="1dip" android:layout_width="fill_parent" android:background="#FF909090"/>
+ <LinearLayout style="@style/entry_layout">
+     <TextView android:text="@string/c2k_ppm_num" style="@style/info_label_12" />
+     <TextView android:id="@+id/TextC2k_PpmNumValue" style="@style/info_state_value_12" />
+ </LinearLayout>
+ <TextView        android:id="@+id/TextView_PpmResult" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="12dp"/>
+
+<View          android:layout_height="1dip" android:layout_width="fill_parent" android:background="#FF909090"/>
+ <LinearLayout style="@style/entry_layout">
+     <TextView android:text="@string/c2k_prm_num" style="@style/info_label_12" />
+     <TextView android:id="@+id/TextC2k_PrmNumValue" style="@style/info_state_value_12" />
+ </LinearLayout>
+ <TextView        android:id="@+id/TextView_PrmResult" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="12dp"/>
+
+<View          android:layout_height="1dip" android:layout_width="fill_parent" android:background="#FF909090"/>
+ <LinearLayout style="@style/entry_layout">
+     <TextView android:text="@string/report_path" style="@style/info_label_12" />
+     <TextView android:id="@+id/TextView_ReportPath" style="@style/info_state_value_12" />
+     <Button    android:id="@+id/button_ClearReports" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/clear_reports" android:textSize="14sp"/>
+ </LinearLayout>
+
+<LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent" >
+   <TextView        android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/TextView_WaitFixTimeout" android:text="@string/wait_fix_timeout" android:width="230dp" android:textSize="14dp"/>
+   <Button    android:id="@+id/button_IncreaseTimeout" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/plus" android:textSize="14sp" android:layout_weight="1"/>
+   <Button    android:id="@+id/button_DecreaseTimeout" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/minus" android:textSize="14sp" android:layout_weight="1"/>
+</LinearLayout>
+
+
+
+</LinearLayout>
+</ScrollView>

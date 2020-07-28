@@ -1,0 +1,224 @@
+#########Modified for VHT-5G########################
+define!$Sigma_ControlAgent_Support!1!
+info! VHT-5G Testbed Qualification !
+#
+#Loading Enviornment
+info![Initializing the Test]!
+wfa_test_commands_init!AP_MAC_Addresses.txt!
+wfa_test_commands_init!InitEnv.txt!
+wfa_test_commands_init!EAP-Credentials.txt!
+
+######### Testbed Qualification mode ######################
+
+define!$TestQualMode!1!
+
+
+######### DUT (Device Under Test) #########################
+
+## DUT can be either STA or AP
+
+info!Connecting to DUT Control Agent!
+
+#DUT Control Agent
+wfa_control_agent_dut!ipaddr=192.168.250.82,port=9000!
+
+#Wireless IP of DUT
+dut_wireless_ip!192.165.100.123!
+
+## Name of the DUT(used in case of APUT)
+#define!$DUT_Name!APUT-VHT!
+
+#Use below name for  Mediatek APUT
+#define!$DUT_Name!RalinkAc!
+define!$DUT_Name!Qualcommvht_ap!
+
+
+## Port number at which APUT is connected to in power switch 
+#define!$APUTPowerSwitchPort!1!
+
+define!$APUT_uname!!
+define!$APUT_pword!!
+define!$APUT_hostname!!
+
+
+######################################################
+## STAUT or APUT
+#------DutMacAddress - Set for APUT or STAUT test cases-------
+define!$DutMacAddress!8C:FD:F0:02:0D:F0!
+
+######### PC Endpoint (WFA Traffic generator console) #####
+
+info!Connecting to PC Endpoint!
+
+# Control IP Address for Console
+wfa_console_ctrl!ipaddr=192.168.250.22,port=9003!
+
+# Traffic generator IP Address for Console
+wfa_console_tg!192.165.100.22!
+
+info!Connecting to Environment PC Endpoint!
+env_pce_control_agent_ip!ipaddr=192.168.250.22,port=9003!
+env_pce_wireless_ip!192.165.100.22!
+
+###########    Test Bed STAs ################################
+
+info!Connecting to Testbed Station Endpoints!
+
+# Use the following to set Testbed STA1 and Testbed STA2
+
+info!Testbed STA1 Broadcomvht!
+wfa_control_agent_broadcomvht_sta!ipaddr=192.168.250.33,port=15000!
+broadcomvht_sta_wireless_ip!192.165.100.33!
+
+info!Testbed STA2  Marvelvht!
+wfa_control_agent_marvellvht_sta!ipaddr=192.168.250.32,port=9000!
+marvellvht_sta_wireless_ip!192.165.100.32!
+
+info!Testbed STA3 Quantennavht!
+wfa_control_agent_quantennavht_sta!ipaddr=192.168.250.50,port=9000!
+quantennavht_sta_wireless_ip!192.165.100.50!
+
+info!Testbed STA4 Ralinkvht!
+wfa_control_agent_ralinkvht_sta!ipaddr=192.168.250.102,port=9999!
+ralinkvht_sta_wireless_ip!192.165.100.102!
+
+info!Testbed STA5 Qualcommvht!
+wfa_control_agent_qualcommvht_sta!ipaddr=192.168.250.201,port=9000!
+qualcommvht_sta_wireless_ip!192.165.100.201!
+
+info!Testbed STA6 Intelvht!
+wfa_control_agent_intelvht_sta!ipaddr=192.168.250.72,port=9000!
+intelvht_sta_wireless_ip!192.165.100.72!
+
+###########    Testbed AP Configuration #######################
+wfa_test_commands_init!VHT-Testbed-APs.txt!
+
+
+###########    Testbed AP Configuration #######################
+
+info!Connecting to AP Configuration Agent!
+
+info!Testbed Qualcommvht_ap!
+wfa_control_agent_qualcommvht_ap!ipaddr=192.168.250.82,port=9000!
+
+info!Testbed Broadcomvht_ap!
+wfa_control_agent_broadcomvht_ap!ipaddr=192.168.250.20,port=15000!
+
+info!Testbed Marvell8964vht_ap!
+wfa_control_agent_marvell8964vht_ap!ipaddr=192.168.250.30,port=7000!	
+info!Testbed Ralink_ap!
+wfa_control_agent_ralink_ap!ipaddr=127.0.0.1,port=7000!
+info!Testbed RalinkAc_ap!
+wfa_control_agent_ralinkac_ap!ipaddr=127.0.0.1,port=7000!
+
+info!Testbed Quantennavht_ap!
+wfa_control_agent_quantennavht_ap!ipaddr=192.168.250.77,port=9000!
+
+#Testbed AP scan time
+define!$scan_time!60!
+
+#################### SNIFFER ##################################
+
+info!Connecting to Sniffer!
+
+#For wfa_sniffer agent use port 9999
+#wfa_sniffer: 
+
+wfa_sniffer!ipaddr=192.168.250.5,port=9999!
+
+#Quantenna Sniffer sub-agent runs on  same wfa_sniffer agent machine
+# which have same ip as above but with different port 9005
+# make sure following ip/port are same
+# as above 192.168.250.5 port 9005, then in the scripts they point to
+# same wfa sniffer agent
+
+# Make sure  below IP address is configured on Quantenna Sniffer Laptop;
+#Required only for VHTR2 Test cases
+#wfa_control_agent_qsniffer_sta!ipaddr=192.168.250.5,port=9005!
+
+
+# To enable the sniffing during all the test execution,set this variable to 1.
+# NOTE - Sniffer logs occupy large disk space. So make sure to clean the logs on
+#        Snifffer machine if choose to enable this option
+
+sniffer_enable!1!
+
+##################Display Names#########################
+
+#Loading Display Names before PowerOnOff and RadioOff must
+wfa_test_commands_init!DisplayNames.txt!
+
+###########    Turn OFF radio ##########################
+info!Turning OFF radio!
+wfa_test_commands!PowerOnOffAPs.txt!
+wfa_test_commands!RadioOff.txt!
+
+##### WFAEMT #####
+info!Connecting to WFAEMT Control Agent!
+
+# Control IP Address for WFAEMT
+#wfa_wfaemt_control_agent!ipaddr=192.168.250.100,port=9000!
+
+#WFAEMT wireless Interface Name
+define!WfaEmtIface!wlan0!
+
+# WFAEMT wireless Address when acting as a STA/AP
+define!$WFAEMTWirlessIP!192.165.180.21!
+
+
+###### 11N MAX HT FRAME RATE FOR ENDPOINT Traffic ##########################
+
+#define!$MaxHtRate!25000!
+define!$MaxHtRate!0!
+
+###### WMM STREAM DATA CALCULATION ##########################
+
+info!Calculating stream data!
+
+#Maximum Throughput in Mbps
+max_throughput!230!
+
+#Payload Size in Bytes
+payloadValue!1000!
+
+#Stream percentage distribution. Specify the percentage of Maximum throughput for each stream
+# For example, to specify stream 1 as 40% stream 2 as 40% and stream 3 as 45%
+#		stream1!40!
+#		stream2!40!
+#		stream3!45!
+#INFO : Total percentage should exceed 100 for saturation of bandwidth
+
+stream1!37!
+stream2!33!
+stream3!33!
+
+#For testcase 1
+stream_mt!100!
+
+#For Transaction stream
+stream_trans!5!
+
+#Test Network Netmask
+define!$netmask!255.255.0.0!
+
+### Stream Durations ####
+define!$DT1_Duration!60!
+define!$DT2_Duration!60!
+define!$DT3_Duration!60!
+define!$WMM25_Duration!30!
+define!$HT_Duration!60!
+define!$HT_High_Duration!90!
+
+
+#Multicast IP Address
+define!$multicast_ip_addr!224.0.0.1!
+
+# Display scripts version
+wfa_test_commands!scripts-version.txt!
+
+# Version Info 
+wfa_test_commands!Get-Version-Info.txt!
+
+# Reset testbed devices
+#Please DO NOT comment out the following line. It's MANDATORY to reset VHT DUT and tesbed STAs
+wfa_test_commands!VHT-testbed-reset.txt!

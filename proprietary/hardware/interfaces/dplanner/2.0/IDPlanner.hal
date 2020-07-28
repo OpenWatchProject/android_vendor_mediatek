@@ -1,0 +1,18 @@
+package vendor.mediatek.hardware.dplanner@2.0;
+
+interface IDPlanner {
+    getConfig() generates (string config, string log);
+    setConfig(string config) generates (bool done, string log);
+    clearConfig() generates (bool done, string log);
+
+    getState() generates (PlannerState state);
+    runStart() generates (bool done);
+    runAbort() generates (bool done);
+    runFinished() generates (bool done);
+    bootCompleted() generates (bool done);
+
+    installTesters(string filepath, uint8_t[65536] data, uint32_t len) generates (bool done, string log);
+    getTest() generates (string test, string log);
+    setTest(string test) generates (bool done, string log);
+    getResult() generates (string fullpath, string log);
+};

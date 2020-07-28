@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2" xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- dm lock -->
+    <string name="dm_lock">DM Locked</string>
+    <string name="dm_unlock">DM Unlock</string>
+    <!-- voice recorder -->
+    <string name="start_record">Start recording</string>
+    <string name="stop_record">Stop recording</string>
+    <string name="str_db_playlist_name">My recordings</string>
+    <string name="alert_device_error">Error occurred on audio device</string>
+    <string name="ext_media_badremoval_notification_title">SD card unexpectedly removed</string>
+    <string name="error_sdcard_access">Unable to access SD card</string>
+    <string name="confirm_device_info_full">SD card is out of space, the recording has been saved.</string>
+    <string name="confirm_save_info_saved">The recording has been saved</string>
+    <string name="confirm_save_info_saved_to">The recording has been saved to</string>
+    <string name="recording_saved_sd_full">SD card is out of space, the recording has been saved.</string>
+    <string name="sd_not_enough">SD card is running\nout of space</string>
+    <string name="alert_dialog_dismiss">Dismiss</string>
+    <string name="change_my_pic">Change</string>
+
+    <!-- Add for VoLTE conference Call  -->
+    <string name="volte_add_conference_member_title">Add to conference</string>
+    <string name="add_member_msg">Type number or name</string>
+    <string name="card_title_incoming_conference">Conference call invitation</string>
+    <string name="addConferenceMemeberText">Add member</string>
+    <string name="add_conference_member_limit">Can only add one number at a time.</string>
+    <string name="conference_member_join"><xliff:g id="member_name">%s</xliff:g> joined the conference.</string>
+    <string name="conference_member_leave"><xliff:g id="member_name">%s</xliff:g> left the conference.</string>
+    <string name="conference_member_adding">Adding <xliff:g id="member_name">%s</xliff:g> ...</string>
+    <string name="multi_conference_member_adding">Adding member(s)...</string>
+    <string name="conference_member_add_fail">Failed to add <xliff:g id="member_name">%s</xliff:g> .</string>
+    <!-- Text for VoLTE conference "remove conference member" button -->
+    <string name="removeMember">Remove</string>
+    <!-- Text for VoLTE conference "status" indication -->
+    <string name="memberStatus">Status</string>
+    <!-- Add for VoLTE SS Indication -->
+    <string name="volte_call_waiting_indication_text">The other side is in call, please wait...</string>
+
+    <!-- FTA menu items -->
+    <string name="onscreenHangupAll">Hangup all</string>
+    <string name="onscreenHangupHolding">Hangup holding</string>
+    <string name="onscreenHangupActiveAndAnswerWaiting">Hangup active, answer waiting</string>
+    <!-- Add for ECT(explicit call transfer. -->
+    <string name="menu_ect">Transfer</string>
+    <string name="respond_via_sms_confirmation_format">Message sent to <xliff:g id="phone_number">%s</xliff:g>.</string>
+    <!-- CTA request, for notification -->
+    <string name="two_incoming_calls">2 Incoming calls</string>
+    <!-- CTA request, for onHold text, zh-rCN only -->
+    <string name="onHold_cta">On hold</string>
+
+    <!-- Conference participant call status show -->
+    <!-- Conferenc manager screen: status for a call in the "Online" state -->
+    <string name="call_status_online">Online</string>
+    <!-- Conferenc manager screen: status for a call in the "On hold" state -->
+    <string name="call_status_onhold">On hold</string>
+    <!-- Conferenc manager screen: status for a call in the "Dialing" state -->
+    <string name="call_status_dialing">Dialing</string>
+    <!-- Conferenc manager screen: status for a call in the "Disconnecting" state -->
+    <string name="call_status_disconnecting">Disconnecting</string>
+    <!-- Conferenc manager screen: status for a call in the "Disconnected" state -->
+    <string name="call_status_disconnected">Disconnected</string>
+
+    <!-- Add for MSMS[MSMA] feature, ref:ALPS01690655 -->
+    <!-- Use to prompt the user that accept incoming call will hangup current call. -->
+    <string name="accept_incoming_and_disconnect_current">Accepting this call will end the current call.</string>
+
+    <string name="add_voicemail_number">Add voice mail number.</string>
+    <!-- WFC items -->
+    <string name="wifi_title">Wi-Fi Calling and Minutes </string>
+    <string name="close">Close</string>
+    <string name="ok">OK</string>
+    <string name="view_networks">View networks</string>
+    <string name="no_thanks">No thanks</string>
+    <string name="wfc_wifi_call_drop_summary">Oops! You must have move outside of your Wi-Fi network during a call.\n \nWould you like to try and reconnect to your Wi-Fi network to finish your call?</string>
+    <string name="call_drop">Your call may drop</string>
+    <string name="call_drop_message">You are almost outside the range of Wi-Fi coverage</string>
+    <!-- M: Video Call-->
+    <string name="hideVideoPreview">Hide my video</string>
+    <string name="showVideoPreview">Show my video</string>
+    <string name="restartVideoPreview">Restart local video</string>
+    <string name="video_call_downgrade_to_voice_call">Switched to voice call</string>
+    <string name="video_call_downgrade_request">Switching to voice call</string>
+    <string name="video_call_upgrade_to_video_call">Switched to video call</string>
+    <string name="video_call_upgrade_to_video_call_failed">Failed to switch to video call</string>
+    <string name="video_call_downgrade_to_voice_call_failed">Failed to switch to voice call</string>
+
+    <!-- M: Add for blind ECT(explicit call transfer. -->
+    <string name="add_transfer_call_number">Transfer current call to</string>
+    <string name="add_transfer_number_hint">Phone number</string>
+
+    <!-- M: CMCC cancel upgrade -->
+    <string name="onscreenCancelUpgrade">Cancel Upgrade</string>
+    <string name="card_title_cancel_upgrade_requesting">Canceling requesting</string>
+    <string name="peer_cancel_upgrade_request">Canceled by peer side</string>
+    <string name="cancel_upgrade_fail">Cancellation failed</string>
+
+    <string name="onscreenChangeToVoiceText">Change to voice call</string>
+    <string name="contact_grid_incoming_video_via_template">Video call via
+         <xliff:g id="PROVIDER_NAME">%s</xliff:g></string>
+    <!-- Add for Device Switch. -->
+    <string name="menu_device_switch">Switch Device</string>
+    <string name="video_over_wifi_not_available">Video over WiFi is currently not available.</string>
+
+    <string name="missing_required_permission">You have disabled a required permission.</string>
+
+    <!-- Label for "Voice" notification action. This is a displayed on the notification for an
+       incoming video call, and answers the call as an audio call. [CHAR LIMIT=12] -->
+    <string name="notification_action_answer_voice">Voice</string>
+
+    <!-- Button shown during a phone call to upgrade to one way video.-->
+    <string name="menu_oneway_videocall">One way video</string>
+
+    <!-- Add for RTT feature. -->
+    <string name="incall_label_rtt_downgrade" translate="false">RTT downgrade</string>
+    <string name="srvcc_happend_not_support_rtt" translate="false">Simultaneous voice and real-time text calling is currently available only over high speed LTE and Wi-Fi networks. Real-time text may not be available over 2G/3G.</string>
+    <string name="csfb_happend" translate="false">CSFB happened.</string>
+    <string name="rtt_updown_fail" translate="false">RTT is not available for this call. Your call has been connected as a voice-only call.</string>
+    <string name="not_support_rtt_emergency_redial" translate="false">RTT is not available for this 911 call. Your  call has been re-dialed as a voice-only call. If you experience difficulties with voice, please place a relay call to 911.</string>
+    <string name="rtt_drop_to_audio_when_merge" translate="false">RTT call will drop to audio when merged.</string>
+</resources>

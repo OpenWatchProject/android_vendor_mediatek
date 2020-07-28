@@ -1,0 +1,16 @@
+WHAT IT DOES?
+=============
+Will be built as /vendor/bin/hw/vendor.mediatek.hardware.pq@2.1-service to perform MediaTek HAL PQ work.
+
+HOW IT WAS BUILT?
+==================
+It needs the following library from AOSP:
+1.  libutils
+2.  liblog
+3.  libhidlbase
+4.  libhidltransport
+5.  libhardware
+
+HOW TO USE IT?
+==============
+run vendor.mediatek.hardware.pq@2.1-service in init.rc to register PQ related feature parameters.

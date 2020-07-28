@@ -1,0 +1,21 @@
+
+const ISP_NVRAM_ANR2_T NBC2_ANR2_%04d = {
+        .con1      ={.bits ={.NBC2_ANR2_ENC=1, .NBC2_ANR2_ENY=1, .rsv_2=0, .NBC2_ANR2_SCALE_MODE=0, .rsv_6=0, .NBC2_ANR2_VER_C_REF_Y=1, .rsv_9=0, .NBC2_ANR2_MODE=0, .rsv_13=0, .NBC2_ANR2_TILE_EDGE=15, .rsv_20=0, .NBC2_ANR2_SL2_LINK=1, .rsv_25=0}},
+        .cad       ={.bits ={.NBC2_ANR2_PTC_VGAIN=10, .NBC2_ANR2_C_GAIN=8, .NBC2_ANR2_PTC_GAIN_TH=0, .rsv_13=0, .NBC2_ANR2_C_L_DIFF_TH=24, .NBC2_ANR2_C_MODE=0, .rsv_25=0}},
+        .ptc       ={.bits ={.NBC2_ANR2_PTC1=2, .NBC2_ANR2_PTC2=3, .NBC2_ANR2_PTC3=4, .NBC2_ANR2_PTC4=6}},
+        .med3      ={.bits ={.NBC2_ANR2_NCL_TH=48, .NBC2_ANR2_NCL_SL=3, .rsv_11=0, .NBC2_ANR2_NCL_LV=16, .rsv_17=0, .NBC2_ANR2_VAR=3, .rsv_23=0, .NBC2_ANR2_Y0=10, .rsv_30=0}},
+        .sl2       ={.bits ={.NBC2_ANR2_SL2_C_GAIN=6, .rsv_4=0, .NBC2_ANR2_LM_WT=4, .rsv_20=0}},
+        .med4      ={.bits ={.NBC2_ANR2_Y1=13, .rsv_6=0, .NBC2_ANR2_Y2=16, .rsv_14=0, .NBC2_ANR2_Y3=19, .rsv_22=0, .NBC2_ANR2_Y4=22, .rsv_30=0}},
+        .med1      ={.bits ={.NBC2_ANR2_COR_TH=5, .rsv_5=0, .NBC2_ANR2_COR_SL=4, .rsv_11=0, .NBC2_ANR2_MCD_TH=5, .rsv_17=0, .NBC2_ANR2_MCD_SL=3, .rsv_23=0, .NBC2_ANR2_LCL_TH=32}},
+        .med2      ={.bits ={.NBC2_ANR2_LCL_SL=3, .rsv_3=0, .NBC2_ANR2_LCL_LV=16, .rsv_9=0, .NBC2_ANR2_SCL_TH=12, .rsv_18=0, .NBC2_ANR2_SCL_SL=3, .rsv_23=0, .NBC2_ANR2_SCL_LV=16, .rsv_29=0}},
+        .med5      ={.bits ={.NBC2_ANR2_LCL_OFT=0, .NBC2_ANR2_SCL_OFT=0, .rsv_14=0, .NBC2_ANR2_NCL_OFT=0, .rsv_24=0}},
+        .y4lut1    ={.bits ={.NBC2_ANR2_Y_CPX1=40, .NBC2_ANR2_Y_CPX2=120, .NBC2_ANR2_Y_CPX3=160, .rsv_24=0}},
+        .y4lut2    ={.bits ={.NBC2_ANR2_Y_SCALE_CPY0=16, .rsv_5=0, .NBC2_ANR2_Y_SCALE_CPY1=16, .rsv_13=0, .NBC2_ANR2_Y_SCALE_CPY2=16, .rsv_21=0, .NBC2_ANR2_Y_SCALE_CPY3=8, .rsv_29=0}},
+        .y4lut3    ={.bits ={.NBC2_ANR2_Y_SCALE_SP0=0, .rsv_5=0, .NBC2_ANR2_Y_SCALE_SP1=0, .rsv_13=0, .NBC2_ANR2_Y_SCALE_SP2=28, .rsv_21=0, .NBC2_ANR2_Y_SCALE_SP3=30, .rsv_29=0}},
+        .l4lut1    ={.bits ={.NBC2_ANR2_SL2_X1=64, .NBC2_ANR2_SL2_X2=128, .NBC2_ANR2_SL2_X3=192, .rsv_24=0}},
+        .l4lut2    ={.bits ={.NBC2_ANR2_SL2_GAIN0=16, .rsv_6=0, .NBC2_ANR2_SL2_GAIN1=20, .rsv_14=0, .NBC2_ANR2_SL2_GAIN2=24, .rsv_22=0, .NBC2_ANR2_SL2_GAIN3=32, .rsv_30=0}},
+        .l4lut3    ={.bits ={.NBC2_ANR2_SL2_SP0=8, .rsv_6=0, .NBC2_ANR2_SL2_SP1=8, .rsv_14=0, .NBC2_ANR2_SL2_SP2=16, .rsv_22=0, .NBC2_ANR2_SL2_SP3=16, .rsv_30=0}},
+        .con2      ={.bits ={.rsv_0=0, .NBC2_ANR2_C_SM_EDGE=1, .rsv_10=0, .NBC2_ANR2_FLT_C=0, .rsv_13=0}},
+        .yad1      ={.bits ={.rsv_0=0, .NBC2_ANR2_K_TH_C=8}},
+        .actc      ={.bits ={.rsv_0=0, .NBC2_ANR2_ACT_BLD_BASE_C=48, .rsv_15=0, .NBC2_ANR2_C_DITH_U=8, .rsv_21=0, .NBC2_ANR2_C_DITH_V=8, .rsv_29=0}},
+};

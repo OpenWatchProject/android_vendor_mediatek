@@ -1,0 +1,23 @@
+Library of MTK performance feature.
+
+This library is pre-built by MediaTek internal.
+
+
+WHAT IT DOES?
+=============
+libperservice.so contains MediaTek developed performance enhancement.
+User can control cpu core, cpu freq and gpu freq
+
+HOW IT WAS BUILT?
+==================
+It needs the following libs from AOSP:
+1.  libc.so
+2.  libcutils.so
+3.  libdl.so
+
+HOW TO USE IT?
+==============
+Provide api for user space to control cpu core, cpu freq and gpu freq
+all api interface are at (vendor/mediatek/proprietary/external/perfservicenative/)
+
+All the source code of this library were written by MediaTek co..

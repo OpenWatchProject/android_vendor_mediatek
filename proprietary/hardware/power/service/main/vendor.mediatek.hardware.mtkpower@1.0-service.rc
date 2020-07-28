@@ -1,0 +1,8 @@
+service power-hal-1-0 /vendor/bin/hw/vendor.mediatek.hardware.mtkpower@1.0-service
+    class hal
+    capabilities NET_ADMIN NET_RAW SYS_MODULE
+    user system
+    group system readproc wifi media media_rw camera audio
+
+on property:vold.decrypt=trigger_shutdown_framework
+    setprop vendor.powerhal.init 0

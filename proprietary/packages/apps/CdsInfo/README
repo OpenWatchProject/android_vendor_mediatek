@@ -1,0 +1,25 @@
+WHAT IT DOES?
+=============
+This is a engineer mode APK
+The purpose of CDS (Common Data Service) engineer mode program is to provide means to acquire the information of data connection,
+including Wi-Fi and Mobile, and dump detailed information about network interfaces, such as waln0, ccmni L2 interfaces. 
+The RD should be able to debug IP data services issues easily by using this program. 
+Moreover, we provide utility tools to send AT commands or shell commands. 
+It is convenient for RD/QA to verify issues without any extra tools in the desktop.
+
+PS.
+This is a optional APK. 
+If this APK is removed from ROM, there is no impact for any phone's functionality.
+
+HOW IT WAS BUILT?
+==================
+Default build in eng/userdebug load. No feature option.
+
+[Build Method]
+make CDS_INFO
+or
+mmm vendor/mediatek/proprietary/packages/apps/CdsInfo/
+
+HOW TO USE IT?
+==============
+*#*#3646633#*#* ==> Connectivity ==> CdsInfo

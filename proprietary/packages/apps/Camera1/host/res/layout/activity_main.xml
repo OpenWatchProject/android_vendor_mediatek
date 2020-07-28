@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:splitMotionEvents="false">
+
+    <FrameLayout
+        android:id="@+id/preview_frame_root"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:splitMotionEvents="false">
+    </FrameLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/preview_cover"
+        android:background="@android:color/black"
+        android:visibility="gone"/>
+
+    <FrameLayout
+        android:id="@+id/app_ui_root"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:splitMotionEvents="false" />
+
+    <com.mediatek.camera.common.widget.PreviewFrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/preview_layout_container"
+        android:layout_gravity="center"
+        android:layoutDirection="ltr"
+        android:splitMotionEvents="false">
+    </com.mediatek.camera.common.widget.PreviewFrameLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/camera_cover"
+        android:background="@android:color/black"
+        android:visibility="gone"/>
+    <LinearLayout
+        android:id="@+id/setting_ui_root"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="gone">
+        <include layout="@layout/setting_layout"/>
+        <LinearLayout
+            android:id="@+id/setting_tail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="bottom"
+            android:background="@android:color/black">
+        </LinearLayout>
+    </LinearLayout>
+</FrameLayout>

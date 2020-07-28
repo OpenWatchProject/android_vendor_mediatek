@@ -1,0 +1,3 @@
+service aee_aedv /vendor/bin/aee_aedv
+    group root readproc system debuggerd log
+    writepid /dev/cpuset/system-background/tasks

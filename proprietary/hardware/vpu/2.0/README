@@ -1,0 +1,23 @@
+WHAT IT DOES?
+=============
+libvpu.so provides vpu APIs for AP/Middleware to use vpu driver.
+
+HOW IT WAS BUILT?
+==================
+It needs the following library from AOSP:
+1.  libcutils.so
+2.  libion.so
+3.  liblog.so
+
+and the following libs from MediaTek:
+1.  libion_mtk.so
+
+It can build the following shared library file :
+libvpu.so
+
+HOW TO USE IT?
+==============
+Refer to the interfaces defined as below:
+$(TOP)/$(MTK_PATH_SOURCE)/hardware/vpu/include/vpu.h
+
+All the source code of this library were written by MediaTek co..

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/long_exposure_ui"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:visibility="invisible"
+    android:layout_marginBottom="18.5dp">
+
+    <FrameLayout
+        android:id="@+id/long_exposure_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:clickable="true"
+        android:visibility="visible">
+
+        <com.mediatek.camera.common.widget.RotateImageView
+            android:layout_width="79dp"
+            android:layout_height="79dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:clickable="true"
+            android:gravity="center"
+            android:scaleType="centerInside"
+            android:src="@drawable/ic_shutter_photo" />
+
+        <com.mediatek.camera.feature.mode.longexposure.LongExposureView
+            android:id="@+id/long_exposure_progress"
+            android:layout_width="79dp"
+            android:layout_height="79dp"
+            app:roundColor="@android:color/transparent"
+            app:roundProgressColor="@android:color/holo_orange_dark" />
+    </FrameLayout>
+
+    <com.mediatek.camera.common.widget.StrokeTextView
+        android:id="@+id/shutter_speed_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/long_exposure_image"
+        android:layout_centerHorizontal="true"
+        android:clickable="true"
+        android:enabled="true"
+        android:gravity="center"
+        android:maxLines="1"
+        android:text="@string/long_exposure_abort"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="#FFFFFFFF"
+        android:textSize="20sp" />
+</RelativeLayout>

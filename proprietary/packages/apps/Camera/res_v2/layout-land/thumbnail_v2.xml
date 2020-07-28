@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/ReviewThumbnailGroup" >
+    <com.android.camera.v2.ui.RotateImageView
+        android:id="@+id/thumbnail"
+        style="@style/ReviewThumbnail"
+		android:layout_toRightOf="@+id/preview_thumb"
+        android:clickable="true"
+        android:focusable="false"
+        android:contentDescription="@string/accessibility_review_thumbnail"
+        android:background="@drawable/border_last_picture" />
+		
+	<com.android.camera.v2.ui.RotateImageView
+            android:id="@+id/preview_thumb"
+            android:visibility="invisible"
+            style="@style/ReviewThumbnail"/>
+			
+</RelativeLayout>

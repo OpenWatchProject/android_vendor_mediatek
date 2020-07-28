@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!--M: add new string resource @{ -->
+    <string name="valid_date_range">"Valid date is January 1970 to December 2036"</string>
+    <string name="shareEvent">Share event</string>
+    <string name="share_label">Share</string>
+    <!-- When loading events from database is failed, give user a tip. -->
+    <string name="loading_failed">Loading failed.</string>
+    <!-- When access database is faile, give user a tip to check the "Calendar Storage" application. -->    
+    <string name="operation_failed">Operation failed. Please check if “Calendar Storage“ is stopped.</string>
+    <!-- @} -->
+
+    <!-- #ClearAllEvents# -->
+    <!--M: add new string resource for clear events in the calendar @{ -->
+    <!-- clear the events in the calendar -->
+    <string name="clear_events">Clear events</string>
+    <!-- select the accounts of calendar to clear events. -->
+    <string name="select_clear_calendars_title">Select account</string>
+    <string name="clear_all_selected_events_title">All the events in selected account will be deleted.</string>
+    <string name="delete_completed">Delete operation completed.</string>
+    <string name="delete_certain">OK</string>
+    <string name="wait_deleting_tip">"Please wait while deleting..."</string>
+    <!-- @} -->
+    <!-- M:check attendees' validation, if invalid, give a tip. -->
+    <string name="attendees_invalid_tip">"Some attendees are invalid."</string>
+    <string name="unread_reminders">"%d unread reminders"</string>
+    <string name="click_to_view_all">"Click to view all"</string>
+    <string name="search_setting_description">"Events in Calendar"</string>
+
+    <!-- #Lunar# -->
+    <!-- M:add for lunar calendar,only be used in zh-rCN. @{ -->
+    <string name="lunar_radio_text" tools:ignore="MissingTranslation" translatable="false">"农历"</string>
+    <string name="gregorian_radio_text" tools:ignore="MissingTranslation" translatable="false">"公历"</string>
+    
+    <string name="date_picker_dialog_title" tools:ignore="MissingTranslation" translatable="false">设置农历时间</string>
+    <!-- Name of the button in the date/time picker to accept the date/time change -->
+    <string name="date_time_done" tools:ignore="MissingTranslation" translatable="false">设置</string>
+    <string name="date_picker_decrement_year_button" tools:ignore="MissingTranslation" translatable="false">增加一年</string>
+    <string name="cancel" tools:ignore="MissingTranslation" translatable="false">取消</string>
+    <!-- DataPicker original has.Only simple preserved.  -->
+    <string name="date_picker_decrement_month_button" tools:ignore="MissingTranslation" translatable="false">Decrement month</string>
+    <string name="date_picker_increment_month_button" tools:ignore="MissingTranslation" translatable="false">Increment month</string>
+    <string name="date_picker_increment_year_button" tools:ignore="MissingTranslation" translatable="false">Increment year</string>
+    <string name="date_picker_increment_day_button" tools:ignore="MissingTranslation" translatable="false">Increment day</string>
+    <string name="date_picker_decrement_day_button" tools:ignore="MissingTranslation" translatable="false">Decrement day</string>
+    <!-- simple preserved -->
+    <string name="picker_change_date" tools:ignore="MissingTranslation" translatable="false">改变日期</string>
+    <!-- @} -->
+
+    <string name="quick_response_error_already_exist">Text already exist</string>
+    <string name="quick_response_error_null">Can not be empty</string>
+    <!-- On Settings screen, vibrate setting item summary text -->
+    <string name="preferences_alerts_vibrateWhen_summary">Vibrate for event reminder</string>
+    <!-- Jump to special -->
+    <string name="go_to">Go to</string>
+    <string name="no_event_tip">No event.</string>
+    <!-- Calendar search hint -->
+    <string name="search_hint">Search calendar</string>
+    <string name="noApplications">No apps can perform this action.</string>
+
+    <string name="low_storage_save_failed">"The save failed due to low storage"</string>
+    <string name="denied_required_permission">Permissions denied. You can change them in Settings &gt; Apps.</string>
+</resources>

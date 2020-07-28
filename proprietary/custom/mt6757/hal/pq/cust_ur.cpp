@@ -1,0 +1,2616 @@
+#include "PQDSImpl.h"
+
+#include <string.h>
+extern "C" {
+
+uint32_t iTdshpLevel[ISP_SCENARIOS] =
+{
+    0,0,0,0,
+    0,0,0,0,
+    0,0,0,0,
+    0
+};
+
+DSReg iDSRegEntry[UR_MAX_LEVEL] =
+{
+    {// iDSRegEntry_0
+    .DS_en = 1,
+
+    .iUpSlope = 0,          // Range from -64 to 63
+    .iUpThreshold = 1024,    // Range from 0 to 4095
+    .iDownSlope = 0,        // Range from -64 to 63
+    .iDownThreshold = 1024,  // Range from 0 to 4095
+
+    //ISO adaptive SW registers
+    .iISO_en   = 1,
+    .iISO_thr0 = 200,
+    .iISO_thr1 = 400,
+    .iISO_thr2 = 800,
+    .iISO_thr3 = 1600,
+    .iISO_IIR_alpha = 128,
+
+    .iCorZero_clip2 =   0,
+    .iCorZero_clip1 =   0,
+    .iCorZero_clip0 =   0,
+    .iCorThr_clip2  =   0,
+    .iCorThr_clip1  =   0,
+    .iCorThr_clip0  =   0,
+    .iCorGain_clip2 =   0,
+    .iCorGain_clip1 =   0,
+    .iCorGain_clip0 =   0,
+    .iGain_clip2    =   0,
+    .iGain_clip1    =   0,
+    .iGain_clip0    =   0,
+
+#ifndef DS_BYPASS_2DGC
+    .iHighCorZero_clip2 =   0,
+    .iHighCorZero_clip1 =   0,
+    .iHighCorZero_clip0 =   0,
+    .iHighCorThr_clip2  =   0,
+    .iHighCorThr_clip1  =   0,
+    .iHighCorThr_clip0  =   0,
+    .iHighCorGain_clip2 =   0,
+    .iHighCorGain_clip1 =   0,
+    .iHighCorGain_clip0 =   0,
+
+    .iMidCorZero_clip2 =  0,
+    .iMidCorZero_clip1 =  0,
+    .iMidCorZero_clip0 =  0,
+    .iMidCorThr_clip2  =  0,
+    .iMidCorThr_clip1  =  0,
+    .iMidCorThr_clip0  =  0,
+    .iMidCorGain_clip2 =  0,
+    .iMidCorGain_clip1 =  0,
+    .iMidCorGain_clip0 =  0,
+#endif //DS_BYPASS_2DGC
+
+    //UR SW registers
+    .iUltraRes_en = 1,
+    .iUltraRes_ratio_thr0 = 1024,
+    .iUltraRes_ratio_thr1 = 2048,
+    .iUltraRes_ratio_thr2 = 4096,
+    .iUltraRes_gain_mid_clip0 = 0,
+    .iUltraRes_gain_mid_clip1 = 0,
+    .iUltraRes_gain_high_clip0 = 0,
+    .iUltraRes_gain_high_clip1 = 0,
+#ifndef DS_BYPASS_EDS
+    .iUltraRes_edf_edge_gain_clip0 = 0,
+    .iUltraRes_edf_edge_gain_clip1 = 0,
+    .iUltraRes_edf_detail_gain_clip0 = 0,
+    .iUltraRes_edf_detail_gain_clip1 = 0,
+    .iUltraRes_edf_flat_gain_clip0 = 0,
+    .iUltraRes_edf_flat_gain_clip1 = 0,
+#endif //DS_BYPASS_EDS
+    .iUltraRes_clip_thr_clip0 = 0,
+    .iUltraRes_clip_thr_clip1 = 0,
+    .iUltraRes_clip_ratio_clip0 = 0,
+    .iUltraRes_clip_ratio_clip1 = 0,
+
+#ifndef DS_BYPASS_EDS
+    .i_edf_flat_th_clip2 =  0,
+    .i_edf_flat_th_clip1 =  0,
+    .i_edf_flat_th_clip0 =  0,
+    .i_edf_detail_rise_th_clip2 =  0,
+    .i_edf_detail_rise_th_clip1 =  0,
+    .i_edf_detail_rise_th_clip0 =  0
+#endif //DS_BYPASS_EDS
+    },
+
+    {// iDSRegEntry_1
+    .DS_en = 1,
+
+    .iUpSlope = -4,          // Range from -64 to 63
+    .iUpThreshold = 1024,    // Range from 0 to 4095
+    .iDownSlope = -4,        // Range from -64 to 63
+    .iDownThreshold = 1024,  // Range from 0 to 4095
+
+    //ISO adaptive SW registers
+    .iISO_en   = 1,
+    .iISO_thr0 = 200,
+    .iISO_thr1 = 400,
+    .iISO_thr2 = 800,
+    .iISO_thr3 = 1600,
+    .iISO_IIR_alpha = 128,
+
+    .iCorZero_clip2 =   4,
+    .iCorZero_clip1 =   4,
+    .iCorZero_clip0 =  10,
+    .iCorThr_clip2  =   6,
+    .iCorThr_clip1  =   6,
+    .iCorThr_clip0  =  24,
+    .iCorGain_clip2 =   0,
+    .iCorGain_clip1 =   0,
+    .iCorGain_clip0 =  16,
+    .iGain_clip2    =   0,
+    .iGain_clip1    =   0,
+    .iGain_clip0    =   0,
+
+#ifndef DS_BYPASS_2DGC
+    .iHighCorZero_clip2 =   3,
+    .iHighCorZero_clip1 =   3,
+    .iHighCorZero_clip0 =   3,
+    .iHighCorThr_clip2  =   4,
+    .iHighCorThr_clip1  =   4,
+    .iHighCorThr_clip0  =   4,
+    .iHighCorGain_clip2 =   0,
+    .iHighCorGain_clip1 =   0,
+    .iHighCorGain_clip0 =  16,
+
+    .iMidCorZero_clip2 =  3,
+    .iMidCorZero_clip1 =  3,
+    .iMidCorZero_clip0 =  3,
+    .iMidCorThr_clip2  =  4,
+    .iMidCorThr_clip1  =  4,
+    .iMidCorThr_clip0  =  4,
+    .iMidCorGain_clip2 =  0,
+    .iMidCorGain_clip1 =  0,
+    .iMidCorGain_clip0 = 16,
+#endif //DS_BYPASS_2DGC
+
+    //UR SW registers
+    .iUltraRes_en = 1,
+    .iUltraRes_ratio_thr0 = 1024,
+    .iUltraRes_ratio_thr1 = 2048,
+    .iUltraRes_ratio_thr2 = 4096,
+    .iUltraRes_gain_mid_clip0 = 10,
+    .iUltraRes_gain_mid_clip1 = 34,
+    .iUltraRes_gain_high_clip0 = 50,
+    .iUltraRes_gain_high_clip1 = 51,
+#ifndef DS_BYPASS_EDS
+    .iUltraRes_edf_edge_gain_clip0 = -2,
+    .iUltraRes_edf_edge_gain_clip1 = -1,
+    .iUltraRes_edf_detail_gain_clip0 = -2,
+    .iUltraRes_edf_detail_gain_clip1 = -1,
+    .iUltraRes_edf_flat_gain_clip0 = -2,
+    .iUltraRes_edf_flat_gain_clip1 = -1,
+#endif //DS_BYPASS_EDS
+    .iUltraRes_clip_thr_clip0 = 0,
+    .iUltraRes_clip_thr_clip1 = -4,
+    .iUltraRes_clip_ratio_clip0 = 0,
+    .iUltraRes_clip_ratio_clip1 = -4,
+
+#ifndef DS_BYPASS_EDS
+    .i_edf_flat_th_clip2 =  8,
+    .i_edf_flat_th_clip1 =  4,
+    .i_edf_flat_th_clip0 = 12,
+    .i_edf_detail_rise_th_clip2 =  8,
+    .i_edf_detail_rise_th_clip1 =  4,
+    .i_edf_detail_rise_th_clip0 = 12
+#endif //DS_BYPASS_EDS
+    },
+
+    {// iDSRegEntry_2
+    .DS_en = 1,
+
+    .iUpSlope = 0,          // Range from -64 to 63
+    .iUpThreshold = 1024,    // Range from 0 to 4095
+    .iDownSlope = 0,        // Range from -64 to 63
+    .iDownThreshold = 1024,  // Range from 0 to 4095
+
+    //ISO adaptive SW registers
+    .iISO_en   = 0,
+    .iISO_thr0 = 200,
+    .iISO_thr1 = 400,
+    .iISO_thr2 = 800,
+    .iISO_thr3 = 1600,
+    .iISO_IIR_alpha = 128,
+
+    .iCorZero_clip2 =   4,
+    .iCorZero_clip1 =   4,
+    .iCorZero_clip0 =  10,
+    .iCorThr_clip2  =   6,
+    .iCorThr_clip1  =   6,
+    .iCorThr_clip0  =  24,
+    .iCorGain_clip2 =   0,
+    .iCorGain_clip1 =   0,
+    .iCorGain_clip0 =  16,
+    .iGain_clip2    =   0,
+    .iGain_clip1    =   0,
+    .iGain_clip0    =   0,
+
+#ifndef DS_BYPASS_2DGC
+    .iHighCorZero_clip2 =   3,
+    .iHighCorZero_clip1 =   3,
+    .iHighCorZero_clip0 =   3,
+    .iHighCorThr_clip2  =   4,
+    .iHighCorThr_clip1  =   4,
+    .iHighCorThr_clip0  =   4,
+    .iHighCorGain_clip2 =   0,
+    .iHighCorGain_clip1 =   0,
+    .iHighCorGain_clip0 =  16,
+
+    .iMidCorZero_clip2 =  3,
+    .iMidCorZero_clip1 =  3,
+    .iMidCorZero_clip0 =  3,
+    .iMidCorThr_clip2  =  4,
+    .iMidCorThr_clip1  =  4,
+    .iMidCorThr_clip0  =  4,
+    .iMidCorGain_clip2 =  0,
+    .iMidCorGain_clip1 =  0,
+    .iMidCorGain_clip0 = 16,
+#endif //DS_BYPASS_2DGC
+
+    //UR SW registers
+    .iUltraRes_en = 1,
+    .iUltraRes_ratio_thr0 = 1024,
+    .iUltraRes_ratio_thr1 = 2048,
+    .iUltraRes_ratio_thr2 = 4096,
+    .iUltraRes_gain_mid_clip0 = 37,
+    .iUltraRes_gain_mid_clip1 = 34,
+    .iUltraRes_gain_high_clip0 = 69,
+    .iUltraRes_gain_high_clip1 = 51,
+#ifndef DS_BYPASS_EDS
+    .iUltraRes_edf_edge_gain_clip0 = -8,
+    .iUltraRes_edf_edge_gain_clip1 = -8,
+    .iUltraRes_edf_detail_gain_clip0 = -2,
+    .iUltraRes_edf_detail_gain_clip1 = -1,
+    .iUltraRes_edf_flat_gain_clip0 = 0,
+    .iUltraRes_edf_flat_gain_clip1 = 0,
+#endif //DS_BYPASS_EDS
+    .iUltraRes_clip_thr_clip0 = 0,
+    .iUltraRes_clip_thr_clip1 = -4,
+    .iUltraRes_clip_ratio_clip0 = 0,
+    .iUltraRes_clip_ratio_clip1 = -4,
+
+#ifndef DS_BYPASS_EDS
+    .i_edf_flat_th_clip2 =  8,
+    .i_edf_flat_th_clip1 =  4,
+    .i_edf_flat_th_clip0 = 12,
+    .i_edf_detail_rise_th_clip2 =  8,
+    .i_edf_detail_rise_th_clip1 =  4,
+    .i_edf_detail_rise_th_clip0 = 12
+#endif //DS_BYPASS_EDS
+    },
+
+    {// iDSRegEntry_3
+    .DS_en = 1,
+
+    .iUpSlope = -4,          // Range from -64 to 63
+    .iUpThreshold = 1024,    // Range from 0 to 4095
+    .iDownSlope = -4,        // Range from -64 to 63
+    .iDownThreshold = 1024,  // Range from 0 to 4095
+
+    //ISO adaptive SW registers
+    .iISO_en   = 1,
+    .iISO_thr0 = 200,
+    .iISO_thr1 = 400,
+    .iISO_thr2 = 800,
+    .iISO_thr3 = 1600,
+    .iISO_IIR_alpha = 128,
+
+    .iCorZero_clip2 =   4,
+    .iCorZero_clip1 =   4,
+    .iCorZero_clip0 =  10,
+    .iCorThr_clip2  =   6,
+    .iCorThr_clip1  =   6,
+    .iCorThr_clip0  =  24,
+    .iCorGain_clip2 =   0,
+    .iCorGain_clip1 =   0,
+    .iCorGain_clip0 =  16,
+    .iGain_clip2    =   0,
+    .iGain_clip1    =   0,
+    .iGain_clip0    =   0,
+
+#ifndef DS_BYPASS_2DGC
+    .iHighCorZero_clip2 =   3,
+    .iHighCorZero_clip1 =   3,
+    .iHighCorZero_clip0 =   3,
+    .iHighCorThr_clip2  =   4,
+    .iHighCorThr_clip1  =   4,
+    .iHighCorThr_clip0  =   4,
+    .iHighCorGain_clip2 =   0,
+    .iHighCorGain_clip1 =   0,
+    .iHighCorGain_clip0 =  16,
+
+    .iMidCorZero_clip2 =  3,
+    .iMidCorZero_clip1 =  3,
+    .iMidCorZero_clip0 =  3,
+    .iMidCorThr_clip2  =  4,
+    .iMidCorThr_clip1  =  4,
+    .iMidCorThr_clip0  =  4,
+    .iMidCorGain_clip2 =  0,
+    .iMidCorGain_clip1 =  0,
+    .iMidCorGain_clip0 = 16,
+#endif //DS_BYPASS_2DGC
+
+    //UR SW registers
+    .iUltraRes_en = 1,
+    .iUltraRes_ratio_thr0 = 1024,
+    .iUltraRes_ratio_thr1 = 2048,
+    .iUltraRes_ratio_thr2 = 4096,
+    .iUltraRes_gain_mid_clip0 = 30,
+    .iUltraRes_gain_mid_clip1 = 34,
+    .iUltraRes_gain_high_clip0 = 50,
+    .iUltraRes_gain_high_clip1 = 51,
+#ifndef DS_BYPASS_EDS
+    .iUltraRes_edf_edge_gain_clip0 = -2,
+    .iUltraRes_edf_edge_gain_clip1 = -1,
+    .iUltraRes_edf_detail_gain_clip0 = -2,
+    .iUltraRes_edf_detail_gain_clip1 = -1,
+    .iUltraRes_edf_flat_gain_clip0 = -2,
+    .iUltraRes_edf_flat_gain_clip1 = -1,
+#endif //DS_BYPASS_EDS
+    .iUltraRes_clip_thr_clip0 = 0,
+    .iUltraRes_clip_thr_clip1 = -4,
+    .iUltraRes_clip_ratio_clip0 = 0,
+    .iUltraRes_clip_ratio_clip1 = -4,
+
+#ifndef DS_BYPASS_EDS
+    .i_edf_flat_th_clip2 =  8,
+    .i_edf_flat_th_clip1 =  4,
+    .i_edf_flat_th_clip0 = 12,
+    .i_edf_detail_rise_th_clip2 =  8,
+    .i_edf_detail_rise_th_clip1 =  4,
+    .i_edf_detail_rise_th_clip0 = 12
+#endif //DS_BYPASS_EDS
+    },
+
+    {// iDSRegEntry_4
+    .DS_en = 1,
+
+    .iUpSlope = -4,          // Range from -64 to 63
+    .iUpThreshold = 1024,    // Range from 0 to 4095
+    .iDownSlope = -4,        // Range from -64 to 63
+    .iDownThreshold = 1024,  // Range from 0 to 4095
+
+    //ISO adaptive SW registers
+    .iISO_en   = 1,
+    .iISO_thr0 = 200,
+    .iISO_thr1 = 400,
+    .iISO_thr2 = 800,
+    .iISO_thr3 = 1600,
+    .iISO_IIR_alpha = 128,
+
+    .iCorZero_clip2 =   4,
+    .iCorZero_clip1 =   4,
+    .iCorZero_clip0 =  10,
+    .iCorThr_clip2  =   6,
+    .iCorThr_clip1  =   6,
+    .iCorThr_clip0  =  24,
+    .iCorGain_clip2 =   0,
+    .iCorGain_clip1 =   0,
+    .iCorGain_clip0 =  16,
+    .iGain_clip2    =   0,
+    .iGain_clip1    =   0,
+    .iGain_clip0    =   0,
+
+#ifndef DS_BYPASS_2DGC
+    .iHighCorZero_clip2 =   3,
+    .iHighCorZero_clip1 =   3,
+    .iHighCorZero_clip0 =   3,
+    .iHighCorThr_clip2  =   4,
+    .iHighCorThr_clip1  =   4,
+    .iHighCorThr_clip0  =   4,
+    .iHighCorGain_clip2 =   0,
+    .iHighCorGain_clip1 =   0,
+    .iHighCorGain_clip0 =  16,
+
+    .iMidCorZero_clip2 =  3,
+    .iMidCorZero_clip1 =  3,
+    .iMidCorZero_clip0 =  3,
+    .iMidCorThr_clip2  =  4,
+    .iMidCorThr_clip1  =  4,
+    .iMidCorThr_clip0  =  4,
+    .iMidCorGain_clip2 =  0,
+    .iMidCorGain_clip1 =  0,
+    .iMidCorGain_clip0 = 16,
+#endif //DS_BYPASS_2DGC
+
+    //UR SW registers
+    .iUltraRes_en = 1,
+    .iUltraRes_ratio_thr0 = 1024,
+    .iUltraRes_ratio_thr1 = 2048,
+    .iUltraRes_ratio_thr2 = 4096,
+    .iUltraRes_gain_mid_clip0 = 40,
+    .iUltraRes_gain_mid_clip1 = 34,
+    .iUltraRes_gain_high_clip0 = 50,
+    .iUltraRes_gain_high_clip1 = 51,
+#ifndef DS_BYPASS_EDS
+    .iUltraRes_edf_edge_gain_clip0 = -2,
+    .iUltraRes_edf_edge_gain_clip1 = -1,
+    .iUltraRes_edf_detail_gain_clip0 = -2,
+    .iUltraRes_edf_detail_gain_clip1 = -1,
+    .iUltraRes_edf_flat_gain_clip0 = -2,
+    .iUltraRes_edf_flat_gain_clip1 = -1,
+#endif //DS_BYPASS_EDS
+    .iUltraRes_clip_thr_clip0 = 0,
+    .iUltraRes_clip_thr_clip1 = -4,
+    .iUltraRes_clip_ratio_clip0 = 0,
+    .iUltraRes_clip_ratio_clip1 = -4,
+
+#ifndef DS_BYPASS_EDS
+    .i_edf_flat_th_clip2 =  8,
+    .i_edf_flat_th_clip1 =  4,
+    .i_edf_flat_th_clip0 = 12,
+    .i_edf_detail_rise_th_clip2 =  8,
+    .i_edf_detail_rise_th_clip1 =  4,
+    .i_edf_detail_rise_th_clip0 = 12
+#endif //DS_BYPASS_EDS
+    },
+
+    {// iDSRegEntry_5
+    .DS_en = 1,
+
+    .iUpSlope = -4,          // Range from -64 to 63
+    .iUpThreshold = 1024,    // Range from 0 to 4095
+    .iDownSlope = -4,        // Range from -64 to 63
+    .iDownThreshold = 1024,  // Range from 0 to 4095
+
+    //ISO adaptive SW registers
+    .iISO_en   = 1,
+    .iISO_thr0 = 200,
+    .iISO_thr1 = 400,
+    .iISO_thr2 = 800,
+    .iISO_thr3 = 1600,
+    .iISO_IIR_alpha = 128,
+
+    .iCorZero_clip2 =   4,
+    .iCorZero_clip1 =   4,
+    .iCorZero_clip0 =  10,
+    .iCorThr_clip2  =   6,
+    .iCorThr_clip1  =   6,
+    .iCorThr_clip0  =  24,
+    .iCorGain_clip2 =   0,
+    .iCorGain_clip1 =   0,
+    .iCorGain_clip0 =  16,
+    .iGain_clip2    =   0,
+    .iGain_clip1    =   0,
+    .iGain_clip0    =   0,
+
+#ifndef DS_BYPASS_2DGC
+    .iHighCorZero_clip2 =   3,
+    .iHighCorZero_clip1 =   3,
+    .iHighCorZero_clip0 =   3,
+    .iHighCorThr_clip2  =   4,
+    .iHighCorThr_clip1  =   4,
+    .iHighCorThr_clip0  =   4,
+    .iHighCorGain_clip2 =   0,
+    .iHighCorGain_clip1 =   0,
+    .iHighCorGain_clip0 =  16,
+
+    .iMidCorZero_clip2 =  3,
+    .iMidCorZero_clip1 =  3,
+    .iMidCorZero_clip0 =  3,
+    .iMidCorThr_clip2  =  4,
+    .iMidCorThr_clip1  =  4,
+    .iMidCorThr_clip0  =  4,
+    .iMidCorGain_clip2 =  0,
+    .iMidCorGain_clip1 =  0,
+    .iMidCorGain_clip0 = 16,
+#endif //DS_BYPASS_2DGC
+
+    //UR SW registers
+    .iUltraRes_en = 1,
+    .iUltraRes_ratio_thr0 = 1024,
+    .iUltraRes_ratio_thr1 = 2048,
+    .iUltraRes_ratio_thr2 = 4096,
+    .iUltraRes_gain_mid_clip0 = 50,
+    .iUltraRes_gain_mid_clip1 = 34,
+    .iUltraRes_gain_high_clip0 = 50,
+    .iUltraRes_gain_high_clip1 = 51,
+#ifndef DS_BYPASS_EDS
+    .iUltraRes_edf_edge_gain_clip0 = -2,
+    .iUltraRes_edf_edge_gain_clip1 = -1,
+    .iUltraRes_edf_detail_gain_clip0 = -2,
+    .iUltraRes_edf_detail_gain_clip1 = -1,
+    .iUltraRes_edf_flat_gain_clip0 = -2,
+    .iUltraRes_edf_flat_gain_clip1 = -1,
+#endif //DS_BYPASS_EDS
+    .iUltraRes_clip_thr_clip0 = 0,
+    .iUltraRes_clip_thr_clip1 = -4,
+    .iUltraRes_clip_ratio_clip0 = 0,
+    .iUltraRes_clip_ratio_clip1 = -4,
+
+#ifndef DS_BYPASS_EDS
+    .i_edf_flat_th_clip2 =  8,
+    .i_edf_flat_th_clip1 =  4,
+    .i_edf_flat_th_clip0 = 12,
+    .i_edf_detail_rise_th_clip2 =  8,
+    .i_edf_detail_rise_th_clip1 =  4,
+    .i_edf_detail_rise_th_clip0 = 12
+#endif //DS_BYPASS_EDS
+    },
+
+    {// iDSRegEntry_6
+    .DS_en = 1,
+
+    .iUpSlope = -4,          // Range from -64 to 63
+    .iUpThreshold = 1024,    // Range from 0 to 4095
+    .iDownSlope = -4,        // Range from -64 to 63
+    .iDownThreshold = 1024,  // Range from 0 to 4095
+
+    //ISO adaptive SW registers
+    .iISO_en   = 1,
+    .iISO_thr0 = 200,
+    .iISO_thr1 = 400,
+    .iISO_thr2 = 800,
+    .iISO_thr3 = 1600,
+    .iISO_IIR_alpha = 128,
+
+    .iCorZero_clip2 =   4,
+    .iCorZero_clip1 =   4,
+    .iCorZero_clip0 =  10,
+    .iCorThr_clip2  =   6,
+    .iCorThr_clip1  =   6,
+    .iCorThr_clip0  =  24,
+    .iCorGain_clip2 =   0,
+    .iCorGain_clip1 =   0,
+    .iCorGain_clip0 =  16,
+    .iGain_clip2    =   0,
+    .iGain_clip1    =   0,
+    .iGain_clip0    =   0,
+
+#ifndef DS_BYPASS_2DGC
+    .iHighCorZero_clip2 =   3,
+    .iHighCorZero_clip1 =   3,
+    .iHighCorZero_clip0 =   3,
+    .iHighCorThr_clip2  =   4,
+    .iHighCorThr_clip1  =   4,
+    .iHighCorThr_clip0  =   4,
+    .iHighCorGain_clip2 =   0,
+    .iHighCorGain_clip1 =   0,
+    .iHighCorGain_clip0 =  16,
+
+    .iMidCorZero_clip2 =  3,
+    .iMidCorZero_clip1 =  3,
+    .iMidCorZero_clip0 =  3,
+    .iMidCorThr_clip2  =  4,
+    .iMidCorThr_clip1  =  4,
+    .iMidCorThr_clip0  =  4,
+    .iMidCorGain_clip2 =  0,
+    .iMidCorGain_clip1 =  0,
+    .iMidCorGain_clip0 = 16,
+#endif //DS_BYPASS_2DGC
+
+    //UR SW registers
+    .iUltraRes_en = 1,
+    .iUltraRes_ratio_thr0 = 1024,
+    .iUltraRes_ratio_thr1 = 2048,
+    .iUltraRes_ratio_thr2 = 4096,
+    .iUltraRes_gain_mid_clip0 = 60,
+    .iUltraRes_gain_mid_clip1 = 34,
+    .iUltraRes_gain_high_clip0 = 50,
+    .iUltraRes_gain_high_clip1 = 51,
+#ifndef DS_BYPASS_EDS
+    .iUltraRes_edf_edge_gain_clip0 = -2,
+    .iUltraRes_edf_edge_gain_clip1 = -1,
+    .iUltraRes_edf_detail_gain_clip0 = -2,
+    .iUltraRes_edf_detail_gain_clip1 = -1,
+    .iUltraRes_edf_flat_gain_clip0 = -2,
+    .iUltraRes_edf_flat_gain_clip1 = -1,
+#endif //DS_BYPASS_EDS
+    .iUltraRes_clip_thr_clip0 = 0,
+    .iUltraRes_clip_thr_clip1 = -4,
+    .iUltraRes_clip_ratio_clip0 = 0,
+    .iUltraRes_clip_ratio_clip1 = -4,
+
+#ifndef DS_BYPASS_EDS
+    .i_edf_flat_th_clip2 =  8,
+    .i_edf_flat_th_clip1 =  4,
+    .i_edf_flat_th_clip0 = 12,
+    .i_edf_detail_rise_th_clip2 =  8,
+    .i_edf_detail_rise_th_clip1 =  4,
+    .i_edf_detail_rise_th_clip0 = 12
+#endif //DS_BYPASS_EDS
+    },
+
+    {// iDSRegEntry_7
+    .DS_en = 1,
+
+    .iUpSlope = -4,          // Range from -64 to 63
+    .iUpThreshold = 1024,    // Range from 0 to 4095
+    .iDownSlope = -4,        // Range from -64 to 63
+    .iDownThreshold = 1024,  // Range from 0 to 4095
+
+    //ISO adaptive SW registers
+    .iISO_en   = 1,
+    .iISO_thr0 = 200,
+    .iISO_thr1 = 400,
+    .iISO_thr2 = 800,
+    .iISO_thr3 = 1600,
+    .iISO_IIR_alpha = 128,
+
+    .iCorZero_clip2 =   4,
+    .iCorZero_clip1 =   4,
+    .iCorZero_clip0 =  10,
+    .iCorThr_clip2  =   6,
+    .iCorThr_clip1  =   6,
+    .iCorThr_clip0  =  24,
+    .iCorGain_clip2 =   0,
+    .iCorGain_clip1 =   0,
+    .iCorGain_clip0 =  16,
+    .iGain_clip2    =   0,
+    .iGain_clip1    =   0,
+    .iGain_clip0    =   0,
+
+#ifndef DS_BYPASS_2DGC
+    .iHighCorZero_clip2 =   3,
+    .iHighCorZero_clip1 =   3,
+    .iHighCorZero_clip0 =   3,
+    .iHighCorThr_clip2  =   4,
+    .iHighCorThr_clip1  =   4,
+    .iHighCorThr_clip0  =   4,
+    .iHighCorGain_clip2 =   0,
+    .iHighCorGain_clip1 =   0,
+    .iHighCorGain_clip0 =  16,
+
+    .iMidCorZero_clip2 =  3,
+    .iMidCorZero_clip1 =  3,
+    .iMidCorZero_clip0 =  3,
+    .iMidCorThr_clip2  =  4,
+    .iMidCorThr_clip1  =  4,
+    .iMidCorThr_clip0  =  4,
+    .iMidCorGain_clip2 =  0,
+    .iMidCorGain_clip1 =  0,
+    .iMidCorGain_clip0 = 16,
+#endif //DS_BYPASS_2DGC
+
+    //UR SW registers
+    .iUltraRes_en = 1,
+    .iUltraRes_ratio_thr0 = 1024,
+    .iUltraRes_ratio_thr1 = 2048,
+    .iUltraRes_ratio_thr2 = 4096,
+    .iUltraRes_gain_mid_clip0 = 70,
+    .iUltraRes_gain_mid_clip1 = 34,
+    .iUltraRes_gain_high_clip0 = 50,
+    .iUltraRes_gain_high_clip1 = 51,
+#ifndef DS_BYPASS_EDS
+    .iUltraRes_edf_edge_gain_clip0 = -2,
+    .iUltraRes_edf_edge_gain_clip1 = -1,
+    .iUltraRes_edf_detail_gain_clip0 = -2,
+    .iUltraRes_edf_detail_gain_clip1 = -1,
+    .iUltraRes_edf_flat_gain_clip0 = -2,
+    .iUltraRes_edf_flat_gain_clip1 = -1,
+#endif //DS_BYPASS_EDS
+    .iUltraRes_clip_thr_clip0 = 0,
+    .iUltraRes_clip_thr_clip1 = -4,
+    .iUltraRes_clip_ratio_clip0 = 0,
+    .iUltraRes_clip_ratio_clip1 = -4,
+
+#ifndef DS_BYPASS_EDS
+    .i_edf_flat_th_clip2 =  8,
+    .i_edf_flat_th_clip1 =  4,
+    .i_edf_flat_th_clip0 = 12,
+    .i_edf_detail_rise_th_clip2 =  8,
+    .i_edf_detail_rise_th_clip1 =  4,
+    .i_edf_detail_rise_th_clip0 = 12
+#endif //DS_BYPASS_EDS
+    },
+
+    {// iDSRegEntry_8
+    .DS_en = 1,
+
+    .iUpSlope = -4,          // Range from -64 to 63
+    .iUpThreshold = 1024,    // Range from 0 to 4095
+    .iDownSlope = -4,        // Range from -64 to 63
+    .iDownThreshold = 1024,  // Range from 0 to 4095
+
+    //ISO adaptive SW registers
+    .iISO_en   = 1,
+    .iISO_thr0 = 200,
+    .iISO_thr1 = 400,
+    .iISO_thr2 = 800,
+    .iISO_thr3 = 1600,
+    .iISO_IIR_alpha = 128,
+
+    .iCorZero_clip2 =   4,
+    .iCorZero_clip1 =   4,
+    .iCorZero_clip0 =  10,
+    .iCorThr_clip2  =   6,
+    .iCorThr_clip1  =   6,
+    .iCorThr_clip0  =  24,
+    .iCorGain_clip2 =   0,
+    .iCorGain_clip1 =   0,
+    .iCorGain_clip0 =  16,
+    .iGain_clip2    =   0,
+    .iGain_clip1    =   0,
+    .iGain_clip0    =   0,
+
+#ifndef DS_BYPASS_2DGC
+    .iHighCorZero_clip2 =   3,
+    .iHighCorZero_clip1 =   3,
+    .iHighCorZero_clip0 =   3,
+    .iHighCorThr_clip2  =   4,
+    .iHighCorThr_clip1  =   4,
+    .iHighCorThr_clip0  =   4,
+    .iHighCorGain_clip2 =   0,
+    .iHighCorGain_clip1 =   0,
+    .iHighCorGain_clip0 =  16,
+
+    .iMidCorZero_clip2 =  3,
+    .iMidCorZero_clip1 =  3,
+    .iMidCorZero_clip0 =  3,
+    .iMidCorThr_clip2  =  4,
+    .iMidCorThr_clip1  =  4,
+    .iMidCorThr_clip0  =  4,
+    .iMidCorGain_clip2 =  0,
+    .iMidCorGain_clip1 =  0,
+    .iMidCorGain_clip0 = 16,
+#endif //DS_BYPASS_2DGC
+
+    //UR SW registers
+    .iUltraRes_en = 1,
+    .iUltraRes_ratio_thr0 = 1024,
+    .iUltraRes_ratio_thr1 = 2048,
+    .iUltraRes_ratio_thr2 = 4096,
+    .iUltraRes_gain_mid_clip0 = 80,
+    .iUltraRes_gain_mid_clip1 = 34,
+    .iUltraRes_gain_high_clip0 = 50,
+    .iUltraRes_gain_high_clip1 = 51,
+#ifndef DS_BYPASS_EDS
+    .iUltraRes_edf_edge_gain_clip0 = -2,
+    .iUltraRes_edf_edge_gain_clip1 = -1,
+    .iUltraRes_edf_detail_gain_clip0 = -2,
+    .iUltraRes_edf_detail_gain_clip1 = -1,
+    .iUltraRes_edf_flat_gain_clip0 = -2,
+    .iUltraRes_edf_flat_gain_clip1 = -1,
+#endif //DS_BYPASS_EDS
+    .iUltraRes_clip_thr_clip0 = 0,
+    .iUltraRes_clip_thr_clip1 = -4,
+    .iUltraRes_clip_ratio_clip0 = 0,
+    .iUltraRes_clip_ratio_clip1 = -4,
+
+#ifndef DS_BYPASS_EDS
+    .i_edf_flat_th_clip2 =  8,
+    .i_edf_flat_th_clip1 =  4,
+    .i_edf_flat_th_clip0 = 12,
+    .i_edf_detail_rise_th_clip2 =  8,
+    .i_edf_detail_rise_th_clip1 =  4,
+    .i_edf_detail_rise_th_clip0 = 12
+#endif //DS_BYPASS_EDS
+    },
+
+    {// iDSRegEntry_9
+    .DS_en = 1,
+
+    .iUpSlope = -4,          // Range from -64 to 63
+    .iUpThreshold = 1024,    // Range from 0 to 4095
+    .iDownSlope = -4,        // Range from -64 to 63
+    .iDownThreshold = 1024,  // Range from 0 to 4095
+
+    //ISO adaptive SW registers
+    .iISO_en   = 1,
+    .iISO_thr0 = 200,
+    .iISO_thr1 = 400,
+    .iISO_thr2 = 800,
+    .iISO_thr3 = 1600,
+    .iISO_IIR_alpha = 128,
+
+    .iCorZero_clip2 =   4,
+    .iCorZero_clip1 =   4,
+    .iCorZero_clip0 =  10,
+    .iCorThr_clip2  =   6,
+    .iCorThr_clip1  =   6,
+    .iCorThr_clip0  =  24,
+    .iCorGain_clip2 =   0,
+    .iCorGain_clip1 =   0,
+    .iCorGain_clip0 =  16,
+    .iGain_clip2    =   0,
+    .iGain_clip1    =   0,
+    .iGain_clip0    =   0,
+
+#ifndef DS_BYPASS_2DGC
+    .iHighCorZero_clip2 =   3,
+    .iHighCorZero_clip1 =   3,
+    .iHighCorZero_clip0 =   3,
+    .iHighCorThr_clip2  =   4,
+    .iHighCorThr_clip1  =   4,
+    .iHighCorThr_clip0  =   4,
+    .iHighCorGain_clip2 =   0,
+    .iHighCorGain_clip1 =   0,
+    .iHighCorGain_clip0 =  16,
+
+    .iMidCorZero_clip2 =  3,
+    .iMidCorZero_clip1 =  3,
+    .iMidCorZero_clip0 =  3,
+    .iMidCorThr_clip2  =  4,
+    .iMidCorThr_clip1  =  4,
+    .iMidCorThr_clip0  =  4,
+    .iMidCorGain_clip2 =  0,
+    .iMidCorGain_clip1 =  0,
+    .iMidCorGain_clip0 = 16,
+#endif //DS_BYPASS_2DGC
+
+    //UR SW registers
+    .iUltraRes_en = 1,
+    .iUltraRes_ratio_thr0 = 1024,
+    .iUltraRes_ratio_thr1 = 2048,
+    .iUltraRes_ratio_thr2 = 4096,
+    .iUltraRes_gain_mid_clip0 = 90,
+    .iUltraRes_gain_mid_clip1 = 34,
+    .iUltraRes_gain_high_clip0 = 50,
+    .iUltraRes_gain_high_clip1 = 51,
+#ifndef DS_BYPASS_EDS
+    .iUltraRes_edf_edge_gain_clip0 = -2,
+    .iUltraRes_edf_edge_gain_clip1 = -1,
+    .iUltraRes_edf_detail_gain_clip0 = -2,
+    .iUltraRes_edf_detail_gain_clip1 = -1,
+    .iUltraRes_edf_flat_gain_clip0 = -2,
+    .iUltraRes_edf_flat_gain_clip1 = -1,
+#endif //DS_BYPASS_EDS
+    .iUltraRes_clip_thr_clip0 = 0,
+    .iUltraRes_clip_thr_clip1 = -4,
+    .iUltraRes_clip_ratio_clip0 = 0,
+    .iUltraRes_clip_ratio_clip1 = -4,
+
+#ifndef DS_BYPASS_EDS
+    .i_edf_flat_th_clip2 =  8,
+    .i_edf_flat_th_clip1 =  4,
+    .i_edf_flat_th_clip0 = 12,
+    .i_edf_detail_rise_th_clip2 =  8,
+    .i_edf_detail_rise_th_clip1 =  4,
+    .i_edf_detail_rise_th_clip0 = 12
+#endif //DS_BYPASS_EDS
+    },
+
+    {// iDSRegEntry_10
+    .DS_en = 1,
+
+    .iUpSlope = -4,          // Range from -64 to 63
+    .iUpThreshold = 1024,    // Range from 0 to 4095
+    .iDownSlope = -4,        // Range from -64 to 63
+    .iDownThreshold = 1024,  // Range from 0 to 4095
+
+    //ISO adaptive SW registers
+    .iISO_en   = 1,
+    .iISO_thr0 = 200,
+    .iISO_thr1 = 400,
+    .iISO_thr2 = 800,
+    .iISO_thr3 = 1600,
+    .iISO_IIR_alpha = 128,
+
+    .iCorZero_clip2 =   4,
+    .iCorZero_clip1 =   4,
+    .iCorZero_clip0 =  10,
+    .iCorThr_clip2  =   6,
+    .iCorThr_clip1  =   6,
+    .iCorThr_clip0  =  24,
+    .iCorGain_clip2 =   0,
+    .iCorGain_clip1 =   0,
+    .iCorGain_clip0 =  16,
+    .iGain_clip2    =   0,
+    .iGain_clip1    =   0,
+    .iGain_clip0    =   0,
+
+#ifndef DS_BYPASS_2DGC
+    .iHighCorZero_clip2 =   3,
+    .iHighCorZero_clip1 =   3,
+    .iHighCorZero_clip0 =   3,
+    .iHighCorThr_clip2  =   4,
+    .iHighCorThr_clip1  =   4,
+    .iHighCorThr_clip0  =   4,
+    .iHighCorGain_clip2 =   0,
+    .iHighCorGain_clip1 =   0,
+    .iHighCorGain_clip0 =  16,
+
+    .iMidCorZero_clip2 =  3,
+    .iMidCorZero_clip1 =  3,
+    .iMidCorZero_clip0 =  3,
+    .iMidCorThr_clip2  =  4,
+    .iMidCorThr_clip1  =  4,
+    .iMidCorThr_clip0  =  4,
+    .iMidCorGain_clip2 =  0,
+    .iMidCorGain_clip1 =  0,
+    .iMidCorGain_clip0 = 16,
+#endif //DS_BYPASS_2DGC
+
+    //UR SW registers
+    .iUltraRes_en = 1,
+    .iUltraRes_ratio_thr0 = 1024,
+    .iUltraRes_ratio_thr1 = 2048,
+    .iUltraRes_ratio_thr2 = 4096,
+    .iUltraRes_gain_mid_clip0 = 90,
+    .iUltraRes_gain_mid_clip1 = 34,
+    .iUltraRes_gain_high_clip0 = 50,
+    .iUltraRes_gain_high_clip1 = 51,
+#ifndef DS_BYPASS_EDS
+    .iUltraRes_edf_edge_gain_clip0 = -2,
+    .iUltraRes_edf_edge_gain_clip1 = -1,
+    .iUltraRes_edf_detail_gain_clip0 = -2,
+    .iUltraRes_edf_detail_gain_clip1 = -1,
+    .iUltraRes_edf_flat_gain_clip0 = -2,
+    .iUltraRes_edf_flat_gain_clip1 = -1,
+#endif //DS_BYPASS_EDS
+    .iUltraRes_clip_thr_clip0 = 0,
+    .iUltraRes_clip_thr_clip1 = -4,
+    .iUltraRes_clip_ratio_clip0 = 0,
+    .iUltraRes_clip_ratio_clip1 = -4,
+
+#ifndef DS_BYPASS_EDS
+    .i_edf_flat_th_clip2 =  8,
+    .i_edf_flat_th_clip1 =  4,
+    .i_edf_flat_th_clip0 = 12,
+    .i_edf_detail_rise_th_clip2 =  8,
+    .i_edf_detail_rise_th_clip1 =  4,
+    .i_edf_detail_rise_th_clip0 = 12
+#endif //DS_BYPASS_EDS
+    }
+};
+
+DSHWReg iDSHWRegEntry[UR_MAX_LEVEL] =
+{
+    {// iDSHWRegEntry_0
+    .tdshp_en = 1,
+    .tdshp_bypass_mid = 0,
+    .tdshp_bypass_high = 0,
+    .tdshp_ink_sel = 0,
+    .tdshp_gain_mid = 0,
+    .tdshp_gain_high = 0,
+    .tdshp_softcoring_gain = 0,
+
+    .tdshp_coring_thr = 0,
+    .tdshp_coring_zero = 0,
+    .tdshp_gain = 0,
+    .tdshp_limit_ratio = 0,
+    .tdshp_limit = 0,
+    .tdshp_bound = 0,
+    .tdshp_coring_value = 0,
+
+    .tdshp_clip_en = 0,
+    .tdshp_clip_ratio = 0,
+    .tdshp_clip_thr = 0,
+    .tdshp_ac_lpf_coe = 0,
+    .tdshp_sat_proc = 0,
+
+    .tdshp_ylev_p000 = 0,
+    .tdshp_ylev_p016 = 24,
+    .tdshp_ylev_p032 = 48,
+    .tdshp_ylev_p048 = 72,
+    .tdshp_ylev_p064 = 96,
+    .tdshp_ylev_p080 = 104,
+    .tdshp_ylev_p096 = 112,
+    .tdshp_ylev_p112 = 120,
+    .tdshp_ylev_p128 = 128,
+    .tdshp_ylev_p144 = 123,
+    .tdshp_ylev_p160 = 118,
+    .tdshp_ylev_p176 = 112,
+    .tdshp_ylev_p192 = 107,
+    .tdshp_ylev_p208 = 102,
+    .tdshp_ylev_p224 = 96,
+    .tdshp_ylev_p240 = 91,
+    .tdshp_ylev_256  = 86,
+    .tdshp_ylev_alpha = 16,
+    .tdshp_ylev_en = 0,
+
+
+    .pbc1_en = 0,
+    .pbc1_lpf_en = 0,
+    .pbc1_gain = 0,
+    .pbc1_rslope_1 = 39,
+    .pbc1_theta_r = 12,
+    .pbc1_radius_r = 12,
+    .pbc1_theta_c = 127,
+    .pbc1_radius_c = 26,
+    .pbc1_tslope = 85,
+    .pbc1_lpf_gain = 0,
+    .pbc1_rslope = 85,
+    .pbc1_conf_gain = 1,
+    .pbc1_edge_en = 0,
+    .pbc1_edge_thr = 12,
+    .pbc1_edge_slope = 32,
+
+
+    .pbc2_en = 0,
+    .pbc2_lpf_en = 0,
+    .pbc2_gain = 0,
+    .pbc2_rslope_1 = 32,
+    .pbc2_theta_r = 24,
+    .pbc2_radius_r = 24,
+    .pbc2_theta_c = 96,
+    .pbc2_radius_c = 32,
+    .pbc2_tslope = 43,
+    .pbc2_lpf_gain = 0,
+    .pbc2_rslope = 43,
+    .pbc2_conf_gain = 5,
+    .pbc2_edge_en = 1,
+    .pbc2_edge_thr = 12,
+    .pbc2_edge_slope = 32,
+
+    .pbc3_en = 0,
+    .pbc3_lpf_en = 0,
+    .pbc3_gain = 0,
+    .pbc3_rslope_1 = 17,
+    .pbc3_theta_r = 16,
+    .pbc3_radius_r = 32,
+    .pbc3_theta_c = 224,
+    .pbc3_radius_c = 60,
+    .pbc3_tslope = 64,
+    .pbc3_lpf_gain = 0,
+    .pbc3_rslope = 32,
+    .pbc3_conf_gain = 1,
+    .pbc3_edge_en = 0,
+    .pbc3_edge_thr = 12,
+    .pbc3_edge_slope = 32,
+
+#ifndef DS_BYPASS_2DGC
+    .tdshp_mid_coring_thr = 0,
+    .tdshp_mid_coring_zero = 0,
+    .tdshp_mid_softlimit_ratio = 0,
+    .tdshp_mid_limit = 0,
+    .tdshp_mid_bound = 0,
+    .tdshp_mid_coring_value = 0,
+    .tdshp_mid_softcoring_gain = 0,
+
+    .tdshp_high_coring_thr = 0,
+    .tdshp_high_coring_zero = 0,
+    .tdshp_high_softlimit_ratio = 0,
+    .tdshp_high_limit = 0,
+    .tdshp_high_bound = 0,
+    .tdshp_high_coring_value = 0,
+    .tdshp_high_softcoring_gain = 0,
+#endif //DS_BYPASS_2DGC
+
+#ifndef DS_BYPASS_EDS
+    .edf_gain_en = 0,
+    .edf_flat_gain = 0,
+    .edf_detail_gain = 0,
+    .edf_edge_gain = 0,
+    .edf_clip_ratio_inc = 2,
+
+    .edf_flat_th = 16,
+    .edf_detail_rise_th = 16,
+    .edf_detail_fall_th = 240,
+    .edf_edge_th = 240,
+
+    .edf_flat_slope = 4,
+    .edf_detail_rise_slope = 5,
+    .edf_detail_fall_slope = 10,
+    .edf_edge_slope = 10,
+
+    .edf_edge_mag_th = 0,
+    .edf_edge_mag_slope = 8,
+    .edf_edge_mono_th = 48,
+    .edf_edge_mono_slope = 7,
+
+    .edf_edge_trend_th = 32,
+    .edf_edge_trend_slope = 16,
+    .edf_edge_trend_flat_mag = 8,
+
+    .edf_bld_wgt_trend = 32,
+    .edf_bld_wgt_mono = 32,
+    .edf_bld_wgt_mag = 32,
+#endif //DS_BYPASS_EDS
+
+#ifndef DS_BYPASS_CB
+    .tdshp_cboost_lmt_u = 255,
+    .tdshp_cboost_lmt_l = 128,
+    .tdshp_cboost_en = 0,
+    .tdshp_cboost_gain = 128,
+    .tdshp_cboost_yconst = 16,
+    .tdshp_cboost_yoffset_sel = 0,
+    .tdshp_cboost_yoffset = 0,
+#endif
+    },
+
+    {// iDSHWRegEntry_1
+    .tdshp_en = 1,
+    .tdshp_bypass_mid = 0,
+    .tdshp_bypass_high = 0,
+    .tdshp_ink_sel = 0,
+    .tdshp_gain_mid = 16,
+    .tdshp_gain_high = 32,
+    .tdshp_softcoring_gain = 16,
+
+    .tdshp_coring_thr = 4,
+    .tdshp_coring_zero = 2,
+    .tdshp_gain = 32,
+    .tdshp_limit_ratio = 8,
+    .tdshp_limit = 24,
+    .tdshp_bound = 48,
+    .tdshp_coring_value = 3,
+
+    .tdshp_clip_en = 1,
+    .tdshp_clip_ratio = 8,
+    .tdshp_clip_thr = 2,
+    .tdshp_ac_lpf_coe = 8,
+    .tdshp_sat_proc = 10,
+
+    .tdshp_ylev_p000 = 0,
+    .tdshp_ylev_p016 = 24,
+    .tdshp_ylev_p032 = 48,
+    .tdshp_ylev_p048 = 72,
+    .tdshp_ylev_p064 = 96,
+    .tdshp_ylev_p080 = 104,
+    .tdshp_ylev_p096 = 112,
+    .tdshp_ylev_p112 = 120,
+    .tdshp_ylev_p128 = 128,
+    .tdshp_ylev_p144 = 123,
+    .tdshp_ylev_p160 = 118,
+    .tdshp_ylev_p176 = 112,
+    .tdshp_ylev_p192 = 107,
+    .tdshp_ylev_p208 = 102,
+    .tdshp_ylev_p224 = 96,
+    .tdshp_ylev_p240 = 91,
+    .tdshp_ylev_256  = 86,
+    .tdshp_ylev_alpha = 16,
+    .tdshp_ylev_en = 1,
+
+
+    .pbc1_en = 1,
+    .pbc1_lpf_en = 0,
+    .pbc1_gain = 48,
+    .pbc1_rslope_1 = 39,
+    .pbc1_theta_r = 12,
+    .pbc1_radius_r = 12,
+    .pbc1_theta_c = 127,
+    .pbc1_radius_c = 26,
+    .pbc1_tslope = 85,
+    .pbc1_lpf_gain = 16,
+    .pbc1_rslope = 85,
+    .pbc1_conf_gain = 1,
+    .pbc1_edge_en = 0,
+    .pbc1_edge_thr = 12,
+    .pbc1_edge_slope = 32,
+
+
+    .pbc2_en = 1,
+    .pbc2_lpf_en = 1,
+    .pbc2_gain = 16,
+    .pbc2_rslope_1 = 32,
+    .pbc2_theta_r = 24,
+    .pbc2_radius_r = 24,
+    .pbc2_theta_c = 96,
+    .pbc2_radius_c = 32,
+    .pbc2_tslope = 43,
+    .pbc2_lpf_gain = 16,
+    .pbc2_rslope = 43,
+    .pbc2_conf_gain = 5,
+    .pbc2_edge_en = 1,
+    .pbc2_edge_thr = 12,
+    .pbc2_edge_slope = 32,
+
+    .pbc3_en = 1,
+    .pbc3_lpf_en = 0,
+    .pbc3_gain = 36,
+    .pbc3_rslope_1 = 17,
+    .pbc3_theta_r = 16,
+    .pbc3_radius_r = 32,
+    .pbc3_theta_c = 224,
+    .pbc3_radius_c = 60,
+    .pbc3_tslope = 64,
+    .pbc3_lpf_gain = 16,
+    .pbc3_rslope = 32,
+    .pbc3_conf_gain = 1,
+    .pbc3_edge_en = 0,
+    .pbc3_edge_thr = 12,
+    .pbc3_edge_slope = 32,
+
+#ifndef DS_BYPASS_2DGC
+    .tdshp_mid_coring_thr = 4,
+    .tdshp_mid_coring_zero = 2,
+    .tdshp_mid_softlimit_ratio = 8,
+    .tdshp_mid_limit = 24,
+    .tdshp_mid_bound = 48,
+    .tdshp_mid_coring_value = 3,
+    .tdshp_mid_softcoring_gain = 16,
+
+    .tdshp_high_coring_thr = 4,
+    .tdshp_high_coring_zero = 2,
+    .tdshp_high_softlimit_ratio = 8,
+    .tdshp_high_limit = 24,
+    .tdshp_high_bound = 48,
+    .tdshp_high_coring_value = 3,
+    .tdshp_high_softcoring_gain = 16,
+#endif //DS_BYPASS_2DGC
+
+#ifndef DS_BYPASS_EDS
+    .edf_gain_en = 1,
+    .edf_flat_gain = 0,
+    .edf_detail_gain = 64,
+    .edf_edge_gain = 16,
+    .edf_clip_ratio_inc = 2,
+
+    .edf_flat_th = 16,
+    .edf_detail_rise_th = 16,
+    .edf_detail_fall_th = 240,
+    .edf_edge_th = 240,
+
+    .edf_flat_slope = 4,
+    .edf_detail_rise_slope = 5,
+    .edf_detail_fall_slope = 10,
+    .edf_edge_slope = 10,
+
+    .edf_edge_mag_th = 0,
+    .edf_edge_mag_slope = 8,
+    .edf_edge_mono_th = 48,
+    .edf_edge_mono_slope = 7,
+
+    .edf_edge_trend_th = 32,
+    .edf_edge_trend_slope = 16,
+    .edf_edge_trend_flat_mag = 8,
+
+    .edf_bld_wgt_trend = 32,
+    .edf_bld_wgt_mono = 32,
+    .edf_bld_wgt_mag = 32,
+#endif //DS_BYPASS_EDS
+
+#ifndef DS_BYPASS_CB
+    .tdshp_cboost_lmt_u = 255,
+    .tdshp_cboost_lmt_l = 128,
+    .tdshp_cboost_en = 1,
+    .tdshp_cboost_gain = 128,
+    .tdshp_cboost_yconst = 16,
+    .tdshp_cboost_yoffset_sel = 0,
+    .tdshp_cboost_yoffset = 0,
+#endif
+    },
+
+    {// iDSHWRegEntry_2
+    .tdshp_en = 1,
+    .tdshp_bypass_mid = 0,
+    .tdshp_bypass_high = 0,
+    .tdshp_ink_sel = 0,
+    .tdshp_gain_mid = 0,
+    .tdshp_gain_high = 0,
+    .tdshp_softcoring_gain = 16,
+
+    .tdshp_coring_thr = 4,
+    .tdshp_coring_zero = 2,
+    .tdshp_gain = 3,
+    .tdshp_limit_ratio = 8,
+    .tdshp_limit = 24,
+    .tdshp_bound = 48,
+    .tdshp_coring_value = 3,
+
+    .tdshp_clip_en = 1,
+    .tdshp_clip_ratio = 8,
+    .tdshp_clip_thr = 2,
+    .tdshp_ac_lpf_coe = 8,
+    .tdshp_sat_proc = 10,
+
+    .tdshp_ylev_p000 = 0,
+    .tdshp_ylev_p016 = 24,
+    .tdshp_ylev_p032 = 48,
+    .tdshp_ylev_p048 = 72,
+    .tdshp_ylev_p064 = 96,
+    .tdshp_ylev_p080 = 104,
+    .tdshp_ylev_p096 = 112,
+    .tdshp_ylev_p112 = 120,
+    .tdshp_ylev_p128 = 128,
+    .tdshp_ylev_p144 = 123,
+    .tdshp_ylev_p160 = 118,
+    .tdshp_ylev_p176 = 112,
+    .tdshp_ylev_p192 = 107,
+    .tdshp_ylev_p208 = 102,
+    .tdshp_ylev_p224 = 96,
+    .tdshp_ylev_p240 = 91,
+    .tdshp_ylev_256  = 86,
+    .tdshp_ylev_alpha = 16,
+    .tdshp_ylev_en = 1,
+
+
+    .pbc1_en = 1,
+    .pbc1_lpf_en = 0,
+    .pbc1_gain = 48,
+    .pbc1_rslope_1 = 39,
+    .pbc1_theta_r = 12,
+    .pbc1_radius_r = 12,
+    .pbc1_theta_c = 127,
+    .pbc1_radius_c = 26,
+    .pbc1_tslope = 85,
+    .pbc1_lpf_gain = 16,
+    .pbc1_rslope = 85,
+    .pbc1_conf_gain = 1,
+    .pbc1_edge_en = 0,
+    .pbc1_edge_thr = 12,
+    .pbc1_edge_slope = 32,
+
+
+    .pbc2_en = 1,
+    .pbc2_lpf_en = 0,
+    .pbc2_gain = 16,
+    .pbc2_rslope_1 = 32,
+    .pbc2_theta_r = 24,
+    .pbc2_radius_r = 24,
+    .pbc2_theta_c = 96,
+    .pbc2_radius_c = 32,
+    .pbc2_tslope = 43,
+    .pbc2_lpf_gain = 16,
+    .pbc2_rslope = 43,
+    .pbc2_conf_gain = 5,
+    .pbc2_edge_en = 0,
+    .pbc2_edge_thr = 12,
+    .pbc2_edge_slope = 32,
+
+    .pbc3_en = 0,
+    .pbc3_lpf_en = 0,
+    .pbc3_gain = 36,
+    .pbc3_rslope_1 = 17,
+    .pbc3_theta_r = 16,
+    .pbc3_radius_r = 32,
+    .pbc3_theta_c = 224,
+    .pbc3_radius_c = 60,
+    .pbc3_tslope = 64,
+    .pbc3_lpf_gain = 16,
+    .pbc3_rslope = 32,
+    .pbc3_conf_gain = 1,
+    .pbc3_edge_en = 0,
+    .pbc3_edge_thr = 12,
+    .pbc3_edge_slope = 32,
+
+#ifndef DS_BYPASS_2DGC
+    .tdshp_mid_coring_thr = 4,
+    .tdshp_mid_coring_zero = 2,
+    .tdshp_mid_softlimit_ratio = 8,
+    .tdshp_mid_limit = 24,
+    .tdshp_mid_bound = 48,
+    .tdshp_mid_coring_value = 3,
+    .tdshp_mid_softcoring_gain = 16,
+
+    .tdshp_high_coring_thr = 4,
+    .tdshp_high_coring_zero = 2,
+    .tdshp_high_softlimit_ratio = 8,
+    .tdshp_high_limit = 24,
+    .tdshp_high_bound = 48,
+    .tdshp_high_coring_value = 3,
+    .tdshp_high_softcoring_gain = 16,
+#endif //DS_BYPASS_2DGC
+
+#ifndef DS_BYPASS_EDS
+    .edf_gain_en = 1,
+    .edf_flat_gain = 0,
+    .edf_detail_gain = 64,
+    .edf_edge_gain = 16,
+    .edf_clip_ratio_inc = 2,
+
+    .edf_flat_th = 16,
+    .edf_detail_rise_th = 16,
+    .edf_detail_fall_th = 240,
+    .edf_edge_th = 240,
+
+    .edf_flat_slope = 4,
+    .edf_detail_rise_slope = 5,
+    .edf_detail_fall_slope = 10,
+    .edf_edge_slope = 10,
+
+    .edf_edge_mag_th = 0,
+    .edf_edge_mag_slope = 8,
+    .edf_edge_mono_th = 48,
+    .edf_edge_mono_slope = 7,
+
+    .edf_edge_trend_th = 32,
+    .edf_edge_trend_slope = 16,
+    .edf_edge_trend_flat_mag = 8,
+
+    .edf_bld_wgt_trend = 32,
+    .edf_bld_wgt_mono = 32,
+    .edf_bld_wgt_mag = 32,
+#endif //DS_BYPASS_EDS
+
+#ifndef DS_BYPASS_CB
+    .tdshp_cboost_lmt_u = 255,
+    .tdshp_cboost_lmt_l = 128,
+    .tdshp_cboost_en = 0,
+    .tdshp_cboost_gain = 128,
+    .tdshp_cboost_yconst = 16,
+    .tdshp_cboost_yoffset_sel = 0,
+    .tdshp_cboost_yoffset = 0,
+#endif
+    },
+
+    {// iDSHWRegEntry_3
+    .tdshp_en = 1,
+    .tdshp_bypass_mid = 0,
+    .tdshp_bypass_high = 0,
+    .tdshp_ink_sel = 0,
+    .tdshp_gain_mid = 16,
+    .tdshp_gain_high = 32,
+    .tdshp_softcoring_gain = 16,
+
+    .tdshp_coring_thr = 4,
+    .tdshp_coring_zero = 2,
+    .tdshp_gain = 32,
+    .tdshp_limit_ratio = 8,
+    .tdshp_limit = 24,
+    .tdshp_bound = 48,
+    .tdshp_coring_value = 3,
+
+    .tdshp_clip_en = 1,
+    .tdshp_clip_ratio = 8,
+    .tdshp_clip_thr = 2,
+    .tdshp_ac_lpf_coe = 8,
+    .tdshp_sat_proc = 10,
+
+    .tdshp_ylev_p000 = 0,
+    .tdshp_ylev_p016 = 24,
+    .tdshp_ylev_p032 = 48,
+    .tdshp_ylev_p048 = 72,
+    .tdshp_ylev_p064 = 96,
+    .tdshp_ylev_p080 = 104,
+    .tdshp_ylev_p096 = 112,
+    .tdshp_ylev_p112 = 120,
+    .tdshp_ylev_p128 = 128,
+    .tdshp_ylev_p144 = 123,
+    .tdshp_ylev_p160 = 118,
+    .tdshp_ylev_p176 = 112,
+    .tdshp_ylev_p192 = 107,
+    .tdshp_ylev_p208 = 102,
+    .tdshp_ylev_p224 = 96,
+    .tdshp_ylev_p240 = 91,
+    .tdshp_ylev_256  = 86,
+    .tdshp_ylev_alpha = 16,
+    .tdshp_ylev_en = 1,
+
+
+    .pbc1_en = 1,
+    .pbc1_lpf_en = 0,
+    .pbc1_gain = 48,
+    .pbc1_rslope_1 = 39,
+    .pbc1_theta_r = 12,
+    .pbc1_radius_r = 12,
+    .pbc1_theta_c = 127,
+    .pbc1_radius_c = 26,
+    .pbc1_tslope = 85,
+    .pbc1_lpf_gain = 16,
+    .pbc1_rslope = 85,
+    .pbc1_conf_gain = 1,
+    .pbc1_edge_en = 0,
+    .pbc1_edge_thr = 12,
+    .pbc1_edge_slope = 32,
+
+
+    .pbc2_en = 1,
+    .pbc2_lpf_en = 1,
+    .pbc2_gain = 16,
+    .pbc2_rslope_1 = 32,
+    .pbc2_theta_r = 24,
+    .pbc2_radius_r = 24,
+    .pbc2_theta_c = 96,
+    .pbc2_radius_c = 32,
+    .pbc2_tslope = 43,
+    .pbc2_lpf_gain = 16,
+    .pbc2_rslope = 43,
+    .pbc2_conf_gain = 5,
+    .pbc2_edge_en = 1,
+    .pbc2_edge_thr = 12,
+    .pbc2_edge_slope = 32,
+
+    .pbc3_en = 1,
+    .pbc3_lpf_en = 0,
+    .pbc3_gain = 36,
+    .pbc3_rslope_1 = 17,
+    .pbc3_theta_r = 16,
+    .pbc3_radius_r = 32,
+    .pbc3_theta_c = 224,
+    .pbc3_radius_c = 60,
+    .pbc3_tslope = 64,
+    .pbc3_lpf_gain = 16,
+    .pbc3_rslope = 32,
+    .pbc3_conf_gain = 1,
+    .pbc3_edge_en = 0,
+    .pbc3_edge_thr = 12,
+    .pbc3_edge_slope = 32,
+
+#ifndef DS_BYPASS_2DGC
+    .tdshp_mid_coring_thr = 4,
+    .tdshp_mid_coring_zero = 2,
+    .tdshp_mid_softlimit_ratio = 8,
+    .tdshp_mid_limit = 24,
+    .tdshp_mid_bound = 48,
+    .tdshp_mid_coring_value = 3,
+    .tdshp_mid_softcoring_gain = 16,
+
+    .tdshp_high_coring_thr = 4,
+    .tdshp_high_coring_zero = 2,
+    .tdshp_high_softlimit_ratio = 8,
+    .tdshp_high_limit = 24,
+    .tdshp_high_bound = 48,
+    .tdshp_high_coring_value = 3,
+    .tdshp_high_softcoring_gain = 16,
+#endif //DS_BYPASS_2DGC
+
+#ifndef DS_BYPASS_EDS
+    .edf_gain_en = 1,
+    .edf_flat_gain = 0,
+    .edf_detail_gain = 64,
+    .edf_edge_gain = 16,
+    .edf_clip_ratio_inc = 2,
+
+    .edf_flat_th = 16,
+    .edf_detail_rise_th = 16,
+    .edf_detail_fall_th = 240,
+    .edf_edge_th = 240,
+
+    .edf_flat_slope = 4,
+    .edf_detail_rise_slope = 5,
+    .edf_detail_fall_slope = 10,
+    .edf_edge_slope = 10,
+
+    .edf_edge_mag_th = 0,
+    .edf_edge_mag_slope = 8,
+    .edf_edge_mono_th = 48,
+    .edf_edge_mono_slope = 7,
+
+    .edf_edge_trend_th = 32,
+    .edf_edge_trend_slope = 16,
+    .edf_edge_trend_flat_mag = 8,
+
+    .edf_bld_wgt_trend = 32,
+    .edf_bld_wgt_mono = 32,
+    .edf_bld_wgt_mag = 32,
+#endif //DS_BYPASS_EDS
+
+#ifndef DS_BYPASS_CB
+    .tdshp_cboost_lmt_u = 255,
+    .tdshp_cboost_lmt_l = 128,
+    .tdshp_cboost_en = 1,
+    .tdshp_cboost_gain = 128,
+    .tdshp_cboost_yconst = 16,
+    .tdshp_cboost_yoffset_sel = 0,
+    .tdshp_cboost_yoffset = 0,
+#endif
+    },
+
+    {// iDSHWRegEntry_4
+    .tdshp_en = 1,
+    .tdshp_bypass_mid = 0,
+    .tdshp_bypass_high = 0,
+    .tdshp_ink_sel = 0,
+    .tdshp_gain_mid = 16,
+    .tdshp_gain_high = 32,
+    .tdshp_softcoring_gain = 16,
+
+    .tdshp_coring_thr = 4,
+    .tdshp_coring_zero = 2,
+    .tdshp_gain = 32,
+    .tdshp_limit_ratio = 8,
+    .tdshp_limit = 24,
+    .tdshp_bound = 48,
+    .tdshp_coring_value = 3,
+
+    .tdshp_clip_en = 1,
+    .tdshp_clip_ratio = 8,
+    .tdshp_clip_thr = 2,
+    .tdshp_ac_lpf_coe = 8,
+    .tdshp_sat_proc = 10,
+
+    .tdshp_ylev_p000 = 0,
+    .tdshp_ylev_p016 = 24,
+    .tdshp_ylev_p032 = 48,
+    .tdshp_ylev_p048 = 72,
+    .tdshp_ylev_p064 = 96,
+    .tdshp_ylev_p080 = 104,
+    .tdshp_ylev_p096 = 112,
+    .tdshp_ylev_p112 = 120,
+    .tdshp_ylev_p128 = 128,
+    .tdshp_ylev_p144 = 123,
+    .tdshp_ylev_p160 = 118,
+    .tdshp_ylev_p176 = 112,
+    .tdshp_ylev_p192 = 107,
+    .tdshp_ylev_p208 = 102,
+    .tdshp_ylev_p224 = 96,
+    .tdshp_ylev_p240 = 91,
+    .tdshp_ylev_256  = 86,
+    .tdshp_ylev_alpha = 16,
+    .tdshp_ylev_en = 1,
+
+
+    .pbc1_en = 1,
+    .pbc1_lpf_en = 0,
+    .pbc1_gain = 48,
+    .pbc1_rslope_1 = 39,
+    .pbc1_theta_r = 12,
+    .pbc1_radius_r = 12,
+    .pbc1_theta_c = 127,
+    .pbc1_radius_c = 26,
+    .pbc1_tslope = 85,
+    .pbc1_lpf_gain = 16,
+    .pbc1_rslope = 85,
+    .pbc1_conf_gain = 1,
+    .pbc1_edge_en = 0,
+    .pbc1_edge_thr = 12,
+    .pbc1_edge_slope = 32,
+
+
+    .pbc2_en = 1,
+    .pbc2_lpf_en = 1,
+    .pbc2_gain = 16,
+    .pbc2_rslope_1 = 32,
+    .pbc2_theta_r = 24,
+    .pbc2_radius_r = 24,
+    .pbc2_theta_c = 96,
+    .pbc2_radius_c = 32,
+    .pbc2_tslope = 43,
+    .pbc2_lpf_gain = 16,
+    .pbc2_rslope = 43,
+    .pbc2_conf_gain = 5,
+    .pbc2_edge_en = 1,
+    .pbc2_edge_thr = 12,
+    .pbc2_edge_slope = 32,
+
+    .pbc3_en = 1,
+    .pbc3_lpf_en = 0,
+    .pbc3_gain = 36,
+    .pbc3_rslope_1 = 17,
+    .pbc3_theta_r = 16,
+    .pbc3_radius_r = 32,
+    .pbc3_theta_c = 224,
+    .pbc3_radius_c = 60,
+    .pbc3_tslope = 64,
+    .pbc3_lpf_gain = 16,
+    .pbc3_rslope = 32,
+    .pbc3_conf_gain = 1,
+    .pbc3_edge_en = 0,
+    .pbc3_edge_thr = 12,
+    .pbc3_edge_slope = 32,
+
+#ifndef DS_BYPASS_2DGC
+    .tdshp_mid_coring_thr = 4,
+    .tdshp_mid_coring_zero = 2,
+    .tdshp_mid_softlimit_ratio = 8,
+    .tdshp_mid_limit = 24,
+    .tdshp_mid_bound = 48,
+    .tdshp_mid_coring_value = 3,
+    .tdshp_mid_softcoring_gain = 16,
+
+    .tdshp_high_coring_thr = 4,
+    .tdshp_high_coring_zero = 2,
+    .tdshp_high_softlimit_ratio = 8,
+    .tdshp_high_limit = 24,
+    .tdshp_high_bound = 48,
+    .tdshp_high_coring_value = 3,
+    .tdshp_high_softcoring_gain = 16,
+#endif //DS_BYPASS_2DGC
+
+#ifndef DS_BYPASS_EDS
+    .edf_gain_en = 1,
+    .edf_flat_gain = 0,
+    .edf_detail_gain = 64,
+    .edf_edge_gain = 16,
+    .edf_clip_ratio_inc = 2,
+
+    .edf_flat_th = 16,
+    .edf_detail_rise_th = 16,
+    .edf_detail_fall_th = 240,
+    .edf_edge_th = 240,
+
+    .edf_flat_slope = 4,
+    .edf_detail_rise_slope = 5,
+    .edf_detail_fall_slope = 10,
+    .edf_edge_slope = 10,
+
+    .edf_edge_mag_th = 0,
+    .edf_edge_mag_slope = 8,
+    .edf_edge_mono_th = 48,
+    .edf_edge_mono_slope = 7,
+
+    .edf_edge_trend_th = 32,
+    .edf_edge_trend_slope = 16,
+    .edf_edge_trend_flat_mag = 8,
+
+    .edf_bld_wgt_trend = 32,
+    .edf_bld_wgt_mono = 32,
+    .edf_bld_wgt_mag = 32,
+#endif //DS_BYPASS_EDS
+
+#ifndef DS_BYPASS_CB
+    .tdshp_cboost_lmt_u = 255,
+    .tdshp_cboost_lmt_l = 128,
+    .tdshp_cboost_en = 1,
+    .tdshp_cboost_gain = 128,
+    .tdshp_cboost_yconst = 16,
+    .tdshp_cboost_yoffset_sel = 0,
+    .tdshp_cboost_yoffset = 0,
+#endif
+    },
+
+    {// iDSHWRegEntry_5
+    .tdshp_en = 1,
+    .tdshp_bypass_mid = 0,
+    .tdshp_bypass_high = 0,
+    .tdshp_ink_sel = 0,
+    .tdshp_gain_mid = 16,
+    .tdshp_gain_high = 32,
+    .tdshp_softcoring_gain = 16,
+
+    .tdshp_coring_thr = 4,
+    .tdshp_coring_zero = 2,
+    .tdshp_gain = 64,
+    .tdshp_limit_ratio = 8,
+    .tdshp_limit = 24,
+    .tdshp_bound = 48,
+    .tdshp_coring_value = 3,
+
+    .tdshp_clip_en = 1,
+    .tdshp_clip_ratio = 8,
+    .tdshp_clip_thr = 2,
+    .tdshp_ac_lpf_coe = 8,
+    .tdshp_sat_proc = 10,
+
+    .tdshp_ylev_p000 = 0,
+    .tdshp_ylev_p016 = 24,
+    .tdshp_ylev_p032 = 48,
+    .tdshp_ylev_p048 = 72,
+    .tdshp_ylev_p064 = 96,
+    .tdshp_ylev_p080 = 104,
+    .tdshp_ylev_p096 = 112,
+    .tdshp_ylev_p112 = 120,
+    .tdshp_ylev_p128 = 128,
+    .tdshp_ylev_p144 = 123,
+    .tdshp_ylev_p160 = 118,
+    .tdshp_ylev_p176 = 112,
+    .tdshp_ylev_p192 = 107,
+    .tdshp_ylev_p208 = 102,
+    .tdshp_ylev_p224 = 96,
+    .tdshp_ylev_p240 = 91,
+    .tdshp_ylev_256  = 86,
+    .tdshp_ylev_alpha = 16,
+    .tdshp_ylev_en = 1,
+
+
+    .pbc1_en = 1,
+    .pbc1_lpf_en = 0,
+    .pbc1_gain = 48,
+    .pbc1_rslope_1 = 39,
+    .pbc1_theta_r = 12,
+    .pbc1_radius_r = 12,
+    .pbc1_theta_c = 127,
+    .pbc1_radius_c = 26,
+    .pbc1_tslope = 85,
+    .pbc1_lpf_gain = 16,
+    .pbc1_rslope = 85,
+    .pbc1_conf_gain = 1,
+    .pbc1_edge_en = 0,
+    .pbc1_edge_thr = 12,
+    .pbc1_edge_slope = 32,
+
+
+    .pbc2_en = 1,
+    .pbc2_lpf_en = 1,
+    .pbc2_gain = 16,
+    .pbc2_rslope_1 = 32,
+    .pbc2_theta_r = 24,
+    .pbc2_radius_r = 24,
+    .pbc2_theta_c = 96,
+    .pbc2_radius_c = 32,
+    .pbc2_tslope = 43,
+    .pbc2_lpf_gain = 16,
+    .pbc2_rslope = 43,
+    .pbc2_conf_gain = 5,
+    .pbc2_edge_en = 1,
+    .pbc2_edge_thr = 12,
+    .pbc2_edge_slope = 32,
+
+    .pbc3_en = 1,
+    .pbc3_lpf_en = 0,
+    .pbc3_gain = 36,
+    .pbc3_rslope_1 = 17,
+    .pbc3_theta_r = 16,
+    .pbc3_radius_r = 32,
+    .pbc3_theta_c = 224,
+    .pbc3_radius_c = 60,
+    .pbc3_tslope = 64,
+    .pbc3_lpf_gain = 16,
+    .pbc3_rslope = 32,
+    .pbc3_conf_gain = 1,
+    .pbc3_edge_en = 0,
+    .pbc3_edge_thr = 12,
+    .pbc3_edge_slope = 32,
+
+#ifndef DS_BYPASS_2DGC
+    .tdshp_mid_coring_thr = 4,
+    .tdshp_mid_coring_zero = 2,
+    .tdshp_mid_softlimit_ratio = 8,
+    .tdshp_mid_limit = 24,
+    .tdshp_mid_bound = 48,
+    .tdshp_mid_coring_value = 3,
+    .tdshp_mid_softcoring_gain = 16,
+
+    .tdshp_high_coring_thr = 4,
+    .tdshp_high_coring_zero = 2,
+    .tdshp_high_softlimit_ratio = 8,
+    .tdshp_high_limit = 24,
+    .tdshp_high_bound = 48,
+    .tdshp_high_coring_value = 3,
+    .tdshp_high_softcoring_gain = 16,
+#endif //DS_BYPASS_2DGC
+
+#ifndef DS_BYPASS_EDS
+    .edf_gain_en = 0,
+    .edf_flat_gain = 0,
+    .edf_detail_gain = 64,
+    .edf_edge_gain = 16,
+    .edf_clip_ratio_inc = 2,
+
+    .edf_flat_th = 16,
+    .edf_detail_rise_th = 16,
+    .edf_detail_fall_th = 240,
+    .edf_edge_th = 240,
+
+    .edf_flat_slope = 4,
+    .edf_detail_rise_slope = 5,
+    .edf_detail_fall_slope = 10,
+    .edf_edge_slope = 10,
+
+    .edf_edge_mag_th = 0,
+    .edf_edge_mag_slope = 8,
+    .edf_edge_mono_th = 48,
+    .edf_edge_mono_slope = 7,
+
+    .edf_edge_trend_th = 32,
+    .edf_edge_trend_slope = 16,
+    .edf_edge_trend_flat_mag = 8,
+
+    .edf_bld_wgt_trend = 32,
+    .edf_bld_wgt_mono = 32,
+    .edf_bld_wgt_mag = 32,
+#endif //DS_BYPASS_EDS
+
+#ifndef DS_BYPASS_CB
+    .tdshp_cboost_lmt_u = 255,
+    .tdshp_cboost_lmt_l = 128,
+    .tdshp_cboost_en = 1,
+    .tdshp_cboost_gain = 128,
+    .tdshp_cboost_yconst = 16,
+    .tdshp_cboost_yoffset_sel = 0,
+    .tdshp_cboost_yoffset = 0,
+#endif
+    },
+
+    {// iDSHWRegEntry_6
+    .tdshp_en = 1,
+    .tdshp_bypass_mid = 0,
+    .tdshp_bypass_high = 0,
+    .tdshp_ink_sel = 0,
+    .tdshp_gain_mid = 16,
+    .tdshp_gain_high = 32,
+    .tdshp_softcoring_gain = 16,
+
+    .tdshp_coring_thr = 4,
+    .tdshp_coring_zero = 2,
+    .tdshp_gain = 64,
+    .tdshp_limit_ratio = 8,
+    .tdshp_limit = 24,
+    .tdshp_bound = 48,
+    .tdshp_coring_value = 3,
+
+    .tdshp_clip_en = 1,
+    .tdshp_clip_ratio = 8,
+    .tdshp_clip_thr = 2,
+    .tdshp_ac_lpf_coe = 8,
+    .tdshp_sat_proc = 10,
+
+    .tdshp_ylev_p000 = 0,
+    .tdshp_ylev_p016 = 24,
+    .tdshp_ylev_p032 = 48,
+    .tdshp_ylev_p048 = 72,
+    .tdshp_ylev_p064 = 96,
+    .tdshp_ylev_p080 = 104,
+    .tdshp_ylev_p096 = 112,
+    .tdshp_ylev_p112 = 120,
+    .tdshp_ylev_p128 = 128,
+    .tdshp_ylev_p144 = 123,
+    .tdshp_ylev_p160 = 118,
+    .tdshp_ylev_p176 = 112,
+    .tdshp_ylev_p192 = 107,
+    .tdshp_ylev_p208 = 102,
+    .tdshp_ylev_p224 = 96,
+    .tdshp_ylev_p240 = 91,
+    .tdshp_ylev_256  = 86,
+    .tdshp_ylev_alpha = 16,
+    .tdshp_ylev_en = 1,
+
+
+    .pbc1_en = 1,
+    .pbc1_lpf_en = 0,
+    .pbc1_gain = 48,
+    .pbc1_rslope_1 = 39,
+    .pbc1_theta_r = 12,
+    .pbc1_radius_r = 12,
+    .pbc1_theta_c = 127,
+    .pbc1_radius_c = 26,
+    .pbc1_tslope = 85,
+    .pbc1_lpf_gain = 16,
+    .pbc1_rslope = 85,
+    .pbc1_conf_gain = 1,
+    .pbc1_edge_en = 0,
+    .pbc1_edge_thr = 12,
+    .pbc1_edge_slope = 32,
+
+
+    .pbc2_en = 1,
+    .pbc2_lpf_en = 1,
+    .pbc2_gain = 16,
+    .pbc2_rslope_1 = 32,
+    .pbc2_theta_r = 24,
+    .pbc2_radius_r = 24,
+    .pbc2_theta_c = 96,
+    .pbc2_radius_c = 32,
+    .pbc2_tslope = 43,
+    .pbc2_lpf_gain = 16,
+    .pbc2_rslope = 43,
+    .pbc2_conf_gain = 5,
+    .pbc2_edge_en = 1,
+    .pbc2_edge_thr = 12,
+    .pbc2_edge_slope = 32,
+
+    .pbc3_en = 1,
+    .pbc3_lpf_en = 0,
+    .pbc3_gain = 36,
+    .pbc3_rslope_1 = 17,
+    .pbc3_theta_r = 16,
+    .pbc3_radius_r = 32,
+    .pbc3_theta_c = 224,
+    .pbc3_radius_c = 60,
+    .pbc3_tslope = 64,
+    .pbc3_lpf_gain = 16,
+    .pbc3_rslope = 32,
+    .pbc3_conf_gain = 1,
+    .pbc3_edge_en = 0,
+    .pbc3_edge_thr = 12,
+    .pbc3_edge_slope = 32,
+
+#ifndef DS_BYPASS_2DGC
+    .tdshp_mid_coring_thr = 4,
+    .tdshp_mid_coring_zero = 2,
+    .tdshp_mid_softlimit_ratio = 8,
+    .tdshp_mid_limit = 24,
+    .tdshp_mid_bound = 48,
+    .tdshp_mid_coring_value = 3,
+    .tdshp_mid_softcoring_gain = 16,
+
+    .tdshp_high_coring_thr = 4,
+    .tdshp_high_coring_zero = 2,
+    .tdshp_high_softlimit_ratio = 8,
+    .tdshp_high_limit = 24,
+    .tdshp_high_bound = 48,
+    .tdshp_high_coring_value = 3,
+    .tdshp_high_softcoring_gain = 16,
+#endif //DS_BYPASS_2DGC
+
+#ifndef DS_BYPASS_EDS
+    .edf_gain_en = 1,
+    .edf_flat_gain = 0,
+    .edf_detail_gain = 64,
+    .edf_edge_gain = 16,
+    .edf_clip_ratio_inc = 2,
+
+    .edf_flat_th = 16,
+    .edf_detail_rise_th = 16,
+    .edf_detail_fall_th = 240,
+    .edf_edge_th = 240,
+
+    .edf_flat_slope = 4,
+    .edf_detail_rise_slope = 5,
+    .edf_detail_fall_slope = 10,
+    .edf_edge_slope = 10,
+
+    .edf_edge_mag_th = 0,
+    .edf_edge_mag_slope = 8,
+    .edf_edge_mono_th = 48,
+    .edf_edge_mono_slope = 7,
+
+    .edf_edge_trend_th = 32,
+    .edf_edge_trend_slope = 16,
+    .edf_edge_trend_flat_mag = 8,
+
+    .edf_bld_wgt_trend = 32,
+    .edf_bld_wgt_mono = 32,
+    .edf_bld_wgt_mag = 32,
+#endif //DS_BYPASS_EDS
+
+#ifndef DS_BYPASS_CB
+    .tdshp_cboost_lmt_u = 255,
+    .tdshp_cboost_lmt_l = 128,
+    .tdshp_cboost_en = 1,
+    .tdshp_cboost_gain = 128,
+    .tdshp_cboost_yconst = 16,
+    .tdshp_cboost_yoffset_sel = 0,
+    .tdshp_cboost_yoffset = 0,
+#endif
+    },
+
+    {// iDSHWRegEntry_7
+    .tdshp_en = 1,
+    .tdshp_bypass_mid = 0,
+    .tdshp_bypass_high = 0,
+    .tdshp_ink_sel = 0,
+    .tdshp_gain_mid = 16,
+    .tdshp_gain_high = 32,
+    .tdshp_softcoring_gain = 16,
+
+    .tdshp_coring_thr = 4,
+    .tdshp_coring_zero = 2,
+    .tdshp_gain = 32,
+    .tdshp_limit_ratio = 8,
+    .tdshp_limit = 24,
+    .tdshp_bound = 48,
+    .tdshp_coring_value = 3,
+
+    .tdshp_clip_en = 1,
+    .tdshp_clip_ratio = 8,
+    .tdshp_clip_thr = 2,
+    .tdshp_ac_lpf_coe = 8,
+    .tdshp_sat_proc = 10,
+
+    .tdshp_ylev_p000 = 0,
+    .tdshp_ylev_p016 = 24,
+    .tdshp_ylev_p032 = 48,
+    .tdshp_ylev_p048 = 72,
+    .tdshp_ylev_p064 = 96,
+    .tdshp_ylev_p080 = 104,
+    .tdshp_ylev_p096 = 112,
+    .tdshp_ylev_p112 = 120,
+    .tdshp_ylev_p128 = 128,
+    .tdshp_ylev_p144 = 123,
+    .tdshp_ylev_p160 = 118,
+    .tdshp_ylev_p176 = 112,
+    .tdshp_ylev_p192 = 107,
+    .tdshp_ylev_p208 = 102,
+    .tdshp_ylev_p224 = 96,
+    .tdshp_ylev_p240 = 91,
+    .tdshp_ylev_256  = 86,
+    .tdshp_ylev_alpha = 16,
+    .tdshp_ylev_en = 1,
+
+
+    .pbc1_en = 1,
+    .pbc1_lpf_en = 0,
+    .pbc1_gain = 48,
+    .pbc1_rslope_1 = 39,
+    .pbc1_theta_r = 12,
+    .pbc1_radius_r = 12,
+    .pbc1_theta_c = 127,
+    .pbc1_radius_c = 26,
+    .pbc1_tslope = 85,
+    .pbc1_lpf_gain = 16,
+    .pbc1_rslope = 85,
+    .pbc1_conf_gain = 1,
+    .pbc1_edge_en = 0,
+    .pbc1_edge_thr = 12,
+    .pbc1_edge_slope = 32,
+
+
+    .pbc2_en = 1,
+    .pbc2_lpf_en = 1,
+    .pbc2_gain = 16,
+    .pbc2_rslope_1 = 32,
+    .pbc2_theta_r = 24,
+    .pbc2_radius_r = 24,
+    .pbc2_theta_c = 96,
+    .pbc2_radius_c = 32,
+    .pbc2_tslope = 43,
+    .pbc2_lpf_gain = 16,
+    .pbc2_rslope = 43,
+    .pbc2_conf_gain = 5,
+    .pbc2_edge_en = 1,
+    .pbc2_edge_thr = 12,
+    .pbc2_edge_slope = 32,
+
+    .pbc3_en = 1,
+    .pbc3_lpf_en = 0,
+    .pbc3_gain = 36,
+    .pbc3_rslope_1 = 17,
+    .pbc3_theta_r = 16,
+    .pbc3_radius_r = 32,
+    .pbc3_theta_c = 224,
+    .pbc3_radius_c = 60,
+    .pbc3_tslope = 64,
+    .pbc3_lpf_gain = 16,
+    .pbc3_rslope = 32,
+    .pbc3_conf_gain = 1,
+    .pbc3_edge_en = 0,
+    .pbc3_edge_thr = 12,
+    .pbc3_edge_slope = 32,
+
+#ifndef DS_BYPASS_2DGC
+    .tdshp_mid_coring_thr = 4,
+    .tdshp_mid_coring_zero = 2,
+    .tdshp_mid_softlimit_ratio = 8,
+    .tdshp_mid_limit = 24,
+    .tdshp_mid_bound = 48,
+    .tdshp_mid_coring_value = 3,
+    .tdshp_mid_softcoring_gain = 16,
+
+    .tdshp_high_coring_thr = 4,
+    .tdshp_high_coring_zero = 2,
+    .tdshp_high_softlimit_ratio = 8,
+    .tdshp_high_limit = 24,
+    .tdshp_high_bound = 48,
+    .tdshp_high_coring_value = 3,
+    .tdshp_high_softcoring_gain = 16,
+#endif //DS_BYPASS_2DGC
+
+#ifndef DS_BYPASS_EDS
+    .edf_gain_en = 1,
+    .edf_flat_gain = 0,
+    .edf_detail_gain = 64,
+    .edf_edge_gain = 16,
+    .edf_clip_ratio_inc = 2,
+
+    .edf_flat_th = 16,
+    .edf_detail_rise_th = 16,
+    .edf_detail_fall_th = 240,
+    .edf_edge_th = 240,
+
+    .edf_flat_slope = 4,
+    .edf_detail_rise_slope = 5,
+    .edf_detail_fall_slope = 10,
+    .edf_edge_slope = 10,
+
+    .edf_edge_mag_th = 0,
+    .edf_edge_mag_slope = 8,
+    .edf_edge_mono_th = 48,
+    .edf_edge_mono_slope = 7,
+
+    .edf_edge_trend_th = 32,
+    .edf_edge_trend_slope = 16,
+    .edf_edge_trend_flat_mag = 8,
+
+    .edf_bld_wgt_trend = 32,
+    .edf_bld_wgt_mono = 32,
+    .edf_bld_wgt_mag = 32,
+#endif //DS_BYPASS_EDS
+
+#ifndef DS_BYPASS_CB
+    .tdshp_cboost_lmt_u = 255,
+    .tdshp_cboost_lmt_l = 128,
+    .tdshp_cboost_en = 1,
+    .tdshp_cboost_gain = 128,
+    .tdshp_cboost_yconst = 16,
+    .tdshp_cboost_yoffset_sel = 0,
+    .tdshp_cboost_yoffset = 0,
+#endif
+    },
+
+    {// iDSHWRegEntry_8
+    .tdshp_en = 1,
+    .tdshp_bypass_mid = 0,
+    .tdshp_bypass_high = 0,
+    .tdshp_ink_sel = 0,
+    .tdshp_gain_mid = 16,
+    .tdshp_gain_high = 32,
+    .tdshp_softcoring_gain = 16,
+
+    .tdshp_coring_thr = 4,
+    .tdshp_coring_zero = 2,
+    .tdshp_gain = 32,
+    .tdshp_limit_ratio = 8,
+    .tdshp_limit = 24,
+    .tdshp_bound = 48,
+    .tdshp_coring_value = 3,
+
+    .tdshp_clip_en = 1,
+    .tdshp_clip_ratio = 8,
+    .tdshp_clip_thr = 2,
+    .tdshp_ac_lpf_coe = 8,
+    .tdshp_sat_proc = 10,
+
+    .tdshp_ylev_p000 = 0,
+    .tdshp_ylev_p016 = 24,
+    .tdshp_ylev_p032 = 48,
+    .tdshp_ylev_p048 = 72,
+    .tdshp_ylev_p064 = 96,
+    .tdshp_ylev_p080 = 104,
+    .tdshp_ylev_p096 = 112,
+    .tdshp_ylev_p112 = 120,
+    .tdshp_ylev_p128 = 128,
+    .tdshp_ylev_p144 = 123,
+    .tdshp_ylev_p160 = 118,
+    .tdshp_ylev_p176 = 112,
+    .tdshp_ylev_p192 = 107,
+    .tdshp_ylev_p208 = 102,
+    .tdshp_ylev_p224 = 96,
+    .tdshp_ylev_p240 = 91,
+    .tdshp_ylev_256  = 86,
+    .tdshp_ylev_alpha = 16,
+    .tdshp_ylev_en = 1,
+
+
+    .pbc1_en = 1,
+    .pbc1_lpf_en = 0,
+    .pbc1_gain = 48,
+    .pbc1_rslope_1 = 39,
+    .pbc1_theta_r = 12,
+    .pbc1_radius_r = 12,
+    .pbc1_theta_c = 127,
+    .pbc1_radius_c = 26,
+    .pbc1_tslope = 85,
+    .pbc1_lpf_gain = 16,
+    .pbc1_rslope = 85,
+    .pbc1_conf_gain = 1,
+    .pbc1_edge_en = 0,
+    .pbc1_edge_thr = 12,
+    .pbc1_edge_slope = 32,
+
+
+    .pbc2_en = 1,
+    .pbc2_lpf_en = 1,
+    .pbc2_gain = 16,
+    .pbc2_rslope_1 = 32,
+    .pbc2_theta_r = 24,
+    .pbc2_radius_r = 24,
+    .pbc2_theta_c = 96,
+    .pbc2_radius_c = 32,
+    .pbc2_tslope = 43,
+    .pbc2_lpf_gain = 16,
+    .pbc2_rslope = 43,
+    .pbc2_conf_gain = 5,
+    .pbc2_edge_en = 1,
+    .pbc2_edge_thr = 12,
+    .pbc2_edge_slope = 32,
+
+    .pbc3_en = 1,
+    .pbc3_lpf_en = 0,
+    .pbc3_gain = 36,
+    .pbc3_rslope_1 = 17,
+    .pbc3_theta_r = 16,
+    .pbc3_radius_r = 32,
+    .pbc3_theta_c = 224,
+    .pbc3_radius_c = 60,
+    .pbc3_tslope = 64,
+    .pbc3_lpf_gain = 16,
+    .pbc3_rslope = 32,
+    .pbc3_conf_gain = 1,
+    .pbc3_edge_en = 0,
+    .pbc3_edge_thr = 12,
+    .pbc3_edge_slope = 32,
+
+#ifndef DS_BYPASS_2DGC
+    .tdshp_mid_coring_thr = 4,
+    .tdshp_mid_coring_zero = 2,
+    .tdshp_mid_softlimit_ratio = 8,
+    .tdshp_mid_limit = 24,
+    .tdshp_mid_bound = 48,
+    .tdshp_mid_coring_value = 3,
+    .tdshp_mid_softcoring_gain = 16,
+
+    .tdshp_high_coring_thr = 4,
+    .tdshp_high_coring_zero = 2,
+    .tdshp_high_softlimit_ratio = 8,
+    .tdshp_high_limit = 24,
+    .tdshp_high_bound = 48,
+    .tdshp_high_coring_value = 3,
+    .tdshp_high_softcoring_gain = 16,
+#endif //DS_BYPASS_2DGC
+
+#ifndef DS_BYPASS_EDS
+    .edf_gain_en = 1,
+    .edf_flat_gain = 0,
+    .edf_detail_gain = 64,
+    .edf_edge_gain = 16,
+    .edf_clip_ratio_inc = 2,
+
+    .edf_flat_th = 16,
+    .edf_detail_rise_th = 16,
+    .edf_detail_fall_th = 240,
+    .edf_edge_th = 240,
+
+    .edf_flat_slope = 4,
+    .edf_detail_rise_slope = 5,
+    .edf_detail_fall_slope = 10,
+    .edf_edge_slope = 10,
+
+    .edf_edge_mag_th = 0,
+    .edf_edge_mag_slope = 8,
+    .edf_edge_mono_th = 48,
+    .edf_edge_mono_slope = 7,
+
+    .edf_edge_trend_th = 32,
+    .edf_edge_trend_slope = 16,
+    .edf_edge_trend_flat_mag = 8,
+
+    .edf_bld_wgt_trend = 32,
+    .edf_bld_wgt_mono = 32,
+    .edf_bld_wgt_mag = 32,
+#endif //DS_BYPASS_EDS
+
+#ifndef DS_BYPASS_CB
+    .tdshp_cboost_lmt_u = 255,
+    .tdshp_cboost_lmt_l = 128,
+    .tdshp_cboost_en = 1,
+    .tdshp_cboost_gain = 128,
+    .tdshp_cboost_yconst = 16,
+    .tdshp_cboost_yoffset_sel = 0,
+    .tdshp_cboost_yoffset = 0,
+#endif
+    },
+
+    {// iDSHWRegEntry_9
+    .tdshp_en = 1,
+    .tdshp_bypass_mid = 0,
+    .tdshp_bypass_high = 0,
+    .tdshp_ink_sel = 0,
+    .tdshp_gain_mid = 16,
+    .tdshp_gain_high = 32,
+    .tdshp_softcoring_gain = 16,
+
+    .tdshp_coring_thr = 4,
+    .tdshp_coring_zero = 2,
+    .tdshp_gain = 32,
+    .tdshp_limit_ratio = 8,
+    .tdshp_limit = 24,
+    .tdshp_bound = 48,
+    .tdshp_coring_value = 3,
+
+    .tdshp_clip_en = 1,
+    .tdshp_clip_ratio = 8,
+    .tdshp_clip_thr = 2,
+    .tdshp_ac_lpf_coe = 8,
+    .tdshp_sat_proc = 10,
+
+    .tdshp_ylev_p000 = 0,
+    .tdshp_ylev_p016 = 24,
+    .tdshp_ylev_p032 = 48,
+    .tdshp_ylev_p048 = 72,
+    .tdshp_ylev_p064 = 96,
+    .tdshp_ylev_p080 = 104,
+    .tdshp_ylev_p096 = 112,
+    .tdshp_ylev_p112 = 120,
+    .tdshp_ylev_p128 = 128,
+    .tdshp_ylev_p144 = 123,
+    .tdshp_ylev_p160 = 118,
+    .tdshp_ylev_p176 = 112,
+    .tdshp_ylev_p192 = 107,
+    .tdshp_ylev_p208 = 102,
+    .tdshp_ylev_p224 = 96,
+    .tdshp_ylev_p240 = 91,
+    .tdshp_ylev_256  = 86,
+    .tdshp_ylev_alpha = 16,
+    .tdshp_ylev_en = 1,
+
+
+    .pbc1_en = 1,
+    .pbc1_lpf_en = 0,
+    .pbc1_gain = 48,
+    .pbc1_rslope_1 = 39,
+    .pbc1_theta_r = 12,
+    .pbc1_radius_r = 12,
+    .pbc1_theta_c = 127,
+    .pbc1_radius_c = 26,
+    .pbc1_tslope = 85,
+    .pbc1_lpf_gain = 16,
+    .pbc1_rslope = 85,
+    .pbc1_conf_gain = 1,
+    .pbc1_edge_en = 0,
+    .pbc1_edge_thr = 12,
+    .pbc1_edge_slope = 32,
+
+
+    .pbc2_en = 1,
+    .pbc2_lpf_en = 1,
+    .pbc2_gain = 16,
+    .pbc2_rslope_1 = 32,
+    .pbc2_theta_r = 24,
+    .pbc2_radius_r = 24,
+    .pbc2_theta_c = 96,
+    .pbc2_radius_c = 32,
+    .pbc2_tslope = 43,
+    .pbc2_lpf_gain = 16,
+    .pbc2_rslope = 43,
+    .pbc2_conf_gain = 5,
+    .pbc2_edge_en = 1,
+    .pbc2_edge_thr = 12,
+    .pbc2_edge_slope = 32,
+
+    .pbc3_en = 1,
+    .pbc3_lpf_en = 0,
+    .pbc3_gain = 36,
+    .pbc3_rslope_1 = 17,
+    .pbc3_theta_r = 16,
+    .pbc3_radius_r = 32,
+    .pbc3_theta_c = 224,
+    .pbc3_radius_c = 60,
+    .pbc3_tslope = 64,
+    .pbc3_lpf_gain = 16,
+    .pbc3_rslope = 32,
+    .pbc3_conf_gain = 1,
+    .pbc3_edge_en = 0,
+    .pbc3_edge_thr = 12,
+    .pbc3_edge_slope = 32,
+
+#ifndef DS_BYPASS_2DGC
+    .tdshp_mid_coring_thr = 4,
+    .tdshp_mid_coring_zero = 2,
+    .tdshp_mid_softlimit_ratio = 8,
+    .tdshp_mid_limit = 24,
+    .tdshp_mid_bound = 48,
+    .tdshp_mid_coring_value = 3,
+    .tdshp_mid_softcoring_gain = 16,
+
+    .tdshp_high_coring_thr = 4,
+    .tdshp_high_coring_zero = 2,
+    .tdshp_high_softlimit_ratio = 8,
+    .tdshp_high_limit = 24,
+    .tdshp_high_bound = 48,
+    .tdshp_high_coring_value = 3,
+    .tdshp_high_softcoring_gain = 16,
+#endif //DS_BYPASS_2DGC
+
+#ifndef DS_BYPASS_EDS
+    .edf_gain_en = 1,
+    .edf_flat_gain = 0,
+    .edf_detail_gain = 64,
+    .edf_edge_gain = 16,
+    .edf_clip_ratio_inc = 2,
+
+    .edf_flat_th = 16,
+    .edf_detail_rise_th = 16,
+    .edf_detail_fall_th = 240,
+    .edf_edge_th = 240,
+
+    .edf_flat_slope = 4,
+    .edf_detail_rise_slope = 5,
+    .edf_detail_fall_slope = 10,
+    .edf_edge_slope = 10,
+
+    .edf_edge_mag_th = 0,
+    .edf_edge_mag_slope = 8,
+    .edf_edge_mono_th = 48,
+    .edf_edge_mono_slope = 7,
+
+    .edf_edge_trend_th = 32,
+    .edf_edge_trend_slope = 16,
+    .edf_edge_trend_flat_mag = 8,
+
+    .edf_bld_wgt_trend = 32,
+    .edf_bld_wgt_mono = 32,
+    .edf_bld_wgt_mag = 32,
+#endif //DS_BYPASS_EDS
+
+#ifndef DS_BYPASS_CB
+    .tdshp_cboost_lmt_u = 255,
+    .tdshp_cboost_lmt_l = 128,
+    .tdshp_cboost_en = 1,
+    .tdshp_cboost_gain = 128,
+    .tdshp_cboost_yconst = 16,
+    .tdshp_cboost_yoffset_sel = 0,
+    .tdshp_cboost_yoffset = 0,
+#endif
+    },
+
+    {// iDSHWRegEntry_10
+    .tdshp_en = 1,
+    .tdshp_bypass_mid = 0,
+    .tdshp_bypass_high = 0,
+    .tdshp_ink_sel = 0,
+    .tdshp_gain_mid = 16,
+    .tdshp_gain_high = 32,
+    .tdshp_softcoring_gain = 16,
+
+    .tdshp_coring_thr = 4,
+    .tdshp_coring_zero = 2,
+    .tdshp_gain = 32,
+    .tdshp_limit_ratio = 8,
+    .tdshp_limit = 24,
+    .tdshp_bound = 48,
+    .tdshp_coring_value = 3,
+
+    .tdshp_clip_en = 1,
+    .tdshp_clip_ratio = 8,
+    .tdshp_clip_thr = 2,
+    .tdshp_ac_lpf_coe = 8,
+    .tdshp_sat_proc = 10,
+
+    .tdshp_ylev_p000 = 0,
+    .tdshp_ylev_p016 = 24,
+    .tdshp_ylev_p032 = 48,
+    .tdshp_ylev_p048 = 72,
+    .tdshp_ylev_p064 = 96,
+    .tdshp_ylev_p080 = 104,
+    .tdshp_ylev_p096 = 112,
+    .tdshp_ylev_p112 = 120,
+    .tdshp_ylev_p128 = 128,
+    .tdshp_ylev_p144 = 123,
+    .tdshp_ylev_p160 = 118,
+    .tdshp_ylev_p176 = 112,
+    .tdshp_ylev_p192 = 107,
+    .tdshp_ylev_p208 = 102,
+    .tdshp_ylev_p224 = 96,
+    .tdshp_ylev_p240 = 91,
+    .tdshp_ylev_256  = 86,
+    .tdshp_ylev_alpha = 16,
+    .tdshp_ylev_en = 1,
+
+
+    .pbc1_en = 1,
+    .pbc1_lpf_en = 0,
+    .pbc1_gain = 48,
+    .pbc1_rslope_1 = 39,
+    .pbc1_theta_r = 12,
+    .pbc1_radius_r = 12,
+    .pbc1_theta_c = 127,
+    .pbc1_radius_c = 26,
+    .pbc1_tslope = 85,
+    .pbc1_lpf_gain = 16,
+    .pbc1_rslope = 85,
+    .pbc1_conf_gain = 1,
+    .pbc1_edge_en = 0,
+    .pbc1_edge_thr = 12,
+    .pbc1_edge_slope = 32,
+
+
+    .pbc2_en = 1,
+    .pbc2_lpf_en = 1,
+    .pbc2_gain = 16,
+    .pbc2_rslope_1 = 32,
+    .pbc2_theta_r = 24,
+    .pbc2_radius_r = 24,
+    .pbc2_theta_c = 96,
+    .pbc2_radius_c = 32,
+    .pbc2_tslope = 43,
+    .pbc2_lpf_gain = 16,
+    .pbc2_rslope = 43,
+    .pbc2_conf_gain = 5,
+    .pbc2_edge_en = 1,
+    .pbc2_edge_thr = 12,
+    .pbc2_edge_slope = 32,
+
+    .pbc3_en = 1,
+    .pbc3_lpf_en = 0,
+    .pbc3_gain = 36,
+    .pbc3_rslope_1 = 17,
+    .pbc3_theta_r = 16,
+    .pbc3_radius_r = 32,
+    .pbc3_theta_c = 224,
+    .pbc3_radius_c = 60,
+    .pbc3_tslope = 64,
+    .pbc3_lpf_gain = 16,
+    .pbc3_rslope = 32,
+    .pbc3_conf_gain = 1,
+    .pbc3_edge_en = 0,
+    .pbc3_edge_thr = 12,
+    .pbc3_edge_slope = 32,
+
+#ifndef DS_BYPASS_2DGC
+    .tdshp_mid_coring_thr = 4,
+    .tdshp_mid_coring_zero = 2,
+    .tdshp_mid_softlimit_ratio = 8,
+    .tdshp_mid_limit = 24,
+    .tdshp_mid_bound = 48,
+    .tdshp_mid_coring_value = 3,
+    .tdshp_mid_softcoring_gain = 16,
+
+    .tdshp_high_coring_thr = 4,
+    .tdshp_high_coring_zero = 2,
+    .tdshp_high_softlimit_ratio = 8,
+    .tdshp_high_limit = 24,
+    .tdshp_high_bound = 48,
+    .tdshp_high_coring_value = 3,
+    .tdshp_high_softcoring_gain = 16,
+#endif //DS_BYPASS_2DGC
+
+#ifndef DS_BYPASS_EDS
+    .edf_gain_en = 1,
+    .edf_flat_gain = 0,
+    .edf_detail_gain = 64,
+    .edf_edge_gain = 16,
+    .edf_clip_ratio_inc = 2,
+
+    .edf_flat_th = 16,
+    .edf_detail_rise_th = 16,
+    .edf_detail_fall_th = 240,
+    .edf_edge_th = 240,
+
+    .edf_flat_slope = 4,
+    .edf_detail_rise_slope = 5,
+    .edf_detail_fall_slope = 10,
+    .edf_edge_slope = 10,
+
+    .edf_edge_mag_th = 0,
+    .edf_edge_mag_slope = 8,
+    .edf_edge_mono_th = 48,
+    .edf_edge_mono_slope = 7,
+
+    .edf_edge_trend_th = 32,
+    .edf_edge_trend_slope = 16,
+    .edf_edge_trend_flat_mag = 8,
+
+    .edf_bld_wgt_trend = 32,
+    .edf_bld_wgt_mono = 32,
+    .edf_bld_wgt_mag = 32,
+#endif //DS_BYPASS_EDS
+
+#ifndef DS_BYPASS_CB
+    .tdshp_cboost_lmt_u = 255,
+    .tdshp_cboost_lmt_l = 128,
+    .tdshp_cboost_en = 1,
+    .tdshp_cboost_gain = 128,
+    .tdshp_cboost_yconst = 16,
+    .tdshp_cboost_yoffset_sel = 0,
+    .tdshp_cboost_yoffset = 0,
+#endif
+    }
+};
+
+}

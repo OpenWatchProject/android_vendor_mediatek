@@ -1,0 +1,15 @@
+package vendor.mediatek.hardware.apmonitor@2.0;
+
+import IApmControlCallback;
+
+interface IApmService {
+    createSession() generates (apmResult_e result, SID sessionId, int64_t param);
+    closeSession(SID sessionId) generates (apmResult_e result);
+    registerControlCallback(SID sessionId, IApmControlCallback callback) generates (apmResult_e result);
+    getSubscribedMessages(SID sessionId) generates (apmResult_e result, vec<APM_MSGID> subscribedMessages);
+    getCurrentTimestamp() generates (timestamp timestampMs);
+
+    submitRawEvent(SID sessionId, apmKpiHeader_t header, uint32_t len, vec<uint8_t> data) generates (apmResult_e result);
+    submitFooBarEvent(SID sessionId, apmKpiHeader_t header, FooBar_t kpi) generates (apmResult_e result);
+    submitPacketEvent(SID sessionId, apmKpiHeader_t header, PacketEvent_t kpi) generates (apmResult_e result);
+};

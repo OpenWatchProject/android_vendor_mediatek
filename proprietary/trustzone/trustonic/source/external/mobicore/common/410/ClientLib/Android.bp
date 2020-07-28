@@ -1,0 +1,69 @@
+cc_library_shared {
+    name: "libMcClient",
+    proprietary: true,
+
+    srcs: [
+        "src/client_log.cpp",
+        "src/common.cpp",
+        "src/driver.cpp",
+        "src/native_interface.cpp",
+    ],
+
+    shared_libs: [
+        "liblog",
+    ],
+
+    cflags: [
+        "-Werror",
+        "-Wall",
+        "-Wextra",
+        "-fvisibility=hidden",
+        "-DLOG_ANDROID",
+        "-DTBASE_API_LEVEL=9",
+    ],
+
+    local_include_dirs: [
+         "include",
+         "include/GP",
+    ],
+
+    export_include_dirs: [
+         "include",
+         "include/GP",
+    ],
+}
+
+cc_library_static {
+    name: "libMcClient_static",
+    proprietary: true,
+
+    srcs: [
+        "src/client_log.cpp",
+        "src/common.cpp",
+        "src/driver.cpp",
+        "src/native_interface.cpp",
+    ],
+
+    shared_libs: [
+        "liblog",
+    ],
+
+    cflags: [
+        "-Werror",
+        "-Wall",
+        "-Wextra",
+        "-fvisibility=hidden",
+        "-DLOG_ANDROID",
+        "-DTBASE_API_LEVEL=9",
+    ],
+
+    local_include_dirs: [
+         "include",
+         "include/GP",
+    ],
+
+    export_include_dirs: [
+         "include",
+         "include/GP",
+    ],
+}

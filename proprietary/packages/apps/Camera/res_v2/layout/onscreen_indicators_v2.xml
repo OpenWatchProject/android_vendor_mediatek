@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/on_screen_group"
+    style="@style/OnScreenIndicatorGroup">
+<!-- 
+    <TextView android:id="@+id/onscreen_exposure_indicator"
+            style="@style/OnScreenIndicator"
+            android:paddingLeft="3dp"
+            android:paddingRight="3dp"
+            android:gravity="center_vertical"
+            android:textSize="@dimen/onscreen_exposure_indicator_text_size"
+            android:textColor="@android:color/white"
+            />
+ -->
+    <com.android.camera.v2.ui.RotateImageView
+        android:id="@+id/onscreen_dng_indicator"
+        style="@style/OnScreenIndicator"/>
+    <com.android.camera.v2.ui.RotateImageView
+        android:id="@+id/onscreen_scene_indicator"
+        style="@style/OnScreenIndicator"/>
+    <com.android.camera.v2.ui.RotateImageView
+        android:id="@+id/onscreen_white_balance_indicator"
+        style="@style/OnScreenIndicator"/>
+    <com.android.camera.v2.ui.RotateImageView
+        android:id="@+id/onscreen_exposure_indicator"
+        style="@style/OnScreenIndicator"/>
+
+    <com.android.camera.v2.ui.RotateImageView
+        android:id="@+id/onscreen_selftimer_indicator"
+        style="@style/OnScreenIndicator"/>
+    <com.android.camera.v2.ui.RotateImageView
+        android:id="@+id/onscreen_asd_indicator"
+        style="@style/OnScreenIndicator"/>
+    <com.android.camera.v2.ui.RotateAnimationImageView
+        android:id="@+id/onscreen_voice_indicator"
+        style="@style/OnScreenIndicator"/>
+<!--      <com.android.camera.ui.RotateAnimationImageView
+        android:id="@+id/onscreen_slow_motion"
+        style="@style/OnScreenIndicator"/>  -->
+</LinearLayout>
+

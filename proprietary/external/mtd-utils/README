@@ -1,0 +1,28 @@
+The mtd-utils utilities package
+
+WHAT IT DOES?
+=============
+Managing flash devices at the MTD/UBI level.
+Create ubifs filesystem tool.
+
+HOW IT WAS BUILT?
+==================
+It needs the following library from AOSP:
+1. libz.so
+2. libselinux.so
+
+HOW TO USE IT?
+==============
+mkfs.ubifs [OPTIONS] target
+ubinize [-o filename] [-p <bytes>] [-m <bytes>] [-s <bytes>] [-O <num>] [-e <num>]
+nandwrite [OPTION] MTD_DEVICE [INPUTFILE|-]
+flash_erase [options] MTD_DEVICE <start offset> <block count>
+ubiformat <MTD device node file name> [-s <bytes>] [-O <offs>] [-n]
+ubinfo [-d <UBI device number>] [-n <volume ID> | -N <volume name>] [-a] [-h] [-V]
+ubiattach [<UBI control device node file name>]
+ubidetach [<UBI control device node file name>]
+ubimkvol <UBI device node file name> [-h] [-a <alignment>] [-n <volume ID>] [-N <name>]
+ubirmvol <UBI device node file name> [-n <volume id>] [--vol_id=<volume id>]
+ubiupdatevol <UBI volume node file name> [-t] [-s <size>] [-h] [-V] [--truncate]
+mtdinfo <MTD node file path> [--map | -M] [--ubi-info | -u]
+For detal, please reference the usage in the code.

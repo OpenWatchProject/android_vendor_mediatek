@@ -1,0 +1,7 @@
+# do not warn the build warning, or else may cause build failed.
+-verbose
+
+# Contacts plugin @{
+-keep class com.mediatek.op18.contacts.** { *; }
+-keep class com.mediatek.contacts.ext.** { *; }
+# @}

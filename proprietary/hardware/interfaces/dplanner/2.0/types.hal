@@ -1,0 +1,9 @@
+package vendor.mediatek.hardware.dplanner@2.0;
+
+enum PlannerState: uint8_t {
+    IDLE = 0,
+    PREPARING,
+    RUNNING,
+    COMPLETING
+};
+

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    coreApp="true"
+    package="com.mediatek.security" >
+
+    <uses-sdk android:minSdkVersion="24" android:targetSdkVersion="28" />
+
+    <protected-broadcast android:name="com.mediatek.security.action.NETWORK_DATA_UPDATE" />
+
+    <uses-permission android:name="com.mediatek.security.permission.ACCESS_PERMISSION_CONTROL" />
+    <uses-permission android:name="android.permission.STATUS_BAR" />
+    <permission
+        android:name="com.mediatek.security.NETWORK_DATA_CONTROLLER_ACTIVITY"
+        android:label="@string/network_data_control_title"
+        android:protectionLevel="signatureOrSystem" />
+
+    <permission
+        android:name="com.mediatek.security.SYSTEM_NETWORK_DATA_ACTIVITY"
+        android:label="@string/app_name"
+        android:protectionLevel="signatureOrSystem" />
+
+    <application
+        android:allowClearUserData="false"
+        android:defaultToDeviceProtectedStorage="true"
+        android:directBootAware="true"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:taskAffinity=""
+        android:resizeableActivity="false"
+        android:theme="@android:style/Theme.Material.Settings" >
+        <activity
+            android:name="com.mediatek.security.NetworkDataControllerActivity"
+            android:label="@string/network_data_control_title"
+            android:launchMode="singleTask"
+            android:permission="com.mediatek.security.NETWORK_DATA_CONTROLLER_ACTIVITY" >
+            <intent-filter>
+                <action android:name="com.mediatek.security.NETWORK_DATA_CONTROLLER" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.mediatek.security.SystemPermissionRequestActivity"
+            android:excludeFromRecents="true"
+            android:theme="@style/NoActionBar"
+            android:permission="com.mediatek.security.SYSTEM_NETWORK_DATA_ACTIVITY" >
+            <intent-filter android:priority="1" >
+                <action android:name="com.mediatek.security.REVIEW_PERMISSIONS" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

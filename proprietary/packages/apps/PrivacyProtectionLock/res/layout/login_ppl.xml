@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scrollview_login_ppl"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true" >
+
+    <RelativeLayout
+        android:id="@+id/layout_login_ppl_outer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/tv_login_ppl_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:text="@string/title_access_lock"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <ProgressBar
+            android:id="@+id/common_progress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true" />
+
+        <LinearLayout
+            android:id="@+id/layout_login_ppl_up"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_login_ppl_title"
+            android:orientation="vertical" >
+
+            <EditText
+                android:id="@+id/et_login_ppl_input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="numberPassword" >
+                <requestFocus/>
+            </EditText>
+
+            <CheckBox
+                android:id="@+id/cb_login_ppl_show_pw"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/checkbox_show_password" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layout_login_ppl_down"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_below="@id/layout_login_ppl_up"
+            android:gravity="bottom"
+            android:orientation="vertical" >
+
+            <View
+                android:id="@+id/view_split_line"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:background="#444444" />
+
+            <Button
+                android:id="@+id/btn_bottom_confirm"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/button_confirm" />
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</ScrollView>
+

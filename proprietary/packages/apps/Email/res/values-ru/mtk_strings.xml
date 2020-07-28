@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Copyright Statement:
+
+    This software/firmware and related documentation ("MediaTek Software") are
+    protected under relevant copyright laws. The information contained herein
+    is confidential and proprietary to MediaTek Inc. and/or its licensors.
+    Without the prior written permission of MediaTek inc. and/or its licensors,
+    any reproduction, modification, use or disclosure of MediaTek Software,
+    and information contained herein, in whole or in part, shall be strictly prohibited.
+
+    MediaTek Inc. (C) 2012. All rights reserved.
+
+    BY OPENING THIS FILE, RECEIVER HEREBY UNEQUIVOCALLY ACKNOWLEDGES AND AGREES
+    THAT THE SOFTWARE/FIRMWARE AND ITS DOCUMENTATIONS ("MEDIATEK SOFTWARE")
+    RECEIVED FROM MEDIATEK AND/OR ITS REPRESENTATIVES ARE PROVIDED TO RECEIVER ON
+    AN "AS-IS" BASIS ONLY. MEDIATEK EXPRESSLY DISCLAIMS ANY AND ALL WARRANTIES,
+    EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF
+    MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE OR NONINFRINGEMENT.
+    NEITHER DOES MEDIATEK PROVIDE ANY WARRANTY WHATSOEVER WITH RESPECT TO THE
+    SOFTWARE OF ANY THIRD PARTY WHICH MAY BE USED BY, INCORPORATED IN, OR
+    SUPPLIED WITH THE MEDIATEK SOFTWARE, AND RECEIVER AGREES TO LOOK ONLY TO SUCH
+    THIRD PARTY FOR ANY WARRANTY CLAIM RELATING THERETO. RECEIVER EXPRESSLY ACKNOWLEDGES
+    THAT IT IS RECEIVER'S SOLE RESPONSIBILITY TO OBTAIN FROM ANY THIRD PARTY ALL PROPER LICENSES
+    CONTAINED IN MEDIATEK SOFTWARE. MEDIATEK SHALL ALSO NOT BE RESPONSIBLE FOR ANY MEDIATEK
+    SOFTWARE RELEASES MADE TO RECEIVER'S SPECIFICATION OR TO CONFORM TO A PARTICULAR
+    STANDARD OR OPEN FORUM. RECEIVER'S SOLE AND EXCLUSIVE REMEDY AND MEDIATEK'S ENTIRE AND
+    CUMULATIVE LIABILITY WITH RESPECT TO THE MEDIATEK SOFTWARE RELEASED HEREUNDER WILL BE,
+    AT MEDIATEK'S OPTION, TO REVISE OR REPLACE THE MEDIATEK SOFTWARE AT ISSUE,
+    OR REFUND ANY SOFTWARE LICENSE FEES OR SERVICE CHARGE PAID BY RECEIVER TO
+    MEDIATEK FOR SUCH MEDIATEK SOFTWARE AT ISSUE.
+
+    The following software/firmware and/or related documentation ("MediaTek Software")
+    have been modified by MediaTek Inc. All revisions are subject to any receiver's
+    applicable license agreements with MediaTek Inc.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">  
+    <string name="not_add_more_text">"Невозможно добавить дополнительный текст"</string>  
+    <!-- message compose add attachment -->  
+    <string name="attach_image">Фото</string>  
+    <string name="attach_video">Видео</string>  
+    <string name="attach_sound">Музыка</string>  
+    <string name="attach_contact">Контакты</string>  
+    <string name="attach_file">Файл</string>  
+    <string name="attach_calender">Календарь</string>  
+    <string name="attach_error_occurred">Нет приложения, поддерживающего вложение данного типа.</string>  
+    <!-- Toast for telling user the email service stopped when low storage -->  
+    <string name="low_storage_service_stop">Служба электронной почты остановлена из-за нехватки памяти.</string>  
+    <!-- Toast for hint user to delete unused emails to reclaim storage -->  
+    <string name="low_storage_hint_delete_mail">Для освобождения памяти можно удалить ненужные сообщения электронной почты или неиспользуемые приложения.</string>  
+    <!-- Toast for telling user the email service started when storage ok-->  
+    <string name="low_storage_service_start">Служба электронной почты снова запущена, так как памяти для ее работы сейчас достаточно.</string>  
+    <!-- Toast for telling user can not download attachment due to low storage -->  
+    <string name="low_storage_attachment_cannot_download">Невозможно загрузить вложение из-за нехватки памяти.</string>  
+    <!-- Toast for telling user can not view attachment due to low storage -->  
+    <string name="low_storage_attachment_cannot_view">Невозможно просмотреть вложение из-за нехватки памяти.</string>  
+    <!-- Download remaining of the message when view a partial downloaded message -->  
+    <string name="download_remaining">Остающиеся загрузки</string>  
+    <string name="downloading_remaining">Загрузка ...</string>  
+    <!-- Dialog title when user syncing manually without active network -->  
+    <string name="unable_to_connect">Невозможно подключиться</string>  
+    <!-- Dialog text when user syncing manually without active network  -->  
+    <string name="need_connection_prompt">"Для использования данного приложения требуется подключение к сети. Включите мобильную сеть или WiFi в меню настроек."</string>  
+    <!-- Dialog text when user syncing manually without active wifi network  -->
+    <string name="need_wifi_connection_prompt">"Для использования данного приложения требуется сетевое подключение. В меню настроек включите функцию WiFi." </string>
+    <!-- Button text in the connection alert dialog -->  
+    <string name="connection_settings">"Настройки"</string>  
+    <!-- limit of attachment number, when share more than 100+ attachments -->  
+    <string name="too_many_attachments">Невозможно добавить слишком много вложений. Будут добавлены только первые 
+        <xliff:g id="currentCount">%1$d</xliff:g> вложений.
+    </string>  
+    <!-- limit of attachment number, when the current number >100 -->  
+    <string name="not_add_more_attachments">Невозможно добавить дополнительные вложения. Ограничение составляет 
+        <xliff:g id="maxLimit">%1$d</xliff:g> вложений.
+    </string>  
+    <string name="attachment_overflow">Переполнение вложений</string>  
+    <!-- String which used to show toast when some attachment cannot be attached -->  
+    <string name="cannot_add_this_attachment">Невозможно добавить данное вложение.</string>  
+    <string name="loading_attachment">Загрузка вложений...</string> 
+    <!-- Open eml message -->  
+    <string name="open_message_parsing">Анализ сообщения...</string>  
+    <string name="open_message_update_db">Обновление базы данных...</string>  
+    <string name="open_message_update_ui">Загрузка сообщения...</string>  
+    <string name="please_wait">Операция выполняется. Пожалуйста, подождите…</string> 
+    <string name="delete_message_dialog_title">Удалить сообщение.</string>  
+    <string name="delete_message_confirm">Удалить данное сообщение?</string> 
+    <string name="attachment_info_deleted">"Данное приложение невозможно сохранить или открыть, т.к. оно, возможно, удалено."</string>  
+    <string name="send_failed_ticker"> 
+        <xliff:g id="account_name">%s</xliff:g> не удалось при отправке электронной почты.
+    </string>  
+    <!-- Notification title when email sent fails [CHAR LIMIT=30]-->  
+    <string name="send_failed_title">Не удалось при отправке электронной почты</string>  
+    <string name="always_bcc_myself">Всегда использовать скрытую копию</string>  
+    <string name="always_bcc_myself_summary">Всегда использовать режим скрытой копии при составлении, ответе и отправке электронной почты</string> 
+    <string name="remote_search_failed">Сбой поиска по серверу</string>
+    <string name="searching_on_server">Поиск на сервере</string>  
+    <string name="searching_on_server_title">Поиск \" 
+        <xliff:g id="account_name">%s</xliff:g>\" на сервере
+    </string>  
+    <string name="search_field_subject">Тема</string>  
+    <string name="search_field_receiver">Получатель</string>  
+    <string name="search_field_sender">Отправитель</string>  
+    <string name="search_field_body">Тело сообщения</string>  
+    <string name="search_field_all">"Все"</string>
+    <string name="searching_all_fields_on_sever">Искать все поля на сервере</string> 
+    <string name="select_all">"Выбрать все"</string>
+    <string name="deselect_all">"Отменить выбор"</string>
+
+    <string name="vip_settings">НАСТРОЙКИ VIP</string>  
+    <string name="vip_members">Члены VIP</string>  
+    <string name="vip_notifications">Уведомления VIP</string>  
+    <string name="vip_settings_notify_summary">Уведомление в системной панели при получении сообщения электронной почты VIP</string>  
+    <string name="vip_members_count">Члены VIP (<xliff:g example="2">%1$d</xliff:g>)</string>  
+    <string name="vip_remove_title">Удалить из VIP</string>
+    <string name="vip_remove_prompt"><xliff:g example="2">%1$s</xliff:g> будет удален из членов VIP.</string>  
+    <string name="not_add_duplicate_vip">Дублированный контакт не будет добавлен в список VIP.</string>  
+    <string name="vip_settings_ringtone">"Выбрать мелодию"</string>  
+    <string name="vip_settings_vibrate_label">Вибрация</string>  
+    <string name="vip_settings_vibrate_summary">Вибрация при получении электронной почты VIP</string>  
+    <string name="global_search_label">"Эл. почта"</string>  
+    <string name="global_search_hint">"Искать в электронной почте"</string>  
+    <string name="global_search_description">Отправители, темы и тело сообщения</string>  
+    <string name="account_settings_oof_time_alert">Время должно быть позднее, чем текущее время.</string>
+    <string name="account_settings_oof_label">Вне офиса</string>  
+    <string name="account_settings_oof_unchecked_summary">Теперь я в офисе</string>  
+    <string name="account_settings_oof_checked_summary">Сейчас я не в офисе</string>  
+    <string name="account_settings_oof_from_label">"С"</string>  
+    <string name="account_settings_oof_to_label">"Кому:"</string>  
+    <string name="account_settings_oof_auto_reply_label">Автоматические ответы при нахождении вне офиса</string>  
+    <string name="account_settings_oof_auto_reply_summary">Автоматически отправлять сообщение каждому отправителю</string>  
+    <string name="account_settings_oof_external_server_label">Отправлять автоматические ответы на внешний сервер</string>  
+    <string name="account_settings_oof_get_status">Получение статуса от сервера</string>  
+    <string name="account_settings_oof_save_sets">Сохранение настроек на сервере</string>  
+    <string name="account_settings_oof_get_status_fail">Не удается получить статус</string>
+    <string name="account_settings_oof_get_status_fail_summary">Сейчас не удается получить статус c сервера. Повторите попытку позднее.</string>
+    <string name="account_settings_oof_cancel">Без сохранения?</string>  
+    <string name="account_settings_oof_cancel_summary">Все изменения будут отменены.</string>  
+    <string name="account_settings_oof_save_fail">Не удается сохранить</string>  
+    <string name="account_settings_oof_save_fail_summary">Не удается сохранить настройки на сервере. Сервер может быть недоступен, автоматические ответы превысили лимит сервера или на устройствах установлена неверная дата или время.</string>  
+    <string name="account_setup_options_mail_check_frequency_smartpush">Интеллектуальная функция</string>
+    <string name="smart_push_alert_dialog_title">Функция экономии энергии</string>
+    <string name="smart_push_alert_dialog_message">" проверяет новые сообщения электронной почты реже в целях экономии энергии. При постоянном использовании данного режима сообщения электронной почты чаще будут приходить своевременно.\n\nРежим можно изменить в настройках в любое время."</string>
+    <string name="not_add_more_recipients">Невозможно\ одновременно добавить более <xliff:g id="maxLimit">%1$d</xliff:g> получателей.</string>
+    <string name="vip_choose_contact">Добавить в VIP</string>
+    <string name="can_not_add_vip_over_99">Невозможно\ добавить более 99 VIP-участников.</string>
+    <string name="no_application_response">Приложение блокировано</string>
+    <string name="vip_emails_from_accounts_fmt">Электронные сообщения с <xliff:g id="vipAccountCount">%d</xliff:g> учетных записей</string>
+    <string name="notification_multiple_new_vip_messages_fmt"><xliff:g example="2">%1$d</xliff:g> новых VIP-сообщений</string>
+    <string name="send_attachment_fail">Сбой при отправке вложения.</string>
+    <string name="cannot_move_multiple_mailbox_toast">Некоторые электронные письма сейчас в процессе отправки, повторите попытку позже.</string>
+    <string name="certificate_request_ssl">Для сертификации клиента следует использовать надежное подключение.</string>
+    <string name="auto_clear_cache_title">Автоматически очищать кэш-память</string>
+    <string name="auto_clear_cache_description">Периодически очищать приложения в кэш-памяти</string>
+    <string name="edit_quoted_dialog_title">Максимальное количество символов</string>
+    <string name="edit_quoted_not_append_all">Достигнуто ограничение на число символов. Некоторое прежнее содержимое будет потеряно, продолжить?</string>
+    <string name="single_message_view_attachment_saved">Приложение сохранено в <xliff:g id="filename">%s</xliff:g></string>
+    <string name="choose_attachment_dialog_title">"Выбрать приложение"</string>
+    <string name="message_compose_error_invalid_email">"Некоторые адреса электронной почты являются недопустимыми."</string>
+    <string name="extension_choose_provider_title">Выберите поставщика почтовых услуг</string>
+    <string name="message_view_status_sdcard_not_enough">Недостаточно памяти для сохранения приложения на SD-карте.</string>
+    <string name="message_body_too_large">Невозможно загрузить содержимое полностью, т.к. сообщение слишком длинное.</string>
+</resources>

@@ -1,0 +1,42 @@
+cc_prebuilt_library_shared {
+
+    name: "libjpeg-alpha_vendor",
+
+    proprietary: true,
+    owner: "mtk",
+    arch: {
+        arm: {
+            srcs: ["common/lib/libjpeg-alpha_vendor.so"],
+        },
+        arm64: {
+            srcs: ["common/lib64/libjpeg-alpha_vendor.so"],
+        },
+    },
+    compile_multilib: "both",
+    export_include_dirs: ["include/"],
+    shared_libs: ["libjpeg-alpha-oal_vendor"],
+}
+
+mtk_libjpeg_alpha_oal_vendor_prebuilt_library_shared {
+
+    name: "libjpeg-alpha-oal_vendor",
+
+    proprietary: true,
+    owner: "mtk",
+    compile_multilib: "both",
+}
+
+bootstrap_go_package {
+
+    name: "soong-libjpeg_alpha_vendor-mediatek",
+
+    pkgPath: "android/soong/libjpeg_alpha_vendor/mediatek",
+    deps: [
+        "soong-android",
+        "soong-cc",
+    ],
+    srcs: [
+        "libjpeg-alpha_vendor.go",
+    ],
+    pluginFor: ["soong_build"],
+}

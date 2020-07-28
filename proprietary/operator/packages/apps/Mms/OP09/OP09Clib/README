@@ -1,0 +1,27 @@
+OP09 customization features.
+
+This apk is pre-built by MediaTek internal.
+
+
+WHAT IT DOES?
+=============
+It is a plugin apk which contains the OP09 6M customization for Host App (dialer,phone and son on)
+
+HOW IT WAS BUILT?
+==================
+It needs the following library from Mediatek:
+1. mediatek-common.jar
+2. Host App api interface,for example:com.mediatek.phone.ext
+
+All the OP09 customization for dialer,phone and son on will be built as OP09Plugin.apk  installed under system/plugin, 
+and the OP09Plugin.mpinfo also be copied to the installed path when build time
+
+HOW TO USE IT?
+==============
+
+Implement the interface provided by Host App(dialer,phone and so on) to do customization.
+all api interface are at (packages/apps/xxx(Host App name)/ext).
+
+when run time, framework will find the OP09Plugin customization implementation via OP09Plugin.mpinfo.
+
+All the source code of  were written by MediaTek.

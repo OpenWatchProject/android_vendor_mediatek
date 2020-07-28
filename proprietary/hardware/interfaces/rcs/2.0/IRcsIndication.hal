@@ -1,0 +1,12 @@
+package vendor.mediatek.hardware.rcs@2.0;
+
+interface IRcsIndication {
+    /*
+     * Indicates event send from RCS UA daemon.
+     *
+     * @param account indicate SIM account.
+     * @param request request ID to indicate event type.
+     * @param data event payload.
+     */
+    oneway readEvent(int32_t account, int32_t request, vec<int8_t> data);
+};

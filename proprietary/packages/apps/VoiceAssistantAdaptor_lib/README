@@ -1,0 +1,19 @@
+WHAT IT DOES?
+==================
+This is a Mediatek VOW 2E2K feature mainly required resource.
+There is one APK file as an adaptor between VoiceCommand framework and
+3rd party hands-free assistant APP, and one xml config file will be preset
+in the load to enhance system feature.
+
+HOW IT WAS BUILD?
+===================
+1. MTK_VOW_2E2K_SUPPORT && MTK_VOW_SUPPORT should be true.
+
+[Build Method]
+mmm vendor/mediatek/proprietary/packages/apps/VoiceAssistantAdaptor_lib
+
+HOW TO USE IT?
+====================
+It uses the VoiceCommandListener for interfaces.
+
+All the source code of this library were written by MediaTek co..

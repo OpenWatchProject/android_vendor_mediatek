@@ -1,0 +1,16 @@
+
+WHAT IT DOES?
+=============
+This module works for png which decoded to 8888 dest optimization to let png decode faster.
+
+HOW IT WAS BUILT?
+==================
+It can be built independently and after build this module, should also build libskia.so, this opt can effect.
+
+HOW TO USE IT?
+==============
+
+Provide png decode filter optimization's implementation.
+Call this api in external/skia/src/images/SkScaledBitmapSampler.cpp (xxxx_D8888_neon())
+
+All the source code of this library were written by MediaTek co..

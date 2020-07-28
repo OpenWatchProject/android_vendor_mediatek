@@ -1,0 +1,24 @@
+cc_library_static {
+    name: "libmtkcam_pipelinepolicy-streaminfo",
+    proprietary: true,
+    vendor: true,
+    owner: "mtk",
+    cppflags: [
+    ],
+    srcs: [
+        "P1StreamInfoBuilder.cpp",
+        "StreamInfoBuilders.cpp",
+        "StreamInfoPluginDecider.cpp",
+    ],
+    header_libs: [
+        "libmtkcam_headers",
+        "libmtkcam3_headers",
+    ],
+    local_include_dirs: [
+    ],
+    export_include_dirs: [
+        ".",
+    ],
+}
+
+optional_subdirs = ["*"]

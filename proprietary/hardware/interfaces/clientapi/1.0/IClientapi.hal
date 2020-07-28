@@ -1,0 +1,10 @@
+package vendor.mediatek.hardware.clientapi@1.0;
+
+import IClientapiIndication;
+
+interface IClientapi {
+    setResponseFunctions(IClientapiIndication clientapiIndication);
+    oneway writeEvent(int32_t request_id, int32_t length, vec<int8_t> value);
+    oneway writeBytes(vec<int8_t> value);
+    oneway writeInt(int32_t value);
+};

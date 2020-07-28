@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:fillViewport="true"
+    android:fadeScrollbars="false">
+	<LinearLayout 
+    	android:layout_width="match_parent"
+	    android:layout_height="match_parent"
+    	android:orientation="vertical"
+	    android:scrollbars="vertical">
+  
+		<TextView  
+	    android:id="@+id/wfc_tutorial_view"
+    	android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:paddingLeft="20dp"
+	    android:paddingRight="20dp"
+	    android:paddingTop="20dp"
+		/>
+	
+
+		<Button
+    	android:id="@+id/tutorial_button"
+    	android:layout_width="wrap_content"
+    	android:layout_height="wrap_content"
+    	android:layout_gravity="right"	
+    	android:gravity="center"
+    	android:background="#00ffffff"
+    	android:textColor="#ff009688"
+    	/>
+
+	</LinearLayout>
+</ScrollView>

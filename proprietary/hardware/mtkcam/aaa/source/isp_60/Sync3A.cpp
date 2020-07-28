@@ -1,0 +1,2664 @@
+/* Copyright Statement:
+ *
+ * This software/firmware and related documentation ("MediaTek Software") are
+ * protected under relevant copyright laws. The information contained herein is
+ * confidential and proprietary to MediaTek Inc. and/or its licensors. Without
+ * the prior written permission of MediaTek inc. and/or its licensors, any
+ * reproduction, modification, use or disclosure of MediaTek Software, and
+ * information contained herein, in whole or in part, shall be strictly
+ * prohibited.
+ *
+ * MediaTek Inc. (C) 2010. All rights reserved.
+ *
+ * BY OPENING THIS FILE, RECEIVER HEREBY UNEQUIVOCALLY ACKNOWLEDGES AND AGREES
+ * THAT THE SOFTWARE/FIRMWARE AND ITS DOCUMENTATIONS ("MEDIATEK SOFTWARE")
+ * RECEIVED FROM MEDIATEK AND/OR ITS REPRESENTATIVES ARE PROVIDED TO RECEIVER
+ * ON AN "AS-IS" BASIS ONLY. MEDIATEK EXPRESSLY DISCLAIMS ANY AND ALL
+ * WARRANTIES, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED
+ * WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE OR
+ * NONINFRINGEMENT. NEITHER DOES MEDIATEK PROVIDE ANY WARRANTY WHATSOEVER WITH
+ * RESPECT TO THE SOFTWARE OF ANY THIRD PARTY WHICH MAY BE USED BY,
+ * INCORPORATED IN, OR SUPPLIED WITH THE MEDIATEK SOFTWARE, AND RECEIVER AGREES
+ * TO LOOK ONLY TO SUCH THIRD PARTY FOR ANY WARRANTY CLAIM RELATING THERETO.
+ * RECEIVER EXPRESSLY ACKNOWLEDGES THAT IT IS RECEIVER'S SOLE RESPONSIBILITY TO
+ * OBTAIN FROM ANY THIRD PARTY ALL PROPER LICENSES CONTAINED IN MEDIATEK
+ * SOFTWARE. MEDIATEK SHALL ALSO NOT BE RESPONSIBLE FOR ANY MEDIATEK SOFTWARE
+ * RELEASES MADE TO RECEIVER'S SPECIFICATION OR TO CONFORM TO A PARTICULAR
+ * STANDARD OR OPEN FORUM. RECEIVER'S SOLE AND EXCLUSIVE REMEDY AND MEDIATEK'S
+ * ENTIRE AND CUMULATIVE LIABILITY WITH RESPECT TO THE MEDIATEK SOFTWARE
+ * RELEASED HEREUNDER WILL BE, AT MEDIATEK'S OPTION, TO REVISE OR REPLACE THE
+ * MEDIATEK SOFTWARE AT ISSUE, OR REFUND ANY SOFTWARE LICENSE FEES OR SERVICE
+ * CHARGE PAID BY RECEIVER TO MEDIATEK FOR SUCH MEDIATEK SOFTWARE AT ISSUE.
+ *
+ * The following software/firmware and/or related documentation ("MediaTek
+ * Software") have been modified by MediaTek Inc. All revisions are subject to
+ * any receiver's applicable license agreements with MediaTek Inc.
+ */
+
+#define LOG_TAG "sync3a"
+
+#ifndef ENABLE_MY_LOG
+#define ENABLE_MY_LOG       (1)
+#endif
+
+#include <mtkcam/utils/std/Log.h>
+#include <aaa_types.h>
+#include <ISync3A.h>
+#include <aaa_scheduling_custom.h>
+
+#include "aaa/MTKSyncAe.h"
+#include "MTKSyncAwb.h"
+
+#include "Local.h"
+#include <ae_mgr/ae_mgr_if.h>
+#include <awb_mgr/awb_mgr_if.h>
+#include <isp_mgr/isp_mgr.h>
+#include <sensor_mgr/aaa_sensor_mgr.h>
+
+#include <nvbuf_util.h>
+#include <cutils/properties.h>
+
+#include "n3d_sync2a_tuning_param.h"
+#include <camera_custom_imgsensor_cfg.h>
+#include <mtkcam/drv/IHalSensor.h>
+#include <mtkcam/drv/mem/cam_cal_drv.h>
+#include <isp_tuning/isp_tuning_mgr.h>
+#include <isp_tuning.h>
+
+#include <debug_exif/dbg_id_param.h>        // for DEBUG_XXX_KEY_ID
+#include <dbg_cam_param.h>
+#include <dbg_cam_n3d_param.h>
+
+#include <string>
+#include <math.h>
+
+#include <dbg_aaa_param.h>
+#include <dbg_af_param.h>
+#include <camera_custom_nvram.h>
+#include <af_feature.h>
+extern "C" {
+#include <af_algo_if.h>
+}
+#include <af_mgr_if.h>
+#include <StatisticBuf.h>
+#include <ispif.h>
+#include <flash_hal.h>
+#include <flash_mgr.h>
+#include <flicker_hal_if.h>
+// for Sync AE of CCU version
+#include <iccu_ctrl_3actrl.h>
+#include <ccu_ext_interface/ccu_ae_extif.h>
+
+// for the FO of Wide standby mode
+#include <camera_custom_dualzoom.h>
+
+// ResultPool
+#include <IResultPool.h>
+
+using namespace NS3Av3;
+using namespace NSIspTuning;
+using namespace NSCcuIf;
+
+#define SEM_TIME_LIMIT_NS       1000000000L
+
+#define GET_PROP(prop, init, val)\
+{\
+    char value[PROPERTY_VALUE_MAX] = {'\0'};\
+    property_get(prop, value, (init));\
+    (val) = atoi(value);\
+}
+
+#define MIN(a,b)  ((a) < (b) ? (a) : (b))
+
+static NSCam::MRect
+get2AStatROI(
+    float main1_FOV_vertical,
+    float main1_FOV_horizontal,
+    float main2_FOV_vertical,
+    float main2_FOV_horizontal,
+    int tg_size_w, int tg_size_h)
+{
+    NSCam::MRect CropResult;
+
+    int width, height;
+    int offset_x, offset_y;
+
+    width  = (int)( ::tan(main1_FOV_horizontal / 180.0f * (float)::acos(0.0f)) / ::tan(main2_FOV_horizontal / 180.0f * (float)::acos(0.0f)) * tg_size_w / 2 ) * 2 ;
+    height = (int)( ::tan(main1_FOV_vertical / 180.0f * (float)::acos(0.0f)) / ::tan(main2_FOV_vertical / 180.0f * (float)::acos(0.0f)) * tg_size_h / 2 ) * 2 ;
+    offset_x = ((( tg_size_w - width ) >> 2 ) << 1) ;
+    offset_y = ((( tg_size_h - height) >> 2 ) << 1) ;
+
+    CAM_LOGD("[%s] FOV1_V(%3.3f), FOV1_H(%3.3f), FOV2_V(%3.3f), FOV2_H(%3.3f), tg(%d, %d)", __FUNCTION__,
+             main1_FOV_vertical, main1_FOV_horizontal, main2_FOV_vertical, main2_FOV_horizontal, tg_size_w, tg_size_h);
+
+    CropResult.p.x = offset_x;
+    CropResult.p.y = offset_y;
+
+    CropResult.s.w = width;
+    CropResult.s.h = height;
+
+    return CropResult;
+}
+
+/******************************************************************************
+ *  Sync3AWrapper
+ ******************************************************************************/
+class Sync3AWrapper
+{
+public:
+    struct ManualAe
+    {
+        MUINT32 u4ExpTime;  // in micro second
+        MUINT32 u4AfeGain;  // 1024 = 1x
+        MUINT32 u4IspGain;  // 1024 = 1x
+        MBOOL   fgOnOff;
+        ManualAe()
+            : u4ExpTime(10000000)
+            , u4AfeGain(1024)
+            , u4IspGain(1024)
+            , fgOnOff(MFALSE)
+        {}
+    };
+
+    static Sync3AWrapper*       getInstance();
+
+    virtual MBOOL               init(MINT32 i4Master, MINT32 i4Slave);
+
+    virtual MBOOL               uninit();
+
+    virtual MBOOL               syncCalc(MINT32 i4Opt, const StatisticBufInfo* pMasterSttBuf, const StatisticBufInfo* pSlaveSttBuf);
+
+    virtual MBOOL               setDebugInfo(void* prDbgInfo) const;
+
+    virtual MBOOL               isAeStable() const {return (m_fgMasterAeStable && m_fgSlaveAeStable);}
+
+    //This is for CPU AE
+    virtual VOID                syncAeSetting(MINT32 i4MasterIdx, MINT32 i4SlaveIdx);
+
+    //This is for CCU AE
+    virtual MBOOL               syncCCUAeSetting(MINT32 i4MasterIdx, MINT32 i4SlaveIdx, MINT32 i4MasterDev, MINT32 i4SlaveDev);
+
+    virtual VOID                syncAwbSetting(MINT32 i4MasterIdx, MINT32 i4SlaveIdx);
+
+    virtual MVOID               updateMasterSlave(MINT32 i4Master, MINT32 i4Slave);
+
+    virtual MVOID               updateFrameSync(MBOOL bEnable);
+
+protected:
+    Sync3AWrapper();
+    virtual ~Sync3AWrapper() {}
+
+    virtual MBOOL               update(MINT32 i4Opt);
+    SYNCAE_CAMERA_TYPE_ENUM     querySensorType(MINT32 i4SensorDev);
+    MBOOL                       syncAeInit();
+    MBOOL                       syncAwbInit();
+
+    MBOOL                       syncAeMain(const StatisticBufInfo* pMasterSttBuf, const StatisticBufInfo* pSlaveSttBuf);
+    MBOOL                       syncAwbMain(const StatisticBufInfo* pMasterSttBuf, const StatisticBufInfo* pSlaveSttBuf);
+
+    mutable std::mutex          m_Lock;
+    MINT32                      m_i4User;
+
+    MINT32                      m_i4Master;
+    MINT32                      m_i4Slave;
+
+    MBOOL                       m_fgMasterAeStable;
+    MBOOL                       m_fgSlaveAeStable;
+
+    ManualAe                    m_rManualAeMaster;
+    ManualAe                    m_rManualAeSlave;
+
+    MTKSyncAe*                  m_pMTKSyncAe;
+    MTKSyncAwb*                 m_pMTKSyncAwb;
+    ICcuCtrl3ACtrl*             m_pCcuCtrl3ASync;
+
+    SYNC_AWB_INPUT_INFO_STRUCT  m_rAwbSyncInput;
+    SYNC_AWB_OUTPUT_INFO_STRUCT m_rAwbSyncOutput;
+    SYNC_AE_OUTPUT_STRUCT       m_rAeSyncOutput;
+    MINT32                      m_Sync3ALogEnable;
+};
+
+/******************************************************************************
+ *  Sync3AWrapper Implementation
+ ******************************************************************************/
+static MINT32 Complement2(MUINT32 value, MUINT32 digit)
+{
+    MINT32 Result;
+
+    if (((value >> (digit - 1)) & 0x1) == 1) // negative
+    {
+        Result = 0 - (MINT32)((~value + 1) & ((1 << digit) - 1));
+    }
+    else
+    {
+        Result = (MINT32)(value & ((1 << digit) - 1));
+    }
+
+    return Result;
+}
+
+
+Sync3AWrapper::
+Sync3AWrapper()
+    : m_Lock()
+    , m_i4User(0)
+    , m_i4Master(ESensorDevId_Main)
+    , m_i4Slave(ESensorDevId_Main)
+    , m_fgMasterAeStable(MFALSE)
+    , m_fgSlaveAeStable(MFALSE)
+    , m_pMTKSyncAe(NULL)
+    , m_pMTKSyncAwb(NULL)
+    , m_pCcuCtrl3ASync(NULL)
+    , m_Sync3ALogEnable(0)
+{
+    memset(&m_rAwbSyncInput, 0, sizeof(SYNC_AWB_INPUT_INFO_STRUCT));
+    memset(&m_rAwbSyncOutput, 0, sizeof(SYNC_AWB_OUTPUT_INFO_STRUCT));
+    memset(&m_rAeSyncOutput, 0, sizeof(SYNC_AE_OUTPUT_STRUCT));
+    GET_PROP("vendor.debug.sync3AWrapper.log", "0", m_Sync3ALogEnable);
+}
+
+Sync3AWrapper*
+Sync3AWrapper::getInstance()
+{
+    static Sync3AWrapper _rWrap;
+    return &_rWrap;
+}
+
+MBOOL
+Sync3AWrapper::
+init(MINT32 i4Master, MINT32 i4Slave)
+{
+    std::lock_guard<std::mutex> lock(m_Lock);
+
+    if (m_i4User > 0)
+    {
+
+    }
+    else
+    {
+        CAM_LOGD("[%s] User(%d), eSensor(%d,%d)", __FUNCTION__, m_i4User, i4Master, i4Slave);
+        m_i4Master = i4Master;
+        m_i4Slave = i4Slave;
+        m_fgMasterAeStable = MFALSE;
+        m_fgSlaveAeStable = MFALSE;
+        syncAeInit();
+        syncAwbInit();
+        if(m_pCcuCtrl3ASync == NULL)
+        {
+            m_pCcuCtrl3ASync = ICcuCtrl3ACtrl::createInstance();
+            CAM_LOGD("[%s] CCU_SYNC_DBG Create ICcuCtrl3ACtrl", __FUNCTION__);
+        }
+        IAfMgr::getInstance(m_i4Slave).SyncAFSetMode(0xFE);
+        IAfMgr::getInstance(m_i4Master).SyncAFSetMode(0xFF);
+    }
+
+    m_i4User++;
+
+    return MTRUE;
+}
+
+MBOOL
+Sync3AWrapper::
+uninit()
+{
+    std::lock_guard<std::mutex> lock(m_Lock);
+
+    if (m_i4User > 0)
+    {
+        // More than one user, so decrease one User.
+        m_i4User--;
+
+        if (m_i4User == 0) // There is no more User after decrease one User
+        {
+            CAM_LOGD("[%s]", __FUNCTION__);
+            if (m_pMTKSyncAe)
+            {
+                m_pMTKSyncAe->destroyInstance();
+                m_pMTKSyncAe = NULL;
+            }
+            if (m_pMTKSyncAwb)
+            {
+                m_pMTKSyncAwb->destroyInstance();
+                m_pMTKSyncAwb = NULL;
+            }
+        }
+        else  // There are still some users.
+        {
+            CAM_LOGD("[%s] Still %d users \n", __FUNCTION__, m_i4User);
+        }
+    }
+
+    return MTRUE;
+}
+
+MBOOL
+Sync3AWrapper::
+syncCalc(MINT32 i4Opt, const StatisticBufInfo* pMasterSttBuf, const StatisticBufInfo* pSlaveSttBuf)
+{
+    if (pMasterSttBuf == NULL || pSlaveSttBuf == NULL)
+    {
+        CAM_LOGE("[%s] pMasterSttBuf = NULL(%p) || pSlaveSttBuf = NULL(%p)", __FUNCTION__, pMasterSttBuf, pSlaveSttBuf);
+        return MFALSE;
+    }
+    if (i4Opt & (ISync3A::E_SYNC3A_DO_AE | ISync3A::E_SYNC3A_DO_AE_PRECAP))
+    {
+        if (!syncAeMain(pMasterSttBuf, pSlaveSttBuf))
+            CAM_LOGE("[%s] syncAeMain fail", __FUNCTION__);
+    }
+
+    if (i4Opt & ISync3A::E_SYNC3A_DO_AWB)
+    {
+        if (!syncAwbMain(pMasterSttBuf, pSlaveSttBuf))
+            CAM_LOGE("[%s] syncAwbMain fail", __FUNCTION__);
+
+        //syncAwbSetting(m_i4Master, m_i4Slave);
+    }
+
+    return update(i4Opt);
+}
+
+
+MBOOL
+Sync3AWrapper::
+syncAeInit()
+{
+    CAM_LOGD("[%s] +", __FUNCTION__);
+
+    m_pMTKSyncAe = MTKSyncAe::createInstance();
+    if (!m_pMTKSyncAe)
+    {
+        CAM_LOGE("MTKSyncAe::createInstance() fail");
+        return MFALSE;
+    }
+
+    SYNC_AE_INIT_STRUCT rAEInitData;
+    ::memset(&rAEInitData, 0x0, sizeof(SYNC_AE_INIT_STRUCT));  //  initialize, Set all to 0
+    rAEInitData.SyncScenario = SYNC_AE_SCENARIO_N3D;
+    rAEInitData.SyncNum = 2; //N3D 2 cam
+
+    AWB_Calibration_Data AWBCalData = {512, 512, 512};   // todo remove ??
+
+    const strSyncAEInitInfo* pSyncAEInitInfo = getSyncAEInitInfo();
+
+    rAEInitData.SyncAeTuningParam.syncPolicy = (SYNC_AE_POLICY)pSyncAEInitInfo->SyncWhichEye;
+    rAEInitData.SyncAeTuningParam.enFinerSyncOffset = pSyncAEInitInfo->isFinerSyncOffset;
+    rAEInitData.SyncAeTuningParam.enPPGainComp = pSyncAEInitInfo->isDoGainRegression;
+    rAEInitData.SyncAeTuningParam.u4FixSyncGain = pSyncAEInitInfo->FixSyncGain;
+    rAEInitData.SyncAeTuningParam.u4RegressionType = pSyncAEInitInfo->u4RegressionType;
+
+    rAEInitData.main_param.syncAECalData.Golden = AWBCalData;  // todo
+    rAEInitData.main_param.syncAECalData.Unit = AWBCalData;    // todo
+    rAEInitData.sub_param.syncAECalData.Golden = AWBCalData;   // todo
+    rAEInitData.sub_param.syncAECalData.Unit = AWBCalData;     // todo
+    rAEInitData.main_param.syncAECamType = querySensorType(m_i4Master);
+    rAEInitData.sub_param.syncAECamType = querySensorType(m_i4Slave);
+
+    ::memcpy(rAEInitData.SyncAeTuningParam.pDeltaBVtoRatioArray, &pSyncAEInitInfo->pDeltaBVtoRatioArray[0][0], sizeof(MUINT32) * 2 * 30);
+    ::memcpy(rAEInitData.main_param.BVOffset, pSyncAEInitInfo->EVOffset_main, sizeof(MUINT32) * 2);
+    ::memcpy(rAEInitData.sub_param.BVOffset, pSyncAEInitInfo->EVOffset_main2, sizeof(MUINT32) * 2);
+    ::memcpy(rAEInitData.main_param.RGB2YCoef, pSyncAEInitInfo->RGB2YCoef_main, sizeof(MUINT32) * 3);
+    ::memcpy(rAEInitData.sub_param.RGB2YCoef, pSyncAEInitInfo->RGB2YCoef_main2, sizeof(MUINT32) * 3);
+
+    m_rAeSyncOutput.main_ch.u4SyncGain = 1024;
+    m_rAeSyncOutput.sub_ch.u4SyncGain = 1024;
+    NVRAM_CAMERA_3A_STRUCT* p3aNvram;
+    NvBufUtil::getInstance().getBufAndRead(CAMERA_NVRAM_DATA_3A, m_i4Master, (void*&)p3aNvram, 0);
+    rAEInitData.main_param.pAeNvram = &p3aNvram->AE[0];
+    NvBufUtil::getInstance().getBufAndRead(CAMERA_NVRAM_DATA_3A, m_i4Slave, (void*&)p3aNvram, 0);
+    rAEInitData.sub_param.pAeNvram = &p3aNvram->AE[0];
+
+    m_pMTKSyncAe->SyncAeInit(reinterpret_cast<void*>(&rAEInitData));
+
+    CAM_LOGD("[%s] -", __FUNCTION__);
+    return MTRUE;
+}
+
+MBOOL
+Sync3AWrapper::
+syncAwbInit()
+{
+    CAM_LOGD("[%s] +", __FUNCTION__);
+
+    m_pMTKSyncAwb = MTKSyncAwb::createInstance();
+    if (!m_pMTKSyncAwb)
+    {
+        CAM_LOGE("MTKSyncAwb::createInstance() fail");
+        return MFALSE;
+    }
+
+    MINT32 i4Master = ISync3AMgr::getInstance()->getAWBMasterDev();
+    MINT32 i4Slave  = ISync3AMgr::getInstance()->getAWBSlaveDev();
+    CAM_LOGD("[%s] MS(%d,%d), AWB(%d,%d) +", __FUNCTION__, m_i4Master, m_i4Slave, i4Master, i4Slave);
+
+    SYNC_AWB_INIT_INFO_STRUCT rAWBInitData;
+    ::memset(&rAWBInitData, 0x0, sizeof(SYNC_AWB_INIT_INFO_STRUCT));  //  initialize, Set all to 0
+
+    const strSyncAWBInitInfo* pAwbInitInfo = getSyncAWBInitInfo();
+
+    rAWBInitData.SyncScenario = SYNC_AWB_SCENARIO_N3D;
+
+    NVRAM_CAMERA_3A_STRUCT* p3aNvram;
+    NvBufUtil::getInstance().getBufAndRead(CAMERA_NVRAM_DATA_3A, m_i4Master, (void*&)p3aNvram, MFALSE);
+    rAWBInitData.main_param = p3aNvram->AWB[CAM_SCENARIO_PREVIEW];
+    rAWBInitData.main_sync_param = p3aNvram->AWBSYNC;
+    NvBufUtil::getInstance().getBufAndRead(CAMERA_NVRAM_DATA_3A, m_i4Slave, (void*&)p3aNvram, MFALSE);
+    rAWBInitData.sub_param = p3aNvram->AWB[CAM_SCENARIO_PREVIEW];
+    rAWBInitData.sub_sync_param = p3aNvram->AWBSYNC;
+
+
+    rAWBInitData.SyncAwbTuningParam.SyncMode = pAwbInitInfo->syncAWBMethod;
+
+    rAWBInitData.SyncAwbTuningParam.isFixMapLocation = pAwbInitInfo->isFixMapLocation;
+    rAWBInitData.SyncAwbTuningParam.u4SyncAWB_fov_ratio = pAwbInitInfo->u4SyncAWB_fov_ratio;
+    rAWBInitData.CurrentMasterDev = m_i4Master;
+
+    ::memcpy(&rAWBInitData.SyncAwbTuningParam.syncAWB_pp_method_tuning_param, &pAwbInitInfo->syncAWB_pp_method_tuning_param, sizeof(SYNC_AWB_ADV_PP_METHOD_TUNING_STRUCT));
+    ::memcpy(&rAWBInitData.SyncAwbTuningParam.syncAWB_blend_method_tuning_param, &pAwbInitInfo->syncAWB_blend_method_tuning_param, sizeof(SYNC_AWB_BLEND_TUNING_STRUCT));
+    ::memcpy(&rAWBInitData.SyncAwbTuningParam.syncAWB_wp_method_tuning_param, &pAwbInitInfo->syncAWB_wp_method_tuning_param, sizeof(SYNC_AWB_WHITEPOINTS_MAPPING_TUNING_STRUCT));
+    ::memcpy(&rAWBInitData.SyncAwbTuningParam.syncAWB_smooth_param, &pAwbInitInfo->syncAWB_smooth_param, sizeof(SYNC_AWB_SMOOTH_TUNING_STRUCT));
+    ::memcpy(&rAWBInitData.SyncAwbTuningParam.syncAWB_prefer_param, &pAwbInitInfo->syncAWB_prefer_param, sizeof(SYNC_AWB_PREFER_TUNING_STRUCT));
+    ::memcpy(&rAWBInitData.SyncAwbTuningParam.syncAWB_prefer_lvbase, &pAwbInitInfo->syncAWB_prefer_lvbase, sizeof(SYNC_AWB_PREFER_LVBASE_STRUCT));
+
+    m_pMTKSyncAwb->SyncAwbInit(reinterpret_cast<void*>(&rAWBInitData));
+
+    CAM_LOGD("[%s] -", __FUNCTION__);
+    return MTRUE;
+}
+
+MBOOL
+Sync3AWrapper::
+syncAeMain(const StatisticBufInfo* pMasterSttBuf, const StatisticBufInfo* pSlaveSttBuf)
+{
+    CAM_LOGD("[%s] MS(%d,%d)+", __FUNCTION__, m_i4Master, m_i4Slave);
+
+    AWB_GAIN_T defGain = {512, 512, 512};   // todo remove ??
+
+    SYNC_AE_INPUT_STRUCT rAeSyncInput;
+    // rAeSyncInput.eSyncAEMode = SYNC_AE_PLINES_CONST_W;
+    rAeSyncInput.eSyncAEMode = SYNC_AE_EXPTIME_CONST_W;
+    // CAM_LOGD("[%s] rAeSyncInput.eSyncAEMode = SYNC_AE_EXPTIME_CONST_W", __FUNCTION__);
+
+    rAeSyncInput.SyncCamScenario = SYNC_AE_CAM_SCENARIO_PREVIEW;
+    AE_MODE_CFG_T _a_rAEOutput_main, _a_rAEOutput_main2;
+    strAETable strPreviewAEPlineTableMain, strCaptureAEPlineTabMain;
+    strAETable strPreviewAEPlineTableMain2, strCaptureAEPlineTabMain2;
+    strAETable strStrobeAEPlineTableMain, strStrobeAEPlineTableMain2;
+    strAFPlineInfo strStrobeAFPlineTabMain, strStrobeAFPlineTabMain2;
+    strFinerEvPline strPreviewAEFinverPlineTableMain, strCaptureAEFinverPlineTabMain;
+    strFinerEvPline strPreviewAEFinverPlineTableMain2, strCaptureAEFinverPlineTabMain2;
+    MUINT32 u4AEConditionMain, u4AEConditionMain2;
+
+    AWB_OUTPUT_T rAwbMaster, rAwbSlave;
+
+    NVRAM_CAMERA_3A_STRUCT *pMasterNvram, *pSlaveNvram;
+    NvBufUtil::getInstance().getBufAndRead(CAMERA_NVRAM_DATA_3A, m_i4Master, (void*&)pMasterNvram, 0);
+    NvBufUtil::getInstance().getBufAndRead(CAMERA_NVRAM_DATA_3A, m_i4Slave, (void*&)pSlaveNvram, 0);
+
+    IAwbMgr::getInstance().getAWBOutput(m_i4Master, rAwbMaster);
+    IAwbMgr::getInstance().getAWBOutput(m_i4Slave, rAwbSlave);
+
+    AE_PERFRAME_INFO_T AEPerframeInfoMaster;
+    AE_PERFRAME_INFO_T AEPerframeInfoSlave;
+    IAeMgr::getInstance().getAEInfo(m_i4Master, AEPerframeInfoMaster);
+    IAeMgr::getInstance().getAEInfo(m_i4Slave, AEPerframeInfoSlave);
+
+    IAeMgr::getInstance().sendAECtrl(m_i4Master, EAECtrl_GetCurrentPlineTable, reinterpret_cast<MINTPTR>(&(strPreviewAEPlineTableMain)), reinterpret_cast<MINTPTR>(&(strCaptureAEPlineTabMain)), reinterpret_cast<MINTPTR>(&(strStrobeAEPlineTableMain)), reinterpret_cast<MINTPTR>(&(strStrobeAFPlineTabMain)));
+    IAeMgr::getInstance().sendAECtrl(m_i4Slave, EAECtrl_GetCurrentPlineTable, reinterpret_cast<MINTPTR>(&(strPreviewAEPlineTableMain2)), reinterpret_cast<MINTPTR>(&(strCaptureAEPlineTabMain2)), reinterpret_cast<MINTPTR>(&(strStrobeAEPlineTableMain2)), reinterpret_cast<MINTPTR>(&(strStrobeAFPlineTabMain2)));
+    IAeMgr::getInstance().sendAECtrl(m_i4Master, EAECtrl_GetCurrentPlineTableF, reinterpret_cast<MINTPTR>(&(strPreviewAEFinverPlineTableMain)), NULL, NULL, NULL);
+    IAeMgr::getInstance().sendAECtrl(m_i4Slave, EAECtrl_GetCurrentPlineTableF, reinterpret_cast<MINTPTR>(&(strPreviewAEFinverPlineTableMain2)), NULL, NULL, NULL);
+
+    m_fgMasterAeStable = AEPerframeInfoMaster.rAEISPInfo.bAEStable;
+    m_fgSlaveAeStable  = AEPerframeInfoSlave.rAEISPInfo.bAEStable;
+
+    MUINT32 i4AECondition = (AE_CONDITION_BACKLIGHT | AE_CONDITION_OVEREXPOSURE | AE_CONDITION_HIST_STRETCH | AE_CONDITION_SATURATION_CHECK | AE_CONDITION_FACEAE);
+
+    u4AEConditionMain = (i4AECondition & AEPerframeInfoMaster.rAEUpdateInfo.u4AECondition);
+    u4AEConditionMain2 = (i4AECondition & AEPerframeInfoSlave.rAEUpdateInfo.u4AECondition);
+
+    // All we need is CCU_strAEOutput@ccu_ae_param.h
+    // bAEStable     -> bAEStable@ccu_ae_param.h
+    // EvSetting     -> EvSetting@ccu_ae_param.h
+    // Bv            -> Bv@ccu_ae_param.h
+    // u4AECondition -> u4AECondition@ccu_ae_param.h
+    // i4DeltaBV     -> i4DeltaBV@ccu_ae_param.h
+    // u4ISO         -> u4ISO@ccu_ae_param.h
+    // u2FrameRate   -> u2FrameRate@ccu_ae_param.h
+    // i2FlareOffset -> i2FlareOffset@ccu_ae_param.h
+    // i2FlareGain -> i2FlareGain@ccu_ae_param.h
+    // i2FaceDiffIndex -> i2FaceDiffIndex@ccu_ae_param.h
+    // Except
+    // rAeSyncInput.main_ch.u4SyncGain = 1024
+    // rAeSyncInput.main_ch.u4ExposureMode ----> need to check
+    // rAeSyncInput.main_ch.wb_gain ----> need to check
+    // rAeSyncInput.main_ch.aao_buffer_info.buf_line_size = 780
+    // rAeSyncInput.main_ch.aao_buffer_info.pAEStatisticBuf 780*90 aao buffer
+    rAeSyncInput.main_ch.Input.bAEStable = AEPerframeInfoMaster.rAEISPInfo.bAEStable;
+
+    rAeSyncInput.main_ch.Input.EvSetting.u4Eposuretime = AEPerframeInfoMaster.rAEISPInfo.u8P1Exposuretime_ns / 1000;
+    rAeSyncInput.main_ch.Input.EvSetting.u4AfeGain = AEPerframeInfoMaster.rAEISPInfo.u4P1SensorGain;
+    rAeSyncInput.main_ch.Input.EvSetting.u4IspGain = AEPerframeInfoMaster.rAEISPInfo.u4P1DGNGain;
+    rAeSyncInput.main_ch.Input.EvSetting.uIris = 0;  // Iris fix
+    rAeSyncInput.main_ch.Input.EvSetting.uSensorMode = 0;  // sensor mode don't change
+    rAeSyncInput.main_ch.Input.EvSetting.uFlag = 0; // No hypersis
+    rAeSyncInput.main_ch.Input.Bv = AEPerframeInfoMaster.rAEUpdateInfo.i4BVvalue_x10;
+    rAeSyncInput.main_ch.Input.u4AECondition = u4AEConditionMain;
+    rAeSyncInput.main_ch.Input.i4DeltaBV = AEPerframeInfoMaster.rAEUpdateInfo.i4DeltaBV;
+
+    rAeSyncInput.main_ch.Input.u4ISO = AEPerframeInfoMaster.rAEISPInfo.u4P1RealISOValue;
+    rAeSyncInput.main_ch.Input.u2FrameRate = AEPerframeInfoMaster.rAEUpdateInfo.u2FrameRate_x10;
+    rAeSyncInput.main_ch.Input.i2FlareOffset = AEPerframeInfoMaster.rAEISPInfo.i2FlareOffset;
+    rAeSyncInput.main_ch.Input.i2FlareGain = AEPerframeInfoMaster.rAEISPInfo.i2FlareGain;
+    rAeSyncInput.main_ch.Input.i2FaceDiffIndex = AEPerframeInfoMaster.rAEUpdateInfo.i2AEFaceDiffIndex;
+    rAeSyncInput.main_ch.Input.i4AEidxCurrent = AEPerframeInfoMaster.rAEUpdateInfo.i4AEidxCur;
+    rAeSyncInput.main_ch.Input.i4AEidxCurrent = AEPerframeInfoMaster.rAEUpdateInfo.i4AEidxNext;
+    rAeSyncInput.main_ch.Input.i4AEidxCurrent = AEPerframeInfoMaster.rAEUpdateInfo.i4AEidxNextF;
+    rAeSyncInput.main_ch.Input.u4CWValue = AEPerframeInfoMaster.rAEUpdateInfo.u4CWValue;
+    rAeSyncInput.main_ch.Input.u4AvgY = AEPerframeInfoMaster.rAEUpdateInfo.u4AvgY;
+    rAeSyncInput.main_ch.u4SyncGain = m_rAeSyncOutput.main_ch.u4SyncGain;
+    rAeSyncInput.main_ch.u4ExposureMode = AEPerframeInfoMaster.rAEUpdateInfo.u4ExposureMode;   // exposure time
+    rAeSyncInput.main_ch.pAETable = &strPreviewAEPlineTableMain;
+    rAeSyncInput.main_ch.pAEFinerEVPline = &strPreviewAEFinverPlineTableMain;
+    rAeSyncInput.main_ch.pAeNvram = &pMasterNvram->AE[0];
+    rAeSyncInput.main_ch.aao_buffer_info.pAEStatisticBuf = (MVOID*) pMasterSttBuf->mVa; // reinterpret_cast<MVOID *>(IAAOBufMgr::getInstance().getCurrHwBuf(m_i4Master));
+    rAeSyncInput.main_ch.u4FinverEVidx = AEPerframeInfoMaster.rAEISPInfo.u4AEFinerEVIdxBase;
+    IAeMgr::getInstance().sendAECtrl(m_i4Master, EAECtrl_GetAAOLineByteSize, reinterpret_cast<MINTPTR>(&(rAeSyncInput.main_ch.aao_buffer_info.buf_line_size)), NULL, NULL, NULL);
+    rAeSyncInput.main_ch.wb_gain.i4B = rAwbMaster.rAWBSyncInput_N3D.rAlgGain.i4B;
+    rAeSyncInput.main_ch.wb_gain.i4G = rAwbMaster.rAWBSyncInput_N3D.rAlgGain.i4G;
+    rAeSyncInput.main_ch.wb_gain.i4R = rAwbMaster.rAWBSyncInput_N3D.rAlgGain.i4R;
+
+    rAeSyncInput.sub_ch.Input.bAEStable = AEPerframeInfoSlave.rAEISPInfo.bAEStable;
+    rAeSyncInput.sub_ch.Input.EvSetting.u4Eposuretime = _a_rAEOutput_main2.u4Eposuretime;
+    rAeSyncInput.sub_ch.Input.EvSetting.u4AfeGain = _a_rAEOutput_main2.u4AfeGain;
+    rAeSyncInput.sub_ch.Input.EvSetting.u4IspGain = _a_rAEOutput_main2.u4IspGain;
+    rAeSyncInput.sub_ch.Input.EvSetting.uIris = 0;  // Iris fix
+    rAeSyncInput.sub_ch.Input.EvSetting.uSensorMode = 0;  // sensor mode don't change
+    rAeSyncInput.sub_ch.Input.EvSetting.uFlag = 0; // No hypersis
+    rAeSyncInput.sub_ch.Input.Bv = AEPerframeInfoSlave.rAEUpdateInfo.i4BVvalue_x10;
+    rAeSyncInput.sub_ch.Input.u4AECondition = u4AEConditionMain2;
+    rAeSyncInput.sub_ch.Input.i4DeltaBV = AEPerframeInfoSlave.rAEUpdateInfo.i4DeltaBV;
+    rAeSyncInput.sub_ch.Input.u4ISO = AEPerframeInfoMaster.rAEISPInfo.u4P1RealISOValue;
+    rAeSyncInput.sub_ch.Input.u2FrameRate = _a_rAEOutput_main2.u2FrameRate;
+    rAeSyncInput.sub_ch.Input.i2FlareOffset = _a_rAEOutput_main2.i2FlareOffset;
+    rAeSyncInput.sub_ch.Input.i2FlareGain = _a_rAEOutput_main2.i2FlareGain;
+    rAeSyncInput.sub_ch.Input.i2FaceDiffIndex = AEPerframeInfoSlave.rAEUpdateInfo.i2AEFaceDiffIndex;
+    rAeSyncInput.sub_ch.Input.i4AEidxCurrent = AEPerframeInfoSlave.rAEUpdateInfo.i4AEidxCur;
+    rAeSyncInput.sub_ch.Input.i4AEidxCurrent = AEPerframeInfoSlave.rAEUpdateInfo.i4AEidxNext;
+    rAeSyncInput.sub_ch.Input.i4AEidxCurrent = AEPerframeInfoSlave.rAEUpdateInfo.i4AEidxNextF;
+    rAeSyncInput.sub_ch.u4FinverEVidx = _a_rAEOutput_main2.u4AEFinerEVIdxBase;
+    rAeSyncInput.sub_ch.Input.u4CWValue = _a_rAEOutput_main2.u4CWValue;
+    rAeSyncInput.sub_ch.Input.u4AvgY = _a_rAEOutput_main2.u4AvgY;
+    rAeSyncInput.sub_ch.u4SyncGain = m_rAeSyncOutput.sub_ch.u4SyncGain;
+    rAeSyncInput.sub_ch.u4ExposureMode = _a_rAEOutput_main2.u4ExposureMode;   // exposure time
+    rAeSyncInput.sub_ch.pAETable = &strPreviewAEPlineTableMain2;
+    rAeSyncInput.sub_ch.pAEFinerEVPline = &strPreviewAEFinverPlineTableMain2;
+
+    rAeSyncInput.sub_ch.pAeNvram = &pSlaveNvram->AE[0];
+    rAeSyncInput.sub_ch.aao_buffer_info.pAEStatisticBuf = (MVOID*) pSlaveSttBuf->mVa; //reinterpret_cast<MVOID *>(IAAOBufMgr::getInstance().getCurrHwBuf(m_i4Slave));
+    IAeMgr::getInstance().sendAECtrl(m_i4Slave, EAECtrl_GetAAOLineByteSize, reinterpret_cast<MINTPTR>(&(rAeSyncInput.sub_ch.aao_buffer_info.buf_line_size)), NULL, NULL, NULL);
+    rAeSyncInput.sub_ch.wb_gain.i4B = rAwbSlave.rAWBSyncInput_N3D.rAlgGain.i4B;
+    rAeSyncInput.sub_ch.wb_gain.i4G = rAwbSlave.rAWBSyncInput_N3D.rAlgGain.i4G;
+    rAeSyncInput.sub_ch.wb_gain.i4R = rAwbSlave.rAWBSyncInput_N3D.rAlgGain.i4R;
+
+    m_pMTKSyncAe->SyncAeMain(&rAeSyncInput, &m_rAeSyncOutput);
+
+    CAM_LOGD("[%s] -", __FUNCTION__);
+
+    return MTRUE;
+}
+
+MBOOL
+Sync3AWrapper::
+syncAwbMain(const StatisticBufInfo* pMasterSttBuf, const StatisticBufInfo* pSlaveSttBuf)
+{
+    MINT32 i4Master = ISync3AMgr::getInstance()->getAWBMasterDev();
+    MINT32 i4Slave = ISync3AMgr::getInstance()->getAWBSlaveDev();
+    CAM_LOGD("[%s] MS(%d/%p,%d/%p), AWB(%d,%d) +", __FUNCTION__, m_i4Master, pMasterSttBuf, m_i4Slave, pSlaveSttBuf, i4Master, i4Slave);
+
+    AWB_OUTPUT_T rAwbMaster, rAwbSlave;
+    AWB_AAO_CONFIG_Param_T rMasterAWBConfig, rSlaveAWBConfig;
+
+    AWB_PARENT_BLK_STAT_T *rAwbParentStatMaster = &rAwbMaster.rAWBSyncInput_N3D.rAwbParentStatBlk[0][0];
+    AWB_PARENT_BLK_STAT_T *rAwbParentStatSlave = &rAwbSlave.rAWBSyncInput_N3D.rAwbParentStatBlk[0][0];
+    MINT32& iParentBlkNumX_Main = rAwbMaster.rAWBSyncInput_N3D.ParentBlkNumX;
+    MINT32& iParentBlkNumY_Main = rAwbMaster.rAWBSyncInput_N3D.ParentBlkNumY;
+    MINT32& iParentBlkNumX_Sub = rAwbSlave.rAWBSyncInput_N3D.ParentBlkNumX;
+    MINT32& iParentBlkNumY_Sub = rAwbSlave.rAWBSyncInput_N3D.ParentBlkNumY;
+
+    IAwbMgr::getInstance().getAWBOutput(m_i4Master, rAwbMaster);
+    IAwbMgr::getInstance().getAWBOutput(m_i4Slave, rAwbSlave);
+
+    IAwbMgr::getInstance().getAWBParentStat(m_i4Master, rAwbParentStatMaster, &iParentBlkNumX_Main, &iParentBlkNumY_Main);
+    IAwbMgr::getInstance().getAWBParentStat(m_i4Slave, rAwbParentStatSlave, &iParentBlkNumX_Sub, &iParentBlkNumY_Sub);
+
+    IAwbMgr::getInstance().getAAOConfig(m_i4Master, rMasterAWBConfig);
+    IAwbMgr::getInstance().getAAOConfig(m_i4Slave, rSlaveAWBConfig);
+
+    Stereo_Param_T rParams = ISync3AMgr::getInstance()->getStereoParams();
+    switch (rParams.i4Sync2AMode)
+    {
+    case NS3Av3::E_SYNC2A_MODE::E_SYNC2A_MODE_VSDOF:
+        m_rAwbSyncInput.feature_type = DUAL_CAM_FEATURE_VSDOF;
+        break;
+    case NS3Av3::E_SYNC2A_MODE::E_SYNC2A_MODE_DENOISE:
+        m_rAwbSyncInput.feature_type = DUAL_CAM_FEATURE_BAYER_MONO;
+        break;
+    case NS3Av3::E_SYNC2A_MODE::E_SYNC2A_MODE_DUAL_ZOOM:
+        m_rAwbSyncInput.feature_type = DUAL_CAM_FEATURE_WIDE_TELE;
+        break;
+    }
+
+    m_rAwbSyncInput.EnStandbyMode = (DUALZOOM_WIDE_STANDY_EN) ? TRUE : FALSE;
+
+    CAM_LOGD("[%s] ZoomRatio = %d  Now_Master = %d ", __FUNCTION__, (m_rAwbSyncInput.display_cam == 0) ?
+        (rAwbMaster.rAWBSyncInput_N3D.ZoomRatio):(rAwbSlave.rAWBSyncInput_N3D.ZoomRatio), m_i4Master);
+
+
+    // 0 : main preview, 1 : sub preview
+    //if (m_i4Master == ISync3AMgr::getInstance()->getAWBMasterDev())
+    //{
+    //    m_rAwbSyncInput.isSwitch = (m_rAwbSyncInput.display_cam == 1) ? (TRUE) : (FALSE);
+    //    m_rAwbSyncInput.display_cam = 0;
+        //m_rAwbSyncInput.main_ch.aao_buf_info.pAWBStatBuf = (MVOID*) pMasterSttBuf->mVa;
+        //m_rAwbSyncInput.sub_ch.aao_buf_info.pAWBStatBuf = (MVOID*) pSlaveSttBuf->mVa;
+    //}
+    //else
+    //{
+    //    m_rAwbSyncInput.isSwitch = (m_rAwbSyncInput.display_cam == 0) ? (TRUE) : (FALSE);
+    //    m_rAwbSyncInput.display_cam = 1;
+        //m_rAwbSyncInput.sub_ch.aao_buf_info.pAWBStatBuf = (MVOID*) pMasterSttBuf->mVa;
+        //m_rAwbSyncInput.main_ch.aao_buf_info.pAWBStatBuf = (MVOID*) pSlaveSttBuf->mVa;
+    //}
+    m_rAwbSyncInput.zoom_ratio = 32;    // TODO
+
+    m_rAwbSyncInput.isSwitch = 0 ;
+    m_rAwbSyncInput.display_cam = m_i4Master;
+    m_rAwbSyncInput.main_ch.aao_buf_info.pAWBStatBuf = (MVOID*) pMasterSttBuf->mVa;
+    m_rAwbSyncInput.sub_ch.aao_buf_info.pAWBStatBuf = (MVOID*) pSlaveSttBuf->mVa;
+
+    m_rAwbSyncInput.strLocationTransInfo.AAOWinConfig_main.width = rMasterAWBConfig.width;
+    m_rAwbSyncInput.strLocationTransInfo.AAOWinConfig_main.height = rMasterAWBConfig.height;
+    m_rAwbSyncInput.strLocationTransInfo.AAOWinConfig_main.offset_x = rMasterAWBConfig.offset_x;
+    m_rAwbSyncInput.strLocationTransInfo.AAOWinConfig_main.offset_y = rMasterAWBConfig.offset_y;
+    m_rAwbSyncInput.strLocationTransInfo.AAOWinConfig_main.size_x = rMasterAWBConfig.size_x;
+    m_rAwbSyncInput.strLocationTransInfo.AAOWinConfig_main.size_y = rMasterAWBConfig.size_y;
+    m_rAwbSyncInput.strLocationTransInfo.AAOWinConfig_main.num_x = rMasterAWBConfig.num_x;
+    m_rAwbSyncInput.strLocationTransInfo.AAOWinConfig_main.num_y = rMasterAWBConfig.num_y;
+
+    m_rAwbSyncInput.strLocationTransInfo.AAOWinConfig_main2.width = rSlaveAWBConfig.width;
+    m_rAwbSyncInput.strLocationTransInfo.AAOWinConfig_main2.height = rSlaveAWBConfig.height;
+    m_rAwbSyncInput.strLocationTransInfo.AAOWinConfig_main2.offset_x = rSlaveAWBConfig.offset_x;
+    m_rAwbSyncInput.strLocationTransInfo.AAOWinConfig_main2.offset_y = rSlaveAWBConfig.offset_y;
+    m_rAwbSyncInput.strLocationTransInfo.AAOWinConfig_main2.size_x = rSlaveAWBConfig.size_x;
+    m_rAwbSyncInput.strLocationTransInfo.AAOWinConfig_main2.size_y = rSlaveAWBConfig.size_y;
+    m_rAwbSyncInput.strLocationTransInfo.AAOWinConfig_main2.num_x = rSlaveAWBConfig.num_x;
+    m_rAwbSyncInput.strLocationTransInfo.AAOWinConfig_main2.num_y = rSlaveAWBConfig.num_y;
+
+    const strSyncAWBInitInfo* pAwbInitInfo = getSyncAWBInitInfo();
+    m_rAwbSyncInput.strLocationTransInfo.isFixMapLocation = pAwbInitInfo->isFixMapLocation;
+    m_rAwbSyncInput.strLocationTransInfo.u4MainCamFovRatio = pAwbInitInfo->u4SyncAWB_fov_ratio;
+
+    NSIspTuning::ISP_NVRAM_CCM_T ccm;
+    IResultPool* pResultPoolMaster = NULL;
+    ISPResultToMeta_T *pISPResultToMeta = NULL;
+    pResultPoolMaster = IResultPool::getInstance(m_i4Master);
+    MINT32 rHistoryReqMagic[HistorySize] = {0, 0, 0};
+    if (pResultPoolMaster)
+    {
+        pResultPoolMaster->getHistory(rHistoryReqMagic);
+        CAM_LOGW("[%s] Master History (Req0, Req1, Req2) = (#%d, #%d, #%d)", __FUNCTION__, rHistoryReqMagic[0], rHistoryReqMagic[1], rHistoryReqMagic[2]);
+        pISPResultToMeta = (ISPResultToMeta_T*)pResultPoolMaster->getResult(rHistoryReqMagic[1], E_ISP_RESULTTOMETA, __FUNCTION__);
+        if (pISPResultToMeta == NULL)
+        {
+            CAM_LOGW("[%s] Master get History (Req0) = (#%d)", __FUNCTION__, rHistoryReqMagic[0]);
+            pISPResultToMeta = (ISPResultToMeta_T*)pResultPoolMaster->getResult(rHistoryReqMagic[0], E_ISP_RESULTTOMETA, __FUNCTION__);
+        }
+    }
+
+    if (pISPResultToMeta)
+        ccm = pISPResultToMeta->rCamInfo.rMtkCCM;
+    else
+        CAM_LOGW("[%s] Master pISPResultToMeta %p", __FUNCTION__, pISPResultToMeta);
+    if (sizeof(AWB_OUTPUT_T) == sizeof(AWB_OUTPUT_N3D_T))
+    {
+        memcpy(&m_rAwbSyncInput.main_ch.awb_output_struct, &rAwbMaster, sizeof(AWB_OUTPUT_T));
+    }
+    else
+        CAM_LOGE("AWB_OUTPUT_T != AWB_OUTPUT_N3D_T");
+    m_rAwbSyncInput.main_ch.focus_distance = 0;                 // TODO : query from AF, (example : 10 cm)
+    IAeMgr::getInstance().sendAECtrl(m_i4Master, EAECtrl_GetAAOLineByteSize, reinterpret_cast<MINTPTR>(&(m_rAwbSyncInput.main_ch.aao_buf_info.stat_line_size)), NULL, NULL, NULL);// TODO
+    m_rAwbSyncInput.main_ch.ccm.CCmatrix[0] = ((float)Complement2(ccm.cnv_1.bits.CCM_CNV_00, 13) / 512);
+    m_rAwbSyncInput.main_ch.ccm.CCmatrix[1] = ((float)Complement2(ccm.cnv_1.bits.CCM_CNV_01, 13) / 512);
+    m_rAwbSyncInput.main_ch.ccm.CCmatrix[2] = ((float)Complement2(ccm.cnv_2.bits.CCM_CNV_02, 13) / 512);
+    m_rAwbSyncInput.main_ch.ccm.CCmatrix[3] = ((float)Complement2(ccm.cnv_3.bits.CCM_CNV_10, 13) / 512);
+    m_rAwbSyncInput.main_ch.ccm.CCmatrix[4] = ((float)Complement2(ccm.cnv_3.bits.CCM_CNV_11, 13) / 512);
+    m_rAwbSyncInput.main_ch.ccm.CCmatrix[5] = ((float)Complement2(ccm.cnv_4.bits.CCM_CNV_12, 13) / 512);
+    m_rAwbSyncInput.main_ch.ccm.CCmatrix[6] = ((float)Complement2(ccm.cnv_5.bits.CCM_CNV_20, 13) / 512);
+    m_rAwbSyncInput.main_ch.ccm.CCmatrix[7] = ((float)Complement2(ccm.cnv_5.bits.CCM_CNV_21, 13) / 512);
+    m_rAwbSyncInput.main_ch.ccm.CCmatrix[8] = ((float)Complement2(ccm.cnv_6.bits.CCM_CNV_22, 13) / 512);
+
+    CAM_LOGD("[%s] main_ch CCmatrix[%f,%f,%f,%f,%f,%f,%f,%f,%f] CCM_CNV_00[%d,%d,%d,%d,%d,%d,%d,%d,%d]", __FUNCTION__
+                , m_rAwbSyncInput.main_ch.ccm.CCmatrix[0], m_rAwbSyncInput.main_ch.ccm.CCmatrix[1], m_rAwbSyncInput.main_ch.ccm.CCmatrix[2], m_rAwbSyncInput.main_ch.ccm.CCmatrix[3]
+                , m_rAwbSyncInput.main_ch.ccm.CCmatrix[4], m_rAwbSyncInput.main_ch.ccm.CCmatrix[5], m_rAwbSyncInput.main_ch.ccm.CCmatrix[6], m_rAwbSyncInput.main_ch.ccm.CCmatrix[7]
+                , m_rAwbSyncInput.main_ch.ccm.CCmatrix[8]
+                , ccm.cnv_1.bits.CCM_CNV_00, ccm.cnv_1.bits.CCM_CNV_01, ccm.cnv_2.bits.CCM_CNV_02
+                , ccm.cnv_3.bits.CCM_CNV_10, ccm.cnv_3.bits.CCM_CNV_11, ccm.cnv_4.bits.CCM_CNV_12
+                , ccm.cnv_5.bits.CCM_CNV_20, ccm.cnv_5.bits.CCM_CNV_21, ccm.cnv_6.bits.CCM_CNV_22);
+
+
+    IResultPool* pResultPoolSlave = NULL;
+    pISPResultToMeta = NULL;
+    pResultPoolSlave = IResultPool::getInstance(m_i4Slave);
+    ::memset(rHistoryReqMagic, 0, sizeof(rHistoryReqMagic));
+    if (pResultPoolSlave)
+    {
+        pResultPoolSlave->getHistory(rHistoryReqMagic);
+        CAM_LOGW("[%s] Slave History (Req0, Req1, Req2) = (#%d, #%d, #%d)", __FUNCTION__, rHistoryReqMagic[0], rHistoryReqMagic[1], rHistoryReqMagic[2]);
+        pISPResultToMeta = (ISPResultToMeta_T*)pResultPoolSlave->getResult(rHistoryReqMagic[1], E_ISP_RESULTTOMETA, __FUNCTION__);
+        if (pISPResultToMeta == NULL)
+        {
+            CAM_LOGW("[%s] Slave get History (Req0) = (#%d)", __FUNCTION__, rHistoryReqMagic[0]);
+            pISPResultToMeta = (ISPResultToMeta_T*)pResultPoolSlave->getResult(rHistoryReqMagic[0], E_ISP_RESULTTOMETA, __FUNCTION__);
+        }
+    }
+
+    if (pISPResultToMeta)
+        ccm = pISPResultToMeta->rCamInfo.rMtkCCM;
+    else
+        CAM_LOGW("[%s] Slave pISPResultToMeta %p", __FUNCTION__, pISPResultToMeta);
+    if (sizeof(AWB_OUTPUT_T) == sizeof(AWB_OUTPUT_N3D_T))
+    {
+        memcpy(&m_rAwbSyncInput.sub_ch.awb_output_struct, &rAwbSlave, sizeof(AWB_OUTPUT_T));
+    }
+    else
+        CAM_LOGE("AWB_OUTPUT_T != AWB_OUTPUT_N3D_T");
+    m_rAwbSyncInput.sub_ch.focus_distance = 0;                  // TODO : query from AF, (example : 10 cm)
+    IAeMgr::getInstance().sendAECtrl(m_i4Slave, EAECtrl_GetAAOLineByteSize, reinterpret_cast<MINTPTR>(&(m_rAwbSyncInput.sub_ch.aao_buf_info.stat_line_size)), NULL, NULL, NULL);// TODO
+    m_rAwbSyncInput.sub_ch.ccm.CCmatrix[0] = ((float)Complement2(ccm.cnv_1.bits.CCM_CNV_00, 13) / 512);
+    m_rAwbSyncInput.sub_ch.ccm.CCmatrix[1] = ((float)Complement2(ccm.cnv_1.bits.CCM_CNV_01, 13) / 512);
+    m_rAwbSyncInput.sub_ch.ccm.CCmatrix[2] = ((float)Complement2(ccm.cnv_2.bits.CCM_CNV_02, 13) / 512);
+    m_rAwbSyncInput.sub_ch.ccm.CCmatrix[3] = ((float)Complement2(ccm.cnv_3.bits.CCM_CNV_10, 13) / 512);
+    m_rAwbSyncInput.sub_ch.ccm.CCmatrix[4] = ((float)Complement2(ccm.cnv_3.bits.CCM_CNV_11, 13) / 512);
+    m_rAwbSyncInput.sub_ch.ccm.CCmatrix[5] = ((float)Complement2(ccm.cnv_4.bits.CCM_CNV_12, 13) / 512);
+    m_rAwbSyncInput.sub_ch.ccm.CCmatrix[6] = ((float)Complement2(ccm.cnv_5.bits.CCM_CNV_20, 13) / 512);
+    m_rAwbSyncInput.sub_ch.ccm.CCmatrix[7] = ((float)Complement2(ccm.cnv_5.bits.CCM_CNV_21, 13) / 512);
+    m_rAwbSyncInput.sub_ch.ccm.CCmatrix[8] = ((float)Complement2(ccm.cnv_6.bits.CCM_CNV_22, 13) / 512);
+
+    CAM_LOGD("[%s] sub_ch CCmatrix[%f,%f,%f,%f,%f,%f,%f,%f,%f] CCM_CNV_00[%d,%d,%d,%d,%d,%d,%d,%d,%d]", __FUNCTION__
+                , m_rAwbSyncInput.sub_ch.ccm.CCmatrix[0], m_rAwbSyncInput.sub_ch.ccm.CCmatrix[1], m_rAwbSyncInput.sub_ch.ccm.CCmatrix[2], m_rAwbSyncInput.sub_ch.ccm.CCmatrix[3]
+                , m_rAwbSyncInput.sub_ch.ccm.CCmatrix[4], m_rAwbSyncInput.sub_ch.ccm.CCmatrix[5], m_rAwbSyncInput.sub_ch.ccm.CCmatrix[6], m_rAwbSyncInput.sub_ch.ccm.CCmatrix[7]
+                , m_rAwbSyncInput.sub_ch.ccm.CCmatrix[8]
+                , ccm.cnv_1.bits.CCM_CNV_00, ccm.cnv_1.bits.CCM_CNV_01, ccm.cnv_2.bits.CCM_CNV_02
+                , ccm.cnv_3.bits.CCM_CNV_10, ccm.cnv_3.bits.CCM_CNV_11, ccm.cnv_4.bits.CCM_CNV_12
+                , ccm.cnv_5.bits.CCM_CNV_20, ccm.cnv_5.bits.CCM_CNV_21, ccm.cnv_6.bits.CCM_CNV_22);
+#if 0
+    rAwbSyncInput.main_ch.alg_gain      = rAwbMaster.rAWBSyncInput_N3D.rAlgGain;
+    rAwbSyncInput.main_ch.curr_gain     = rAwbMaster.rAWBSyncInput_N3D.rCurrentGain;
+    rAwbSyncInput.main_ch.target_gain   = rAwbMaster.rAWBSyncInput_N3D.rTargetGain;
+    rAwbSyncInput.main_ch.m_i4CCT       = rAwbMaster.rAWBSyncInput_N3D.i4CCT;
+    rAwbSyncInput.main_ch.m_i4LightMode = rAwbMaster.rAWBSyncInput_N3D.i4LightMode;
+    rAwbSyncInput.main_ch.m_i4SceneLV   = rAwbMaster.rAWBSyncInput_N3D.i4SceneLV;
+    rAwbSyncInput.main_ch.rLightProb    = rAwbMaster.rAWBSyncInput_N3D.rLightProb;
+    rAwbSyncInput.sub_ch.alg_gain       = rAwbSlave.rAWBSyncInput_N3D.rAlgGain;
+    rAwbSyncInput.sub_ch.curr_gain      = rAwbSlave.rAWBSyncInput_N3D.rCurrentGain;
+    rAwbSyncInput.sub_ch.target_gain    = rAwbSlave.rAWBSyncInput_N3D.rTargetGain;
+    rAwbSyncInput.sub_ch.m_i4CCT        = rAwbSlave.rAWBSyncInput_N3D.i4CCT;
+    rAwbSyncInput.sub_ch.m_i4LightMode  = rAwbSlave.rAWBSyncInput_N3D.i4LightMode;
+    rAwbSyncInput.sub_ch.m_i4SceneLV    = rAwbSlave.rAWBSyncInput_N3D.i4SceneLV;
+    rAwbSyncInput.sub_ch.rLightProb     = rAwbSlave.rAWBSyncInput_N3D.rLightProb;
+#endif
+    CAM_LOGD_IF(m_Sync3ALogEnable, "[%s] In Main: R(%d), G(%d), B(%d), Main2: R(%d), G(%d), B(%d)", __FUNCTION__,
+                rAwbMaster.rAWBSyncInput_N3D.rCurrentGain.i4R, rAwbMaster.rAWBSyncInput_N3D.rCurrentGain.i4G, rAwbMaster.rAWBInfo.rCurrentAWBGain.i4B,
+                rAwbSlave.rAWBSyncInput_N3D.rCurrentGain.i4R, rAwbSlave.rAWBSyncInput_N3D.rCurrentGain.i4G, rAwbSlave.rAWBInfo.rCurrentAWBGain.i4B);
+    if(m_pMTKSyncAwb)
+        m_pMTKSyncAwb->SyncAwbMain(&m_rAwbSyncInput, &m_rAwbSyncOutput);
+    CAM_LOGD_IF(m_Sync3ALogEnable, "[%s] Out Main: R(%d), G(%d), B(%d), Main2: R(%d), G(%d), B(%d)", __FUNCTION__,
+                m_rAwbSyncOutput.main_ch.rAwbGain.i4R, m_rAwbSyncOutput.main_ch.rAwbGain.i4G, m_rAwbSyncOutput.main_ch.rAwbGain.i4B,
+                m_rAwbSyncOutput.sub_ch.rAwbGain.i4R, m_rAwbSyncOutput.sub_ch.rAwbGain.i4G, m_rAwbSyncOutput.sub_ch.rAwbGain.i4B);
+
+    CAM_LOGD("[%s] -", __FUNCTION__);
+
+    return MTRUE;
+}
+
+
+MBOOL
+Sync3AWrapper::
+update(MINT32 i4Opt)
+{
+    CAM_LOGD("[%s] OPT(%d) +", __FUNCTION__, i4Opt);
+
+    MINT32 i4MeMasterOnOff = 0;
+    GET_PROP("vendor.debug.sync2a.me.m", "-1", i4MeMasterOnOff);
+    if (i4MeMasterOnOff != -1)
+    {
+        GET_PROP("vendor.debug.sync2a.me.m.exp", "10000", m_rManualAeMaster.u4ExpTime);
+        GET_PROP("vendor.debug.sync2a.me.m.gain", "1024", m_rManualAeMaster.u4AfeGain);
+        GET_PROP("vendor.debug.sync2a.me.m.isp", "1024", m_rManualAeMaster.u4IspGain);
+        m_rManualAeMaster.fgOnOff = i4MeMasterOnOff == 1 ? MTRUE : MFALSE;
+        if (m_pCcuCtrl3ASync && m_pCcuCtrl3ASync->isSupport3ASync())
+            IAeMgr::getInstance().sendAECtrl(m_i4Master, EAECtrl_SetCCUManualControl, m_rManualAeMaster.u4ExpTime, m_rManualAeMaster.u4AfeGain, m_rManualAeMaster.u4IspGain, m_rManualAeMaster.fgOnOff);
+    }
+
+    MINT32 i4MeSlaveOnOff = 0;
+    GET_PROP("vendor.debug.sync2a.me.s", "-1", i4MeSlaveOnOff);
+    if (i4MeSlaveOnOff != -1)
+    {
+        GET_PROP("vendor.debug.sync2a.me.s.exp", "10000", m_rManualAeSlave.u4ExpTime);
+        GET_PROP("vendor.debug.sync2a.me.s.gain", "1024", m_rManualAeSlave.u4AfeGain);
+        GET_PROP("vendor.debug.sync2a.me.s.isp", "1024", m_rManualAeSlave.u4IspGain);
+        m_rManualAeSlave.fgOnOff = i4MeSlaveOnOff == 1 ? MTRUE : MFALSE;
+        if (m_pCcuCtrl3ASync && m_pCcuCtrl3ASync->isSupport3ASync())
+            IAeMgr::getInstance().sendAECtrl(m_i4Slave, EAECtrl_SetCCUManualControl, m_rManualAeSlave.u4ExpTime, m_rManualAeSlave.u4AfeGain, m_rManualAeSlave.u4IspGain, m_rManualAeSlave.fgOnOff);
+    }
+
+    if (i4Opt & (ISync3A::E_SYNC3A_DO_AE | ISync3A::E_SYNC3A_DO_AE_PRECAP))
+    {
+        AE_MODE_CFG_T rAEInfoMaster, rAEInfoSlave;
+        rAEInfoMaster.u4ExposureMode    = 0;   // us
+        rAEInfoMaster.u4Eposuretime     = m_rAeSyncOutput.main_ch.Output.EvSetting.u4Eposuretime;
+        rAEInfoMaster.u4AfeGain         = m_rAeSyncOutput.main_ch.Output.EvSetting.u4AfeGain;
+        rAEInfoMaster.u4IspGain         = m_rAeSyncOutput.main_ch.Output.EvSetting.u4IspGain;
+        rAEInfoMaster.u4RealISO         = m_rAeSyncOutput.main_ch.Output.u4ISO;
+        rAEInfoMaster.u2FrameRate       = m_rAeSyncOutput.main_ch.Output.u2FrameRate;
+        rAEInfoMaster.u4CWValue         = m_rAeSyncOutput.main_ch.Output.u4CWValue;
+        rAEInfoMaster.i2FlareGain       = m_rAeSyncOutput.main_ch.Output.i2FlareGain;
+        rAEInfoMaster.i2FlareOffset     = m_rAeSyncOutput.main_ch.Output.i2FlareOffset;
+        if (m_rManualAeMaster.fgOnOff)
+        {   // manual override for master
+            rAEInfoMaster.u4Eposuretime = m_rManualAeMaster.u4ExpTime;
+            rAEInfoMaster.u4AfeGain     = m_rManualAeMaster.u4AfeGain;
+            rAEInfoMaster.u4IspGain     = m_rManualAeMaster.u4IspGain;
+        }
+
+        rAEInfoSlave.u4ExposureMode     = 0;   // us
+        rAEInfoSlave.u4Eposuretime      = m_rAeSyncOutput.sub_ch.Output.EvSetting.u4Eposuretime;
+        rAEInfoSlave.u4AfeGain          = m_rAeSyncOutput.sub_ch.Output.EvSetting.u4AfeGain;
+        rAEInfoSlave.u4IspGain          = m_rAeSyncOutput.sub_ch.Output.EvSetting.u4IspGain;
+        rAEInfoSlave.u4RealISO          = m_rAeSyncOutput.sub_ch.Output.u4ISO;
+        rAEInfoSlave.u2FrameRate        = m_rAeSyncOutput.sub_ch.Output.u2FrameRate;
+        rAEInfoSlave.u4CWValue          = m_rAeSyncOutput.sub_ch.Output.u4CWValue;
+        rAEInfoSlave.i2FlareGain        = m_rAeSyncOutput.sub_ch.Output.i2FlareGain;
+        rAEInfoSlave.i2FlareOffset      = m_rAeSyncOutput.sub_ch.Output.i2FlareOffset;
+        if (m_rManualAeSlave.fgOnOff)
+        {   // manual override for slave
+            rAEInfoSlave.u4Eposuretime  = m_rManualAeSlave.u4ExpTime;
+            rAEInfoSlave.u4AfeGain      = m_rManualAeSlave.u4AfeGain;
+            rAEInfoSlave.u4IspGain      = m_rManualAeSlave.u4IspGain;
+        }
+
+        if (i4Opt & ISync3A::E_SYNC3A_DO_AE)
+        {
+            IAeMgr::getInstance().sendAECtrl(m_i4Master, EAECtrl_SetPreviewParams, reinterpret_cast<MINTPTR>(&(rAEInfoMaster)), m_rAeSyncOutput.main_ch.Output.i4AEidxNext, m_rAeSyncOutput.main_ch.Output.i4AEidxNextF, NULL);
+            IAeMgr::getInstance().sendAECtrl(m_i4Slave, EAECtrl_SetPreviewParams, reinterpret_cast<MINTPTR>(&(rAEInfoSlave)), m_rAeSyncOutput.sub_ch.Output.i4AEidxNext, m_rAeSyncOutput.sub_ch.Output.i4AEidxNextF, NULL);
+            IAeMgr::getInstance().sendAECtrl(m_i4Master, EAECtrl_SetUnderExpdeltaBVIdx, m_rAeSyncOutput.main_ch.Output.i4DeltaBV, NULL, NULL, NULL);
+            IAeMgr::getInstance().sendAECtrl(m_i4Slave, EAECtrl_SetUnderExpdeltaBVIdx, m_rAeSyncOutput.sub_ch.Output.i4DeltaBV, NULL, NULL, NULL);
+            IAeMgr::getInstance().sendAECtrl(m_i4Master, EAECtrl_SetStereoDenoiseRatio, reinterpret_cast<MINTPTR>(&(m_rAeSyncOutput.main_ch.Output.u4DeltaBVRatio[0])), NULL, NULL, NULL);
+            IAeMgr::getInstance().sendAECtrl(m_i4Slave, EAECtrl_SetStereoDenoiseRatio, reinterpret_cast<MINTPTR>(&(m_rAeSyncOutput.sub_ch.Output.u4DeltaBVRatio[0])), NULL, NULL, NULL);
+        }
+        if (i4Opt & ISync3A::E_SYNC3A_DO_AE_PRECAP)
+        {
+            IAeMgr::getInstance().sendAECtrl(m_i4Master, EAECtrl_SetCaptureParams, reinterpret_cast<MINTPTR>(&(rAEInfoMaster)), NULL, NULL, NULL);
+            IAeMgr::getInstance().sendAECtrl(m_i4Slave, EAECtrl_SetCaptureParams, reinterpret_cast<MINTPTR>(&(rAEInfoSlave)), NULL, NULL, NULL);
+        }
+    }
+
+    if (i4Opt & ISync3A::E_SYNC3A_DO_AWB)
+    {
+        MINT32 i4Master = ISync3AMgr::getInstance()->getAWBMasterDev();
+        MINT32 i4Slave = ISync3AMgr::getInstance()->getAWBSlaveDev();
+        AWB_SYNC_OUTPUT_N3D_T rAwbSyncMaster, rAwbSyncSlave;
+        rAwbSyncMaster.rAWBGain         = m_rAwbSyncOutput.main_ch.rAwbGain;
+        rAwbSyncMaster.i4CCT            = m_rAwbSyncOutput.main_ch.i4CCT;
+        rAwbSyncMaster.rSyncAWBGain     = m_rAwbSyncOutput.main_ch.rAwbGain;
+        rAwbSyncMaster.i4XR             = m_rAwbSyncInput.main_ch.awb_output_struct.rAWBSyncInput_N3D.i4XR;
+        rAwbSyncMaster.i4YR             = m_rAwbSyncInput.main_ch.awb_output_struct.rAWBSyncInput_N3D.i4YR;
+        //rAwbSyncMaster.i4PreviewCam     = m_rAwbSyncInput.main_ch.awb_output_struct.rAWBSyncOutput_N3D.i4PreviewCam;
+        rAwbSyncMaster.i4PreviewCam     = m_i4Master;
+
+        rAwbSyncSlave.rAWBGain          = m_rAwbSyncOutput.sub_ch.rAwbGain;
+        rAwbSyncSlave.i4CCT             = m_rAwbSyncOutput.sub_ch.i4CCT;
+        rAwbSyncSlave.rSyncAWBGain      = m_rAwbSyncOutput.sub_ch.rAwbGain;
+        rAwbSyncSlave.i4XR              = m_rAwbSyncInput.sub_ch.awb_output_struct.rAWBSyncInput_N3D.i4XR;
+        rAwbSyncSlave.i4YR              = m_rAwbSyncInput.sub_ch.awb_output_struct.rAWBSyncInput_N3D.i4YR;
+        //rAwbSyncSlave.i4PreviewCam      = m_rAwbSyncInput.sub_ch.awb_output_struct.rAWBSyncOutput_N3D.i4PreviewCam;
+        rAwbSyncSlave.i4PreviewCam      = m_i4Master;
+
+        IAwbMgr::getInstance().applyAWB(m_i4Master, rAwbSyncMaster);
+        IAwbMgr::getInstance().applyAWB(m_i4Slave, rAwbSyncSlave);
+    }
+
+    CAM_LOGD("[%s] -", __FUNCTION__);
+    return MTRUE;
+}
+
+MBOOL
+Sync3AWrapper::
+setDebugInfo(void* prDbgInfo) const
+{
+    CAM_LOGD_IF(m_Sync3ALogEnable, "[%s] +", __FUNCTION__);
+
+    N3D_DEBUG_INFO_T* prN3dDbgInfo = reinterpret_cast<N3D_DEBUG_INFO_T*>(prDbgInfo);
+    if (!prN3dDbgInfo)
+    {
+        CAM_LOGE("prN3dDbgInfo is NULL!");
+        return MFALSE;
+    }
+    if (m_pMTKSyncAe)
+        m_pMTKSyncAe->SyncAeFeatureCtrl(SYNC_AE_FEATURE_GET_DEBUG_INFO, (void*) &prN3dDbgInfo->rAEDebugInfo, NULL);
+    if (m_pMTKSyncAwb)
+        m_pMTKSyncAwb->SyncAwbFeatureCtrl(SYNC_AWB_FEATURE_GET_DEBUG_INFO, (void*) &prN3dDbgInfo->rAWBDebugInfo, NULL);
+    if (m_pCcuCtrl3ASync && m_pCcuCtrl3ASync->isSupport3ASync())
+        m_pCcuCtrl3ASync->getDebugInfo((N3D_AE_DEBUG_INFO_T *)&prN3dDbgInfo->rAEDebugInfo);
+
+    CAM_LOGD_IF(m_Sync3ALogEnable, "[%s] -", __FUNCTION__);
+    return MTRUE;
+}
+
+SYNCAE_CAMERA_TYPE_ENUM
+Sync3AWrapper::
+querySensorType(MINT32 i4SensorDev)
+{
+    SensorStaticInfo sensorStaticInfo;
+    IHalSensorList*const pHalSensorList = MAKE_HalSensorList();
+    if (!pHalSensorList)
+    {
+        CAM_LOGE("MAKE_HalSensorList() == NULL");
+        return BAYER_SENSOR;
+    }
+    pHalSensorList->querySensorStaticInfo(i4SensorDev, &sensorStaticInfo);
+
+    MUINT32 u4RawFmtType = sensorStaticInfo.rawFmtType; // SENSOR_RAW_MONO or SENSOR_RAW_Bayer
+    CAM_LOGD("[%s] i4SensorDev(%d) u4RawFmtType(%d)\n", __FUNCTION__, i4SensorDev, u4RawFmtType);
+    return (u4RawFmtType == SENSOR_RAW_MONO) ? MONO_SENSOR : BAYER_SENSOR;
+}
+
+MBOOL
+Sync3AWrapper::
+syncCCUAeSetting(MINT32 i4MasterIdx, MINT32 i4SlaveIdx, MINT32 i4MasterDev, MINT32 i4SlaveDev)
+{
+    if (m_pCcuCtrl3ASync && m_pCcuCtrl3ASync->isSupport3ASync())
+    {
+        struct ccu_sync_ae_settings_data syncAESettingData;
+        Stereo_Param_T rParams = ISync3AMgr::getInstance()->getStereoParams();
+        syncAESettingData.master_sensor_dev = i4MasterDev;
+        syncAESettingData.master_sensor_idx = i4MasterIdx;
+        CAM_LOGD("[%s] CCU_SYNC_DBG MSG_TO_CCU_SYNC_AE_SETTING, M(Idx/Dev)(%d/%d)",__FUNCTION__, i4MasterIdx, i4MasterDev);
+        m_pCcuCtrl3ASync->ccuControl(MSG_TO_CCU_SYNC_AE_SETTING, &syncAESettingData, NULL);
+        return MTRUE;
+    }
+    else
+        return MFALSE;
+}
+
+VOID
+Sync3AWrapper::
+syncAeSetting(MINT32 i4MasterDev, MINT32 i4SlaveDev)
+{
+    SYNC_AE_DIRECT_INDEX_MAPPING_STRUCT rInput;
+    SYNC_AE_DIRECT_MAP_RESULT_STRUCT    rOutput;
+    AE_MODE_CFG_T rMasterPreviewInfo, rSlavePreviewInfo;
+
+    // prepare master's input
+    const strSyncAEInitInfo* pSyncAEInitInfo = getSyncAEInitInfo();
+    strAETable strPreviewAEPlineTableMain, strCaptureAEPlineTabMain;
+    strAETable strPreviewAEPlineTableMain2, strCaptureAEPlineTabMain2;
+    strAETable strStrobeAEPlineTableMain, strStrobeAEPlineTableMain2;
+    strAFPlineInfo strStrobeAFPlineTabMain, strStrobeAFPlineTabMain2;
+
+    AE_PERFRAME_INFO_T AEPerframeInfoMaster;
+    AE_PERFRAME_INFO_T AEPerframeInfoSlave;
+    IAeMgr::getInstance().getAEInfo(m_i4Master, AEPerframeInfoMaster);
+    IAeMgr::getInstance().getAEInfo(m_i4Slave, AEPerframeInfoSlave);
+
+    IAeMgr::getInstance().sendAECtrl(m_i4Master, EAECtrl_GetCurrentPlineTable, reinterpret_cast<MINTPTR>(&(strPreviewAEPlineTableMain)), reinterpret_cast<MINTPTR>(&(strCaptureAEPlineTabMain)), reinterpret_cast<MINTPTR>(&(strStrobeAEPlineTableMain)), reinterpret_cast<MINTPTR>(&(strStrobeAFPlineTabMain)));
+    IAeMgr::getInstance().sendAECtrl(m_i4Slave, EAECtrl_GetCurrentPlineTable, reinterpret_cast<MINTPTR>(&(strPreviewAEPlineTableMain2)), reinterpret_cast<MINTPTR>(&(strCaptureAEPlineTabMain2)), reinterpret_cast<MINTPTR>(&(strStrobeAEPlineTableMain2)), reinterpret_cast<MINTPTR>(&(strStrobeAFPlineTabMain2)));
+
+    NVRAM_CAMERA_3A_STRUCT* pMaster3aNvram = NULL;
+    NVRAM_CAMERA_3A_STRUCT* pSlave3aNvram = NULL;
+    NvBufUtil::getInstance().getBufAndRead(CAMERA_NVRAM_DATA_3A, i4MasterDev, (void*&)pMaster3aNvram, 0);
+    NvBufUtil::getInstance().getBufAndRead(CAMERA_NVRAM_DATA_3A, i4SlaveDev, (void*&)pSlave3aNvram, 0);
+
+    rInput.MasterCamAeIdx = AEPerframeInfoMaster.rAEUpdateInfo.i4AEidxNext;
+    rInput.MasterCamAeIdxF = AEPerframeInfoMaster.rAEUpdateInfo.i4AEidxNextF;
+    rInput.MasterFinerEVIdxBase = AEPerframeInfoMaster.rAEISPInfo.u4AEFinerEVIdxBase;
+    rInput.SlaveFinerEVIdxBase = AEPerframeInfoSlave.rAEISPInfo.u4AEFinerEVIdxBase;
+    rInput.MasterCamBVOffset = pMaster3aNvram->AE[0].rCCTConfig.i4BVOffset;
+    rInput.SlaveCamBVOffset = pSlave3aNvram->AE[0].rCCTConfig.i4BVOffset;
+    rInput.pMasterAETable = &strPreviewAEPlineTableMain;
+    rInput.pSlaveAETable = &strPreviewAEPlineTableMain2;
+    CAM_LOGD("[%s] M(%d) : AeIdx(%d)/BVOffset(%d)/idxBase(%d), S(%d) : BVOffset(%d)/idxBase(%d)", __FUNCTION__,
+             i4MasterDev, rInput.MasterCamAeIdx, rInput.MasterCamBVOffset, rInput.MasterFinerEVIdxBase,
+             i4SlaveDev, rInput.SlaveCamBVOffset, rInput.SlaveFinerEVIdxBase);
+
+    rMasterPreviewInfo.u4ExposureMode = AEPerframeInfoMaster.rAEUpdateInfo.u4ExposureMode;
+    rMasterPreviewInfo.u2FrameRate = AEPerframeInfoMaster.rAEUpdateInfo.u2FrameRate_x10;
+    rMasterPreviewInfo.u4CWValue = AEPerframeInfoMaster.rAEUpdateInfo.u4CWValue;
+    rMasterPreviewInfo.u4AvgY = AEPerframeInfoMaster.rAEUpdateInfo.u4AvgY;
+    rMasterPreviewInfo.u4RealISO = AEPerframeInfoMaster.rAEISPInfo.u4P1RealISOValue;
+    rMasterPreviewInfo.i2FlareOffset = AEPerframeInfoMaster.rAEISPInfo.i2FlareOffset;
+    rMasterPreviewInfo.i2FlareGain = AEPerframeInfoMaster.rAEISPInfo.i2FlareGain;
+    rMasterPreviewInfo.u4AEFinerEVIdxBase = AEPerframeInfoMaster.rAEISPInfo.u4AEFinerEVIdxBase;;
+
+    // get new setting
+    m_pMTKSyncAe->SyncAeFeatureCtrl(SYNC_AE_FEATURE_GET_MAPPING_INDEX, &rInput, &rOutput);
+
+    rMasterPreviewInfo.u4Eposuretime = rOutput.EVSetting.u4Eposuretime;
+    rMasterPreviewInfo.u4AfeGain = rOutput.EVSetting.u4AfeGain;
+    rMasterPreviewInfo.u4IspGain = rOutput.EVSetting.u4IspGain;
+    CAM_LOGD("[%s] Exp(%d), Afe(%d), Isp(%d)", __FUNCTION__, rMasterPreviewInfo.u4Eposuretime, rMasterPreviewInfo.u4AfeGain, rMasterPreviewInfo.u4IspGain);
+    // update output to slave
+    IAeMgr::getInstance().sendAECtrl(i4SlaveDev, EAECtrl_SetPreviewParams, reinterpret_cast<MINTPTR>(&(rMasterPreviewInfo)), rOutput.u4SlaveAEindex, rOutput.u4SlaveAEindexF, NULL);
+    IAeMgr::getInstance().sendAECtrl(i4SlaveDev, EAECtrl_SetExposureSetting, rMasterPreviewInfo.u4Eposuretime, rMasterPreviewInfo.u4AfeGain, rMasterPreviewInfo.u4IspGain, NULL);
+
+}
+
+VOID
+Sync3AWrapper::
+syncAwbSetting(MINT32 i4MasterDev, MINT32 i4SlaveDev)
+{
+    SYNC_AWB_DIRECT_GAIN_MAPPING_STRUCT rInput = {0};
+
+    //SYNC_AWB_OUTPUT_INFO_STRUCT rOutput;
+
+    //AWB_CALIBRATION_DATA_T rMasterAWBCalData, rSlaveAWBCalData;
+
+    AWB_OUTPUT_T rAwbMaster = {0}, rAwbSlave = {0};
+
+    IAwbMgr::getInstance().getAWBOutput(i4MasterDev, rAwbMaster);
+
+    //IAwbMgr::getInstance().getAWBUnitGain(i4MasterDev, rMasterAWBCalData);
+    //IAwbMgr::getInstance().getAWBUnitGain(i4SlaveDev, rSlaveAWBCalData);
+/*
+    Stereo_Param_T rParams = ISync3AMgr::getInstance()->getStereoParams();
+    switch (rParams.i4Sync2AMode)
+    {
+    case NS3Av3::E_SYNC2A_MODE::E_SYNC2A_MODE_VSDOF:
+        rInput.feature_type = DUAL_CAM_FEATURE_VSDOF;
+        break;
+    case NS3Av3::E_SYNC2A_MODE::E_SYNC2A_MODE_DENOISE:
+        rInput.feature_type = DUAL_CAM_FEATURE_BAYER_MONO;
+        break;
+    case NS3Av3::E_SYNC2A_MODE::E_SYNC2A_MODE_DUAL_ZOOM:
+        rInput.feature_type = DUAL_CAM_FEATURE_WIDE_TELE;
+        break;
+    }
+*/
+
+    //NVRAM_CAMERA_3A_STRUCT* pMaster3aNvram = NULL;
+    //NVRAM_CAMERA_3A_STRUCT* pSlave3aNvram = NULL;
+    //NvBufUtil::getInstance().getBufAndRead(CAMERA_NVRAM_DATA_3A, i4MasterDev, (void*&)pMaster3aNvram, 0);
+    //NvBufUtil::getInstance().getBufAndRead(CAMERA_NVRAM_DATA_3A, i4SlaveDev, (void*&)pSlave3aNvram, 0);
+    MUINT32 result=0;
+    CAM_CAL_DATA_STRUCT GetCamCalDataMaster;
+    CAM_CAL_DATA_STRUCT GetCamCalDataSlave;
+    CamCalDrvBase *pCamCalDrvObj = CamCalDrvBase::createInstance();
+
+    CAMERA_CAM_CAL_TYPE_ENUM enCamCalEnum = CAMERA_CAM_CAL_DATA_3A_GAIN;
+    result= pCamCalDrvObj->GetCamCalCalData(i4MasterDev, enCamCalEnum, (void *)&GetCamCalDataMaster);
+    CAM_LOGD("MasterDev(%d) (0x%8x)=pCamCalDrvObj->GetCamCalCalData", i4MasterDev, result);
+    result= pCamCalDrvObj->GetCamCalCalData(i4SlaveDev, enCamCalEnum, (void *)&GetCamCalDataSlave);
+    CAM_LOGD("SlaveDev(%d) (0x%8x)=pCamCalDrvObj->GetCamCalCalData", i4SlaveDev, result);
+
+    rInput.EnStandbyMode = (DUALZOOM_WIDE_STANDY_EN) ? TRUE : FALSE;
+
+    //CAM_LOGD("[%s] MasterCam = %d, Unit Gain (R/G/B) = (%d,%d,%d), Golden Gain (R/G/B) = (%d,%d,%d) ", __FUNCTION__,i4MasterDev,
+    //    rMasterAWBCalData.rUnitGain.i4R,rMasterAWBCalData.rUnitGain.i4G,rMasterAWBCalData.rUnitGain.i4B,
+    //    rMasterAWBCalData.rGoldenGain.i4R,rMasterAWBCalData.rGoldenGain.i4G,rMasterAWBCalData.rGoldenGain.i4B);
+
+   //CAM_LOGD("[%s] SlaveCam  = %d, Unit Gain (R/G/B) = (%d,%d,%d), Golden Gain (R/G/B) = (%d,%d,%d) ", __FUNCTION__,i4SlaveDev,
+   //     rSlaveAWBCalData.rUnitGain.i4R,rSlaveAWBCalData.rUnitGain.i4G,rSlaveAWBCalData.rUnitGain.i4B,
+   //     rSlaveAWBCalData.rGoldenGain.i4R,rSlaveAWBCalData.rGoldenGain.i4G,rSlaveAWBCalData.rGoldenGain.i4B);
+
+    CAM_LOGD("[%s] MasterCam = %d, AWB = %d/%d ", __FUNCTION__,i4MasterDev,
+        rAwbMaster.rAWBSyncInput_N3D.rCurrentGain,rAwbMaster.rAWBSyncInput_N3D.rStandbySyncGain);
+
+    //if(i4MasterDev == ISync3AMgr::getInstance()->getAWBMasterDev())
+        rInput.i4Display_cam = i4MasterDev;
+    //else
+    //    rInput.i4Display_cam = 1;
+
+    //Need replacement by EEPROM
+    //rInput.MasterCalibrationData = (pMaster3aNvram->AWB[CAM_SCENARIO_PREVIEW]).rAlgoCalParam.rCalData;
+    //rInput.SlaveCalibrationData  = (pSlave3aNvram->AWB[CAM_SCENARIO_PREVIEW]).rAlgoCalParam.rCalData;
+
+    rInput.MasterCalibrationData.rGoldenGain.i4R = static_cast<MINT32>(GetCamCalDataMaster.Single2A.S2aAwb.rGoldGainu4R);
+    rInput.MasterCalibrationData.rGoldenGain.i4G = static_cast<MINT32>(GetCamCalDataMaster.Single2A.S2aAwb.rGoldGainu4G);
+    rInput.MasterCalibrationData.rGoldenGain.i4B = static_cast<MINT32>(GetCamCalDataMaster.Single2A.S2aAwb.rGoldGainu4B);
+    rInput.MasterCalibrationData.rUnitGain.i4R = static_cast<MINT32>(GetCamCalDataMaster.Single2A.S2aAwb.rUnitGainu4R);
+    rInput.MasterCalibrationData.rUnitGain.i4G = static_cast<MINT32>(GetCamCalDataMaster.Single2A.S2aAwb.rUnitGainu4G);
+    rInput.MasterCalibrationData.rUnitGain.i4B = static_cast<MINT32>(GetCamCalDataMaster.Single2A.S2aAwb.rUnitGainu4B);
+
+    rInput.SlaveCalibrationData.rGoldenGain.i4R = static_cast<MINT32>(GetCamCalDataSlave.Single2A.S2aAwb.rGoldGainu4R);
+    rInput.SlaveCalibrationData.rGoldenGain.i4G = static_cast<MINT32>(GetCamCalDataSlave.Single2A.S2aAwb.rGoldGainu4G);
+    rInput.SlaveCalibrationData.rGoldenGain.i4B = static_cast<MINT32>(GetCamCalDataSlave.Single2A.S2aAwb.rGoldGainu4B);
+    rInput.SlaveCalibrationData.rUnitGain.i4R = static_cast<MINT32>(GetCamCalDataSlave.Single2A.S2aAwb.rUnitGainu4R);
+    rInput.SlaveCalibrationData.rUnitGain.i4G = static_cast<MINT32>(GetCamCalDataSlave.Single2A.S2aAwb.rUnitGainu4G);
+    rInput.SlaveCalibrationData.rUnitGain.i4B = static_cast<MINT32>(GetCamCalDataSlave.Single2A.S2aAwb.rUnitGainu4B);
+
+    if (sizeof(AWB_OUTPUT_N3D_T) == sizeof(AWB_OUTPUT_T))
+    {
+        memcpy(&rInput.rAWBSyncData, &rAwbMaster, sizeof(AWB_OUTPUT_N3D_T));
+    }
+    else
+        CAM_LOGE("AWB_OUTPUT_T != AWB_OUTPUT_N3D_T");
+
+
+    // get new setting
+    m_pMTKSyncAwb->SyncAwbFeatureCtrl(SYNC_AWB_FEATURE_GET_MAPPING_GAIN, &rInput, &m_rAwbSyncOutput);
+
+    CAM_LOGD_IF(m_Sync3ALogEnable, "[%s] Out Main: R(%d), G(%d), B(%d), Main2: R(%d), G(%d), B(%d)", __FUNCTION__,
+                m_rAwbSyncOutput.main_ch.rAwbGain.i4R, m_rAwbSyncOutput.main_ch.rAwbGain.i4G, m_rAwbSyncOutput.main_ch.rAwbGain.i4B,
+                m_rAwbSyncOutput.sub_ch.rAwbGain.i4R, m_rAwbSyncOutput.sub_ch.rAwbGain.i4G, m_rAwbSyncOutput.sub_ch.rAwbGain.i4B);
+
+    // update output to slave
+    AWB_SYNC_OUTPUT_N3D_T rAwbSyncSlave = {0};
+    rAwbSyncSlave.rAWBGain          = m_rAwbSyncOutput.sub_ch.rAwbGain;
+    rAwbSyncSlave.i4CCT             = m_rAwbSyncOutput.sub_ch.i4CCT;
+    rAwbSyncSlave.rSyncAWBGain      = m_rAwbSyncOutput.sub_ch.rAwbGain;
+    rAwbSyncSlave.i4XR              = m_rAwbSyncInput.sub_ch.awb_output_struct.rAWBSyncInput_N3D.i4XR;
+    rAwbSyncSlave.i4YR              = m_rAwbSyncInput.sub_ch.awb_output_struct.rAWBSyncInput_N3D.i4YR;
+    //rAwbSyncSlave.i4PreviewCam      = m_rAwbSyncInput.sub_ch.awb_output_struct.rAWBSyncOutput_N3D.i4PreviewCam;
+    rAwbSyncSlave.i4PreviewCam      = i4MasterDev;
+    IAwbMgr::getInstance().applyAWB(i4SlaveDev, rAwbSyncSlave);
+}
+
+
+VOID
+Sync3AWrapper::
+updateMasterSlave(MINT32 i4Master, MINT32 i4Slave)
+{
+    m_i4Master = i4Master;
+    m_i4Slave = i4Slave;
+
+    if (m_pCcuCtrl3ASync && m_pCcuCtrl3ASync->isSupport3ASync())
+    {
+        struct ccu_3a_sync_state syncState;
+        syncState.mode = SYNC;
+        syncState.master_sensor_dev = (ESensorDev_T) m_i4Master;
+
+        Stereo_Param_T rParams = ISync3AMgr::getInstance()->getStereoParams();
+        syncState.master_sensor_idx = rParams.i4MasterIdx;
+        syncState.master_cam_type = (querySensorType(m_i4Master) == MONO_SENSOR) ? CCU_MONO_SENSOR : CCU_BAYER_SENSOR;
+        syncState.slave_cam_type = (querySensorType(m_i4Slave) == MONO_SENSOR) ? CCU_MONO_SENSOR : CCU_BAYER_SENSOR;
+
+        switch (rParams.i4Sync2AMode)
+        {
+        case NS3Av3::E_SYNC2A_MODE::E_SYNC2A_MODE_VSDOF:
+            syncState.feature = BAYER_BAYER;
+            break;
+        case NS3Av3::E_SYNC2A_MODE::E_SYNC2A_MODE_DENOISE:
+            syncState.feature = BAYER_MONO;
+            break;
+        case NS3Av3::E_SYNC2A_MODE::E_SYNC2A_MODE_DUAL_ZOOM:
+            syncState.feature = WIDE_TELE;
+            break;
+        default:
+            syncState.feature = BAYER_BAYER;
+            break;
+        }
+        CAM_LOGD("[%s] CCU_SYNC_DBG MSG_TO_CCU_SET_3A_SYNC_STATE, mode(%d), feature(%d). master_dev(%d) master_Idx(%d)",
+                 __FUNCTION__, syncState.mode, syncState.feature, syncState.master_sensor_dev, syncState.master_sensor_idx);
+        m_pCcuCtrl3ASync->ccuControl(MSG_TO_CCU_SET_3A_SYNC_STATE, &syncState, NULL);
+    }
+}
+
+VOID
+Sync3AWrapper::
+updateFrameSync(MBOOL bEnable)
+{
+    if(m_pCcuCtrl3ASync == NULL)
+    {
+        m_pCcuCtrl3ASync = ICcuCtrl3ACtrl::createInstance();
+        CAM_LOGD("[%s] CCU_SYNC_DBG Create ICcuCtrl3ACtrl", __FUNCTION__);
+    }
+    if (m_pCcuCtrl3ASync && m_pCcuCtrl3ASync->isSupportFrameSync())
+    {
+        if (bEnable)
+        {
+            m_pCcuCtrl3ASync->ccuControl(MSG_TO_CCU_START_FRAME_SYNC, NULL, NULL);
+            CAM_LOGD("[%s] CCU_SYNC_DBG MSG_TO_CCU_START_FRAME_SYNC", __FUNCTION__);
+        }
+        else
+        {
+            m_pCcuCtrl3ASync->ccuControl(MSG_TO_CCU_STOP_FRAME_SYNC, NULL, NULL);
+            CAM_LOGD("[%s] CCU_SYNC_DBG MSG_TO_CCU_STOP_FRAME_SYNC", __FUNCTION__);
+        }
+    }
+    else
+        CAM_LOGD("[%s] ICcuCtrl3ACtrl is NULL", __FUNCTION__);
+}
+
+/******************************************************************************
+ *  Sync3A
+ ******************************************************************************/
+class Sync3A : public ISync3A
+{
+public:
+    static Sync3A*              getInstance(MINT32 i4Id);
+
+    virtual MBOOL               init(MINT32 i4Policy, MINT32 i4Master, MINT32 i4Slave, const char* strName);
+
+    virtual MBOOL               uninit();
+
+    virtual MINT32              sync(MINT32 i4Sensor, MINT32 i4Param, MVOID* pSttBuf, MINT32 i4FrameNum);
+
+    virtual MINT32              syncAF(MINT32 i4Sensor, MBOOL initLens, MBOOL bIsDataSync);
+
+    virtual MVOID               enableSync(MBOOL fgOnOff);
+
+    virtual MBOOL               isSyncEnable() const;
+
+    virtual MINT32              getFrameCount() const {return m_i4SyncFrmCount;}
+
+    virtual MBOOL               isAeStable() const;
+
+    virtual MBOOL               setDebugInfo(void* prDbgInfo) const;
+
+    virtual MVOID               enableSyncSupport(E_SYNC3A_SUPPORT iSupport);
+
+    virtual MVOID               disableSyncSupport(E_SYNC3A_SUPPORT iSupport);
+
+    virtual MINT32              getSyncSupport() const;
+
+    virtual MBOOL               isAFSyncFinish();
+
+    virtual MBOOL               is2ASyncFinish();
+
+    virtual MBOOL               isAESyncStable();
+
+    virtual MBOOL               isPerframeAE() {return 0;}   // fixing o1.mp1 build error
+
+    virtual MVOID               sync2ASetting(MINT32 i4MasterIdx, MINT32 i4SlaveIdx);
+
+    virtual MVOID               updateMasterSlave(MINT32 i4Master, MINT32 i4Slave);
+
+    virtual MVOID               updateFrameSync(MBOOL bEnable);
+
+    virtual MBOOL               getRemappingAeSetting(void* pAeSetting) const { return 0; }; // Only use for ISP 3.0, slave need to remapping AE setting
+
+    virtual MINT32              getAFMasterDev() const;
+
+    virtual MINT32              getAFSlaveDev() const;
+protected:
+    Sync3A();
+    virtual ~Sync3A();
+
+    MBOOL                       wait(MINT32 i4Sensor);
+    MBOOL                       post(MINT32 i4Sensor);
+
+    mutable std::mutex          m_Lock;
+    mutable std::mutex          m_LockSync3AWrap;
+    mutable std::mutex          m_LockSync3AWait;
+    std::condition_variable     m_Condition;
+    MBOOL                       m_fgSyncEnable;
+    MBOOL                       m_fgChkSyncEnable;
+    MINT32                      m_i4SyncSupport;
+    MINT32                      m_i4Count;
+    MINT32                      m_i4SyncFrmCount;
+    MINT32                      m_i4OptFirstIn;
+    MINT32                      m_i4Policy;
+    MINT32                      m_i4Master;
+    MINT32                      m_i4Slave;
+    MINT32                      m_i4MasterMagic;
+    MINT32                      m_i4SlaveMagic;
+    StatisticBufInfo*           m_pMasterSttBuf;
+    StatisticBufInfo*           m_pSlaveSttBuf;
+    std::string                 m_strName;
+    Sync3AWrapper*              m_pSync3AWrap;
+    // AWB control
+    MINT32                      m_i4AwbSyncCount;
+    MINT32                      m_Sync3ALogEnable;
+    sem_t                       m_semSync;
+    MINT32                      m_i4WaitFramNum;
+    MINT32                      m_i4AFMaster;
+    MINT32                      m_i4AFSlave;
+    MINT32                      m_i4WaitPostCondition;
+};
+
+/******************************************************************************
+ *  Sync3A Implementation
+ ******************************************************************************/
+Sync3A::
+Sync3A()
+    : m_Lock()
+    , m_LockSync3AWrap()
+    , m_LockSync3AWait()
+    , m_fgSyncEnable(MFALSE)
+    , m_fgChkSyncEnable(MFALSE)
+    , m_i4SyncSupport(3)
+    , m_i4Count(0)
+    , m_i4SyncFrmCount(0)
+    , m_i4OptFirstIn(0)
+    , m_i4Policy(0)
+    , m_i4Master(ESensorDevId_Main)
+    , m_i4Slave(ESensorDevId_Main)
+    , m_i4MasterMagic(0)
+    , m_i4SlaveMagic(0)
+    , m_pMasterSttBuf(NULL)
+    , m_pSlaveSttBuf(NULL)
+    , m_pSync3AWrap(NULL)
+    , m_i4AwbSyncCount(0)
+    , m_Sync3ALogEnable(0)
+    , m_i4WaitFramNum(0)
+    , m_i4AFMaster(ESensorDevId_Main)
+    , m_i4AFSlave(ESensorDevId_Main)
+    , m_i4WaitPostCondition(0)
+{
+    GET_PROP("vendor.debug.sync3A.log", "0", m_Sync3ALogEnable);
+}
+
+Sync3A::
+~Sync3A()
+{}
+
+Sync3A*
+Sync3A::
+getInstance(MINT32 i4Id)
+{
+    switch (i4Id)
+    {
+    case ISync3AMgr::E_SYNC3AMGR_CAPTURE:
+    {
+        static Sync3A _rSync3ACap;
+        return &_rSync3ACap;
+    }
+    default:
+    case ISync3AMgr::E_SYNC3AMGR_PRVIEW:
+    {
+        static Sync3A _rSync3A;
+        return &_rSync3A;
+    }
+    }
+}
+
+MBOOL
+Sync3A::
+init(MINT32 i4Policy, MINT32 i4Master, MINT32 i4Slave, const char* strName)
+{
+    std::lock_guard<std::mutex> lock(m_LockSync3AWrap);
+
+    m_i4Count = 0;
+    m_i4SyncFrmCount = 0;
+    m_i4OptFirstIn = 0;
+    m_i4Policy = i4Policy;
+    m_i4Master = i4Master;
+    m_i4Slave = i4Slave;
+    m_i4MasterMagic = 0;
+    m_i4SlaveMagic = 0;
+    m_fgSyncEnable = MFALSE;
+    m_fgChkSyncEnable = MFALSE;
+    m_i4SyncSupport = E_SYNC3A_SUPPORT_AE | E_SYNC3A_SUPPORT_AWB;
+    m_pMasterSttBuf = NULL;
+    m_pSlaveSttBuf = NULL;
+
+    m_strName = strName;
+
+    if (m_pSync3AWrap == NULL)
+        m_pSync3AWrap = Sync3AWrapper::getInstance();
+
+    if (m_pSync3AWrap)
+        m_pSync3AWrap->init(i4Master, i4Slave);
+
+    MINT32 i4Ret = sem_init(&m_semSync, 0, 0);
+
+    if(i4Ret!=0)
+    {
+        CAM_LOGE("m_semSync sem_init fail");
+    }
+
+    CAM_LOGD("[%s] %s: policy(%d), masterDev(%d), slaveDev(%d), m_pSync3AWrap(%p)",
+             __FUNCTION__, m_strName.c_str(), i4Policy, i4Master, i4Slave, m_pSync3AWrap);
+    return MTRUE;
+}
+
+MBOOL
+Sync3A::
+uninit()
+{
+    std::lock_guard<std::mutex> lock(m_LockSync3AWrap);
+
+    m_fgSyncEnable = MFALSE;
+
+    if (m_pSync3AWrap)
+    {
+        m_pSync3AWrap->uninit();
+        m_pSync3AWrap = NULL;
+    }
+    m_pMasterSttBuf = NULL;
+    m_pSlaveSttBuf = NULL;
+
+    CAM_LOGD("[%s] %s: OK", __FUNCTION__, m_strName.c_str());
+    return MTRUE;
+}
+
+MVOID
+Sync3A::
+enableSync(MBOOL fgOnOff)
+{
+    std::lock_guard<std::mutex> lock(m_Lock);
+
+    if (fgOnOff == MFALSE)
+    {
+        if (m_i4Count < 0)
+        {
+            m_i4Count ++;
+            m_i4WaitPostCondition = 0;
+#if 0
+            m_Condition.notify_one();
+#else
+            ::sem_post(&m_semSync);
+#endif
+            CAM_LOGD("[%s] %s: Disable Sync: post(%d) WaitPostCondition(%d)", __FUNCTION__, m_strName.c_str(), m_i4Count, m_i4WaitPostCondition);
+        }
+    }
+    else
+    {
+        m_i4AwbSyncCount = 3;
+        MINT32 i4Ret = sem_init(&m_semSync, 0, 0);
+        m_i4WaitPostCondition = 0;
+        if(i4Ret!=0)
+        {
+            CAM_LOGE("m_semSync sem_init fail");
+        }
+    }
+    CAM_LOGD("[%s] %s Sync OnOff(%d) WaitPostCondition(%d)", __FUNCTION__, m_strName.c_str(), fgOnOff, m_i4WaitPostCondition);
+    m_fgSyncEnable = fgOnOff;
+}
+
+MBOOL
+Sync3A::
+isSyncEnable() const
+{
+    return m_fgSyncEnable;
+}
+
+MVOID
+Sync3A::
+enableSyncSupport(E_SYNC3A_SUPPORT iSupport)
+{
+    MINT32 i4OldSyncSupport = m_i4SyncSupport;
+    m_i4SyncSupport |= iSupport;
+    CAM_LOGD("[%s] m_i4SyncSupport (%d -> %d), iSupport(%d)", __FUNCTION__, i4OldSyncSupport, m_i4SyncSupport, iSupport);
+}
+
+MVOID
+Sync3A::
+disableSyncSupport(E_SYNC3A_SUPPORT iSupport)
+{
+    MINT32 i4OldSyncSupport = m_i4SyncSupport;
+    m_i4SyncSupport &= (~iSupport);
+    CAM_LOGD("[%s] m_i4SyncSupport (%d -> %d), iSupport(%d)", __FUNCTION__, i4OldSyncSupport, m_i4SyncSupport, iSupport);
+}
+
+MINT32
+Sync3A::
+getSyncSupport() const
+{
+    return m_i4SyncSupport;
+}
+
+MBOOL
+Sync3A::
+isAFSyncFinish()
+{
+    if ( (getSyncSupport() & E_SYNC3A_SUPPORT_AF) && isSyncEnable() )
+    {
+        AFResult_T rAFResultFromMgrMaster;
+        AFResult_T rAFResultFromMgrSlave;
+        IAfMgr::getInstance(m_i4Master).getResult(rAFResultFromMgrMaster);
+        IAfMgr::getInstance(m_i4Slave).getResult(rAFResultFromMgrSlave);
+
+        CAM_LOGD("[%s] isFocusFinish = (%d,%d)", __FUNCTION__,
+                 rAFResultFromMgrMaster.isFocusFinish,
+                 rAFResultFromMgrSlave.isFocusFinish);
+        return (rAFResultFromMgrMaster.isFocusFinish && rAFResultFromMgrSlave.isFocusFinish);
+    }
+    return MFALSE;
+}
+
+MBOOL
+Sync3A::
+is2ASyncFinish()
+{
+    if ( (getSyncSupport() & (E_SYNC3A_SUPPORT_AE | E_SYNC3A_SUPPORT_AWB)) && isSyncEnable() )
+    {
+        CAM_LOGD_IF(m_i4AwbSyncCount, "[%s] m_i4AwbSyncCount = (%d)", __FUNCTION__, m_i4AwbSyncCount);
+        if (m_i4AwbSyncCount == 0)
+            return MTRUE;
+    }
+    return MFALSE;
+}
+
+
+MBOOL
+Sync3A::
+isAESyncStable()
+{
+    if ((getSyncSupport() & E_SYNC3A_SUPPORT_AE))
+    {
+        AE_PERFRAME_INFO_T AEPerframeInfoMaster;
+        AE_PERFRAME_INFO_T AEPerframeInfoSlave;
+        IAeMgr::getInstance().getAEInfo(m_i4Master, AEPerframeInfoMaster);
+        IAeMgr::getInstance().getAEInfo(m_i4Slave, AEPerframeInfoSlave);
+
+        CAM_LOGD("[%s] isFocusFinish = (%d,%d)", __FUNCTION__,
+                 AEPerframeInfoMaster.rAEISPInfo.bAEStable,
+                 AEPerframeInfoSlave.rAEISPInfo.bAEStable);
+        return AEPerframeInfoMaster.rAEISPInfo.bAEStable;
+    }
+    return MTRUE;
+}
+
+MINT32
+Sync3A::
+sync(MINT32 i4Sensor, MINT32 i4Param, MVOID* pSttBuf, MINT32 i4FrameNum)
+{
+    MINT32 i4Ret = 0;
+    MINT32 i4SemVal = 0;
+
+    if (i4Sensor == m_i4Master)
+        m_pMasterSttBuf = reinterpret_cast<StatisticBufInfo*>(pSttBuf);
+    else if (i4Sensor == m_i4Slave)
+        m_pSlaveSttBuf = reinterpret_cast<StatisticBufInfo*>(pSttBuf);
+
+    //if (!(i4Param & E_SYNC3A_DO_SW_SYNC))
+    if (MFALSE)
+    {
+        MBOOL bIsHwSync = MFALSE;
+        if (i4Param & E_SYNC3A_DO_HW_SYNC)
+            bIsHwSync = MTRUE;
+
+        MINT32 i4BypSyncCalc = 0;
+        GET_PROP("vendor.debug.sync2a.byp", "0", i4BypSyncCalc);
+        // Slave do AE sync
+        if ( (i4Sensor == m_i4Slave && !bIsHwSync) ||
+                (i4Sensor == m_i4Master && bIsHwSync) )
+        {
+            MINT32 i4Opt = i4Param & (~i4BypSyncCalc);
+            MINT32 i4OldOpt = i4Opt;
+            // if disable AE sync, remove AE opt
+            if (!(m_i4SyncSupport & E_SYNC3A_SUPPORT_AE))
+            {
+                i4Opt &= (~ISync3A::E_SYNC3A_DO_AE);
+                i4Opt &= (~ISync3A::E_SYNC3A_DO_AE_PRECAP);
+            }
+            // remove AWB opt
+            i4Opt &= (~ISync3A::E_SYNC3A_DO_AWB);
+            CAM_LOGD("[%s] m_i4SyncSupport(%d), AE i4Opt(%d -> %d)", __FUNCTION__, m_i4SyncSupport, i4OldOpt, i4Opt);
+
+            m_LockSync3AWrap.lock();
+            if (m_pSync3AWrap)
+                m_pSync3AWrap->syncCalc(i4Opt, m_pMasterSttBuf, m_pSlaveSttBuf);
+            m_LockSync3AWrap.unlock();
+        }
+
+        // Slave do AWB sync
+        if (i4Sensor != ISync3AMgr::getInstance()->getAWBMasterDev())
+        {
+            MINT32 i4Opt = i4Param & (~i4BypSyncCalc);
+            MINT32 i4OldOpt = i4Opt;
+            // remove AE opt
+            i4Opt &= (~ISync3A::E_SYNC3A_DO_AE);
+            i4Opt &= (~ISync3A::E_SYNC3A_DO_AE_PRECAP);
+            // if disable AWB sync, remove AWB opt
+            if (!(m_i4SyncSupport & E_SYNC3A_SUPPORT_AWB))
+                i4Opt &= (~ISync3A::E_SYNC3A_DO_AWB);
+            CAM_LOGD("[%s] m_i4SyncSupport(%d), AWB i4Opt(%d -> %d)", __FUNCTION__, m_i4SyncSupport, i4OldOpt, i4Opt);
+
+            m_LockSync3AWrap.lock();
+            if (m_pSync3AWrap)
+                m_pSync3AWrap->syncCalc(i4Opt, m_pMasterSttBuf, m_pSlaveSttBuf);
+            m_LockSync3AWrap.unlock();
+
+            if (m_i4AwbSyncCount > 0)
+                m_i4AwbSyncCount--;
+        }
+    } else
+    {
+        {
+            CAM_LOGD_IF(m_Sync3ALogEnable, "[%s] %s: eSensor(%d) i4FrameNum(%d) m_i4Count(%d) WaitFrm(#%d) SemVal(%d) i4Ret(%d)", __FUNCTION__, m_strName.c_str(), i4Sensor, i4FrameNum, m_i4Count, m_i4WaitFramNum, i4SemVal, i4Ret);
+            std::lock_guard<std::mutex> autoLock(m_Lock);
+            i4SemVal = m_i4Count;
+            if (i4SemVal >= 0)
+            {
+                m_i4Count --;
+                i4Ret = 0;
+
+                //Save wait_FrameNum
+                if(i4Sensor == m_i4Master)
+                   m_i4WaitFramNum = i4FrameNum;
+                else if(i4Sensor == m_i4Slave)
+                   m_i4WaitFramNum = i4FrameNum;
+                CAM_LOGD_IF(m_Sync3ALogEnable, "[%s](0) %s: eSensor(%d) Wait(%d) WaitFrm(#%d) i4Param(0x%08x) i4Ret(%d)", __FUNCTION__, m_strName.c_str(), i4Sensor, m_i4Count, m_i4WaitFramNum, i4Param, i4Ret);
+            }
+            else
+            {
+                //compare post_FrameNum with wait_FrameNum
+                if(i4FrameNum == m_i4WaitFramNum)
+                {
+                    m_i4Count ++;
+                    i4Ret = 1;
+                    CAM_LOGD_IF(m_Sync3ALogEnable, "[%s](2) %s: eSensor(%d) Post(%d) PostFrm(#%d) i4Param(0x%08x) i4Ret(%d)", __FUNCTION__, m_strName.c_str(), i4Sensor, m_i4Count, i4FrameNum, i4Param, i4Ret);
+                }
+                else
+                {
+                    i4Ret = -1;
+                    CAM_LOGW("[%s] Case1: PostFrm(#%d) isn't equal to WaitFrm(#%d) i4Ret(%d)\n", __FUNCTION__, i4FrameNum, m_i4WaitFramNum, i4Ret);
+                }
+            }
+        }
+
+        if (i4Ret == 0)
+        {
+            m_i4OptFirstIn = i4Param;
+            wait(i4Sensor);
+        }
+        else if(i4Ret == 1)
+        {
+            if ((i4Param | m_i4OptFirstIn) & ISync3A::E_SYNC3A_BYP_AE)
+            {
+                CAM_LOGD("%s: Ignore AEAWB: eSensor(%d), Opt(0x%08x), another Opt(0x%08x)", m_strName.c_str(), i4Sensor, i4Param, m_i4OptFirstIn);
+                i4Param &= (~(ISync3A::E_SYNC3A_DO_AE | ISync3A::E_SYNC3A_DO_AWB));
+            }
+            else if((i4Param|m_i4OptFirstIn) & ISync3A::E_SYNC3A_DO_AE)
+            {
+                i4Param |= (ISync3A::E_SYNC3A_DO_AE);
+            }
+
+            MINT32 i4BypSyncCalc = 0;
+            GET_PROP("vendor.debug.sync2a.byp", "0", i4BypSyncCalc);
+
+            // calculation
+            CAM_LOGD_IF(m_Sync3ALogEnable, "[%s](3) %s: Sync 2A: Sensor(%d) Calculation i4FrameNum(%d)", __FUNCTION__, m_strName.c_str(), i4Sensor, i4FrameNum);
+
+            // 2a sync do calculation
+            MINT32 i4Opt = i4Param & (~i4BypSyncCalc);
+            CAM_LOGD("[%s] i4Opt = %d", __FUNCTION__, i4Opt);
+            if(!(m_i4SyncSupport & E_SYNC3A_SUPPORT_AE))
+            {
+                i4Opt &= (~ISync3A::E_SYNC3A_DO_AE);
+                i4Opt &= (~ISync3A::E_SYNC3A_DO_AE_PRECAP);
+            }
+            if(!(m_i4SyncSupport & E_SYNC3A_SUPPORT_AWB))
+                i4Opt &= (~ISync3A::E_SYNC3A_DO_AWB);
+            CAM_LOGD("[%s] i4Opt = %d", __FUNCTION__, i4Opt);
+
+            m_LockSync3AWrap.lock();
+            if (m_pSync3AWrap)
+                m_pSync3AWrap->syncCalc(i4Opt, m_pMasterSttBuf, m_pSlaveSttBuf);
+            m_LockSync3AWrap.unlock();
+
+            if (m_i4AwbSyncCount > 0)
+                m_i4AwbSyncCount--;
+
+            post(i4Sensor);
+            m_pMasterSttBuf = NULL;
+            m_pSlaveSttBuf = NULL;
+        }
+        else
+            CAM_LOGW("[%s] Case1: PostFrm(#%d) isn't equre WaitFrm(#%d) i4Ret(%d)\n", __FUNCTION__, i4FrameNum, m_i4WaitFramNum, i4Ret);
+    }
+    return i4Ret;
+}
+
+MINT32
+Sync3A::
+syncAF(MINT32 i4Sensor, MBOOL initLens, MBOOL bIsDataSync)
+{
+    MINT32 i4Ret = 0, syncPos = 0;
+    if ((i4Sensor == m_i4Master && (getSyncSupport() & E_SYNC3A_SUPPORT_AF)) || initLens)
+    {
+        MINT32 i4MfMasterOnOff = 0;
+        GET_PROP("vendor.debug.sync2a.mf.m", "0", i4MfMasterOnOff);
+
+        MINT32 i4MfSlaveOnOff = 0;
+        GET_PROP("vendor.debug.sync2a.mf.s", "0", i4MfSlaveOnOff);
+
+        CAM_LOGD("[%s](i4MfMasterOnOff,i4MfSlaveOnOff) = (%d,%d)", __FUNCTION__, i4MfMasterOnOff, i4MfSlaveOnOff);
+
+        if (i4MfMasterOnOff)
+        {
+            MINT32 i4MfMasterPosition;
+            GET_PROP("vendor.debug.sync2a.mf.m.pos", "0", i4MfMasterPosition);
+            CAM_LOGD("[%s] i4MfMasterPosition = %d", __FUNCTION__, i4MfMasterPosition);
+            IAfMgr::getInstance(m_i4Master).SyncSetMFPos( i4MfMasterPosition); // master : move lens via mf control
+        }
+
+        // prepare the data for AF sync
+        // do AF algo for remapping position to Main2
+        if (i4MfSlaveOnOff)
+        {
+            MINT32 i4MfSlavePosition;
+            GET_PROP("vendor.debug.sync2a.mf.s.pos", "0", i4MfSlavePosition);
+            CAM_LOGD("[%s] i4MfSlavePosition = %d", __FUNCTION__, i4MfSlavePosition);
+            IAfMgr::getInstance(m_i4Slave).SyncMoveLens( i4MfSlavePosition);  // slave : move lens directly
+        }
+        else
+        {
+            Stereo_Param_T rParams = ISync3AMgr::getInstance()->getStereoParams();
+            MINT32 sync2AMode = 0;
+
+            if (bIsDataSync == MTRUE)
+            {
+                m_i4Master = getAFMasterDev();
+                m_i4Slave =  getAFSlaveDev();
+                m_i4AFMaster = ESensorDevId_Main;
+                m_i4AFSlave = ESensorDevId_Main;
+                CAM_LOGD("[%s] bIsDataSync = %d over-write M&S(%d, %d)", __FUNCTION__, bIsDataSync, m_i4Master, m_i4Slave);
+                sync2AMode=3;
+            }
+            else
+            {
+                switch (rParams.i4Sync2AMode)
+                {
+                case NS3Av3::E_SYNC2A_MODE::E_SYNC2A_MODE_VSDOF:
+                    sync2AMode=1;
+                    break;
+                case NS3Av3::E_SYNC2A_MODE::E_SYNC2A_MODE_DENOISE:
+                    sync2AMode=2;
+                    break;
+                case NS3Av3::E_SYNC2A_MODE::E_SYNC2A_MODE_DUAL_ZOOM:
+                    sync2AMode=3;
+                    break;
+                default:
+                    sync2AMode=0;
+                    break;
+                }
+            }
+            AF_SyncInfo_T sCamInfo;
+            memset(&sCamInfo,  0, sizeof(sCamInfo));
+            if (initLens)
+            {
+                sCamInfo.i4SyncStatus = SYNC_STATUS_INITLENS;
+            }
+
+            AFStaticInfo_T staticInfo;
+            IAfMgr::getInstance(m_i4Master).getStaticInfo(staticInfo, LOG_TAG);
+            if (staticInfo.isCCUAF)
+            {
+                // CCU version SyncAF
+                MINT32 slaveDev = 0, slaveIdx = 0;
+                IAfMgr::getInstance(m_i4Slave).SyncAFGetSensorInfoForCCU(slaveDev, slaveIdx);
+                IAfMgr::getInstance(m_i4Master).SyncAFProcess(slaveDev, slaveIdx, sync2AMode, sCamInfo);
+            }
+            else
+            {
+                // CPU version SyncAF
+                IAfMgr::getInstance(m_i4Slave).SyncAFSetMode(sync2AMode);
+                IAfMgr::getInstance(m_i4Slave).SyncAFGetMotorRange( sCamInfo);
+                syncPos = IAfMgr::getInstance(m_i4Master).SyncAFGetInfo( sCamInfo);
+                if (syncPos != 0xFFFF)
+                {
+                    IAfMgr::getInstance(m_i4Slave).SyncAFSetInfo( syncPos, sCamInfo);
+                    IAfMgr::getInstance(m_i4Slave).SyncMoveLens( syncPos);
+                }
+                else
+                    CAM_LOGD("[syncPos] err");
+
+                IAfMgr::getInstance(m_i4Slave).SyncAFGetCalibPos( sCamInfo);
+                IAfMgr::getInstance(m_i4Master).SyncAFCalibPos( sCamInfo);
+            }
+        }
+    }
+
+    return i4Ret;
+}
+
+MBOOL
+Sync3A::
+wait(MINT32 i4Sensor)
+{
+    MBOOL fgRet = MTRUE;
+    CAM_LOGD("[%s](1) %s: + eSensor(%d), m_fgSyncEnable(%d) i4WaitFramNum(%d)", __FUNCTION__, m_strName.c_str(), i4Sensor, m_fgSyncEnable, m_i4WaitFramNum);
+    if (m_fgSyncEnable)
+    {
+
+#if 0
+        std::unique_lock<std::mutex> lock(m_LockSync3AWait);
+        std::cv_status i4Ret = m_Condition.wait_for(lock, std::chrono::nanoseconds(SEM_TIME_LIMIT_NS));
+        if (i4Ret == std::cv_status::timeout)
+            CAM_LOGD("[%s] %s: eSensor(%d), i4Ret(%d), TimeOut(%d ns)", __FUNCTION__, m_strName.c_str(), i4Sensor, i4Ret, SEM_TIME_LIMIT_NS);
+#else
+        struct timespec ts;
+        if (clock_gettime(CLOCK_REALTIME, &ts) == -1)
+            CAM_LOGE("[%s] error in clock_gettime! Please check\n", __FUNCTION__);
+
+        ts.tv_sec  += SEM_TIME_LIMIT_NS/1000000000;
+        ts.tv_nsec += SEM_TIME_LIMIT_NS%1000000000;
+        if (ts.tv_nsec >= 1000000000)
+        {
+            ts.tv_nsec -= 1000000000;
+            ts.tv_sec += 1;
+        }
+        m_i4WaitPostCondition++;
+        int s = ::sem_timedwait(&m_semSync, &ts);
+        if (s == -1)
+        {
+            if (errno == ETIMEDOUT)
+            {
+                CAM_LOGD("[%s] %s: eSensor(%d), TimeOut(%d ns)", __FUNCTION__, m_strName.c_str(), i4Sensor, SEM_TIME_LIMIT_NS);
+            }
+            else
+                CAM_LOGD("[%s] %s: eSensor(%d) sem_timedwait() errno = %d\n", __FUNCTION__, m_strName.c_str(), i4Sensor, errno);
+        }
+#endif
+    }
+
+    if (!m_fgSyncEnable)
+        fgRet = MFALSE;
+    CAM_LOGD("[%s](5) %s: - eSensor(%d), m_fgSyncEnable(%d) WaitPostCondition(%d) i4WaitFramNum(%d)", __FUNCTION__, m_strName.c_str(), i4Sensor, m_fgSyncEnable, m_i4WaitPostCondition, m_i4WaitFramNum);
+    return fgRet;
+}
+
+MBOOL
+Sync3A::
+post(MINT32 i4Sensor)
+{
+    MINT32 i4count = 0;
+    while(m_i4WaitPostCondition > 0 || i4count < 10)
+    {
+        i4count++;
+        if(m_i4WaitPostCondition > 0)
+        {
+            break;
+        }
+        usleep(1000); //1ms
+    }
+
+    m_i4SyncFrmCount ++;
+    m_i4WaitPostCondition = 0;
+    m_i4WaitFramNum = 0;
+    CAM_LOGD("[%s](4) %s: eSensor(%d) count(%d) WaitPostCondition(%d) i4WaitFramNum(%d)", __FUNCTION__, m_strName.c_str(), i4Sensor, i4count, m_i4WaitPostCondition, m_i4WaitFramNum);
+#if 0
+    m_Condition.notify_all();
+#else
+    ::sem_post(&m_semSync);
+#endif
+    return MTRUE;
+}
+
+MBOOL
+Sync3A::
+isAeStable() const
+{
+    std::lock_guard<std::mutex> lock(m_LockSync3AWrap);
+
+    if (m_pSync3AWrap)
+        return m_pSync3AWrap->isAeStable();
+
+    return MFALSE;
+}
+
+MBOOL
+Sync3A::
+setDebugInfo(void* prDbgInfo) const
+{
+    std::lock_guard<std::mutex> lock(m_LockSync3AWrap);
+
+    if (m_pSync3AWrap)
+        return m_pSync3AWrap->setDebugInfo(prDbgInfo);
+
+    return MFALSE;
+}
+
+MVOID
+Sync3A::
+sync2ASetting(MINT32 i4MasterIdx, MINT32 i4SlaveIdx)
+{
+    // sync2ASetting and updateMasterSlave deadlock
+    // MW call this API only, so don't add mutex(m_LockSync3AWrap)
+    // Triple camera will change index, so need updateMasterSlave.
+    //std::lock_guard<std::mutex> lock(m_LockSync3AWrap);
+    // m_pSync3AWrap don't use this,because racing condition with uninit
+
+    Sync3AWrapper* pSync3AWrap = Sync3AWrapper::getInstance();
+
+    if (pSync3AWrap)
+    {
+        IHalSensorList* pHalSensorList = MAKE_HalSensorList();
+        if (!pHalSensorList) return;
+
+        MINT32 i4MasterDev = pHalSensorList->querySensorDevIdx(i4MasterIdx);
+        MINT32 i4SlaveDev = pHalSensorList->querySensorDevIdx(i4SlaveIdx);
+
+        m_i4AFMaster = i4MasterDev;
+        m_i4AFSlave = i4SlaveDev;
+
+        CAM_LOGD("[%s] new M(Idx/Dev)(%d/%d) S(Idx/Dev)(%d/%d)", __FUNCTION__, i4MasterIdx, i4MasterDev, i4SlaveIdx, i4SlaveDev);
+
+        pSync3AWrap->init(i4MasterDev, i4SlaveDev);
+        MBOOL bIsSupportCCU = pSync3AWrap->syncCCUAeSetting(i4MasterIdx, i4SlaveIdx, i4MasterDev, i4SlaveDev);
+        if(!bIsSupportCCU)
+            pSync3AWrap->syncAeSetting(i4MasterDev, i4SlaveDev);
+
+        pSync3AWrap->syncAwbSetting(i4MasterDev, i4SlaveDev);
+        pSync3AWrap->uninit();
+    }
+}
+
+MVOID
+Sync3A::
+updateMasterSlave(MINT32 i4Master, MINT32 i4Slave)
+{
+    m_i4Master = i4Master;
+    m_i4Slave = i4Slave;
+    std::lock_guard<std::mutex> lock(m_LockSync3AWrap);
+    if (m_pSync3AWrap)
+        m_pSync3AWrap->updateMasterSlave(i4Master, i4Slave);
+}
+
+MVOID
+Sync3A::
+updateFrameSync(MBOOL bEnable)
+{
+    std::lock_guard<std::mutex> lock(m_LockSync3AWrap);
+    if(m_pSync3AWrap == NULL)
+    {
+        CAM_LOGD("[%s] m_pSync3AWrap is NULL, so create it", __FUNCTION__);
+        m_pSync3AWrap = Sync3AWrapper::getInstance();
+    }
+    if (m_pSync3AWrap)
+        m_pSync3AWrap->updateFrameSync(bEnable);
+}
+
+MINT32
+Sync3A::
+getAFMasterDev() const
+{
+    return m_i4AFMaster;
+}
+
+MINT32
+Sync3A::
+getAFSlaveDev() const
+{
+    return m_i4AFSlave;
+}
+/******************************************************************************
+ *  ISync3AMgr Implementation
+ ******************************************************************************/
+class Sync3AMgr : public ISync3AMgr
+{
+public:
+    /**
+     * get singleton.
+     */
+    static Sync3AMgr*           getInstance();
+
+    virtual ISync3A*            getSync3A(MINT32 i4Id) const;
+
+    /**
+     * Explicitly init 3A N3D Sync manager by MW.
+     */
+    virtual MBOOL               init(MINT32 i4Policy, MINT32 i4MasterIdx, MINT32 i4SlaveIdx);
+
+    /**
+     * Explicitly uninit 3A N3D Sync manager by MW.
+     */
+    virtual MBOOL               uninit();
+
+    virtual MVOID               DevCount(MBOOL bEnable, MINT32 i4SensorDev);
+
+    virtual MBOOL               isInit() const;
+
+    virtual MBOOL               isActive() const;
+
+    virtual MINT32              getMasterDev() const {return m_i4Master;}
+
+    virtual MINT32              getSlaveDev() const {return m_i4Slave;}
+
+    virtual MVOID               setAFState(MINT32 i4AfState);
+
+    virtual MINT32              getAFState() const {return m_fgAfState;}
+
+    virtual MVOID               setStereoParams(Stereo_Param_T const &rNewParam);
+
+    virtual Stereo_Param_T      getStereoParams() const {return m_rStereoParams;}
+
+    virtual MINT32              getFrmSyncOpt() const;
+
+    virtual MINT32              getAWBMasterDev() const;
+
+    virtual MINT32              getAWBSlaveDev() const;
+
+    virtual MVOID               setSwitchCamCount(MBOOL bEnable);
+
+    virtual MINT32              getSwitchCamCount() const {return m_SwitchCamCount;}
+
+    // only for 97, fixing build error
+    virtual MVOID               setAFSyncMode(MINT32) {return ;}
+
+    virtual MVOID               enable() {return ;}
+
+    virtual MVOID               disable() {return ;}
+
+    virtual MVOID               updateInitParams() {return ;}
+
+    virtual MVOID               setManualControl(MBOOL) {return ;}
+
+    virtual MBOOL               isManualControl() {return 0;}
+
+    virtual MINT32              sendSync3ACtrl(ESync3ACtrl_T eSync3ACtrl, MINTPTR iArg1, MINTPTR iArg2);
+
+    virtual MINT32              isUninitSync(MINT32 i4Sensor, Stereo_Param_T const &rNewParam);
+
+private:
+    virtual MINT32              querySensorType(MINT32 i4SensorDev);
+
+protected:
+    Sync3AMgr()
+        : m_fgIsActive(MFALSE)
+        , m_i4DevCount(0)
+        , m_fgAfState(MFALSE)
+        , m_i4Master(ESensorDevId_Main)
+        , m_i4Slave(ESensorDevId_Main)
+        , m_i4MasterSensorType(0)
+        , m_i4SlaveSensorType(0)
+        , m_eCapMode(E_SYNC3AMGR_CAPMODE_2D)
+        , m_LockSync3AMgr()
+        , m_SwitchCamCount(2)
+        , m_IsStart(1)
+        , m_i4FrameNum4Sync2AOn(-1)
+    {}
+    virtual ~Sync3AMgr() {}
+
+    MBOOL                       m_fgIsActive;
+    MINT32                      m_i4DevCount;
+    MBOOL                       m_fgAfState;
+    MINT32                      m_i4Master;
+    MINT32                      m_i4Slave;
+    MINT32                      m_i4MasterSensorType;
+    MINT32                      m_i4SlaveSensorType;
+    E_SYNC3AMGR_CAPMODE         m_eCapMode;
+    Stereo_Param_T              m_rStereoParams;
+    AF_SyncInfo_T               m_sCamInfoHistWide;
+    AF_SyncInfo_T               m_sCamInfoHistTele;
+    mutable std::mutex          m_LockSync3AMgr;
+    MINT32                      m_SwitchCamCount;
+    MINT32                      m_IsStart;
+    MINT32                      m_i4FrameNum4Sync2AOn;
+};
+
+ISync3AMgr*
+ISync3AMgr::
+getInstance()
+{
+    return Sync3AMgr::getInstance();
+}
+
+Sync3AMgr*
+Sync3AMgr::
+getInstance()
+{
+    static Sync3AMgr _rSync3AMgr;
+    return &_rSync3AMgr;
+}
+
+ISync3A*
+Sync3AMgr::
+getSync3A(MINT32 i4Id) const
+{
+    return Sync3A::getInstance(i4Id);
+}
+
+MBOOL
+Sync3AMgr::
+init(MINT32 i4Policy, MINT32 i4MasterIdx, MINT32 i4SlaveIdx)
+{
+    std::lock_guard<std::mutex> lock(m_LockSync3AMgr);
+
+    m_fgIsActive = MTRUE;
+
+    SensorStaticInfo sensorStaticInfo;
+    IHalSensorList* pHalSensorList = MAKE_HalSensorList();
+    if (!pHalSensorList) return MFALSE;
+
+    m_i4Master = pHalSensorList->querySensorDevIdx(i4MasterIdx);
+    m_i4Slave = pHalSensorList->querySensorDevIdx(i4SlaveIdx);
+    m_i4MasterSensorType = querySensorType(m_i4Master);
+    m_i4SlaveSensorType = querySensorType(m_i4Slave);
+    m_rStereoParams.i4MasterIdx = i4MasterIdx;
+    m_rStereoParams.i4SlaveIdx = i4SlaveIdx;
+
+    FlashHal::getInstance(m_i4Master)->setInCharge(MTRUE);
+    FlashHal::getInstance(m_i4Slave)->setInCharge(MFALSE);
+    FlashMgr::getInstance(m_i4Master)->setInCharge(MTRUE);
+    FlashMgr::getInstance(m_i4Slave)->setInCharge(MFALSE);
+
+    IFlickerHal::getInstance(m_i4Master)->stop();
+    IFlickerHal::getInstance(m_i4Slave)->stop();
+    IFlickerHal::getInstance(m_i4Master)->start(FLK_ATTACH_PRIO_HIGH);
+    IFlickerHal::getInstance(m_i4Slave)->start(FLK_ATTACH_PRIO_LOW);
+
+    CAM_LOGD("[%s] Master(%d,%d), Slave(%d,%d)", __FUNCTION__,
+             m_i4Master, m_i4MasterSensorType,
+             m_i4Slave, m_i4SlaveSensorType);
+
+    Sync3A::getInstance(E_SYNC3AMGR_PRVIEW)->init(i4Policy, m_i4Master, m_i4Slave, "Preview");
+    Sync3A::getInstance(E_SYNC3AMGR_CAPTURE)->init(i4Policy, m_i4Master, m_i4Slave, "Capture");
+    Sync3A::getInstance(E_SYNC3AMGR_PRVIEW)->enableSync(MTRUE);
+    Sync3A::getInstance(E_SYNC3AMGR_CAPTURE)->enableSync(MTRUE);
+
+    // AWB control setting
+    MBOOL isMono = MFALSE;
+    MINT32 IsSupportAF = MFALSE;
+    AFStaticInfo_T staticInfo;
+    IAfMgr::getInstance(m_i4Master).getStaticInfo(staticInfo, LOG_TAG);
+    MINT32 IsSupportAFMaster = staticInfo.isAfSupport;
+    IAfMgr::getInstance(m_i4Slave).getStaticInfo(staticInfo, LOG_TAG);
+    MINT32 IsSupportAFSlave = staticInfo.isAfSupport;
+    IsSupportAF = (IsSupportAFMaster & IsSupportAFSlave);
+
+    if ( m_i4MasterSensorType == SENSOR_RAW_MONO)
+    {
+        IAwbMgr::getInstance().disableAWB(m_i4Master);
+        IAfMgr::getInstance(m_i4Master).SyncSetOffMode();
+        isMono = MTRUE;
+    } else if (m_i4SlaveSensorType == SENSOR_RAW_MONO)
+    {
+        IAwbMgr::getInstance().disableAWB(m_i4Slave);
+        IAfMgr::getInstance(m_i4Slave).SyncSetOffMode();
+        isMono = MTRUE;
+    }
+
+    if (isMono)
+    {
+        // disable AWB sync
+        Sync3A::getInstance(E_SYNC3AMGR_PRVIEW)->disableSyncSupport(ISync3A::E_SYNC3A_SUPPORT_AWB);
+        Sync3A::getInstance(E_SYNC3AMGR_CAPTURE)->disableSyncSupport(ISync3A::E_SYNC3A_SUPPORT_AWB);
+
+        // enable AF sync
+        if(IsSupportAF)
+        {
+            Sync3A::getInstance(E_SYNC3AMGR_PRVIEW)->enableSyncSupport(ISync3A::E_SYNC3A_SUPPORT_AF);
+            Sync3A::getInstance(E_SYNC3AMGR_CAPTURE)->enableSyncSupport(ISync3A::E_SYNC3A_SUPPORT_AF);
+        }
+        else
+        {
+            Sync3A::getInstance(E_SYNC3AMGR_PRVIEW)->disableSyncSupport(ISync3A::E_SYNC3A_SUPPORT_AF);
+            Sync3A::getInstance(E_SYNC3AMGR_CAPTURE)->disableSyncSupport(ISync3A::E_SYNC3A_SUPPORT_AF);
+        }
+    }
+    else
+    {
+        // enable AWB sync
+        Sync3A::getInstance(E_SYNC3AMGR_PRVIEW)->enableSyncSupport(ISync3A::E_SYNC3A_SUPPORT_AWB);
+        Sync3A::getInstance(E_SYNC3AMGR_CAPTURE)->enableSyncSupport(ISync3A::E_SYNC3A_SUPPORT_AWB);
+    }
+
+    ICcuCtrl3ACtrl* pCcuCtrl3ASync = ICcuCtrl3ACtrl::createInstance();
+    if (pCcuCtrl3ASync && pCcuCtrl3ASync->isSupport3ASync())
+    {
+        // disable AE sync
+        Sync3A::getInstance(E_SYNC3AMGR_PRVIEW)->disableSyncSupport(ISync3A::E_SYNC3A_SUPPORT_AE);
+        Sync3A::getInstance(E_SYNC3AMGR_CAPTURE)->disableSyncSupport(ISync3A::E_SYNC3A_SUPPORT_AE);
+    }
+    pCcuCtrl3ASync->destroyInstance();
+    pCcuCtrl3ASync = NULL;
+
+    // awb ROI for main2
+    //NSCamCustomSensor::SensorViewAngle_T rVangle = NSCamCustomSensor::getSensorViewAngle();
+    NSCamCustomSensor::CUSTOM_CFG* pCustomMainCFG = NSCamCustomSensor::getCustomConfig(IMGSENSOR_SENSOR_IDX_MAIN);
+    NSCamCustomSensor::CUSTOM_CFG* pCustomMain2CFG = NSCamCustomSensor::getCustomConfig(IMGSENSOR_SENSOR_IDX_MAIN2);
+
+    if ((pCustomMain2CFG->verticalFov < pCustomMainCFG->verticalFov) ||
+            (pCustomMain2CFG->horizontalFov < pCustomMainCFG->horizontalFov))
+    {
+        CAM_LOGD("[%s] Not necessary to config window MainFOV(%d,%d) Main2FOV(%d,%d)",
+                 __FUNCTION__, pCustomMainCFG->horizontalFov, pCustomMainCFG->verticalFov, pCustomMain2CFG->horizontalFov , pCustomMain2CFG->verticalFov);
+    }
+    else
+    {
+        MINT32 i;
+        SensorStaticInfo rSensorStaticInfo;
+        pHalSensorList->querySensorStaticInfo(m_i4Slave, &rSensorStaticInfo);
+        MINT32 u4NumSensorModes = MIN(rSensorStaticInfo.SensorModeNum, (MINT32)ESensorMode_NUM);
+
+        NSCam::MSize rSize[ESensorMode_NUM];
+        rSize[ESensorMode_Preview].w    = rSensorStaticInfo.previewWidth;
+        rSize[ESensorMode_Preview].h    = rSensorStaticInfo.previewHeight;
+        rSize[ESensorMode_Capture].w    = rSensorStaticInfo.captureWidth;
+        rSize[ESensorMode_Capture].h    = rSensorStaticInfo.captureHeight;
+        rSize[ESensorMode_Video].w      = rSensorStaticInfo.videoWidth;
+        rSize[ESensorMode_Video].h      = rSensorStaticInfo.videoHeight;
+        rSize[ESensorMode_SlimVideo1].w = rSensorStaticInfo.video1Width;
+        rSize[ESensorMode_SlimVideo1].h = rSensorStaticInfo.video1Height;
+        rSize[ESensorMode_SlimVideo2].w = rSensorStaticInfo.video2Width;
+        rSize[ESensorMode_SlimVideo2].h = rSensorStaticInfo.video2Height;
+
+        CAM_LOGD("[%s] u4NumSensorModes(%d), prv(%d,%d), cap(%d,%d), vdo(%d,%d), vdo1(%d,%d), vdo2(%d,%d)", __FUNCTION__, u4NumSensorModes,
+                 rSensorStaticInfo.previewWidth,
+                 rSensorStaticInfo.previewHeight,
+                 rSensorStaticInfo.captureWidth,
+                 rSensorStaticInfo.captureHeight,
+                 rSensorStaticInfo.videoWidth,
+                 rSensorStaticInfo.videoHeight,
+                 rSensorStaticInfo.video1Width,
+                 rSensorStaticInfo.video1Height,
+                 rSensorStaticInfo.video2Width,
+                 rSensorStaticInfo.video2Height
+                );
+
+        for (i = 0; i < u4NumSensorModes; i++)
+        {
+            NSCam::MRect rCrop = get2AStatROI(
+                                     pCustomMainCFG->verticalFov,
+                                     pCustomMainCFG->horizontalFov,
+                                     pCustomMain2CFG->verticalFov,
+                                     pCustomMain2CFG->horizontalFov,
+                                     rSize[i].w, rSize[i].h);
+
+            IAwbMgr::getInstance().setAWBStatCropRegion(
+                m_i4Slave,
+                i,
+                rCrop.p.x, rCrop.p.y, rCrop.s.w, rCrop.s.h);
+        }
+    }
+    return MTRUE;
+}
+
+MBOOL
+Sync3AMgr::
+uninit()
+{
+    std::lock_guard<std::mutex> lock(m_LockSync3AMgr);
+    if (m_fgIsActive)
+    {
+        CAM_LOGD("[%s] Master(%d), Slave(%d)", __FUNCTION__, m_i4Master, m_i4Slave);
+        Sync3A::getInstance(E_SYNC3AMGR_PRVIEW)->enableSync(MFALSE);
+        Sync3A::getInstance(E_SYNC3AMGR_CAPTURE)->enableSync(MFALSE);
+        Sync3A::getInstance(E_SYNC3AMGR_PRVIEW)->uninit();
+        Sync3A::getInstance(E_SYNC3AMGR_CAPTURE)->uninit();
+
+        Stereo_Param_T rStereoParam;
+        rStereoParam.i4HwSyncMode = NS3Av3::E_HW_FRM_SYNC_MODE::E_HW_FRM_SYNC_MODE_OFF;
+        rStereoParam.i4Sync2AMode= NS3Av3::E_SYNC2A_MODE::E_SYNC2A_MODE_NONE;
+        rStereoParam.i4SyncAFMode= NS3Av3::E_SYNCAF_MODE::E_SYNCAF_MODE_OFF;
+        m_fgIsActive = MFALSE;
+        setStereoParams(rStereoParam);
+
+        MBOOL bEnableAEStereoManualPline = MFALSE;
+        IAeMgr::getInstance().sendAECtrl(m_i4Master, EAECtrl_EnableAEStereoManualPline, bEnableAEStereoManualPline, NULL, NULL, NULL);
+        IAeMgr::getInstance().sendAECtrl(m_i4Slave, EAECtrl_EnableAEStereoManualPline, bEnableAEStereoManualPline, NULL, NULL, NULL);
+
+        // reset Master AF sync status
+        AF_SyncInfo_T sCamInfo;
+        memset(&sCamInfo, 0, sizeof(sCamInfo));
+        IAfMgr::getInstance(m_i4Master).SyncAFGetInfo( sCamInfo);
+
+        // reset aaa sensor status
+        AAASensorMgr::getInstance().disableFrameSync();
+    }
+    return MTRUE;
+}
+
+MVOID
+Sync3AMgr::
+DevCount(MBOOL bEnable, MINT32 i4SensorDev)
+{
+    CAM_LOGD("[%s] bEnable(%d) m_i4DevCount(%d) i4SensorDev(%d) +", __FUNCTION__, bEnable, m_i4DevCount, i4SensorDev);
+    if (bEnable)
+        m_i4DevCount++;
+    else
+        m_i4DevCount--;
+    CAM_LOGD("[%s] bEnable(%d) m_i4DevCount(%d) i4SensorDev(%d) -", __FUNCTION__, bEnable, m_i4DevCount, i4SensorDev);
+}
+
+MBOOL
+Sync3AMgr::
+isInit() const
+{
+    std::lock_guard<std::mutex> lock(m_LockSync3AMgr);
+    return m_fgIsActive;
+}
+
+MBOOL
+Sync3AMgr::
+isActive() const
+{
+    std::lock_guard<std::mutex> lock(m_LockSync3AMgr);
+    //return (m_fgIsActive && m_i4DevCount == 2);
+    return (m_fgIsActive);
+}
+
+MVOID
+Sync3AMgr::
+setAFState(MINT32 i4AfState)
+{
+    if (m_fgAfState != i4AfState)
+    {
+        CAM_LOGD("[%s] State(%d -> %d)", __FUNCTION__, m_fgAfState, i4AfState);
+        MBOOL bEnableAEOneShotControl = (i4AfState != 0) ? MTRUE : MFALSE;
+        IAeMgr::getInstance().sendAECtrl(m_i4Slave, EAECtrl_EnableAEOneShotControl, bEnableAEOneShotControl, NULL, NULL, NULL);
+        m_fgAfState = i4AfState;
+    }
+}
+
+MVOID
+Sync3AMgr::
+setStereoParams(Stereo_Param_T const &rNewParam)
+{
+    MINT32 i4Sync2AMode = rNewParam.i4Sync2AMode;
+    MINT32 i4SyncAFMode = rNewParam.i4SyncAFMode;
+    MINT32 i4HwSyncMode = rNewParam.i4HwSyncMode;
+    MINT32 i4MasterIdx = rNewParam.i4MasterIdx;
+    MINT32 i4SlaveIdx = rNewParam.i4SlaveIdx;
+    MINT32 i4Sync3ASwitchOn = rNewParam.i4Sync3ASwitchOn;
+    MINT32 i4ZoomRatio = rNewParam.i4ZoomRatio;
+
+    if( (m_SwitchCamCount != 2) && (i4Sync3ASwitchOn == NS3Av3::E_SYNC3A_NOTIFY::E_SYNC3A_NOTIFY_SWITCH_ON) )
+    {
+        m_SwitchCamCount++;
+        CAM_LOGD("[%s] m_SwitchCamCount(%d)", __FUNCTION__, m_SwitchCamCount);
+    }
+
+    if (i4MasterIdx != 0 || i4SlaveIdx != 0)
+    {
+        IHalSensorList* pHalSensorList = MAKE_HalSensorList();
+        if (!pHalSensorList) return;
+
+        MINT32 newMasterDev = pHalSensorList->querySensorDevIdx(i4MasterIdx);
+        MINT32 newSlaveDev = pHalSensorList->querySensorDevIdx(i4SlaveIdx);
+        if (m_i4Master != newMasterDev || m_i4Slave != newSlaveDev)
+        {
+            CAM_LOGD("[%s] M&S : old(%d,%d), new(%d,%d)", __FUNCTION__,
+                     m_i4Master, m_i4Slave,
+                     newMasterDev, newSlaveDev);
+            m_i4Master = newMasterDev;
+            m_i4Slave = newSlaveDev;
+
+            m_rStereoParams.i4MasterIdx = i4MasterIdx;
+            m_rStereoParams.i4SlaveIdx = i4SlaveIdx;
+            //W+T
+            FlashHal::getInstance(m_i4Master)->setInCharge(MTRUE);
+            FlashHal::getInstance(m_i4Slave)->setInCharge(MFALSE);
+            FlashMgr::getInstance(m_i4Master)->setInCharge(MTRUE);
+            FlashMgr::getInstance(m_i4Slave)->setInCharge(MFALSE);
+
+            IFlickerHal::getInstance(m_i4Master)->stop();
+            IFlickerHal::getInstance(m_i4Slave)->stop();
+            IFlickerHal::getInstance(m_i4Master)->start(FLK_ATTACH_PRIO_HIGH);
+            IFlickerHal::getInstance(m_i4Slave)->start(FLK_ATTACH_PRIO_LOW);
+
+            IAfMgr::getInstance(m_i4Slave).SyncAFSetMode(0xFE);
+            IAfMgr::getInstance(m_i4Master).SyncAFSetMode(0xFF);
+
+            if (((i4Sync3ASwitchOn == NS3Av3::E_SYNC3A_NOTIFY::E_SYNC3A_NOTIFY_SWITCH_ON) || (m_SwitchCamCount == 2)))
+            {
+                Sync3A::getInstance(E_SYNC3AMGR_PRVIEW)->updateMasterSlave(m_i4Master, m_i4Slave);
+                Sync3A::getInstance(E_SYNC3AMGR_CAPTURE)->updateMasterSlave(m_i4Master, m_i4Slave);
+            }
+        }
+        //W+T store master history and sent slave history
+        if (m_rStereoParams.i4Sync2AMode == NS3Av3::E_SYNC2A_MODE::E_SYNC2A_MODE_DUAL_ZOOM)
+        {
+            if (m_i4Master == ESensorDevId_Main)
+            {
+                if (m_i4Master == newMasterDev || m_i4Slave == newSlaveDev)
+                {
+                    IAfMgr::getInstance(m_i4Master).SyncAFGetInfo( Sync3AMgr::getInstance()->m_sCamInfoHistWide);// store master_Wide cam info
+                    IAfMgr::getInstance(m_i4Master).SyncAFSetInfo( 0xFFFF, m_sCamInfoHistTele);// sent slave history to master
+                }
+            }
+            else if (m_i4Master == ESensorDevId_MainSecond)
+            {
+                if (m_i4Master == newMasterDev || m_i4Slave == newSlaveDev)
+                {
+                    IAfMgr::getInstance(m_i4Master).SyncAFGetInfo( Sync3AMgr::getInstance()->m_sCamInfoHistTele);// store master_Tele cam info
+                    IAfMgr::getInstance(m_i4Master).SyncAFSetInfo( 0xFFFF, m_sCamInfoHistWide);// sent slave history to master
+                }
+            }
+        }
+
+        AWB_SYNC_INPUT_N3D_T AWBSyncInfo = {};
+        MINT32 i4MasterDev = getMasterDev();
+        MINT32 i4SlaveDev = getSlaveDev();
+        AWBSyncInfo.i4SyncMode  = i4Sync2AMode;
+        AWBSyncInfo.i4MasterDev = i4MasterDev;
+        AWBSyncInfo.i4SyncEn    = m_fgIsActive;
+        AWBSyncInfo.ZoomRatio   = i4ZoomRatio;
+        IAwbMgr::getInstance().setAWBSyncInfo(i4MasterDev, AWBSyncInfo);
+        IAwbMgr::getInstance().setAWBSyncInfo(i4SlaveDev, AWBSyncInfo);
+    }
+
+    if (i4Sync2AMode != NS3Av3::E_SYNC2A_MODE::E_SYNC2A_MODE_IDLE && m_rStereoParams.i4Sync2AMode != i4Sync2AMode)
+    {
+        CAM_LOGD("[%s] Sync2AMode : old(%d), new(%d)", __FUNCTION__, m_rStereoParams.i4Sync2AMode, i4Sync2AMode);
+
+        if (i4Sync2AMode != NS3Av3::E_SYNC2A_MODE::E_SYNC2A_MODE_NONE)
+        {
+            CAM_LOGD("[%s] enableAEStereoManualPline master(%d)/slave(%d):1", __FUNCTION__, m_i4Master, m_i4Slave);
+            MBOOL bEnableAEStereoManualPline = MTRUE;
+            IAeMgr::getInstance().sendAECtrl(m_i4Master, EAECtrl_EnableAEStereoManualPline, bEnableAEStereoManualPline, NULL, NULL, NULL);
+            IAeMgr::getInstance().sendAECtrl(m_i4Slave, EAECtrl_EnableAEStereoManualPline, bEnableAEStereoManualPline, NULL, NULL, NULL);
+        }
+        else
+        {
+            CAM_LOGD("[%s] enableAEStereoManualPline master(%d)/slave(%d):0", __FUNCTION__, m_i4Master, m_i4Slave);
+            MBOOL bEnableAEStereoManualPline = MFALSE;
+            IAeMgr::getInstance().sendAECtrl(m_i4Master, EAECtrl_EnableAEStereoManualPline, bEnableAEStereoManualPline, NULL, NULL, NULL);
+            IAeMgr::getInstance().sendAECtrl(m_i4Slave, EAECtrl_EnableAEStereoManualPline, bEnableAEStereoManualPline, NULL, NULL, NULL);
+        }
+
+        m_rStereoParams.i4Sync2AMode = static_cast<NS3Av3::E_SYNC2A_MODE>(i4Sync2AMode);
+        if (m_rStereoParams.i4Sync2AMode == NS3Av3::E_SYNC2A_MODE::E_SYNC2A_MODE_DUAL_ZOOM)
+        {
+#if DUALZOOM_WIDE_STANDY_EN
+            Sync3A::getInstance(E_SYNC3AMGR_PRVIEW)->enableSyncSupport(ISync3A::E_SYNC3A_SUPPORT_AWB);
+            Sync3A::getInstance(E_SYNC3AMGR_CAPTURE)->enableSyncSupport(ISync3A::E_SYNC3A_SUPPORT_AWB);
+#else
+            Sync3A::getInstance(E_SYNC3AMGR_PRVIEW)->enableSyncSupport(ISync3A::E_SYNC3A_SUPPORT_AWB);
+            Sync3A::getInstance(E_SYNC3AMGR_CAPTURE)->enableSyncSupport(ISync3A::E_SYNC3A_SUPPORT_AWB);
+#endif
+        }
+        ICcuCtrl3ACtrl* pCcuCtrl3ASync = ICcuCtrl3ACtrl::createInstance();
+        if (m_rStereoParams.i4Sync2AMode != NS3Av3::E_SYNC2A_MODE::E_SYNC2A_MODE_NONE)
+        {
+            if (pCcuCtrl3ASync && pCcuCtrl3ASync->isSupport3ASync() && ((i4Sync3ASwitchOn == NS3Av3::E_SYNC3A_NOTIFY::E_SYNC3A_NOTIFY_SWITCH_ON) || (m_SwitchCamCount == 2)))
+            {
+                struct ccu_3a_sync_state syncState;
+                syncState.mode = SYNC;
+                syncState.master_sensor_dev = (ESensorDev_T) m_i4Master;
+                syncState.master_cam_type = (m_i4MasterSensorType == SENSOR_RAW_MONO) ? CCU_MONO_SENSOR : CCU_BAYER_SENSOR;
+                syncState.slave_cam_type = (m_i4SlaveSensorType == SENSOR_RAW_MONO) ? CCU_MONO_SENSOR : CCU_BAYER_SENSOR;
+
+                syncState.master_sensor_idx = m_rStereoParams.i4MasterIdx;
+                switch (m_rStereoParams.i4Sync2AMode)
+                {
+                case NS3Av3::E_SYNC2A_MODE::E_SYNC2A_MODE_VSDOF:
+                    syncState.feature = BAYER_BAYER;
+                    break;
+                case NS3Av3::E_SYNC2A_MODE::E_SYNC2A_MODE_DENOISE:
+                    syncState.feature = BAYER_MONO;
+                    break;
+                case NS3Av3::E_SYNC2A_MODE::E_SYNC2A_MODE_DUAL_ZOOM:
+                    syncState.feature = WIDE_TELE;
+                    break;
+                default:
+                    syncState.feature = BAYER_BAYER;
+                    break;
+                }
+                CAM_LOGD("[%s] CCU_SYNC_DBG MSG_TO_CCU_SET_3A_SYNC_STATE, mode(%d), feature(%d). master_dev(%d) master_Idx(%d)",
+                         __FUNCTION__, syncState.mode, syncState.feature, syncState.master_sensor_dev, syncState.master_sensor_idx);
+                pCcuCtrl3ASync->ccuControl(MSG_TO_CCU_SET_3A_SYNC_STATE, &syncState, NULL);
+            }
+        }
+        else
+        {
+            if (pCcuCtrl3ASync)
+            {
+                struct ccu_3a_sync_state syncState;
+                syncState.mode = FREE_RUN;
+                CAM_LOGD("[%s] CCU_SYNC_DBG MSG_TO_CCU_SET_3A_SYNC_STATE to FREE_RUN", __FUNCTION__);
+                pCcuCtrl3ASync->ccuControl(MSG_TO_CCU_SET_3A_SYNC_STATE, &syncState, NULL);
+            }
+        }
+        pCcuCtrl3ASync->destroyInstance();
+        pCcuCtrl3ASync = NULL;
+    }
+
+    if (i4SyncAFMode != NS3Av3::E_SYNCAF_MODE::E_SYNCAF_MODE_IDLE && m_rStereoParams.i4SyncAFMode != i4SyncAFMode)
+    {
+        CAM_LOGD("[%s] SyncAFMode : old(%d), new(%d)", __FUNCTION__, m_rStereoParams.i4SyncAFMode, i4SyncAFMode);
+        m_rStereoParams.i4SyncAFMode = static_cast<E_SYNCAF_MODE>(i4SyncAFMode);
+        if (m_rStereoParams.i4SyncAFMode == NS3Av3::E_SYNCAF_MODE::E_SYNCAF_MODE_ON)
+        {
+            if (m_rStereoParams.i4Sync2AMode == NS3Av3::E_SYNC2A_MODE::E_SYNC2A_MODE_DUAL_ZOOM)
+            {
+                AFResult_T rAFResultFromMgrMaster;
+                IAfMgr::getInstance(m_i4Master).getResult(rAFResultFromMgrMaster);
+                if (rAFResultFromMgrMaster.isFocusFinish)
+                    Sync3A::getInstance(E_SYNC3AMGR_PRVIEW)->syncAF(m_i4Master, MTRUE, MFALSE);
+            }
+            else
+            {
+                Sync3A::getInstance(E_SYNC3AMGR_PRVIEW)->enableSyncSupport(ISync3A::E_SYNC3A_SUPPORT_AF);
+                Sync3A::getInstance(E_SYNC3AMGR_CAPTURE)->enableSyncSupport(ISync3A::E_SYNC3A_SUPPORT_AF);
+            }
+        } else if (m_rStereoParams.i4SyncAFMode == NS3Av3::E_SYNCAF_MODE::E_SYNCAF_MODE_OFF)
+        {
+            Sync3A::getInstance(E_SYNC3AMGR_PRVIEW)->disableSyncSupport(ISync3A::E_SYNC3A_SUPPORT_AF);
+            Sync3A::getInstance(E_SYNC3AMGR_CAPTURE)->disableSyncSupport(ISync3A::E_SYNC3A_SUPPORT_AF);
+
+            // reset Master AF sync status
+            AF_SyncInfo_T sCamInfo;
+            memset(&sCamInfo, 0, sizeof(sCamInfo));
+            IAfMgr::getInstance(m_i4Master).SyncAFGetInfo( sCamInfo);
+        }
+    }
+
+    if (i4HwSyncMode != NS3Av3::E_HW_FRM_SYNC_MODE::E_HW_FRM_SYNC_MODE_IDLE && m_rStereoParams.i4HwSyncMode != i4HwSyncMode)
+    {
+        CAM_LOGD("[%s] SyncHwMode : old(%d), new(%d)", __FUNCTION__, m_rStereoParams.i4HwSyncMode, i4HwSyncMode);
+        m_rStereoParams.i4HwSyncMode = static_cast<NS3Av3::E_HW_FRM_SYNC_MODE>(i4HwSyncMode);
+        if (m_rStereoParams.i4HwSyncMode == NS3Av3::E_HW_FRM_SYNC_MODE::E_HW_FRM_SYNC_MODE_OFF)
+        {
+            AAASensorMgr::getInstance().disableFrameSync();
+            Sync3A::getInstance(E_SYNC3AMGR_PRVIEW)->updateFrameSync(MFALSE);
+        }
+        else
+            Sync3A::getInstance(E_SYNC3AMGR_PRVIEW)->updateFrameSync(MTRUE);
+    }
+}
+
+MINT32
+Sync3AMgr::
+getFrmSyncOpt() const
+{
+    MINT32 opt = 0;
+    if (m_rStereoParams.i4HwSyncMode == NS3Av3::E_HW_FRM_SYNC_MODE::E_HW_FRM_SYNC_MODE_ON)
+    {
+        opt |= ISync3A::E_SYNC3A_DO_HW_SYNC;
+        if ( m_rStereoParams.i4Sync2AMode == NS3Av3::E_SYNC2A_MODE::E_SYNC2A_MODE_VSDOF ||
+                m_rStereoParams.i4Sync2AMode == NS3Av3::E_SYNC2A_MODE::E_SYNC2A_MODE_DENOISE ||
+                m_rStereoParams.i4Sync2AMode == NS3Av3::E_SYNC2A_MODE::E_SYNC2A_MODE_DUAL_ZOOM)
+        {
+            opt |= ISync3A::E_SYNC3A_DO_SW_SYNC;
+        }
+    }
+    return opt;
+}
+
+MINT32
+Sync3AMgr::
+getAWBMasterDev() const
+{
+    // TODO : query sensor type to decide which sensor is master.
+    return NSIspTuning::ESensorDev_Main;
+}
+
+MINT32
+Sync3AMgr::
+getAWBSlaveDev() const
+{
+    // TODO : query sensor type to decide which sensor is slave.
+    return NSIspTuning::ESensorDev_MainSecond;
+}
+
+MVOID
+Sync3AMgr::
+setSwitchCamCount(MBOOL bEnable)
+{
+    if(bEnable)
+        m_SwitchCamCount = 0;
+    CAM_LOGD("[%s] m_SwitchCamCount(%d)", __FUNCTION__, m_SwitchCamCount);
+}
+
+MINT32
+Sync3AMgr::
+querySensorType(MINT32 i4SensorDev)
+{
+    SensorStaticInfo sensorStaticInfo;
+    IHalSensorList*const pHalSensorList = MAKE_HalSensorList();
+    if (!pHalSensorList)
+    {
+        CAM_LOGE("MAKE_HalSensorList() == NULL");
+        return 0;
+    }
+    pHalSensorList->querySensorStaticInfo(i4SensorDev, &sensorStaticInfo);
+
+    return sensorStaticInfo.rawFmtType; // SENSOR_RAW_MONO or SENSOR_RAW_Bayer
+}
+
+MINT32
+Sync3AMgr::
+isUninitSync(MINT32 i4Sensor, Stereo_Param_T const &rNewParam)
+{
+    MINT32 i4Sync2AMode = rNewParam.i4Sync2AMode;
+    MINT32 i4FrameNum = rNewParam.i4FrameNum;
+    MINT32 i4Ret = -1;
+
+    if (i4Sync2AMode == NS3Av3::E_SYNC2A_MODE::E_SYNC2A_MODE_VSDOF ||
+        i4Sync2AMode == NS3Av3::E_SYNC2A_MODE::E_SYNC2A_MODE_DENOISE ||
+        i4Sync2AMode == NS3Av3::E_SYNC2A_MODE::E_SYNC2A_MODE_DUAL_ZOOM)
+    {
+        m_i4FrameNum4Sync2AOn = i4FrameNum;
+        i4Ret = 0;
+    }
+    else if (i4Sync2AMode == NS3Av3::E_SYNC2A_MODE::E_SYNC2A_MODE_NONE)
+    {
+        if (i4FrameNum >= m_i4FrameNum4Sync2AOn && m_i4FrameNum4Sync2AOn != -1)
+        {
+            i4Ret = 1;
+            m_i4FrameNum4Sync2AOn = -1;
+        }
+        else
+        {
+            CAM_LOGD("[%s] SensorDev(%d) Sync2AMode(%d) FrameNum(%d,%d)", __FUNCTION__, i4Sensor, i4Sync2AMode, i4FrameNum, m_i4FrameNum4Sync2AOn);
+            i4Ret = 0;
+        }
+    }
+
+    return i4Ret;
+}
+
+
+MINT32
+Sync3AMgr::
+sendSync3ACtrl(ESync3ACtrl_T eSync3ACtrl, MINTPTR iArg1, MINTPTR iArg2)
+{
+    MINT32 i4Ret = 0;
+    switch (eSync3ACtrl)
+    {
+        case ESync3ACtrl_SetIsStart:
+            {
+                MINT32 i4IsStart = (MINT32)iArg1;
+                CAM_LOGD("[%s] m_IsStart(%d->%d)", __FUNCTION__, m_IsStart, i4IsStart);
+                m_IsStart = (MINT32)iArg1;
+                i4Ret = MTRUE;
+            }
+            break;
+        case ESync3ACtrl_GetIsStart:
+            {
+                CAM_LOGD("[%s] m_IsStart(%d)", __FUNCTION__, m_IsStart);
+                *(reinterpret_cast<MINT32*>(iArg1)) = (MINT32)(m_IsStart);
+                i4Ret = MTRUE;
+            }
+            break;
+        default:
+            CAM_LOGD_IF(1,"[%s] Unsupport Command(%d)", __FUNCTION__, eSync3ACtrl);
+            return MFALSE;
+    }
+    return i4Ret;
+}
+

@@ -1,0 +1,32 @@
+Binary of MTK JPEG Decode/Encode feature UT items.
+
+This Binary is pre-built by MediaTek internal.
+
+WHAT IT DOES?
+=============
+mhalJpegTest provides JPEG Decode/Encode UT items. 
+It takes data source from external storage device for running test cases.
+
+HOW IT WAS BUILT?
+==================
+It needs the following library from AOSP:
+1.  liblog.so
+2.  libutils.so
+3.  libcutils.so
+4.  libstlport.so
+
+and the following libs from MediaTek:
+1.  libskia.so
+2.  libm4u.so
+3.  libJpgDecPipe.so
+4.  libJpgEncPipe.so
+
+All source/dependency modules of this module are already put in
+'vendor/mediatek/libs' folder.
+
+HOW TO USE IT?
+==============
+Provide UT items for JPEG Decode/Encode feature.
+Before using it, we need to prepare test image/raw data naming as test.jpg/yuv_src.hex.
+
+All the source code of this library were written by MediaTek co..

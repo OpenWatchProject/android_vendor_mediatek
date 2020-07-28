@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	  android:id="@+id/whole_view"
+	  android:layout_width="match_parent"
+	  android:layout_height="match_parent"
+	  android:orientation="vertical"
+	  android:splitMotionEvents="false">
+    
+    <ImageView
+        android:src="@android:drawable/divider_horizontal_dark"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="fitXY"/>
+    
+    <RelativeLayout android:id="@+id/timerViewLayout"
+    	  android:layout_width="match_parent"
+    	  android:layout_height="490dip"
+    	  android:background="@drawable/gradient_bg"
+    	  android:splitMotionEvents="false">
+
+        <TextView android:id="@+id/timerView"
+        	  android:layout_width="wrap_content"
+        	  android:layout_height="wrap_content"
+        	  android:layout_centerInParent="true"
+        	  style="@android:style/TextAppearance.Large"/>
+        
+        <LinearLayout android:id="@+id/stateMessage2Layout"
+        	  android:orientation="horizontal"
+        	  android:layout_width="wrap_content"
+        	  android:layout_height="wrap_content"
+        	  android:layout_alignParentLeft="true"
+        	  android:layout_alignParentTop="true"
+        	  android:baselineAligned="false"
+        	  android:layout_marginLeft="10dp"
+        	  android:layout_marginTop="10dp"
+        	  android:splitMotionEvents="false">
+            
+            <ImageView android:id="@+id/stateLED"
+            	  android:layout_width="wrap_content"
+            	  android:layout_height="wrap_content"
+            	  android:layout_gravity="center_vertical"/>
+                
+            <TextView android:id="@+id/stateMessage2"
+            	  android:layout_width="wrap_content"
+            	  android:layout_height="wrap_content"
+            	  android:layout_gravity="center_vertical"
+            	  android:text="@string/recording"
+            	  android:layout_marginLeft="5px"
+            	  style="@android:style/TextAppearance.Large"/>
+
+        </LinearLayout>
+        
+        <LinearLayout android:id="@+id/recordfileMessage2Layout"
+        	  android:orientation="horizontal"
+        	  android:layout_width="wrap_content"
+        	  android:layout_height="wrap_content"
+        	  android:layout_below="@id/stateMessage2Layout"
+        	  android:layout_alignParentLeft="true"
+        	  android:baselineAligned="false"
+        	  android:layout_marginLeft="25dip"
+        	  android:layout_marginTop="5dip"
+        	  android:splitMotionEvents="false">
+            
+            <ImageView android:id="@+id/currState"
+            	  android:layout_width="wrap_content"
+            	  android:layout_height="wrap_content"
+            	  android:layout_gravity="center_vertical"/>
+                
+            <TextView
+                android:id="@+id/recordingFileName"
+                style="@android:style/TextAppearance.Large"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="5px"
+                android:ellipsize="none"
+                android:requiresFadingEdge="horizontal"
+                android:singleLine="true" />
+        </LinearLayout>
+        
+        <TextView android:id="@+id/stateMessage1"
+        	  android:layout_width="wrap_content"
+        	  android:layout_height="wrap_content"
+        	  android:layout_below="@id/recordfileMessage2Layout"
+        	  android:layout_alignParentLeft="true"
+        	  android:layout_marginLeft="30dip"
+        	  android:layout_marginTop="5dip"
+        	  style="@android:style/TextAppearance.Small"/>
+            
+        <ProgressBar android:id="@+id/stateProgressBar"
+        	  android:orientation="horizontal"
+        	  android:layout_width="242dip"
+        	  android:layout_height="wrap_content"
+        	  android:max="100"
+        	  android:progress="0"
+        	  android:layout_alignParentLeft="true"
+        	  android:layout_marginLeft="10dip"
+        	  android:layout_marginTop="20dip"
+        	  style="?android:attr/progressBarStyleHorizontal"/>
+
+    </RelativeLayout>
+    
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:splitMotionEvents="false">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:splitMotionEvents="false">
+
+            <ImageView
+               android:id="@+id/firstLine"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:scaleType="fitXY"
+               android:src="@android:drawable/divider_horizontal_dark"/>
+               
+            <LinearLayout android:id="@+id/exitButtons"
+            	  android:orientation="horizontal"
+            	  android:gravity="center_vertical"
+                android:layout_below="@id/firstLine"
+            	  android:layout_gravity="center_vertical"
+            	  android:layout_width="match_parent"
+            	  android:layout_height="match_parent"
+            	  android:layout_centerInParent="true"
+                android:splitMotionEvents="false"
+                android:background="@color/linearLayoutGrayColor">
+        
+                <Button android:id="@+id/discardButton"
+                	  android:layout_width="match_parent"
+                    android:text="@string/discard"
+                    android:layout_weight="1"
+                    android:textSize="40sp"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_height="match_parent"/>
+		    
+		            <ImageView
+                   android:layout_width="wrap_content"
+                   android:layout_height="match_parent"
+                   android:scaleType="fitXY"
+                   android:src="@android:drawable/divider_horizontal_dark"/>
+                    
+                <Button android:id="@+id/acceptButton"
+                	  android:layout_width="match_parent"
+                	  android:text="@string/accept"
+                	  android:layout_weight="1"
+                	  android:textSize="40sp"
+                	  style="?android:attr/buttonBarButtonStyle"
+                    android:layout_height="match_parent" 
+                    android:singleLine="true"
+                    android:ellipsize="marquee"/>
+            
+            </LinearLayout>
+            
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:splitMotionEvents="false">
+
+            <ImageView
+                android:id="@+id/secondLine"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scaleType="fitXY"
+                android:src="@android:drawable/divider_horizontal_dark"/>
+
+            <com.android.soundrecorder.VUMeter android:id="@+id/uvMeter"
+            	  android:layout_width="600px"
+            	  android:layout_height="240px"
+            	  android:layout_centerInParent="true"/>
+            	  
+        </RelativeLayout>
+
+    </FrameLayout>
+    
+    <ImageView
+        android:src="@android:drawable/divider_horizontal_dark"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="fitXY"/>
+               
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dip"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:splitMotionEvents="false">
+
+        <LinearLayout
+            android:id="@+id/buttonParent"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:splitMotionEvents="false">
+
+            <ImageButton android:id="@+id/recordButton"
+            	  android:layout_height="match_parent"
+                android:layout_width="wrap_content"
+                android:layout_weight="1"
+                style="?android:attr/buttonBarButtonStyle"
+                android:src="@drawable/record"/>
+            
+            <ImageButton android:id="@+id/pauseRecordingButton"
+                android:layout_height="match_parent" 
+                android:layout_width="wrap_content"
+                android:layout_weight="1"
+                style="?android:attr/buttonBarButtonStyle"
+                android:src="@drawable/pause"/>
+    
+            <ImageButton android:id="@+id/playButton"
+                android:layout_height="match_parent" 
+                android:layout_width="wrap_content"
+                android:layout_weight="1"
+                style="?android:attr/buttonBarButtonStyle"
+                android:src="@drawable/play"/>
+    
+            <ImageButton android:id="@+id/stopButton"
+                android:layout_height="match_parent" 
+                android:layout_width="wrap_content"
+                android:layout_weight="1"
+                style="?android:attr/buttonBarButtonStyle"
+                android:src="@drawable/stop"/>
+                
+            <ImageButton android:id="@+id/fileListButton"
+                android:layout_height="match_parent"
+                android:layout_width="wrap_content"
+                android:layout_weight="1"
+                style="?android:attr/buttonBarButtonStyle"
+                android:src="@drawable/recording_file_list"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+    
+</LinearLayout>

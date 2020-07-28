@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Copyright Statement:
+
+    This software/firmware and related documentation ("MediaTek Software") are
+    protected under relevant copyright laws. The information contained herein
+    is confidential and proprietary to MediaTek Inc. and/or its licensors.
+    Without the prior written permission of MediaTek inc. and/or its licensors,
+    any reproduction, modification, use or disclosure of MediaTek Software,
+    and information contained herein, in whole or in part, shall be strictly prohibited.
+
+    MediaTek Inc. (C) 2012. All rights reserved.
+
+    BY OPENING THIS FILE, RECEIVER HEREBY UNEQUIVOCALLY ACKNOWLEDGES AND AGREES
+    THAT THE SOFTWARE/FIRMWARE AND ITS DOCUMENTATIONS ("MEDIATEK SOFTWARE")
+    RECEIVED FROM MEDIATEK AND/OR ITS REPRESENTATIVES ARE PROVIDED TO RECEIVER ON
+    AN "AS-IS" BASIS ONLY. MEDIATEK EXPRESSLY DISCLAIMS ANY AND ALL WARRANTIES,
+    EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF
+    MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE OR NONINFRINGEMENT.
+    NEITHER DOES MEDIATEK PROVIDE ANY WARRANTY WHATSOEVER WITH RESPECT TO THE
+    SOFTWARE OF ANY THIRD PARTY WHICH MAY BE USED BY, INCORPORATED IN, OR
+    SUPPLIED WITH THE MEDIATEK SOFTWARE, AND RECEIVER AGREES TO LOOK ONLY TO SUCH
+    THIRD PARTY FOR ANY WARRANTY CLAIM RELATING THERETO. RECEIVER EXPRESSLY ACKNOWLEDGES
+    THAT IT IS RECEIVER'S SOLE RESPONSIBILITY TO OBTAIN FROM ANY THIRD PARTY ALL PROPER LICENSES
+    CONTAINED IN MEDIATEK SOFTWARE. MEDIATEK SHALL ALSO NOT BE RESPONSIBLE FOR ANY MEDIATEK
+    SOFTWARE RELEASES MADE TO RECEIVER'S SPECIFICATION OR TO CONFORM TO A PARTICULAR
+    STANDARD OR OPEN FORUM. RECEIVER'S SOLE AND EXCLUSIVE REMEDY AND MEDIATEK'S ENTIRE AND
+    CUMULATIVE LIABILITY WITH RESPECT TO THE MEDIATEK SOFTWARE RELEASED HEREUNDER WILL BE,
+    AT MEDIATEK'S OPTION, TO REVISE OR REPLACE THE MEDIATEK SOFTWARE AT ISSUE,
+    OR REFUND ANY SOFTWARE LICENSE FEES OR SERVICE CHARGE PAID BY RECEIVER TO
+    MEDIATEK FOR SUCH MEDIATEK SOFTWARE AT ISSUE.
+
+    The following software/firmware and/or related documentation ("MediaTek Software")
+    have been modified by MediaTek Inc. All revisions are subject to any receiver's
+    applicable license agreements with MediaTek Inc.
+
+
+
+    Copyright (C) 2008 The Android Open Source Project
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+         http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">  
+    <string name="not_add_more_text">"텍스트를 더 이상 추가할 수 없음"</string>  
+    <!-- message compose add attachment -->  
+    <string name="attach_image">사진</string>  
+    <string name="attach_video">동영상</string>  
+    <string name="attach_sound">음악</string>  
+    <string name="attach_contact">연락처</string>  
+    <string name="attach_file">파일</string>  
+    <string name="attach_calender">일정</string>  
+    <string name="attach_error_occurred">이 종류의 첨부 파일을 지원하는 애플리케이션이 없습니다.</string>  
+    <!-- Toast for telling user the email service stopped when low storage -->  
+    <string name="low_storage_service_stop">저장 공간이 부족해 이메일 서비스가 중단됨.</string>  
+    <!-- Toast for hint user to delete unused emails to reclaim storage -->  
+    <string name="low_storage_hint_delete_mail">저장 공간을 늘리기 위해 사용하지 않는 이메일 또는 애플리케이션을 삭제할 수 있음.</string>  
+    <!-- Toast for telling user the email service started when storage ok-->  
+    <string name="low_storage_service_start">이제 저장 공간이 충분해 이메일 서비스가 다시 시작됨.</string>  
+    <!-- Toast for telling user can not download attachment due to low storage -->  
+    <string name="low_storage_attachment_cannot_download">저장 공간이 부족해 첨부 파일을 다운로드할 수 없음.</string>  
+    <!-- Toast for telling user can not view attachment due to low storage -->  
+    <string name="low_storage_attachment_cannot_view">저장 공간이 부족해 첨부 파일을 볼 수 없음.</string>  
+    <!-- Download remaining of the message when view a partial downloaded message -->  
+    <string name="download_remaining">다운로드 잔여량</string>  
+    <string name="downloading_remaining">로드하는 중…</string>  
+    <!-- Dialog title when user syncing manually without active network -->  
+    <string name="unable_to_connect">연결할 수 없음</string>  
+    <!-- Dialog text when user syncing manually without active network  -->  
+    <string name="need_connection_prompt">"이 애플리케이션을 사용하려면 네트워크 연결이 필요합니다. 설정에서 모바일 네트워크 또는 WiFi를 켜십시오."</string>  
+    <!-- Dialog text when user syncing manually without active wifi network  -->
+    <string name="need_wifi_connection_prompt">"이 애플리케이션을 사용하려면 네트워크 연결이 필요합니다. 설정에서 WiFi를 켜십시오."</string>
+    <!-- Button text in the connection alert dialog -->  
+    <string name="connection_settings">"설정"</string>  
+    <!-- limit of attachment number, when share more than 100+ attachments -->  
+    <string name="too_many_attachments">첨부 파일이 너무 많아 모두 추가할 수 없습니다. 처음 
+        <xliff:g id="currentCount">%1$d</xliff:g>개의 첨부 파일만 추가됩니다.
+    </string>  
+    <!-- limit of attachment number, when the current number >100 -->  
+    <string name="not_add_more_attachments">첨부 파일을 더 이상 추가할 수 없습니다. 첨부할 수 있는 파일 수의 한계가 
+        <xliff:g id="maxLimit">%1$d</xliff:g>개입니다.
+    </string>  
+    <string name="attachment_overflow">첨부 파일 과다</string>  
+    <!-- String which used to show toast when some attachment cannot be attached -->  
+    <string name="cannot_add_this_attachment">이 첨부 파일을 추가할 수 없음.</string>  
+    <string name="loading_attachment">첨부 파일을 로드하는 중…</string>  
+    <!-- Open eml message -->  
+    <string name="open_message_parsing">메시지 구문을 분석하는 중…</string>  
+    <string name="open_message_update_db">데이터베이스를 업데이트하는 중…</string>  
+    <string name="open_message_update_ui">메시지를 로드하는 중…</string>  
+    <string name="please_wait">동작이 진행 중입니다. 기다리십시오…</string>  
+    <string name="delete_message_dialog_title">메시지 삭제</string>
+    <string name="delete_message_confirm">이 메시지를 삭제하시겠습니까?</string>  
+    <string name="attachment_info_deleted">"이 첨부 파일은 삭제되어 저장하거나 열 수 없습니다."</string>  
+    <string name="send_failed_ticker"> 
+        <xliff:g id="account_name">%s</xliff:g>에서 이메일 보내기에 실패했습니다.
+    </string>  
+    <!-- Notification title when email sent fails [CHAR LIMIT=30]-->  
+    <string name="send_failed_title">이메일 보내기에 실패</string>  
+    <string name="always_bcc_myself">자신을 항상 숨은 참조로</string>  
+    <string name="always_bcc_myself_summary">작성, 회신, 전달 시 자신을 항상 숨은 참조로</string>  
+    <!-- Remote search message -->  
+    <string name="remote_search_failed">서버 검색 실패!</string> 
+    <string name="searching_on_server">서버에서 검색</string>  
+    <string name="searching_on_server_title">서버에서 \" 
+        <xliff:g id="account_name">%s</xliff:g>\"을(를) 검색
+    </string>  
+    <string name="searching_all_fields_on_sever">서버에서 모든 필드 검색</string>  
+    <string name="search_field_subject">제목</string>  
+    <string name="search_field_receiver">받는 사람</string>  
+    <string name="search_field_sender">보내는 사람</string>  
+    <string name="search_field_body">본문</string>  
+    <string name="search_field_all">모두</string> 
+    <string name="select_all">"모두 선택"</string>
+    <string name="deselect_all">"모두 선택취소"</string>
+
+    <string name="vip_settings">VIP 설정</string>  
+    <string name="vip_members">VIP 구성원</string>  
+    <string name="vip_notifications">VIP 알림</string>  
+    <string name="vip_settings_notify_summary">VIP 이메일이 도착하면 시스템 표시줄에 알림</string>  
+    <string name="vip_members_count">VIP 구성원 (<xliff:g example="2">%1$d</xliff:g>)</string>  
+    <string name="vip_remove_title">VIP에서 제거</string>
+    <string name="vip_remove_prompt"><xliff:g example="2">%1$s</xliff:g>이(가) VIP 구성원에서 제거됩니다.</string>  
+    <string name="not_add_duplicate_vip">중복 연락처는 VIP 목록에 추가되지 않습니다.</string>  
+    <string name="vip_settings_ringtone">"벨소리 선택"</string>  
+    <string name="vip_settings_vibrate_label">진동</string>  
+    <string name="vip_settings_vibrate_summary">또한 VIP 이메일이 도착하면 진동이 울립니다</string>  
+    <string name="global_search_label">"이메일"</string>  
+    <string name="global_search_hint">"이메일 검색"</string>  
+    <string name="global_search_description">발신자, 제목 및 본문</string>  
+    <string name="account_settings_oof_time_alert">현재 시간보다 나중이어야 합니다.</string>
+    <string name="account_settings_oof_label">외출 중</string>  
+    <string name="account_settings_oof_unchecked_summary">현재 사무실에 있습니다</string>  
+    <string name="account_settings_oof_checked_summary">현재 외출 중입니다</string>  
+    <string name="account_settings_oof_from_label">"시작:"</string>  
+    <string name="account_settings_oof_to_label">"받는사람"</string>  
+    <string name="account_settings_oof_auto_reply_label">외출 중 자동 응답</string>  
+    <string name="account_settings_oof_auto_reply_summary">각 발신자에게 보내는 자동 응답 메시지</string>  
+    <string name="account_settings_oof_external_server_label">외부 서버에 자동 응답 보내기</string>  
+    <string name="account_settings_oof_get_status">서버에서 상태 가져오기</string>  
+    <string name="account_settings_oof_save_sets">서버에 설정 저장</string>  
+    <string name="account_settings_oof_get_status_fail">상태를 가져올 수 없음</string>
+    <string name="account_settings_oof_get_status_fail_summary">현재 서버에서 상태를 가져올 수 없습니다. 나중에 다시 시도하십시오.</string>
+    <string name="account_settings_oof_cancel">저장하지 않으시겠습니까?</string>  
+    <string name="account_settings_oof_cancel_summary">모든 변경내용이 취소됩니다.</string>  
+    <string name="account_settings_oof_save_fail">저장할 수 없음</string>  
+    <string name="account_settings_oof_save_fail_summary">서버에 설정을 저장할 수 없습니다. 서버를 사용할 수 없거나 자동 응답이 서버에서 한계를 초과했을 수 있거나 장치의 날짜 또는 시간이 잘못되었습니다.</string>  
+    <string name="account_setup_options_mail_check_frequency_smartpush">스마트 푸시</string>
+    <string name="smart_push_alert_dialog_title">절전 옵션</string>
+    <string name="smart_push_alert_dialog_message">" 절전을 위해 새 이메일을 덜 빈번하게 확인하십시오. 이 모드를 계속 사용하면 이메일이 더 시기적절하게 수신됩니다.\n\n언제라도 설정에서 이 모드를 변경할 수 있습니다."</string>
+    <string name="not_add_more_recipients">수신인은 한 번에 <xliff:g id="maxLimit">%1$d</xliff:g> 이상으로 추가할 수 있습니다.</string>
+    <string name="vip_choose_contact">VIP에 추가</string>
+    <string name="can_not_add_vip_over_99">VIP 회원은 99 이상으로 추가할 수 있습니다.</string>
+    <string name="no_application_response">애플리케이션이 비활성화되었습니다</string>
+    <string name="vip_emails_from_accounts_fmt"><xliff:g id="vipAccountCount">%d</xliff:g> 개의 계정에서 받은 이메일</string>
+    <string name="notification_multiple_new_vip_messages_fmt"><xliff:g example="2">%1$d</xliff:g> 개의 새 VIP 이메일</string>
+    <string name="send_attachment_fail">첨부 파일을 보내는 데 실패했습니다.</string>
+    <string name="cannot_move_multiple_mailbox_toast">일부 이메일이 이동 중입니다. 나중에 다시 시도하십시오.</string>
+    <string name="certificate_request_ssl">클라이언트 인증서는 보안 연결을 사용해야 합니다.</string>
+    <string name="auto_clear_cache_title">캐시를 자동으로 지웁니다.</string>
+    <string name="auto_clear_cache_description">로컬에 캐시된 첨부 파일을 정기적으로 지웁니다.</string>
+    <string name="edit_quoted_dialog_title">최대 문자 수</string>
+    <string name="edit_quoted_not_append_all">최대 문자 수에 도달했습니다. 이전 콘텐트의 일부가 손실됩니다. 계속하시겠습니까?</string>
+    <string name="single_message_view_attachment_saved"><xliff:g id="filename">%s</xliff:g> 에 저장된 첨부 파일</string>
+    <string name="choose_attachment_dialog_title">"첨부파일 선택"</string>
+    <string name="message_compose_error_invalid_email">"일부 이메일 주소가 올바르지 않습니다."</string>
+    <string name="extension_choose_provider_title">메일 제공자 선택</string>
+    <string name="message_view_status_sdcard_not_enough">SD 카드에 첨부 파일을 저장할 공간이 부족합니다.</string>
+    <string name="message_body_too_large">메시지가 너무 커서 내용 전체를 로드할 수 없습니다.</string>
+</resources>

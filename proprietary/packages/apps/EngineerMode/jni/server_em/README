@@ -1,0 +1,34 @@
+em_svr is a executable program, which serve as a server to handle the request from EngineerMode App,
+and consist of several modules such as cpu stress test, FB0, sensor, and so on.
+
+the executable program is pre-built by MediaTek internal.
+
+WHAT IT DOES?
+=============
+em_svr handle the request from EngineerMode App
+
+HOW IT WAS BUILT?
+==================
+It needs the following library from AOSP:
+1. libandroid_runtime
+2. libutils
+3. libcutils
+4. libnativehelper
+5. libgui
+6. libbinder
+
+and the following libs from MediaTek:
+1. libem_support_jni
+2. libhwm
+3. libfile_op
+
+All source/dependency modules of this module are already put in
+'vendor/mediatek/libs' folder.
+
+HOW TO USE IT?
+==============
+
+the server designed to handle the EngineerMode request;
+all api interface are at (vendor/mediatek/proprietary/packages/apps/EngineerMode/jni/server_em)
+
+All the source code of this library were written by MediaTek co..

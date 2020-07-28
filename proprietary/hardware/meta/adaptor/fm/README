@@ -1,0 +1,28 @@
+Library of MTK FM feature for meta mode, including FM power on/off, 
+seek, scan, tune...and some other functions.
+
+WHAT IT DOES?
+=============
+Provide meta mode FM test function
+
+HOW IT WAS BUILT?
+==================
+It needs the following libs from AOSP:
+1.  libc.so
+2.  libcutils
+3.  libnetutils
+
+and the following libs from MediaTek:
+1. libft.so
+
+
+HOW TO USE IT?
+==============
+Files in this directory is used to
+generate a library which name is 'libmeta_fm'
+
+The lib 'libmeta_fm' is loaded when target enter meta mode,
+Meta main thread will call META_FM_OP API, if meta FM tool is launched.
+
+All the source code of this library were written by MediaTek co..
+

@@ -1,0 +1,10 @@
+package vendor.mediatek.hardware.mdmonitor@1.0;
+
+import IMDMonitorClientCallback;
+import types;
+
+interface IMDMonitorService {
+    sendMCPData(vec<uint8_t> data) generates (vec<uint8_t> data);
+    registerTrapCallback(string servername, IMDMonitorClientCallback callback);
+    getModemBinData(MtkModemBinType type, uint32_t offset, uint32_t size) generates (vec<uint8_t> data);
+};

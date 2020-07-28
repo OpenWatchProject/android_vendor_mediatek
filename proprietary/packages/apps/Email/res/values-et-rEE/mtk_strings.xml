@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Copyright Statement:
+    This software/firmware and related documentation ("MediaTek Software") are
+    protected under relevant copyright laws. The information contained herein
+    is confidential and proprietary to MediaTek Inc. and/or its licensors.
+    Without the prior written permission of MediaTek inc. and/or its licensors,
+    any reproduction, modification, use or disclosure of MediaTek Software,
+    and information contained herein, in whole or in part, shall be strictly prohibited.
+    MediaTek Inc. (C) 2012. All rights reserved.
+    BY OPENING THIS FILE, RECEIVER HEREBY UNEQUIVOCALLY ACKNOWLEDGES AND AGREES
+    THAT THE SOFTWARE/FIRMWARE AND ITS DOCUMENTATIONS ("MEDIATEK SOFTWARE")
+    RECEIVED FROM MEDIATEK AND/OR ITS REPRESENTATIVES ARE PROVIDED TO RECEIVER ON
+    AN "AS-IS" BASIS ONLY. MEDIATEK EXPRESSLY DISCLAIMS ANY AND ALL WARRANTIES,
+    EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF
+    MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE OR NONINFRINGEMENT.
+    NEITHER DOES MEDIATEK PROVIDE ANY WARRANTY WHATSOEVER WITH RESPECT TO THE
+    SOFTWARE OF ANY THIRD PARTY WHICH MAY BE USED BY, INCORPORATED IN, OR
+    SUPPLIED WITH THE MEDIATEK SOFTWARE, AND RECEIVER AGREES TO LOOK ONLY TO SUCH
+    THIRD PARTY FOR ANY WARRANTY CLAIM RELATING THERETO. RECEIVER EXPRESSLY ACKNOWLEDGES
+    THAT IT IS RECEIVER'S SOLE RESPONSIBILITY TO OBTAIN FROM ANY THIRD PARTY ALL PROPER LICENSES
+    CONTAINED IN MEDIATEK SOFTWARE. MEDIATEK SHALL ALSO NOT BE RESPONSIBLE FOR ANY MEDIATEK
+    SOFTWARE RELEASES MADE TO RECEIVER'S SPECIFICATION OR TO CONFORM TO A PARTICULAR
+    STANDARD OR OPEN FORUM. RECEIVER'S SOLE AND EXCLUSIVE REMEDY AND MEDIATEK'S ENTIRE AND
+    CUMULATIVE LIABILITY WITH RESPECT TO THE MEDIATEK SOFTWARE RELEASED HEREUNDER WILL BE,
+    AT MEDIATEK'S OPTION, TO REVISE OR REPLACE THE MEDIATEK SOFTWARE AT ISSUE,
+    OR REFUND ANY SOFTWARE LICENSE FEES OR SERVICE CHARGE PAID BY RECEIVER TO
+    MEDIATEK FOR SUCH MEDIATEK SOFTWARE AT ISSUE.
+    The following software/firmware and/or related documentation ("MediaTek Software")
+    have been modified by MediaTek Inc. All revisions are subject to any receiver's
+    applicable license agreements with MediaTek Inc.
+    Copyright (C) 2008 The Android Open Source Project
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+         http://www.apache.org/licenses/LICENSE-2.0
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="not_add_more_text">"Ei saa rohkem teksti lisada"</string>
+    <string name="attach_image">Foto</string>
+    <string name="attach_video">Video</string>
+    <string name="attach_sound">"Muusika"</string>
+    <string name="attach_contact">"Kontaktid"</string> 
+    <string name="attach_file">fail</string> 
+    <string name="attach_calender">"Kalender"</string>    
+    <string name="attach_error_occurred">Ükski rakendus ei toeta sellist tüüpi manust.</string>  
+    <string name="low_storage_service_stop">Meiliteenus peatati, kuna mälu ei ole piisavalt.</string>
+    <string name="low_storage_hint_delete_mail">Saad kustutada kasutamata meilid või rakendused, et vabastada mälu.</string>
+    <string name="low_storage_service_start">Meiliteenus taaskäivitati, kuna mälu on nüüd piisavalt.</string>
+    <string name="low_storage_attachment_cannot_download">Ei saa manust alla laadida, kuna mälu ei ole piisavalt.</string>
+    <string name="low_storage_attachment_cannot_view">Ei saa manust kuvada, kuna mälu ei ole piisavalt.</string>
+    <string name="download_remaining">Alla laadida jäänud</string>
+    <string name="downloading_remaining">Laadimine ...</string>
+    <string name="unable_to_connect">Ei saa ühendust luua</string>
+    <string name="need_connection_prompt">"Selle rakenduse kasutamiseks vajad sa võrguühendust. Lülita seadetes sisse mobiilsidevõrk või WiFi seaded."</string>
+    <string name="need_wifi_connection_prompt">"Selle rakenduse kasutamiseks vajad sa võrguühendust. Lülita seadetes sisse WiFi."</string>
+    <string name="connection_settings">A-GPS-i sätted</string>
+    <string name="too_many_attachments">Ei saa lisada liiga palju manuseid. Lisatakse ainult <xliff:g id="currentCount">%1$d</xliff:g> esimest manust.</string>
+    <string name="not_add_more_attachments">Ei saa rohkem manuseid lisada. Manuste arvu piiranguks on <xliff:g id="maxLimit">%1$d</xliff:g>.</string>
+    <string name="attachment_overflow">Manuste ületäitumine</string>
+    <string name="cannot_add_this_attachment">Ei saa seda manust lisada.</string>
+    <string name="loading_attachment">Manuste laadimine...</string>
+    <string name="send_attachment_fail">Manuste saatmine ebaõnnestus.</string>
+    <string name="open_message_parsing">Sõnumi sõelumine...</string>
+    <string name="open_message_update_db">Andmebaasi värskendamine...</string>
+    <string name="open_message_update_ui">Sõnumi laadimine...</string>
+    <string name="please_wait">Toiming on pooleli. Palun oota...</string>
+    <string name="delete_message_dialog_title">Kustuta sõnum</string>
+    <string name="delete_message_confirm">Kustutan selle sõnumi?</string>
+    <string name="attachment_info_deleted">"Manust ei saa salvestada ega avada, kuna see võib olla kustutatud."</string>
+    <string name="send_failed_ticker"><xliff:g id="account_name">%s</xliff:g> ei saanud meili saata.</string>
+    <string name="send_failed_title">Ei õnnestunud meili saata</string>
+    <string name="always_bcc_myself">Lisa alati mind salakoopia saajaks</string>
+    <string name="always_bcc_myself_summary">Lisa alati mind pimekoopia saajaks kirja koostamisel, vastamisel ja edastamisel</string>
+    <string name="remote_search_failed">Serveriotsing ebaõnnestus!</string>
+    <string name="searching_on_server">Otsi serveris</string>
+    <string name="searching_on_server_title">Otsi \"<xliff:g id="account_name">%s</xliff:g>\" serveris</string>
+    <string name="searching_all_fields_on_sever">Otsi kõigilt väljadelt serveris</string>
+    <string name="search_field_subject">"Teema"</string>
+    <string name="search_field_receiver">Saaja</string>
+    <string name="search_field_sender">Saatja</string>
+    <string name="search_field_body">Keha</string>
+    <string name="search_field_all">"Kõik"</string>
+    <string name="select_all">Vali kõik</string>
+    <string name="deselect_all">"Tühista kõik valikud"</string>
+    <string name="vip_settings">VIP-SEADED</string>
+    <string name="vip_members">VIP-liikmed</string>
+    <string name="vip_notifications">VIP-teated</string>
+    <string name="vip_settings_notify_summary">Teavita süsteemiribal, kui saabub VIP-kiri</string>
+    <string name="vip_members_count">VIP-liikmed (<xliff:g example="2">%1$d</xliff:g>)</string>
+    <string name="vip_remove_title">Eemalda VIP-ist</string>
+    <string name="vip_choose_contact">Lisa VIP-ile</string>
+    <string name="vip_remove_prompt"><xliff:g example="2">%1$s</xliff:g> eemaldatakse VIP-liikmetest.</string>
+    <string name="not_add_duplicate_vip">Duplikaatkontakti ei lisata VIP-loendisse.</string>
+    <string name="can_not_add_vip_over_99">Ei saa lisada rohkem kui 99 VIP-liiget.</string>
+    <string name="vip_count">0</string>
+    <string name="vip_settings_ringtone">"Vali helin"</string>
+    <string name="vip_settings_vibrate_label">Värin</string>
+    <string name="vip_settings_vibrate_summary">Vibreeri ka siis, kui saabub VIP-kiri</string>
+    <string name="vip_settings_member_count"><xliff:g id="count">%2d</xliff:g></string>
+    <string name="account_setup_options_mail_check_frequency_smartpush">Smart push</string>
+    <string name="smart_push_alert_dialog_title">Energiasäästu valik</string>
+    <string name="smart_push_alert_dialog_message"> vaata uusi kirju harvemini, et säästa energiat. Jätka selle režiimi kasutamist kirjade kiiremaks hankimiseks.\n\nSaad seda suvalisel ajal seadetes muuta.</string>
+    <string name="global_search_label">"E-post"</string>
+    <string name="global_search_hint">"Otsi meili"</string>
+    <string name="global_search_description">Saatjad, teemad ja kehad</string>
+    <string name="account_settings_oof_label">Kontorist väljas</string>
+    <string name="account_settings_oof_unchecked_summary">Olen nüüd kontoris</string>
+    <string name="account_settings_oof_checked_summary">Olen nüüd kontorist väljas</string>
+    <string name="account_settings_oof_from_label">"Alates"</string>
+    <string name="account_settings_oof_to_label">"Saaja"</string>
+    <string name="account_settings_oof_auto_reply_label">Kontorist väljasoleku automaatvastused</string>
+    <string name="account_settings_oof_auto_reply_summary">Saada automaatselt vastus igale saatjale</string>
+    <string name="account_settings_oof_external_server_label">Saada automaatvastused välisserverisse</string>
+    <string name="account_settings_oof_get_status">Oleku hankimine serverist</string>
+    <string name="account_settings_oof_save_sets">Seadete salvestamine serverisse</string>
+    <string name="account_settings_oof_get_status_fail">Ei saa hankida olekut</string>
+    <string name="account_settings_oof_get_status_fail_summary">Ei saa praegu serverist olekut hankida. Proovi hiljem uuesti.</string>
+    <string name="account_settings_oof_cancel">Ilma salvestamata?</string>
+    <string name="account_settings_oof_cancel_summary">Kõik muudatused likvideeritakse.</string>
+    <string name="account_settings_oof_save_fail">Ei saa salvestada</string>
+    <string name="account_settings_oof_save_fail_summary">Ei saa seadeid serverisse salvestada. Võimalik, et server pole kättesaadav või automaatvastuste piirarv serveris on ületatud või sinu seadme kuupäev või kellaaeg on vale.</string>
+    <string name="account_settings_oof_time_alert">See peaks olema hilisem kui praegune kellaaeg.</string>
+    <string name="no_application_response">"Rakendus on keelatud"</string>
+    <string name="extension_choose_provider_title">Valige meiliteenuse pakkuja</string>
+    <string name="not_add_more_recipients">Korraga ei saa lisada rohkem kui <xliff:g id="maxLimit">%1$d</xliff:g> adressaati.</string>
+    <string name="message_view_status_sdcard_not_enough">Ei ole piisavalt ruumi manuse salvestamiseks SD kaardil.</string>
+    <string name="vip_emails_from_accounts_fmt">Meilid kontodelt: <xliff:g id="vipAccountCount">%d</xliff:g> kontot </string>
+    <string name="notification_multiple_new_vip_messages_fmt"><xliff:g example="2">%1$d</xliff:g> uut VIP-kirja</string>
+    <string name="message_body_too_large">Ei saanud laadida kogu sisu, kuna sõnum oli liiga suur.</string>
+    <string name="cannot_move_multiple_mailbox_toast">Mõne meili teisaldamine on pooleli, proovi hiljem uuesti.</string>
+    <string name="certificate_request_ssl">Kliendi sertifikaat peab kasutama turvalist ühendust.</string>
+    <string name="auto_clear_cache_title">Tühjenda vahemälu automaatselt</string>
+    <string name="auto_clear_cache_description">Kustuta manused lokaalsest vahemälust regulaarselt</string>
+    <string name="edit_quoted_dialog_title">Tähemärke maksimaalselt</string>
+    <string name="edit_quoted_not_append_all">Oled jõudnud tähemärkide maksimumarvuni. Vanast sisust läheb osa kaotsi, jätkan?</string>
+   <string name="single_message_view_attachment_saved">Manus salvestatakse nimega <xliff:g id="filename">%s</xliff:g></string>
+    <string name="choose_attachment_dialog_title">Vali manus</string>
+    <string name="message_compose_error_invalid_email">Mõned e-posti aadressid on kehtetud.</string>
+</resources>

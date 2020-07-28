@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:orientation="vertical">
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dip"
+        android:background="#FF909090" >
+    </View>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:text="@string/desense_at_result_title"
+        android:gravity="center_horizontal"
+        android:textSize="16sp" >
+    </TextView>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dip"
+        android:background="#FF909090" >
+    </View>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp" >
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/desense_at_result_title_1"
+            android:gravity="center" >
+        </TextView>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/desense_at_result_title_2"
+            android:gravity="center" >
+        </TextView>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="5"
+            android:orientation="vertical" >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/desense_at_result_title_3"
+                android:gravity="center_horizontal" >
+            </TextView>
+
+            <LinearLayout
+                android:id="@+id/desense_at_sub_result"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/desense_at_result_sub_title_1"
+                    android:gravity="center_horizontal" >
+                </TextView>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/desense_at_result_sub_title_2"
+                    android:gravity="center_horizontal" >
+                </TextView>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/desense_at_result_sub_title_3"
+                    android:gravity="center_horizontal" >
+                </TextView>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/desense_at_result_sub_title_4"
+                    android:gravity="center_horizontal" >
+                </TextView>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/desense_at_result_sub_title_5"
+                    android:gravity="center_horizontal" >
+                </TextView>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dip"
+        android:background="#FF909090" >
+    </View>
+
+    <ListView
+        android:id="@+id/desense_at_test_result"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</LinearLayout>

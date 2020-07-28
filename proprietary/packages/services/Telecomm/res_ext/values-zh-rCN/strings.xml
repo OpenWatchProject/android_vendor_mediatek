@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2" xmlns:tools="http://schemas.android.com/tools">
+    <string name="call_duration_title">通话结束</string>
+   <string name="call_duration_format">"<xliff:g id="HOURS">%1$s</xliff:g> 时 <xliff:g id="MINUTES">%2$s</xliff:g> 分 <xliff:g id="SECONDS">%3$s</xliff:g> 秒"</string>
+    <string name="call_waiting_indication">对方正在通话中,请稍候...</string>
+    <string name="incall_error_supp_service_unknown">"不支持此服务。"</string>
+    <string name="incall_error_supp_service_switch">"无法切换通话。"</string>
+    <string name="mo_code_unconditional_cf_active">无条件转接已启动</string>
+    <string name="mo_code_some_cf_active">条件式转接开启</string>
+    <string name="mo_code_call_forwarded">通话转接</string>
+    <string name="mo_code_cug_call">封闭群组</string>
+    <string name="mo_code_outgoing_calls_barred">禁拨电话</string>
+    <string name="mo_code_incoming_calls_barred">对方拒接来电</string>
+    <string name="mo_code_clir_suppression_rejected">确认发送本机号码服务</string>
+    <string name="mo_code_call_deflected">通话转接</string>
+    <string name="mo_code_call_forwarding">正在转接...</string>
+    <string name="mt_code_forwarded_call">被转接的电话</string>
+    <string name="mt_code_cug_call">封闭群组</string>
+    <string name="mt_code_call_on_hold">通话保留</string>
+    <string name="mt_code_call_retrieved">恢复通话</string>
+    <string name="mt_code_multi_party_call">电话会议</string>
+    <string name="mt_code_on_hold_call_released">保留通话结束</string>
+    <string name="mt_code_forward_check_received">业务服务设置已更改</string>
+    <string name="mt_code_call_connecting_ect">来电转接中</string>
+    <string name="mt_code_call_connected_ect">启用来电转接</string>
+    <string name="mt_code_deflected_call">被转接的电话</string>
+    <string name="mt_code_additional_call_forwarded">来电转接</string>
+    <string name="mt_code_forwarded_cf">通话转接</string>
+    <string name="mt_code_forwarded_cf_uncond">所有来电转接中</string>
+    <string name="mt_code_forwarded_cf_cond">依设置来电转接中</string>
+    <string name="mt_code_forwarded_cf_busy">忙线中来电转接</string>
+    <string name="mt_code_forwarded_cf_no_reply">无应答时转接</string>
+    <string name="mt_code_forwarded_cf_not_reachable">无法连接时转接</string>
+    <string name="outgoing_call_failed">"拨号失败。"</string>
+    <string name="volte_ss_not_available_tips">请打开<xliff:g id="sub_nacme">%s</xliff:g>的数据连接以完成操作。</string>
+    <string name="start_record_failed">录音失败.</string>
+    <!-- Toast string for start call recorder failed because permissions denied. -->
+    <string name="denied_required_permission">"权限被拒绝。您可以依次选择 \"设置\"&gt;\"应用\" 来更改权限。"</string>
+    <string name="video_over_wifi_not_available">WiFi视频电话不可用。</string>
+    <string name="modify_roaming_settings">修改漫游设置</string>
+    <string name="continue_roaming">继续漫游</string>
+    <string name="roaming_network_dom">您目前正在其他运营商的网络上漫游。\n可以在漫游设置中修改漫游。</string>
+    <string name="roaming_network_int">您目前正在国际运营商的网络上漫游。\n可以在漫游设置中修改漫游。</string>
+    <!-- Call forward permission notification -->
+    <string name="call_forward_permission">此应用没有电话转接权限，无法拨出电话。</string>
+    <!-- Call recorder confirm dialog string -->
+    <string name="call_recorder_confirm_dialog_body">录音文件将被存放于外部存储，存在被恶意获取的风险。是否继续录音？</string>
+    <string name="call_recorder_confirm_dialog_mark_no_ask">不再询问</string>
+    <string name="call_recorder_confirm_dialog_positive">录音</string>
+    <string name="call_recorder_confirm_dialog_negative">取消</string>
+</resources>

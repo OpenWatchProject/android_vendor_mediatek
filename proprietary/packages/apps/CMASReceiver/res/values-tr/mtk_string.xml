@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+ * Copyright (C) 2007-2008 Esmertec AG.
+ * Copyright (C) 2007-2008 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+--><resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+   <string name="alerts">Uyarılar</string>
+    <string name="select_all">"Tümünü seç"</string>
+    <string name="unselect_all">"Tümünün seçimini kaldır"</string>
+    <string name="delete">"Sil"</string>
+    <string name="select_cellbroadcasts">Acil durum uyarısını seç</string>
+    <plurals name="message_view_selected_message_count">
+        <item quantity="one"><xliff:g id="message_count" example="1">%d</xliff:g> seçili</item>
+        <item quantity="other"><xliff:g id="message_count" example="9">%d</xliff:g> seçili</item>
+    </plurals>
+    <plurals name="confirm_delete_broadcast">
+        <item quantity="one">Seçilen 1 uyarı mesajı silinecek</item>
+        <item quantity="other">Seçilen <xliff:g id="number" example="15">%1$s</xliff:g> uyarı mesajı silinecek</item>
+    </plurals>
+    <string name="enable_cmas_presidential_threat_alerts_title">Başkanlık uyarısını göster</string>
+    <string name="enable_cmas_presidential_threat_alerts_summary">Başkanlık düzeyi uyarıları görüntüle</string>
+    <string name="enable_cmas_imminent_threat_alerts_title">Muhtemel Uyarı</string>
+    <string name="enable_cmas_imminent_threat_alerts_summary">Hayat ve mülke yönelik muhtemel tehditler için uyarıları görüntüle</string>
+    <string name="cmas_preview_alert_tone_title">Uyarı tonu önizleme</string>
+    <string name="cmas_preview_alert_tone_summary">Uyarı tonuna önizleme yap</string>
+    <string name="cmas_change_settings">Ayarları değiştirmek istediğinize emin misiniz?</string>
+    <string name="cmas_disable_cmas">Hücre yayınını devre dışı bırakırsanız hiçbir uyarı alınmayacak.</string>
+    <string name="cmas_enable_cmas_failed">Açılamadı.</string>
+    <string name="enable_repeat_alert_title">Uyarıyı tekrarla</string>
+    <string name="enable_repeat_alert_summary">Kullanıcıya okunmamış uyarıyı aralıklı olarak hatırlatmak için</string>
+    <string name="enable_all_alert_title">Tüm Uyarılar Açık</string>
+    <string name="enable_all_imminent_alerts_title">Tüm Muhtemel tehdit mesajları</string>
+    <string name="enable_cell_broadcast_title">Acil durum uyarıları</string>
+    <string name="alert_sound_volume">Uyarı sesi seviyesi</string>
+    <string name="alert_volume_summary">Uyarı ses düzeyini ayarla</string>
+</resources>

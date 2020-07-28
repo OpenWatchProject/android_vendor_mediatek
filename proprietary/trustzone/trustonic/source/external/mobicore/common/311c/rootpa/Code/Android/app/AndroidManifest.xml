@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.gd.mobicore.pa"
+          android:versionCode="34"
+          android:versionName="3.99" >
+
+  <uses-sdk android:minSdkVersion="14"
+           android:targetSdkVersion="24" />
+
+  <uses-permission android:name="android.permission.INTERNET"/>
+  <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+  <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"
+           android:maxSdkVersion="22" />
+
+  <permission android:name="com.gd.mobicore.pa.permission.OEM_PERMISSION"
+        android:label="remove installed secure services"
+        android:description="@string/description_oempermission"
+        android:protectionLevel="signatureOrSystem" />
+
+  <permission android:name="com.gd.mobicore.pa.permission.DEVELOPER_PERMISSION"
+        android:label="install developer trustlet"
+        android:description="@string/description_developerpermission"
+        android:protectionLevel="normal"/>
+
+  <application
+    android:label="RootPA"
+    android:debuggable="false"
+    android:allowBackup="false"
+    android:theme="@android:style/Theme.NoDisplay">
+    <service
+        android:name="com.gd.mobicore.pa.service.ProvisioningService"
+        android:enabled="true"
+        android:exported="true">
+        <intent-filter>
+            <action android:name="com.gd.mobicore.pa.service.PROVISIONING_SERVICE" />
+        </intent-filter>
+    </service>
+
+    <service
+        android:name="com.gd.mobicore.pa.service.DeveloperService"
+        android:enabled="true"
+        android:exported="true"
+        android:permission="com.gd.mobicore.pa.permission.DEVELOPER_PERMISSION">
+        <intent-filter>
+            <action android:name="com.gd.mobicore.pa.service.DEVELOPER_SERVICE" />
+        </intent-filter>
+    </service>
+
+    <service
+        android:name="com.gd.mobicore.pa.service.OemService"
+        android:enabled="true"
+        android:exported="true"
+        android:permission="com.gd.mobicore.pa.permission.OEM_PERMISSION">
+        <intent-filter>
+            <action android:name="com.gd.mobicore.pa.service.OEM_SERVICE" />
+        </intent-filter>
+    </service>
+
+  </application>
+
+</manifest>

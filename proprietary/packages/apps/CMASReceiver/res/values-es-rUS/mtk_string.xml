@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+ * Copyright (C) 2007-2008 Esmertec AG.
+ * Copyright (C) 2007-2008 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+--><resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+   <string name="alerts">Alertas</string>
+    <string name="select_all">"Seleccionar todo"</string>
+    <string name="unselect_all">"Desmarcar todas"</string>
+    <string name="delete">"Eliminar"</string>
+    <string name="select_cellbroadcasts">Selec alerta de emerg</string>
+    <plurals name="message_view_selected_message_count">
+        <item quantity="one"><xliff:g id="message_count" example="1">%d</xliff:g> seleccionado</item>
+        <item quantity="other"><xliff:g id="message_count" example="9">%d</xliff:g> seleccionados</item>
+    </plurals>
+    <plurals name="confirm_delete_broadcast">
+        <item quantity="one">1 Mens de alerta selec será elim</item>
+        <item quantity="other"><xliff:g id="number" example="15">%1$s</xliff:g> mens de alerta selec serán elim</item>
+    </plurals>
+    <string name="enable_cmas_presidential_threat_alerts_title">Mostrar Alerta Pres</string>
+    <string name="enable_cmas_presidential_threat_alerts_summary">Mostrar alertas de nv pres</string>
+    <string name="enable_cmas_imminent_threat_alerts_title">Alerta Inm</string>
+    <string name="enable_cmas_imminent_threat_alerts_summary">Mostrar alertas de amen inm p/la vida y la prop</string>
+    <string name="cmas_preview_alert_tone_title">Vista prev del tono de al</string>
+    <string name="cmas_preview_alert_tone_summary">Vista prev del tono de al</string>
+    <string name="cmas_change_settings">¿Está seg de que desea camb las config?</string>
+    <string name="cmas_disable_cmas">Ning alerta será recib si se desac transm del celular.</string>
+    <string name="cmas_enable_cmas_failed">Err al abrir.</string>
+    <string name="enable_repeat_alert_title">Rep alarma</string>
+    <string name="enable_repeat_alert_summary">Para rec al usuario de alertas no leídos interm</string>
+    <string name="enable_all_alert_title">Todas alertas act</string>
+    <string name="enable_all_imminent_alerts_title">Todos mens de amen inm</string>
+    <string name="enable_cell_broadcast_title">Alertas de Em</string>
+    <string name="alert_sound_volume">Volumen de sonido de alerta</string>
+    <string name="alert_volume_summary">Aj de vol del sonido</string>
+</resources>

@@ -1,0 +1,23 @@
+cc_library_shared {
+    srcs: ["ion_ulit.cpp"],
+    name: "libion_ulit",
+    proprietary: true,
+    owner: "mtk",
+    include_dirs: ["vendor/mediatek/proprietary/external/libudf/libladder"],
+    shared_libs: [
+        "libutils",
+        "liblog",
+        "libladder",
+    ],
+}
+
+cc_library_shared {
+    srcs: ["ion_ulit_sys.cpp"],
+    name: "libion_ulit_sys",
+    owner: "mtk",
+    shared_libs: [
+        "libutils",
+        "liblog",
+        "libutilscallstack",
+    ],
+}

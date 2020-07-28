@@ -1,0 +1,297 @@
+/*
+ * Copyright (C) 2016 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package vendor.mediatek.hardware.gpu@1.0;
+
+/*
+ * lib_ged_sys
+ */
+enum GED_HIDL_ERROR_TAG : int32_t {
+	GED_HIDL_OK,
+	GED_HIDL_ERROR_FAIL,
+	GED_HIDL_ERROR_OOM ,
+	GED_HIDL_ERROR_OUT_OF_FD,
+	GED_HIDL_ERROR_FAIL_WITH_LIMIT,
+	GED_HIDL_ERROR_TIMEOUT,
+	GED_HIDL_ERROR_CMD_NOT_PROCESSED,
+	GED_HIDL_ERROR_INVALID_PARAMS,
+	GED_HIDL_ERROR_INTENTIONAL_BLOCK,
+};
+
+struct GED_HIDL_HANDLE {
+    int32_t i32BridgeFD;
+    int32_t tid;
+};
+
+struct GED_KPI_HANDLE
+{
+	int32_t isSF;	/* if it is created by SurfaceFlinger or not */
+	int32_t queue_frameID;
+	int32_t acquire_frameID;
+	uint64_t BBQ_ID;
+	int32_t BBQ_api_type;
+};
+
+/*
+ * lib_gralloc_extra_sys
+ */
+enum GRALLOC_EXTRA_RESULT : int32_t {
+	GRALLOC_EXTRA_OK,
+	GRALLOC_EXTRA_UNKNOWN,
+	GRALLOC_EXTRA_NOT_SUPPORTED,
+	GRALLOC_EXTRA_NO_IMPLEMENTATION,
+	GRALLOC_EXTRA_NOT_INIT,
+	GRALLOC_EXTRA_INVALIDE_PARAMS,
+	GRALLOC_EXTRA_INVALIDE_OPERATION,
+	GRALLOC_EXTRA_ERROR,
+};
+
+/* enum for query() */
+enum GRALLOC_EXTRA_ATTRIBUTE_QUERY : int32_t {
+	GRALLOC_EXTRA_GET_ION_FD = 1, /**< int32_t */
+	GRALLOC_EXTRA_GET_FB_MVA, /**< deprecated */
+	GRALLOC_EXTRA_GET_SECURE_HANDLE, /**< uint32_t */
+
+	/* output: int32_t */
+	GRALLOC_EXTRA_GET_WIDTH = 10, /**< int32_t */
+	GRALLOC_EXTRA_GET_HEIGHT, /**< int32_t */
+	GRALLOC_EXTRA_GET_STRIDE, /**< int32_t */
+	GRALLOC_EXTRA_GET_VERTICAL_STRIDE, /**< int32_t */
+	GRALLOC_EXTRA_GET_ALLOC_SIZE, /**< int32_t */
+	GRALLOC_EXTRA_GET_FORMAT, /**< int32_t */
+	GRALLOC_EXTRA_GET_USAGE, /**< int32_t */
+	GRALLOC_EXTRA_GET_VERTICAL_2ND_STRIDE, /**< int32_t */
+	GRALLOC_EXTRA_GET_BYTE_2ND_STRIDE, /**< int32_t */
+
+	/* output: uint64_t */
+	GRALLOC_EXTRA_GET_ID = 50, /**< uint64_t */
+	GRALLOC_EXTRA_GET_CONSUMER_USAGE, /**< uint64_t */
+	GRALLOC_EXTRA_GET_PRODUCER_USAGE, /**< uint64_t */
+
+	/* output: ge_sf_info_t */
+	GRALLOC_EXTRA_GET_SF_INFO = 100, /**< ge_sf_info_t */
+	GRALLOC_EXTRA_GET_IOCTL_ION_SF_INFO = GRALLOC_EXTRA_GET_SF_INFO, /* deprecated */
+
+	/* output: ge_smvr_info_t */
+	GRALLOC_EXTRA_GET_SMVR_INFO, /**< ge_smvr_info_t */
+
+	/* output: ge_ion_debug_t */
+	GRALLOC_EXTRA_GET_IOCTL_ION_DEBUG, /**< ge_ion_debug_t */
+
+	/* output: uint32_t */
+	GRALLOC_EXTRA_GET_SECURE_HANDLE_HWC, /**< uint32_t */
+
+	/* output: gralloc_rotate_info_t */
+	GRALLOC_EXTRA_GET_ROTATE_INFO, /**< deprecated */
+
+	/* output: gralloc_gpu_compression_info_t */
+	GRALLOC_EXTRA_GET_GPU_COMPRESSION_INFO, /**< gralloc_gpu_compression_info_t */
+
+	/* output: gralloc_gpu_yuyv rotation: int32_t */
+	GRALLOC_EXTRA_GET_ORIENTATION, /**< int32_t */
+
+	/* output: ge_hdr_info_t */
+	GRALLOC_EXTRA_GET_HDR_INFO, /**< ge_hdr_info_t */
+
+	/* output: ge_video_info_t */
+	GRALLOC_EXTRA_GET_VIDEO_INFO, /**< output: ge_video_info_t */
+
+	/* output: ge_hwc_info_t */
+	GRALLOC_EXTRA_GET_HWC_INFO, /**< output: ge_hwc_info_t */
+
+	/* output: buffer timestmp: uint64_t */
+	GRALLOC_EXTRA_GET_TIMESTAMP, /**< output: uint64_t */
+
+	/* output: ge_timestamp_info_t */ /**< output: ge_timestamp_info_t */
+	GRALLOC_EXTRA_GET_TIMESTAMP_INFO, 
+} ;
+
+/* enum for perform() */
+enum GRALLOC_EXTRA_ATTRIBUTE_PERFORM : int32_t {
+	/* input: ge_sf_info_t * */
+	GRALLOC_EXTRA_SET_SF_INFO = 100,
+	GRALLOC_EXTRA_SET_IOCTL_ION_SF_INFO = GRALLOC_EXTRA_SET_SF_INFO, /* depreacted */
+
+	/* output: ge_smvr_info_t */
+	GRALLOC_EXTRA_SET_SMVR_INFO,
+
+	/* input: ge_ion_debug_t * */
+	GRALLOC_EXTRA_SET_IOCTL_ION_DEBUG,
+
+	/* input: GRALLOC_EXTRA_SECURE_BUFFER_TYPE : int32_t */
+	GRALLOC_EXTRA_ALLOC_SECURE_BUFFER_HWC,
+	GRALLOC_EXTRA_FREE_SECURE_BUFFER_HWC,
+	GRALLOC_EXTRA_FREE_SEC_BUFFER_HWC = GRALLOC_EXTRA_FREE_SECURE_BUFFER_HWC, /* deprecated */
+
+	/* input: gralloc_gpu_yuyv rotation : int32_t*/
+	GRALLOC_EXTRA_SET_ORIENTATION,
+
+	/* input: ge_hdr_info_t */
+	GRALLOC_EXTRA_SET_HDR_INFO,
+
+	/* input: ge_video_info_t */
+	GRALLOC_EXTRA_SET_VIDEO_INFO,
+
+	/* input ge_hwc_info_t */
+	GRALLOC_EXTRA_SET_HWC_INFO,
+
+	/* input: buffer timestmp: uint64_t */
+	GRALLOC_EXTRA_SET_TIMESTAMP,
+
+	/* input: ge_timestamp_info_t */
+	GRALLOC_EXTRA_SET_TIMESTAMP_INFO,
+} ;
+
+enum GRALLOC_EXTRA_SECURE_BUFFER_TYPE : int32_t {
+	/* normal secure buffer */
+	GRALLOC_EXTRA_SECURE_BUFFER_TYPE_NORMAL,
+
+	/* zero-initialized secure buffer */
+	GRALLOC_EXTRA_SECURE_BUFFER_TYPE_ZERO
+};
+
+struct _crop_t {
+	int32_t x;
+    int32_t y;
+    int32_t w;
+    int32_t h;
+};
+
+/* extension data */
+struct ge_smvr_info_t {
+	uint32_t frame_count;
+	uint64_t[32] timestamp;
+    uint64_t timestamp_cam2fw;
+};
+
+struct ge_sf_info_t {
+	/* magic number to make sure that obj is created by query() */
+	uint32_t magic;
+
+	/* used by SurfaceFlinger*/
+	_crop_t src_crop;
+	_crop_t dst_crop;
+
+	/* buffer flags, please change this value by sf_set_status() */
+	int32_t status;
+
+	/* used for pre-allocate buffer */
+	int32_t pool_id;
+
+	/* used for profiling latency */
+	uint32_t sequence;
+
+	/* secure handle allocated by GRALLOC_EXTRA_GET_SECURE_HANDLE_HWC */
+	uint32_t secure_handle_hwc;
+
+	/* used for video frame */
+	uint32_t timestamp;
+
+	/* buffer flags, please change this value by sf_set_status2() */
+	int32_t status2;
+
+	/* video buffer status
+	 * bit 31: valid bit, 0 = invalid (default), 1 = valid
+	 *
+	 * bit 30-25: Y stride alignment
+	 * bit 24-19: CbCr stride alignment
+	 * bit 18-13: height alignment
+	 * alignment interpretation
+	 *
+	 * Y:
+	 *   y_align = (videobuffer_status & 0x7FFFFFFF) >> 25;
+	 *   if (0 == y_align) y_align = 1;
+	 *   else y_align *= 2;
+	 * CbCr:
+	 *   cbcr_align = (videobuffer_status & 0x01FFFFFF) >> 19;
+	 *   if (0 == cbcr_align) cbcr_align = 1;
+	 *   else cbcr_align *= 2;
+	 * Height:
+	 *   h_align = (videobuffer_status & 0x0007FFFF) >> 13;
+	 *   if (0 == h_align) h_align = 1;
+	 *   else h_align *= 2;
+	 *
+	 * bit 12: deinterlace 0 = no, 1 = yes
+	 */
+	int32_t videobuffer_status;
+};
+
+struct ge_hwc_info_t {
+	/* for hwc mirror output buffer use*/
+	_crop_t mirror_out_roi;
+};
+
+/* debug data, to facilitate information while debugging */
+struct ge_ion_debug_t {
+	int32_t[4] data;
+	string name;
+};
+
+/* s* GPU */
+/* deprecated */
+//struct gralloc_rotate_info_t {
+//	int32_t rotate_mode;
+//	int32_t rotate_dx;
+//	int32_t rotate_dy;
+//};
+
+/* s* GPU */
+struct gralloc_gpu_compression_info_t {
+	/* GPU info */
+	uint8_t ufo_enable;
+	uint32_t ufo_length_buffer_base;
+	uint8_t ufo_pattern_replace_en;
+	uint32_t ufo_pattern;
+};
+
+/* HDR */
+struct ge_hdr_info_t {
+	uint32_t u4ColorPrimaries; /* colour_primaries emum */
+	uint32_t u4TransformCharacter; /* transfer_characteristics emum */
+	uint32_t u4MatrixCoeffs; /* matrix_coeffs emum */
+	uint32_t[3] u4DisplayPrimariesX; /* display_primaries_x */
+	uint32_t[3] u4DisplayPrimariesY; /* display_primaries_y */
+	uint32_t u4WhitePointX; /* white_point_x */
+	uint32_t u4WhitePointY; /* white_point_y */
+	uint32_t u4MaxDisplayMasteringLuminance; /* max_display_mastering_luminance */
+	uint32_t u4MinDisplayMasteringLuminance; /* min_display_mastering_luminance */
+	uint32_t u4MaxContentLightLevel; /* max_content_light_level */
+	uint32_t u4MaxPicAverageLightLevel; /* max_pic_average_light_level */
+};
+
+/* Video */
+struct ge_video_info_t {
+	uint32_t width;
+	uint32_t height;
+};
+
+/* use GRALLOC_EXTRA_GET_ORIENTATION
+       GRALLOC_EXTRA_SET_ORIENTATION */
+//struct ge_misc_info_t{
+//	uint32_t orientation; /* camera specify */
+//};
+
+struct ge_timestamp_info_t{
+	uint64_t timestamp;
+	uint64_t timestamp_queued;
+	uint32_t[12] reserved;
+};
+
+
+
+
+
+

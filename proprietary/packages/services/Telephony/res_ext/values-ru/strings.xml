@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2007 The Android Open Source Project
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+          http://www.apache.org/licenses/LICENSE-2.0
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="incall_status_dialed_mmi" msgid="3672498861336189563">"Запуск последовательности MMI..."</string>
+    <string name="dual_mic_title">Шумоподавление</string>
+    <string name="dual_mic_summary">Подавление фоновых шумов во время вызовов</string>
+    <string name="fdn_errorcode_unknown_info">Операция не удалась по причине неизвестной ошибки, повторите попытку позже.</string>
+    <string name="fdn_errorcode_number_info">Операция не удалась так как номер контакта слишком длинный.</string>
+    <string name="fdn_errorcode_name_info">Операция не удалась так как имя контакта слишком длинное.</string>
+    <string name="fdn_errorcode_storage_info">Операция не удалась по причине заполнения памяти.</string>
+    <string name="fdn_errorcode_phb_info">Операция не удалась из-за неготовности телефонной книги, повторите попытку позже.</string>
+    <string name="fdn_errorcode_pin2_info">Операция не удалась из-за неверного PIN2-кода.</string>
+    <string name="fdn_contact_number_invalid">Неверный номер контакта.</string>
+    <string name="fdn_puk_need_tips">PIN2 заблокирован. Измените PIN2 и повторите снова.</string>
+    <string name="fdn_phone_book_busy">Телефонная книга занята, повторите попытку позже.</string>
+    <string name="retries_left">Осталось <xliff:g id="number">%d</xliff:g> попыток</string>
+    <string name="cdma_labelCFU">"Всегда на номер"</string>
+    <string name="cdma_labelCFB">"Если занято"</string>
+    <string name="cdma_labelCFNRy">"При отсутствии ответа"</string>
+    <string name="cdma_labelCFNRc">"Если недоступен"</string>
+    <string name="cdma_labelCFC">Отменить все отправления</string>
+    <string name="cdma_cnir_title">CNIR</string>
+    <string name="cdma_cnir_turnoff">Отключить запрет на идентификацию номера вызывающего</string>
+    <string name="cdma_cnir_turnon">Включить запрет на идентификацию номера вызывающего</string>
+    <string name="volte_is_adding_participants">Добавление участников конференции...</string>
+    <string name="volte_fail_to_invit_participants">Не удалось добавить участников конференции.</string>
+    <string name="volte_conf_member_reach_max">Максимальное число участников конференции уже достигнуто.</string>
+    <string name="wfc_wifi_call_drop">Вызов Wi-Fi пропущен</string>
+    <string name="wfc_internet_connection_lost">Интернет-подключение нарушено</string>
+    <string name="wfc_no_network">Нет доступной мобильной сети</string>
+    <string name="volte_ss_not_available_tips">Для завершения операции нужно подключить данные <xliff:g id="sub_name">%s</xliff:g>.</string>
+    <string name="volte_ss_not_available_tips_data">Для завершения операции необходимо установить подключение к данным <xliff:g id="sub_name">%s</xliff:g>.</string>
+    <string name="volte_ss_not_available_tips_roaming">Для завершения операции необходимо установить подключение к роумингу <xliff:g id="sub_name">%s</xliff:g>.</string>
+    <string name="volte_ss_not_available_tips_data_roaming">Для завершения операции необходимо установить подключение к данным и роумингу <xliff:g id="sub_name">%s</xliff:g>.</string>
+    <string name="vilte_srvcc_tip">Неполадка с сетью - переключение на голосовой вызов. </string>
+    <string name="vilte_to_voice_call">Переключено на голосовой вызов</string>
+    <string name="volte_ss_not_available_tips_data_traffic">Временно будет использоваться слабый сигнал </string>
+    <string name="labelCFVoice">Переадресация голосовых вызовов</string>
+    <string name="actionBarCFVoice">Переадресация голосовых вызовов (<xliff:g id="subscriptionlabel" example="Verizon">%s</xliff:g>)</string>
+    <string name="labelCFVideo">Переадресация видеозвонков</string>
+    <string name="actionBarCFVideo">Переадресация видеозвонков (<xliff:g id="subscriptionlabel" example="Verizon">%s</xliff:g>)</string>
+    <string name="labelCBVoice">Запрет голосовых вызовов</string>
+    <string name="actionBarCBVoice">Запрет голосовых вызовов (<xliff:g id="subscriptionlabel" example="Verizon">%s</xliff:g>)</string>
+    <string name="labelCBVideo">Запрет видеозвонков</string>
+    <string name="actionBarCBVideo">Запрет видеозвонков (<xliff:g id="subscriptionlabel" example="Verizon">%s</xliff:g>)</string>
+    <string name="alert_turn_off_volte">Для завершения операции необходимо отключить VoLTE.</string>
+    <string name="alert_volte_no_service"><xliff:g id="sub_name">%s</xliff:g> Услуги VoLTE и обработки вызовов в настоящий момент недоступны. Отключить VoLTE?</string>
+</resources>

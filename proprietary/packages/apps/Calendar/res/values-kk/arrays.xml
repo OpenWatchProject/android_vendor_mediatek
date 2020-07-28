@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2007 The Android Open Source Project
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+          http://www.apache.org/licenses/LICENSE-2.0
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+--><resources>
+    <string-array name="reminder_methods_labels">
+        <item>Хабарландыру</item>
+        <item>Электрондық пошта</item>
+        <item>SMS</item>
+        <item>Дабыл</item>
+    </string-array>
+    <integer-array name="reminder_methods_values" translatable="false">
+        <item>1</item>  <!-- METHOD_ALERT -->
+        <item>2</item>  <!-- METHOD_EMAIL -->
+        <item>3</item>  <!-- METHOD_SMS -->
+        <item>4</item>  <!-- METHOD_ALARM -->
+    </integer-array>
+    <string-array name="reminder_minutes_labels">
+        <item>0 минут</item>
+        <item>1 минут</item>
+        <item>5 минут</item>
+        <item>10 минут</item>
+        <item>15 минут</item>
+        <item>20 минут</item>
+        <item>25 минут</item>
+        <item>30 минут</item>
+        <item>45 минут</item>
+        <item>1 сағат</item>
+        <item>2 сағат</item>
+        <item>3 сағат</item>
+        <item>12 сағат</item>
+        <item>24 сағат</item>
+        <item>2 күн</item>
+        <item>1 апта</item>
+    </string-array>
+    <integer-array name="reminder_minutes_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>5</item>
+        <item>10</item>
+        <item>15</item>
+        <item>20</item>
+        <item>25</item>
+        <item>30</item>
+        <item>45</item>
+        <item>60</item>
+        <item>120</item>
+        <item>180</item>
+        <item>720</item>
+        <item>1440</item>
+        <item>2880</item>
+        <item>10080</item>
+    </integer-array>
+       <string-array name="preferences_default_reminder_labels">
+        <item>Жоқ</item>
+        <item>0 минут</item>
+        <item>1 минут</item>
+        <item>5 минут</item>
+        <item>10 минут</item>
+        <item>15 минут</item>
+        <item>20 минут</item>
+        <item>25 минут</item>
+        <item>30 минут</item>
+        <item>45 минут</item>
+        <item>1 сағат</item>
+        <item>2 сағат</item>
+        <item>3 сағат</item>
+        <item>12 сағат</item>
+        <item>24 сағат</item>
+        <item>2 күн</item>
+        <item>1 апта</item>
+    </string-array>
+    <string-array name="preferences_week_start_day_labels">
+        <item>Әдепкі аймақтық параметрлер</item>
+        <item>сенбі</item>
+        <item>жексенбі</item>
+        <item>дүйсенбі</item>
+    </string-array>
+    <string-array name="availability">
+        <item>Бос емес</item>
+        <item>Қолжетімді</item>
+        <item>Болжалды</item>
+    </string-array>
+    <integer-array name="availability_values" translatable="false">
+        <item>0</item>  <!-- Busy -->
+        <item>1</item>  <!-- Available -->
+        <item>2</item>  <!-- Tentative -->
+    </integer-array>
+    <string-array name="visibility">
+        <item>Әдепкі</item>
+        <item>Жеке</item>
+        <item>Ортақ</item>
+    </string-array>
+    <string-array name="ordinal_labels">
+        <item>бірінші</item>
+        <item>екінші</item>
+        <item>үшінші</item>
+        <item>төртінші</item>
+        <item>соңғы</item>
+    </string-array>
+    <string-array name="response_labels1">
+        <item>Жауап жоқ</item>
+        <item>Иә</item>
+        <item>Мүмкін</item>
+        <item>Жоқ</item>
+    </string-array>
+    <skip/>
+    <string-array name="delete_repeating_labels">
+        <item>Тек осы оқиға</item>
+        <item>Осы және келешек оқиғалар</item>
+        <item>Барлық оқиғалар</item>
+    </string-array>
+    <integer-array name="delete_repeating_values">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </integer-array>
+    <skip/>
+    <string-array name="delete_repeating_labels_no_selected">
+        <item>Осы және келешек оқиғалар</item>
+        <item>Барлық оқиғалар</item>
+    </string-array>
+    <skip/>
+    <string-array name="change_response_labels">
+        <item>Тек осы оқиға</item>
+        <item>Қатардағы барлық оқиғалар</item>
+    </string-array>
+    <string-array name="buttons_list">
+        <item>күн</item>
+        <item>апта </item>
+        <item>Ай</item>
+        <item>Күн тәртібі</item>
+    </string-array>
+    <string-array name="preferences_skip_reminders_labels">
+        <item>Only if declined</item>
+        <item>If declined or not responded</item>
+    </string-array>
+    <string-array name="recurrence_freq">
+        <item>REPEAT DAILY</item>
+        <item>REPEAT WEEKLY</item>
+        <item>REPEAT MONTHLY</item>
+        <item>REPEAT YEARLY</item>
+    </string-array>
+    <string-array name="repeat_by_nth_sun">
+        <item>on every first Sunday</item>
+        <item>on every second Sunday</item>
+        <item>on every third Sunday</item>
+        <item>on every fourth Sunday</item>
+        <item>on every last Sunday</item>
+    </string-array>
+    <string-array name="repeat_by_nth_mon">
+        <item>on every first Monday</item>
+        <item>on every second Monday</item>
+        <item>on every third Monday</item>
+        <item>on every fourth Monday</item>
+        <item>on every last Monday</item>
+    </string-array>
+    <string-array name="repeat_by_nth_tues">
+        <item>on every first Tuesday</item>
+        <item>on every second Tuesday</item>
+        <item>on every third Tuesday</item>
+        <item>on every fourth Tuesday</item>
+        <item>on every last Tuesday</item>
+    </string-array>
+    <string-array name="repeat_by_nth_wed">
+        <item>on every first Wednesday</item>
+        <item>on every second Wednesday</item>
+        <item>on every third Wednesday</item>
+        <item>on every fourth Wednesday</item>
+        <item>on every last Wednesday</item>
+    </string-array>
+    <string-array name="repeat_by_nth_thurs">
+        <item>on every first Thursday</item>
+        <item>on every second Thursday</item>
+        <item>on every third Thursday</item>
+        <item>on every fourth Thursday</item>
+        <item>on every last Thursday</item>
+    </string-array>
+    <string-array name="repeat_by_nth_fri">
+        <item>on every first Friday</item>
+        <item>on every second Friday</item>
+        <item>on every third Friday</item>
+        <item>on every fourth Friday</item>
+        <item>on every last Friday</item>
+    </string-array>
+    <string-array name="repeat_by_nth_sat">
+        <item>on every first Saturday</item>
+        <item>on every second Saturday</item>
+        <item>on every third Saturday</item>
+        <item>on every fourth Saturday</item>
+        <item>on every last Saturday</item>
+    </string-array>
+</resources>

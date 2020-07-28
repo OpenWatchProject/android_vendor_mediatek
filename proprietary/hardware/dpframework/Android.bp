@@ -1,0 +1,88 @@
+bootstrap_go_package {
+    name: "soong-libdpframework-mediatek",
+    pkgPath: "android/soong/libdpframework/mediatek",
+    deps: [
+        "soong-android",
+        "soong-cc",
+        "soong-android-mediatek",
+    ],
+    srcs: [
+        "libdpframework.go",
+    ],
+    pluginFor: ["soong_build"],
+}
+
+cc_defaults {
+    name: "libdpframework_common_defaults",
+    cflags: [
+        "-DCONFIG_LOG_LEVEL=0",
+    ],
+    product_variables: {
+        eng: {
+            cflags: [
+                "-UCONFIG_LOG_LEVEL",
+                "-DCONFIG_LOG_LEVEL=1",
+            ],
+        },
+        debuggable: {
+            cflags: [
+                "-DDEBUG_DUMP_REG",
+                "-DENABLE_PQ_DEBUG_LOG",
+                "-fno-omit-frame-pointer",
+            ],
+        },
+    },
+    local_include_dirs: [
+        "include",
+    ],
+    export_include_dirs: [
+        "include",
+    ],
+    header_libs: [
+        "libbinder_headers",
+        "libhardware_headers",
+        "libnativebase_headers",
+    ],
+    shared_libs: [
+        "libutils",
+        "libion",
+        "libcutils",
+        "liblog",
+        "libsync",
+        "libdl",
+        "libhardware",
+        "libnativewindow",
+        "libutilscallstack",
+
+    ],
+    static_libs: [
+        "libarect",
+    ],
+    export_shared_lib_headers: [
+        "libnativewindow",
+    ],
+    export_static_lib_headers: [
+        "libarect",
+    ],
+    export_header_lib_headers: [
+        "libnativebase_headers",
+    ],
+}
+
+mtk_libdpframework_defaults {
+    name: "libdpframework_defaults",
+}
+
+cc_library_shared {
+    name: "libdpframework",
+    proprietary: true,
+    owner: "mtk",
+    compile_multilib: "both",
+    header_libs: [
+        "device_kernel_headers",
+    ],
+    defaults: [
+        "libdpframework_common_defaults",
+        "libdpframework_defaults",
+    ],
+}

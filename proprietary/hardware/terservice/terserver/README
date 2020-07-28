@@ -1,0 +1,17 @@
+WHAT IT DOES?
+=============
+MTK TER Service Server will be brought up when TER Service is enabled. 
+
+HOW IT WAS BUILT?
+==================
+It requires following library from AOSP:
+	libutils libbinder libcutils liblog
+
+and following libs from MediaTek: 
+	libterservice
+
+HOW TO USE IT?
+==============
+It will be brought up and registered as a service instance in service manager. 
+
+All the source code of this library were written by MediaTek co..

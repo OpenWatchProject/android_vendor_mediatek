@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin
+    id="hdrplugin"
+    name="hdr"
+    version="1">
+
+    <extension
+        id="hdr"
+        name="longexposure extension"
+        class="com.mediatek.camera.feature.mode.hdr.HdrModeEntry"
+        plugin-id="cameraplugin"
+        point-id="FeatureEntryBase">
+    </extension>
+</plugin>

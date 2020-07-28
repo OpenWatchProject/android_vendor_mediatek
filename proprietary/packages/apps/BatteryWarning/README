@@ -1,0 +1,15 @@
+WHAT IT DOES?
+=============
+Android APK file, used to show a warning dialog to warn user when
+batterywarning deamon find battery charger abnormal.
+
+HOW IT WAS BUILT?
+==================
+It is a Android application project, built by Android SDK.
+
+HOW TO USE IT?
+==============
+When batterywarning deamon monitor find battery charger abnormal,
+it will send broadcast with warning type to notify BatteryWarning.apk.
+BatteryWarning.apk will show warning dialog with the charger's problem
+like voltage/current/temperature to warn user.

@@ -1,0 +1,18 @@
+com.mediatek.omadrm.common is a java static library for OMA DRM features, including utils method and define
+
+This java static library is pre-built by MediaTek internal.
+
+WHAT IT DOES?
+=============
+Define OMA DRM and some utils methods. detail please refer to java doc
+
+HOW IT WAS BUILT?
+==================
+It needs the following library from MTK res:
+1. APPS/mediatek-res_intermediates/src
+mmm vendor/mediatek/proprietary/frameworks/base/omadrm
+
+HOW TO USE IT?
+==============
+If want to use these defines and method, please add below in you Android.mk
+LOCAL_STATIC_JAVA_LIBRARIES := com.mediatek.omadrm.common

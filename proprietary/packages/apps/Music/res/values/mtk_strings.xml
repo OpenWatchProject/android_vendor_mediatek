@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+** Copyright 2007, The Android Open Source Project
+**
+** Licensed under the Apache License, Version 2.0 (the "License"); 
+** you may not use this file except in compliance with the License. 
+** You may obtain a copy of the License at 
+**
+**     http://www.apache.org/licenses/LICENSE-2.0 
+**
+** Unless required by applicable law or agreed to in writing, software 
+** distributed under the License is distributed on an "AS IS" BASIS, 
+** WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. 
+** See the License for the specific language governing permissions and 
+** limitations under the License.
+*/
+
+
+
+
+-->
+
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <!-- Search Media files empty -->
+    <string name="search_empty">No Matches.</string>
+    <!-- Message to toast to user when want to play music during phone call -->
+    <string name="audiofocus_request_failed_message">Cannot play music during a call.</string>
+    <!-- Progress dialog title when deleting items -->
+    <string name="delete_progress_title">Delete songs</string>
+
+    <!-- Progress dialog message when deleting itmes -->
+    <string name="delete_progress_message">Please wait while deleting songs...</string>
+
+    <!-- Menu item for search -->
+    <string name="menu_search">Search</string>
+
+    <!-- Toast after streamStarter activity receives PLAYBACK_COMPLETE in case of an error -->
+    <string name="fail_to_start_stream">Failed to play the requested stream.</string>
+
+    <!-- FM Tx option item text -->
+    <string name="music_fm_transmiter">FM transmitter</string>
+    <string name="effects_list_title">Sound effects</string>
+    <string name="usb_in_using">Playlist is unavailable when USB storage is ON.</string>
+
+    <!-- Action bar item descraption -->
+    <string name="shuffle_menu_item_desc">Shuffle</string>
+    <string name="repeat_menu_item_desc">Repeat</string>
+    
+    <!-- Delete track fail message -->
+    <string name="delete_track_failed">Failed to delete.</string>
+    <!-- Music no songs -->
+    <string name="no_music_title">No music.</string>
+
+    <!-- Music Voice UI indicator -->
+    <string name="voice_command_indicator_ticker">You can say <xliff:g id="first">%1$s</xliff:g> and <xliff:g id="second">%2$s</xliff:g> to control music playing.</string>
+    <string name="voice_command_indicator_content_title">Voice control</string>
+    <string name="voice_command_indicator_content_text">Voice control is enable for Music</string>
+
+    <!-- Menu item for add a folder to play -->
+    <string name="add_folder_to_play">Play folder</string>
+    <!-- Menu item for add a folder as playlist -->
+    <string name="add_folder_as_playlist">Add folder as playlist</string>
+    <!-- Menu item for add one song to play -->
+    <string name="add_song_to_play">Play file</string>
+    <!-- Menu item for add file to playlist -->
+    <string name="add_file">Add file</string>
+    <!-- Toast FL right is invalid -->
+    <string name="fl_invalid">No permission to play the file.</string>
+     <!-- Prompt can't save playlist-->
+    <string name="save_playlist_error">Failed to save playlist.</string>
+    <!-- playlist name of SoundRecord-->
+    <string name="soundrecord_playlist_name">My recordings</string>
+    <!-- playlist name of FMRecord-->
+    <string name="fmrecord_playlist_name">FM Recordings</string>
+    <!-- playlist name of PhoneRecord-->
+    <string name="phonerecord_playlist_name">PhoneRecord</string>
+    <!-- HotKnot menu item string -->
+    <string name="hotknot" translatable="false">"HotKnot"</string>	
+</resources>

@@ -1,0 +1,27 @@
+This is the README for mmc_ffu
+
+WHAT IT DOES?
+=============
+For perform eMMC FFU via ioctl into MMC/MSDC kernel driver
+
+HOW IT WAS BUILT?
+==================
+Native program bulid flow of android.
+
+HOW TO USE IT?
+==============
+Usage:
+    mmc_ffu check $device
+    mmc_ffu do $image_path $device $manf_id [$new_fw_revision $old_fw_revision]
+Parmeters:
+    $device: device node, e.g., /dev/block/mmcblk0
+    $manf_id: manufacturer id, hex value without leading 0x
+                0: skip checking for vendor_id and fw_revision
+                02: Sandisk old
+                11: Toshiba
+                13: Micron
+                15: Samsung
+                45: Sandisk
+                70: Kinston
+                90: Hynix
+    $new_fw_revision and $old_fw_revision: hex value without leading 0x

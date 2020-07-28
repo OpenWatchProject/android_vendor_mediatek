@@ -1,0 +1,30 @@
+This directory contains G-sensor Tool library.
+
+
+WHAT IT DOES?
+=============
+It provide G-sensor test item feature on PC side, which allow test gsensor as GUI.
+
+
+HOW IT WAS BUILT?
+==================
+It needs the following libs from AOSP:
+1. liblog
+
+and the following libs from MediaTek:
+1. libft.so
+2. libhwm.so
+3. libnvram.so
+
+All source/dependency modules of this module are already put in
+'vendor/mediatek/libs' folder.
+
+
+HOW TO USE IT?
+============== 
+Files in this directory is used to generate a library which's name is 'libmeta_gsensor'.
+libmeta_gsensor.a provides API that will get sensor data from driver.
+
+
+All the source code of this library were written by MediaTek co..
+

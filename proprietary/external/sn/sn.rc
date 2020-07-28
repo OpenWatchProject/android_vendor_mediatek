@@ -1,0 +1,14 @@
+on post-fs-data
+    chmod 0664 /sys/class/android_usb/android0/iSerial
+    chown root system /sys/class/android_usb/android0/iSerial
+    chmod 0664 /sys/devices/platform/mt_usb/cmode
+    chown root system /sys/devices/platform/mt_usb/cmode
+    chmod 0664 /sys/class/udc/musb-hdrc/device/cmode
+    chown root system /sys/class/udc/musb-hdrc/device/cmode
+
+service sn /system/bin/sn
+    class late_start
+    user system
+    group system sdcard_rw
+    oneshot
+

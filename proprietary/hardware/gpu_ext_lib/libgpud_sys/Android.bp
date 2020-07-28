@@ -1,0 +1,121 @@
+cc_prebuilt_library_shared {
+    arch: {
+        arm: {
+            cortex_a53: {
+                shared_libs: [
+                    "libcutils",
+                    "libutils",
+                    "liblog",
+                    "libui",
+                    "libsync",
+                    "libhardware",
+                    "libnativewindow",
+                    "libgralloc_extra_sys",
+                    "libhidlbase",
+                    "android.hardware.graphics.common@1.1",
+                    "android.hardware.graphics.common@1.2",
+                    "android.hardware.graphics.mapper@2.0",
+                    "android.hardware.graphics.mapper@2.1",
+                    "android.hardware.graphics.mapper@3.0",
+                ],
+                srcs: [
+                    "arm_armv8-a_cortex-a53/libgpud_sys.so",
+                ],
+            },
+            cortex_a55: {
+                shared_libs: [
+                    "libcutils",
+                    "libutils",
+                    "liblog",
+                    "libui",
+                    "libsync",
+                    "libhardware",
+                    "libnativewindow",
+                    "libgralloc_extra_sys",
+                    "libhidlbase",
+                    "android.hardware.graphics.common@1.1",
+                    "android.hardware.graphics.common@1.2",
+                    "android.hardware.graphics.mapper@2.0",
+                    "android.hardware.graphics.mapper@2.1",
+                    "android.hardware.graphics.mapper@3.0",
+                ],
+                srcs: [
+                    "arm_armv8-2a_cortex-a55/libgpud_sys.so",
+                ],
+            },
+            cortex_a7: {
+                shared_libs: [
+                    "libcutils",
+                    "libutils",
+                    "liblog",
+                    "libui",
+                    "libsync",
+                    "libhardware",
+                    "libnativewindow",
+                    "libgralloc_extra_sys",
+                    "libhidlbase",
+                    "android.hardware.graphics.common@1.1",
+                    "android.hardware.graphics.common@1.2",
+                    "android.hardware.graphics.mapper@2.0",
+                    "android.hardware.graphics.mapper@2.1",
+                    "android.hardware.graphics.mapper@3.0",
+                ],
+                srcs: [
+                    "arm_armv7-a-neon_cortex-a7/libgpud_sys.so",
+                ],
+            },
+        },
+        arm64: {
+            cortex_a53: {
+                shared_libs: [
+                    "libcutils",
+                    "libutils",
+                    "liblog",
+                    "libui",
+                    "libsync",
+                    "libhardware",
+                    "libnativewindow",
+                    "libgralloc_extra_sys",
+                    "libhidlbase",
+                    "android.hardware.graphics.common@1.1",
+                    "android.hardware.graphics.common@1.2",
+                    "android.hardware.graphics.mapper@2.0",
+                    "android.hardware.graphics.mapper@2.1",
+                    "android.hardware.graphics.mapper@3.0",
+                ],
+                srcs: [
+                    "arm64_armv8-a_cortex-a53/libgpud_sys.so",
+                ],
+            },
+            cortex_a55: {
+                shared_libs: [
+                    "libcutils",
+                    "libutils",
+                    "liblog",
+                    "libui",
+                    "libsync",
+                    "libhardware",
+                    "libnativewindow",
+                    "libgralloc_extra_sys",
+                    "libhidlbase",
+                    "android.hardware.graphics.common@1.1",
+                    "android.hardware.graphics.common@1.2",
+                    "android.hardware.graphics.mapper@2.0",
+                    "android.hardware.graphics.mapper@2.1",
+                    "android.hardware.graphics.mapper@3.0",
+                ],
+                srcs: [
+                    "arm64_armv8-2a_cortex-a55/libgpud_sys.so",
+                ],
+            },
+        },
+    },
+    export_include_dirs: [
+        "include",
+    ],
+    name: "libgpud_sys@MTK,smart_phone",
+    strip: {
+        none: true,
+    },
+}
+

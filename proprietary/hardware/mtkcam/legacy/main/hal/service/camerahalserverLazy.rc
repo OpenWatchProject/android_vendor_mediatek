@@ -1,0 +1,17 @@
+service camerahalserver /vendor/bin/hw/camerahalserver
+    interface android.hardware.camera.provider@2.4::ICameraProvider internal/0
+    interface vendor.mediatek.hardware.camera.bgservice@1.1::IBGService internal/0
+    interface vendor.mediatek.hardware.camera.bgservice@1.1::IEventCallback internal/0
+    interface vendor.mediatek.hardware.camera.advcam@1.0::IAdvCamControl internal/0
+    interface vendor.mediatek.hardware.camera.ccap@1.0::ICCAPControl internal/0
+    interface vendor.mediatek.hardware.camera.frhandler@1.0::IFRHandler internal/0
+    interface vendor.mediatek.hardware.camera.frhandler@1.0::IFRClientCallback internal/0
+    interface vendor.mediatek.hardware.camera.lomoeffect@1.0::ILomoEffect internal/0
+    oneshot
+    disabled
+    class hal
+    user cameraserver
+    group audio camera input drmrpc sdcard_rw system media graphics
+    ioprio rt 4
+    capabilities SYS_NICE
+    writepid /dev/cpuset/camera-daemon/tasks /dev/stune/top-app/tasks

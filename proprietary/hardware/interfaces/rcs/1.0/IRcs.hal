@@ -1,0 +1,10 @@
+package vendor.mediatek.hardware.rcs@1.0;
+
+import IRcsIndication;
+
+interface IRcs {
+    setResponseFunctions(IRcsIndication rcsIndication);
+    oneway writeEvent(int32_t request_id, int32_t length, vec<int8_t> value);
+    oneway writeBytes(vec<int8_t> value);
+    oneway writeInt(int32_t value);
+};

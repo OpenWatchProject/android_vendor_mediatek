@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/*
+ * Copyright (C) 2006-2008 Esmertec AG.
+ * Copyright (C) 2006-2008 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+-->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/file_attachment_view"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:background="@drawable/file_attachment_background" >
+    <ImageView
+        android:id="@+id/file_attachment_thumbnail"
+        android:layout_width="48dip"
+        android:layout_height="48dip"
+        android:layout_marginRight="4dip"
+        android:layout_marginTop="2dip"
+        android:layout_marginBottom="3dip" />
+    <ImageView
+        android:id="@+id/file_attachment_thumbnail2"
+        android:layout_width="32dip"
+        android:layout_height="32dip"
+        android:layout_marginRight="4dip"
+        android:layout_marginTop="2dip"
+        android:layout_marginBottom="3dip"
+        android:visibility="gone" />
+    <LinearLayout
+        android:layout_width="0dip"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_marginLeft="5dip"
+        android:layout_marginRight="5dip"
+        android:orientation="vertical"
+        android:gravity="left|center_vertical" >
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/file_attachment_name_info"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textSize="18sp"
+                android:textColor="#000000" />
+            <TextView
+                android:id="@+id/file_attachment_name_info2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textColor="#7b7b7b" />
+        </LinearLayout>
+        <TextView
+            android:id="@+id/file_attachment_size_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textColor="#7b7b7b" />
+    </LinearLayout>
+    <ImageView
+        android:id="@+id/file_attachment_divider"
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:layout_marginRight="7dip"
+        android:visibility="gone"
+        android:scaleType="fitXY"
+        android:src="@drawable/file_attachment_divider" />
+    <ImageView
+        android:id="@+id/file_attachment_button_remove"
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:paddingRight="10dip"
+        android:src="@drawable/ic_delete_file_attachment"
+        android:visibility="gone" />
+</LinearLayout>

@@ -1,0 +1,27 @@
+OP07 customization features.
+
+This apk is pre-built by MediaTek internal.
+
+
+WHAT IT DOES?
+=============
+It is a plugin apk which contains the OP07 customization for Host App (mms,phone and son on)
+
+HOW IT WAS BUILT?
+==================
+It needs the following library from Mediatek:
+1. mediatek-common.jar
+2. Host App api interface,for example:com.mediatek.mms.ext
+
+All the OP07 customization for mms,phone and son on will be built as OP07Plugin.apk  installed under system/plugin, 
+and the OP07Plugin.mpinfo also be copied to the installed path when build time
+
+HOW TO USE IT?
+==============
+
+Implement the interface provided by Host App(mms,phone and so on) to do customization.
+all api interface are at (packages/apps/xxx(Host App name)/ext).
+
+when run time, framework will find the OP07Plugin customization implementation via OP07Plugin.mpinfo.
+
+All the source code of  were written by MediaTek.

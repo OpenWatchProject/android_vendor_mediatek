@@ -1,0 +1,25 @@
+Library of MTK ViLTE features, controlling rotation function
+
+WHAT IT DOES?
+=============
+libcomutils.so control the rotation for uplink
+
+HOW IT WAS BUILT?
+==================
+It needs the following library from AOSP:
+libcutils.so         
+libstagefright_foundation.so
+libutils.so
+libstagefright.so
+
+and the following libs from MediaTek:
+
+libdpframework.so
+
+
+HOW TO USE IT?
+==============
+used by the libimsma/source module to do the rotation
+
+
+

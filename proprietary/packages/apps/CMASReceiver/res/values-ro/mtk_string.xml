@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+ * Copyright (C) 2007-2008 Esmertec AG.
+ * Copyright (C) 2007-2008 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+--><resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+   <string name="alerts">Alerte</string>
+    <string name="select_all">"Selectaţi-le pe toate"</string>
+    <string name="unselect_all">"Deselectaţi-le pe toate"</string>
+    <string name="delete">"Ștergeţi"</string>
+    <string name="select_cellbroadcasts">Selectare alertă urgenţă</string>
+    <plurals name="message_view_selected_message_count">
+        <item quantity="one"><xliff:g id="message_count" example="1">%d</xliff:g> mesaj selectat</item>
+        <item quantity="other"><xliff:g id="message_count" example="9">%d</xliff:g> (de) mesaje selectate</item>
+    </plurals>
+    <plurals name="confirm_delete_broadcast">
+        <item quantity="one">1 mesaj de alertă selectat va fi şters</item>
+        <item quantity="other"><xliff:g id="number" example="15">%1$s</xliff:g> (de) mesaje de alertă selectate vor fi şterse</item>
+    </plurals>
+    <string name="enable_cmas_presidential_threat_alerts_title">Afişare alertă prezidenţială</string>
+    <string name="enable_cmas_presidential_threat_alerts_summary">Afişare alerte de nivel prezidenţial</string>
+    <string name="enable_cmas_imminent_threat_alerts_title">Alertă eveniment iminent</string>
+    <string name="enable_cmas_imminent_threat_alerts_summary">Afişare alerte pentru ameninţările iminente pentru viaţă şi proprietate</string>
+    <string name="cmas_preview_alert_tone_title">Previzualizare ton alertă</string>
+    <string name="cmas_preview_alert_tone_summary">Previzualizaţi tonul alertei</string>
+    <string name="cmas_change_settings">Sigur doriţi să modificaţi setările?</string>
+    <string name="cmas_disable_cmas">Nu veţi primi nicio alertă dacă dezactivaţi transmiterea celulară.</string>
+    <string name="cmas_enable_cmas_failed">Nu s-a putut deschide.</string>
+    <string name="enable_repeat_alert_title">Repetare alarmă</string>
+    <string name="enable_repeat_alert_summary">Pentru a reaminti utilizatorului periodic despre alerta necitită</string>
+    <string name="enable_all_alert_title">Toate alertele activate</string>
+    <string name="enable_all_imminent_alerts_title">Toate mesajele privind ameninţări iminente</string>
+    <string name="enable_cell_broadcast_title">Alerte urgenţe</string>
+    <string name="alert_sound_volume">Volum sunet alerte</string>
+    <string name="alert_volume_summary">Reglare volum sunet alerte</string>
+</resources>

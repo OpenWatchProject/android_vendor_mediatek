@@ -1,0 +1,23 @@
+Library of encryption for meta mode, including getting crypto state and
+decrypt the target.
+
+WHAT IT DOES?
+=============
+It gets the crypto state by property and decrypts the target via vold.
+
+HOW IT WAS BUILT?
+==================
+It needs the following library from AOSP:
+
+libcutils libc 
+
+and the following libs from MediaTek:
+
+libft
+
+
+HOW TO USE IT?
+==============
+Use MTK meta tool
+
+The majority of source code for this library were written by MediaTek

@@ -1,0 +1,26 @@
+<TeeConfig>
+  <ProjectConfig>
+    <config feature="MTK_TEE_SUPPORT" value="yes" />
+    <config feature="MTK_GOOGLE_TRUSTY_SUPPORT" value="yes" />
+    <config feature="MTK_ATF_SUPPORT" value="yes" />
+  </ProjectConfig>
+  <TrustzoneConfig>
+    <config feature="MTK_TEE_SUPPORT" value="yes" />
+    <config feature="MTK_GOOGLE_TRUSTY_SUPPORT" value="yes" />
+    <config feature="MTK_ATF_SUPPORT" value="yes" />
+  </TrustzoneConfig>
+  <LKConfig>
+    <config feature="MTK_GOOGLE_TRUSTY_SUPPORT" value="yes" />
+  </LKConfig>
+  <PreloadConfig>
+    <config feature="MTK_TEE_SUPPORT" value="yes" />
+    <config feature="MTK_GOOGLE_TRUSTY_SUPPORT" value="yes" />
+  </PreloadConfig>
+  <KernelConfig>
+    <config feature="CONFIG_TRUSTY" value="y" />
+  </KernelConfig>
+  <KernelDebugConfig>
+    <config feature="CONFIG_TRUSTY" value="y" />
+    <config feature="CONFIG_MT_TRUSTY_DEBUGFS" value="y" />
+  </KernelDebugConfig>
+</TeeConfig>

@@ -1,0 +1,90 @@
+/*
+ * Copyright (C) 2016 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package vendor.mediatek.hardware.radio@3.16;
+
+import android.hardware.radio@1.1::IRadioResponse;
+import android.hardware.radio@1.1::types;
+import android.hardware.radio@1.0::types:RadioResponseInfo;
+import @3.15::IRadioResponse;
+
+/**
+ * Interface declaring response functions to solicited radio requests.
+ * Response functions defined in this interface are as per following convention:
+ * <xyz>Response is response to IRadio.<xyz>
+ */
+interface IRadioResponse extends @3.15::IRadioResponse {
+    /**
+     * @param info Response info struct containing response type, serial no. and error
+     * @param string containing operator name
+     *
+     * Valid errors returned:
+     *   RadioError:NONE
+     *   RadioError:REQUEST_NOT_SUPPORTED
+     */
+    oneway getPlmnNameFromSE13TableResponse(RadioResponseInfo info, string name);
+
+    /**
+     * @param info Response info struct containing response type, serial no. and error
+     *
+     * Valid errors returned:
+     *   RadioError:NONE
+     *   RadioError:REQUEST_NOT_SUPPORTED
+     */
+    oneway enableCAPlusBandWidthFilterResponse(RadioResponseInfo info);
+
+    /**
+     * The Response of activateUiccCard
+     *
+     * @param info Response info struct containing response type, serial no. and error
+     * @param simPowerOnOffResponse "0" means SUCCESS, "-1" means GENERIC_FAILURE,
+     *              "-3" means REQUEST_IN_PROGRESS
+     *
+     * Valid errors returned:
+     *   RadioError:RIL_E_SUCCESS
+     *   RadioError:RIL_E_REQUEST_RATE_LIMITED
+     *   RadioError:RIL_E_OPERATION_NOT_ALLOWED
+     *   RadioError:SIM_ABSENT
+     */
+    oneway activateUiccCardRsp(RadioResponseInfo info, int32_t simPowerOnOffResponse);
+
+    /**
+     * The Response of deactivateUiccCard
+     *
+     * @param info Response info struct containing response type, serial no. and error
+     * @param simPowerOnOffResponse "0" means SUCCESS, "-1" means GENERIC_FAILURE,
+     *              "-3" means REQUEST_IN_PROGRESS
+     *
+     * Valid errors returned:
+     *   RadioError:RIL_E_SUCCESS
+     *   RadioError:RIL_E_REQUEST_RATE_LIMITED
+     *   RadioError:RIL_E_OPERATION_NOT_ALLOWED
+     *   RadioError:SIM_ABSENT
+     */
+    oneway deactivateUiccCardRsp(RadioResponseInfo info, int32_t simPowerOnOffResponse);
+
+     /**
+     * The Response of getCurrentUiccCardProvisioningStatus
+     *
+     * @param info Response info struct containing response type, serial no. and error
+     * @param simPowerOnOffStatus "0" means INACTIVE, "1" means ACTIVE
+     *
+     * Valid errors returned:
+     *   RadioError:RIL_E_SUCCESS
+     */
+    oneway getCurrentUiccCardProvisioningStatusRsp(RadioResponseInfo info,
+            int32_t simPowerOnOffStatus);
+};

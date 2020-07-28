@@ -1,0 +1,25 @@
+CmasEM.apk provides SIM-ME Lock settings in engineer mode.
+
+This apk is pre-built by MediaTek internal.
+
+WHAT IT DOES?
+=============
+MtkTelephonyAssist.apk is used for customer project only, and will only release to customer with
+TELEPHONYASSIST license.
+It is used to decouple customer and MTK Telephony framework. Since MTK RILD need to sync screen
+state and mobile data settings state to RILD, and some customer's telephony will not offer such API,
+we need to move these feature to a vendor apk which runs in phone process.
+
+HOW IT WAS BUILT?
+==================
+It needs the following library from AOSP:
+1. telephony-common
+
+All source/dependency modules of this module are already put in
+system/
+
+HOW TO USE IT?
+==============
+
+This apk runs in com.android.phone process and will lunch a service
+after device bootup automatically.

@@ -1,0 +1,15 @@
+cc_prebuilt_library_static {
+    name: "libvorbisenc_mtk",
+    proprietary: true,
+    owner: "mtk",
+    arch: {
+        arm: {
+            srcs: ["arm/libvorbisenc_mtk.a"],
+        },
+        arm64: {
+            srcs: ["libvorbisenc_mtk.a"],
+        },
+    },
+    export_include_dirs: ["."],
+    compile_multilib: "both",
+}

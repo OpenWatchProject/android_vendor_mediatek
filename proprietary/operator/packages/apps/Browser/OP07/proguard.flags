@@ -1,0 +1,7 @@
+# do not warn the build warning, or else may cause build failed.
+
+-verbose
+
+# Browser plugin @{
+-keep class com.mediatek.browser.plugin.** { *; }
+# @}

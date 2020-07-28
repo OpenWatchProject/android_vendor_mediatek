@@ -1,0 +1,4 @@
+# Start storageproxyd Daemon
+service istorageproxyd /vendor/bin/istorageproxyd -d /dev/trusty-ipc-dev0 -f /data/vendor/thh/trusty -p com.android.trusty.storage.proxy -r /dev/block/mmcblk0rpmb
+    group system
+    class late_start

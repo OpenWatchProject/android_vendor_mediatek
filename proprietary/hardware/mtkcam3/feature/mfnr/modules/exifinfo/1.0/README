@@ -1,0 +1,75 @@
+MFNR core module: ExifInfo v1.0
+
+
+WHAT IT DOES?
+=============
+
+ExifInfo is an information in JPEG header, and it's for debug and algorithm
+simulation usage. We knows that the register maps are different in the different
+platform, thereforce there's a MFNR core module ExifInfo to take responsibility
+to collect all debug information and provide to caller reference.
+
+
+HOW IT WAS BUILT?
+==================
+
+You cannot partial build this module only, but to build libmfllcore indeed.
+
+libmfllcore partial build path:
+
+    feature/common/mfnr/Android.mk
+
+Library dependency:
+  AOSP:
+  - libutils.so
+  - libcutils.so
+  - libstdc++.so
+
+  MTK:
+  - libcameracustom.so
+  - libmfllnvram.a
+
+
+HOW TO USE IT?
+==============
+
+Create a IMfllExifInfo instance by invoking
+
+    IMfllExifInfo::createInstance();
+
+and caller can update exif info to IMfllExifInfo by invoking these methods:
+
+    1. updateInfo(const MfllCoreDbgInfo_t &dbgInfo)
+    2. updateInfo(IMfllNvram *pNvram)
+    3. updateInfo(unsigned int key, uint32_t value)
+
+where means:
+
+    1. update information from IMfllCore provided
+    2. update information of NVRAM
+    3. update information by key from debug_exif/cam/dbg_cam_mf_param.h
+
+
+After updated information, caller can invoke method
+
+    getInfo(unsigned int key)
+
+to retrieve the value of the key and print it or dispatch to somewhere caller
+wants.
+
+Notice that, IMfllExifInfo need debug info tag from dbg_cam_mf_param.h.
+
+- v1.0
+  Supports dbg_cam_mf_param.h version 3.2 only
+
+
+* This module will be compiled as a static libary and be used by libmfllcore,
+  which means you can only use the interfaces defined in:
+
+      feature/include/common/mfnr/IMfllExifInfo.h
+
+  by linking shared libary
+
+      libmfllcore.so
+
+All the source code of this program were written by MediaTek co..

@@ -1,0 +1,28 @@
+Library of MTK RAT feature for meta mode, including RAT switch functions.
+
+WHAT IT DOES?
+=============
+Provide meta mode RAT switch function
+
+HOW IT WAS BUILT?
+==================
+It needs the following libs from AOSP:
+1.  libc.so
+2.  libcutils
+3.  libutils
+4.  libsysenv_system
+
+and the following libs from MediaTek:
+1. libft.so
+
+
+HOW TO USE IT?
+==============
+Files in this directory is used to
+generate a library which name is 'libmeta_rat'
+
+The lib 'libmeta_rat' is loaded when target enter meta mode,
+Meta main thread will call META_RAT_OP API, if meta RAT tool is launched.
+
+All the source code of this library were written by MediaTek co..
+

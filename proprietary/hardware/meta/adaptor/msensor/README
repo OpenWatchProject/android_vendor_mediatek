@@ -1,0 +1,30 @@
+This directory contains M-sensor Tool library.
+
+
+WHAT IT DOES?
+=============
+It provide M-sensor test item feature on PC side, which allow test magnetometer as GUI.
+
+
+HOW IT WAS BUILT?
+==================
+It needs the following libs from AOSP:
+1.  liblog.so
+
+and the following libs from MediaTek:
+1. libnvram.so
+2. libhwm.so
+2. libft.so
+
+All source/dependency modules of this module are already put in
+'vendor/mediatek/libs' folder.
+
+
+HOW TO USE IT?
+============== 
+Files in this directory is used to generate a library which's name is 'libmeta_msensor'.
+libmeta_msensor.a provides API that will get msensor data from driver.
+
+
+All the source code of this library were written by MediaTek co..
+

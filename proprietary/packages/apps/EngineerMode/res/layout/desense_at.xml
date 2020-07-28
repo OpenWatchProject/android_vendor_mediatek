@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dip"
+        android:background="#FF909090" >
+    </View>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <Button
+            android:id="@+id/desense_at_test_items"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/desense_at_test_items"
+            android:textSize="16sp" >
+        </Button>
+
+        <Button
+            android:id="@+id/desense_at_sv_ids"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/desense_at_gnss_band"
+            android:textSize="16sp" >
+        </Button>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dip"
+        android:background="#FF909090" >
+    </View>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:text="@string/desense_at_test_modes"
+        android:textSize="16sp" >
+    </TextView>
+
+    <TableLayout
+        android:id="@+id/desense_at_test_modes"
+        android:layout_marginLeft="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+    </TableLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dip"
+        android:background="#FF909090" >
+    </View>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+
+        <Button
+            android:id="@+id/desense_at_start"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/desense_at_start"
+            android:onClick="onClick" >
+        </Button>
+
+        <Button
+            android:id="@+id/desense_at_stop"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/desense_at_stop"
+            android:onClick="onClick" >
+        </Button>
+
+    </LinearLayout>
+    <include layout="@layout/desense_at_result_format" />
+</LinearLayout>

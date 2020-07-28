@@ -1,0 +1,17 @@
+# Start Daemon (Registry directories should already be present)
+service mobicore /vendor/bin/mcDriverDaemon --P1 /mnt/vendor/persist/mcRegistry \
+	-r /vendor/app/mcRegistry/020f0000000000000000000000000000.drbin \
+	-r /vendor/app/mcRegistry/05120000000000000000000000000000.drbin \
+	-r /vendor/app/mcRegistry/020b0000000000000000000000000000.drbin \
+	-r /vendor/app/mcRegistry/030b0000000000000000000000000000.drbin
+    user system
+    group system
+    class core
+    priority -20
+
+# t-Drv naming
+# 020f0000000000000000000000000000.drbin : utils
+# 05120000000000000000000000000000.drbin : sec
+# 070b0000000000000000000000000000.drbin : tplay
+# 020b0000000000000000000000000000.drbin : cmdq
+# 030b0000000000000000000000000000.drbin : spi

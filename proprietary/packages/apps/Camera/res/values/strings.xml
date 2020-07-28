@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2007 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- catpure mode -->
+    <string name="accessibility_switch_to_camera">Normal mode</string>
+    <string name="accessibility_switch_to_face_beauty">Face beauty mode</string>
+    <string name="accessibility_switch_to_dual_camera">Dual camera mode</string>
+    <string name="accessibility_switch_to_stereo_camera">Super de-noise mode</string>
+    <string name="accessibility_switch_to_pip">PIP mode</string>
+    <string name="accessibility_switch_to_panorama">Panorama mode</string>
+    <!-- AF -->
+    <string name="pref_af_mode_title">AF mode</string>
+    <string name="pref_af_mode_single">Single point AF</string>
+    <string name="pref_af_mode_multi">Multi-zone AF</string>
+    <string name="pref_af_mode_default" translatable="false">multi</string>
+    <string name="af_single_mode" translatable="false">single</string>
+    <string name="af_multi_mode" translatable="false">multi</string>
+    <!-- GPS --> 
+    <string name="pref_camera_record_location_title">GPS location info</string>
+    <string name="pref_camera_recordlocation_default" translatable="false">none</string>
+    <string name="pref_camera_recordlocation_entry_off" translatable="false">Off</string>
+    <string name="pref_camera_recordlocation_entry_on" translatable="false">On</string>
+    <!-- VFB multi/single mode -->
+    <string name="pref_face_beauty_mode_title">Face beauty</string>
+    <string name="pref_face_beauty_mode_default" translatable="false">Single</string>
+    <string name="pref_face_beauty_mode_single_face_mode">Single face mode</string>
+    <string name="pref_face_beauty_mode_multi_face_mode">Multi-face mode</string>
+    <string name="pref_face_beauty_mode_off">Off</string>
+    <string name="face_beauty_single_mode" translatable="false">Single</string>
+    <string name="face_beauty_multi_mode" translatable="false">Multi</string>
+    <!-- Exposure --> 
+    <string name="pref_exposure_title">Exposure</string>
+    <string name="pref_camera_exposure_default" translatable="false">0</string>
+    <!-- Scene mode -->
+    <string name="pref_camera_scenemode_title">Scene mode</string> 
+    <string name="pref_camera_scenemode_default" translatable="false">auto</string>  
+    <string name="pref_camera_scenemode_entry_auto">Auto</string>  
+    <string name="pref_camera_scenemode_entry_normal">Normal</string><!-- for CMCC feature -->
+    <string name="pref_camera_scenemode_entry_action">Action</string>  
+    <string name="pref_camera_scenemode_entry_night">Night</string>  
+    <string name="pref_camera_scenemode_entry_sunset">Sunset</string>  
+    <string name="pref_camera_scenemode_entry_party">Party</string> 
+    <string name="pref_camera_scenemode_entry_portrait">Portrait</string>
+    <string name="pref_camera_scenemode_entry_landscape">Landscape</string>
+    <string name="pref_camera_scenemode_entry_night_portrait">Night portrait</string>
+    <string name="pref_camera_scenemode_entry_theatre">Theatre</string>
+    <string name="pref_camera_scenemode_entry_beach">Beach</string>
+    <string name="pref_camera_scenemode_entry_snow">Snow</string>
+    <string name="pref_camera_scenemode_entry_steadyphoto">Steady photo</string>
+    <string name="pref_camera_scenemode_entry_fireworks">Fireworks</string>
+    <string name="pref_camera_scenemode_entry_sports">Sports</string>
+    <string name="pref_camera_scenemode_entry_candlelight">Candle light</string>
+    <!-- color effect -->
+    <string name="pref_camera_coloreffect_title">Color effect</string>
+    <string name="pref_camera_coloreffect_default" translatable="false">none</string>
+    <string name="pref_camera_coloreffect_entry_none">None</string>
+    <string name="pref_camera_coloreffect_entry_mono">Mono</string>
+    <string name="pref_camera_coloreffect_entry_sepia">Sepia</string>
+    <string name="pref_camera_coloreffect_entry_negative">Negative</string>
+    <string name="pref_camera_coloreffect_entry_solarize">Solarize</string>
+    <string name="pref_camera_coloreffect_entry_posterize">Posterize</string>
+    <string name="pref_camera_coloreffect_entry_whiteboard">Whiteboard</string>
+    <string name="pref_camera_coloreffect_entry_blackboard">Blackboard</string>
+    <string name="pref_camera_coloreffect_entry_aqua">Aqua</string>
+    <string name="pref_camera_coloreffect_entry_pastel">Pastel</string>
+    <string name="pref_camera_coloreffect_entry_mosaic">Mosaic</string>
+    <string name="pref_camera_coloreffect_entry_redtint">Red tint</string>
+    <string name="pref_camera_coloreffect_entry_bluetint">Blue tint</string>
+    <string name="pref_camera_coloreffect_entry_greentint">Green tint</string>
+    <string name="pref_camera_coloreffect_entry_sepiablue">Sepia Blue</string>
+    <string name="pref_camera_coloreffect_entry_sepiagreen">Sepia Green</string>
+    <string name="pref_camera_coloreffect_entry_nashville">Fresh</string>
+    <string name="pref_camera_coloreffect_entry_hefe">Movie</string>
+    <string name="pref_camera_coloreffect_entry_valencia">Calm</string>
+    <string name="pref_camera_coloreffect_entry_xproll">Memory</string>
+    <string name="pref_camera_coloreffect_entry_lofi">Gorgeous</string>
+    <string name="pref_camera_coloreffect_entry_sierra">Elegant</string>
+    <string name="pref_camera_coloreffect_entry_walden">Cool</string>
+    <!-- white balance -->
+    <string name="pref_camera_whitebalance_title">White balance</string>
+    <string name="pref_camera_whitebalance_default" translatable="false">auto</string>
+    <string name="pref_camera_whitebalance_entry_auto">Auto</string>
+    <string name="pref_camera_whitebalance_entry_incandescent">Incandescent</string>
+    <string name="pref_camera_whitebalance_entry_fluorescent">Fluorescent</string>
+    <string name="pref_camera_whitebalance_entry_daylight">Daylight</string> 
+    <string name="pref_camera_whitebalance_entry_cloudy">Cloudy</string>
+    <string name="pref_camera_whitebalance_entry_twilight">Twilight</string>
+    <string name="pref_camera_whitebalance_entry_shade">Shade</string>
+    <string name="pref_camera_whitebalance_entry_warm_fluorescent">Warm fluorescent</string>
+    <string name="pref_camera_whitebalance_entry_tungsten">Tungsten</string>
+    <!-- Virtual Image properties(Edge,Hue, Sat, Brightness, Contrast) --> 
+    <string name="pref_camera_image_properties_default">Default</string> 
+    <string name="pref_camera_image_properties_title">Image properties</string>
+    <string name="pref_camera_edge_default" translatable="false">middle</string>
+    <string name="pref_camera_edge_title">Sharpness</string>
+    <string name="pref_camera_hue_default" translatable="false">middle</string>
+    <string name="pref_camera_hue_title">Hue</string>
+    <string name="pref_camera_saturation_default" translatable="false">middle</string>
+    <string name="pref_camera_saturation_title">Saturation</string>
+    <string name="pref_camera_brightness_default" translatable="false">middle</string>
+    <string name="pref_camera_brightness_title">Brightness</string>
+    <string name="pref_camera_contrast_default" translatable="false">middle</string>
+    <string name="pref_camera_contrast_title">Contrast</string>
+    <string name="pref_camera_dip_entry_low">Low</string>
+    <string name="pref_camera_dip_entry_middle">Medium</string>
+    <string name="pref_camera_dip_entry_high">High</string>
+    <!-- anti-flicker -->
+    <string name="pref_camera_antibanding_title">Anti-flicker</string>
+    <string name="pref_camera_antibanding_default" translatable="false">auto</string>
+    <string name="pref_camera_antibanding_entry_auto">Auto</string>
+    <string name="pref_camera_antibanding_entry_off">Off</string>
+    <string name="pref_camera_antibanding_entry_50hz">50Hz</string>
+    <string name="pref_camera_antibanding_entry_60hz">60Hz</string>
+    <!-- ZSD -->
+    <string name="pref_camera_zsd_title">Zero shutter delay</string>
+    <string name="pref_camera_zsd_default" translatable="false">off</string>
+    <string name="pref_camera_zsd_entry_off" translatable="false">Off</string>
+    <string name="pref_camera_zsd_entry_on" translatable="false">On</string>
+    <!-- AIS -->
+    <string name="pref_camera_ais_title">Anti-shake</string>
+    <string name="pref_camera_ais_default" translatable="false">off</string>
+    <string name="pref_camera_ais_on" translatable="false">ais</string>
+    <string name="pref_camera_ais_off" translatable="false">off</string>
+    <!-- voice -->
+    <string name="pref_voice_capture">Voice capture</string>
+    <string name="pref_voice_default" translatable="false">off</string>
+    <string name="pref_voice_entry_off" translatable="false">Off</string>
+    <string name="pref_voice_entry_on" translatable="false">On</string>
+    <!-- Face Detection -->
+    <string name="pref_camera_face_detect_title">Face detection</string>
+    <string name="pref_camera_face_detect_default" translatable="false">on</string>
+    <string name="pref_camera_face_detect_entry_off" translatable="false">Off</string>
+    <string name="pref_camera_face_detect_entry_on" translatable="false">On</string>
+    <!-- ASD -->
+    <string name="pref_asd_title">Auto scene detection</string>
+    <string name="pref_asd_default" translatable="false">off</string>
+    <string name="pref_asd_entry_off" translatable="false">Off</string>
+    <string name="pref_asd_entry_on" translatable="false">On</string>
+    <!-- DNG properties -->
+    <string name="pref_dng_title" translatable="false">RAW(.DNG)</string>
+    <string name="pref_dng_default" translatable="false">off</string>
+    <string name="pref_dng_entry_off" translatable="false">Off</string>
+    <string name="pref_dng_entry_on" translatable="false">On</string>
+    <!-- HDR --> 
+    <string name="pref_camera_hdr_title">HDR</string>
+    <string name="pref_camera_hdr_default" translatable="false">off</string>
+    <string name="pref_camera_hdr_entry_off" translatable="false">Off</string>
+    <string name="pref_camera_hdr_entry_on" translatable="false">On</string>
+    <!-- self timer -->
+    <string name="pref_camera_selftimer_title">Self timer</string>
+    <string name="pref_camera_selftimer_default" translatable="false">0</string>
+    <string name="pref_camera_selftimer_entry_off">Off</string>
+    <string name="pref_camera_selftimer_entry_2">2 seconds</string>
+    <string name="pref_camera_selftimer_entry_10">10 seconds</string>
+    <!-- continuous shot -->
+    <string name="pref_camera_continuous_number_title">Capture number</string>
+    <string name="pref_camera_continuous_number_default" translatable="false">40</string>
+    <string name="pref_camera_continuous_number_normal">40 shots</string>
+    <string name="pref_camera_continuous_number_large">99 shots</string>
+    <!-- picture size -->
+    <string name="pref_camera_picturesize_title">Picture size</string>
+    <!-- picture ratio -->
+    <string name="pref_camera_picturesize_ratio_title">Preview size</string>
+    <string name="pref_camera_picturesize_ratio_entry_16_9">Full screen</string>
+    <string name="pref_camera_picturesize_ratio_entry_5_3" translatable="false">@string/pref_camera_picturesize_ratio_entry_16_9</string>
+    <string name="pref_camera_picturesize_ratio_entry_3_2" translatable="false">@string/pref_camera_picturesize_ratio_entry_16_9</string>
+    <string name="pref_camera_picturesize_ratio_entry_4_3">Standard (4:3)</string>
+    <!-- ISO -->
+    <string name="pref_camera_iso_title" translatable="false">ISO</string>
+    <string name="pref_camera_iso_default" translatable="false">auto</string>
+    <string name="pref_camera_iso_entry_auto">Auto</string>
+    <string name="pref_camera_iso_entry_100" translatable="false">100</string>
+    <string name="pref_camera_iso_entry_200" translatable="false">200</string>
+    <string name="pref_camera_iso_entry_400" translatable="false">400</string>
+    <string name="pref_camera_iso_entry_800" translatable="false">800</string>
+    <string name="pref_camera_iso_entry_1600" translatable="false">1600</string>
+    <!--  Virtual FaceBeauty properties   --> 
+    <string name="pref_camera_facebeauty_properties_default">Default</string> 
+    <string name="pref_camera_facebeauty_properties_title">Face beauty</string>
+    <string name="pref_facebeauty_smooth_default" translatable="false">0</string>
+    <string name="pref_facebeauty_smooth_title">Wrinkle removal</string>
+    <string name="pref_facebeauty_skin_color_default" translatable="false">0</string>
+    <string name="pref_facebeauty_skin_color_title">Whiten</string>
+    <string name="pref_facebeauty_sharp_default" translatable="false">0</string>
+    <string name="pref_facebeauty_sharp_title">Beauty shape</string>
+    <!-- Noise reduction -->
+    <string name="pref_camera_3dnr_title">Noise reduction</string>
+    <string name="pref_camera_3dnr_default" translatable="false">on</string>
+    <string name="pref_camera_3dnr_on" translatable="false">On</string>
+    <string name="pref_camera_3dnr_off" translatable="false">Off</string>
+    <!-- EIS setting -->
+    <string name="pref_camera_eis_title" translatable="false">EIS</string>
+    <string name="pref_camera_eis_default" translatable="false">off</string>
+    <string name="pref_camera_eis_on" translatable="false">On</string>
+    <string name="pref_camera_eis_off" translatable="false">Off</string>
+    <!--Microphone -->
+    <string name="pref_camera_recordaudio_default" translatable="false">on</string>
+    <string name="pref_camera_recordaudio_title">Microphone</string>
+    <string name="pref_camera_recordaudio_entry_off" translatable="false">Off</string>
+    <string name="pref_camera_recordaudio_entry_on" translatable="false">On</string>
+    <!-- Auido mode -->
+    <string name="pref_camera_video_hd_recording_title">Audio mode</string>
+    <string name="pref_video_hd_recording_default" translatable="false">normal</string>
+    <string name="pref_camera_video_hd_recording_normal_ics">Normal</string>
+    <string name="pref_camera_video_hd_recording_indoor_ics">Meeting</string>
+    <!-- video quality -->
+    <string name="pref_video_quality_title">Video quality</string>
+    <string name="pref_video_quality_entry_qcif">QCIF</string>
+    <string name="pref_video_quality_entry_cif">CIF</string>
+    <string name="pref_video_quality_entry_480p">480P</string>
+    <string name="pref_video_quality_entry_720p">720P</string>
+    <string name="pref_video_quality_entry_1080p">1080P</string>
+    <string name="pref_video_quality_entry_qvga" translatable="false">QVGA</string>
+    <string name="pref_video_quality_entry_2160p" translatable="false">4K2K</string>
+    <!--  Slow Motion   -->
+    <string name="pref_slow_motion_title" translatable="false">slow motion</string>
+    <string name="pref_slow_motion_default" translatable="false">off</string>
+    <string name="pref_slow_motion_entry_off" translatable="false">Off</string>
+    <string name="pref_slow_motion_entry_on" translatable="false">On</string>
+    <!-- slow motion video quality -->
+    <string name="pref_slow_motion_video_quality_title" translatable="false">Slow motion video</string>
+    <string name="pref_slow_motion_video_quality_entry_low" translatable="false">LOW</string>
+    <string name="pref_slow_motion_video_quality_entry_high" translatable="false">HIGH</string>
+    <string name="pref_slow_motion_video_quality_entry_480p" translatable="false">480P</string>
+    <string name="pref_slow_motion_video_quality_entry_720p" translatable="false">720P</string>
+    <string name="pref_slow_motion_video_quality_entry_1080p" translatable="false">1080P</string>
+    <string name="pref_slow_motion_video_quality_entry_2160p" translatable="false">4K2K</string>
+    <!-- refocus video quality -->
+    <string name="pref_refocus_video_quality_title" translatable="false">@string/pref_video_quality_title</string>
+    <string name="pref_refocus_video_quality_entry_high" translatable="false">@string/pref_video_quality_entry_1080p</string>
+    <!-- Fast AF/Distance -->
+    <string name="pref_dual_camera_switch">Dual camera extras</string>
+    <string name="pref_dual_camera_default" translatable="false">Dual Camera</string>
+    <string name="pref_fast_af_title">Fast Af</string>
+    <string name="pref_fast_af_default" translatable="false">off</string>
+    <string name="pref_distance_info_title">Distance info</string>
+    <string name="pref_distance_default" translatable="false">off</string>
+    <!-- flash mode. -->
+    <string name="pref_camera_flashmode_title">Flash mode</string>
+    <string name="pref_camera_flashmode_default" translatable="false">auto</string>
+    <string name="pref_camera_flashmode_no_flash" translatable="false">no_flash</string>
+    <string name="pref_camera_flashmode_entry_auto">Auto</string>
+    <string name="pref_camera_flashmode_entry_on">On</string>
+    <string name="pref_camera_flashmode_entry_off">Off</string>
+    <!-- Switch Camera -->
+    <string name="pref_camera_id_title">Choose camera</string>
+    <string name="pref_camera_id_default" translatable="false">0</string>
+    <string name="pref_camera_id_entry_back">Back</string>
+    <string name="pref_camera_id_entry_front">Front</string>
+    <!-- continuous shot tips -->
+    <string name="pip_continuous_not_supported">PIP mode does not support continuous shot.</string>
+    <string name="camera_continuous_not_supported">" does not support continuous shot."</string>
+    <string name="camera_saving_busy">Saving pictures, please wait.</string>
+    <string name="continuous_saving_pictures">Saving <xliff:g id="numbers" example="10">%1$d</xliff:g> pictures</string>
+    <string name="normal_camera_continuous_not_supported">"Does not support continuous shot."</string>
+    <string name="wfd_normal_camera_continuous_not_supported">"WFD does not support continuous shot."</string>
+    <string name="pref_camera_capturemode_entry_normal">Normal</string>
+    <string name="pref_camera_capturemode_enrty_fb">Face beauty</string>
+    <string name="pref_camera_capturemode_entry_asd">Auto scene detect</string>
+    <!-- String for recording   --> 
+    <string name="toast_video_recording_not_available">Please stop other recording applications before using video camera.</string>
+    <string name="video_bad_performance_auto_stop">Low memory,auto stop recording.</string>
+    <string name="video_bad_performance_drop_quality">Low memory,auto change quality.</string>
+    <string name="video_encoder_error">Encoder error!</string>
+    <string name="video_recording_error">Error during recording!</string>
+    <!-- String for vFB -->
+    <string name="pref_facebeauty_big_eys_default" translatable="false">0</string>
+    <string name="pref_facebeauty_big_eys_title">Big Eyes</string>
+    <string name="switch_face_beauty">Single touch face region to make it have beautified effect</string>
+    <!-- String for Thermal Throttle --> 
+    <string name="pref_thermal_dialog_timer" translatable="false">30</string>
+    <string name="pref_thermal_dialog_title">Warning</string>
+    <string name="pref_thermal_dialog_content1">Device temperature is too high,please use the camera later.</string>
+    <string name="pref_thermal_dialog_content2">Device temperature is too high and camera will exit automatically in 30 seconds. Please try to use it later.</string>
+    <!-- String for dual camera --> 
+    <string name="dual_camera_too_close_toast">Too close to object for Dual camera effects.</string>
+    <string name="dual_camera_lowlight_toast">Lowlight may affect Dual camera effects.</string>
+    <string name="dual_camera_lens_covered_toast">Lens covered.</string>
+    <string name="dual_camera_low_constract_toast">Low contract may affect Dual camera effects.</string>
+    <!-- Miscellaneous -->
+    <string name="default_off" translatable="false">off</string>
+    <string name="entry_off" translatable="false">Off</string>
+    <string name="entry_on" translatable="false">On</string>
+    <string name="panorama_guide_shutter">Press shutter to start capture panorama</string>
+    <string name="panorama_guide_capture">Move device to overlap the two lines</string>
+    <string name="saving">Saving\u2026</string>
+    <string name="asd_hdr_guide">Turn on HDR may get better photo effect</string>
+    <string name="hdr_guide_capture">Do not move device during HDR capturing</string>
+    <string name="voice_guide">You can say \"%1$s\" or \"%2$s\" to capture a photo</string>
+    <string name="object_track_enable_toast">Touch and hold object on screen to enable object tracking.</string>
+    <string name="accessibility_shutter_button">Shutter button</string>
+    <string name="accessibility_video_shutter_button">Video shutter button</string>
+    <string name="accessibility_second_level_indicators">More setting controls</string>
+    <string name="accessibility_review_thumbnail">Most recent photo</string>
+    <string name="next" translatable="false">Next</string>
+    <string name="scroll_left_bar_title">Scroll to view more capture modes</string>
+    <string name="zoome_title">Zoom in/out</string>
+    <string name="camera_disabled">Camera has been disabled because of security policies.</string>
+    <string name="cannot_connect_camera_new">Can\'t connect to the camera. Please make sure to close other apps that may use camera or flashlight.</string>
+    <string name="pref_camera_settings_category">Camera settings</string>
+    <string name="camera_label">Camera</string>
+    <string name="video_camera_label">Camcorder</string>
+    <string name="no_storage" product="nosdcard">Mount USB storage before using the camera.</string>
+    <string name="no_storage" product="default">Insert an SD card before using the camera.</string>
+    <string name="not_enough_space" product="nosdcard">Your USB storage is full.</string>
+    <string name="not_enough_space" product="default">Your SD card is full.</string>
+    <string name="preparing_sd" product="nosdcard">Preparing USB storage\u2026</string>
+    <string name="preparing_sd" product="default">Preparing SD card\u2026</string>
+    <string name="access_sd_fail" product="nosdcard">Couldn\'t access USB storage.</string>
+    <string name="access_sd_fail" product="default">Couldn\'t access SD card.</string>
+    <string name="can_not_use_storage">SD Card not available</string>
+    <string name="storage_full">The default storage is full,please release some space or manage the storage options in settings</string>
+    <string name="wait">Please wait\u2026</string>
+    <string name="confirm_restore_message">Do you want to restore camera default settings?</string>
+    <string name="dialog_ok">OK</string>
+    <string name="pref_restore_title">Camera settings</string>
+    <string name="pref_restore_detail">Restore defaults</string>
+    <string name="image_file_name_format" translatable="false">"'IMG'_yyyyMMdd_HHmmss"</string>
+    <string name="video_file_name_format" translatable="false">"'VID'_yyyyMMdd_HHmmss"</string>
+    <string name="accessibility_switch">%1$s switch</string>
+    <string name="count_down_title_text">Counting down to take a photo</string>
+    <string name="video_reach_size_limit">Size limit reached.</string>
+    <string name="pano_dialog_title">Panorama</string>
+    <string name="panorama_guide_choose_direction">Move device towards your capture direction</string>
+    <string name="pref_camera_pictureformat_entry_mpo" translatable="false">MPO</string>
+    <string name="pref_camera_pictureformat_entry_jps" translatable="false">JPS</string>
+    <string name="panorama3d_guide_shutter" translatable="false">Press shutter to start capture 3D panorama</string>
+    <string name="panorama3d_guide_move" translatable="false">Move device towards right</string>
+    <string name="panorama3d_guide_capture" translatable="false">Move device to overlap the two lines</string>
+    <string name="pref_stereo3d_mode_default" translatable="false">0</string>
+
+    <string name="setting_summary_megapixels">%1$s megapixels</string>
+    <!-- Not Have resource in other language, for future use-->
+    <string name="setting_summary_kilopixels" translatable="false">%1$s kilopixels</string>
+    <!-- Not Have resource in other language, for future use-->
+    <string name="setting_summary_pixels" translatable="false">%1$s pixels</string>
+    <!-- Runtime Permission -->
+    <string name="denied_required_permission">Permissions denied. You can change them in Settings &gt; Apps.</string>
+</resources>

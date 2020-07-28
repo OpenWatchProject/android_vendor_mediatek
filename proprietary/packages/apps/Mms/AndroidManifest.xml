@@ -1,0 +1,626 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+ * Copyright (C) 2007-2008 Esmertec AG.
+ * Copyright (C) 2007-2008 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+-->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+        package="com.android.mms"
+        android:sharedUserId="android.uid.mms"
+        android:sharedUserLabel="@string/app_label">
+
+    <original-package android:name="com.android.mms" />
+
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.WRITE_CONTACTS" />
+    <uses-permission android:name="android.permission.READ_PROFILE" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.RECEIVE_EMERGENCY_BROADCAST" />
+    <uses-permission android:name="android.permission.RECEIVE_MMS" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_SMS"/>
+    <uses-permission android:name="android.permission.WRITE_SMS"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_MEDIA_STORAGE" />
+    <uses-permission android:name="android.permission.INSTALL_DRM" />
+    <uses-permission android:name="android.permission.UPDATE_DEVICE_STATS" />
+    <uses-permission android:name="android.permission.READ_WAPPUSH" />
+    <uses-permission android:name="android.permission.WRITE_WAPPUSH" />
+    <uses-permission android:name="android.permission.RECEIVE_WAP_PUSH" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="android.permission.WRITE_SECURE_SETTINGS"/>
+    <uses-permission android:name="android.permission.BROADCAST_STICKY"/>
+
+    <!-- Dialog mode-->
+    <uses-permission android:name="android.permission.GET_TASKS" />
+
+    <!-- For DTMF Tone -->
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+
+    <!-- add for iSMS -->
+    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT"/>
+    <uses-permission android:name="android.permission.REORDER_TASKS" />
+
+    <uses-permission android:name="android.permission.WRITE_APN_SETTINGS" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+
+    <!-- System apps can access the  receiver through intent-->
+    <permission android:name="android.permission.MMS_SEND_OUTBOX_MSG"
+                android:protectionLevel="signatureOrSystem"
+                android:label="@string/label_mms_send_outbox_msg"
+                android:description="@string/desc_mms_send_outbox_msg"/>
+    <uses-permission android:name="android.permission.MMS_SEND_OUTBOX_MSG"/>
+
+    <!-- Mutli-user -->
+    <uses-permission android:name="android.permission.INTERACT_ACROSS_USERS"/>
+    <uses-permission android:name="android.permission.INTERACT_ACROSS_USERS_FULL" />
+    <uses-permission android:name="android.permission.MANAGE_USERS" />
+
+    <uses-permission android:name="android.permission.READ_PRIVILEGED_PHONE_STATE" />
+    <uses-permission android:name="android.permission.MODIFY_PHONE_STATE" />
+    <!-- M:WFC -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+
+    <!-- IMS config -->
+    <uses-permission android:name="com.mediatek.ims.config.provider.PERMISSION.READ"/>
+    <uses-permission android:name="com.mediatek.ims.config.provider.PERMISSION.WRITE"/>
+    <uses-permission android:name="com.mediatek.ims.config.provider.READ_LTE_MESSAGE_WAITING_INDICATION"/>
+
+    <!-- RCS -->
+    <uses-permission android:name="com.gsma.services.permission.RCS"/>
+    <uses-permission android:name="com.gsma.services.permission.RCS_INTERNAL_ACCESS_ONLY"/>
+    <uses-permission android:name="com.mediatek.presence.permission.PRESENCE"/>
+    <uses-permission android:name="com.mediatek.rcse.permission.RCS_ACCESS_MESSAGE"/>
+
+    <!-- Security permissions -->
+    <uses-permission android:name="com.mediatek.mms.appservice.permission.SMS_MMS_APP"/>
+    <uses-permission android:name="com.mediatek.permission.omacp.launch"/>
+    <uses-permission android:name="com.mediatek.contacts.MULTICHOICE"/>
+
+    <!-- OMACP -->
+    <uses-permission android:name="com.mediatek.permission.omacp.install"/>
+
+    <application android:name="MmsApp"
+            android:label="@string/app_label"
+            android:icon="@mipmap/ic_launcher_smsmms"
+            android:taskAffinity="android.task.mms"
+            android:allowTaskReparenting="true">
+
+        <service android:name=".transaction.MmsCallbackService"
+                 android:enabled="true"
+                 android:exported="true">
+            <intent-filter>
+                <action android:name="com.mediatek.mms.appcallback.IMmsCallbackService" />
+            </intent-filter>
+        </service>
+
+        <activity android:name=".ui.ConversationList"
+                  android:label="@string/app_label"
+                  android:exported="true"
+                  android:configChanges="orientation|screenSize|keyboardHidden|mcc|mnc"
+                  android:theme="@style/ConversationListTheme"
+                  android:uiOptions="splitActionBarWhenNarrow"
+                  android:launchMode="singleTop">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="vnd.android.cursor.dir/mms" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="vnd.android-dir/mms-sms" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="vnd.android.cursor.dir/cb-messages" />
+            </intent-filter>
+        </activity>
+
+        <activity-alias android:name=".ui.BootActivity"
+                  android:targetActivity=".ui.ConversationList">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.APP_MESSAGING" />
+            </intent-filter>
+        </activity-alias>
+
+        <activity android:name="com.mediatek.cb.cbmsg.CbMessageListActivity"
+                  android:configChanges="orientation|screenSize|keyboardHidden"
+                  android:theme="@style/MmsTheme"
+                  android:exported="false"
+                  android:launchMode="singleTop">
+        </activity>
+
+        <!-- WPMessageActivity, the launcherMode is same with ComposeMessageActivity -->
+        <activity android:name="com.mediatek.wappush.ui.WPMessageActivity"
+                  android:theme="@style/MmsTheme"
+                  android:configChanges="orientation|screenSize|keyboardHidden|mcc|mnc"
+                  android:uiOptions="splitActionBarWhenNarrow"
+                  android:exported="false"
+                  android:launchMode="singleTop" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="vnd.android-dir/wappush" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".ui.ComposeMessageActivity"
+                  android:configChanges="orientation|screenSize|keyboardHidden|mcc|mnc"
+                  android:windowSoftInputMode="stateHidden"
+                  android:theme="@style/MmsTheme"
+                  android:hardwareAccelerated="true"
+                  android:parentActivityName=".ui.ConversationList">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="vnd.android-dir/mms-sms" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <action android:name="android.intent.action.SENDTO" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="sms" />
+                <data android:scheme="smsto" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <action android:name="android.intent.action.SENDTO" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="mms" />
+                <data android:scheme="mmsto" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.SEND" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="image/*" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.SEND" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="video/*" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.SEND" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="audio/*" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.SEND" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="text/plain" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.SEND" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="text/x-vcalendar" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.SEND_MULTIPLE" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="image/*" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.SEND_MULTIPLE" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="video/*" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.SEND_MULTIPLE" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="audio/*" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.SEND_MULTIPLE" />
+                <action android:name="android.intent.action.SEND"/>
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="application/ogg"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.android.mms.ui.ComposeMessageActivity"/>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".ui.MultiSaveActivity"
+                  android:theme="@style/MmsTheme"
+                  android:configChanges="orientation|screenSize|keyboardHidden"
+                  android:uiOptions="splitActionBarWhenNarrow">
+        </activity>
+
+        <activity-alias android:name=".ui.SendMessageToActivity"
+                  android:targetActivity=".ui.ComposeMessageActivity"
+                  android:configChanges="orientation|screenSize|keyboardHidden|mcc|mnc"
+                  android:windowSoftInputMode="stateHidden"
+                  android:theme="@style/MmsTheme" >
+        </activity-alias>
+
+        <activity-alias android:name=".ui.ForwardMessageActivity"
+                  android:targetActivity=".ui.ComposeMessageActivity"
+                  android:configChanges="orientation|screenSize|keyboardHidden|mcc|mnc"
+                  android:windowSoftInputMode="stateHidden"
+                  android:theme="@style/MmsTheme" >
+        </activity-alias>
+
+        <activity android:name=".ui.ComposeMessageActivityNoLockScreen"
+                  android:configChanges="orientation|screenSize|keyboardHidden|mcc|mnc"
+                  android:windowSoftInputMode="stateHidden"
+                  android:theme="@style/MmsTheme"
+                  android:exported="false"
+                  android:launchMode="singleTop" >
+        </activity>
+        <activity android:name=".ui.DeliveryReportActivity"
+            android:label="@string/delivery_report_activity"
+            android:theme="@android:style/Theme.Holo.Light.Dialog">
+        </activity>
+
+        <activity android:name=".ui.WarnOfStorageLimitsActivity"
+                android:theme="@android:style/Theme.Dialog"
+                android:label="@string/storage_limits_activity"
+                android:excludeFromRecents="true">
+        </activity>
+
+        <activity android:name=".ui.EditSlideDurationActivity"
+            android:label="@string/change_duration_activity"
+            android:theme="@android:style/Theme.Holo.Dialog">
+        </activity>
+
+        <activity android:name=".ui.SlideshowEditActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@style/MmsTheme"
+            android:label="@string/edit_slideshow_activity" />
+
+        <activity android:name=".ui.RecipientListActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@style/MmsTheme"
+            android:label="@string/recipient_list_activity" />
+
+        <activity android:name=".ui.SlideEditorActivity"
+            android:windowSoftInputMode="adjustResize"
+            android:theme="@style/MmsTheme"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:label="@string/edit_slide_activity" />
+
+        <activity android:name=".ui.SlideshowActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@style/MmsTheme"
+            android:label="@string/slideshow_activity"
+            android:exported="true" >
+           <intent-filter>
+               <action android:name="com.android.mms.ui.SlideshowActivity"/>
+               <category android:name="android.intent.category.DEFAULT" />
+           </intent-filter>
+        </activity>
+
+        <activity android:name=".ui.MmsPlayerActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@style/MmsTheme"
+            android:label="@string/slideshow_activity">
+           <intent-filter>
+               <action android:name="com.android.mms..ui.MmsPlayerActivity"/>
+               <category android:name="android.intent.category.DEFAULT" />
+           </intent-filter>
+        </activity>
+
+        <activity android:name=".ui.ClassZeroActivity"
+            android:label="@string/class_0_message_activity"
+            android:theme="@style/SmsAlertDialog"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:launchMode="singleInstance"
+            android:excludeFromRecents="true"
+            android:exported="true">
+        </activity>
+
+        <activity android:name="com.mediatek.setting.SubSelectActivity"
+            android:theme="@style/MmsTheme"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:label="@string/preferences_title"
+            android:exported="false">
+        </activity>
+
+        <activity android:name="com.mediatek.mms.ui.ShareVCardViaMMSActivity"
+                  android:label="@string/mms"
+                  android:theme="@style/BackgroundOnlyTheme"
+                  android:configChanges="orientation|keyboardHidden">
+             <intent-filter>
+                 <action android:name="android.intent.action.SEND" />
+                 <category android:name="android.intent.category.DEFAULT" />
+                 <data android:mimeType="text/x-vCard" />
+                 <data android:mimeType="text/x-vcard" />
+             </intent-filter>
+        </activity>
+
+        <receiver android:name=".transaction.PushReceiver"
+            android:permission="android.permission.BROADCAST_WAP_PUSH">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.WAP_PUSH_DELIVER" />
+                <data android:mimeType="application/vnd.wap.mms-message" />
+
+                <data android:mimeType="application/vnd.wap.sic" />
+                <data android:mimeType="text/vnd.wap.si" />
+
+                <data android:mimeType="application/vnd.wap.slc" />
+                <data android:mimeType="text/vnd.wap.sl" />
+
+                <data android:mimeType="application/vnd.wap.coc" />
+                <data android:mimeType="text/vnd.wap.co" />
+
+            </intent-filter>
+        </receiver>
+
+        <receiver android:name=".transaction.MmsSystemEventReceiver"
+            android:permission="android.permission.BROADCAST_SMS">
+            <intent-filter>
+                <action android:name="android.intent.action.CONTENT_CHANGED" />
+            </intent-filter>
+        </receiver>
+
+        <receiver android:name=".transaction.SmsSystemEventReceiver"
+            android:permission="android.permission.BROADCAST_SMS">
+            <intent-filter>
+                <action android:name="android.intent.action.SIM_STATE_CHANGED" />
+            </intent-filter>
+        </receiver>
+
+        <receiver android:name=".transaction.BootCompletedReceiver" >
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+
+        <activity android:name=".ui.SmsTemplateEditActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@style/MmsTheme"
+            android:launchMode="singleTop"
+            android:label="@string/quick_text_editor" />
+
+        <activity android:name="com.mediatek.simmessage.ManageSimMessages"
+                  android:theme="@style/MmsTheme"
+                  android:launchMode="singleTop"
+                  android:configChanges="orientation|screenSize|keyboardHidden|mcc|mnc"
+                  android:label="@string/sim_manage_messages_title"
+                  android:exported="false">
+        </activity>
+
+        <activity android:name=".ui.MultiDeleteActivity"
+                  android:configChanges="orientation|screenSize|keyboardHidden|mcc|mnc"
+                  android:theme="@style/MmsTheme" />
+
+        <!-- Require sender permissions to prevent SMS spoofing -->
+        <receiver android:name=".transaction.PrivilegedSmsReceiver"
+            android:permission="android.permission.BROADCAST_SMS">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SMS_DELIVER" />
+            </intent-filter>
+        </receiver>
+
+        <receiver android:name="com.mediatek.cb.cbmsg.CbMessageReceiver"
+            android:permission="android.permission.BROADCAST_SMS">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SMS_CB_RECEIVED" />
+            </intent-filter>
+        </receiver>
+
+        <receiver android:name=".transaction.SmsReceiver"
+             android:permission="android.permission.SEND_SMS">
+            <intent-filter>
+                <action android:name="com.android.mms.transaction.MESSAGE_SENT" />
+                <data android:scheme="content" />
+            </intent-filter>
+        </receiver>
+
+        <!--receiver android:name="com.mediatek.wappush.WapPushTimeChangedReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.TIME_SET" />
+                <action android:name="android.intent.action.DATE_CHANGED" />
+            </intent-filter>
+        </receiver-->
+
+        <receiver android:name="com.mediatek.omacp.OMACPReceiver"
+            android:permission="com.mediatek.permission.omacp.install">
+            <intent-filter>
+                <action android:name="com.mediatek.omacp.settings"/>
+                <data android:mimeType="application/com.mediatek.omacp-w4" />
+                <data android:mimeType="application/com.mediatek.omacp-ap0005" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.mediatek.omacp.capability"/>
+            </intent-filter>
+        </receiver>
+
+        <receiver android:name=".transaction.MessageStatusReceiver">
+            <intent-filter>
+                <action android:name="com.android.mms.transaction.MessageStatusReceiver.MESSAGE_STATUS_RECEIVED" />
+            </intent-filter>
+        </receiver>
+
+        <receiver android:name="com.mediatek.simmessage.SimFullReceiver">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SIM_FULL" />
+            </intent-filter>
+            <!--intent-filter>
+                <action android:name="mediatek.intent.action.SIM_INFO_UPDATE" />
+            </intent-filter-->
+            <!--intent-filter>
+                <action android:name="com.android.mms.ui.SIM_FULL_VIEWED" />
+            </intent-filter-->
+            <!--intent-filter>
+                <action android:name="android.intent.action.ACTION_SUBINFO_RECORD_UPDATED" />
+            </intent-filter-->
+        </receiver>
+
+        <receiver android:name=".transaction.SmsRejectedReceiver">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SMS_REJECTED" />
+            </intent-filter>
+        </receiver>
+
+        <activity android:name=".ui.ConfirmRateLimitActivity"
+                  android:theme="@android:style/Theme.Dialog">
+            <intent-filter>
+                <action android:name="com.android.mms.RATE_LIMIT_SURPASSED" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".ui.SearchActivity"
+            android:theme="@style/MmsTheme"
+            android:label="@string/search"
+            android:launchMode="singleTask"
+            android:configChanges="orientation|screenSize|keyboardHidden" >
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <meta-data android:name="android.app.searchable"
+                android:resource="@xml/searchable" />
+        </activity>
+
+        <meta-data android:name="android.app.default_searchable"
+            android:value=".ui.SearchActivity" />
+
+        <!-- Search Suggestions Provider -->
+        <provider android:name="SuggestionsProvider"
+            android:exported="true"
+            android:readPermission="android.permission.READ_SMS"
+            android:authorities="com.android.mms.SuggestionsProvider" >
+            <path-permission
+                    android:pathPrefix="/search_suggest_query"
+                    android:readPermission="android.permission.GLOBAL_SEARCH" />
+            <path-permission
+                    android:pathPrefix="/search_suggest_shortcut"
+                    android:readPermission="android.permission.GLOBAL_SEARCH" />
+        </provider>
+
+        <service android:name=".ui.NoConfirmationSendService"
+                 android:permission="android.permission.SEND_RESPOND_VIA_MESSAGE"
+                 android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.RESPOND_VIA_MESSAGE" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:scheme="sms" />
+                <data android:scheme="smsto" />
+            </intent-filter>
+        </service>
+
+        <provider android:name="TempFileProvider"
+                  android:exported="false"
+                  android:authorities="mms_temp_file"
+                  android:grantUriPermissions="true"
+                  android:multiprocess="true" />
+
+        <!-- Widget -->
+        <receiver android:name=".widget.MmsWidgetProvider"  android:label="@string/app_label">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider"
+                       android:resource="@xml/widget_info" />
+        </receiver>
+        <service android:name=".widget.MmsWidgetService"
+                 android:permission="android.permission.BIND_REMOTEVIEWS"
+                 android:exported="false" />
+        <activity android:name=".widget.MmsWidgetProxyActivity"
+            android:theme="@style/MmsProxyTheme" >
+        </activity>
+
+        <activity android:name="com.mediatek.setting.SettingListActivity"
+            android:theme="@style/MmsTheme"
+            android:configChanges="orientation|screenSize|keyboardHidden">
+        </activity>
+        <activity android:name="com.mediatek.setting.SmsPreferenceActivity"
+            android:theme="@style/MmsTheme"
+            android:configChanges="orientation|screenSize|keyboardHidden|mcc|mnc">
+        </activity>
+        <activity android:name="com.mediatek.setting.MmsPreferenceActivity"
+            android:theme="@style/MmsTheme"
+            android:configChanges="orientation|screenSize|keyboardHidden|mcc|mnc">
+        </activity>
+        <activity android:name="com.mediatek.setting.NotificationPreferenceActivity"
+            android:theme="@style/MmsTheme"
+            android:configChanges="orientation|screenSize|keyboardHidden|mcc|mnc">
+        </activity>
+        <activity android:name="com.mediatek.setting.GeneralPreferenceActivity"
+            android:theme="@style/MmsTheme"
+            android:configChanges="orientation|screenSize|keyboardHidden|mcc|mnc">
+        </activity>
+
+        <activity android:name="com.mediatek.cb.cbsettings.CellBroadcastSettings"
+            android:label="@string/cell_broadcast_setting"
+            android:exported="false"
+            android:configChanges="orientation|keyboardHidden|screenSize">
+        </activity>
+
+        <activity android:name="com.mediatek.cb.cbsettings.CellBroadcastActivity"
+            android:label="@string/cell_broadcast"
+            android:exported="false"
+            android:configChanges="orientation|keyboardHidden|screenSize">
+        </activity>
+
+        <!-- mwi begin -->
+        <activity android:name="com.mediatek.mwi.MwiListActivity"
+            android:theme="@style/MmsTheme"
+            android:label="@string/mwi_title" >
+        </activity>
+        <receiver android:name="com.mediatek.mwi.MwiReceiver">
+            <intent-filter>
+                <action android:name="mediatek.intent.action.lte.mwi" />
+            </intent-filter>
+        </receiver>
+        <!--service android:name="com.mediatek.mwi.MwiReceiverService"
+            android:exported="true" /-->
+        <!-- mwi end -->
+
+        <activity android:name="com.mediatek.mms.ui.PermissionCheckActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:label="@string/app_label"
+            android:launchMode="singleTask"
+            android:theme="@style/MmsTheme"
+            android:excludeFromRecents="true"/>
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="@string/contacts_file_provider_authority"
+            android:grantUriPermissions="true"
+            android:exported="false">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+        <receiver android:name="com.mediatek.cb.cbsettings.CellBroadcastReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.SIM_STATE_CHANGED" />
+            </intent-filter>
+        </receiver>
+    </application>
+</manifest>

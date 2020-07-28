@@ -1,0 +1,25 @@
+Library of Drm features, including oemcrypt api for Widevine L1.
+
+This library is pre-built by MediaTek internal.
+
+WHAT IT DOES?
+=============
+liboemcrypto will be used by drm, including mtk in-house tee & trustonic tee.
+Without them, Modular DRM Widevine L1 will not work.
+
+HOW IT WAS BUILT?
+==================
+It needs the following library from AOSP:
+1. libcrypto.so
+2. libcutils.so
+3. libdl.so
+4. liblog.so
+5. libutils.so
+6. libz.so
+
+All source/dependency modules of this module are already put in
+'vendor/lib' folder.
+
+HOW TO USE IT?
+==============
+liboemcrypto provides interface of Widevine L1, it is built library.

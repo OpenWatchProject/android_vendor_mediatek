@@ -1,0 +1,36 @@
+WHAT IT DOES?
+=============
+VSDoF feature BWDN HAL unit test files.
+
+
+HOW IT WAS BUILT?
+==================
+It can build the following executable native binary :
+TestBWDNHAL
+
+HOW TO USE IT?
+==============
+Provide unit test for BWDN HAL of denoise feature.
+Golden: /sdcard/BWDN_HAL_UT/golden
+Input: /sdcard/BWDN_HAL_UT/in
+Ouput: /sdcard/BWDN_HAL_UT/out
+
+======================
+ Input files
+======================
+-- Buffer --
+BayerProcessed__3120x4208_12_0.raw
+BayerShadingGain__200x200_32_0.float
+BayerShadingGain__200x200_32_1.float
+BayerShadingGain__200x200_32_2.float
+BayerW__3120x4208_8.raw
+Depth__320x416_16_1_384x416_16.raw
+MonoProcessed__3120x4208_12_0.raw
+MonoShadingGain__200x200_32.float
+-- Parameters --
+config.dat
+
+======================
+ Output file
+======================
+Output__3120x4208_12.rgb

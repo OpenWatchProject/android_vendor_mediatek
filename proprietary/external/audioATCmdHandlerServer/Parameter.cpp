@@ -1,0 +1,225 @@
+/* Copyright Statement:
+ *
+ * This software/firmware and related documentation ("MediaTek Software") are
+ * protected under relevant copyright laws. The information contained herein
+ * is confidential and proprietary to MediaTek Inc. and/or its licensors.
+ * Without the prior written permission of MediaTek inc. and/or its licensors,
+ * any reproduction, modification, use or disclosure of MediaTek Software,
+ * and information contained herein, in whole or in part, shall be strictly prohibited.
+ *
+ * MediaTek Inc. (C) 2010. All rights reserved.
+ *
+ * BY OPENING THIS FILE, RECEIVER HEREBY UNEQUIVOCALLY ACKNOWLEDGES AND AGREES
+ * THAT THE SOFTWARE/FIRMWARE AND ITS DOCUMENTATIONS ("MEDIATEK SOFTWARE")
+ * RECEIVED FROM MEDIATEK AND/OR ITS REPRESENTATIVES ARE PROVIDED TO RECEIVER ON
+ * AN "AS-IS" BASIS ONLY. MEDIATEK EXPRESSLY DISCLAIMS ANY AND ALL WARRANTIES,
+ * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE OR NONINFRINGEMENT.
+ * NEITHER DOES MEDIATEK PROVIDE ANY WARRANTY WHATSOEVER WITH RESPECT TO THE
+ * SOFTWARE OF ANY THIRD PARTY WHICH MAY BE USED BY, INCORPORATED IN, OR
+ * SUPPLIED WITH THE MEDIATEK SOFTWARE, AND RECEIVER AGREES TO LOOK ONLY TO SUCH
+ * THIRD PARTY FOR ANY WARRANTY CLAIM RELATING THERETO. RECEIVER EXPRESSLY ACKNOWLEDGES
+ * THAT IT IS RECEIVER'S SOLE RESPONSIBILITY TO OBTAIN FROM ANY THIRD PARTY ALL PROPER LICENSES
+ * CONTAINED IN MEDIATEK SOFTWARE. MEDIATEK SHALL ALSO NOT BE RESPONSIBLE FOR ANY MEDIATEK
+ * SOFTWARE RELEASES MADE TO RECEIVER'S SPECIFICATION OR TO CONFORM TO A PARTICULAR
+ * STANDARD OR OPEN FORUM. RECEIVER'S SOLE AND EXCLUSIVE REMEDY AND MEDIATEK'S ENTIRE AND
+ * CUMULATIVE LIABILITY WITH RESPECT TO THE MEDIATEK SOFTWARE RELEASED HEREUNDER WILL BE,
+ * AT MEDIATEK'S OPTION, TO REVISE OR REPLACE THE MEDIATEK SOFTWARE AT ISSUE,
+ * OR REFUND ANY SOFTWARE LICENSE FEES OR SERVICE CHARGE PAID BY RECEIVER TO
+ * MEDIATEK FOR SUCH MEDIATEK SOFTWARE AT ISSUE.
+ *
+ * The following software/firmware and/or related documentation ("MediaTek Software")
+ * have been modified by MediaTek Inc. All revisions are subject to any receiver's
+ * applicable license agreements with MediaTek Inc.
+ */
+
+
+/*****************************************************************************
+*  Copyright Statement:
+*  --------------------
+*  This software is protected by Copyright and the information contained
+*  herein is confidential. The software may not be copied and the information
+*  contained herein may not be used or disclosed except with the written
+*  permission of MediaTek Inc. (C) 2009
+*
+*  BY OPENING THIS FILE, BUYER HEREBY UNEQUIVOCALLY ACKNOWLEDGES AND AGREES
+*  THAT THE SOFTWARE/FIRMWARE AND ITS DOCUMENTATIONS ("MEDIATEK SOFTWARE")
+*  RECEIVED FROM MEDIATEK AND/OR ITS REPRESENTATIVES ARE PROVIDED TO BUYER ON
+*  AN "AS-IS" BASIS ONLY. MEDIATEK EXPRESSLY DISCLAIMS ANY AND ALL WARRANTIES,
+*  EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF
+*  MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE OR NONINFRINGEMENT.
+*  NEITHER DOES MEDIATEK PROVIDE ANY WARRANTY WHATSOEVER WITH RESPECT TO THE
+*  SOFTWARE OF ANY THIRD PARTY WHICH MAY BE USED BY, INCORPORATED IN, OR
+*  SUPPLIED WITH THE MEDIATEK SOFTWARE, AND BUYER AGREES TO LOOK ONLY TO SUCH
+*  THIRD PARTY FOR ANY WARRANTY CLAIM RELATING THERETO. MEDIATEK SHALL ALSO
+*  NOT BE RESPONSIBLE FOR ANY MEDIATEK SOFTWARE RELEASES MADE TO BUYER'S
+*  SPECIFICATION OR TO CONFORM TO A PARTICULAR STANDARD OR OPEN FORUM.
+*
+*  BUYER'S SOLE AND EXCLUSIVE REMEDY AND MEDIATEK'S ENTIRE AND CUMULATIVE
+*  LIABILITY WITH RESPECT TO THE MEDIATEK SOFTWARE RELEASED HEREUNDER WILL BE,
+*  AT MEDIATEK'S OPTION, TO REVISE OR REPLACE THE MEDIATEK SOFTWARE AT ISSUE,
+*  OR REFUND ANY SOFTWARE LICENSE FEES OR SERVICE CHARGE PAID BY BUYER TO
+*  MEDIATEK FOR SUCH MEDIATEK SOFTWARE AT ISSUE.
+*
+*  THE TRANSACTION CONTEMPLATED HEREUNDER SHALL BE CONSTRUED IN ACCORDANCE
+*  WITH THE LAWS OF THE STATE OF CALIFORNIA, USA, EXCLUDING ITS CONFLICT OF
+*  LAWS PRINCIPLES.  ANY DISPUTES, CONTROVERSIES OR CLAIMS ARISING THEREOF AND
+*  RELATED THERETO SHALL BE SETTLED BY ARBITRATION IN SAN FRANCISCO, CA, UNDER
+*  THE RULES OF THE INTERNATIONAL CHAMBER OF COMMERCE (ICC).
+*
+*****************************************************************************/
+
+/*******************************************************************************
+ *
+ * Filename:
+ * ---------
+ * Parameter.cpp
+ *
+ * Project:
+ * --------
+ *   Android
+ *
+ * Description:
+ * ------------
+ *   This file implements the utility tool  about audio command parameter comming from AT Command Service.
+ *
+ * Author:
+ * -------
+ *   Chester Wang(mtk12239)
+ *------------------------------------------------------------------------------
+*****************************************************************************/
+
+
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <dlfcn.h>
+#include <unistd.h>
+#include <fcntl.h>
+#include <errno.h>
+#include <log/log.h>
+#include <cutils/properties.h>
+#include <utils/String8.h>
+#include <sys/socket.h>
+#include <cutils/sockets.h>
+#include <netinet/in.h>
+#include <pthread.h>
+
+#include <binder/IPCThreadState.h>
+#include <binder/ProcessState.h>
+#include <system/audio.h>
+
+#include "Parameter.h"
+
+typedef struct {
+ const char *StreamName;
+ int Id;
+} StramTypeTable_ST;
+
+static StramTypeTable_ST StramTypeTable[] = {
+{.StreamName = "Voice_Call", .Id =AUDIO_STREAM_VOICE_CALL},
+{.StreamName = "VoIP_Call", .Id = AUDIO_STREAM_VOICE_CALL}, 
+{.StreamName = "System", .Id = AUDIO_STREAM_SYSTEM}, 
+{.StreamName = "Ring", .Id = AUDIO_STREAM_RING}, 
+{.StreamName = "Music", .Id = AUDIO_STREAM_MUSIC}, 
+{.StreamName = "Alarm", .Id = AUDIO_STREAM_ALARM}, 
+{.StreamName = "Notification", .Id = AUDIO_STREAM_NOTIFICATION}, 
+{.StreamName = "Bluetooth_sco", .Id =  AUDIO_STREAM_BLUETOOTH_SCO}, 
+{.StreamName = "Enforced_Audible", .Id = AUDIO_STREAM_ENFORCED_AUDIBLE}, 
+{.StreamName = "DTMF", .Id = AUDIO_STREAM_DTMF}, 
+{.StreamName = "TTS", .Id = AUDIO_STREAM_TTS}, 
+{.StreamName = "Accessibility", .Id = AUDIO_STREAM_ACCESSIBILITY} 
+};
+
+typedef struct {
+ const char *DeviceName;
+ int Id[5];
+} DeviceTypeTable_ST;
+
+static DeviceTypeTable_ST DeviceTypeTable[] = {
+{.DeviceName = "Normal", .Id = {AUDIO_DEVICE_OUT_EARPIECE,AUDIO_DEVICE_NONE,AUDIO_DEVICE_NONE,AUDIO_DEVICE_NONE,AUDIO_DEVICE_NONE}},
+{.DeviceName = "HAC", .Id = {AUDIO_DEVICE_OUT_EARPIECE,AUDIO_DEVICE_NONE,AUDIO_DEVICE_NONE,AUDIO_DEVICE_NONE,AUDIO_DEVICE_NONE}},
+{.DeviceName = "Lpbk_Handset", .Id = {AUDIO_DEVICE_OUT_EARPIECE,AUDIO_DEVICE_NONE,AUDIO_DEVICE_NONE,AUDIO_DEVICE_NONE,AUDIO_DEVICE_NONE}},
+{.DeviceName = "Handset 2mic NR", .Id = {AUDIO_DEVICE_OUT_EARPIECE,AUDIO_DEVICE_NONE,AUDIO_DEVICE_NONE,AUDIO_DEVICE_NONE,AUDIO_DEVICE_NONE}},
+{.DeviceName = "Handset no 2mic NR", .Id = {AUDIO_DEVICE_OUT_EARPIECE,AUDIO_DEVICE_NONE,AUDIO_DEVICE_NONE,AUDIO_DEVICE_NONE,AUDIO_DEVICE_NONE}},
+
+{.DeviceName = "3_pole_Headset", .Id  = {AUDIO_DEVICE_OUT_WIRED_HEADSET,AUDIO_DEVICE_OUT_WIRED_HEADPHONE,AUDIO_DEVICE_NONE,AUDIO_DEVICE_NONE,AUDIO_DEVICE_NONE}},
+{.DeviceName = "4_pole_Headset", .Id  = {AUDIO_DEVICE_OUT_WIRED_HEADSET,AUDIO_DEVICE_OUT_WIRED_HEADPHONE,AUDIO_DEVICE_NONE,AUDIO_DEVICE_NONE,AUDIO_DEVICE_NONE}},
+{.DeviceName = "5_pole_Headset", .Id  = {AUDIO_DEVICE_OUT_WIRED_HEADSET,AUDIO_DEVICE_OUT_WIRED_HEADPHONE,AUDIO_DEVICE_NONE,AUDIO_DEVICE_NONE,AUDIO_DEVICE_NONE}},
+{.DeviceName = "5_pole_Headset+ANC", .Id  = {AUDIO_DEVICE_OUT_WIRED_HEADSET,AUDIO_DEVICE_OUT_WIRED_HEADPHONE,AUDIO_DEVICE_NONE,AUDIO_DEVICE_NONE,AUDIO_DEVICE_NONE}},
+{.DeviceName = "Lpbk_Headset", .Id  = {AUDIO_DEVICE_OUT_WIRED_HEADSET,AUDIO_DEVICE_OUT_WIRED_HEADPHONE,AUDIO_DEVICE_NONE,AUDIO_DEVICE_NONE,AUDIO_DEVICE_NONE}},
+{.DeviceName = "3-pole headset", .Id  = {AUDIO_DEVICE_OUT_WIRED_HEADSET,AUDIO_DEVICE_OUT_WIRED_HEADPHONE,AUDIO_DEVICE_NONE,AUDIO_DEVICE_NONE,AUDIO_DEVICE_NONE}},
+{.DeviceName = "4-pole headset", .Id  = {AUDIO_DEVICE_OUT_WIRED_HEADSET,AUDIO_DEVICE_OUT_WIRED_HEADPHONE,AUDIO_DEVICE_NONE,AUDIO_DEVICE_NONE,AUDIO_DEVICE_NONE}},
+{.DeviceName = "5-pole headset", .Id  = {AUDIO_DEVICE_OUT_WIRED_HEADSET,AUDIO_DEVICE_OUT_WIRED_HEADPHONE,AUDIO_DEVICE_NONE,AUDIO_DEVICE_NONE,AUDIO_DEVICE_NONE}},
+{.DeviceName = "5-pole headset+ANC", .Id  = {AUDIO_DEVICE_OUT_WIRED_HEADSET,AUDIO_DEVICE_OUT_WIRED_HEADPHONE,AUDIO_DEVICE_NONE,AUDIO_DEVICE_NONE,AUDIO_DEVICE_NONE}},
+{.DeviceName = "Headset", .Id  = {AUDIO_DEVICE_OUT_WIRED_HEADSET,AUDIO_DEVICE_OUT_WIRED_HEADPHONE,AUDIO_DEVICE_NONE,AUDIO_DEVICE_NONE,AUDIO_DEVICE_NONE}},
+{.DeviceName = "HS5POLE", .Id  = {AUDIO_DEVICE_OUT_WIRED_HEADSET,AUDIO_DEVICE_OUT_WIRED_HEADPHONE,AUDIO_DEVICE_NONE,AUDIO_DEVICE_NONE,AUDIO_DEVICE_NONE}},
+{.DeviceName = "5-pole headset+ANC", .Id  = {AUDIO_DEVICE_OUT_WIRED_HEADSET,AUDIO_DEVICE_OUT_WIRED_HEADPHONE,AUDIO_DEVICE_NONE,AUDIO_DEVICE_NONE,AUDIO_DEVICE_NONE}},
+
+
+{.DeviceName = "Handsfree", .Id  = {AUDIO_DEVICE_OUT_SPEAKER,AUDIO_DEVICE_NONE,AUDIO_DEVICE_NONE,AUDIO_DEVICE_NONE,AUDIO_DEVICE_NONE}},
+{.DeviceName = "MagiConference", .Id  = {AUDIO_DEVICE_OUT_SPEAKER,AUDIO_DEVICE_NONE,AUDIO_DEVICE_NONE,AUDIO_DEVICE_NONE,AUDIO_DEVICE_NONE}},
+{.DeviceName = "Lpbk_Handsfree", .Id  = {AUDIO_DEVICE_OUT_SPEAKER,AUDIO_DEVICE_NONE,AUDIO_DEVICE_NONE,AUDIO_DEVICE_NONE,AUDIO_DEVICE_NONE}},
+{.DeviceName = "SmartPA", .Id  = {AUDIO_DEVICE_OUT_SPEAKER,AUDIO_DEVICE_NONE,AUDIO_DEVICE_NONE,AUDIO_DEVICE_NONE,AUDIO_DEVICE_NONE}},
+{.DeviceName = "SmartPA+MagiCon", .Id  = {AUDIO_DEVICE_OUT_SPEAKER,AUDIO_DEVICE_NONE,AUDIO_DEVICE_NONE,AUDIO_DEVICE_NONE,AUDIO_DEVICE_NONE}},
+{.DeviceName = "Hands-free 1mic NR", .Id  = {AUDIO_DEVICE_OUT_SPEAKER,AUDIO_DEVICE_NONE,AUDIO_DEVICE_NONE,AUDIO_DEVICE_NONE,AUDIO_DEVICE_NONE}},
+{.DeviceName = "Hands-free no 1mic NR", .Id  = {AUDIO_DEVICE_OUT_SPEAKER,AUDIO_DEVICE_NONE,AUDIO_DEVICE_NONE,AUDIO_DEVICE_NONE,AUDIO_DEVICE_NONE}},
+{.DeviceName = "Speaker", .Id  = {AUDIO_DEVICE_OUT_SPEAKER,AUDIO_DEVICE_NONE,AUDIO_DEVICE_NONE,AUDIO_DEVICE_NONE,AUDIO_DEVICE_NONE}},
+
+{.DeviceName = "BT_Earphone", .Id  = {AUDIO_DEVICE_OUT_BLUETOOTH_SCO,AUDIO_DEVICE_OUT_BLUETOOTH_SCO_HEADSET,AUDIO_DEVICE_OUT_BLUETOOTH_SCO_CARKIT,AUDIO_DEVICE_NONE,AUDIO_DEVICE_NONE}},
+{.DeviceName = "BT_NREC_Off", .Id  = {AUDIO_DEVICE_OUT_BLUETOOTH_SCO,AUDIO_DEVICE_OUT_BLUETOOTH_SCO_HEADSET,AUDIO_DEVICE_OUT_BLUETOOTH_SCO_CARKIT,AUDIO_DEVICE_NONE,AUDIO_DEVICE_NONE}},
+{.DeviceName = "BT earphone", .Id  = {AUDIO_DEVICE_OUT_BLUETOOTH_SCO,AUDIO_DEVICE_OUT_BLUETOOTH_SCO_HEADSET,AUDIO_DEVICE_OUT_BLUETOOTH_SCO_CARKIT,AUDIO_DEVICE_NONE,AUDIO_DEVICE_NONE}},
+
+
+{.DeviceName = "Headset+Speaker", .Id  = {AUDIO_DEVICE_OUT_WIRED_HEADSET,AUDIO_DEVICE_OUT_WIRED_HEADPHONE,AUDIO_DEVICE_OUT_SPEAKER,AUDIO_DEVICE_NONE,AUDIO_DEVICE_NONE}},
+};
+
+
+//--->
+int GetStreamTypeIndex(char *StreamType)
+{
+   int iResult = -1;
+   int iItemNum = sizeof(StramTypeTable)/sizeof(StramTypeTable[0]);
+   int iCnt = 0;
+
+   for (iCnt = 0; iCnt<iItemNum; iCnt++) {
+      if (0 == strcmp(StramTypeTable[iCnt].StreamName, StreamType)) {
+          iResult = StramTypeTable[iCnt].Id;
+          break;
+      }
+
+   }
+
+
+   return iResult;
+}
+
+
+int GetDeviceTypeIndex(char *DeviceType)
+{
+   int iResult = -1;
+   int iItemNum = sizeof(DeviceTypeTable)/sizeof(DeviceTypeTable[0]);
+   int iCnt =0;
+
+   for(iCnt=0; iCnt < iItemNum; iCnt++) {
+       if (0 == strcmp(DeviceTypeTable[iCnt].DeviceName, DeviceType)) {
+           iResult = iCnt;
+       }
+   }
+
+   return iResult;
+}
+
+int DeviceTypeId;
+void StartDeviceIdQuery()
+{
+   DeviceTypeId = 0;
+}
+
+int QueryDeviceId(int DeviceTableIndex)
+{
+   int Id = DeviceTypeTable[DeviceTableIndex].Id[DeviceTypeId];
+   DeviceTypeId++;
+   return Id;
+}
+ 

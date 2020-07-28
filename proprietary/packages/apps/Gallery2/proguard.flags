@@ -1,0 +1,168 @@
+# Disable the warnings of using dynamic method call in common library.
+-dontnote com.android.gallery3d.common.*
+-dontwarn android.util.Pools$Pool
+-dontwarn android.util.Pools$SynchronizedPool
+-dontwarn com.mediatek.dcfdecoder.DcfDecoder
+-dontwarn com.mediatek.media.MtkMediaStore
+-dontwarn com.mediatek.internal.*
+-dontwarn com.mediatek.media.MtkMediaStore
+-dontwarn com.mediatek.media.MtkMediaStore$MediaColumns
+-dontwarn com.mediatek.storage.StorageManagerEx
+-dontwarn com.mediatek.common.util.*
+-dontwarn android.os.PowerManager
+-dontwarn android.media.MediaPlayer
+-dontwarn android.support.compat.*
+-dontskipnonpubliclibraryclassmembers
+
+# Keep all classes extended from com.android.gallery3d.common.Entry
+# Since we annotate on the fields and use reflection to create SQL
+# according to those field.
+
+-keep class * extends com.android.gallery3d.common.Entry {
+    @com.android.gallery3d.common.Entry$Column <fields>;
+}
+
+# ctors of subclasses of CameraPreference are called with Java reflection.
+-keep class * extends com.android.camera.CameraPreference {
+  <init>(...);
+}
+# added for refocus start.
+-keep class com.mediatek.ja3m.*{*;}
+
+-keep class com.mediatek.ngin3d.*{*;}
+# added for refocus end.
+-keep class com.android.camera.CameraActivity {
+  public boolean isRecording();
+  public long getAutoFocusTime();
+  public long getShutterLag();
+  public long getShutterToPictureDisplayedTime();
+  public long getPictureDisplayedToJpegCallbackTime();
+  public long getJpegCallbackFinishTime();
+  public long getCaptureStartTime();
+}
+
+-keep class com.android.camera.v2.CameraActivityBridge {
+*;
+}
+
+-keep class com.android.camera.VideoModule {
+  public void onCancelBgTraining(...);
+  public void onProtectiveCurtainClick(...);
+}
+
+-keep class * extends android.app.Activity {
+  @com.android.camera.OnClickAttr <methods>;
+}
+
+-keep class com.android.camera.CameraHolder {
+  public static void injectMockCamera(...);
+}
+
+# Disable the warnings of using dynamic method calls in EffectsRecorder
+-dontnote com.android.camera.EffectsRecorder
+
+# Required for ActionBarSherlock
+-keep class android.support.v4.app.** { *; }
+-keep interface android.support.v4.app.** { *; }
+-keep class com.actionbarsherlock.** { *; }
+-keep interface com.actionbarsherlock.** { *; }
+-keepattributes *Annotation*
+
+# Required for mp4parser
+-keep public class * implements com.coremedia.iso.boxes.Box
+
+#-assumenosideeffects junit.framework.Assert {
+#*;
+#}
+
+# For unit testing:
+
+# - Required for running exif tests on userdebug
+-keep class com.android.gallery3d.exif.ExifTag { *; }
+-keep class com.android.gallery3d.exif.ExifData { *; }
+-keep class com.android.gallery3d.exif.ExifInterface { *; }
+-keepclassmembers class com.android.gallery3d.exif.Util {
+  *** closeSilently(...);
+}
+
+# - Required for running blobcache tests on userdebug
+-keep class com.android.gallery3d.common.BlobCache { *; }
+
+# - Required for running glcanvas tests on userdebug
+-keep class com.android.gallery3d.ui.GLPaint { *; }
+-keep class com.android.gallery3d.ui.GLCanvas { *; }
+-keep class com.android.gallery3d.glrenderer.GLPaint { *; }
+-keep class com.android.gallery3d.glrenderer.GLCanvas { *; }
+-keep class com.android.gallery3d.ui.GLView { *; }
+-keepclassmembers class com.android.gallery3d.util.IntArray {
+  *** toArray(...);
+}
+-keep class com.android.gallery3d.util.ProfileData { *; }
+
+# - Required for running jpeg stream tests on userdebug
+-keep class com.android.gallery3d.jpegstream.JPEGOutputStream { *; }
+-keep class com.android.gallery3d.jpegstream.JPEGInputStream { *; }
+-keep class com.android.gallery3d.jpegstream.StreamUtils { *; }
+
+
+# TODO: remove or rename android.util.Pools.java from our source.
+-dontwarn android.util.Pools*
+
+-keep class com.android.gallery3d.app.AlbumDataLoader {
+  public int getActiveStart();
+  public int getActiveEnd();
+}
+
+-keep class com.android.gallery3d.app.AlbumSetDataLoader {
+  public int getActiveStart();
+  public int getActiveEnd();
+}
+
+-keep class com.android.gallery3d.ui.GLRootView {
+  public void setFpsPerformance(...);
+}
+
+-keep class com.android.gallery3d.ui.AlbumSetSlidingWindow {
+  public boolean isAllActiveSlotsFilled();
+  }
+
+-keep class com.android.gallery3d.ui.AlbumSlidingWindow {
+  public boolean isAllActiveSlotsFilled();
+  }
+
+# VideoPlayer required for slowmotion jni.
+-keep class com.mediatek.gallery3d.video.SlowMotionTranscode { *; }
+
+# VideoPlayer required for running plugin
+-keep class com.android.gallery3d.app.MovePlayer.MoviePlayerExtension { *; }
+-keep class com.mediatek.gallery3d.video.IMoviePlayer { *; }
+
+# Gallery2 ImageOption plugin @{
+-keep class com.mediatek.gallery3d.ext.** { *; }
+-keep class com.mediatek.galleryframework.base.MediaData { *; }
+#-keep class com.android.gallery3d.ui.PositionController { *; }
+#-keep class com.android.gallery3d.ui.TileImageViewAdapter { *; }
+#-keep class com.android.gallery3d.ui.PhotoView.Picture { *; }
+#-keep class com.android.gallery3d.ui.PhotoView.FullPicture { *; }
+#-keep class com.android.gallery3d.ui.PhotoView.ScreenNailPicture { *; }
+#-keep class com.android.gallery3d.ui.ScreenNail { *; }
+#-keep class com.android.gallery3d.ui.BitmapScreenNail { *; }
+#-keep class com.android.gallery3d.ui.SurfaceTextureScreenNail { *; }
+#-keep class com.android.gallery3d.ui.TiledScreenNail { *; }
+-keep class com.android.gallery3d.ui.** { *; }
+-keep class com.android.camera.CameraScreenNail { *; }
+# @}
+
+# bitmap stream to video generator required
+-keep class com.mediatek.galleryfeature.btovgenerator.FullBox { *; }
+-keep class com.mediatek.galleryfeature.btovgenerator.DirectBox { *; }
+-keep class com.mediatek.camera.util.jpegcodec.HwJpegDecodeImpl { *; }
+
+# VideoPlayer Plugin
+-keep class com.mediatek.gallery3d.video.** { *; }
+
+# Gallery feature plugin
+-keep class com.mediatek.plugin.** { *; }
+-keep class mf.org.apache.xerces.** { *; }
+-keep class com.mediatek.gallerybasic.** { *; }
+-keep class com.mediatek.omadrm.** { *; }

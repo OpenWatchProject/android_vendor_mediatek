@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+ * Copyright (C) 2007-2008 Esmertec AG.
+ * Copyright (C) 2007-2008 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+--><resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+   <string name="alerts">Сигналізація</string>
+    <string name="select_all">"Вибрати всі"</string>
+    <string name="unselect_all">"Відмінити все"</string>
+    <string name="delete">"Delete"</string>
+    <string name="select_cellbroadcasts">Виберіть термінову сигналізацію</string>
+    <plurals name="message_view_selected_message_count">
+        <item quantity="one">вибрано <xliff:g id="message_count" example="1">%d</xliff:g></item>
+        <item quantity="other">вибрано <xliff:g id="message_count" example="9">%d</xliff:g></item>
+    </plurals>
+    <plurals name="confirm_delete_broadcast">
+        <item quantity="one">1 вибране повідомлення про сигналізацію буде видалено</item>
+        <item quantity="other"><xliff:g id="number" example="15">%1$s</xliff:g> вибраних повідомлень про сигналізацію буде видалено</item>
+    </plurals>
+    <string name="enable_cmas_presidential_threat_alerts_title">Показати Президентську сигналізацію</string>
+    <string name="enable_cmas_presidential_threat_alerts_summary">Показати сигналізацію президентського рівня</string>
+    <string name="enable_cmas_imminent_threat_alerts_title">Найближча сигналізація</string>
+    <string name="enable_cmas_imminent_threat_alerts_summary">Показати сигналізацію для загрозу для життя і власності</string>
+    <string name="cmas_preview_alert_tone_title">Попереднє прослуховування тону сигналізації</string>
+    <string name="cmas_preview_alert_tone_summary">Прослухати тон сигналізації</string>
+    <string name="cmas_change_settings">Точно змінити налаштування?</string>
+    <string name="cmas_disable_cmas">Якщо вимкнути стільникову трансляцію, жодної сигналізації не буде отримано.</string>
+    <string name="cmas_enable_cmas_failed">Не вдалося відкрити.</string>
+    <string name="enable_repeat_alert_title">Повторити сигналізацію</string>
+    <string name="enable_repeat_alert_summary">Періодично нагадувати користувачеві про непрочитану сигналізацію</string>
+    <string name="enable_all_alert_title">Всі попередження увімкнені</string>
+    <string name="enable_all_imminent_alerts_title">Всі попередження про загрозу, що насувається</string>
+    <string name="enable_cell_broadcast_title">Термінова сигналізація</string>
+    <string name="alert_sound_volume">Гучність сигналізації</string>
+    <string name="alert_volume_summary">Регулювати гучність сигналізації</string>
+</resources>

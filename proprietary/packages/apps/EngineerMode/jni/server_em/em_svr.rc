@@ -1,0 +1,18 @@
+on property:ro.build.type=eng
+    start emsvr
+
+on property:ro.build.type=user
+    start emsvr_user
+
+on property:ro.build.type=userdebug
+    start emsvr_user
+
+service emsvr_user /system/bin/em_svr
+    disabled
+    user system
+    group system radio diag bluetooth sdcard_rw
+
+service emsvr /system/bin/em_svr
+    disabled
+    user root
+    group bluetooth system

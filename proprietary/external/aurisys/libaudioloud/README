@@ -1,0 +1,28 @@
+The files implement the aurisys interface and corresponding library operations to libbessound_hd_mtk.
+libbessound_hd_mtk provides the functionality of ACF/HCF/DRC.
+
+WHAT IT DOES?
+=============
+
+MtkAudioLoudc.c as the wrapper,
+implements the aurisys interface and corresponding library operations to libbessound_hd_mtk.
+Including loads the AFC/HCF xml parameters, set paramters to library, process data...etc.
+MtkAudioLoudc.h declares the variables and structures used in MtkAudioLoudc.c
+libbessound_hd_mtk provides the functionality of ACF/HCF/DRC.
+
+HOW IT WAS BUILT?
+==================
+
+Native program bulid flow.
+The files use the uthash function from /hardware/audio/common/utility,
+ensure the utility folder has existed under audio folder.
+
+
+HOW TO USE IT?
+==============
+
+The built shared library 'libaudioloudc.so' is loaded and invoked by
+audio post-process.
+
+
+All the source code of this library were written by MediaTek co..

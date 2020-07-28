@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.mediatek.location.lppe.main"
+    android:versionCode="1"
+    android:versionName="1.0"
+    android:sharedUserId = "android.uid.system" >
+
+    <uses-permission android:name="android.permission.LOCATION_HARDWARE" />
+    <!-- WLAN -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <!-- BT -->
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <!-- Network -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <!-- LBS -->
+    <uses-permission android:name="android.permission.READ_SMS"/>
+    <uses-permission android:name="android.permission.RECEIVE_SMS"/>
+    <uses-permission android:name="android.permission.RECEIVE_WAP_PUSH"/>
+    <!-- AgpsApn -->
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <!-- Telephony -->
+    <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS" />
+    <uses-permission android:name="android.permission.READ_PRIVILEGED_PHONE_STATE" />
+
+    <application
+        android:name="com.mediatek.location.lppe.main.LPPeServiceApplication"
+        android:allowBackup="false"
+        android:process="system"
+        android:label="@string/app_name" >
+        <!--
+        <activity
+            android:name="com.mediatek.location.lppe.main.MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+         -->
+
+        <service
+            android:name="com.mediatek.location.lppe.main.LPPeServiceWrapper"
+            android:exported="false" >
+        </service>
+
+        <receiver
+            android:name="com.mediatek.location.lppe.main.LPPeBootUpReceiver"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter
+                android:priority="999">
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+    </application>
+
+</manifest>

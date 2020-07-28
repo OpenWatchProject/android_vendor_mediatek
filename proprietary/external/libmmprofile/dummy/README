@@ -1,0 +1,32 @@
+This module creates the MMProfile libraries.
+
+This library is pre-built by MediaTek internally (dummy librariy which has no
+actual implementation).
+
+
+WHAT IT DOES?
+=============
+MMProfile is an Multi-Media profiling tool.
+
+libmmprofile.so contains Multi-Media profiling APIs.
+
+HOW IT WAS BUILT?
+==================
+It needs the following library from AOSP:
+
+libcutils and libc
+
+and the following libs from MediaTek:
+
+
+
+All source/dependency modules of this module are already put in
+'vendor/mediatek/libs' folder.
+
+HOW TO USE IT?
+==============
+
+The MMProfile libraries should not be used directly by an application developer.
+
+The majority of source code for this library were written by MediaTek.  Various
+open source libraries are also used and contained in this folder.

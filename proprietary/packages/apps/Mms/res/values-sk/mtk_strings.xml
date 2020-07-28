@@ -1,0 +1,609 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+/*
+ * Copyright (C) 2007-2008 Esmertec AG.
+ * Copyright (C) 2007-2008 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+ --><resources xmlns:android="http://schemas.android.com/apk/res/android" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+<!-- MTK Resoursces -->
+    <string name="create_new_message" msgid="8735943333953093860">"Napísať novú správu"</string>
+    <string name="menu_undelivered_messages" msgid="3896857623211780616">"Nedoručené správy"</string>
+    <string name="broadcast_from_to" msgid="2050376286109362539">"<xliff:g id="SENDER">%1$s</xliff:g> skupine <xliff:g id="RECIPIENT">%2$s</xliff:g>"</string>
+    <string name="anonymous_recipient" msgid="2501437626187039034">"Anonymný"</string>
+    <string name="view_picture" msgid="4356315935277709195">"Zobraziť fotografiu"</string>
+    <string name="sent_on" msgid="5868288548564632354">"Odoslané: <xliff:g id="DATE">%s</xliff:g>"</string>
+    <string name="name_colon" msgid="7069560650889479120"><b>"<xliff:g id="NAME">%s</xliff:g>"</b>": "</string>
+    <string name="compose_title" msgid="558578836596816068">"Napísať správu"</string>
+    <string name="image_too_large" msgid="261880224164478061">"Fotografia je príliš veľká"</string>
+    <string name="ask_for_automatically_resize" msgid="7657603662407738758">"Prispôsobiť veľkosť fotografie pred odoslaním?"</string>
+    <string name="cannot_load_message" msgid="2577010607550849892">"Správa sa nedá načítať."</string>
+    <string name="locked_message_cannot_be_deleted" msgid="6369452071783350219">"Uzamknuté správy nie je možné odstrániť"</string>
+    <string name="multiple_recipients" msgid="8747754491343248141">"Počet príjemcov: <xliff:g id="RECIPIENTCOUNT">%1$s</xliff:g>"</string>
+    <string name="resize" msgid="4308912589984220360">"Prispôsobiť veľkosť"</string>
+    <string name="to_label" msgid="2355268818058389047">"Komu "</string>
+    <string name="confirm_delete_all_messages" msgid="5836389073199814660">"Celá konverzácia bude odstránená."</string>
+    <string name="mms_priority_label">"Priorita"</string>
+    <string name="menu_retry_sending" msgid="3146582005568302643">"Odoslať znova"</string>
+    <string name="menu_retry_sending_all" msgid="1870529976966340616">"Odoslať znova všetky"</string>
+    <string name="retrying_dialog_body" msgid="4738260459043003431">"Správu <xliff:g id="MESSAGE">%s</xliff:g> sa nepodarilo odoslať kvôli problémom s pripojením."\n"Ďalší pokus..."</string>
+    <string name="dl_expired_notification" msgid="950390029992535809">"Platnosť tejto správy vypršala a správa bude odstránená."</string>
+    <string name="add_attachment_activity" msgid="5324811371129695320">"Pridať prílohu:"</string>
+    <string name="select_layout_activity" msgid="5041916695464513848">"Vybrať rozloženie"</string>
+    <string name="edit_text_activity" msgid="5915226413346879213">"Upraviť text"</string>
+    <string name="pick_numbers_activity" msgid="2083330191224178637">"Vybrať čísla"</string>
+    <string name="send_using_mms_activity" msgid="3703434556280345726">"Odoslať ako multimediálnu správu..."</string>
+    <string name="select_contact_method_activity" msgid="1743384358979323991">"Spôsob výberu kontaktu"</string>
+    <string name="me" msgid="341726346007839961">"Ja"</string>
+    <string name="invalid_contact_message" msgid="8215051456181842274">"Kontakt neexistuje."</string>
+    <string name="finish">"Hotovo"</string>
+<string name="more_recipients">príjemca(-ovia)</string>
+    <string name="Insert_sdcard">Vložte kartu SD!</string>
+    <string name="pref_title_mms_enable_to_send_delivery_reports">Odoslať správu o doručení</string>
+    <string name="pref_summary_mms_enable_to_send_delivery_reports">Odoslať správu o doručení pre každú vami prijatú správu</string>
+    <string name="set_service_center_OK">Servisné stredisko SMS nastaviť na OK</string>
+    <string name="set_service_center_fail">Servisné stredisko SMS nastaviť na Chyba</string>
+    <string name="OK">OK</string>
+    <string name="Cancel">"Zrušiť"</string>
+    <string name="sms_save_location">Pamäťové miesto SMS</string>
+    <string name="sms_service_center">Servisné stredisko SMS</string>
+    <string name="sms_validity_period">Doba platnosti SMS</string>
+    <string name="sms_validity_period_nosetting">Nič nie je nastavené</string>
+    <string name="sms_validity_period_1hour">"1 hodina"</string>
+    <string name="sms_validity_period_6hours">6 hodín</string>
+    <string name="sms_validity_period_12hours">12 hodín</string>
+    <string name="sms_validity_period_1day">"1 deň"</string>
+    <string name="sms_validity_period_max">Maximu</string>
+    <string name="service_center_label">Servisné stredisko:\u0020</string>
+    <string name="cu_subject">Predmet e-mailu</string>
+    <string name="pref_title_mms_creation_mode">Režim tvorby</string>
+    <string name="pref_summary_mms_creation_mode">Režim tvorby MMS pre vytvárané správy</string>
+    <string name="pref_title_mms_size_limit">Limit veľkosti</string>
+    <string name="pref_summary_mms_size_limit">Limit veľkosti MMS pre písanie správy</string>
+    <string name="confirm_restricted_audio">Obmedzený typ zvukového obsahu. Chcete ho napriek tomu priložiť?</string>
+    <string name="confirm_restricted_image">Obmedzený typ obrazového obsahu. Chcete ho napriek tomu priložiť?</string>
+    <string name="confirm_restricted_video">Obmedzený typ obsahu videa. Chcete ho napriek tomu priložiť?</string>
+    <string name="unsupport_media_type">Nepodporovaný typ média</string>
+    <string name="select_different_media_type">Vyberte iné médium</string>
+    <string name="image_resolution_too_large">Rozlíšenie obrazu je príliš veľké na vloženie</string>
+    <string name="wp_msg_type">Servisné hlásenie</string>
+    <string name="wp_msg_created_label">Vytvorené:\u0020</string>
+    <string name="wp_msg_created_unknown">"Neznáme"</string>
+    <string name="wp_msg_priority_label">Priorita:\u0020</string>
+    <string name="wp_msg_priority_low">Nízka</string>
+    <string name="wp_msg_priority_medium">"Stredné"</string>
+    <string name="wp_msg_priority_high">Vysoká</string>
+    <string name="menu_goto_browser">Otvoriť prehliadač</string>
+    <string name="menu_add_to_bookmark">Pridať do záložky</string>
+    <string name="wp_msg_expiration_label">Neaktuálny dátum: <xliff:g id="DATE">%s</xliff:g></string>
+    <string name="error_unsupported_scheme">Táto akcia teraz nie je podporovaná.</string>
+    <string name="pref_title_wappush_settings">Nastavenie servisného hlásenia</string>
+    <string name="pref_title_wappush_enable">Aktivovať WAP PUSH</string>
+    <string name="pref_summary_wappush_enable">Povoliť príjem WAP PUSH</string>
+    <string name="pref_title_wappush_sl_autoloading">Automaticky spustiť SL</string>
+    <string name="pref_summary_wappush_sl_autoloading">Pri prijatí automaticky spustiť službu nahrávania (SL) správy</string>
+    <string name="menu_send_sms">Odoslať správu pre <xliff:g id="name">%s</xliff:g></string>
+    <string name="menu_omacp">Konfigurácia správy</string>
+    <string name="save_message_to_sim">Správu uložiť na kartu SIM</string>
+    <string name="received_on">"Dátum prijatia: <xliff:g id="date">%s</xliff:g>"</string>
+    <string name="save_message_to_sim_successful">Správa je úspešne uložená</string>
+    <string name="save_message_to_sim_unsuccessful">Správa je úspešne uložená</string>
+    <string name="transmission_transiently_failed">Pri prenose dát došlo k chybe. Zopakuje sa neskôr.</string>
+    <string name="download_failed_due_to_full_memory">Správu sa nepodarilo prevziať z dôvodu plnej pamäte.</string>
+    <string name="mms_too_big_to_download">Správa je príliš veľká na prevzatie zo siete.</string>
+    <string name="menu_reply">"Odpovedať"</string>
+    <string name="menu_sim_sms">"SIM SMS" </string>
+    <string name="cannot_add_recipient">Príjemcovia dosiahli limit. Nemôžete pridať žiadneho príjemcu.</string>
+    <string name="status_expired">Neaktuálna správa</string>
+    <string name="status_deferred">Oneskorená</string>
+    <string name="status_unrecognized">Neznáma</string>
+    <string name="status_indeterminate">Neurčitá</string>
+    <string name="status_unreachable">Nedostupná</string>
+    <string name="attach_ringtone">"Tón zvonenia"</string>
+    <string name="notification_multiple_cb"><xliff:g id="count">%s</xliff:g> Neprečítané správy CB</string>
+    <string name="notification_multiple_cb_title">Nové správy vysielané pre mobilný telefón</string>
+    <string name="fdn_enabled">Povolené FDN</string>
+    <string name="cannot_send_message_reason_no_content">Žiadny obsah na odoslanie</string>
+    <string name="ok">"OK"</string>
+    <string name="cancel">"Zrušiť"</string>
+    <string name="enable">"Povoliť"</string>
+    <string name="disable">"Zakázať"</string>
+    <string name="cb_read_message">Prečítajte si správy CB</string>
+    <string name="cb_read_message2">Prečítajte si správu vysielanú pre mobilný telefón</string>
+    <string name="cb_message">Sprava vysielaná pre mobilný telefón</string>
+    <string name="cb_default_channel_name">Z kanála</string>
+    <string name="cell_broadcast_setting">"Nastavenia správ Cell Broadcast"</string>
+    <string name="cb_menu_language">"Jazyk"</string>
+    <string name="cb_menu_add_channel">Pridať kanál</string>
+    <string name="cb_menu_channel_list">Zoznam kanálov</string>
+    <string name="cb_dialog_title_language_choice">Vybrať jazyk</string>
+    <string name="cb_channel_dialog_channel_name">Názov kanála (0 až 10 znakov)</string>
+    <string name="cb_channel_dialog_channel_number">Číslo kanála (0 až 65534)</string>
+    <string name="cb_channel_dialog_channel_state">Zapnúť kanál</string>
+    <string name="cb_channel_dialog_edit_channel">Upraviť kanál</string>
+    <string name="cb_menu_edit">"Upraviť"</string>
+    <string name="cb_menu_delete">"Odstrániť"</string>
+    <string name="cb_error_channel_num">Zadajte číslo kanála (0 až 65534)</string>
+    <string name="cb_error_channel_name">Nesprávna dĺžka názvu kanála (1 až 10 znakov).</string>
+    <string name="cb_error_language_select">Vyberte prosím aspoň jeden jazyk.</string>
+    <string name="cb_error_channel_id_exist">Tento kanál už existuje</string>
+    <string name="cb_all_languages">"Všetky jazyky"</string>
+    <string name="cb_default_new_channel_name">Nový kanál</string>
+    <string name="sum_cell_broadcast_control_on">Odblokovať mobilné vysielanie</string>
+    <string name="sum_cell_broadcast_control_off">Zablokovať mobilné vysielanie</string>
+    <string name="sum_cell_broadcast_setting">Nastavenie jazyky a kanála pre mobilné vysielanie</string>
+    <string name="message_open_email_fail">Ľutujeme, ale najskôr si nastavte konto pre e-maily</string>
+    <string name="add_contacts">"Kontakty"</string>
+    <string name="close_dialog">OK</string>
+    <string name="updating_title">"Nastavenia hovorov"</string>
+    <string name="error_updating_title">"Chyba nastavení hovorov"</string>
+    <string name="reading_settings">"Prebieha načítavanie nastavení..."</string>
+    <string name="updating_settings">"Prebieha aktualizácia nastavení..."</string>
+    <string name="reverting_settings">"Prebieha vrátenie predchádzajúcich nastavení…"</string>
+    <string name="exception_error">"Došlo k chybe siete alebo karty SIM."</string>
+    <string name="send_by_sim2">Odoslať pomocou karty SIM2</string>
+    <string name="send_by_sim1">Odoslať pomocou karty SIM1</string>
+    <string name="menu_item_send_by">Odoslať pomocou</string>
+    <string name="data_connected_confirm_title">Potvrdiť odoslanie</string>
+    <string name="data_connected_confirm_message">Ak MMS odošlete pomocou tejto karty SIM, aktuálne preberanie údajov sa môže na chvíľu prerušiť. Pokračovať?</string>
+    <string name="menu_item_sim1">SIM 1</string>
+    <string name="menu_item_sim2">SIM 2</string>
+    <string name="no_sim_1">SIM 1 nie je vložená.</string>
+    <string name="no_sim_2">SIM 2 nie je vložená.</string>
+    <string name="no_sim">SIM %d nie je vložená.</string>
+    <string name="sim1_full_title">Karta SIM 1 je plná</string>
+    <string name="sim2_full_title">Karta SIM 2 je plná </string>
+    <string name="select_all">"Vybrať všetko"</string>
+    <string name="confirm_delete_selected_messages">Vybrané správy budú odstránené.</string>
+    <string name="confirm_delete_selected_theads">Vybrané vlákna budú odstránené.</string>
+    <string name="restricted_forward_title">"Multimediálna správa"</string>
+    <string name="restricted_forward_message">Príjemcovi sa tieto médiá nemusia správne zobraziť. Pokračovať?</string>
+    <string name="strOk">Správa je odoslaná</string>
+    <string name="strFail">Odoslanie správy zlyhalo</string>
+    <string name="menu_insert_text_vcard">Vložte kontakt</string>
+    <string name="contact_name">"Názov"</string>
+    <string name="contact_tel">Tel. č.</string>
+    <string name="contact_email">E-mail</string>
+    <string name="contact_organization">Organizácia</string>
+    <string name="contact_address">Adresa</string>
+    <string name="max_recipients_title">Dosiahol sa max. počet</string>
+    <string name="max_recipients_message">MMS povoľuje maximálne iba <xliff:g id="maxLimit">%s</xliff:g> príjemcov. Niektorí z príjemcov budú odstránení. Chcete pokračovať?</string>
+    <string name="via_without_time_for_send">Pomocou</string>
+    <string name="via_without_time_for_recieve">Pomocou</string>
+    <string name="sim_selected_dialog_title">Zvoliť kartu SIM</string>
+    <string name="suggested">Navrhované</string>
+    <string name="add_contact_dialog_message">"Pridať číslo %s do existujúceho alebo nového kontaktu?"</string>
+    <string name="add_contact_dialog_new">"Nové"</string>
+    <string name="add_contact_dialog_existing">Existujúci</string>
+    <string name="deleting">Prebieha odstraňovanie</string>
+    <string name="pref_title_storage_status">Aktuálne využitie pamäte</string>
+    <string name="storage_dialog_mms">MMS:\u0020<xliff:g id="number">%s</xliff:g> položka(-y)</string>
+    <string name="storage_dialog_sms">SMS:\u0020<xliff:g id="number">%s</xliff:g> položka(-y)</string>
+    <string name="storage_dialog_attachments">Prílohy MMS:\u0020</string>
+    <string name="storage_dialog_database">Databáza:\u0020</string>
+    <string name="storage_dialog_available_space">Voľné miesto:\u0020</string>
+    <string name="menu_show_icc_sms_capacity">Zobraziť kapacitu</string>
+    <string name="show_icc_sms_capacity_title">Kapacita</string>
+    <string name="icc_sms_used">Využité:</string>
+    <string name="icc_sms_total">Celkom:</string>
+    <string name="get_icc_sms_capacity_failed">Nepodarilo získať kapacitu karty SIM.</string>
+    <plurals name="read_report_toast_msg">
+     <item quantity="one">odoslanie %d prečítanej správy</item>
+     <item quantity="other">odoslanie %d prečítaných správ</item>
+   </plurals>
+    <string name="pref_title_mms_auto_reply_read_reports">Odoslať prečítanú správu</string>
+    <string name="pref_summary_mms_auto_reply_read_reports">Odoslať prečítanú správu, ak to požaduje odosielateľ MMS</string>
+    <string name="exceed_subject_length_limitation">Dosiahla sa max. dĺžka</string>
+    <plurals name="message_view_selected_message_count">
+     <item quantity="one">Vybraný <xliff:g id="message_count" example="1">%d</xliff:g></item>
+     <item quantity="other">Vybrané <xliff:g id="message_count" example="9">%d</xliff:g></item>
+   </plurals>
+    <string name="disable_notifications_dialog_message">"Zastaviť duplicitné upozornenia na textové správy z predvolenej aplikácie správ SMS a MMS?"</string>
+    <string name="sms_input_mode_title">Vstupný režim</string>
+    <string name="sms_input_mode_dialog_title">Vyberte vstupný režim</string>
+    <string name="sms_input_mode_summary">Vstupný režim SMS na vytvorenie správy</string>
+    <string name="pref_title_io_settings">Importovať/Exportovať SMS</string>
+    <string name="pref_summary_import_msg">SMS importovať z karty SD</string>
+    <string name="pref_title_import_msg">Importovať SMS</string>
+    <string name="pref_summary_export_msg">SMS exportovať z karty SD</string>
+    <string name="pref_title_export_msg">Exportovať SMS</string>
+    <string name="no_sd_card">Karta SD nie je pripravená</string>
+    <string name="export_message_ongoing">Prebieha export SMS na kartu SD, čakajte, prosím...</string>
+    <string name="import_message_ongoing">Prebieha import SMS z karty SD, čakajte, prosím...</string>
+    <string name="export_message_success">SMS bola úspešne exportovaná na kartu SD</string>
+    <string name="import_message_success">SMS bola úspešne importovaná z karty SD</string>
+    <string name="import_message_fail">Chyba pri importovaní SMS z karty SD</string>
+    <string name="export_message_fail">Chyba pri exportovaní SMS na kartu SD</string>
+    <string name="import_message_list">Zoznam DB SMS na karte SD</string>
+    <string name="import_message_list_empty">Na karte SD neexistujú žiadne súbory SMS DB</string>
+    <string name="export_message_empty">Na exportovanie neexistuje žiadna SMS!</string>
+    <string name="whether_export_item">Chcete exportovať SMS?</string>
+    <string name="whether_import_item">Chcete importovať</string>
+    <string name="export_disk_problem">Karta SD je plná alebo nemožno na ňu zapisovať</string>
+    <string name="select_text">Vyberte text</string>
+    <string name="unselect_all">"Zrušiť výber"</string>
+    <string name="forward_from">Odoslať z:</string>
+    <string name="sms_forward_setting">Nastavenie odoslania SMS</string>
+    <string name="sms_forward_setting_summary">SMS odoslať s menom a číslom odosielateľa</string>
+    <string name="forward_byself">"Ja"</string>
+    <string name="file_attachment_vcalendar_name">vCalendar(<xliff:g id="text">%s</xliff:g>)</string>
+    <string name="file_attachment_vcard_name">vCard(<xliff:g id="text">%s</xliff:g>)</string>
+    <string name="attach_vcalendar">"Kalendár"</string>
+    <string name="file_attachment_import_vcard">Importovať vCard</string>
+    <string name="attach_vcard">Kontakt</string>
+    <string name="type_common_file">súbor</string>
+    <string name="please_wait">"Čakajte, prosím..."</string>
+    <string name="failed_to_parse_vcard">Nepodarilo sa analyzovať súbor vCard!</string>
+    <string name="empty_vcard">Žiadne kontakty na vCard</string>
+    <string name="parse_vcard">Analyzovať vCard</string>
+    <string name="vcard_no_details">Pre tento kontaktu neexistujú žiadne ďalšie informácie"</string>
+    <string name="note">Poznámka</string>
+    <string name="organization">Optimalizácia</string>
+    <string name="website">Internetová stránka:\u0020</string>
+    <string name="nickname">Prezývka</string>
+    <string name="call_custom"><xliff:g id="custom">%s</xliff:g></string>
+    <string name="call_home">"Domov"</string>
+    <string name="call_mobile">"Mobil"</string>
+    <string name="call_work">"Práca"</string>
+    <string name="call_fax_work">"Fax do práce"</string>
+    <string name="call_fax_home">"Fax domov"</string>
+    <string name="call_pager">"Pager"</string>
+    <string name="call_other">iné</string>
+    <string name="call_callback">spätné volanie</string>
+    <string name="call_car">"Telefón v aute"</string>
+    <string name="call_company_main">"Hlavné číslo spoločnosti"</string>
+    <string name="call_isdn">"ISDN"</string>
+    <string name="call_main">"Hlavné"</string>
+    <string name="call_other_fax">"FAX"</string>
+    <string name="call_radio">"Rádiotelefón"</string>
+    <string name="call_telex">"Telex"</string>
+    <string name="call_tty_tdd">TTY/TDD</string>
+    <string name="call_work_mobile">"Pracovný mobil"</string>
+    <string name="call_work_pager">"Pracovný pager"</string>
+    <string name="call_assistant"><xliff:g id="assistant">%s</xliff:g></string>
+    <string name="call_mms">MMS</string>
+    <string name="email_home">E-mail na domácu adresu</string>
+    <string name="email_mobile">E-mail na mobilný telefón</string>
+    <string name="email_work">E-mail na adresu do práce</string>
+    <string name="email_other">E-mail</string>
+    <string name="email_custom">E-mail <xliff:g id="custom">%s</xliff:g></string>
+    <string name="email">E-mail</string>
+    <string name="map_home">Zobraziť adresu domov</string>
+    <string name="map_work">Zobraziť adresu do práce</string>
+    <string name="map_other">Zobraziť adresu</string>
+    <string name="map_custom">Zobraziť <xliff:g id="custom">%s</xliff:g> adresu</string>
+    <string name="chat_aim">Rozhovor pomocou AIM</string>
+    <string name="chat_msn">Rozhovor pomocou Windows Live</string>
+    <string name="chat_yahoo">Rozhovor pomocou Yahoo</string>
+    <string name="chat_skype">Rozhovor pomocou Skype</string>
+    <string name="chat_qq">Rozhovor pomocou QQ</string>
+    <string name="chat_gtalk">Rozhovor pomocou Google Talk</string>
+    <string name="chat_icq">Rozhovor pomocou ICQ</string>
+    <string name="chat_jabber">Rozhovor pomocou Jabber</string>
+    <string name="chat">Rozhovor </string>
+    <string name="inbox">"Doručená pošta"</string>
+    <string name="outbox">"Pošta na odoslanie"</string>
+    <string name="draftbox">Draftbox</string>
+    <string name="sentbox">Sentbox</string>
+    <string name="simbox">SIMbox</string>
+    <string name="changeview">Zmeniť režim</string>
+    <string name="viewer_title_sms">"SMS"</string>
+    <string name="viewer_title_wappush">Wappush</string>
+    <string name="viewer_title_cb">Vysielanie na mobilné telefóny</string>
+    <string name="slideshow_details">Detail správy</string>
+    <string name="open">"Otvoriť"</string>
+    <string name="delete_all_confirm">"Vymazať všetky správy v priečinku Došlá pošta?"</string>
+    <string name="folder_recipient">Príjemca:</string>
+    <string name="folder_recieve_date">Dátum:</string>
+    <string name="folder_download">Prebieha preberanie MMS</string>
+    <string name="confirm_download_message">"Potvrďte prevzatú správu"</string>
+    <string name="play_as_slideshow">MMS prehrať ako prezentáciu</string>
+    <string name="by_card">Podľa:</string>
+    <string name="page">Strana %d</string>
+    <string name="space_not_enough">Na zachytenie videa je nedostatok miesta</string>
+    <string name="space_not_enough_for_audio">Na nahranie zvuku je nedostatok miesta</string>
+    <string name="no_messages">"Žiadne správy" </string>
+    <string name="call_video_call">Videohovor</string>
+    <string name="storage_dialog_mms_size">Veľkosť MMS:\u0020</string>
+    <string name="error_add_attachment">"Neznáma chyba, nemožno pridať <xliff:g id="name">%1$s</xliff:g> do správy."</string>
+    <string name="no_application_response">"Na spracovanie požiadavky nie je k dispozícii žiadna aplikácia"</string>
+    <string name="cdma_not_support">CDMA nepodporuje túto funkciu</string>
+    <string name="allmessage">"Všetky správy"</string>
+    <string name="select_message">Vybrať správu</string>
+    <string name="confirm_delete_allmessage">"Všetky správy budú odstránené."</string>
+    <string name="mark_as_read_btn_str">Označiť ako prečítané</string>
+    <string name="delete_btn_str">"Odstrániť"</string>
+    <string name="reply_send">"Odoslať"</string>
+    <string name="via_test">"prostredníctvom"</string>
+    <string name="received_header">"Prijaté:"</string>
+    <string name="no_item_selected">Žiadna položka nie je vybraná.</string>
+    <string name="sync_mms_to_db">Prebieha načítavanie...</string>
+    <string name="pref_title_font_size_setting">NASTAVENIE VEĽKOSTI PÍSMA</string>
+    <string name="pref_title_message_font_size">Veľkosť písma správy</string>
+    <string name="pref_summary_message_font_size">Veľkosť písma správy</string>
+    <string name="message_font_size_dialog_title">Veľkosť písma správy</string>
+    <string name="message_font_size_dialog_cancel">"Zrušiť"</string>
+    <string name="change">Zmeniť</string>
+    <string name="change_default_disk">V pamäti telefónu je nedostatok miesta. Uvoľnite časť pamäte alebo v nastaveniach zmeňte "Predvolený zapisovateľný disk".</string>
+    <string name="failed_to_add_image">Dosiahol sa limit veľkosti správy. Niektoré časti nie sú pridané.</string>
+    <string name="ipmsg_conversation_list_all">"Správy"</string>
+    <string name="ipmsg_conversation_list_important">Dôležité upozornenie</string>
+    <string name="ipmsg_conversation_list_group_chats">Skupinové rozhovory</string>
+    <string name="ipmsg_conversation_list_spam">Nevyžiadaná pošta</string>
+    <string name="ipmsg_create_group_chat">Vytvoriť skupinový hovor</string>
+    <string name="ipmsg_send_invitation">Odoslať pozvánky</string>
+    <string name="str_ipmsg_download_history_dlg">Prebieha preberanie...</string>
+    <string name="to_hint_ipmsg">"Zadajte meno alebo číslo"</string>
+    <string name="type_to_compose_text_enter_to_send_ipmsg">"Napíšte správu SMS/iSMS"</string>
+    <string name="ipmsg_ipmsg_hint">"Napíšte správu iSMS"</string>
+    <string name="ipmsg_sms_hint">"Napíšte text správy"</string>
+    <string name="ipmsg_caption_hint">"Napíšte titulky"</string>
+    <string name="ipmsg_cancel">"Zrušiť"</string>
+    <string name="ipmsg_invite_chat_frequently"><b>Chcete často hovoriť s %s ?</b>\nPrečo nevyzvete %s, aby si aktivoval službu iSMS a aby ste obaja ušetrili peniaze?</string>
+    <string name="ipmsg_enable_chat_frequently"><b>%s používa službu iSMS!</b>\nPrečo si neaktivujete službu iSMS, aby ste obaja ušetrili peniaze?</string>
+    <string name="ipmsg_invite">Vyzvať</string>
+    <string name="ipmsg_dismiss">"Zrušiť"</string>
+    <string name="ipmsg_enable">"Povoliť"</string>
+    <string name="ipmsg_enable_notice">Naozaj chcete aktivovať službu iSMS?</string>
+    <string name="ipmsg_activate">"Aktivovať"</string>
+    <string name="ipmsg_activate_chat_frequently"><b>Chcete často hovoriť s priateľmi?</b>\nPrečo si neaktivujete službu iSMS, aby ste sa mohli rozprávať bez poplatku za SMS?</string>
+    <string name="ipmsg_activate_note">Naozaj chcete aktivovať iSMS?</string>
+    <string name="ipmsg_dismiss_content">Naozaj chcete odmietnuť tento oznam?</string>
+    <string name="ipmsg_ipmsg">IP správy</string>
+    <string name="ipmsg_dailog_multi_forward">Odosielanie správ</string>
+    <string name="ipmsg_dialog_send_result">Odoslať výsledok</string>
+    <string name="ipmsg_dlg_send_all">Všetky: %s</string>
+    <string name="ipmsg_dlg_send_sucess">Odoslané: %s</string>
+    <string name="ipmsg_dlg_send_failed">Neodoslané: %s</string>
+    <string name="multi_forward_sim_info">Získanie informácií o SIM</string>
+    <string name="ipmsg_multi_forward_no_sim">Žiadne informácie o SIM</string>
+    <string name="ipmsg_divider_online">%s je pripojený</string>
+    <string name="ipmsg_divider_offline">Posledný čas pripojenia o %s</string>
+    <string name="ipmsg_divider_never_online">Nikdy nepripojený</string>
+    <string name="ipmsg_vcard_file_name">%s kontakty</string>
+    <string name="ipmsg_getsim_failed">Nepodarilo sa získať informácie o SIM</string>
+    <string name="ipmsg_sim_status_error">Chybový stav SIM</string>
+    <string name="ipmsg_forward_failed">Nepodarilo sa odoslať</string>
+    <string name="ipmsg_forward_norecipients">Pre odosielanie správ neexistuje žiadny príjemca(-ovia) </string>
+    <string name="ipmsg_multiforward_no_message">Na odoslanie neexistuje žiadna správa(-y)</string>
+    <string name="ipmsg_need_input_recipients">Najskôr uveďte aspoň jedného príjemcu</string>
+    <string name="str_ipmsg_unread_format">%1$d neprečítaných správ</string>
+    <string name="str_ipmsg_not_delivered_title">Ešte nie je nedoručená</string>
+    <string name="str_ipmsg_failed_title">Nepodarilo sa odoslať</string>
+    <string name="ipmsg_try_again">"Skúsiť znova"</string>
+    <string name="ipmsg_try_all_again">Skúste všetko znova</string>
+    <string name="ipmsg_resend_via_sms">Namiesto toho pošlite SMS</string>
+    <string name="ipmsg_resend_via_mms">Namiesto toho pošlite MMS</string>
+    <string name="str_ipmsg_cant_share">Karta SD nie je k dispozícii. Mediálnu správu nemožno zdieľať</string>
+    <string name="str_ipmsg_file_limit">Príliš veľká</string>
+    <string name="str_ipmsg_no_app">Túto operáciu nemôžu vykonať žiadne aplikácie.</string>
+    <string name="str_ipmsg_today">"Dnes"</string>
+    <string name="str_ipmsg_yesterday">"včera"</string>
+    <string name="ip_message_typing_text">Písanie</string>
+    <string name="str_ipmsg_no_such_file">Takýto súbor neexistuje</string>
+    <string name="str_ipmsg_over_file_limit">Veľkosť súboru prekračuje limit</string>
+    <string name="str_ipmsg_invalid_file_type">Nepodporuje tento typ</string>
+    <string name="invite_friends_to_ipmsg">Priateľov pozvať pomocou iSMS</string>
+    <string name="invite_friends_to_chat">Pozvite priateľov na rozhovor</string>
+    <string name="invite_friends_to_ipmsg_dialog_msg">Ak chcete poslať pozvánku, písanie vašich správ bude zrušené.</string>
+    <string name="invite_friends_to_ipmsg_content">Ahoj, iSMS je populárny nástroj na rozprávanie. Je zadarmo a je pohodlný. Viac informácií nájdete na http://isms.hissage.com.</string>
+    <string name="export">"Exportovať"</string>
+    <string name="mark_as_spam">Prejdite do zoznamu Nevyžiadaná pošta</string>
+    <string name="mark_as_spam_tips">Správy, ktoré sú označené ako nevyžiadaná pošta, budú presunuté do zoznamu Nevyžiadaná pošta a oznámenie bude automaticky vypnuté.</string>
+    <string name="remove_frome_spam">Odstrániť zo zoznamu Nevyžiadaná pošta</string>
+    <string name="add_shortcut">Pridať skratku</string>
+    <string name="view_all_media">Zobraziť všetky médiá</string>
+    <string name="view_all_location">Zobraziť všetky umiestnenia</string>
+    <string name="ipmsg_export_to_sdcard">Exportovať na kartu SD</string>
+    <string name="ipmsg_copy">"Kopírovať"</string>
+    <string name="ipmsg_send_via_text_msg">Poslať prostredníctvom textovej správy</string>
+    <string name="ipmsg_send_via_mms">Poslať prostredníctvom multimediálnej správy</string>
+    <string name="ipmsg_retry">"Skúsiť znova"</string>
+    <string name="ipmsg_delete">"Odstrániť"</string>
+    <string name="ipmsg_share">"Zdieľať"</string>
+    <string name="ipmsg_mark_as_important">Označiť ako dôležitá</string>
+    <string name="ipmsg_remove_from_important">Odstrániť označenie ako dôležitá</string>
+    <string name="str_ipmsg_save_file">Súbor je uložený do %1$s</string>
+    <string name="continue_str">"Pokračovať"</string>
+    <string name="convert_to_mms">Zmeniť na MMS.</string>
+    <string name="convert_to_sms">Zmeniť na SMS.</string>
+    <string name="ipmsg_convert_to_ipmsg">Zmeniť na iSMS.</string>
+    <string name="ip_message_convert_to_mms_message_for_service">Služba iSMS nie je dostupná na tejto vybranej karte SIM. Táto správa môže byť zaslaná len prostredníctvom MMS na tejto karte SIM. Chcete napriek tomu pokračovať?</string>
+    <string name="ip_message_convert_to_sms_message_for_service">Služba iSMS nie je dostupná na tejto vybranej karte SIM. Táto správa môže byť zaslaná len prostredníctvom SMS na tejto karte SIM. Chcete napriek tomu pokračovať?</string>
+    <string name="ip_message_convert_to_mms_message_for_recipients">Príjemca(-ovia) nie je (sú) používateľom služby iSMS. Táto správa môže byť zaslaná iba prostredníctvom MMS. Chcete napriek tomu pokračovať?</string>
+    <string name="ip_message_convert_to_sms_message_for_recipients">Príjemca(-ovia) nie je (sú) používateľom služby iSMS. Táto správa môže byť zaslaná iba prostredníctvom SMS. Chcete napriek tomu pokračovať?</string>
+    <string name="ipmsg_sms_convert_to_ipmsg">Služba iSMS je dostupná na tejto vybranej karte SIM. Ak chcete ušetriť poplatok za SMS, odporúča sa správu zmeniť na iSMS. Má sa zmeniť teraz?</string>
+    <string name="ipmsg_mms_convert_to_ipmsg">Služba iSMS je dostupná na tejto vybranej karte SIM. Ak chcete ušetriť poplatok za MMS, odporúča sa správu zmeniť na iSMS. Má sa zmeniť teraz?</string>
+    <string name="keep_mms">Ponechať MMS</string>
+    <string name="keep_sms">Ponechať SMS</string>
+    <string name="switch_ipmsg">Zmeniť</string>
+    <string name="ip_message_load_all_message">Načítať všetky správy</string>
+    <string name="str_ipmsg_replace_attach">Vymeniť prílohu</string>
+    <string name="str_ipmsg_replace_attach_msg">Priložená je príloha. Má sa vymeniť?</string>
+    <string name="ipmsg_err_file">Súbor sa nepodarilo otvoriť</string>
+    <string name="pref_title_display_preference_settings">ZOBRAZIŤ A PREFERENCIE</string>
+    <string name="pref_chat_wallpaper">Tapeta počas rozhovoru</string>
+    <string name="pref_auto_rotation">Automatické otáčanie</string>
+    <string name="pref_show_email_address">Zobraziť e-mailovú adresu</string>
+    <string name="pref_summary_show_email_address">E-mailovú adresu zaradiť do výsledkov kontaktu</string>
+    <string name="pref_title_backup_restore_settings">ZÁLOHOVAŤ A OBNOVIŤ</string>
+    <string name="pref_backage_message">Zálohovať správu</string>
+    <string name="pref_summary_backup_message">Posledná záloha: Nikdy</string>
+    <string name="pref_restore_message">Obnoviť správu</string>
+    <string name="pref_summary_restore_message">Obnoviť zálohované správy</string>
+    <string name="pref_mute">"Ignorovať"</string>
+    <string name="pref_summary_mute">"Vypnuté"</string>
+    <string name="pref_vibrate">"Vibrovať"</string>
+    <string name="pref_summary_vibrate">Vibrovať pri prijatí oznámení</string>
+    <string name="pref_popup_notification">Prekrývacie oznámenie</string>
+    <string name="pref_summary_popup_notification">Zobraziť prekrývanie pre posunuté oznámenia</string>
+    <string name="pref_title_display_settings">"Zobrazenie"</string>
+    <string name="pref_title_actions_settings">Úkony</string>
+    <string name="pref_download_chat_history">Prevziať históriu rozhovorov</string>
+    <string name="pref_summary_download_chat_history">Uložiť na kartu SD vo formáte zip</string>
+    <string name="pref_email_chat_history">História e-mailov a rozhovorov</string>
+    <string name="pref_summary_email_chat_history">História e-mailov a rozhovorov vo formáte zip</string>
+    <string name="pref_clear_chat_history">Vymazať históriu rozhovorov</string>
+    <string name="pref_summary_notification_ringtone">Nastavte vyzváňací tón pre nové oznámenia</string>
+    <string name="pref_setting_title">Nastavenie správy</string>
+    <string name="pref_setting_sms">Text správy (SMS)</string>
+    <string name="pref_setting_mms">Multimediálna správa (MMS)</string>
+    <string name="pref_setting_notification">"Upozornenia"</string>
+    <string name="pref_setting_general">"Všeobecné"</string>
+    <string name="pref_setting_chat">Nastavenia rozhovoru</string>
+    <string name="chat_setting_saving">ukladám ...</string>
+    <string name="chat_setting_updating">aktualizujem ...</string>
+    <string name="chat_setting_sending">odosielam...</string>
+    <string name="dialog_save_title">Uložiť na kartu SD</string>
+    <string name="dialog_save_description">Uložiť vlákno tohto rozhovoru na kartu SD vo formáte zip</string>
+    <string name="dialog_email_title">Zdieľať prostredníctvom e-mailu</string>
+    <string name="dialog_email_description">Zdieľať toto vlákno rozhovoru ako prílohu prostredníctvom e-mailu vo formáte zip</string>
+    <string name="dialog_clear_title">"Vymazať"</string>
+    <string name="dialog_clear_description">V tejto hovorni bude vymazaná celá história rozhovorov</string>
+    <string name="dialog_wallpaper_chooser_wallpapers">Tapety</string>
+    <string name="dialog_wallpaper_chooser_gallery">Galéria</string>
+    <string name="dialog_wallpaper_chooser_take">"Odfotiť"</string>
+    <string name="dialog_wallpaper_chooser_default">"Predvolené"</string>
+    <string name="dialog_wallpaper_title">Vyberte tapetu</string>
+    <string name="mute_one_hour">"1 hodina"</string>
+    <string name="mute_four_hours">4 hodiny</string>
+    <string name="mute_eight_hours">8 hodíny</string>
+    <string name="save_chat_history_failed">ukladanie zlyhalo</string>
+    <string name="send_chat_history_failed">E-mail sa nepodarilo odoslať</string>
+    <string name="actionbar_sms_setting">Nastavenia SMS</string>
+    <string name="actionbar_mms_setting">Nastavenia MMS</string>
+    <string name="actionbar_notification_setting">"Nastavenia upozornení"</string>
+    <string name="actionbar_general_setting">Všeobecné nastavenia</string>
+    <string name="save_history_file">uložiť ako</string>
+    <string name="no_sdcard_suggestion">"Žiadna karta SD"</string>
+    <string name="save_wallpaper_success">Tapeta je zmenená</string>
+    <string name="save_wallpaper_fail">Tapetu nemožno zmeniť</string>
+    <string name="ip_message_delete_important">"Zahrnúť správy označené ako dôležité"</string>
+    <string name="str_ipmsg_spam_empty">Nemáte žiadny nevyžiadaný rozhovor. \nSPAM zhromažďuje všetky rozhovory, ktoré sú označené ako spam. Oznámenie bude štandardne vypnuté. Nebudete zbytočne vyrušovaní. \n\nOdosielateľa môžete označiť ako spam tak, že podržíte rozhovor a zvolíte možnosť Označiť ako ikona spamu. Keď je konverzácia označená ako spam, automaticky sa zobrazí ikona vypnutia oznámenia a rozhovor bude umiestnený sem.</string>
+    <string name="str_ipmsg_spam_example_subject">To je príklad nevyžiadanej správy.</string>
+    <string name="str_ipmsg_groupchat_empty">Nemáte žiadnu správu o skupinovom rozhovore. \nGROUP CHATS zhromažďuje všetky správy o skupinových rozhovorov, ktoré sú vytvorené alebo ste ich zapojili. To vám umožní ľahko nájsť a spravovať vaše skupinové rozhovory. \n\nAk chcete vytvoriť skupinový rozhovor, klepnite na tlačidlo Vytvoriť skupinový rozhovor v spodnej časti tejto obrazovky a pozvite svojich priateľov, aby sa pripojili k tejto skupine.</string>
+    <string name="str_ipmsg_group_example_from">Názov skupiny </string>
+    <string name="str_ipmsg_group_example_subject">Váš priateľ:\nPáči sa mi funkcia skupinového rozhovoru!</string>
+    <string name="str_ipmsg_important_empty">Nemáte žiadnu dôležitú správu. \nIMPORTANT zhromažďuje všetky správy, ktoré sú označené ako dôležité. To vám umožní ľahko nájsť dôležité správy. \n\nSprávy môže označiť ako dôležité tým, že správu podržíte a v ponuke Možnosti vyberiete možnosť Označiť ako dôležitá. Ak je správa označená ako dôležitá, dolu bude zobrazená ikona červenej zástavky.</string>
+    <string name="str_ipmsg_important_example_title">Toto je príklad správy označenej ako dôležité. Zobrazí sa červená zástavka.</string>
+    <string name="str_ipmsg_important_example_time">10:55 AM</string>
+    <string name="str_ipmsg_allchat_empty">"Žiadne konverzácie"</string>
+    <string name="str_ipmsg_empty_activate_content">Ak chcete použiť túto funkciu, najskôr budete musieť aktivovať službu iSMS. Nemajte obavy - ak sa vám táto služba nepáči, v možnosti Nastavenia ju môžete vždy vypnúť. Skúste to teraz!</string>
+    <string name="str_ipmsg_empty_activate_title">Aktivovať iSMS</string>
+    <string name="str_ipmsg_service_title">Servisné stredisko iSMS</string>
+    <string name="str_ipmsg_introduction">Pomocou služby iSMS môžete okamžite doručiť voľné správ a históriu rozhovorov uchová na jednom mieste. Stlačením jedného tlačidla získate novú skúsenosť!</string>
+    <string name="time_now">"TERAZ"</string>
+    <string name="str_ipmsg_active">Aktivovať iSMS</string>
+    <string name="str_ipmsg_welcome_active">Vitajte v službe iSMS</string>
+    <string name="str_ipmsg_term_warn_welcome">Pomocou služby iSMS sa môžete kedykoľvek a kdekoľvek rozprávať so svojimi priateľmi a deliť sa s nimi o svoje multimediálne súbory prostredníctvom siete WiFi alebo dátového pripojenia.\n\nNa aktivovanie stačí vykonať iba 3 kroky!\n\n Zmluvné podmienky\n</string>
+    <string name="str_ipmsg_term_warn_activate">Túto funkciu podporuje iba služba iSMS.\n\nPomocou služby iSMS sa môžete kedykoľvek a kdekoľvek rozprávať so svojimi priateľmi a deliť sa s nimi o svoje multimediálne súbory prostredníctvom siete WiFi alebo dátového pripojenia.\n\n Zmluvné podmienky</string>
+    <string name="str_ipmsg_term_key">Zmluvné podmienky</string>
+    <string name="str_ipmsg_agree_and_continue">Súhlasím a pokračovať</string>
+    <string name="no_sim_card">Nezistila sa žiadna karta SIM!</string>
+    <string name="ip_message_activate_title">Aktivovať iSMS</string>
+    <string name="ip_message_current_sim_enabled">Aktuálna karta SIM je aktivovaná.</string>
+    <string name="sim_selected_dialog_title_for_activate">Vyberte kartu SIM pre aktiváciu iSMS</string>
+    <string name="ip_message_activate_message">Túto funkciu podporuje iba služba iSMS. Má sa aktivovať vaše konto iSMS teraz?</string>
+    <string name="typing">"Prebieha písanie ..."</string>
+    <string name="ip_message_enable_title">Aktivovať iSMS</string>
+    <string name="ip_message_enable_message">Túto funkciu podporuje iba služba iSMS. Má sa povoliť vaše konto iSMS teraz?</string>
+    <string name="sim_selected_dialog_title_for_enable">Vyberte kartu SIM pre zapnutie iSMS</string>
+    <string name="ip_message_switch_sim_title">Zmeniť SIM</string>
+    <string name="ip_message_switch_sim_message">Aktuálna karta SIM nepodporuje službu iSMS. Má sa zmeniť karta SIM?</string>
+    <string name="ip_message_switch_sim_button">Zmeniť</string>
+    <string name="ip_message_switch_sim_successfully">Karta SIM bola úspešne zmenená!</string>
+    <string name="close">"Zatvoriť"</string>
+    <string name="nointernet">"Nenašlo sa žiadne funkčné pripojenie k internetu! Skúste znova neskôr"</string>
+    <string name="ipmsg_reject">Odmietnuť</string>
+    <string name="ipmsg_accept">"Prijať"</string>
+    <string name="ipmsg_resend">Znova odoslať</string>
+    <string name="ipmsg_resend_discard_message">Ak chcete správu znova odoslať, správa, ktorú práve píšete, bude odstránená.</string>
+    <plurals name="deleted_conversations">
+     <item quantity="one">Zistený bol jeden rozhovor</item>
+     <item quantity="other">Bolo zistených <xliff:g id="number" example="15">%1$s</xliff:g> rozhovorov</item>
+   </plurals>
+    <string name="discard_mms_title">Vymazať MMS</string>
+    <string name="discard_mms_content">Z viacnásobného odosielania správ bude odstránená celá správa MMS.</string>
+    <string name="toast_sms_forward">Žiadna správa SMS nebola odoslaná</string>
+    <string name="dialog_continue">"Pokračovať"</string>
+    <string name="sms_size_limit">Dosiahol sa limit veľkosti správy.</string>
+    <string name="dialog_sms_limit">Dosiahol sa limit veľkosti správy. Správa s prekročeným limitom veľkosti bude vymazaná</string>
+    <string name="forward_tips_title">"Oznámenie o vymazaní MMS"</string>
+    <string name="forward_tips_body">"Oznámenie MMS nepodporuje odoslanie. Správa bude vymazaná."</string>
+    <string name="type_to_quick_text">"Napíšte rýchly text"</string>
+    <string name="menu_wappush">"Správy Wap push"</string>
+    <string name="visit_website">"Navštívte internetovú stránku"</string>
+    <string name="meet_emoticon_limit">Dodržte limity pre emotikon</string>
+    <string name="view_mms_notification">Nedá sa zobraziť oznámenie o MMS</string>
+    <string name="ipmsg_multi_forward_tips_content">Ak chcete vykonať viacnásobné odoslanie, najskôr je potrebné prevziať niektorú iSMS.</string>
+    <string name="multi_forward_failed_all">Nepodarilo sa prevziať, viacnásobné odoslanie je zrušené.</string>
+    <string name="ipmsg_multi_forward_failed_part">Nepodarilo sa odoslať niektorú iSMS</string>
+    <string name="sum_search_networks">"Hľadať všetky dostupné siete"</string>
+    <string name="confirm_delete_allwappush">"Všetky správy WAP push budú odstránené."</string>
+    <string name="confirm_delete_selected_wappush">"Vybrané správy WAP push budú odstránené."</string>
+    <string name="menu_delete_allwappush">Odstrániť všetky</string>
+    <string name="duplicated_recipient">Duplicitne zadaný príjemca</string>
+    <string name="sms_not_ready">Prebieha spúšťanie modulu SMS. Čakajte prosím ...</string>
+    <string name="label_full_name">"Názov"</string>
+    <string name="label_phone">"Telefón"</string>
+    <string name="label_email">"Poslať e-mail"</string>
+    <string name="label_postal">Adresa</string>
+    <string name="label_organization">Organizácia</string>
+    <string name="label_im">IM</string>
+    <string name="label_website">Internetová stránka</string>
+    <string name="label_sip_address">"Internetový hovor"</string>
+    <string name="label_nick_name">"Prezývka"</string>
+    <string name="label_notes">Oznamy</string>
+    <string name="label_event">Udalosti</string>
+    <string name="search_time_period_label">Časový interval</string>
+    <string name="done_text">"Hotovo"</string>
+    <string name="add_duplicate_recipients">Duplicitne zadaný príjemca</string>
+    <string name="download_disabled_toast">Nedá sa prevziať. Táto aplikácia SMS nie je predvolená.</string>
+    <string name="adding_wallpaper_title">Ukladá sa tapeta...</string>
+    <string name="mwi_title">Hlasové správy</string>
+    <string name="type_voice_msg">Hlasová správa</string>
+    <string name="type_video_msg">Videospráva </string>
+    <string name="type_fax_msg">Faxová správa</string>
+    <string name="priority_urgent">Urgentné</string>
+    <string name="date_label">"Dátum: "</string>
+    <string name="message_id_label">Identif. č. správy:\u0020</string>
+    <string name="voice_message_count_notification"><xliff:g id="number" example="3">%1$s</xliff:g> nových hlasových správ</string>
+    <string name="confirm_delete_allmwi">"Všetky hlasové správy budú odstránené."</string>
+    <string name="confirm_delete_selected_mwi">"Vybrané hlasové správy budú odstránené."</string>
+    <string name="sms_priority_setting">Priorita UIM</string>
+    <string name="sms_priority_Interactive">Interaktívny</string>
+    <string name="sms_priority_Urgent">Urgentné</string>
+    <string name="sms_priority_Emergency">Núdzový stav</string>
+    <string name="type_text_msg">"Textová správa"</string>
+    <string name="empty_sim_name">Zásuvka SIM <xliff:g id="subId" example="2">%1$d</xliff:g></string>
+
+    <string name="drm_not_support">MMS nepodporuje obsah chránený proti kopírovaniu.</string>
+    <string name="user_has_no_premission">Tento používateľ nemôže používať SMS</string>
+    <string name="wfc_no_cellular_network">Žiadna mobilná sieť</string>
+    <string name="wfc_connect_to_available_wifi">Ak chcete odosielať správy, pripojte sa k dostupnej sietei Wi-Fi. </string>
+    <string name="wfc_notification_title">Na odosielanie správ musíte byť pripojení k sieti Wi-Fi</string>
+    <string name="ct_om_switch_notification"><xliff:g id="op1">%s</xliff:g> nebude dočasne fungovať, a v prípade predvoleného hovoru budú podľa toho správy SMS a údajve v <xliff:g id="op2">%s</xliff:g> zmenené na <xliff:g id="op3">%s</xliff:g>.</string>
+    <string name="can_not_switch_account_during_call">PreferovanúkartuSIMnemožnoprepnúťnaSMSpočashovoru.</string>
+    <string name="can_not_switch_account_temporarily">UprednostňovanúkartuSIMnemožnodočasneprepnúťpreSMS.</string>
+    <string name="omh_exceed_message_size_limitation">VeľkosťsprávyR-UIMdosiahlalimit</string>
+    <string name="omh_failed_to_add_image">Dosiahol sa limit veľkosti správy R-UIM, odstráňte niekotré časti. </string>
+    <string name="missing_required_permission">Odmietnuté povolenia. Zmeniť ich môžete v položkách Settings (Nastavenia) &gt; Apps. (Aplikácie)</string>
+    <string name="manage_card_msg_title">Spravovať správy o kartách UIM/SIM</string>
+    <string name="manage_card_msg_summary">Spravovať správy uložené na vašej karte UIM/SIM</string>
+    <string name="disable_delivery_report">Počas roamingu to nemožno povoliť.</string>
+    <string name="fore_service_notify_title">Prenášanie správ</string>
+    <string name="fore_service_notify_content">Existujú správy na prenos.</string>
+    <string name="smart_req_mms_indicator">MMS nie je povolená, skúste znova na SMS.</string>
+</resources>

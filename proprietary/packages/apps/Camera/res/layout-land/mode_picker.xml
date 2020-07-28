@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.android.camera.ui.ModePickerFrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/ModePickerLayout" >
+    <ImageView
+        android:id="@+id/mode_picker_background"
+        style="@style/ModePickerBackground"/>
+    <com.android.camera.ui.ModePickerScrollView
+        android:id="@+id/mode_picker_scroller"
+        style="@style/ModePickerScroll" >
+        <LinearLayout android:id="@+id/mode_picker"
+            style="@style/ModePickerGroup" 
+            android:splitMotionEvents="false">
+            <com.android.camera.ui.RotateImageView
+                android:id="@+id/mode_photo"
+                android:contentDescription="@string/accessibility_switch_to_camera"
+                style="@style/ModePickerIcon" />
+            <com.android.camera.ui.RotateImageView
+                android:id="@+id/mode_stereo_camera"
+                android:contentDescription="@string/accessibility_switch_to_dual_camera"
+                style="@style/ModePickerIcon" />
+            <com.android.camera.ui.RotateImageView
+                android:id="@+id/mode_photo_stereo"
+                android:contentDescription="@string/accessibility_switch_to_stereo_camera"
+                style="@style/ModePickerIcon" />
+            <com.android.camera.ui.RotateImageView
+                android:id="@+id/mode_photo_pip"
+                android:contentDescription="@string/accessibility_switch_to_pip"
+                style="@style/ModePickerIcon" />
+            <com.android.camera.ui.RotateImageView
+                android:id="@+id/mode_face_beauty"
+                android:contentDescription="@string/accessibility_switch_to_face_beauty"
+                style="@style/ModePickerIcon" />
+            <com.android.camera.ui.RotateImageView
+                android:id="@+id/mode_panorama"
+                android:contentDescription="@string/accessibility_switch_to_panorama"
+                style="@style/ModePickerIcon" />
+        </LinearLayout>
+    </com.android.camera.ui.ModePickerScrollView>
+</com.android.camera.ui.ModePickerFrameLayout>

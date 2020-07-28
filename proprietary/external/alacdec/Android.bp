@@ -1,0 +1,15 @@
+cc_prebuilt_library_static {
+    name: "libalacdec_mtk",
+    proprietary: true,
+    owner: "mtk",
+    arch: {
+        arm: {
+            srcs: ["arm/libalacdec_mtk.a"],
+        },
+        arm64: {
+            srcs: ["libalacdec_mtk.a"],
+        },
+    },
+    export_include_dirs: ["."],
+    compile_multilib: "both",
+}

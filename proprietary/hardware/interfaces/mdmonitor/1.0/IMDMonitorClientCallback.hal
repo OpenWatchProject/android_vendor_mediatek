@@ -1,0 +1,5 @@
+package vendor.mediatek.hardware.mdmonitor@1.0;
+
+interface IMDMonitorClientCallback {
+    MCPReceiver(vec<uint8_t> data) generates (bool success);
+};

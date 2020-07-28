@@ -1,0 +1,32 @@
+MFNR core middleware build adapter
+
+
+WHAT IT DOES?
+=============
+
+An platform-independent MFNR core adapter to select which version of MFNR core
+to build
+
+
+HOW IT WAS BUILT?
+==================
+
+To determine the core version, you have to set
+
+    MFLL_CORE_VERSION_MAJOR
+    MFLL_CORE_VERSION_MINOR
+
+from here:
+
+    feature/common/mfnr/Android.mk
+
+See: feature/common/mfnr/README
+
+
+HOW TO USE IT?
+==============
+
+See: feature/common/mfnr/README
+
+
+All the source code of this program were written by MediaTek co..

@@ -1,0 +1,16 @@
+WHAT IT DOES?
+=============
+This is using to packaging mediatek added APIs, android hidden APIs as
+portability.jar to Camera app to import, which make Camera app can build
+pass on any android platform.
+
+
+HOW IT WAS BUILT?
+==================
+Build command:mmm vendor/mediatek/proprietary/packages/apps/Camera2/
+portability
+
+
+HOW TO USE IT?
+==============
+Import portability class you want to use in your class.

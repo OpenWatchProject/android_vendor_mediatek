@@ -1,0 +1,23 @@
+android_app {
+    name: "mediatek-res",
+    owner : "mtk",
+    certificate: "platform",
+
+    // Soong special-cases mediatek-res to install this alongside
+    // the libraries at /system/framework/mediatek-res.apk.
+
+    // Generate private symbols into the com.mediatek.internal.R class
+    // so they are not accessible to 3rd party apps.
+    aaptflags: [
+        "--private-symbols",
+        "com.mediatek.internal",
+
+        // Framework doesn't need versioning since it IS the platform.
+        "--no-auto-version",
+    ],
+
+    // Create package-export.apk, which other packages can use to get
+    // PRODUCT-agnostic resource data like IDs and type definitions.
+    export_package_resources: true,
+}
+

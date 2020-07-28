@@ -1,0 +1,80 @@
+######### DUT (Device Under Test) Information #########################
+
+#### Wi-Fi Test Suite Control Agent Support ########
+# 1-If DUT has Wi-Fi Test Suite Control Agent support. 0-If not supported.
+
+WTS_ControlAgent_Support!1!
+
+# DUTType : WPA2-Personal or WPA2-Enterprise
+DUTType!WPA2-Personal!
+
+# DUT Band : ABG or BG or B (B only) or ABGN or GN
+DUTBand!ABGN!
+
+#DUT Category : c1 or c2 or c3 if device is WPA2-Enterprise
+DUTCategory!c3!
+
+#Supported EAP Methods 0-No 1-Yes
+TLS!1!
+TTLS!1!
+PEAP0!1!
+PEAP1!1!
+SIM!1!
+AKA!1!
+
+# WEP Support 0-No 1-Yes
+WEP!1!
+
+#Pre Authentication Support 0-No 1-Yes
+PreAuth!0!
+
+#802.11h Support 0-No 1-Yes
+11h!0!
+
+####### MIMO Parameters ############
+
+## Supported Channel Widht 20-20Mhz 40-20/40Mhz
+SupportedChannelWidth!20!
+
+## Number of Streams Support
+## 1 - 1X1, 2 - 2X2, 3-3X3
+
+Streams!1!
+
+## Greenfield Support 0-N0 1-Yes
+Greenfield!0!
+
+## Short Guard Interval(SGI) Support 0-N0 1-Yes
+SGI20!1!
+SGI40!1!
+
+## RIFS Tx 0-N0 1-Yes
+RIFS_TX!0!
+ 
+## 20/40 Coexistence - 0-N0 1-Yes
+Coexistence_2040!1!
+
+### STBC Receive 0-N0 1-Yes
+
+STBC_RX!1!
+
+### STBC Transmit 0-N0 1-Yes
+
+STBC_TX!0!
+
+### OBSS on Extension Channel 0-N0 1-Yes
+
+OBSS!0!
+
+### A-MPDU Tx Support 0-N0 1-Yes
+
+AMPDU_TX!0!
+
+### AP Concurrent Opn in 2.4GHz and 5GHz 0-N0 1-Yes
+
+AP_Concurrent!0!
+
+### HT Duplication Mode (MCS 32) 0-N0 1-Yes
+
+MCS32!0!
+

@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+ * Copyright (C) 2007-2008 Esmertec AG.
+ * Copyright (C) 2007-2008 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+-->
+
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+   <!-- MTK resource -->
+   <string name="alerts">Alerts</string>
+    <string name="select_all">Select all</string>
+    <string name="unselect_all">Deselect all</string>
+    <string name="delete">Delete</string>
+    <string name="select_cellbroadcasts">Select emergency alert</string>
+
+    <!-- add for dual sim setting -->
+    <string name="common_setting">Common Settings</string>
+    <string name="account_setting">Account Settings</string>
+
+    <!-- add for language setting -->
+    <string name="menu_language_settings">Language Settings</string>
+    <string name="cb_dialog_title_language_choice">Select language</string>
+    <string name="cb_error_language_select">Please select at least one language.</string>
+    <string name="ok">OK</string>
+    <string name="cancel">CANCEL</string>
+
+    <plurals name="message_view_selected_message_count">
+        <item quantity="one"><xliff:g id="message_count" example="1">%d</xliff:g> selected</item>
+        <item quantity="other"><xliff:g id="message_count" example="9">%d</xliff:g> selected</item>
+    </plurals>
+    <plurals name="confirm_delete_broadcast">
+        <!-- Case of 1 result. -->
+        <item quantity="one">1 selected alert message will be deleted</item>
+        <!-- Case of 0 or 2 or more results. -->
+        <item quantity="other"><xliff:g id="number" example="15">%1$s</xliff:g> selected alert messages will be deleted</item>
+    </plurals>
+
+    <string name="enable_cmas_presidential_threat_alerts_title">Show Presidential alert</string>
+    <string name="enable_cmas_presidential_threat_alerts_summary">Display presidential level alerts</string>
+
+    <string name="enable_cmas_imminent_threat_alerts_title">Imminent Alert</string>
+    <string name="enable_cmas_imminent_threat_alerts_summary">Display alerts for imminent threats to life and property</string>
+
+    <string name="cmas_preview_alert_tone_title">Alert tone preview</string>
+    <string name="cmas_preview_alert_tone_summary">Preview the alert tone</string>
+
+    <string name="cmas_change_settings">Are you sure to change the settings?</string>
+    <string name="cmas_disable_cmas">No alert will be received if you disable the cell broadcast.</string>
+    <string name="cmas_enable_cmas_failed">Fail to open.</string>
+
+    <string name="enable_repeat_alert_title">Repeat alarm</string>
+    <string name="enable_repeat_alert_summary">To remind user the unread alert intermittently</string>
+    <string name="enable_all_alert_title">All Alerts On</string>
+    <string name="enable_all_imminent_alerts_title">All Imminent threat messages</string>
+    <string name="enable_cell_broadcast_title">Wireless EMERGENCY ALERTS</string>
+    <string name="alert_sound_volume">Alert sound volume</string>
+    <string name="alert_volume_summary">Adjust alert sound volume</string>
+    <string name="chile_emergency_alert">ALERTA DE EMERGENCIA</string>
+
+    <string name="public_safety_dialog_title">Public Safety Alert</string>
+    <string name="wea_test_dialog_title">State/Local Test Alert</string>
+
+    <!-- add for TRA test-->
+    <string name="enable_tra_class1_threat_alerts_title">National Emergency Alerts</string>
+    <string name="enable_tra_class1_threat_alerts_summary">Enable national emergency alerts</string>
+    <string name="enable_tra_class2_threat_alerts_title">Emergency Alerts</string>
+    <string name="enable_tra_class2_threat_alerts_summary">Enable emergency alerts</string>
+    <string name="enable_tra_class3_threat_alerts_title">Emergency Alerts</string>
+    <string name="enable_tra_class3_threat_alerts_summary">Enable emergency alerts</string>
+    <string name="enable_tra_class4_threat_alerts_title">Warning Alerts</string>
+    <string name="enable_tra_class4_threat_alerts_summary">Enable warning alerts</string>
+    <string name="enable_tra_class5_threat_alerts_title">Test Alerts</string>
+    <string name="enable_tra_class5_threat_alerts_summary">Enable test alerts</string>
+    <string name="enable_tra_class6_threat_alerts_title">Exercises</string>
+    <string name="enable_tra_class6_threat_alerts_summary">Enable Exercises</string>
+    <string name="emergency_other_settings_title">Other Settings</string>
+
+     <!-- add for TRA test-->
+    <string name="cmas_tra_class1_level_alert">National Emergency Alert</string>
+    <string name="cmas_tra_class2_level_alert">Emergency Alert</string>
+    <string name="cmas_tra_class3_level_alert">Emergency Alert</string>
+    <string name="cmas_tra_class4_level_alert">Warning Alert</string>
+    <string name="cmas_tra_class5_level_alert">Test Alert</string>
+    <string name="cmas_tra_class6_level_alert">Exercise</string>
+
+    <!-- add for TRA test-->
+    <string name="cmas_tra_class1_level_alert_ar">تحذير طارئ وطني</string>
+    <string name="cmas_tra_class2_level_alert_ar">تحذير طارئ</string>
+    <string name="cmas_tra_class3_level_alert_ar">تحذير طارئ</string>
+    <string name="cmas_tra_class4_level_alert_ar">رسائل تحذيرية</string>
+    <string name="cmas_tra_class5_level_alert_ar">رسالة تجريبية</string>
+    <string name="cmas_tra_class6_level_alert_ar">تمرين</string>
+
+    <!-- add for language setting -->
+    <string-array name="language_list_values" translatable="false">
+        <item>All Languages</item>
+        <item>German</item>
+        <item>English</item>
+        <item>Italian</item>
+        <item>French</item>
+        <item>Spanish</item>
+        <item>Dutch</item>
+        <item>Swedish</item>
+        <item>Danish</item>
+        <item>Portuguese</item>
+        <item>Finnish</item>
+        <item>Norwegian</item>
+        <item>Greek</item>
+        <item>Turkish</item>
+        <item>Hungarian</item>
+        <item>Polish</item>
+        <item>Others</item>
+        <item>Czech</item>
+        <item>Hebrew</item>
+        <item>Arabic</item>
+        <item>Russian</item>
+        <item>IceLandic</item>
+    </string-array>
+
+    <!-- add for language setting -->
+    <string-array name="language_list_id" translatable="false">
+        <item>-1</item>
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+        <item>13</item>
+        <item>14</item>
+        <item>15</item>
+        <item>32</item>
+        <item>33</item>
+        <item>34</item>
+        <item>35</item>
+        <item>36</item>
+    </string-array>
+</resources>
+

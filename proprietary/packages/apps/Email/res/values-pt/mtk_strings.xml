@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Copyright Statement:
+
+    This software/firmware and related documentation ("MediaTek Software") are
+    protected under relevant copyright laws. The information contained herein
+    is confidential and proprietary to MediaTek Inc. and/or its licensors.
+    Without the prior written permission of MediaTek inc. and/or its licensors,
+    any reproduction, modification, use or disclosure of MediaTek Software,
+    and information contained herein, in whole or in part, shall be strictly prohibited.
+
+    MediaTek Inc. (C) 2012. All rights reserved.
+
+    BY OPENING THIS FILE, RECEIVER HEREBY UNEQUIVOCALLY ACKNOWLEDGES AND AGREES
+    THAT THE SOFTWARE/FIRMWARE AND ITS DOCUMENTATIONS ("MEDIATEK SOFTWARE")
+    RECEIVED FROM MEDIATEK AND/OR ITS REPRESENTATIVES ARE PROVIDED TO RECEIVER ON
+    AN "AS-IS" BASIS ONLY. MEDIATEK EXPRESSLY DISCLAIMS ANY AND ALL WARRANTIES,
+    EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF
+    MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE OR NONINFRINGEMENT.
+    NEITHER DOES MEDIATEK PROVIDE ANY WARRANTY WHATSOEVER WITH RESPECT TO THE
+    SOFTWARE OF ANY THIRD PARTY WHICH MAY BE USED BY, INCORPORATED IN, OR
+    SUPPLIED WITH THE MEDIATEK SOFTWARE, AND RECEIVER AGREES TO LOOK ONLY TO SUCH
+    THIRD PARTY FOR ANY WARRANTY CLAIM RELATING THERETO. RECEIVER EXPRESSLY ACKNOWLEDGES
+    THAT IT IS RECEIVER'S SOLE RESPONSIBILITY TO OBTAIN FROM ANY THIRD PARTY ALL PROPER LICENSES
+    CONTAINED IN MEDIATEK SOFTWARE. MEDIATEK SHALL ALSO NOT BE RESPONSIBLE FOR ANY MEDIATEK
+    SOFTWARE RELEASES MADE TO RECEIVER'S SPECIFICATION OR TO CONFORM TO A PARTICULAR
+    STANDARD OR OPEN FORUM. RECEIVER'S SOLE AND EXCLUSIVE REMEDY AND MEDIATEK'S ENTIRE AND
+    CUMULATIVE LIABILITY WITH RESPECT TO THE MEDIATEK SOFTWARE RELEASED HEREUNDER WILL BE,
+    AT MEDIATEK'S OPTION, TO REVISE OR REPLACE THE MEDIATEK SOFTWARE AT ISSUE,
+    OR REFUND ANY SOFTWARE LICENSE FEES OR SERVICE CHARGE PAID BY RECEIVER TO
+    MEDIATEK FOR SUCH MEDIATEK SOFTWARE AT ISSUE.
+
+    The following software/firmware and/or related documentation ("MediaTek Software")
+    have been modified by MediaTek Inc. All revisions are subject to any receiver's
+    applicable license agreements with MediaTek Inc.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">  
+    <string name="not_add_more_text">"Não pode adicionar mais texto"</string>  
+    <!-- message compose add attachment -->  
+    <string name="attach_image">Foto</string>  
+    <string name="attach_video">Video</string>  
+    <string name="attach_sound">Música</string>  
+    <string name="attach_contact">Contatos</string>  
+    <string name="attach_file">Arquivo</string>  
+    <string name="attach_calender">Calendário</string>  
+    <string name="attach_error_occurred">Nenhum aplicativo suporta este tipo de anexo.</string>  
+    <!-- Toast for telling user the email service stopped when low storage -->  
+    <string name="low_storage_service_stop">Serviço de email parado devido a baixo armazenamento.</string>  
+    <!-- Toast for hint user to delete unused emails to reclaim storage -->  
+    <string name="low_storage_hint_delete_mail">Você pode excluir emails ou aplicativos não utilizados para recuperar armazenamento.</string>  
+    <!-- Toast for telling user the email service started when storage ok-->  
+    <string name="low_storage_service_start">Serviço de email reiniciado, pois o espaço agora é suficiente.</string>  
+    <!-- Toast for telling user can not download attachment due to low storage -->  
+    <string name="low_storage_attachment_cannot_download">Não pode baixar anexo devido a baixo armazenamento.</string>  
+    <!-- Toast for telling user can not view attachment due to low storage -->  
+    <string name="low_storage_attachment_cannot_view">Não pode visualizar anexo devido a baixo armazenamento.</string>  
+    <!-- Download remaining of the message when view a partial downloaded message -->  
+    <string name="download_remaining">Baixando Remanescente</string>  
+    <string name="downloading_remaining">Carregando ...</string>  
+    <!-- Dialog title when user syncing manually without active network -->  
+    <string name="unable_to_connect">Incapaz de conectar</string>  
+    <!-- Dialog text when user syncing manually without active network  -->  
+    <string name="need_connection_prompt">"Você precisa de uma conexão de rede para utilizar este aplicativo. Por favor, ligue a rede móvel ou WiFi em Configurações."</string>  
+    <!-- Dialog text when user syncing manually without active wifi network  -->
+    <string name="need_wifi_connection_prompt">"Você precisa de uma conexão de rede para usar este aplicativo. Ligue o WiFi em Configurações."</string>
+    <!-- Button text in the connection alert dialog -->  
+    <string name="connection_settings">"Configurações"</string>  
+    <!-- limit of attachment number, when share more than 100+ attachments -->  
+    <string name="too_many_attachments">Impossível adicionar muitos anexos. Apenas os primeiros 
+        <xliff:g id="currentCount">%1$d</xliff:g> anexos serão adicionados.
+    </string>  
+    <!-- limit of attachment number, when the current number >100 -->  
+    <string name="not_add_more_attachments">Não pode adicionar tantos anexos. Apenas o primeiro 
+        <xliff:g id="currentCount">%1$d</xliff:g> anexo será adicionado.
+    </string>  
+    <string name="attachment_overflow">Excesso de anexos</string>  
+    <!-- String which used to show toast when some attachment cannot be attached -->  
+    <string name="cannot_add_this_attachment">Não pode adicionar este anexo.</string>  
+    <string name="loading_attachment">Carregando anexos...</string> 
+    <!-- Open eml message -->  
+    <string name="open_message_parsing">A analisar a mensagem...</string>  
+    <string name="open_message_update_db">A actualizar a base de dados...</string>  
+    <string name="open_message_update_ui">A carregar a mensagem...</string>  
+    <string name="please_wait">Ação em progresso. Aguarde...</string> 
+    <string name="delete_message_dialog_title">Excluir Mensagem</string>
+    <string name="delete_message_confirm">Excluir esta mensagem?</string> 
+    <string name="attachment_info_deleted">"O anexo não pode ser salvo nem aberto porque because o anexo pode ter sido excluído."</string>  
+    <string name="send_failed_ticker"> 
+        <xliff:g id="account_name">%s</xliff:g> falhou ao enviar email.
+    </string>  
+    <!-- Notification title when email sent fails [CHAR LIMIT=30]-->  
+    <string name="send_failed_title">Falhou ao enviar email</string>  
+    <string name="always_bcc_myself">Sempre me enviar cco</string>  
+    <string name="always_bcc_myself_summary">Sempre me enviar cco ao compor, responder e encaminhar</string> 
+    <string name="remote_search_failed">Procura de servidor falhou!</string>
+    <string name="searching_on_server">Procurar no Servidor</string>  
+    <string name="searching_on_server_title">Procurar \" 
+        <xliff:g id="account_name">%s</xliff:g>\" no servidor
+    </string>  
+    <string name="search_field_subject">Assunto</string>  
+    <string name="search_field_receiver">Receptor</string>  
+    <string name="search_field_sender">Remetente</string>  
+    <string name="search_field_body">Corpo</string>  
+    <string name="search_field_all">"Todos"</string>
+    <string name="searching_all_fields_on_sever">Procurar todos os campos no Servidor</string> 
+    <string name="select_all">"Selecionar tudo"</string>
+    <string name="deselect_all">"Desmarcar tudo"</string>
+
+    <string name="vip_settings">AJUSTES VIP</string>  
+    <string name="vip_members">Membros VIP </string>  
+    <string name="vip_notifications">Notificações VIP</string>  
+    <string name="vip_settings_notify_summary">Notificar na barra de Sistema quando a e-mail VIP chegar</string>  
+    <string name="vip_members_count">Membros VIP (<xliff:g example="2">%1$d</xliff:g>)</string>  
+    <string name="vip_remove_title">Remover de VIP</string>
+    <string name="vip_remove_prompt"><xliff:g example="2">%1$s</xliff:g> será removido dos membros VIP.</string>  
+    <string name="not_add_duplicate_vip">O contato duplicado não será adicionado à lista VIP.</string>  
+    <string name="vip_settings_ringtone">"Escolher toque"</string>  
+    <string name="vip_settings_vibrate_label">Vibrar</string>  
+    <string name="vip_settings_vibrate_summary">Também vibra quando a e-mail VIP chega</string>  
+    <string name="global_search_label">"E-mail"</string>  
+    <string name="global_search_hint">"Pesquisar e-mail"</string>  
+    <string name="global_search_description">Remetente, assuntos e corpos</string>  
+    <string name="account_settings_oof_time_alert">Deve ser mais tarde que a hora atual.</string>
+    <string name="account_settings_oof_label">Fora do escritório</string>  
+    <string name="account_settings_oof_unchecked_summary">Agora, estou no escritório</string>  
+    <string name="account_settings_oof_checked_summary">Agora, estou fora do escritório</string>  
+    <string name="account_settings_oof_from_label">"De"</string>  
+    <string name="account_settings_oof_to_label">"Para"</string>  
+    <string name="account_settings_oof_auto_reply_label">"Respostas automáticas 'fora do escritório'"</string>  
+    <string name="account_settings_oof_auto_reply_summary">Mensagem de resposta automática a cada remetente</string>  
+    <string name="account_settings_oof_external_server_label">Enviar respostas automáticas ao servidor externo</string>  
+    <string name="account_settings_oof_get_status">Obter status do servidor</string>  
+    <string name="account_settings_oof_save_sets">Salvar ajustes para o servidor</string>  
+    <string name="account_settings_oof_get_status_fail">Não foi possível obter status</string>
+    <string name="account_settings_oof_get_status_fail_summary">Não foi possível obter status do servidor agora. Por favor, tente novamente mais tarde.</string>
+    <string name="account_settings_oof_cancel">Sem salvar?</string>  
+    <string name="account_settings_oof_cancel_summary">Todas as mudanças serão descartadas.</string>  
+    <string name="account_settings_oof_save_fail">Não foi possível salvar</string>  
+    <string name="account_settings_oof_save_fail_summary">Não foi possível salvar os ajustes no servidor. O servidor pode estar indisponível ou suas respostas automáticas podem ter excedido o limite no servidor ou seus dispositivos estão com a data ou hora incorreta.</string>  
+    <string name="account_setup_options_mail_check_frequency_smartpush">Pressão inteligente</string>
+    <string name="smart_push_alert_dialog_title">Opção de economia de energia</string>
+    <string name="smart_push_alert_dialog_message">" verifica novos new com menos frequência para economizar energia. Se mantenha usando este modo, o email será recebido em tempo.\n\nVocê pode alterar nas configurações a qualquer momento."</string>
+    <string name="not_add_more_recipients">Impossível adicionar destinatários acima de <xliff:g id="maxLimit">%1$d</xliff:g> de uma vez.</string>
+    <string name="vip_choose_contact">Adicionar a VIP</string>
+    <string name="can_not_add_vip_over_99">Impossível adicionar membro VIP acima de 99</string>
+    <string name="no_application_response">O aplicativo foi desabilitado</string>
+    <string name="vip_emails_from_accounts_fmt">Emails de <xliff:g id="vipAccountCount">%d</xliff:g> contas</string>
+    <string name="notification_multiple_new_vip_messages_fmt"><xliff:g example="2">%1$d</xliff:g> novos emails VIP </string>
+    <string name="send_attachment_fail">Falhou em enviar anexo.</string>
+    <string name="cannot_move_multiple_mailbox_toast">Alguns emails estão em processo de movimentação, tente novamente mais tarde.</string>
+    <string name="certificate_request_ssl">O certificado do cliente deve usar conexão de segurança.</string>
+    <string name="auto_clear_cache_title">Limpar cache automaticamente</string>
+    <string name="auto_clear_cache_description">Limpar localmente anexos regularmente</string>
+    <string name="edit_quoted_dialog_title">Caracteres máximos</string>
+    <string name="edit_quoted_not_append_all">Números máximos de caracteres alcançados. Parte do conteúdo antigo será perdido, continuar?</string>
+    <string name="single_message_view_attachment_saved">Anexo salvo em <xliff:g id="filename">%s</xliff:g></string>
+    <string name="choose_attachment_dialog_title">"Escolher anexo"</string>
+    <string name="message_compose_error_invalid_email">"Alguns endereços de e-mail são inválidos."</string>
+    <string name="extension_choose_provider_title">Escolher um provedor de e-mail</string>
+    <string name="message_view_status_sdcard_not_enough">Não há espaço suficiente para salvar o anexo em um cartão SD.</string>
+    <string name="message_body_too_large">Impossível carregar todo o conteúdo pos a mensagem era muito grande.</string>
+</resources>

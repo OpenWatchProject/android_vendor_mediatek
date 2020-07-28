@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Copyright Statement:
+    This software/firmware and related documentation ("MediaTek Software") are
+    protected under relevant copyright laws. The information contained herein
+    is confidential and proprietary to MediaTek Inc. and/or its licensors.
+    Without the prior written permission of MediaTek inc. and/or its licensors,
+    any reproduction, modification, use or disclosure of MediaTek Software,
+    and information contained herein, in whole or in part, shall be strictly prohibited.
+    MediaTek Inc. (C) 2012. All rights reserved.
+    BY OPENING THIS FILE, RECEIVER HEREBY UNEQUIVOCALLY ACKNOWLEDGES AND AGREES
+    THAT THE SOFTWARE/FIRMWARE AND ITS DOCUMENTATIONS ("MEDIATEK SOFTWARE")
+    RECEIVED FROM MEDIATEK AND/OR ITS REPRESENTATIVES ARE PROVIDED TO RECEIVER ON
+    AN "AS-IS" BASIS ONLY. MEDIATEK EXPRESSLY DISCLAIMS ANY AND ALL WARRANTIES,
+    EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF
+    MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE OR NONINFRINGEMENT.
+    NEITHER DOES MEDIATEK PROVIDE ANY WARRANTY WHATSOEVER WITH RESPECT TO THE
+    SOFTWARE OF ANY THIRD PARTY WHICH MAY BE USED BY, INCORPORATED IN, OR
+    SUPPLIED WITH THE MEDIATEK SOFTWARE, AND RECEIVER AGREES TO LOOK ONLY TO SUCH
+    THIRD PARTY FOR ANY WARRANTY CLAIM RELATING THERETO. RECEIVER EXPRESSLY ACKNOWLEDGES
+    THAT IT IS RECEIVER'S SOLE RESPONSIBILITY TO OBTAIN FROM ANY THIRD PARTY ALL PROPER LICENSES
+    CONTAINED IN MEDIATEK SOFTWARE. MEDIATEK SHALL ALSO NOT BE RESPONSIBLE FOR ANY MEDIATEK
+    SOFTWARE RELEASES MADE TO RECEIVER'S SPECIFICATION OR TO CONFORM TO A PARTICULAR
+    STANDARD OR OPEN FORUM. RECEIVER'S SOLE AND EXCLUSIVE REMEDY AND MEDIATEK'S ENTIRE AND
+    CUMULATIVE LIABILITY WITH RESPECT TO THE MEDIATEK SOFTWARE RELEASED HEREUNDER WILL BE,
+    AT MEDIATEK'S OPTION, TO REVISE OR REPLACE THE MEDIATEK SOFTWARE AT ISSUE,
+    OR REFUND ANY SOFTWARE LICENSE FEES OR SERVICE CHARGE PAID BY RECEIVER TO
+    MEDIATEK FOR SUCH MEDIATEK SOFTWARE AT ISSUE.
+    The following software/firmware and/or related documentation ("MediaTek Software")
+    have been modified by MediaTek Inc. All revisions are subject to any receiver's
+    applicable license agreements with MediaTek Inc.
+    Copyright (C) 2008 The Android Open Source Project
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+         http://www.apache.org/licenses/LICENSE-2.0
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="not_add_more_text">"不能再加更多字"</string>
+    <string name="attach_image">照片</string>
+    <string name="attach_video">影片</string>
+    <string name="attach_sound">"音樂"</string>
+    <string name="attach_contact">"通訊錄"</string> 
+    <string name="attach_file">檔案</string> 
+    <string name="attach_calender">"日曆"</string>    
+    <string name="attach_error_occurred">沒有應用程式支援這種附件。</string>  
+    <string name="low_storage_service_stop">由於低存儲停止電子郵件服務。</string>
+    <string name="low_storage_hint_delete_mail">您可以刪除未使用的電子郵件或回收存儲的應用程式。</string>
+    <string name="low_storage_service_start">電子郵件服務重新啟動，因為現在存儲量已滿。</string>
+    <string name="low_storage_attachment_cannot_download">不能下載低存儲的附件。</string>
+    <string name="low_storage_attachment_cannot_view">不能查看低存儲的附件。</string>
+    <string name="download_remaining">下載剩餘</string>
+    <string name="downloading_remaining">正在載入...</string>
+    <string name="unable_to_connect">無法連接</string>
+    <string name="need_connection_prompt">"你需要網絡連接使用此應用程式。請在設置處打開移動網路或 WiFi。"</string>
+    <string name="need_wifi_connection_prompt">"你需要網絡連接使用此應用程式。請在設置處打開WiFi。"</string>
+    <string name="connection_settings">輔助定位系統設定</string>
+    <string name="too_many_attachments">不能添加太多附件。僅第一次的 <xliff:g id="currentCount"> %1$d </xliff:g> 附件將被添加。</string>
+    <string name="not_add_more_attachments">不能添加太多附件。這是 <xliff:g id="maxLimit"> %1$ d </xliff:g> 附件的限制。</string>
+    <string name="attachment_overflow">附件溢出</string>
+    <string name="cannot_add_this_attachment">不能添加此附件。</string>
+    <string name="loading_attachment">正在載入附件...</string>
+    <string name="send_attachment_fail">發送附件失敗。</string>
+    <string name="open_message_parsing">解析信息......</string>
+    <string name="open_message_update_db">正在更新資料庫...</string>
+    <string name="open_message_update_ui">載入信息......</string>
+    <string name="please_wait">採取行動中，請稍候…</string>
+    <string name="delete_message_dialog_title">刪除信息</string>
+    <string name="delete_message_confirm">刪除此信息？</string>
+    <string name="attachment_info_deleted">"此附件不能保存或打開，由於可能已被刪除。"</string>
+    <string name="send_failed_ticker"><xliff:g id="account_name"> %s </xliff:g> 發送電子郵件失敗。</string>
+    <string name="send_failed_title">發送電子郵件失敗</string>
+    <string name="always_bcc_myself">總是給自己一個密件副本</string>
+    <string name="always_bcc_myself_summary">當撰寫、 答覆和轉發時，總是給自己一個密件副本</string>
+    <string name="remote_search_failed">伺服器搜索失敗 ！</string>
+    <string name="searching_on_server">在伺服器上的搜索</string>
+    <string name="searching_on_server_title">搜索 \ "<xliff:g id="account_name"> %s </xliff:g> \"於伺服器</string>
+    <string name="searching_all_fields_on_sever">搜尋伺服器上的所有欄位</string>
+    <string name="search_field_subject">"主旨"</string>
+    <string name="search_field_receiver">收件者</string>
+    <string name="search_field_sender">寄件者</string>
+    <string name="search_field_body">正文</string>
+    <string name="search_field_all">"全部"</string>
+    <string name="select_all">選擇全部</string>
+    <string name="deselect_all">"全部不選"</string>
+    <string name="vip_settings">VIP 的設置</string>
+    <string name="vip_members">VIP 會員</string>
+    <string name="vip_notifications">VIP 通知</string>
+    <string name="vip_settings_notify_summary">當 VIP 電子郵件到達時，於系統欄通知</string>
+    <string name="vip_members_count">VIP 會員 (<xliff:g example="2">%1$d</xliff:g>)</string>
+    <string name="vip_remove_title">從VIP裡移除</string>
+    <string name="vip_choose_contact">加入到VIP</string>
+    <string name="vip_remove_prompt"><xliff:g example="2">%1$s</xliff:g>將從VIP會員中移除。</string>
+    <string name="not_add_duplicate_vip">重複的連絡人將不添加到 VIP 清單中。</string>
+    <string name="can_not_add_vip_over_99">超過 99後不能添加 VIP 會員。</string>
+    <string name="vip_count">0</string>
+    <string name="vip_settings_ringtone">"選擇鈴聲"</string>
+    <string name="vip_settings_vibrate_label">震動</string>
+    <string name="vip_settings_vibrate_summary">VIP電子郵件到達時還要震動 </string>
+    <string name="vip_settings_member_count"><xliff:g id="count">%2d</xliff:g></string>
+    <string name="account_setup_options_mail_check_frequency_smartpush">智慧推送</string>
+    <string name="smart_push_alert_dialog_title">節電選項</string>
+    <string name="smart_push_alert_dialog_message">減少檢查新電子郵件的頻率以節省電源。繼續使用這種模式，每次收到的電子郵件將會更多。\n\n你可以在任何時間更改它的設置。</string>
+    <string name="global_search_label">"電郵"</string>
+    <string name="global_search_hint">"搜尋電郵"</string>
+    <string name="global_search_description">寄件者、 主題和內文</string>
+    <string name="account_settings_oof_label">不在辦公室</string>
+    <string name="account_settings_oof_unchecked_summary">我現在在辦公室</string>
+    <string name="account_settings_oof_checked_summary">我現在不在辦公室</string>
+    <string name="account_settings_oof_from_label">"從"</string>
+    <string name="account_settings_oof_to_label">"至"</string>
+    <string name="account_settings_oof_auto_reply_label">不在辦公室時自動回覆</string>
+    <string name="account_settings_oof_auto_reply_summary">自動回覆消息給每個寄件者</string>
+    <string name="account_settings_oof_external_server_label">向外部伺服器發送自動回覆</string>
+    <string name="account_settings_oof_get_status">從伺服器上獲取狀態</string>
+    <string name="account_settings_oof_save_sets">保存設定到伺服器</string>
+    <string name="account_settings_oof_get_status_fail">無法獲取狀態</string>
+    <string name="account_settings_oof_get_status_fail_summary">現在無法從伺服器獲取狀態。請稍後再試。</string>
+    <string name="account_settings_oof_cancel">不保存嗎？</string>
+    <string name="account_settings_oof_cancel_summary">所有更改將都被丟棄。</string>
+    <string name="account_settings_oof_save_fail">無法保存</string>
+    <string name="account_settings_oof_save_fail_summary">無法將設定保存到伺服器。伺服器可能不可用，或您的自動回覆可能有超過此限制的伺服器上，或您的設備是在錯誤的日期或時間。</string>
+    <string name="account_settings_oof_time_alert">它應比目前時間晚。</string>
+    <string name="no_application_response">"應用程式已被禁用"</string>
+    <string name="extension_choose_provider_title">選擇電郵供應商</string>
+    <string name="not_add_more_recipients">不能同時添加收件者超過 <xliff:g id="maxLimit"> %1$d </xliff:g> 。</string>
+    <string name="message_view_status_sdcard_not_enough">沒有足夠的空間來保存附件到 SD 卡。</string>
+    <string name="vip_emails_from_accounts_fmt">電子郵件從<xliff:g id="vipAccountCount"> %d </xliff:g> 帳戶</string>
+    <string name="notification_multiple_new_vip_messages_fmt"><xliff:g example="2"> %1$ d </xliff:g> 新 VIP 電子郵件</string>
+    <string name="message_body_too_large">不載入整個內容因信息太大。</string>
+    <string name="cannot_move_multiple_mailbox_toast">一些電子郵件正在移動，請稍後再嘗試。</string>
+    <string name="certificate_request_ssl">用戶端憑證必須使用安全連線。</string>
+    <string name="auto_clear_cache_title">自動清除快取</string>
+    <string name="auto_clear_cache_description">定期清除本機快取的附件</string>
+    <string name="edit_quoted_dialog_title">最大字元數</string>
+    <string name="edit_quoted_not_append_all">達到最大數量的字元。一些舊的內容將會失去，是否繼續?</string>
+   <string name="single_message_view_attachment_saved">附件儲存到 <xliff:g id="filename">%s</xliff:g></string>
+    <string name="choose_attachment_dialog_title">選擇附件</string>
+    <string name="message_compose_error_invalid_email">部份電子郵件不正確</string>
+</resources>

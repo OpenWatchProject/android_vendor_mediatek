@@ -1,0 +1,112 @@
+cc_library_shared {
+    name: "libmtkavenhancements",
+    owner: "mtk",
+
+    srcs: [
+        "MtkAVStageFactory.cpp",
+        "MtkAVStageUtils.cpp",
+        "MtkACodec/MtkACodec.cpp",
+        "MtkMPEG4Writer/MtkMPEG4Writer.cpp",
+        "Utils_MTK.cpp",
+        "TableOfContentThread.cpp",
+        "MtkImageDecoder.cpp",
+        "roi/MtkRoi.cpp",
+    ],
+
+    include_dirs: [
+    		"vendor/mediatek/proprietary/frameworks/av/AVEnhance/libmtkavenhancements",
+    		"vendor/mediatek/proprietary/frameworks/av/AVEnhance/libavextensions",
+        "frameworks/av/media/libstagefright",
+        "system/core/base/include",
+        "frameworks/av/include",
+        "frameworks/av/include/media",
+        "frameworks/av/media/libstagefright/include",
+        "frameworks/av/media/libstagefright/foundation/include",
+        "frameworks/av/media/libstagefright/omx/include",
+    ],
+
+    shared_libs: [
+        "libcutils",
+        "liblog",
+        "libutils",
+        "libstagefright",
+        "libstagefright_foundation",
+        "libcrypto",
+        "libmedia",
+        "libbinder",
+        "libnativewindow",
+        "android.hidl.memory@1.0",
+        "libmedia_omx",
+    ],
+
+    static_libs: [
+        "libavextensions",
+    ],
+
+    cflags: [
+        "-Wno-multichar",
+        "-Werror",
+        "-Wall",
+    ],
+
+    sanitize: {
+        misc_undefined: [
+            "signed-integer-overflow",
+            "unsigned-integer-overflow",
+        ],
+        cfi: true,
+        diag: {
+            cfi: true,
+        },
+    },
+
+    defaults: [
+        "mtk_libmtkavenhancements_defaults",
+    ],
+}
+
+bootstrap_go_package {
+    name:"soong-libmtkavenhancements-mediatek",
+    pkgPath:"android/soong/libmtkavenhancements/mediatek",
+    deps:[
+        "soong-android",
+        "soong-cc",
+    ],
+    srcs:[
+        "libmtkavenhancements.go",
+    ],
+    pluginFor:["soong_build"],
+}
+
+mtk_libmtkavenhancements_defaults {
+    name: "mtk_libmtkavenhancements_defaults",
+
+    header_libs: [
+        "mtk_openmax_headers",
+    ],
+    cflags: [
+        "-DCONFIG_MT_ENG_BUILD",
+    ],
+}
+
+cc_library_static {
+    name: "libmtkavenhancements_metadatautils",
+    owner: "mtk",
+    srcs: ["MetaDataUtils_MTK.cpp"],
+
+    cflags: [
+        "-Werror",
+        "-Wall",
+    ],
+
+    sanitize: {
+        misc_undefined: [
+            "signed-integer-overflow",
+        ],
+        cfi: true,
+    },
+}
+
+subdirs = [
+   "wifi-display",
+]

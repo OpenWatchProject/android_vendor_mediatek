@@ -1,0 +1,6 @@
+
+package vendor.mediatek.hardware.mtkcodecservice@1.1;
+
+interface IMtkCodecServiceCallback {
+    callbackToClient(vec<uint8_t> data) generates (bool success);
+};

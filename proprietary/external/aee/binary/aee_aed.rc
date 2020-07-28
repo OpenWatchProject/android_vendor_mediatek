@@ -1,0 +1,9 @@
+service aee_aed /system/bin/aee_aed
+    group root readproc system debuggerd log package_info
+    writepid /dev/cpuset/system-background/tasks
+
+service aee-reinit /system/bin/aee_aed --reinit
+    oneshot
+    disabled
+    user root
+    group root

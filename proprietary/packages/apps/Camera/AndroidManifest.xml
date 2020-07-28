@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.mediatek.camera0"
+    android:versionCode="40030"
+    android:versionName="1.1.40030" >
+
+    <uses-sdk
+        android:minSdkVersion="14"
+        android:targetSdkVersion="29"/>
+
+    <uses-permission android:name="mediatek.permission.ACCESS_MTK_MMHW" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.BIND_WALLPAPER" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.NFC" />
+    <uses-permission android:name="android.permission.READ_SYNC_SETTINGS" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.SET_WALLPAPER" />
+    <uses-permission android:name="android.permission.SUBSCRIBED_FEEDS_READ" />
+    <uses-permission android:name="android.permission.SUBSCRIBED_FEEDS_WRITE" />
+    <uses-permission android:name="android.permission.USE_CREDENTIALS" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />	
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="com.android.gallery3d.permission.GALLERY_PROVIDER" />
+
+    <uses-permission android:name="android.permission.DEVICE_POWER" />
+    <!-- M: Add for crop -->
+    <uses-permission android:name="android.permission.WRITE_MEDIA_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.WRITE_SYNC_SETTINGS" />
+    <!-- M: Add for test case,allow the application to modify the list of preferred applications -->
+    <uses-permission android:name="android.permission.SET_PREFERRED_APPLICATIONS" />
+    
+    <uses-permission android:name="android.permission.WRITE_APN_SETTINGS" />
+
+    <!-- M: Add for VoiceCommand -->
+    <uses-permission android:name="android.permission.MANAGE_VOICE_KEYPHRASES" />
+
+    <supports-screens
+        android:anyDensity="true"
+        android:largeScreens="true"
+        android:normalScreens="true"
+        android:smallScreens="false" />
+
+    <application
+        android:hardwareAccelerated="true"
+        android:icon="@mipmap/ic_launcher_camera"
+        android:label="@string/camera_label"
+        android:largeHeap="true"
+        android:restoreAnyVersion="true"
+        android:supportsRtl="true"
+        android:theme="@style/ThemeCamera" >
+        <activity
+            android:name="com.android.camera.CameraActivity"
+            android:clearTaskOnLaunch="true"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|screenSize|keyboardHidden|mnc|mcc|smallestScreenSize|uiMode|screenLayout|navigation|keyboard|touchscreen"
+            android:label="@string/camera_label"
+            android:launchMode="singleTask"
+            android:taskAffinity="com.android.camera.CameraActivity"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustPan" >
+            <intent-filter>
+                <action android:name="android.media.action.STILL_IMAGE_CAMERA" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <meta-data
+                android:name="com.android.keyguard.layout"
+                android:resource="@layout/keyguard_widget" />
+        </activity>
+        <activity-alias android:icon="@mipmap/ic_launcher_camera"
+                        android:label="@string/camera_label"
+                        android:name="com.android.camera.CameraLauncher"
+                        android:targetActivity="com.android.camera.CameraActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+        <activity
+            android:name="com.android.camera.SecureCameraActivity"
+            android:clearTaskOnLaunch="true"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:excludeFromRecents="true"
+            android:icon="@mipmap/ic_launcher_camera"
+            android:label="@string/camera_label"
+            android:taskAffinity="com.android.camera.SecureCameraActivity"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustPan" >
+            <intent-filter>
+                <action android:name="android.media.action.STILL_IMAGE_CAMERA_SECURE" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.media.action.IMAGE_CAPTURE_SECURE" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <meta-data
+                android:name="com.android.keyguard.layout"
+                android:resource="@layout/keyguard_widget" />
+        </activity>
+        <activity
+            android:name="com.android.camera.CaptureActivity"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|screenSize|keyboardHidden|mnc|mcc|smallestScreenSize|uiMode|screenLayout|navigation|keyboard|touchscreen"
+            android:label="@string/camera_label"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustPan"
+            android:visibleToInstantApps="true">
+            <intent-filter>
+                <action android:name="android.media.action.IMAGE_CAPTURE" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity-alias
+            android:name="com.android.camera.VideoCamera"
+            android:label="@string/video_camera_label"
+            android:screenOrientation="portrait"
+            android:targetActivity="com.android.camera.CaptureActivity"
+            android:visibleToInstantApps="true">
+            <intent-filter>
+                <action android:name="android.media.action.VIDEO_CAMERA" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.media.action.VIDEO_CAPTURE" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity-alias>
+        <receiver android:name="com.android.camera.DisableCameraReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+        <service android:name="com.android.camera.MediaSaveService" />
+        <service android:name="com.android.camera.FileSaverService" />
+    </application>
+
+</manifest>

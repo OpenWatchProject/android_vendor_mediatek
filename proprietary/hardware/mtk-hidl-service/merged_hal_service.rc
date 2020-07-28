@@ -1,0 +1,7 @@
+service merged_hal_service /vendor/bin/hw/merged_hal_service
+    class hal animation
+    user system
+    group system gps radio inet sdcard_r sdcard_rw graphics
+    onrestart restart surfaceflinger
+    ioprio rt 4
+    writepid /dev/cpuset/foreground/tasks

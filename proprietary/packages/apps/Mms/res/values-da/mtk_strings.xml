@@ -1,0 +1,615 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+/*
+ * Copyright (C) 2007-2008 Esmertec AG.
+ * Copyright (C) 2007-2008 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+ --><resources xmlns:android="http://schemas.android.com/apk/res/android" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+  <!-- MTK Resource-->   
+    <!-- wap push string begin -->
+    <!-- The type of wap push message, used in message details -->
+    <string name="wp_msg_type">Service message</string>
+    <string name="wp_msg_created_label">Created:\u0020</string>
+    <string name="wp_msg_created_unknown">Ukendte</string>
+    <string name="wp_msg_priority_label">Priority:\u0020</string>
+    <!-- Wappush message priority -->
+    <string name="wp_msg_priority_low">Low</string>
+    <string name="wp_msg_priority_medium">Medium</string>
+    <string name="wp_msg_priority_high">High</string>
+    <!-- Context menu item -->
+    <string name="menu_goto_browser">Open browser</string>
+    <string name="menu_add_to_bookmark">Add to bookmark</string>
+    <!-- Wappush message content label -->
+    <string name="wp_msg_expiration_label">Expired: <xliff:g id="DATE">%s</xliff:g></string>
+    
+    <string name="error_unsupported_scheme">"Handlingen understøttes ikke i øjeblikket."</string>
+    <!-- wap push string end -->
+    <string name="create_new_message" msgid="8735943333953093860">"Skriv ny besked"</string>
+    <string name="menu_undelivered_messages" msgid="3896857623211780616">"Ikke afleverede beskeder"</string>
+    <string name="broadcast_from_to" msgid="2050376286109362539">"<xliff:g id="SENDER">%1$s</xliff:g> til <xliff:g id="RECIPIENT">%2$s</xliff:g>"</string>
+    <string name="anonymous_recipient" msgid="2501437626187039034">"Anonyme"</string>
+    <string name="view_picture" msgid="4356315935277709195">"Vis billede"</string>
+    <string name="sent_on" msgid="5868288548564632354">"Sendt: <xliff:g id="DATE">%s</xliff:g>"</string>
+    <string name="received_on" msgid="5868288548564632354">"Modtaget: <xliff:g id="DATE">%s</xliff:g>"</string>
+    <string name="name_colon" msgid="7069560650889479120"><b>"<xliff:g id="NAME">%s</xliff:g>"</b>": "</string>
+    <string name="compose_title" msgid="558578836596816068">"Skriv"</string>
+    <string name="image_too_large" msgid="261880224164478061">"Billedet er for stort"</string>
+    <string name="ask_for_automatically_resize" msgid="7657603662407738758">"Rediger automatisk størrelsen på billede, inden det sendes?"</string>
+    <string name="cannot_load_message" msgid="2577010607550849892">"Beskeden kan ikke indlæses."</string>
+    <string name="locked_message_cannot_be_deleted" msgid="6369452071783350219">"Låste beskeder kan ikke slettes."</string>
+    <string name="multiple_recipients" msgid="8747754491343248141">"<xliff:g id="RECIPIENTCOUNT">%1$s</xliff:g> modtagere"</string>
+    <string name="resize" msgid="4308912589984220360">"Rediger størrelse"</string>
+    <string name="to_label" msgid="2355268818058389047">"Til "</string>
+    <string name="confirm_delete_all_messages" msgid="5836389073199814660">"Hele tråden slettes."</string>
+    <string name="mms_priority_label">"Prioritet"</string>
+    <string name="menu_retry_sending" msgid="3146582005568302643">"Prøv at sende igen"</string>
+    <string name="menu_retry_sending_all" msgid="1870529976966340616">"Prøv at sende alle igen"</string>
+    <string name="retrying_dialog_body" msgid="4738260459043003431">"Denne besked <xliff:g id="MESSAGE">%s</xliff:g> blev ikke sendt på grund af et forbindelsesproblem."\n" Prøver at sende igen ..."</string>
+    <string name="dl_expired_notification" msgid="950390029992535809">"Denne besked er forældet og slettes."</string>
+    <string name="add_attachment_activity" msgid="5324811371129695320">"Tilføj vedhæftet fil:"</string>
+    <string name="select_layout_activity" msgid="5041916695464513848">"Vælg layout"</string>
+    <string name="edit_text_activity" msgid="5915226413346879213">"Rediger tekst"</string>
+    <string name="pick_numbers_activity" msgid="2083330191224178637">"Vælg tal"</string>
+    <string name="send_using_mms_activity" msgid="3703434556280345726">"Send som mms-besked ..."</string>
+    <string name="select_contact_method_activity" msgid="1743384358979323991">"Vælg kontaktmetode"</string>
+    <string name="add_contacts">"Kontakter"</string>
+    <string name="me" msgid="341726346007839961">"Mig"</string>
+    <string name="invalid_contact_message">"Kontaktpersonen findes ikke."</string>
+    <string name="finish">"Udfør"</string>
+<string name="more_recipients">modtagere</string>
+    <string name="Insert_sdcard">Indsæt et SD-kort!</string>
+    <string name="pref_title_mms_enable_to_send_delivery_reports">Send leveringsrapport</string>
+    <string name="pref_summary_mms_enable_to_send_delivery_reports">Send en leveringsrapport for hver besked, du modtager</string>
+    <string name="set_service_center_OK">indstil SMS Servicecenter OK</string>
+    <string name="set_service_center_fail">indstil SMS Servicecenter Fejl</string>
+    <string name="OK">OK</string>
+    <string name="Cancel">"Annuller"</string>
+    <string name="sms_save_location">Lagringsplacering for SMS</string>
+    <string name="sms_service_center">SMS Servicecenter</string>
+    <string name="sms_validity_period">Gyldighedsperiode for SMS</string>
+    <string name="sms_validity_period_nosetting">Ingen angivet</string>
+    <string name="sms_validity_period_1hour">"Én time"</string>
+    <string name="sms_validity_period_6hours">6 timer</string>
+    <string name="sms_validity_period_12hours">12 timer</string>
+    <string name="sms_validity_period_1day">"1 dag"</string>
+    <string name="sms_validity_period_max">Maks.</string>
+    <string name="service_center_label">Servicecenter:\u0020</string>
+    <string name="cu_subject">Lemei-emne</string>
+    <string name="pref_title_mms_creation_mode">Oprettelsesfunktionen</string>
+    <string name="pref_summary_mms_creation_mode">MMS oprettelsestilstand til oprettelse af meddelelse</string>
+    <string name="pref_title_mms_size_limit">Størrelsesgrænse</string>
+    <string name="pref_summary_mms_size_limit">MMS størrelsesgrænse til oprettelse af en meddelelse</string>
+    <string name="confirm_restricted_audio">Begrænset lydindholdstype. Vil du vedhæfte alligevel?</string>
+    <string name="confirm_restricted_image">Begrænset billedindholdstype. Vil du vedhæfte alligevel?</string>
+    <string name="confirm_restricted_video">Begrænset videoindholdstype. Vil du vedhæfte alligevel?</string>
+    <string name="unsupport_media_type">Ikke-understøttet medietype</string>
+    <string name="select_different_media_type">Vælg et andet medie</string>
+    <string name="image_resolution_too_large">Billedets opløsning er for stor til at indsætte</string>
+    <string name="pref_title_wappush_settings">Indstilling for tjenestemeddelelse</string>
+    <string name="pref_title_wappush_enable">Aktiver WAP PUSH</string>
+    <string name="pref_summary_wappush_enable">Aktiver modtagelse af WAP PUSH</string>
+    <string name="pref_title_wappush_sl_autoloading">Auto-start SL</string>
+    <string name="pref_summary_wappush_sl_autoloading">Start automatisk meddelelse om indlæsning af tjeneste (SL), når den modtages</string>
+    <string name="menu_send_sms">Send meddelelse <xliff:g id="name">%s</xliff:g></string>
+    <string name="menu_omacp">Konfigurationsmeddelelse</string>
+    <string name="save_message_to_sim">Gem meddelelse på SIM-kort</string>
+    <string name="save_message_to_sim_successful">Gemt</string>
+    <string name="save_message_to_sim_unsuccessful">Ikke gemt</string>
+    <string name="transmission_transiently_failed">Fejl ved sending Prøver igen senere.</string>
+    <string name="download_failed_due_to_full_memory">Download af meddelelse mislykkedes, da hukommelse er fuld.</string>
+    <string name="mms_too_big_to_download">Meddelelsen er for stor til at downloade fra netværket.</string>
+    <string name="menu_reply">"Svar"</string>
+    <string name="menu_sim_sms">"SIM SMS"</string>
+    <string name="cannot_add_recipient">Grænsen for modtagere nået. Du kan ikke tilføje modtagere.</string>
+    <string name="status_expired">Udløbet</string>
+    <string name="status_deferred">Udskudt</string>
+    <string name="status_unrecognized">Ikke genkendt</string>
+    <string name="status_indeterminate">Ubestemt</string>
+    <string name="status_unreachable">Utilgængeligt</string>
+    <string name="attach_ringtone">"Ringetone"</string>
+    <string name="notification_multiple_cb"><xliff:g id="count">%s</xliff:g> ulæste CB-meddelelser</string>
+    <string name="notification_multiple_cb_title">Nye CB-meddelelser</string>
+    <string name="fdn_enabled">FDN aktiveret</string>
+    <string name="cannot_send_message_reason_no_content">Intet indhold skal sendes</string>
+    <string name="ok">"OK"</string>
+    <string name="cancel">"Annuller"</string>
+    <string name="enable">"Aktivér"</string>
+    <string name="disable">"Deaktiver"</string>
+    <string name="cb_read_message">Læs CB-meddelelse</string>
+    <string name="cb_read_message2">Læs CB-meddelelse</string>
+    <string name="cb_message">CB-meddelelse</string>
+    <string name="cb_default_channel_name">Fra kanal</string>
+    <string name="cell_broadcast_setting">"Indstillinger for mobilmeddelelser"</string>
+    <string name="cb_menu_language">"Sprog"</string>
+    <string name="cb_menu_add_channel">Tilføj kanal</string>
+    <string name="cb_menu_channel_list">Kanalliste</string>
+    <string name="cb_dialog_title_language_choice">Vælg sprog</string>
+    <string name="cb_channel_dialog_channel_name">Kanalnavn (0-10 tegn)</string>
+    <string name="cb_channel_dialog_channel_number">Kanalnummer (0-65534)</string>
+    <string name="cb_channel_dialog_channel_state">Aktiver kanalen</string>
+    <string name="cb_channel_dialog_edit_channel">Rediger kanal</string>
+    <string name="cb_menu_edit">"Rediger"</string>
+    <string name="cb_menu_delete">"Slet"</string>
+    <string name="cb_error_channel_num">Indtast kanalnummer (0-65534).</string>
+    <string name="cb_error_channel_name">Kanalnavnets længde er ikke korrekt (1-10 tegn).</string>
+    <string name="cb_error_language_select">Vælg mindst ét sprog.</string>
+    <string name="cb_error_channel_id_exist">"Kanal-id'et findes i forvejen."</string>
+    <string name="cb_all_languages">"Alle sprog"</string>
+    <string name="cb_default_new_channel_name">Ny kanal</string>
+    <string name="sum_cell_broadcast_control_on">Aktiver mobil-broadcast</string>
+    <string name="sum_cell_broadcast_control_off">Deaktiver mobil-broadcast</string>
+    <string name="sum_cell_broadcast_setting">Indstilling af Sprog og kanaler for mobil-broadcast</string>
+    <string name="message_open_email_fail">Beklager, konfigurer først din e-mailkonto</string>
+    <string name="close_dialog">OK</string>
+    <string name="updating_title">"Indstillinger for opkald"</string>
+    <string name="error_updating_title">"Fejl i indstillinger for opkald"</string>
+    <string name="reading_settings">"Læser indstillinger ..."</string>
+    <string name="updating_settings">"Opdaterer indstillinger ..."</string>
+    <string name="reverting_settings">"Tilbagefører indstillinger …"</string>
+    <string name="exception_error">"Fejl på netværk eller SIM-kort."</string>
+    <string name="send_by_sim2">Send via SIM2</string>
+    <string name="send_by_sim1">Send via SIM1</string>
+    <string name="menu_item_send_by">Send via</string>
+    <string name="data_connected_confirm_title">Bekræft afsendelse</string>
+    <string name="data_connected_confirm_message">Sender du MMS via dette SIM-kort, kan din igangværende datadownload blive midlertidigt afbrudt. Fortsæt?</string>
+    <string name="menu_item_sim1">SIM 1</string>
+    <string name="menu_item_sim2">SIM 2</string>
+    <string name="no_sim_1">SIM-kort 1 er ikke sat i.</string>
+    <string name="no_sim_2">SIM-kort 2 er ikke sat i.</string>
+    <string name="no_sim">SIM-kort %d er ikke sat i.</string>
+    <string name="sim1_full_title">SIM-kort 1 er fyldt</string>
+    <string name="sim2_full_title">SIM-kort 2 er fyldt</string>
+    <string name="select_all">"Markér alle"</string>
+    <string name="confirm_delete_selected_messages">De valgte meddelelser slettes.</string>
+    <string name="confirm_delete_selected_theads">De valgte tråde slettes.</string>
+    <string name="restricted_forward_title">"Mms-besked"</string>
+    <string name="restricted_forward_message">Dette medie vises muligvis ikke korrekt for modtagere. Fortsæt?</string>
+    <string name="strOk">Meddelelse sendt</string>
+    <string name="strFail">Afsendelse af meddelelse mislykkedes</string>
+    <string name="menu_insert_text_vcard">Indsæt kontaktperson</string>
+    <string name="contact_name">"Navn"</string>
+    <string name="contact_tel">Tlf.</string>
+    <string name="contact_email">E-mail</string>
+    <string name="contact_organization">Organisation</string>
+    <string name="contact_address">Adresse</string>
+    <string name="max_recipients_title">Maks. antal nået</string>
+    <string name="max_recipients_message">MMS tillader kun maks. <xliff:g id="maxLimit">%s</xliff:g> modtagere. Nogle af modtagerne fjernes. Vil du fortsætte?</string>
+    <string name="via_without_time_for_send">Via</string>
+    <string name="via_without_time_for_recieve">Via</string>
+    <string name="sim_selected_dialog_title">Vælg SIM-kort</string>
+    <string name="suggested">Foreslåede</string>
+    <string name="add_contact_dialog_message">"Tilføj nummer %s til eksisterende eller ny kontaktperson?"</string>
+    <string name="add_contact_dialog_new">"Ny"</string>
+    <string name="add_contact_dialog_existing">Eksiterende</string>
+    <string name="deleting">Sletter</string>
+    <string name="pref_title_storage_status">Aktuelt lagerbrug</string>
+    <string name="storage_dialog_mms">Mms:\u0020<xliff:g id="number">%s</xliff:g> elementer</string>
+    <string name="storage_dialog_sms">Sms:\u0020<xliff:g id="number">%s</xliff:g> elementer</string>
+    <string name="storage_dialog_attachments">Mms vedhæftninger:\u0020</string>
+    <string name="storage_dialog_database">Database:\u0020</string>
+    <string name="storage_dialog_available_space">Ledig plads:\u0020</string>
+    <string name="menu_show_icc_sms_capacity">Vis kapacitet</string>
+    <string name="show_icc_sms_capacity_title">Kapacitet</string>
+    <string name="icc_sms_used">Anvendt:</string>
+    <string name="icc_sms_total">I alt:</string>
+    <string name="get_icc_sms_capacity_failed">Hent SIM-kortets kapacitet mislykkedes.</string>
+    <plurals name="read_report_toast_msg">
+     <item quantity="one">sender %d læserapportering</item>
+     <item quantity="other">sender %d læserapporteringer</item>
+   </plurals>
+    <string name="pref_title_mms_auto_reply_read_reports">Send læserapportering</string>
+    <string name="pref_summary_mms_auto_reply_read_reports">Send en læserapportering, hvis der er anmodet om én af MMS-afsenderen</string>
+    <string name="exceed_subject_length_limitation">Maks. længde nået</string>
+    <plurals name="message_view_selected_message_count">
+     <item quantity="one"><xliff:g id="message_count" example="1">%d</xliff:g> valgt</item>
+     <item quantity="other"><xliff:g id="message_count" example="9">%d</xliff:g> valgt</item>
+   </plurals>
+    <string name="disable_notifications_dialog_message">"Vil du stoppe dobbelte underretninger via sms fra standardappen Meddelelser?"</string>
+    <string name="sms_input_mode_title">Indtastningstilstand</string>
+    <string name="sms_input_mode_dialog_title">Vælg indtastningstilstand</string>
+    <string name="sms_input_mode_summary">SMS indtastningstilstand til oprettelse af meddelelse</string>
+    <string name="pref_title_io_settings">Importer/eksporter SMS</string>
+    <string name="pref_summary_import_msg">Importer SMS fra SD-kort</string>
+    <string name="pref_title_import_msg">Importer SMS</string>
+    <string name="pref_summary_export_msg">Eksporter SMS til SD-kort</string>
+    <string name="pref_title_export_msg">Eksporter SMS</string>
+    <string name="no_sd_card">SD-kort er ikke klart</string>
+    <string name="export_message_ongoing">Eksporter SMS til SD-kort. Vent...</string>
+    <string name="import_message_ongoing">Importer SMS fra SD-kort. Vent...</string>
+    <string name="export_message_success">Eksport af SMS til SD-kort lykkedes</string>
+    <string name="import_message_success">Import af SMS fra SD-kort lykkedes</string>
+    <string name="import_message_fail">Import af SMS fra SD-kort mislykkedes</string>
+    <string name="export_message_fail">Eksport af SMS til SD-kort mislykkedes</string>
+    <string name="import_message_list">SMS DB-liste i SD-kort</string>
+    <string name="import_message_list_empty">Der er ingen SMS DB-filer på SD-kortet</string>
+    <string name="export_message_empty">Der er ingen SMS at eksportere!</string>
+    <string name="whether_export_item">Vil du eksportere SMS?</string>
+    <string name="whether_import_item">Vil du importere</string>
+    <string name="export_disk_problem">SD-kortet er fyldt, eller der kan ikke skrives på det</string>
+    <string name="select_text">Vælg tekst</string>
+    <string name="unselect_all">"Fravælg alle"</string>
+    <string name="forward_from">Videresend fra:</string>
+    <string name="sms_forward_setting">Indstilling af Videresend SMS</string>
+    <string name="sms_forward_setting_summary">Videresend SMS med afsenderens navn og nummer</string>
+    <string name="forward_byself">"Mig"</string>
+    <string name="file_attachment_vcalendar_name">vCalendar(<xliff:g id="text">%s</xliff:g>)</string>
+    <string name="file_attachment_vcard_name">vCard(<xliff:g id="text">%s</xliff:g>)</string>
+    <string name="attach_vcalendar">"Kalender"</string>
+    <string name="file_attachment_import_vcard">Importer vCard</string>
+    <string name="attach_vcard">Kontakt</string>
+    <string name="type_common_file">fil</string>
+    <string name="please_wait">"Vent..."</string>
+    <string name="failed_to_parse_vcard">Kunne ikke fortolke vCard-filen!</string>
+    <string name="empty_vcard">Ingen kontakter i vCard</string>
+    <string name="parse_vcard">Fortolk vCard</string>
+    <string name="vcard_no_details">Ingen yderligere oplysninger for denne kontaktperson"</string>
+    <string name="note">Noter</string>
+    <string name="organization">Organisation</string>
+    <string name="website">Websted:\u0020</string>
+    <string name="nickname">Kaldenavn</string>
+    <string name="call_custom"><xliff:g id="custom">%s</xliff:g></string>
+    <string name="call_home">"Hjem"</string>
+    <string name="call_mobile">"Mobil"</string>
+    <string name="call_work">"Arbejde"</string>
+    <string name="call_fax_work">"Arbejdsfax"</string>
+    <string name="call_fax_home">"Hjemmefax"</string>
+    <string name="call_pager">"Personsøger"</string>
+    <string name="call_other">other</string>
+    <string name="call_callback">Tilbagekald</string>
+    <string name="call_car">"Bil"</string>
+    <string name="call_company_main">"Virksomhed (hovednummer)"</string>
+    <string name="call_isdn">"ISDN"</string>
+    <string name="call_main">"Hoved"</string>
+    <string name="call_other_fax">"FAX"</string>
+    <string name="call_radio">"Radio"</string>
+    <string name="call_telex">"Telex"</string>
+    <string name="call_tty_tdd">TTY/TDD</string>
+    <string name="call_work_mobile">"Arbejdsmobiltelefon"</string>
+    <string name="call_work_pager">"Personsøger"</string>
+    <string name="call_assistant"><xliff:g id="assistant">%s</xliff:g></string>
+    <string name="call_mms">MMS</string>
+    <string name="email_home">E-mail til hjem</string>
+    <string name="email_mobile">E-mail til mobil</string>
+    <string name="email_work">E-mail til arbejde</string>
+    <string name="email_other">E-mail</string>
+    <string name="email_custom">E-mail til <xliff:g id="custom">%s</xliff:g></string>
+    <string name="email">E-mail</string>
+    <string name="map_home">Vis hjemmeadresse</string>
+    <string name="map_work">Vis arbejdsadresse</string>
+    <string name="map_other">Vis adresse</string>
+    <string name="map_custom">Vis <xliff:g id="custom">%s</xliff:g> adresse</string>
+    <string name="chat_aim">Chat med AIM</string>
+    <string name="chat_msn">Chat med Windows Live</string>
+    <string name="chat_yahoo">Chat med Yahoo</string>
+    <string name="chat_skype">Chat med Skype</string>
+    <string name="chat_qq">Chat med QQ</string>
+    <string name="chat_gtalk">Chat med Google Talk</string>
+    <string name="chat_icq">Chat med ICQ</string>
+    <string name="chat_jabber">Chat med Jabber</string>
+    <string name="chat">Chat</string>
+    <string name="inbox">"Indbakke"</string>
+    <string name="outbox">"Udbakke"</string>
+    <string name="draftbox">Kladde</string>
+    <string name="sentbox">Sendt</string>
+    <string name="simbox">SIMboks</string>
+    <string name="changeview">Skift tilstand</string>
+    <string name="viewer_title_sms">"sms"</string>
+    <string name="viewer_title_wappush">Wappush</string>
+    <string name="viewer_title_cb">Cell Broadcast (CB)</string>
+    <string name="slideshow_details">Oplysninger om meddelelse</string>
+    <string name="open">"Åbn"</string>
+    <string name="delete_all_confirm">"Slet alle meddelelser i boksen?"</string>
+    <string name="folder_recipient">Modtager :</string>
+    <string name="folder_recieve_date">Dato :</string>
+    <string name="folder_download">MMS downloades</string>
+    <string name="confirm_download_message">"Bekræft download af meddelelse"</string>
+    <string name="play_as_slideshow">Afspil MMS som diasshow</string>
+    <string name="by_card">Af:</string>
+    <string name="page">Side %d</string>
+    <string name="space_not_enough">Den tilbageværende plads er utilstrækkelig til optagelse af video</string>
+    <string name="space_not_enough_for_audio">Den tilbageværende plads er utilstrækkelig til optagelse af lyd</string>
+    <string name="no_messages">"Ingen meddelelser"</string>
+    <string name="call_video_call">Videoopkald</string>
+    <string name="storage_dialog_mms_size">MMS-størrelse:\u0020</string>
+    <string name="error_add_attachment">"Ukendt fejl. Kan ikke tilføje <xliff:g id="name">%1$s</xliff:g> til din meddelelse."</string>
+    <string name="no_application_response">"Intet program til at håndtere anmodningen"</string>
+    <string name="cdma_not_support">CDMA understøtter ikke denne funktion</string>
+    <string name="allmessage">"Alle meddelelser"</string>
+    <string name="select_message">Vælg meddelelse</string>
+    <string name="confirm_delete_allmessage">"Alle meddelelser slettes."</string>
+    <string name="mark_as_read_btn_str">Marker som læst</string>
+    <string name="delete_btn_str">"Slet"</string>
+    <string name="reply_send">"Send"</string>
+    <string name="via_test">"via "</string>
+    <string name="received_header">"Modtaget:"</string>
+    <string name="no_item_selected">Ingen elementer valgt.</string>
+    <string name="sync_mms_to_db">Indlæser...</string>
+    <string name="pref_title_font_size_setting">INDSTILLING AF SKRIFTSTØRRELSE</string>
+    <string name="pref_title_message_font_size">Skriftstørrelse</string>
+    <string name="pref_summary_message_font_size">Skriftstørrelse</string>
+    <string name="message_font_size_dialog_title">Skriftstørrelse</string>
+    <string name="message_font_size_dialog_cancel">"Annuller"</string>
+    <string name="change">Skift</string>
+    <string name="change_default_disk">Telefonhukommelsen har ikke tilstrækkelig med plads. Frigør noget lagerplads eller skift "standard skrivedisk" i indstillingerne.</string>
+    <string name="failed_to_add_image">Grænsen for meddelelsesstørrelse er nået. Nogle dele tilføjes ikke.</string>
+    <string name="ipmsg_conversation_list_all">"Meddelelser"</string>
+    <string name="ipmsg_conversation_list_important">Vigtigt</string>
+    <string name="ipmsg_conversation_list_group_chats">Gruppechat</string>
+    <string name="ipmsg_conversation_list_spam">Spam</string>
+    <string name="ipmsg_create_group_chat">Opret gruppechat</string>
+    <string name="ipmsg_send_invitation">Send invitationer</string>
+    <string name="str_ipmsg_download_history_dlg">Downloader...</string>
+    <string name="to_hint_ipmsg">"Skriv navn eller nummer"</string>
+    <string name="type_to_compose_text_enter_to_send_ipmsg">"Skriv SMS/iSMS-meddelelse"</string>
+    <string name="ipmsg_ipmsg_hint">"Skriv iSMS-meddelelse"</string>
+    <string name="ipmsg_sms_hint">"Skriv tekstmeddelelse"</string>
+    <string name="ipmsg_caption_hint">"Skriv billedtekster"</string>
+    <string name="ipmsg_cancel">"Annuller"</string>
+    <string name="ipmsg_invite_chat_frequently"><b>Chatter du ofte med %s ?</b>\nHvorfor inviterer du ikke %s til at bruge iSMS, så I begge sparer penge?</string>
+    <string name="ipmsg_enable_chat_frequently"><b>%s bruger iSMS!</b>\nHvorfor aktiverer du ikke din iSMS-tjeneste og sparer penge for jer begge?</string>
+    <string name="ipmsg_invite">Inviter</string>
+    <string name="ipmsg_dismiss">"Annuller"</string>
+    <string name="ipmsg_enable">"Aktivér"</string>
+    <string name="ipmsg_enable_notice">Er du sikker på, at du vil aktivere iSMS-tjenesten?</string>
+    <string name="ipmsg_activate">"Aktiver"</string>
+    <string name="ipmsg_activate_chat_frequently">"<b>Chatter du ofte med dine venner?</b>\nHvorfor aktiverer du ikke iSMS-tjenesten, så du kan chatte uden at betale for SMS erne?"</string>
+    <string name="ipmsg_activate_note">Er du sikker på, at du vil aktivere iSMS?</string>
+    <string name="ipmsg_dismiss_content">Er du sikker på, at du vil afvise noten?</string>
+    <string name="ipmsg_ipmsg">IP-meddelelse</string>
+    <string name="ipmsg_dailog_multi_forward">Videresende meddelelser</string>
+    <string name="ipmsg_dialog_send_result">Send resultat</string>
+    <string name="ipmsg_dlg_send_all">Alle: %s</string>
+    <string name="ipmsg_dlg_send_sucess">Sendt: %s</string>
+    <string name="ipmsg_dlg_send_failed">Mislykkedes: %s</string>
+    <string name="multi_forward_sim_info">Henter SIM-info</string>
+    <string name="ipmsg_multi_forward_no_sim">Ingen SIM-info</string>
+    <string name="ipmsg_divider_online">%s er online</string>
+    <string name="ipmsg_divider_offline">Senest online %s</string>
+    <string name="ipmsg_divider_never_online">Aldrig online</string>
+    <string name="ipmsg_vcard_file_name">%s kontaktpersoner</string>
+    <string name="ipmsg_getsim_failed">Hent SIM info mislykkedes</string>
+    <string name="ipmsg_sim_status_error">Fejl i SIM-status</string>
+    <string name="ipmsg_forward_failed">Videresend mislykkedes</string>
+    <string name="ipmsg_forward_norecipients">Der er ingen modtagere til videresendt meddelelse</string>
+    <string name="ipmsg_multiforward_no_message">Der er ingen meddelelser, der kan videresendes</string>
+    <string name="ipmsg_need_input_recipients">Angiv først mindst én modtager</string>
+    <string name="str_ipmsg_unread_format">%1$d ulæste meddelelser</string>
+    <string name="str_ipmsg_not_delivered_title">Endnu ikke leveret</string>
+    <string name="str_ipmsg_failed_title">Kunne ikke sende</string>
+    <string name="ipmsg_try_again">"Prøv igen"</string>
+    <string name="ipmsg_try_all_again">Forsøg alle igen</string>
+    <string name="ipmsg_resend_via_sms">Send SMS i stedet</string>
+    <string name="ipmsg_resend_via_mms">Send MMS i stedet</string>
+    <string name="str_ipmsg_cant_share">SD-kortet er ikke tilgængeligt. Kan ikke dele mediemeddelelse</string>
+    <string name="str_ipmsg_file_limit">for stor</string>
+    <string name="str_ipmsg_no_app">Ingen programmer kan udføre denne handling.</string>
+    <string name="str_ipmsg_today">"I dag"</string>
+    <string name="str_ipmsg_yesterday">"i går"</string>
+    <string name="ip_message_typing_text">Skriver</string>
+    <string name="str_ipmsg_no_such_file">Ingen fil</string>
+    <string name="str_ipmsg_over_file_limit">Filen er for stor</string>
+    <string name="str_ipmsg_invalid_file_type">Understøtter ikke denne type</string>
+    <string name="invite_friends_to_ipmsg">Inviter dine venner til at bruge iSMS</string>
+    <string name="invite_friends_to_chat">Inviter dine venner til at chatte</string>
+    <string name="invite_friends_to_ipmsg_dialog_msg">Hvis du vil sende en invitation, kasseres dine oprettede meddelelser.</string>
+    <string name="invite_friends_to_ipmsg_content">Hej! iSMS er et fint chatte-værktøj. Det er gratis og nemt at bruge. Find flere oplysninger på http://isms.hissage.com.</string>
+    <string name="export">"Eksporter"</string>
+    <string name="mark_as_spam">Flyt til spamliste</string>
+    <string name="mark_as_spam_tips">Meddelelser, der er markeret som spam, flyttes til spamlisten og får automatisk deaktiveret meddelelse.</string>
+    <string name="remove_frome_spam">Fjern fra spamliste</string>
+    <string name="add_shortcut">Tilføj genvej</string>
+    <string name="view_all_media">Vis alle medier</string>
+    <string name="view_all_location">Vis alle placeringer</string>
+    <string name="ipmsg_export_to_sdcard">Eksport til SD-kort</string>
+    <string name="ipmsg_copy">"Kopiér"</string>
+    <string name="ipmsg_send_via_text_msg">Send via tekstmeddelelse</string>
+    <string name="ipmsg_send_via_mms">Send via multimediemeddelelse</string>
+    <string name="ipmsg_retry">"Prøv igen"</string>
+    <string name="ipmsg_delete">"Slet"</string>
+    <string name="ipmsg_share">"Del"</string>
+    <string name="ipmsg_mark_as_important">Marker som vigtig</string>
+    <string name="ipmsg_remove_from_important">Fjern markering som vigtig</string>
+    <string name="str_ipmsg_save_file">Filen er gemt i %1$s</string>
+    <string name="continue_str">"Fortsæt"</string>
+    <string name="convert_to_mms">Konvertér til MMS.</string>
+    <string name="convert_to_sms">Konvertér til SMS.</string>
+    <string name="ipmsg_convert_to_ipmsg">Konvertér til iSMS.</string>
+    <string name="ip_message_convert_to_mms_message_for_service">iSMS-tjenesten er ikke tilgængelig med dette valgte SIM-kort. Denne meddelelse kan kun sendes via MMS med dette SIM-kort. Fortsæt alligevel?</string>
+    <string name="ip_message_convert_to_sms_message_for_service">iSMS-tjenesten er ikke tilgængelig med dette valgte SIM-kort. Denne meddelelse kan kun sendes via SMS med dette SIM-kort. Fortsæt alligevel?</string>
+    <string name="ip_message_convert_to_mms_message_for_recipients">Modtagerne er ikke iSMS-brugere. Denne meddelelse kan kun sendes via MMS. Fortsæt alligevel?</string>
+    <string name="ip_message_convert_to_sms_message_for_recipients">Modtagerne er ikke iSMS-brugere. Denne meddelelse kan kun sendes via SMS. Fortsæt alligevel?</string>
+    <string name="ipmsg_sms_convert_to_ipmsg">iSMS-tjenesten er tilgængelig med dette valgte SIM-kort. Hvis du spare på SMS-udgifterne, kan du flytte meddelelsen til iSMS. Skift nu?</string>
+    <string name="ipmsg_mms_convert_to_ipmsg">iSMS-tjenesten er tilgængelig med dette valgte SIM-kort. Hvis du spare på MMS-udgifterne, kan du flytte meddelelsen til iSMS. Skift nu?</string>
+    <string name="keep_mms">Behold MMS</string>
+    <string name="keep_sms">Behold SMS</string>
+    <string name="switch_ipmsg">Skift</string>
+    <string name="ip_message_load_all_message">Indlæs alle meddelelser</string>
+    <string name="str_ipmsg_replace_attach">Udskift vedhæftning</string>
+    <string name="str_ipmsg_replace_attach_msg">Der er allerede en vedhæftning. Vil du udskifte den?</string>
+    <string name="ipmsg_err_file">Kunne ikke åbne filen</string>
+    <string name="pref_title_display_preference_settings">SKÆRM &amp; INDSTILLINGER</string>
+    <string name="pref_chat_wallpaper">Chatbaggrund</string>
+    <string name="pref_auto_rotation">Auto-rotation</string>
+    <string name="pref_show_email_address">Vis e-mail-adresse</string>
+    <string name="pref_summary_show_email_address">Inkludér e-mailadresse i resultater for kontaktperson</string>
+    <string name="pref_title_backup_restore_settings">SIKKERHEDSKOPIERING &amp; GENDANNELSE</string>
+    <string name="pref_backage_message">Sikkerhedskopier meddelelse</string>
+    <string name="pref_summary_backup_message">Seneste sikkerhedskopiering:Aldrig</string>
+    <string name="pref_restore_message">Gendan meddelelse</string>
+    <string name="pref_summary_restore_message">Gendan dine sikkerhedskopierede meddelelser</string>
+    <string name="pref_mute">"Lyd fra"</string>
+    <string name="pref_summary_mute">"Fra"</string>
+    <string name="pref_vibrate">"Vibration"</string>
+    <string name="pref_summary_vibrate">Vibrer, når der modtages meddelelser</string>
+    <string name="pref_popup_notification">Popup-meddelelse</string>
+    <string name="pref_summary_popup_notification">Vis popup ved push-meddelelser</string>
+    <string name="pref_title_display_settings">"Skærm"</string>
+    <string name="pref_title_actions_settings">Handlinger</string>
+    <string name="pref_download_chat_history">Download chatoversigt</string>
+    <string name="pref_summary_download_chat_history">Gem på SD-kort i zipformat</string>
+    <string name="pref_email_chat_history">Send chatoversigt via e-mail</string>
+    <string name="pref_summary_email_chat_history">Send chatoversigt i zipformat via e-mail</string>
+    <string name="pref_clear_chat_history">Ryd chatoversigt</string>
+    <string name="pref_summary_notification_ringtone">Angiv en ringetone for nye meddelelser</string>
+    <string name="pref_setting_title">Meddelelsesindstillinger</string>
+    <string name="pref_setting_sms">Tekstmeddelelse (SMS)</string>
+    <string name="pref_setting_mms">Multimediemeddelelse (MMS)</string>
+    <string name="pref_setting_notification">"Underretninger"</string>
+    <string name="pref_setting_general">"Generelt"</string>
+    <string name="pref_setting_chat">Chatindstillinger</string>
+    <string name="chat_setting_saving">gemmer...</string>
+    <string name="chat_setting_updating">opdaterer...</string>
+    <string name="chat_setting_sending">sender ...</string>
+    <string name="dialog_save_title">Gem på SD-kort</string>
+    <string name="dialog_save_description">Gem denne chattråd på SD-kort som en zipfil</string>
+    <string name="dialog_email_title">Del via e-mail</string>
+    <string name="dialog_email_description">Del denne chattråd som vedhæftning i zipformat via e-mail</string>
+    <string name="dialog_clear_title">"Ryd"</string>
+    <string name="dialog_clear_description">Hele charoversigten ryddes i dette chatrum</string>
+    <string name="dialog_wallpaper_chooser_wallpapers">Baggrund</string>
+    <string name="dialog_wallpaper_chooser_gallery">Galleri</string>
+    <string name="dialog_wallpaper_chooser_take">"Tag et billede"</string>
+    <string name="dialog_wallpaper_chooser_default">"Standard"</string>
+    <string name="dialog_wallpaper_title">Vælg baggrund</string>
+    <string name="mute_one_hour">"Én time"</string>
+    <string name="mute_four_hours">4 timer</string>
+    <string name="mute_eight_hours">8 timer</string>
+    <string name="save_chat_history_failed">gemning mislykkedes</string>
+    <string name="send_chat_history_failed">E-mail mislykkedes</string>
+    <string name="actionbar_sms_setting">SMS-indstillinger</string>
+    <string name="actionbar_mms_setting">MMS-indstillinger</string>
+    <string name="actionbar_notification_setting">"Indstillinger for underretninger"</string>
+    <string name="actionbar_general_setting">Generelle indstillinger</string>
+    <string name="save_history_file">gem som</string>
+    <string name="no_sdcard_suggestion">"Der er intet SD-kort"</string>
+    <string name="save_wallpaper_success">Baggrund ændret.</string>
+    <string name="save_wallpaper_fail">Kunne ikke skifte baggrund.</string>
+    <string name="ip_message_delete_important">"Medtag meddelelser, der er markeret som vigtige"</string>
+    <string name="str_ipmsg_spam_empty">Du har ingen spamsamtale. \nSPAM samler alle samtaler, der er markeret som spam. Meddelelser slås fra som standard. Derved undgår du unødvendige forstyrrelser. \n\nDu kan markere en afsender som spam ved at holde på en samtale om vælge ikonet Marker som spam. Når en samtale er markeret som spam, vises et ikon for meddelelse fra automatisk, og samtalen placeres her.</string>
+    <string name="str_ipmsg_spam_example_subject">Dette er et eksempel på en spamsamtale.</string>
+    <string name="str_ipmsg_groupchat_empty">Du har ingen gruppechatmeddelelser. \nGRUPPECHAT samler alle gruppechatmeddelelser, der oprettes af dig eller som du deltager i. Derved kan du let finde og administrere dine gruppechats. \n\nHvis du vil oprette en gruppechat, kan du trykke på knappen Opret en gruppechat nederst på skærmen og invitere dine venner til at deltage i gruppen.</string>
+    <string name="str_ipmsg_group_example_from">Gruppenavn</string>
+    <string name="str_ipmsg_group_example_subject">Din ven:\nJeg synes godt om gruppechatten!</string>
+    <string name="str_ipmsg_important_empty">Du har ingen vigtige meddelelser. \nVIGTIGE samler alle de meddelelser, der er markeret som vigtige. Derved kan du let finde vigtige meddelelser. \n\nDu kan markere en meddelelse som vigtig ved at holde på den og vælge Marker som vigtig fra menuen Indstillinger. Når en meddelelse er markeret som vigtig, kan du se et rødt flagikon som vist nedenfor.</string>
+    <string name="str_ipmsg_important_example_title">Dette er et eksempel på en meddelelse, der er markeret som vigtig. Der vises et rødt flag.</string>
+    <string name="str_ipmsg_important_example_time">10:55:00 AM</string>
+    <string name="str_ipmsg_allchat_empty">"Der er ingen samtaler."</string>
+    <string name="str_ipmsg_empty_activate_content">Hvis du vil bruge denne funktion, skal du først aktivere SMS-tjenesten. Bare rolig - hvis du ikke bryder dig om denne tjeneste, kan du altid slå den fra i Indstillinger. Prøv den med det samme!</string>
+    <string name="str_ipmsg_empty_activate_title">Aktiver iSMS</string>
+    <string name="str_ipmsg_service_title">iSMS servicecenter</string>
+    <string name="str_ipmsg_introduction">Med iSMS kan du øjeblikkeligt sende gratis meddelelser, og funktionen opbevarer din chatoversigt på ét sted. Tryk på én knap for at bruge denne nye funktion!</string>
+    <string name="time_now">"NU"</string>
+    <string name="str_ipmsg_active">Aktiver iSMS</string>
+    <string name="str_ipmsg_welcome_active">Velkommen til iSMS</string>
+    <string name="str_ipmsg_term_warn_welcome">Med iSMS kan du når som helst chatte og dele multimediefiler med dine venner via Wi-Fi eller dataforbindelse.\n\nDet kræver kun 3 trin at aktivere!\n\n Vilkår og betingelser\n</string>
+    <string name="str_ipmsg_term_warn_activate">Denne funktion understøttes kun af iSMS-tjenesten.\n\nMed iSMS-tjenesten kan du når og hvor som helst chatte og dele multimediefiler med dine venner via Wi-Fi eller dataforbindelse.\n\n Vilkår og betingelser</string>
+    <string name="str_ipmsg_term_key">Vilkår og betingelser</string>
+    <string name="str_ipmsg_agree_and_continue">Accepter og Fortsæt</string>
+    <string name="no_sim_card">Intet SIM-kort!</string>
+    <string name="ip_message_activate_title">Aktiver iSMS</string>
+    <string name="ip_message_current_sim_enabled">Aktuelt SIM-kort er aktiveret.</string>
+    <string name="sim_selected_dialog_title_for_activate">Vælg SIM-kort til aktivering af iSMS</string>
+    <string name="ip_message_activate_message">Denne funktion understøttes kun af iSMS-tjenesten. Aktiver din iSMS-konto nu?</string>
+    <string name="typing">"Taster..."</string>
+    <string name="ip_message_enable_title">Aktiver iSMS</string>
+    <string name="ip_message_enable_message">Denne funktion understøttes kun af iSMS-tjenesten. Aktiver din iSMS-konto nu?</string>
+    <string name="sim_selected_dialog_title_for_enable">Vælg SIM-kort til aktivering af iSMS</string>
+    <string name="ip_message_switch_sim_title">Skift SIM-kort</string>
+    <string name="ip_message_switch_sim_message">Det nuværende SIM-kort understøtter ikke iSMS. Skifte til et andet SIM-kort?</string>
+    <string name="ip_message_switch_sim_button">Skift</string>
+    <string name="ip_message_switch_sim_successfully">SIM-kort skiftet!</string>
+    <string name="close">"Luk"</string>
+    <string name="nointernet">"Ingen fungerende internetforbindelse fundet! Prøv igen senere."</string>
+    <string name="ipmsg_reject">Afvis</string>
+    <string name="ipmsg_accept">"Accepter"</string>
+    <string name="ipmsg_resend">Genafsend</string>
+    <string name="ipmsg_resend_discard_message">Hvis du vil sende meddelelsen igen, kasseres den meddelelse, du er ved at oprette.</string>
+    <plurals name="deleted_conversations">
+     <item quantity="one">En samtale blev slettet</item>
+     <item quantity="other"><xliff:g id="number" example="15">%1$s</xliff:g> samtaler blev slettet</item>
+   </plurals>
+    <string name="discard_mms_title">Kassér MMS</string>
+    <string name="discard_mms_content">"Alle MMS'er i din multivideresendte meddelelse kasseres"</string>
+    <string name="toast_sms_forward">Ingen SMS blev videresendt</string>
+    <string name="dialog_continue">"Fortsæt"</string>
+    <string name="sms_size_limit">Størrelsesbegrænsning nået</string>
+    <string name="dialog_sms_limit">Størrelsesbegrænsning for meddelelse er nået. Den resterende del af meddelelsen kasseres</string>
+    <string name="forward_tips_title">"Kassér MMS-meddelelse"</string>
+    <string name="forward_tips_body">"MMS-meddelelse understøtter ikke videresendelse. Den kasseres."</string>
+    <string name="type_to_quick_text">"Tast hurtigtekst"</string>
+    <string name="menu_wappush">"Wappush meddelelser"</string>
+    <string name="visit_website">"Besøg websted"</string>
+    <string name="meet_emoticon_limit">Find Emoticons grænser</string>
+    <string name="view_mms_notification">Kan ikke vise MMS-meddelelse</string>
+    <string name="ipmsg_multi_forward_tips_content">"Hvis du vil multivideresende, skal nogle iSMS'er først downloades."</string>
+    <string name="multi_forward_failed_all">Download mislykkedes. Multivideresend kasseret.</string>
+    <string name="ipmsg_multi_forward_failed_part">Nogle iSMS-videresendelser mislykkedes.</string>
+    <string name="sum_search_networks">"Søg efter alle tilgængelige netværk"</string>
+    <string name="confirm_delete_allwappush">"Alle wappush-meddelelser slettes."</string>
+    <string name="confirm_delete_selected_wappush">"De valgte wappush-meddelelser slettes."</string>
+    <string name="menu_delete_allwappush">Slet alle</string>
+    <string name="duplicated_recipient">Dobbelt modtager</string>
+    <string name="sms_not_ready">SMS-modul initialiseres. Vent...</string>
+    <string name="label_full_name">"Navn"</string>
+    <string name="label_phone">"Telefon"</string>
+    <string name="label_email">"E-mail"</string>
+    <string name="label_postal">Adresse</string>
+    <string name="label_organization">Organisation</string>
+    <string name="label_im">IM</string>
+    <string name="label_website">Websted</string>
+    <string name="label_sip_address">"Internetopkald"</string>
+    <string name="label_nick_name">"Kaldenavn"</string>
+    <string name="label_notes">Noter</string>
+    <string name="label_event">Begivenheder</string>
+    <string name="search_time_period_label">Tidsperiode</string>
+    <string name="done_text">"Udfør"</string>
+    <string name="add_duplicate_recipients">Dobbelt modtager</string>
+    <string name="download_disabled_toast">Kunne ikke hente. Ikke standard SMS-program.</string>
+    <string name="adding_wallpaper_title">Gemmer baggrund...</string>
+    <string name="mwi_title">Talebeskeder</string>
+    <string name="type_voice_msg">Talebesked</string>
+    <string name="type_video_msg">Videobesked</string>
+    <string name="type_fax_msg">Faxbesked</string>
+    <string name="priority_urgent">Haster</string>
+    <string name="date_label">"Dato: "</string>
+    <string name="message_id_label">Meddelelses-id:\u0020</string>
+    <string name="voice_message_count_notification"><xliff:g id="number" example="3">%1$s</xliff:g> nye talebeskeder</string>
+    <string name="confirm_delete_allmwi">"Alle talebeskeder vil blive slettet."</string>
+    <string name="confirm_delete_selected_mwi">"De valgte talebeskeder vil blive slettet."</string>
+    <string name="sms_priority_setting">UIM-prioritet</string>
+    <string name="sms_priority_Interactive">Interaktiv</string>
+    <string name="sms_priority_Urgent">Haster</string>
+    <string name="sms_priority_Emergency">Nød</string>
+    <string name="type_text_msg">"Sms"</string>
+    <string name="empty_sim_name">SIM-stik <xliff:g id="subId" example="2">%1$d</xliff:g></string>
+
+    <string name="drm_not_support">Kopibeskyttet indhold understøttes ikke af MMS.</string>
+    <string name="user_has_no_premission">Denne bruger kan ikke bruge SMS</string>
+    <string name="wfc_no_cellular_network">Intet mobilnetværk</string>
+    <string name="wfc_connect_to_available_wifi">Forbind til et tilgængeligt Wi-Fi-netværk, for at modtage/sende beskeder.</string>
+    <string name="wfc_notification_title">Forbind til et Wi-Fi-netværk, for at modtage/sende beskeder.</string>
+    <string name="ct_om_switch_notification"><xliff:g id="op1">%s</xliff:g> virker ikke midlertidigt, og alle standard opkald, SMS, og data på <xliff:g id="op2">%s</xliff:g> ændre henholdsvis til <xliff:g id="op3">%s</xliff:g>.</string>
+    <string name="can_not_switch_account_during_call">KanikkeskifteforetrukketSIM-korttilSMSunderetopkald.</string>
+    <string name="can_not_switch_account_temporarily">KanikkemidlertidigtskifteforetrukketSIM-kortforSMS.</string>
+    <string name="omh_exceed_message_size_limitation">GrænseforR-UIM-meddelelsensstørrelsenået</string>
+    <string name="omh_failed_to_add_image">R-UIM-beskeden er for stor. Fjern venligst nogle dele.</string>
+    <string name="missing_required_permission">Tilladelser afvist. Du kan ændre dem i Indstillinger &gt; Programmer.</string>
+    <string name="manage_card_msg_title">Administrer beskeder til/fra UIM/SIM-kortet</string>
+    <string name="manage_card_msg_summary">Administrer beskeder, der er gemt på dit UIM/SIM-kort</string>
+    <string name="disable_delivery_report">Andre\u2026</string>
+    <string name="fore_service_notify_title">Overfører beskeder</string>
+    <string name="fore_service_notify_content">Der er beskeder, der overføres</string>
+    <string name="smart_req_mms_indicator">MMS er ikke tilladt. Prøv venligst igen med SMS.</string>
+</resources>

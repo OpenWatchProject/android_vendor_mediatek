@@ -1,0 +1,19 @@
+WHAT IT DOES?
+=============
+VSDoF feature tuning provider unit test files.
+
+
+HOW IT WAS BUILT?
+==================
+It can build the following executable native binary :
+TestStereoTuningProvider
+
+
+HOW TO USE IT?
+==============
+Provide unit test for tuning provider of VSDoF feature.
+DPE/WMF/Bokeh tuning providers are the test targets.
+Each test runs in three steps:
+1. Load default value
+2. Write to file if the property has been set
+3. Read from written file is the property has been set

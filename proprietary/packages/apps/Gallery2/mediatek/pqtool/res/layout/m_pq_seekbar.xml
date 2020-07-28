@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="horizontal" >
+
+    <RelativeLayout
+        android:id="@+id/m_listitem"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/m_textViewMinValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/m_seekbar"
+            android:layout_toLeftOf="@+id/m_seekbar" />
+
+        <SeekBar
+            android:id="@+id/m_seekbar"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_centerVertical="true"
+            android:paddingLeft="50dp"
+            android:paddingRight="50dp"
+            android:textColor="#FFFFFFFF" />
+
+        <TextView
+            android:id="@+id/m_textViewMaxValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/m_seekbar"
+            android:layout_toRightOf="@+id/m_seekbar" />
+
+        <TextView
+            android:id="@+id/m_textViewCurrentIndex"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/m_seekbar"
+            android:layout_centerHorizontal="true"
+            android:textColor="#FFFFFFFF" />
+    </RelativeLayout>
+
+</LinearLayout>

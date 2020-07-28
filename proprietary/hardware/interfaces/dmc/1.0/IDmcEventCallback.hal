@@ -1,0 +1,5 @@
+package vendor.mediatek.hardware.dmc@1.0;
+
+interface IDmcEventCallback {
+    onHandleEvent(SID sessionId, dmcObjectId_t objectId, dmcValue_t eventValue) generates (dmcResult_e ret);
+};

@@ -1,0 +1,87 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- AAL -->
+    <Preference android:key="aal" android:title="@string/aal_title"
+        android:persistent="false">
+        <intent android:action="android.intent.action.MAIN"
+            android:targetPackage="com.mediatek.engineermode"
+            android:targetClass="com.mediatek.engineermode.AalSetting" />
+    </Preference>
+    <!-- Audio -->
+    <Preference android:key="audio" android:title="@string/audio"
+        android:persistent="false">
+        <intent android:action="android.intent.action.MAIN"
+            android:targetPackage="com.mediatek.engineermode"
+            android:targetClass="com.mediatek.engineermode.audio.Audio" />
+    </Preference>
+    <!-- Camera -->
+    <Preference android:key="camerasolo" android:title="@string/camera"
+        android:persistent="false">
+        <intent android:action="android.intent.action.MAIN"
+            android:targetPackage="com.mediatek.emcamera"
+            android:targetClass="com.mediatek.emcamera.AutoCalibration" />
+    </Preference>
+    <!-- De-Sense -->
+    <Preference android:key="de_sense" android:title="@string/de_sense"
+        android:persistent="false">
+        <intent android:action="android.intent.action.MAIN"
+            android:targetPackage="com.mediatek.engineermode"
+            android:targetClass="com.mediatek.engineermode.desense.DesenseActivity" />
+    </Preference>
+    <!-- Device Register -->
+    <Preference android:key="device_register" android:title="@string/device_register"
+        android:persistent="false">
+        <intent android:action="android.intent.action.MAIN"
+            android:targetPackage="com.mediatek.engineermode"
+            android:targetClass="com.mediatek.engineermode.DeviceRegister" />
+    </Preference>
+    <!-- IO -->
+    <Preference android:key="io" android:title="@string/io"
+        android:persistent="false">
+        <intent android:action="android.intent.action.MAIN"
+            android:targetPackage="com.mediatek.engineermode"
+            android:targetClass="com.mediatek.engineermode.io.IoList" />
+    </Preference>
+    <!-- Memory -->
+    <Preference android:key="memory" android:title="@string/memory"
+        android:persistent="false">
+        <intent android:action="android.intent.action.MAIN"
+            android:targetPackage="com.mediatek.engineermode"
+            android:targetClass="com.mediatek.engineermode.memory.Memory" />
+    </Preference>
+    <!-- Power -->
+    <Preference android:key="power" android:title="@string/power"
+        android:persistent="false">
+        <intent android:action="android.intent.action.MAIN"
+            android:targetPackage="com.mediatek.engineermode"
+            android:targetClass="com.mediatek.engineermode.power.Power" />
+    </Preference>
+    <!-- Sensor -->
+    <!-- Sensor Hub Test -->
+    <Preference android:key="sensor_hub_test" android:title="@string/sensor_hub_test"
+        android:persistent="false">
+        <intent android:action="android.intent.action.MAIN"
+            android:targetPackage="com.mediatek.sensorhub.ui"
+            android:targetClass="com.mediatek.sensorhub.ui.SensorSettings" />
+    </Preference>
+    <!-- UART/USB switch -->
+    <Preference android:key="usbmode_switch" android:title="@string/uart_usb_switch"
+        android:persistent="false">
+        <intent android:action="android.intent.action.MAIN"
+            android:targetPackage="com.mediatek.engineermode"
+            android:targetClass="com.mediatek.engineermode.UartUsbSwitch" />
+    </Preference>
+    <!-- USB -->
+    <Preference android:key="usb" android:title="@string/usb"
+        android:persistent="false">
+        <intent android:action="android.intent.action.MAIN"
+            android:targetPackage="com.mediatek.engineermode"
+            android:targetClass="com.mediatek.engineermode.usb.UsbList" />
+    </Preference>
+    <!-- USBSpeedSwitch -->
+    <Preference android:key="usb_speed" android:title="@string/usb_super_speed_switch"
+        android:persistent="false">
+        <intent android:action="android.intent.action.MAIN"
+            android:targetPackage="com.mediatek.engineermode"
+            android:targetClass="com.mediatek.engineermode.UsbSuperSpeedSwitch" />
+    </Preference>
+</PreferenceScreen>

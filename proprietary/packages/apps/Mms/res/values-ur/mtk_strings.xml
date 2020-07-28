@@ -1,0 +1,636 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="set_service_center_OK">SMS خدمت کا مرکز سیٹ کرنا ٹھیک ہے</string>
+    <string name="set_service_center_fail">SMS خدمت کا مرکز سیٹ کرنا ناکام</string>
+    <string name="OK">ٹھیک ہے</string>
+    <string name="Cancel">منسوخ</string>
+    <string name="sms_save_location">SMS ذخیرے کا مقام</string>
+    <string name="sms_service_center">SMS خدمت کا مرکز</string>
+    <string name="service_center_label">خدمت کا مرکز:/u0020</string>
+    <string name="cu_subject">لیمی موضوع</string>
+    <string name="pref_title_mms_creation_mode">تخلیق کی وضع</string>
+    <string name="pref_summary_mms_creation_mode">پیغام لکھنے کے لئے MMS تخلیق کی وضع</string>
+    <string name="pref_title_mms_size_limit">سائز کی حد</string>
+    <string name="pref_summary_mms_size_limit">پیغام لکھنے کے لئے MMS سائز کی حد</string>
+    <string name="confirm_restricted_audio">محدود آڈيو کے مشمولات کی قسم، کیا آپ بھر بھی منسلک کرنا چاہتے ہيں؟</string>
+    <string name="confirm_restricted_image">محدود تصویر کے مشمولات کی قسم، کیا آپ بھر بھی منسلک کرنا چاہتے ہيں؟</string>
+    <string name="confirm_restricted_video">محدود ویڈیو کے مشمولات کی قسم، کیا آپ بھر بھی منسلک کرنا چاہتے ہيں؟</string>
+    <string name="unsupport_media_type">غیرسہولت یافتہ میڈیا کی قسم</string>
+    <string name="select_different_media_type">مختلف میڈیا کی قسم منتخب کریں</string>
+    <string name="image_resolution_too_large">تصویر کا ریزولوشن ڈالنے کے لئے بہت بڑا ہے</string>
+    <string name="wp_msg_type">خدمت کا پیغام</string>
+    <string name="wp_msg_created_label">بنایا گیا:\u0020</string>
+    <string name="wp_msg_created_unknown">نامعلوم مرسل</string>
+    <string name="wp_msg_priority_label">ترجیح:\u0020</string>
+    <string name="wp_msg_priority_low">کم</string>
+    <string name="wp_msg_priority_medium">درمیانہ</string>
+    <string name="wp_msg_priority_high">اعلی</string>
+    <string name="menu_goto_browser">براؤزر کھولیں</string>
+    <string name="menu_add_to_bookmark">بک مارک میں شامل کريں</string>
+    <string name="wp_msg_expiration_label">ختم ہوگیا: <xliff:g id="DATE">%s</xliff:g></string>
+    <string name="error_unsupported_scheme">اس عمل کی اس وقت سہولت نہيں ہے</string>
+    <string name="pref_title_wappush_settings">خدمت پیغام کی ترتیب</string>
+    <string name="pref_title_wappush_enable">WAP PUSH فعال کریں</string>
+    <string name="pref_summary_wappush_enable">WAP PUSH کی وصولی فعال کریں</string>
+    <string name="pref_title_wappush_sl_autoloading">خودکار لانچ SL </string>
+    <string name="pref_summary_wappush_sl_autoloading">موصول ہونے پر خودکار طر پر خدمت لوڈنگ کا پیغام چلائيں</string>
+    <string name="create_new_message" msgid="8735943333953093860">نیا پیغام لکھیں</string>
+    <string name="menu_omacp">تشکیلاتی پیغام</string>
+    <string name="menu_undelivered_messages" msgid="3896857623211780616">پیغامات جنہيں پہنچایا نہيں گیا</string>
+    <string name="broadcast_from_to" msgid="2050376286109362539"><xliff:g id="sender" example="me">%1$s</xliff:g> کو <xliff:g id="recipient" example="Megan">%2$s</xliff:g></string>
+    <string name="anonymous_recipient" msgid="2501437626187039034">گم نام</string>
+    <string name="view_picture" msgid="4356315935277709195">تصویر دیکھیں</string>
+    <string name="save_message_to_sim">پیغام کو SIM کارڈ پر محفوظ کریں</string>
+    <string name="sent_on" msgid="5868288548564632354">"بھیجا گیا: <xliff:g id="date">%s</xliff:g>"</string>
+    <string name="received_on" msgid="5868288548564632354">"موصول کیا گیا: <xliff:g id="date">%s</xliff:g>"</string>
+    <string name="name_colon" msgid="7069560650889479120"><b><xliff:g id="name" example="Me">%s</xliff:g></b>": "</string>
+    <string name="compose_title" msgid="558578836596816068">لکھیں</string>
+    <string name="image_too_large" msgid="261880224164478061">تصویر بہت بڑی ہے</string>
+    <string name="ask_for_automatically_resize" msgid="7657603662407738758">بھیجنے سے پہلے تصویر کو خودکار طور پر دوبارہ سائز کریں؟</string>
+    <string name="cannot_load_message" msgid="2577010607550849892">پیغام لوڈ کرنے سے قاصر۔</string>
+    <string name="locked_message_cannot_be_deleted" msgid="6369452071783350219">مقفل پیغام کو مٹایا نہيں جاسکتا ہے۔</string>
+    <string name="cannot_add_recipient">وصول کنندگان کی حد پہنچ گئی ہے۔ آپ کسی وصول کنندہ کا اضافہ نہيں کرسکتے ہيں۔</string>
+    <string name="multiple_recipients" msgid="8747754491343248141"><xliff:g id="recipientCount">%1$s</xliff:g> وصول کنندگان</string>
+    <string name="resize" msgid="4308912589984220360">سائز تبدیل کريں</string>
+    <string name="pref_summary_notification_enabled" msgid="619729096820999905">کیفیت کے بار میں پیغام کی اطلاعات دکھائيں</string>
+    <string name="to_label" msgid="2355268818058389047">"کو "</string>
+    <string name="confirm_delete_all_messages" msgid="5836389073199814660">مکمل تھريڈ کو مٹایا جائے گآ،</string>
+    <string name="mms_priority_label">ترجیح:\u0020</string>
+    <string name="menu_retry_sending" msgid="3146582005568302643">بھیجنے کی دوبارہ کوشش کریں</string>
+    <string name="menu_retry_sending_all" msgid="1870529976966340616">سب کو بھیجنے کی دوبارہ کوشش کریں</string>
+    <string name="retrying_dialog_body" msgid="4738260459043003431">یہ پیغام <xliff:g id="message">%s</xliff:g>کنکشن ميں مسئلے کی وجہ سے نہيں بھیجا گیا۔\r\nبھیجنے کی دوبارہ کوشش کررہا ہے\u2026</string>
+    <string name="attach_ringtone">رنگ ٹون</string>
+    <string name="notification_multiple" msgid="7684007285202109490"><xliff:g id="count">%s</xliff:g> غیرخواندہ پیغامات۔</string>
+    <string name="notification_multiple_cb"><xliff:g id="count">%s</xliff:g> غیرخواندہ CB پیغامات</string>
+    <string name="notification_multiple_cb_title">نئے سیل براڈکاسٹ پیغامات</string>
+    <string name="dl_expired_notification" msgid="950390029992535809">یہ پیغام ختم ہوگیا ہے اور اسے مٹایا جائے گا۔</string>
+    <string name="add_attachment_activity" msgid="5324811371129695320">منسلکہ شامل ،</string>
+    <string name="select_layout_activity" msgid="5041916695464513848">لے آؤٹ منتخب کریں</string>
+    <string name="edit_text_activity" msgid="5915226413346879213">ٹیکسٹ ترمیم کریں</string>
+    <string name="pick_numbers_activity" msgid="2083330191224178637">نمبر اٹھائيں</string>
+    <string name="send_using_mms_activity" msgid="3703434556280345726">بطور ملٹی میڈیا پیغام بھیجیں\u2026</string>
+    <string name="select_contact_method_activity" msgid="1743384358979323991">رابطے کا طریقہ کار منتخب کریں</string>
+    <string name="fdn_enabled">FDN فعال ہے</string>
+    <string name="cannot_send_message_reason_no_content">بھیجنے کے لئے کوئی مشمولات نہيں</string>
+    <string name="cb_read_message">CB پیغام پڑھیں</string>
+    <string name="cb_read_message2">سیل براڈکاسٹ پیغام پڑھیں</string>
+    <string name="cb_message">سیل براڈکاسٹ پیغام</string>
+    <string name="cb_default_channel_name">چینل سے</string>
+    <string name="message_open_email_fail">پہلے اپنا ای میل اکاؤنٹ سیٹ اپ کریں</string>
+    <string name="add_contacts">روابط</string>
+    <string name="me" msgid="341726346007839961">میں</string>
+    <string name="send_by_sim2">بذریعہ SIM2 بھیجيں</string>
+    <string name="send_by_sim1">بذریعہ SIM1 بھیجیں</string>
+    <string name="menu_item_send_by">بذریعہ بھیجیں</string>
+    <string name="data_connected_confirm_title">بھیجنے کی تصدیق کریں</string>
+    <string name="data_connected_confirm_message">اس SIM کے ذریعے ڈيٹا بھیجنے سے ممکن ہے کہ آپ کے ڈيٹا کا حالیہ ڈاؤن لوڈ کچھ دیر کے لئے معطل ہوجائے۔ جاری رکھیں؟</string>
+    <string name="menu_item_sim1">SIM 1</string>
+    <string name="menu_item_sim2">SIM 2</string>
+    <string name="no_sim_1">SIM لگی نہیں ہے۔</string>
+    <string name="no_sim_2">SIM لگی نہیں ہے۔</string>
+    <string name="sim1_full_title">SIM کارڈ 1 بھر گيا ہے</string>
+    <string name="sim2_full_title">SIM کارڈ 2 بھر گيا ہے</string>
+    <string name="select_all">تمام منتخب کریں</string>
+    <string name="confirm_delete_selected_messages">متنخب کردہ پیغامات کو مٹایا جائے گا۔</string>
+    <string name="confirm_delete_selected_theads">منتخب کردہ تھریڈ کو مٹایا جائے گا۔</string>
+    <string name="restricted_forward_title">ملٹی میڈيا پیغام</string>
+    <string name="restricted_forward_message">ممکن ہے کہ وصول کنندگآن کو میڈیا درست طور پر ظاہر نہ ہو۔ جاری رکھیں؟</string>
+    <string name="strOk">پیغام بھیجا گيا</string>
+    <string name="strFail">پیغام بھیجنا ناکام</string>
+    <string name="menu_insert_text_vcard">رابطہ داخل کریں</string>
+    <string name="contact_name">نام</string>
+    <string name="contact_tel">ٹیلی فون</string>
+    <string name="contact_email">ای میل</string>
+    <string name="contact_organization">تنظیم</string>
+    <string name="contact_address">پتہ</string>
+    <string name="max_recipients_title">زیادہ سے زیادہ تعداد پہنچ گئی</string>
+    <string name="max_recipients_message">MMS میں صرف زيادہ سے زیادہ<xliff:g id="maxLimit">%s</xliff:g> وصول کنندگان کی اجازت ہے۔ کچھ وصول کنندگان کو ہٹایا جائے گا۔ کیا آپ جاری رکھنا چاہتے ہيں؟</string>
+    <string name="via_without_time_for_send">بذریعہ</string>
+    <string name="via_without_time_for_recieve">بذریعہ</string>
+    <string name="sim_selected_dialog_title">SIM منتخب کریں</string>
+    <string name="add_contact_dialog_message">"نمبر %s کو موجودہ یا نئے رابطے میں شامل کریں؟"</string>
+    <string name="add_contact_dialog_new">نیا</string>
+    <string name="add_contact_dialog_existing">موجودہ</string>
+    <string name="deleting">مٹارہا ہے</string>
+    <string name="pref_title_mms_enable_to_send_delivery_reports">حوالگی کی رپورٹ بھیجیں</string>
+    <string name="pref_summary_mms_enable_to_send_delivery_reports">موصول ہونے والے ہر پیغام کے لئے حوالگی کی رپورٹ بھیجیں</string>
+    <string name="pref_summary_mms_auto_reply_read_reports">MMS بھیجنے والے کی درخواست پر پڑھنے کی رپورٹ بھیجیں</string>
+    <string name="pref_title_mms_auto_reply_read_reports">پڑھنے کی رپورٹ بھیجیں</string>
+    <plurals name="read_report_toast_msg">
+        <item quantity="one">%d  پڑھنے کی رپورٹ بھیج رہا ہے</item>
+        <item quantity="other">%d  پڑھنے کی رپورٹیں بھیج رہا ہے</item>
+    </plurals>
+    <string name="sms_input_mode_title">مداخلے کی وضع</string> 
+    <string name="sms_input_mode_dialog_title">مداخلے کی وضع منتخب کریں</string> 
+    <string name="sms_input_mode_summary">پیغام کمپوز لکھنے کے لئے SMS مداخلے کی وضع</string> 
+    <string name="unselect_all">تمام غیرمنتخب کریں</string>
+    <!-- add for vcard -->
+    <string name="forward_byself">میں</string>
+   <string name="file_attachment_vcard_name">vCard(<xliff:g id="text">%s</xliff:g>)</string>
+    <string name="attach_vcalendar">کیلنڈر</string>  
+   <string name="file_attachment_import_vcard">vCard برآمد کریں</string>
+   <string name="attach_vcard">رابطہ</string>
+   <string name="type_common_file">فائل</string>
+   <string name="failed_to_parse_vcard">vCard پارس کرنا ناکام!</string>
+   <string name="empty_vcard">vCard میں کوئی روابط نہيں</string>
+   <string name="parse_vcard">vCard پارس کریں</string>
+   <string name="vcard_no_details">اس رابطے کے لئے کوئی اضافی معلومات نہيں"</string>
+   <string name="call_custom"><xliff:g id="custom">%s</xliff:g></string>
+   <string name="call_home">گھر</string>
+   <string name="call_mobile">موبائل</string>
+   <string name="call_work">کام</string>
+   <string name="call_fax_work">کام کا فیکس</string>
+   <string name="call_fax_home">گھر کا فیکس</string>
+   <string name="call_pager">پیجر</string>
+   <string name="call_callback">واپس کال کریں</string>
+   <string name="call_car">گاڑی</string>
+   <string name="call_company_main">کمپنی مرکزی</string>
+   <string name="call_isdn">ISDN</string>
+   <string name="call_radio">ریڈیو</string>
+   <string name="call_telex">ٹیلیکس</string>
+   <string name="call_tty_tdd">TTY/TDD</string>
+   <string name="call_work_mobile">کام کا موبائل</string>
+   <string name="call_work_pager">کام کا پیجر</string>
+   <string name="call_assistant"><xliff:g id="assistant">%s</xliff:g></string>
+   <string name="call_mms">MMS</string>
+   <string name="email_home">گھر کا ای میل</string>
+   <string name="email_mobile">موبائل کا ای میل</string>
+   <string name="email_work">کام کا ای میل</string>
+   <string name="email_custom">ای میل <xliff:g id="custom">%s</xliff:g></string>
+   <string name="map_home">گھر کا پتہ دیکھیں</string>
+   <string name="map_work">کام کا پتہ دیکھیں</string>
+   <string name="map_other">پتہ دیکھیں</string>
+   <string name="map_custom"> <xliff:g id="custom">%s</xliff:g> پتہ دیکھیں</string>
+   <string name="chat_aim">AIM کے ذریعے چیٹ کریں</string>
+   <string name="chat_msn">Windows Live کے ذریعے چیٹ کریں</string>
+   <string name="chat_yahoo">Yahoo کے ذریعے چیٹ کریں</string>
+   <string name="chat_skype">Skype کے ذریعے چیٹ کریں</string>
+   <string name="chat_qq">QQ کے ذریعے چیٹ کریں</string>
+   <string name="chat_gtalk">Google Talk کے ذریعے چیٹ کریں</string>
+   <string name="chat_icq">ICQ کے ذریعے چیٹ کریں</string>
+   <string name="chat_jabber">Jabber کے ذریعے چیٹ کریں</string>
+   <string name="chat">چیٹ کریں</string>
+   <string name="please_wait">"برائے مہربانی انتظار کریں..."</string>
+   <string name="note">نوٹ</string>
+   <string name="organization">تنظیم</string>
+    <string name="website">ویب سائٹ:\u0020</string>
+   <string name="nickname">عرفی نام</string>
+   <string name="call_other">دیگر</string>
+   <string name="call_main">اصلی</string>
+   <string name="call_other_fax">فیکس</string>
+   <string name="email_other">ای میل</string>
+   <string name="email">ای میل</string>
+   <!-- add for vcard -->
+
+   <string name="menu_sim_sms">سم ایس ایم ایس</string>
+    <!-- Cell broadcast SMS strings -->  
+    <!-- Import/Export mms/sms from/to sdcard-->  
+    <string name="pref_title_io_settings">ایس ایم ایس امپورٹ کریں/ایکسپورٹ کریں</string>  
+    <string name="pref_summary_import_msg">ایس ڈی کارڈ سے ایس ایم ایس امپورٹ کریں</string>  
+    <string name="pref_title_import_msg">ایس ایم ایس امپورٹ کریں</string>  
+    <string name="pref_summary_export_msg">ایس ڈی کارڈ پر ایس ایم ایس ایکسپورٹ کریں</string>  
+    <string name="pref_title_export_msg">ایس ایم ایس ایکسپورٹ کریں</string>  
+    <string name="no_sd_card">ایس ڈی کارڈ تیار نہیں ہے</string>  
+    <string name="export_message_ongoing">ایس ڈی کارڈ پر ایس ایم ایس ایکسپورٹ کریں۔ برائے مہربانی انتظار کریں…</string>  
+    <string name="import_message_ongoing">ایس ڈی کارڈ سے ایس ایم ایس امپورٹ کریں۔ برائے مہربانی انتظار کریں…</string>  
+    <string name="export_message_success">ایس ڈی کارڈ پر ایس ایم ایس ایکسپورٹ کرنے میں کامیابی</string>  
+    <string name="import_message_success">ایس ڈی کارڈ سے ایس ایم ایس امپورٹ کرنے میں کامیابی</string>  
+    <string name="import_message_fail">ایس ڈی کارڈ سے ایس ایم ایس امپورٹ کرنے میں ناکامی</string>  
+    <string name="export_message_fail">ایس ڈی کارڈ پر ایس ایم ایس ایکسپورٹ کرنے میں ناکامی</string>  
+    <string name="import_message_list">ایس ڈی کارڈ میں ایس ایم ایس ڈی بی کی فہرست</string>  
+    <string name="import_message_list_empty">ایس ڈی کارڈ میں ایس ایم ایس ڈی بی کی کوئی فائل موجود نہیں</string>  
+    <string name="export_message_empty">ایکسپورٹ کرنے کے لیے کوئی بھی ایس ایم ایس موجود نہیں!</string>  
+    <string name="whether_export_item">کیا آپ ایس ایم ایس ایکسپورٹ کرنا چاہتے ہیں؟</string>  
+    <string name="whether_import_item">کیا آپ امپورٹ کرنا چاہتے ہیں</string>  
+    <string name="export_disk_problem">ایس ڈی کارڈ بھر چکا ہے یا لکھ نہیں سکتا</string> 
+    <!-- Action bar mode title when multi-selecting conversations -->
+    <!-- Show this in the middle of the main activity when there are no conversations [CHAR LIMIT=none] -->
+    <string name="call_video_call">ویڈیو کال</string>
+    <string name="error_add_attachment">"نامعلوم غلطی، آپ کے پیغام میں <xliff:g id="name">%1$s</xliff:g>شامل نہيں کرسکتا ہے۔"</string>
+    <string name="save_message_to_sim_successful">محفوظ کرنے میں کامیاب</string>  
+    <string name="save_message_to_sim_unsuccessful">محفوظ کرنے میں ناکام</string>  
+    <string name="transmission_transiently_failed">ترسیل میں ناکامی۔ بعد میں دوبارہ کوشش کی جائے گی۔</string>  
+    <string name="download_failed_due_to_full_memory">میموری بھری ہونے کی وجہ سے پیغام ڈاؤن لوڈ کرنے میں ناکامی۔</string>  
+    <string name="status_expired"> زائد المعیاد</string>  
+    <string name="status_deferred"> موقوف</string>  
+    <string name="status_unrecognized"> پہچان سے باہر</string>  
+    <string name="status_indeterminate"> غیر معیّن</string>  
+    <string name="status_unreachable"> ناقابلِ رسائی</string>  
+    <plurals name="message_view_selected_message_count"> 
+        <item quantity="one"><xliff:g id="message_count" example="1">%d</xliff:g> منتخب کیا گیا</item>  
+        <item quantity="other"><xliff:g id="message_count" example="9">%d</xliff:g> منتخب کیے گئے</item> 
+    </plurals>  
+    <string name="by_card"> از:</string>  
+    <string name="page"> صفحہ%d</string>  
+    <string name="space_not_enough"> بقایا جگہ ویڈیو بنانے کیلئے کافی نہیں ہے</string>  
+    <string name="no_messages"> "کوئی پیغامات نہیں ہیں"</string>  
+    <string name="storage_dialog_mms_size"> ایم ایم ایس کا حجم: \u0020</string>
+    <string name="space_not_enough_for_audio"> بقایا جگہ آواز ریکارڈ کرنے کیلئے کافی نہیں ہے</string> 
+    <string name="sync_mms_to_db">لوڈ‎ ‎ہورہا‎ ‎ہے‎...‎</string>
+    <string name="finish">ہوگیا</string>
+    <string name="pref_title_long_press_operation_guide">آپریشن گائڈ کو دیر تک دبائيں</string>  
+    <string name="pref_title_watch_animation">انیمیشن دیکھیں</string>  
+    <string name="long_press_conversationlist_title">پیغامات حذف کریں</string>  
+    <string name="long_press_conversationlist_content">پیغامات حذف کرنے کیلئے اسے دیر تک دبائیں۔</string>  
+    <string name="long_press_composer_content">مزید اختیارات دیکھنے کیلئے اسے دیر تک دبائیں۔</string> 
+    <string name="menu_show_icc_sms_capacity">گنجائش دیکھیں</string>  
+    <string name="show_icc_sms_capacity_title">گنجائش</string>  
+    <string name="icc_sms_used">استعمال شدہ:</string>
+    <string name="select_text">منتخب کیا ہوا متن</string> 
+    <string name="icc_sms_total">کل:</string>  
+    <string name="get_icc_sms_capacity_failed">SIM حاصل کرنے کی صلاحیت ناکام ہوگئی۔</string>  
+    <string name="menu_reply">جواب دیں</string> 
+    <string name="failed_to_add_image">پیغام کی جسامت کی حد پہنچ چکی ہے، کچھ حصوں کو شامل نہیں کیا گیا ہے۔</string>
+    <string name="ipmsg_conversation_list_all">پیغامات</string>  
+    <string name="ipmsg_conversation_list_important">اہم</string>  
+    <string name="ipmsg_conversation_list_group_chats">گروپ چیٹس</string>  
+    <string name="ipmsg_conversation_list_spam">فضول</string>  
+    <string name="ipmsg_create_group_chat">گروپ چیٹ بنائیں</string>  
+    <string name="ipmsg_send_invitation">دعوت نامے بھیجیں</string>  
+    <string name="str_ipmsg_download_history_dlg">ڈاؤن لوڈ ہو رہا ہے...</string>  
+    <string name="to_hint_ipmsg">"شخص کا نام یا نمبر ٹائپ کریں"</string>  
+    <string name="type_to_compose_text_enter_to_send_ipmsg">"SMS/iSMS پیغام ٹائپ کریں"</string>  
+    <string name="ipmsg_ipmsg_hint">"iSMS پیغام ٹائپ کریں"</string>  
+    <string name="ipmsg_sms_hint">"متنی پیغام ٹائپ کریں"</string>  
+    <string name="ipmsg_caption_hint">"سرخیاں ٹائپ کریں"</string>  
+    <string name="ipmsg_cancel">منسوخ کریں</string>  
+    <string name="ipmsg_invite_chat_frequently"><b>%s کے ساتھ اکثر چیٹ کرتے ہیں؟</b>\niSMS استعمال کرنے کیلئے کیوں نہ %s کا استعمال کریں تاکہ آپ دونوں کی رقم کی بچت ہو؟</string>  
+    <string name="ipmsg_enable_chat_frequently"><b>%s iSMS کا استعمال کر رہا ہے!</b>\nکیوں نہ اپنا iSMS سروس فعال کریں اور آپ دونوں کی رقم کی بچت کریں؟</string>  
+    <string name="ipmsg_invite">دعوت دیں</string>  
+    <string name="ipmsg_dismiss">برخاست کرنا</string>  
+    <string name="ipmsg_enable">فعال</string>  
+    <string name="ipmsg_enable_notice">کیا آپ iSMS سروس فعال کرنے میں درست ہیں؟</string>  
+    <string name="ipmsg_activate">فعال کرنا</string>  
+    <string name="ipmsg_activate_chat_frequently"><b>دوستوں کے ساتھ اکثر چیٹ کریں؟</b>\nکیوں نہ iSMS سروس فعال کرکے SMS شرح کے بغیر چیٹ کریں؟</string>  
+    <string name="ipmsg_activate_note">کیا آپ iSMS چالو کرنے میں درست ہیں؟</string>  
+    <string name="ipmsg_dismiss_content">کیا آپ نوٹ کو ضائع کرنے میں درست ہیں؟</string>  
+    <string name="ipmsg_send_exception">خامی بھیجیں</string>  
+    <string name="ipmsg_ipmsg">IP پیغام</string>  
+    <string name="ipmsg_dailog_multi_forward">پیغامات آگے بھیج رہا ہے</string>  
+    <string name="ipmsg_dialog_send_result">نتیجہ بھیجیں</string>  
+    <string name="ipmsg_dlg_send_all">سبھی: %s</string>  
+    <string name="ipmsg_dlg_send_sucess">مرسلہ: %s</string>  
+    <string name="ipmsg_dlg_send_failed">ناکام: %s</string>  
+    <string name="multi_forward_sim_info">SIM کی معلومات حاصل کر رہا ہے</string>  
+    <string name="ipmsg_multi_forward_no_sim">SIM کی کوئی معلومات نہیں ہے</string>  
+    <string name="ipmsg_divider_online">%s آن لائن ہے</string>  
+    <string name="ipmsg_divider_offline">%s پر آخری آن لائن کا وقت</string>  
+    <string name="ipmsg_divider_never_online">کبھی آن لائن نہ ہوں</string>  
+    <string name="ipmsg_vcard_file_name">%s رابطے</string>  
+    <string name="ipmsg_getsim_failed">SIM کی معلومات حاصل کرنا ناکام ہوگیا</string>  
+    <string name="ipmsg_sim_status_error">SIM کی صورتحال کی خامی</string>  
+    <string name="ipmsg_forward_failed">آگے بھیجنا ناکام ہوگیا</string>  
+    <string name="ipmsg_forward_norecipients">آگے بھیجے جانے والے پیغام کیلئے کوئی وصول کنندہ (کنندگان) نہیں ہے</string>  
+    <string name="ipmsg_multiforward_no_message">کوئی بھی ایسا پیغام (پیغامات) نہیں ہے جو آگے بھیجا جاسکے</string>  
+    <string name="ipmsg_need_input_recipients">براہ کرم کم سے کم ایک وصول کنندہ متعین کریں</string>  
+    <string name="str_ipmsg_unread_format">%1$d بغیر پڑھے ہوئے پیغامات</string>  
+    <string name="str_ipmsg_not_delivered_title">ابھی تک حوالے نہیں کیا گیا</string>  
+    <string name="str_ipmsg_failed_title">ناکام</string>  
+    <string name="str_ipmsg_cant_share">SD کارڈ دستیاب نہیں ہے، میڈیا پیغام کا اشتراک نہیں کرسکتا ہے</string>  
+    <string name="str_ipmsg_file_limit">کافی بڑا</string>  
+    <string name="str_ipmsg_no_app">کوئی بھی ایپلی کیشن یہ عمل نہیں کرسکتی ہے۔</string>  
+    <string name="str_ipmsg_today">آج</string>  
+    <string name="str_ipmsg_yesterday">گذشتہ روز</string>  
+    <string name="ip_message_typing_text">ٹائپ کر رہا ہے</string>  
+    <string name="ipmsg_try_again">دوبارہ کوشش کریں</string>  
+    <string name="ipmsg_try_all_again">سبھی کو دوبارہ آزمائیں</string>  
+    <string name="ipmsg_resend_via_sms">بذریعہ SMS بھیجیں</string>  
+    <string name="ipmsg_resend_via_mms">بذریعہ MMS بھیجیں</string>  
+    <string name="str_ipmsg_no_such_file">اس طرح کی فائل نہیں ہے</string>  
+    <string name="str_ipmsg_over_file_limit">فائل کا سائز حد سے زیادہ ہے</string>  
+    <string name="str_ipmsg_invalid_file_type">اس قسم کا تعاون نہیں کرتا ہے</string>  
+    <string name="invite_friends_to_ipmsg">iSMS استعمال کرنے کیلئے دوستوں کو مدعو کریں</string>  
+    <string name="invite_friends_to_chat">چیٹ کرنے کیلئے دوستوں کو مدعو کریں</string>  
+    <string name="invite_friends_to_ipmsg_dialog_msg">ایک دعوت نامہ بھیجنے کیلئے، آپ کے تحریر کرنے کے پیغامات ضائع کردیے جائیں گے۔</string>  
+    <string name="invite_friends_to_ipmsg_content">ہائے، iSMS چیٹ کرنے کا ایک خوبصورت ٹول ہے۔ یہ مفت اور سہولت بخش ہے۔ مزید پتہ کرنے کیلئے براہ کرم http://isms.hissage.com چیک کریں۔</string>  
+    <string name="export">برآمد کریں</string>  
+    <string name="mark_as_spam">فضول کے بطور نشان زد کریں</string>  
+    <string name="mark_as_spam_tips">فضول کے بطور نشان زد پیغامات فضول کی فہرست میں منتقل کردیے جائیں کے اور اطلاع خود بخود بند کردی جائے گی۔</string>  
+    <string name="remove_frome_spam">فضول سے ہٹائیں</string>  
+    <string name="add_shortcut">شارٹ کٹ شامل کریں</string>  
+    <string name="view_all_media">سبھی میڈیا دیکھیں</string>  
+    <string name="view_all_location">سبھی مقامات دیکھیں</string>  
+    <string name="ipmsg_export_to_sdcard">SD کارڈ میں برآمد کریں</string>  
+    <string name="ipmsg_copy">کاپی کرنا</string>  
+    <string name="ipmsg_send_via_text_msg">متنی پیغام کے بطور بھیجیں</string>  
+    <string name="ipmsg_send_via_mms">ملٹی میڈیا پیغام کی معرفت بھیجیں</string>  
+    <string name="ipmsg_retry">دوبارہ کوشش کریں</string>  
+    <string name="ipmsg_delete">مٹائيں</string>  
+    <string name="ipmsg_share">تقسیم کریں</string>  
+    <string name="ipmsg_mark_as_important">اہم کے بطور نشان زد کریں</string>  
+    <string name="ipmsg_remove_from_important">اہم سے ہٹائیں</string>  
+    <string name="str_ipmsg_save_file">فائل %1$s میں محفوظ کی گئی ہے۔</string>  
+    <string name="continue_str">جاری</string>  
+    <string name="convert_to_mms">MMS میں بدلیں۔</string>  
+    <string name="convert_to_sms">SMS میں بدلیں۔</string>  
+    <string name="ipmsg_convert_to_ipmsg">iSMS میں بدلیں۔</string>
+    <string name="ip_message_convert_to_mms_message_for_service">iSMS سروس اس منتخب کردہ SIM کارڈ میں دستیاب نہیں ہے۔ یہ پیغام اس SIM کارڈ میں صرف MMS کی معرفت بھیجا جاسکتا ہے۔ بہرحال جاری رکھیں؟</string>  
+    <string name="ip_message_convert_to_sms_message_for_service">iSMS سروس اس منتخب کردہ SIM کارڈ میں دستیاب نہیں ہے۔ یہ پیغام اس SIM کارڈ میں صرف SMS کی معرفت بھیجا جاسکتا ہے۔ بہرحال جاری رکھیں؟</string>  
+    <string name="ip_message_convert_to_mms_message_for_recipients">وصول کنندہ (کنندگان) iSMS صارف نہیں ہے (ہیں۔ یہ پیغام صرف MMS کی معرفت بھیجا سکتا ہے۔ بہرحال جاری رکھیں؟</string>  
+    <string name="ip_message_convert_to_sms_message_for_recipients">وصول کنندہ (کنندگان) iSMS صارف نہیں ہے (ہیں)۔ یہ پیغام صرف SMS کی معرفت بھیجا سکتا ہے۔ بہرحال جاری رکھیں؟</string>  
+    <string name="ipmsg_sms_convert_to_ipmsg">iSMS سروس اس منتخب کردہ کارڈ میں دستیاب ہے۔ SMS کی شرح محفوظ کرنے کیلئے، پیغام کو iSMS میں تبدیل کرنے کی تجویز کی جاتی ہے۔ ابھی تبدیل کریں؟</string>
+    <string name="ipmsg_mms_convert_to_ipmsg">iSMS سروس اس منتخب کردہ کارڈ میں دستیاب ہے۔ MMS کی شرح محفوظ کرنے کیلئے، پیغام کو iSMS میں تبدیل کرنے کی تجویز کی جاتی ہے۔ ابھی تبدیل کریں؟</string>
+    <string name="keep_mms">MMS رکھیں</string>  
+    <string name="keep_sms">SMS رکھیں</string>  
+    <string name="switch_ipmsg">تبدیل کریں</string>  
+    <string name="ip_message_load_all_message">سبھی پیغام لوڈ کریں</string>  
+    <string name="pref_title_display_preference_settings">ڈسپلے اور حوالہ</string>  
+    <string name="pref_chat_wallpaper">چیٹ وال پیپر</string>  
+    <string name="pref_auto_rotation">خودکار گھماؤ</string>  
+    <string name="pref_show_email_address">ای میل پتہ دکھائیں</string>  
+    <string name="pref_summary_show_email_address">رابطہ کے نتائج میں ای میل پتہ شامل کریں</string>  
+    <string name="pref_title_backup_restore_settings">بیکیج اور بحالی</string>  
+    <string name="pref_backage_message">پیغام کا بیک اپ بنائیں</string>  
+    <string name="pref_summary_backup_message">آخری بیک اپ:کبھی نہیں</string>  
+    <string name="pref_restore_message">پیغام بحال کریں</string>  
+    <string name="pref_summary_restore_message">اپنے بیک اپ پیغامات بحال کریں</string>  
+    <string name="pref_mute">خاموش</string>  
+    <string name="pref_summary_mute">بند</string>  
+    <string name="pref_vibrate">وائبریٹ</string>  
+    <string name="pref_summary_vibrate">اطلاعات موصول ہونے پر مرتعش کریں</string>  
+    <string name="pref_popup_notification">پاپ اپ کی اطلاع</string>  
+    <string name="pref_summary_popup_notification">پُش پیغامات کیلئے پاپ اپ دکھائیں</string>  
+    <string name="pref_title_display_settings">ڈسپلے</string>  
+    <string name="pref_title_actions_settings">کارروائیاں</string>  
+    <string name="pref_download_chat_history">چیٹ کی سرگزشت ڈاؤن لوڈ کریں</string>  
+    <string name="pref_summary_download_chat_history">SD کارڈ میں زپ کی شکل میں محفوظ کریں</string>  
+    <string name="pref_email_chat_history">چیٹ کی سرگزشت ای میل کریں</string>  
+    <string name="pref_summary_email_chat_history">چیٹ کی سرگزشت زپ کی شکل میں ای میل کریں</string>  
+    <string name="pref_clear_chat_history">چیٹ کی سرگزشت صاف کریں</string>  
+    <string name="pref_summary_notification_ringtone">نئی اطلاعات کیلئے ایک رنگ ٹون متعین کریں</string>  
+    <string name="pref_setting_title">پیغام کی ترتیب</string>  
+    <string name="pref_setting_sms">متنی پیغام(SMS)</string>  
+    <string name="pref_setting_mms">ملٹی میڈیا پیغام(MMS)</string>  
+    <string name="pref_setting_notification">اطلاعات</string>  
+    <string name="pref_setting_general">عام</string>  
+    <string name="pref_setting_chat">چیٹ کی ترتیبات</string>  
+    <string name="chat_setting_saving">محفوظ کررہا ہے۔۔۔</string>  
+    <string name="chat_setting_updating">تجدید کر رہا ہے...</string>  
+    <string name="chat_setting_sending">بھیج رہا ہے...</string>  
+    <string name="dialog_save_title">SD کارڈ میں محفوظ کریں</string>  
+    <string name="dialog_save_description">یہ چیٹ کا سلسلہ SD کارڈ میں زپ فائل کے بطور محفوظ کریں</string>  
+    <string name="dialog_email_title">ای میل کی معرفت اشتراک کریں</string>  
+    <string name="dialog_email_description">یہ چیٹ کا سلسلہ انسلاک کے بطور ای میل کی معرفت زپ کی شکل میں اشتراک کریں</string>  
+    <string name="dialog_clear_title">صاف کرنا</string>  
+    <string name="dialog_clear_description">چیٹ کی ساری سرگزشت اس چیٹ روم میں صاف کردی جائے گی</string>  
+    <string name="dialog_wallpaper_chooser_wallpapers">وال پیپر</string>  
+    <string name="dialog_wallpaper_chooser_gallery">گیلری</string>  
+    <string name="dialog_wallpaper_chooser_take">ایک تصویر لیں</string>  
+    <string name="dialog_wallpaper_chooser_default">ڈیفالٹ</string>  
+    <string name="dialog_wallpaper_title">وال پیپر منتخب کریں</string>  
+    <string name="mute_one_hour">1 گھنٹہ</string>  
+    <string name="mute_four_hours">4 گھنٹے</string>  
+    <string name="mute_eight_hours">8 گھنٹے</string>  
+    <string name="save_chat_history_failed">محفوظ کرنا ناکام</string>  
+    <string name="send_chat_history_failed">ای میل ناکام ہوگیا</string>  
+    <string name="actionbar_sms_setting">SMS ترتیبات</string>  
+    <string name="actionbar_mms_setting">MMS ترتیبات</string>  
+    <string name="actionbar_notification_setting">اطلاعی ترتیبات</string>  
+    <string name="actionbar_general_setting">عام ترتیبات</string>  
+    <string name="save_history_file">محفوظ کریں بطور</string>  
+    <string name="no_sdcard_suggestion">کوئی SD کارڈ نہيں</string>  
+    <string name="save_wallpaper_success">وال پیپر تبدیل کردیا گیا۔</string>  
+    <string name="save_wallpaper_fail">وال پیپر تبدیل نہیں کرسکا۔</string>  
+    <string name="ip_message_delete_important">"اہم کے بطور پرچم لگے ہوئے پیغامات شامل کریں"</string>  
+    <string name="str_ipmsg_spam_empty">آپ کے پاس کوئی فضول بات چیت نہیں ہے۔ \nSPAM فضول کے بطور نشان زد سبھی بات چیت کو اکٹھا کرتا ہے۔ اطلاع ڈیفالٹ کے لحاظ سے بند کردی جائے گی۔ یہ آپ کو غیر ضروری مداخلت سے روکتا ہے۔ \n\nآپ پیغام کو پکڑ کر اور فضول کے بطور نشان زد کریں والے آئیکن کو منتخب کرکے کسی مرسل کو فضول کے بطور نشان زد کرسکتے ہیں۔ بات چیت کے فضول کے بطور نشان زد ہوجانے پر، اطلاع بند ہے کا ایک آئیکن خود بخود نظر آئے گا اور بات چیت یہاں ڈال دی جائے گی۔</string>  
+    <string name="str_ipmsg_spam_example_from">+86123456789</string>  
+    <string name="str_ipmsg_spam_example_subject">یہ فضول پیغام کی ایک مثال ہے۔</string>  
+    <string name="str_ipmsg_groupchat_empty">آپ کے پاس کوئی گروپ چیٹ پیغام نہیں ہے۔ \nگروپ چیٹ گروپ چیٹ کے وہ سبھی پیغامات اکٹھا کرتا ہے جو آپ کے تخلیق کردہ ہیں یا جن میں آپ شامل ہوئے ہیں۔ یہ آپ کو اپنا گروپ چیٹ آسانی سے تلاش اور منظم کرنے کی اجازت دیتا ہے۔ \n\nایک گروپ چیٹ بنانے کیلئے، آپ اس اسکرین کے نچلے حصے میں گروپ چیٹ بنائیں کے بٹن پر تھپکی دے سکتے اور اپنے دوستوں کو گروپ میں شامل ہونے کیلئے مدعو کرسکتے ہیں۔</string>  
+    <string name="str_ipmsg_group_example_from">گروپ کا نام</string>  
+    <string name="str_ipmsg_group_example_subject">آپ کے دوست:\nI کو گروپ چیٹ کی خصوصیت پسند ہے!</string>  
+    <string name="str_ipmsg_important_empty">آپ کے پاس کوئی اہم پیغام نہیں ہے۔ \nاہم ان سبھی پیغامات کو اکٹھا کرتا ہے جن پر اہم کے بطور پرچم لگایا گیا ہے۔ یہ آپ کو اہم پیغامات آسانی سے تلاش کرنے کی اجازت دیتا ہے۔ \n\nآپ پیغام کو روکے رکھ کر اور اختیار والے مینو سے اہم کے بطور پرچم لگائیں کو منتخب کرکے پیغام پر اہم کے بطور پرچم لگا سکتے ہیں۔ کسی پیغام میں اہم کے بطور پرچم لگ جانے پر، آپ کو ذیل کی طرح سرخ پرچم کا ایک آئیکن نظر آئے گا۔</string>  
+    <string name="str_ipmsg_important_example_title">یہ اہم کے بطور پرچم لگے ہوئے پیغام کی ایک مثال ہے۔ ایک سرخ پرچم ظاہر ہوگا۔</string>  
+    <string name="str_ipmsg_important_example_time">صبح 10:55 بجے</string>  
+    <string name="str_ipmsg_allchat_empty">کوئی مکالمہ نہیں</string>  
+    <string name="str_ipmsg_empty_activate_content">یہ خصوصیت استعمال کرنے کیلئے۔ آپ کو پہلے iSMS سروس چالو کرنا ہوگا۔ گھبرائیں نہیں - اگر آپ کو یہ سروس پسند نہیں ہے تو، آپ ترتیبات میں ہمیشہ بند کرسکتے ہیں۔ اسے ابھی آزمائیں!</string>  
+    <string name="str_ipmsg_empty_activate_title">iSMS چالو کریں</string>  
+    <string name="str_ipmsg_service_title">iSMS سروس سنٹر</string>  
+    <string name="str_ipmsg_introduction">iSMS سروس کے ساتھ، آپ فوری طور پر مفت پیغامات حوالے کرسکتے، اور اپنی چیٹ کی سرگزشت ایک جگہ میں رکھ سکتے ہیں، ایک بٹن پر دبائیں، نیا تجربہ سامنے آتا ہے!</string>  
+    <string name="time_now">غیرمعلوم آرٹسٹ نام</string>  
+    <string name="str_ipmsg_active">iSMS چالو کریں</string>  
+    <string name="str_ipmsg_welcome_active">iSMS میں خوش آمدید</string>  
+    <string name="str_ipmsg_term_warn_welcome">iSMS سروس آپ کو WIFI یا ڈیٹا کنکشن کی معرفت کسی بھی وقت کسی بھی جگہ پر اپنے دوستوں کے ساتھ چیٹ کرنے اور ملٹی میڈیا فائلوں کا اشتراک کرنے کی اجازت دیتا ہے۔\n\nفعالیت مکمل کرنے کیلئے صرف 3 اقدام!\n\n شرائط و ضوابط\n</string>  
+    <string name="str_ipmsg_term_warn_activate">یہ خصوصیت صرف iSMS سروس کے ذریعہ تعاون یافتہ ہے۔\n\niSMS سروس آپ کو WIFI یا ڈیٹا کنکشن کی معرفت کسی بھی وقت کسی بھی جگہ پر اپنے دوستوں کے ساتھ چیٹ کرنے اور ملٹی میڈیا فائلوں کا اشتراک کرنے کی اجازت دیتا ہے۔\n\n شرائط و ضوابط</string>  
+    <string name="str_ipmsg_term_key">شرائط و ضوابط</string>  
+    <string name="str_ipmsg_agree_and_continue">اتفاق کریں اور جاری رکھیں</string>  
+    <string name="no_sim_card">کوئی SIM کارڈ نہیں ہے!</string>  
+    <string name="ip_message_activate_title">iSMS چالو کریں</string>  
+    <string name="ip_message_current_sim_enabled">موجودہ SIM فعال ہے۔</string>  
+    <string name="sim_selected_dialog_title_for_activate">iSMS چالو کرنے کیلئے SIM منتخب کریں</string>  
+    <string name="ip_message_activate_message">یہ خصوصیت صرف iSMS سروس کے ذریعہ تعاون یافتہ ہے۔ اپنا iSMS اکاؤنٹ ابھی چالو کریں؟</string>  
+    <string name="typing">"ٹائپ کر رہا ہے..."</string>  
+    <string name="ip_message_enable_title">iSMS فعال کریں</string>  
+    <string name="ip_message_enable_message">یہ خصوصیت صرف iSMS سروس کے ذریعہ تعاون یافتہ ہے۔ اپنا iSMS اکاؤنٹ ابھی فعال بنائیں؟</string>  
+    <string name="sim_selected_dialog_title_for_enable">iSMS فعال کرنے کیلئے SIM منتخب کریں</string>  
+    <string name="ip_message_switch_sim_title">SIM تبدیل کریں</string>  
+    <string name="ip_message_switch_sim_message">موجودہ SIM iSMS کا تعاون نہیں کرتا ہے۔ دوسرے SIM میں تبدیل کریں؟</string>  
+    <string name="ip_message_switch_sim_button">تبدیل کریں</string>  
+    <string name="ip_message_switch_sim_successfully">SIM کامیابی کے ساتھ بدلیں!</string>  
+    <string name="close">چینل بند کریں</string>  
+    <string name="nointernet">"کوئی کارگر انٹرنیٹ کنکشن نہیں ملا! براہ کرم بعد میں دوبارہ کوشش کریں۔"</string>  
+    <plurals name="deleted_conversations"> 
+        <item quantity="one">ایک بات چیت حذف کردی گئی تھی</item>  
+        <item quantity="other"><xliff:g id="number" example="15">%1$s</xliff:g> بات چیت حذف کردی گئی تھیں</item> 
+    </plurals> 
+
+    <string name="more_recipients">وصول کنندہ (کنندگان)</string>
+    <string name="Insert_sdcard">براہ کرمSD کارڈ داخل کریں</string>
+    <string name="sms_validity_period">SMS درستگی کا وقفہ</string>
+    <string name="sms_validity_period_nosetting">متعین نہیں</string>
+    <string name="sms_validity_period_1hour">1 گھنٹہ</string>
+    <string name="sms_validity_period_6hours">6 گھنٹے</string>
+    <string name="sms_validity_period_12hours">12 گھنٹے</string>
+    <string name="sms_validity_period_1day">"1 دن"</string>
+    <string name="sms_validity_period_max">زیادہ سے زیادہ</string>
+    <string name="mms_too_big_to_download">نیٹ ورک سے ڈاؤن لوڈ کرنے کیلئے یہ پیغام کافی بڑا ہے۔</string>
+    <string name="suggested">مجوزہ</string>
+    <string name="pref_title_storage_status">اسٹوریج کا موجودہ استعمال</string>
+    <string name="storage_dialog_mms">Mms:\u0020<xliff:g id="number">%s</xliff:g>  آئٹم (آئٹمز)</string>
+    <string name="storage_dialog_sms">Sms:\u0020<xliff:g id="number">%s</xliff:g> آئٹم (آئٹمز)</string>
+    <string name="storage_dialog_attachments">Mms منسلکات:\u0020</string>
+    <string name="storage_dialog_database">ڈیٹا بیس:\u0020</string>
+    <string name="storage_dialog_available_space">دستیاب جگہ:\u0020</string>
+    <string name="exceed_subject_length_limitation">زیادہ سے زیادہ لمبائی تک پہنچ گیا ہے</string>
+    <string name="disable_notifications_dialog_message">ڈیفالٹ پیغام رسانی والے اطلاق سے متنی پیغام کے دوہرے اطلاعات بند کریں؟</string>
+    <string name="forward_from">آگے بھیجیں منجانب:</string>
+    <string name="sms_forward_setting">SMS آگے بھیجنے کی ترتیب</string>
+    <string name="sms_forward_setting_summary">مرسل کے نام اور نمبر کے ساتھ SMS آگے بھیجیں</string>
+    <string name="file_attachment_vcalendar_name">vکیلینڈر(<xliff:g id="text">%s</xliff:g>)</string>
+    <string name="inbox">ان باکس</string>
+    <string name="outbox">آؤٹ باکس</string>
+    <string name="draftbox">مسودہ باکس</string>
+    <string name="sentbox">مرسلہ باکس</string>
+    <string name="simbox">SIM‏ باکس‏</string>
+    <string name="changeview">طرز تبدیل کریں</string>
+    <string name="viewer_title_sms">SMS</string>
+    <string name="viewer_title_wappush">Wappush</string>
+    <string name="slideshow_details">پیغام کی تفصیل</string>
+    <string name="open">کھولیں</string>
+    <string name="delete_all_confirm">‎"‎باکس کے سبھی پیغامات ‏حذف کریں؟‎"‎</string>
+    <string name="folder_recipient">وصول کنندہ:</string>
+    <string name="folder_recieve_date">تاریخ:</string>
+    <string name="folder_download">mms ڈاؤن لوڈ ہورہا ہے</string>
+    <string name="confirm_download_message">"پیغام ڈاؤن لوڈ کی تصدیق کریں"</string>
+    <string name="play_as_slideshow">MMS کو سلائڈ شو کی طرح چلائیں</string>
+    <string name="invalid_contact_message">رابطہ موجود نہیں ہے۔</string>
+    <string name="no_application_response">"درخواست پر کارروائی کیلئے کوئی اطلاق نہیں ہے"</string>
+    <string name="cdma_not_support">CDMA اس خصوصیت کا تعاون نہیں کرتا ہے</string>
+    <string name="allmessage">"سرور کا ڈیٹا نقص شدہ ہے، تمام پیغامات کو دوبارہ سنکرونائز کیا جائے گا"</string>
+    <string name="select_message">پیغام منتخب کریں</string>
+    <string name="confirm_delete_allmessage">"سبھی پیغام حذف کردیا جائے گا۔"</string>
+    <string name="mark_as_read_btn_str">بطور خواندہ نشان زد کریں</string>
+    <string name="delete_btn_str">مٹائيں</string>
+    <string name="reply_send">بھیجیں</string>
+    <string name="via_test">SIM1 سے کال کریں</string>
+    <string name="received_header">موصول ہوا:‏</string>
+    <string name="no_item_selected">کوئی آئٹم منتخب نہیں ہے۔</string>
+    <string name="pref_title_font_size_setting">فونٹ سائز کی ترتیب</string>
+    <string name="pref_title_message_font_size">پیغام کا فونٹ سائز</string>
+    <string name="pref_summary_message_font_size">پیغام کا فونٹ سائز</string>
+    <string name="message_font_size_dialog_title">پیغام کا فونٹ سائز</string>
+    <string name="message_font_size_dialog_cancel">منسوخ کرنا</string>
+    <string name="change">تبدیل کرنا</string>
+    <string name="ipmsg_accept">قبول کریں</string>
+    <string name="ipmsg_resend">دوبارہ بھیجیں</string>
+    <string name="menu_send_sms"><xliff:g id="name">%s</xliff:g>کو پیغام بھیجیں</string>
+    <string name="viewer_title_cb">سیل نشریہ</string>
+    <string name="change_default_disk">فون کے اسٹوریج میں کافی گنجائش نہیں ہے۔ براہ کرم کچھ اسٹوریج خالی کریں یا ترتیبات میں "ڈیفالٹ لکھنے کی ڈسک" تبدیل کریں۔</string>
+    <string name="ipmsg_reject">مسترد کرنا</string>
+    <string name="discard_mms_title">MMS ضائع کریں</string>
+    <string name="discard_mms_content">آپ کے ملٹی فاروارڈ پیغام میں موجود سبھی MMS ضائع ہوجائیں گے۔</string>
+    <string name="toast_sms_forward">کوئی MMS آگے نہیں بھیجا گیا تھا</string>
+    <string name="dialog_continue">جاری</string>
+    <string name="sms_size_limit">سائز کی حد کو پہنچ گیا</string>
+    <string name="dialog_sms_limit">پیغام کے سائز کی حد کو پہنچ گیا۔ متجاوز پیغام ضائع ہوجائے گا</string>
+    <string name="sum_search_networks">تمام دستیاب نیٹورک تلاش کریں</string>
+    <string name="str_ipmsg_replace_attach">منسلکہ تبدیل کریں</string>
+    <string name="str_ipmsg_replace_attach_msg">ایک منسلکہ موجود ہے، اسے تبدیل کریں؟</string>
+    <string name="ipmsg_err_file">فائل کھولنے میں ناکام</string>
+    <string name="forward_tips_title">"MMS نوٹیفکیشن رد کریں"</string>
+    <string name="forward_tips_body">"MMS نوٹیفکیشن آگے بڑھانے کو تعاون نہیں کرتا، اسے رد کردیا جائے گا۔"</string>
+    <string name="ipmsg_resend_discard_message">پیغام دوبارہ بھیجنے کیلئے، آپ کا موجودہ تحریر کردہ پیغام رد کردیا جائے گا۔</string>
+    <string name="type_to_quick_text">"فوری متن ٹائپ کریں"</string>
+    <string name="menu_wappush">"Wap پُش پیغامات"</string>
+    <string name="visit_website">"ویب سائٹ دیکھیں"</string>
+    <string name="meet_emoticon_limit">علامات جذبات کی حدود پرعمل کریں</string>
+    <string name="view_mms_notification">mms اطلاعات نہیں دیکھ سکتا</string>
+    <string name="ipmsg_multi_forward_tips_content">متعدد کو آگے بڑھانے کیلئے، پہلے کچھ iSMS کو ڈاؤن لوڈ کیے جانے کی ضرورت ہے۔</string>
+    <string name="multi_forward_failed_all">ڈاؤن لوڈ ناکام، متعدد کو آگے بڑھانے کا عمل رد ہوگیا۔</string>
+    <string name="ipmsg_multi_forward_failed_part">کچھ iSMS کو اگے بڑھانا ناکام ہوگیا۔</string>
+    <string name="confirm_delete_allwappush">"سبھی ویپ پُش پیغامات حذف ہوجائیں گے۔"</string>
+    <string name="confirm_delete_selected_wappush">"منتخب ویپ پُش پیغامات حذف ہوجائیں گے۔"</string>
+    <string name="menu_delete_allwappush">تمام حذف کرنا</string>
+    <string name="duplicated_recipient">وصول کنندہ دوبار درج ہوگیا</string>
+
+<string name="ok">ٹھیک ہے</string>
+    <string name="cancel">منسوخ</string>
+    <string name="enable">فعال کریں</string>
+    <string name="disable">غیرفعال کریں</string>
+    <string name="cell_broadcast_setting">سیل براڈکاسٹ کی ترتیبات</string>
+    <string name="cb_menu_language">زبان</string>
+    <string name="cb_menu_add_channel">چینل کا اضافہ کریں</string>
+    <string name="cb_menu_channel_list">چینل فہرست</string>
+    <string name="cb_dialog_title_language_choice">زبان منتخب کریں</string>
+    <string name="cb_channel_dialog_channel_name">چینل کا نام (0 سے 10 حروف)</string>
+    <string name="cb_channel_dialog_channel_number">چینل نمبر (0-65534)</string>
+    <string name="cb_channel_dialog_channel_state">چینل فعال کریں</string>
+    <string name="cb_channel_dialog_edit_channel">چینل میں ترمیم کریں</string>
+    <string name="cb_menu_edit">تدوین کریں</string>
+    <string name="cb_menu_delete">مٹائيں</string>
+    <string name="cb_error_channel_num">براہ کرم چینل نمبر درج کریں(0-65534)۔</string>
+    <string name="cb_error_channel_name">چینل کے نام کی لمبائی صحیح نہيں ہے (1- 10 کریکٹر)۔</string>
+    <string name="cb_error_language_select">برائے مہربانی کم از کم ایک زبان منتخب کریں۔</string>
+    <string name="cb_error_channel_id_exist">چینل کی id موجود ہے۔</string>
+    <string name="cb_all_languages">تمام زبانیں</string>
+    <string name="cb_default_new_channel_name">نیا چینل</string>
+    <string name="sum_cell_broadcast_control_on">سیل براڈکاسٹ اہل کریں</string>
+    <string name="sum_cell_broadcast_control_off">سیل براڈکاسٹ نااہل کریں</string>
+    <string name="sum_cell_broadcast_setting">سیل براڈکاسٹ کے لئے زبان اور چینل کی ترتیب</string>
+    <string name="close_dialog">ٹھیک ہے</string>
+    <string name="updating_title">کال کی ترتیبات</string>
+    <string name="error_updating_title">کال کی ترتیبات کی غلطی</string>
+    <string name="reading_settings">ترتیبات پڑھ رہا ہے/u2026</string>
+    <string name="updating_settings">ترتیبات کی تجدید کر رہا ہے/u2026</string>
+    <string name="reverting_settings">ترتیبات کو پلٹ رہا ہے/u2026</string>
+    <string name="exception_error">نیٹورک یا SIM کارڈ کی غلطی</string>
+    <string name="no_sim">SIM %d کا پلگ نہیں لگا ہے۔</string>
+    <string name="sms_not_ready">SMS ماڈیول شروع ہو رہا ہے، براہ کرم انتظار کریں…</string>
+    <string name="label_full_name">نام</string>
+    <string name="label_phone">فون</string>
+    <string name="label_email">ای میل</string>
+    <string name="label_postal">پتہ</string>
+    <string name="label_organization">تنظیم</string>
+    <string name="label_im">IM</string>
+    <string name="label_website">ویب سائٹ</string>
+    <string name="label_sip_address">انٹرنیٹ کال</string>
+    <string name="label_nick_name">عرفی نام</string>
+    <string name="label_notes">نوٹس</string>
+    <string name="label_event">واقعہ</string>
+    <string name="search_time_period_label">وقفہ وقت</string>
+    <string-array name="language_list_values" translatable="false">
+        <item>تمام زبانیں</item>
+        <item>جرمن</item>
+        <item>انگریزی</item>
+        <item>اطالوی</item>
+        <item>فرانسیسی</item>
+        <item>ہسپانوی</item>
+        <item>ڈچ</item>
+        <item>سویڈش</item>
+        <item>ڈینش</item>
+        <item>پرتگالی</item>
+        <item>فننش</item>
+        <item>نارویجین</item>
+        <item>یونانی</item>
+        <item>ترکی</item>
+        <item>ہنگریائی</item>
+        <item>پولش</item>
+        <item>دیگر</item>
+        <item>چیک</item>
+        <item>عبرانی</item>
+        <item>عربی</item>
+        <item>روسی</item>
+        <item>الجزائری</item>
+    </string-array>
+    <string name="add_duplicate_recipients">وصول کنندہ دوبار درج ہوگیا</string>
+
+    <!-- begin of mwi -->
+    <string name="mwi_title">صوتی پیغامات</string>
+    <string name="type_voice_msg">صوتی پیغام</string>
+    <string name="type_video_msg">ویڈیو پیغام</string>
+    <string name="type_fax_msg">فیکس پیغام</string>
+    <string name="type_text_msg">ٹیکسٹ پیغام</string>
+    <string name="priority_urgent">فوری</string>
+    <string name="date_label">تاریخ:\u0020</string>
+    <string name="message_id_label">پیغام کی شناخت:\u0020</string>
+    <string name="voice_message_count_notification"><xliff:g id="number" example="3">%1$s</xliff:g> نیا صوتی پیغام</string>
+    <string name="confirm_delete_allmwi">"سبھی صوتی پیغامات حذف کردیے جائیں گے۔"</string>
+    <string name="confirm_delete_selected_mwi">"منتخب صوتی پیغامات حذف کردیے جائیں گے۔"</string>
+    <!-- end of mwi -->
+
+    <string name="done_text">ہوگيا</string>
+    <string name="download_disabled_toast">ڈاؤن لوڈ نہیں کرسکتا۔ کوئی ڈیفالٹ SMS ایپ نہیں ہے۔</string>
+    <string name="adding_wallpaper_title">وال پیپر محفوظ کررہا ہے…</string>
+    <string name="sms_priority_setting">UIM ترجیح</string>
+    <string name="sms_priority_Interactive">متعامل</string>
+    <string name="sms_priority_Urgent">فوری</string>
+    <string name="sms_priority_Emergency">ایمرجنسی</string>
+    <string name="empty_sim_name">سم سلاٹ <xliff:g id="subId" example="2">%1$d</xliff:g></string>
+
+    <string name="drm_not_support">MMS کاپی ممنوع والے مواد کو تعاون نہیں کرتا۔  </string>
+    <string name="user_has_no_premission">اس صارف کو SMS استعمال کرنے کی اجازت نہیں ہے</string>
+    <string name="wfc_no_cellular_network">کوئی سیلولر نیٹ ورک نہیں</string>
+    <string name="wfc_connect_to_available_wifi">پیغام رسانی کے لیے دستیاب Wi-Fi سے جڑیں۔</string>
+    <string name="wfc_notification_title">پیغام رسانی کے لیے Wi-Fi سے جڑیں۔</string>
+    <string name="ct_om_switch_notification"><xliff:g id="op1">%s</xliff:g> عارضی طور پر کام نہیں کرے گا، اور اگر کوئی ڈیفالٹ کال SMS، ڈیٹا <xliff:g id="op2">%s</xliff:g> پر ہوگا تو وہ اس کے مطابق <xliff:g id="op3">%s</xliff:g> پر تبدیل ہوجائے گا۔</string>
+    <string name="can_not_switch_account_during_call">کالکےدورانSMSکےلیےترجیحیSIMکوسوئچنہیںکیاجاسکتا۔</string>
+    <string name="can_not_switch_account_temporarily">عارضیطورپرSMSکےلیےترجیحیSIMکوسوئچنہیںکیاجاسکتا۔</string>
+    <string name="omh_exceed_message_size_limitation">R-UIMپیغامکےسائزکیحدپہنچگئی</string>
+    <string name="omh_failed_to_add_image">R-UIM پیغام کی جسامت کی حد پہنچ گئی، براہ کرم کچھ حصوں کو حذف کریں۔</string>
+    <string name="missing_required_permission">اجازت سے انکار۔ آپ انہیں سیٹنگز &gt; ایپس میں تبدیل کرسکتے ہیں۔</string>
+    <string name="manage_card_msg_title">UIM/SIM پیغامات کا نظم کریں</string>
+    <string name="manage_card_msg_summary">آپ کے  UIM/SIM پر سٹور پیغامات کا نظم کریں</string>
+    <string name="disable_delivery_report">رومنگ کے وقت اسے فعال نہیں کرسکتے۔</string>
+    <string name="fore_service_notify_title">پیغامات منتقل ہورہا ہے</string>
+    <string name="fore_service_notify_content">منتقلی میں پیغامات ہیں۔</string>
+    <string name="smart_req_mms_indicator">MMS کی اجازت نہیں ہے، براہ کرم دوبارہ SMS میں آزمائیں۔</string>
+</resources>

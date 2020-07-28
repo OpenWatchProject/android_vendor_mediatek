@@ -1,0 +1,268 @@
+/*
+ * Copyright (C) 2016 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package vendor.mediatek.hardware.radio_op@1.1;
+
+import IRadioResponseOp;
+import IRadioIndicationOp;
+import IImsRadioResponseOp;
+import IImsRadioIndicationOp;
+import IDigitsRadioResponse;
+import IDigitsRadioIndication;
+import IRcsRadioResponse;
+import IRcsRadioIndication;
+
+/*
+ * This interface is used by telephony & telecom to talk to cellular radio.
+ * All the functions have minimum one parameter:
+ * serial: which corresponds to serial no. of request. Serial numbers must only be memorized for the
+ * duration of a method call. If clients provide colliding serials (including passing the same
+ * serial to different methods), multiple responses (one for each method call) must still be served.
+ */
+interface IRadioOp {
+
+    /**
+     * When response type received from a radio indication or radio response is
+     * RadioIndicationType:UNSOLICITED_ACK_EXP or RadioResponseType:SOLICITED_ACK_EXP respectively,
+     * acknowledge the receipt of those messages by sending responseAcknowledgement().
+     *
+     */
+    oneway responseAcknowledgement();
+
+    /*
+     * Set response functions for Mtk radio requests & radio indications.
+     *
+     * @param radioResponse Object containing response functions
+     * @param radioIndication Object containing radio indications
+     */
+    setResponseFunctions(IRadioResponseOp radioResponse,
+            IRadioIndicationOp radioIndication);
+
+    /*
+     * Set response functions for Ims radio requests & radio indications.
+     *
+     * @param radioResponse Object containing response functions
+     * @param radioIndication Object containing radio indications
+     */
+    oneway setResponseFunctionsIms(IImsRadioResponseOp radioResponse,
+            IImsRadioIndicationOp radioIndication);
+
+    /*
+     * Set response functions for Digits radio requests & radio indications.
+     *
+     * @param radioResponse Object containing response functions
+     * @param radioIndication Object containing radio indications
+     */
+    oneway setResponseFunctionsDigits(IDigitsRadioResponse radioResponse,
+            IDigitsRadioIndication radioIndication);
+
+    /**
+     * Set RTT Mode, Indicate RTT Call type
+     * RIL_REQUEST_SET_RTT_MODE
+     *
+     * @param serial Serial number of request
+     * @param mode 0: Not a RTT Call (RTT OFF)
+     *             1: RTT Call (RTT Auto)
+     *             2: Enable IMS RTT Capability with upon Request RTT Operation Mode
+     */
+    oneway setRttMode(int32_t serial, int32_t mode);
+
+    /**
+     * Send RTT Modify Request, IMS RTT Call Upgrade/Downgrade
+     * RIL_REQUEST_SEND_RTT_MODIFY_REQUEST
+     *
+     * @param serial Serial number of request
+     * @param callid Call Id
+     * @param newMode 0: Downgrade, 1: Upgrade
+     */
+    oneway sendRttModifyRequest(int32_t serial, int32_t callId, int32_t newMode);
+
+    /**
+     * Send RTT Text, Send or Receive RTT String
+     * RIL_REQUEST_SEND_RTT_TEXT
+     *
+     * @param serial Serial number of request
+     * @param callId Call Id
+     * @param lenOfString Length of RTT text String
+     * @param text RTT Text String
+     */
+    oneway sendRttText(int32_t serial, int32_t callId, int32_t lenOfString, string text);
+
+    /**
+     * Request RTT Modify Response
+     * RIL_REQUEST_RTT_MODIFY_REQUEST_RESPONSE
+     *
+     * @param serial Serial number of request
+     * @param callId Call Id
+     * @param result 0: Accept the request, 1:Reject the request
+     */
+    oneway rttModifyRequestResponse(int32_t serial, int32_t callId, int32_t result);
+
+    /**
+     * Set Digits Line
+     * RIL_REQUEST_SET_DIGITS_LINE
+     *
+     * @param serial Serial number of request
+     * @param accountId Accound id
+     * @param digitsSerial Serial number
+     * @param isLogout Is logout
+     * @param hasNext If has next AT command
+     * @param isNative If it's a native line
+     * @param msisdn Msisdn
+     * @param sit Service instance token (SIT)
+     */
+    oneway setDigitsLine(int32_t serial, int32_t accountId, int32_t digitsSerial,
+                         bool isLogout, bool hasNext, bool isNative, string msisdn,
+                         string sit);
+
+    /**
+     * Set TRN
+     * RIL_REQUEST_SET_TRN
+     *
+     * @param serial Serial number of request
+     * @param fromMsisdn from msisdn
+     * @param toMsisdn to msisdn
+     * @param trn trn
+     */
+    oneway setTrn(int32_t serial, string fromMsisdn, string toMsisdn, string trn);
+
+    /**
+     * Set CS incoming call virtual line
+     * RIL_REQUEST_SET_INCOMING_VIRTUAL_LINE
+     *
+     * @param serial Serial number of request
+     * @param toMsisdn to msisdn
+     *
+     * Response function is IRadioResponseOp.setIncomingVirtualLineResponse
+     */
+    oneway setIncomingVirtualLine(int32_t serial, string fromMsisdn, string toMsisdn);
+
+    /*
+     * Set Rx Test Config
+     *
+     * @param serial Serial number of request.
+     * @param antType antType of the test
+     *
+     * Response function is IRadioResponse.setRxTestConfigResponse
+     */
+    oneway setRxTestConfig(int32_t serial, int32_t antType);
+
+    /*
+     * Get Rx Test result
+     *
+     * @param serial Serial number of request.
+     * @param mode test mode
+     *
+     * Response function is IRadioResponse.getRxTestResultResponse
+     */
+    oneway getRxTestResult(int32_t serial, int32_t mode);
+
+    /**
+     * Initiate voice call with dialing from number.
+     * RIL_REQUEST_DIAL_FROM
+     *
+     * @param serial Serial number of request.
+     * @param dialInfo Dial struct with dialing from number
+     *
+     * Response function is IImsRadioResponseOp.dialFromResponse()
+     */
+    oneway dialFrom(int32_t serial, DialFrom dialInfo);
+
+    /**
+     * Send USSI from specific line
+     * RIL_REQUEST_SEND_USSI_FROM
+     *
+     * @param serial Serial number of request
+     * @param from Specific line address
+     * @param action USSI request or response
+     * @param ussi USSI string
+     */
+    oneway sendUssiFrom(int32_t serial, string from, int32_t action, string ussi);
+
+    /**
+     * Cancel USSI from specific line
+     * RIL_REQUEST_CANCEL_USSI_FROM
+     *
+     * @param serial Serial number of request
+     * @param from Specific line address
+     */
+    oneway cancelUssiFrom(int32_t serial, string from);
+
+    /**
+     * Set Emergency call config
+     * RIL_REQUEST_SET_EMERGENCY_CALL_CONFIG
+     *
+     * @param serial Serial number of request
+     * @param category Emergency service category
+     * @param isForceEmergency is force emergency
+     */
+    oneway setEmergencyCallConfig(int32_t serial, int32_t category, bool isForceEcc);
+
+    /*
+     * Set Disable 2G
+     * @param serial Serial number of request.
+     * @param mode on or off
+     *
+     * Response function is IRadioResponse.setDisable2GResponse
+     */
+    oneway setDisable2G(int32_t serial, bool mode);
+
+    /*
+     * Get Disable 2G
+     * @param serial Serial number of request.
+     *
+     * Response function is IRadioResponse.getDisable2GResponse
+     */
+    oneway getDisable2G(int32_t serial);
+
+    /**
+     * Request device switch
+     * RIL_REQUEST_DEVICE_SWITCH
+     *
+     * @param serial Serial number of request
+     * @param number Target number
+     * @param deviceId Target device id
+     */
+    oneway deviceSwitch(int32_t serial, string number, string deviceId);
+
+    /**
+     * Cancel device switch
+     * RIL_REQUEST_CANCEL_DEVICE_SWITCH
+     *
+     * @param serial Serial number of request
+     */
+    oneway cancelDeviceSwitch(int32_t serial);
+
+
+    /*
+     * Set response functions for Rcs radio requests & radio indications.
+     *
+     * @param radioResponse Object containing response functions
+     * @param radioIndication Object containing radio indications
+     */
+    oneway setResponseFunctionsRcs(IRcsRadioResponse radioResponse,
+            IRcsRadioIndication radioIndication);
+
+
+    /**
+     * send digits line registration info to DigitsService
+     * RIL_REQUEST_SET_DIGITS_REG_STATUS
+     *
+     * @param digitsinfo content of URC - DIGITSLINE
+     */
+    oneway setDigitsRegStatus(int32_t serial, string digitsinfo);
+
+};

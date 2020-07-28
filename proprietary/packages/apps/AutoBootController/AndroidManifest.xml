@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.mediatek.autobootcontroller">
+    <uses-sdk android:minSdkVersion="23" android:targetSdkVersion="28"/>
+    <protected-broadcast android:name="com.mediatek.autoboot.action.AUTOBOOT_UPDATE" />
+    <uses-permission android:name="android.permission.MANAGE_USERS" />
+    <uses-permission android:name="android.permission.INTERACT_ACROSS_USERS_FULL" />
+
+    <permission
+        android:name="com.mediatek.autobootcontroller.permission.AUTO_BOOT_ACTIVITY"
+        android:label="@string/auto_boot_pref_title"
+        android:protectionLevel="signatureOrSystem"/>
+
+    <permission
+        android:name="com.mediatek.autobootcontroller.permission.TRIGER_HISTORY"
+        android:label="@string/trigger_history_pref_title"
+        android:protectionLevel="signatureOrSystem"/>
+
+    <application
+        android:taskAffinity=""
+        android:label="@string/app_name"
+        android:theme="@android:style/Theme.Material.Settings"
+        android:supportsRtl="true"
+        android:allowClearUserData="false" >
+        <!-- enter : auto boot ui -->
+        <activity android:name="AutoBootAppManageActivity"
+                android:label="@string/auto_boot_pref_title"
+                android:launchMode="singleTask"
+                android:permission="com.mediatek.autobootcontroller.permission.AUTO_BOOT_ACTIVITY">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <action android:name="com.mediatek.autobootcontroller.AUTO_BOOT" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+         <!--   get each ap's permission control ui-->
+        <activity android:name="AppToPermissionActivity"
+                android:label="@string/manage_permission_app_label"
+                android:configChanges="orientation|keyboardHidden|screenSize|mcc|mnc"
+                android:exported="false">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <action android:name="com.mediatek.autobootcontroller.EACH_PERMISSION_CONTROL" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <!-- enter : permission trigger history activity ui -->
+        <activity android:name="PermissionTriggerHistoryActivity"
+                android:label="@string/trigger_history_pref_title"
+                android:launchMode="singleTask"
+                android:permission="com.mediatek.autobootcontroller.permission.TRIGER_HISTORY">
+            <intent-filter>
+                <action android:name="com.mediatek.autobootcontroller.TRIGGER_HISTORY" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+    </application>
+</manifest>

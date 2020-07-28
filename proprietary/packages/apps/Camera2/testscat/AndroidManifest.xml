@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    coreApp="true"
+    android:sharedUserId="android.uid.system"
+    package="com.mediatek.camera.tests.helper"
+    android:versionCode="14003"
+    android:versionName="1.170505" >
+
+    <uses-sdk
+        android:minSdkVersion="16"/>
+
+    <uses-permission android:name="android.permission.READ_LOGS"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_MEDIA_STORAGE"/>
+
+    <application
+        android:name=".CameraTestsHelperApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name">
+
+        <service android:name=".LoggerService" >
+            <intent-filter>
+                <action android:name="com.mediatek.camera.tests.helper.LoggerService" />
+            </intent-filter>
+        </service>
+    </application>
+
+</manifest>

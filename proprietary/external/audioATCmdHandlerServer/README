@@ -1,0 +1,26 @@
+This module creates the audio command handler service executable file.
+
+WHAT IT DOES?
+=============
+Audio command handler service is a native service, it receive MM commands sent by atcid.
+according to the different commands, Audio command handler service read/write data from/to NVRAM,
+and control audio hardware(volume, speech...)
+
+the path is following
+PC tool -> ATCID -> Audio CMD Handler Service -> Audio HAL/NVRAM
+
+HOW IT WAS BUILT?
+==================
+It needs the following library from AOSP:
+
+libbinder, libcutils and libutils
+
+and the following libs from MediaTek:
+
+libmedia, libaudiocustparam, libaudiocomponentengine, libaudiocompensationfilter
+
+HOW TO USE IT?
+==============
+
+audio command handler service is a service to calibrate audio/speech parameters.
+it can send the commands to this service by socket.

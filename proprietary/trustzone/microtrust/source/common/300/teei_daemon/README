@@ -1,0 +1,36 @@
+WHAT IT DOES?
+=============
+This package is for loading teei linux driver in init phase.
+
+HOW IT WAS BUILT?
+==================
+This package is built with Android related libraries.
+
+HOW TO USE IT?
+==============
+1 Put this dir into android src (ex: system/core/).
+2 Copy your *.ko here. Change its name to module.ko
+3 run gen_module.h.sh to gen module.h .
+4 add a file teei_loader.te in android src [external/sepolicy].
+#########file begin########
+type teei_loader, domain;
+type teei_loader_exec, exec_type, file_type;
+
+allow teei_laoder self:capability sys_module;
+init_daemon_domain(teei_loader)
+#########file eng########
+
+5 modify file_contexts [same dir]
+#########add line begin########
+#!!Change the file path to yours.
+/system/bin/teei_loader u:object_r:teei_loader_exec:s0
+#########add line end########
+
+6 modify your init.rc (or init.xxx.rc),add a service.
+########add begin########
+service teei_loader /system/bin/teei_loader
+    class main
+    user root
+    group root
+    oneshot
+########add end########

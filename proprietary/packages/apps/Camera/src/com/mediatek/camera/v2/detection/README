@@ -1,0 +1,25 @@
+WHAT IS Detection?
+==================
+1.An accessory function which must be attached to module.
+2.Detection features must relay on camera device.
+3.Unlike stream features, detection features will not process buffers.
+
+HOW TO USE IT?
+==================
+All the detection use MVP architecture and manager by DetectionManager.
+The main function of the DetectionManager includes:listens detection settings
+change,notify the detection to update,aubmit capture request and dispatch
+capture result to the detections.
+The MTK way of adding a new detection:
+1.New a detection view and presenter implement in DetectionManager.The view
+instance is a parameter of the presenter.
+2.The detection device implement is create in presenter implement constructor,
+that is to say,the presenter implement includes the detection view and detection
+device implement.
+The detection device implement has a capture observer and DetectionManager help
+to register the observer and notify detection device implement the capture result.
+3.The presenter set a listener to the device implement,once capture callback
+has received,device implement will notify presenter and presenter will trigger
+view update.
+
+The third party could use their own way to manager the detections.

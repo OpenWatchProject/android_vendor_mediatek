@@ -1,0 +1,34 @@
+cc_binary {
+    name: "android.hardware.secure_element@1.0-service-mediatek",
+    relative_install_path: "hw",
+    proprietary: true,
+
+    defaults: ["hidl_defaults"],
+    init_rc: ["android.hardware.secure_element@1.0-service-mediatek.rc"],
+
+    srcs: [
+        "MtkUiccSeService.cpp",
+        "SecureElement.cpp",
+        "SERadioResponse.cpp",
+        "SERadioIndication.cpp",
+        "RadioDeathRecipient.cpp",
+        "RadioResponse.cpp",
+        "RadioIndication.cpp",
+        "SERadioResponseHandler.cpp",
+    ],
+
+    shared_libs: [
+        /* HIDL service */
+        "libhidlbase",
+        "libhidltransport",
+        "libutils",
+        "android.hardware.secure_element@1.0",
+
+        /* Implementation */
+        "libcutils",
+        "liblog",
+        "android.hardware.radio@1.2",
+        "android.hardware.radio@1.4",
+        "vendor.mediatek.hardware.mtkradioex@1.0",
+    ],
+}

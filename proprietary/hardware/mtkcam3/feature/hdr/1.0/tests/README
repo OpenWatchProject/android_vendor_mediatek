@@ -1,0 +1,69 @@
+An unit test of HDRProc
+
+
+WHAT IT DOES?
+=============
+
+A HDR client to test the functionality of HDRProc.
+
+
+HOW IT WAS BUILT?
+==================
+
+It needs the following libs from AOSP:
+1. libcutils.so
+2. libstlport.so
+3. libutils.so
+4. libbinder.so
+5. libhardware.so
+6. libcamera_metadata.so
+7. libdl.so
+
+and the following libs from MediaTek:
+1. libcompiler_rt.so
+2. libcam.camadapter.so
+3. libmmsdkservice.feature.so
+4. libcam_utils.so
+5. libcamdrv.so
+
+All source/dependency modules of this module are already put in
+'vendor/mediatek/libs' folder.
+
+
+HOW TO USE IT?
+==============
+
+1. to run this test on different camera devices, you need to modify
+
+[Camera HAL device v1]
+#define RUN_IN_CAM3_LOAD 0
+
+[Camera HAL device v3]
+#define RUN_IN_CAM3_LOAD 1
+
+2. push input data into your android device
+    adb root
+    adb remount
+    adb shell "rm -rf /data/input"
+    adb shell "mkdir -p /data/input"
+
+   then unpacking input.rar and execute
+
+    adb push input /data/input
+
+3. push the test program
+    adb push out/target/product/<PROJECT_NAME>/data/nativetest/hdreffecthal_test/hdreffecthal_test
+
+   into
+
+    /system/bin/hdreffecthal_test
+
+   and grant it the execution permission
+
+    adb shell "chmod 755 /system/bin/hdreffecthal_test"
+
+4. run the test program
+    adb shell hdreffecthal_test
+
+
+All the source code of this program were written by MediaTek co..

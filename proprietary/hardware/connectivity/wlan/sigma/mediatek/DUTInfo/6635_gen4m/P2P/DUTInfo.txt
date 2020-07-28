@@ -1,0 +1,94 @@
+######### DUT (Device Under Test) Information #########################
+
+#### Wi-Fi Test Suite Control Agent Support ########
+# 1-If DUT has Wi-Fi Test Suite Control Agent support. 0-If not supported.
+
+WTS_ControlAgent_Support!1!
+
+#Any other notes about DUT - Optional
+DUT_Notes!-!
+
+# DUT Band : ABG or BG or B (B only) or ABGN or GN or AN
+DUTBand!ABGN!
+
+# WPS Methods Support. 0-Not Supported 1-Supported
+
+WPS_PushButton!1!
+WPS_Display!1!
+WPS_Keypad!1!
+WPS_Label!0!
+
+# PLEASE SELECT THE P2P FEATURES SUPPORTED BY DUT #
+############### 0-Not Supported 1-Supported ###########
+#P2P Multi Client Support (For Group Owner)
+P2P_GO_Multi_Client_Support!0!
+
+# DUT support for configuration of Intent Value(15)
+P2P_GO_Intent_Value_Configuration!0!
+
+
+# P2P Concurrent mode support
+P2P_Concurrency_Support!0!
+
+#P2P Multi Channel Concurrency Support
+P2P_Multi_Channel_Concurrency_Support!0!
+
+#Support for configuring Concurreny (Cross_Connection Bit)?
+P2P_Cross_Connection_Bit_Conf_Support!0!
+
+
+#P2P Invitation Procedure Support
+P2P_Invitation_Procedure_Support!0!
+
+#If DUT needs user conformance when accepting the P2P Invitation Request
+#
+#0 - If no user conformance needed
+#1 - If it needs user conformance
+P2P_Invitation_User_Conf!0!
+
+#P2P Persistent Group Support
+P2P_Persistent_Group_Support!0!
+
+#P2P Dual band support
+P2P_Dual_Band_Support!0!
+
+
+#DUT support advertisement of Extended Listen Timing and Persistent Group capability
+P2P_Extended_Listen_Timing_Support!0!
+
+#DUT support Device Discoverability functionality
+P2P_Discoverability_Exchange_Support!0!
+
+#P2P Service Discovery Support
+P2P_Service_Discovery_Support!0!
+
+#Managed P2P functionality
+P2P_Managed_Support!0!
+
+#P2P Multi Client Support (For Group Owner)
+P2P_GO_Multi_Client_Support!0!
+
+# Support for configuring Intra BSS Bit?
+P2P_Intra_BSS_Bit_Conf_Support!0!
+
+#P2P GO Notice of Absence Support
+P2P_GO_Notice_of_Absence_Support!0!
+
+#P2P GO Opportunistic PowerSave Support
+P2P_GO_Opportunistic_PS_Support!0!
+
+#DUT support multi-stream 802.11n
+P2P_11n_Multi_Stream_Support!0!
+
+#DUT WMM-PowerSave support
+P2P_WMM_PS!0!
+
+#DUT NFC support
+NFC_Support_Flag!0!
+
+#DUT NFC Interface support
+NFC_Interface_Flag!0!
+###4.3.1 test operating channel###
+###List the channel number supported by the DUT other than CH#2.
+#### The Channel number can 1 or 3 or 4
+OPER_CHANL!3!

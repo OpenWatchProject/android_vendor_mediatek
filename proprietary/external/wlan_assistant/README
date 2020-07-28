@@ -1,0 +1,19 @@
+This module collects wifi events and reports to agps moudule.
+
+This application is open source now.
+
+
+WHAT IT DOES?
+=============
+wifi2agps collects wifi enable/disable, connect/disconnect, scan result events
+and report to agps moudule, who make use these information for positioning.
+
+HOW IT WAS BUILT?
+==================
+This is a independent module, you can build it directly.
+
+HOW TO USE IT?
+==============
+This application is started by init process when system is booting. And if this process
+is killed abnormally, init process will start it automatically again.
+It is not able to be started by command line.

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <com.android.camera.ui.RotateImageView
+        android:id="@+id/lomo_effect_indicator"
+        style="@style/SubSettingIndicator"
+        android:background="@drawable/bg_pressed"
+        android:clickable="true"
+        android:contentDescription="@string/accessibility_second_level_indicators"
+        android:focusable="true"
+        android:padding="10dip"
+        android:scaleType="center"
+        android:src="@drawable/port_open_row" />
+
+</RelativeLayout>

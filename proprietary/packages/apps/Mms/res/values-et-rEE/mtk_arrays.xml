@@ -1,0 +1,543 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+ * Copyright (C) 2008 Esmertec AG.
+ * Copyright (C) 2008 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ -->
+<resources>
+<string-array name="default_quick_texts">
+      <item>Kus sa oled?</item>
+      <item>Mida teed?</item>
+      <item>Palun helista!</item>
+      <item>Palun vabandust, olen koosolekul.</item>
+      <item>Helistan varsti.</item>
+      <item>Ära muretse! Kõik on korras.</item>
+      <item>Olen teel koju.</item>
+      <item>Juba tulen!</item>
+      <item>Kui sa ei tule, pole sind olemas.</item>
+    </string-array>
+    <string-array name="pref_mms_creation_mode_choices">
+        <item>Piiratud režiim</item>
+        <item>Hoiatusrežiim</item>
+        <item>Vaba režiim</item>
+    </string-array>
+    <string-array name="pref_key_mms_priority_choices">
+        <item>"Kõrge"</item>
+        <item>"Tavaline"</item>
+        <item>"Madal"</item>
+    </string-array>
+    <string-array name="pref_sms_input_mode_choice">
+        <item>GSM-i sõnastik</item>
+        <item>Unicode</item>
+        <item>"Automaatne"</item>
+    </string-array>
+    <string-array name="pref_sms_save_location_choices">
+        <item>"Telefon"</item>
+        <item>SIM-kaart</item>
+    </string-array>
+    <string-array name="pref_tablet_sms_save_location_choices">
+        <item>"SEADE"</item>
+        <item>SIM-kaart</item>
+    </string-array>
+    <string-array name="pref_message_font_size_choices">
+        <item>Vastavalt süsteemi fondimõõdule</item>
+        <item>"Väike"</item>
+        <item>"Keskmine"</item>
+        <item>"Suur"</item>
+        <item>Eriti suur</item>
+    </string-array>
+    <string-array name="pref_message_font_size_values">
+        <item>18</item>
+        <item>20</item>
+        <item>24</item>
+        <item>28</item>
+        <item>32</item>
+    </string-array>
+    <integer-array name="share_column">
+        <item>4</item>
+        <item>6</item>
+    </integer-array>
+    <integer-array name="emoticon_column">
+        <item>5</item>
+        <item>10</item>
+    </integer-array>
+    <string-array name="large_emoticon_name">
+        <item>[kiitus]</item>
+        <item>[Kink]</item>
+        <item>[KongFu]</item>
+        <item>[Vihm]</item>
+        <item>[Hirmus]</item>
+        <item>[Haige]</item>
+        <item>[Rikas]</item>
+        <item>[Kärbes]</item>
+        <item>[Vihane]</item>
+        <item>[Heakskiit]</item>
+        <item>[Igav]</item>
+        <item>[Nutt]</item>
+        <item>[Roolis]</item>
+        <item>[Sööb]</item>
+        <item>[Õnnelik]</item>
+        <item>[Hoia]</item>
+        <item>[Puhkus]</item>
+        <item>[Armastus]</item>
+        <item>[Palve]</item>
+        <item>[Surve]</item>
+        <item>[Laulab]</item>
+        <item>[Magab]</item>
+        <item>[Sport]</item>
+        <item>[Ujumine]</item>
+    </string-array>
+    <string-array name="large_emoticon_name_en">
+        <item>[kiitus]</item>
+        <item>[Kink]</item>
+        <item>[KongFu]</item>
+        <item>[Vihm]</item>
+        <item>[Hirmus]</item>
+        <item>[Haige]</item>
+        <item>[Rikas]</item>
+        <item>[Kärbes]</item>
+        <item>[Vihane]</item>
+        <item>[Heakskiit]</item>
+        <item>[Igav]</item>
+        <item>[Nutt]</item>
+        <item>[Roolis]</item>
+        <item>[Sööb]</item>
+        <item>[Õnnelik]</item>
+        <item>[Hoia]</item>
+        <item>[Puhkus]</item>
+        <item>[Armastus]</item>
+        <item>[Palve]</item>
+        <item>[Surve]</item>
+        <item>[Laulab]</item>
+        <item>[Magab]</item>
+        <item>[Sport]</item>
+        <item>[Ujumine]</item>
+    </string-array>
+    <string-array name="dynamic_emoticon_name">
+        <item>{õnnelik}</item>
+        <item>{plaksutab}</item>
+        <item>{armastus}</item>
+        <item>{uhkusega}</item>
+        <item>{põlastav}</item>
+        <item>{rahutu}</item>
+        <item>{laks}</item>
+        <item>{vihane}</item>
+        <item>{needus}</item>
+        <item>{siiksi}</item>
+        <item>{sassis}</item>
+        <item>{nutt}</item>
+        <item>{hirmul}</item>
+        <item>{vihane}</item>
+        <item>{ümber}</item>
+        <item>{mööduv}</item>
+        <item>{palvus}</item>
+        <item>{puhas}</item>
+        <item>{hüvasti}</item>
+        <item>{süütu}</item>
+        <item>{hämmastav}</item>
+        <item>{näljane}</item>
+        <item>{magab}</item>
+        <item>{soovib}</item>
+    </string-array>
+    <string-array name="large_emoticon_name_ch">
+        <item>[赞]</item>
+        <item>[礼物]</item>
+        <item>[降龙十八掌]</item>
+        <item>[洗澡]</item>
+        <item>[惊吓]</item>
+        <item>[生病]</item>
+        <item>[高富帅]</item>
+        <item>[飞行]</item>
+        <item>[生气]</item>
+        <item>[同意]</item>
+        <item>[无聊]</item>
+        <item>[哭]</item>
+        <item>[开车]</item>
+        <item>[吃饭]</item>
+        <item>[开心]</item>
+        <item>[Hold住]</item>
+        <item>[度假]</item>
+        <item>[喜爱]</item>
+        <item>[祈福]</item>
+        <item>[压力很大]</item>
+        <item>[唱歌]</item>
+        <item>[睡觉]</item>
+        <item>[足球]</item>
+        <item>[游泳]</item>
+    </string-array>
+    <string-array name="dynamic_emoticon_name_en">
+        <item>{õnnelik}</item>
+        <item>{plaksutab}</item>
+        <item>{armastus}</item>
+        <item>{uhkusega}</item>
+        <item>{põlastav}</item>
+        <item>{rahutu}</item>
+        <item>{laks}</item>
+        <item>{vihane}</item>
+        <item>{needus}</item>
+        <item>{siiksi}</item>
+        <item>{sassis}</item>
+        <item>{nutt}</item>
+        <item>{hirmul}</item>
+        <item>{vihane}</item>
+        <item>{ümber}</item>
+        <item>{mööduv}</item>
+        <item>{palvus}</item>
+        <item>{puhas}</item>
+        <item>{hüvasti}</item>
+        <item>{süütu}</item>
+        <item>{hämmastav}</item>
+        <item>{näljane}</item>
+        <item>{magab}</item>
+        <item>{soovib}</item>
+    </string-array>
+    <string-array name="dynamic_emoticon_name_ch">
+        <item>{高兴}</item>
+        <item>{拍手}</item>
+        <item>{喜欢}</item>
+        <item>{得意}</item>
+        <item>{不屑}</item>
+        <item>{不耐烦}</item>
+        <item>{扇耳光}</item>
+        <item>{气愤}</item>
+        <item>{诅咒}</item>
+        <item>{无奈}</item>
+        <item>{纠结}</item>
+        <item>{哭泣}</item>
+        <item>{泄气}</item>
+        <item>{生气}</item>
+        <item>{围观}</item>
+        <item>{路过}</item>
+        <item>{膜拜}</item>
+        <item>{纯洁}</item>
+        <item>{再见}</item>
+        <item>{无辜}</item>
+        <item>{震惊}</item>
+        <item>{饿}</item>
+        <item>{睡觉}</item>
+        <item>{祝福}</item>
+    </string-array>
+    <string-array name="ad_emoticon_name">
+        <item>/lööb/</item>
+        <item>/kõrvaletendus/</item>
+        <item>/nutt/</item>
+        <item>/halo/</item>
+        <item>/südamelöök/</item>
+        <item>/doseerib/</item>
+        <item>/naer/</item>
+        <item>/rahutu/</item>
+        <item>/jookseb/</item>
+        <item>/needus/</item>
+        <item>/higi/</item>
+        <item>/mõnulev/</item>
+        <item>/aevastus/</item>
+        <item>/tantsib/</item>
+        <item>/vihane/</item>
+        <item>/hüppab/</item>
+        <item>/piilub/</item>
+        <item>/sissekukkumine/</item>
+        <item>/sööb/</item>
+        <item>/võru/</item>
+        <item>/mööduv/</item>
+        <item>/raputab/</item>
+        <item>/hüvasti/</item>
+        <item>/kahanemine/</item>
+    </string-array>
+    <string-array name="ad_emoticon_name_en">
+        <item>/lööb/</item>
+        <item>/kõrvaletendus/</item>
+        <item>/nutt/</item>
+        <item>/halo/</item>
+        <item>/südamelöök/</item>
+        <item>/doseerib/</item>
+        <item>/naer/</item>
+        <item>/rahutu/</item>
+        <item>/jookseb/</item>
+        <item>/needus/</item>
+        <item>/higi/</item>
+        <item>/mõnulev/</item>
+        <item>/aevastus/</item>
+        <item>/tantsib/</item>
+        <item>/vihane/</item>
+        <item>/hüppab/</item>
+        <item>/piilub/</item>
+        <item>/sissekukkumine/</item>
+        <item>/sööb/</item>
+        <item>/võru/</item>
+        <item>/mööduv/</item>
+        <item>/raputab/</item>
+        <item>/hüvasti/</item>
+        <item>/kahanemine/</item>
+    </string-array>
+    <string-array name="ad_emoticon_name_ch">
+        <item>/挨打/</item>
+        <item>/杂耍/</item>
+        <item>/哭泣/</item>
+        <item>/晕眩/</item>
+        <item>/心动/</item>
+        <item>/瞌睡/</item>
+        <item>/傻笑/</item>
+        <item>/不耐烦/</item>
+        <item>/跑步/</item>
+        <item>/诅咒/</item>
+        <item>/冒汗/</item>
+        <item>/得意/</item>
+        <item>/打喷嚏/</item>
+        <item>/跳舞/</item>
+        <item>/生气/</item>
+        <item>/跳绳/</item>
+        <item>/偷窥/</item>
+        <item>/出丑/</item>
+        <item>/吃/</item>
+        <item>/呼啦圈/</item>
+        <item>/路过/</item>
+        <item>/扭屁股/</item>
+        <item>/再见/</item>
+        <item>/便秘/</item>
+    </string-array>
+    <string-array name="xm_emoticon_name">
+        <item>#pilgutab#</item>
+        <item>#küsimus#</item>
+        <item>#okse#</item>
+        <item>#õnnetus#</item>
+        <item>#meeldib#</item>
+        <item>#kena#</item>
+        <item>#pöörane#</item>
+        <item>#väsinud#</item>
+        <item>#segaduses#</item>
+        <item>#suudlus#</item>
+        <item>#armastus#</item>
+        <item>#needus#</item>
+        <item>#raha#</item>
+        <item>#naeratus#</item>
+        <item>#nutt#</item>
+        <item>#vihane#</item>
+        <item>#rõõmus#</item>
+        <item>#üleannetu#</item>
+        <item>#põnevik#</item>
+        <item>#juhm#</item>
+        <item>#kimbatuses#</item>
+        <item>#magab#</item>
+        <item>#haihtub#</item>
+        <item>#nuriseb#</item>
+    </string-array>
+    <string-array name="xm_emoticon_name_en">
+        <item>#pilgutab#</item>
+        <item>#küsimus#</item>
+        <item>#okse#</item>
+        <item>#õnnetus#</item>
+        <item>#meeldib#</item>
+        <item>#kena#</item>
+        <item>#pöörane#</item>
+        <item>#väsinud#</item>
+        <item>#segaduses#</item>
+        <item>#suudlus#</item>
+        <item>#armastus#</item>
+        <item>#needus#</item>
+        <item>#raha#</item>
+        <item>#naeratus#</item>
+        <item>#nutt#</item>
+        <item>#vihane#</item>
+        <item>#rõõmus#</item>
+        <item>#üleannetu#</item>
+        <item>#põnevik#</item>
+        <item>#juhm#</item>
+        <item>#kimbatuses#</item>
+        <item>#magab#</item>
+        <item>#haihtub#</item>
+        <item>#nuriseb#</item>
+    </string-array>
+    <string-array name="xm_emoticon_name_ch">
+        <item>#眨眼#</item>
+        <item>#疑问#</item>
+        <item>#吐#</item>
+        <item>#衰#</item>
+        <item>#喜欢#</item>
+        <item>#萌#</item>
+        <item>#晕#</item>
+        <item>#困#</item>
+        <item>#不懂#</item>
+        <item>#亲#</item>
+        <item>#爱#</item>
+        <item>#大骂#</item>
+        <item>#钱#</item>
+        <item>#微笑#</item>
+        <item>#哭#</item>
+        <item>#生气#</item>
+        <item>#得意#</item>
+        <item>#淘气#</item>
+        <item>#恐怖#</item>
+        <item>#发呆#</item>
+        <item>#汗#</item>
+        <item>#睡觉#</item>
+        <item>#消失#</item>
+        <item>#委屈#</item>
+    </string-array>
+    <string-array name="emoticon_name">
+        <item>:-)</item>
+        <item>;-)</item>
+        <item>:-(</item>
+        <item>:\'(</item>
+        <item>B-)</item>
+        <item>:-*</item>
+        <item>:-P</item>
+        <item>:O</item>
+        <item>O:-)</item>
+        <item>#NAME?</item>
+        <item>:-[</item>
+        <item>:-$</item>
+        <item>:-!</item>
+        <item>:-\\</item>
+        <item>:-D</item>
+        <item>o_O</item>
+        <item>:-X</item>
+        <item>&lt;3</item>
+        <item>x-(</item>
+        <item>:-/</item>
+        <item>:-I</item>
+        <item>:-zZ</item>
+        <item>:-E</item>
+        <item>;-o</item>
+        <item>-□ -\"</item>
+        <item>ˋ▽ˊψ</item>
+        <item>┬＾┬</item>
+        <item>&lt;(_ _)&gt;</item>
+        <item>＊￣▽￣＊</item>
+        <item>|-O</item>
+        <item>゜ロ゜</item>
+        <item>:-@</item>
+        <item>°ο°</item>
+        <item>◎~◎</item>
+        <item>:-}</item>
+        <item>′▽｀</item>
+        <item>\\#/</item>
+        <item>●～*</item>
+        <item>#｀′</item>
+        <item>/◇\\</item>
+        <item>∠</item>
+        <item>〒</item>
+        <item>≯</item>
+        <item>∨</item>
+        <item>⊙╭╯</item>
+        <item>№</item>
+        <item>﹌ </item>
+        <item>\\▽/</item>
+        <item>☀</item>
+        <item>╭∩╮</item>
+        <item>(o)</item>
+        <item>( _ )</item>
+        <item>(*ｉ*)</item>
+        <item>≦≧</item>
+        <item>{()}</item>
+        <item>(*)</item>
+        <item>£›</item>
+        <item>◇</item>
+        <item>*-:-)</item>
+        <item>※</item>
+        <item>:-m</item>
+        <item>:-y</item>
+        <item>●</item>
+        <item>*&amp;*</item>
+        <item>□</item>
+        <item>:-~~</item>
+        <item>^``^</item>
+        <item>*^*</item>
+        <item>&lt;(\')</item>
+        <item>(=)</item>
+    </string-array>
+    <string-array name="default_emoticon_name">
+        <item>:-)</item>
+        <item>;-)</item>
+        <item>:-(</item>
+        <item>:\'(</item>
+        <item>B-)</item>
+        <item>:-*</item>
+        <item>:-P</item>
+        <item>:O</item>
+        <item>O:-)</item>
+        <item>#NAME?</item>
+        <item>:-[</item>
+        <item>:-$</item>
+        <item>:-!</item>
+        <item>:-\\</item>
+        <item>:-D</item>
+        <item>o_O</item>
+        <item>:-X</item>
+        <item>&lt;3</item>
+        <item>x-(</item>
+        <item>:-/</item>
+        <item>:-I</item>
+        <item>:-zZ</item>
+        <item>:-E</item>
+        <item>;-o</item>
+        <item>-□ -\"</item>
+        <item>ˋ▽ˊψ</item>
+        <item>┬＾┬</item>
+        <item>&lt;(_ _)&gt;</item>
+        <item>＊￣▽￣＊</item>
+        <item>|-O</item>
+        <item>゜ロ゜</item>
+        <item>:-@</item>
+        <item>°ο°</item>
+        <item>◎~◎</item>
+        <item>:-}</item>
+        <item>′▽｀</item>
+        <item>\\#/</item>
+        <item>●～*</item>
+        <item>#｀′</item>
+        <item>/◇\\</item>
+    </string-array>
+    <string-array name="gift_emoticon_name">
+        <item>∠</item>
+        <item>〒</item>
+        <item>≯</item>
+        <item>∨</item>
+        <item>⊙╭╯</item>
+        <item>№</item>
+        <item>﹌ </item>
+        <item>\\▽/</item>
+        <item>☀</item>
+        <item>╭∩╮</item>
+        <item>(o)</item>
+        <item>( _ )</item>
+        <item>(*ｉ*)</item>
+        <item>≦≧</item>
+        <item>{()}</item>
+        <item>(*)</item>
+        <item>£›</item>
+        <item>◇</item>
+        <item>*-:-)</item>
+        <item>※</item>
+        <item>:-m</item>
+        <item>:-y</item>
+        <item>●</item>
+        <item>*&amp;*</item>
+        <item>□</item>
+        <item>:-~~</item>
+        <item>^``^</item>
+        <item>*^*</item>
+        <item>&lt;(\')</item>
+        <item>(=)</item>
+    </string-array>
+    <string-array name="pref_key_sms_priority_values">
+        <item>"Tavaline"</item>
+        <item>Interaktiivne</item>
+        <item>Kiire</item>
+        <item>Hädaolukord</item>
+    </string-array>
+    <string-array name="ct_sms_save_location_array">
+        <item>"Telefon"</item>
+        <item> </item>
+    </string-array>
+</resources>

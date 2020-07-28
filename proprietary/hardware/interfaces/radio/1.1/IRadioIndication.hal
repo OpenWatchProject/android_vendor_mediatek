@@ -1,0 +1,519 @@
+/*
+ * Copyright (C) 2016 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package vendor.mediatek.hardware.radio@1.1;
+
+import android.hardware.radio@1.0::IRadioIndication;
+import android.hardware.radio@1.0::types;
+/*
+ * Interface declaring unsolicited radio indications.
+ */
+interface IRadioIndication extends android.hardware.radio@1.0::IRadioIndication {
+
+    /// M: CC @{
+    /*
+     * Reports incoming call indication from the network.
+     * URC: RIL_UNSOL_INCOMING_CALL_INDICATION
+     *
+     * @param type Type of radio indication
+     * @param inCallNotify IncomingCallNotification as defined in types.hal
+     */
+    oneway incomingCallIndication(RadioIndicationType type, IncomingCallNotification inCallNotify);
+
+    /*
+     * Reports ciphering indicator information
+     *
+     * @param type Type of radio indication
+     * @param cipherNotify CipherNotification as defined in types.hal
+     */
+    oneway cipherIndication(RadioIndicationType type, CipherNotification cipherNotify);
+
+    /*
+     * Reports CRSS related supplementary service notification from the network.
+     * URC: RIL_UNSOL_CRSS_NOTIFICATION
+     *
+     * @param type Type of radio indication
+     * @param crssNotify CrssNotification as defined in types.hal
+     */
+    oneway crssIndication(RadioIndicationType type, CrssNotification crssNotify);
+    /// @}
+
+    /// M: CC: Call control framework 3GVT @{
+    /*
+     * Reports 3GVT status information
+     *
+     * @param type Type of radio indication
+     * @param info integer type VT status info
+     */
+    oneway vtStatusInfoIndication(RadioIndicationType type, int32_t info);
+    /// @}
+
+    /*
+     * Reports speech codec information
+     *
+     * @param type Type of radio indication
+     * @param info integer type speech codec info
+     */
+    oneway speechCodecInfoIndication(RadioIndicationType type, int32_t info);
+
+    /// M: CC: CDMA call accepted @{
+    /*
+     * Reports cdma call is accepted.
+     * URC: RIL_UNSOL_CDMA_CALL_ACCEPTED
+     *
+     * @param type Type of radio indication
+     */
+    oneway cdmaCallAccepted(RadioIndicationType type);
+    /// @}
+
+     /*
+     * [SIM] Virtual SIM On Indication
+     * @param info Response info struct containing response type, serial no. and error
+     * @param result Indication Data
+     *
+     * Valid errors returned:
+     *   RadioError:NONE
+     *   RadioError:INVALID_ARGUMENTS
+     *   RadioError:GENERIC_FAILURE
+     */
+     oneway onVirtualSimOn(RadioIndicationType type, int32_t simInserted);
+
+     /*
+     * [SIM] Virtual SIM Off Indication
+     * @param info Response info struct containing response type, serial no. and error
+     * @param result Indication Data
+     *
+     * Valid errors returned:
+     *   RadioError:NONE
+     *   RadioError:INVALID_ARGUMENTS
+     *   RadioError:GENERIC_FAILURE
+     */
+     oneway onVirtualSimOff(RadioIndicationType type, int32_t simInserted);
+
+     /*
+     * [SIM] IMEI lock Indication
+     * @param info Response info struct containing response type, serial no. and error
+     * @param result Indication Data
+     *
+     * Valid errors returned:
+     *   RadioError:NONE
+     *   RadioError:INVALID_ARGUMENTS
+     *   RadioError:GENERIC_FAILURE
+     */
+     oneway onImeiLock(RadioIndicationType type);
+
+     /*
+     * [SIM] IMSI Refressh Done Indication
+     * @param info Response info struct containing response type, serial no. and error
+     * @param result Indication Data
+     *
+     * Valid errors returned:
+     *   RadioError:NONE
+     *   RadioError:INVALID_ARGUMENTS
+     *   RadioError:GENERIC_FAILURE
+     */
+
+     oneway onImsiRefreshDone(RadioIndicationType type);
+
+    // SMS-START
+    /**
+     * Indicate New Earthquake and Tsunami Warning System notification
+     * The API should be called while receiving the URC which means
+     * there is an Earthquake and Tsunami Warning SystemS notification coming
+     *
+     * @param type Type of radio indication
+     * @param etws information of the Earthquake and Tsunami Warning System notification.
+     *             refer to the structureEtwsNotification defined in type.hal
+     */
+    oneway newEtwsInd(RadioIndicationType type, EtwsNotification etws);
+
+    /**
+     * Indicate ME SMS storage full
+     * The API should be called while receiving the URC which means
+     * device storage is full from modem
+     *
+     * @param type Type of radio indication
+     */
+    oneway meSmsStorageFullInd(RadioIndicationType type);
+
+    /**
+     * Indicate the module of SMS in modem is ready
+     *
+     * @param type Type of radio indication
+     */
+    oneway smsReadyInd(RadioIndicationType type);
+    // SMS-END
+
+    /**
+     * Indicate the change of data call list
+     *
+     * @param type Type of radio indication
+     */
+    oneway dataCallListChangedEx(RadioIndicationType type, vec<MtkSetupDataCallResult> dcList);
+
+    /*
+     * Indicates when CS state changes.
+     *
+     * @param type Type of radio indication
+     * @param Info register state
+     * @param Info lac
+     * @param Info ci
+     * @param Info Act
+     * @param Info reject cause
+     * @param Info cdma network existence
+     */
+    oneway responseCsNetworkStateChangeInd(RadioIndicationType type, vec<string> state);
+
+    /// M: eMBMS feature
+    /*
+     * Indicates of eMBMS AT command event
+     *
+     * @param info Information AT command string
+     */
+    oneway eMBMSAtInfoIndication(RadioIndicationType type, string info);
+
+    /*
+     * Indicates of eMBMS session activate status
+     *
+     * @param status Activated session:1, else 0
+     */
+    oneway eMBMSSessionStatusIndication(RadioIndicationType type, int32_t status);
+    /// M: eMBMS end
+
+    /*
+     * Indicates when PS state changes.
+     *
+     * @param type Type of radio indication
+     * @param Info register state
+     * @param Info mcc/mnc
+     * @param Info Act
+     */
+    oneway responsePsNetworkStateChangeInd(RadioIndicationType type, vec<int32_t> state);
+
+    /*
+     * Indicates PS is allowed or not, AP should make sure both two protocols are NOT set to ON
+     * at the same time in the case of default data switch flow.
+     * @param type Type of radio indication
+     * @param allowed PS is allowed or not
+     */
+
+    /*
+     * Indicates when SIM is invalid.
+     *
+     * @param type Type of radio indication
+     */
+    oneway responseInvalidSimInd(RadioIndicationType type, vec<string> state);
+
+     /*
+     * Indicates for RAU/TAU enevt
+     *
+     * @param type Type of radio indication
+     * @param info Event
+     */
+    oneway responseNetworkEventInd(RadioIndicationType type,
+            vec<int32_t> event);
+
+    /*
+     * Indicates for modulation info
+     *
+     * @param type Type of radio indication
+     * @param info modulation
+     */
+    oneway responseModulationInfoInd(RadioIndicationType type,
+            vec<int32_t> modulation);
+
+    oneway dataAllowedNotification(RadioIndicationType type, int32_t allowed);
+
+    /*
+     * Indicates of pseudo cell info
+     * URC: RIL_UNSOL_PSEUDO_CELL_INFO
+     *
+     * @param type Type of radio indication
+     * @param cellInfo pseudo cell info
+     */
+    oneway onPseudoCellInfoInd(RadioIndicationType type, vec<int32_t> cellInfo);
+
+    /*
+     * Indicates when PLMN Changed.
+     *
+     * @param type Type of radio indication
+     */
+    oneway plmnChangedIndication(RadioIndicationType type, vec<string> plmns);
+
+    /*
+     * Indicates when need to registrtion.
+     *
+     * @param type Type of radio indication
+     */
+    oneway registrationSuspendedIndication(RadioIndicationType type, vec<int32_t> sessionIds);
+
+    /*
+     * Indicates when GMSS Rat changed..
+     *
+     * @param type Type of radio indication
+     */
+    oneway gmssRatChangedIndication(RadioIndicationType type, vec<int32_t> gmsss);
+
+    /*
+     * Indicates when modem trigger world mode.
+     *
+     * @param type Type of radio indication
+     */
+    oneway worldModeChangedIndication(RadioIndicationType type, vec<int32_t> modes);
+
+    /*
+     * Indicates when reset attach APN
+     *
+     */
+    oneway resetAttachApnInd(RadioIndicationType type);
+
+    /*
+     * Indicates when modem changes attach APN
+     *
+     * @param apnClassType class type for APN
+     */
+    oneway mdChangedApnInd(RadioIndicationType type, int32_t apnClassType);
+
+    /*
+     * Report ESN/MEID changes when modem changes the value in NVRAM.
+     *
+     * @param type Type of radio indication
+     * @param esnMeid ESN or MEID string, the format is "old value, new value"
+     */
+    oneway esnMeidChangeInd(RadioIndicationType type, string esnMeid);
+
+    /*
+     * Indicates the femtocell information.
+     *
+     * @param information of femtocell
+     */
+    oneway responseFemtocellInfo(RadioIndicationType type, vec<string> info);
+
+    /*
+     * Indicates phb state changes.
+     *
+     * @param type Type of radio indication
+     * @param isPhbReady New phb state
+     */
+    oneway phbReadyNotification(RadioIndicationType type, int32_t isPhbReady);
+
+    // / M: BIP {
+    /*
+    * Indicates when SIM issue a BIP proactive command to applications
+    *
+    * @param type Type of radio indication
+    * @param cmd SAT/USAT BIP proactive represented as byte array starting with command tag.
+    * Refer ETSI TS 102.223 section 9.4 for BIP related command types
+    */
+    oneway bipProactiveCommand(RadioIndicationType type, string cmd);
+    // / M: BIP }
+
+    // / M: OTASP {
+    /*
+    * Indicates when SIM need trigger OTASP
+    * URC:RIL_UNSOL_TRIGGER_OTASP
+    *
+    * @param type Type of radio indication
+    */
+    oneway triggerOtaSP(RadioIndicationType type);
+    // / M: OTASP }
+
+    // / M: STK {
+    /*
+    * Indicates when need reset stk menu
+    * URC:RIL_UNSOL_STK_SETUP_MENU_RESET
+    *
+    * @param type Type of radio indication
+    */
+    oneway onStkMenuReset(RadioIndicationType type);
+    // / M: STK }
+
+    /*
+     * Indicates that modem has reset the data retry count
+     *
+     * @param type Type of radio indication
+     */
+    oneway onMdDataRetryCountReset(RadioIndicationType type);
+
+    /*
+     * Indicates that modem has removed the EUTRAN restriction
+     *
+     * @param type Type of radio indication
+     */
+    oneway onRemoveRestrictEutran(RadioIndicationType type);
+
+    /*
+     * Indicates the PCO status
+     *
+     * @param type Type of radio indication
+     * @param pco PCO information
+     */
+    oneway onPcoStatus(RadioIndicationType type, vec<int32_t> pco);
+
+   /*
+    * Indicates the new LTE access stratum state.
+    *
+    * @param type Type of radio indication
+    * @param state new LTE access stratum state
+    */
+   oneway onLteAccessStratumStateChanged(RadioIndicationType type, vec<int32_t> state);
+
+    /*
+     * [SIM] Sim Plug In Indication
+     * @param info Response info struct containing response type, serial no. and error
+     *
+     * Valid errors returned:
+     *   RadioError:NONE
+     *   RadioError:INVALID_ARGUMENTS
+     *   RadioError:GENERIC_FAILURE
+     */
+     oneway onSimPlugIn(RadioIndicationType type);
+
+    /*
+     * [SIM] Sim Plug Out Indication
+     * @param info Response info struct containing response type, serial no. and error
+     *
+     * Valid errors returned:
+     *   RadioError:NONE
+     *   RadioError:INVALID_ARGUMENTS
+     *   RadioError:GENERIC_FAILURE
+     */
+     oneway onSimPlugOut(RadioIndicationType type);
+
+    /*
+     * [SIM] Sim Missing Indication
+     * @param info Response info struct containing response type, serial no. and error
+     * @param result Indication Data
+     *
+     * Valid errors returned:
+     *   RadioError:NONE
+     *   RadioError:INVALID_ARGUMENTS
+     *   RadioError:GENERIC_FAILURE
+     */
+     oneway onSimMissing(RadioIndicationType type, int32_t simInserted);
+
+    /*
+     * [SIM] Sim Recovery Indication
+     * @param info Response info struct containing response type, serial no. and error
+     * @param result Indication Data
+     *
+     * Valid errors returned:
+     *   RadioError:NONE
+     *   RadioError:INVALID_ARGUMENTS
+     *   RadioError:GENERIC_FAILURE
+     */
+     oneway onSimRecovery(RadioIndicationType type, int32_t simInserted);
+
+    /*
+     * [SIM] Sim Tray Plug In Indication
+     * @param info Response info struct containing response type, serial no. and error
+     *
+     * Valid errors returned:
+     *   RadioError:NONE
+     *   RadioError:INVALID_ARGUMENTS
+     *   RadioError:GENERIC_FAILURE
+     */
+     oneway onSimTrayPlugIn(RadioIndicationType type);
+
+    /*
+     * [SIM] Sim Common Slot No Changed Indication
+     * @param info Response info struct containing response type, serial no. and error
+     *
+     * Valid errors returned:
+     *   RadioError:NONE
+     *   RadioError:INVALID_ARGUMENTS
+     *   RadioError:GENERIC_FAILURE
+     */
+     oneway onSimCommonSlotNoChanged(RadioIndicationType type);
+
+    /*
+     * Indicates of network info
+     *
+     * @param type Type of radio indication
+     * @param networkinfo network info
+     */
+    oneway networkInfoInd(RadioIndicationType type, vec<string> networkinfo);
+
+    /* Notify application to show or hide CFU (Call Forwarding Uncondictional) icon
+     *
+     * @param type Type of radio indication
+     * @param cfuStatus CfuStatusNotification as defined in types.hal
+     */
+    oneway cfuStatusNotify(RadioIndicationType type, CfuStatusNotification cfuStatus);
+
+    /*
+     * Notify application for the PCO data after data attached.
+     *
+     * @param type Type of radio indication
+     * @param PcoDataAttachedInfo as defined in types.hal
+     */
+    oneway pcoDataAfterAttached(RadioIndicationType type, PcoDataAttachedInfo pcoData);
+
+    /*
+     * Indicates the orders of participants call ids when IMS conference SRVCC.
+     *
+     * @param type Type of radio indication
+     * @param callIds the order of calls id
+     */
+    oneway confSRVCC(RadioIndicationType type, vec<int32_t> callIds);
+
+    // External SIM [Start]
+    /*
+     * Send raw data to external sim manager.
+     *
+     * @param type Type of radio indication
+     * @param event vsim data payload
+     */
+    oneway onVsimEventIndication(RadioIndicationType type, VsimOperationEvent event);
+    // Exteranl SIM [End]
+
+
+    /*
+     * Indicates when Sim Refresh.
+     *
+     * @param type Type of radio indication
+     * @param Info register state
+     * @param Info mcc/mnc
+     * @param Info Act
+     */
+    oneway volteLteConnectionStatus(RadioIndicationType type, vec<int32_t> state);
+
+    /*
+     * Notify application for the dedicated bearer data.
+     *
+     * @param type Type of radio indication
+     * @param DedicateDataCall as defined in types.hal
+     */
+    oneway dedicatedBearerActivationInd(RadioIndicationType type, DedicateDataCall ddcData);
+    oneway dedicatedBearerModificationInd(RadioIndicationType type, DedicateDataCall ddcData);
+
+    /*
+     * Notify application for the dedicated bearer data.
+     *
+     * @param type Type of radio indication
+     * @param cid Bearer Id
+     */
+    oneway dedicatedBearerDeactivationInd(RadioIndicationType type, int32_t cid);
+
+    oneway onWifiMonitoringThreshouldChanged(RadioIndicationType type, vec<int32_t> indStgs);
+    oneway onWifiPdnActivate(RadioIndicationType type, vec<int32_t> indStgs);
+    oneway onWfcPdnError(RadioIndicationType type, vec<int32_t> indStgs);
+    oneway onPdnHandover(RadioIndicationType type, vec<int32_t> indStgs);
+    oneway onWifiRoveout(RadioIndicationType type, vec<string> indStgs);
+    oneway onLocationRequest(RadioIndicationType type, vec<string> indStgs);
+    oneway onWfcPdnStateChanged(RadioIndicationType type, vec<int32_t> indStgs);
+    oneway onNattKeepAliveChanged(RadioIndicationType type, vec<string> indStgs);
+};

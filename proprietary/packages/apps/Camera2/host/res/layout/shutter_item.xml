@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.mediatek.camera.ui.shutter.ShutterView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    >
+    <com.mediatek.camera.ui.shutter.ShutterButton
+        android:layout_width="79dp"
+        android:layout_height="79dp"
+        android:id="@+id/shutter_button"
+        android:layout_alignParentBottom="true"
+        android:gravity="center"
+        android:clickable="true"
+        android:scaleType="centerInside"
+        android:layout_centerHorizontal="true"/>
+
+    <com.mediatek.camera.common.widget.StrokeTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/shutter_text"
+        android:layout_above="@id/shutter_button"
+        android:textSize="20sp"
+        android:textColor="#FFFFFFFF"
+        android:maxLines="1"
+        android:gravity="center"
+        android:enabled="true"
+        android:clickable="true"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_centerHorizontal="true"/>
+</com.mediatek.camera.ui.shutter.ShutterView>
+

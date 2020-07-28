@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center">
+    <ListView android:id="@+id/siminfolist"
+          style="?android:attr/listViewWhiteStyle" 
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:drawSelectorOnTop="false"
+          android:fadingEdgeLength="16dip"
+          android:cacheColorHint="@android:color/white"
+          android:background="@android:color/white"
+          android:scrollbarStyle="insideOverlay"
+          android:divider="@android:drawable/divider_horizontal_bright"/><!--     -->
+</LinearLayout>
+
+

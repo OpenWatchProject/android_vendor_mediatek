@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+  <!-- MTK Wi-Fi settings start -->
+   <string name="wifi_security_wapi_certificate">WAPI 证书</string>
+  <string name="wifi_hex_password">"十六进制密码"</string>
+  <string name="wifi_no_cert_for_wapi">未能找到正在连接的接入点的证书</string>
+  <string name="sim_slot">SIM 卡槽</string>
+  <string name="wifi_advanced_ipv4_address_title">IPv4 地址</string>
+  <string name="wifi_advanced_ipv6_address_title">IPv6 地址</string>
+  <string name="wapi_auto_sel_cert">"自动选择"</string>
+    <string name="wapi_cert_manage_title">"WAPI证书管理"</string>
+  <!-- MTK Wi-Fi settings end -->
+
+  <!-- MTK Wi-Fi hotspot client start -->
+  <string name="wifi_tether_auto_channel_text">自动</string>
+  <string name="wifi_tether_auto_channel_width_text">自动 20/40兆赫</string>
+  <string name="wifi_tether_auto_disable_title">保持WLAN热点开启</string>
+  <string name="wifi_tether_setting_title">基本设置</string>
+  <string name="wifi_tether_wps_connect_title">WPS 连接</string>
+  <string name="wifi_tether_wps_connect_summary">选择 WPS 模式</string>
+  <string name="wifi_tether_wps_pin_error">PIN码无效</string>
+  <string name="wifi_tethering_title">WLAN 热点</string>
+  <string name="wifi_ap_wps_dialog_title">WPS 连接</string>
+  <string name="wifi_ap_wps_mode_title">WPS 模式</string>
+  <string name="wifi_ap_wps_pin_title">从对等设备输入 PIN 码</string>
+  <string name="wifi_ap_reset_OOB_title">重置网络名称, 加密方式及密码 (WPS 参数恢复恢复出厂设置)</string>
+  <string name="wifi_ap_reset_OOB">重置 OOB</string>
+  <string name="wifi_ap_max_connection_title">最大连接数</string>
+  <string name="wifi_ap_connected_title">已连接用户</string>
+  <string name="wifi_ap_blocked_title">已封锁用户</string>
+  <string name="wifi_ap_client_block_title">"阻止"</string>
+  <string name="wifi_ap_client_unblock_title">取消封锁</string>
+  <string name="wifi_ap_client_details_title">说明</string>
+  <string name="wifi_ap_client_mac_label">MAC 地址:</string>
+  <string name="wifi_ap_client_ip_label">IP 地址:</string>
+  <string name="wifi_ap_bandwidth_title">频宽使用</string>
+  <string name="wifi_ap_bandwidth_enable">启用频宽限制</string>
+  <string name="wifi_ap_bandwidth_chart_title">实时速度</string>
+  <string name="wifi_ap_bandwidth_chart_summary">速度会因为手机或电脑的不同而有所差异.</string>
+  <string name="wifi_wps_fail_error">WPS 连接失败， 请稍候再试。</string>
+  <string name="wifi_ap_title">统计数据</string>
+  <string name="wifi_ap_time_duration">使用时间:
+        <xliff:g id="time">%1$s</xliff:g></string>
+  <string name="wifi_ap_total_data">已使用数据:
+        <xliff:g id="time">%1$s</xliff:g></string>
+  <string name="wifi_ap_no_connected">0 个已连接用户</string>
+  <string name="wifi_ap_no_blocked">0 个已封锁用户</string>
+  <!-- MTK Wi-Fi hotspot client end -->
+
+  <!-- MTK WFD start -->
+  <string name="wfd_change_resolution_menu_title">更改分辨率</string>
+  <string name="wfd_sink_summary">其他设备可检测到此设备</string>
+  <string name="wfd_device_category">设备列表</string>
+  <string name="wfd_sink_toast_enjoy">开始显示其他设备的投射屏幕</string>
+  <string name="wfd_sink_toast_disconnect">投射屏幕连接终止</string>
+  <string name="wfd_sink_disconnecting">正在断开连接…</string>
+  <string name="wfd_sink_guide_btn">我知道了</string>
+  <string name="wfd_sink_guide_title">如何退出投射画面?</string>
+  <string name="wfd_sink_guide_content">在屏幕上长按<xliff:g id="seconds">%s</xliff:g>秒即可退出其他设备投射屏幕的显示画面。</string>
+  <!-- MTK WFD end -->
+
+  <!-- MTK Wireless settings start -->
+  <string name="tethering_apn_settings_title">APN 设置</string>
+  <string name="tethering_apn_settings_summary">设置网络共享 APN</string>
+  <string name="lockdown_vpn_already_connected">始终开启的 VPN 已启动。</string>
+  <!-- MTK Wireless settings end -->
+
+  <!-- Sound enhancement Settings start -->
+  <string name="sound_enhancement_title">音效改善</string>
+  <string name="music_plus_summary">针对耳机的音效改善</string>
+  <string name="audio_profile_bes_surround_title">BesSurround</string>
+  <string name="audio_profile_bes_surround_summary">音效环绕</string>
+  <string name="audio_profile_bes_surround_mode_movie">电影模式</string>
+  <string name="audio_profile_bes_surround_mode_music">音乐模式</string>
+  <string name="anc_switch_title">噪音消除</string>
+  <string name="audio_profile_bes_loudness_summary">喇叭音量助推器</string>
+  <string name="sound_enhance_hifi_mode">Hi-Fi 模式</string>
+  <string name="sound_enhance_hifi_mode_summary">高保真</string>
+  <!-- Sound enhancement Settings end -->
+
+  <!-- MTK NFC settings start -->
+   <string name="nfc_p2p_mode">P2P 模式</string>
+  <string name="nfc_p2p_mode_summary">发送或接收 App 内容</string>
+  <string name="nfc_tag_mode_category">标签模式</string>
+  <string name="nfc_rw_tag_title">标签读取和写入</string>
+  <string name="nfc_rw_tag_summary">从标签读取或写入</string>
+  <string name="nfc_card_emulation_category_title">﻿卡模拟模式</string>
+  <string name="nfc_card_emulation">卡模拟</string>
+  <string name="card_emulation_settings_category_title">可用安全元件</string>
+  <string name="card_emulation_settings_no_element_found">无可用安全元件。</string>
+  <string name="card_emulation_settings_off_text">要查看可用安全元件，请打开卡模拟功能。</string>
+  <string name="card_emulation_turning_off_text">正在关闭卡模拟功能…</string>
+  <string name="card_emulation_turning_on_text">正在打开卡模拟功能…</string>
+  <string name="card_emulation_switch_error_title">错误</string>
+  <string name="card_emulation_switch_error_message">无法切换至 <xliff:g id="card_mode">%1$s</xliff:g>。</string>
+  <string name="card_emulation_sim_not_supported_message"><xliff:g id="sim_description">%1$s</xliff:g>不支持卡模拟功能。</string>
+  <string name="card_emulation_two_sim_not_supported_message">SIM1，SIM2 不支持卡模拟功能。</string>
+  <string name="nfc_hce_pay_summary">像Google钱包、信用卡一般的使用此设备來触碰付款</string>
+  <string name="nfc_service_status_title">非支付类服务项</string>
+  <string name="nfc_service_status_summary"><xliff:g id="count" example="24">%2$d</xliff:g> 项服务中有 <xliff:g id="count" example="24">%1$d</xliff:g> 项开启</string>
+  <string name="nfc_service_overflow">超过容量上限</string>
+  <string name="nfc_service_summary_enabled">开启</string>
+  <string name="nfc_service_summary_disabled">未启用</string>
+  <!-- MTK NFC settings end -->
+
+  <!-- MTK HDMI start -->
+   <string name="hdmi_settings">HDMI 设定</string>
+  <string name="hdmi_settings_summary">点击设定 HDMI</string>
+  <string name="hdmi_video_resolution">视频分辨率</string>
+  <string name="hdmi_auto">自动</string>
+  <string name="hdmi_scale_control">视频比例控制</string>
+  <string name="hdmi_scale_no_scale">不缩放</string>
+  <string name="hdmi_scale_scale_down">缩小<xliff:g id="scale_percent">%s</xliff:g>%%</string>
+  <string name="hdmi_audio_output">音频输出</string>
+  <string name="hdmi_audio_output_stereo">立体声</string>
+  <string name="hdmi_audio_output_multi_channel">多声道</string>
+  <string name="hdmi_wfd_on_hint">WFD是打开状态，无法开启HDMI，请先关闭WFD</string>
+  <!-- MTK HDMI end -->
+
+  <!-- MTK Data usage  start -->
+   <string name="datausage_overview_tab">概览</string>
+  <string name="datausage_overview_wifi_today">今日</string>
+  <string name="datausage_overview_wifi_total">共计</string>
+  <string name="datausage_overview_mobile_title">移动网络</string>
+  <string name="datausage_overview_mobile_usage" formatted="false"><xliff:g id="actual">%s</xliff:g>已使用,共<xliff:g id="limit">%s</xliff:g></string>
+  <string name="datausage_overview_mobile_usage_warning">超出流量上限<xliff:g>%s</xliff:g></string>
+  <string name="data_saving_title">流量节省模式</string>
+  <!-- MTK Dta usage  end -->
+
+  <!-- MTK About phone start -->
+  <string name="custom_build_version">"自定义版本"</string>
+  <string name="mota_system_update_summary">"检测更新"</string>
+  <string name="software_updates_more_title">软件更新服务</string>
+  <string name="software_updates_more_summary">检测软件更新</string>
+  <!-- MTK About phone end -->
+
+  <!-- SIM Settings start -->
+  <string name="default_data_switch_err_msg1">通话中无法切换首选移动数据网络。</string>
+  <string name="radio_off_during_emergency_call">正在进行紧急呼救通话，无法关闭SIM卡。</string>
+  <!-- SIM Settings end -->
+
+  <!-- APN Settings start -->
+  <string name="apn_predefine_change_dialog_notice">确定要保存？修改默认的 APN 可能会影响数据连接！</string>
+  <string name="apn_port_warning">端口值必须是1-65535！</string>
+  <!-- APN Settings end -->
+
+  <!-- Data Usage Setting start -->
+  <string name="temp_data_service">临时数据业务</string>
+  <string name="temp_data_service_summary">非数据卡通话期间，使用该卡进行数据业务。</string>
+  <string name="temp_data_service_prompt">非数据卡通话期间，使用该卡进行数据业务。打开该功能会使用非数据卡的流量。</string>
+  <!-- Data Usage Setting end -->
+
+  <!-- Mobile Network Setting start -->
+  <string name="enhanced_4g_lte_mode_ct_title">VoLTE高清通话</string>
+  <string name="enhanced_4g_lte_mode_ct_summary">启用前应先向运营商确认已开通此功能，否则可能影响正常通话</string>
+  <string name="cannot_switch_enhanced_4g_lte_mode">开关暂不可用，请稍后再试。</string>
+  <string name="ctvolte_unavailable_message"><xliff:g id="sub_name">%s</xliff:g>当前VoLTE不可用，开启后可能无法进行通话。</string>
+  <string name="enable_4g_data_title">启用4G</string>
+  <string name="enable_4g_data_summary">4G可提供更快更好的上网服务</string>
+  <!-- Mobile Network Setting end -->
+
+  <!-- PLMN settings start -->
+  <string name="plmn_settings">偏好设置</string>
+  <string name="plmn_network_id">网络 ID</string>
+  <string name="plmn_network_type">网络类型</string>
+  <!-- PLMN settings end -->
+
+  <!--MTK DRM settings start -->
+   <string name="drm_settings_title">"重置DRM"</string>
+  <string name="drm_settings_summary">"删除所有DRM许可"</string>
+  <string name="drm_reset_dialog_msg">"此操作会删除您手机上所有DRM许可，是否继续?"</string>
+  <string name="drm_reset_toast_msg">"已成功删除DRM许可。"</string>
+  <!--MTK DRM settings end -->
+
+  <!--MTK HotKnot start -->
+   <string name="hotknot_explained_description">允许设备屏幕在接触其他设备时交换数据</string>
+  <string name="hotknot_charging_warning">充电可能会影响<xliff:g id="title">%s</xliff:g>功能</string>
+  <!--MTK HotKnot end -->
+
+  <!-- ClearMotion start -->
+   <string name="clear_motion_summary">视频流畅增强工具</string>
+  <string name="on_text">开启</string>
+  <string name="off_text">关闭</string>
+  <!-- ClearMotion end -->
+
+  <!-- MiraVision start -->
+   <string name="mira_vision_summary">提供最佳的视觉显示效果</string>
+  <!-- MiraVision end -->
+
+  <!--MTK DateTime start-->
+   <string name="gps_time_sync_attention_gps_on">使用 GPS 提供时间，必须要等待 GPS 定位成功。GPS 定位最多需要一分钟。\n\n确定要使用 GPS 提供时间吗？</string>
+  <string name="gps_time_sync_attention_gps_off">使用 GPS 提供时间，必须要先启用 GPS，并等待 GPS 定位成功。GPS 定位最多需要一分钟。如果 GPS 信号弱，可能会定位失败。\n\n确定现在要启用 GPS 并使用 GPS 提供时间吗？</string>
+  <!--MTK DateTime end-->
+
+  <!-- MTK IPO settings start -->
+   <string name="ipo_title">快速开机</string>
+  <string name="ipo_summary_off">启动快速开机</string>
+  <!-- MTK IPO settings end -->
+
+  <!-- Storage & USB settings start -->
+   <string name="select_memory">默认存储器</string>
+  <string name="usb_use_built_in_cd_rom">内置光盘</string>
+  <string name="usb_bicr_summary">做为虚拟光盘，包含一些常用软件。</string>
+  <string name="usb_use_mass_storage">USB 存储设备</string>
+  <string name="usb_ums_summary">"XP系统推荐。将手机作为U盘进行文件复制。"</string>
+  <!-- Storage & USB settings end -->
+
+  <!-- MTK Storage Settings start -->
+   <string name="launch_error">不能启动应用程序</string>
+  <!-- MTK Storage Settings end -->
+
+  <!--MTK Security Settings start -->
+   <string name="security_not_set">您没有设置安全性</string>
+  <!--MTK Security Settings end -->
+
+  <!-- Voice UI start -->
+   <string name="voice_ui_title">"语音控制"</string>
+  <!-- Voice UI end -->
+
+  <!-- MTK schedule power start -->
+   <string name="schedule_power_on_off_settings_title">"定时开关机"</string>
+  <!-- MTK schedule power end -->
+
+  <!-- Background power saving start -->
+   <string name="bg_power_saving_title">待机智能省电</string>
+  <!-- Background power saving end -->
+
+  <!-- wifiGprsSelector setting start -->
+  <string name="apn_list_category_title">APN列表</string>
+  <string name="data_conn_category_title">数据连接</string>
+  <string name="wifi_gprs_selector_title">选择网络</string>
+  <string name="data_enabler_title">数据连接</string>
+  <string name="data_enabler_summary">使用移动网络</string>
+  <!-- wifiGprsSelector setting end -->
+
+  <!-- Performance and power start -->
+  <string name="performance_and_power_title">性能与省电</string>
+  <!-- Performance and power end-->
+
+    <!-- MTK vow service start -->
+    <string name="wakeup_interaction">语音唤醒和启动指令</string>
+    <string name="voice_wakeup">语音唤醒</string>
+    <string name="voice_wakeup_confirm">请先设置语音指令.</string>
+    <!-- MTK vow service end -->
+
+    <!-- M: for [CTA2016 requirement] -->
+    <string name="data_usage_menu_cellular_data_control">移动流量管控</string>
+    <!-- MTK AOD settings start -->
+    <string name="aod_title">低耗能亮屏待机</string>
+    <string name="aod_summary">一些特定系统信息在手机待机时也会在屏幕上显示</string>
+    <!-- MTK AOD settings end -->
+    <!-- MTK Resolution switch settings start -->
+    <string name="resolution_switch_title">图像省电模式</string>
+    <string name="resolution_switch_summary">降低画面分辨率以节省电量</string>
+    <string name="resolution_switch_multi_window_tips">无法在多窗口模式中切换。</string>
+    <string name="resolution_switch_display_size_tips">无法在图像省电模式下使用该功能</string>
+    <!-- MTK Resolution switch settings end -->
+
+  <!-- lovelyfonts start -->
+    <string name="font_setting_title">字体风格</string>
+  <!-- lovelyfonts end -->
+
+    <!-- Network data controller start -->
+    <string name="data_usage_network_data_control">网络流量管控</string>
+    <!-- Network data controller end -->
+
+    <!-- Auto-start management start -->
+    <string name="auto_boot_pref_title">自启动管理</string>
+    <!-- Auto-start management end -->
+
+    <!-- Permission request start -->
+    <string name="trigger_history_pref_title">权限申请</string>
+    <!-- Permission request end -->
+    <!-- MTK for china mobile feature start-->
+    <string name="auto_select_networktype">首选网络类型</string>
+    <string name="auto_select_networktype_summary">4G/3G/2G(自动)</string>
+    <!-- MTK for china mobile feature end-->
+    <!-- Data protection Settings start -->
+    <string name="data_protection_title">数据保护</string>
+    <!-- Data protection Settings end -->
+</resources>

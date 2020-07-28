@@ -1,0 +1,5 @@
+service thermal_manager /vendor/bin/thermal_manager
+    class main
+    user root
+    group system
+    oneshot

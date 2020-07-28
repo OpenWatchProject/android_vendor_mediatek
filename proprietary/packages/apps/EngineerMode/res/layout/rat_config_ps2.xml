@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <LinearLayout style="@style/info_layout" >
+
+        <TextView
+            android:id="@+id/Current_rat_config"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:text="@string/Current_RAT_Config" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="10dp"
+            android:background="#FF909090" >
+        </View>
+
+        <RadioGroup
+            android:id="@+id/rat_mode_radio_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:gravity="left"
+            android:orientation="vertical" >
+
+            <RadioButton
+                android:id="@+id/rat_mode_c_w_g"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:text="@string/rat_mode_c_w_g" >
+            </RadioButton>
+
+            <RadioButton
+                android:id="@+id/rat_mode_c_g"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:text="@string/rat_mode_c_g" >
+            </RadioButton>
+
+            <RadioButton
+                android:id="@+id/rat_mode_w_g"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:text="@string/rat_mode_w_g" >
+            </RadioButton>
+
+            <RadioButton
+                android:id="@+id/rat_mode_g"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:text="@string/rat_mode_g" >
+            </RadioButton>
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/rat_mode_set"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="@string/rat_mode_set"
+            android:onClick="onClick" >
+        </Button>
+
+    </LinearLayout>
+
+</ScrollView>

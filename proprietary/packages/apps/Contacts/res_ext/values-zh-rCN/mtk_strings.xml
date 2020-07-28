@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <string name="no_sdcard_title" product="nosdcard">"存储设备不存在"</string>
+    <string name="no_sdcard_title" product="default">"无 SD 卡"</string>
+
+    <string name="selected_item_count"><xliff:g id="count">%d</xliff:g> 已选择</string>
+
+    <!-- Contacts multi-choice string -->
+    <string name="menu_actionbar_selected_items"><xliff:g id="name">%s</xliff:g> 已选择</string>
+
+    <!-- MTK for edit SIM/USIM contact -->
+    <string name="has_double_phone_number">不可重复保存同类型号码，请检查</string>
+    <string name="phone_book_busy">"电话簿忙碌中，请稍候再试。"</string>
+    <string name="sim_invalid">"卡无效不能保存联系人。"</string>
+    <string name="cannot_insert_null_number">"不能保存电话号码为空的联系人。"</string>
+    <string name="AirPlane_mode_on">"飞行模式开启时不能保存联系人。"</string>
+    <string name="FDNEnabled">"固定拨号启用时不能保存联系人"。</string>
+    <string name="sim_invalid_number">"不能保存无效号码。"</string>
+    <string name="sim_invalid_fix_number">"不能保存无效的固定电话。"</string>
+    <string name="msg_loading_sim_contacts_toast">"正在载入SIM卡联系人，请稍候"</string>
+    <string name="name_too_long">"姓名过长。"</string>
+    <string name="storage_full">"存储已满。"</string>
+    <string name="number_too_long">"号码过长。"</string>
+    <string name="generic_failure">"未知错误。"</string>
+    <string name="email_too_long">"电子邮箱过长。"</string>
+    <string name="additional_number_too_long">"附属电话号码过长。"</string>
+
+    <!-- below strings are used by contacts group -->
+    <string name="please_wait">"请稍候..."</string>
+    <string name="usim_group_name_exceed_limit">"标签名称长度超过限制，无法存入卡中。"</string>
+    <string name="usim_group_count_exceed_limit">"卡中标签数目达到上限，无法添加新的标签。"</string>
+    <string name="name_needed">需要输入名称</string>
+    <string name="save_group_fail">"保存标签失败。"</string>
+    <string name="group_name_exists">"标签名称已经存在。"</string>
+
+    <!-- below strings are used by contacts import/export -->
+    <string name="import_export_title">"导入/导出"</string>
+    <string name="next">"下一步"</string>
+    <string name="tips_source">"选择您要复制的联系人来源"</string>
+    <string name="tips_target">"复制联系人到"</string>
+    <string name="back">"后退"</string>
+    <string name="imexport_title">"导入/导出联系人"</string>
+    <string name="import_title">"导入联系人"</string>
+    <string name="export_title">"导出联系人"</string>
+    <string name="xport_error_one_account">"要导入导出联系人，请先插入SIM卡或SD卡。"</string>
+    <!-- previous strings are used by contacts import/export -->
+
+    <!-- Title when popup ContactEditorAccountsChangedActivity's dialog -->
+    <string name="store_contact_to">保存联系人到</string>
+
+    <!-- Menu item that start to conference call -->
+    <string name="menu_conference_call">电话会议</string>
+
+    <!-- string for multiple choice -->
+
+    <string name="notifier_finish_delete_title">成功删除联系人</string>
+    <string name="notifier_finish_delete_content">已删除  <xliff:g id="total">%d</xliff:g> 个联系人</string>
+
+    <string name="notifier_finish_copy_title">成功复制联系人</string>
+    <string name="notifier_finish_copy_content">已成功复制 <xliff:g id="total">%d</xliff:g> 个联系人</string>
+
+    <string name="notifier_multichoice_process_report">已完成: <xliff:g id="items">%d</xliff:g>\n未完成: <xliff:g id="items">%d</xliff:g></string>
+
+    <string name="notifier_failure_by_sim_full">SIM卡存储已满\n已完成: <xliff:g id="items">%d</xliff:g>\n未完成: <xliff:g id="items">%d</xliff:g></string>
+    <string name="notifier_failure_sim_notready">SIM卡未准备好\n已完成: <xliff:g id="items">%d</xliff:g>\n未完成: <xliff:g id="items">%d</xliff:g></string>
+
+    <string name="notifier_cancel_delete_title">取消删除联系人</string>
+    <string name="notifier_fail_delete_title">删除联系人失败</string>
+
+    <string name="notifier_cancel_copy_title">取消复制联系人</string>
+    <string name="notifier_fail_copy_title">复制联系人失败</string>
+
+    <string name="notifier_progress__delete_will_start_message">"系统稍后就会删除你选择的联系人。"</string>
+    <string name="notifier_progress_delete_message">正在删除 <xliff:g id="current_number">%s</xliff:g>/<xliff:g id="total_number">%s</xliff:g>: <xliff:g id="name" example="Joe Due">%s</xliff:g></string>
+    <string name="notifier_progress_delete_description">正在删除 <xliff:g id="name" example="Joe Due">%s</xliff:g></string>
+
+    <string name="notifier_progress__copy_will_start_message">"系统稍后就会复制你选择的联系人。"</string>
+    <string name="notifier_progress_copy_message">正在复制 <xliff:g id="current_number">%s</xliff:g>/<xliff:g id="total_number">%s</xliff:g>: <xliff:g id="name" example="Joe Due">%s</xliff:g></string>
+    <string name="notifier_progress_copy_description">正在复制 <xliff:g id="name" example="Joe Due">%s</xliff:g></string>
+
+    <string name="multichoice_confirmation_title_delete">正在取消删除联系人</string>
+    <string name="multichoice_confirmation_message_delete">取消删除联系人?</string>
+
+    <string name="multichoice_confirmation_title_copy">正在取消复制联系人</string>
+    <string name="multichoice_confirmation_message_copy">取消复制联系人?</string>
+
+    <string name="multichoice_no_select_alert">"没有条目被选中."</string>
+    <string name="multichoice_contacts_limit">"所选联系人不可多于"<xliff:g id="count">%d</xliff:g>""</string>
+
+    <string name="contact_delete_all_tips">"删除程序正在运行，无法进行该操作。"</string>
+
+    <string name="send_file_sms_error">"无法使用短信共享该文件，请使用彩信。"</string>
+
+    <string name="error_save_usim_contact_email_lost">"卡中Email地址空间已满，Email地址存储失败。"</string>
+    <string name="error_import_usim_contact_email_lost">由于卡中Email地址空间已满，部分联系人的Email地址导入失败。\n已完成: <xliff:g id="items">%d</xliff:g>\n未完成: <xliff:g id="items">%d</xliff:g></string>
+    <string name="call_sms">"短信"</string>
+
+    <string name="delete_group_failure">"删除标签失败。"</string>
+    <string name="import_no_vcard_dialog_text">"未在<xliff:g id="storage_name">%s</xliff:g>中找到 vCard 文件。"</string>
+
+    <string name="contact_group_list_title">"选择标签"</string>
+
+    <string name="deleteConfirmation_title">"要删除联系人吗？"</string>
+
+    <string name="nickname_too_long">"昵称过长。"</string>
+
+    <string name="contact_recent_number_limit">"只可选择 %1$s 联系人"</string>
+
+    <string name="account_phone_only" product="tablet">"平板电脑"</string>
+    <string name="account_phone_only" product="default">手机联系人</string>
+
+    <string name="err_icc_no_phone_book">此%1$s卡无法存储联系人</string>
+
+    <string name="menu_select_all">"全选"</string>
+    <string name="menu_select_none">"取消全选"</string>
+
+    <!-- M: TODO for migration, duplicate string -->
+    <string name="mtk_contact_list_loading">"正在加载..."</string>
+    <string name="vcard_import_failed_v2">无法导入 </string>
+    <string name="quickcontact_missing_app">"未找到可处理此操作的应用。"</string>
+
+    <string name="icc_phone_book_invalid">"电话簿暂时不可用，请稍候再试。"</string>
+
+    <!-- aas strings start-->
+    <string name="aas_custom_title">USIM附属号码标签</string>
+    <string name="aas_phone_type_none">不使用标签</string>
+    <string name="aas_new_dialog_title">新增标签</string>
+    <string name="ass_rename_dialog_title">修改标签</string>
+    <string name="aas_delele_dialog_message">删除所选的标签会影响到所有使用这些标签的附属号码。请确认是否删除？</string>
+    <string name="aas_name_invalid">标签名不合法，请重新输入</string>
+    <string name="aas_name_exist">标签名已存在</string>
+    <string name="aas_usim_full">标签已满。</string>
+    <string name="ass_edit_assert_message">修改所选的标签会影响到所有使用该标签的附属号码。请确认是否修改？</string>
+    <string name="aas_new_fail">创建新标签失败</string>
+    <string name="aas_edit_fail">修改标签 <xliff:g id="aas">%s</xliff:g>失败。</string>
+    <string name="aas_delete_fail">删除 <xliff:g id="aas">%s</xliff:g>标签失败。</string>
+    <string name="aas_phone_primary">主号码</string>
+    <string name="aas_phone_additional">附属号码</string>
+    <string name="menu_done">"完成"</string>
+    <!-- aas strings end-->
+
+    <string name="postal_neighborhood">"社区"</string>
+    <string name="postal_pobox">"邮政信箱"</string>
+
+    <string name="confirm_export_title">"要导出联系人吗？"</string>
+    <string name="select_vcard_title">"选择 vCard 文件"</string>
+    <string name="import_one_vcard_string">"导入一个 vCard 文件"</string>
+    <string name="import_multiple_vcard_string">"导入多个 vCard 文件"</string>
+    <string name="import_all_vcard_string">"导入所有 vCard 文件"</string>
+    <string name="searching_vcard_message" product="nosdcard">"正在搜索存储设备中的 vCard 数据..."</string>
+    <string name="searching_vcard_message" product="default">"正在搜索SD卡中的 vCard 数据..."</string>
+    <string name="confirm_export_message">"系统会将您的联系人列表导出到以下文件：<xliff:g id="VCARD_FILENAME">%s</xliff:g>。"</string>
+    <string name="vcard_export_will_start_message">"“<xliff:g id="FILENAME">%s</xliff:g>”将在稍后导出。"</string>
+
+    <string name="no_sdcard_message" product="nosdcard">"找不到任何存储设备。"</string>
+    <string name="no_sdcard_message" product="default">"找不到SD卡。"</string>
+
+    <string name="batch_merge_sim_contacts_warning">SIM卡联系人不可以合并.</string>
+    <string name="noGroups">"没有任何标签。"</string>
+
+    <!-- The toast title when storage is full -->
+    <string name="add_SIP_to_sim">"不可在电话卡联系人中添加SIP号码。"</string>
+    <!-- The toast title fot if there has SIP No. can't add new -->
+    <string name="already_has_SIP">"不可添加两个SIP号码。如果必须添加,请删除旧SIP号码。"</string>
+
+    <string name="menu_add">"添加"</string>
+    <string name="menu_delete">"删除"</string>
+    <plurals name="group_list_num_contacts_in_group">
+        <item quantity="one">"<xliff:g id="COUNT">%1$d</xliff:g> 个人"</item>
+        <item quantity="other">"<xliff:g id="COUNT">%1$d</xliff:g> 个人"</item>
+    </plurals>
+    <string name="percentage" translate="false">
+        <xliff:g id="percentage" example="50">%s</xliff:g>
+        <xliff:g id="percentsign" example="%">%%</xliff:g>
+    </string>
+</resources>

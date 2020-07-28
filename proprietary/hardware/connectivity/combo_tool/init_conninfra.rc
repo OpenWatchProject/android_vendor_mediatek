@@ -1,0 +1,11 @@
+# MTK conninfra .rc configure
+
+on boot
+
+# conninfra
+service conninfra_loader /vendor/bin/conninfra_loader
+    class core
+    user system
+    group system
+    oneshot
+

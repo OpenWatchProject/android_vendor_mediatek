@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2009 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.mediatek.voicecommand.vis"
+    android:sharedUserId="android.uid.system">
+
+    <uses-sdk android:minSdkVersion="21" />
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.WRITE_MEDIA_STORAGE" />
+    <uses-permission android:name="android.permission.MANAGE_VOICE_KEYPHRASES" />
+
+    <application
+        android:persistent="true"
+        android:supportsRtl="true"
+        android:allowClearUserData="false"
+        android:permission="android.permission.MANAGE_VOICE_KEYPHRASES">
+        <activity
+            android:name=".VoiceTrainingEnrollmentActivity"
+            android:exported="false"
+            android:label="Voice Enrollment Application"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+            <intent-filter>
+                <action android:name="com.android.intent.action.MANAGE_VOICE_KEYPHRASES" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <service android:name=".VoiceTrainingEnrollmentService"
+                 android:singleUser="true"
+                 android:permission="android.permission.MANAGE_VOICE_KEYPHRASES" >
+            <intent-filter>
+                <action android:name="com.mediatek.intent.action.bindEnrollmentService" />
+                <action android:name="com.mediatek.voicecommand.vis.REMOTE_SERVICE" />
+            </intent-filter>
+        </service>
+        <service android:name=".VoiceWakeupInteractionService"
+                 android:label="@string/voice_wakeup_title"
+                 android:singleUser="true"
+                 android:permission="android.permission.BIND_VOICE_INTERACTION" >
+            <meta-data android:name="android.voice_interaction"
+                       android:resource="@xml/voice_wakeup_interaction_service" />
+            <intent-filter>
+                <action android:name="android.service.voice.VoiceInteractionService" />
+                <action android:name="com.mediatek.voicecommand.VoiceWakeupInteractionService" />
+            </intent-filter>
+        </service>
+        <service android:name=".VoiceWakeupInteractionSessionService"
+                 android:singleUser="true"
+                 android:permission="android.permission.BIND_VOICE_INTERACTION" >
+        </service>
+        <service android:name=".VoiceWakeupRecognitionService"
+                 android:singleUser="true"
+                android:label="@string/voice_wakeup_title">
+            <intent-filter>
+                <action android:name="android.speech.RecognitionService" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <meta-data android:name="android.speech"
+                       android:resource="@xml/voice_wakeup_recognition_service" />
+        </service>
+        <meta-data
+            android:name="android.voice_enrollment"
+            android:resource="@xml/voice_traning_enrollment_application"/>
+    </application>
+</manifest>

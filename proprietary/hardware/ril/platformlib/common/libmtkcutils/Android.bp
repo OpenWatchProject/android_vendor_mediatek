@@ -1,0 +1,15 @@
+cc_library_static {
+     name: "libmtkrillog_android_arm",
+     proprietary: true,
+     srcs: [
+         "atomic.c"
+     ],
+     include_dirs: [
+        "vendor/mediatek/proprietary/hardware/ril/platformlib/include"
+     ],
+     arch: {
+         arm: {
+             instruction_set: "arm",
+         },
+     },
+}

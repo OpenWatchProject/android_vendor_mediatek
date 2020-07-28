@@ -1,0 +1,22 @@
+The library file nvram_platform is a share library.
+This library is pre-built by MediaTek internal.
+
+
+WHAT IT DOES?
+=============
+
+libnvram_platform is a share library which offer a interface for querying nvram layout
+
+
+HOW IT WAS BUILT?
+==================
+depend on library libc libcutils
+need to include header file in  
+$(MTK_PATH_SOURCE)/external/meta/common/inc\
+$(MTK_PATH_SOURCE)/external/nvram/libnvram
+
+HOW TO USE IT?
+==============
+
+use nvram_platform_callback(NVRAM_PLATFORM_T* pPlatform) to query nvram layout
+include this share library by adding LOCAL_SHARED_LIBRARIES in your Android.mk

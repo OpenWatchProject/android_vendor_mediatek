@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+ * Copyright (C) 2008 Esmertec AG.
+ * Copyright (C) 2008 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+-->
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+  <com.android.mms.ui.HeightChangedLinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/changed_linear_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/ipmsg_joyn_stranger_remind"
+        android:layout_width="match_parent"
+        android:layout_height="24dp"
+        android:layout_alignParentTop="true"
+        android:background="#80ff4444"
+        android:textColor="@android:color/white"
+        android:textSize="12dp"
+        android:gravity="center"
+        android:visibility="gone"/>
+
+    <LinearLayout
+        android:id="@+id/recipients_subject_linear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="5dip"
+        android:paddingBottom="5dip"
+        android:paddingLeft="8dip"
+        android:paddingRight="5dip"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <ViewStub android:id="@+id/recipients_editor_stub"
+            android:layout="@layout/recipients_editor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <EditText android:id="@+id/subject"
+            android:textAppearance="?android:attr/textAppearanceMediumInverse"
+            android:textColor="@android:color/black"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="12dip"
+            android:paddingBottom="12dip"
+            android:capitalize="sentences"
+            android:autoText="true"
+            android:inputType="textFilter"
+            android:singleLine="true"
+            android:maxLength="40"
+            android:hint="@string/subject_hint"
+            android:nextFocusDown="@+id/embedded_text_editor"
+            android:visibility="gone"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="bottom">
+
+        <view class="com.android.mms.ui.MessageListView"
+            style="?android:attr/listViewWhiteStyle"
+            android:id="@+id/history"
+            android:layout_width="match_parent"
+            android:layout_height="0dip"
+            android:layout_weight="1.0"
+            android:transcriptMode="normal"
+            android:smoothScrollbar="true"
+            android:stackFromBottom="true"
+            android:visibility="gone"
+            android:fadingEdge="none"
+            android:layout_marginBottom="1dip"
+            android:cacheColorHint="#00000000"
+            android:scrollbarAlwaysDrawVerticalTrack="false"
+            android:scrollbarStyle="insideOverlay"
+            android:paddingBottom="@dimen/input_text_height_adjusted"/>
+        <TextView android:id="@+id/ip_message_typing_status"
+            android:layout_width="match_parent"
+            android:layout_height="24dp"
+            android:orientation="vertical"
+            android:gravity="center_vertical"
+            android:textColor="#FFFFFF"
+            android:background="#FF0000"
+            android:paddingLeft="12dp"
+            android:textSize="12dp"
+            android:visibility="gone" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <ScrollView
+                android:id="@+id/attachment_editor_scroll_view"
+                android:layout_weight="1.0"
+                android:layout_width="match_parent"
+                android:layout_height="0dip">
+                <view class="com.android.mms.ui.AttachmentEditor"
+                    android:id="@+id/attachment_editor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <ViewStub
+                        android:id="@+id/file_attachment_view_stub"
+                        android:layout="@layout/file_attachment_view"
+                        android:layout_width="match_parent"
+                        android:layout_marginLeft="5dip"
+                        android:layout_marginRight="5dip"
+                        android:layout_marginBottom="3dip"
+                        android:layout_height="wrap_content" />
+
+                    <ViewStub android:id="@+id/image_attachment_view_stub"
+                        android:layout="@layout/image_attachment_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <ViewStub android:id="@+id/video_attachment_view_stub"
+                        android:layout="@layout/video_attachment_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <ViewStub android:id="@+id/audio_attachment_view_stub"
+                        android:layout="@layout/audio_attachment_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <ViewStub android:id="@+id/slideshow_attachment_view_stub"
+                        android:layout="@layout/slideshow_attachment_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+                </view>
+            </ScrollView>
+
+            <LinearLayout
+                android:id="@+id/bottom_panel"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#fff"
+                android:gravity="bottom"
+                android:paddingBottom="4dip" >
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#fff"
+                    android:paddingTop="4dip"
+                    android:paddingBottom="4dip"
+                    android:layout_weight="1" >
+                    <ImageButton
+                        android:id="@+id/share_button"
+                        style="?android:attr/borderlessButtonStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom"
+                        android:adjustViewBounds="true"
+                        android:layout_marginLeft="4dip"
+                        android:paddingTop="9dip"
+                        android:paddingLeft="4dip"
+                        android:paddingRight="4dip"
+                        android:paddingBottom="9dip"
+                        android:src="@drawable/ipmsg_share"
+                        android:visibility="gone" />
+                    <EditText
+                        android:id="@+id/embedded_text_editor"
+                        android:textColor="@android:color/black"
+                        android:layout_width="match_parent"
+                        android:layout_gravity="bottom"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dip"
+                        android:autoText="true"
+                        android:textSize="16sp"
+                        android:capitalize="sentences"
+                        android:nextFocusRight="@+id/send_button"
+                        android:hint="@string/ipmsg_sms_hint"
+                        android:minHeight="@dimen/input_text_height"
+                        android:maxLines="3"
+                        android:ellipsize="end"
+                        android:inputType="textShortMessage|textAutoCorrect|textCapSentences|textMultiLine"
+                        android:imeOptions="actionDone|flagNoEnterAction"
+                        android:maxLength="2048"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/button_with_counter"
+                    android:orientation="vertical"
+                    android:layout_gravity="bottom"
+                    android:paddingBottom="4dip"
+                    android:paddingTop="4dip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0" >
+                    <TextView
+                        android:id="@+id/text_counter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:layout_gravity="center_horizontal"
+                        android:textColor="#5c5c5c"
+                        android:textSize="10sp"
+                        android:textStyle="bold"
+                        android:paddingBottom="2dip"
+                        android:visibility="gone" />
+                    <TextView
+                        android:id="@+id/send_button_mms"
+                        style="?android:attr/borderlessButtonStyle"
+                        android:drawableBottom="@drawable/ic_send_sms_unsend"
+                        android:drawablePadding="0dip"
+                        android:layout_width="wrap_content"
+                        android:textSize="11sp"
+                        android:layout_height="0dip"
+                        android:layout_weight="1.0"
+                        android:layout_marginLeft="4dip"
+                        android:layout_marginRight="4dip"
+                        android:layout_gravity="right"
+                        android:adjustViewBounds="true"
+                        android:paddingTop="8dip"
+                        android:paddingLeft="6dip"
+                        android:paddingRight="6dip"
+                        android:paddingBottom="8dip"
+                        android:editable="false"
+                        android:text="@string/mms"
+                        android:contentDescription="@string/send_mms"
+                        android:nextFocusLeft="@+id/embedded_text_editor" />
+                    <ImageButton
+                        android:id="@+id/send_button_sms"
+                        style="?android:attr/borderlessButtonStyle"
+                        android:src="@drawable/ic_send_ipmsg"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dip"
+                        android:layout_weight="1.0"
+                        android:layout_marginLeft="4dip"
+                        android:layout_marginRight="4dip"
+                        android:layout_gravity="right"
+                        android:adjustViewBounds="true"
+                        android:paddingTop="8dip"
+                        android:paddingLeft="6dip"
+                        android:paddingRight="6dip"
+                        android:paddingBottom="8dip"
+                        android:contentDescription="@string/send"
+                        android:nextFocusLeft="@+id/embedded_text_editor" />
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/panel_container"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" >
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+  </com.android.mms.ui.HeightChangedLinearLayout>
+
+    <QuickContactBadge
+        android:id="@+id/avatar"
+        android:visibility="gone"
+        android:layout_centerVertical="true"
+        style="?android:attr/quickContactBadgeStyleWindowLarge"/>
+</merge>

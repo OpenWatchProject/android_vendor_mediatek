@@ -1,0 +1,555 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <TableLayout
+            android:id="@+id/TableLayout01"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TableRow
+                android:id="@+id/TableRow00"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10pt"
+                    android:text="@string/presence_set_slot_id" >
+                </TextView>
+
+                <EditText
+                    android:id="@+id/presence_set_slot_id"
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
+                    android:numeric="integer"
+                    android:singleLine="true" >
+                </EditText>
+
+                <Button
+                    android:id="@+id/presence_set_slot_id_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10pt"
+                    android:text="@string/set" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/TableRow01"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10pt"
+                    android:text="@string/presence_set_489_timer_value" >
+                </TextView>
+
+                <EditText
+                    android:id="@+id/presence_set_489_timer_value"
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
+                    android:numeric="integer"
+                    android:singleLine="true" >
+                </EditText>
+
+                <Button
+                    android:id="@+id/presence_set_489_timer_value_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10pt"
+                    android:text="@string/set" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/TableRow02"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10pt"
+                    android:text="@string/presence_set_capability_polling_period" >
+                </TextView>
+
+                <EditText
+                    android:id="@+id/presence_set_capability_polling_period"
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
+                    android:maxLength="4"
+                    android:numeric="integer"
+                    android:singleLine="true" >
+                </EditText>
+
+                <Button
+                    android:id="@+id/presence_set_capability_polling_period_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10pt"
+                    android:text="@string/set" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/TableRow03"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10pt"
+                    android:text="@string/presence_set_capability_expiry_time" >
+                </TextView>
+
+                <EditText
+                    android:id="@+id/presence_set_capability_expiry_time"
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
+                    android:maxLength="4"
+                    android:numeric="integer"
+                    android:singleLine="true" >
+                </EditText>
+
+                <Button
+                    android:id="@+id/presence_set_capability_expiry_time_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10pt"
+                    android:text="@string/set" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/TableRow04"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10pt"
+                    android:text="@string/presence_set_publish_expiry_time" >
+                </TextView>
+
+                <EditText
+                    android:id="@+id/presence_set_publish_expiry_time"
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
+                    android:maxLength="4"
+                    android:numeric="integer"
+                    android:singleLine="true" >
+                </EditText>
+
+                <Button
+                    android:id="@+id/presence_set_publish_expiry_time_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10pt"
+                    android:text="@string/set" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/TableRow05"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10pt"
+                    android:text="@string/presence_set_max_subscription_list" >
+                </TextView>
+
+                <EditText
+                    android:id="@+id/presence_set_max_subscription_list"
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
+                    android:maxLength="4"
+                    android:numeric="integer"
+                    android:singleLine="true" >
+                </EditText>
+
+                <Button
+                    android:id="@+id/presence_set_max_subscription_list_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10pt"
+                    android:text="@string/set" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/TableRow06"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10pt"
+                    android:text="@string/presence_enable" >
+                </TextView>
+
+                <EditText
+                    android:id="@+id/presence_enable"
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
+                    android:maxLength="4"
+                    android:numeric="integer"
+                    android:singleLine="true" >
+                </EditText>
+
+                <Button
+                    android:id="@+id/presence_enable_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10pt"
+                    android:text="@string/set" />
+            </TableRow>
+        </TableLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <Button
+                android:id="@+id/presence_set_reset_ETAG"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10pt"
+                android:text="@string/presence_set_reset_ETAG" />
+
+            <Button
+                android:id="@+id/presence_set_reset_489_state"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10pt"
+                android:text="@string/presence_set_reset_489_state" />
+        </LinearLayout>
+
+        <TableLayout
+            android:id="@+id/TableLayout02"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TableRow
+                android:id="@+id/TableRow01"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10pt"
+                    android:text="@string/presence_set_eab_publish_timer" >
+                </TextView>
+
+                <EditText
+                    android:id="@+id/presence_set_eab_publish_timer_value"
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
+                    android:numeric="integer"
+                    android:singleLine="true" >
+                </EditText>
+
+                <Button
+                    android:id="@+id/presence_set_eab_publish_timer_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10pt"
+                    android:text="@string/set" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/TableRow02"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10pt"
+                    android:text="@string/presence_set_eab_publish_timer_extended" >
+                </TextView>
+
+                <EditText
+                    android:id="@+id/presence_set_eab_publish_timer_extended_value"
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
+                    android:numeric="integer"
+                    android:singleLine="true" >
+                </EditText>
+
+                <Button
+                    android:id="@+id/presence_set_eab_publish_timer_extended_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10pt"
+                    android:text="@string/set" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/TableRow03"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10pt"
+                    android:text="@string/presence_set_eab_capability_cache_exp" >
+                </TextView>
+
+                <EditText
+                    android:id="@+id/presence_set_eab_capability_cache_exp_value"
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
+                    android:numeric="integer"
+                    android:singleLine="true" >
+                </EditText>
+
+                <Button
+                    android:id="@+id/presence_set_eab_capability_cache_exp_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10pt"
+                    android:text="@string/set" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/TableRow04"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10pt"
+                    android:text="@string/presence_set_eab_availability_cache_exp" >
+                </TextView>
+
+                <EditText
+                    android:id="@+id/presence_set_eab_availability_cache_exp_value"
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
+                    android:numeric="integer"
+                    android:singleLine="true" >
+                </EditText>
+
+                <Button
+                    android:id="@+id/presence_set_eab_availability_cache_exp_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10pt"
+                    android:text="@string/set" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/TableRow05"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10pt"
+                    android:text="@string/presence_set_eab_source_throttle_publish" >
+                </TextView>
+
+                <EditText
+                    android:id="@+id/presence_set_eab_source_throttle_publish_value"
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
+                    android:numeric="integer"
+                    android:singleLine="true" >
+                </EditText>
+
+                <Button
+                    android:id="@+id/presence_set_eab_source_throttle_publish_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10pt"
+                    android:text="@string/set" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/TableRow06"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10pt"
+                    android:text="@string/presence_set_eab_capability_poll_interval" >
+                </TextView>
+
+                <EditText
+                    android:id="@+id/presence_set_eab_capability_poll_interval_value"
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
+                    android:numeric="integer"
+                    android:singleLine="true" >
+                </EditText>
+
+                <Button
+                    android:id="@+id/presence_set_eab_capability_poll_interval_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10pt"
+                    android:text="@string/set" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/TableRow07"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10pt"
+                    android:text="@string/presence_set_eab_max_no_entries" >
+                </TextView>
+
+                <EditText
+                    android:id="@+id/presence_set_eab_max_no_entries_value"
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
+                    android:numeric="integer"
+                    android:singleLine="true" >
+                </EditText>
+
+                <Button
+                    android:id="@+id/presence_set_eab_max_no_entries_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10pt"
+                    android:text="@string/set" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/TableRow08"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10pt"
+                    android:text="@string/presence_set_eab_cap_poll_exp" >
+                </TextView>
+
+                <EditText
+                    android:id="@+id/presence_set_eab_cap_poll_exp_value"
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
+                    android:numeric="integer"
+                    android:singleLine="true" >
+                </EditText>
+
+                <Button
+                    android:id="@+id/presence_set_eab_cap_poll_exp_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10pt"
+                    android:text="@string/set" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/TableRow09"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10pt"
+                    android:text="@string/presence_set_eab_capability_discovery" >
+                </TextView>
+
+                <EditText
+                    android:id="@+id/presence_set_eab_capability_discovery_value"
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
+                    android:numeric="integer"
+                    android:singleLine="true" >
+                </EditText>
+
+                <Button
+                    android:id="@+id/presence_set_eab_capability_discovery_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10pt"
+                    android:text="@string/set" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/TableRow10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10pt"
+                    android:text="@string/presence_set_eab_gzip_enabled" >
+                </TextView>
+
+                <EditText
+                    android:id="@+id/presence_set_eab_gzip_enabled_value"
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
+                    android:numeric="integer"
+                    android:singleLine="true" >
+                </EditText>
+
+                <Button
+                    android:id="@+id/presence_set_eab_gzip_enabled_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10pt"
+                    android:text="@string/set" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/TableRow11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10pt"
+                    android:text="@string/presence_set_eab_publish_error_retry_timer" >
+                </TextView>
+
+                <EditText
+                    android:id="@+id/presence_set_eab_publish_error_retry_timer_value"
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
+                    android:numeric="integer"
+                    android:singleLine="true" >
+                </EditText>
+
+                <Button
+                    android:id="@+id/presence_set_eab_publish_error_retry_timer_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10pt"
+                    android:text="@string/set" />
+            </TableRow>
+        </TableLayout>
+    </LinearLayout>
+
+</ScrollView>

@@ -1,0 +1,70 @@
+do project.cmm
+
+system.reset
+SYSTEM.OPTION ENRESET ON
+SYStem.Option ResBreak OFF
+SYStem.Option WaitReset OFF
+SYStem.JtagClock 5.MHz
+SYStem.CPU CORTEXA53;
+SYStem.CONFIG CORENUMBER 1;
+SYStem.CONFIG COREBASE 0x8D410000;
+SYStem.CONFIG CTIBASE 0x8D420000;
+
+SYStem.Up
+MMU.OFF
+
+SETUP.IMASKHLL ON
+SETUP.IMASKASM ON
+
+; disable DABORT and PABORT breakpoint
+tronchip.set dabort off
+tronchip.set pabort off
+tronchip.set undef off
+tronchip.set irq off
+
+;;->
+;;-> <<< COMMON SCRIPT FOOTER >>>
+;;-> @ Set default breakpoints to HW
+Break.SELect Program OnChip
+Break.SELect Read OnChip
+Break.SELect Write OnChip
+
+d.s c:0x10007000 %le %long 0x22000064
+;d.s c:0x1020011C %le %long 0x01 //CA7 can receive the snoop
+
+print "loading lk symbol"
+
+&LittleKernelPATH="../../../../../../out/target/product/&project/obj/BOOTLOADER_OBJ/build-&project"
+;d.load.elf &LittleKernelPATH/lk /gnu /nocode
+
+Y.SPATH.RESET ; reset all source path
+
+print "Loading Little kernel symbols..."
+sYmbol.SourcePATH.RESet
+&searchStr="/alps/"
+&pathlen=STRing.SCAN(OS.PWD(),"&searchStr",0)+STRing.LEN("&searchStr")-1
+&alpsPath=STRing.MID(OS.PWD(), 0, &pathlen)
+Data.LOAD.Elf &LittleKernelPATH/lk /gnu /nocode /StripPART "&searchStr" /PATH "&alpsPath"
+
+Break.Delete
+B.set kmain
+d.l
+go
+
+while ISRUN()
+(
+)
+
+on pbreak gosub
+(
+	if data.long(asd:0x10007000)!=0x00000000
+	(
+		do wdt.cmm
+		print "Watchdog disabled"
+		return
+	)
+)
+
+stop
+end
+

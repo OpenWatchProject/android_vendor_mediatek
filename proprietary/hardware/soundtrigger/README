@@ -1,0 +1,34 @@
+The shared library 'soundtrigger.primary.mt6797.so' implements the soundtrigger hal of android.
+
+
+WHAT IT DOES?
+=============
+
+The shared library 'soundtrigger.primary.mt6799.so' implements the soundtrigger hal of android.
+
+
+HOW IT WAS BUILT?
+==================
+
+It needs the following library from AOSP:
+1.  libmedia.so
+2.  libcutils.so
+3.  libutils.so
+4.  libbinder.so
+5.  libhardware_legacy.so
+6.  libhardware.so
+7.  libdl.so
+8.  libpowermanager.so
+
+
+and the following libs from MediaTek:
+1.  NA
+
+
+
+HOW TO USE IT?
+==============
+
+The releated APIs of audio hal is used by audioflinger module.
+
+

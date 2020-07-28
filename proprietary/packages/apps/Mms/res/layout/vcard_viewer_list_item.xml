@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+ ! Excerpted from "Hello, Android!",
+ ! published by The Pragmatic Bookshelf.
+ ! Copyrights apply to this code. It may not be used to create training material,
+ ! courses, books, articles, and the like. Contact us if you are in doubt.
+ ! We make no guarantees that this code is fit for any purpose.
+ ! Visit http://www.pragmaticprogrammer.com/titles/eband for more book information.
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content">
+    <ImageView
+        android:id="@+id/vcard_contact_avatar"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="80dip"
+        android:layout_height="80dip"
+        android:layout_gravity="left"
+        android:layout_marginLeft="4dip"
+        android:paddingTop="10dip"
+        android:paddingBottom="10dip"
+        android:paddingLeft="4dip"
+        android:src="@drawable/ic_contact_picture"
+        android:scaleType="fitCenter" />
+   <TextView
+        android:id="@+id/vcard_contact_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dip"
+        android:paddingBottom="10dip"
+        android:paddingLeft="10dip"
+        android:paddingRight="10dip"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+</LinearLayout>

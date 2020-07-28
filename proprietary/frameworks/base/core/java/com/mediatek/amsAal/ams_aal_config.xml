@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright (C) 2012 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<!--
+aal_mode:
+    AAL_MODE_PERFORMANCE = 0;
+    AAL_MODE_BALANCE = 1;
+    AAL_MODE_LOWPOWER = 2;
+
+component:
+    Package: com.foo
+    Activity: com.foo/.Blah
+
+backlight Level: 0~255 (Default : 128)
+-->
+<ams_aal>
+<!-- AAL_MODE_PERFORMANCE -->
+    <config aal_mode="0" component="com.android.launcher3" backlight="160"/>
+    <config aal_mode="0" component="com.rovio.angrybirds" backlight="160"/>
+    <config aal_mode="0" component="com.vectorunit.yellow" backlight="160"/>
+    <config aal_mode="0" component="nl.dotsightsoftware.pacificfighter.release" backlight="128"/>
+    <config aal_mode="0" component="com.tencent.mm" backlight="200"/>
+    <config aal_mode="0" component="com.tencent.mm/.plugin.voip.ui.VideoActivity" backlight="255"/>
+
+<!-- AAL_MODE_BALANCE -->
+    <config aal_mode="1" component="com.android.launcher3" backlight="192"/>
+    <config aal_mode="1" component="com.rovio.angrybirds" backlight="192"/>
+    <config aal_mode="1" component="com.vectorunit.yellow" backlight="192"/>
+    <config aal_mode="1" component="nl.dotsightsoftware.pacificfighter.release" backlight="160"/>
+    <config aal_mode="1" component="com.tencent.mm" backlight="200"/>
+    <config aal_mode="1" component="com.tencent.mm/.plugin.voip.ui.VideoActivity" backlight="255"/>
+
+<!-- AAL_MODE_LOWPOWER -->
+    <config aal_mode="2" component="com.android.launcher3" backlight="240"/>
+    <config aal_mode="2" component="com.rovio.angrybirds" backlight="240"/>
+    <config aal_mode="2" component="com.vectorunit.yellow" backlight="240"/>
+    <config aal_mode="2" component="nl.dotsightsoftware.pacificfighter.release" backlight="192"/>
+    <config aal_mode="2" component="com.tencent.mm" backlight="200"/>
+    <config aal_mode="2" component="com.tencent.mm/.plugin.voip.ui.VideoActivity" backlight="255"/>
+</ams_aal>
+

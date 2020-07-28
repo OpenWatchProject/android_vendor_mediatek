@@ -1,0 +1,19 @@
+
+WHAT IT DOES?
+=============
+This is a protected memory t-driver API library for share memory testing.
+- test protect memory read/write between GZ and TEE.
+
+
+HOW IT WAS BUILT?
+=================
+It could be built with mmm or mm build command.
+
+
+HOW TO USE IT?
+==============
+Please link this library in your TA makefile with below statement:
+HAL_LIBS += $(ANDROID_STATIC_LIBRARIES_OUT_DIR)/drpmem_api_intermediates/drpmem_api.lib
+
+And the include below header file to use the APIs.
+#include <drpmem_api.h>

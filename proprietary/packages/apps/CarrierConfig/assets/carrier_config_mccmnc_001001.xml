@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<carrier_config_list>
+    <carrier_config>
+        <boolean name="carrier_volte_available_bool" value="true" />
+        <!-- M: Support emergency call back -->
+        <int name="gps.es_extension_sec" value="300" />
+    </carrier_config>
+    <carrier_config spn="null">
+        <boolean name="carrier_volte_available_bool" value="true" />
+        <!-- M: Support emergency call back -->
+        <int name="gps.es_extension_sec" value="300" />
+    </carrier_config>
+    <carrier_config spn="^Tes.*">
+        <boolean name="carrier_volte_available_bool" value="true" />
+        <!-- M: Support emergency call back -->
+        <int name="gps.es_extension_sec" value="300" />
+    </carrier_config>
+    <carrier_config imsi="^001001.*">
+        <boolean name="carrier_volte_available_bool" value="true" />
+        <!-- M: Support emergency call back -->
+        <int name="gps.es_extension_sec" value="300" />
+    </carrier_config>
+</carrier_config_list>

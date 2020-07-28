@@ -1,0 +1,22 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+        package="com.mediatek.miravision.ui">
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.ACCESS_CHECKIN_PROPERTIES"/>
+
+       <application android:label="@string/mira_vision_title"
+            android:taskAffinity=""
+            android:theme="@android:style/Theme.DeviceDefault.Settings"
+            android:supportsRtl="true">
+
+        <activity android:name="MiraVisionActivity"
+                android:label="@string/mira_vision_title"
+                android:configChanges="orientation|keyboardHidden|screenSize|mcc|mnc">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <action android:name="com.android.settings.MIRA_VISION" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+    </application>
+</manifest>

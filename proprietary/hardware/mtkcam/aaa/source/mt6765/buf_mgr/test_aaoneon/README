@@ -1,0 +1,27 @@
+WHAT UT DOES?
+=============
+NEON bit true test related files.
+
+
+HOW UT WAS BUILT?
+==================
+It can build the following:
+Executable test file
+
+It needs the following library from MediaTek:
+LOCAL_SHARED_LIBRARIES := \
+    liblog.so
+    libcutils.so
+    libutils.so
+    libmet-tag.so
+    libmtkcam_stdutils.so
+
+
+HOW TO USE IT?
+==============
+Need to dump original aao file
+CMD : Executable aao_file bitMode
+EX  : test_aaoneon aao_16.raw 12 (12bit)
+EX  : test_aaoneon aao_24_62.raw 14 (14bit)
+
+All the source code of this library were written by MediaTek co..

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:key="connsyslog_preference_screen"
+    android:title="@string/connsys_log_name" >
+
+    <PreferenceCategory
+        android:key="connsysfw_log_settings_category"
+        android:title="@string/connsysfw_log_settings_title" >
+
+        <EditTextPreference
+            android:defaultValue="2000"
+            android:key="connsysfwlog_logsize"
+            android:summary="@string/limit_log_size_summary"
+            android:title="@string/limit_log_size_title" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="gps_log_settings_category"
+        android:title="@string/gps_log_settings_title" >
+
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="gpslog_switch"
+            android:title="@string/gps_host_log_name" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="bluetooth_log_settings_category"
+        android:title="@string/bluetooth_log_settings_title" >
+
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="bthostlog_switch"
+            android:title="@string/bt_hci_log_name"
+            android:summary="@string/bthostlog_switch_summary" />
+
+        <EditTextPreference
+            android:defaultValue="2000"
+            android:key="bthostlog_logsize"
+            android:summary="@string/limit_hci_snoop_log_size_summary"
+            android:title="@string/limit_hci_snoop_log_size_title" />
+
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="btstacklog_enable"
+            android:title="@string/bt_stack_log_name"
+            android:summary="@string/btstacklog_enable_summary" />
+
+        <ListPreference
+            android:defaultValue="@string/default_btfw_log_level_value"
+            android:dialogTitle="@string/btfw_Log_level_title"
+            android:entries="@array/btfw_log_level_list"
+            android:entryValues="@array/btfw_log_level_value_list"
+            android:key="btfw_log_level"
+            android:summary="@string/btfw_Log_level_summary"
+            android:title="@string/btfw_Log_level_title" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="wifi_logl_settings_category"
+        android:title="@string/wifi_log_settings_title" >
+
+        <Preference
+            android:key="wifi_log_tool"
+            android:summary="@string/open_wifi_log_tool_summary"
+            android:title="@string/open_wifi_log_tool_title" >
+        </Preference>
+    </PreferenceCategory>
+
+</PreferenceScreen>

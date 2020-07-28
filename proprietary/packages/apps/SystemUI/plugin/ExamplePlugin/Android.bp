@@ -1,0 +1,14 @@
+android_app {
+
+    name: "MtkExamplePlugin",
+
+    libs: ["MtkSystemUIPluginLib"],
+
+    certificate: "platform",
+    optimize: {
+        enabled: false,
+    },
+
+    srcs: ["src/**/*.java"],
+
+}

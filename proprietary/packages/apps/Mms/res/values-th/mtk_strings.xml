@@ -1,0 +1,666 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+/*
+ * Copyright (C) 2007-2008 Esmertec AG.
+ * Copyright (C) 2007-2008 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+ --><resources xmlns:android="http://schemas.android.com/apk/res/android" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+<!--MTK Resources-->
+<string name="Insert_sdcard">โปรดใส่ SD การ์ด</string>
+    <string name="pref_title_mms_enable_to_send_delivery_reports">ส่งรายงานการส่ง</string>
+    <string name="pref_summary_mms_enable_to_send_delivery_reports">ส่งรายงานการส่งสำหรับแต่ละข้อความที่คุณได้รับ</string>
+    <string name="deleting">กำลังลบ</string>
+    <string name="sms_save_location">ตำแหน่งบันทึก SMS</string>
+    <string name="sms_service_center">ศูนย์บริการ SMS</string>
+    <string name="service_center_label">ศูนย์บริการ:</string>
+    <string name="attach_ringtone">ริงโทน</string>
+    <string name="pref_title_mms_size_limit">ขีดจำกัดขนาด</string>
+    <string name="pref_summary_mms_size_limit">ขีดจำกัดขนาด MMS สำหรับการเขียนข้อความ</string>
+    <string name="pref_title_mms_creation_mode">โหมดสร้าง</string>
+    <string name="pref_summary_mms_creation_mode">โหมดสร้าง MMS สำหรับสร้างข้อความใหม่</string>
+    <string name="confirm_restricted_audio">ชนิดเนื้อหาเสียงที่จำกัด อย่างไรคุณก็ต้องการแนบไฟล์ใช่หรือไม่?</string>
+    <string name="confirm_restricted_image">ชนิดเนื้อหาภาพที่จำกัด อย่างไรคุณก็ต้องการแนบไฟล์ใช่หรือไม่?</string>
+    <string name="confirm_restricted_video">ชนิดเนื้อหาวิดีโอที่จำกัด อย่างไรคุณก็ต้องการแนบไฟล์ใช่หรือไม่?</string>
+    <string name="unsupport_media_type">ไม่สนับสนุนชนิดมีเดีย</string>
+    <string name="select_different_media_type">เลือกมีเดียที่แตกต่าง</string>
+    <!-- to notify user that image resolution is too large -->    
+    <string name="image_resolution_too_large">ความละเอียดภาพมากเกินไปที่จะใส่</string>
+    <!-- wap push string begin -->
+    <!-- The type of wap push message, used in message details -->
+    <string name="wp_msg_type">ข้อความบริการ</string>
+    <string name="wp_msg_created_label">สร้างเมื่อ:\u0020</string>
+    <string name="wp_msg_created_unknown">Unknown</string>
+    <string name="wp_msg_priority_label">ความสำคัญ:\u0020</string>
+    <!-- Wappush message priority -->
+    <string name="wp_msg_priority_low">ต่ำ</string>
+    <string name="wp_msg_priority_medium">ปานกลาง</string>
+    <string name="wp_msg_priority_high">สูง</string>
+    <!-- Context menu item -->
+    <string name="menu_goto_browser">เปิดเบราเซอร์</string>
+    <string name="menu_add_to_bookmark">เพิ่มลงในบุ๊คมาร์ค</string>
+    <!-- Wappush message content label -->
+    <string name="wp_msg_expiration_label">หมดอายุ: <xliff:g id="DATE">%s</xliff:g></string>
+    <string name="error_unsupported_scheme">ขณะนี้ไม่สนับสนุนการกระทำนั้น</string>
+    <!-- wap push setting -->
+    <string name="pref_title_wappush_settings">การตั้งค่าข้อความบริการ</string>
+    <string name="pref_title_wappush_enable">เปิดทำงาน WAP PUSH</string>
+    <string name="pref_summary_wappush_enable">เปิดทำงานเพื่อรับ WAP PUSH</string>
+    <string name="pref_title_wappush_sl_autoloading">เปิด SL อัตโนมัติ</string>
+    <string name="pref_summary_wappush_sl_autoloading">เปิดข้อความการโหลดบริการ (SL) เมื่อได้รับโดยอัตโนมัติ</string>
+    <!-- wap push string end -->
+    <string name="create_new_message">สร้างข้อความใหม่</string>
+    <string name="menu_send_sms">ส่งข้อความไปยัง <xliff:g id="name">%s</xliff:g></string>
+    <string name="menu_undelivered_messages">ข้อความที่ไม่ได้ส่ง</string>
+    <string name="broadcast_from_to"><xliff:g id="SENDER">%1$s</xliff:g> ไป <xliff:g id="RECIPIENT">%2$s</xliff:g></string>
+    <string name="anonymous_recipient">ไม่ทราบชื่อ</string>
+    <string name="view_picture">ดูภาพ</string>
+    <string name="sent_on">"ส่งแล้ว: <xliff:g id="DATE">%s</xliff:g>"</string>
+    <string name="received_on">"ที่ได้รับ: <xliff:g id="date">%s</xliff:g>"</string>
+    <string name="name_colon"><b><xliff:g id="name" example="Me">%s</xliff:g></b>": "</string>
+    <string name="compose_title">"เขียน"</string>
+    <string name="image_too_large">ภาพใหญ่เกินไป</string>
+    <string name="ask_for_automatically_resize">เปลี่ยนขนาดภาพก่อนการส่งโดยอัตโนมัติ?</string>
+    <string name="cannot_load_message">ไม่สามารถโหลดข้อความ</string>
+    <string name="locked_message_cannot_be_deleted">ข้อความที่ล็อคไม่สามารถถูกลบได้</string>
+    <string name="cannot_add_recipient">ถึงขีดจำกัดผู้รับแล้ว คุณไม่สามารถเพิ่มผู้รับได้</string>
+    <string name="multiple_recipients"><xliff:g id="RECIPIENTCOUNT">%1$s</xliff:g> ผู้รับ</string>
+    <string name="resize">เปลี่ยนขนาด</string>
+    <string name="to_label">ถึง</string>
+    <string name="confirm_delete_all_messages">"ชุดข้อความทั้งหมดจะถูกลบ"</string>
+    <string name="mms_priority_label">ความสำคัญ</string>
+    <string name="menu_retry_sending">ลองส่งใหม่</string>
+    <string name="menu_retry_sending_all">ลองส่งใหม่ทั้งหมด</string>
+    <string name="retrying_dialog_body">ข้อความนี้ <xliff:g id="MESSAGE">%s</xliff:g> ไม่ถูกส่งเนื่องจากปัญหาในการเชื่อมต่อ\nกำลังลองส่งใหม่…</string>
+    <string name="notification_multiple_cb"><xliff:g id="count">%s</xliff:g> ข้อความ CB ที่ยังไม่อ่าน</string>
+    <string name="notification_multiple_cb_title">ข้อความเซลล์บรอดคาสท์ใหม่</string>
+    <string name="dl_expired_notification">ข้อความนี้หมดอายุแล้ว และจะถูกลบ</string>
+    <string name="add_attachment_activity">เพิ่มไฟล์แนบ:</string>
+    <string name="select_layout_activity">เลือกโครงร่าง</string>
+    <string name="edit_text_activity">แก้ไขข้อความ</string>
+    <string name="pick_numbers_activity">เลือกตัวเลข</string>
+    <string name="send_using_mms_activity">ส่งเป็นข้อความมัลติมีเดีย...</string>
+    <string name="select_contact_method_activity">เลือกวิธีติดต่อ</string>
+    <string name="fdn_enabled">FDN เปิดทำงาน</string>
+    <string name="cannot_send_message_reason_no_content">ไม่มีเนื้อหาที่จะถูกส่ง</string>
+    <string name="cb_read_message">อ่านข้อความ CB </string>
+    <string name="cb_read_message2">อ่านข้อความเซลล์บรอดคาสท์</string>
+    <string name="cb_message">ข้อความเซลล์บรอดคาสท์</string>
+    <string name="cb_default_channel_name">จากช่อง</string>
+    <string name="message_open_email_fail">ขออภัย โปรดตั้งค่าบัญชีอีเมลของคุณก่อน</string>
+    <string name="add_contacts">ผู้ติดต่อ</string>
+    <string name="me">"ฉัน"</string>
+    <string name="send_by_sim2">ส่งโดย SIM2</string>
+    <string name="send_by_sim1">ส่งโดย SIM1</string>
+    <string name="menu_item_send_by">ส่งโดย</string>
+    <string name="data_connected_confirm_title">ยืนยันการส่ง</string>
+    <string name="data_connected_confirm_message">การส่ง MMS โดย SIM นี้อาจทำให้การดาวน์โหลดข้อมูลปัจจุบันของคุณถูกพักไว้ครู่หนึ่ง ทำต่อหรือไม่?</string>
+    <string name="menu_item_sim1">SIM1</string>
+    <string name="menu_item_sim2">SIM2</string>
+    <string name="no_sim_1">SIM ไม่ได้เสียบ</string>
+    <string name="no_sim_2">SIM ไม่ได้เสียบ</string>
+    <string name="sim1_full_title">SIM การ์ด 1 เต็ม</string>
+    <string name="sim2_full_title">SIM การ์ด 2 เต็ม</string>
+    <string name="select_all">"เลือกทั้งหมด"</string>
+    <string name="confirm_delete_selected_messages">ข้อความ ที่เลือกจะถูกลบ</string>
+    <string name="confirm_delete_selected_theads">การสนทนา ที่เลือกจะถูกลบ</string>
+    <string name="restricted_forward_title">"ข้อความมัลติมีเดีย"</string>
+    <string name="restricted_forward_message">มีเดียนี้อาจไม่แสดงในเครื่องของผู้รับอย่างถูกต้อง ทำต่อหรือไม่?</string>
+    <string name="menu_insert_text_vcard">ใส่ผู้ติดต่อ</string>
+    <string name="contact_name">ชื่อ</string>
+    <string name="contact_tel">โทรศัพท์</string>
+    <string name="contact_email">อีเมล</string>
+    <string name="contact_organization">องค์กร</string>
+    <string name="contact_address">ที่อยู่</string>
+	<string name="strOk">ส่งข้อความแล้ว</string>
+    <string name="strFail">การส่งข้อความล้มเหลว</string>
+     <string name="max_recipients_title">ถึงจำนวนสูงสุดแล้ว</string>
+    <string name="max_recipients_message">MMS อนุญาตเฉพาะผู้รับสูงสุด<xliff:g id="maxLimit">%s</xliff:g> คน ผู้รับบางคนจะถูกลบ คุณต้องการทำต่อหรือไม่?</string>
+    <string name="via_without_time_for_send">ผ่าน</string>
+    <string name="via_without_time_for_recieve">ผ่าน</string> 
+    <string name="sim_selected_dialog_title">เลือก SIM</string> 
+    <string name="suggested">ที่แนะนำ</string>
+    <string name="add_contact_dialog_message">"เพิ่มหมายเลข %s ไปยังผู้ติดต่อที่มีอยู่หรือผู้ติดต่อใหม่หรือไม่?"</string> 
+    <string name="add_contact_dialog_existing">เดิม</string>
+    <string name="add_contact_dialog_new">ใหม่</string>  
+    <!-- Context menu item on an SMS for saving message to sim card -->
+    <string name="save_message_to_sim">บันทึกข้อความไปยัง SIM การ์ด</string>
+    <!-- Toast message for saving message to sim card successful-->
+    <string name="save_message_to_sim_successful">บันทึกสำเร็จแล้ว</string>
+    <!-- Toast message for saving message to sim card unsuccessful-->
+    <string name="save_message_to_sim_unsuccessful">บันทึกไม่สำเร็จ</string>
+    <!-- Toast message for transmission transiently failed-->
+    <string name="transmission_transiently_failed">การส่งข้อมูลล้มเหลว จะลองใหม่ในภายหลัง</string>
+    <!-- Toast message for downloading failed due to full memory-->
+    <string name="download_failed_due_to_full_memory">ดาวน์โหลดข้อความล้มเหลวเนื่องจากหน่วยความจำเต็ม</string>
+    <!-- Toast message for downloading failed due to message size exceed limitation-->
+    <string name="mms_too_big_to_download">ข้อความใหญ่เกินไปที่จะดาวน์โหลดจากเครือข่าย</string>
+    <!-- Status in "Report" window -->
+    <string name="status_expired">หมดอายุ</string>
+    <string name="status_deferred">หน่วง</string>
+    <string name="status_unrecognized">ไม่รู้จัก</string>
+    <string name="status_indeterminate">ไม่แน่นอน</string>
+    <string name="status_unreachable">ติดต่อไม่ได้</string>
+    <string name="pref_summary_mms_auto_reply_read_reports">ส่งรายงานการอ่านถ้ามีการขอโดยผู้ส่ง MMS</string>
+    <string name="pref_title_mms_auto_reply_read_reports">ส่งรายงานการอ่าน</string>
+    <plurals name="read_report_toast_msg">
+        <item quantity="one">กำลังส่ง %d รายงานการอ่าน</item>
+        <item quantity="other">กำลังส่ง %d รายงานการอ่าน</item>
+    </plurals>
+    <string name="sms_input_mode_title">โหมดใส่ข้อมูล</string> 
+    <string name="sms_input_mode_dialog_title">เลือกโหมดใส่ข้อมูล</string> 
+    <string name="sms_input_mode_summary">โหมดใส่ข้อมูล SMS สำหรับเขียนข้อความ</string> 
+    <string name="unselect_all">ยกเลิกการเลือกทั้งหมด</string>
+    <!-- add for vcard -->
+   <string name="file_attachment_vcard_name">vCard(<xliff:g id="text">%s</xliff:g>)</string>
+    <string name="attach_vcalendar" msgid="5452708708398908131">"ปฏิทิน"</string>
+   <string name="file_attachment_import_vcard">นำเข้า vCard</string>
+   <string name="attach_vcard">ที่อยู่ติดต่อ</string>
+   <string name="type_common_file">ไฟล์</string>
+   <string name="failed_to_parse_vcard">ไม่สามารถตัดคำในไฟล์vCard ได้!</string>
+   <string name="empty_vcard">ไม่มีที่อยู่ติดต่อใน vCard</string>
+   <string name="parse_vcard">ตัดคำใน vCard</string>
+   <string name="vcard_no_details">ไม่มีข้อมูลเพิ่มเติมสำหรับที่อยู่ติดต่อนี้"</string>
+   <string name="call_custom"><xliff:g id="custom">%s</xliff:g></string>
+   <string name="call_home">บ้าน</string>
+   <string name="call_mobile">มือถือ</string>
+   <string name="call_work">ที่ทำงาน</string>
+   <string name="call_fax_work">แฟกซ์ที่ทำงาน</string>
+   <string name="call_fax_home">แฟกซ์ที่บ้าน</string>
+   <string name="call_pager">เพจเจอร์</string>
+   <string name="call_callback">โทร.กลับ</string>
+   <string name="call_car">รถยนต์</string>
+   <string name="call_company_main">เบอร์โทร.หลักของบริษัท</string>
+   <string name="call_isdn">ISDN</string>
+   <string name="call_radio">วิทยุ</string>
+   <string name="call_telex">เทเลกซ์</string>
+   <string name="call_tty_tdd">TTY/TDD</string>
+   <string name="call_work_mobile">มือถือที่ทำงาน</string>
+   <string name="call_work_pager">เพจเจอร์ที่ทำงาน</string>
+   <string name="call_assistant"><xliff:g id="assistant">%s</xliff:g></string>
+   <string name="call_mms">MMS</string>
+   <string name="email_home">อีเมลไปยังบ้าน</string>
+   <string name="email_mobile">อีเมลไปยังมือถือ</string>
+   <string name="email_work">อีเมลไปที่ทำงาน</string>
+   <string name="email_custom">อีเมล <xliff:g id="custom">%s</xliff:g></string>
+   <string name="map_home">แสดงที่อยู่บ้าน</string>
+   <string name="map_work">แสดงที่อยู่ที่ทำงาน</string>
+   <string name="map_other">แสดงที่อยู่</string>
+   <string name="map_custom">แสดงที่อยู่ <xliff:g id="custom">%s</xliff:g></string>
+   <string name="chat_aim">แชทโดยใช้ AIM</string>
+   <string name="chat_msn">แชทโดยใช้ Windows Live</string>
+   <string name="chat_yahoo">แชทโดยใช้ Yahoo</string>
+   <string name="chat_skype">แชทโดยใช้ Skype</string>
+   <string name="chat_qq">แชทโดยใช้ QQ</string>
+   <string name="chat_gtalk">แชทโดยใช้ Google Talk</string>
+   <string name="chat_icq">แชทโดยใช้ ICQ</string>
+   <string name="chat_jabber">แชทโดยใช้ Jabber</string>
+   <string name="chat">แชท</string>
+   <string name="please_wait">โปรดรอ…</string>
+   <string name="note">บันทึก</string>
+   <string name="organization">องค์กร</string>
+   <string name="website">เว็บไซต์:\u0020</string>
+   <string name="nickname">ชื่อเล่น</string>
+   <string name="call_other">อื่น ๆ</string>
+   <string name="call_main">Main</string>
+   <string name="call_other_fax">แฟกซ์</string>
+   <string name="email_other">อีเมล</string>
+   <string name="email">อีเมล</string>
+   <!-- add for vcard -->
+    <string name="invalid_contact_message" msgid="8215051456181842274">"ไม่มีรายชื่อติดต่อนี?</string>
+
+    <string name="menu_sim_sms">SMS SIM</string>  
+    <!-- Cell broadcast SMS strings -->  
+    <!-- Import/Export mms/sms from/to sdcard-->  
+    <string name="pref_title_io_settings">นำเข้า/ส่งออก SMS</string>  
+    <string name="pref_summary_import_msg">นำเข้า SMS จาก SD การ์ด</string>  
+    <string name="pref_title_import_msg">นำเข้า SMS</string>  
+    <string name="pref_summary_export_msg">ส่งออก SMS ไป SD การ์ด</string>  
+    <string name="pref_title_export_msg">ส่งออก SMS</string>  
+    <string name="no_sd_card">SD การ์ดไม่พร้อม</string>  
+    <string name="export_message_ongoing">ส่งออก SMS ไป SD การ์ด, โปรดรอ...</string>  
+    <string name="import_message_ongoing">นำเข้า SMS จาก SD การ์ด, โปรดรอ...</string>  
+    <string name="export_message_success">ส่งออก SMS ไป SD การ์ดสำเร็จ</string>  
+    <string name="import_message_success">นำเข้า SMS จาก SD การ์ดสำเร็จ</string>  
+    <string name="import_message_fail">นำเข้า SMS จาก SD การ์ดล้มเหลว</string>  
+    <string name="export_message_fail">ส่งออก SMS ไป SD การ์ดล้มเหลว</string>  
+    <string name="import_message_list">รายการ SMS DB ใน SD การ์ด</string>  
+    <string name="import_message_list_empty">ไม่มีไฟล์ SMS DB ใน SD การ์ด</string>  
+    <string name="export_message_empty">ไม่มี SMS ที่จะส่งออก!</string>  
+    <string name="whether_export_item">คุณต้องการส่งออก SMS หรือไม่?</string>  
+    <string name="whether_import_item">คุณต้องการนำเข้าหรือไม่</string>  
+    <string name="export_disk_problem">SD การ์ดเต็ม หรือไม่สามารถเขียน</string> 
+    <string name="forward_byself">"ฉัน"</string>
+    <string name="call_video_call">สายวิดีโอ</string>
+    <string name="error_add_attachment">"ความผิดพลาดที่ไม่ทราบ ไม่สามารถเพิ่ม<xliff:g id="name">%1$s</xliff:g> ลงในข้อความของคุณได้"</string>
+    <plurals name="message_view_selected_message_count"> 
+        <item quantity="one"><xliff:g id="message_count" example="1">%d</xliff:g> ข้อความถูกเลือก</item>  
+        <item quantity="other"><xliff:g id="message_count" example="9">%d</xliff:g> ข้อความถูกเลือก</item> 
+    </plurals>
+
+    <string name="by_card">โดย:</string>  
+    <string name="page">หน้า %d</string>  
+    <string name="space_not_enough">เนื้อที่เก็บข้อมูลที่ยังเหลือไม่เพียงพอในการจับภาพวิดีโอ</string>  
+    <string name="no_messages">"ไม่มีข้อความ"</string>  
+    <string name="storage_dialog_mms_size">ขนาด MMS:\u0020</string>
+    <string name="space_not_enough_for_audio">เนื้อที่เก็บข้อมูลที่ยังเหลือไม่เพียงพอในการบันทึกเสียง</string> 
+    <string name="sync_mms_to_db">กำลังโหลด...</string>
+    <string name="finish">"เสร็จสิ้น"</string>
+    <string name="pref_title_long_press_operation_guide">คำแนะนำการใช้งานแบบกดแช่ไว้</string>  
+    <string name="pref_title_watch_animation">ดูอนิเมชั่น</string>  
+    <string name="long_press_conversationlist_title">ลบข้อความ</string>  
+    <string name="long_press_conversationlist_content">กดแช่ไว้เพื่อลบข้อความ</string>  
+    <string name="long_press_composer_content">กดแช่ไว้เพื่อดูตัวเลือกเพิ่มเติม</string>  
+    <string name="OK">ตกลง</string> 
+     <string name="menu_show_icc_sms_capacity">ดูความจุ</string>  
+    <string name="show_icc_sms_capacity_title">ความจุ</string>  
+    <string name="icc_sms_used">ใช้แล้ว:</string> 
+    <string name="select_text">เลือกข้อความ</string>
+    <string name="icc_sms_total">ทั้งหมด:</string>  
+    <string name="get_icc_sms_capacity_failed">ไม่สามารถรับข้อมูลความจุของซิมได้</string>  
+    <string name="menu_reply">"ตอบกลับ"</string>
+    <string name="failed_to_add_image">ข้อความมีขนาดถึงขีดจำกัดแล้ว บางส่วนจะไม่ถูกเพิ่ม</string>
+    <string name="ipmsg_conversation_list_all">ข้อความ</string>  
+    <string name="ipmsg_conversation_list_important">สำคัญ</string>  
+    <string name="ipmsg_conversation_list_group_chats">การสนทนาเป็นกลุ่ม</string>  
+    <string name="ipmsg_conversation_list_spam">สแปม</string>  
+    <string name="ipmsg_create_group_chat">สร้างการสนทนาเป็นกลุ่ม</string>  
+    <string name="ipmsg_send_invitation">ส่งคำเชิญ</string>  
+    <string name="str_ipmsg_download_history_dlg">กำลังดาวน์โหลด...</string>  
+    <string name="to_hint_ipmsg">"พิมพ์ชื่อหรือหมายเลขของบุคคล"</string>  
+    <string name="type_to_compose_text_enter_to_send_ipmsg">"พิมพ์ข้อความ SMS/iSMS"</string>  
+    <string name="ipmsg_ipmsg_hint">"พิมพ์ข้อความ iSMS"</string>  
+    <string name="ipmsg_sms_hint">"พิมพ์ข้อความตัวอักษร"</string>  
+    <string name="ipmsg_caption_hint">"พิมพ์คำบรรยาย"</string>  
+    <string name="ipmsg_cancel">"ยกเลิก"</string>  
+    <string name="ipmsg_invite_chat_frequently"><b>สนทนากับ %s บ่อย ๆ หรือไม่</b>\nทำไมไม่เชิญ %s ให้ใช้ iSMS เพื่อประหยัดเงินของคุณทั้งคู่</string>  
+    <string name="ipmsg_enable_chat_frequently"><b>%s กำลังใช้ iSMS!</b>\nทำไมไม่เปิดใช้บริการ iSMS ของคุณ และประหยัดเงินของคุณทั้งคู่</string>  
+    <string name="ipmsg_invite">"เชิญ"</string>  
+    <string name="ipmsg_dismiss">"ยกเลิก"</string>  
+    <string name="ipmsg_enable">"ใช้งาน"</string>  
+    <string name="ipmsg_enable_notice">ต้องการเปิดใช้บริการiSMS หรือไม่</string>  
+    <string name="ipmsg_activate">เปิดทำงาน</string>  
+    <string name="ipmsg_activate_chat_frequently"><b>สนทนากับเพื่อน ๆ บ่อย ๆ หรือไม่</b>\nทำไมไม่เปิดบริการ iSMS เพื่อสนทนาโดยไม่เสียอัตราค่าบริการ SMS </string>  
+    <string name="ipmsg_activate_note">ต้องการเปิดใช้ iSMS หรือไม่</string>  
+    <string name="ipmsg_dismiss_content">ต้องการยกเลิกบันทึกหรือไม่</string>  
+    <string name="ipmsg_send_exception">ส่งข้อผิดพลาด</string>  
+    <string name="ipmsg_ipmsg">ข้อความ IP</string>  
+    <string name="ipmsg_dailog_multi_forward">ส่งต่อข้อความ</string>  
+    <string name="ipmsg_dialog_send_result">ส่งผลลัพธ์</string>  
+    <string name="ipmsg_dlg_send_all">ทั้งหมด: %s</string>  
+    <string name="ipmsg_dlg_send_sucess">ส่งแล้ว: %s</string>  
+    <string name="ipmsg_dlg_send_failed">ไม่สำเร็จ: %s</string>  
+    <string name="multi_forward_sim_info">การรับข้อมูลซิม</string>  
+    <string name="ipmsg_multi_forward_no_sim">ไม่มีข้อมูลซิม</string>  
+    <string name="ipmsg_divider_online">%s กำลังออนไลน์</string>  
+    <string name="ipmsg_divider_offline">ออนไลน์ครั้งสุดท้ายเมื่อเวลา %s</string>  
+    <string name="ipmsg_divider_never_online">ไม่เคยออนไลน์</string>  
+    <string name="ipmsg_vcard_file_name">%s รายชื่อ</string>  
+    <string name="ipmsg_getsim_failed">รับข้อมูลซิมไม่สำเร็จ</string>  
+    <string name="ipmsg_sim_status_error">สถานะซิมผิดพลาด</string>  
+    <string name="ipmsg_forward_failed">การส่งต่อไม่สำเร็จ</string>  
+    <string name="ipmsg_forward_norecipients">ไม่มีผู้รับสำหรับข้อความที่กำลังส่งต่อ</string>  
+    <string name="ipmsg_multiforward_no_message">ไม่มีข้อความที่สามารถส่งต่อได้</string>  
+    <string name="ipmsg_need_input_recipients">โปรดระบุผู้รับอย่างน้อยหนึ่งคนก่อน</string>  
+    <string name="str_ipmsg_unread_format">มี %1$d ข้อความที่ยังไม่ได้อ่าน</string>  
+    <string name="str_ipmsg_not_delivered_title">ยังไม่ได้ส่ง</string>  
+    <string name="str_ipmsg_failed_title">ล้มเหลว</string>  
+    <string name="str_ipmsg_cant_share">SDการ์ดไม่พร้อมใช้งาน แชร์\ข้อความมีเดียไม่ได้</string>  
+    <string name="str_ipmsg_file_limit">ใหญ่เกินไป</string>  
+    <string name="str_ipmsg_no_app">"ไม่มีแอปพลิเคชันใดทำงานนี้ได้"</string>  
+    <string name="str_ipmsg_today">วันนี้</string>  
+    <string name="str_ipmsg_yesterday">"เมื่อวาน"</string>  
+    <string name="ip_message_typing_text">กำลังพิมพ์</string>  
+    <string name="ipmsg_try_again">"ลองใหม่อีกครั้ง"</string>  
+    <string name="ipmsg_try_all_again">พยายามทั้งหมดอีกครั้ง</string>  
+    <string name="ipmsg_resend_via_sms">ส่งผ่าน SMS</string>  
+    <string name="ipmsg_resend_via_mms">ส่งผ่าน MMS</string>  
+    <string name="str_ipmsg_no_such_file">ไม่มีไฟล์เช่นนั้น</string>  
+    <string name="str_ipmsg_over_file_limit">ขนาดไฟล์เกินขีดจำกัด</string>  
+    <string name="str_ipmsg_invalid_file_type">ไม่รองรับชนิดนี้</string>  
+    <string name="invite_friends_to_ipmsg">เชิญเพื่อน ๆ ให้ใช้ iSMS</string>  
+    <string name="invite_friends_to_chat">เชิญเพื่อน ๆ ให้สนทนา</string>  
+    <string name="invite_friends_to_ipmsg_dialog_msg">ในการส่งคำเชิญ ข้อความที่คุณกำลังเขียนจะถูกละทิ้ง</string>  
+    <string name="invite_friends_to_ipmsg_content">สวัสดี, iSMS เป็นเครื่องมือการสนทนาที่เจ๋งจริง ๆ ฟรีและใช้สะดวก ดูข้อมูลเพิ่มเติมที่ http://isms.hissage.com</string>  
+    <string name="export">"ส่งออก"</string>  
+    <string name="mark_as_spam">ทำเครื่องหมายเป็นสแปม</string>  
+    <string name="mark_as_spam_tips">ข้อความที่ทำเครื่องหมายเป็นสแปมจะถูกย้ายไปยังรายการสแปม และจะปิดการแจ้งเตือนโดยอัตโนมัติ</string>  
+    <string name="remove_frome_spam">ลบออกจากสแปม</string>  
+    <string name="add_shortcut">เพิ่มทางลัด</string>  
+    <string name="view_all_media">ดูมีเดียทั้งหมด</string>  
+    <string name="view_all_location">ดูที่ตั้งทั้งหมด</string>  
+    <string name="ipmsg_export_to_sdcard">ส่งออกไปยัง SD การ์ด</string>  
+    <string name="ipmsg_copy">"คัดลอก"</string>  
+    <string name="ipmsg_send_via_text_msg">ส่งผ่านข้อความตัวอักษร</string>  
+    <string name="ipmsg_send_via_mms">ส่งผ่านข้อความมัลติมีเดีย</string>  
+    <string name="ipmsg_retry">ลองใหม่</string>  
+    <string name="ipmsg_delete">"ลบ"</string>  
+    <string name="ipmsg_share">"�แบ่งปั?</string>  
+    <string name="ipmsg_mark_as_important">ทำเครื่องหมายว่าสำคัญ</string>  
+    <string name="ipmsg_remove_from_important">ลบออกจากรายการสำคัญ</string>  
+    <string name="str_ipmsg_save_file">ไฟล์ถูกบันทึกไปยัง %1$s</string>  
+    <string name="continue_str">ทำต่อ</string>  
+    <string name="convert_to_mms">เปลี่ยนเป็น MMS</string>  
+    <string name="convert_to_sms">เปลี่ยนเป็น SMS</string>  
+    <string name="ipmsg_convert_to_ipmsg">เปลี่ยนเป็น iSMS</string>
+    <string name="ip_message_convert_to_mms_message_for_service">ไม่มีบริการ iSMS ในซิมการ์ดที่เลือกนี้ สามารถส่งข้อความผ่าน MMS ในซิมการ์ดนี้ได้เท่านั้น ต้องการทำต่อหรือไม่</string>  
+    <string name="ip_message_convert_to_sms_message_for_service">ไม่มีบริการ iSMS ในซิมการ์ดที่เลือกนี้ สามารถส่งข้อความผ่าน SMS ในซิมการ์ดนี้ได้เท่านั้น ต้องการทำต่อหรือไม่</string>  
+    <string name="ip_message_convert_to_mms_message_for_recipients">ผู้รับไม่ใช่ผู้ใช้ iSMS สามารถส่งข้อความนี้ผ่าน MMS ได้เท่านั้น ต้องการทำต่อหรือไม่</string>  
+    <string name="ip_message_convert_to_sms_message_for_recipients">ผู้รับไม่ใช่ผู้ใช้ iSMS สามารถส่งข้อความนี้ผ่าน SMS ได้เท่านั้น ต้องการทำต่อหรือไม่</string>  
+    <string name="ipmsg_sms_convert_to_ipmsg">มีบริการ iSMS ในซิมการ์ดที่เลือกนี้ เพื่อประหยัดอัตราค่าบริการ SMS แนะนำให้สลับข้อความนี้ไปยัง iSMS สลับเดี๋ยวนี้หรือไม่</string>
+    <string name="ipmsg_mms_convert_to_ipmsg">มีบริการ iSMS ในซิมการ์ดที่เลือกนี้ เพื่อประหยัดอัตราค่าบริการ MMS แนะนำให้สลับข้อความนี้ไปยัง iSMS สลับเดี๋ยวนี้หรือไม่</string>
+    <string name="keep_mms">เก็บ MMS</string>  
+    <string name="keep_sms">เก็บ SMS</string>  
+    <string name="switch_ipmsg">สลับ</string>  
+    <string name="ip_message_load_all_message">โหลดข้อความทั้งหมด</string>  
+    <string name="pref_title_display_preference_settings">หน้าจอ &amp; การกำหนด</string>  
+    <string name="pref_chat_wallpaper">วอลล์เปเปอร์การสนทนา</string>  
+    <string name="pref_auto_rotation">การหมุนอัตโนมัติ</string>  
+    <string name="pref_show_email_address">แสดงที่อยู่อีเมล</string>  
+    <string name="pref_summary_show_email_address">รวมที่อยู่อีเมลไว้ในผลของรายการติดต่อ</string>  
+    <string name="pref_title_backup_restore_settings">สำรองข้อมูล &amp; กู้ข้อมูล</string>  
+    <string name="pref_backage_message">ข้อความการสำรองข้อมูล</string>  
+    <string name="pref_summary_backup_message">การสำรองข้อมูลสุดท้าย:ไม่เลย</string>  
+    <string name="pref_restore_message">กู้ข้อความ</string>  
+    <string name="pref_summary_restore_message">กู้ข้อความที่สำรองข้อมูลไว้</string>  
+    <string name="pref_mute">"ปิดเสียง"</string>  
+    <string name="pref_summary_mute">"ปิด"</string>  
+    <string name="pref_vibrate">ระบบสั่น</string>  
+    <string name="pref_summary_vibrate">สั่นเมื่อได้รับการแจ้งเตือน</string>  
+    <string name="pref_popup_notification">ป็อปอัพการแจ้งเตือน</string>  
+    <string name="pref_summary_popup_notification">แสดงป็อปอัพสำหรับการแจ้งเตือนพุช</string>  
+    <string name="pref_title_display_settings">"การแสดงผล"</string>  
+    <string name="pref_title_actions_settings">การดำเนินการ</string>  
+    <string name="pref_download_chat_history">ดาวน์โหลดประวัติการสนทนา</string>  
+    <string name="pref_summary_download_chat_history">บันทึกใน SD การ์ดในรูปแบบ zip </string>  
+    <string name="pref_email_chat_history">ประวัติการสนทนาผ่านอีเมล</string>  
+    <string name="pref_summary_email_chat_history">ประวัติการสนทนาผ่านอีเมลในรูปแบบ zip </string>  
+    <string name="pref_clear_chat_history">ล้างประวัติการสนทนา</string>  
+    <string name="pref_summary_notification_ringtone">ตั้งเสียงเรียกเข้าสำหรับการแจ้งเตือนใหม่</string>  
+    <string name="pref_setting_title">การตั้งค่าข้อความ</string>  
+    <string name="pref_setting_sms">ข้อความตัวอักษร (SMS)</string>  
+    <string name="pref_setting_mms">ข้อความมัลติมีเดีย (MMS)</string>  
+    <string name="pref_setting_notification">"การแจ้งเตือน"</string>  
+    <string name="pref_setting_general">"ผลิตภัณฑ์"</string>  
+    <string name="pref_setting_chat">การตั้งค่าการสนทนา</string>  
+    <string name="chat_setting_saving">กำลังบันทึก…</string>  
+    <string name="chat_setting_updating">กำลังอัพเดท...</string>  
+    <string name="chat_setting_sending">"กำลังส่ง..."</string>  
+    <string name="dialog_save_title">บันทึกไปยัง SD การ์ด</string>  
+    <string name="dialog_save_description">บันทึกเธรตการสนทนานี้ไปยัง SD การ์ดเป็นไฟล์ zip</string>  
+    <string name="dialog_email_title">แชร์ผ่านอีเมล</string>  
+    <string name="dialog_email_description">แชร์เธรตการสนทนานี้เป็นไฟล์แนบผ่านอีเมลในรูปแบบ zip</string>  
+    <string name="dialog_clear_title">"ล้างข้อมูล"</string>  
+    <string name="dialog_clear_description">ในห้องสนทนานี้ ประวัติการสนทนาทั้งหมดจะถูกล้าง</string>  
+    <string name="dialog_wallpaper_chooser_wallpapers">วอลล์เปเปอร์</string>  
+    <string name="dialog_wallpaper_chooser_gallery">"แกลเลอรี"</string>  
+    <string name="dialog_wallpaper_chooser_take">"ถ่ายรูป"</string>  
+    <string name="dialog_wallpaper_chooser_default">"เริ่มต้น"</string>  
+    <string name="dialog_wallpaper_title">เลือกวอลล์เปเปอร์</string>  
+    <string name="mute_one_hour">1 ชั่วโมง</string>  
+    <string name="mute_four_hours">4 ชั่วโมง</string>  
+    <string name="mute_eight_hours">8 ชั่วโมง</string>  
+    <string name="save_chat_history_failed">บันทึกล้มเหลว</string>  
+    <string name="send_chat_history_failed">อีเมลไม่สำเร็จ</string>  
+    <string name="actionbar_sms_setting">การตั้งค่า SMS</string>  
+    <string name="actionbar_mms_setting">การตั้งค่า MMS</string>  
+    <string name="actionbar_notification_setting">"การตั้งค่าการแจ้งเตือน"</string>  
+    <string name="actionbar_general_setting">การตั้งค่าทั่วไป</string>  
+    <string name="save_history_file">บันทึกเป็น</string>  
+    <string name="no_sdcard_suggestion">ไม่มี SD การ์ด</string>  
+    <string name="save_wallpaper_success">เปลี่ยนวอลล์เปเปอร์แล้ว</string>  
+    <string name="save_wallpaper_fail">เปลี่ยน\วอลล์เปเปอร์ไม่ได้</string>  
+    <string name="ip_message_delete_important">"รวมข้อความที่ทำเครื่องหมายว่าสำคัญ"</string>  
+    <string name="str_ipmsg_spam_empty">คุณไม่มี\การสนทนาที่เป็นสแปม \nสแปม จะรวบรวมการสนทนาทั้งหมดที่ทำเครื่องหมายว่าเป็นสแปม การแจ้งเตือนจะถูกตั้งให้มีค่าเริ่มต้นเป็นปิด ซึ่งทำให้คุณหลีกเลี่ยงการรบกวนที่ไม่จำเป็น \n\nคุณสามารถทำเครื่องหมายผู้ส่งเป็นสแปมได้ โดยกดการสนทนาค้างไว้ แล้วเลือกไอคอน ทำเครื่องหมายเป็นสแปม เมื่อการสนทนาถูกทำเครื่องหมายเป็นสแปม จะมีการแสดงไอคอนการปิดการแจ้งเตือนอย่างอัตโนมัติ และบทสนทนาจะถูกวางไว้ที่นี่ </string>  
+    <string name="str_ipmsg_spam_example_from">+86123456789</string>  
+    <string name="str_ipmsg_spam_example_subject">นี่คือตัวอย่างของข้อความสแปม</string>  
+    <string name="str_ipmsg_groupchat_empty">คุณไม่มี\ข้อความการสนทนาเป็นกลุ่ม \nการสนทนาเป็นกลุ่ม จะรวบรวมข้อความการสนทนาเป็นกลุ่มทั้งหมด ที่คุณได้สร้างหรือรวมไว้ ซึ่งทำให้คุณสามารถค้นหาและจัดการการสนทนาเป็นกลุ่มได้อย่างง่ายดาย \n\nในการสร้างการสนทนาเป็นกลุ่ม ให้คุณแตะที่ปุ่ม สร้างการสนทนาเป็นกลุ่ม ที่ด้านล่างหน้าจอนี้ และเชิญเพื่อน ๆ ให้เข้าร่วมกลุ่ม</string>  
+    <string name="str_ipmsg_group_example_from">"ชื่อกลุ่ม"</string>  
+    <string name="str_ipmsg_group_example_subject">เพื่อนของคุณ:\nฉันชอบฟีเจอร์การสนทนาเป็นกลุ่ม!</string>  
+    <string name="str_ipmsg_important_empty">คุณไม่มี\ข้อความที่สำคัญ \nสำคัญ จะรวบรวมข้อความทั้งหมดที่ถูกทำเครื่องหมายว่าสำคัญ ซึ่งทำให้คุณสามารถค้นหาข้อความที่สำคัญได้อย่างง่ายดาย \n\nคุณสามารถทำเครื่องหมายข้อความว่าสำคัญได้โดยการกดข้อความค้างไว้ แล้วเลือก ทำเครื่องหมายว่าสำคัญ จากเมนูตัวเลือก เมื่อข้อความถูกทำเครื่องหมายว่าสำคัญ คุณจะเห็นไอคอนรูปธงสีแดงเช่นด้านล่าง</string>  
+    <string name="str_ipmsg_important_example_title">นี่คือตัวอย่างข้อความที่ถูกทำเครื่องหมายว่าสำคัญ ธงสีแดงจะปรากฏขึ้น</string>  
+    <string name="str_ipmsg_important_example_time">10:55 น.</string>  
+    <string name="str_ipmsg_allchat_empty">"ไม่มีการสนทนา"</string>  
+    <string name="str_ipmsg_empty_activate_content">เพื่อที่จะใช้ฟีเจอร์นี้ คุณต้องเปิดใช้บริการ iSMS ก่อน ไม่ต้อง\กังวลถ้าคุณไม่\ชอบบริการ คุณสามารถปิดการใช้งานได้ในการตั้งค่าเสมอ ลองดูเดี๋ยวนี้!</string>  
+    <string name="str_ipmsg_empty_activate_title">เปิดใช้ iSMS</string>  
+    <string name="str_ipmsg_service_title">ศูนย์บริการ iSMS</string>  
+    <string name="str_ipmsg_introduction">เมื่อใช้ iSMS คุณสามารถส่งข้อความฟรีได้อย่างทันที และเก็บประวัติการสนทนาของคุณไว้ในที่เดียวได้ กดปุ่มเพื่อสัมผัสประสบการณ์ใหม่!</string>  
+    <string name="time_now">ชื่อศิลปินที่ไม่รู้จัก</string>  
+    <string name="str_ipmsg_active">เปิดใช้ iSMS</string>  
+    <string name="str_ipmsg_welcome_active">ยินดีต้อนรับสู่ iSMS</string>  
+    <string name="str_ipmsg_term_warn_welcome">บริการ iSMS ทำให้คุณสามารถสนทนาและแชร์ไลฟ์มัลติมีเดียกับเพื่อน ๆ ได้ทุกเวลาทุกสถานที่ ผ่าน WIFI หรือากรเชื่อมต่อข้อมูล\n\nเพียง 3 ขั้นตอนเพื่อทำการเปิดใช้งานให้เสร็จสมบูรณ์!\n\n ข้อกำหนดและเงื่อนไข\n</string>  
+    <string name="str_ipmsg_term_warn_activate">ฟีเจอร์นี้สนับสนุนโดยบริการ iSMS เท่านั้น\n\nบริการ iSMS ทำให้คุณสามารถสนทนาและแชร์มัลติมีเดียกับเพื่อน ๆ ได้ทุกเวลาทุกสถานที่ ผ่าน WIFI หรือการเชื่อมต่อข้อมูล\n\n ข้อกำหนดและเงื่อนไข</string>  
+    <string name="str_ipmsg_term_key">ข้อกำหนดและเงื่อนไข</string>  
+    <string name="str_ipmsg_agree_and_continue">ตกลงและทำต่อ</string>  
+    <string name="no_sim_card">ไม่มีซิมการ์ด!</string>  
+    <string name="ip_message_activate_title">เปิดใช้ iSMS</string>  
+    <string name="ip_message_current_sim_enabled">เปิดใช้งานซิมการ์ดปัจจุบันแล้ว</string>  
+    <string name="sim_selected_dialog_title_for_activate">เลือกซิมเพื่อเปิดใช้ iSMS</string>  
+    <string name="ip_message_activate_message">ฟีเจอร์นี้สนับสนุนโดยบริการ iSMS เท่านั้น ต้องการเปิดใช้บัญชี iSMS ของคุณเดี๋ยวนี้หรือไม่</string>  
+    <string name="typing">"กำลังพิมพ์..."</string>  
+    <string name="ip_message_enable_title">เปิดใช้ iSMS</string>  
+    <string name="ip_message_enable_message">ฟีเจอร์นี้สนับสนุนโดยบริการ iSMS เท่านั้นเปิดใช้งานบัญชี iSMS ของคุณขณะนี้หรือไม่</string>  
+    <string name="sim_selected_dialog_title_for_enable">เลือกซิมเพื่อเปิดใช้งาน iSMS</string>  
+    <string name="ip_message_switch_sim_title">สลับซิม</string>  
+    <string name="ip_message_switch_sim_message">ซิมปัจจุบันไม่สนับสนุน iSMS ต้องการสลับเป็นซิมอื่นหรือไม่</string>  
+    <string name="ip_message_switch_sim_button">สลับ</string>  
+    <string name="ip_message_switch_sim_successfully">สลับซิมสำเร็จแล้ว!</string>  
+    <string name="close">ปิดแชนเนล</string>  
+    <string name="nointernet">"ไม่พบการเชื่อมต่ออินเตอร์เน็ตที่ทำงาน! โปรดลองอีกครั้งภายหลัง"</string>  
+    <plurals name="deleted_conversations"> 
+        <item quantity="one">หนึ่งบทสนทนาถูกลบออกแล้ว</item>  
+        <item quantity="other"><xliff:g id="number" example="15">%1$s</xliff:g> บทสนทนาถูกลบออกแล้ว</item> 
+    </plurals> 
+<string name="more_recipients">ผู้รับ</string>
+    <string name="set_service_center_OK">ตั้งศูนย์บริการ SMS OK</string>
+    <string name="set_service_center_fail">ตั้งศุนย์บริการ SMS ล้มเหลว</string>
+    <string name="Cancel">"ยกเลิก"</string>
+    <string name="sms_validity_period">ช่วงที่ SMS ใช้ได้</string>
+    <string name="sms_validity_period_nosetting">ไม่ได้ตั้ง</string>
+    <string name="sms_validity_period_1hour">1 ชั่วโมง</string>
+    <string name="sms_validity_period_6hours">6 ชั่วโมง</string>
+    <string name="sms_validity_period_12hours">12 ชั่วโมง</string>
+    <string name="sms_validity_period_1day">1 วัน</string>
+    <string name="sms_validity_period_max">สูงสุด</string>
+    <string name="cu_subject">หัวข้อ Lemei</string>
+    <string name="menu_omacp">ข้อความการกำหนดค่า</string>
+    <string name="pref_title_storage_status">การใช้ที่บันทึกข้อมูลปัจจุบัน</string>
+    <string name="storage_dialog_mms"> Mms:\u0020 <xliff:g id="number">%s</xliff:g> รายการ </string>
+    <string name="storage_dialog_sms"> Sms:\u0020 <xliff:g id="number">%s</xliff:g> รายการ </string>
+    <string name="storage_dialog_attachments">ไฟล์แนบ Mms:\u0020</string>
+    <string name="storage_dialog_database">ฐานข้อมูล:\u0020</string>
+    <string name="storage_dialog_available_space">ที่ว่างที่พร้อมใช้งาน:\u0020</string>
+    <string name="exceed_subject_length_limitation">ถึงความยาวสูงสุด</string>
+    <string name="disable_notifications_dialog_message" msgid="7644011234972074096">"ต้องการหยุดการแจ้งเตือนข้อความที่ซ้ำกันจากแอปพลิเคชันการรับส่งข้อความเริ่มต้นหรือไม่"</string>
+    <string name="forward_from">ส่งต่อจาก:</string>
+    <string name="sms_forward_setting">การตั้งค่าการส่งต่อ SMS</string>
+    <string name="sms_forward_setting_summary">ส่งต่อ SMS พร้อม\ชือ่และเลขหมายผู้ส่ง</string>
+    <string name="file_attachment_vcalendar_name"> vCalendar( <xliff:g id="text">%s</xliff:g> ) </string>
+    <string name="inbox">"กล่องจดหมาย"</string>
+    <string name="outbox">"กล่องจดหมายออก"</string>
+    <string name="draftbox">กล่องร่าง</string>
+    <string name="sentbox">กล่องส่ง</string>
+    <string name="simbox">กล่องซิม</string>
+    <string name="changeview">เปลี่ยนโหมด</string>
+    <string name="viewer_title_sms">"SMS"</string>
+    <string name="viewer_title_wappush">แว็ปพุช</string>
+    <string name="slideshow_details">รายละเอียดข้อความ</string>
+    <string name="open">"เปิด"</string>
+    <string name="delete_all_confirm">"ลบข้อความทั้งหมดในกล่องหรือไม่"</string>
+    <string name="folder_recipient">ผู้รับ :</string>
+    <string name="folder_recieve_date">วันที่ :</string>
+    <string name="folder_download">กำลังดาวน์โหลด mms</string>
+    <string name="confirm_download_message">"ยืนยันการดาวน์โหลดข้อความ"</string>
+    <string name="play_as_slideshow">เล่น MMS เป็นสไลด์โชว์</string>
+    <string name="no_application_response">"ไม่มีแอพที่จะดำเนินการคำขอ"</string>
+    <string name="cdma_not_support">CDMA ไม่\รองรับฟีเจอร์นี้</string>
+    <string name="allmessage">"ข้อมูลเซิร์ฟเวอร์เสียหาย จะมีการซิงโครไนซ์ทุกข้อความอีกครั้ง"</string>
+    <string name="select_message">เลือกข้อความ</string>
+    <string name="confirm_delete_allmessage">"ข้อความจะถูกลบทั้งหมด"</string>
+    <string name="mark_as_read_btn_str">ทำเครื่องหมายว่าอ่านแล้ว</string>
+    <string name="delete_btn_str">ลบ</string>
+    <string name="reply_send">"ส่ง"</string>
+    <string name="via_test">โทรผ่าน SIM1</string>
+    <string name="received_header">"รับแล้ว:"</string>
+    <string name="no_item_selected">ยังไม่ได้เลือกรายการ</string>
+    <string name="pref_title_font_size_setting">การตั้งค่าขนาดแบบอักษร</string>
+    <string name="pref_title_message_font_size">ขนาดแบบอักษรของข้อความ</string>
+    <string name="pref_summary_message_font_size">ขนาดแบบอักษรของข้อความ</string>
+    <string name="message_font_size_dialog_title">ขนาดแบบอักษรของข้อความ</string>
+    <string name="message_font_size_dialog_cancel">ยกเลิก</string>
+    <string name="change">เปลี่ยน</string>
+    <string name="ipmsg_accept">"ยอมรับ"</string>
+    <string name="sum_search_networks">"ค้นหาเครือข่ายทั้งหมดที่ใช้ได้"</string>
+    <string name="ipmsg_resend">ส่งอีกครั้ง</string>
+    <string name="viewer_title_cb">ถ่ายทอดเซลล์</string>
+    <string name="change_default_disk">หน่วยความจำในโทรศัพท์มีเนื้อที่ไม่เพียงพอ โปรดลบเนื้อที่เก็บข้อมูลบางส่วนหรือเปลี่ยน "ดิสก์การเขียนเริ่มต้น" ในการตั้งค่า</string>
+    <string name="ipmsg_reject">"ยกเลิก"</string>
+    <string name="discard_mms_title">ละทิ้ง MMS</string>
+    <string name="discard_mms_content">MMS ทั้งหมดในข้อความแบบส่งต่อหลายครั้งของคุณจะถูกละทิ้ง</string>
+    <string name="toast_sms_forward">ไม่มีการส่งต่อ SMS</string>
+    <string name="dialog_continue">ทำต่อ</string>
+    <string name="sms_size_limit">ถึงขนาดที่จำกัด</string>
+    <string name="dialog_sms_limit">ถึงขนาดที่จำกัดของข้อความแล้ว ข้อความที่ยาวเกินไปจะถูกละทิ้ง</string>
+    <string name="str_ipmsg_replace_attach">แทนที่ไฟล์แนบ</string>
+    <string name="str_ipmsg_replace_attach_msg">มีไฟล์แนบอยู่แล้ว ให้แทนที่หรือไม่</string>
+    <string name="ipmsg_err_file">เปิดไฟล์ไม่สำเร็จ</string>
+    <string name="forward_tips_title">"ละทิ้งการแจ้งเตือน MMS"</string>
+    <string name="forward_tips_body">"การแจ้งเตือน MMS ไม่สนับสนุนการส่งต่อ และจะถูกละทิ้ง"</string>
+    <string name="ipmsg_resend_discard_message">เพื่อที่จะส่งข้อความอีกครั้ง ข้อความที่คุณกำลังเขียนอยู่จะถูกละทิ้ง</string>
+    <string name="type_to_quick_text">"พิมพ์ข้อความด่วน"</string>
+    <string name="menu_wappush">"ข้อความแว็ปพุช"</string>
+    <string name="visit_website">"เยี่ยมชมเว็บไซต์"</string>
+    <string name="meet_emoticon_limit">ถึงขีดจำกัดของอิโมติคอน</string>
+    <string name="view_mms_notification">ไม่สามารถเรียกดูการเตือน mms ได้</string>
+    <string name="ipmsg_multi_forward_tips_content">เพื่อที่จะทำการส่งต่อหลายครั้ง ต้องดาวน์โหลด iSMS บางข้อความก่อน </string>
+    <string name="multi_forward_failed_all">การดาวน์โหลดล้มเหลว ละทิ้งการส่งต่อหลายครั้ง</string>
+    <string name="ipmsg_multi_forward_failed_part">การส่งต่อ iSMS บางข้อความล้มเหลว</string>
+    <string name="confirm_delete_allwappush">"ข้อความ WAP พุชทั้งหมดจะถูกลบ"</string>
+    <string name="confirm_delete_selected_wappush">"ข้อความ WAP พุชที่เลือกจะถูกลบ"</string>
+    <string name="menu_delete_allwappush">ลบทั้งหมด</string>
+    <string name="duplicated_recipient">ผู้รับซ้ำ</string>
+
+<string name="ok">"ตกลง"</string>
+    <string name="cancel">"ยกเลิก"</string>
+    <string name="enable">"ใช้งาน"</string>
+    <string name="disable">"ปิดการใช้งาน"</string>
+    <string name="cell_broadcast_setting">การตั้งค่าการเผยแพร่ผ่านเซลล์</string>
+    <string name="cb_menu_language">"ภาษา"</string>
+    <string name="cb_menu_add_channel">เพิ่มแชนเนล</string>
+    <string name="cb_menu_channel_list">รายการแชนเนล</string>
+    <string name="cb_dialog_title_language_choice">เลือกภาษา</string>
+    <string name="cb_channel_dialog_channel_name">ชื่อแชนเนล</string>
+    <string name="cb_channel_dialog_channel_number">หมายเลขแชนเนล (0-65534)</string>
+    <string name="cb_channel_dialog_channel_state">เปิดทำงานแชนเนล</string>
+    <string name="cb_channel_dialog_edit_channel">แก้ไขแชนเนล</string>
+    <string name="cb_menu_edit">"แก้ไข"</string>
+    <string name="cb_menu_delete">"ลบ"</string>
+    <string name="cb_error_channel_num">โปรดป้อนหมายเลขแชนเนล (0-65534)</string>
+    <string name="cb_error_channel_name">ความยาวของชื่อแชนเนลไม่ถูกต้อง (1-10 ตัวอักษร)</string>
+    <string name="cb_error_language_select">โปรดเลือกอย่างน้อยหนึ่งภาษา</string>
+    <string name="cb_error_channel_id_exist">ID แชนเนลมีอยู่แล้ว</string>
+    <string name="cb_all_languages">ทุกภาษา</string>
+    <string name="cb_default_new_channel_name">แชนเนลใหม่</string>
+    <string name="sum_cell_broadcast_control_on">เปิดทำงานการเผยแพร่ผ่านเซลล์</string>
+    <string name="sum_cell_broadcast_control_off">ปิดทำงานการเผยแพร่ผ่านเซลล์</string>
+    <string name="sum_cell_broadcast_setting">การตั้งค่าภาษาและแชนเนลสำหรับการเผยแพร่ผ่านเซลล์</string>
+    <string name="close_dialog">ตกลง</string>
+    <string name="updating_title">"การตั้งค่าการโทร"</string>
+    <string name="error_updating_title">"ข้อผิดพลาดในการตั้งค่าการโทร"</string>
+    <string name="reading_settings">"กำลังอ่านการตั้งค่า…"</string>
+    <string name="updating_settings">"กำลังอัปเดตการตั้งค่า..."</string>
+    <string name="reverting_settings">"กำลังย้อนกลับการตั้งค่า…"</string>
+    <string name="exception_error">"ข้อผิดพลาดของเครือข่ายหรือซิมการ์ด"</string>
+    <string name="no_sim">ไม่ได้เสียบ SIM %d</string>
+    <string name="sms_not_ready">โมดูล SMS กำลังตั้งค่าเริ่มต้น โปรดรอ...</string>
+    <string name="label_full_name">ชื่อ</string>
+    <string name="label_phone">โทรศัพท์</string>
+    <string name="label_email">"อีเมล"</string>
+    <string name="label_postal">"ที่อยู่"</string>
+    <string name="label_organization">"องค์กร"</string>
+    <string name="label_im">"IM"</string>
+    <string name="label_website">เว็บไซต์</string>
+    <string name="label_sip_address">"การโทรทางอินเทอร์เน็ต"</string>
+    <string name="label_nick_name">"ชื่อเล่น"</string>
+    <string name="label_notes">"หมายเหตุ"</string>
+    <string name="label_event">"กิจกรรม"</string>
+    <string name="search_time_period_label">ช่วงเวลา</string>
+    <string name="done_text">"เสร็จสิ้น"</string>
+    <string-array name="language_list_values" translatable="false">
+        <item>ทุกภาษา</item>
+        <item>เยอรมัน</item>
+        <item>อังกฤษ</item>
+        <item>อิตาลี</item>
+        <item>ฝรั่งเศส</item>
+        <item>สเปน</item>
+        <item>ดัตช์</item>
+        <item>สวีเดน</item>
+        <item>เดนมาร์ก</item>
+        <item>โปรตุเกส</item>
+        <item>ฟินแลนด์</item>
+        <item>นอร์เวย์</item>
+        <item>กรีก</item>
+        <item>ตุรกี</item>
+        <item>ฮังการี</item>
+        <item>โปแลนด์</item>
+        <item>อื่น ๆ</item>
+        <item>เช็ก</item>
+        <item>ฮีบรู</item>
+        <item>อาระบิก</item>
+        <item>รัสเซีย</item>
+        <item>ไอซ์แลนด์</item>
+    </string-array>
+    <string name="add_duplicate_recipients">ผู้รับซ้ำ</string>
+
+    <!-- begin of mwi -->
+    <string name="mwi_title">ข้อความเสียง</string>
+    <string name="type_voice_msg">ข้อความเสียง</string>
+    <string name="type_video_msg">ข้อความวิดีโอ</string>
+    <string name="type_fax_msg">ข้อความแฟกซ์</string>
+    <string name="type_text_msg">"ข้อความ"</string>
+    <string name="priority_urgent">ด่วน</string>
+    <string name="date_label">วันที่:\u0020</string>
+    <string name="message_id_label">ID ข้อความ:\u0020</string>
+    <string name="voice_message_count_notification"><xliff:g id="number" example="3">%1$s</xliff:g> ข้อความเสียงใหม่</string>
+    <string name="confirm_delete_allmwi">"ข้อความเสียงทั้งหมดจะถูกลบ"</string>
+    <string name="confirm_delete_selected_mwi">"ข้อความเสียงที่เลือกจะถูกลบ"</string>
+    <!-- end of mwi -->
+
+    <string name="download_disabled_toast">ไม่สามารถดาวน์โหลด ไม่ใช่แอป SMS เริ่มต้น</string>
+    <string name="adding_wallpaper_title">กำลังจัดเก็บวอลล์เปเปอร์...</string>
+    <string name="sms_priority_setting">ลำดับความสำคัญ UIM</string>
+    <string name="sms_priority_Interactive">อินเทอร์แอกทีฟ</string>
+    <string name="sms_priority_Urgent">ด่วน</string>
+    <string name="sms_priority_Emergency">ฉุกเฉิน</string>
+    <string name="empty_sim_name">สล็อตซิม <xliff:g id="subId" example="2">%1$d</xliff:g></string>
+
+    <string name="drm_not_support">เนื้อหาที่มีการป้องกันการคัดลอกไม่ได้รับการสนับสนุนโดย MMS</string>
+    <string name="user_has_no_premission">ผู้ใช้นี้ไม่ได้รับอนุญาตให้ใช้ SMS</string>
+    <string name="wfc_no_cellular_network">ไม่มีเครือข่ายเซลลูลาร์</string>
+    <string name="wfc_connect_to_available_wifi">เชื่อมต่อไปยัง Wi-Fi ที่มีสำหรับระบบข้อความ</string>
+    <string name="wfc_notification_title">เชื่อมต่อไปยัง Wi-Fi สำหรับระบบข้อความ</string>
+    <string name="ct_om_switch_notification"><xliff:g id="op1">%s</xliff:g> จะไม่ทำงานชั่วคราว และถ้ามีค่าเริ่มต้น สาย, SMS, ข้อมูลบน <xliff:g id="op2">%s</xliff:g> จะถูกเปลี่ยนไปยัง <xliff:g id="op3">%s</xliff:g> อย่างเหมาะสม</string>
+    <string name="can_not_switch_account_during_call">ไม่สามารถสลับSIMที่เลือกใช้สำหรับSMSระหว่างการโทรได้</string>
+    <string name="can_not_switch_account_temporarily">ไม่สามารถสลับSIMที่เลือกใช้สำหรับSMSชั่วคราว</string>
+    <string name="omh_exceed_message_size_limitation">ถึงขีดจำกัดขนาดข้อความR-UIMแล้ว</string>
+    <string name="omh_failed_to_add_image">ถึงขีดจำกัดขนาดข้อความ R-UIM แล้ว โปรดลบบางส่วน</string>
+    <string name="missing_required_permission">การอนุญาตถูกปฏิเสธ คุณสามารถเปลี่ยนแปลงได้ใน การตั้งค่า &gt; แอปส์</string>
+    <string name="manage_card_msg_title">จัดการข้อความ UIM/SIM การ์ด</string>
+    <string name="manage_card_msg_summary">จัดการข้อความที่เก็บบน UIM/SIM การ์ดของคุณ</string>
+    <string name="disable_delivery_report">ไม่สามารถเปิดใช้งานในขณะโรมมิ่งได้</string>
+    <string name="fore_service_notify_title">กำลังถ่ายโอนข้อความ</string>
+    <string name="fore_service_notify_content">มีข้อความในการถ่ายโอน</string>
+    <string name="smart_req_mms_indicator">ไม่อนุญาต MMS โปรดลองอีกครั้งด้วย SMS</string>
+</resources>

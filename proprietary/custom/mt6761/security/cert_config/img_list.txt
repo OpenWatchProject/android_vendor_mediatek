@@ -1,0 +1,17 @@
+[single_bin]
+logo.bin=logo
+boot.img=boot
+recovery.img=recovery
+spmfw.img=spmfw
+sspm.img=tinysys-sspm
+dtbo.img=dtbo
+gz.img=gz
+recovery-ramdisk.img=recovery-ramdisk
+recovery-vendor.img=recovery-vendor
+
+[multi_bin]
+tee.img=atf,atf_dram,tee
+lk.img=lk,lk_main_dtb
+scp.img=tinysys-loader-CM4_A,tinysys-scp-CM4_A,tinysys-scp-CM4_A_dram
+md1img.img=md1rom,md1dsp,md1drdi
+boot_para.img=dconfig,dconfig-dt

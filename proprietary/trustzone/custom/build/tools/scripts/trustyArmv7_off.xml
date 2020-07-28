@@ -1,0 +1,27 @@
+<TeeConfig>
+  <ProjectConfig>
+    <config feature="MTK_TEE_SUPPORT" value="no" />
+    <config feature="MTK_GOOGLE_TRUSTY_SUPPORT" value="no" />
+    <config feature="MTK_ATF_SUPPORT" value="no" />
+  </ProjectConfig>
+  <TrustzoneConfig>
+    <config feature="MTK_TEE_SUPPORT" value="no" />
+    <config feature="MTK_GOOGLE_TRUSTY_SUPPORT" value="no" />
+    <config feature="MTK_ATF_SUPPORT" value="no" />
+    <config feature="MTK_TEE_DRAM_SIZE" value="delete_entry" />
+  </TrustzoneConfig>
+  <LKConfig>
+    <config feature="MTK_GOOGLE_TRUSTY_SUPPORT" value="no" />
+  </LKConfig>
+  <PreloadConfig>
+    <config feature="MTK_TEE_SUPPORT" value="no" />
+    <config feature="MTK_GOOGLE_TRUSTY_SUPPORT" value="no" />
+  </PreloadConfig>
+  <KernelConfig>
+    <config feature="CONFIG_TRUSTY" value="is not set" />
+  </KernelConfig>
+  <KernelDebugConfig>
+    <config feature="CONFIG_TRUSTY" value="is not set" />
+    <config feature="CONFIG_MT_TRUSTY_DEBUGFS" value="is not set" />
+  </KernelDebugConfig>
+</TeeConfig>

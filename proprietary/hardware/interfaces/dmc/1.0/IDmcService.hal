@@ -1,0 +1,15 @@
+package vendor.mediatek.hardware.dmc@1.0;
+
+import IDmcEventCallback;
+
+interface IDmcService {
+    createSession(dmcSessionConfig_t config) generates (dmcResult_e ret, SID sessionId);
+    closeSession(SID sessionId) generates (dmcResult_e ret);
+    registerEventCallback(SID sessionId, IDmcEventCallback callback) generates (dmcResult_e ret);
+    invokeInt(SID sessionId, dmcCommand_e command, dmcObjectId_t objectId, int32_t param) generates (dmcResult_e ret);
+    invokeString(SID sessionId, dmcCommand_e command, dmcObjectId_t objectId, string param) generates (dmcResult_e ret);
+    queryEvent(SID sessionId, dmcObjectId_t objectId) generates (dmcResult_e ret, dmcValue_t eventValue);
+    subscribe(SID sessionId, dmcObjectId_t objectId) generates (dmcResult_e ret);
+    unsubscribe(SID sessionId, dmcObjectId_t objectId) generates (dmcResult_e ret);
+    getSessionStats(SID sessionId, GID group) generates (dmcResult_e ret, dmcSessionStats_t stats);
+};

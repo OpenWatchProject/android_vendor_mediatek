@@ -1,0 +1,89 @@
+do project.cmm
+do path.cmm
+; =========================================
+; Please DO NOT modify this section - START
+; =========================================
+SYStem.Down
+system.reset
+SYSTEM.OPTION ENRESET ON
+SYStem.Option ResBreak OFF
+SYStem.Option WaitReset OFF
+SYStem.JtagClock 10.MHz
+
+SYStem.CPU CORTEXA53;
+
+;Setting Core debug register access
+SYSTEM.CONFIG CORENUMBER 8;
+SYStem.CONFIG COREBASE 0x80810000 0x80910000 0x80A10000 0x80B10000 0x80C10000 0x80D10000 0x80E10000 0x80F10000;
+SYStem.CONFIG CTIBASE  0x80820000 0x80920000 0x80A20000 0x80B20000 0x80C20000 0x80D20000 0x80E20000 0x80F20000;
+
+CORE.ASSIGN 1 2 3 4 5 6 7 8
+
+;; Parallel Interface
+System.CONFIG SWDP OFF
+
+SYStem.Up
+
+SETUP.IMASKASM	ON          ; Disbale interrupt during assembly step
+SETUP.IMASKHLL	ON          ; Disbale interrupt during C step
+
+MMU.OFF
+
+print "[INFO][MAIN] Watchdog Disabled"
+
+do wdt.cmm  ; disable hw watchdog timer
+
+Break.SELect Program OnChip ; set_hw_breakpoint_by_def   Jau add
+Break.SELect Read OnChip
+Break.SELect Write OnChip
+
+Break.Delete
+sYmbol.RESet
+
+TrOnchip.Set DABORT OFF        ; used by Linux for page miss!
+TrOnchip.Set SWI OFF
+TrOnchip.Set PABORT OFF        ; used by Linux for page miss!
+TrOnchip.Set UNDEF OFF         ; used to detect non-existent coprocessor
+
+print "[INFO][MAIN] Loading Linux Kernel Symbols ..."
+sYmbol.SourcePATH.RESet
+
+&searchKernelStr="kernel-3.18"
+&kernelCodePath="&alpsPath\&searchKernelStr"
+&vmlinuxPATH="&alpsPath/out/target/product/&project/obj/KERNEL_OBJ"
+
+Data.LOAD.Elf &vmlinuxPATH/vmlinux /gnu /nocode /StripPART "&searchKernelStr" /PATH "&kernelCodePath"
+
+task.config Linux
+;menu.reprogram Linux
+menu.reprogram watchdog
+
+B::
+TOOLBAR ON
+STTUSBAR ON
+;WINPAGE.RESET
+
+WINPOS 0.125 0.125 100. 30. 13. 1. W000
+WINTABS 16. 10. 25. 62.
+;WINPAGE.SELECT P000
+
+
+Break.Delete
+;B.set start_kernel
+
+d.l
+go
+
+while ISRUN()
+(
+)
+
+on pbreak gosub
+(
+	do wdt.cmm
+	print "Watchdog disabled"
+
+)
+
+stop
+end

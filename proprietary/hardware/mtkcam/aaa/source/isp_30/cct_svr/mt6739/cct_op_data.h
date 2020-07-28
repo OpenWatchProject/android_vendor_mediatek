@@ -1,0 +1,308 @@
+/* Copyright Statement:
+ *
+ * This software/firmware and related documentation ("MediaTek Software") are
+ * protected under relevant copyright laws. The information contained herein is
+ * confidential and proprietary to MediaTek Inc. and/or its licensors. Without
+ * the prior written permission of MediaTek inc. and/or its licensors, any
+ * reproduction, modification, use or disclosure of MediaTek Software, and
+ * information contained herein, in whole or in part, shall be strictly
+ * prohibited.
+ *
+ * MediaTek Inc. (C) 2010. All rights reserved.
+ *
+ * BY OPENING THIS FILE, RECEIVER HEREBY UNEQUIVOCALLY ACKNOWLEDGES AND AGREES
+ * THAT THE SOFTWARE/FIRMWARE AND ITS DOCUMENTATIONS ("MEDIATEK SOFTWARE")
+ * RECEIVED FROM MEDIATEK AND/OR ITS REPRESENTATIVES ARE PROVIDED TO RECEIVER
+ * ON AN "AS-IS" BASIS ONLY. MEDIATEK EXPRESSLY DISCLAIMS ANY AND ALL
+ * WARRANTIES, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED
+ * WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE OR
+ * NONINFRINGEMENT. NEITHER DOES MEDIATEK PROVIDE ANY WARRANTY WHATSOEVER WITH
+ * RESPECT TO THE SOFTWARE OF ANY THIRD PARTY WHICH MAY BE USED BY,
+ * INCORPORATED IN, OR SUPPLIED WITH THE MEDIATEK SOFTWARE, AND RECEIVER AGREES
+ * TO LOOK ONLY TO SUCH THIRD PARTY FOR ANY WARRANTY CLAIM RELATING THERETO.
+ * RECEIVER EXPRESSLY ACKNOWLEDGES THAT IT IS RECEIVER'S SOLE RESPONSIBILITY TO
+ * OBTAIN FROM ANY THIRD PARTY ALL PROPER LICENSES CONTAINED IN MEDIATEK
+ * SOFTWARE. MEDIATEK SHALL ALSO NOT BE RESPONSIBLE FOR ANY MEDIATEK SOFTWARE
+ * RELEASES MADE TO RECEIVER'S SPECIFICATION OR TO CONFORM TO A PARTICULAR
+ * STANDARD OR OPEN FORUM. RECEIVER'S SOLE AND EXCLUSIVE REMEDY AND MEDIATEK'S
+ * ENTIRE AND CUMULATIVE LIABILITY WITH RESPECT TO THE MEDIATEK SOFTWARE
+ * RELEASED HEREUNDER WILL BE, AT MEDIATEK'S OPTION, TO REVISE OR REPLACE THE
+ * MEDIATEK SOFTWARE AT ISSUE, OR REFUND ANY SOFTWARE LICENSE FEES OR SERVICE
+ * CHARGE PAID BY RECEIVER TO MEDIATEK FOR SUCH MEDIATEK SOFTWARE AT ISSUE.
+ *
+ * The following software/firmware and/or related documentation ("MediaTek
+ * Software") have been modified by MediaTek Inc. All revisions are subject to
+ * any receiver's applicable license agreements with MediaTek Inc.
+ */
+#ifndef _CCT_OP_DATA_H_
+#define _CCT_OP_DATA_H_
+
+
+//yiyi, temp
+//typedef enum {
+//    CCTIF_NO_ERROR         = 0,            ///< The function work successfully
+//    CCTIF_UNKNOWN_ERROR    = 0x80000000,   ///< Unknown error
+//    CCTIF_INVALID_DRIVER   = 0x80000001,
+//    CCTIF_UNSUPPORT_SENSOR_TYPE = 0x80000002,
+//    CCTIF_BAD_CTRL_CODE,
+//    CCTIF_BAD_PARAM,
+//    CCTIF_NOT_INIT,
+//} CCTIF_ERROR_ENUM;
+
+
+//yiyi, temp
+#ifndef MUINT32
+typedef unsigned int        MUINT32;
+#endif
+#ifndef MINT8
+typedef signed char         MINT8;
+#endif
+
+
+
+
+
+//yiyi, tmp
+typedef struct
+{
+    unsigned int /*ACDK_CCT_REG_TYPE_ENUM*/          type;
+    unsigned int            device_id;
+    unsigned short int      width;
+    unsigned short int      height;
+    unsigned int /*FT_CCT_BAYER_PATTERN*/    start_pixel_bayer_ptn;
+    unsigned short int      grab_x_offset;
+    unsigned short int      grab_y_offset;
+} FT_CCT_SENSOR;
+typedef struct
+{
+    FT_CCT_SENSOR           sensor[4];
+    unsigned char           sensor_count;
+} FT_CCT_ON_BOARD_SENSOR;
+
+
+
+
+
+
+enum
+{
+    FT_CCT_OP_CAPTURE_START = 0x0000,
+    FT_CCT_OP_SENSOR_START  = 0x1000,
+    FT_CCT_OP_3A_START      = 0x2000,
+    FT_CCT_OP_ISP_START     = 0x3000,
+    FT_CCT_OP_NVRAM_START   = 0x4000,
+    FT_CCT_OP_CAL_START     = 0x5000,
+    FT_CCT_OP_SHELL_START   = 0x6000,
+    FT_CCT_OP_INTERNAL_START= 0x7000,
+    FT_CCT_OP_EMCAM_START   = 0x8000
+};
+
+typedef enum
+{
+    FT_CCT_OP_CAMERA_CAPTURE = FT_CCT_OP_CAPTURE_START
+    ,FT_CCT_OP_SET_PROFILE_MODE
+    ,FT_CCT_OP_GET_PROFILE_MODE
+    ,FT_CCT_OP_SET_FEATURE_MODE
+    ,FT_CCT_OP_GET_FEATURE_MODE
+    
+    ,FT_CCT_OP_GET_SENSOR = FT_CCT_OP_SENSOR_START 
+    ,FT_CCT_OP_SWITCH_SENSOR                       
+    ,FT_CCT_OP_SET_SENSOR_REG                      
+    ,FT_CCT_OP_GET_SENSOR_REG                      
+    ,FT_CCT_OP_LSC_GET_SENSOR_RESOLUTION
+    ,FT_CCT_OP_GET_SENSOR_MODE_NUM
+    ,FT_CCT_OP_SET_PROP
+    ,FT_CCT_OP_GET_PROP
+    ,FT_CCT_OP_SENSOR_TYPE_MAX
+
+    ,FT_CCT_OP_AE_GET_ON_OFF = FT_CCT_OP_3A_START  
+    ,FT_CCT_OP_AE_SET_ON_OFF                       
+    ,FT_CCT_OP_AE_GET_BAND                         
+    ,FT_CCT_OP_AE_SET_BAND                         
+    ,FT_CCT_OP_AE_GET_METERING_MODE                
+    ,FT_CCT_OP_AE_SET_METERING_MODE                
+    ,FT_CCT_OP_AE_GET_SCENE_MODE                   
+    ,FT_CCT_OP_AE_SET_SCENE_MODE                   
+    ,FT_CCT_OP_AE_GET_AUTO_PARA                    
+    ,FT_CCT_OP_AE_SET_AUTO_PARA                    
+    ,FT_CCT_OP_AE_GET_CAPTURE_PARA                 
+    ,FT_CCT_OP_AE_SET_CAPTURE_PARA              
+    ,FT_CCT_OP_AF_GET_RANGE                        
+    ,FT_CCT_OP_AF_GET_POS                          
+    ,FT_CCT_OP_AF_SET_POS           
+    ,FT_CCT_OP_AWB_GET_ON_OFF                      
+    ,FT_CCT_OP_AWB_SET_ON_OFF                      
+    ,FT_CCT_OP_AWB_GET_LIGHT_PROB                  
+    ,FT_CCT_OP_AWB_GET_MODE                        
+    ,FT_CCT_OP_AWB_SET_MODE                        
+    ,FT_CCT_OP_AWB_GET_GAIN                        
+    ,FT_CCT_OP_AWB_SET_GAIN                        
+    ,FT_CCT_OP_FLASH_GET_MODE                      
+    ,FT_CCT_OP_FLASH_SET_MODE                                                
+    ,FT_CCT_OP_3A_TYPE_MAX
+
+    ,FT_CCT_OP_GET_ID    = FT_CCT_OP_ISP_START     
+    ,FT_CCT_OP_ISP_GET_ON_OFF                      
+    ,FT_CCT_OP_ISP_SET_ON_OFF                      
+    ,FT_CCT_OP_ISP_GET_CCM_FIXED_ON_OFF            
+    ,FT_CCT_OP_ISP_SET_CCM_FIXED_ON_OFF            
+    ,FT_CCT_OP_ISP_GET_CCM_MATRIX                  
+    ,FT_CCT_OP_ISP_SET_CCM_MATRIX                  
+    ,FT_CCT_OP_ISP_GET_INDEX         
+    ,FT_CCT_OP_ISP_GET_SMOOTH_CCM
+    ,FT_CCT_OP_ISP_SET_SMOOTH_CCM
+    ,FT_CCT_OP_GET_SHADING_ON_OFF                  
+    ,FT_CCT_OP_SET_SHADING_ON_OFF                  
+    ,FT_CCT_OP_GET_SHADING_INDEX                   
+    ,FT_CCT_OP_SET_SHADING_INDEX                   
+    ,FT_CCT_OP_GET_SHADING_TSF_ON_OFF              
+    ,FT_CCT_OP_SET_SHADING_TSF_ON_OFF              
+    ,FT_CCT_OP_ISP_TYPE_MAX
+
+    ,FT_CCT_OP_ISP_GET_NVRAM_DATA = FT_CCT_OP_NVRAM_START                 
+    ,FT_CCT_OP_ISP_SET_NVRAM_DATA                                         
+    ,FT_CCT_OP_ISP_SET_PARTIAL_NVRAM_DATA                                 
+    ,FT_CCT_OP_ISP_SAVE_NVRAM_DATA                                        
+    ,FT_CCT_OP_NVRAM_TYPE_MAX
+
+    ,FT_CCT_OP_CAL_CDVT_CALIBRATION = FT_CCT_OP_CAL_START
+    ,FT_CCT_OP_CAL_CDVT_TEST
+    ,FT_CCT_OP_CAL_SHADING
+    ,FT_CCT_OP_CAL_AE_GET_FALRE
+    ,FT_CCT_OP_CAL_AE_GET_EV
+    ,FT_CCT_OP_CAL_FLASH
+    ,FT_CCT_OP_CAL_TYPE_MAX
+
+    ,FT_CCT_OP_ISP_EXEC_SHELL_CMD = FT_CCT_OP_SHELL_START                     
+
+    ,FT_CCT_OP_AE_SET_AUTO_EXPOSURE_ON_OFF = FT_CCT_OP_INTERNAL_START
+    ,FT_CCT_OP_AE_SET_AEMODE
+    ,FT_CCT_OP_AE_GET_AEMODE
+    ,FT_CCT_OP_AE_SET_SENSOR_PARA
+    ,FT_CCT_OP_AE_GET_SENSOR_PARA
+    ,FT_CCT_OP_AF_SET_ON_OFF
+    ,FT_CCT_OP_GET_SHADING_PARA
+    ,FT_CCT_OP_SET_SHADING_TABLE_POLYCOEF
+    ,FT_CCT_OP_INTERNAL_TYPE_MAX
+
+    ,FT_CCT_OP_AF_BRECKET_STEP = FT_CCT_OP_EMCAM_START  //0x8000
+    ,FT_CCT_OP_AE_BRECKET_STEP                          //0x8001
+    ,FT_CCT_OP_AF_SET_AFMODE                            //0x8002
+    ,FT_CCT_OP_AF_AUTOFOCUS                             //0x8003
+    ,FT_CCT_OP_AF_FULL_SCAN_SET_INTERVAL                //0x8004
+    ,FT_CCT_OP_AF_FULL_SCAN_SET_DACSTEP                 //0x8005
+    ,FT_CCT_OP_AF_FULL_SCAN_TRIGGER                     //0x8006
+    ,FT_CCT_OP_AF_SET_AREA                              //0x8007
+    ,FT_CCT_OP_FLASH_CALIBRATION                        //0x8008
+    ,FT_CCT_OP_AE_SET_CAPTURE_ISO                       //0x8009
+    ,FT_CCT_OP_AE_SET_CAPTURE_SENSOR_GAIN               //0x800a
+    ,FT_CCT_OP_AE_APPLY_CAPTURE_AE_PARAM                //0x800b
+    ,FT_CCT_OP_AE_SET_CAPTURE_EXP_TIME_US               //0x800c
+    ,FT_CCT_OP_AE_SET_VHDR_RATIO                        //0x800d
+    ,FT_CCT_OP_AE_SET_AE_MODE                           //0x800e
+    ,FT_CCT_OP_AWB_SET_MTK_ENABLE                       //0x800f
+    ,FT_CCT_OP_AWB_SET_SENSOR_ENABLE                    //0x8010
+    ,FT_CCT_OP_AE_EV_CALIBRATION                        //0x8011
+    ,FT_CCT_OP_SET_RESULT_FILE_PATH                     //0x8012
+
+    ,FT_CCT_OP_EMCAM_TYPE_MAX
+
+    ,FT_CCT_OP_END
+} CCT_OP_ID;
+
+
+#define FT_CCT_OP_SENSOR_TYPE_OP_NO             (FT_CCT_OP_SENSOR_TYPE_MAX - FT_CCT_OP_SENSOR_START)
+#define FT_CCT_OP_3A_TYPE_OP_NO                 (FT_CCT_OP_3A_TYPE_MAX - FT_CCT_OP_3A_START)
+#define FT_CCT_OP_ISP_TYPE_OP_NO                (FT_CCT_OP_ISP_TYPE_MAX - FT_CCT_OP_ISP_START)
+#define FT_CCT_OP_CAL_TYPE_OP_NO                (FT_CCT_OP_CAL_TYPE_MAX - FT_CCT_OP_CAL_START)
+#define FT_CCT_OP_INTERNAL_TYPE_OP_NO           (FT_CCT_OP_INTERNAL_TYPE_MAX - FT_CCT_OP_INTERNAL_START)
+#define FT_CCT_OP_EMCAM_TYPE_OP_NO              (FT_CCT_OP_EMCAM_TYPE_MAX - FT_CCT_OP_EMCAM_START)
+
+
+typedef enum  {
+   CCT_FL_MODE_OFF = 0,
+   CCT_FL_MODE_HI_TEMP,
+   CCT_FL_MODE_LO_TEMP,
+   CCT_FL_MODE_MIX_TEMP
+}  CCT_FL_MODE_T;
+
+
+typedef enum {
+    CCT_NVRAM_DATA_LSC_PARA = 0
+    ,CCT_NVRAM_DATA_LSC_TABLE
+    ,CCT_NVRAM_DATA_LSC
+    ,CCT_NVRAM_DATA_AE_PLINE
+    ,CCT_NVRAM_DATA_AE
+    ,CCT_NVRAM_DATA_AF
+    ,CCT_NVRAM_DATA_AWB
+    ,CCT_NVRAM_DATA_ISP
+    ,CCT_NVRAM_DATA_FEATURE
+    ,CCT_NVRAM_DATA_STROBE
+    ,CCT_NVRAM_DATA_FLASH_AWB
+    ,CCT_NVRAM_DATA_ENUM_MAX
+
+} CCT_NVRAM_DATA_T;
+
+typedef struct
+{
+    CCT_NVRAM_DATA_T    dataType;
+    MINT8*                pDataBuf;
+} CCT_NVRAM_DATA_SET_T;
+
+    
+typedef enum {
+    ISP_CATEGORY_DBS = 0,
+    ISP_CATEGORY_OBC,
+    ISP_CATEGORY_BPC,
+    ISP_CATEGORY_NR1,
+    ISP_CATEGORY_PDC,
+    //ISP_CATEGORY_LSC,
+    ISP_CATEGORY_SL2,
+    ISP_CATEGORY_CFA,
+    ISP_CATEGORY_CCM,
+    ISP_CATEGORY_GGM,
+    //ISP_CATEGORY_IHDR_GGM,
+    ISP_CATEGORY_ANR,
+    ISP_CATEGORY_CCR,
+    ISP_CATEGORY_EE,
+    ISP_CATEGORY_PCA,
+    ISP_CATEGORY_MAX
+}CCT_ISP_CATEGORY_T;
+
+
+
+
+typedef struct
+{
+    // average
+    int fRAvg;
+    int fGrAvg;
+    int fGbAvg;
+    int fBAvg;
+
+    // median
+    unsigned int u4Median;
+} AP_ACDK_CDVT_RAW_ANALYSIS_RESULT_T;
+
+typedef struct
+    {
+    int i4ErrorCode;
+    int i4TestCount;
+    AP_ACDK_CDVT_RAW_ANALYSIS_RESULT_T rRAWAnalysisResult[1000];
+} AP_ACDK_CDVT_SENSOR_TEST_OUTPUT_T;
+
+
+
+
+//yiyi, temp
+#define MAX_SHADING_PvwFrm_SIZE 1024
+
+typedef struct {
+    MUINT32    mode;
+    MUINT32    color_temperature;
+    MUINT32    offset;
+    MUINT32    length;
+    MUINT32    table[MAX_SHADING_PvwFrm_SIZE];
+} CCT_SHADING_TAB_STRUCT;
+
+#endif

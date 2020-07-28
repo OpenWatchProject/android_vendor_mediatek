@@ -1,0 +1,37 @@
+APK of encrypt/decrypt files in storage, including encrypting file, 
+decrypting file etc.
+
+This APK is pre-built by MediaTek internal.
+
+WHAT IT DOES?
+=============
+DataProtection.apk protect files from unwanted accessing in storage(Phone
+ Storage/SD card etc).
+1. encrypting file
+2. decrypting file
+3. view encrypting image/video thumbnail
+4. real play image/video/audio.
+
+HOW IT WAS BUILT?
+==================
+It needs the following library from AOSP:
+1. framework.jar
+
+and the following libs from MediaTek:
+1. mediatek-framework.jar
+2. mediatek-common.jar
+
+All source/dependency modules of this module are already put in
+'/system/framework' folder.
+
+and the following lib from MediaTek:
+1. com.mediatek.settings.ext.jar
+
+All source of com.mediatek.settings.ext.jar are already put in 
+'alps/packages/apps/Settings/ext' folder
+
+HOW TO USE IT?
+==============
+1. install DataProtection.apk in mediatek platform.
+2. start DataProtection from Settings --> Security --> DataProtection, 
+3. select files to encrypt, or select encrypted files to decrypt.

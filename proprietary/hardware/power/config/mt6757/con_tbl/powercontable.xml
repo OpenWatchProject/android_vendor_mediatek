@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONTABLE>
+    <CMD name="PERF_RES_POWER_HPS_THRESH_UP" id="0X01C10000">
+        <Entry path="/proc/hps/up_threshold"></Entry>
+        <LegacyCmdID>16</LegacyCmdID>
+        <Compare>less</Compare>
+        <MaxValue>100</MaxValue>
+        <MinValue>0</MinValue>
+        <DefaultValue>95</DefaultValue>
+        <SportValue>80</SportValue>
+        <Valid>1</Valid>
+    </CMD>
+    <CMD name="PERF_RES_POWER_HPS_THRESH_DOWN" id="0X01C10100">
+        <Entry path="/proc/hps/down_threshold"></Entry>
+        <LegacyCmdID>17</LegacyCmdID>
+        <Compare>less</Compare>
+        <MaxValue>100</MaxValue>
+        <MinValue>0</MinValue>
+        <DefaultValue>85</DefaultValue>
+        <SportValue>60</SportValue>
+        <Valid>1</Valid>
+    </CMD>
+    <CMD name="PERF_RES_POWER_HPS_TIMES_UP" id="0x01c14000">
+        <Entry path="/proc/hps/up_times"></Entry>
+        <LegacyCmdID>18</LegacyCmdID>
+        <Compare>less</Compare>
+        <MaxValue>100</MaxValue>
+        <MinValue>0</MinValue>
+        <DefaultValue>3</DefaultValue>
+        <SportValue>1</SportValue>
+        <Valid>1</Valid>
+    </CMD>
+    <CMD name="PERF_RES_POWER_HPS_TIMES_DOWN" id="0x01c14100">
+        <Entry path="/proc/hps/down_times"></Entry>
+        <LegacyCmdID>19</LegacyCmdID>
+        <Compare>more</Compare>
+        <MaxValue>100</MaxValue>
+        <MinValue>0</MinValue>
+        <DefaultValue>1</DefaultValue>
+        <SportValue>5</SportValue>
+        <Valid>1</Valid>
+    </CMD>
+    <CMD name="PERF_RES_POWER_HPS_RUSH_BOOST_ENABLE" id="0x01c18000">
+        <Entry path="/proc/hps/rush_boost_enabled"></Entry>
+        <LegacyCmdID>20</LegacyCmdID>
+        <Compare>more</Compare>
+        <MaxValue>1</MaxValue>
+        <MinValue>0</MinValue>
+        <DefaultValue>1</DefaultValue>
+        <SportValue>1</SportValue>
+    </CMD>
+    <CMD name="PERF_RES_POWER_HPS_HEAVY_TASK" id="0x01c1c000">
+        <Entry path="/proc/hps/heavy_task_enabled"></Entry>
+        <LegacyCmdID>21</LegacyCmdID>
+        <Compare>more</Compare>
+        <MaxValue>1</MaxValue>
+        <MinValue>0</MinValue>
+        <DefaultValue>0</DefaultValue>
+        <SportValue>1</SportValue>
+        <Valid>1</Valid>
+    </CMD>
+    <CMD name="PERF_RES_POWER_CPUFREQ_HISPEED_FREQ" id="0X01C00000">
+        <Entry path="/sys/devices/system/cpu/cpufreq/interactive/hispeed_freq"></Entry>
+        <LegacyCmdID>12</LegacyCmdID>
+        <Compare>more</Compare>
+        <MaxValue>1950000</MaxValue>
+        <MinValue>0</MinValue>
+    </CMD>
+    <CMD name="PERF_RES_POWER_CPUFREQ_MIN_SAMPLE_TIME" id="0X01C04000">
+        <Entry path="/sys/devices/system/cpu/cpufreq/interactive/min_sample_time"></Entry>
+        <LegacyCmdID>13</LegacyCmdID>
+        <Compare>more</Compare>
+        <MaxValue>800000</MaxValue>
+        <MinValue>0</MinValue>
+    </CMD>
+    <CMD name="PERF_RES_POWER_CPUFREQ_ABOVE_HISPEED_DELAY" id="0X01C08000">
+        <Entry path="/sys/devices/system/cpu/cpufreq/interactive/above_hispeed_delay"></Entry>
+        <LegacyCmdID>14</LegacyCmdID>
+        <Compare>less</Compare>
+        <MaxValue>200000</MaxValue>
+        <MinValue>0</MinValue>
+    </CMD>
+    <CMD name="PERF_RES_POWER_CPUFREQ_POWER_MODE" id="0x01c0c000">
+        <Entry path="/proc/cpufreq/cpufreq_power_mode"></Entry>
+        <LegacyCmdID>15</LegacyCmdID>
+        <Compare>more</Compare>
+        <MaxValue>3</MaxValue>
+        <MinValue>0</MinValue>
+        <DefaultValue>0</DefaultValue>
+        <SportValue>3</SportValue>
+        <Valid>1</Valid>
+    </CMD>
+    <CMD name="PERF_RES_DRAM_VCORE_MIN" id="0x01004000"> 
+        <Entry path="/proc/perfmgr/boost_ctrl/dram_ctrl/vcore"></Entry>
+        <LegacyCmdID>10</LegacyCmdID>
+        <Compare>less</Compare>
+        <MaxValue>3</MaxValue>
+        <MinValue>0</MinValue>
+        <DefaultValue>-1</DefaultValue>
+        <Valid>1</Valid>
+    </CMD>
+    <CMD name="PERF_RES_POWER_PPM_ROOT_CLUSTER" id="0x01C24000">
+        <Entry path="/proc/ppm/root_cluster"></Entry>
+        <LegacyCmdID>23</LegacyCmdID>
+        <Compare>more</Compare>
+        <MaxValue>1</MaxValue>
+        <MinValue>-1</MinValue>
+    </CMD>
+    <CMD name="PERF_RES_POWER_PPM_HICA_VAR" id="0x01C2C000">
+        <Entry path="/proc/ppm/policy/hica_variant"></Entry>
+        <LegacyCmdID>26</LegacyCmdID>
+        <Compare>less</Compare>
+        <MaxValue>1</MaxValue>
+        <MinValue>0</MinValue>
+        <DefaultValue>1</DefaultValue>
+        <SportValue>0</SportValue>
+        <Valid>1</Valid>
+    </CMD>
+    <CMD name="PERF_RES_POWER_PPM_SPORTS_MODE" id="0x01c34000">
+        <Entry path="/proc/ppm/smart_detect_boost"></Entry>
+        <LegacyCmdID>47</LegacyCmdID>
+        <Compare>more</Compare>
+        <MaxValue>1</MaxValue>
+        <MinValue>-1</MinValue>
+        <DefaultValue>0</DefaultValue>
+        <SportValue>1</SportValue>
+        <Valid>1</Valid>
+    </CMD>
+    <CMD name="PERF_RES_SCHED_HEAVY_TASK_AVG_HTASK_AC" id="0x0142c100">
+        <Entry path="/sys/devices/system/cpu/rq-stats/htasks_thresh"></Entry>
+        <LegacyCmdID>28</LegacyCmdID>
+        <Compare>less</Compare>
+        <MaxValue>1023</MaxValue>
+        <MinValue>0</MinValue>
+        <DefaultValue>1000</DefaultValue>
+        <SportValue>800</SportValue>
+        <Valid>1</Valid>
+    </CMD>
+    <CMD name="PERF_RES_SCHED_HEAVY_TASK_AVG_HTASK_THRES" id="0x0142c200">
+        <Entry path="/sys/devices/system/cpu/rq-stats/avg_htasks_thresh"></Entry>
+        <LegacyCmdID>29</LegacyCmdID>
+        <Compare>less</Compare>
+        <MaxValue>1023</MaxValue>
+        <MinValue>0</MinValue>
+        <DefaultValue>1000</DefaultValue>
+        <SportValue>800</SportValue>
+        <Valid>1</Valid>
+    </CMD>
+</CONTABLE>

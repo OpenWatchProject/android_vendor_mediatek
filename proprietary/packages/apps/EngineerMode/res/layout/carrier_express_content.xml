@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    <TextView
+            android:id="@+id/cxp_radiogroup_txt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/cxp_operator_switch"/>
+
+    <Spinner
+        android:id="@+id/optr_list_spinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" 
+        android:layout_below="@+id/cxp_radiogroup_txt"/>
+
+    <TextView
+            android:id="@+id/subid_list_txt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/cxp_optr_sub_id"
+            android:layout_below="@+id/optr_list_spinner"/>
+    <Spinner
+        android:id="@+id/subid_list_spinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" 
+        android:layout_below="@+id/subid_list_txt"/>
+
+    <TextView
+        android:id="@+id/cxp_sim_radiogroup_txt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/cxp_primary_sim"
+        android:layout_below="@+id/subid_list_spinner"/>
+
+    <RadioGroup android:id="@+id/cxp_sim_radiogroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/cxp_sim_radiogroup_txt"/>
+
+     <Button
+         android:id="@+id/apply_button_id"
+         android:layout_height="wrap_content"
+         android:layout_width="wrap_content"
+         android:text="@string/cxp_apply" 
+         android:layout_below="@+id/cxp_sim_radiogroup"/>
+</RelativeLayout>

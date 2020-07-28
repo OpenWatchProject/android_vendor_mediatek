@@ -1,0 +1,82 @@
+MFNR core module: Capturer v1.0
+
+
+WHAT IT DOES?
+=============
+
+Capturer has responsibility to collect frame buffers and GMV (Global Motion
+Vector) that MFNR core needs. Frame buffers is including RAW, YUV and Y, which
+depends on what MFNR core asks.
+
+
+HOW IT WAS BUILT?
+==================
+
+You cannot partial build this module only, but to build libmfllcore indeed.
+
+libmfllcore partial build path:
+
+    feature/common/mfnr/Android.mk
+
+Library dependency:
+  AOSP:
+  - libutils.so
+  - libcutils.so
+  - libstdc++.so
+
+  MTK:
+  - libmfllmfb.a
+
+
+HOW TO USE IT?
+==============
+
+Create an MfllCapturer by invoking
+
+    IMfllCapturer::createInstance();
+
+and caller should set the pointer of MfllCore after created an instance
+successfully.
+
+Capturer will invoke IMfllMfb::encodeRawToYuv from an IMfllMfb instance which
+is queied from IMfllCore, therefore caller has to set IMfllCore too.
+
+e.g.:
+
+    sp<IMfllCapturer> spCaptuer = IMfllCapturer::createInstance();
+    if (spCaptuer.get() != NULL) {
+        // gives Capturer the pointer of IMfllCore
+        spCaptuer->setMfllCore(spCore);
+
+        // Tells MfllCapturer what kind of shot mode is using,
+        // because there's different tuning setting between different shot modes
+        spCaptuer->setShotMode(MfllMode_NormalMfll);
+
+        // Tells MfllCapturer what kind of post NR will be applied,
+        // because there's different tuning setting between post NR types
+        spCaptuer->setPostNrType(NoiseReductionType_None);
+    }
+
+- v1.0
+  Capturer WON'T to capture any frame from sensor. Hence caller has to feed RAW
+  buffers and GMV to Capturer by invoking
+
+      queueSourceImage(sp<IMfllImageBuffer> &img)
+      queueGmv(const MfllMotionVector_t &mv)
+
+  from
+
+      feature/include/common/mfnr/IMfllCapturer.h
+
+
+* This module will be compiled as a static libary and be used by libmfllcore,
+  which means you can only use the interfaces defined in:
+
+      feature/include/common/mfnr/IMfllCapturer.h
+
+  by linking shared libary
+
+      libmfllcore.so
+
+
+All the source code of this program were written by MediaTek co..

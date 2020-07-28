@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <SwitchPreference
+        android:defaultValue="false"
+        android:key="hdmi_toggler"
+        android:persistent="false"
+        android:title="@string/hdmi_toggler" />
+
+    <ListPreference
+        android:key="video_resolution"
+        android:persistent="false"
+        android:title="@string/hdmi_video_resolution"
+        android:entries="@array/hdmi_video_resolution_entries"
+        android:entryValues="@array/hdmi_video_resolution_entry_values" />
+
+    <ListPreference
+        android:key="video_scale"
+        android:persistent="false"
+        android:title="@string/hdmi_scale_control"
+        android:entries="@array/hdmi_video_scale_entries"
+        android:entryValues="@array/hdmi_video_scale_entry_values" />
+
+    <ListPreference
+        android:key="audio_output"
+        android:persistent="false"
+        android:title="@string/hdmi_audio_output"
+        android:entries="@array/hdmi_audio_output_entries"
+        android:entryValues="@array/hdmi_audio_output_entry_values" />
+</PreferenceScreen>

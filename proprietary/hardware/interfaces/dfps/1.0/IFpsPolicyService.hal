@@ -1,0 +1,17 @@
+package vendor.mediatek.hardware.dfps@1.0;
+
+import IFpsPolicyClient;
+import IFpsInfoClient;
+import IFpsVsyncClient;
+
+interface IFpsPolicyService {
+
+    createPolicyClient() generates (Error error, IFpsPolicyClient client);
+
+    createInfoClient() generates (Error error, IFpsInfoClient client);
+
+    createVsyncClient() generates (Error error, IFpsVsyncClient client);
+
+    dumpDebugInfo() generates (string debugInfo);
+
+};

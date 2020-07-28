@@ -1,0 +1,23 @@
+Library of MTK IMS VoLTE Supplementary Service features, including call forwarding (communication diversion),
+call barring (communication barring), call waiting (communication waiting).
+
+This library is pre-built by MediaTek internal.
+
+
+WHAT IT DOES?
+=============
+MMTelSS module will depend on Simservs to query/update each and every VoLTE Supplementary Service.
+
+HOW IT WAS BUILT?
+==================
+It needs the following library from MediaTek:
+1.  xcap
+
+All source/dependency modules of this module are already put in
+'vendor/mediatek/proprietary/protect/external' folder.
+
+HOW TO USE IT?
+==============
+Provide api for MMTelSS to communicate with XCAP server.
+
+All the source code of this library were written by MediaTek co..

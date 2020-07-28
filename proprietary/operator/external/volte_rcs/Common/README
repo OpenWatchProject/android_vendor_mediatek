@@ -1,0 +1,21 @@
+This module creates the VOLTE_RCS for enabling volte services for RCS
+
+
+
+
+WHAT IT DOES?
+=============
+volte_rcs help the RCS application use volte for Single registrtaion and sending SIP messages
+in case of VoLTE network is available.
+
+HOW IT WAS BUILT?
+==================
+It needs the following library of MediaTek::
+
+volte_core volte_xdmc libc libcutils libdl
+
+
+HOW TO USE IT?
+==============
+
+volte_rcs is enabled and disabled by RCS based on the logic that volte network is available or not.

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<carrier_config>
+    <boolean name="allow_emergency_numbers_in_call_log_bool" value="true"/>
+    <boolean name="show_apn_setting_cdma_bool" value="true"/>
+    <string name="sim_country_iso_override_string">cn</string>
+    <!-- Supplementary Service WWOP Config -->
+    <boolean name="mtk_carrier_ss_gsm_ut_support" value="true" />
+    <boolean name="mtk_carrier_ss_not_support_call_identity" value="true" />
+    <boolean name="ascii_7_bit_support_for_long_message_bool" value="true" />
+    <boolean name="call_forwarding_over_ut_warning_bool" value="true"/>
+    <boolean name="call_barring_over_ut_warning_bool" value="true"/>
+    <boolean name="call_waiting_over_ut_warning_bool" value="true"/>
+    <boolean name="caller_id_over_ut_warning_bool" value="true"/>
+    <boolean name="vilte_data_is_metered_bool" value="false" />
+    <boolean name="ignore_data_enabled_changed_for_video_calls" value="true" />
+    <!-- M: InCallUI features begin. @{ -->
+    <boolean name="mtk_allow_cancel_video_upgrade_bool" value="true" />
+    <boolean name="mtk_allow_auto_start_timer_for_cancel_upgrade_bool" value="true" />
+    <int name="mtk_timer_for_cancel_upgrade_int" value="30" />
+    <boolean name="no_sip_message_on_pause_video_bool" value="true" />
+    <boolean name="mtk_vt_dialpad_support_bool" value="true" />
+    <!-- M: InCallUI features end. @} -->
+    <!-- M: Single video call mode -->
+    <boolean name="mtk_allow_one_video_call_only_bool" value="true" />
+    <!-- M: Support emergency call back -->
+    <int name="gps.es_extension_sec" value="300" />
+</carrier_config>

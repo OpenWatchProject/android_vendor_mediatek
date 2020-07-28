@@ -1,0 +1,33 @@
+JNI Library of engineermode wifi, which contain the interfaces
+to communicate with wifi driver
+
+This library is pre-built by MediaTek internal.
+
+WHAT IT DOES?
+=============
+libem_wifi_jni.so provide jni interface to EngineerMode application to 
+access native interface of wifi
+
+HOW IT WAS BUILT?
+==================
+It needs the following library from AOSP:
+1. libandroid_runtime
+2. libutils
+3. libui
+4. libcutils
+5. libnativehelper
+6. libshia
+
+and the following libs from MediaTek:
+None
+
+All source/dependency modules of this module are already put in
+'vendor/mediatek/libs' folder.
+
+HOW TO USE IT?
+==============
+
+provide jni interface to EngineerMode to access native interface of wifi
+all api interface are at (vendor/mediatek/proprietary/packages/apps/EngineerMode/jni/wifi)
+
+All the source code of this library were written by MediaTek co..

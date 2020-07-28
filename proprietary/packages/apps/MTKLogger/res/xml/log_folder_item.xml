@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" 
+	android:layout_width="match_parent" 
+	android:layout_height="wrap_content" 
+	android:orientation="horizontal" 
+	android:minHeight="?android:attr/listPreferredItemHeight"
+	android:padding="?android:attr/scrollbarSize">
+	
+    <TextView android:id="@+id/log_folder_name" 
+			android:layout_width="wrap_content" 
+			android:layout_height="wrap_content"
+			android:layout_marginTop="5dp" 
+			android:textAppearance="?android:attr/textAppearanceMedium" 
+			android:singleLine="true"  
+			android:gravity="left" />
+    
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:gravity="right" >
+
+        <ImageView
+            android:id="@+id/right_arrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="right"
+            android:src="@drawable/ic_right_arrow" />
+    </RelativeLayout>
+    
+</LinearLayout>

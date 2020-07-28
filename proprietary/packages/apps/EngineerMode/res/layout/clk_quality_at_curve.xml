@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/desense_at_curve_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#FFFFFFFF"
+    android:textColor="#FF000000" >
+
+    <TextView
+        android:id="@+id/clk_quality_at_curve_title"
+        android:gravity="center_horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FF000000"
+        android:textColor="#FFFFFFFF" />
+
+    <TextView
+        android:gravity="center_horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#FF000000"
+        android:text="@string/clk_quality_at_result_title_3" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" >
+
+        <TextView
+            android:id="@+id/clk_quailty_at_curve_y_label_clkdriftrate"
+            android:rotation="270"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:textColor="#FF000000"
+            android:text="@string/clk_quality_at_value_unit" />
+
+        <com.mediatek.engineermode.clkqualityat.CurveView
+            android:id="@+id/clk_quality_at_curve_clkdriftrate"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dip"
+        android:background="#FF909090" >
+    </View>
+
+    <TextView
+        android:gravity="center_horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#FF000000"
+        android:text="@string/clk_quality_at_result_title_4" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" >
+
+        <TextView
+            android:id="@+id/clk_quailty_at_curve_y_label_cpsclkdriftrate"
+            android:rotation="270"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:textColor="#FF000000"
+            android:text="@string/clk_quality_at_value_unit" />
+
+        <com.mediatek.engineermode.clkqualityat.CurveView
+            android:id="@+id/clk_quality_at_curve_compclkdriftrate"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+
+</LinearLayout>

@@ -1,0 +1,16 @@
+WHAT IT DOES?
+=============
+A platform-independent implementation of camera device manager base class.
+Camera deviec manager is used to manage camera devices.
+
+HOW IT WAS BUILT?
+==================
+libmtkcam_devicemgrbase.a
+
+HOW TO USE IT?
+==============
+Android.mk:
+LOCAL_STATIC_LIBRARIES += libmtkcam_devicemgrbase
+
+Source:
+Define a CamDeviceManagerBase-derived class and implement it.

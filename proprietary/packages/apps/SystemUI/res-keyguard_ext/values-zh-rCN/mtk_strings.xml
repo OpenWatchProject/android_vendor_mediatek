@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/* //device/apps/common/assets/res/any/strings.xml
+**
+** Copyright 2006, The Android Open Source Project
+**
+** Licensed under the Apache License, Version 2.0 (the "License");
+** you may not use this file except in compliance with the License.
+** You may obtain a copy of the License at
+**
+**     http://www.apache.org/licenses/LICENSE-2.0
+**
+** Unless required by applicable law or agreed to in writing, software
+** distributed under the License is distributed on an "AS IS" BASIS,
+** WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+** See the License for the specific language governing permissions and
+** limitations under the License.
+*/
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- Telephony -->
+    <string name="invalidPuk">"输入8位数字。"</string>
+    <string name="keyguard_password_enter_new_pin_code">"输入新 PIN 码"</string>
+    <string name="keyguard_password_Confirm_pin_code">"确认新 PIN 码"</string>
+    <string name="sim_permanently_locked">"PUK 码输错已超过10次，SIM 卡已被永久锁定"</string>
+    <string name="retries_left">"剩余次数:"<xliff:g id="number">%d</xliff:g></string>
+    <string name="simlock_slot_locked_message">"卡槽已被永久锁定"</string>
+    <string name="simlock_entersimmelock">"输入 SIM ME 锁码"</string>
+    <string name="slot_id">卡槽<xliff:g id="number">%d</xliff:g>:</string>
+    <string name="new_simcard">新SIM卡</string>
+    <string name="lockscreen_missing_sim_dialog_message">"SIM卡已移除，请确认您的SIM卡已经正确插入。"</string>
+    <string name="sim_card_changed_dialog_title">SIM卡有变动</string>
+    <string name="change_setting_for_onenewsim">有新SIM卡插入。卡被命名为</string>
+    <string name="change_setting_for_twonewsim">有新SIM卡插入。卡被命名为</string>
+    <string name="sim_card_removed">有卡被移除。</string>
+    <string name="sim_card_swapped">SIM卡已交换。</string>
+    <string name="change_settings">变更设置</string>
+    <string name="keyguard_sms">信息：</string>
+    <string name="keyguard_data">数据连接：</string>
+    <string name="dismiss">忽略</string>
+    <string name="keyguard_wrong_code_input">密码错误。</string>
+    <string name="keyguard_code_length_prompt">请输入4-8位数字。</string>
+    <string name="keyguard_code_donnot_mismatch">PIN码不匹配。</string>
+    <string name="network_searching">正在搜索网络</string>
+    <string name="searching_simcard">检测中...</string>
+    <string name="keyguard_close">关闭</string>
+    <string name="default_sim_setting_prompt">目前默认SIM卡设置为：</string>
+    <string name="invalid_sim_title">无效的SIM卡</string>
+    <string name="invalid_sim_message">此UIM/SIM卡无法识别.</string>
+    <string name="ppl_prompt">请输入防盗密码</string>
+    <!-- Tablet -->
+    <string name="sd_accessing_swtich_user_title">切换用户？</string>
+    <string name="sd_accessing_swtich_user_message">机主账户下尚未保存的数据可能会丢失或损坏。</string>
+    <!-- Misc -->
+    <string name="kg_emergency_call_label">"紧急呼救"</string>
+    <string name="kg_detecting_simcard">检测中...</string>
+    <string name="kg_new_simcard">新SIM卡</string>
+    <string name="kg_slot_id">卡槽<xliff:g id="number">%d</xliff:g>:\u0020</string>
+</resources>

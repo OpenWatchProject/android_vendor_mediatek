@@ -1,0 +1,23 @@
+The directory contains HAL interfaces of irtx driver, which is used to build a 
+libconsumerir.default.so shared library.
+
+
+WHAT IT DOES?
+=============
+
+It is used to get IR supported carrier frequences, set IR carrier frequence, and transmit IR.
+
+HOW IT WAS BUILT?
+==================
+
+All source of this module are already put in
+'vendor/mediatek/proprietary/hardware/consumerir' folder.
+dependency modules: liblog libcutils
+
+
+HOW TO USE IT?
+==============
+
+It is used to support interfaces of ConsumerIrService JNI.
+
+

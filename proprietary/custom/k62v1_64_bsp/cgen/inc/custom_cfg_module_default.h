@@ -1,0 +1,6 @@
+#include "../cfgdefault/CFG_Custom1_Default.h"
+#include "../cfgdefault/CFG_GPS_Default.h"
+#include "../cfgdefault/CFG_PRODUCT_INFO_Default.h"
+#include "../cfgdefault/CFG_WIFI_Default.h"
+#include "../cfgdefault/CFG_FG_Default.h"
+#include "../cfgdefault/CFG_SMARTPA_CALIB_Default.h"

@@ -1,0 +1,28 @@
+The bin file 'connsyslogger' is a daemon service.
+This bin is pre-built by MediaTek internal.
+
+
+WHAT IT DOES?
+=============
+
+connsyslogger is native service to process connsys firmware log.
+It reads log from connsys radio device node, and writes logs to files on SD card.
+
+
+HOW IT WAS BUILT?
+==================
+
+It needs the following library from AOSP:
+1.  libutils.so
+2.  libcutils.so
+3.  libselinux.so
+
+All source/dependency modules of this module are already put in
+'vendor/mediatek/libs' folder.
+
+
+HOW TO USE IT?
+==============
+
+This bin file is automatically started by init, and it behavior is controlled by MTKLogger.
+

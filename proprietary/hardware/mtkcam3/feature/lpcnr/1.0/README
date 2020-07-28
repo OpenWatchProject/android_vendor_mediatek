@@ -1,0 +1,80 @@
+MFNR core module: Nvram v1.0
+
+
+WHAT IT DOES?
+=============
+
+NVRAM is a platform dependent customized struct for custom tuning. MFNR core
+module Nvram is to read the memory chunk for caller mapping, which means that
+caller has responsibility to know the NVRAM structure now using, and cast it.
+
+
+HOW IT WAS BUILT?
+==================
+
+You cannot partial build this module only, but to build libmfllcore indeed.
+
+libmfllcore partial build path:
+
+    feature/common/mfnr/Android.mk
+
+Library dependency:
+  AOSP:
+  - libutils.so
+  - libcutils.so
+  - libstdc++.so
+
+  MTK:
+  - libcameracustom.so
+  - libmtkcam_modulehelper.so
+  - libmfllnvram.a
+
+
+HOW TO USE IT?
+==============
+
+Create an IMfllNvram instance by invoking
+
+    IMfllNvram::createInstance();
+
+and initialize it with sensor ID because different sensor may has different
+setting.
+
+    IMfllNvram::init(int sensorId)
+
+
+And caller should know NVRAM structure. e.g.:
+
+    sp<IMfllNvram> spNvram = IMfllNvram::createInstance();
+    if (spNvram.get() == NULL) {
+        ERROR_LOG("create IMfllNvram instance failed");
+        return MfllErr_UnexpectedError;
+    }
+
+    spNvram->init(0); // init with sensor ID 0
+
+    NVRAM_CAMERA_FEATURE_STRUCT *pNvramStruct =
+      static_cast<NVRAM_CAMERA_FEATURE_STRUCT*>(spNvram->getChunk());
+
+    // To access attributes of NVRAM_CAMERA_FEATURE_STRUCT
+    // ...
+    // ...
+
+At most of case, caller won't to use IMfllNvram directly but other MFNR core
+module does.
+
+
+- v1.0
+  The first version
+
+
+* This module will be compiled as a static libary and be used by libmfllcore,
+  which means you can only use the interfaces defined in:
+
+      feature/include/common/mfnr/IMfllNvram.h
+
+  by linking shared libary
+
+      libmfllcore.so
+
+*** All the source code of this program were written by MediaTek co. ***

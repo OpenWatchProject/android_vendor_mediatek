@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="app_name">Auto boot controller</string>
+    <string name="manage_permission_app_label">App permissions</string>
+    <!-- auto boot part begin -->
+    <string  name="auto_boot_pref_title">Auto-start management</string>
+    <string  name="auto_boot_pref_summary">Allow or deny app auto-start during system bootup</string>
+    <string  name="no_auto_boot_app">No auto-start apps.</string>
+
+
+    <string  name="trigger_history_pref_title">Permission request</string>
+    <string  name="trigger_history_pref_summary">Show app permission request records</string>
+
+    <string  name="no_permission_request">Empty</string>
+    <string  name="loading">Loading</string>
+    <string  name="refresh">Refresh</string>
+    <string  name="on">On</string>
+    <string  name="off">Off</string>
+    <string name="version_text">version <xliff:g id="version_num">%1$s</xliff:g></string>
+    <!-- app count/permission count -->
+    <string name="app_count_unit_single">app</string>
+    <string name="app_count_unit_plural">apps</string>
+    <string name="perm_count_unit_single">permission</string>
+    <string name="perm_count_unit_plural">permissions</string>
+    <plurals name="autoboot_app_desc_allow">
+        <item quantity="one"><xliff:g id="app_count">%1$d</xliff:g> app allowed,</item>
+        <item quantity="other"><xliff:g id="app_count">%1$d</xliff:g> apps allowed,</item>
+    </plurals>
+
+   <plurals name="autoboot_app_desc_deny">
+        <item quantity="one"><xliff:g id="app_count">%1$d</xliff:g> app denied.</item>
+        <item quantity="other"><xliff:g id="app_count">%1$d</xliff:g> apps denied.</item>
+   </plurals>
+   <!-- auto boot part end -->
+</resources>

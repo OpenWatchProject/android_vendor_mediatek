@@ -1,0 +1,15 @@
+cc_prebuilt_library_static {
+    name: "libmp3dec_mtk",
+    proprietary: true,
+    owner: "mtk",
+    multilib: {
+        lib32: {
+            srcs: ["arm/libmp3dec_mtk.a"],
+        },
+        lib64: {
+            srcs: ["libmp3dec_mtk.a"],
+        },
+    },
+    export_include_dirs: ["."],
+    compile_multilib: "both",
+}

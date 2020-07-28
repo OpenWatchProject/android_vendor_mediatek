@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginLeft="10dip"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/testsimcard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:text="@string/testsimcard" >
+        </TextView>
+
+        <RadioGroup
+            android:id="@+id/testsimswitch_radio_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:orientation="vertical" >
+
+            <RadioButton
+                android:id="@+id/simtype_default_radio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/simtype_default_radio" >
+            </RadioButton>
+
+            <RadioButton
+                android:id="@+id/simtype_cdma_radio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/simtype_cdma_radio" >
+              </RadioButton>
+
+            <RadioButton
+                android:id="@+id/simtype_gsm_radio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/simtype_gsm_radio" >
+            </RadioButton>
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/simtype_set_button"
+            android:layout_width="100dip"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dip"
+            android:text="@string/simtype_set" >
+        </Button>
+    </LinearLayout>
+
+</LinearLayout>

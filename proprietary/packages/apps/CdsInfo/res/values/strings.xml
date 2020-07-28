@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name" translate="false">Common Data Service</string>
+    <string name="service_name" translate="false">CDS Service</string>
+
+    <string name="cds_common_info" translate="false">CDS Information</string>
+    <string name="cds_wifi_info" translate="false">Wi-Fi Information</string>
+    <string name="cds_radio_info" translate="false">Radio Information</string>
+    <string name="cds_radio_menu_info" translate="false">Phone Information</string>
+
+    <string name="cds_common_tab_framework" translate="false">CDS Framework Information</string>
+    <string name="cds_common_tab_native" translate="false">CDS Native Information</string>
+    <string name="cds_tether_info" translate="false">CDS Tether Information</string>
+    <string name="cds_traffic_info" translate="false">CDS Traffic Information</string>
+    <string name="cds_connectivity_info" translate="false">Connectivity Server</string>
+    <string name="cds_connectivity_mtu" translate="false">CDS MTU Configuration</string>
+
+    <string name="cds_utility_info" translate="false">Network Utility</string>
+    <string name="cds_pdp_info" translate="false">Multiple APN</string>
+    <string name="cds_check_apn" translate="false">Check APN</string>
+    <string name="cds_refresh_apn" translate="false">Refresh Status</string>
+    <string name="cds_reset_apn" translate="false">Quit</string>
+    <string name="cds_socket_info" translate="false">Listening Socket Information</string>
+
+    <string name="cds_ds_info" translate="false">CDS Background Data Usage</string>
+    <string name="btn_refresh" translate="false">Refresh</string>
+    <string name="btn_snapshot" translate="false">Snapshot</string>
+    <string name="btn_exit" translate="false">Exit</string>
+    <string name="btn_clear" translate="false">Clear</string>
+    <string name="warning" translate="false">Warning</string>
+    <string name="announce" translate="false">[Only record background data]</string>
+    <string name="network_utility_hint" translate="false">Ping commands\n -c ping count:1~65536\n -t ping interval:1~10\n</string>
+    <string name="sys_property_hint" translate="false">[Set/Get System Property - AID_SYSTEM]</string>
+    <string name="sys_get_button" translate="false">Get</string>
+    <string name="sys_set_button" translate="false">Set</string>
+    <string name="multi_apn_hint" translate="false">[Start/Stop APN data connections]</string>
+    <string name="connectivity_settings" translate="false">[Connectivity Settings]</string>
+    <string name="connectivity_captive_portal_setting" translate="false">Captive portal detection (Android N)</string>
+    <string name="connectivity_mobile_on_setting" translate="false">Mobile data always on</string>
+    <string name="connectivity_dhcp_client_setting" translate="false">Use legacy DHCP client for Wi-Fi</string>
+    <string name="tethering_dun_apn_label" translate="false">DUN APN Setting:</string>
+    <string name="dns_server_label" translate="false">default DNS server:</string>
+    <string name="captive_server_label" translate="false">default captive server:</string>
+    <string name="tethering_test_label" translate="false">Tethering UDP testing</string>
+    <string name="md_direct_tethering_test_label" translate="false">MD Direct Tethering testing</string>
+    <string name="dun_apn_button" translate="false">Config APN</string>
+    <string name="avoid_bad_wifi" translate="false">Avoid bad wifi</string>
+    <string name="dun_required" translate="false">Require DUN APN on the device</string>
+    <string name="ignore_mode" translate="false">Don\'t attempt to detect captive portals</string>
+    <string name="prompt_mode" translate="false">Prompts the user to sign in</string>
+    <string name="avoid_mode" translate="false">Avoid captive portal</string>
+    <string name="captive_portal_mode" translate="false">CAPTIVE PORTAL MODE (After Android O)</string>
+    <string name="save" translate="false">Save</string>
+    <string name="develope" translate="false">Android development settings</string>
+
+    <!-- Framework Network Information -->
+    <string name="active_network_info_label" translate="false">Active Network Info</string>
+    <string name="active_link_properties_label" translate="false">Active Network Link Properties</string>
+    <string name="active_network_quota_info_label" translate="false">Active Network Quota information</string>
+    <string name="network_infos_label" translate="false">Network Information List</string>
+    <string name="network_policy_label" translate="false">Network Policy</string>
+
+
+    <!-- Native Network Information -->
+    <string name="network_list_label" translate="false">Network Interface List</string>
+    <string name="network_config_label" translate="false">Network Config</string>
+    <string name="ip_route_label" translate="false">IP Routing Table</string>
+    <string name="ip_v6_route_label" translate="false">IPv6 Routing Table</string>
+    <string name="ip_rule_label" translate="false">IP Rule Table</string>
+
+    <string name="net_stat_label" translate="false">Active IP connections</string>
+    <string name="tether_info_label" translate="false">Tether information</string>
+
+    <string name="traffic_info_label" translate="false">Traffic information</string>
+    <string name="traffic_mobile_info_label" translate="false">Mobile Traffic Information</string>
+
+    <string name="ccmni0_info_label" translate="false">ccmni0 information</string>
+    <string name="ccmni1_info_label" translate="false">ccmni1 information</string>
+    <string name="ccmni2_info_label" translate="false">ccmni2 information</string>
+    <string name="wlan_info_label" translate="false">wlan information (valid only if Wi-Fi is on)</string>
+
+    <string name="wifi_update" translate="false">Refresh Status</string>
+    <!-- Do not translate. Used for diagnostic screens, precise translation is not necessary
+         Label on Wifi Status screen-->
+    <string name="wifi_state_label" translate="false">Wi-Fi state:</string>
+    <!-- Do not translate. Used for diagnostic screens, precise translation is not necessary
+         Label on Wifi Status screen-->
+    <string name="network_state_label" translate="false">Network state:</string>
+    <!-- Do not translate. Used for diagnostic screens, precise translation is not necessary
+        Label on Wifi Status screen-->
+    <string name="supplicant_state_label" translate="false">Supplicant state:</string>
+    <!-- Do not translate. Used for diagnostic screens, precise translation is not necessary
+         Label on Wifi Status screen-->
+    <string name="rssi_label" translate="false">RSSI:</string>
+    <!-- Do not translate. Used for diagnostic screens, precise translation is not necessary
+         Label on Wifi Status screen-->
+    <string name="bssid_label" translate="false">BSSID:</string>
+    <!-- Do not translate. Used for diagnostic screens, precise translation is not necessary
+         Label on Wifi Status screen-->
+    <string name="ssid_label" translate="false">SSID:</string>
+    <!-- Do not translate. Used for diagnostic screens, precise translation is not necessary
+         Label on Wifi Status screen-->
+    <string name="hidden_ssid_label" translate="false">Hidden SSID:</string>
+    <!-- Do not translate. Used for diagnostic screens, precise translation is not necessary
+         Label on Wifi Status screen-->
+    <string name="ipaddr_label" translate="false">IPaddr:</string>
+    <!-- Do not translate. Used for diagnostic screens, precise translation is not necessary
+         Label on Wifi Status screen-->
+    <string name="macaddr_label" translate="false">MAC addr:</string>
+    <!-- Do not translate. Used for diagnostic screens, precise translation is not necessary
+         Label on Wifi Status screen-->
+    <string name="networkid_label" translate="false">Network ID:</string>
+    <!-- Do not translate. Used for diagnostic screens, precise translation is not necessary
+         Label on Wifi Status screen-->
+    <string name="link_speed_label" translate="false">Link speed:</string>
+    <!-- Do not translate. Used for diagnostic screens, precise translation is not necessary
+         Label on Wifi Status screen-->
+    <string name="scan_list_label" translate="false">Scan results:</string>
+    <string name="mac_edit_label" translate="false">Random MAC Address:</string>
+    <string name="mac_update" translate="false">Update Mac</string>
+    <string name="system_property_label" translate="false">System properties:</string>
+    <string name="wifi_capability" translate="false">Wi-Fi Capability:</string>
+
+    <!-- wifi state values-->
+    <!-- Do not translate. Used for diagnostic screens, precise translation is not necessary -->
+    <string name="wifi_state_disabling" translate="false">Disabling</string>
+    <!-- Do not translate. Used for diagnostic screens, precise translation is not necessary -->
+    <string name="wifi_state_disabled" translate="false">Disabled</string>
+    <!-- Do not translate. Used for diagnostic screens, precise translation is not necessary -->
+    <string name="wifi_state_enabling" translate="false">Enabling</string>
+    <!-- Do not translate. Used for diagnostic screens, precise translation is not necessary -->
+    <string name="wifi_state_enabled" translate="false">Enabled</string>
+    <!-- Do not translate. Used for diagnostic screens, precise translation is not necessary -->
+    <string name="wifi_state_unknown" translate="false">Unknown</string>
+
+    <string name="na_string" translate="false">N/A</string>
+    <string name="unknown_string" translate="false">Unknown</string>
+    <string name="loading_string" translate="false">Loading</string>
+    <string name="wifi_scan" translate="false">Wi-Fi Scan</string>
+
+    <string name="google" translate="false">Google</string>
+    <string name="dns1" translate="false">DNS 1</string>
+    <string name="dns2" translate="false">DNS 2</string>
+
+    <!-- Radio Info screen. Label for a status item.  Used for diagnostic info screens, precise translation isn't needed -->
+    <string name="radio_info_signal_location_label">Location:</string>
+    <!-- Radio Info screen. Label for a status item.  Used for diagnostic info screens, precise translation isn't needed -->
+    <string name="radio_info_neighboring_location_label">Neighboring CID:</string>
+    <!-- Radio Info screen. Label for a status item.  Used for diagnostic info screens, precise translation isn't needed -->
+    <string name="radio_info_current_network_label">Current network:</string>
+    <!-- Radio Info screen. Label for a status item.  Used for diagnostic info screens, precise translation isn't needed -->
+    <string name="radio_info_gsm_service_label">GSM service:</string>
+    <!-- Radio Info screen. Label for a status item.  Used for diagnostic info screens, precise translation isn't needed -->
+    <string name="radio_info_signal_strength_label">Signal strength:</string>
+    <!-- Radio Info screen. Label for a status item.  Used for diagnostic info screens, precise translation isn't needed -->
+    <string name="radio_info_call_status_label">Call status:</string>
+
+    <string name="Send" translate="false">SEND AT COMMAND</string>
+    <string name="Start" translate="false">START</string>
+    <string name="Add" translate="false">ROUTE ADD</string>
+    <string name="Stop" translate="false">STOP</string>
+    <string name="Report" translate="false">Report Inet Condition</string>
+
+    <string name="radio_info_gprs_attach_service_label">GPRS PS service:</string>
+    <string name="radio_info_gprs_service_label">Default pdp status:</string>
+    <!-- Radio Info screen. Label for a status item.  Used for diagnostic info screens, precise translation isn't needed -->
+    <string name="radio_info_roaming_label">Roaming:</string>
+    <!-- Radio Info screen. Label for a status item.  Used for diagnostic info screens, precise translation isn't needed -->
+    <string name="radio_info_imei_label">IMEI:</string>
+    <string name="radio_info_imsi_label">IMSI:</string>
+    <string name="radio_info_impi_label">IMPI:</string>
+    <string name="radio_info_impu_label">IMPU:</string>
+    <string name="radio_info_ims_domain_label">IMS Domain:</string>
+    <string name="radio_info_ims_pcscf_label">P-CSCF server list:</string>
+
+    <string name="radio_info_phone_number_label">Phone number:</string>
+    <!-- Radio Info screen. Label for a status item.  Used for diagnostic info screens, precise translation isn't needed -->
+
+    <string name="radio_info_network_type_label">Network type:</string>
+    <!-- Radio Info screen. Label for a status item.  Used for diagnostic info screens, precise translation isn't needed -->
+
+    <string name="radio_state_label" translate="false">Radio state:</string>
+    <string name="sim_state_label" translate="false">SIM state:</string>
+    <string name="radio_info_service_state_label" translate="false">Service state:</string>
+
+    <!-- Used for diagnostic info screens, precise translation isn't needed -->
+    <string name="radioInfo_unknown" translate="false">unknown</string>
+    <!-- Phone Info screen. Units shown after a value.  Used for diagnostic info screens, precise translation isn't needed -->
+    <string name="radioInfo_display_packets" translate="false">pkts</string>
+    <!-- Phone Info screen. Units shown after a value.  Used for diagnostic info screens, precise translation isn't needed -->
+    <string name="radioInfo_display_bytes" translate="false">bytes</string>
+    <!-- Phone Info screen. Units shown after a value.  Used for diagnostic info screens, precise translation isn't needed -->
+    <string name="radioInfo_display_dbm" translate="false">dBm</string>
+    <!-- Phone Info screen. Units shown after a value.  Used for diagnostic info screens, precise translation isn't needed -->
+    <string name="radioInfo_display_asu" translate="false">asu</string>
+    <!-- Used for diagnostic info screens, precise translation isn't needed -->
+    <string name="radioInfo_lac" translate="false">LAC</string>
+    <!-- Used for diagnostic info screens, precise translation isn't needed -->
+    <string name="radioInfo_cid" translate="false">CID</string>
+
+    <!-- Phone Info screen. Status label.  Used for diagnostic info screens, precise translation isn't needed -->
+    <string name="radioInfo_service_in" translate="false">In service</string>
+    <!-- Phone Info screen. Status label.  Used for diagnostic info screens, precise translation isn't needed -->
+    <string name="radioInfo_service_out" translate="false">Out of service</string>
+    <!-- Phone Info screen. Status label.  Used for diagnostic info screens, precise translation isn't needed -->
+    <string name="radioInfo_service_emergency" translate="false">Emergency calls only</string>
+    <!-- Phone Info screen. Status label.  Used for diagnostic info screens, precise translation isn't needed -->
+    <string name="radioInfo_service_off" translate="false">Radio off</string>
+    <string name="radioInfo_service_on" translate="false">Radio on</string>
+
+    <!-- Phone Info screen. Status label.  Used for diagnostic info screens, precise translation isn't needed -->
+    <string name="radioInfo_phone_idle"  translate="false">Idle</string>
+    <!-- Phone Info screen. Status label.  Used for diagnostic info screens, precise translation isn't needed -->
+    <string name="radioInfo_phone_ringing"  translate="false">Ringing</string>
+    <!-- Phone Info screen. Status label.  Used for diagnostic info screens, precise translation isn't needed -->
+    <string name="radioInfo_phone_offhook"  translate="false">Call in progress</string>
+
+    <!-- Phone Info screen. Status label.  Used for diagnostic info screens, precise translation isn't needed -->
+    <string name="radioInfo_data_disconnected" translate="false">Disconnected</string>
+    <!-- Phone Info screen. Status label.  Used for diagnostic info screens, precise translation isn't needed -->
+    <string name="radioInfo_data_connecting" translate="false">Connecting</string>
+    <!-- Phone Info screen. Status label.  Used for diagnostic info screens, precise translation isn't needed -->
+    <string name="radioInfo_data_connected" translate="false">Connected</string>
+    <!-- Phone Info screen. Status label.  Used for diagnostic info screens, precise translation isn't needed -->
+    <string name="radioInfo_data_suspended" translate="false">Suspended</string>
+
+    <!-- Phone Info screen. Status label.  Used for diagnostic info screens, precise translation isn't needed -->
+    <string name="radioInfo_roaming_in" translate="false">Roaming</string>
+    <!-- Phone Info screen. Status label.  Used for diagnostic info screens, precise translation isn't needed -->
+    <string name="radioInfo_roaming_not" translate="false">Not roaming</string>
+
+    <string name="mtu_default_value" translate="false">1500</string>
+    <string name="mtu_name" translate="false">Configure MTU Size for\r\n Network Interface</string>
+    <string name="mtu_configure_btn" translate="false">MTU SIZE CONFIGURE</string>
+    <string name="mobileOnly" translate="false">Mobile network interface only</string>
+    <string name="interfaceUp" translate="false">Interface Up only</string>
+
+    <string name="ps_data_flow" translate="false">PS Data Control</string>
+    <string name="btn_enable_fw" translate="false">Enable Firewall</string>
+    <string name="btn_disable_fw" translate="false">Disable Firewall</string>
+    <string name="ps_fw_rule" translate="false">Firewall status:</string>
+    <string name="btn_ps_enable" translate="false">Enable</string>
+    <string name="btn_ps_disable" translate="false">Disable</string>
+    <string name="ps_fw_app_rule_label" translate="false">App firewall status</string>
+    <string name="ps_fw_app_agps" translate="false">AGPS</string>
+    <string name="ps_fw_app_shell" translate="false">SHELL</string>
+    <string name="btn_enable_udp" translate="false">Enable USB testing</string>
+    <string name="btn_disable_udp" translate="false">Diable USB testing</string>
+
+    <string name="chk_gcf_stk" translate="false">Support GCF STK</string>
+    <string name="ps_fw_rule_note" translate="false">If you reboot the deviec, the firewall rule will be lost\r\nPlease remember to enable this firewall rule again</string>
+
+    <string name="lce_test" translate="false">LCE Test</string>
+    <string name="lce_start_test" translate="false">LCE Test start</string>
+    <string name="lce_stop_test" translate="false">LCE Test stop</string>
+
+    <string name="c2k" translate="false">Send to C2K (Gen91/92)</string>
+    <string name="eBox" translate="false">eBox APN</string>
+    <string name="vzw" translate="false">VZW APN</string>
+
+    <string name="multi_pdn_hint" translate="false">1. For 3 PDP testing, suggest to use INTERNET + MMS + SUPL\n
+        2. For Internet PDN, please check mobile data connection setting\n
+        3. Only support 2 PDN connections simultaneously for Others APN. (2~3: others)\n
+           0: internet, 1: tethering, 2~3: others, 4~6: IMS (non-throttling)\n
+        4. IMS PDN is only supported in LTE
+        5. Please add -I ccmmiX for ping testing
+    </string>
+    <string name="apn_ui">APN UI</string>
+    <string name="run" translate="false">Run</string>
+    <string name="voice_mail_label" translate="false">Voice Mail Alpha Tag:</string>
+
+</resources>

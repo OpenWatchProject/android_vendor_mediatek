@@ -1,0 +1,100 @@
+/*
+ * Copyright (C) 2016 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package vendor.mediatek.hardware.wfo@1.0;
+
+interface IWifiOffloadCallback {
+    /*
+     * Request location information callback from MAL
+     *
+     * @param simIdx SIM index
+     */
+    oneway onRequestLocationInfo(int32_t simIdx);
+
+    /*
+     * Rssi monitor request callback from MAL
+     *
+     * @param simId SIM index
+     * @param size RSSI threshold array size
+     * @param rssiThresholds RSSI threshold array
+     */
+    oneway onRssiMonitorRequest(int32_t simId, int32_t size, vec<int32_t> rssiThresholds);
+
+    /*
+     * Request Ims Switch callback from MAL
+     *
+     * @param simIdx SIM index
+     * @param isImsOn Is IMS on
+     */
+    oneway onRequestImsSwitch(int32_t simIdx, bool isImsOn);
+
+    /*
+     * Request set Wi-Fi disable callback from MAL
+     *
+     * @param pdnCount Wi-Fi PDN status at runtime
+     */
+    oneway onRequestSetWifiDisabled(int32_t pdnCount);
+
+    /*
+     * Disconnect cause notify callback from MAL
+     *
+     * @param simIdx SIM index
+     * @param lastErr Last error code
+     * @param lastSubErr Last sub error code
+     */
+    oneway onDisconnectCauseNotify(int32_t simIdx, int32_t lastErr, int32_t lastSubErr);
+
+    /*
+     * MAL reset notification callback
+     *
+     */
+    oneway onMalReset();
+
+    /*
+     * PDN Ran type change callback from MAL
+     *
+     * @param simIdx SIM index
+     * @param interfaceId Interface id
+     * @param ranType Ran type
+     */
+    oneway onPdnRanTypeChanged(int32_t simIdx, int32_t interfaceId, int32_t ranType);
+
+    /*
+     * PDN state change callback from MAL
+     *
+     * @param simIdx SIM index
+     * @param active Active or not
+     */
+    oneway onPdnStateChanged(int32_t simIdx, bool active);
+
+    /*
+     * Wi-Fi calling rove out callback from MAL
+     *
+     * @param simIdx SIM index
+     * @param roveOut Roveout or not
+     * @param rssi RSSI value
+     */
+    oneway onRoveOut(int32_t simIdx, bool roveOut, int32_t rssi);
+
+    /*
+     * Wi-Fi hand over callback from MAL
+     *
+     * @param simIdx SIM index
+     * @param stage Wi-Fi hand over stage
+     * @param ratType Ray type
+     */
+    oneway onHandover(int32_t simIdx, int32_t stage, int32_t ratType);
+};

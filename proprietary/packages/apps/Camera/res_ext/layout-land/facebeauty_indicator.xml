@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/facebeauty_indicator" 
+	style="@style/OnScreenFacebeautyIcon">
+    
+    <LinearLayout 
+		android:id="@+id/effcts_bg"
+		style="@style/OnScreenFacebeautyBg"
+		android:gravity="center"
+     >
+		 <com.mediatek.camera.ui.RotateImageView
+			android:id="@+id/facebeauty_wrinkle_remove"
+			android:contentDescription="@string/pref_facebeauty_smooth_title"
+			style="@style/OnScreenFacebeautyFixed"/>		
+		<com.mediatek.camera.ui.RotateImageView
+			android:id="@+id/facebeauty_whitening"
+			android:contentDescription="@string/pref_facebeauty_skin_color_title"
+			style="@style/OnScreenFacebeautyFixed"/>
+		<com.mediatek.camera.ui.RotateImageView
+			android:id="@+id/facebeauty_beauty_shape"
+			android:contentDescription="@string/pref_facebeauty_sharp_title"
+			style="@style/OnScreenFacebeautyFixed"/>
+		<com.mediatek.camera.ui.RotateImageView
+			android:id="@+id/facebeauty_big_eys_nose"
+			android:contentDescription="@string/pref_facebeauty_big_eys_title"
+			style="@style/OnScreenFacebeautyFixed"/>
+		   <SeekBar
+				android:id="@+id/facebeauty_changevalue"
+				style="@style/OnScreenFacebeautySeekBar"
+				android:paddingLeft="13dp"
+				android:paddingRight="13dp"
+				android:layout_marginBottom = "3dp"
+				android:visibility="invisible"
+				android:thumb="@drawable/thumbs"
+				android:progressDrawable="@drawable/bg_bars"/>
+				
+		  <com.mediatek.camera.ui.RotateImageView
+			android:id="@+id/facebeauty_modify"
+			style="@style/OnScreenFacebeautyFixed"/>		
+	</LinearLayout>
+	  
+	<LinearLayout 
+		android:layout_width = "wrap_content"
+		android:layout_height = "wrap_content">
+		
+		<com.mediatek.camera.ui.RotateImageView
+			android:id="@+id/facebeauty_icon"
+			style="@style/OnScreenFacebeautyFixed"/>
+	</LinearLayout>
+
+</LinearLayout>

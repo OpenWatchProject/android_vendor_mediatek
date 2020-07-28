@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<merge
+    xmlns:latin="http://schemas.android.com/apk/res/com.android.inputmethod.latin">
+    <switch>
+        <case
+            latin:keyboardLayoutSetElement="alphabetManualShifted|alphabetShiftLocked|alphabetShiftLockShifted">
+            <Key latin:keySpec="&#x101a;" />
+            <Key latin:keySpec="&#x101e;" latin:moreKeys="&#x1086;"/>
+            <Key latin:keySpec="&#x101f;" />
+            <Key latin:keySpec="&#x1020;" />
+            <Key latin:keySpec="&#x1021;" />
+            <Key latin:keySpec="&#x102b;" latin:moreKeys="&#x105a;," />
+            <Key latin:keySpec="&#x102c;" latin:moreKeys="&#x1039;" />
+            <Key latin:keySpec="&#x102f;" latin:moreKeys="&#x1030;,&#x1033;,&#x1034;,&#x103d;,&#x104a;,&#x104b;,&#x1087;,&#x1088;,&#x1089;" />
+        </case>
+        <default>
+            <Key latin:keySpec="&#x1023;" />
+            <Key latin:keySpec="&#x1024;" />
+            <Key latin:keySpec="&#x1029;" />
+            <Key latin:keySpec="&#x102a;" />
+            <Key latin:keySpec="&#x104c;" />
+            <Key latin:keySpec="&#x104d;" />
+            <Key latin:keySpec="&#x104e;" />
+            <Key latin:keySpec="&#x104f;" />
+        </default>
+    </switch>
+</merge>

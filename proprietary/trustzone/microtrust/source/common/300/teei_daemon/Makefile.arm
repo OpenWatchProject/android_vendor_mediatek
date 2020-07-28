@@ -1,0 +1,18 @@
+.PHONY: all clean
+.SILENT: all clean
+
+ANDROID_VERSION ?= N
+ANDROID_VENDOR_PATH ?= /vendor
+export MICROTRUST_TEE_SUPPORT ?= yes
+
+all:
+	echo Building teei_daemon for Android $(ANDROID_VERSION)
+	ndk-build -B V=1 NDK_APPLICATION_MK=./Application.mk NDK_PROJECT_PATH=./ NDK_APP_OUT=./out || exit 1;
+	find . -name 'teei_daemon' | xargs file
+	echo Finished compiling teei_daemon
+
+clean:
+	echo Cleaning...
+	rm -rf $(CURDIR)/out $(CURDIR)/libs
+	find . -name 'teei_daemon'
+	echo Done

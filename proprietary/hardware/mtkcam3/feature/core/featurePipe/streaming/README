@@ -1,0 +1,37 @@
+Library of MTK camera streaming feature pipe
+
+This library is pre-built by MediaTek internal.
+
+
+WHAT IT DOES?
+=============
+This contains MediaTek developed library for camera streaming feature pipe
+
+HOW IT WAS BUILT?
+==================
+It needs the following library from AOSP:
+- liblog.so
+- libcutils.so
+- libstdc++.so
+- libnativewindow.so
+- libutils.so
+
+and the following libs from MediaTek:
+- libcamalgo.so
+- libcam_utils.so
+- libcam.iopipe.so
+- libdpframework.so
+- libgralloc_extra.so
+
+All source/dependency modules of this module are already put in
+'vendor/mediatek/libs' folder.
+
+HOW TO USE IT?
+==============
+include $(TOP)/$(MTK_PATH_SOURCE)/hardware/mtkcam/mtkcam.mk
+LOCAL_C_INCLUDES += $(TOP)/$(MTK_PATH_SOURCE)/hardware/mtkcam/feature/include
+LOCAL_C_INCLUDES += $(MTKCAM_DRV_INCLUDE)
+LOCAL_C_INCLUDES += $(MTKCAM_DRV_INCLUDE)/iopipe
+LOCAL_SHARED_LIBRARIES += libmtkcam.featurepipe.streaming
+
+All the source code of this library were written by MediaTek co..

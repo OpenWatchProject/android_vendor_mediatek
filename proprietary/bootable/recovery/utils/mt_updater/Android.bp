@@ -1,0 +1,31 @@
+//
+// Copyright (C) 2014 MediaTek Inc.
+// Modification based on code covered by the mentioned copyright
+// and/or permission notice(s).
+//
+
+// librecovery_updater_mtk (static library)
+// ========================================
+
+cc_library_static {
+    name: "librecovery_updater_mtk",
+
+    include_dirs: [
+        "system/core/libsparse",
+        "system/core/base/include",
+        "bootable/recovery",
+        "bootable/recovery/edify/include",
+        "bootable/recovery/otautil/include",
+        "bootable/recovery/bootloader_message/include",
+        "system/core/libziparchive/include",
+        "device/mediatek/common/kernel-headers"
+    ],
+
+    local_include_dirs: [
+        "include",
+    ],
+
+    srcs: ["mt_updater.cpp"],
+    owner: "mtk",
+
+}

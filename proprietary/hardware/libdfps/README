@@ -1,0 +1,38 @@
+libdfps support collecting request of frame rate and adjusting display frame rate of system
+
+WHAT IT DOES?
+=============
+
+libdfps will create a DFPS service as a bridge between user space and kernel space. It will
+collect request of frame rate from other module, and send it to dfrc driver which decide the
+frame rate of system. Then dfrc drvier noify DFPS service that the result of the scenario.
+
+HOW IT WAS BUILT?
+==================
+
+It needs the following libs from AOSP:
+1.  libbase.so
+2.  libcutils.so
+3.  libfmq.so
+4.  libhardware.so
+5.  libhidlbase.so
+6.  libhidltransport.so
+7.  liblog.so
+8.  libsync.so
+9.  libutils.so
+10. libhwbinder
+
+and the following libs from MediaTek:
+1.  vendor.mediatek.hardware.dfps@1.0.so
+
+All source/dependency modules of this module are already put in
+'vendor/mediatek/proprietary/hardware/libdfps/' and
+'vendor/mediatek/proprietary/hardware/interfaces/' folder.
+
+
+HOW TO USE IT?
+==============
+
+just link the libfpspolicy_fw.so or libfpspolicy.
+
+libdfps source code in this library were written by MediaTek co..

@@ -1,0 +1,48 @@
+cc_prebuilt_library_shared {
+    arch: {
+        arm: {
+            shared_libs: [
+                "liblog",
+                "libcutils",
+                "libOpenCL",
+                "libhidlmemory",
+                "android.hardware.neuralnetworks@1.0",
+                "android.hardware.neuralnetworks@1.1",
+                "android.hardware.neuralnetworks@1.2",
+                "android.hidl.allocator@1.0",
+                "android.hidl.memory@1.0",
+                "libcmdl",
+            ],
+            srcs: [
+                "arm/libarmnn.so",
+            ],
+        },
+        arm64: {
+            shared_libs: [
+                "liblog",
+                "libcutils",
+                "libOpenCL",
+                "libhidlmemory",
+                "android.hardware.neuralnetworks@1.0",
+                "android.hardware.neuralnetworks@1.1",
+                "android.hardware.neuralnetworks@1.2",
+                "android.hidl.allocator@1.0",
+                "android.hidl.memory@1.0",
+                "libcmdl",
+            ],
+            srcs: [
+                "arm64/libarmnn.so",
+            ],
+        },
+    },
+    export_include_dirs: [
+        "armnn/include/mtk/wrapper",
+    ],
+    name: "libarmnn@MTK,aosp",
+    owner: "mtk",
+    proprietary: true,
+    strip: {
+        none: true,
+    },
+}
+

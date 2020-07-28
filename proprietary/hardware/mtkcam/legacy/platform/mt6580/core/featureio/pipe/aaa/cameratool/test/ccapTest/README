@@ -1,0 +1,27 @@
+Binary of MTK camera verification tool.
+
+This binary is pre-built by MediaTek internal.
+
+
+WHAT IT DOES?
+=============
+ccaptest contains MediaTek developed camera related pre- and post-processing modules.  
+It provides an easy to verify camera's functionality.
+
+HOW IT WAS BUILT?
+==================
+It needs the following library from AOSP:
+1.  liblog.so
+2.  libcutils.so
+3.  libdl.so
+
+and the following libs from MediaTek:
+1.  libacdk_entry_cctif.so
+2.  libmet-libacdk_entry_mdk.so
+
+All source/dependency modules of this module are already put in
+'vendor/mediatek/libs' folder.
+
+HOW TO USE IT?
+==============
+

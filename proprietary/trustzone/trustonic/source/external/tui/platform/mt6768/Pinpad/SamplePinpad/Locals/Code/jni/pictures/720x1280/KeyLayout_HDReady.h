@@ -1,0 +1,83 @@
+/*
+ * Copyright (c) 2016 TRUSTONIC LIMITED
+ * All rights reserved
+ *
+ * The present software is the confidential and proprietary information of
+ * TRUSTONIC LIMITED. You shall not disclose the present software and shall
+ * use it only in accordance with the terms of the license agreement you
+ * entered into with TRUSTONIC LIMITED. This software may be subject to
+ * export or import laws in certain countries.
+ */
+
+#ifndef __KEY_LAYOUT_HDREADY_H__
+#define __KEY_LAYOUT_HDREADY_H__
+
+#include "tlPinpadLayout.h"
+
+/* x/y coordinates for our pin pad as in pictures/720*1280/pinpad.png (determined manually).
+ * Use any graphic tool to look up the coordinates of your image.
+ */
+#define PAD_COL1_LEFT_HDREADY     (3)
+#define PAD_COL1_RIGHT_HDREADY    (236)
+#define PAD_COL2_LEFT_HDREADY     (243)
+#define PAD_COL2_RIGHT_HDREADY    (476)
+#define PAD_COL3_LEFT_HDREADY     (483)
+#define PAD_COL3_RIGHT_HDREADY    (716)
+
+/* /!\ yBottom > yTop */
+#define PAD_LINE1_TOP_HDREADY      (616)
+#define PAD_LINE1_BOTTOM_HDREADY   (716)
+#define PAD_LINE2_TOP_HDREADY      (726)
+#define PAD_LINE2_BOTTOM_HDREADY   (826)
+#define PAD_LINE3_TOP_HDREADY      (836)
+#define PAD_LINE3_BOTTOM_HDREADY   (936)
+#define PAD_LINE4_TOP_HDREADY      (946)
+#define PAD_LINE4_BOTTOM_HDREADY   (1046)
+
+/* TODO: Change this part because the entryfield's shape has changed */
+#define TEXTAREA_LEFT_HDREADY      (64)
+#define TEXTAREA_RIGHT_HDREADY     (656)
+#define TEXTAREA_TOP_HDREADY       (383)
+#define TEXTAREA_BOTTOM_HDREADY    (483)
+#define TEXTAREA_MARGIN_HDREADY    (0)
+#define TEXTAREA_CHARSIZE_HDREADY  (164)
+
+#define CANCEL_LEFT_HDREADY       (3)
+#define CANCEL_RIGHT_HDREADY      (236)
+#define CANCEL_TOP_HDREADY        (1056)
+#define CANCEL_BOTTOM_HDREADY     (1156)
+
+#define VALID_LEFT_HDREADY        (483)
+#define VALID_RIGHT_HDREADY       (716)
+#define VALID_TOP_HDREADY         (1056)
+#define VALID_BOTTOM_HDREADY      (1156)
+
+static const sLayout_t pinpad_layout_hdready  = {
+    /* sPinPadKey_t buttons_array[PINPAD_SIZE+1] */ {
+  {0, 0, 0, 0, PAD_NOKEY_VAL, NOKEY},
+  {PAD_COL1_LEFT_HDREADY, PAD_COL1_RIGHT_HDREADY, PAD_LINE1_TOP_HDREADY, PAD_LINE1_BOTTOM_HDREADY, 1,                PAD_NUM},
+  {PAD_COL2_LEFT_HDREADY, PAD_COL2_RIGHT_HDREADY, PAD_LINE1_TOP_HDREADY, PAD_LINE1_BOTTOM_HDREADY, 2,                PAD_NUM},
+  {PAD_COL3_LEFT_HDREADY, PAD_COL3_RIGHT_HDREADY, PAD_LINE1_TOP_HDREADY, PAD_LINE1_BOTTOM_HDREADY, 3,                PAD_NUM},
+  {PAD_COL1_LEFT_HDREADY, PAD_COL1_RIGHT_HDREADY, PAD_LINE2_TOP_HDREADY, PAD_LINE2_BOTTOM_HDREADY, 4,                PAD_NUM},
+  {PAD_COL2_LEFT_HDREADY, PAD_COL2_RIGHT_HDREADY, PAD_LINE2_TOP_HDREADY, PAD_LINE2_BOTTOM_HDREADY, 5,                PAD_NUM},
+  {PAD_COL3_LEFT_HDREADY, PAD_COL3_RIGHT_HDREADY, PAD_LINE2_TOP_HDREADY, PAD_LINE2_BOTTOM_HDREADY, 6,                PAD_NUM},
+  {PAD_COL1_LEFT_HDREADY, PAD_COL1_RIGHT_HDREADY, PAD_LINE3_TOP_HDREADY, PAD_LINE3_BOTTOM_HDREADY, 7,                PAD_NUM},
+  {PAD_COL2_LEFT_HDREADY, PAD_COL2_RIGHT_HDREADY, PAD_LINE3_TOP_HDREADY, PAD_LINE3_BOTTOM_HDREADY, 8,                PAD_NUM},
+  {PAD_COL3_LEFT_HDREADY, PAD_COL3_RIGHT_HDREADY, PAD_LINE3_TOP_HDREADY, PAD_LINE3_BOTTOM_HDREADY, 9,                PAD_NUM},
+  {PAD_COL2_LEFT_HDREADY, PAD_COL2_RIGHT_HDREADY, PAD_LINE4_TOP_HDREADY, PAD_LINE4_BOTTOM_HDREADY, 0,                PAD_NUM},
+  {PAD_COL3_LEFT_HDREADY, PAD_COL3_RIGHT_HDREADY, PAD_LINE4_TOP_HDREADY, PAD_LINE4_BOTTOM_HDREADY, PAD_CORRECT_VAL,  PAD_CORRECT},
+  {CANCEL_LEFT_HDREADY,   CANCEL_RIGHT_HDREADY,   CANCEL_TOP_HDREADY,    CANCEL_BOTTOM_HDREADY,    PAD_CANCEL_VAL,   PAD_CANCEL},
+  {VALID_LEFT_HDREADY,    VALID_RIGHT_HDREADY,    VALID_TOP_HDREADY,     VALID_BOTTOM_HDREADY,     PAD_VALIDATE_VAL, PAD_VALIDATE}
+    },
+    /* sTextAreaLayout_t textarea */ {
+    TEXTAREA_LEFT_HDREADY,
+    TEXTAREA_RIGHT_HDREADY,
+    TEXTAREA_TOP_HDREADY,
+    TEXTAREA_BOTTOM_HDREADY,
+    TEXTAREA_MARGIN_HDREADY,
+    TEXTAREA_CHARSIZE_HDREADY,
+    }
+};
+
+#endif /* #ifndef __KEY_LAYOUT_HDREADY_H__ */
+

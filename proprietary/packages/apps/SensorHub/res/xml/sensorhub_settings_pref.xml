@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+        android:title="@string/sensor_hub_entry">
+    <Preference android:key="stress_random_test" android:title="@string/stress_title"
+        android:persistent="false">
+        <intent android:action="android.intent.action.MAIN"
+            android:targetPackage="com.mediatek.sensorhub.ui"
+            android:targetClass="com.mediatek.sensorhub.ui.SensorStressTestActivity" />
+    </Preference>
+    <Preference android:key="stress_full_test" android:title="@string/stress_full_title"
+        android:persistent="false">
+        <intent android:action="android.intent.action.MAIN"
+            android:targetPackage="com.mediatek.sensorhub.ui"
+            android:targetClass="com.mediatek.sensorhub.ui.SensorStressFullTestActivity" />
+    </Preference>
+    <Preference android:key="sensor" android:title="@string/sensor"
+        android:persistent="false">
+        <intent android:action="android.intent.action.MAIN"
+            android:targetPackage="com.mediatek.sensorhub.ui"
+            android:targetClass="com.mediatek.sensorhub.sensor.Sensor" />
+    </Preference>
+</PreferenceScreen>

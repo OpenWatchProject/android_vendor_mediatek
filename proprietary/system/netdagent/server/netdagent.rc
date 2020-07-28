@@ -1,0 +1,12 @@
+service netdagent /vendor/bin/netdagent
+    class late_start
+    #socket netdagent stream 0660 root system
+    user system
+    group net_admin net_raw system misc
+    capabilities NET_ADMIN NET_RAW
+
+on init
+    setprop ro.vendor.net.upload.benchmark.default blocking
+
+on property:persist.vendor.operator.optr=OP12
+    write /proc/sys/net/optr 12

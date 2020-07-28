@@ -1,0 +1,16 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:phone="http://schemas.android.com/apk/res/com.android.phone"
+    android:title="@string/labelCDMAMore">
+
+    <PreferenceScreen
+        android:key="button_cf_expand_key"
+        android:title="@string/labelCF"
+        android:persistent="false"
+        >
+    </PreferenceScreen>
+
+    <Preference
+        android:key="button_cw_key"
+        android:title="@string/labelCW"
+        android:persistent="false"/>
+</PreferenceScreen>

@@ -1,0 +1,107 @@
+/* Copyright Statement:
+ *
+ * This software/firmware and related documentation ("MediaTek Software") are
+ * protected under relevant copyright laws. The information contained herein is
+ * confidential and proprietary to MediaTek Inc. and/or its licensors. Without
+ * the prior written permission of MediaTek inc. and/or its licensors, any
+ * reproduction, modification, use or disclosure of MediaTek Software, and
+ * information contained herein, in whole or in part, shall be strictly
+ * prohibited.
+ *
+ * MediaTek Inc. (C) 2019. All rights reserved.
+ *
+ * BY OPENING THIS FILE, RECEIVER HEREBY UNEQUIVOCALLY ACKNOWLEDGES AND AGREES
+ * THAT THE SOFTWARE/FIRMWARE AND ITS DOCUMENTATIONS ("MEDIATEK SOFTWARE")
+ * RECEIVED FROM MEDIATEK AND/OR ITS REPRESENTATIVES ARE PROVIDED TO RECEIVER
+ * ON AN "AS-IS" BASIS ONLY. MEDIATEK EXPRESSLY DISCLAIMS ANY AND ALL
+ * WARRANTIES, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED
+ * WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE OR
+ * NONINFRINGEMENT. NEITHER DOES MEDIATEK PROVIDE ANY WARRANTY WHATSOEVER WITH
+ * RESPECT TO THE SOFTWARE OF ANY THIRD PARTY WHICH MAY BE USED BY,
+ * INCORPORATED IN, OR SUPPLIED WITH THE MEDIATEK SOFTWARE, AND RECEIVER AGREES
+ * TO LOOK ONLY TO SUCH THIRD PARTY FOR ANY WARRANTY CLAIM RELATING THERETO.
+ * RECEIVER EXPRESSLY ACKNOWLEDGES THAT IT IS RECEIVER'S SOLE RESPONSIBILITY TO
+ * OBTAIN FROM ANY THIRD PARTY ALL PROPER LICENSES CONTAINED IN MEDIATEK
+ * SOFTWARE. MEDIATEK SHALL ALSO NOT BE RESPONSIBLE FOR ANY MEDIATEK SOFTWARE
+ * RELEASES MADE TO RECEIVER'S SPECIFICATION OR TO CONFORM TO A PARTICULAR
+ * STANDARD OR OPEN FORUM. RECEIVER'S SOLE AND EXCLUSIVE REMEDY AND MEDIATEK'S
+ * ENTIRE AND CUMULATIVE LIABILITY WITH RESPECT TO THE MEDIATEK SOFTWARE
+ * RELEASED HEREUNDER WILL BE, AT MEDIATEK'S OPTION, TO REVISE OR REPLACE THE
+ * MEDIATEK SOFTWARE AT ISSUE, OR REFUND ANY SOFTWARE LICENSE FEES OR SERVICE
+ * CHARGE PAID BY RECEIVER TO MEDIATEK FOR SUCH MEDIATEK SOFTWARE AT ISSUE.
+ *
+ * The following software/firmware and/or related documentation ("MediaTek
+ * Software") have been modified by MediaTek Inc. All revisions are subject to
+ * any receiver's applicable license agreements with MediaTek Inc.
+ */
+
+#ifndef __DISPLAY_TUI_H__
+#define __DISPLAY_TUI_H__
+
+#include "ddp_log.h"
+#define DISP_TUI_OPTION_LCM_BUSY_POLLING
+#define DISP_RDMA_INTERRUPT_ENABLE 0
+
+int disp_tui_dump_backup_regs();
+int disp_tui_init_backup_regs();
+int disp_tui_reg_backup(void* addr);
+
+
+static inline int disp_tui_poll(void* addr, unsigned int mask, unsigned int value, long timeout)
+{
+	volatile long i = 0;
+	volatile unsigned int reg_val;
+	int ret = 0;
+
+	while(1) {
+		reg_val = DISP_REG_GET(addr);
+
+		//DDPMSG("poll%d 0x%p = 0x%x, msk=0x%x, val=0x%x\n", i, addr, reg_val, mask, value);
+
+		if((reg_val & mask) == value) {
+			ret = 0;
+			break;
+		}
+		if(timeout != -1 && i > timeout) {
+			ret = -1;
+			break;
+		}
+
+		i++;
+	}
+	return ret;
+}
+
+static inline int disp_tui_poll_nz(void* addr, unsigned int mask, long timeout)
+{
+	volatile long i = 0;
+	volatile unsigned int reg_val;
+	int ret = 0;
+
+	while(1) {
+		reg_val = DISP_REG_GET(addr);
+
+		//DDPMSG("poll%d 0x%p = 0x%x, msk=0x%x, val=0x%x\n", i, addr, reg_val, mask, value);
+
+		if((reg_val & mask)) {
+			ret = 0;
+			break;
+		}
+		if(timeout != -1 && i > timeout) {
+			ret = -1;
+			break;
+		}
+
+		i++;
+	}
+	return ret;
+}
+
+int disp_tui_init();
+int disp_tui_enter();
+int disp_tui_leave();
+
+int disp_tui_pan_display(unsigned long offset);
+int disp_tui_draw_buffer(uint8_t *va, int w, int h, int pitch, int Bpp);
+
+#endif

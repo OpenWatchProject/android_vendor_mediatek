@@ -1,0 +1,30 @@
+The bin file factory is a service.
+This bin is pre-built by MediaTek internal.
+
+
+WHAT IT DOES?
+=============
+
+factory is native service to test hardware.
+
+
+HOW IT WAS BUILT?
+==================
+
+It needs the following library from AOSP:
+1.  libutils.so
+2.  libcutils.so
+3.  libselinux.so
+
+and the following libs from MediaTek:
+1.  libminzip
+2.  libunz
+
+All source/dependency modules of this module are already put in
+'vendor/mediatek/libs' folder.
+
+
+HOW TO USE IT?
+==============
+
+This bin file is automatically started by system.img

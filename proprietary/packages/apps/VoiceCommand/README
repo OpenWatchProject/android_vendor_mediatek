@@ -1,0 +1,23 @@
+WHAT IT DOES?
+==================
+This is a Mediatek feature mainly refers to 
+1. User can control some apps operation by using voice from the mic on Earphones, such as answer/ignore the incoming call, control music playing and snooze/dismiss alarm. 
+2. User record the voice command for several times first and then speak out the command to unlock device, or unlock then launch some app by unlock command.
+3. User in 'Contact', say a name and the phone show refreshed matched list according to the name you said.
+4. The device always automatically detect voice input, once the command or password is recognized, and then the device will be wake up and launch pre-defined apps.
+
+HOW IT WAS BUILD?
+===================
+1. At least one of the feature options: MTK_VOICE_UI_SUPPORT,MTK_VOICE_UNLOCK_SUPPORT, MTK_VOICE_CONTACT_SEARCH_SUPPORT, MTK_VOW_SUPPORT should be true.
+2. It needs the following library from MediaTek: libvoicerecognition_jni.so.
+
+[Build Method]
+make VoiceCommand
+or
+mmm vend/mediatek/proprietary/packages/apps/VoiceCommand
+
+HOW TO USE IT?
+====================
+Boot up the device will start it.
+All api interface are at (vendor/mediatek/proprietary/packages/apps/VoiceCommand)
+All the source code of this library were written by MediaTek co..

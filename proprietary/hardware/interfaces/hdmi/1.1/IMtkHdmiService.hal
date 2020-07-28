@@ -1,0 +1,21 @@
+package vendor.mediatek.hardware.hdmi@1.1;
+
+import @1.0::types;
+import @1.0::IMtkHdmiService;
+
+interface IMtkHdmiService extends @1.0::IMtkHdmiService{
+
+    /**
+     * set auto mode type
+     *
+     * @param is_auto_mode 0:not auto mode 1:auto mode
+     */
+    set_mode_type(int32_t is_auto_mode) generates (Result retval);
+
+    /**
+     * get auto disp mode
+     *
+     * @return audo disp mode resolution
+     */
+    get_auto_disp_mode() generates (Result retval, int32_t auto_disp_mode);
+};

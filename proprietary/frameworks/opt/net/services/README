@@ -1,0 +1,23 @@
+Library of MTK IP network extension class or interfaces.
+It includes DHCP, ARP, IpReachability and Tethering functions.
+
+This library is pre-built by MediaTek internal.
+
+WHAT IT DOES?
+=============
+mediatek-framework-net.jar contains Mediatek developed IP network related
+functionality. Android framework can use these classes/interfaces to
+enable the Mediatek IP network functions or bugs fixed.
+
+HOW IT WAS BUILT?
+==================
+It needs the following library from AOSP:
+1.  services.jar
+2.  framework.jar
+
+HOW TO USE IT?
+==============
+In Android AOSP framework, use java reflection mechanism dyamically loading class.
+
+
+All the source code of this library were written by MediaTek co..

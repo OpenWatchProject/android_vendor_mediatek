@@ -1,0 +1,43 @@
+######### DUT (Device Under Test) Information #########################
+
+#### Wi-Fi Test Suite Control Agent Support ########
+# 1-If DUT has Wi-Fi Test Suite Control Agent support. 0-If not supported.
+
+WTS_ControlAgent_Support!1!
+
+
+#Any other notes about DUT - Optional
+DUT_Notes!-!
+
+# DUTType : WPA2-Personal or WPA2-Enterprise
+DUTType!WPA2-Enterprise!
+
+# DUT Band : ABG or BG or B (B only) or ABGN or GN or AN
+DUTBand!ABGN!
+
+#DUT Category : c1 or c2 or c3 if device is WPA2-Enterprise
+DUTCategory!c2!
+
+#Supported EAP Methods 0-No 1-Yes
+TLS!1!
+TTLS!1!
+PEAP0!1!
+FAST!1!
+PEAP1!0!
+SIM!1!
+AKA!1!
+
+
+####### PMF Optional Features - 1 if Supported. 0 if Not Supported or ignore ############
+
+#DUT Support for PMF Required
+PMF_REQUIRED_Support!1!
+
+#DUT Support for disconnecting through Unicast DEAUTH/DISASSOC
+PMF_UNICAST_DISCONNECT_Support!1!
+
+#APUT Support for disconnecting through Broadcast DEAUTH/DISASSOC, STAUT should ignore
+PMF_BCAST_DISCONNECT_Support!1!
+
+#APUT support for advertising 2 AKMs (SHA1 and SHA256) with PMF enabled, STAUT should ignore
+PMF_SHA1SHA256_Support!1!

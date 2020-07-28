@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--* Copyright Statement:
+ *
+ * This software/firmware and related documentation ("MediaTek Software") are
+ * protected under relevant copyright laws. The information contained herein
+ * is confidential and proprietary to MediaTek Inc. and/or its licensors.
+ * Without the prior written permission of MediaTek inc. and/or its licensors,
+ * any reproduction, modification, use or disclosure of MediaTek Software,
+ * and information contained herein, in whole or in part, shall be strictly prohibited.
+ *
+ * MediaTek Inc. (C) 2012. All rights reserved.
+ *
+ * BY OPENING THIS FILE, RECEIVER HEREBY UNEQUIVOCALLY ACKNOWLEDGES AND AGREES
+ * THAT THE SOFTWARE/FIRMWARE AND ITS DOCUMENTATIONS ("MEDIATEK SOFTWARE")
+ * RECEIVED FROM MEDIATEK AND/OR ITS REPRESENTATIVES ARE PROVIDED TO RECEIVER ON
+ * AN "AS-IS" BASIS ONLY. MEDIATEK EXPRESSLY DISCLAIMS ANY AND ALL WARRANTIES,
+ * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE OR NONINFRINGEMENT.
+ * NEITHER DOES MEDIATEK PROVIDE ANY WARRANTY WHATSOEVER WITH RESPECT TO THE
+ * SOFTWARE OF ANY THIRD PARTY WHICH MAY BE USED BY, INCORPORATED IN, OR
+ * SUPPLIED WITH THE MEDIATEK SOFTWARE, AND RECEIVER AGREES TO LOOK ONLY TO SUCH
+ * THIRD PARTY FOR ANY WARRANTY CLAIM RELATING THERETO. RECEIVER EXPRESSLY ACKNOWLEDGES
+ * THAT IT IS RECEIVER'S SOLE RESPONSIBILITY TO OBTAIN FROM ANY THIRD PARTY ALL PROPER LICENSES
+ * CONTAINED IN MEDIATEK SOFTWARE. MEDIATEK SHALL ALSO NOT BE RESPONSIBLE FOR ANY MEDIATEK
+ * SOFTWARE RELEASES MADE TO RECEIVER'S SPECIFICATION OR TO CONFORM TO A PARTICULAR
+ * STANDARD OR OPEN FORUM. RECEIVER'S SOLE AND EXCLUSIVE REMEDY AND MEDIATEK'S ENTIRE AND
+ * CUMULATIVE LIABILITY WITH RESPECT TO THE MEDIATEK SOFTWARE RELEASED HEREUNDER WILL BE,
+ * AT MEDIATEK'S OPTION, TO REVISE OR REPLACE THE MEDIATEK SOFTWARE AT ISSUE,
+ * OR REFUND ANY SOFTWARE LICENSE FEES OR SERVICE CHARGE PAID BY RECEIVER TO
+ * MEDIATEK FOR SUCH MEDIATEK SOFTWARE AT ISSUE.
+ *
+ * The following software/firmware and/or related documentation ("MediaTek Software")
+ * have been modified by MediaTek Inc. All revisions are subject to any receiver's
+ * applicable license agreements with MediaTek Inc.
+ */  -->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="app_label">Operator Plugin APK</string>
+    
+    <!-- MTK WFC Start -->
+    <string name="hotspot_block_unblock_summary">MAC: %1$s\nIP: %2$s</string>
+    <string name="wfc_quick_toggle_title">Wi-Fi calling</string>
+    <string name="wfc_mode_preference_title">Preference</string>
+    <string name="Help">HELP</string>
+    <string name="Tutorials">Tutorial</string>
+    <string name="Top_questions">Top questions</string>
+    <string name="Wifi_wfc_dialog_title">Wi-Fi calling</string>
+    <string name="Wifi_wfc_dialog_top_wording">You are now connected to Wi-Fi Network Name Wi-Fi Network</string>
+    <string name="Wifi_wfc_dialog_bottom_wording">When you see this symbol at the top of your screen after connected to a Wi-Fi network, you are able to make calls and send messages over Wi-Fi.</string>
+    <string name="Skip">SKIP</string>
+    <string name="Learn_more">LEARN MORE</string>
+    <string name="Next">NEXT</string>
+    <string name="Done">DONE</string>
+    <string name="Wfc_questions">Wi-Fi calling questions</string>
+    <string name="Wfc_off_summary">Disabled</string>
+    <string name="wfc_on_summary">Wi-Fi calling on</string>
+    <string name="connection_preference">Connection preference</string>
+    <string name="WiFi_preferred">Wi-Fi preferred</string>
+    <string name="Cellular_network_preferred">Cellular network preferred</string>
+    <string name="Never_use_cellular_network">Never use Cellular Network</string>
+    <string name="WiFi_preferred_summary">Use Wi-Fi for calls. If Wi-Fi is unavailable, use cellular network.(Default)</string>
+    <string name="Cellular_network_preferred_summary">Use cellular network for calls. If cellular network is unavailable use Wi-Fi.</string>
+    <string name="Never_use_cellular_network_summary">Use only Wi-Fi for calls. Do not use Cellular network, even if available.</string>
+    <string name="no_sim_present_error">No Sim present</string>
+    <string name="inavlid_sim_error">Error05: Invalid Sim</string>
+    <string name="airplane_mode_on">Airplane mode is on</string>
+    <string name="cellular_prefered_summary">Cellular preferred is your connection preference</string>
+    <string name="wifi_off_summary">Wi-Fi turned Off</string>
+    <string name="not_connected_to_wifi_summary">Not connected to Wi-Fi</string>
+    <string name="poor_wifi_signal_summary">Poor Wi-Fi signal</string>
+    <string name="wfc_enabling_summary">Enabling...</string>
+    <string name="wfc_disabling_summary">Disabling...</string>
+    <string name="wfc_ready_for_calls_summary">Ready for calls</string>
+    <string name="wfc_unknown_error_summary">Unknown error</string>
+    <string name="wfc_tutorial_heading">LEARN ALL ABOUT WI-FI CALLING</string>
+    <string name="wfc_tutorial_content_first_page">Wi-Fi calling lets you say goodbye to spotty coverage. With Wi-Fi calling you can send and receive calls and messages over a Wi-Fi network using your existing T-Mobile plan. There\'s no special setup needed for Wi-Fi calling. From the settings menu, go to Wireless and Networks and connect to a Wi-Fi network to get started.</string>
+    <string name="wfc_tutorial_content_second_page_part1">Once you see the Wi-Fi calling icon in the status bar, your phone is ready for Wi-Fi calling.</string>
+    <string name="wfc_tutorial_content_second_page_part2">To stay on a Wi-Fi call, remain in the range of the Wi-Fi network. You\'ll get an audible beep and a screen message letting you know when a call has dropped because you have moved out of range.</string>
+    <string name="wfc_incorrect_sim_alert_title">Error05: Invalid SIM card</string>
+    <string name="wfc_invalid_sim_alert_message">Important Notice\nYour SIM card needs to be updated for Wi-Fi Calling service compatibility. Please visit a T-Mobile store or dial 611 from your phone to reach Customer Care.</string>
+	<string name="ok_string">OK</string>
+	<string name="cancel">Cancel</string>
+    <string name="video_call_downgrade_insufficient_bandwidth">Insufficient bandwidth, downgrade to voice call</string>
+    <string name="Wfc_tut_first_page">
+		<![CDATA[<p><b><font color=\"#000000\" size="16">LEARN ALL ABOUT WI-FI CALLING</font></b></p>
+		<img src="divider_horizontal_holo_dark" alt="THIN GREY LINE">
+		<p><font color=\"#757575\" size="14">Wi-Fi calling lets you say goodbye to spotty coverage. With Wi-Fi calling you can send and receive calls and messages over a Wi-Fi network using your existing T-Mobile plan. There\'s no special setup needed for Wi-Fi calling. From the settings menu, go to Wireless and Networks and connect to a Wi-Fi network to get started.
+		</font></p>]]>
+ 	</string>
+ 	
+ 	<string name="Wfc_tut_second_page">
+		<![CDATA[<p><b><font color=\"#000000\" size="16">LEARN ALL ABOUT WI-FI CALLING</font></b></p>
+		<img src="divider_horizontal_holo_dark" alt="THIN GREY LINE">
+		<p><font color=\"#757575\" size="14">Once you see the Wi-Fi calling icon in the status bar, your phone is ready for Wi-Fi calling.</font></p>
+		<img src="wfc_tutorial_icon" alt="Green WFC icon">
+		<p><font color=\"#757575\" size="14">To stay on a Wi-Fi call, remain in the range of the Wi-Fi network. You\'ll get an audible beep and a screen message letting you know when a call has dropped because you have moved out of range.</font></p>
+		]]>
+ 	</string>
+ 	
+ 	<string name="Wfc_top_questions_page">
+		<![CDATA[<p><b><font color=\"#000000\" size="16">What is Wi-Fi Calling\?</font></b></p>
+		<img src="divider_horizontal_holo_dark" alt="THIN GREY LINE">
+		<p><font color=\"#757575\" size="14">Wi-Fi Calling lets you make and receive voice calls and text\/text/multimedia messages over Wi-Fi when your phone is connected to a Wi-Fi network and registered with the T-Mobile network for Wi-Fi Calling.</font></p>
+		
+		<p><b><font color=\"#000000\" size="16">How do I enable Wi-Fi\?</font></b></p>
+		<img src="divider_horizontal_holo_dark" alt="THIN GREY LINE">
+		<p><font color=\"#757575\" size="14">To enable Wi-Fi, use the wireless control section of your Android settings menu.</font></p>
+		
+		<p><b><font color=\"#000000\" size="16">How do I enable Wi-Fi Calling\?</font></b></p>
+		<img src="divider_horizontal_holo_dark" alt="THIN GREY LINE">
+		<p><font color=\"#757575\" size="14">By default, your phone is enabled for Wi-Fi Calling as soon as you enable the Wi-Fi radio. Wi-Fi Calling can be controlled from the Wi-Fi Calling Settings.</font></p>
+		
+		<p><b><font color=\"#000000\" size="16">How do I know when I am using Wi-Fi for my calls\?</font></b></p>
+		<img src="divider_horizontal_holo_dark" alt="THIN GREY LINE">
+		<p><font color=\"#757575\" size="14">When your phone associates with a Wi-Fi network, it will automatically try to register with the T-Mobile network for Wi-Fi Calling. Once the registration has successfully completed you will see the Wi-Fi Calling icon in the Status Bar. You will also see the Wi-Fi Calling icon displayed in the dialer (in place of your regular calling icon) and you will briefly see a message at the top of the screen saying, \"Calls will be made over Wi-Fi.\"</font></p>
+		
+		<p><b><font color=\"#000000\" size="16">Will calls or SMS\/MMS over Wi-Fi be charged differently than my cellular calls\?</font></b></p>
+		<img src="divider_horizontal_holo_dark" alt="THIN GREY LINE">
+		<p><font color=\"#757575\" size="14">The primary benefit of Wi-Fi Calling is to increase your coverage in locations with Wi-Fi. Calls and messages made over Wi-Fi will be charged like cellular calls for certain plans.</font></p>
+		
+		<p><b><font color=\"#000000\" size="16">What happens if I lose Wi-Fi coverage\?</font></b></p>
+		<img src="divider_horizontal_holo_dark" alt="THIN GREY LINE">
+		<p><font color=\"#757575\" size="14">If you have access to the LTE network and your device is VoLTE enabled, your call will seamlessly transition the TMobile LTE network. However, if you do not have LTE or other cellular network access, any active call will drop. You will receive a notification if your call drops due to a loss of Wi-Fi coverage.</font></p>
+		]]>
+ 	</string>
+ 
+    <!-- MTK WFC end -->
+
+    <string name="lte_on">LTE On (recommended)</string>
+    <string name="lte_off" translatable="false">LTE Off</string>
+    <string name="only_2g" translatable="false">2G only</string>
+        
+    <string-array name="enabled_networks_4g_choices" translatable="false">
+        <item>@string/lte_on</item>
+        <item>@string/lte_off</item>
+        <item>@string/only_2g</item>
+    </string-array>
+
+    <string name="wifi_title">Wi-Fi Calling and Minutes </string>
+    <string name="offer_dont_display">Please do not show me again</string>
+    <string name="wifi_wfc_dialog_bottom_wording">When you see this symbol at the top of your screen, you are able to make calls and send messages over Wi-Fi. Wi-Fi calling may use minutes with certain plans.</string>
+    <string name="wifi_wfc_dialog_top_wording">Congratulations, you\'ve complete your first call using Wi-Fi calling.</string>
+
+    <!-- MTK_TETHERING start -->
+    <string name="allowed_devices_title">Allowed devices</string>
+    <string name="allowed_devices_summary">Allowed all devices without verifying MAC addresses</string>
+    <string name="add_device_title">Add a device</string>
+    <string name="device_name">Name</string>
+    <string name="device_mac_addr">MAC address</string>
+    <string name="device_name_hint">You can name this device</string>
+    <string name="device_save">Save</string>
+    <string name="device_cancel">Cancel</string>
+    <string name="allowed_devices">Allowed devices</string>
+    <string name="allow_all_devices">Allow all devices</string>
+    <string name="allowed_device_list">Allowed device list</string>
+    <string name="add">Add</string>
+    <string name="delete">Delete</string>
+    <string name="close">Close</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="no_allowed_device_present">No devices are added this time</string>
+    <string name="mac_tutorial">
+        Wi-Fi MAC address is typically available from the device settings.For instance Android
+        devices have information on \'Settings - about Phone - Status - Wi-Fi MAC adddress\'.\n\n
+        if you can\'t find MAC address of the device, you may turn on \'Allow all devices\' option
+        and connect the device. After it is connected you may turn off \'Allow all devices\'
+        option and you will be given a menu to add all the connected devices to the list
+        without entering MAC address manually.
+    </string>
+    <string name="allowed_devices_turn_off_not_allowed_dialog_text">You do not have any device in the allowed device list.
+        Inorder to turn off this option, you must add one or more device in the list.
+    </string>
+    <string name="add_all_devices_confirmation_dialog_text">Do you want to add all the currently connected devices to the allowed device list?\n\n
+        You may delete each device from the list afterward.
+    </string>
+    <string name="add_allowed_device_failed">Adding new allowed device failed. Please try again.</string>
+    <string name="show_empty_allowed_list">Allowed list is empty now, Checkbox will be set checked.</string>
+    <!-- MTK_TETHERING end -->
+    <!-- MTK multiline settings start -->
+    <string name="multi_line">Multi-line Settings</string>
+    <string name="use_multiple_numbers">Use multiple numbers on this device.</string>
+    <string name="sign_in">SIGN IN WITH YOUR T-MOBILE ID</string>
+    <string name="create_new">CREATE NEW T-MOBILE ACCOUNT</string>
+    <string name="enter_line">Enter the line number you want to activate</string>
+    <string name="enter_line_number">Enter the line number</string>
+    <string name="request_use">REQUEST TO USE NUMBER</string>
+    <string name="rename_device">Rename device</string>
+    <string name="edit_line_settings">Edit line Settings</string>
+    <string name="activate_new_line">Acitivate new line</string>
+    <string name="activate_all">Activate all lines</string>
+    <string name="logout">Logout</string>
+    <string name="primary_line">PRIMARY LINE</string>
+    <string name="other_lines">OTHER LINES</string>
+    <string name="edit_device">Edit device name:</string>
+    <string name="edit_line">Edit line name:</string>
+    <string name="acitvate_new_head">ACTIVATE NEW LINE</string>
+    <string name="enter_to_activate">Enter the line number you want to activate</string>
+    <string name="not_connected_to_digit">Not connected to Digits Service, Please try again later</string>
+    <string name="wait_message">Please wait....\nUpdating Choice</string>
+    <string name="loading_message">Please wait, Page is loading</string>
+    <string name="try_again">Please try again.</string>
+    
+    <!-- MTK multiline settings end -->
+        <!-- Add Call Settings in Main Settings: start -->
+    <string name="call_settings_title">Call Settings</string>
+    <!-- Add Call Settings in Main Settings:  end -->
+</resources>

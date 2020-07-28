@@ -1,0 +1,11 @@
+android_app {
+    name: "QuickSearchBoxGo",
+    overrides: [
+        "QuickSearchBox",
+    ],
+    static_libs: [
+        "android-common",
+    ],
+    certificate: "shared",
+    product_specific: true,
+}

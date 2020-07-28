@@ -1,0 +1,617 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+/*
+ * Copyright (C) 2007-2008 Esmertec AG.
+ * Copyright (C) 2007-2008 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+ --><resources xmlns:android="http://schemas.android.com/apk/res/android" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+<!-- MTK Resources -->
+    
+    <!-- wap push string begin -->
+    <!-- The type of wap push message, used in message details -->
+    <string name="wp_msg_type">Service message</string>
+    <string name="wp_msg_created_label">Created:\u0020</string>
+    <string name="wp_msg_created_unknown">Ukjent</string>
+    <string name="wp_msg_priority_label">Priority:\u0020</string>
+    <!-- Wappush message priority -->
+    <string name="wp_msg_priority_low">Low</string>
+    <string name="wp_msg_priority_medium">Medium</string>
+    <string name="wp_msg_priority_high">High</string>
+    <!-- Context menu item -->
+    <string name="menu_goto_browser">Open browser</string>
+    <string name="menu_add_to_bookmark">Add to bookmark</string>
+    <!-- Wappush message content label -->
+    <string name="wp_msg_expiration_label">Expired: <xliff:g id="DATE">%s</xliff:g></string>
+    
+    <string name="error_unsupported_scheme">"Denne handlingen er ikke støttet nå."</string>
+    <!-- wap push string end -->
+    <string name="create_new_message" msgid="8735943333953093860">"Skriv ny melding"</string>
+    <string name="menu_undelivered_messages" msgid="3896857623211780616">"Ikke leverte meldinger"</string>
+    <string name="broadcast_from_to" msgid="2050376286109362539">"<xliff:g id="SENDER">%1$s</xliff:g> to <xliff:g id="RECIPIENT">%2$s</xliff:g>"</string>
+    <string name="anonymous_recipient" msgid="2501437626187039034">"Anonym"</string>
+    <string name="view_picture" msgid="4356315935277709195">"Vis bilde"</string>
+    <string name="sent_on" msgid="5868288548564632354">"Sendt: <xliff:g id="DATE">%s</xliff:g>"</string>
+    <string name="received_on" msgid="5868288548564632354">"Mottatt: <xliff:g id="DATE">%s</xliff:g>"</string>
+    <string name="name_colon" msgid="7069560650889479120"><b>"<xliff:g id="NAME">%s</xliff:g>"</b>": "</string>
+    <string name="compose_title" msgid="558578836596816068">"Skriv melding"</string>
+    <string name="image_too_large" msgid="261880224164478061">"Bildet er for stort"</string>
+    <string name="ask_for_automatically_resize" msgid="7657603662407738758">"Gjør bildet mindre før sending?"</string>
+    <string name="cannot_load_message" msgid="2577010607550849892">"Kan ikke laste meldingen."</string>
+    <string name="locked_message_cannot_be_deleted" msgid="6369452071783350219">"Låst melding kan ikke slettes."</string>
+    <string name="multiple_recipients" msgid="8747754491343248141">"<xliff:g id="RECIPIENTCOUNT">%1$s</xliff:g> mottakere."</string>
+    <string name="resize" msgid="4308912589984220360">"Skaler"</string>
+    <string name="to_label" msgid="2355268818058389047">"Til "</string>
+    <string name="confirm_delete_all_messages" msgid="5836389073199814660">"Hele tråden vil bli slettet."</string>
+    <string name="mms_priority_label">"Prioritet"</string>
+    <string name="menu_retry_sending" msgid="3146582005568302643">"Prøv å sende på nytt"</string>
+    <string name="menu_retry_sending_all" msgid="1870529976966340616">"Prøv å sende alle på nytt"</string>
+    <string name="retrying_dialog_body" msgid="4738260459043003431">"Denne meldingen, <xliff:g id="MESSAGE">%s</xliff:g>, ble ikke sendt på grunn av et tilkoblingsproblem."\n"Prøver å sende på nytt…"</string>
+    <string name="dl_expired_notification" msgid="950390029992535809">"Denne meldingen er utløpt, og vil bli slettet."</string>
+    <string name="add_contacts">"Kontakter"</string>  
+    <string name="add_attachment_activity" msgid="5324811371129695320">"Legg til vedlegg:"</string>
+    <string name="select_layout_activity" msgid="5041916695464513848">"Velg layout"</string>
+    <string name="edit_text_activity" msgid="5915226413346879213">"Rediger tekst"</string>
+    <string name="pick_numbers_activity" msgid="2083330191224178637">"Velg tall"</string>
+    <string name="send_using_mms_activity" msgid="3703434556280345726">"Send som MMS-melding…"</string>
+    <string name="select_contact_method_activity" msgid="1743384358979323991">"Velg kontaktmetode"</string>
+    <string name="me" msgid="341726346007839961">"Meg"</string>
+    <string name="invalid_contact_message" msgid="8215051456181842274">"Kontakten finnes ikke."</string>
+    <string name="finish">"Utført"</string>
+<string name="more_recipients">mottaker(e)</string>
+    <string name="Insert_sdcard">Sett inn et SD-kort!</string>
+    <string name="pref_title_mms_enable_to_send_delivery_reports">Send leveringsrapport</string>
+    <string name="pref_summary_mms_enable_to_send_delivery_reports">Send leveringsrapport for hver melding som mottas</string>
+    <string name="set_service_center_OK">SMS-servicesenter er satt</string>
+    <string name="set_service_center_fail">SMS-servicesenter ble ikke satt</string>
+    <string name="OK">OK</string>
+    <string name="Cancel">"Avbryt"</string>
+    <string name="sms_save_location">SMS-lagringssted</string>
+    <string name="sms_service_center">SMS-servicesenter</string>
+    <string name="sms_validity_period">SMS-gyldighetstid</string>
+    <string name="sms_validity_period_nosetting">Ikke satt</string>
+    <string name="sms_validity_period_1hour">"1 time"</string>
+    <string name="sms_validity_period_6hours">6 timer</string>
+    <string name="sms_validity_period_12hours">12 timer</string>
+    <string name="sms_validity_period_1day">"1 dag"</string>
+    <string name="sms_validity_period_max">Maksimum</string>
+    <string name="service_center_label">Servicesenter:\u0020</string>
+    <string name="cu_subject">Lemei-emne</string>
+    <string name="pref_title_mms_creation_mode">Opprettelsesmodus</string>
+    <string name="pref_summary_mms_creation_mode">MMS-modus for å skrive melding</string>
+    <string name="pref_title_mms_size_limit">Størrelsesbegrensning</string>
+    <string name="pref_summary_mms_size_limit">MMS størrelsesgrense for å skrive en melding</string>
+    <string name="confirm_restricted_audio">Begrenset lydinnholdstype. Vil du legge ved likevel?</string>
+    <string name="confirm_restricted_image">Begrenset bildeinnholdstype. Vil du legge ved likevel?</string>
+    <string name="confirm_restricted_video">Begrenset videoinnholdstype. Vil du legge ved likevel?</string>
+    <string name="unsupport_media_type">Ustøttet medietype</string>
+    <string name="select_different_media_type">Velg annet media</string>
+    <string name="image_resolution_too_large">Bildeoppløsningen er for stor til å sette inn</string>
+    <string name="pref_title_wappush_settings">Servicemelding-innstilling</string>
+    <string name="pref_title_wappush_enable">Aktiver WAP PUSH</string>
+    <string name="pref_summary_wappush_enable">Aktiver for å motta WAP PUSH</string>
+    <string name="pref_title_wappush_sl_autoloading">Autostart SL</string>
+    <string name="pref_summary_wappush_sl_autoloading">Åpne melding for tjenestelasting (SL) automatisk når den mottas</string>
+    <string name="menu_send_sms">Send melding til <xliff:g id="name">%s</xliff:g></string>
+    <string name="menu_omacp">Konfigureringsmelding</string>
+    <string name="save_message_to_sim">Lagre melding til SIM-kortet</string>
+    <string name="save_message_to_sim_successful">Lagring var vellykket.</string>
+    <string name="save_message_to_sim_unsuccessful">Lagring var ikke vellykket.</string>
+    <string name="transmission_transiently_failed">Overføringsfeil. Skal prøve på nytt senere.</string>
+    <string name="download_failed_due_to_full_memory">Nedlasting av melding mislyktes på grunn av at minnet er fullt.</string>
+    <string name="mms_too_big_to_download">Meldingen er for stor til å laste ned fra nettverket.</string>
+    <string name="menu_reply">"Svar"</string>
+    <string name="menu_sim_sms">"SIM-SMS"</string>
+    <string name="cannot_add_recipient">Antaller mottakere har nådd grensen. Du kan ikke legge til flere mottaker.</string>
+    <string name="status_expired">Utløpt</string>
+    <string name="status_deferred">Utsatt</string>
+    <string name="status_unrecognized">Ikke gjenkjent</string>
+    <string name="status_indeterminate">Ubestemmelig</string>
+    <string name="status_unreachable">Kan ikke nås</string>
+    <string name="attach_ringtone">"Ringetone"</string>
+    <string name="notification_multiple_cb"><xliff:g id="count">%s</xliff:g> Uleste CB-meldinger</string>
+    <string name="notification_multiple_cb_title">Ny cellekringkastingsmelding</string>
+    <string name="fdn_enabled">FDN aktivert</string>
+    <string name="cannot_send_message_reason_no_content">Ikke noe innhold som skal sendes</string>
+    <string name="ok">"OK"</string>
+    <string name="cancel">"Avbryt"</string>
+    <string name="enable">"Aktiver"</string>
+    <string name="disable">"Deaktiver"</string>
+    <string name="cb_read_message">Les CB-melding</string>
+    <string name="cb_read_message2">Les cellekringkastingsmelding</string>
+    <string name="cb_message">Cellekringkastingsmelding</string>
+    <string name="cb_default_channel_name">Fra kanal</string>
+    <string name="cell_broadcast_setting">"Innstillinger for cellekringkastinger"</string>
+    <string name="cb_menu_language">"Språk"</string>
+    <string name="cb_menu_add_channel">Legg til kanal</string>
+    <string name="cb_menu_channel_list">Kanalliste</string>
+    <string name="cb_dialog_title_language_choice">Velg språk</string>
+    <string name="cb_channel_dialog_channel_name">Kanalnavn (0–10 tegn)</string>
+    <string name="cb_channel_dialog_channel_number">Kanalnummer (0–65534)</string>
+    <string name="cb_channel_dialog_channel_state">Aktiver kanalen</string>
+    <string name="cb_channel_dialog_edit_channel">Rediger kanal</string>
+    <string name="cb_menu_edit">"Rediger"</string>
+    <string name="cb_menu_delete">"Slett"</string>
+    <string name="cb_error_channel_num">Skriv inn kanalnummer (0–65534).</string>
+    <string name="cb_error_channel_name">Lengden på kanalnavnet er ikke korrekt (1–10 tegn).</string>
+    <string name="cb_error_language_select">Velg minst ett språk</string>
+    <string name="cb_error_channel_id_exist">Kanal-ID finnes allerede.</string>
+    <string name="cb_all_languages">"Alle språk"</string>
+    <string name="cb_default_new_channel_name">Ny kanal</string>
+    <string name="sum_cell_broadcast_control_on">Aktiver cellekringkasting</string>
+    <string name="sum_cell_broadcast_control_off">Deaktiver cellekringkasting</string>
+    <string name="sum_cell_broadcast_setting">Språk og kanalinnstillinger for cellekringkasting</string>
+    <string name="message_open_email_fail">Konfigurer e-postkontoen først.</string>
+    <string name="close_dialog">OK</string>
+    <string name="updating_title">"Samtaleinnstillinger"</string>
+    <string name="error_updating_title">"Feil ved samtaleinnstillinger"</string>
+    <string name="reading_settings">"Leser innstillinger…"</string>
+    <string name="updating_settings">"Oppdaterer innstillinger…"</string>
+    <string name="reverting_settings">"Tilbakestiller innstillinger ..."</string>
+    <string name="exception_error">"Nettverks- eller SIM-kort-feil."</string>
+    <string name="send_by_sim2">Send med SIM2</string>
+    <string name="send_by_sim1">Send med SIM1</string>
+    <string name="menu_item_send_by">Send med</string>
+    <string name="data_connected_confirm_title">Bekreft sending</string>
+    <string name="data_connected_confirm_message">Sender du MMS med dette SIM-kortet kan gjeldende datanedlasting utsettes i en stund. Fortsett?</string>
+    <string name="menu_item_sim1">SIM-kort 1</string>
+    <string name="menu_item_sim2">SIM-kort 2</string>
+    <string name="no_sim_1">SIM-kort 1 er ikke satt i.</string>
+    <string name="no_sim_2">SIM-kort 2 er ikke satt i.</string>
+    <string name="no_sim">SIM-kort %d er ikke koblet til.</string>
+    <string name="sim1_full_title">SIM-kort 1 er fullt</string>
+    <string name="sim2_full_title">SIM-kort 2 er fullt</string>
+    <string name="select_all">"Velg alle"</string>
+    <string name="confirm_delete_selected_messages">De valgte meldingene slettes.</string>
+    <string name="confirm_delete_selected_theads">De valgte trådene slettes.</string>
+    <string name="restricted_forward_title">"MMS"</string>
+    <string name="restricted_forward_message">Dette mediet kan ikke vises korrekt å hos mottakere. Fortsette?</string>
+    <string name="strOk">Melding sendt</string>
+    <string name="strFail">Feil ved sending av melding</string>
+    <string name="menu_insert_text_vcard">Sett inn kontakt</string>
+    <string name="contact_name">"Navn"</string>
+    <string name="contact_tel">Tlf</string>
+    <string name="contact_email">E-post</string>
+    <string name="contact_organization">Organisasjon</string>
+    <string name="contact_address">Adr.</string>
+    <string name="max_recipients_title">Maks. antall nådd</string>
+    <string name="max_recipients_message">MMS tillater kun maks. <xliff:g id="maxLimit">%s</xliff:g> mottakere. Noen av mottakerne blir fjernet. Vil du fortsette?</string>
+    <string name="via_without_time_for_send">Via</string>
+    <string name="via_without_time_for_recieve">Via</string>
+    <string name="sim_selected_dialog_title">Velg SIM-kort</string>
+    <string name="suggested">Foreslåtte</string>
+    <string name="add_contact_dialog_message">"Vil du legg nummeret %s til en eksisterende eller en ny kontakt?"</string>
+    <string name="add_contact_dialog_new">"Ny"</string>
+    <string name="add_contact_dialog_existing">Eksisterende</string>
+    <string name="deleting">Sletter</string>
+    <string name="pref_title_storage_status">Gjeldende lagringsbruk</string>
+    <string name="storage_dialog_mms">MMS:\u0020<xliff:g id="number">%s</xliff:g> element(er)</string>
+    <string name="storage_dialog_sms">SMS:\u0020<xliff:g id="number">%s</xliff:g> element(er)</string>
+    <string name="storage_dialog_attachments">MMS-vedlegg:\u0020</string>
+    <string name="storage_dialog_database">Database:\u0020</string>
+    <string name="storage_dialog_available_space">Ledig plass:\u0020</string>
+    <string name="menu_show_icc_sms_capacity">Vis kapasitet</string>
+    <string name="show_icc_sms_capacity_title">Kapasitet</string>
+    <string name="icc_sms_used">Brukt:</string>
+    <string name="icc_sms_total">Totalt:</string>
+    <string name="get_icc_sms_capacity_failed">Kunne ikke hente SIM-kortkapasitet.</string>
+    <plurals name="read_report_toast_msg">
+     <item quantity="one">sender %d leserapport</item>
+     <item quantity="other">sender %d leserapporter</item>
+   </plurals>
+    <string name="pref_title_mms_auto_reply_read_reports">Send leserapport</string>
+    <string name="pref_summary_mms_auto_reply_read_reports">Send en leserapport hvis forespurt av MMS-avsender</string>
+    <string name="exceed_subject_length_limitation">Nådd maks. lengde</string>
+    <plurals name="message_view_selected_message_count">
+     <item quantity="one"><xliff:g id="message_count" example="1">%d</xliff:g> valgt</item>
+     <item quantity="other"><xliff:g id="message_count" example="9">%d</xliff:g> valgt</item>
+   </plurals>
+    <string name="disable_notifications_dialog_message">"Vil du deaktivere SMS-varsler fra standardappen for Meldinger?"</string>
+    <string name="sms_input_mode_title">Inndatamodus</string>
+    <string name="sms_input_mode_dialog_title">Velg inndatamodus</string>
+    <string name="sms_input_mode_summary">SMS-inndatamodus for å skrive meldinger</string>
+    <string name="pref_title_io_settings">Importer/eksporter SMS</string>
+    <string name="pref_summary_import_msg">Importer SMS fra SD-kort</string>
+    <string name="pref_title_import_msg">Importer SMS</string>
+    <string name="pref_summary_export_msg">Eksporter SMS til SD-kort</string>
+    <string name="pref_title_export_msg">Eksporter SMS</string>
+    <string name="no_sd_card">SD-kortet er ikke klart.</string>
+    <string name="export_message_ongoing">Eksporterer SMS til SD-kort. Vent litt…</string>
+    <string name="import_message_ongoing">Importerer SMS fra SD-kort. Vent litt…</string>
+    <string name="export_message_success">Eksporterte SMS til SD-kort suksess</string>
+    <string name="import_message_success">Importerte SMS fra SD-kort suksess</string>
+    <string name="import_message_fail">Kunne ikke importere SMS fra SD-kort</string>
+    <string name="export_message_fail">Kunne ikke eksportere SMS til SD-kort</string>
+    <string name="import_message_list">SMS-DB-liste i SD-kort</string>
+    <string name="import_message_list_empty">Det er ingen SMS-DB-filer på SD-kortet</string>
+    <string name="export_message_empty">Det er ingen SMS-er å eksportere!</string>
+    <string name="whether_export_item">Vil du eksportere SMS?</string>
+    <string name="whether_import_item">Vil du importere</string>
+    <string name="export_disk_problem">SD-kortet er fullt, eller kan ikke skrive</string>
+    <string name="select_text">Velg tekst</string>
+    <string name="unselect_all">"Fjern all merking"</string>
+    <string name="forward_from">Videresend fra:</string>
+    <string name="sms_forward_setting">Innstilling for SMS-videresending</string>
+    <string name="sms_forward_setting_summary">Videresend SMS med avsenderens navn og nummer</string>
+    <string name="forward_byself">"Meg"</string>
+    <string name="file_attachment_vcalendar_name">vCalendar(<xliff:g id="text">%s</xliff:g>)</string>
+    <string name="file_attachment_vcard_name">vCard(<xliff:g id="text">%s</xliff:g>)</string>
+    <string name="attach_vcalendar">"Kalender"</string>
+    <string name="file_attachment_import_vcard">Importer vCard</string>
+    <string name="attach_vcard">Kontakt</string>
+    <string name="type_common_file">fil</string>
+    <string name="please_wait">"Vent litt …"</string>
+    <string name="failed_to_parse_vcard">Klarte ikke å analysere vCard-filen!</string>
+    <string name="empty_vcard">Ingen kontakter i vCard</string>
+    <string name="parse_vcard">Analyser vCard</string>
+    <string name="vcard_no_details">Ingen tilleggsinformasjon for denne kontakten"</string>
+    <string name="note">Merknad</string>
+    <string name="organization">Organisasjon</string>
+    <string name="website">Nettsted:\u0020</string>
+    <string name="nickname">Kallenavn</string>
+    <string name="call_custom"><xliff:g id="custom">%s</xliff:g></string>
+    <string name="call_home">"Hjemmenummer"</string>
+    <string name="call_mobile">"Mobil"</string>
+    <string name="call_work">"Arbeid"</string>
+    <string name="call_fax_work">"Faks arbeid"</string>
+    <string name="call_fax_home">"Faks hjemme"</string>
+    <string name="call_pager">"Personsøker"</string>
+    <string name="call_other">annet</string>
+    <string name="call_callback">tilbakeringing</string>
+    <string name="call_car">"Bil"</string>
+    <string name="call_company_main">"Firma hoved"</string>
+    <string name="call_isdn">"ISDN"</string>
+    <string name="call_main">"Hoved"</string>
+    <string name="call_other_fax">"Fax"</string>
+    <string name="call_radio">"Radio"</string>
+    <string name="call_telex">"Teleks"</string>
+    <string name="call_tty_tdd">Teksttelefon</string>
+    <string name="call_work_mobile">"Mobil arbeid"</string>
+    <string name="call_work_pager">"Personsøker arbeid"</string>
+    <string name="call_assistant"><xliff:g id="assistant">%s</xliff:g></string>
+    <string name="call_mms">MMS</string>
+    <string name="email_home">E-post (privat)</string>
+    <string name="email_mobile">E-post (mobil)</string>
+    <string name="email_work">E-post (arbeid)</string>
+    <string name="email_other">E-post</string>
+    <string name="email_custom">E-post <xliff:g id="custom">%s</xliff:g></string>
+    <string name="email">E-post</string>
+    <string name="map_home">Vis privat adresse</string>
+    <string name="map_work">Vis jobbadresse</string>
+    <string name="map_other">Vis adresse</string>
+    <string name="map_custom">Vis adresse for <xliff:g id="custom">%s</xliff:g></string>
+    <string name="chat_aim">Nettprat med AIM</string>
+    <string name="chat_msn">Nettprat med Windows Live</string>
+    <string name="chat_yahoo">Nettprat med Yahoo</string>
+    <string name="chat_skype">Nettprat med Skype</string>
+    <string name="chat_qq">Nettprat med QQ</string>
+    <string name="chat_gtalk">Nettprat med Google Talk</string>
+    <string name="chat_icq">Nettprat med ICQ</string>
+    <string name="chat_jabber">Nettprat med Jabber</string>
+    <string name="chat">Nettprat</string>
+    <string name="inbox">"Innboks"</string>
+    <string name="outbox">"Utboks"</string>
+    <string name="draftbox">Utkast</string>
+    <string name="sentbox">Sendte</string>
+    <string name="simbox">SIM-boks</string>
+    <string name="changeview">Endre modus</string>
+    <string name="viewer_title_sms">"SMS"</string>
+    <string name="viewer_title_wappush">Wappush</string>
+    <string name="viewer_title_cb">Cellekringkasting</string>
+    <string name="slideshow_details">Meldingsdetaljer</string>
+    <string name="open">"Åpne"</string>
+    <string name="delete_all_confirm">"Slette alle meldinger i boksen?"</string>
+    <string name="folder_recipient">Mottaker:</string>
+    <string name="folder_recieve_date">Dato:</string>
+    <string name="folder_download">MMS lastes ned</string>
+    <string name="confirm_download_message">"Bekreft nedlasting av melding"</string>
+    <string name="play_as_slideshow">Spill MMS som fremvisning</string>
+    <string name="by_card">Av:</string>
+    <string name="page">Side %d</string>
+    <string name="space_not_enough">Den resterende plassen er ikke nok til å ta opp video</string>
+    <string name="space_not_enough_for_audio">Den resterende plassen er ikke nok til å ta opp lyd</string>
+    <string name="no_messages">"Ingen meldinger"</string>
+    <string name="call_video_call">Videoanrop</string>
+    <string name="storage_dialog_mms_size">MMS-størrelse:\u0020</string>
+    <string name="error_add_attachment">"Ukjent feil. Kan ikke legge til <xliff:g id="name">%1$s</xliff:g> i meldingen."</string>
+    <string name="no_application_response">"Ikke noe program kan håndtere forespørselen"</string>
+    <string name="cdma_not_support">CDMA støtter ikke denne funksjonen</string>
+    <string name="allmessage">"Alle meldinger"</string>
+    <string name="select_message">Velg melding</string>
+    <string name="confirm_delete_allmessage">"Alle meldinger blir slettet."</string>
+    <string name="mark_as_read_btn_str">Marker som lest</string>
+    <string name="delete_btn_str">"Slett"</string>
+    <string name="reply_send">"Send"</string>
+    <string name="via_test">"via"</string>
+    <string name="received_header">"Mottatt:"</string>
+    <string name="no_item_selected">Ingen element er valgt.</string>
+    <string name="sync_mms_to_db">Laster …</string>
+    <string name="pref_title_font_size_setting">SKRIFTSTØRRELSEINNSTILLING</string>
+    <string name="pref_title_message_font_size">Skriftstørrelse for meldinger</string>
+    <string name="pref_summary_message_font_size">Skriftstørrelse for meldinger</string>
+    <string name="message_font_size_dialog_title">Skriftstørrelse for meldinger</string>
+    <string name="message_font_size_dialog_cancel">"Avbryt"</string>
+    <string name="change">Endre</string>
+    <string name="change_default_disk">Telefonens lagringsområde har ikke nok plass. Frigjør litt plass eller endre "Standard skrivedisk" i innstillingene.</string>
+    <string name="failed_to_add_image">Grensen for meldingsstørrelse er nådd. Noen deler ble ikke lagt til.</string>
+    <string name="ipmsg_conversation_list_all">"E-poster"</string>
+    <string name="ipmsg_conversation_list_important">Viktig</string>
+    <string name="ipmsg_conversation_list_group_chats">Gruppesamtaler</string>
+    <string name="ipmsg_conversation_list_spam">Søppelpost</string>
+    <string name="ipmsg_create_group_chat">Opprett gruppesamtale</string>
+    <string name="ipmsg_send_invitation">Send invitasjoner</string>
+    <string name="str_ipmsg_download_history_dlg">Laster ned …</string>
+    <string name="to_hint_ipmsg">"Skriv navn eller nummer"</string>
+    <string name="type_to_compose_text_enter_to_send_ipmsg">"Skriv SMS-/iSMS-melding"</string>
+    <string name="ipmsg_ipmsg_hint">"Skriv iSMS-melding"</string>
+    <string name="ipmsg_sms_hint">"Skriv tekstmelding"</string>
+    <string name="ipmsg_caption_hint">"Skriv bildetekster"</string>
+    <string name="ipmsg_cancel">"Avbryt"</string>
+    <string name="ipmsg_invite_chat_frequently"><b>Prater du ofte med %s ?</b>\nHvorfor ikke invitere %s til å bruke iSMS slik at dere begge kan spare penger?</string>
+    <string name="ipmsg_enable_chat_frequently"><b>%s bruker iSMS!</b>\nHvorfor ikke aktivere iSMS-tjenesten slik at dere begge kan spare penger?</string>
+    <string name="ipmsg_invite">Inviter</string>
+    <string name="ipmsg_dismiss">"Lukk"</string>
+    <string name="ipmsg_enable">"Aktiver"</string>
+    <string name="ipmsg_enable_notice">Er du sikker på at du vil aktivere iSMS-tjenesten?</string>
+    <string name="ipmsg_activate">"Aktiver"</string>
+    <string name="ipmsg_activate_chat_frequently"><b>Prater du ofte med venner?</b>\nHvorfor ikke aktivere iSMS-tjenesten slik at dere kan prate uten å betale for SMS?</string>
+    <string name="ipmsg_activate_note">Er du sikker på at du vil aktivere iSMS?</string>
+    <string name="ipmsg_dismiss_content">Er du sikker på å avvise merknaden?</string>
+    <string name="ipmsg_ipmsg">IP-melding</string>
+    <string name="ipmsg_dailog_multi_forward">Videresender meldinger</string>
+    <string name="ipmsg_dialog_send_result">Send resultat</string>
+    <string name="ipmsg_dlg_send_all">Alle: %s</string>
+    <string name="ipmsg_dlg_send_sucess">Sendt: %s</string>
+    <string name="ipmsg_dlg_send_failed">Mislyktes: %s</string>
+    <string name="multi_forward_sim_info">Henter SIM-kortinfo</string>
+    <string name="ipmsg_multi_forward_no_sim">Ingen SIM-kortinfo</string>
+    <string name="ipmsg_divider_online">%s er tilkoblet</string>
+    <string name="ipmsg_divider_offline">Siste tilkoblet %s</string>
+    <string name="ipmsg_divider_never_online">Aldri tilkoblet</string>
+    <string name="ipmsg_vcard_file_name">%s kontakter</string>
+    <string name="ipmsg_getsim_failed">Kunne ikke få SIM-kortinfo</string>
+    <string name="ipmsg_sim_status_error">Feil med SIM-kortstatus</string>
+    <string name="ipmsg_forward_failed">videresending mislyktes</string>
+    <string name="ipmsg_forward_norecipients">Det er ingen mottaker(e) å videresende meldingen til</string>
+    <string name="ipmsg_multiforward_no_message">Det er ingen melding(er) som kan videresendes</string>
+    <string name="ipmsg_need_input_recipients">Oppgi minst én mottaker først</string>
+    <string name="str_ipmsg_unread_format">%1$d uleste meldinger</string>
+    <string name="str_ipmsg_not_delivered_title">Ikke levert ennå</string>
+    <string name="str_ipmsg_failed_title">Sending mislyktes</string>
+    <string name="ipmsg_try_again">"Prøv igjen"</string>
+    <string name="ipmsg_try_all_again">Prøv alle på nytt</string>
+    <string name="ipmsg_resend_via_sms">Send SMS i stedet</string>
+    <string name="ipmsg_resend_via_mms">Send MMS i stedet</string>
+    <string name="str_ipmsg_cant_share">SD-kort er ikke tilgjengelig. Kan ikke dele mediemelding</string>
+    <string name="str_ipmsg_file_limit">for stor</string>
+    <string name="str_ipmsg_no_app">Ingen programmer kan utføre denne oppgaven.</string>
+    <string name="str_ipmsg_today">"I dag"</string>
+    <string name="str_ipmsg_yesterday">"i går"</string>
+    <string name="ip_message_typing_text">Skrive</string>
+    <string name="str_ipmsg_no_such_file">Ingen slik fil</string>
+    <string name="str_ipmsg_over_file_limit">Filstørrelsen er over grensen.</string>
+    <string name="str_ipmsg_invalid_file_type">Støtter ikke denne typen</string>
+    <string name="invite_friends_to_ipmsg">Inviter venner til å bruke iSMS</string>
+    <string name="invite_friends_to_chat">Inviter venner til å prate</string>
+    <string name="invite_friends_to_ipmsg_dialog_msg">Om du sender en invitasjon vil meldingene du skriver bli forkastet.</string>
+    <string name="invite_friends_to_ipmsg_content">Hei! iSMS er en kun måte å prate på. Det er gratis og praktisk. Se på http://isms.hissage.com for å finne mer.</string>
+    <string name="export">"Eksportér"</string>
+    <string name="mark_as_spam">Flytt til søppelpostliste</string>
+    <string name="mark_as_spam_tips">Meldinger som er merket som søppelpost vil flyttes til søppelpostlisten, og du vil ikke motta varslinger.</string>
+    <string name="remove_frome_spam">Fjern fra søppelpostliste</string>
+    <string name="add_shortcut">Legg til snarvei</string>
+    <string name="view_all_media">Vis alle medier</string>
+    <string name="view_all_location">Vis alle plasseringer</string>
+    <string name="ipmsg_export_to_sdcard">Eksporter til SD-kort</string>
+    <string name="ipmsg_copy">"Kopiér"</string>
+    <string name="ipmsg_send_via_text_msg">Send via tekstmelding</string>
+    <string name="ipmsg_send_via_mms">Send via multimediemelding</string>
+    <string name="ipmsg_retry">"Prøv på nytt"</string>
+    <string name="ipmsg_delete">"Slett"</string>
+    <string name="ipmsg_share">"Del"</string>
+    <string name="ipmsg_mark_as_important">Marker som viktig</string>
+    <string name="ipmsg_remove_from_important">Fjern viktig-markering</string>
+    <string name="str_ipmsg_save_file">Filen er lagres til %1$s</string>
+    <string name="continue_str">"Fortsett"</string>
+    <string name="convert_to_mms">Konverterer til MMS.</string>
+    <string name="convert_to_sms">Konverterer til SMS.</string>
+    <string name="ipmsg_convert_to_ipmsg">Konverter til iSMS.</string>
+    <string name="ip_message_convert_to_mms_message_for_service">iSMS-tjenesten er ikke tilgjengelige på det valgte SIM-kortet. Denne meldingen kan bare sendes som MMS med dette SIM-kortet. Fortsette likevel?</string>
+    <string name="ip_message_convert_to_sms_message_for_service">iSMS-tjenesten er ikke tilgjengelige på det valgte SIM-kortet. Denne meldingen kan bare sendes som SMS med dette SIM-kortet. Fortsette likevel?</string>
+    <string name="ip_message_convert_to_mms_message_for_recipients">Mottakeren(e) bruker ikke iSMS. Denne meldingen kan bare sendes via MMS. Fortsette likevel?</string>
+    <string name="ip_message_convert_to_sms_message_for_recipients">Mottakeren(e) bruker ikke iSMS. Denne meldingen kan bare sendes via SMS. Fortsette likevel?</string>
+    <string name="ipmsg_sms_convert_to_ipmsg">iSMS-tjenesten er tilgjengelig med det valgte SIM-kortet. For å spare kostnader ved SMS, foreslår vi at du endrer meldingen til iSMS. Bytte nå?</string>
+    <string name="ipmsg_mms_convert_to_ipmsg">iSMS-tjenesten er tilgjengelig med det valgte SIM-kortet. For å spare kostnader ved MMS, foreslår vi at du endrer meldingen til iSMS. Bytte nå?</string>
+    <string name="keep_mms">Behold MMS</string>
+    <string name="keep_sms">Behold SMS</string>
+    <string name="switch_ipmsg">Endre</string>
+    <string name="ip_message_load_all_message">Last alle meldinger</string>
+    <string name="str_ipmsg_replace_attach">Erstatt vedlegg</string>
+    <string name="str_ipmsg_replace_attach_msg">Det er et eksisterende vedlegg. Erstatte?</string>
+    <string name="ipmsg_err_file">Kunne ikke åpne filen</string>
+    <string name="pref_title_display_preference_settings">VISNING &amp; ALTERNATIVER</string>
+    <string name="pref_chat_wallpaper">Bakgrunnsbilde for nettprat</string>
+    <string name="pref_auto_rotation">Automatisk rotering</string>
+    <string name="pref_show_email_address">Vis e-postadresse</string>
+    <string name="pref_summary_show_email_address">Inkluder e-postadresse i kontaktresultater</string>
+    <string name="pref_title_backup_restore_settings">SIKKERHETSKOPIERING &amp; GJENOPPRETTING</string>
+    <string name="pref_backage_message">Sikkerhetskopier melding</string>
+    <string name="pref_summary_backup_message">Siste sikkerhetskopiering: Aldri</string>
+    <string name="pref_restore_message">Gjenopprett melding</string>
+    <string name="pref_summary_restore_message">Gjenopprett sikkerhetskopierte meldinger</string>
+    <string name="pref_mute">"Lyd av"</string>
+    <string name="pref_summary_mute">"Av"</string>
+    <string name="pref_vibrate">"Vibrering"</string>
+    <string name="pref_summary_vibrate">Vibrer når varsler mottas</string>
+    <string name="pref_popup_notification">Popup-varsling</string>
+    <string name="pref_summary_popup_notification">Vis popup for push-varslinger</string>
+    <string name="pref_title_display_settings">"Skjerm"</string>
+    <string name="pref_title_actions_settings">Tiltak</string>
+    <string name="pref_download_chat_history">Last ned nettpratlogg</string>
+    <string name="pref_summary_download_chat_history">Lagre på SD-kort i zip-format</string>
+    <string name="pref_email_chat_history">E-postpratlogg</string>
+    <string name="pref_summary_email_chat_history">E-postpratlogg i zip-format</string>
+    <string name="pref_clear_chat_history">Slett pratlogg</string>
+    <string name="pref_summary_notification_ringtone">Angi en ringetone for nye meldinger</string>
+    <string name="pref_setting_title">Innstillinger for meldinger</string>
+    <string name="pref_setting_sms">Tekstmelding (SMS)</string>
+    <string name="pref_setting_mms">Multimediemelding (MMS)</string>
+    <string name="pref_setting_notification">"Varsler"</string>
+    <string name="pref_setting_general">"Generelt"</string>
+    <string name="pref_setting_chat">Nettpratnnstillinger</string>
+    <string name="chat_setting_saving">lagrer …</string>
+    <string name="chat_setting_updating">oppdaterer …</string>
+    <string name="chat_setting_sending">sender …</string>
+    <string name="dialog_save_title">Lagre på SD-kort</string>
+    <string name="dialog_save_description">Lagre denne nettprattråden til SD-kortet som en zip-fil</string>
+    <string name="dialog_email_title">Del via e-post</string>
+    <string name="dialog_email_description">Del denne nettprattråden som vedlegg via e-post i zip-format</string>
+    <string name="dialog_clear_title">"Tøm"</string>
+    <string name="dialog_clear_description">Hele nettpratloggen vil bli fjernet i dette praterommet</string>
+    <string name="dialog_wallpaper_chooser_wallpapers">Bakgrunnsbilder</string>
+    <string name="dialog_wallpaper_chooser_gallery">Galleri</string>
+    <string name="dialog_wallpaper_chooser_take">"Ta et bilde"</string>
+    <string name="dialog_wallpaper_chooser_default">"Standard"</string>
+    <string name="dialog_wallpaper_title">Velg bakgrunnsbilde</string>
+    <string name="mute_one_hour">"1 time"</string>
+    <string name="mute_four_hours">4 timer</string>
+    <string name="mute_eight_hours">8 timer</string>
+    <string name="save_chat_history_failed">lagring mislyktes</string>
+    <string name="send_chat_history_failed">E-post mislyktes</string>
+    <string name="actionbar_sms_setting">SMS-innstillinger</string>
+    <string name="actionbar_mms_setting">MMS-innstillinger</string>
+    <string name="actionbar_notification_setting">"Innstillinger for varsling"</string>
+    <string name="actionbar_general_setting">Generelle innstillinger</string>
+    <string name="save_history_file">lagre som</string>
+    <string name="no_sdcard_suggestion">"Mangler minnekort"</string>
+    <string name="save_wallpaper_success">Bakgrunnsbilde endret.</string>
+    <string name="save_wallpaper_fail">Kunne ikke endre bakgrunnsbilde.</string>
+    <string name="ip_message_delete_important">"Inkluder meldinger markert som viktig"</string>
+    <string name="str_ipmsg_spam_empty">Du har ikke noen søppelpostsamtaler. \nSØPPELPOST samler alle samtaler som er merket som søppelpost. Varsling vil bli slått av som standard. Slik unngår du unødig forstyrrelse. \n\nDu kan markere en avsender som søppelpost ved å holde en samtale og velge ikonet for Marker som søppelpost. Når en samtale er merket som søppelpost, vil ikonet varsling av vises automatisk og samtalen blir plassert her.</string>
+    <string name="str_ipmsg_spam_example_subject">Dette er et eksempel på søppelpost.</string>
+    <string name="str_ipmsg_groupchat_empty">Du har ikke en gruppesamtale. \nGRUPPESAMTALER samler alle gruppesamtaler som du oppretter eller blir med i. Slik kan du finne og administrere gruppesamtale enkelt. \n\nDu oppretter en gruppesamtale ved å trykke på Opprett en gruppesamtale-knappen nederst på denne skjermen og invitere vennene dine til å bli med i gruppen.</string>
+    <string name="str_ipmsg_group_example_from">Gruppenavn</string>
+    <string name="str_ipmsg_group_example_subject">Vennen din: \nJeg liker gruppesamtalefunksjonen!</string>
+    <string name="str_ipmsg_important_empty">Du har ikke noen viktige meldinger. \nVIKTIG samler alle meldinger som er markert som viktig. Slik kan du finne viktige beskjeder lett. \n\nDu kan markere en melding som viktig ved å holde den og velge Marker som viktig fra Alternativer-menyen. Når en melding er flagget som viktig, vil du se et rødt flagg som nedenfor.</string>
+    <string name="str_ipmsg_important_example_title">Dette er et eksempel på et melding som er markert som viktig. Et rødt flagg vises.</string>
+    <string name="str_ipmsg_important_example_time">10:55 AM</string>
+    <string name="str_ipmsg_allchat_empty">"Ingen samtaler."</string>
+    <string name="str_ipmsg_empty_activate_content">For å bruke denne funksjonen må du aktivere iSMS-tjenesten først. Vær ikke redd – hvis du ikke liker tjenesten, kan du alltids slå den av i innstillingene. Prøv det nå!</string>
+    <string name="str_ipmsg_empty_activate_title">Aktiver iSMS</string>
+    <string name="str_ipmsg_service_title">iSMS-tjenestesenter</string>
+    <string name="str_ipmsg_introduction">Med iSMS kan du sende gratis meldinger umiddelbart og beholde nettpratloggen på ett sted. Trykk på en knapp, så kommer den nye opplevelsen!</string>
+    <string name="time_now">"NÅ"</string>
+    <string name="str_ipmsg_active">Aktiver iSMS</string>
+    <string name="str_ipmsg_welcome_active">Velkommen til iSMS</string>
+    <string name="str_ipmsg_term_warn_welcome">Med iSMS-tjenesten kan du prate og dele multimediefiler med vennene dine når som helst og hvor som helst via Wi-Fi eller en dataforbindelse.\n\nDu er bare 3 skritt fra å fullføre aktiveringen!\n\n Vilkår og betingelser\n</string>
+    <string name="str_ipmsg_term_warn_activate">Denne funksjonen støttes bare av iSMS-tjenesten.\n\nMed iSMS-tjenesten kan du prate og dele multimediefiler med vennene dine når som helst og hvor som helst via Wi-Fi eller en dataforbindelse.\n\n Vilkår og betingelser</string>
+    <string name="str_ipmsg_term_key">Vilkår og betingelser</string>
+    <string name="str_ipmsg_agree_and_continue">Godta og fortsett</string>
+    <string name="no_sim_card">Mangler SIM-kort!</string>
+    <string name="ip_message_activate_title">Aktiver iSMS</string>
+    <string name="ip_message_current_sim_enabled">Nåværende SIM-kort er aktivert.</string>
+    <string name="sim_selected_dialog_title_for_activate">Velg SIM-kort for activate iSMS</string>
+    <string name="ip_message_activate_message">Denne funksjonen støttes bare av iSMS-tjenesten. Aktivere iSMS-kontoen nå?</string>
+    <string name="typing">"Skriver …"</string>
+    <string name="ip_message_enable_title">Aktiver iSMS</string>
+    <string name="ip_message_enable_message">Denne funksjonen støttes bare av iSMS-tjenesten. Vil du aktivere iSMS-kontoen nå?</string>
+    <string name="sim_selected_dialog_title_for_enable">Velg SIM-kort for å aktiverr iSMS</string>
+    <string name="ip_message_switch_sim_title">Endre SIM-kort</string>
+    <string name="ip_message_switch_sim_message">SIM-kortet støtter ikke iSMS. Bytte til et annet SIM-kort?</string>
+    <string name="ip_message_switch_sim_button">Endre</string>
+    <string name="ip_message_switch_sim_successfully">SIM-kortet ble endret!</string>
+    <string name="close">"Lukk"</string>
+    <string name="nointernet">"Ingen fungerende Internett-tilkobling er funnet! Vennligst prøv igjen senere."</string>
+    <string name="ipmsg_reject">Forkast</string>
+    <string name="ipmsg_accept">"Godta"</string>
+    <string name="ipmsg_resend">Send på nytt</string>
+    <string name="ipmsg_resend_discard_message">For å sende meldingen på nytt må meldingen du skriver nå bli forkastet.</string>
+    <plurals name="deleted_conversations">
+     <item quantity="one">En samtale ble slettet</item>
+     <item quantity="other"><xliff:g id="number" example="15">%1$s</xliff:g> samtaler ble slettet</item>
+   </plurals>
+    <string name="discard_mms_title">Forkast MMS</string>
+    <string name="discard_mms_content">Alle MMS i din flervideresendingsmeldingen vil bli forkastet</string>
+    <string name="toast_sms_forward">Ingen SMS ble videresendt</string>
+    <string name="dialog_continue">"Fortsett"</string>
+    <string name="sms_size_limit">Størrelsesgrense nådd</string>
+    <string name="dialog_sms_limit">Meldingstørrelsesgrensen er nådd. Meldingen som gikk over vil bli forkastet</string>
+    <string name="forward_tips_title">"Forkast MMS-varsling"</string>
+    <string name="forward_tips_body">"MMS-varsling støtter ikke videresending. Den blir forkastet."</string>
+    <string name="type_to_quick_text">"Skriv rask tekst"</string>
+    <string name="menu_wappush">"Wappush-meldinger"</string>
+    <string name="visit_website">"Besøk webområde"</string>
+    <string name="meet_emoticon_limit">Møt uttrykksikon-grenser</string>
+    <string name="view_mms_notification">Kan ikke se mms-varsling</string>
+    <string name="ipmsg_multi_forward_tips_content">For å utføre flervideresending må noen iSMS-er lastes ned først.</string>
+    <string name="multi_forward_failed_all">Nedlasting mislyktes. Flervideresending forkastes.</string>
+    <string name="ipmsg_multi_forward_failed_part">Videresending av noen iSMS-er mislyktes.</string>
+    <string name="sum_search_networks">"Søk etter alle tilgjengelige nettverk"</string>
+    <string name="confirm_delete_allwappush">"Alle wappush-meldinger vil bli slettet."</string>
+    <string name="confirm_delete_selected_wappush">"De valgte wappush-meldingene vil bli slettet."</string>
+    <string name="menu_delete_allwappush">Slett alle</string>
+    <string name="duplicated_recipient">Duplisert mottaker</string>
+    <string name="sms_not_ready">SMS-modulen initialiseres. Vent litt …</string>
+    <string name="label_full_name">"Navn"</string>
+    <string name="label_phone">"Telefon"</string>
+    <string name="label_email">"E-post"</string>
+    <string name="label_postal">Adresse</string>
+    <string name="label_organization">Organisasjon</string>
+    <string name="label_im">Direktemelding</string>
+    <string name="label_website">Nettsted</string>
+    <string name="label_sip_address">"Internett-anrop"</string>
+    <string name="label_nick_name">"Kallenavn"</string>
+    <string name="label_notes">Merknader</string>
+    <string name="label_event">Hendelser</string>
+    <string name="search_time_period_label">Tidsperiode</string>
+    <string name="done_text">"Utført"</string>
+    <string name="add_duplicate_recipients">Duplisert mottaker</string>
+    <string name="download_disabled_toast">Kan ikke laste ned. Ikke standard SMS-app.</string>
+    <string name="adding_wallpaper_title">Lagrer bakgrunnsbilde …</string>
+    <string name="mwi_title">Talemeldinger</string>
+    <string name="type_voice_msg">Talemelding</string>
+    <string name="type_video_msg">Videomelding</string>
+    <string name="type_fax_msg">Faksmelding</string>
+    <string name="priority_urgent">Haster</string>
+    <string name="date_label">"Dato: "</string>
+    <string name="message_id_label">Meldings-ID:\u0020</string>
+    <string name="voice_message_count_notification"><xliff:g id="number" example="3">%1$s</xliff:g> nye talemeldinger</string>
+    <string name="confirm_delete_allmwi">"Alle talemeldinger vil bli slettet."</string>
+    <string name="confirm_delete_selected_mwi">"De valgte talemeldingene slettes."</string>
+    <string name="sms_priority_setting">UIM-prioritet</string>
+    <string name="sms_priority_Interactive">Interaktiv</string>
+    <string name="sms_priority_Urgent">Haster</string>
+    <string name="sms_priority_Emergency">Nødssituasjon</string>
+    <string name="type_text_msg">"SMS"</string>
+    <string name="empty_sim_name">SIM-spor <xliff:g id="subId" example="2">%1$d</xliff:g></string>
+
+    <string name="drm_not_support">Kopieringsbeskyttet innhold støttes ikke via MMS.</string>
+    <string name="user_has_no_premission">Denne brukeren har ikke tillattelse til å bruke SMS</string>
+    <string name="wfc_no_cellular_network">Mobilnettverk mangler</string>
+    <string name="wfc_connect_to_available_wifi">Koble til tilgjengelig Wi-Fi-nettverk for meldinger.</string>
+    <string name="wfc_notification_title">Koble til Wi-Fi for meldinger</string>
+    <string name="ct_om_switch_notification"><xliff:g id="op1">%s</xliff:g> vil ikke fungere midlertidig, og eventuell standardanrop, SMS og data for <xliff:g id="op2">%s</xliff:g> endres til <xliff:g id="op3">%s</xliff:g>.</string>
+    <string name="can_not_switch_account_during_call">KanikkebytteforetrukketSIM-kortforSMSunderetanrop.</string>
+    <string name="can_not_switch_account_temporarily">KanikkebytteforetrukketSIM-kortforSMSakkuratnå.</string>
+    <string name="omh_exceed_message_size_limitation">GrenseforR-UIM-meldingsstørrelsenådd</string>
+    <string name="omh_failed_to_add_image">R-UIM-meldingsstørrelse nådd. Du må fjerne noen deler.</string>
+    <string name="missing_required_permission">Tillatelse nektet. Du kan endre tillatelser under Innstillinger &gt; Apper.</string>
+    <string name="manage_card_msg_title">Administrer UIM-/SIM-kortmeldinger</string>
+    <string name="manage_card_msg_summary">Administrer meldinger lagret på UIM-/SIM-kortet</string>
+    <string name="disable_delivery_report">Kan ikke aktivere under roaming.</string>
+    <string name="fore_service_notify_title">Overfører meldinger</string>
+    <string name="fore_service_notify_content">Det er meldinger som overføres</string>
+    <string name="smart_req_mms_indicator">MMS er ikke tillatt; prøv igjen som SMS.</string>
+</resources>

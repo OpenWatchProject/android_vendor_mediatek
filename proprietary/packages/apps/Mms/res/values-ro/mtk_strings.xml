@@ -1,0 +1,656 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+/*
+ * Copyright (C) 2007-2008 Esmertec AG.
+ * Copyright (C) 2007-2008 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+ --><resources xmlns:android="http://schemas.android.com/apk/res/android" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+<!-- MTK Resources -->
+    <string name="create_new_message" msgid="8735943333953093860">"Scrieţi un mesaj nou"</string>
+    <string name="menu_undelivered_messages" msgid="3896857623211780616">"Mesaje neexpediate"</string>
+    <string name="broadcast_from_to" msgid="2050376286109362539">"<xliff:g id="SENDER">%1$s</xliff:g> către <xliff:g id="RECIPIENT">%2$s</xliff:g>"</string>
+    <string name="anonymous_recipient" msgid="2501437626187039034">"Anonim"</string>
+    <string name="view_picture" msgid="4356315935277709195">"Vizualizaţi fotografia"</string>
+    <string name="sent_on" msgid="5868288548564632354">"Trimis: <xliff:g id="DATE">%s</xliff:g>"</string>
+    <string name="name_colon" msgid="7069560650889479120"><b>"<xliff:g id="NAME">%s</xliff:g>"</b>": "</string>
+    <string name="compose_title" msgid="558578836596816068">"Scrieţi"</string>
+    <string name="image_too_large" msgid="261880224164478061">"Fotografie prea mare"</string>
+    <string name="ask_for_automatically_resize" msgid="7657603662407738758">"Redimensionaţi automat fotografia înainte de trimitere?"</string>
+    <string name="cannot_load_message" msgid="2577010607550849892">"Mesajul nu poate fi încărcat."</string>
+    <string name="locked_message_cannot_be_deleted" msgid="6369452071783350219">"Mesajul blocat nu poate fi şters."</string>
+    <string name="multiple_recipients" msgid="8747754491343248141">"<xliff:g id="RECIPIENTCOUNT">%1$s</xliff:g> (de) destinatari"</string>
+    <string name="resize" msgid="4308912589984220360">"Redimensionaţi"</string>
+    <string name="to_label" msgid="2355268818058389047">"Către "</string>
+    <string name="confirm_delete_all_messages" msgid="5836389073199814660">"Firul de conversaţie va fi şters în întregime."</string>
+    <string name="mms_priority_label">"Prioritate"</string>
+    <string name="menu_retry_sending" msgid="3146582005568302643">"Încercaţi să trimiteţi din nou"</string>
+    <string name="menu_retry_sending_all" msgid="1870529976966340616">"Încercaţi să trimiteţi din nou toate mesajele"</string>
+    <string name="retrying_dialog_body" msgid="4738260459043003431">"Mesajul <xliff:g id="MESSAGE">%s</xliff:g> nu a fost trimis din cauza unei probleme de conectare."\n"Se încearcă din nou trimiterea..."</string>
+    <string name="dl_expired_notification" msgid="950390029992535809">"Acest mesaj a expirat şi va fi şters."</string>
+    <string name="add_attachment_activity" msgid="5324811371129695320">"Adăugaţi un ataşament:"</string>
+    <string name="select_layout_activity" msgid="5041916695464513848">"Selectaţi aspectul"</string>
+    <string name="edit_text_activity" msgid="5915226413346879213">"Modificaţi text"</string>
+    <string name="pick_numbers_activity" msgid="2083330191224178637">"Alegeţi numerele"</string>
+    <string name="send_using_mms_activity" msgid="3703434556280345726">"Trimiteţi ca mesaj multimedia..."</string>
+    <string name="select_contact_method_activity" msgid="1743384358979323991">"Selectaţi metoda de contact"</string>
+    <string name="me" msgid="341726346007839961">"Eu"</string>
+    <string name="more_recipients">destinatar(i)</string>
+    <string name="Insert_sdcard">Introduceţi o cartelă SD!</string>
+    <string name="set_service_center_OK">setare centru service SMS OK</string>
+    <string name="set_service_center_fail">setarea centrului de service SMS nu a reuşit</string>
+    <string name="OK">OK</string>
+    <string name="Cancel">"Anulaţi"</string>
+    <string name="sms_save_location">Locaţie de stocare SMS</string>
+    <string name="gemini_3g_indic">3G</string>
+    <string name="sms_service_center">Centru service SMS</string>
+    <string name="service_center_label">Centru service:\u0020</string>
+    <string name="test_operator">implicit</string>
+    <string name="test_number">1234</string>
+    <string name="test_status">implicit</string>
+    <string name="cu_subject">Subiect Lemei</string>
+    <string name="pref_key_mms_priority">Prioritate MMS</string>
+    <string name="pref_title_mms_creation_mode">Mod creare</string>
+    <string name="pref_summary_mms_creation_mode">Mod creare MMS pentru compunerea mesajelor</string>
+    <string name="pref_title_mms_size_limit">Limită dimensiune</string>
+    <string name="pref_summary_mms_size_limit">Limită dimensiune MMS pentru compunerea de mesaje</string>
+    <string name="confirm_restricted_audio">Tip de conţinut audio restricţionat. Ataşaţi oricum?</string>
+    <string name="confirm_restricted_image">Tip de conţinut imagine restricţionat. Ataşaţi oricum?</string>
+    <string name="confirm_restricted_video">Tip de conţinut video restricţionat. Ataşaţi oricum?</string>
+    <string name="unsupport_media_type">Tip de media neacceptat</string>
+    <string name="select_different_media_type">Selectaţi altă media</string>
+    <string name="image_resolution_too_large">Rezoluţia imaginii este prea mare pentru inserare</string>
+    <string name="wp_msg_type">Mesaj service</string>
+    <string name="wp_msg_created_label">Creat:\u0020</string>
+    <string name="wp_msg_created_unknown">Necunoscut</string>
+    <string name="wp_msg_priority_label">Prioritate:\u0020</string>
+    <string name="wp_msg_priority_low">Scăzută</string>
+    <string name="wp_msg_priority_medium">Medie</string>
+    <string name="wp_msg_priority_high">Înaltă</string>
+    <string name="menu_goto_browser">Deschidere browser</string>
+    <string name="menu_add_to_bookmark">Adăugare la marcaje</string>
+    <string name="wp_msg_expiration_label">Expirat: <xliff:g id="DATE">%s</xliff:g></string>
+    <string name="error_unsupported_scheme">Acţiunea nu este acceptată în acest moment.</string>
+    <string name="pref_title_wappush_settings">Setări mesaje service</string>
+    <string name="pref_title_wappush_enable">Activare mesaje service</string>
+    <string name="pref_summary_wappush_enable">Activare pentru primire mesaje service</string>
+    <string name="pref_title_wappush_sl_autoloading">Lansare automată SL</string>
+    <string name="pref_summary_wappush_sl_autoloading">Lansare automată a mesajului încărcare service (SL) la primire</string>
+    <string name="menu_send_sms">Trimitere mesaj la <xliff:g id="name">%s</xliff:g></string>
+    <string name="menu_omacp">Mesaj de configurare</string>
+    <string name="save_message_to_sim">Salvare mesaj în cartela SIM</string>
+    <string name="received_on">"Primit: <xliff:g id="date">%s</xliff:g>"</string>
+    <string name="save_message_to_sim_successful">Salvarea a reuşit</string>
+    <string name="save_message_to_sim_unsuccessful">Salvarea nu a reuşit</string>
+    <string name="transmission_transiently_failed">Eroare de transmisie. Se va încerca din nou mai târziu.</string>
+    <string name="download_failed_due_to_full_memory">Descărcarea mesajului nu a reuşit din cauză că memoria este plină.</string>
+    <string name="mms_too_big_to_download">Mesaj prea mare pentru descărcare din reţea.</string>
+    <string name="cannot_add_recipient">A fost atins numărul maxim de destinatari. Imposibil de adăugat orice alt destinatar.</string>
+    <string name="attach_ringtone">Ton de apel</string>
+    <string name="notification_multiple_cb"><xliff:g id="count">%s</xliff:g> Mesaje transmisie celulară necitite</string>
+    <string name="notification_multiple_cb_title">Mesaje transmisie celulară noi</string>
+    <string name="fdn_enabled">FDN activat</string>
+    <string name="cannot_send_message_reason_no_content">Niciun conţinut de trimis</string>
+    <string name="cb_read_message">Citire mesaj transmisie celulară</string>
+    <string name="cb_read_message2">Citire mesaj transmisie celulară</string>
+    <string name="cb_message">Mesaj transmisie celulară</string>
+    <string name="cb_default_channel_name">De la canalul</string>
+    <string name="message_open_email_fail">Scuze. Setaţi mai întâi contul de e-mail.</string>
+    <string name="add_contacts">Contacte</string>
+    <string name="send_by_sim2">Trimis de SIM2</string>
+    <string name="send_by_sim1">Trimis de SIM1</string>
+    <string name="menu_item_send_by">Trimis de</string>
+    <string name="data_connected_confirm_title">Confirmare trimitere</string>
+    <string name="data_connected_confirm_message">Trimiterea MMS de la acest SIM poate duce la suspendarea temporară a descărcării datelor. Continuaţi?</string>
+    <string name="menu_item_sim1">SIM 1</string>
+    <string name="menu_item_sim2">SIM 2</string>
+    <string name="no_sim_1">SIM neconectat</string>
+    <string name="no_sim_2">SIM neconectat</string>
+    <string name="sim1_full_title">Cartela SIM 1 plină</string>
+    <string name="sim2_full_title">Cartela SIM 2 plină</string>
+    <string name="select_all">"Selectaţi-le pe toate"</string>
+    <string name="confirm_delete_selected_messages">Mesajele selectate vor fi şterse.</string>
+    <string name="confirm_delete_selected_theads">Firele selectate vor fi şterse.</string>
+    <string name="restricted_forward_title">"Mesaj multimedia"</string>
+    <string name="restricted_forward_message">Media ar putea fi afişată incorect la destinatari. Continuaţi?</string>
+    <string name="strOk">Mesaj trimis</string>
+    <string name="strFail">Trimiterea mesajului nu a reuşit</string>
+    <string name="menu_insert_text_vcard">Inserare contact</string>
+    <string name="contact_name">Nume</string>
+    <string name="contact_tel">Telefon</string>
+    <string name="contact_email">E-mail</string>
+    <string name="contact_organization">Organizaţie</string>
+    <string name="contact_address">Adresă</string>
+    <string name="string_via">" prin"</string>
+    <string name="max_recipients_title">A fost atins numărul maxim</string>
+    <string name="max_recipients_message">MMS permite max. <xliff:g id="maxLimit">%s</xliff:g> destinatari. Unii destinatari vor fi eliminaţi. Doriţi să continuaţi?</string>
+    <string name="via_without_time_for_send">prin</string>
+    <string name="via_without_time_for_recieve">prin</string>
+    <string name="sim_selected_dialog_title">Selectare SIM</string>
+    <string name="suggested">Sugerat</string>
+    <string name="add_contact_dialog_message">"Adăugare număr %s la contact existent sau nou?"</string>
+    <string name="add_contact_dialog_new">Nou</string>
+    <string name="add_contact_dialog_existing">Existent</string>
+    <string name="deleting">Se şterge...</string>
+    <string name="pref_title_storage_status">Utilizare curentă spaţiu de stocare</string>
+    <string name="storage_dialog_mms">Element(e) MMS:\u0020<xliff:g id="number">%s</xliff:g></string>
+    <string name="storage_dialog_sms">Elemente SMS:\u0020<xliff:g id="number">%s</xliff:g></string>
+    <string name="storage_dialog_attachments">Ataşamente MMS:\u0020</string>
+    <string name="storage_dialog_database">Bază de date:\u0020</string>
+    <string name="storage_dialog_available_space">Spaţiu disponibil:\u0020</string>
+    <string name="pref_title_mms_enable_to_send_delivery_reports">Trimitere raport livrare</string>
+    <string name="pref_summary_mms_enable_to_send_delivery_reports">Trimiteţi un raport de livrare pentru fiecare mesaj pe care-l primiţi</string>
+    <string name="pref_summary_mms_auto_reply_read_reports">Trimiteţi un raport de citire dacă este solicitat de expeditorul MMS-ului</string>
+    <string name="pref_title_mms_auto_reply_read_reports">Trimitere raport citire</string>
+    <plurals name="read_report_toast_msg">
+        <item quantity="one">%d trimitere raport citire</item>
+        <item quantity="other">%d trimitere raporturi citire</item>
+    </plurals>
+    <string name="unselect_all">Deselecție toate</string>
+    <!-- add for vcard -->
+   <string name="file_attachment_vcard_name">vCard(<xliff:g id="text">%s</xliff:g>)</string>
+    <string name="attach_vcalendar" msgid="5452708708398908131">"Calendar"</string>
+   <string name="file_attachment_import_vcard">Importă cardV</string>
+   <string name="attach_vcard">Contact</string>
+   <string name="type_common_file">fișier</string>
+   <string name="failed_to_parse_vcard">Analiză fișier cardV eșuată!</string>
+   <string name="empty_vcard">Niciun contact în cardV</string>
+   <string name="parse_vcard">Analizează cardV</string>
+   <string name="vcard_no_details">Nicio informație suplimentară pentru acest contact”</string>
+   <string name="call_custom"><xliff:g id="custom">%s</xliff:g></string>
+   <string name="call_home">acasă</string>
+   <string name="call_mobile">mobil</string>
+   <string name="call_work">lucru</string>
+   <string name="call_fax_work">fax lucru</string>
+   <string name="call_fax_home">fax acasă</string>
+   <string name="call_pager">pager</string>
+   <string name="call_callback">apel de răspuns</string>
+   <string name="call_car">mașină</string>
+   <string name="call_company_main">firmă principal</string>
+   <string name="call_isdn">ISDN</string>
+   <string name="call_radio">radio</string>
+   <string name="call_telex">telex</string>
+   <string name="call_tty_tdd">TTY/TDD</string>
+   <string name="call_work_mobile">mobil lucru</string>
+   <string name="call_work_pager">pager lucru</string>
+   <string name="call_assistant"><xliff:g id="assistant">%s</xliff:g></string>
+   <string name="call_mms">MMS</string>
+   <string name="email_home">email acasă</string>
+   <string name="email_mobile">email mobil</string>
+   <string name="email_work">email lucru</string>
+   <string name="email_custom">Email <xliff:g id="custom">%s</xliff:g></string>
+   <string name="map_home">vezi adresă acasă</string>
+   <string name="map_work">vezi adresă lucru</string>
+   <string name="map_other">vezi adresă</string>
+   <string name="map_custom">Vezi <xliff:g id="custom">%s</xliff:g> adresă</string>
+   <string name="chat_aim">chat folosind AIM</string>
+   <string name="chat_msn">chat folosind Windows Live</string>
+   <string name="chat_yahoo">chat folosind Yahoo</string>
+   <string name="chat_skype">chat folosind Skype</string>
+   <string name="chat_qq">chat folosind QQ</string>
+   <string name="chat_gtalk">chat folosind Google Talk</string>
+   <string name="chat_icq">chat folosind ICQ</string>
+   <string name="chat_jabber">chat folosind Jabber</string>
+   <string name="chat">chat</string>
+   <string name="please_wait">"Vă rugăm așteptați..."</string>
+   <string name="note">Notă</string>
+   <string name="organization">Organizație</string>
+   <string name="website">Pagină web:\u0020</string>
+   <string name="nickname">Poreclă</string>
+   <string name="call_other">altul</string>
+   <string name="call_main">principal</string>
+   <string name="call_other_fax">fax</string>
+   <string name="email_other">Email</string>
+   <string name="email">Email</string>
+   <!-- add for vcard -->
+    <string name="invalid_contact_message" msgid="8215051456181842274">"Persoana nu există în agendă."</string>
+
+    <string name="menu_sim_sms">SMS SIM</string>  
+    <!-- Cell broadcast SMS strings -->  
+    <!-- Import/Export mms/sms from/to sdcard-->  
+    <string name="pref_title_io_settings">Import/Export SMS</string>  
+    <string name="pref_summary_import_msg">Import SMS de pe cartela SD</string>  
+    <string name="pref_title_import_msg">Import SMS</string>  
+    <string name="pref_summary_export_msg">Export SMS în cartela SD</string>  
+    <string name="pref_title_export_msg">Export SMS</string>  
+    <string name="no_sd_card">Cartela SD nu este pregătită</string>  
+    <string name="export_message_ongoing">Export SMS în cartela SD, aşteptaţi...</string>  
+    <string name="import_message_ongoing">Import SMS de pe cartela SD, aşteptaţi...</string>  
+    <string name="export_message_success">Export SMS în cartela SD reuşit</string>  
+    <string name="import_message_success">Import SMS de pe cartela SD reuşit</string>  
+    <string name="import_message_fail">Import SMS de pe cartela SD nereuşit</string>  
+    <string name="export_message_fail">Export SMS în cartela SD nereuşit</string>  
+    <string name="import_message_list">Listă DB SMS în cartela SD</string>  
+    <string name="import_message_list_empty">Nu există niciun fişier DB SMS în cartela SD</string>  
+    <string name="export_message_empty">Nu există niciun mesaj SMS de exportat!</string>  
+    <string name="whether_export_item">Doriţi să exportaţi mesajul SMS?</string>  
+    <string name="whether_import_item">Doriţi să importaţi</string>  
+    <string name="export_disk_problem">Cartela SD este plină sau imposibil de scris</string> 
+    <string name="error_add_attachment">"Eroare necunoscută, imposibil de adăugat <xliff:g id="name">%1$s</xliff:g> la mesaj."</string>
+    <string name="forward_byself">"Eu"</string>
+    <string name="status_expired">Expirat</string>  
+    <string name="status_deferred">Amânat</string>  
+    <string name="status_unrecognized">Nerecunoscut</string>  
+    <string name="status_indeterminate">Nedeterminat</string>  
+    <string name="status_unreachable">Inaccesibil</string>  
+    <plurals name="message_view_selected_message_count"> 
+        <item quantity="one"><xliff:g id="message_count" example="1">%d</xliff:g> mesaj selectat</item>  
+        <item quantity="other"><xliff:g id="message_count" example="9">%d</xliff:g> (de) mesaje selectate</item> 
+    </plurals>  
+    <string name="sms_input_mode_title">Mod intrare</string>  
+    <string name="sms_input_mode_dialog_title">Selectare mod intrare</string>  
+    <string name="sms_input_mode_summary">Mod intrare SMS pentru compunere mesaj</string>  
+    <string name="by_card">După:</string>  
+    <string name="page">Pagina %d</string>  
+    <string name="space_not_enough">Spaţiul rămas este insuficient pentru captură video</string>  
+    <string name="no_messages">"Niciun mesaj"</string>  
+    <string name="call_video_call">Apel video</string>  
+    <string name="storage_dialog_mms_size">Dimensiune MMS:\u0020</string>
+    <string name="space_not_enough_for_audio">Spaţiul rămas este insuficient pentru înregistrare audio</string> 
+    <string name="sync_mms_to_db">Se încarcă...</string>
+    <string name="finish">"Terminat"</string>
+    <string name="pref_title_long_press_operation_guide">GHID DE OPERARE PENTRU APĂSARE LUNGĂ</string>  
+    <string name="pref_title_watch_animation">Vizionare animaţie</string>  
+    <string name="long_press_conversationlist_title">Ştergere mesaje</string>  
+    <string name="long_press_conversationlist_content">Pentru a şterge mesaje, apăsaţi lung.</string>  
+    <string name="long_press_composer_content">Pentru a vedea mai multe opţiuni, apăsaţi lung.</string>
+    <string name="menu_show_icc_sms_capacity">Vizualizare capacitate</string>  
+    <string name="show_icc_sms_capacity_title">Capacitate</string>  
+    <string name="icc_sms_used">Utilizată:</string>
+    <string name="select_text">Selectare text</string>
+    <string name="icc_sms_total">Totală:</string>  
+    <string name="get_icc_sms_capacity_failed">Obţinerea capacităţii SIM nu a reuşit.</string>
+    <string name="menu_reply">"Răspundeţi"</string> 
+    <string name="failed_to_add_image">S-a atins limita de dimensiune a mesajului, anumite părţi nu au fost adăugate.</string>
+    <string name="ipmsg_conversation_list_all">Mesaje</string>  
+    <string name="ipmsg_conversation_list_important">Important</string>  
+    <string name="ipmsg_conversation_list_group_chats">Chat-uri de grup</string>  
+    <string name="ipmsg_conversation_list_spam">Spam</string>  
+    <string name="ipmsg_create_group_chat">Creare chat de grup</string>  
+    <string name="ipmsg_send_invitation">Trimitere invitaţii</string>  
+    <string name="str_ipmsg_download_history_dlg">Se descarcă...</string>  
+    <string name="to_hint_ipmsg">"Introduceţi numele persoanei sau numărul de identificare"</string>  
+    <string name="type_to_compose_text_enter_to_send_ipmsg">"Introducere mesaj SMS/iSMS"</string>  
+    <string name="ipmsg_ipmsg_hint">"Introducere mesaj iSMS"</string>  
+    <string name="ipmsg_sms_hint">"Introducere mesaj text"</string>  
+    <string name="ipmsg_caption_hint">"Introducere titluri"</string>  
+    <string name="ipmsg_cancel">"Anulaţi"</string>  
+    <string name="ipmsg_invite_chat_frequently"><b>Conversaţi frecvent cu %s ?</b>\nDe ce nu îl/o invitaţi pe %s să utilizeze iSMS, iar astfel veţi economisi bani amândoi?</string>  
+    <string name="ipmsg_enable_chat_frequently"><b>%s utilizează iSMS!</b>\nDe ce nu activaţi serviciul iSMS pentru a economisi bani amândoi?</string>  
+    <string name="ipmsg_invite">"Invitaţi"</string>  
+    <string name="ipmsg_dismiss">"Respingere"</string>  
+    <string name="ipmsg_enable">"Activaţi"</string>  
+    <string name="ipmsg_enable_notice">Sigur doriţi să activaţi serviciul iSMS?</string>  
+    <string name="ipmsg_activate">Activare</string>  
+    <string name="ipmsg_activate_chat_frequently"><b>Conversaţi frecvent cu prietenii?</b>\nDe ce nu activaţi serviciul iSMS pentru a conversa fără a plăti tariful pentru mesaje SMS?</string>  
+    <string name="ipmsg_activate_note">Sigur doriţi să activaţi serviciul iSMS?</string>  
+    <string name="ipmsg_dismiss_content">Sigur doriţi să renunţaţi la această notă?</string>  
+    <string name="ipmsg_send_exception">Eroare la trimitere</string>  
+    <string name="ipmsg_ipmsg">Mesaj IP</string>  
+    <string name="ipmsg_dailog_multi_forward">Se direcţionează mesajele</string>  
+    <string name="ipmsg_dialog_send_result">Rezultat trimitere</string>  
+    <string name="ipmsg_dlg_send_all">Toţi: %s</string>  
+    <string name="ipmsg_dlg_send_sucess">Trimise: %s</string>  
+    <string name="ipmsg_dlg_send_failed">Eşuate: %s</string>  
+    <string name="multi_forward_sim_info">Se obţin informaţiile de pe SIM</string>  
+    <string name="ipmsg_multi_forward_no_sim">Nicio informaţie pe SIM</string>  
+    <string name="ipmsg_divider_online">%s este online</string>  
+    <string name="ipmsg_divider_offline">Ultima oră la care a fost online este %s</string>  
+    <string name="ipmsg_divider_never_online">Niciodată online</string>  
+    <string name="ipmsg_vcard_file_name">%s contacte</string>  
+    <string name="ipmsg_getsim_failed">Obţinerea informaţiilor de pe SIM a eşuat</string>  
+    <string name="ipmsg_sim_status_error">Eroare stare SIM</string>  
+    <string name="ipmsg_forward_failed">Direcţionarea a eşuat</string>  
+    <string name="ipmsg_forward_norecipients">Nu există destinatari pentru direcţionarea mesajului</string>  
+    <string name="ipmsg_multiforward_no_message">Nu există mesaje care să poată fi direcţionate</string>  
+    <string name="ipmsg_need_input_recipients">Specificaţi mai întâi minimum un destinatar</string>  
+    <string name="str_ipmsg_unread_format">%1$d mesaje necitite</string>  
+    <string name="str_ipmsg_not_delivered_title">Nelivrat încă</string>  
+    <string name="str_ipmsg_failed_title">Nereuşit</string>  
+    <string name="str_ipmsg_cant_share">Cardul SD este indisponibil, nu se poate partaja mesajul media</string>  
+    <string name="str_ipmsg_file_limit">prea mare</string>  
+    <string name="str_ipmsg_no_app">"Această acţiune nu poate fi efectuată de nicio aplicaţie."</string>  
+    <string name="str_ipmsg_today">Astăzi</string>  
+    <string name="str_ipmsg_yesterday">"ieri"</string>  
+    <string name="ip_message_typing_text">Se introduce</string>  
+    <string name="ipmsg_try_again">"Încercaţi din nou"</string>  
+    <string name="ipmsg_try_all_again">Încercaţi din nou de la început</string>  
+    <string name="ipmsg_resend_via_sms">Trimitere prin SMS</string>  
+    <string name="ipmsg_resend_via_mms">Trimitere prin MMS</string>  
+    <string name="str_ipmsg_no_such_file">Nu există fişierul</string>  
+    <string name="str_ipmsg_over_file_limit">Dimensiunea fişierului este peste limită</string>  
+    <string name="str_ipmsg_invalid_file_type">Nu este acceptat acest tip</string>  
+    <string name="invite_friends_to_ipmsg">Invitaţi prieteni să utilizeze iSMS</string>  
+    <string name="invite_friends_to_chat">Invitaţi prieteni la chat</string>  
+    <string name="invite_friends_to_ipmsg_dialog_msg">Dacă doriţi să trimiteţi o invitaţie, mesajele pe care le compuneţi vor fi abandonate.</string>  
+    <string name="invite_friends_to_ipmsg_content">Salut, iSMS este un instrument de chat extraordinar. Este gratuit şi comod de utilizat. Vizitaţi http://isms.hissage.com pentru a afla mai multe.</string>  
+    <string name="export">"Exportaţi"</string>  
+    <string name="mark_as_spam">Marcare ca spam</string>  
+    <string name="mark_as_spam_tips">Mesajele marcate ca Spam vor fi mutate în lista Spam şi nu vor fi declanşa notificări automate.</string>  
+    <string name="remove_frome_spam">Eliminare din spam</string>  
+    <string name="add_shortcut">Adăugare comandă rapidă</string>  
+    <string name="view_all_media">Vizualizare toate conţinuturile media</string>  
+    <string name="view_all_location">Vizualizare toate locaţiile</string>  
+    <string name="ipmsg_export_to_sdcard">Export pe cardul SD</string>  
+    <string name="ipmsg_copy">"Copiaţi"</string>  
+    <string name="ipmsg_send_via_text_msg">Trimitere prin mesaj text</string>  
+    <string name="ipmsg_send_via_mms">Trimitere prin mesaj multimedia</string>  
+    <string name="ipmsg_retry">Reîncercare</string>  
+    <string name="ipmsg_delete">EXCLUIR</string>  
+    <string name="ipmsg_share">"Distribuiţi"</string>  
+    <string name="ipmsg_mark_as_important">Marcare ca important</string>  
+    <string name="ipmsg_remove_from_important">Eliminare din elemente importante</string>  
+    <string name="str_ipmsg_save_file">Fişierul a fost salvat în %1$s</string>  
+    <string name="continue_str">Continuare</string>  
+    <string name="convert_to_mms">Convertire la MMS.</string>  
+    <string name="convert_to_sms">Convertire la SMS.</string>  
+    <string name="ipmsg_convert_to_ipmsg">Convertire la iSMS.</string>
+    <string name="ip_message_convert_to_mms_message_for_service">Serviciul iSMS nu este disponibil pentru această cartelă SIM. Acest mesaj poate fi trimis numai prin MMS cu această cartelă SIM. Continuaţi oricum?</string>  
+    <string name="ip_message_convert_to_sms_message_for_service">Serviciul iSMS nu este disponibil pentru această cartelă SIM. Acest mesaj poate fi trimis numai prin SMS cu această cartelă SIM. Continuaţi oricum?</string>  
+    <string name="ip_message_convert_to_mms_message_for_recipients">Destinatarii nu utilizează iSMS. Acest mesaj poate fi trimis numai prin MMS. Continuaţi oricum?</string>  
+    <string name="ip_message_convert_to_sms_message_for_recipients">Destinatarii nu utilizează iSMS. Acest mesaj poate fi trimis numai prin SMS. Continuaţi oricum?</string>  
+    <string name="ipmsg_sms_convert_to_ipmsg">Serviciul iSMS este disponibil pentru această cartelă SIM. Pentru a nu mai plăti tariful pentru mesaje SMS, vă sugerăm să comutaţi la iSMS. Comutaţi acum?</string>
+    <string name="ipmsg_mms_convert_to_ipmsg">Serviciul iSMS este disponibil pentru această cartelă SIM. Pentru a nu mai plăti tariful pentru mesaje MMS, vă sugerăm să comutaţi la iSMS. Comutaţi acum?</string>
+    <string name="keep_mms">Păstrare MMS</string>  
+    <string name="keep_sms">Păstrare SMS</string>  
+    <string name="switch_ipmsg">Comutare</string>  
+    <string name="ip_message_load_all_message">Încărcare toate mesajele</string>  
+    <string name="pref_title_display_preference_settings">AFIŞAJ ŞI PREFERINŢE</string>  
+    <string name="pref_chat_wallpaper">Imagine de fundal chat</string>  
+    <string name="pref_auto_rotation">Rotire automată</string>  
+    <string name="pref_show_email_address">Afişare adresă e-mail</string>  
+    <string name="pref_summary_show_email_address">Includere adresă de e-mail în rezultatele contactelor</string>  
+    <string name="pref_title_backup_restore_settings">COPII DE REZERVĂ ŞI RESTAURARE</string>  
+    <string name="pref_backage_message">Copiere de rezervă mesaj</string>  
+    <string name="pref_summary_backup_message">Ultima copiere de rezervă:Niciodată</string>  
+    <string name="pref_restore_message">Restaurare mesaj</string>  
+    <string name="pref_summary_restore_message">Restaurare mesaje copiate de rezervă</string>  
+    <string name="pref_mute">"Dezactivaţi sunetul"</string>  
+    <string name="pref_summary_mute">"dezactivat"</string>  
+    <string name="pref_vibrate">Vibraţii</string>  
+    <string name="pref_summary_vibrate">Vibrare la primirea notificărilor</string>  
+    <string name="pref_popup_notification">Notificare popup</string>  
+    <string name="pref_summary_popup_notification">Afişare popup pentru notificări push</string>  
+    <string name="pref_title_display_settings">"Afişare"</string>  
+    <string name="pref_title_actions_settings">Acţiuni</string>  
+    <string name="pref_download_chat_history">Descărcare istoric chat</string>  
+    <string name="pref_summary_download_chat_history">Salvare pe cardul SD în format ZIP</string>  
+    <string name="pref_email_chat_history">Trimitere istoric chat prin e-mail</string>  
+    <string name="pref_summary_email_chat_history">Trimitere istoric chat prin e-mail, în format zip</string>  
+    <string name="pref_clear_chat_history">Golire istoric chat</string>  
+    <string name="pref_summary_notification_ringtone">Setare ton de apel pentru notificări noi</string>  
+    <string name="pref_setting_title">Setări mesaje</string>  
+    <string name="pref_setting_sms">Mesaj text(SMS)</string>  
+    <string name="pref_setting_mms">Mesaj multimedia(MMS)</string>  
+    <string name="pref_setting_notification">"Notificări"</string>  
+    <string name="pref_setting_general">"General"</string>  
+    <string name="pref_setting_chat">Setări chat</string>  
+    <string name="chat_setting_saving">Salvare...</string>  
+    <string name="chat_setting_updating">se actualizează…</string>  
+    <string name="chat_setting_sending">"Se trimite..."</string>  
+    <string name="dialog_save_title">Salvare pe cardul SD</string>  
+    <string name="dialog_save_description">Salvare fir de chat pe cardul SD, ca fişier zip</string>  
+    <string name="dialog_email_title">Partajare prin e-mail</string>  
+    <string name="dialog_email_description">Partajare fir de chat ca ataşament e-mail, în format zip</string>  
+    <string name="dialog_clear_title">"Ştergeţi"</string>  
+    <string name="dialog_clear_description">Întregul istoric de chat va fi golit pentru această cameră de chat</string>  
+    <string name="dialog_wallpaper_chooser_wallpapers">Tapeturi</string>  
+    <string name="dialog_wallpaper_chooser_gallery">"Galerie"</string>  
+    <string name="dialog_wallpaper_chooser_take">"Fotografiaţi"</string>  
+    <string name="dialog_wallpaper_chooser_default">"Prestabilit"</string>  
+    <string name="dialog_wallpaper_title">Alegere imagine de fundal</string>  
+    <string name="mute_one_hour">1 oră</string>  
+    <string name="mute_four_hours">4 ore</string>  
+    <string name="mute_eight_hours">8 ore</string>  
+    <string name="save_chat_history_failed">Salvarea nu a reuşit</string>  
+    <string name="send_chat_history_failed">Trimiterea mesajului e-mail a eşuat</string>  
+    <string name="actionbar_sms_setting">Setări SMS</string>  
+    <string name="actionbar_mms_setting">Setări MMS</string>  
+    <string name="actionbar_notification_setting">"Setări pentru notificări"</string>  
+    <string name="actionbar_general_setting">Setări generale</string>  
+    <string name="save_history_file">salvare ca</string>  
+    <string name="no_sdcard_suggestion">"Niciun card SD"</string>  
+    <string name="save_wallpaper_success">Imaginea de fundal a fost schimbată.</string>  
+    <string name="save_wallpaper_fail">Nu s-a putut schimba imaginea de fundal.</string>  
+    <string name="ip_message_delete_important">"Includere mesaje marcate ca importante"</string>  
+    <string name="str_ipmsg_spam_empty">Nu aveţi conversaţii spam. \nSecţiunea SPAM colectează toate conversaţii marcate ca spam. Notificările vor fi dezactivate în mod implicit. Astfel nu veţi fi deranjat inutil. \n\nPuteţi marca un expeditor ca spam ţinând apăsată o conversaţie şi selectând pictograma Marcare ca spam. Când o conversaţie este marcată ca spam, va fi afişată automat o pictogramă de anulare a notificărilor, iar conversaţia va fi mutată în secţiunea de spam.</string>  
+    <string name="str_ipmsg_spam_example_from">+86123456789</string>  
+    <string name="str_ipmsg_spam_example_subject">Acesta este un exemplu de mesaj spam.</string>  
+    <string name="str_ipmsg_groupchat_empty">Nu aveţi niciun mesaj de chat în grup. \nSecţiunea Chat-uri de grup colectează toate mesajele chat-urilor de grup pe care le-aţi creat sau la care v-aţi alăturat. Acest lucru vă permite să gestionaţi cu uşurinţă chat-urile de grup. \n\nPentru a crea un chat de grup, puteţi atinge butonul Creare chat de grup din partea de jos a acestui ecran şi apoi puteţi să vă invitaţi prietenii în grupul dvs.</string>  
+    <string name="str_ipmsg_group_example_from">"Nume grup"</string>  
+    <string name="str_ipmsg_group_example_subject">Prietenul dvs.:\nÎmi place caracteristica de chat în grup!</string>  
+    <string name="str_ipmsg_important_empty">Nu aveţi mesaje importante. \nSecţiunea IMPORTANT colectează toate mesajele marcate ca importante. Astfel veţi putea găsi cu uşurinţă mesajele importante pentru dvs. \n\nPuteţi marca un mesaj ca important ţinând apăsat pe acesta şi selectând Marcare ca important din meniul Opţiuni. Când un mesaj este marcat ca important, veţi putea vedea o pictogramă de culoare roşie, ca mai jos.</string>  
+    <string name="str_ipmsg_important_example_title">Acesta este un exemplu de mesaj marcat ca important. Va apărea un marcaj de culoare roşie.</string>  
+    <string name="str_ipmsg_important_example_time">10:55 AM</string>  
+    <string name="str_ipmsg_allchat_empty">"Nicio conversaţie."</string>  
+    <string name="str_ipmsg_empty_activate_content">Pentru a utiliza această caracteristică, trebuie mai întâi să activaţi serviciul iSMS. Nu vă faceţi griji. Dacă nu agreaţi acest serviciu, îl puteţi dezactiva în orice moment, din secţiunea Setări. Încercaţi serviciul acum!</string>  
+    <string name="str_ipmsg_empty_activate_title">Activare iSMS</string>  
+    <string name="str_ipmsg_service_title">Centru de servicii iSMS</string>  
+    <string name="str_ipmsg_introduction">Cu iSMS puteţi trimite instantaneu mesaje gratuit, iar serviciul păstrează istoricul dvs. de chat într-o locaţie unică. Apăsaţi butonul pentru a porni într-o nouă experienţă!</string>  
+    <string name="time_now">Nume artist necunoscut</string>  
+    <string name="str_ipmsg_active">Activare iSMS</string>  
+    <string name="str_ipmsg_welcome_active">Bun venit la iSMS</string>  
+    <string name="str_ipmsg_term_warn_welcome">Serviciul iSMS vă permite să conversaţi şi să partajaţi fişiere multimedia cu prietenii, în orice moment şi oriunde v-aţi afla, prin Wi-Fi sau conexiune de date.\n\nSunt necesari doar 3 paşi pentru a finaliza activarea!\n\n Termeni şi condiţii\n</string>  
+    <string name="str_ipmsg_term_warn_activate">Această caracteristică este acceptată numai de către serviciul iSMS.\n\nServiciul iSMS vă permite să conversaţi şi să partajaţi fişiere multimedia cu prietenii, în orice moment şi oriunde v-aţi afla, prin Wi-Fi sau conexiune de date.\n\n Termeni şi condiţii</string>  
+    <string name="str_ipmsg_term_key">Termeni şi condiţii</string>  
+    <string name="str_ipmsg_agree_and_continue">Acord şi continuare</string>  
+    <string name="no_sim_card">Nu există nicio cartelă SIM!</string>  
+    <string name="ip_message_activate_title">Activare iSMS</string>  
+    <string name="ip_message_current_sim_enabled">Cartela SIM curentă este activată.</string>  
+    <string name="sim_selected_dialog_title_for_activate">Selectaţi cartela SIM pentru care doriţi activarea iSMS</string>  
+    <string name="ip_message_activate_message">Această caracteristică este acceptată numai de către serviciul iSMS. Activaţi contul iSMS acum?</string>  
+    <string name="typing">"Se tastează…"</string>  
+    <string name="ip_message_enable_title">Activare iSMS</string>  
+    <string name="ip_message_enable_message">Această caracteristică este acceptată numai de către serviciul iSMS. Activaţi contul iSMS acum?</string>  
+    <string name="sim_selected_dialog_title_for_enable">Selectaţi cartela SIM pentru care doriţi activarea iSMS</string>  
+    <string name="ip_message_switch_sim_title">Schimbare SIM</string>  
+    <string name="ip_message_switch_sim_message">Cartela SIM curentă nu acceptă iSMS. A comuta la alte SIM?</string>  
+    <string name="ip_message_switch_sim_button">Comutare</string>  
+    <string name="ip_message_switch_sim_successfully">Schimbarea cartelei SIM s-a finalizat cu succes!</string>  
+    <string name="close">Închidere canal</string>  
+    <string name="nointernet">"Nu s-a găsit o conexiune activă la internet! Încercaţi din nou mai târziu"</string>  
+    <plurals name="deleted_conversations"> 
+        <item quantity="one">O conversaţie a fost ştearsă</item>  
+        <item quantity="other"><xliff:g id="number" example="15">%1$s</xliff:g> conversaţii au fost şterse</item> 
+    </plurals> 
+<string name="sms_validity_period">Perioadă valabilitate SMS</string>
+    <string name="sms_validity_period_nosetting">Nesetat</string>
+    <string name="sms_validity_period_1hour">1 oră</string>
+    <string name="sms_validity_period_6hours">6 ore</string>
+    <string name="sms_validity_period_12hours">12 ore</string>
+    <string name="sms_validity_period_1day">1 zi</string>
+    <string name="sms_validity_period_max">Maximum</string>
+    <string name="exceed_subject_length_limitation">Lungime max. atinsă</string>
+    <string name="disable_notifications_dialog_message" msgid="7644011234972074096">"Opriţi duplicarea notificărilor prin mesaje text din aplicaţia prestabilită Mesagerie?"</string>
+    <string name="forward_from">Redirecţionare de la:</string>
+    <string name="sms_forward_setting">Setare redirecţionare SMS</string>
+    <string name="sms_forward_setting_summary">Redirecţionare SMS cu numele şi numărul de telefon ale expeditorului</string>
+    <string name="file_attachment_vcalendar_name"> vCalendar( <xliff:g id="text">%s</xliff:g> ) </string>
+    <string name="inbox">"Mesaje primite"</string>
+    <string name="outbox">"Mesaje de trimis"</string>
+    <string name="draftbox">Casetă ciorne</string>
+    <string name="sentbox">Casetă mesaje trimise</string>
+    <string name="simbox">SIMbox</string>
+    <string name="changeview">Schimbare mod</string>
+    <string name="viewer_title_sms">"SMS"</string>
+    <string name="viewer_title_wappush">Comandă WAP</string>
+    <string name="slideshow_details">Detaliu mesaj</string>
+    <string name="open">Deschidere</string>
+    <string name="delete_all_confirm">"Ştergeţi toate mesajele din casetă?"</string>
+    <string name="folder_recipient">Destinatar :</string>
+    <string name="folder_recieve_date">Dată :</string>
+    <string name="folder_download">Mesajul MMS se descarcă</string>
+    <string name="confirm_download_message">"confirmare descărcare mesaj"</string>
+    <string name="play_as_slideshow">Redare MMS ca expunere de diapozitive</string>
+    <string name="no_application_response">"Nicio aplicaţie pentru gestionarea solicitării"</string>
+    <string name="cdma_not_support">CDMA nu acceptă această caracteristică</string>
+    <string name="allmessage">"Date de server deteriorate, toate mesajele vor fi resincronizate"</string>
+    <string name="select_message">Selectare mesaj</string>
+    <string name="confirm_delete_allmessage">„Toate mesajele se vor şterge.”</string>
+    <string name="mark_as_read_btn_str">"Marcaţi conversaţia ca citită"</string>
+    <string name="delete_btn_str">Ştergere</string>
+    <string name="reply_send">"Trimiteţi"</string>
+    <string name="via_test">Apelare via SIM1</string>
+    <string name="received_header">"Primite:"</string>
+    <string name="no_item_selected">Niciun element nu este selectat.</string>
+    <string name="pref_title_font_size_setting">SETARE DIMENSIUNE FONTURI</string>
+    <string name="pref_title_message_font_size">Dimensiune fonturi mesaj</string>
+    <string name="pref_summary_message_font_size">Dimensiune fonturi mesaj</string>
+    <string name="message_font_size_dialog_title">Dimensiune fonturi mesaj</string>
+    <string name="message_font_size_dialog_cancel">Revocare</string>
+    <string name="change">Modificare</string>
+    <string name="ipmsg_accept">"Acceptaţi"</string>
+    <string name="ipmsg_resend">Retrimitere</string>
+    <string name="viewer_title_cb">Transmisie celulară</string>
+    <string name="change_default_disk">Telefonul nu are spaţiu liber suficient. Eliberaţi o parte din spaţiu sau schimbaţi "disc de scriere implicit" din setări.</string>
+    <string name="ipmsg_reject">Respingere</string>
+    <string name="discard_mms_title">Ştergere MMS-uri</string>
+    <string name="discard_mms_content">TOATE MMS-urile din mesajul dvs. multi.redirecţionare vor fi şterse</string>
+    <string name="toast_sms_forward">Niciun SMS nu a fost redirecţionat</string>
+    <string name="dialog_continue">Continuare</string>
+    <string name="sms_size_limit">Limită dimensiune atinsă</string>
+    <string name="dialog_sms_limit">Limită dimensiune mesaj atinsă. Mesajul depăşit va fi eliminat</string>
+    <string name="sum_search_networks">"Căutaţi toate reţelele disponibile"</string>
+    <string name="str_ipmsg_replace_attach">Înlocuire ataşament</string>
+    <string name="str_ipmsg_replace_attach_msg">Există un ataşament. Doriţi să îl înlocuiţi?</string>
+    <string name="ipmsg_err_file">Eroare la deschiderea fişierului</string>
+    <string name="forward_tips_title">"Anulare notificare MMS"</string>
+    <string name="forward_tips_body">"Notificarea MMS nu acceptă redirecţionarea. Aceasta va fi anulată."</string>
+    <string name="ipmsg_resend_discard_message">Pentru a retrimite mesajul, mesajul care este compus momentan va fi eliminat.</string>
+    <string name="type_to_quick_text">"Introducere text rapid"</string>
+    <string name="menu_wappush">"Mesaje Wappush"</string>
+    <string name="visit_website">"Vizitare site Web"</string>
+    <string name="meet_emoticon_limit">Atingere limite emoticonuri</string>
+    <string name="view_mms_notification">Notificarea mms nu poate fi vizualizată</string>
+    <string name="ipmsg_multi_forward_tips_content">Pentru multi-redirecţionare, mai întâi trebuie descărcate unele mesaje iSMS.</string>
+    <string name="multi_forward_failed_all">Descărcare eşuată, multi-redirecţionare abandonată.</string>
+    <string name="ipmsg_multi_forward_failed_part">Redirecţionarea unor iSMS a eşuat.</string>
+    <string name="confirm_delete_allwappush">"Toate mesajele push WAP vor fi șterse."</string>
+    <string name="confirm_delete_selected_wappush">"Mesajele push WAP selectate vor fi șterse."</string>
+    <string name="menu_delete_allwappush">Ştergere totală</string>
+    <string name="duplicated_recipient">Destinatar dublat</string>
+
+<string name="ok">"OK"</string>
+    <string name="cancel">"Anulaţi"</string>
+    <string name="enable">"Activaţi"</string>
+    <string name="disable">"Dezactivaţi"</string>
+    <string name="cell_broadcast_setting">Setări transmisie celulară</string>
+    <string name="cb_menu_language">"Limbă"</string>
+    <string name="cb_menu_add_channel">Adăugare canal</string>
+    <string name="cb_menu_channel_list">Listă canale</string>
+    <string name="cb_dialog_title_language_choice">Selectare limbă</string>
+    <string name="cb_channel_dialog_channel_name">Nume canal (1-10 caractere)</string>
+    <string name="cb_channel_dialog_channel_number">Număr canal (0-65534)</string>
+    <string name="cb_channel_dialog_channel_state">Activaţi canalul</string>
+    <string name="cb_channel_dialog_edit_channel">Editare canal</string>
+    <string name="cb_menu_edit">"Modificaţi"</string>
+    <string name="cb_menu_delete">EXCLUIR</string>
+    <string name="cb_error_channel_num">Introduceţi numărul canalului (0-65534).</string>
+    <string name="cb_error_channel_name">Lungimea numelui canalului nu este corectă (1-10 caractere).</string>
+    <string name="cb_error_language_select">Selectaţi cel puţin o limbă.</string>
+    <string name="cb_error_channel_id_exist">ID-ul canalului există.</string>
+    <string name="cb_all_languages">Toate limbile</string>
+    <string name="cb_default_new_channel_name">Canal nou</string>
+    <string name="sum_cell_broadcast_control_on">Activare transmisie celulară</string>
+    <string name="sum_cell_broadcast_control_off">Dezactivare transmisie celulară</string>
+    <string name="sum_cell_broadcast_setting">Setare limbă şi canal pentru transmisie celulară</string>
+    <string name="close_dialog">OK</string>
+    <string name="updating_title">"Setări apel"</string>
+    <string name="error_updating_title">"Eroare în setările de apel"</string>
+    <string name="reading_settings">"Se citesc setările..."</string>
+    <string name="updating_settings">"Se actualizează setările..."</string>
+    <string name="reverting_settings">"Se revine la setări..."</string>
+    <string name="exception_error">"Eroare de reţea sau de card SIM."</string>
+    <string name="no_sim">Cartela SIM %d nu este conectată.</string>
+    <string name="sms_not_ready">Modulul SMS este în curs de iniţializare, aşteptaţi...</string>
+    <string name="label_full_name">Nume</string>
+    <string name="label_phone">Telefon</string>
+    <string name="label_email">"E-mail"</string>
+    <string name="label_postal">"Adresă"</string>
+    <string name="label_organization">"Organizaţie"</string>
+    <string name="label_im">"IM"</string>
+    <string name="label_website">Pagină web</string>
+    <string name="label_sip_address">"Apel prin internet"</string>
+    <string name="label_nick_name">"Pseudonim"</string>
+    <string name="label_notes">"Note"</string>
+    <string name="label_event">"Evenimente"</string>
+    <string name="search_time_period_label">Perioadă de timp</string>
+    <string name="done_text">"Terminat"</string>
+    <string-array name="language_list_values" translatable="false">
+        <item>Toate limbile</item>
+        <item>Germană</item>
+        <item>Engleză</item>
+        <item>Italiană</item>
+        <item>Franceză</item>
+        <item>Spaniolă</item>
+        <item>Olandeză</item>
+        <item>Suedeză</item>
+        <item>Daneză</item>
+        <item>Portugheză</item>
+        <item>Finlandeză</item>
+        <item>Norvegiană</item>
+        <item>Greacă</item>
+        <item>Turcă</item>
+        <item>Maghiară</item>
+        <item>Poloneză</item>
+        <item>Altele</item>
+        <item>Cehă</item>
+        <item>Ebraică</item>
+        <item>Arabă</item>
+        <item>Rusă</item>
+        <item>Islandeză</item>
+    </string-array>
+    <string name="add_duplicate_recipients">Destinatar dublat</string>
+
+    <!-- begin of mwi -->
+    <string name="mwi_title">Mesaje vocale</string>
+    <string name="type_voice_msg">Mesaj vocal</string>
+    <string name="type_video_msg">Mesaj video</string>
+    <string name="type_fax_msg">Mesaj fax</string>
+    <string name="type_text_msg">"Mesaj text"</string>
+    <string name="priority_urgent">Urgent</string>
+    <string name="date_label">Dată:\u0020</string>
+    <string name="message_id_label">ID mesaj:\u0020</string>
+    <string name="voice_message_count_notification"><xliff:g id="number" example="3">%1$s</xliff:g> noi mesaje vocale</string>
+    <string name="confirm_delete_allmwi">"Toate mesajele vocale vor fi şterse."</string>
+    <string name="confirm_delete_selected_mwi">"Mesajele vocale selectate vor fi şterse."</string>
+    <!-- end of mwi -->
+
+    <string name="download_disabled_toast">Nu se poate descărcare. Aceasta nu este aplicaţia implicită pentru SMS.</string>
+    <string name="adding_wallpaper_title">Se salvează tapetul…</string>
+    <string name="sms_priority_setting">Prioritate UIM</string>
+    <string name="sms_priority_Interactive">Interactiv</string>
+    <string name="sms_priority_Urgent">Urgent</string>
+    <string name="sms_priority_Emergency">Urgenţă</string>
+    <string name="empty_sim_name">Sim Slot <xliff:g id="subId" example="2">%1$d</xliff:g></string>
+
+    <string name="drm_not_support">Nu puteţi trimite prin mesaj MMS conţinut protejat împotriva copierii.</string>
+    <string name="user_has_no_premission">Acest utilizator nu are permisiunea de a utiliza SMS</string>
+    <string name="wfc_no_cellular_network">Lipsă reţea celulară</string>
+    <string name="wfc_connect_to_available_wifi">Conectaţi-vă la reţeaua Wi-Fi disponibilă pentru schimb de mesaje.</string>
+    <string name="wfc_notification_title">Conectaţi-vă la reţeaua Wi-Fi pentru schimb de mesaje.</string>
+    <string name="ct_om_switch_notification"><xliff:g id="op1">%s</xliff:g> nu va funcţiona temporar şi, dacă există, orice apeluri, mesaje SMS și date implicite de pe <xliff:g id="op2">%s</xliff:g> vor fi mutate pe <xliff:g id="op3">%s</xliff:g> în mod corespunzător.</string>
+    <string name="can_not_switch_account_during_call">NusepoatecomutacartelaSIMpreferatăpentrumesajeSMSîntimpulapelului.</string>
+    <string name="can_not_switch_account_temporarily">NusepoatecomutatemporarcartelaSIMpreferatăpentruSMS.</string>
+    <string name="omh_exceed_message_size_limitation">S-aatinsdimensiuneamaximăamesajuluiR-UIM</string>
+    <string name="omh_failed_to_add_image">S-a atins limita de dimensiune a mesajelor R-UIM, eliminaţi anumite părţi.</string>
+    <string name="missing_required_permission">Permisiune refuzată. Le puteţi schimba în Setări &gt; Aplicaţii.</string>
+    <string name="manage_card_msg_title">Gestionaţi mesajele de pe cartela UIM/SIM</string>
+    <string name="manage_card_msg_summary">Gestionaţi mesajele stocate pe cartela dumneavoastră UIM/SIM</string>
+    <string name="disable_delivery_report">Nu poate fi activat pe durata roamingului.</string>
+    <string name="fore_service_notify_title">Se transferă mesajele</string>
+    <string name="fore_service_notify_content">Există mesaje în curs de transferare.</string>
+    <string name="smart_req_mms_indicator">Mesajele MMS nu sunt permise; încercați din nou trimiterea ca mesaj SMS.</string>
+</resources>

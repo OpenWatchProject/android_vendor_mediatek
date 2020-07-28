@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/camera_gray_background" >
+
+    <ImageView
+        android:layout_gravity="center"
+        android:layout_width="@dimen/mode_transition_view_icon_size"
+        android:layout_height="@dimen/mode_transition_view_icon_size"
+        android:scaleType="fitCenter"
+        app:srcCompat="@drawable/ic_camera_blanket" />
+
+</FrameLayout>

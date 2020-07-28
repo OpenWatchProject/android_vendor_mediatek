@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/* //device/apps/common/assets/res/any/strings.xml
+**
+** Copyright 2006, The Android Open Source Project
+**
+** Licensed under the Apache License, Version 2.0 (the "License");
+** you may not use this file except in compliance with the License.
+** You may obtain a copy of the License at
+**
+**     http://www.apache.org/licenses/LICENSE-2.0
+**
+** Unless required by applicable law or agreed to in writing, software
+** distributed under the License is distributed on an "AS IS" BASIS,
+** WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+** See the License for the specific language governing permissions and
+** limitations under the License.
+*/
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="badPin2">El PIN 2 anterior que has escrit no és correcte.</string>
+    <string name="badPuk2">El PUK 2 que has escrit no és correcte.</string>
+    <string name="checkPwdLen">La contrasenya ha de tenir entre 4 i 8 dígits.</string>
+    <string name="pinNotEnabled">Habilita el PIN abans de canviar-lo.</string>
+    <string name="puk1Blocked">El PIN està bloquejat.</string>
+    <string name="puk2Blocked">El PIN 2 està bloquejat.</string>
+    <string name="fdnFailMmi">Error en verificar FDN.</string>
+    <string name="callBarringFailMmi">Error en restricció de trucades.</string>
+    <string name="Pin2Mmi">Canvi de PIN 2</string>
+    <string name="PukMmi">Desbloqueja PIN</string>
+    <string name="Puk2Mmi">Desbloqueja PIN2</string>
+    <string name="serviceProvisioned">Servei ofert.</string>
+    <string name="serviceUnknown">"Problema de connexió o codi MMI no vàlid."</string>
+    <string name="cfServiceNotForwarded">"No s'ha reenviat."</string>
+
+    <string name="invalidPuk">Introdueix 8 dígits.</string>
+    <string name="invalid_imei">IMEI no vàlid</string>
+    <string name="same_imei">El mateix IMEI</string>
+    <string name="oper_long_46000">CMCC</string>
+    <string name="oper_long_46001">CU</string>
+    <string name="oper_long_46003">China Telecom</string>
+    <string name="oper_long_46601">Far EasTone</string>
+    <string name="oper_long_46692">Chunghwa Telecom</string>
+    <string name="oper_long_46697">Taiwan Mobile</string>
+    <string name="oper_long_99998">Android1</string>
+    <string name="oper_long_99999">Android</string>
+    <string name="oper_short_46000">CMCC</string>
+    <string name="oper_short_46001">CU-GSM</string>
+    <string name="oper_short_46003">China Telecom</string>
+    <string name="oper_short_46601">FET</string>
+    <string name="oper_short_46692">Chunghwa</string>
+    <string name="oper_short_46697">TWN</string>
+    <string name="oper_short_99997">AD1</string>
+    <string name="oper_short_99999">AD</string>
+
+    <string name="sim_close">Tanca targeta SIM</string>
+
+    <string name="serviceClassVideo">"Vídeo"</string>
+  <string name="free_memory_btn">"Espai lliure"</string>
+  <string name="contact_widget_loading">"S\'està carregant…"</string>
+
+   <string name="media_controller_buffering">"S’està emmagatzemant a la memòria intermèdia %d%%..."</string>
+   <string name="media_controller_live">"En viu"</string>
+   <string name="media_controller_playing">"Reproduint"</string>
+   <string name="media_controller_connecting">"S’està connectant…"</string>
+   <string name="VideoView_error_text_bad_file">"Fitxer incorrecte, aquest vídeo no es pot reproduir."</string>
+   <string name="VideoView_error_text_cannot_connect_to_server">"No es pot connectar al servidor."</string>
+   <string name="VideoView_error_text_type_not_supported">"El tipus de fitxer multimèdia no és compatible."</string>
+   <string name="VideoView_error_text_drm_not_supported">"Protegit per DRM, aquest vídeo no es pot reproduir."</string>
+   <string name="VideoView_error_text_invalid_connection">"Connexió no vàlida. (403 Prohibit)"</string>
+    <string name="new_sim">SIM nova</string>
+
+    <string name="delete">"Suprimeix"</string>
+    <string name="searching_simcard">S’està detectant...</string>
+
+    <string name="aerr_application_lowstorage">L’emmagatzematge intern s’està esgotant, l’aplicació s’ha aturat. Allibera espai i torna-ho a provar.</string>
+    <string name="aerr_process_lowstorage">L’emmagatzematge intern s’està esgotant, el procés s’ha aturat. Allibera espai i torna-ho a provar.</string>
+    <string name="low_internal_storage_view_title">L’emmagatzematge intern s’està esgotant</string>
+    <string name="low_storage_warning_message">Allibera espai o algunes aplicacions i funcions del sistema potser no funcionaran correctament.</string>
+    <string name="deleteMails">Esborra missatges de correu</string>
+    <string name="drm_protection_status">Estat de protecció:</string>
+    <string name="drm_can_forward">Es pot reenviar.</string>
+    <string name="drm_can_not_forward">No es pot reenviar.</string>
+    <string name="drm_no_limitation">No hi ha límits.</string>
+    <string name="drm_no_license">No hi ha cap llicència de DRM disponible.</string>
+    <string name="drm_begin">Inici:</string>
+    <string name="drm_end">Final:</string>
+    <string name="drm_use_left">Queden:</string>
+    <string name="drm_protectioninfo_renew">Renova</string>
+    <string name="drm_protectioninfo_title">Informació de protecció</string>
+    <string name="drm_licenseacquisition_title">Adquisició de llicència de DRM</string>
+    <string name="drm_licenseacquisition_message">%1$s no té cap llicència de DRM disponible. Pots prémer el botó "Renova" per adquirir la llicència de DRM.</string>
+    <string name="drm_toast_license_expired">La llicència de DRM ha caducat.</string>
+    <string name="drm_forwardforbidden_title">Reenviament prohibit</string>
+    <string name="drm_forwardforbidden_message">Alguns fitxers protegits no es poden reenviar.</string>
+    <string name="drm_license_install_success">Instal·lació de llicència de DRM correcta.</string>
+    <string name="drm_license_install_fail">"Error d'instal·lació de llicència de DRM."</string>
+    <string name="drm_secure_timer_title">Rellotge segur de DRM no vàlid</string>
+    <string name="drm_secure_timer_message">No pots utilitzar fitxers protegits per DRM. Comprova que tens una connexió de dades.</string>
+    <string name="drm_consume_title">Consumeix drets de DRM</string>
+    <string name="drm_consume_message">La teva acció consumirà drets de DRM.</string>
+    <string name="virtual_sim_on_slot1">SIM 1 virtual ACTIVA</string>
+    <string name="virtual_sim_on_slot2">SIM 2 virtual ACTIVA</string>
+    <string name="virtual_sim_on_slot3">SIM 3 virtual ACTIVA</string>
+    <string name="virtual_sim_on_slot4">SIM 4 virtual ACTIVA</string>
+    <string name="virtual_sim_on">SIM virtual ACTIVA</string>
+    <string name="sim_missing_slot1">Ranura 1:  No s’ha detectat cap targeta SIM</string>
+    <string name="sim_missing_slot2">Ranura 2:  No s’ha detectat cap targeta SIM</string>
+    <string name="sim_missing_slot3">Ranura 3:  No s’ha detectat cap targeta SIM</string>
+    <string name="sim_missing_slot4">Ranura 4:  No s’ha detectat cap targeta SIM</string>
+    <string name="sim_missing">No s’ha detectat cap targeta SIM</string>
+    <string name="sim_missing_detail">Comprova si la targeta SIM està a punt</string>
+    <string name="sim_missing_slot1_card">Ranura 1:  No s’ha detectat cap targeta</string>
+    <string name="sim_missing_slot2_card">Ranura 2:  No s’ha detectat cap targeta</string>
+    <string name="sim_missing_card">No s’ha detectat cap targeta</string>
+    <string name="sim_missing_detail_card">Comprova si la targeta està a punt</string>
+    <string name="confirm_flight_mode_title">Mode de vol activat</string>
+    <string name="confirm_flight_mode_msg">Per utilitzar el número, has de desactivar el mode de vol.</string>
+    <string name="confirm_radio_title">SIM desactivada</string>
+    <string name="confirm_radio_msg">Per utilitzar el número, has d’activar-la.</string>
+    <string name="confirm_flight_mode_radio_title">Mode de vol activat i SIM desactivada</string>
+    <string name="confirm_flight_mode_radio_msg">Per utilitzar el número, has de desactivar el mode de vol i activar la SIM.</string>
+    <string name="confirm_unlock_title">SIM bloquejada</string>
+    <string name="confirm_unlock_msg">La targeta SIM seleccionada està bloquejada. Desbloqueja-la abans.</string>
+    <string name="confirm_roaming_title">Advertència de roaming</string>
+    <string name="confirm_roaming_msg">La targeta SIM està en itinerància. Vols seguir utilitzant-la?</string>
+    <string name="confirm_button_ok">"D\'acord"</string>
+    <string name="confirm_button_cancel">"Cancel·la"</string>
+    <string name="confirm_button_unlock">"Desbloqueja"</string>
+    <string name="confirm_button_turn_off">Desactiva-la</string>
+    <string name="confirm_button_turn_on">"Activa"</string>
+    <string name="confirm_button_yes">"Sí"</string>
+    <string name="confirm_button_no">"No"</string>
+    <string name="url_dialog_choice_title">"Missatges"</string>
+    <string name="url_dialog_choice_message">S’obrirà el navegador, vols continuar?</string>
+    <string name="deleteMail">Fes una còpia de seguretat dels correus i allibera espai d’emmagatzematge</string>
+    <string name="storage_withsd">L’emmagatzematge del telèfon no té prou espai. Allibera espai d’emmagatzemament o canvia el disc d’escriptura predeterminat a la configuració.</string>
+    <string name="storage_withoutsd">L’emmagatzematge del telèfon no té prou espai. Allibera espai d’emmagatzematge o introdueix una targeta SD.</string>
+    <string name="storage_sd">La targeta SD no té prou espai. Allibera espai d’emmagatzemament o canvia el disc d’escriptura predeterminat a la configuració.</string>
+    <string name="usb_ums_notification_title">Connectat com a emmagatzematge USB</string>
+    <string name="usb_charging_notification_title">Només càrrega per USB</string>
+    <string name="gps_time_sync_fail_str">No s’ha pogut obtenir l’hora subministrada pel GPS</string>
+    <string name="invalid_card">Targeta no vàlida</string>
+    <string name="RejectCauseTitle">Motiu pel qual s’ha rebutjat la xarxa</string>
+    <string name="MMRejectCause2">SIM no subministrada MM #2</string>
+    <string name="MMRejectCause3">SIM no permesa MM #3</string>
+    <string name="MMRejectCause5">La trucada ha fallat MM #5</string>
+    <string name="MMRejectCause6">Telèfon no permès MM #6</string>
+    <string name="MMRejectCause13">Només SOS/trucades d’emergència</string>
+    <string name="tethered_notification_message_for_hotspot"><xliff:g id="connected">%1$d</xliff:g> connectat, <xliff:g id="blocked">%2$d</xliff:g> bloquejat</string>
+    <string name="tethered_notification_message_bandwidth_set">S’ha definit l’ample de banda</string>
+
+    <string name="default_wallpaper_name">Cadena per defecte A-GPS</string>
+    <string name="description_direction_right">"Fes lliscar el dit cap a la dreta per ometre"</string>
+    <string name="description_direction_left">"Fes lliscar el dit cap a l\'esquerra per posposar"</string>
+    <string name="description_direction_up">"Fes lliscar el dit cap amunt per ometre"</string>
+    <string name="description_direction_down">"Fes lliscar el dit cap avall per posposar"</string>
+    <string name="press_color_to_apply">Prem un color per aplicar-lo</string>
+    <string name="color_picker_select"/>
+    <string name="wifi_display_bt_hdmi_off_wfd_on">L’HDMI s’apagarà quan activis la visualització sense fil. Vols continuar?</string>
+    <string name="wifi_display_wfd_off_hdmi_on">La visualització sense fil s’apagarà quan activis l’HDMI. Vols continuar?</string>
+    <string name="wifi_display_wifi_p2p_disconnect_wfd_connect">La connexió actual de Wi-Fi Direct es desconnectarà quan connectis el dispositiu de visualització sense fil. Vols continuar?</string>
+    <string name="wifi_display_unstable_connection">Connexió inestable</string>
+    <string name="wifi_display_connection_is_not_steady">La connexió actual de visualització sense fil no és estable.</string>
+    <string name="wifi_display_unstable_suggestion">La connexió actual de visualització sense fil no és estable, prova d’apropar-te al dispositiu de visualització.</string>
+    <string name="wifi_display_reconnect">Torna a connectar-te</string>
+    <string name="wifi_display_disconnect_then_reconnect">Visualització sense fil desconnectada. Vols tornar-la a connectar?</string>
+    <string name="wifi_display_disconnected">Visualització sense fil desconnectada.</string>
+    <string name="wifi_wps_failed_overlap">"S\'ha detectat una altra sessió de WPS. Torna-ho a provar d\'aquí a una estona."</string>
+    <string name="wifi_p2p_frequency_conflict_message">"El telèfon es desconnectarà temporalment de la Wi-Fi mentre estigui connectat a <xliff:g id="device_name">%1$s</xliff:g> (només si es canvia la banda de canals i l'ID dels punts d'accés de la Wi-Fi actual a <xliff:g id="oper_freq">%2$s</xliff:g>)"</string>
+    <string name="wifi_display_wfd_and_wifi_are_turned_on">S’han activat la visualització sense fil i la Wi-Fi.</string>
+    <string name="wifi_display_sound_path_reminder">No sentiràs el so multimèdia pels auriculars.</string>
+    <string name="wifi_display_change_resolution_reminder">Quan es canviï la resolució, es tornarà a connectar la visualització sense fil automàticament.</string>
+    <string name="wifi_display_do_not_remind_again">No m’ho tornis a recordar.</string>
+    <string name="wifi_display_wifi_ap_affects_quality">L’AP Wi-Fi actual pot afectar la qualitat de la visualització sense fil.</string>
+    <string name="wifi_display_wait_connection">S’estan esperant les invitacions de connexió d’altres dispositius.</string>
+    <string name="wifi_display_confirm_connection">vol connectar-se amb aquest dispositiu.</string>
+    <string name="wifi_display_build_connection">Establint connexió.</string>
+    <string name="sdcard_ready_title">La targeta SD està a punt</string>
+    <string name="sdcard_select_default_path">Vols canviar el disc d’escriptura predeterminat?</string>
+    <string name="sdcard_default_path_change">S’ha canviat el disc d’escriptura predeterminat.</string>
+    <string name="usb_storage_ready_title">Emmagatzematge USB extern a punt</string>
+    <string name="headset_pin_recognition">Els auriculars no són compatibles amb el telèfon. Prova amb uns altres.</string>
+
+    <string name="usb_autorun_cdrom_notification_title">Connectat com a CD d’execució automàtica</string>
+    <string name="ct_net_name">"CTNET"</string>
+    <string name="ct_wap_name">"CTWAP"</string>
+    <string name="hdmi_notification_title">Cable d’HDMI connectat</string>
+    <string name="hdmi_notification_content">Fes clic per configurar l’HDMI</string>
+    <string name="hdmi_hdvideo_toast">L’HDMI no pot reproduir el vídeo de 4k, la connexió s’interromprà.</string>
+	<string name="hdmi_mutex_call_content">"Ho sentim, l'HDMI s'ha aturat per causa de la trucada telefònica actual."</string>
+
+    <string name="data_conn_only">Només connexió de dades</string>
+
+    <string name="Special_Card_Type_Title_Lte_Not_Available">La xarxa LTE no es troba disponible.</string>
+    <string name="Suggest_To_Change_USIM">Es suggereix passar a una targeta SIM 4G.</string>
+    <string name="Default_Account_Selection_Content">Selecció de compte predeterminat</string>
+    <string name="network_forbidden">prohibit</string>
+    <string name="media_info_audio_not_supported">"No s'ha pogut reproduir l'àudio."</string>
+    <string name="media_info_video_not_supported">"Aquest vídeo no és compatible"</string>
+    <string name="save_password_label">"Confirma el PIN nou"</string>
+    <string name="save_password_message">"Voleu que el navegador recordi aquesta contrasenya?"</string>
+    <string name="save_password_notnow">"Ara no"</string>
+    <string name="save_password_remember">"Recorda la preferència"</string>
+    <string name="save_password_never">No m’ho demanis mai</string>
+    <string name="hdmi_audio_output">"Sortida d'àudio"</string>
+    <string name="hdmi_audio_output_stereo">Estèreo</string>
+    <string name="hdmi_audio_output_multi_channel">Multicanal</string>
+    <string name="account_always_ask_title">"Demana-m\'ho cada vegada"</string>
+    <string name="permlab_wake_device_sensorhub" product="tablet">desperta la tauleta</string>
+    <string name="permlab_wake_device_sensorhub" product="default">desperta el telèfon</string>
+    <string name="permdesc_wake_device_sensorhub" product="tablet">"Permet a l'aplicació despertar la tauleta en mode suspensió mitjançant el concentrador de sensors."</string>
+    <string name="permdesc_wake_device_sensorhub" product="default">"Permet a l'aplicació despertar el telèfon en mode suspensió mitjançant el concentrador de sensors."</string>
+    <string name="lockscreen_pin_too_many_failed_attempts_dialog_message">Has introduït un PIN incorrecte <xliff:g id="number">%d</xliff:g> vegades. \n\nTorna-ho a provar en <xliff:g id="number">%d</xliff:g> segons.</string>
+    <string name="lockscreen_password_too_many_failed_attempts_dialog_message">Has introduït una contrasenya incorrecta <xliff:g id="number">%d</xliff:g> vegades. \n\nTorna-ho a provar en <xliff:g id="number">%d</xliff:g> segons.</string>
+    <string name="wifi_display_connected_to_wifi_network">Connectat a la xarxa Wi-Fi <xliff:g id="wifi_ap_name">%1$s</xliff:g>.</string>
+    <string name="wifi_display_wifi_network_disconnected">Xarxa Wi-Fi <xliff:g id="wifi_ap_name">%1$s</xliff:g> desconnectada.</string>
+    <string name="wifi_display_channel_confliction">Conflicte de canals</string>
+    <string name="wifi_display_wifi_network_cannot_coexist">"La xarxa Wi-Fi actual no pot coexistir amb la connexió de pantalla d'emissió."</string>
+    <string name="permdesc_receiveCbSms">Permet a l’aplicació rebre i processar missatges d’SMS de CB. Les aplicacions malicioses poden controlar els teus missatges o eliminar-los sense mostrar-los.</string>
+    <string name="permdesc_receiveDmRegisterSms">Permet a l’aplicació rebre i processar missatges d’SMS de registre DM. Cap aplicació ha d’utilitzar aquesta opció, excepte l’aplicació de DM.</string>
+    <string name="drm_first_time_use">"Aquesta és la primera vegada que s'utilitza."</string>
+    <string name="drm_use_now">Voleu utilitzar-lo ara?</string>
+    <string name="drm_consume_interval">Aquest fitxer estarà disponible %1$s després de començar a utilitzar-lo.</string>
+    <string name="drm_effective_duration">Durada efectiva:</string>
+    <string name="drm_expire_dialog_future">Període vàlid:</string>
+    <string name="validity_period" msgid="8818886137545983110">"Validesa:"</string>
+</resources>

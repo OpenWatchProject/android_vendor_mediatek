@@ -1,0 +1,38 @@
+cc_binary {
+    name: "vendor.trustonic.teeregistry@1.0-service",
+    relative_install_path: "hw",
+    proprietary: true,
+
+    srcs: [
+        "TeeRegistry.cpp",
+        "service.cpp",
+    ],
+
+    shared_libs: [
+        "libbinder",
+        "liblog",
+        "libutils",
+        "libhidlbase",
+        "libhidlmemory",
+        "android.hidl.allocator@1.0",
+        "android.hidl.memory@1.0",
+        "vendor.trustonic.teeregistry@1.0",
+    ],
+
+    include_dirs: [
+        "vendor/mediatek/proprietary/trustzone/trustonic/source/external/mobicore/common/410/ClientLib/include",
+        "vendor/mediatek/proprietary/trustzone/trustonic/source/external/mobicore/common/410/ClientLib/include/GP",
+    ],
+
+    cflags: [
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-DTBASE_API_LEVEL=5",
+    ],
+
+    init_rc: [
+        "vendor.trustonic.teeregistry@1.0-service.rc",
+    ],
+}
+

@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <LinearLayout style="@style/info_layout" >
+
+        <TextView
+            android:id="@+id/antenna_title_4g"
+            style="@style/info_label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/antenna_title_4g" />
+
+        <LinearLayout android:id="@+id/antenna_4g"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Spinner
+                android:id="@+id/spinner_antenna_4g"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:entries="@array/antenna_modes_4g" />
+
+        </LinearLayout>
+        <LinearLayout android:id="@+id/antanna_4g_egmc"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp">
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/antenna_force_rx"
+                    android:layout_weight="1"/>
+                <RadioGroup
+                    android:id="@+id/force_rx_mode"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_weight="1" >
+                    <RadioButton
+                        android:id="@+id/force_rx_enable"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/antenna_true" />
+                    <RadioButton
+                        android:id="@+id/force_rx_disable"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/antenna_false" />
+                </RadioGroup>
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/antenna_scc_follow_pcc"
+                    android:layout_weight="1"/>
+                <RadioGroup
+                    android:id="@+id/scc_follow_pcc_mode"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_weight="1" >
+                    <RadioButton
+                        android:id="@+id/scc_follow_pcc_enable"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/antenna_true" />
+                    <RadioButton
+                        android:id="@+id/scc_follow_pcc_disable"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/antenna_false" />
+                </RadioGroup>
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/antenna_pcell_2rx"
+                    android:layout_weight="3"/>
+                <CheckBox
+                    android:id="@+id/pcell_2rx_rx1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/antenna_rx1"
+                    android:layout_weight="2" />
+                <CheckBox
+                    android:id="@+id/pcell_2rx_rx2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/antenna_rx2"
+                    android:layout_weight="2" />
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4" />
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/antenna_pcell_4rx"
+                    android:layout_weight="3"/>
+                <CheckBox
+                    android:id="@+id/pcell_4rx_rx1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/antenna_rx1"
+                    android:layout_weight="2" />
+                <CheckBox
+                    android:id="@+id/pcell_4rx_rx2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/antenna_rx2"
+                    android:layout_weight="2" />
+                <CheckBox
+                    android:id="@+id/pcell_4rx_rx3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/antenna_rx3"
+                    android:layout_weight="2" />
+                <CheckBox
+                    android:id="@+id/pcell_4rx_rx4"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/antenna_rx4"
+                    android:layout_weight="2" />
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/antenna_scell_2rx"
+                    android:layout_weight="3"/>
+                <CheckBox
+                    android:id="@+id/scell_2rx_rx1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/antenna_rx1"
+                    android:layout_weight="2" />
+                <CheckBox
+                    android:id="@+id/scell_2rx_rx2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/antenna_rx2"
+                    android:layout_weight="2" />
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4" />
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/antenna_scell_4rx"
+                    android:layout_weight="3"/>
+                <CheckBox
+                    android:id="@+id/scell_4rx_rx1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/antenna_rx1"
+                    android:layout_weight="2" />
+                <CheckBox
+                    android:id="@+id/scell_4rx_rx2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/antenna_rx2"
+                    android:layout_weight="2" />
+                <CheckBox
+                    android:id="@+id/scell_4rx_rx3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/antenna_rx3"
+                    android:layout_weight="2" />
+                <CheckBox
+                    android:id="@+id/scell_4rx_rx4"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/antenna_rx4"
+                    android:layout_weight="2" />
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp">
+                <Button android:layout_width="0dp"
+                    android:id="@+id/antenna_query_4g"
+                    android:layout_height="wrap_content"
+                    android:text="@string/antenna_4g_read"
+                    android:layout_weight="1"/>
+                <Button android:layout_width="0dp"
+                    android:id="@+id/antenna_set_4g"
+                    android:layout_height="wrap_content"
+                    android:text="@string/antenna_4g_write"
+                    android:layout_weight="1"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="2dip"
+            android:background="#FF909090" >
+        </View>
+
+        <TextView
+            android:id="@+id/antenna_title_3g"
+            style="@style/info_label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/antenna_title_3g" />
+
+        <Spinner
+            android:id="@+id/spinner_antenna_3g"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:entries="@array/antenna_modes_3g" />
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="2dip"
+            android:background="#FF909090" >
+        </View>
+
+        <TextView
+            android:id="@+id/antenna_title_c2k"
+            style="@style/info_label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/antenna_title_c2k" />
+
+        <Spinner
+            android:id="@+id/spinner_antenna_c2k_mode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:entries="@array/antenna_modes_c2k_mode" />
+
+        <TextView
+            android:id="@+id/antenna_hint"
+            style="@style/info_label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5pt"
+            android:layout_marginRight="5pt"
+            android:layout_marginTop="5pt"
+            android:text="@string/antenna_hint" />
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="2dip"
+            android:background="#FF909090" >
+        </View>
+
+       <LinearLayout android:id="@+id/antenna_2g"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/antenna_title_2g"
+                style="@style/info_label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/antenna_title_2g" />
+            <Spinner
+                android:id="@+id/spinner_antenna_2g"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:entries="@array/antenna_modes_2g" />
+        </LinearLayout>
+    </LinearLayout>
+
+</ScrollView>

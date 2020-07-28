@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- layout for create folder or rename file -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rename_layout" android:orientation="vertical"
+    android:layout_width="260dp" android:layout_height="68dp" android:gravity="center">
+
+    <EditText android:id="@+id/edit_text" android:layout_width="245dp"
+        android:layout_height="58dp" android:singleLine="true"
+        android:maxLength="@integer/max_long" android:inputType="textNoSuggestions" />
+</LinearLayout>

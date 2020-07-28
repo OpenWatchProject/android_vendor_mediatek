@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2" xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Toast message after a call ended. will combine with call_duration_format -->
+    <string name="call_duration_title">Call ended</string>
+    <!-- Toast message after a call ended. will combine with call_duration_title -->
+    <string name="call_duration_format">"<xliff:g id="HOURS">%1$s</xliff:g> hours <xliff:g id="MINUTES">%2$s</xliff:g> minutes <xliff:g id="SECONDS">%3$s</xliff:g> seconds"</string>
+    <!-- An In-call toast to indicate the remote side is in communication with other device -->
+    <string name="call_waiting_indication">The other side is in call, please wait...</string>
+    <!-- In-call screen: message displayed in an error dialog -->
+    <string name="incall_error_supp_service_unknown">Unsupported service.</string>
+    <!-- In-call screen: message displayed in an error dialog -->
+    <string name="incall_error_supp_service_switch">Unable to switch calls.</string>
+
+    <!-- during call toast, indicates the interactive with network -->
+    <string name="mo_code_unconditional_cf_active">Call forwarding\nunconditional activated</string>
+    <!-- during call toast, indicates the interactive with network -->
+    <string name="mo_code_some_cf_active">Call Forwarding\nOn Conditional</string>
+    <!-- during call toast, indicates the interactive with network -->
+    <string name="mo_code_call_forwarded">Call forwarded</string>
+    <!-- during call toast, indicates the interactive with network -->
+    <string name="mo_code_cug_call">Closed User Group</string>
+    <!-- during call toast, indicates the interactive with network -->
+    <string name="mo_code_outgoing_calls_barred">Call barred</string>
+    <!-- during call toast, indicates the interactive with network -->
+    <string name="mo_code_incoming_calls_barred">Incoming call barred in the other side</string>
+    <!-- during call toast, indicates the interactive with network -->
+    <string name="mo_code_clir_suppression_rejected">Check caller ID sending service</string>
+    <!-- during call toast, indicates the interactive with network -->
+    <string name="mo_code_call_deflected">call Call transferred</string>
+    <!-- during call toast, indicates the interactive with network -->
+    <string name="mo_code_call_forwarding">Call forwarding...</string>
+
+    <!-- during call toast, indicates the interactive with network -->
+    <string name="mt_code_forwarded_call">It is a forwarded call</string>
+    <!-- during call toast, indicates the interactive with network -->
+    <string name="mt_code_cug_call">Closed User Group</string>
+    <!-- during call toast, indicates the interactive with network -->
+    <string name="mt_code_call_on_hold">Call held</string>
+    <!-- during call toast, indicates the interactive with network -->
+    <string name="mt_code_call_retrieved">Call retrieved</string>
+    <!-- during call toast, indicates the interactive with network -->
+    <string name="mt_code_multi_party_call">Conference call</string>
+    <!-- during call toast, indicates the interactive with network -->
+    <string name="mt_code_on_hold_call_released">Held call released</string>
+    <!-- during call toast, indicates the interactive with network -->
+    <string name="mt_code_forward_check_received">Forward check SS message received</string>
+    <!-- during call toast, indicates the interactive with network -->
+    <string name="mt_code_call_connecting_ect">Call transferring</string>
+    <!-- during call toast, indicates the interactive with network -->
+    <string name="mt_code_call_connected_ect">Call transfer active</string>
+    <!-- during call toast, indicates the interactive with network -->
+    <string name="mt_code_deflected_call">It is a deflected call</string>
+    <!-- during call toast, indicates the interactive with network -->
+    <string name="mt_code_additional_call_forwarded">Additional incoming call forwarded</string>
+    <!-- during call toast, indicates the interactive with network -->
+    <string name="mt_code_forwarded_cf">Call forwarded</string>
+    <!-- during call toast, indicates the interactive with network -->
+    <string name="mt_code_forwarded_cf_uncond">Call forwarded on unconditional</string>
+    <!-- during call toast, indicates the interactive with network -->
+    <string name="mt_code_forwarded_cf_cond">Call forwarded on conditional</string>
+    <!-- during call toast, indicates the interactive with network -->
+    <string name="mt_code_forwarded_cf_busy">Call busy forwarded</string>
+    <!-- during call toast, indicates the interactive with network -->
+    <string name="mt_code_forwarded_cf_no_reply">Call forwarded on not reply</string>
+    <!-- during call toast, indicates the interactive with network -->
+    <string name="mt_code_forwarded_cf_not_reachable">Call forwarded on not reachable</string>
+
+    <!-- Error toast: A general error prompt to user that failed to dial out the call -->
+    <string name="outgoing_call_failed">Call not sent.</string>
+    <string name="volte_ss_not_available_tips">To complete the operation, you need to open data connection of <xliff:g id="sub_name">%s</xliff:g>.</string>
+    <string name="start_record_failed">Failed to record.</string>
+     <!-- show alert dialog in roaming -->
+    <string name="modify_roaming_settings">Modify roaming settings</string>
+    <string name="continue_roaming">Continue roaming</string>
+    <string name="roaming_network_dom">You are currently roaming on another carrier\'s network.\nRoaming may be modified and/or turned off in \"Roaming Settings\".</string>
+    <string name="roaming_network_int">You are currently roaming on an international roaming carrier\'s network.\nRoaming may be modified and/or turned off in \"Roaming Settings\".</string>
+    <!-- Toast string for start call recorder failed because permissions denied. -->
+    <string name="denied_required_permission">Permissions denied. You can change them in Settings &gt; Apps.</string>
+    <!-- prevent initiation of video call when registered over wifi -->
+    <string name="video_over_wifi_not_available">Video over WiFi is currently not available.</string>
+    <!-- Call forward permission notification -->
+    <string name="call_forward_permission">This application cannot make outgoing calls without the Call Forward permission.</string>
+    <!-- Call recorder confirm dialog string -->
+    <string name="call_recorder_confirm_dialog_body">Voice recording files will be stored on external storage, which may later be accessed by any other application. Continue?</string>
+    <string name="call_recorder_confirm_dialog_mark_no_ask">Don`t ask again</string>
+    <string name="call_recorder_confirm_dialog_positive">RECORD</string>
+    <string name="call_recorder_confirm_dialog_negative">CANCEL</string>
+</resources>

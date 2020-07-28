@@ -1,0 +1,304 @@
+/*
+ * Copyright (C) 2016 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+
+package vendor.mediatek.hardware.camera.isphal@1.0;
+
+import android.hardware.graphics.common@1.0::types;
+
+typedef vec<uint8_t> ISPMetadata;
+typedef bitfield<Dataspace> DataspaceFlags;
+
+enum Status : int32_t {
+    /**
+     * Method call succeeded
+     */
+    OK = 0,
+
+    /**
+     * One of the arguments to the method call is invalid. For example,
+     * the camera ID is unknown.
+     */
+    ILLEGAL_ARGUMENT = 1,
+
+    /**
+     * The resource mallocation error, usually is memory issue or hardware resource issue. For example,
+     * the device open too much.
+     */
+    RESOURCE_ERROR = 2,
+
+    /**
+     * The ISP device process request failed. For example,
+     * the request didn't have any input streams.
+     */
+    REQUEST_ERROR = 3,
+
+    /**
+     * The ISP device process request failed. For example,
+     * stream id is invaild or not in configure stream set.
+     */
+    REQUEST_STREAM_ID_ERROR = 4,
+
+    /**
+     * The ISP pipeline process request failed and return metadata error. For example,
+     * the tuning metadata has wrong parameters.
+     */
+    RESULT_ERROR = 5,
+
+    /**
+     * The HAL has encountered an internal error and cannot complete the
+     * request.
+     */
+    INTERNAL_ERROR = 7
+};
+
+enum MetaDataType : int32_t {
+    TYPE_BYTE,
+    TYPE_INT32,
+    TYPE_INT64,
+    TYPE_FLOAT
+};
+
+enum TransformType : int32_t {
+    /* do not rotate or flip image */
+    MTKISP_Transform_None                     = 0x00,
+
+    /* flip source image horizontally (around the vertical axis) */
+    MTKISP_Transform_FLIP_H                   = 0x01,
+
+    /* flip source image vertically (around the horizontal axis)*/
+    MTKISP_Transform_FLIP_V                   = 0x02,
+
+    /* rotate source image 90 degrees clockwise */
+    MTKISP_Transform_ROT_90                   = 0x04,
+
+    /* rotate source image 180 degrees */
+    MTKISP_Transform_ROT_180                  = 0x03,
+
+    /* rotate source image 270 degrees clockwise */
+    MTKISP_Transform_ROT_270                  = 0x07,
+};
+
+struct ISPFeatureTagInfo {
+
+    /**
+    * Meta tag name
+    */
+    string Name;
+
+    /**
+    * Meta tag enum
+    */
+    uint32_t tag;
+
+    /**
+    * Meta tag datatype
+    */
+    MetaDataType type;
+
+};
+
+struct StatisticsInfo {
+
+    /**
+    * Information for query
+    */
+    ISPMetadata meta;
+
+};
+
+struct FeatureSetting {
+
+    /**
+    * Meta tag name
+    */
+    string Name;
+
+    /**
+    * Meta tag enum
+    */
+    uint32_t tag;
+
+    /**
+    * Meta tag datatype
+    */
+    MetaDataType type;
+
+    /**
+    * data
+    */
+    vec<uint8_t> data;
+
+    /**
+    * data count
+    */
+    uint32_t count;
+
+    /**
+    * frame number, hint this tag setting is for which frame
+    */
+    uint32_t frameNo;
+
+};
+
+/**
+ * A descriptor of the pixel format and dataspace that ISP supports
+ */
+struct ISPFormat {
+   /**
+    * The pixel format for the buffers in this stream
+    */
+   PixelFormat format;
+
+   /**
+    * A field that describes the contents of the buffer. The format and buffer
+    * dimensions define the memory layout and structure of the stream,
+    * while dataSpace defines the meaning of the data within the buffer.
+    */
+   DataspaceFlags dataspace;
+};
+
+/**
+ * A descriptor for a ISP Hal input/output streams.
+ */
+struct ISPStream {
+
+   /**
+    * stream id use to identify stream buffer
+    */
+   uint64_t id;
+
+   /**
+    * data size in bytes
+    */
+   uint32_t size;
+
+   /**
+    * stride in bytes of each plane of buffer in this stream
+    */
+   vec<uint32_t> stride;
+
+   /**
+    * width in pixels of the buffers in this stream
+    */
+   uint32_t width;
+
+   /**
+    * height in pixles of the buffers in this stream
+    */
+   uint32_t height;
+
+   /**
+    * The pixel format and dataspace for the buffers in this stream
+    */
+   ISPFormat format;
+
+   /**
+    * Stream usage, used to query real format by gralloc
+    */
+   uint64_t usage;
+
+   /**
+    * Set rotation and flip information for this stream
+    */
+   uint32_t transform;
+};
+
+/**
+ * A descriptor for configure information of ISP Device.
+ */
+struct ISPStreamConfiguration{
+   /**
+    * input streams for this ISP device
+    */
+   vec<ISPStream> InputStreams;
+   /**
+    * output streams for this ISP device
+    */
+   vec<ISPStream> OutputStreams;
+   /**
+    * User parameters for configure
+    */
+   ISPMetadata ConfigureParams;
+};
+
+/**
+ * A descriptor for buffers
+ */
+struct ISPBuffer {
+   /**
+    * stream id use to identify stream buffer
+    */
+   uint64_t id;
+
+   /**
+    * the image buffer for input/output in request
+    */
+   handle buffer;
+
+   /**
+    * the tuning data for this buffer needed by MTK ISP
+    */
+   handle tuningData;
+
+   /**
+    * the size of tuning data.
+    */
+    uint32_t tuningDataSize;
+};
+
+/**
+ * A descriptor for ISP request for reprocessing
+ */
+struct ISPRequest{
+   /**
+    * request number
+    */
+   uint32_t reqNumber;
+   /**
+    * request setting to hint MTK ISP to do which reprocessing if needed.
+    */
+   ISPMetadata settings;
+   /**
+    * the input buffers of this request
+    */
+   vec<ISPBuffer> InputBuffers;
+   /**
+    * the output buffers of this request
+    */
+   vec<ISPBuffer> OutputBuffers;
+};
+
+/**
+ * A descriptor for MTK ISP result
+ */
+struct ISPResult{
+
+   /**
+    * request number
+    */
+   uint32_t reqNumber;
+
+   /**
+    * final metadata for sending processed result to user
+    */
+   ISPMetadata result;
+
+   /**
+    * result status to hint the request is success or failed
+    */
+   Status status;
+};

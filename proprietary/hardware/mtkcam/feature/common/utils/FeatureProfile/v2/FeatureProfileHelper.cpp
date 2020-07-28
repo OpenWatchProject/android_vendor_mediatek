@@ -1,0 +1,381 @@
+/* Copyright Statement:
+ *
+ * This software/firmware and related documentation ("MediaTek Software") are
+ * protected under relevant copyright laws. The information contained herein
+ * is confidential and proprietary to MediaTek Inc. and/or its licensors.
+ * Without the prior written permission of MediaTek inc. and/or its licensors,
+ * any reproduction, modification, use or disclosure of MediaTek Software,
+ * and information contained herein, in whole or in part, shall be strictly prohibited.
+ */
+/* MediaTek Inc. (C) 2010. All rights reserved.
+ *
+ * BY OPENING THIS FILE, RECEIVER HEREBY UNEQUIVOCALLY ACKNOWLEDGES AND AGREES
+ * THAT THE SOFTWARE/FIRMWARE AND ITS DOCUMENTATIONS ("MEDIATEK SOFTWARE")
+ * RECEIVED FROM MEDIATEK AND/OR ITS REPRESENTATIVES ARE PROVIDED TO RECEIVER ON
+ * AN "AS-IS" BASIS ONLY. MEDIATEK EXPRESSLY DISCLAIMS ANY AND ALL WARRANTIES,
+ * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE OR NONINFRINGEMENT.
+ * NEITHER DOES MEDIATEK PROVIDE ANY WARRANTY WHATSOEVER WITH RESPECT TO THE
+ * SOFTWARE OF ANY THIRD PARTY WHICH MAY BE USED BY, INCORPORATED IN, OR
+ * SUPPLIED WITH THE MEDIATEK SOFTWARE, AND RECEIVER AGREES TO LOOK ONLY TO SUCH
+ * THIRD PARTY FOR ANY WARRANTY CLAIM RELATING THERETO. RECEIVER EXPRESSLY ACKNOWLEDGES
+ * THAT IT IS RECEIVER'S SOLE RESPONSIBILITY TO OBTAIN FROM ANY THIRD PARTY ALL PROPER LICENSES
+ * CONTAINED IN MEDIATEK SOFTWARE. MEDIATEK SHALL ALSO NOT BE RESPONSIBLE FOR ANY MEDIATEK
+ * SOFTWARE RELEASES MADE TO RECEIVER'S SPECIFICATION OR TO CONFORM TO A PARTICULAR
+ * STANDARD OR OPEN FORUM. RECEIVER'S SOLE AND EXCLUSIVE REMEDY AND MEDIATEK'S ENTIRE AND
+ * CUMULATIVE LIABILITY WITH RESPECT TO THE MEDIATEK SOFTWARE RELEASED HEREUNDER WILL BE,
+ * AT MEDIATEK'S OPTION, TO REVISE OR REPLACE THE MEDIATEK SOFTWARE AT ISSUE,
+ * OR REFUND ANY SOFTWARE LICENSE FEES OR SERVICE CHARGE PAID BY RECEIVER TO
+ * MEDIATEK FOR SUCH MEDIATEK SOFTWARE AT ISSUE.
+ *
+ * The following software/firmware and/or related documentation ("MediaTek Software")
+ * have been modified by MediaTek Inc. All revisions are subject to any receiver's
+ * applicable license agreements with MediaTek Inc.
+ */
+
+/********************************************************************************************
+ *     LEGAL DISCLAIMER
+ *
+ *     (Header of MediaTek Software/Firmware Release or Documentation)
+ *
+ *     BY OPENING OR USING THIS FILE, BUYER HEREBY UNEQUIVOCALLY ACKNOWLEDGES AND AGREES
+ *     THAT THE SOFTWARE/FIRMWARE AND ITS DOCUMENTATIONS ("MEDIATEK SOFTWARE") RECEIVED
+ *     FROM MEDIATEK AND/OR ITS REPRESENTATIVES ARE PROVIDED TO BUYER ON AN "AS-IS" BASIS
+ *     ONLY. MEDIATEK EXPRESSLY DISCLAIMS ANY AND ALL WARRANTIES, EXPRESS OR IMPLIED,
+ *     INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR
+ *     A PARTICULAR PURPOSE OR NONINFRINGEMENT. NEITHER DOES MEDIATEK PROVIDE ANY WARRANTY
+ *     WHATSOEVER WITH RESPECT TO THE SOFTWARE OF ANY THIRD PARTY WHICH MAY BE USED BY,
+ *     INCORPORATED IN, OR SUPPLIED WITH THE MEDIATEK SOFTWARE, AND BUYER AGREES TO LOOK
+ *     ONLY TO SUCH THIRD PARTY FOR ANY WARRANTY CLAIM RELATING THERETO. MEDIATEK SHALL ALSO
+ *     NOT BE RESPONSIBLE FOR ANY MEDIATEK SOFTWARE RELEASES MADE TO BUYER'S SPECIFICATION
+ *     OR TO CONFORM TO A PARTICULAR STANDARD OR OPEN FORUM.
+ *
+ *     BUYER'S SOLE AND EXCLUSIVE REMEDY AND MEDIATEK'S ENTIRE AND CUMULATIVE LIABILITY WITH
+ *     RESPECT TO THE MEDIATEK SOFTWARE RELEASED HEREUNDER WILL BE, AT MEDIATEK'S OPTION,
+ *      TO REVISE OR REPLACE THE MEDIATEK SOFTWARE AT ISSUE, OR REFUND ANY SOFTWARE LICENSE
+ *     FEES OR SERVICE CHARGE PAID BY BUYER TO MEDIATEK FOR SUCH MEDIATEK SOFTWARE AT ISSUE.
+ *
+ *     THE TRANSACTION CONTEMPLATED HEREUNDER SHALL BE CONSTRUED IN ACCORDANCE WITH THE LAWS
+ *     OF THE STATE OF CALIFORNIA, USA, EXCLUDING ITS CONFLICT OF LAWS PRINCIPLES.
+ ************************************************************************************************/
+
+//! \file FeatureProfileHelper.cpp
+#define LOG_TAG "FeatureProfileHelper"
+#include <mtkcam/feature/utils/FeatureProfileHelper.h>
+
+#include <isp_tuning/isp_tuning.h>
+#include <mtkcam/drv/IHalSensor.h>
+using namespace NSCam;
+using namespace NSIspTuning;
+
+
+#define FPHELP_LOG(fmt, arg...)    CAM_LOGD("[%s]" fmt, __func__, ##arg)
+#define FPHELP_INF(fmt, arg...)    CAM_LOGI("[%s]" fmt, __func__, ##arg)
+#define FPHELP_WRN(fmt, arg...)    CAM_LOGW("[%s] WRN(%5d):" fmt, __func__, __LINE__, ##arg)
+#define FPHELP_ERR(fmt, arg...)    CAM_LOGE("[%s] %s ERROR(%5d):" fmt, __func__,__FILE__, __LINE__, ##arg)
+
+#define MY_LOGD_IF(cond, ...)       do { if ( (cond) >= (1) ) { FPHELP_LOG(__VA_ARGS__); } }while(0)
+#define MY_LOGI_IF(cond, ...)       do { if ( (cond) >= (1) ) { FPHELP_INF(__VA_ARGS__); } }while(0)
+#define MY_LOGW_IF(cond, ...)       do { if ( (cond) >= (1) ) { FPHELP_WRN(__VA_ARGS__); } }while(0)
+#define MY_LOGE_IF(cond, ...)       do { if ( (cond) >= (0) ) { FPHELP_ERR(__VA_ARGS__); } }while(0)
+
+#define PROF_HELP_4K2K_LENG (3840*2160)
+
+#define _SET_FEATURE_PROFILE(outProf, scen, vMode, isAuto, isEISOn)        \
+{                                                                          \
+    if( isAuto ){                                                          \
+        if( scen == ProfileScen_Preview ){                                 \
+            if( isEISOn ){                                                 \
+                outProf = EIspProfile_EIS_Auto_##vMode##HDR_Preview;       \
+            }else{                                                         \
+                outProf = EIspProfile_Auto_##vMode##HDR_Preview;           \
+            }                                                              \
+        }else if( scen == ProfileScen_Video ){                             \
+            if( isEISOn ){                                                 \
+                outProf = EIspProfile_EIS_Auto_##vMode##HDR_Video;         \
+            }else{                                                         \
+                outProf = EIspProfile_Auto_##vMode##HDR_Video;             \
+            }                                                              \
+        }else if( scen == ProfileScen_Capture ){                           \
+            outProf = EIspProfile_Auto_##vMode##HDR_Capture;               \
+        }else if( scen == ProfileScen_Preview_VSS ){                       \
+            outProf = EIspProfile_Auto_##vMode##HDR_Preview_VSS;           \
+        }else if( scen == ProfileScen_Video_VSS ){                         \
+            outProf = EIspProfile_Auto_##vMode##HDR_Video_VSS;             \
+        }else{                                                             \
+            outProf = EIspProfile_Auto_##vMode##HDR_Preview;               \
+        }                                                                  \
+    }else{                                                                 \
+        if( scen == ProfileScen_Preview ){                                 \
+            if( isEISOn ){                                                 \
+                outProf = EIspProfile_EIS_##vMode##HDR_Preview;            \
+            }else{                                                         \
+                outProf = EIspProfile_##vMode##HDR_Preview;                \
+            }                                                              \
+        }else if( scen == ProfileScen_Video ){                             \
+            if( isEISOn ){                                                 \
+                outProf = EIspProfile_EIS_##vMode##HDR_Video;              \
+            }else{                                                         \
+                outProf = EIspProfile_##vMode##HDR_Video;                  \
+            }                                                              \
+        }else if( scen == ProfileScen_Capture ){                           \
+            outProf = EIspProfile_##vMode##HDR_Capture;                    \
+        }else if( scen == ProfileScen_Preview_VSS ){                       \
+            outProf = EIspProfile_##vMode##HDR_Preview_VSS;                \
+        }else if( scen == ProfileScen_Video_VSS ){                         \
+            outProf = EIspProfile_##vMode##HDR_Video_VSS;                  \
+        }else{                                                             \
+            outProf = EIspProfile_##vMode##HDR_Preview;                    \
+        }                                                                  \
+    }                                                                      \
+}
+
+#define SET_FEATURE_PROFILE(outProf, scen, mode, isAuto, isEISOn)         \
+{                                                                         \
+    if( mode == SENSOR_VHDR_MODE_ZVHDR){                                  \
+        _SET_FEATURE_PROFILE(outProf, scen, z, isAuto, isEISOn);          \
+    }else if( mode == SENSOR_VHDR_MODE_IVHDR){                            \
+        _SET_FEATURE_PROFILE(outProf, scen, i, isAuto, isEISOn);          \
+    }else if( mode == SENSOR_VHDR_MODE_MVHDR){                            \
+        _SET_FEATURE_PROFILE(outProf, scen, m, isAuto, isEISOn);          \
+    }else if( isEISOn ){                                                  \
+        if( scen == ProfileScen_Preview ){                                \
+            outProf = EIspProfile_EIS_Preview;                            \
+        }else if( scen == ProfileScen_Video ){                            \
+            outProf = EIspProfile_EIS_Video;                              \
+        }else{                                                            \
+            FPHELP_ERR("Unknown prfile mode(%d), set output prof to (%d)", mode, EIspProfile_Preview); \
+            outProf = EIspProfile_EIS_Preview;                                \
+        }                                                                 \
+    }else{                                                                \
+        FPHELP_ERR("Unknown prfile mode(%d), set output prof to (%d)", mode, EIspProfile_Preview); \
+        outProf = EIspProfile_Preview;                                    \
+    }                                                                     \
+}
+
+
+typedef enum ProfileRemap_T{
+    // ISP Profile has no iHDR capture
+    EIspProfile_iHDR_Capture = NSIspTuning::EIspProfile_iHDR_Video,
+    EIspProfile_Auto_iHDR_Capture = NSIspTuning::EIspProfile_Auto_iHDR_Video,
+}ProfileRemap;
+
+typedef enum ProfileScen_T {
+    ProfileScen_Preview      = 0,
+    ProfileScen_Video        = 1,
+    ProfileScen_Capture      = (1 << 1),
+    ProfileScen_Preview_VSS  = (1 << 2),
+    ProfileScen_Video_VSS    = (1 << 3),
+}ProfileScne;
+
+/**************************************************
+ *
+ ***************************************************/
+
+MBOOL
+FeatureProfileHelper::getStreamingProf(MUINT8& outputProfile, const ProfileParam& param)
+{
+    MBOOL isProfileSet = MFALSE;
+    MBOOL isAutoHDR = (param.featureMask & ProfileParam::FMASK_AUTO_HDR_ON);
+    MBOOL isEISOn   = (param.featureMask & ProfileParam::FMASK_EIS_ON);
+
+    if(param.vhdrMode == SENSOR_VHDR_MODE_NONE && !isEISOn)
+    {
+        // No VHDR, currently no profile need to be set
+        isProfileSet = MFALSE;
+    }
+    else
+    {
+        isProfileSet = MTRUE;
+        // Do VHDR profile setting
+        if ( (param.streamSize.w * param.streamSize.h) < PROF_HELP_4K2K_LENG)
+        {
+            SET_FEATURE_PROFILE(outputProfile, ProfileScen_Preview, param.vhdrMode, isAutoHDR, isEISOn);
+        }
+        else
+        {
+            SET_FEATURE_PROFILE(outputProfile, ProfileScen_Video, param.vhdrMode, isAutoHDR, isEISOn);
+        }
+
+        if (param.flag & ProfileParam::FLAG_PURE_RAW_STREAM) // Use Pure raw as P2 input -> capture profile
+        {
+            SET_FEATURE_PROFILE(outputProfile, ProfileScen_Capture, param.vhdrMode, isAutoHDR, 0);
+        }
+    }
+    MY_LOGD_IF(isDebugOpen(), "isProfileSet(%d), outputProfile(%d), isAuto(%d), isEISOn(%d),  param.flag(%d)", isProfileSet, outputProfile, isAutoHDR, isEISOn, param.flag);
+    return isProfileSet;
+}
+
+/**************************************************
+ *
+ ***************************************************/
+
+MBOOL
+FeatureProfileHelper::getEngStreamingProf(MUINT8& outputProfile, const ProfileParam& param)
+{
+    MBOOL isProfileSet = MFALSE;
+    MBOOL isAutoHDR = (param.featureMask & ProfileParam::FMASK_AUTO_HDR_ON);
+    MBOOL isEISOn   = (param.featureMask & ProfileParam::FMASK_EIS_ON);
+
+    if(param.vhdrMode == SENSOR_VHDR_MODE_NONE && !isEISOn)
+    {
+        // No VHDR, currently no profile need to be set
+        isProfileSet = MFALSE;
+    }
+    else
+    {
+        isProfileSet = MTRUE;
+        switch(param.engProfile){
+            case EIspProfile_Preview:
+            {
+                SET_FEATURE_PROFILE(outputProfile, ProfileScen_Preview, param.vhdrMode, isAutoHDR, isEISOn);
+                break;
+            }
+            case EIspProfile_Video:
+            {
+                SET_FEATURE_PROFILE(outputProfile, ProfileScen_Video, param.vhdrMode, isAutoHDR, isEISOn);
+                break;
+            }
+            case EIspProfile_Capture: // SHOULD NOT BE SET...
+            {
+                SET_FEATURE_PROFILE(outputProfile, ProfileScen_Capture, param.vhdrMode, isAutoHDR, 0);
+                break;
+            }
+            default:
+            {
+                FPHELP_WRN("EM Mode Profile(%d) can not be recognized!", param.engProfile);
+                isProfileSet = MFALSE;
+                break;
+            }
+        }
+    }
+    MY_LOGD_IF(isDebugOpen(), "isProfileSet(%d), outputProfile(%d), isAuto(%d), isEISOn(%d)", isProfileSet, outputProfile, isAutoHDR, isEISOn);
+    return isProfileSet;
+}
+
+/**************************************************
+ *
+ ***************************************************/
+
+MBOOL
+FeatureProfileHelper::getVSSProf(MUINT8& outputProfile, const ProfileParam& param)
+{
+    MBOOL isProfileSet = MFALSE;
+    MBOOL isAutoHDR = (param.featureMask & ProfileParam::FMASK_AUTO_HDR_ON);
+
+    if(param.vhdrMode == SENSOR_VHDR_MODE_NONE)
+    {
+        // No VHDR, currently no profile need to be set
+        isProfileSet = MFALSE;
+    }
+    else
+    {
+        isProfileSet = MTRUE;
+        // Do VHDR profile setting
+        if ( (param.streamSize.w * param.streamSize.h) < PROF_HELP_4K2K_LENG)
+        {
+            SET_FEATURE_PROFILE(outputProfile, ProfileScen_Preview_VSS, param.vhdrMode, isAutoHDR, 0);
+        }
+        else
+        {
+            SET_FEATURE_PROFILE(outputProfile, ProfileScen_Video_VSS, param.vhdrMode, isAutoHDR, 0);
+        }
+    }
+    MY_LOGD_IF(isDebugOpen(), "isProfileSet(%d), outputProfile(%d), isAuto(%d), isEISOn(0)", isProfileSet, outputProfile, isAutoHDR);
+    return isProfileSet;
+}
+
+/**************************************************
+ *
+ ***************************************************/
+
+MBOOL
+FeatureProfileHelper::getShotProf(MUINT8& outputProfile, const ProfileParam& param)
+{
+    MBOOL isProfileSet = MFALSE;
+    MBOOL isAutoHDR = (param.featureMask & ProfileParam::FMASK_AUTO_HDR_ON);
+
+    if(param.vhdrMode == SENSOR_VHDR_MODE_NONE || param.vhdrMode == SENSOR_VHDR_MODE_IVHDR)
+    {
+        // No VHDR, currently no profile need to be set
+        isProfileSet = MFALSE;
+    }
+    else
+    {
+        // Do VHDR profile setting
+        isProfileSet = MTRUE;
+
+        switch(param.sensorMode){
+            case ESensorMode_Preview: // Should the same as VSS 1080p
+            {
+                SET_FEATURE_PROFILE(outputProfile, ProfileScen_Preview_VSS, param.vhdrMode, isAutoHDR, 0);
+                break;
+            }
+            case ESensorMode_Video: // Should the same as VSS 4k2k
+            {
+                SET_FEATURE_PROFILE(outputProfile, ProfileScen_Video_VSS, param.vhdrMode, isAutoHDR, 0);
+                break;
+            }
+            case ESensorMode_Capture: // Should the same as VHDR Shot
+            {
+                SET_FEATURE_PROFILE(outputProfile, ProfileScen_Capture, param.vhdrMode, isAutoHDR, 0);
+                break;
+            }
+            default:
+            {
+                FPHELP_WRN("SensorMode(%d) can not be recognized!", param.sensorMode);
+                isProfileSet = MFALSE;
+                break;
+            }
+        }
+    }
+    MY_LOGD_IF(isDebugOpen(), "isProfileSet(%d), outputProfile(%d), isAuto(%d), isEISOn(0)", isProfileSet, outputProfile, isAutoHDR);
+    return isProfileSet;
+}
+/**************************************************
+ *
+ ***************************************************/
+
+MBOOL
+FeatureProfileHelper::getEngShotProf(MUINT8& outputProfile, const ProfileParam& param)
+{
+    MBOOL isProfileSet = MFALSE;
+    MBOOL isAutoHDR = (param.featureMask & ProfileParam::FMASK_AUTO_HDR_ON);
+
+    if(param.vhdrMode == SENSOR_VHDR_MODE_NONE)
+    {
+        // No VHDR, currently no profile need to be set
+        isProfileSet = MFALSE;
+    }
+    else
+    {
+        isProfileSet = MTRUE;
+        // Do VHDR profile setting
+        switch(param.engProfile){
+            case EIspProfile_Preview: // Should the same as VSS 1080p
+            {
+                SET_FEATURE_PROFILE(outputProfile, ProfileScen_Preview_VSS, param.vhdrMode, isAutoHDR, 0);
+                break;
+            }
+            case EIspProfile_Video: // Should the same as VSS 4k2k
+            {
+                SET_FEATURE_PROFILE(outputProfile, ProfileScen_Video_VSS, param.vhdrMode, isAutoHDR, 0);
+                break;
+            }
+            case EIspProfile_Capture: // Should the same as VHDR Shot
+            {
+                SET_FEATURE_PROFILE(outputProfile, ProfileScen_Capture, param.vhdrMode, isAutoHDR, 0);
+                break;
+            }
+            default:
+            {
+                FPHELP_WRN("EM Mode Profile(%d) can not be recognized!", param.engProfile);
+                isProfileSet = MFALSE;
+                break;
+            }
+        }
+    }
+    MY_LOGD_IF(isDebugOpen(), "isProfileSet(%d), outputProfile(%d), isAuto(%d), isEISOn(0)", isProfileSet, outputProfile, isAutoHDR);
+    return isProfileSet;
+}
+

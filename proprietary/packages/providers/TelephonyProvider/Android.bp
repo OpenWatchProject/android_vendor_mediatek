@@ -1,0 +1,34 @@
+bootstrap_go_package {
+    name: "soong-TelephonyProvider-mediatek",
+    pkgPath: "android/soong/TelephonyProvider/mediatek",
+    deps: [
+        "soong-android",
+        "soong-java",
+    ],
+    srcs: [
+       "TelephonyProvider.go",
+    ],
+    pluginFor: ["soong_build"],
+}
+
+mtk_TelephonyProvider_defaults {
+    name: "mediatek-TelephonyProvider_defaults",
+}
+
+android_app {
+    name: "MtkTelephonyProvider",
+    overrides: [
+        "TelephonyProvider",
+    ],
+    privileged: true,
+    srcs: ["src/**/*.java"],
+    defaults: [
+        "mediatek-TelephonyProvider_defaults",
+    ],   
+    platform_apis: true,
+    certificate: "platform",
+    libs: ["telephony-common",
+           "mediatek-telephony-base",
+           "mediatek-framework"],
+    static_libs: ["android-common"],
+}

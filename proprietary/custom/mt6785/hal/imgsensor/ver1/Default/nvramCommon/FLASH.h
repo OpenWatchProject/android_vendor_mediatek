@@ -1,0 +1,2 @@
+.u4Version = NVRAM_CAMERA_STROBE_FILE_VERSION,
+.SensorId = SENSOR_ID,

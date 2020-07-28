@@ -1,0 +1,28 @@
+mtkplugintest of Drm test features, including drm plugin test.
+
+WHAT IT DOES?
+=============
+mtkplugintest will be used by drm test, it tests oma drm plugin function.
+
+HOW IT WAS BUILT?
+==================
+It needs the following library from AOSP:
+1. libicui18n.so
+2. libicuuc.so
+3. libutils.so
+4. libcutils.so
+5. libdl.so
+6. libcrypto.so
+7. libssl.so
+8. libdrmframework.so
+
+and the following libs from MediaTek:
+1. libdrmmtkwhitelist.so
+2. libdrmmtkutil.so
+
+All source/dependency modules of this module are already put in
+'system/framework' folder.
+
+HOW TO USE IT?
+==============
+mtkplugintest provides oma drm plugin test.

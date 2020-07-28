@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/review_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clickable="true">
+
+    <ImageView
+        android:id="@+id/review_image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/black"
+        android:clickable="true"
+        android:focusable="false"
+        android:visibility="gone" />
+
+    <RelativeLayout
+        android:id="@+id/review_btn_root"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.mediatek.camera.common.widget.RotateImageView
+            android:id="@+id/btn_play"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:clickable="false"
+            android:visibility="gone"
+            app:srcCompat="@drawable/ic_video_play" />
+
+        <com.mediatek.camera.common.widget.RotateImageView
+            android:id="@+id/video_shutter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="25dp"
+            android:clickable="false"
+            android:visibility="invisible"
+            app:srcCompat="@drawable/ic_video_stop" />
+
+        <com.mediatek.camera.common.widget.RotateImageView
+            android:id="@+id/btn_retake"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="32dp"
+            android:layout_marginRight="26dp"
+            android:layout_toLeftOf="@id/video_shutter"
+            android:clickable="true"
+            android:soundEffectsEnabled="false"
+            app:srcCompat="@drawable/ic_retake_button" />
+
+        <com.mediatek.camera.common.widget.RotateImageView
+            android:id="@+id/btn_save"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="32dp"
+            android:layout_marginLeft="26dp"
+            android:layout_toRightOf="@id/video_shutter"
+            android:clickable="true"
+            android:soundEffectsEnabled="false"
+            app:srcCompat="@drawable/ic_save_button" />
+    </RelativeLayout>
+
+</FrameLayout>

@@ -1,0 +1,800 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/* //device/apps/common/assets/res/any/strings.xml
+**
+** Copyright 2006, The Android Open Source Project
+**
+** Licensed under the Apache License, Version 2.0 (the "License");
+** you may not use this file except in compliance with the License.
+** You may obtain a copy of the License at
+**
+**     http://www.apache.org/licenses/LICENSE-2.0
+**
+** Unless required by applicable law or agreed to in writing, software
+** distributed under the License is distributed on an "AS IS" BASIS,
+** WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+** See the License for the specific language governing permissions and
+** limitations under the License.
+*/
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+ <!-- carrier express pack. -->
+    <string name="app_name">Operator configuration</string>
+
+    <!-- UniService pack. -->
+    <string name="reboot_dialog_message">Switching the carrier, please wait...</string>
+    <string name="reconfig_dialog_message">Reconfiguring the carrier, please wait...</string>
+    <string name="usp_config_notif_dialog">It will be switched into %1$s phone. All the applications will be closed. Continue?</string>
+    <string name="usp_config_notif_reboot_dialog">It will be switched into %1$s phone. All the applications will be closed and phone will reboot. Continue?</string>
+    <string name="usp_notif_content_title">%1$s SIM card detected.</string>
+    <string name="usp_notif_content_text">Tap to switch into %1$s phone</string>
+    <string name="reject_config_during_inCall">Switching the carrier not allowed during call.</string>
+
+    <!-- Add by MTK: mtk uniservice-pack user confirmation string -->
+    <string name="usp_config_confirm">SIM card detected. Configure your phone for this SIM card?</string>
+    <string name="usp_config_reboot_confirm">SIM card detected. Configure and reboot your phone for this SIM card?</string>
+
+    <!-- Add by MTK: mtk optr mapping table in the form of
+         "start_mcc_mnc", "end mcc_mnc", "Optr number" -->
+    <string-array translatable="false" name="operator_map_list">
+        <!-- OP01 CMCC -->
+        <item>46000, 46000, 01</item>
+        <item>46002, 46002, 01</item>
+        <item>46004, 46004, 01</item>
+        <item>46007, 46007, 01</item>
+        <item>46008, 46008, 01</item>
+        <item>46070, 46070, 01</item>
+        <!-- Test SIM -->
+        <item>46096, 46096, 01</item>
+
+        <!-- OP02 CU -->
+        <item>46001, 46001, 02</item>
+        <item>46006, 46006, 02</item>
+        <item>46009, 46009, 02</item>
+
+        <!-- OP03 Orange -->
+        <!-- Belgium -->
+        <item>20610, 20610, 03</item>
+        <!-- France -->
+        <item>20801, 20802, 03</item>
+        <item>20829, 20829, 03</item>
+        <item>20891, 20891, 03</item>
+        <!-- Spain -->
+        <item>21403, 21403, 03</item>
+        <item>21409, 21409, 03</item>
+        <item>21411, 21411, 03</item>
+        <!-- Romania -->
+        <item>22610, 22610, 03</item>
+        <!-- Slovakia -->
+        <item>23101, 23101, 03</item>
+        <!-- Poland -->
+        <item>26003, 26003, 03</item>
+        <!-- French Guiana -->
+        <item>34001, 34001, 03</item>
+        <!-- Egypt -->
+        <item>60201, 60201, 03</item>
+
+        <!-- OP05 DTAG (TMO EU) -->
+        <!-- Greece -->
+        <item>20201, 20202, 05</item>
+        <!-- Netherlands -->
+        <item>20416, 20416, 05</item>
+        <item>20420, 20420, 05</item>
+        <!-- Hungary -->
+        <item>21630, 21630, 05</item>
+        <!-- Telekom - Croatia -->
+        <item>21901, 21901, 05</item>
+        <!-- Czech -->
+        <item>23001, 23001, 05</item>
+        <!-- Telekom - Slovakia -->
+        <item>23102, 23102, 05</item>
+        <item>23104, 23104, 05</item>
+        <!-- T-Mobile - Austria -->
+        <item>23203, 23203, 05</item>
+        <!-- Poland -->
+        <item>26002, 26002, 05</item>
+        <item>26034, 26034, 05</item>
+        <!-- OP05 Germany -->
+        <item>26201, 26201, 05</item>
+        <item>26206, 26206, 05</item>
+
+        <!-- OP06 Vodafone -->
+        <!-- Greece -->
+        <item>20205, 20205, 06</item>
+        <!-- NL -->
+        <item>20404, 20404, 06</item>
+        <!-- Spain -->
+        <item>21401, 21401, 06</item>
+        <item>21406, 21406, 06</item>
+        <!-- Hungary -->
+        <item>21670, 21670, 06</item>
+        <!-- Italy -->
+        <item>22206, 22206, 06</item>
+        <item>22210, 22210, 06</item>
+        <!-- CZ -->
+        <item>23003, 23003, 06</item>
+        <!-- United Kingdom -->
+        <item>23415, 23415, 06</item>
+        <item>23427, 23427, 06</item>
+        <item>23491, 23491, 06</item>
+        <!-- Germany -->
+        <item>26202, 26202, 06</item>
+        <item>26204, 26204, 06</item>
+        <item>26209, 26209, 06</item>
+        <!-- Portugal -->
+        <item>26801, 26801, 06</item>
+        <item>26889, 26889, 06</item>
+        <!-- Ireland -->
+        <item>27201, 27201, 06</item>
+        <!-- Turkey -->
+        <item>28602, 28602, 06</item>
+        <!-- New Zealand -->
+        <item>53001, 53001, 06</item>
+        <!-- Egypt -->
+        <item>60202, 60202, 06</item>
+        <!-- Zambia -->
+        <item>64505, 64505, 06</item>
+        <!-- ZA -->
+        <item>65501, 65501, 06</item>
+
+        <!-- OP07 AT&T -->
+        <!-- United States -->
+        <item>310030, 310030, 07</item>
+        <item>310070, 310070, 07</item>
+        <item>310090, 310090, 07</item>
+        <item>310680, 310680, 07</item>
+        <item>310170, 310170, 07</item>
+        <item>310280, 310280, 07</item>
+        <item>310380, 310380, 07</item>
+        <item>310410, 310410, 07</item>
+        <item>310560, 310560, 07</item>
+        <item>310950, 310950, 07</item>
+        <item>311180, 311180, 07</item>
+        <!-- Mexico -->
+        <item>334050, 334050, 07</item>
+        <item>334090, 334090, 07</item>
+
+        <!-- OP08 United States-->
+        <item>31031, 31032, 08</item>
+        <item>310210, 310210, 08</item>
+        <item>310220, 310220, 08</item>
+        <item>310230, 310230, 08</item>
+        <item>310260, 310260, 08</item>
+        <item>310270, 310270, 08</item>
+        <item>310200, 310200, 08</item>
+        <item>310250, 310250, 08</item>
+        <item>310160, 310160, 08</item>
+        <item>310240, 310240, 08</item>
+        <item>310660, 310660, 08</item>
+        <item>310300, 310300, 08</item>
+        <item>310330, 310330, 08</item>
+        <item>310800, 310800, 08</item>
+        <item>310310, 310310, 08</item>
+        <item>310490, 310490, 08</item>
+        <item>310580, 310580, 08</item>
+
+        <!-- OP09 CT -->
+        <item>46003, 46003, 09</item>
+        <item>46005, 46005, 09</item>
+        <item>46011, 46011, 09</item>
+        <!-- Macao China-->
+        <item>45502, 45502, 09</item>
+        <item>45507, 45507, 09</item>
+
+        <!-- OP11 H3G -->
+        <!-- Austria -->
+        <item>23205, 23205, 11</item>
+        <item>23210, 23210, 11</item>
+        <!-- United Kingdom -->
+        <item>23420, 23420, 11</item>
+        <item>23594, 23594, 11</item>
+        <!-- Sweden -->
+        <item>24002, 24002, 11</item>
+        <!-- Denmark -->
+        <item>23806, 23806, 11</item>
+
+        <!-- OP12 Verizon -->
+        <!-- United States -->
+        <item>310004, 310006, 12</item>
+        <item>310010, 310010, 12</item>
+        <item>310012, 310013, 12</item>
+        <item>310590, 310590, 12</item>
+        <item>310890, 310890, 12</item>
+        <item>310910, 310910, 12</item>
+        <item>311012, 311012, 12</item>
+        <item>311110, 311110, 12</item>
+        <item>311270, 311289, 12</item>
+        <item>311390, 311390, 12</item>
+        <item>311480, 311489, 12</item>
+
+        <!-- OP15 Telefonica -->
+        <!-- Austria -->
+        <item>23208, 23208, 15</item>
+        <!-- United Kingdom -->
+        <item>23410, 23410, 15</item>
+        <!-- DE -->
+        <item>26203, 26203, 15</item>
+        <item>26207, 26208, 15</item>
+        <item>26277, 26277, 15</item>
+
+        <!-- OP16 -->
+        <!-- United Kingdom -->
+        <item>23430, 23434, 16</item>
+        <item>23486, 23486, 16</item>
+        <item>23502, 23502, 16</item>
+
+        <!-- OP17 DoCoMo -->
+        <!-- Guam -->
+        <item>310370, 310370, 17</item>
+        <item>310470, 310470, 17</item>
+        <!-- Japan -->
+        <item>44010, 44010, 17</item>
+
+        <!-- OP18 India -->
+        <item>40587, 40587, 18</item>
+        <item>405840, 405840, 18</item>
+        <item>405854, 405874, 18</item>
+
+        <!-- OP19 -->
+        <!-- Australia -->
+        <item>50501, 50501, 19</item>
+        <item>50511, 50511, 19</item>
+        <item>50571, 50572, 19</item>
+        <!-- New Zealand -->
+        <item>53004, 53004, 19</item>
+
+        <!-- OP20 United States -->
+        <item>31000, 31000, 20</item>
+        <item>310120, 310120, 20</item>
+        <item>311490, 311490, 20</item>
+        <item>312530, 312530, 20</item>
+
+        <!-- OP50 Japan -->
+        <item>44000, 44000, 50</item>
+        <item>44020, 44020, 50</item>
+
+        <!-- OP100 Hongkong China -->
+        <item>45400, 45400, 100</item>
+        <item>45402, 45402, 100</item>
+        <item>45410, 45410, 100</item>
+        <item>45418, 45418, 100</item>
+
+        <!-- OP101 Hongkong China -->
+        <item>45416, 45416, 101</item>
+        <item>45419, 45420, 101</item>
+        <item>45429, 45429, 101</item>
+
+        <!-- OP102 Hongkong China -->
+        <item>45406, 45406, 102</item>
+        <item>45415, 45415, 102</item>
+        <item>45417, 45417, 102</item>
+
+        <!-- OP103 Singapore -->
+        <item>52501, 52502, 103</item>
+        <item>52507, 52507, 103</item>
+
+        <!-- OP104 Singapore -->
+        <item>52505, 52506, 104</item>
+
+        <!-- OP105 Paraguay -->
+        <item>74402, 74402, 105</item>
+
+        <!-- OP106 Hongkong China -->
+        <item>45403, 45405, 106</item>
+        <item>45414, 45414, 106</item>
+
+        <!-- OP107 -->
+        <!-- France -->
+        <item>20809, 20811, 107</item>
+        <!-- Reunion -->
+        <item>64710, 64710, 107</item>
+
+        <!-- OP108 Taiwan -->
+        <item>46697, 46697, 108</item>
+        <item>46699, 46699, 108</item>
+
+        <!-- OP109 Taiwan -->
+        <item>46692, 46692, 109</item>
+
+        <!-- OP110 Taiwan -->
+        <item>46601, 46603, 110</item>
+        <item>46606, 46607, 110</item>
+        <item>46688, 46688, 110</item>
+
+        <!-- OP111 Vodafone India -->
+        <item>40401, 40401, 111</item>
+        <item>40405, 40405, 111</item>
+        <item>40411, 40411, 111</item>
+        <item>40413, 40413, 111</item>
+        <item>40415, 40415, 111</item>
+        <item>40420, 40420, 111</item>
+        <item>40427, 40427, 111</item>
+        <item>40430, 40430, 111</item>
+        <item>40443, 40443, 111</item>
+        <item>40446, 40446, 111</item>
+        <item>40460, 40460, 111</item>
+        <item>40484, 40484, 111</item>
+        <item>40486, 40486, 111</item>
+        <item>40488, 40488, 111</item>
+        <item>40566, 40567, 111</item>
+        <item>405750, 405756, 111</item>
+
+        <!-- OP112 -->
+        <!-- TelCel Maxico -->
+        <item>33402, 33402, 112</item>
+        <item>334020, 334020, 112</item>
+        <!-- French Antilles -->
+        <item>34003, 34003, 112</item>
+        <!-- Former Netherlands Antilles -->
+        <item>36251, 36251, 112</item>
+
+        <!-- OP113 Venezuela -->
+        <item>25099, 25099, 113</item>
+
+        <!-- OP114 South Korea -->
+        <item>45002, 45002, 114</item>
+        <item>45004, 45004, 114</item>
+        <item>45007, 45008, 114</item>
+
+        <!-- OP115 South Korea -->
+        <item>45005, 45005, 115</item>
+        <item>45011, 45012, 115</item>
+
+        <!-- OP116 South Korea -->
+        <item>45006, 45006, 116</item>
+
+        <!-- OP117 Indonesia -->
+        <item>51009, 51009, 117</item>
+        <item>51028, 51028, 117</item>
+
+        <!-- OP118 Malaysia -->
+        <item>502152, 502152, 118</item>
+
+        <!-- OP119 -->
+        <!-- Haiti -->
+        <item>37203, 37203, 119</item>
+        <!-- Natcom Nigeria -->
+        <item>62140, 62140, 119</item>
+
+        <!-- OP120 Claro -->
+        <!-- Peru -->
+        <item>71610, 71610, 120</item>
+        <!-- Argentina -->
+        <item>722310, 722310, 120</item>
+        <item>722320, 722320, 120</item>
+        <item>722330, 722330, 120</item>
+        <!-- Brazil -->
+        <item>72405, 72405, 120</item>
+        <!-- Chile TS.25; Operator confirmed -->
+        <item>73003, 73003, 120</item>
+        <item>730003, 730003, 120</item>
+        <!-- Colombia -->
+        <item>732101, 732101, 120</item>
+
+        <!-- OP121 Canada -->
+        <item>302610, 302610, 121</item>
+        <item>302630, 302630, 121</item>
+        <item>302640, 302640, 121</item>
+        <item>302690, 302690, 121</item>
+
+        <!-- OP122 Thailand -->
+        <item>52001, 52001, 122</item>
+        <item>52003, 52003, 122</item>
+        <item>52023, 52023, 122</item>
+
+        <!-- OP124 Taiwan -->
+        <item>46605, 46605, 124</item>
+
+        <!-- OP125 Thailand -->
+        <item>52005, 52005, 125</item>
+        <item>52018, 52018, 125</item>
+
+        <!-- OP126 Turkey -->
+        <item>28603, 28603, 126</item>
+        <item>286003, 286003, 126</item>
+
+        <!-- OP127 Megafon Russian -->
+        <item>25002, 25002, 127</item>
+        <item>25011, 25011, 127</item>
+        <item>25030, 25030, 127</item>
+
+        <!-- OP128 Finland -->
+        <item>24412, 24412, 128</item>
+
+        <!-- OP129 Japan -->
+        <item>44007, 44008, 129</item>
+        <item>44050, 44056, 129</item>
+        <item>44070, 44079, 129</item>
+        <item>44088, 44089, 129</item>
+        <item>44170, 44170, 129</item>
+
+        <!-- OP130 TIM -->
+        <!-- Italy -->
+        <item>22201, 22201, 130</item>
+        <!-- Brazil -->
+        <item>72402, 72404, 130</item>
+
+        <!-- OP131 TH -->
+        <item>52000, 52000, 131</item>
+        <item>52004, 52004, 131</item>
+
+        <!-- OP132 Movistar -->
+        <!-- Chile -->
+        <item>73002, 73002, 132</item>
+        <!-- Venezuela -->
+        <item>73404, 73404, 132</item>
+        <!-- Ecuador -->
+        <item>74000, 74000, 132</item>
+        <!-- Uruguay -->
+        <item>74807, 74807, 132</item>
+        <!-- Below OP132 movistar AP behaves as Telefonica(OP15) -->
+        <!-- Mexico -->
+        <item>33403, 33403, 15, 132</item>
+        <item>334030, 334030, 15, 132</item>
+        <!-- Peru -->
+        <item>71606, 71606, 15, 132</item>
+        <item>716006, 716006, 15, 132</item>
+        <!-- Argentina -->
+        <item>72207, 72207, 15, 132</item>
+        <!-- Brazil -->
+        <item>72406, 72406, 15, 132</item>
+        <item>72410, 72411, 15, 132</item>
+        <item>72423, 72423, 15, 132</item>
+        <!-- Colombia -->
+        <item>732123, 732123, 15, 132</item>
+
+        <!--  OP133 DU -->
+        <item>42403, 42403, 133</item>
+
+        <!--  OP134 Elisa -->
+        <!-- Finland -->
+        <item>24405, 24405, 134</item>
+        <item>24421, 24421, 134</item>
+
+        <!--  OP135 MTS -->
+        <item>25001, 25001, 135</item>
+
+        <!--  OP136 Entel -->
+        <!-- Peru -->
+        <item>71617, 71617, 136</item>
+        <!-- Chile -->
+        <item>73001, 73001, 136</item>
+
+        <!--  OP137 Tele2 -->
+        <!-- Netherlands -->
+        <item>20402, 20402, 137</item>
+        <!-- Sweden -->
+        <item>24007, 24007, 137</item>
+        <item>28808, 28808, 137</item>
+        <!-- Russian -->
+        <item>25020, 25020, 137</item>
+
+        <!--  OP139 Bouygues -->
+        <!-- France -->
+        <item>20820, 20820, 139</item>
+        <item>20888, 20888, 139</item>
+
+        <!--  OP140 MTN - South Africa -->
+        <item>65510, 65510, 140</item>
+
+        <!--  OP141 Cell C - South Africa -->
+        <item>65507, 65507, 141</item>
+
+        <!--  OP143 Turkcell -->
+        <item>28601, 28601, 143</item>
+
+        <!--  OP144 Smile -->
+        <!-- Nigeria -->
+        <item>62127, 62127, 144</item>
+        <!-- Tanzania -->
+        <item>64011, 64011, 144</item>
+        <!-- Uganda -->
+        <item>64133, 64133, 144</item>
+
+        <!-- OP145 Cricket: OP07 + SBP ID 145 -->
+        <item>310150, 310150, 07, 145</item>
+
+        <!--  OP146 Etisalat -->
+        <!-- United Arab Emirates -->
+        <item>42402, 42402, 146</item>
+        <!-- Egypt -->
+        <item>60203, 60203, 146</item>
+
+        <!--  OP147 Airtel - India -->
+        <item>40402, 40403, 147</item>
+        <item>40410, 40410, 147</item>
+        <item>40416, 40416, 147</item>
+        <item>40431, 40431, 147</item>
+        <item>40440, 40440, 147</item>
+        <item>40445, 40445, 147</item>
+        <item>40449, 40449, 147</item>
+        <item>40470, 40470, 147</item>
+        <item>40490, 40490, 147</item>
+        <item>40492, 40498, 147</item>
+        <item>40551, 40556, 147</item>
+
+        <!--  OP148 Seatel - Cambodia -->
+        <item>45611, 45611, 148</item>
+
+        <!--  OP149 CMCC Hong Kong -->
+        <item>45412, 45413, 149</item>
+
+        <!--  OP150 Swisscom Schweiz AG -->
+        <item>22801, 22801, 150</item>
+        <item>29501, 29501, 150</item>
+
+        <!--  OP151 M1 - Singapore -->
+        <item>52503, 52503, 151</item>
+
+        <!--  OP152 Optus Australia -->
+        <item>50502, 50502, 152</item>
+
+        <!--  OP153 VHA Australia-->
+        <item>50503, 50503, 153</item>
+        <item>50506, 50506, 153</item>
+
+        <!--  OP154 Telia -->
+        <!-- Sweden -->
+        <item>24001, 24001, 154</item>
+        <item>24005, 24005, 154</item>
+        <!-- Norway -->
+        <item>24202, 24202, 154</item>
+        <item>24205, 24205, 154</item>
+        <!-- Finland -->
+        <item>24436, 24436, 154</item>
+        <item>24491, 24491, 154</item>
+        <!-- Lithuania/Omnitel -->
+        <item>24601, 24601, 154</item>
+        <!-- Estonia, EMT -->
+        <item>24801, 24801, 154</item>
+
+        <!--  OP155 Digi -->
+        <!-- Hungary -->
+        <item>21603, 21603, 155</item>
+        <!-- Romania -->
+        <item>22605, 22605, 155</item>
+        <!-- Malaysia -->
+        <item>50216, 50216, 155</item>
+
+        <!--  OP156 Telenor -->
+        <!-- Hungary -->
+        <item>21601, 21601, 156</item>
+        <!-- Denmark -->
+        <item>23802, 23802, 156</item>
+        <item>23877, 23877, 156</item>
+        <!-- Sweden -->
+        <item>24008, 24008, 156</item>
+        <!-- Norway -->
+        <item>24201, 24201, 156</item>
+        <!-- Bulgaria -->
+        <item>28405, 28405, 156</item>
+        <!-- Pakistan -->
+        <item>41006, 41006, 156</item>
+        <!-- Myanmar -->
+        <item>41406, 41406, 156</item>
+        <item>414006, 414006, 156</item>
+
+        <!--  OP157 Telus - Canada -->
+        <item>302220, 302222, 157</item>
+
+        <!--  OP158 Zain - Saudi Arabia -->
+        <item>42004, 42004, 158</item>
+
+        <!--  OP159 STC - Saudi Arabia -->
+        <item>42001, 42001, 159</item>
+
+        <!--  OP160 Webe Malaysia -->
+        <item>502153, 502153, 160</item>
+
+        <!--  OP161 Play Poland -->
+        <item>26006, 26006, 161</item>
+        <item>26098, 26098, 161</item>
+
+        <!--  OP162 Freedom - Canada -->
+        <item>302490, 302490, 162</item>
+
+        <!--  OP163 Dialog - Sri Lanka -->
+        <item>41302, 41302, 163</item>
+
+        <!--  OP165 Sunrise - Switzerland -->
+        <item>22802, 22802, 165</item>
+
+        <!--  OP166 Salt - Switzerland -->
+        <item>22803, 22803, 166</item>
+
+        <!--  OP171 WOM - Chile -->
+        <item>73009, 73009, 171</item>
+
+        <!--  OP175 TDC Denmark -->
+        <item>23801, 23801, 175</item>
+        <item>23810, 23810, 175</item>
+
+        <!--  OP176 TStar - Taiwan -->
+        <item>46689, 46689, 176</item>
+
+        <!--  OP177 Telecom - Egypt -->
+        <item>60204, 60204, 177</item>
+
+        <!--  OP178 Smart -->
+        <!-- Cambodia -->
+        <item>45606, 45606, 178</item>
+        <!-- Philippines -->
+        <item>51503, 51503, 178</item>
+
+        <!--  OP179 Allai Newroz Telecom - Iraq -->
+        <item>41866, 41866, 179</item>
+
+        <!--  OP180 Swazi Mobile - Swaziland -->
+        <item>65302, 65302, 180</item>
+
+        <!--  OP181 TelKom - South Africa -->
+        <item>65502, 65502, 181</item>
+
+        <!--  OP182 Proximus - Belgium -->
+        <item>20601, 20601, 182</item>
+
+        <!--  OP183 Personal - Argentina -->
+        <item>72234, 72234, 183</item>
+
+        <!--  OP184 Viettel - Vietnum -->
+        <item>45204, 45204, 184</item>
+
+        <!--  OP185 2degrees - New Zealand -->
+        <item>53024, 53024, 185</item>
+
+        <!--  OP186 IDEA - India -->
+        <item>40404, 40404, 186</item>
+        <item>40407, 40407, 186</item>
+        <item>40412, 40412, 186</item>
+        <item>40414, 40414, 186</item>
+        <item>40419, 40419, 186</item>
+        <item>40422, 40422, 186</item>
+        <item>40424, 40424, 186</item>
+        <item>40444, 40444, 186</item>
+        <item>40456, 40456, 186</item>
+        <item>40478, 40478, 186</item>
+        <item>40482, 40482, 186</item>
+        <item>40487, 40487, 186</item>
+        <item>40489, 40489, 186</item>
+        <item>40570, 40570, 186</item>
+        <item>405799, 405799, 186</item>
+        <item>405845, 405846, 186</item>
+        <item>405848, 405850, 186</item>
+        <item>405852, 405853, 186</item>
+
+        <!--  OP187 Safaricom - Kenya -->
+        <item>63902, 63902, 187</item>
+
+        <!--  OP188 A1 - Austria -->
+        <item>23201, 23201, 188</item>
+
+        <!--  OP189 U Mobile - Malaysia -->
+        <item>50218, 50218, 189</item>
+
+        <!--  OP190 Telkom - Kenya -->
+        <item>63907, 63907, 190</item>
+
+        <!--  OP195 O2 - Czech -->
+        <item>23002, 23002, 195</item>
+
+        <!-- OP196 FirstNet: OP07 + SBP ID 196 -->
+        <item>312670, 312670, 07, 196</item>
+        <item>313100, 313100, 07, 196</item>
+        <item>313110, 313190, 07, 196</item>
+
+        <!-- OP198 Sberbank - Russia -->
+        <item>25050, 25050, 198</item>
+
+        <!-- OP199 Vivacom - Bulgaria -->
+        <item>28403, 28403, 199</item>
+
+        <!-- OP200 JTL - kenya -->
+        <item>63910, 63910, 200</item>
+        <item>639010, 639010, 200</item>
+
+        <!-- OP201 KPN - Netherlands -->
+        <item>20408, 20408, 201</item>
+        <item>204069, 204069, 201</item>
+
+        <!-- OP202 Spark - New Zealand -->
+        <item>53005, 53005, 202</item>
+
+        <!-- OP203 NOS - Portugal -->
+        <item>26803, 26803, 203</item>
+        <item>26899, 26899, 203</item>
+
+        <!-- OP204 Rogers - Canada -->
+        <item>302370, 302370, 204</item>
+        <item>302720, 302720, 204</item>
+
+        <!-- OP205 Altan - Mexico -->
+        <item>334140, 334140, 205</item>
+
+        <!-- OP206 Sky - United Kingdom -->
+        <item>23457, 23457, 206</item>
+
+        <!-- OP207 CTM - Macau -->
+        <item>45501, 45501, 207</item>
+        <item>45504, 45504, 207</item>
+
+        <!-- OP208 3 - Macau -->
+        <item>45503, 45503, 208</item>
+        <item>45505, 45505, 208</item>
+
+        <!-- OP209 Avantel - Colombia -->
+        <item>732130, 732130, 209</item>
+
+        <!-- OP210 BSNL - India -->
+        <item>40434, 40434, 210</item>
+        <item>40438, 40438, 210</item>
+        <item>40451, 40451, 210</item>
+        <item>40453, 40455, 210</item>
+        <item>40457, 40459, 210</item>
+        <item>40462, 40462, 210</item>
+        <item>40464, 40464, 210</item>
+        <item>40466, 40466, 210</item>
+        <item>40471, 40481, 210</item>
+
+        <!-- OP211 C&W - Panama -->
+        <item>71401, 71401, 211</item>
+        <item>714010, 714010, 211</item>
+
+        <!-- OP213 Motiv - Russian Federation -->
+        <item>25035, 25035, 213</item>
+
+        <!-- OP214 IDC - Moldova -->
+        <item>25915, 25915, 214</item>
+
+        <!-- OP215 Cellcard - Cambodia -->
+        <item>45601, 45601, 215</item>
+
+        <!-- OP216 Zong - Pakistan -->
+        <item>41004, 41004, 216</item>
+
+        <!-- OP217 Telekom Slovenjie - Slovenia -->
+        <item>29341, 29341, 217</item>
+
+        <!-- OP218 Rakuten - Japan -->
+        <item>44011, 44011, 218</item>
+
+        <!-- OP219 Mytel - Myanmar -->
+        <item>41409, 41409, 219</item>
+
+        <!-- OP220 Tigo - Guatemala -->
+        <item>70402, 70402, 220</item>
+
+        <!-- OP226 GrameenPhone - Bangladesh -->
+        <item>47001, 47001, 226</item>
+
+        <!-- OP227 Wind -->
+        <!-- Greece -->
+        <item>20209, 20210, 227</item>
+        <!-- Italy -->
+        <item>22288, 22288, 227</item>
+
+        <!-- OP236 USCC Test Lab LTE (4G) - US -->
+        <item>31100, 31100, 236</item>
+
+        <!-- OP236 USCC Test Lab LTE (4G) - US -->
+        <item>311220, 311229, 236</item>
+
+        <!-- OP236 USCC Production LTE (4G) - US -->
+        <item>311580, 311589, 236</item>
+
+        <!-- OP1001 Ericsson IODT -->
+        <item>26280, 26280, 1001</item>
+        <item>262080, 262080, 1001</item>
+        <item>72480, 72480, 1001</item>
+
+        <!-- OP1002 Nokia IODT -->
+        <item>23112, 23112, 1002</item>
+
+        <!-- OP1003 MTK_HQLAB-Ericsson -->
+        <item>24099, 24099, 1003</item>
+
+        <!-- OP1004 Huawei IODT -->
+        <item>46020, 46020, 1004</item>
+    </string-array>
+
+</resources>

@@ -1,0 +1,29 @@
+The lib file libmdloggerrecycle.so is to log recycle for modem logger.
+This lib is pre-built by MediaTek internal.
+
+
+WHAT IT DOES?
+=============
+
+Its function is to monitor whether modem logger folder is overhead the pre-setted limit value.
+If true, it would remove the oldest modem folders/files.
+
+
+HOW IT WAS BUILT?
+==================
+
+It needs the following library from AOSP:
+1.  libutils.so
+2.  libcutils.so
+3.  liblog.so
+4.  libstlport.so
+
+All source/dependency modules of this module are already put in
+'vendor/mediatek/libs' folder.
+
+
+HOW TO USE IT?
+==============
+
+libmdloggerrecycle.so is shared lib, and would be included in modem logger bin.
+

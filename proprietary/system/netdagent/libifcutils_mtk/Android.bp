@@ -1,0 +1,17 @@
+
+
+cc_library_shared {
+    name: "libifcutils_mtk",
+    srcs: ["ifc_utils.c"],
+    proprietary: true,
+    owner: "mtk",
+
+    compile_multilib: "both",
+    header_libs: ["netdagent_headers"],
+
+    shared_libs: [
+        "libcutils",
+        "liblog",
+    ],
+
+}

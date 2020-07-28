@@ -1,0 +1,20 @@
+Entitlement.apk is a service for VoWifi (Wi-Fi Calling), VoLTE and other entitlement.
+
+WHAT IT DOES?
+=============
+Entitlement.apk contains
+ - GCM: handles Google Cloud Messaging for entitlement push notification.
+ - EntitlementService: contains the main entitlement service class. It performs device activation, entitlement check, and push notification handling etc.
+ - EapAka: handles EAP-AKA related functionality.
+ - BootCompletedReceiver: handles BOOT_COMPLETED intent if it's entitled before the power down.
+ - EntitlementHandling: contains entitlement service APIs such as doQueryGcmToken(), doDeviceActivation(), etc.
+ - EntitlementServerApi: compiles messages defined by the entitlement server API spec.
+ - TestBed: contains an entitlement test utility which can by-pass UI.
+
+HOW IT WAS BUILT?
+==================
+Entitlement.apk is built in custom images for operators who require entitlement.
+
+HOW TO USE IT?
+==============
+The entitlement service can be woke up either by UI or broadcast intents such as BOOT_COMPLETED and PUSH_NOTIFICATION, to perform device activation, check entitlement status and change E-911 address, etc.

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="app_name">权限监控</string>
+    <string name="accept_perm">允许</string>
+    <string name="deny_perm">拒绝</string>
+    <string name="wifi_only">仅WLAN</string>
+
+    <!-- Dialog message body for different permission -->
+    <string name="notify_dialog_title">安全警告</string>
+    <string name="notify_dialog_msg_body"><xliff:g id="pkg_name">%s</xliff:g> 试图访问数据和WLAN网络。</string>
+    <string name="time_count_down_hint">(<xliff:g id="time">%s</xliff:g> 秒后自动拒绝。)</string>
+    <!-- Toast information for different permission -->
+    <string name="toast_deny_msg_body"><xliff:g id="pkg_name">%s</xliff:g>已被禁止<xliff:g id="perm_name">%s</xliff:g>。</string>
+
+    <string name="notification_control_state_title">应用权限</string>
+    <string name="notification_control_state_summary">应用权限管理未开启。</string>
+    <!-- Permission manager UI  -->
+    <string name="manage_permission_app_label">﻿应用权限</string>
+    <string  name="foreground_notification_title">网络流量管控正在运行</string>
+    <string  name="foreground_notification_summary">点击查看并修改网络权限。</string>
+    <string name="manage_permission_summary">管理应用权限以保障安全和隐私</string>
+    <string name="normal_apps">普通应用</string>
+    <string name="system_apps">系统应用</string>
+    <string name="no_applications">无应用。</string>
+    <string name="version_text">版本 <xliff:g id="version_num">%1$s</xliff:g></string>
+
+    <!-- app count/permission count -->
+    <string name="app_count_unit_single">款应用</string>
+    <string name="app_count_unit_plural">款应用</string>
+    <string name="perm_count_unit_single">项权限</string>
+    <string name="perm_count_unit_plural">项权限</string>
+
+    <!-- empty text for listview -->
+    <string name="no_app_use_perm">未发现涉及该权限的应用。</string>
+    <string name="no_perm_is_used">该应用不涉及任何权限。</string>
+    <string name="notify_user_switch_on">打开开关进行应用权限管理</string>
+
+    <!-- alert dialog when turn off the switch -->
+    <string name="alert_dlg_title">关闭权限保护？</string>
+    <string name="alert_dlg_mgs">应用将直接获得权限，不再需要经过您的确认。</string>
+
+    <!-- auto boot part begin -->
+    <string name="auto_boot_pref_title">自启动管理</string>
+    <string name="auto_boot_pref_summary">允许或禁止应用开机自动运行</string>
+    <string name="no_auto_boot_app">无开机自动运行的应用。</string>
+
+    <string  name="no_network_data_app">内容为空</string>
+    <string  name="control_cellular_data">打开开关进行移动流量管控</string>
+    <string  name="trigger_history_pref_title">权限申请</string>
+    <string  name="trigger_history_pref_summary">显示应用程序权限申请纪录</string>
+    <string  name="network_data_control_title">网络流量管控</string>
+    <string  name="network_data_message">使用你的网络</string>
+    <string  name="no_permission_request">内容为空</string>
+    <string  name="loading">载入中</string>
+    <string  name="refresh">刷新</string>
+    <string  name="on">开启</string>
+    <string  name="off">关闭</string>
+    <string  name="prompt">如果选择拒绝,您可以去以下路径修改配置\"设置->网络和互联网->流量使用情况->菜单->网络流量管控\"。</string>
+    <string  name="channel_name">网络流量管控</string>
+    <string  name="channel_description">管控使用流量的应用程序</string>
+    <string  name="ok">确定</string>
+    <string  name="cancel">取消</string>
+    <string  name="network_review_title">以下系统应用需要访问数据流量和WLAN网络。</string>
+    <string  name="no_network_permission">禁止访问网络</string>
+    <string  name="warning_network">某些系统应用无法工作</string>
+    <string  name="multiple_apps">多个应用程序</string>
+    <string  name="warning_network_title">禁止系统应用访问网络会造成以下严重的使用问题。</string>
+
+    <plurals name="autoboot_app_desc_allow">
+        <item quantity="one">允许<xliff:g id="app_count">%1$d</xliff:g>款应用，</item>
+        <item quantity="other">允许<xliff:g id="app_count">%1$d</xliff:g>款应用，</item>
+    </plurals>
+    <plurals name="autoboot_app_desc_deny">
+        <item quantity="one">禁止<xliff:g id="app_count">%1$d</xliff:g>款应用。</item>
+        <item quantity="other">禁止<xliff:g id="app_count">%1$d</xliff:g>款应用。</item>
+    </plurals>
+    <!-- auto boot part end -->
+
+</resources>

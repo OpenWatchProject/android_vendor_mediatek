@@ -1,0 +1,12 @@
+android_app {
+    name: "PrintSpoolerGo",
+    overrides: [
+        "PrintSpooler",
+    ],
+    platform_apis: true,
+    static_libs: [
+        "android-common",
+    ],
+
+}
+

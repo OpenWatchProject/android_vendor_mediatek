@@ -1,0 +1,16 @@
+cc_test {
+    srcs: ["mtk_ion_test.c"],
+    header_libs: [
+        "device_kernel_headers",
+    ],
+    proprietary: true,
+    name: "mtk_ion_test",
+    owner: "mtk",
+    compile_multilib: "both",
+    shared_libs: [
+        "libcutils",
+        "libc",
+        "libion",
+        "libion_mtk",
+    ],
+}

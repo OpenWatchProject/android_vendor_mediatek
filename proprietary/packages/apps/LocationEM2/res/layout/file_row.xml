@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:gravity="left"
+    >
+
+<ImageView android:id="@+id/ImageView_fileRow" android:layout_width="45dip" android:layout_height="45dip"/>
+
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+<TextView android:id="@+id/TextView_fileRow" android:layout_gravity="center_vertical" android:layout_width="1000dip" android:layout_weight="1.0" android:layout_height="wrap_content" android:textSize="20dip"/>
+<TextView android:id="@+id/TextView_fileRow2" android:layout_gravity="center_vertical" android:layout_width="1000dip" android:layout_weight="1.0" android:layout_height="wrap_content" android:textSize="12dip"/>
+</LinearLayout>
+
+</LinearLayout>

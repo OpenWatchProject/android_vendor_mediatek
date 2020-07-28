@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.mediatek.fullscreenswitch">
+    <uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES" />
+    <application
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name">
+
+        <provider
+            android:name=".FullscreenSwitchProvider"
+            android:authorities="com.mediatek.fullscreenswitch"
+            android:enabled="true"
+            android:exported="true" />
+
+    </application>
+
+</manifest>

@@ -1,0 +1,23 @@
+cc_prebuilt_library_static {
+    arch: {
+        arm: {
+            srcs: [
+                "arm/libdpframework_prot.a",
+            ],
+        },
+        arm64: {
+            srcs: [
+                "arm64/libdpframework_prot.a",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    export_include_dirs: [
+        "include/mt6765",
+        "include/common",
+    ],
+    name: "libdpframework_prot@MTK,smart_phone,mt6765",
+    owner: "mtk",
+    proprietary: true,
+}
+

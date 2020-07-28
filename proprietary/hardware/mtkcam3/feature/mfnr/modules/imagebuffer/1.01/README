@@ -1,0 +1,117 @@
+MFNR core module: ImageBuffer v1.0
+
+
+WHAT IT DOES?
+=============
+
+Instead of using IImageBuffer, MFNR core prepare a special mechanism of image
+buffer which called IMfllImageBuffer.
+
+This module makes IImageBuffer much extensible and flexible, such as horizontal
+and vertical padding, re-allocation-free image format conversion. Besides,
+IImageBuffer will be automatically release after IMfllImageBuffer is being
+destroyed.
+
+
+HOW IT WAS BUILT?
+==================
+
+You cannot partial build this module only, but to build libmfllcore indeed.
+
+libmfllcore partial build path:
+
+    feature/common/mfnr/Android.mk
+
+Library dependency:
+  AOSP:
+  - libutils.so
+  - libcutils.so
+  - libstdc++.so
+
+  MTK:
+  - libm4u.so
+  - libmedia.so
+  - libcam_utils.so
+  - libmtkcam_modulehelper.so
+
+
+HOW TO USE IT?
+==============
+
+Create an IMfllImageBuffer by invoking:
+
+    IMfllImageBuffer::createInstance()
+
+
+After created, caller need to set configurations to IMfllImageBuffer and then
+invoke method
+
+    initBuffer()
+
+e.g.:
+
+    sp<IMfllImageBuffer> spImgBuf = IMfllImageBuffer::createInstance();
+    if (spImgBuf.get() == NULL) {
+        ERROR_LOG("create IMfllImageBuffer failed");
+        return MfllErr_UnexpectedError;
+    }
+
+    spImgBuf->setResolution(1244, 732); // set resolution 1244x732
+    spImgBuf->setAligned(16, 16); // set vertical/horizontal alignment
+    spImgBuf->setImageFormat(mfll::ImageFormat_Yuy2);
+
+    auto err = spImgBuf->initBuffer();
+    if (err != MfllErr_Ok) {
+        ERROR_LOG("init IMfllImageBuffer failed with code %x", err);
+        return err;
+    }
+
+
+IMfllImageBuffer provides two different ways to create an image buffer chunk:
+
+  1. Allocate a memory chunk from ION(see example below)
+  2. Manage a IImageBuffer, e.g:
+
+    sp<IMfllImageBuffer> spImgBuf = IMfllImageBuffer::createInstance();
+    if (spImgBuf.get() == NULL) {
+        ERROR_LOG("create IMfllImageBuffer failed");
+        return MfllErr_UnexpectedError;
+    }
+
+    // gives a pointer of IImageBuffer instance
+    // IMfllImageBuffer will invoke IImageBuffer::incStrong and
+    // IImageBuffer::decStrong while destroying
+    spImgBuf->setImageBuffer((void*)lpImageBuffer);
+
+
+IMfllImageBuffer image format conversion is a really good design to provide
+a performance improvement mechanism for hardware operation. For example, pass 2
+driver only supports image format YUY2, but algorithm only supports YV16 (but
+while algorithm computing, it will convert YV16 format to YUY2 in the same time),
+for this case, we have to prepare two buffers, one is YV16 another is YUY2, it
+means these two buffers CAN NOT be re-used because pass 2 driver takes image
+format and IImageBuffer doesn't provide image format conversion (w/o memory
+re-allocation-free)
+
+By IMfllImageBuffer, we can easily convert image format w/o re-allocate memory
+chunk, e.g.:
+
+    spImgBuf->setAligned(2, 2); // set new alignment is available too
+    spImgBuf->convertImageFormat(mfll::ImageFormat_Yuy2);
+
+
+v1.0
+  - First version
+
+
+* This module will be compiled as a static libary and be used by libmfllcore,
+  which means you can only use the interfaces defined in:
+
+      feature/include/common/mfnr/IMfllImageBuffer.h
+
+  by linking shared libary
+
+      libmfllcore.so
+
+
+*** All the source code of this program were written by MediaTek co. ***

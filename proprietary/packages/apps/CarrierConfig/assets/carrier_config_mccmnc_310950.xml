@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<carrier_config_list>
+    <carrier_config>
+        <boolean name="rtt_supported_bool" value="true" />
+        <boolean name="mtk_domestic_roaming_enabled_only_by_mobile_data_setting" value="true" />
+        <boolean name="mtk_intl_roaming_enabled_only_by_roaming_data_setting" value="true" />
+        <boolean name="support_video_conference_call_bool" value="true" />
+        <!-- International roaming list -->
+        <string-array name="carrier_international_roaming_exception_list_strings" num="5">
+            <item value="310110" />
+            <item value="310140" />
+            <item value="310400" />
+            <item value="310470" />
+            <item value="311170" />
+        </string-array>
+    </carrier_config>
+</carrier_config_list>

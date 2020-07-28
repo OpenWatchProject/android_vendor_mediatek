@@ -1,0 +1,25 @@
+==========================
+#generate debug cert(oem)
+==========================
+===========
+#legacy
+===========
+python sctrlcert.py -i settings/sctrlcert/scc_key.ini  -g settings/sctrlcert/scc_gfh_config_legacy.ini out/sctrlcert/scc_sv5.cert
+===========
+#pss
+===========
+python sctrlcert.py -i settings/sctrlcert/scc_key.ini  -g settings/sctrlcert/scc_gfh_config_pss.ini out/sctrlcert/scc_sv5.cert
+===========
+#cert chain
+===========
+python sctrlcert.py -i settings/sctrlcert/scc_key.ini -k out/sctrlcert/key_cert.bin -g settings/sctrlcert/scc_gfh_config_cert_chain.ini -q settings/sctrlcert/scc_primary_dbg.ini -p out/sctrlcert/primary_dbg_cert.bin -s settings/sctrlcert/scc_secondary_dbg.ini out/sctrlcert/scc_sv5.cert
+
+====================================
+#generate debug cert(service center)
+====================================
+#for legacy/pss, the command is the same as sign(oem)
+===========
+#cert chain
+===========
+python sctrlcert.py -k prebuilt/sctrlcert/key_cert.bin -g settings/sctrlcert/scc_gfh_config_cert_chain.ini -p prebuilt/sctrlcert/primary_dbg_cert.bin -s settings/sctrlcert/scc_secondary_dbg.ini out/sctrlcert/scc_sv5.cert
+

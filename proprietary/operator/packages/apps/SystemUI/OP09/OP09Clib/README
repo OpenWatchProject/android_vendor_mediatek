@@ -1,0 +1,20 @@
+OP09Clip customization features.
+This apk is pre-built by MediaTek internal.
+WHAT IT DOES?
+=============
+It is a plugin apk which contains the OP09Clip customization for systemui
+
+HOW IT WAS BUILT?
+==================
+It needs the following library from Mediatek:
+1. mediatek-common.jar
+2. Host App api interface,for example:com.mediatek.systemui.ext
+All the OP09Clip customization for systemui will be built as OP09ClipSystemUI.apk  installed under system/app/
+
+HOW TO USE IT?
+==============
+Implement the interface provided by systemui to do customization.
+all api interface are at frameworks/base/packages/SystemUI/ext.
+when run time, framework will find the OP09ClipSystemUI customization implementation via OpSystemUICustomizationFactoryBase.sOpFactoryInfos
+
+All the source code of  were written by MediaTek.

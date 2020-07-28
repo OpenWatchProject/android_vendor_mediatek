@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    Copyright Statement:
+
+    This software/firmware and related documentation ("MediaTek Software") are
+    protected under relevant copyright laws. The information contained herein
+    is confidential and proprietary to MediaTek Inc. and/or its licensors.
+    Without the prior written permission of MediaTek inc. and/or its licensors,
+    any reproduction, modification, use or disclosure of MediaTek Software,
+    and information contained herein, in whole or in part, shall be strictly prohibited.
+
+    MediaTek Inc. (C) 2012. All rights reserved.
+
+    BY OPENING THIS FILE, RECEIVER HEREBY UNEQUIVOCALLY ACKNOWLEDGES AND AGREES
+    THAT THE SOFTWARE/FIRMWARE AND ITS DOCUMENTATIONS ("MEDIATEK SOFTWARE")
+    RECEIVED FROM MEDIATEK AND/OR ITS REPRESENTATIVES ARE PROVIDED TO RECEIVER ON
+    AN "AS-IS" BASIS ONLY. MEDIATEK EXPRESSLY DISCLAIMS ANY AND ALL WARRANTIES,
+    EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF
+    MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE OR NONINFRINGEMENT.
+    NEITHER DOES MEDIATEK PROVIDE ANY WARRANTY WHATSOEVER WITH RESPECT TO THE
+    SOFTWARE OF ANY THIRD PARTY WHICH MAY BE USED BY, INCORPORATED IN, OR
+    SUPPLIED WITH THE MEDIATEK SOFTWARE, AND RECEIVER AGREES TO LOOK ONLY TO SUCH
+    THIRD PARTY FOR ANY WARRANTY CLAIM RELATING THERETO. RECEIVER EXPRESSLY ACKNOWLEDGES
+    THAT IT IS RECEIVER'S SOLE RESPONSIBILITY TO OBTAIN FROM ANY THIRD PARTY ALL PROPER LICENSES
+    CONTAINED IN MEDIATEK SOFTWARE. MEDIATEK SHALL ALSO NOT BE RESPONSIBLE FOR ANY MEDIATEK
+    SOFTWARE RELEASES MADE TO RECEIVER'S SPECIFICATION OR TO CONFORM TO A PARTICULAR
+    STANDARD OR OPEN FORUM. RECEIVER'S SOLE AND EXCLUSIVE REMEDY AND MEDIATEK'S ENTIRE AND
+    CUMULATIVE LIABILITY WITH RESPECT TO THE MEDIATEK SOFTWARE RELEASED HEREUNDER WILL BE,
+    AT MEDIATEK'S OPTION, TO REVISE OR REPLACE THE MEDIATEK SOFTWARE AT ISSUE,
+    OR REFUND ANY SOFTWARE LICENSE FEES OR SERVICE CHARGE PAID BY RECEIVER TO
+    MEDIATEK FOR SUCH MEDIATEK SOFTWARE AT ISSUE.
+
+    The following software/firmware and/or related documentation ("MediaTek Software")
+    have been modified by MediaTek Inc. All revisions are subject to any receiver's
+    applicable license agreements with MediaTek Inc.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="not_add_more_text">"Неможливо додати більше тексту"</string>
+    <string name="attach_image">Фото</string>
+    <string name="attach_video">"Відео"</string>
+    <string name="attach_sound">"Музика"</string>
+    <string name="attach_contact">"Контакти"</string> 
+    <string name="attach_file">Файл</string> 
+    <string name="attach_calender">"Календар"</string>    
+    <string name="attach_error_occurred">Жоден застосунок не підтримує це вкладення.</string>  
+    <string name="low_storage_service_stop">"Послуги ел.пошти зупинені через малий обсяг пам'яті."</string>
+    <string name="low_storage_hint_delete_mail">"Можна видалити непотрібні пошту або застосунки, щоб повернути пам'ять."</string>
+    <string name="low_storage_service_start">"Ел.пошту перестартовано: достатньо пам'яті."</string>
+    <string name="low_storage_attachment_cannot_download">"Неможливо завантажити вкладення через малий обсяг пам'яті."</string>
+    <string name="low_storage_attachment_cannot_view">"Неможливо переглянути вкладення через малий обсяг пам'яті."</string>
+    <string name="download_remaining">Завантажити решту</string>
+    <string name="downloading_remaining">Завантаження...</string>
+    <string name="unable_to_connect">Неможливо підключитися</string>
+    <string name="need_connection_prompt">"Потрібне мережне підключення для користування застосунком. Увімкніть мобільну мережу або WiFi у Налаштуваннях."</string>
+    <string name="need_wifi_connection_prompt">"Потрібне мережне підключення для користування застосунком. Увімкніть WiFi у Налаштуваннях."</string>
+    <string name="connection_settings">"Налаштування"</string>
+    <string name="too_many_attachments">Неможливо додати забагато вкладень. Дудуть додані лише перші <xliff:g id="currentCount">%1$d</xliff:g> вкладення.</string>
+    <string name="not_add_more_attachments">Неможливо додати більше вкладень. Обмеження: <xliff:g id="maxLimit">%1$d</xliff:g> вкладень.</string>
+    <string name="attachment_overflow">Переповнення вкладеннями</string>
+    <string name="cannot_add_this_attachment">Неможливо додати це вкладення.</string>
+    <string name="loading_attachment">Завантаження вкладень...</string>
+    <string name="send_attachment_fail">Не надіслано вкладення.</string>
+    <string name="open_message_parsing">Аналіз повідомлення...</string>
+    <string name="open_message_update_db">Поновлення бази даних...</string>
+    <string name="open_message_update_ui">Завантаження повідомлення...</string>
+    <string name="please_wait">Дія триває. Будь ласка, почекайте...</string>
+    <string name="delete_message_dialog_title">Видалити повідомлення</string>
+    <string name="delete_message_confirm">"Видалити це повідомлення?"</string>
+    <string name="attachment_info_deleted">"Це вкладення неможливо зберегти або відкрити: можливо, його видалили."</string>
+    <string name="send_failed_ticker">не надіслано ел.пошту <xliff:g id="account_name">%s</xliff:g></string>
+    <string name="send_failed_title">Не надіслано ел.пошту</string>
+    <string name="always_bcc_myself">Завжди приховану копію собі</string>
+    <string name="always_bcc_myself_summary">Завжди приховану копію собі при написанні, відповіді і перенаправленні</string>
+    <string name="remote_search_failed">Не виконано пошук у сервері!</string>
+    <string name="searching_on_server">Пошук у сервері</string>
+    <string name="searching_on_server_title">Пошук \"<xliff:g id="account_name">%s</xliff:g>\" у сервері</string>
+    <string name="searching_all_fields_on_sever">Пошук всіх полів у сервері</string>
+    <string name="search_field_subject">"Тема"</string>
+    <string name="search_field_receiver">Отримувач</string>
+    <string name="search_field_sender">Відправник</string>
+    <string name="search_field_body">Тіло</string>
+    <string name="search_field_all">"Усі"</string>
+    <string name="select_all">"Вибрати всі"</string>
+    <string name="deselect_all">"Відмінити все"</string>
+    <string name="vip_settings">VIP-НАЛАШТУВАННЯ</string>
+    <string name="vip_members">VIP-члени</string>
+    <string name="vip_notifications">VIP-повідомлення</string>
+    <string name="vip_settings_notify_summary">Про появу VIP-ел.пошти повідомляти на панелі системи</string>
+    <string name="vip_members_count">VIP-члени (<xliff:g example="2">%1$d</xliff:g>)</string>
+    <string name="vip_remove_title">Видалити з VIP</string>
+    <string name="vip_choose_contact">Додати до VIP</string>
+    <string name="vip_remove_prompt"><xliff:g example="2">%1$s</xliff:g> буде видаено з VIP-членів.</string>
+    <string name="not_add_duplicate_vip">Дубльований контакт не буде додано до списку VIP.</string>
+    <string name="can_not_add_vip_over_99">Неможливо додати більше 99 VIP-членів.</string>
+    <string name="vip_settings_ringtone">"Вибрати сигнал дзвінка"</string>
+    <string name="vip_settings_vibrate_label">"Вібрув."</string>
+    <string name="vip_settings_vibrate_summary">Також вібрація при надходженні VIP ел.пошти</string>
+    <string name="account_setup_options_mail_check_frequency_smartpush">Одним натисненням</string>
+    <string name="smart_push_alert_dialog_title">Опція енергозбереження</string>
+    <string name="smart_push_alert_dialog_message">рідше перевіряйте ел.пошту, щоб заощадити енергію. Продовжуйте користуватися режимом, ел.пошта надходитиме регулярніше.\n\nЦе завжди можна змінити у налаштуваннях.</string>
+    <string name="global_search_label">"Ел.пошта"</string>
+    <string name="global_search_hint">"Пошук в електронній пошті"</string>
+    <string name="global_search_description">Відправник, теми і повідомлення</string>
+    <string name="account_settings_oof_label">Поза офісом</string>
+    <string name="account_settings_oof_unchecked_summary">Зараз я в офісі</string>
+    <string name="account_settings_oof_checked_summary">Зараз я поза офісом</string>
+    <string name="account_settings_oof_from_label">"З"</string>
+    <string name="account_settings_oof_to_label">"Кому"</string>
+    <string name="account_settings_oof_auto_reply_label">Автовідповіді поза офісом</string>
+    <string name="account_settings_oof_auto_reply_summary">Автоматично відповісти на повідомлення кожного відправника</string>
+    <string name="account_settings_oof_external_server_label">Надіслати автовідповіді на зовнішній сервер</string>
+    <string name="account_settings_oof_get_status">Отримання статусу з сервера</string>
+    <string name="account_settings_oof_save_sets">Збереження налаштувань на сервер</string>
+    <string name="account_settings_oof_get_status_fail">Неможливо отримати статус</string>
+    <string name="account_settings_oof_get_status_fail_summary">Зараз неможливо отримати статус від сервера. Будь ласка, повторіть спробу пізніше.</string>
+    <string name="account_settings_oof_cancel">Без збереження?</string>
+    <string name="account_settings_oof_cancel_summary">Всі зміни будуть відхилені.</string>
+    <string name="account_settings_oof_save_fail">Неможливо зберегти</string>
+    <string name="account_settings_oof_save_fail_summary">Неможливо зберегти налаштування на сервер. Сервер може бути недоступним, ваші автовідповіді можуть перевищувати ліміт сервера або неправильні дата і час на вашому пристрої.</string>
+    <string name="account_settings_oof_time_alert">Мусить бути пізніше поточного часу.</string>
+    <string name="no_application_response">"Задачі були вимкнути"</string>
+    <string name="extension_choose_provider_title">Закрити провайдера пошти</string>
+    <string name="not_add_more_recipients">Неможливо додати більше <xliff:g id="maxLimit">%1$d</xliff:g>  отримувачів за раз.</string>
+    <string name="message_view_status_sdcard_not_enough">Недостатньо місця, щоб зберегти вкладення на карту SD.</string>
+    <string name="vip_emails_from_accounts_fmt">Ел.пошта з <xliff:g id="vipAccountCount">%d</xliff:g> облікових записів</string>
+    <string name="notification_multiple_new_vip_messages_fmt"><xliff:g example="2">%1$d</xliff:g> нова VIP ел.пошта</string>
+    <string name="message_body_too_large">Неможливо завантажити повний зміст, бо повідомлення завелике.</string>
+    <string name="cannot_move_multiple_mailbox_toast">Переміщуються певні ел.повідомлення, будь ласка, повторіть спробу пізніше.</string>
+    <string name="certificate_request_ssl">Сертифікат клієнта мусить користуватися безпечним підключенням.</string>
+    <string name="auto_clear_cache_title">"Автоматично очищувати кеш-пам'ять"</string>
+    <string name="auto_clear_cache_description">"Регулярно очищувати вкладення з локальної кеш-пам'яті"</string>
+    <string name="edit_quoted_dialog_title">Максимум символів</string>
+    <string name="edit_quoted_not_append_all">Досягнуто максимальної кількості символів. Трохи старого змісту буде втрачено. Продовжити? </string>
+   <string name="single_message_view_attachment_saved">Вкладення збережено в <xliff:g id="filename">%s</xliff:g></string>
+    <string name="choose_attachment_dialog_title">"Виберіть вклад. файл"</string>
+    <string name="message_compose_error_invalid_email">"Деякі електронні адреси недійсні."</string>
+</resources>

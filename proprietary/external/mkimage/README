@@ -1,0 +1,12 @@
+WHAT IT DOES?
+=============
+It is PC side tool to gen header for MTK proprietary image
+
+HOW IT WAS BUILT?
+==================
+Android Build system
+
+HOW TO USE IT?
+==============
+./mkimage <image_file_path> <image_name> <image_addr> > out_image
+./mkimage <image_file_path> <image_name> <image_addr> <dest_image_file_path>

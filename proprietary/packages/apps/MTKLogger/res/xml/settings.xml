@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:title="@string/menu_settings" >
+
+    <PreferenceCategory android:title="@string/general_settings_title" 
+         android:key="general_settings_category" >
+        <com.debug.loggerui.utils.SelfdefinedSwitchPreference
+            android:defaultValue="true"
+            android:key="mobilelog_switch"
+            android:title="@string/mobile_log_name" />
+        <com.debug.loggerui.utils.SelfdefinedSwitchPreference
+            android:defaultValue="true"
+            android:key="modemlog_switch"
+            android:title="@string/modem_log_name" />
+        <com.debug.loggerui.utils.SelfdefinedSwitchPreference
+            android:defaultValue="true"
+            android:key="networklog_switch"
+            android:title="@string/network_log_name" />
+        <com.debug.loggerui.utils.SelfdefinedSwitchPreference
+            android:defaultValue="true"
+            android:key="connsyslog_switch"
+            android:title="@string/connsys_log_name" />
+        <com.debug.loggerui.utils.SelfdefinedSwitchPreference
+            android:defaultValue="true"
+            android:key="metlog_switch"
+            android:title="@string/met_log_name" />
+    </PreferenceCategory>
+    <PreferenceCategory 
+        android:title="@string/advanced_settings_title"
+        android:key="advanced_settings_category" >
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="taglog_enable"
+            android:summary="@string/enable_tag_log_summary"
+            android:title="@string/enable_tag_log_title" />
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="always_tag_modem_log_enable"
+            android:title="@string/enable_always_tag_modem_log_title"
+            android:summary="@string/enable_always_tag_modem_log_summary"
+            android:dependency="taglog_enable"
+            android:layout="?android:attr/preferenceLayoutChild" />
+        <ListPreference
+            android:dialogTitle="@string/log_storage_location_title"
+            android:key="log_storage_location"
+            android:title="@string/log_storage_location_title"
+            android:defaultValue="@string/default_log_path_type_value"
+            android:entries="@array/log_path_type_list"
+            android:entryValues="@array/log_path_type_value_list"
+            android:summary="@string/default_log_path_type_value" />
+         <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="metlog_enable"
+            android:summary="@string/enable_met_log_summary"
+            android:title="@string/enable_met_log_title" />
+         
+        </PreferenceCategory>
+
+</PreferenceScreen>

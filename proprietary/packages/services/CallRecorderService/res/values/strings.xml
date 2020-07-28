@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2" xmlns:tools="http://schemas.android.com/tools">
+    <!-- Call recorder -->
+    <!-- Call call record: all the records will be put in a media player playlist
+         naming "My recordings" -->
+    <string name="str_db_playlist_name">My recordings</string>
+    <!-- Call call record error message: toast if recording stopped due to audio device error -->
+    <string name="alert_device_error">Error occurred on audio device</string>
+    <!-- Call call record error message: toast if recording stopped due to SD removed -->
+    <string name="ext_media_badremoval_notification_title">SD card unexpectedly removed</string>
+    <!-- Call call record error message: toast if recording stopped due to accessing SD failed -->
+    <string name="error_sdcard_access">Unable to access SD card</string>
+    <!-- Call call record error message: toast if recording stopped due to SD full.
+         In this case, the current recording has already saved successfully -->
+    <string name="confirm_device_info_full">SD card is out of space,  the recording has been saved.</string>
+    <!-- Call record error message: toast if recorded file was saved to somewhere -->
+    <string name="confirm_save_info_saved_to">The recording has been saved to</string>
+    <!-- Call record error message: toast if can not start record due to SD full. -->
+    <string name="alert_storage_is_not_available">Storage is not available</string>
+</resources>

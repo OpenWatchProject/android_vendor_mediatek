@@ -1,0 +1,45 @@
+
+#ifndef __TLDAPC_INDEX_H__
+#define __TLDAPC_INDEX_H__
+
+#define DAPC_INDEX_SPI0       54
+
+#define DAPC_INDEX_DISP_OVL   81
+#define DAPC_INDEX_DISP_RDMA0 82
+#define DAPC_INDEX_DISP_RDMA1 83
+#define DAPC_INDEX_DISP_WDMA  84
+#define DAPC_INDEX_DISP_COLOR 85
+#define DAPC_INDEX_DISP_CCORR 86
+#define DAPC_INDEX_DISP_AAL   87
+#define DAPC_INDEX_DISP_GAMMA 88
+#define DAPC_INDEX_DISP_DITHER 89
+
+#define DAPC_INDEX_DSI              91
+#define DAPC_INDEX_DPI              92
+#define DAPC_INDEX_SMI_LARB0        95
+#define DAPC_INDEX_SMI_COMMON       96
+#define DAPC_INDEX_MIPI_TX_CONFIG   97
+#define DAPC_INDEX_IMGSYS_CONFIG    98
+#define DAPC_INDEX_IMGSYS_SMI_LARB2  99
+
+#define DAPC_INDEX_IMGSYS_CAM1       100
+#define DAPC_INDEX_IMGSYS_CAM2       101
+#define DAPC_INDEX_IMGSYS_CAM3       102
+#define DAPC_INDEX_IMGSYS_CAM4       103
+#define DAPC_INDEX_IMGSYS_SENINF     104
+#define DAPC_INDEX_IMGSYS_CAMSV      105
+#define DAPC_INDEX_IMGSYS_FDVT       106
+#define DAPC_INDEX_IMGSYS_CAM5       107
+#define DAPC_INDEX_IMGSYS_CAM6       108
+#define DAPC_INDEX_IMGSYS_CAM7       109
+
+#define DAPC_INDEX_VDECSYS_GLOBAL_CONFIGURATION       110
+#define DAPC_INDEX_SMI_LARB1                111
+#define DAPC_INDEX_VDEC_FULL_TOP            112
+#define DAPC_INDEX_VENC_GLOBAL_CON          113
+#define DAPC_INDEX_SMI_LARB3                114
+#define DAPC_INDEX_VENC                     115
+#define DAPC_INDEX_JPEG_ENC                 116
+#define DAPC_INDEX_JPEG_DEC                 117
+
+#endif // __TLDAPC_INDEX_H__

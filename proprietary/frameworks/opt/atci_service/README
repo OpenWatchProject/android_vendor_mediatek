@@ -1,0 +1,27 @@
+The atci_service is a daemon process for AT command interface.
+It will receive the AT commands belongs to specified module from atcid.
+The modules includes audio/GPS and so on.
+This daemon is pre-built by MediaTek internal.
+
+
+WHAT IT DOES?
+=============
+
+The atci_service is a daemon process for AT command interface.
+It will receive the AT commands belongs to specified module from atcid.
+The modules includes audio/GPS and so on.
+
+HOW IT WAS BUILT?
+==================
+
+It will pre-built automatically by build process.
+
+
+HOW TO USE IT?
+==============
+
+Enable atci and connect with atcid. Send AT command by pctools. Such as hyperterminal.
+The commands belongs audio/GPS will send to atci_service.
+The specified responses should be send back after command execution done.
+
+All the source code of this library were written by MediaTek co..

@@ -1,0 +1,18 @@
+
+WHAT IT DOES?
+=============
+This is a test program package for protect memory testing includes:
+- test protect memory read/write between GZ and TEE.
+- test protect memory allocate and free using ION interface.
+- test protect memory functions using /proc/pmem0 interface.
+
+
+HOW IT WAS BUILT?
+=================
+It could be built with mmm or mm build command.
+
+
+HOW TO USE IT?
+==============
+Use adb push command to install test programs to device directly,
+and then execute them using adb commands.

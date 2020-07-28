@@ -1,0 +1,18 @@
+// Build MtkCapCtrl apk
+android_app {
+    name: "MtkCapCtrl",
+    srcs: [
+        "src/**/*.java",
+    ],
+    resource_dirs: ["res"],
+    libs: [
+        "telephony-common",
+    ],
+    static_libs: [
+        "vendor.mediatek.hardware.mtkradioex-V1.0-java",
+        "CapCtrlInterface",
+    ],
+    platform_apis: true,
+    certificate: "platform",
+    privileged: true,
+}

@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/* //device/apps/common/assets/res/any/strings.xml
+**
+** Copyright 2006, The Android Open Source Project
+**
+** Licensed under the Apache License, Version 2.0 (the "License");
+** you may not use this file except in compliance with the License.
+** You may obtain a copy of the License at
+**
+**     http://www.apache.org/licenses/LICENSE-2.0
+**
+** Unless required by applicable law or agreed to in writing, software
+** distributed under the License is distributed on an "AS IS" BASIS,
+** WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+** See the License for the specific language governing permissions and
+** limitations under the License.
+*/
+--><resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <string name="badPin2">Antamasi vanha PIN2 ei ole oikein.</string>
+    <string name="badPuk2">Antamasi PUK2 ei ole oikein.</string>
+
+    <string name="checkPwdLen">Tarkista onko salasanasi 4–8 numeroa pitkä.</string>
+
+    <string name="pinNotEnabled">Ota PIN käyttöön ennen sen muuttamista.</string>
+
+    <string name="puk1Blocked">PIN on estetty.</string>
+
+    <string name="puk2Blocked">PIN2 on estetty.</string>
+
+    <string name="fdnFailMmi">FDN-tarkistus epäonnistui.</string>
+
+    <string name="callBarringFailMmi">Puhelun esto epäonnistui.</string>
+    <string name="Pin2Mmi">PIN2-muutos</string>
+    <string name="PukMmi">Kumoa PIN-koodin esto</string>
+    <string name="Puk2Mmi">Kumoa PIN2-koodin esto</string>
+
+    <string name="serviceProvisioned">Palvelu valmisteltu.</string>
+
+    <string name="serviceUnknown">Yhdistämisongelma tai virheellinen MMI-koodi.</string>
+    <string name="cfServiceNotForwarded">Ei lähetetty edelleen</string>
+
+    <string name="invalidPuk">Syötä 8 numeroa.</string>
+
+    <string name="invalid_imei">IMEI ei kelpaa</string>
+    <string name="same_imei">Sama IMEI</string>
+
+    <string name="oper_long_46000">CMCC</string>
+    <string name="oper_long_46001">CU</string>
+    <string name="oper_long_46003">China Telecom</string>    
+    <string name="oper_long_46601">Far EasTone</string>
+    <string name="oper_long_46692">Chunghwa Telecom</string>
+    <string name="oper_long_46697">Taiwan Mobile</string>
+    <string name="oper_long_99998">Android1</string>
+    <string name="oper_long_99999">Android</string>
+
+    <string name="oper_short_46000">CMCC</string>
+    <string name="oper_short_46001">CU-GSM</string>
+    <string name="oper_short_46003">China Telecom</string>    
+    <string name="oper_short_46601">FET</string>
+    <string name="oper_short_46692">Chunghwa</string>
+    <string name="oper_short_46697">TWN</string>
+    <string name="oper_short_99997">AD1</string>
+    <string name="oper_short_99999">AD</string>
+
+    <string name="sim_close">Sulje SIM-kortti</string>
+
+    <string name="serviceClassVideo">Video</string>
+
+  <string name="free_memory_btn">"Vapaa tila"</string>
+
+  <string name="contact_widget_loading">Ladataan\u2026</string>
+
+   <string name="media_controller_buffering">"Puskuroidaan %d%%..."</string>
+   <string name="media_controller_live">"Live"</string>
+   <string name="media_controller_playing">"Toistaa"</string>
+   <string name="media_controller_connecting">"Yhdistetään..."</string>
+
+   <string name="VideoView_error_text_bad_file">"Viallinen tiedosto. Tätä videota ei voi toistaa."</string>
+   <string name="VideoView_error_text_cannot_connect_to_server">"Palvelimeen ei voi yhdistää."</string>
+   <string name="VideoView_error_text_type_not_supported">"Mediatiedostotyyppi ei tuettu."</string>
+   <string name="VideoView_error_text_drm_not_supported">"DRM-suojattu. Tätä videota ei voi toistaa."</string>
+   <string name="VideoView_error_text_invalid_connection">"Yhteys ei kelpaa. (403 kielletty)"</string>
+
+    <string name="new_sim">Uusi SIM</string>
+
+    <string name="delete">Poista</string>
+
+    <string name="searching_simcard">Tunnistetaan...</string>
+
+    <string name="low_internal_storage_view_title">Sisäinen tallennustila käymässä vähiin</string>
+    <string name="deleteMails">Poista sähköposteja</string>
+
+    <string name="drm_protection_status">Suojauksen tila:</string>
+    <string name="drm_can_forward">Voidaan lähettää edelleen.</string>
+    <string name="drm_can_not_forward">Ei voida lähettää edelleen.</string>
+    <string name="drm_no_limitation">Ei rajoitusta.</string>
+    <string name="drm_no_license">Ei käytettävissä olevaa DRM-lisenssiä.</string>
+    <string name="drm_begin">Aloitusaika:</string>
+    <string name="drm_end">Lopetusaika:</string>
+    <string name="drm_use_left">Lukema jäljellä:</string>
+    <string name="drm_protectioninfo_renew">Uudista</string>
+    <string name="drm_protectioninfo_title">Suojaustiedot</string>
+    <string name="drm_licenseacquisition_title">DRM-lisenssin hankinta</string>
+    <string name="drm_licenseacquisition_message">Kohteella %1$s ei ole käytettävissä olevaa DRM-lisenssiä. Voit hankkia DRM-lisenssin painamalla "Uudista"-painiketta.</string>
+    <string name="drm_toast_license_expired">DRM-lisenssi on vanhentunut.</string>
+    <string name="drm_forwardforbidden_title">Edelleen lähetys kielletty</string>
+    <string name="drm_forwardforbidden_message">Joitakin suojattuja tiedostoja ei voi lähettää edelleen.</string>
+    <string name="drm_license_install_success">DRM-lisenssin asennus onnistui.</string>
+    <string name="drm_license_install_fail">DRM-lisenssin asennus epäonnistui.</string>
+    <string name="drm_secure_timer_title">DRM-suojauskello ei kelpaa</string>
+    <string name="drm_secure_timer_message">Et voisi käyttää DRM-suojattuja tiedostoja. Varmista, että datayhteys on käytettävissä.</string>
+    <string name="drm_consume_title">DRM-oikeuksien kuluminen</string>
+    <string name="drm_consume_message">Toimintasi kuluttaa DRM-oikeuksia.</string>
+
+    <string name="virtual_sim_on_slot1">Virtuaalinen SIM 1 PÄÄLLÄ</string>
+    <string name="virtual_sim_on_slot2">Virtuaalinen SIM 2 PÄÄLLÄ</string>
+    <string name="virtual_sim_on_slot3">Virtuaalinen SIM 3 PÄÄLLÄ</string>
+    <string name="virtual_sim_on_slot4">Virtuaalinen SIM 4 PÄÄLLÄ</string>
+    <string name="virtual_sim_on">Virtuaalinen SIM PÄÄLLÄ</string>
+
+    <string name="sim_missing_slot1">Korttipaikka 1: SIM-korttia ei tunnisteta</string>
+    <string name="sim_missing_slot2">Korttipaikka 2: SIM-korttia ei tunnisteta</string>
+    <string name="sim_missing_slot3">Korttipaikka 3: SIM-korttia ei tunnisteta</string>
+    <string name="sim_missing_slot4">Korttipaikka 4: SIM-korttia ei tunnisteta</string>
+    <string name="sim_missing">SIM-korttia ei tunnisteta</string>
+    <string name="sim_missing_detail">Tarkista onko SIM-kortti valmis</string>
+    <string name="sim_missing_slot1_card">Korttipaikka 1: Korttia ei tunnisteta</string>
+    <string name="sim_missing_slot2_card">Korttipaikka 2: Korttia ei tunnisteta</string>
+    <string name="sim_missing_card">Korttia ei tunnisteta</string>
+    <string name="sim_missing_detail_card">Tarkista onko kortti valmis</string>
+
+    <string name="url_dialog_choice_title">Viestit</string>
+    <string name="url_dialog_choice_message">Se avaa selaimen. Jatketaanko?</string>
+
+    <string name="deleteMail">Varmuuskopioi sähköposteja ja vapauta tallennustilaa</string>    
+
+    <string name="storage_withsd">Puhelimen tallennustilassa ei ole tarpeeksi tilaa. Vapauta tallennustilaa tai muuta oletuskirjoituslevyä Asetuksissa.</string>
+    <string name="storage_withoutsd">Puhelimen tallennustilassa ei ole tarpeeksi tilaa. Vapauta tallennustilaa tai liitä SD-kortti.</string>
+    <string name="storage_sd">SD-kortissa ei ole tarpeeksi tilaa. Vapauta tallennustilaa tai muuta oletuskirjoituslevyä Asetuksissa.</string>   
+    <string name="usb_ums_notification_title">Liitetty USB-tallennustilana</string>
+
+    <string name="usb_charging_notification_title">Vain USB-lataus</string>
+
+    <string name="gps_time_sync_fail_str">GPS:n tarjoaman ajan hakeminen epäonnistui</string>
+
+    <string name="invalid_card">Kortti ei kelpaa</string>
+
+    <string name="RejectCauseTitle">Verkon hylkäyksen syy</string>
+
+    <string name="MMRejectCause2">SIM ei valmisteltu MM #2</string>
+
+    <string name="MMRejectCause3">SIM ei sallittu MM #3</string>
+
+    <string name="MMRejectCause5">Puhelu epäonnistui MM #5</string>
+
+    <string name="MMRejectCause6">Puhelin ei sallittu MM #6</string>    
+
+    <string name="MMRejectCause13">Vain SOS/Hätäpuhelut</string>
+
+    <string name="tethered_notification_message_for_hotspot"><xliff:g id="connected">%1$d</xliff:g> yhdistetty, <xliff:g id="blocked">%2$d</xliff:g> estetty</string>
+    <string name="tethered_notification_message_bandwidth_set">Kaistanleveys on asetettu</string>
+
+    <string name="default_wallpaper_name">Oletus</string>
+
+    <string name="description_direction_right">"Hylkää liu'uttamalla oikealle"</string>
+
+    <string name="description_direction_left">"Aseta torkkutila liu'uttamalla vasemmalle"</string>
+
+    <string name="description_direction_up">"Hylkää liu'uttamalla ylös"</string>
+
+    <string name="description_direction_down">"Aseta torkkutila liu'uttamalla alas"</string>
+
+    <string name="press_color_to_apply">Paina väriä ottaaksesi käyttöön</string>
+    <string name="color_picker_select">-&gt;</string>
+
+    <string name="wifi_display_bt_hdmi_off_wfd_on">HDMI kytketään pois päältä, kun kytket langattoman näytön päälle. Haluatko jatkaa?</string> 
+
+    <string name="wifi_display_wfd_off_hdmi_on">Langaton näyttö kytketään pois päältä, kun kytket HDMI:n päälle. Haluatko jatkaa?</string> 
+
+    <string name="wifi_display_wifi_p2p_disconnect_wfd_connect">Nykyinen Wi-Fi Direct -yhteys katkaistaan, kun yhdistät langattomaan näyttölaitteeseen. Haluatko jatkaa?</string>
+
+    <string name="wifi_display_unstable_connection">Epävakaa yhteys</string>
+
+    <string name="wifi_display_connection_is_not_steady">Langattoman näytön nykyinen yhteys ei ole vakaa.</string>
+
+    <string name="wifi_display_unstable_suggestion">Langattoman näytön nykyinen yhteys ei ole vakaa, kokeile siirtymistä lähemmäs näyttölaitetta.</string>
+
+    <string name="wifi_display_reconnect">Yhdistä uudelleen</string> 
+
+    <string name="wifi_display_disconnect_then_reconnect">Langattoman näytön yhteys katkaistu. Haluatko muodostaa yhteyden uudelleen?</string> 
+
+    <string name="wifi_display_disconnected">Langattoman näytön yhteys katkaistu.</string>
+
+    <string name="wifi_wps_failed_overlap">Toinen WPS-istunto tunnistettiin. Kokeile uudelleen muutaman minuutin kuluttua.</string>
+
+    <string name="wifi_p2p_frequency_conflict_message">Puhelin katkaisee tilapäisesti Wi-Fi-yhteyden, kun se on liitetty kohteeseen <xliff:g id="device_name">%1$s</xliff:g> (vain, jos vaihdetaan kanavakaista ja nykyisten Wi-Fi-tukiasemien tunnukseksi asetetaan <xliff:g id="oper_freq">%2$s</xliff:g>)</string>
+
+    <string name="wifi_display_wfd_and_wifi_are_turned_on">Langaton näyttö ja Wi-Fi on kytketty päälle.</string>
+
+    <string name="wifi_display_sound_path_reminder">Multimedia ääntä ei voi kuunnella kuulokkeillasi.</string>  
+
+    <string name="wifi_display_change_resolution_reminder">Kuvatarkkuuden muuttaminen yhdistää langattoman näytön automaattisesti uudelleen.</string>  
+
+    <string name="wifi_display_do_not_remind_again">Älä muistuta uudelleen.</string>
+    <string name="wifi_display_wait_connection">Odotetaan yhteyskutsuja muilta laitteilta.</string>
+    <string name="wifi_display_confirm_connection">haluaa muodostaa yhteyden kanssasi.</string>
+    <string name="wifi_display_build_connection">Muodostetaan yhteyttä.</string>
+
+    <string name="sdcard_ready_title">SD-kortti valmis</string>
+    <string name="sdcard_select_default_path">Haluatko muuttaa oletuskirjoituslevyn?</string>
+    <string name="sdcard_default_path_change">Oletuskirjoituslevy muutettu.</string>
+    <string name="usb_storage_ready_title">Ulkoinen USB-tallennusväline valmis</string>
+
+    <string name="headset_pin_recognition">Kuulokkeesi eivät ole yhteensopivat puhelimen kanssa. Kokeile toisia kuulokkeita</string>
+
+    <string name="usb_autorun_cdrom_notification_title">Yhdistetty automaattisesti käynnistyvänä CD-ROM-asemana</string>
+
+    <string name="ct_net_name">"CTNET"</string>
+    <string name="ct_wap_name">"CTWAP"</string>    
+
+    <string name="hdmi_notification_title">HDMI-kaapeli liitetty</string>
+    <string name="hdmi_notification_content">Napsauta määrittääksesi HDMI:n</string>
+    <string name="hdmi_hdvideo_toast">HDMI ei pysty toistamaan 4 K -videota. Yhteys keskeytyy.</string>
+    <string name="hdmi_mutex_call_content">Olen pahoillani, HDMI on pysähtynyt nykyisestä puhelusta johtuen.</string>
+    <string name="hdmi_audio_output">Garso signalų išvestis</string>
+    <string name="hdmi_audio_output_stereo">Stereo</string>
+    <string name="hdmi_audio_output_multi_channel">Daugiakanalis</string>
+
+    <string name="aerr_application_lowstorage">Sisäinen tallennustila käymässä vähiin. Sovellus on pysäytetty. Vapauta tilaa ja yritä uudelleen.</string>
+    <string name="aerr_process_lowstorage">Sisäinen tallennustila käymässä vähiin. Prosessi on pysäytetty. Vapauta tilaa ja yritä uudelleen.</string>
+    <string name="low_storage_warning_message">Vapauta tilaa tai joitakin sovelluksia, järjestelmätoiminnot eivät ehkä toimi hyviin.</string>
+
+    <string name="wifi_display_wifi_ap_affects_quality">Nykyinen Wi-Fi-tukiasema voi vaikuttaa langattoman näytön laatuun.</string>
+    <string name="data_conn_only">Vain datayhteys</string>
+
+    <string name="Special_Card_Type_Title_Lte_Not_Available">LTE-verkko ei ole käytettävissä.</string>
+    <string name="Suggest_To_Change_USIM">On suositeltavaa vaihtaa 4G SIM -kortti.</string>
+    <string name="confirm_flight_mode_title">Lentokonetila päällä</string>
+    <string name="confirm_flight_mode_msg">Käyttääksesi numeroa, kytke ensin lentokonetila pois päältä.</string>
+    <string name="confirm_radio_title">SIM pois</string>
+    <string name="confirm_radio_msg">Käyttääksesi numeroa, kytke se ensin päälle.</string>
+    <string name="confirm_flight_mode_radio_title">Lentokonetila päällä ja SIM pois</string>
+    <string name="confirm_flight_mode_radio_msg">Käyttääksesi numeroa, kytke lentokonetila ensin pois päältä ja kytke SIM päälle.</string>
+    <string name="confirm_unlock_msg">Valittu SIM-kortti on nyt lukittu. Vapauta ensin sen lukitus.</string>
+    <string name="confirm_roaming_msg">SIM-kortti on verkkovierailutilassa. Jatketaanko sen käyttöä?</string>
+    <string name="confirm_button_turn_off">Kytke pois päältä</string>
+
+    <string name="media_info_audio_not_supported">"Audion toisto epäonnistui."</string>
+    <string name="media_info_video_not_supported">"Tämä video ei ole tuettu."</string>
+    <string name="save_password_label">"Vahvista"</string>
+    <string name="save_password_message">"Haluatko selaimen muistavan tämän salasanan?"</string>
+    <string name="save_password_notnow">"Ei nyt"</string>
+    <string name="save_password_remember">"Muista"</string>
+    <string name="save_password_never">"Ei koskaan"</string>
+
+    <string name="confirm_unlock_title">SIM lukittu</string>
+    <string name="confirm_roaming_title">Verkkovierailuvaroitus</string>
+    <string name="confirm_button_ok">"OK"</string>
+    <string name="confirm_button_cancel">"Peruuta"</string>
+    <string name="confirm_button_unlock">"Poista lukitus"</string>
+    <string name="confirm_button_turn_on">"Ota käyttöön"</string>
+    <string name="confirm_button_yes">"Kyllä"</string>
+    <string name="confirm_button_no">"Ei"</string>
+    <string name="Default_Account_Selection_Content">Oletustilivalinta</string>
+    <string name="network_forbidden">kielletty</string>
+
+    <string name="account_always_ask_title">"Kysy aina"</string>
+    <string name="permlab_wake_device_sensorhub" product="tablet">herätä tabletti</string>
+    <string name="permlab_wake_device_sensorhub" product="default">herätä puhelin</string>
+    <string name="permdesc_wake_device_sensorhub" product="tablet">Antaa sovelluksen herättää tabletin, jonka anturikeskitin on asettanut keskeytystilaan.</string>
+    <string name="permdesc_wake_device_sensorhub" product="default">Antaa sovelluksen herättää puhelimen, jonka anturikeskitin on asettanut keskeytystilaan.</string>
+    <string name="lockscreen_pin_too_many_failed_attempts_dialog_message">Olet syöttänyt väärän PIN-koodin <xliff:g id="number">%d</xliff:g> kertaa. \n\nYritä uudelleen <xliff:g id="number">%d</xliff:g> sekunnin kuluttua.</string>
+    <string name="lockscreen_password_too_many_failed_attempts_dialog_message">Olet syöttänyt väärän salasanan <xliff:g id="number">%d</xliff:g> kertaa. \n\nYritä uudelleen <xliff:g id="number">%d</xliff:g> sekunnin kuluttua.</string>
+    <string name="wifi_display_connected_to_wifi_network">Yhdistetty Wi-Fi-verkkoon <xliff:g id="wifi_ap_name">%1$s</xliff:g>.</string>
+    <string name="wifi_display_wifi_network_disconnected">Wi-Fi-verkon <xliff:g id="wifi_ap_name">%1$s</xliff:g> yhteys katkaistu.</string>
+    <string name="wifi_display_channel_confliction">Kanavaristiriita</string>
+    <string name="wifi_display_wifi_network_cannot_coexist">Nykyistä Wi-Fi-verkkoa ei voi käyttää samanaikaisesti  heijastusnäyttöyhteyden kanssa.</string>
+    <string name="permdesc_receiveCbSms">Sallii sovelluksen vastaanottaa ja käsitellä CB SMS -viestejä. Haittasovellukset voivat valvoa viestejäsi tai poistaa niitä näyttämättä niitä sinulle.</string>
+    <string name="permdesc_receiveDmRegisterSms">Sallii sovelluksen vastaanottaa ja käsitellä DM-rekisteröityjä SMS -viestejä. Muiden kuin DM APP -sovelluksen ei tulisi käyttää tätä</string>
+    <string name="drm_first_time_use">Tämä on ensimmäinen käyttö.</string>
+    <string name="drm_use_now">Käytetäänkö nyt?</string>
+    <string name="drm_consume_interval">Tämä tiedosto on käytettävissä %1$s kuluttua, kun olet aloittanut sen käytön.</string>
+    <string name="drm_effective_duration">Tehollinen kesto:</string>
+    <string name="drm_expire_dialog_future">Kelvollisuusaika:</string>
+    <string name="validity_period" msgid="8818886137545983110">"Voimassa:"</string>
+</resources>

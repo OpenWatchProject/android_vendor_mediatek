@@ -1,0 +1,7 @@
+cc_binary {
+    srcs: ["fbconfig.c"],
+    shared_libs: ["libc"],
+    name: "fbconfig",
+    owner: "mtk",
+    vendor:true,
+}

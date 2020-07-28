@@ -1,0 +1,609 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+/*
+ * Copyright (C) 2007-2008 Esmertec AG.
+ * Copyright (C) 2007-2008 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+ --><resources xmlns:android="http://schemas.android.com/apk/res/android" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+<!-- MTK Resources -->
+    <string name="create_new_message" msgid="8735943333953093860">"Sukurti naują pranešimą"</string>
+    <string name="menu_undelivered_messages" msgid="3896857623211780616">"Nepristatyti pranešimai"</string>
+    <string name="broadcast_from_to" msgid="2050376286109362539">"<xliff:g id="SENDER">%1$s</xliff:g>skirta <xliff:g id="RECIPIENT">%2$s</xliff:g>"</string>
+    <string name="anonymous_recipient" msgid="2501437626187039034">"Anonimas"</string>
+    <string name="view_picture" msgid="4356315935277709195">"Žiūrėti paveikslėlį"</string>
+    <string name="sent_on" msgid="5868288548564632354">"Išsiųstas: <xliff:g id="DATE">%s</xliff:g>"</string>
+    <string name="name_colon" msgid="7069560650889479120"><b>"<xliff:g id="NAME">%s</xliff:g>"</b>": "</string>
+    <string name="compose_title" msgid="558578836596816068">"Sukurti"</string>
+    <string name="image_too_large" msgid="261880224164478061">"Paveikslėlis per didelis"</string>
+    <string name="ask_for_automatically_resize" msgid="7657603662407738758">"Automatiškai pakeisti paveikslėlio dydį prieš siunčiant?"</string>
+    <string name="cannot_load_message" msgid="2577010607550849892">"Negalima įkelti pranešimo."</string>
+    <string name="locked_message_cannot_be_deleted" msgid="6369452071783350219">"Užrakinto pranešimo ištrinti negalima."</string>
+    <string name="multiple_recipients" msgid="8747754491343248141">"<xliff:g id="RECIPIENTCOUNT">%1$s</xliff:g> gavėjai (-ų)"</string>
+    <string name="resize" msgid="4308912589984220360">"Keisti dydį"</string>
+    <string name="to_label" msgid="2355268818058389047">"Kam "</string>
+    <string name="confirm_delete_all_messages" msgid="5836389073199814660">"Bus ištrinta visa gija."</string>
+    <string name="mms_priority_label" msgid="7397600367853359607">"Pirmenybė"</string>
+    <string name="menu_retry_sending" msgid="3146582005568302643">"Bandyti siųsti iš naujo"</string>
+    <string name="menu_retry_sending_all" msgid="1870529976966340616">"Bandyti siųsti viską iš naujo"</string>
+    <string name="retrying_dialog_body" msgid="4738260459043003431">"Šis pranešimas <xliff:g id="MESSAGE">%s</xliff:g> nebuvo išsiųstas dėl ryšio problemos."\n"Bandoma siųsti iš naujo..."</string>
+    <string name="dl_expired_notification" msgid="950390029992535809">"Baigėsi šio pranešimo galiojimo laikas, jis bus ištrintas."</string>
+    <string name="add_attachment_activity" msgid="5324811371129695320">"Pridėti priedą:"</string>
+    <string name="select_layout_activity" msgid="5041916695464513848">"Pasirinkti išdėstymą"</string>
+    <string name="edit_text_activity" msgid="5915226413346879213">"Redaguoti tekstą"</string>
+    <string name="pick_numbers_activity" msgid="2083330191224178637">"Pasirinkti numerius"</string>
+    <string name="send_using_mms_activity" msgid="3703434556280345726">"Siųsti kaip daugialypės terpės pranešimą..."</string>
+    <string name="select_contact_method_activity" msgid="1743384358979323991">"Pasirinkti adresato būdą"</string>
+    <string name="me" msgid="341726346007839961">"Aš"</string>
+    <string name="invalid_contact_message" msgid="8215051456181842274">"Kontaktas neegzistuoja."</string>
+    <string name="finish">"Atlikta"</string>
+<string name="more_recipients">gavėjas(-ai)</string>
+    <string name="Insert_sdcard">Įdėkite SD kortelę!</string>
+    <string name="pref_title_mms_enable_to_send_delivery_reports">Siųsti pristatymo ataskaitą</string>
+    <string name="pref_summary_mms_enable_to_send_delivery_reports">Siųsti kiekvieno jūsų gauto pranešimo pristatymo ataskaitą</string>
+    <string name="set_service_center_OK">nustatyti SMS paslaugų centrą Gerai</string>
+    <string name="set_service_center_fail">nustatyti SMS paslaugų centrą Nepavyko</string>
+    <string name="OK">Gerai</string>
+    <string name="Cancel">"Atšaukti"</string>
+    <string name="sms_save_location">SMS atminties vieta</string>
+    <string name="sms_service_center">SMS paslaugų centras</string>
+    <string name="sms_validity_period">SMS galiojimo laikotarpis</string>
+    <string name="sms_validity_period_nosetting">Nenustatyta</string>
+    <string name="sms_validity_period_1hour">"1 val."</string>
+    <string name="sms_validity_period_6hours">6 val.</string>
+    <string name="sms_validity_period_12hours">12 val.</string>
+    <string name="sms_validity_period_1day">"1 d."</string>
+    <string name="sms_validity_period_max">Maksimaliai</string>
+    <string name="service_center_label">Paslaugų centras:\u0020</string>
+    <string name="cu_subject">Lemei tema</string>
+    <string name="pref_title_mms_creation_mode">Kūrimo režimas</string>
+    <string name="pref_summary_mms_creation_mode">MMS kūrimo režimas pranešimui kurti</string>
+    <string name="pref_title_mms_size_limit">Dydžio riba</string>
+    <string name="pref_summary_mms_size_limit">MMS dydžio riba kuriant pranešimą</string>
+    <string name="confirm_restricted_audio">Draudžiamas garso duomenų tipas; ar vis tiek norite pridėti?</string>
+    <string name="confirm_restricted_image">Draudžiamas vaizdo duomenų tipas; ar vis tiek norite pridėti?</string>
+    <string name="confirm_restricted_video">Draudžiamas vaizdo įrašo duomenų tipas; ar vis tiek norite pridėti?</string>
+    <string name="unsupport_media_type">Nepalaikomas medijos tipas</string>
+    <string name="select_different_media_type">Pasirinkite kitą mediją</string>
+    <string name="image_resolution_too_large">Per didelė vaizdo raiška; įterpti negalima</string>
+    <string name="wp_msg_type">Paslaugos pranešimas</string>
+    <string name="wp_msg_created_label">Sukurta:\u0020</string>
+    <string name="wp_msg_created_unknown">"Nežinomas"</string>
+    <string name="wp_msg_priority_label">Pirmumas:\u0020</string>
+    <string name="wp_msg_priority_low">Žemas</string>
+    <string name="wp_msg_priority_medium">"Vidutinis"</string>
+    <string name="wp_msg_priority_high">Aukštas</string>
+    <string name="menu_goto_browser">Atidaryti naršyklę</string>
+    <string name="menu_add_to_bookmark">Įtraukti į adresyną</string>
+    <string name="wp_msg_expiration_label">Baigėsi: <xliff:g id="DATE">%s</xliff:g></string>
+    <string name="error_unsupported_scheme">Šis veiksmas kol kas nepalaikomas.</string>
+    <string name="pref_title_wappush_settings">Paslaugų pranešimų nustatymas</string>
+    <string name="pref_title_wappush_enable">Leisti WAP PUSH</string>
+    <string name="pref_summary_wappush_enable">Leisti gauti WAP PUSH</string>
+    <string name="pref_title_wappush_sl_autoloading">Automatiškai paleisti SL</string>
+    <string name="pref_summary_wappush_sl_autoloading">Automatiškai paleisti paslaugos įkėlimo (SL) pranešimą gavus</string>
+    <string name="menu_send_sms">Siųsti pranešimą <xliff:g id="name">%s</xliff:g></string>
+    <string name="menu_omacp">Pranešimo konfigūravimas</string>
+    <string name="save_message_to_sim">Išsaugoti pranešimą SIM kortelėje</string>
+    <string name="received_on">"Gauta: <xliff:g id="date">%s</xliff:g>"</string>
+    <string name="save_message_to_sim_successful">Sėkmingai išsaugota</string>
+    <string name="save_message_to_sim_unsuccessful">Išsaugoti nepavyko</string>
+    <string name="transmission_transiently_failed">Perkelti nepavyko. Bus bandoma vėliau.</string>
+    <string name="download_failed_due_to_full_memory">Pranešimo atsisiųsti nepavyko, nes atmintis pilna.</string>
+    <string name="mms_too_big_to_download">Pranešimas per didelis, kad jį galima būtų atsisiųsti iš tinklo.</string>
+    <string name="menu_reply">"Atsakyti"</string>
+    <string name="menu_sim_sms">"SIM SMS"</string>
+    <string name="cannot_add_recipient">Pasiektas maksimalus gavėjų skaičius. Daugiau ne\galima pridėti jokių gavėjų.</string>
+    <string name="status_expired">Negaliojantis</string>
+    <string name="status_deferred">Atidėtas</string>
+    <string name="status_unrecognized">Neatpažintas</string>
+    <string name="status_indeterminate">Nenustatytas</string>
+    <string name="status_unreachable">Nepasiekiamas</string>
+    <string name="attach_ringtone">"Skambėjimo tonas"</string>
+    <string name="notification_multiple_cb"><xliff:g id="count">%s</xliff:g> Neperskaityti KT pranešimai</string>
+    <string name="notification_multiple_cb_title">Nauji korinės transliacijos pranešimai</string>
+    <string name="fdn_enabled">FDN veikia</string>
+    <string name="cannot_send_message_reason_no_content">Nėra turinio, kurį galima būtų siųsti</string>
+    <string name="ok">"Gerai"</string>
+    <string name="cancel">"Atšaukti"</string>
+    <string name="enable">"Įgalinti"</string>
+    <string name="disable">"Išjungti"</string>
+    <string name="cb_read_message">Perskaitytas KT pranešimas</string>
+    <string name="cb_read_message2">Perskaitytas korinės transliacijos pranešimas</string>
+    <string name="cb_message">Korinės transliacijos pranešimas</string>
+    <string name="cb_default_channel_name">Iš kanalo</string>
+    <string name="cell_broadcast_setting">"Tinklo transliacijos nustatymai"</string>
+    <string name="cb_menu_language">"Kalba"</string>
+    <string name="cb_menu_add_channel">Pridėti kanalą</string>
+    <string name="cb_menu_channel_list">Kanalų sąrašas</string>
+    <string name="cb_dialog_title_language_choice">Pasirinkite kalbą</string>
+    <string name="cb_channel_dialog_channel_name">Kanalo pavadinimas (0–10 simbolių)</string>
+    <string name="cb_channel_dialog_channel_number">Kanalo numeris (0–65534)</string>
+    <string name="cb_channel_dialog_channel_state">Įjungti kanalą</string>
+    <string name="cb_channel_dialog_edit_channel">Redaguoti kanalą</string>
+    <string name="cb_menu_edit">"Redaguoti"</string>
+    <string name="cb_menu_delete">"Ištrinti"</string>
+    <string name="cb_error_channel_num">Įveskite kanalo numerį (0-65534).</string>
+    <string name="cb_error_channel_name">Netinkamas kanalo pavadinimo ilgis (1–10 simbolių).</string>
+    <string name="cb_error_language_select">Pasirinkite bent vieną kalbą.</string>
+    <string name="cb_error_channel_id_exist">Toks kanalo ID jau yra.</string>
+    <string name="cb_all_languages">"Visos kalbos"</string>
+    <string name="cb_default_new_channel_name">Naujas kanalas</string>
+    <string name="sum_cell_broadcast_control_on">Įjungti mobiliąją transliaciją</string>
+    <string name="sum_cell_broadcast_control_off">Išjungti mobiliąją transliaciją</string>
+    <string name="sum_cell_broadcast_setting">Mobiliosios transliacijos kalbos ir kanalo nustatymas</string>
+    <string name="message_open_email_fail">Apgailestaujame: pirmiausiai sukurkite savo el. pašto paskyrą.</string>
+    <string name="add_contacts">"Kontaktai"</string>
+    <string name="close_dialog">Gerai</string>
+    <string name="updating_title">"Skambinimo nustatymai"</string>
+    <string name="error_updating_title">"Skambinimo nustatymų klaida"</string>
+    <string name="reading_settings">"Skaitomi nustatymai..."</string>
+    <string name="updating_settings">"Atnaujinami nustatymai..."</string>
+    <string name="reverting_settings">"Grąžinami nustatymai…"</string>
+    <string name="exception_error">"Tinklo ar SIM kortelės klaida."</string>
+    <string name="send_by_sim2">Siųsti naudojant SIM2</string>
+    <string name="send_by_sim1">Siųsti naudojant SIM1</string>
+    <string name="menu_item_send_by">Siųsti naudojant</string>
+    <string name="data_connected_confirm_title">Patvirtinti išsiuntimą</string>
+    <string name="data_connected_confirm_message">Siunčiant MMS naudojant šią SIM, gali būti laikinai pristabdytas dabartinis duomenų atsisiuntimas. Tęsti?</string>
+    <string name="menu_item_sim1">SIM 1</string>
+    <string name="menu_item_sim2">SIM 2</string>
+    <string name="no_sim_1">SIM 1 neįdėta.</string>
+    <string name="no_sim_2">SIM 2 neįdėta.</string>
+    <string name="no_sim">SIM %d neįdėta.</string>
+    <string name="sim1_full_title">1 SIM kortelė pilna</string>
+    <string name="sim2_full_title">2 SIM kortelė pilna</string>
+    <string name="select_all">"Pasirinkti viską"</string>
+    <string name="confirm_delete_selected_messages">Pasirinkti pranešimai bus ištrinti.</string>
+    <string name="confirm_delete_selected_theads">Pasirinkti pokalbiai bus ištrinti.</string>
+    <string name="restricted_forward_title">"Daugialypės terpės pranešimas"</string>
+    <string name="restricted_forward_message">Šis medijos failas gali būti netinkamai rodomas gavėjams. Tęsti?</string>
+    <string name="strOk">Pranešimas išsiųstas</string>
+    <string name="strFail">Pranešimo išsiųsti nepavyko</string>
+    <string name="menu_insert_text_vcard">Įrašykite adresatą</string>
+    <string name="contact_name">"Pavadinimas"</string>
+    <string name="contact_tel">Tel.</string>
+    <string name="contact_email">El. paštas</string>
+    <string name="contact_organization">Organizacija</string>
+    <string name="contact_address">Adr</string>
+    <string name="max_recipients_title">Pasiektas maks. skaičius</string>
+    <string name="max_recipients_message">MMS galima siųsti maks. <xliff:g id="maxLimit">%s</xliff:g> gavėjų. Kai kurie gavėjai bus pašalinti. Ar norite tęsti?</string>
+    <string name="via_without_time_for_send">Per</string>
+    <string name="via_without_time_for_recieve">Per</string>
+    <string name="sim_selected_dialog_title">Pasirinkti SIM</string>
+    <string name="suggested">Siūloma</string>
+    <string name="add_contact_dialog_message">"Įtraukti numerį %s į esamą arba kurti naują adresatą?"</string>
+    <string name="add_contact_dialog_new">"Naujas"</string>
+    <string name="add_contact_dialog_existing">Esamas</string>
+    <string name="deleting">Trinama</string>
+    <string name="pref_title_storage_status">Dabartinis atminties naudojimas</string>
+    <string name="storage_dialog_mms">Mms:\u0020<xliff:g id="number">%s</xliff:g> elementai (-ų)</string>
+    <string name="storage_dialog_sms">Sms:\u0020<xliff:g id="number">%s</xliff:g> elementai (-ų)</string>
+    <string name="storage_dialog_attachments">Mms priedai:\u0020</string>
+    <string name="storage_dialog_database">Duomenų bazė:\u0020</string>
+    <string name="storage_dialog_available_space">Liko vietos:\u0020</string>
+    <string name="menu_show_icc_sms_capacity">Peržiūrėti talpą</string>
+    <string name="show_icc_sms_capacity_title">Talpa</string>
+    <string name="icc_sms_used">Panaudota:</string>
+    <string name="icc_sms_total">Iš viso:</string>
+    <string name="get_icc_sms_capacity_failed">Nepavyko gauti duomenų apie SIM talpą.</string>
+    <plurals name="read_report_toast_msg">
+     <item quantity="one">siunčiama %d ataskaita, kad perskaityta</item>
+     <item quantity="other">siunčiamos %d ataskaitos, kad perskaitytos</item>
+   </plurals>
+    <string name="pref_title_mms_auto_reply_read_reports">Siųsti ataskaitą, kad perskaityta</string>
+    <string name="pref_summary_mms_auto_reply_read_reports">Išsiųskite ataskaitą, kad perskaityta, jeigu to reikalauja MMS siuntėjas</string>
+    <string name="exceed_subject_length_limitation">Pasiektas maks. ilgis</string>
+    <plurals name="message_view_selected_message_count">
+     <item quantity="one">Pasirinktas<xliff:g id="message_count" example="1">%d</xliff:g></item>
+     <item quantity="other">Pasirinktia<xliff:g id="message_count" example="9">%d</xliff:g></item>
+   </plurals>
+    <string name="disable_notifications_dialog_message">"Nebekurti numatytosios „Susirašinėjimo žinutėmis“ programos pranešimų apie teksto žinutes kopijų?"</string>
+    <string name="sms_input_mode_title">Įvesties režimas</string>
+    <string name="sms_input_mode_dialog_title">Pasirinkite įvesties režimą</string>
+    <string name="sms_input_mode_summary">SMS įvesties režimas pranešimui kurti</string>
+    <string name="pref_title_io_settings">Importuoti /eksportuoti SMS</string>
+    <string name="pref_summary_import_msg">Importuoti SMS iš SD kortelės</string>
+    <string name="pref_title_import_msg">Importuoti SMS</string>
+    <string name="pref_summary_export_msg">Eksportuoti SMS į SD kortelę</string>
+    <string name="pref_title_export_msg">Eksportuoti SMS</string>
+    <string name="no_sd_card">SD kortelė neparengta</string>
+    <string name="export_message_ongoing">Eksportuojama SMS į SD kortelę, palaukite...</string>
+    <string name="import_message_ongoing">Importuojama SMS iš SD kortelės, palaukite...</string>
+    <string name="export_message_success">SMS sėkmingai eksportuota į SD kortelę</string>
+    <string name="import_message_success">SMS sėkmingai importuota iš SD kortelės</string>
+    <string name="import_message_fail">Nepavyko importuoti SMS iš SD kortelės</string>
+    <string name="export_message_fail">Nepavyko eksportuoti SMS į SD kortelę</string>
+    <string name="import_message_list">SMS DB sąrašas SD kortelėje</string>
+    <string name="import_message_list_empty">SD kortelėje nėra SMS DB failų</string>
+    <string name="export_message_empty">Nėra SMS, kurias galima būtų eksportuoti!</string>
+    <string name="whether_export_item">Norite eksportuoti SMS?</string>
+    <string name="whether_import_item">Ar norite importuoti</string>
+    <string name="export_disk_problem">SD kortelė yra pilna arba nepavyksta įrašyti</string>
+    <string name="select_text">Pasirinkite tekstą</string>
+    <string name="unselect_all">"Panaikint žym."</string>
+    <string name="forward_from">Persiųsti iš:</string>
+    <string name="sms_forward_setting">SMS persiuntimo nuostata</string>
+    <string name="sms_forward_setting_summary">Siųsti SMS nurodant siuntėj\o vardą bei numerį</string>
+    <string name="forward_byself">"Aš"</string>
+    <string name="file_attachment_vcalendar_name">vCalendar(<xliff:g id="text">%s</xliff:g>)</string>
+    <string name="file_attachment_vcard_name">vCard(<xliff:g id="text">%s</xliff:g>)</string>
+    <string name="attach_vcalendar">"Kalendorius"</string>
+    <string name="file_attachment_import_vcard">Importuoti vCard</string>
+    <string name="attach_vcard">Adresatas</string>
+    <string name="type_common_file">failas</string>
+    <string name="please_wait">"Prašome palaukti..."</string>
+    <string name="failed_to_parse_vcard">Nepavyko gramatiškai išnagrinėti vCard failo!</string>
+    <string name="empty_vcard">Nėra adresatų vCard</string>
+    <string name="parse_vcard">Gramatiškai išnagrinėti vCard</string>
+    <string name="vcard_no_details">Nėra papildomos informacijos apie šį adresatą"</string>
+    <string name="note">Pastaba</string>
+    <string name="organization">Organizacija</string>
+    <string name="website">Tinklavietė:\u0020</string>
+    <string name="nickname">Pravardė</string>
+    <string name="call_custom"><xliff:g id="custom">%s</xliff:g></string>
+    <string name="call_home">"Pagrindinis"</string>
+    <string name="call_mobile">"Mobilusis"</string>
+    <string name="call_work">"Darbo"</string>
+    <string name="call_fax_work">"Darbo faksas"</string>
+    <string name="call_fax_home">"Namų faksas"</string>
+    <string name="call_pager">"Pranešimų gaviklis"</string>
+    <string name="call_other">kita</string>
+    <string name="call_callback">atšaukimas</string>
+    <string name="call_car">"Automobilis"</string>
+    <string name="call_company_main">"Vidinė telefono linija"</string>
+    <string name="call_isdn">"ISDN"</string>
+    <string name="call_main">"Pagrindinis"</string>
+    <string name="call_other_fax">"FAKSAS"</string>
+    <string name="call_radio">"Radijas"</string>
+    <string name="call_telex">"„Telex“"</string>
+    <string name="call_tty_tdd">TTY/TDD</string>
+    <string name="call_work_mobile">"Mobilusis darbo telefonas"</string>
+    <string name="call_work_pager">"Darbo pranešimų gaviklis"</string>
+    <string name="call_assistant"><xliff:g id="assistant">%s</xliff:g></string>
+    <string name="call_mms">MMS</string>
+    <string name="email_home">Namų el. paštas</string>
+    <string name="email_mobile">Mobilusis el. paštas</string>
+    <string name="email_work">Darbo el. paštas</string>
+    <string name="email_other">El. paštas</string>
+    <string name="email_custom">El. paštas <xliff:g id="custom">%s</xliff:g></string>
+    <string name="email">El. paštas</string>
+    <string name="map_home">Peržiūrėti namų adresą</string>
+    <string name="map_work">Peržiūrėti darbo adresą</string>
+    <string name="map_other">Peržiūrėti adresą</string>
+    <string name="map_custom">Peržiūrėti <xliff:g id="custom">%s</xliff:g> adresą</string>
+    <string name="chat_aim">Šnekučiuotis naudojant AIM</string>
+    <string name="chat_msn">Šnekučiuotis naudojant Windows Live</string>
+    <string name="chat_yahoo">Šnekučiuotis naudojant Yahoo</string>
+    <string name="chat_skype">Šnekučiuotis naudojant Skype</string>
+    <string name="chat_qq">Šnekučiuotis naudojant QQ</string>
+    <string name="chat_gtalk">Šnekučiuotis naudojant Google Talk</string>
+    <string name="chat_icq">Šnekučiuotis naudojant ICQ</string>
+    <string name="chat_jabber">Šnekučiuotis naudojant Jabber</string>
+    <string name="chat">Pokalbiai</string>
+    <string name="inbox">"Gautieji"</string>
+    <string name="outbox">"Išsiųstieji"</string>
+    <string name="draftbox">Juodraščių dėžutė</string>
+    <string name="sentbox">Išsiųstųjų dėžutė</string>
+    <string name="simbox">SIM dėžutė</string>
+    <string name="changeview">Keisti režimą</string>
+    <string name="viewer_title_sms">"SMS"</string>
+    <string name="viewer_title_wappush">Wappush</string>
+    <string name="viewer_title_cb">Korinė transliacija</string>
+    <string name="slideshow_details">Pranešimo detalės</string>
+    <string name="open">"Atidaryti"</string>
+    <string name="delete_all_confirm">"Trinti visus pranešimus iš dėžutės?"</string>
+    <string name="folder_recipient">Gavėjas :</string>
+    <string name="folder_recieve_date">Data :</string>
+    <string name="folder_download">Atsisiunčiamas MMS</string>
+    <string name="confirm_download_message">"Patvirtinti pranešimą atsisiuntimą"</string>
+    <string name="play_as_slideshow">Rodyti MMS skaidrių demonstravimo režimu</string>
+    <string name="by_card">Iki:</string>
+    <string name="page">Puslapis %d</string>
+    <string name="space_not_enough">Likusios vietos nepakanka vaido įrašui užfiksuoti</string>
+    <string name="space_not_enough_for_audio">Likusios vietos nepakanka garsui įrašyti</string>
+    <string name="no_messages">"Žinučių nėra"</string>
+    <string name="call_video_call">Vaizdo skambutis</string>
+    <string name="storage_dialog_mms_size">MMS dydis:\u0020</string>
+    <string name="error_add_attachment">"Nežinoma klaida; nepavyko pridėti <xliff:g id="name">%1$s</xliff:g> prie jūsų pranešimo."</string>
+    <string name="no_application_response">"Nėra programos, kuri galėtų apdoroti šią užklausą"</string>
+    <string name="cdma_not_support">CDMA nepalaiko šios funkcijos</string>
+    <string name="allmessage">"Visi pranešimai"</string>
+    <string name="select_message">Pasirinkti pranešimą</string>
+    <string name="confirm_delete_allmessage">"Visi pranešimai bus ištrinti."</string>
+    <string name="mark_as_read_btn_str">Pažymėti kaip skaitytą</string>
+    <string name="delete_btn_str">"Ištrinti"</string>
+    <string name="reply_send">"Siųsti"</string>
+    <string name="via_test">"per "</string>
+    <string name="received_header">"Gauta"</string>
+    <string name="no_item_selected">Nepasirinktas joks elementas.</string>
+    <string name="sync_mms_to_db">Įkeliama...</string>
+    <string name="pref_title_font_size_setting">ŠRIFTO DYDŽIO NUSTATYMAS</string>
+    <string name="pref_title_message_font_size">Pranešimo šrifto dydis</string>
+    <string name="pref_summary_message_font_size">Pranešimo šrifto dydis</string>
+    <string name="message_font_size_dialog_title">Pranešimo šrifto dydis</string>
+    <string name="message_font_size_dialog_cancel">"Nega"</string>
+    <string name="change">Keisti</string>
+    <string name="change_default_disk">Telefono atmintyje nepakanka vietos. Atlaisvinkite šiek tiek vietos arba pakeiskite nuostatose "numatytąjį įrašymo diską".</string>
+    <string name="failed_to_add_image">Pasiekta maksimali pranešimo dydžio riba; kai kurios dalys nepridėtos.</string>
+    <string name="ipmsg_conversation_list_all">"Pranešimai"</string>
+    <string name="ipmsg_conversation_list_important">Svarbūs</string>
+    <string name="ipmsg_conversation_list_group_chats">Grupiniai pokalbiai</string>
+    <string name="ipmsg_conversation_list_spam">Šlamštas</string>
+    <string name="ipmsg_create_group_chat">Sukurti grupinį pokalbį</string>
+    <string name="ipmsg_send_invitation">Siųsti pakvietimus</string>
+    <string name="str_ipmsg_download_history_dlg">Atsisiunčiama...</string>
+    <string name="to_hint_ipmsg">"Įrašykite vardą arba numerį"</string>
+    <string name="type_to_compose_text_enter_to_send_ipmsg">"Rašykite SMS/iSMS pranešimą"</string>
+    <string name="ipmsg_ipmsg_hint">"Rašykite iSMS pranešimą"</string>
+    <string name="ipmsg_sms_hint">"Rašykite tekstinį pranešimą"</string>
+    <string name="ipmsg_caption_hint">"Rašykite titrus"</string>
+    <string name="ipmsg_cancel">"Atšaukti"</string>
+    <string name="ipmsg_invite_chat_frequently"><b>Dažnai kalbatės su %s ?</b>\nKodėl gi jums nepakvietus %s naudotis iSMS ir nesutaupius jūsų abiejų pinigus?</string>
+    <string name="ipmsg_enable_chat_frequently"><b>%s naudojasi iSMS!</b>\nKodėl gi jums neįjungus savo iSMS paslaugos ir nesutaupius jūsų abiejų pinigų?</string>
+    <string name="ipmsg_invite">Kviesti</string>
+    <string name="ipmsg_dismiss">"Atsisakyti"</string>
+    <string name="ipmsg_enable">"Įgalinti"</string>
+    <string name="ipmsg_enable_notice">Ar tikrai norite įjungti iSMS paslaugą?</string>
+    <string name="ipmsg_activate">"Aktyvinti"</string>
+    <string name="ipmsg_activate_chat_frequently"><b>Dažnai kalbatės su draugais?</b>\nKodėl ji jums nesuaktyvinus iSMS paslaugos, kad galėtumėte kalbėtis be SMS žinučių mokesčių?</string>
+    <string name="ipmsg_activate_note">Ar tikrai norite suaktyvinti iSMS paslaugą?</string>
+    <string name="ipmsg_dismiss_content">Ar tikrai norite atmesti pastabą?</string>
+    <string name="ipmsg_ipmsg">IP pranešimas</string>
+    <string name="ipmsg_dailog_multi_forward">Pranešimų persiuntimas</string>
+    <string name="ipmsg_dialog_send_result">Siųsti rezultatą</string>
+    <string name="ipmsg_dlg_send_all">Visi: %s</string>
+    <string name="ipmsg_dlg_send_sucess">Siųsti: %s</string>
+    <string name="ipmsg_dlg_send_failed">Nepavyko: %s</string>
+    <string name="multi_forward_sim_info">Informacijos apie SIM gavimas</string>
+    <string name="ipmsg_multi_forward_no_sim">Informacijos apie SIM nėra</string>
+    <string name="ipmsg_divider_online">%s prisijungęs</string>
+    <string name="ipmsg_divider_offline">Paskutinio prisijungimo %s laikas</string>
+    <string name="ipmsg_divider_never_online">Niekada nebuvo prisijungęs</string>
+    <string name="ipmsg_vcard_file_name">%s adresatai</string>
+    <string name="ipmsg_getsim_failed">Nepavyko gauti informacijos apie SIM</string>
+    <string name="ipmsg_sim_status_error">SIM būsenos klaida</string>
+    <string name="ipmsg_forward_failed">Persiųsti nepavyko</string>
+    <string name="ipmsg_forward_norecipients">Nenurodytas persiunčiamo pranešimo gavėjas(-ai)</string>
+    <string name="ipmsg_multiforward_no_message">Nėra pranešimo(-ų), kuriuos galima būtų persiųsti</string>
+    <string name="ipmsg_need_input_recipients">Pirmiausiai nurodykite bent vieną gavėją</string>
+    <string name="str_ipmsg_unread_format">%1$d neperskaitytų pranešimų</string>
+    <string name="str_ipmsg_not_delivered_title">Dar nepristatytas</string>
+    <string name="str_ipmsg_failed_title">Išsiųsti nepavyko</string>
+    <string name="ipmsg_try_again">"Bandyti dar kartą"</string>
+    <string name="ipmsg_try_all_again">Bandykite dar kartą</string>
+    <string name="ipmsg_resend_via_sms">Vietoj to siųsti SMS</string>
+    <string name="ipmsg_resend_via_mms">Vietoj to siųsti MMS</string>
+    <string name="str_ipmsg_cant_share">SD kortelė nepasiekiama; nepavyksta bendrinti medijos pranešimo</string>
+    <string name="str_ipmsg_file_limit">per didelis</string>
+    <string name="str_ipmsg_no_app">Šio veiksmo negali atlikti jokios programos.</string>
+    <string name="str_ipmsg_today">"Šiandien"</string>
+    <string name="str_ipmsg_yesterday">"vakar"</string>
+    <string name="ip_message_typing_text">Rašo</string>
+    <string name="str_ipmsg_no_such_file">Tokio failo nėra</string>
+    <string name="str_ipmsg_over_file_limit">Failas yra per didelis</string>
+    <string name="str_ipmsg_invalid_file_type">Nepalaiko šio tipo</string>
+    <string name="invite_friends_to_ipmsg">Kviesti draugus naudoti iSMS</string>
+    <string name="invite_friends_to_chat">Kviesti draugus kalbėtis</string>
+    <string name="invite_friends_to_ipmsg_dialog_msg">Siunčiant pakvietimą, jūsų sukurti pranešimai bus išmesti.</string>
+    <string name="invite_friends_to_ipmsg_content">Labas, iSMS yra šauni pokalbių priemonė. Ji nemokama ir patogi naudoti. Daugiau informacijos rasite http://isms.hissage.com</string>
+    <string name="export">"Eksportuoti"</string>
+    <string name="mark_as_spam">Perkelti į Šlamšto sąrašą</string>
+    <string name="mark_as_spam_tips">Pranešimai, pažymėti kaip Šlamštas, bus perkelti į Šlamšto sąrašą ir apie juos automatiškai bus nepranešama.</string>
+    <string name="remove_frome_spam">Pašalinti iš Šlamšto sąrašo</string>
+    <string name="add_shortcut">Pridėti nuorodą</string>
+    <string name="view_all_media">Rodyti visus duomenis</string>
+    <string name="view_all_location">Rodyti visas vietas</string>
+    <string name="ipmsg_export_to_sdcard">Eksportuoti į SD kortelę</string>
+    <string name="ipmsg_copy">"Kopijuoti"</string>
+    <string name="ipmsg_send_via_text_msg">Siųsti tekstiniu pranešimu</string>
+    <string name="ipmsg_send_via_mms">Siųsti multimedijos pranešimu</string>
+    <string name="ipmsg_retry">"Bandykite dar kartą"</string>
+    <string name="ipmsg_delete">"Ištrinti"</string>
+    <string name="ipmsg_share">"Bendrinti"</string>
+    <string name="ipmsg_mark_as_important">Pažymėti kaip svarbų</string>
+    <string name="ipmsg_remove_from_important">Pašalinti svarbaus žymą</string>
+    <string name="str_ipmsg_save_file">Failas išsaugotas %1$s</string>
+    <string name="continue_str">"Tęsti"</string>
+    <string name="convert_to_mms">Konvertuoti į MMS.</string>
+    <string name="convert_to_sms">Konvertuoti į SMS.</string>
+    <string name="ipmsg_convert_to_ipmsg">Konvertuoti į iSMS.</string>
+    <string name="ip_message_convert_to_mms_message_for_service">Šioje pasirinktoje SIM kortelėje iSMS paslauga neveikia. Šioje SIM kortelėje šį pranešimą galima siųsti tik per MMS. Vis tiek tęsti?</string>
+    <string name="ip_message_convert_to_sms_message_for_service">Šioje pasirinktoje SIM kortelėje iSMS paslauga neveikia. Šioje SIM kortelėje šį pranešimą galima siųsti tik per SMS. Vis tiek tęsti?</string>
+    <string name="ip_message_convert_to_mms_message_for_recipients">Gavėjas(-ai) nėra iSMS vartotojai. Šį pranešimą galima siųsti tik per MMS. Vis tiek tęsti?</string>
+    <string name="ip_message_convert_to_sms_message_for_recipients">Gavėjas(-ai) nėra iSMS vartotojai. Šį pranešimą galima siųsti tik per SMS. Vis tiek tęsti?</string>
+    <string name="ipmsg_sms_convert_to_ipmsg">Šioje pasirinktoje SIM kortelėje galima naudoti iSMS paslaugą. Pranešimą siūloma perjungti į iSMS, kad nereikėtų mokėti už SMS siuntimą. Perjungti dabar?</string>
+    <string name="ipmsg_mms_convert_to_ipmsg">Šioje pasirinktoje SIM kortelėje galima naudoti iSMS paslaugą. Pranešimą siūloma perjungti į iSMS, kad nereikėtų mokėti už MMS siuntimą. Perjungti dabar?</string>
+    <string name="keep_mms">Išlaikyti MMS</string>
+    <string name="keep_sms">Išlaikyti SMS</string>
+    <string name="switch_ipmsg">Perjungti</string>
+    <string name="ip_message_load_all_message">Įkelti visus pranešimus</string>
+    <string name="str_ipmsg_replace_attach">Pakeisti priedą</string>
+    <string name="str_ipmsg_replace_attach_msg">Priedas jau yra; pakeisti?</string>
+    <string name="ipmsg_err_file">Nepavyko atidaryti failo</string>
+    <string name="pref_title_display_preference_settings">RODINYS IR PAGEIDAVIMAS</string>
+    <string name="pref_chat_wallpaper">Pokalbio fonas</string>
+    <string name="pref_auto_rotation">Automatinis vaizdo sukimas</string>
+    <string name="pref_show_email_address">Rodyti el. pašto adresą</string>
+    <string name="pref_summary_show_email_address">Į adresato rezultatus įtraukti el. pašto adresą</string>
+    <string name="pref_title_backup_restore_settings">ATSARGINĖS KOPIJOS IR ATKŪRIMAS</string>
+    <string name="pref_backage_message">Kurti pranešimo kopiją</string>
+    <string name="pref_summary_backup_message">Paskutinė atsarginė kopija: Niekada</string>
+    <string name="pref_restore_message">Atkurti pranešimą</string>
+    <string name="pref_summary_restore_message">Atkurti visus pranešimus, kuriems buvo padarytos atdarginės kopijos</string>
+    <string name="pref_mute">"Nutildyti"</string>
+    <string name="pref_summary_mute">"Išjungta"</string>
+    <string name="pref_vibrate">"Vibruoti"</string>
+    <string name="pref_summary_vibrate">Vibruoti gavus pranešimus</string>
+    <string name="pref_popup_notification">Laikinajame lange rodomas pranešimas</string>
+    <string name="pref_summary_popup_notification">Rodyti automatinius pranešimus laikinajame lange</string>
+    <string name="pref_title_display_settings">"Ekranas"</string>
+    <string name="pref_title_actions_settings">Veiksmai</string>
+    <string name="pref_download_chat_history">Atsisiųsti pokalbių istoriją</string>
+    <string name="pref_summary_download_chat_history">Išsaugoti SD kortelėje ZIP formatu</string>
+    <string name="pref_email_chat_history">Siųsti pokalbių istoriją el. paštu</string>
+    <string name="pref_summary_email_chat_history">Siųsti pokalbių istoriją el. paštu ZIP formatu</string>
+    <string name="pref_clear_chat_history">Trinti pokalbių istoriją</string>
+    <string name="pref_summary_notification_ringtone">Nustatyti naujų pranešimų skambėjimo toną</string>
+    <string name="pref_setting_title">Pranešimų nustatymas</string>
+    <string name="pref_setting_sms">Tekstinis pranešimas(SMS)</string>
+    <string name="pref_setting_mms">Multimedijos pranešimas(MMS)</string>
+    <string name="pref_setting_notification">"Įspėjimai"</string>
+    <string name="pref_setting_general">"Bendras"</string>
+    <string name="pref_setting_chat">Pokalbio nuostatos</string>
+    <string name="chat_setting_saving">Salvataggio in corso...</string>
+    <string name="chat_setting_updating">naujinama...</string>
+    <string name="chat_setting_sending">siunčiama...</string>
+    <string name="dialog_save_title">Išsaugoti SD kortelėje</string>
+    <string name="dialog_save_description">Išsaugoti šį pokalbį SD kortelėje kaip ZIP failą</string>
+    <string name="dialog_email_title">Bendrinti el. paštu</string>
+    <string name="dialog_email_description">Bendrinti šį pokalbį kaip priedą el. paštu ZIP formatu</string>
+    <string name="dialog_clear_title">"Išvalyti"</string>
+    <string name="dialog_clear_description">Visa šio pokalbio istorija bus ištrinta</string>
+    <string name="dialog_wallpaper_chooser_wallpapers">Fonai</string>
+    <string name="dialog_wallpaper_chooser_gallery">Galerija</string>
+    <string name="dialog_wallpaper_chooser_take">"Fotografuoti"</string>
+    <string name="dialog_wallpaper_chooser_default">"Numatytoji"</string>
+    <string name="dialog_wallpaper_title">Pasirinkti foną</string>
+    <string name="mute_one_hour">"1 val."</string>
+    <string name="mute_four_hours">4 val.</string>
+    <string name="mute_eight_hours">8 val.</string>
+    <string name="save_chat_history_failed">Salvataggio non riuscito</string>
+    <string name="send_chat_history_failed">El. pašto išsiųsti nepavyko</string>
+    <string name="actionbar_sms_setting">SMS nuostatos</string>
+    <string name="actionbar_mms_setting">MMS nuostatos</string>
+    <string name="actionbar_notification_setting">"Įspėjimų nustatymai"</string>
+    <string name="actionbar_general_setting">Impostazioni generali</string>
+    <string name="save_history_file">išsaugoti kaip</string>
+    <string name="no_sdcard_suggestion">"Nėra SD kortelės"</string>
+    <string name="save_wallpaper_success">Fonas pakeistas.</string>
+    <string name="save_wallpaper_fail">Ne\pavyko pakeisti fono.</string>
+    <string name="ip_message_delete_important">"Įtraukti pranešimus, pažymėtus kaip svarbius"</string>
+    <string name="str_ipmsg_spam_empty">Nėra jokio nepageidaujamo pokalbio. \nŠLAMŠTE renkami visi pokalbiai, kurie yra pažymėti kaip šlamštas. Pranešimo funkcija bus automatiškai išjungta. Taip išvengsite bereikalingo trukdymo. \n\nGalite pažymėti siuntėją kaip nepageidaujamą, palaikę nuspaudę pokalbį ir pasirinkę piktogramą Pažymėti kaip šlamštą. Pažymėjus pokalbį kaip šlamštą, automatiškai bus rodoma pranšimo funkcijos išjungimo piktograma ir pokalbis bus patalpintas čia.</string>
+    <string name="str_ipmsg_spam_example_subject">Tai nepageidaujamo pranešimo pavyzdys.</string>
+    <string name="str_ipmsg_groupchat_empty">Nėra jokio grupinio pokalbio pranešimo. \nGRUPINIUOSE PRANEŠIMUOSE renkami visi sukurti arba jūsų sujungti grupinių pokalbių pranešimai. Taip galėsite lengvai rasti ir tvarkyti savo grupinius pokalbius. \n\nNorėdami sukurti grupinį pokalbį, galite spustelėti šio ekrano apačioje esantį mygtuką Kurti grupinį pokalbį ir pakviesti draugus prisijungti prie grupės.</string>
+    <string name="str_ipmsg_group_example_from">Grupės pavadinimas</string>
+    <string name="str_ipmsg_group_example_subject">Jūsų draugui:\nI patinka grupinio pokalbio funkcija!</string>
+    <string name="str_ipmsg_important_empty">Nė\ra jokio svarbaus pranešimo. \nSVARBIUOSE renkami visi pranešimai, kurie yra pažymėti kaip svarbūs. Taip galėsite lengvai rasti svarbius pranešimus. \n\nGalite pažymėti pranešimą kaip svarbų, laikydami nuspaudę pranešimą ir Parinkčių meniu pasirinkę Pažymėti kaip svarbų. Pažymėjus pranešimą kaip svarbų, matysite raudonos vėliavėlės piktogramą, kaip pavaizduota toliau.</string>
+    <string name="str_ipmsg_important_example_title">Tai pranešimo, pažymėto kaip svarbaus, pavyzdys. Atsiranda raudona vėliavėlė.</string>
+    <string name="str_ipmsg_important_example_time">10:55 AM</string>
+    <string name="str_ipmsg_allchat_empty">"Nėra pokalbių"</string>
+    <string name="str_ipmsg_empty_activate_content">Norint naudoti šią funkciją, pirmiausiai privaloma suaktyvinti iSMS paslaugą. Nesirūpinkite – jeigu jums nepatiks paslauga, galėsite bet kada ją išjungti, atidarę Parametrus. Išbandykite dabar!</string>
+    <string name="str_ipmsg_empty_activate_title">Suaktyvinti iSMS</string>
+    <string name="str_ipmsg_service_title">iSMS paslaugos centras</string>
+    <string name="str_ipmsg_introduction">Naudodami iSMS, galite akimirksniu siųsti nemokamus pranešimus, laikyti pokalbių istoriją vienoje vietoje. Nauja patirtis spustelėjus vieną mygtuką!</string>
+    <string name="time_now">"DABAR"</string>
+    <string name="str_ipmsg_active">Suaktyvinti iSMS</string>
+    <string name="str_ipmsg_welcome_active">Sveikiname pradėjus naudoti iSMS</string>
+    <string name="str_ipmsg_term_warn_welcome">iSMS paslauga leidžia jums bet kur ir bet kada kalbėtis ir dalytis multimedijos failais su savo draugais naudojant WIFI arba duomenų ryšį.\n\nSuaktyvinimui tereikia vos 3 žingsnių!\n\n Teisinės sąlygos\n</string>
+    <string name="str_ipmsg_term_warn_activate">Ši funkcija veikia tik naudojant iSMS paslaugą.\n\niSMS paslauga leidžia jums bet kur ir bet kada kalbėtis ir dalytis multimedija su savo draugais naudojant WIFI arba duomenų ryšį.\n\n Teisinės sąlygos</string>
+    <string name="str_ipmsg_term_key">Teisinės sąlygos</string>
+    <string name="str_ipmsg_agree_and_continue">Sutinti ir tęsti</string>
+    <string name="no_sim_card">Nėra SIM kortelės!</string>
+    <string name="ip_message_activate_title">Suaktyvinti iSMS</string>
+    <string name="ip_message_current_sim_enabled">Įjungta dabartinė SIM.</string>
+    <string name="sim_selected_dialog_title_for_activate">Pasirinkite SIM, kuriai norite suaktyvinti iSMS</string>
+    <string name="ip_message_activate_message">Šis funkcija veikia tik naudojant iSMS paslaugą. Sukurti jūsų iSMS paskyrą dabar?</string>
+    <string name="typing">"Rašo..."</string>
+    <string name="ip_message_enable_title">Įjungti iSMS</string>
+    <string name="ip_message_enable_message">Šis funkcija veikia tik naudojant iSMS paslaugą. Įjungti jūsų iSMS paskyrą dabar?</string>
+    <string name="sim_selected_dialog_title_for_enable">Pasirinkite SIM, kuriai norite įjungti iSMS</string>
+    <string name="ip_message_switch_sim_title">Sukeisti SIM</string>
+    <string name="ip_message_switch_sim_message">Ši SIM nepalaiko iSMS. Pakeisti kitą SIM?</string>
+    <string name="ip_message_switch_sim_button">Sukeisti</string>
+    <string name="ip_message_switch_sim_successfully">SIM sėkmingai pakeista!</string>
+    <string name="close">"Uždaryti"</string>
+    <string name="nointernet">"Nerasta veikiančio interneto ryšio! Vėliau bandykite dar kartą."</string>
+    <string name="ipmsg_reject">Atmesti</string>
+    <string name="ipmsg_accept">"Sutikti"</string>
+    <string name="ipmsg_resend">Dar kartą siųsti</string>
+    <string name="ipmsg_resend_discard_message">Persiuntus pranešimą, jūsų dabartinis pranešimas bus išmestas.</string>
+    <plurals name="deleted_conversations">
+     <item quantity="one">Rastas vienas pokalbis</item>
+     <item quantity="other">Ištrinta <xliff:g id="number" example="15">%1$s</xliff:g> pokalbių</item>
+   </plurals>
+    <string name="discard_mms_title">Išmesti MMS</string>
+    <string name="discard_mms_content">Visi bendrai persiųstame pranešime esantys MMS bus išmesti</string>
+    <string name="toast_sms_forward">Nepersiųsta nė viena SMS</string>
+    <string name="dialog_continue">"Tęsti"</string>
+    <string name="sms_size_limit">Pasiekta maksimalaus dydžio riba</string>
+    <string name="dialog_sms_limit">Pasiekta pranešimo maks. dydžio riba.Per ilgas pranešimas bus išmestas</string>
+    <string name="forward_tips_title">"Išmesti MMS pranešimą"</string>
+    <string name="forward_tips_body">"MMS pranešimas nepalaiko persiuntimo funkcijos; jis bus išmestas."</string>
+    <string name="type_to_quick_text">"Įrašyti greitąjį tekstą"</string>
+    <string name="menu_wappush">"Automatiniai WAP pranešimai"</string>
+    <string name="visit_website">"Apsilankyti tinklavietėje"</string>
+    <string name="meet_emoticon_limit">Taikyti emocijų piktogramų apribojimus</string>
+    <string name="view_mms_notification">Nepavyko peržiūrėti pranešimo apie gautą MMS</string>
+    <string name="ipmsg_multi_forward_tips_content">Norint persiųsti keliems gavėjams, pirmiausiai reikia atsisiųsti kažkurį iSMS.</string>
+    <string name="multi_forward_failed_all">Atsisiųsti nepavyko; daugybinis persiuntimo išmestas.</string>
+    <string name="ipmsg_multi_forward_failed_part">Kažkurio iSMS persiųsti nepavyko.</string>
+    <string name="sum_search_networks">"Ieškoti galimų tinklų"</string>
+    <string name="confirm_delete_allwappush">"Visi WAP automatiniai pranešimai bus ištrinti."</string>
+    <string name="confirm_delete_selected_wappush">"Pasirinkti WAP automatiniai pranešimai bus ištrinti."</string>
+    <string name="menu_delete_allwappush">Trinti visus</string>
+    <string name="duplicated_recipient">Antrą kartą nurodytas tas pats gavėjas</string>
+    <string name="sms_not_ready">Inicijuojamas SMS modulis; palaukite...</string>
+    <string name="label_full_name">"Pavadinimas"</string>
+    <string name="label_phone">"Telefonas"</string>
+    <string name="label_email">"El. paštas"</string>
+    <string name="label_postal">Adresas</string>
+    <string name="label_organization">Organizacija</string>
+    <string name="label_im">IM</string>
+    <string name="label_website">Tinklavietė</string>
+    <string name="label_sip_address">"Skambutis internetu"</string>
+    <string name="label_nick_name">"Slapyvardis"</string>
+    <string name="label_notes">Pastabos</string>
+    <string name="label_event">Įvykiai</string>
+    <string name="search_time_period_label">Laikotarpis</string>
+    <string name="done_text">"Atlikta"</string>
+    <string name="add_duplicate_recipients">Antrą kartą nurodytas tas pats gavėjas</string>
+    <string name="download_disabled_toast">Ne\pavyko parsiųsti. Tai nėra numatytoji SMS programa.</string>
+    <string name="adding_wallpaper_title">Išsaugomas ekrano fonas...</string>
+    <string name="mwi_title">Balso pranešimai</string>
+    <string name="type_voice_msg">Balso pranešimas</string>
+    <string name="type_video_msg">Vaizdo pranešimas</string>
+    <string name="type_fax_msg">Fakso pranešimas</string>
+    <string name="priority_urgent">Skubus</string>
+    <string name="date_label">"Data: "</string>
+    <string name="message_id_label">Pranešimo ID:\u0020</string>
+    <string name="voice_message_count_notification"><xliff:g id="number" example="3">%1$s</xliff:g> naujų balso pranešimų</string>
+    <string name="confirm_delete_allmwi">"Visi balso pranešimai bus ištrinti."</string>
+    <string name="confirm_delete_selected_mwi">"Pasirinkti balso pranešimai bus ištrinti."</string>
+    <string name="sms_priority_setting">UIM pirmenybė</string>
+    <string name="sms_priority_Interactive">Interaktyvus</string>
+    <string name="sms_priority_Urgent">Skubus</string>
+    <string name="sms_priority_Emergency">Kritiška padėtis</string>
+    <string name="type_text_msg">"Teksto pranešimas"</string>
+    <string name="empty_sim_name"><xliff:g id="subId" example="2">%1$d</xliff:g> SIM lizdas</string>
+
+    <string name="drm_not_support">MMS nepalaiko nuo kopijavimo apsaugoto turinio.</string>
+    <string name="user_has_no_premission">Šiam naudotojui neleidžiama naudoti SMS</string>
+    <string name="wfc_no_cellular_network">Nėra mobiliojo ryšio tinklo</string>
+    <string name="wfc_connect_to_available_wifi">Prisijunkite prie esamo Wi-Fi pranešimams siųsti.</string>
+    <string name="wfc_notification_title">Prisijunkite prie Wi-Fi pranešimams siųsti.</string>
+    <string name="ct_om_switch_notification"><xliff:g id="op1">%s</xliff:g> laikinai neveiks, o bet kokie numatytieji skambučiai, žinutės, duomenys <xliff:g id="op2">%s</xliff:g> bus atitinkamai perjungti į <xliff:g id="op3">%s</xliff:g>.</string>
+    <string name="can_not_switch_account_during_call">NegalimaperjungtipageidaujamosSIMSMSžinutėmsskambučiometu.</string>
+    <string name="can_not_switch_account_temporarily">LaikinainegalimaperjungtipageidaujamosSIMSMSžinutėms.</string>
+    <string name="omh_exceed_message_size_limitation">PasiektasR-UIMpranešimodydžiolimitas</string>
+    <string name="omh_failed_to_add_image">Pasiekta maksimali R-UIM pranešimo dydžio riba, pašalinkite tam tikras dalis.</string>
+    <string name="missing_required_permission">Leidimai nesuteikti. Tai galite pakeisti pasirinkę Nuostatos &gt; Programėlės.</string>
+    <string name="manage_card_msg_title">Tvarkyti UIM / SIM kortelės pranešimus</string>
+    <string name="manage_card_msg_summary">Tvarkyti pranešimus, išsaugotus SUIM / SIM kortelėje</string>
+    <string name="disable_delivery_report">Negalima įjungti naudojant tarptinklinį ryšį.</string>
+    <string name="fore_service_notify_title">Perkeliami pranešimai</string>
+    <string name="fore_service_notify_content">Nėra perkeliamų pranešimų.</string>
+    <string name="smart_req_mms_indicator">MMS siųsti negalima, bandykite siųsti SMS.</string>
+</resources>

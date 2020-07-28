@@ -1,0 +1,35 @@
+
+const FEATURE_NVRAM_HFG_T HFG_%04d = {
+    .HFG_TUNINGREG = 
+    {
+        .HFG_NOISE_GSEED = 0,
+        .HFG_IMAGE_WD = 0,
+        .HFG_NOISE_SEED0 = 55552,
+        .HFG_NOISE_SEED1 = 56905,
+        .HFG_NOISE_SEED2 = 46189,
+        .HFC_NOISE_STD = 0,
+        .HFC_SL2_LINK_EN = 0,
+        .HFC_LUMA_CPX1 = 64,
+        .HFC_LUMA_CPX2 = 128,
+        .HFC_LUMA_CPX3 = 192,
+        .HFC_LUMA_CPY0 = 32,
+        .HFC_LUMA_CPY1 = 28,
+        .HFC_LUMA_CPY2 = 24,
+        .HFC_LUMA_CPY3 = 20,
+        .HFC_LUMA_SP0 = 28,
+        .HFC_LUMA_SP1 = 28,
+        .HFC_LUMA_SP2 = 28,
+        .HFC_LUMA_SP3 = 28,
+        .HFC_SL2_CPX1 = 64,
+        .HFC_SL2_CPX2 = 128,
+        .HFC_SL2_CPX3 = 192,
+        .HFC_SL2_CPY0 = 16,
+        .HFC_SL2_CPY1 = 20,
+        .HFC_SL2_CPY2 = 24,
+        .HFC_SL2_CPY3 = 28,
+        .HFC_SL2_SP0 = 4,
+        .HFC_SL2_SP1 = 4,
+        .HFC_SL2_SP2 = 4,
+        .HFC_SL2_SP3 = 4,    
+    }
+};

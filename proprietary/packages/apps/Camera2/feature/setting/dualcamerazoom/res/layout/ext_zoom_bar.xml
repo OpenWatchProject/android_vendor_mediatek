@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/ext_dual_camera_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.mediatek.camera.common.widget.RotateLayout
+        android:id="@+id/zoom_rotate_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="130dp">
+
+        <RelativeLayout
+            android:id="@+id/ext_zoom_item"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
+
+            <android.support.v7.widget.AppCompatImageView
+                android:id="@+id/ext_zoom_image_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                app:srcCompat="@drawable/ic_circle" />
+
+            <com.mediatek.camera.feature.setting.dualcamerazoom.ZoomTextView
+                android:id="@+id/ext_zoom_text_view"
+                android:layout_width="29dp"
+                android:layout_height="29dp"
+                android:gravity="center"
+                android:layout_centerInParent="true"
+                android:textColor="@android:color/white"
+                android:textSize="14sp"
+                android:text="@string/default_ratio_value"/>
+        </RelativeLayout>
+    </com.mediatek.camera.common.widget.RotateLayout>
+
+    <com.mediatek.camera.feature.setting.dualcamerazoom.ObservableScrollView
+        android:id="@+id/scroller"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="125dp"
+        android:layout_alignParentBottom="true"
+        android:scrollbars="none"
+        android:visibility="gone">
+            <ImageView
+                android:id="@+id/scroller_background"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_ruler"/>
+    </com.mediatek.camera.feature.setting.dualcamerazoom.ObservableScrollView>
+</RelativeLayout>

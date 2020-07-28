@@ -1,0 +1,18 @@
+WHAT IT DOES?
+=============
+thermald is a native daemon which is run when system initialized and listens to
+signals for thermal shutdown. When thermal shutdown signal is received,
+thermald broadcast THERMAL_WARNING intent via binder calls.
+
+HOW IT WAS BUILT?
+==================
+It needs the following library from AOSP:
+1. libcutils
+2. libc
+3. libutils
+4. libbinder
+
+HOW TO USE IT?
+==============
+1. It is started in init.rc
+

@@ -1,0 +1,23 @@
+The shared library 'libfft.so' is a SWIP for FFT calculation.
+
+
+WHAT IT DOES?
+=============
+
+The shared library 'libfft.so' is a SWIP for FFT calculation.
+It is used to analyze the frequency components of audio signals.
+
+
+HOW IT WAS BUILT?
+==================
+
+It needs the following libs from AOSP:
+1.  libnativehelper.so
+2.  libcutils.so
+3.  libutils.so
+
+
+
+HOW TO USE IT?
+==============
+Factory mode will use the related API to analyze the audio data.

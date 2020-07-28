@@ -1,0 +1,30 @@
+This is the README for ufs_util
+
+WHAT IT DOES?
+=============
+ufs_util is a user space tool specifically designed for UFS.
+
+Now ufs_util can support below features,
+1) Field firmware udpate (FFU).
+2) Query device firmware version.
+3) Query device descriptors/attributes/flags (limited items are allowed).
+
+HOW IT WAS BUILT?
+==================
+Native program bulid flow of android.
+
+HOW TO USE IT?
+==============
+Usage:
+		ufs_util ffu_check <device>
+		ufs_util ffu_do <device> <fw_path> <manu_id> <base_fw_revision>
+
+Parmeters:
+		<device>: Device node. E.g., /dev/block/sdc
+		<fw_path>: Location of firmware. E.g., /system/bin/ufs_fw.bin
+		<manu_id>: Manufacturer ID. HEX value without leading 0x. E.g., 1AD
+				0: Skip checking <manu_id> and <base_fw_revision>
+				198: Toshiba
+				1AD: SK-Hynix
+				1CE: Samsung
+		<base_fw_revision>: Base firmware version. A string with at most 4 chars. E.g., T007

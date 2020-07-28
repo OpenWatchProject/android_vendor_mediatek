@@ -1,0 +1,39 @@
+bootstrap_go_package {
+    name: "soong-libion_mtk-mediatek",
+    pkgPath: "android/soong/libion_mtk/mediatek",
+    deps: [
+        "soong-android",
+        "soong-cc",
+    ],
+    srcs: [
+        "libion_mtk.go",
+    ],
+    pluginFor: ["soong_build"],
+}
+
+mtk_libion_mtk_defaults {
+    name: "libion_mtk_defaults",
+    srcs: ["ion.c"],
+}
+
+cc_library_shared {
+    name: "libion_mtk",
+    proprietary: true,
+    owner: "mtk",
+    header_libs: [
+        "device_kernel_headers",
+    ],
+    shared_libs: [
+        "libion",
+        "liblog",
+        "libdl",
+        "libion_ulit",
+    ],
+    defaults: [
+        "libion_mtk_defaults",
+    ],
+}
+
+optional_subdirs = [
+    "*",
+]

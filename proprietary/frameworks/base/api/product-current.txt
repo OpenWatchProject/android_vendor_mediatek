@@ -1,0 +1,653 @@
+// Signature format: 2.0
+package com.mediatek.common.jpe {
+
+  public class a {
+    ctor public a();
+    method public void a() throws com.mediatek.common.jpe.JpeException;
+    method public int aa();
+    field public static boolean b;
+  }
+
+}
+
+package com.mediatek.common.ppl {
+
+  public interface IPplManager extends android.os.IInterface {
+    method public void lock() throws android.os.RemoteException;
+    method public int needLock() throws android.os.RemoteException;
+    method public void resetPassword() throws android.os.RemoteException;
+    method public boolean unlock(String) throws android.os.RemoteException;
+  }
+
+  public static class IPplManager.Default implements com.mediatek.common.ppl.IPplManager {
+    ctor public IPplManager.Default();
+    method public android.os.IBinder asBinder();
+    method public void lock() throws android.os.RemoteException;
+    method public int needLock() throws android.os.RemoteException;
+    method public void resetPassword() throws android.os.RemoteException;
+    method public boolean unlock(String) throws android.os.RemoteException;
+  }
+
+  public abstract static class IPplManager.Stub extends android.os.Binder implements com.mediatek.common.ppl.IPplManager {
+    ctor public IPplManager.Stub();
+    method public android.os.IBinder asBinder();
+    method public static com.mediatek.common.ppl.IPplManager asInterface(android.os.IBinder);
+    method public static com.mediatek.common.ppl.IPplManager getDefaultImpl();
+    method public boolean onTransact(int, android.os.Parcel, android.os.Parcel, int) throws android.os.RemoteException;
+    method public static boolean setDefaultImpl(com.mediatek.common.ppl.IPplManager);
+  }
+
+}
+
+package com.mediatek.common.search {
+
+  public final class SearchEngine implements android.os.Parcelable {
+    method public String getFaviconUri();
+    method public String getLabel();
+    method public String getName();
+    method public String getSearchUriForQuery(String);
+    method public String getSuggestUriForQuery(String);
+    method public boolean supportsSuggestions();
+  }
+
+}
+
+package com.mediatek.common.util {
+
+  public class OperatorCustomizationFactoryLoader {
+    method public static Object loadFactory(ClassLoader, java.util.List<com.mediatek.common.util.OperatorCustomizationFactoryLoader.OperatorFactoryInfo>);
+    method public static Object loadFactory(ClassLoader, java.util.List<com.mediatek.common.util.OperatorCustomizationFactoryLoader.OperatorFactoryInfo>, int);
+    method public static Object loadFactory(android.content.Context, java.util.List<com.mediatek.common.util.OperatorCustomizationFactoryLoader.OperatorFactoryInfo>);
+    method public static Object loadFactory(android.content.Context, java.util.List<com.mediatek.common.util.OperatorCustomizationFactoryLoader.OperatorFactoryInfo>, int);
+  }
+
+  public static class OperatorCustomizationFactoryLoader.OperatorFactoryInfo {
+    ctor public OperatorCustomizationFactoryLoader.OperatorFactoryInfo(String, String, String, String);
+    ctor public OperatorCustomizationFactoryLoader.OperatorFactoryInfo(String, String, String, String, String);
+    ctor public OperatorCustomizationFactoryLoader.OperatorFactoryInfo(String, String, String, String, String, String);
+  }
+
+}
+
+package com.mediatek.common.voicecommand {
+
+  public interface IVoiceCommandListener extends android.os.IInterface {
+    method public void onVoiceCommandNotified(int, int, android.os.Bundle) throws android.os.RemoteException;
+  }
+
+  public static class IVoiceCommandListener.Default implements com.mediatek.common.voicecommand.IVoiceCommandListener {
+    ctor public IVoiceCommandListener.Default();
+    method public android.os.IBinder asBinder();
+    method public void onVoiceCommandNotified(int, int, android.os.Bundle) throws android.os.RemoteException;
+  }
+
+  public abstract static class IVoiceCommandListener.Stub extends android.os.Binder implements com.mediatek.common.voicecommand.IVoiceCommandListener {
+    ctor public IVoiceCommandListener.Stub();
+    method public android.os.IBinder asBinder();
+    method public static com.mediatek.common.voicecommand.IVoiceCommandListener asInterface(android.os.IBinder);
+    method public static com.mediatek.common.voicecommand.IVoiceCommandListener getDefaultImpl();
+    method public boolean onTransact(int, android.os.Parcel, android.os.Parcel, int) throws android.os.RemoteException;
+    method public static boolean setDefaultImpl(com.mediatek.common.voicecommand.IVoiceCommandListener);
+  }
+
+  public interface IVoiceCommandManagerService extends android.os.IInterface {
+    method public int registerListener(String, com.mediatek.common.voicecommand.IVoiceCommandListener) throws android.os.RemoteException;
+    method public int sendCommand(String, int, int, android.os.Bundle) throws android.os.RemoteException;
+    method public int unregisterListener(String, com.mediatek.common.voicecommand.IVoiceCommandListener) throws android.os.RemoteException;
+  }
+
+  public static class IVoiceCommandManagerService.Default implements com.mediatek.common.voicecommand.IVoiceCommandManagerService {
+    ctor public IVoiceCommandManagerService.Default();
+    method public android.os.IBinder asBinder();
+    method public int registerListener(String, com.mediatek.common.voicecommand.IVoiceCommandListener) throws android.os.RemoteException;
+    method public int sendCommand(String, int, int, android.os.Bundle) throws android.os.RemoteException;
+    method public int unregisterListener(String, com.mediatek.common.voicecommand.IVoiceCommandListener) throws android.os.RemoteException;
+  }
+
+  public abstract static class IVoiceCommandManagerService.Stub extends android.os.Binder implements com.mediatek.common.voicecommand.IVoiceCommandManagerService {
+    ctor public IVoiceCommandManagerService.Stub();
+    method public android.os.IBinder asBinder();
+    method public static com.mediatek.common.voicecommand.IVoiceCommandManagerService asInterface(android.os.IBinder);
+    method public static com.mediatek.common.voicecommand.IVoiceCommandManagerService getDefaultImpl();
+    method public boolean onTransact(int, android.os.Parcel, android.os.Parcel, int) throws android.os.RemoteException;
+    method public static boolean setDefaultImpl(com.mediatek.common.voicecommand.IVoiceCommandManagerService);
+  }
+
+}
+
+package com.mediatek.custom {
+
+  public class CustomProperties {
+    method public static String getString(String, String);
+    method public static String getString(String, String, String);
+  }
+
+}
+
+package com.mediatek.dcfdecoder {
+
+  public class DcfDecoder {
+    ctor public DcfDecoder();
+    method public byte[] forceDecryptFile(String, boolean);
+  }
+
+}
+
+package com.mediatek.ims {
+
+  public class MtkImsConnectionStateListener {
+    ctor public MtkImsConnectionStateListener();
+    method public void onCapabilitiesStatusChanged(android.telephony.ims.feature.MmTelFeature.Capabilities);
+    method public void onImsEmergencyCapabilityChanged(boolean);
+    method public void onRedirectIncomingCallInd(int, String[]);
+    method public void onRegistrationImsStateInd(int, android.net.Uri[], int, int, String);
+    method public void onWifiPdnOOSStateChanged(int);
+  }
+
+}
+
+package com.mediatek.ims.internal {
+
+  public class MtkImsManager {
+    method public void addImsConnectionStateListener(android.telephony.ims.ImsMmTelManager.RegistrationCallback) throws com.android.ims.ImsException;
+    method public boolean isEnhanced4gLteModeSettingEnabledByUser();
+    method public static boolean isNonTtyOrTtyOnVolteEnabled(android.content.Context, int);
+    method public static boolean isSupportMims();
+    method public void removeImsConnectionStateListener(android.telephony.ims.ImsMmTelManager.RegistrationCallback) throws com.android.ims.ImsException;
+    method public void setEnhanced4gLteModeVtSetting(android.content.Context, boolean, boolean);
+  }
+
+  public class MtkImsManagerEx {
+    method public int getCurrentCallCount(int) throws com.android.ims.ImsException;
+    method public int getImsState(int) throws com.android.ims.ImsException;
+    method public static com.mediatek.ims.internal.MtkImsManagerEx getInstance();
+  }
+
+}
+
+package com.mediatek.internal.telephony {
+
+  public interface IMtkTelephonyEx extends android.os.IInterface {
+    method public boolean abortFemtoCellList(int) throws android.os.RemoteException;
+    method public boolean cancelAvailableNetworks(int) throws android.os.RemoteException;
+    method public boolean exitEmergencyCallbackMode(int) throws android.os.RemoteException;
+    method public int[] getAdnStorageInfo(int) throws android.os.RemoteException;
+    method public java.util.List<android.telephony.CellInfo> getAllCellInfo(int, String) throws android.os.RemoteException;
+    method public com.mediatek.internal.telephony.PseudoCellInfo getApcInfoUsingSlotId(int) throws android.os.RemoteException;
+    method public int getCdmaSubscriptionActStatus(int) throws android.os.RemoteException;
+    method public android.os.Bundle getCellLocationUsingSlotId(int) throws android.os.RemoteException;
+    method public int getDisable2G(int) throws android.os.RemoteException;
+    method public java.util.List<com.mediatek.internal.telephony.FemtoCellInfo> getFemtoCellList(int) throws android.os.RemoteException;
+    method public String getIccAtr(int) throws android.os.RemoteException;
+    method public String getIccCardType(int) throws android.os.RemoteException;
+    method public boolean getIsLastEccIms() throws android.os.RemoteException;
+    method public String getLocatedPlmn(int) throws android.os.RemoteException;
+    method public String getLteAccessStratumState() throws android.os.RemoteException;
+    method public int getMainCapabilityPhoneId() throws android.os.RemoteException;
+    method public android.net.NetworkStats getMobileDataUsage(int) throws android.os.RemoteException;
+    method public String getMvnoMatchType(int) throws android.os.RemoteException;
+    method public String getMvnoPattern(int, String) throws android.os.RemoteException;
+    method public int getPCO520State(int) throws android.os.RemoteException;
+    method public int[] getRoamingEnable(int) throws android.os.RemoteException;
+    method public int[] getRxTestResult(int) throws android.os.RemoteException;
+    method public int getSelfActivateState(int) throws android.os.RemoteException;
+    method public android.telephony.ServiceState getServiceStateByPhoneId(int, String) throws android.os.RemoteException;
+    method public int getSimOnOffExecutingState(int) throws android.os.RemoteException;
+    method public int getSimOnOffState(int) throws android.os.RemoteException;
+    method public String[] getSimOperatorNumericForPhoneEx(int) throws android.os.RemoteException;
+    method public String[] getSuggestedPlmnList(int, int, int, int, String) throws android.os.RemoteException;
+    method public String getUimSubscriberId(String, int) throws android.os.RemoteException;
+    method public byte[] iccExchangeSimIOEx(int, int, int, int, int, int, String, String, String) throws android.os.RemoteException;
+    method @Deprecated public int invokeOemRilRequestRaw(byte[], byte[]) throws android.os.RemoteException;
+    method public int invokeOemRilRequestRawBySlot(int, byte[], byte[]) throws android.os.RemoteException;
+    method public boolean isAppTypeSupported(int, int) throws android.os.RemoteException;
+    method public boolean isCapabilitySwitching() throws android.os.RemoteException;
+    method public boolean isEmergencyNumber(int, String) throws android.os.RemoteException;
+    method public boolean isFdnEnabled(int) throws android.os.RemoteException;
+    method public boolean isInCsCall(int) throws android.os.RemoteException;
+    method public boolean isInHomeNetwork(int) throws android.os.RemoteException;
+    method public boolean isPhbReady(int) throws android.os.RemoteException;
+    method public boolean isRadioOffBySimManagement(int) throws android.os.RemoteException;
+    method public boolean isSharedDefaultApn() throws android.os.RemoteException;
+    method public boolean isTestIccCard(int) throws android.os.RemoteException;
+    method public java.util.List<java.lang.String> loadEFLinearFixedAll(int, int, int, String) throws android.os.RemoteException;
+    method public byte[] loadEFTransparent(int, int, int, String) throws android.os.RemoteException;
+    method public int queryFemtoCellSystemSelectionMode(int) throws android.os.RemoteException;
+    method public android.os.Bundle queryNetworkLock(int, int) throws android.os.RemoteException;
+    method public void repollIccStateForNetworkLock(int, boolean) throws android.os.RemoteException;
+    method public boolean selectFemtoCell(int, com.mediatek.internal.telephony.FemtoCellInfo) throws android.os.RemoteException;
+    method public int selfActivationAction(int, android.os.Bundle, int) throws android.os.RemoteException;
+    method public void setApcModeUsingSlotId(int, int, boolean, int) throws android.os.RemoteException;
+    method public boolean setDisable2G(int, boolean) throws android.os.RemoteException;
+    method public boolean setFemtoCellSystemSelectionMode(int, int) throws android.os.RemoteException;
+    method public void setIsLastEccIms(boolean) throws android.os.RemoteException;
+    method public boolean setLteAccessStratumReport(boolean) throws android.os.RemoteException;
+    method public boolean setLteUplinkDataTransfer(boolean, int) throws android.os.RemoteException;
+    method public void setMobileDataUsageSum(int, long, long, long, long) throws android.os.RemoteException;
+    method public boolean setRadioCapability(android.telephony.RadioAccessFamily[]) throws android.os.RemoteException;
+    method public boolean setRoamingEnable(int, int[]) throws android.os.RemoteException;
+    method public int[] setRxTestConfig(int, int) throws android.os.RemoteException;
+    method public int setSimPower(int, int) throws android.os.RemoteException;
+    method public boolean setupPdnByType(int, String) throws android.os.RemoteException;
+    method public byte[] simAkaAuthentication(int, int, byte[], byte[]) throws android.os.RemoteException;
+    method public byte[] simGbaAuthBootStrapMode(int, int, byte[], byte[]) throws android.os.RemoteException;
+    method public byte[] simGbaAuthNafMode(int, int, byte[], byte[]) throws android.os.RemoteException;
+    method public int[] supplyDeviceNetworkDepersonalization(String) throws android.os.RemoteException;
+    method public int supplyNetworkDepersonalization(int, String) throws android.os.RemoteException;
+    method public boolean tearDownPdnByType(int, String) throws android.os.RemoteException;
+  }
+
+  public static class IMtkTelephonyEx.Default implements com.mediatek.internal.telephony.IMtkTelephonyEx {
+    ctor public IMtkTelephonyEx.Default();
+    method public boolean abortFemtoCellList(int) throws android.os.RemoteException;
+    method public android.os.IBinder asBinder();
+    method public boolean cancelAvailableNetworks(int) throws android.os.RemoteException;
+    method public boolean exitEmergencyCallbackMode(int) throws android.os.RemoteException;
+    method public int[] getAdnStorageInfo(int) throws android.os.RemoteException;
+    method public java.util.List<android.telephony.CellInfo> getAllCellInfo(int, String) throws android.os.RemoteException;
+    method public com.mediatek.internal.telephony.PseudoCellInfo getApcInfoUsingSlotId(int) throws android.os.RemoteException;
+    method public int getCdmaSubscriptionActStatus(int) throws android.os.RemoteException;
+    method public android.os.Bundle getCellLocationUsingSlotId(int) throws android.os.RemoteException;
+    method public int getDisable2G(int) throws android.os.RemoteException;
+    method public java.util.List<com.mediatek.internal.telephony.FemtoCellInfo> getFemtoCellList(int) throws android.os.RemoteException;
+    method public String getIccAtr(int) throws android.os.RemoteException;
+    method public String getIccCardType(int) throws android.os.RemoteException;
+    method public boolean getIsLastEccIms() throws android.os.RemoteException;
+    method public String getLocatedPlmn(int) throws android.os.RemoteException;
+    method public String getLteAccessStratumState() throws android.os.RemoteException;
+    method public int getMainCapabilityPhoneId() throws android.os.RemoteException;
+    method public android.net.NetworkStats getMobileDataUsage(int) throws android.os.RemoteException;
+    method public String getMvnoMatchType(int) throws android.os.RemoteException;
+    method public String getMvnoPattern(int, String) throws android.os.RemoteException;
+    method public int getPCO520State(int) throws android.os.RemoteException;
+    method public int[] getRoamingEnable(int) throws android.os.RemoteException;
+    method public int[] getRxTestResult(int) throws android.os.RemoteException;
+    method public int getSelfActivateState(int) throws android.os.RemoteException;
+    method public android.telephony.ServiceState getServiceStateByPhoneId(int, String) throws android.os.RemoteException;
+    method public int getSimOnOffExecutingState(int) throws android.os.RemoteException;
+    method public int getSimOnOffState(int) throws android.os.RemoteException;
+    method public String[] getSimOperatorNumericForPhoneEx(int) throws android.os.RemoteException;
+    method public String[] getSuggestedPlmnList(int, int, int, int, String) throws android.os.RemoteException;
+    method public String getUimSubscriberId(String, int) throws android.os.RemoteException;
+    method public byte[] iccExchangeSimIOEx(int, int, int, int, int, int, String, String, String) throws android.os.RemoteException;
+    method @Deprecated public int invokeOemRilRequestRaw(byte[], byte[]) throws android.os.RemoteException;
+    method public int invokeOemRilRequestRawBySlot(int, byte[], byte[]) throws android.os.RemoteException;
+    method public boolean isAppTypeSupported(int, int) throws android.os.RemoteException;
+    method public boolean isCapabilitySwitching() throws android.os.RemoteException;
+    method public boolean isEmergencyNumber(int, String) throws android.os.RemoteException;
+    method public boolean isFdnEnabled(int) throws android.os.RemoteException;
+    method public boolean isInCsCall(int) throws android.os.RemoteException;
+    method public boolean isInHomeNetwork(int) throws android.os.RemoteException;
+    method public boolean isPhbReady(int) throws android.os.RemoteException;
+    method public boolean isRadioOffBySimManagement(int) throws android.os.RemoteException;
+    method public boolean isSharedDefaultApn() throws android.os.RemoteException;
+    method public boolean isTestIccCard(int) throws android.os.RemoteException;
+    method public java.util.List<java.lang.String> loadEFLinearFixedAll(int, int, int, String) throws android.os.RemoteException;
+    method public byte[] loadEFTransparent(int, int, int, String) throws android.os.RemoteException;
+    method public int queryFemtoCellSystemSelectionMode(int) throws android.os.RemoteException;
+    method public android.os.Bundle queryNetworkLock(int, int) throws android.os.RemoteException;
+    method public void repollIccStateForNetworkLock(int, boolean) throws android.os.RemoteException;
+    method public boolean selectFemtoCell(int, com.mediatek.internal.telephony.FemtoCellInfo) throws android.os.RemoteException;
+    method public int selfActivationAction(int, android.os.Bundle, int) throws android.os.RemoteException;
+    method public void setApcModeUsingSlotId(int, int, boolean, int) throws android.os.RemoteException;
+    method public boolean setDisable2G(int, boolean) throws android.os.RemoteException;
+    method public boolean setFemtoCellSystemSelectionMode(int, int) throws android.os.RemoteException;
+    method public void setIsLastEccIms(boolean) throws android.os.RemoteException;
+    method public boolean setLteAccessStratumReport(boolean) throws android.os.RemoteException;
+    method public boolean setLteUplinkDataTransfer(boolean, int) throws android.os.RemoteException;
+    method public void setMobileDataUsageSum(int, long, long, long, long) throws android.os.RemoteException;
+    method public boolean setRadioCapability(android.telephony.RadioAccessFamily[]) throws android.os.RemoteException;
+    method public boolean setRoamingEnable(int, int[]) throws android.os.RemoteException;
+    method public int[] setRxTestConfig(int, int) throws android.os.RemoteException;
+    method public int setSimPower(int, int) throws android.os.RemoteException;
+    method public boolean setupPdnByType(int, String) throws android.os.RemoteException;
+    method public byte[] simAkaAuthentication(int, int, byte[], byte[]) throws android.os.RemoteException;
+    method public byte[] simGbaAuthBootStrapMode(int, int, byte[], byte[]) throws android.os.RemoteException;
+    method public byte[] simGbaAuthNafMode(int, int, byte[], byte[]) throws android.os.RemoteException;
+    method public int[] supplyDeviceNetworkDepersonalization(String) throws android.os.RemoteException;
+    method public int supplyNetworkDepersonalization(int, String) throws android.os.RemoteException;
+    method public boolean tearDownPdnByType(int, String) throws android.os.RemoteException;
+  }
+
+  public abstract static class IMtkTelephonyEx.Stub extends android.os.Binder implements com.mediatek.internal.telephony.IMtkTelephonyEx {
+    ctor public IMtkTelephonyEx.Stub();
+    method public android.os.IBinder asBinder();
+    method public static com.mediatek.internal.telephony.IMtkTelephonyEx asInterface(android.os.IBinder);
+    method public static com.mediatek.internal.telephony.IMtkTelephonyEx getDefaultImpl();
+    method public boolean onTransact(int, android.os.Parcel, android.os.Parcel, int) throws android.os.RemoteException;
+    method public static boolean setDefaultImpl(com.mediatek.internal.telephony.IMtkTelephonyEx);
+  }
+
+  public class MtkGsmCdmaPhone extends com.android.internal.telephony.GsmCdmaPhone {
+    method public void getPol(android.os.Message);
+    method public void setPolEntry(com.mediatek.internal.telephony.NetworkInfoWithAcT, android.os.Message);
+  }
+
+  @Deprecated public enum MtkIccCardConstants.CardType {
+    method @Deprecated public static com.mediatek.internal.telephony.MtkIccCardConstants.CardType getCardTypeFromInt(int);
+    method @Deprecated public int getValue();
+    method @Deprecated public boolean is4GCard();
+    enum_constant @Deprecated public static final com.mediatek.internal.telephony.MtkIccCardConstants.CardType CARD_NOT_INSERTED;
+    enum_constant @Deprecated public static final com.mediatek.internal.telephony.MtkIccCardConstants.CardType CT_3G_UIM_CARD;
+    enum_constant @Deprecated public static final com.mediatek.internal.telephony.MtkIccCardConstants.CardType CT_4G_UICC_CARD;
+    enum_constant @Deprecated public static final com.mediatek.internal.telephony.MtkIccCardConstants.CardType CT_EXCEL_GG_CARD;
+    enum_constant @Deprecated public static final com.mediatek.internal.telephony.MtkIccCardConstants.CardType CT_UIM_SIM_CARD;
+    enum_constant @Deprecated public static final com.mediatek.internal.telephony.MtkIccCardConstants.CardType LOCKED_CARD;
+    enum_constant @Deprecated public static final com.mediatek.internal.telephony.MtkIccCardConstants.CardType NOT_CT_UICC_CARD;
+    enum_constant @Deprecated public static final com.mediatek.internal.telephony.MtkIccCardConstants.CardType PIN_LOCK_CARD;
+    enum_constant @Deprecated public static final com.mediatek.internal.telephony.MtkIccCardConstants.CardType SIM_CARD;
+    enum_constant @Deprecated public static final com.mediatek.internal.telephony.MtkIccCardConstants.CardType UIM_CARD;
+    enum_constant @Deprecated public static final com.mediatek.internal.telephony.MtkIccCardConstants.CardType UIM_SIM_CARD;
+    enum_constant @Deprecated public static final com.mediatek.internal.telephony.MtkIccCardConstants.CardType UNKNOW_CARD;
+  }
+
+  public class MtkPhoneConstants {
+    field public static final String[] MTK_APN_TYPES;
+  }
+
+  public class MtkSubscriptionInfo extends android.telephony.SubscriptionInfo {
+    method public android.graphics.Bitmap createIconBitmap(android.content.Context, int);
+    method public android.graphics.Bitmap createIconBitmap(android.content.Context, int, boolean);
+  }
+
+  public class MtkSubscriptionManager {
+    method public static int getSubIdUsingPhoneId(int);
+    method public static com.mediatek.internal.telephony.MtkSubscriptionInfo getSubInfo(String, int);
+  }
+
+  public class NetworkInfoWithAcT {
+    ctor public NetworkInfoWithAcT(String, String, int, int);
+    method public int getAccessTechnology();
+    method public String getOperatorAlphaName();
+    method public String getOperatorNumeric();
+    method public int getPriority();
+    method public void setAccessTechnology(int);
+    method public void setOperatorAlphaName(String);
+    method public void setOperatorNumeric(String);
+    method public void setPriority(int);
+  }
+
+  public class RadioCapabilitySwitchUtil {
+    method public static int getMainCapabilityPhoneId();
+    method public static boolean isPS2SupportLTE();
+  }
+
+}
+
+package com.mediatek.internal.telephony.phb {
+
+  public class AlphaTag implements android.os.Parcelable {
+    method public String getAlphaTag();
+    method public int getPbrIndex();
+    method public int getRecordIndex();
+  }
+
+  public interface IMtkIccPhoneBook extends android.os.IInterface {
+    method public boolean addContactToGroup(int, int, int) throws android.os.RemoteException;
+    method public int getAnrCount(int) throws android.os.RemoteException;
+    method public int getEmailCount(int) throws android.os.RemoteException;
+    method public int getSneRecordLen(int) throws android.os.RemoteException;
+    method public String getUsimAasById(int, int) throws android.os.RemoteException;
+    method public java.util.List<com.mediatek.internal.telephony.phb.AlphaTag> getUsimAasList(int) throws android.os.RemoteException;
+    method public int getUsimAasMaxCount(int) throws android.os.RemoteException;
+    method public int getUsimAasMaxNameLen(int) throws android.os.RemoteException;
+    method public java.util.List<com.mediatek.internal.telephony.phb.UsimGroup> getUsimGroups(int) throws android.os.RemoteException;
+    method public int getUsimGrpMaxCount(int) throws android.os.RemoteException;
+    method public int getUsimGrpMaxNameLen(int) throws android.os.RemoteException;
+    method public boolean hasSne(int) throws android.os.RemoteException;
+    method public int insertUsimAas(int, String) throws android.os.RemoteException;
+    method public int insertUsimGroup(int, String) throws android.os.RemoteException;
+    method public boolean isAdnAccessible(int) throws android.os.RemoteException;
+    method public boolean removeContactFromGroup(int, int, int) throws android.os.RemoteException;
+    method public boolean removeUsimAasById(int, int, int) throws android.os.RemoteException;
+    method public boolean removeUsimGroupById(int, int) throws android.os.RemoteException;
+    method public boolean updateUsimAas(int, int, int, String) throws android.os.RemoteException;
+    method public int updateUsimGroup(int, int, String) throws android.os.RemoteException;
+  }
+
+  public static class IMtkIccPhoneBook.Default implements com.mediatek.internal.telephony.phb.IMtkIccPhoneBook {
+    method public boolean addContactToGroup(int, int, int) throws android.os.RemoteException;
+    method public int getAnrCount(int) throws android.os.RemoteException;
+    method public int getEmailCount(int) throws android.os.RemoteException;
+    method public int getSneRecordLen(int) throws android.os.RemoteException;
+    method public String getUsimAasById(int, int) throws android.os.RemoteException;
+    method public java.util.List<com.mediatek.internal.telephony.phb.AlphaTag> getUsimAasList(int) throws android.os.RemoteException;
+    method public int getUsimAasMaxCount(int) throws android.os.RemoteException;
+    method public int getUsimAasMaxNameLen(int) throws android.os.RemoteException;
+    method public java.util.List<com.mediatek.internal.telephony.phb.UsimGroup> getUsimGroups(int) throws android.os.RemoteException;
+    method public int getUsimGrpMaxCount(int) throws android.os.RemoteException;
+    method public int getUsimGrpMaxNameLen(int) throws android.os.RemoteException;
+    method public boolean hasSne(int) throws android.os.RemoteException;
+    method public int insertUsimAas(int, String) throws android.os.RemoteException;
+    method public int insertUsimGroup(int, String) throws android.os.RemoteException;
+    method public boolean isAdnAccessible(int) throws android.os.RemoteException;
+    method public boolean removeContactFromGroup(int, int, int) throws android.os.RemoteException;
+    method public boolean removeUsimAasById(int, int, int) throws android.os.RemoteException;
+    method public boolean removeUsimGroupById(int, int) throws android.os.RemoteException;
+    method public boolean updateUsimAas(int, int, int, String) throws android.os.RemoteException;
+    method public int updateUsimGroup(int, int, String) throws android.os.RemoteException;
+  }
+
+  public class MtkUiccPhoneBookController extends com.mediatek.internal.telephony.phb.IMtkIccPhoneBook.Stub {
+    method public boolean addContactToGroup(int, int, int) throws android.os.RemoteException;
+    method public int getAnrCount(int) throws android.os.RemoteException;
+    method public int getEmailCount(int) throws android.os.RemoteException;
+    method public int getSneRecordLen(int) throws android.os.RemoteException;
+    method public String getUsimAasById(int, int) throws android.os.RemoteException;
+    method public java.util.List<com.mediatek.internal.telephony.phb.AlphaTag> getUsimAasList(int) throws android.os.RemoteException;
+    method public int getUsimAasMaxCount(int) throws android.os.RemoteException;
+    method public int getUsimAasMaxNameLen(int) throws android.os.RemoteException;
+    method public java.util.List<com.mediatek.internal.telephony.phb.UsimGroup> getUsimGroups(int) throws android.os.RemoteException;
+    method public int getUsimGrpMaxCount(int) throws android.os.RemoteException;
+    method public int getUsimGrpMaxNameLen(int) throws android.os.RemoteException;
+    method public boolean hasSne(int) throws android.os.RemoteException;
+    method public int insertUsimAas(int, String) throws android.os.RemoteException;
+    method public int insertUsimGroup(int, String) throws android.os.RemoteException;
+    method public boolean isAdnAccessible(int) throws android.os.RemoteException;
+    method public boolean removeContactFromGroup(int, int, int) throws android.os.RemoteException;
+    method public boolean removeUsimAasById(int, int, int) throws android.os.RemoteException;
+    method public boolean removeUsimGroupById(int, int) throws android.os.RemoteException;
+    method public boolean updateUsimAas(int, int, int, String) throws android.os.RemoteException;
+    method public int updateUsimGroup(int, int, String) throws android.os.RemoteException;
+  }
+
+  public class UsimGroup implements android.os.Parcelable {
+    ctor public UsimGroup(int, String);
+    method public int describeContents();
+    method public String getAlphaTag();
+    method public int getRecordIndex();
+    method public boolean isEmpty();
+    method public boolean isEqual(com.mediatek.internal.telephony.phb.UsimGroup);
+    method public void setAlphaTag(String);
+    method public void setRecordIndex(int);
+    method public void writeToParcel(android.os.Parcel, int);
+    field public static final android.os.Parcelable.Creator<com.mediatek.internal.telephony.phb.UsimGroup> CREATOR;
+  }
+
+}
+
+package com.mediatek.internal.telephony.ratconfiguration {
+
+  public class RatConfiguration {
+    method public static boolean isC2kSupported();
+    method public static boolean isGsmSupported();
+    method public static boolean isLteFddSupported();
+    method public static boolean isLteTddSupported();
+    method public static boolean isNrSupported();
+    method public static boolean isTdscdmaSupported();
+    method public static boolean isWcdmaSupported();
+  }
+
+}
+
+package com.mediatek.media {
+
+  public class MediaRecorderEx {
+    method public static void setVideoBitOffSet(android.media.MediaRecorder, int, boolean);
+  }
+
+}
+
+package com.mediatek.pq {
+
+  public class PictureQuality {
+    method public static String setMode(int);
+  }
+
+}
+
+package com.mediatek.provider {
+
+  public static final class MtkContactsContract.Aas {
+    method public static String buildIndicator(int, int);
+    method public static CharSequence getLabel(android.content.ContentResolver, CharSequence);
+  }
+
+  public static final class MtkContactsContract.CommonDataKinds.Phone {
+    method public static CharSequence getTypeLabel(android.content.Context, int, CharSequence);
+  }
+
+  public static final class MtkSettingsExt.System {
+    method public static String getVoiceCommandValue(android.content.ContentResolver, String, int);
+    field public static String BASE_VOICE_WAKEUP_COMMAND_KEY;
+  }
+
+}
+
+package com.mediatek.search {
+
+  public class SearchEngineManager {
+    method public java.util.List<com.mediatek.common.search.SearchEngine> getAvailables();
+    method public com.mediatek.common.search.SearchEngine getBestMatch(String, String);
+    method public com.mediatek.common.search.SearchEngine getByName(String);
+    method public com.mediatek.common.search.SearchEngine getDefault();
+  }
+
+}
+
+package com.mediatek.storage {
+
+  public class StorageManagerEx {
+    method public static String getDefaultPath();
+    method public static String getExternalStoragePath();
+  }
+
+}
+
+package com.mediatek.telephony {
+
+  public class MtkTelephonyManagerEx {
+    ctor public MtkTelephonyManagerEx(android.content.Context);
+    method public boolean abortFemtoCellList(int);
+    method public void addGwsdListener(com.mediatek.gwsd.GwsdListener);
+    method public boolean cancelAvailableNetworks(int);
+    method public int checkValidCard(int);
+    method public boolean exitEmergencyCallbackMode(int);
+    method public com.mediatek.internal.telephony.PseudoCellInfo getApcInfo(int);
+    method public com.mediatek.internal.telephony.MtkIccCardConstants.CardType getCdmaCardType(int);
+    method public int getCdmaSubscriptionActStatus(int);
+    method public android.telephony.CellLocation getCellLocation(int);
+    method @Deprecated public static com.mediatek.telephony.MtkTelephonyManagerEx getDefault();
+    method public int getDisable2G(int);
+    method public java.util.List<com.mediatek.internal.telephony.FemtoCellInfo> getFemtoCellList(int);
+    method public int getIccAppFamily(int);
+    method public String getIccCardType(int);
+    method @RequiresPermission(anyOf={android.Manifest.permission.READ_PHONE_STATE, android.Manifest.permission.READ_SMS, android.Manifest.permission.READ_PHONE_NUMBERS}) public String getLine1PhoneNumber(int);
+    method public String getLocatedPlmn(int);
+    method public android.net.NetworkStats getMobileDataUsage(int);
+    method public int getPhoneType(int);
+    method public int[] getRoamingEnable(int);
+    method public int[] getRxTestResult();
+    method @RequiresPermission(allOf={android.Manifest.permission.READ_PHONE_STATE, android.Manifest.permission.ACCESS_COARSE_LOCATION}) public android.telephony.ServiceState getServiceStateByPhoneId(int);
+    method public int getShouldServiceCapability(int);
+    method public int getSimLockPolicy();
+    method public int getSimLockState();
+    method public int getSimOnOffExecutingState(int);
+    method public int getSimOnOffState(int);
+    method public String[] getSimOperatorNumericForPhoneEx(int);
+    method public String getSimSerialNumber(int);
+    method @RequiresPermission(allOf={android.Manifest.permission.MODIFY_PHONE_STATE, android.Manifest.permission.ACCESS_COARSE_LOCATION}) public String[] getSuggestedPlmnList(int, int, int, int);
+    method public String[] getSupportCardType(int);
+    method public String getUimSubscriberId(int);
+    method @Deprecated public int invokeOemRilRequestRaw(byte[], byte[]);
+    method public int invokeOemRilRequestRawBySlot(int, byte[], byte[]);
+    method public boolean isCt3gDualMode(int);
+    method public boolean isDataAvailableForGwsdDualSim(boolean);
+    method public boolean isDigitsSupported();
+    method public boolean isEmergencyNumber(int, String);
+    method public boolean isGsm(int);
+    method public boolean isImsRegistered(int);
+    method public boolean isInCsCall(int);
+    method public boolean isInHomeNetwork(int);
+    method public boolean isSimOnOffEnabled();
+    method public boolean isVolteEnabled(int);
+    method public boolean isWifiCallingEnabled(int);
+    method public int queryFemtoCellSystemSelectionMode(int);
+    method public void removeGwsdListener();
+    method public boolean selectFemtoCell(int, com.mediatek.internal.telephony.FemtoCellInfo);
+    method public void setApcMode(int, int, boolean, int);
+    method public void setCallValidTimer(int);
+    method public boolean setDisable2G(int, boolean);
+    method public boolean setFemtoCellSystemSelectionMode(int, int);
+    method public void setGwsdAutoRejectEnabled(boolean);
+    method @RequiresPermission(android.Manifest.permission.MODIFY_PHONE_STATE) public void setGwsdDualSimEnabled(boolean);
+    method public void setGwsdEnabled(boolean);
+    method public void setIgnoreSameNumberInterval(int);
+    method public void setMobileDataUsageSum(int, long, long, long, long);
+    method public boolean setRoamingEnable(int, int[]);
+    method public int[] setRxTestConfig(int);
+    method public int setSimPower(int, int);
+    method public boolean setupPdnByType(int, String);
+    method public void syncGwsdInfo(boolean, boolean);
+    method public boolean tearDownPdnByType(int, String);
+    field public static final String PROPERTY_SIM_CARD_ONOFF = "ro.vendor.mtk_sim_card_onoff";
+    field public static final String[] PROPERTY_SIM_ONOFF_STATE;
+    field public static final String PROPERTY_SIM_ONOFF_SUPPORT = "vendor.ril.sim.onoff.support";
+    field public static final int SET_SIM_POWER_ERROR_ALREADY_SIM_OFF = 14; // 0xe
+    field public static final int SET_SIM_POWER_ERROR_ALREADY_SIM_ON = 15; // 0xf
+    field public static final int SET_SIM_POWER_ERROR_EXECUTING_SIM_OFF = 12; // 0xc
+    field public static final int SET_SIM_POWER_ERROR_EXECUTING_SIM_ON = 13; // 0xd
+    field public static final int SET_SIM_POWER_ERROR_NOT_ALLOWED = 54; // 0x36
+    field public static final int SET_SIM_POWER_ERROR_NOT_SUPPORT = -1; // 0xffffffff
+    field public static final int SET_SIM_POWER_ERROR_SIM_ABSENT = 11; // 0xb
+    field public static final int SET_SIM_POWER_SUCCESS = 0; // 0x0
+    field public static final int SIM_POWER_STATE_EXECUTING_SIM_OFF = 10; // 0xa
+    field public static final int SIM_POWER_STATE_EXECUTING_SIM_ON = 11; // 0xb
+    field public static final int SIM_POWER_STATE_SIM_OFF = 10; // 0xa
+    field public static final int SIM_POWER_STATE_SIM_ON = 11; // 0xb
+  }
+
+}
+
+package mediatek.telecom {
+
+  public static class MtkCall.MtkDetails {
+    method public static String capabilitiesToStringShort(int);
+    method public static String propertiesToStringShort(int);
+  }
+
+  public static class MtkTelecomHelper.MtkInCallServiceHelper {
+    method public static android.os.Bundle buildParamsForBlindOrAssuredEct(String, String, int);
+    method public static android.os.Bundle buildParamsForExplicitCallTransfer(String);
+    method public static android.os.Bundle buildParamsForHangupAll();
+    method public static android.os.Bundle buildParamsForHangupHold();
+    method public static android.os.Bundle buildParamsForInviteConferenceParticipants(String, java.util.ArrayList<java.lang.String>);
+    method public static android.os.Bundle buildParamsForSetSortedIncomingCallList(java.util.ArrayList<java.lang.String>);
+    method public static android.os.Bundle buildParamsForStartVoiceRecording();
+    method public static android.os.Bundle buildParamsForStopVoiceRecording();
+  }
+
+  public class MtkTelecomManager {
+    method public static android.content.Intent createConferenceInvitationIntent(android.content.Context);
+  }
+
+}
+
+package mediatek.telephony {
+
+  public class MtkServiceState extends android.telephony.ServiceState {
+    method public int getCellularRegState();
+  }
+
+}
+

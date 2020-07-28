@@ -1,0 +1,56 @@
+cc_library_shared {
+    shared_libs: [
+        "liblog",
+        "libmediandk",
+        "libcutils",
+        "libstagefright_foundation",
+        "libmedia"
+    ],
+
+    static_libs: [
+        "libstagefright_metadatautils",
+        "libutils",
+    ],
+
+    name: "libmtkasfextractor",
+    owner: "mtk",
+    relative_install_path: "extractors",
+
+    compile_multilib: "first",
+
+    cflags: [
+        "-Werror",
+        "-Wall",
+        "-fvisibility=hidden",
+    ],
+    version_script: "exports.lds",
+
+    sanitize: {
+        cfi: true,
+        misc_undefined: [
+            "unsigned-integer-overflow",
+            "signed-integer-overflow",
+        ],
+    },
+
+    defaults: [
+        "mtk_asfextractor_defaults",
+    ],
+}
+ 
+bootstrap_go_package {
+    name:"soong-asf-mediatek",
+    pkgPath:"android/soong/asf/mediatek",
+    deps:[
+        "soong-android",
+        "soong-cc",
+    ],
+    srcs:[
+        "asf.go",
+    ],
+    pluginFor:["soong_build"],
+}
+
+mtk_asfextractor_defaults {
+    name: "mtk_asfextractor_defaults",
+}

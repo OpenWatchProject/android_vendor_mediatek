@@ -1,0 +1,151 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+    <RelativeLayout android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:minHeight="?android:attr/listPreferredItemHeight"
+                  android:paddingRight="?android:attr/scrollbarSize"
+                  android:gravity="center_vertical"
+                  >
+        <TextView android:id="@+id/SwitchAcsTitle"
+                  android:layout_alignParentLeft="true"
+                  android:layout_marginLeft="10dip"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:textAppearance="?android:attr/textAppearanceMedium"
+                  android:textColor="?android:attr/textColorPrimary"
+                  android:text="@string/switch_acs"
+              />
+        <ToggleButton android:id="@+id/AcsSwitchButton"
+                  android:layout_alignParentRight="true"
+                  style="@style/ImageAcsSwitch"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:background="#00000000"
+                  android:checked="true"
+                  android:textOff=""
+                  android:textOn=""
+                  />
+    </RelativeLayout>
+
+    <LinearLayout style="@style/horizontal_division_line"/>
+
+    <TableLayout android:layout_width="fill_parent"
+                 android:layout_height="wrap_content"
+                 android:layout_margin="5dip"
+                 android:stretchColumns="0,1">
+      <TableRow android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+        <Button android:text="@string/reset_acs"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/reset_btn"/>
+      </TableRow>
+    </TableLayout>
+
+    <LinearLayout style="@style/horizontal_division_line"/>
+
+    <ScrollView android:layout_width="fill_parent" android:layout_height="fill_parent">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <TextView android:text="@string/acs_url_selection"
+        android:paddingTop="5dip"
+        android:layout_marginLeft="5dip"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"/>
+        <EditText android:id="@+id/AcsUrlSelection"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dip"
+        android:layout_marginRight="5dip"
+        android:inputType="textMultiLine"
+        android:maxLength="100"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:enabled="true"
+        />
+        <Button android:id="@+id/SaveUrlBtn"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/save_acs_url"
+            android:layout_marginLeft="5dip"
+            android:layout_marginRight="5dip"
+            />
+
+        <TextView android:text="@string/ipme_url"
+        android:paddingTop="5dip"
+        android:layout_marginLeft="5dip"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"/>
+        <EditText android:id="@+id/IpMeUrl"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dip"
+        android:layout_marginRight="5dip"
+        android:inputType="textMultiLine"
+        android:enabled="false"
+        />
+
+        <TextView android:text="@string/ambs_url"
+        android:paddingTop="5dip"
+        android:layout_marginLeft="5dip"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"/>
+        <EditText android:id="@+id/AMBSUrl"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dip"
+        android:layout_marginRight="5dip"
+        android:inputType="textMultiLine"
+        android:enabled="false"
+        />
+
+        <TextView android:text="@string/config_doc_expiration"
+        android:paddingTop="5dip"
+        android:layout_marginLeft="5dip"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"/>
+        <EditText android:id="@+id/Config_Doc_Expiration"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dip"
+        android:layout_marginRight="5dip"
+        android:inputType="textMultiLine"
+        android:enabled="false"
+        />
+
+        <TextView android:text="@string/config_version"
+        android:paddingTop="5dip"
+        android:layout_marginLeft="5dip"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"/>
+        <EditText android:id="@+id/Config_Ver"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dip"
+        android:layout_marginRight="5dip"
+        android:inputType="textMultiLine"
+        android:enabled="false"
+        />
+
+        <TextView android:text="@string/username_and_password"
+        android:paddingTop="5dip"
+        android:layout_marginLeft="5dip"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"/>
+        <EditText android:id="@+id/Username_Password"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dip"
+        android:layout_marginRight="5dip"
+        android:inputType="textMultiLine"
+        android:enabled="false"
+        />
+    </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

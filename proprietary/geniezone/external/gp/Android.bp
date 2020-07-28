@@ -1,0 +1,42 @@
+cc_library {
+    name: "libgz_gp_client",
+    proprietary: true,
+    owner: "mtk",
+    cflags: [
+        "-Wall",
+        "-Werror",
+        "-Wno-unused-parameter",
+        "-Wno-unused-function",
+    ],
+    srcs: [
+        "tee_client_api.c",
+    ],
+    local_include_dirs: ["include"],
+    export_include_dirs: ["include"],
+    shared_libs: [
+        "liblog",
+        "libgz_uree",
+    ],
+}
+
+cc_test {
+    name: "gz_gp_test",
+    proprietary: true,
+    owner: "mtk",
+    cflags: [
+        "-Wall",
+        "-Werror",
+        "-Wno-unused-parameter",
+        "-Wno-unused-function",
+    ],
+    compile_multilib: "both",
+    srcs: [
+        "test/test.c",
+    ],
+    local_include_dirs: ["include"],
+    shared_libs: [
+        "liblog",
+        "libgz_uree",
+        "libgz_gp_client",
+    ],
+}

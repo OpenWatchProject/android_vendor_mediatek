@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This layout is shared by phone and tablet in landscape orientation. -->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/camera_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:splitMotionEvents="false">
+    <FrameLayout android:id="@+id/camera_preview_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center">
+    </FrameLayout>
+    <FrameLayout android:id="@+id/camera_view_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:splitMotionEvents="false">
+        <View android:id="@+id/camera_cover"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/black"
+            android:visibility="gone"/>
+        <include layout="@layout/camera_view_layers"/>
+    </FrameLayout>
+    <FrameLayout android:id="@+id/image_strip_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:splitMotionEvents="false">
+    </FrameLayout>
+</FrameLayout>

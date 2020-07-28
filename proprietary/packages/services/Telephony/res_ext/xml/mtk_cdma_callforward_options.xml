@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+     xmlns:phone="http://schemas.android.com/apk/res/com.android.phone"
+     android:title="@string/labelCF">
+    <Preference
+        android:key="button_cfu_key"
+        android:title="@string/cdma_labelCFU"
+        android:persistent="false"/>
+    <Preference
+        android:key="button_cfb_key"
+        android:title="@string/cdma_labelCFB"
+        android:persistent="false"/>
+    <Preference
+        android:key="button_cfnry_key"
+        android:title="@string/cdma_labelCFNRy"
+        android:persistent="false"/>
+    <Preference
+        android:key="button_cfnrc_key"
+        android:title="@string/cdma_labelCFNRc"
+        android:persistent="false"/>
+    <Preference
+        android:key="button_cfc_key"
+        android:title="@string/cdma_labelCFC"
+        android:persistent="false"/>
+</PreferenceScreen>

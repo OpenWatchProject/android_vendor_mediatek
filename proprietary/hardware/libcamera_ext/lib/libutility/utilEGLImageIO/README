@@ -1,0 +1,23 @@
+This module creates an static utility library about EGL
+
+WHAT IT DOES?
+=============
+This library includes EGL functions for easier usage of GPU
+
+HOW IT WAS BUILT?
+==================
+It needs the following library from AOSP:
+
+libcutils, liblog
+
+All source/dependency modules of this module are already put in
+
+'vendor/mediatek/libs' folder.
+
+HOW TO USE IT?
+==============
+
+This libraries should not be used directly by an application developer.
+
+The majority of source code for this library were written by MediaTek.
+

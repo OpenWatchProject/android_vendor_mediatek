@@ -1,0 +1,25 @@
+Native test for MTK camera feature pipe
+
+WHAT IT DOES?
+=============
+Unit test for MTK camera feature pipe core library
+
+HOW IT WAS BUILT?
+==================
+It needs the following library from AOSP:
+- libcutils.so
+- liblog.so
+- libutils.so
+- libstdc++
+
+and the following libs from MediaTek:
+-
+
+All source/dependency modules of this module are already put in
+'vendor/mediatek/libs' folder.
+
+HOW TO USE IT?
+==============
+adb shell /data/nativetest/libmtkcam.featurepipe.test
+
+All the source code of this library were written by MediaTek co..

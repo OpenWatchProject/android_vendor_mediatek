@@ -1,0 +1,18 @@
+This directory contains MTK RIL protect mechansim, which can restart the modem and ril while underlayer is abnormal
+
+WHAT IT DOES?
+=============
+It provides the protect mechanism for MTK RIL.
+
+HOW IT WAS BUILT?
+==================
+
+The muxreport binary was built entirely from source files written by Mediatek.
+
+HOW TO USE IT?
+==============
+
+Files in this directory is used to
+generate a executable file 'muxreport'.
+
+The executable file 'muxreport' is used by gsm0710muxd, mtk-ril.so and rild-prop-md1.a

@@ -1,0 +1,94 @@
+
+cc_binary {
+    proprietary: true,
+    defaults: ["hidl_defaults"],
+    relative_install_path: "hw",
+    name: "power_native_test_v_1_0",
+    srcs: [
+        "power_native_test.cpp",
+    ],
+
+    cflags: [
+        "-Wall",
+        "-Werror",
+    ],
+
+    include_dirs: [
+        "vendor/mediatek/proprietary/hardware/power/include",
+    ],
+
+    shared_libs: [
+        "liblog",
+        "libutils",
+        "libcutils",
+        "libhardware",
+        "libhidlbase",
+        "libdl",
+        "android.hardware.power@1.0",
+        "android.hardware.power@1.1",
+        "android.hardware.power@1.2",
+        "android.hardware.power@1.3",
+        "vendor.mediatek.hardware.mtkpower@1.0",
+    ],
+
+}
+
+cc_binary {
+    proprietary: true,
+    defaults: ["hidl_defaults"],
+    relative_install_path: "hw",
+    name: "power_legacy_test_v_1_0",
+    srcs: [
+        "power_legacy_test.cpp",
+    ],
+
+    cflags: [
+        "-Wall",
+        "-Werror",
+    ],
+
+    include_dirs: [
+        "vendor/mediatek/proprietary/hardware/power/include",
+    ],
+
+    shared_libs: [
+        "liblog",
+        "libutils",
+        "libcutils",
+        "libhardware",
+        "libhidlbase",
+        "libdl",
+        "vendor.mediatek.hardware.power@2.0",
+        "vendor.mediatek.hardware.mtkpower@1.0",
+    ],
+
+}
+
+cc_binary {
+    proprietary: true,
+    defaults: ["hidl_defaults"],
+    relative_install_path: "hw",
+    name: "power_uevent_test",
+    srcs: [
+        "power_uevent_test.cpp",
+    ],
+
+    cflags: [
+        "-Wall",
+        "-Werror",
+    ],
+
+    include_dirs: [
+        "vendor/mediatek/proprietary/hardware/power/include",
+    ],
+
+    shared_libs: [
+        "liblog",
+        "libutils",
+        "libcutils",
+        "libhardware",
+        "libhidlbase",
+        "libdl"        
+    ],
+
+}

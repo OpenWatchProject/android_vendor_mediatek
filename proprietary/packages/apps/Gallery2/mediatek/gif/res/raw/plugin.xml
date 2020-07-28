@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    id="Gallery2Gif"
+    name="Gallery2Gif"
+    version="1"
+    xmlns="http://www.plugin.com"
+    xsi:schemaLocation="http://www.plugin.com ../../../plugin/assets/plugin.xsd" >
+
+    <extension
+        id="GifMember"
+        name="Show indicator for gif image"
+        class="com.mediatek.gallerygif.GifMember"
+        plugin-id="Gallery2Root"
+        point-id="MediaMember" >
+    </extension>
+
+</plugin>

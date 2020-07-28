@@ -1,0 +1,703 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+/*
+ * Copyright (C) 2007-2008 Esmertec AG.
+ * Copyright (C) 2007-2008 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+ -->
+
+<resources xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+
+<!-- MTK Resources --> 
+    <string name="more_recipients">位聯絡人</string>
+    <string name="Insert_sdcard">請插入 SD 卡</string>
+    <string name="pref_title_mms_enable_to_send_delivery_reports">發送傳送報告</string>
+    <string name="pref_summary_mms_enable_to_send_delivery_reports">對各收到的訊息發送傳送報告 </string>
+    <string name="sms_save_location">簡訊儲存位置</string>
+    <string name="sms_service_center">簡訊服務中心</string>
+    <string name="sms_validity_period">簡訊有效期</string>
+    <string name="sms_validity_period_nosetting">未設定</string>
+    <string name="sms_validity_period_1hour">1小時</string>
+    <string name="sms_validity_period_6hours">6小時</string>
+    <string name="sms_validity_period_12hours">12小時</string>
+    <string name="sms_validity_period_1day">1天</string>
+    <string name="sms_validity_period_max">最大</string>
+    <string name="service_center_label">"服務中心： "</string>
+    <string name="attach_ringtone">"鈴聲"</string>
+    <string name="cu_subject">中國聯通樂媒</string>
+    <string name="pref_title_mms_size_limit">容量限制</string>
+    <string name="pref_summary_mms_size_limit">編寫多媒體訊息時的 MMS 容量限制</string>
+    <string name="pref_title_mms_creation_mode">新建模式</string>
+    <string name="pref_summary_mms_creation_mode">編寫訊息的 MMS 新建模式</string>
+    <string name="confirm_restricted_audio">受限的音訊內容類型，確定要附寄？ </string>
+    <string name="confirm_restricted_image">受限的影像內容類型，確定要附寄？ </string>
+    <string name="confirm_restricted_video">受限的視訊內容類型，確定要附寄？ </string>
+    <string name="unsupport_media_type">不支援的媒體類型</string>
+    <string name="select_different_media_type">選擇不同的媒體</string>
+    <!-- to notify user that image resolution is too large -->    
+    <string name="image_resolution_too_large">影像解析度太高無法插入</string>
+    <!-- wap push string begin -->
+    <!-- The type of wap push message, used in message details -->
+    <string name="wp_msg_type">服務訊息</string>
+    <string name="wp_msg_created_label">創建於：\u0020</string>
+    <string name="wp_msg_created_unknown">未知</string>
+    <string name="wp_msg_priority_label">級別：\u0020</string>
+    <!-- Wappush message priority -->
+    <string name="wp_msg_priority_low">低優先</string>
+    <string name="wp_msg_priority_medium">中等</string>
+    <string name="wp_msg_priority_high">高</string>
+    <!-- Context menu item -->
+    <string name="menu_goto_browser">開啟瀏覽器</string>
+    <string name="menu_add_to_bookmark">新增到書籤</string>
+    <!-- Wappush message content label -->
+    <string name="wp_msg_expiration_label">逾期日：<xliff:g id="DATE">%s</xliff:g></string>
+    
+    <string name="error_unsupported_scheme">該操作目前不支援。</string>
+    
+        <!-- wap push setting -->
+    <string name="pref_title_wappush_settings">推送訊息設定</string>
+    
+    <string name="pref_title_wappush_enable">啟用推送訊息</string>
+    <string name="pref_summary_wappush_enable">啟用接收推送訊息</string>
+    
+    <string name="pref_title_wappush_sl_autoloading">自動啟動 SL</string>
+    <string name="pref_summary_wappush_sl_autoloading">收到時自動啟動服務負載 (SL)訊息 </string>
+    <!-- wap push string end -->
+    <string name="create_new_message" msgid="8735943333953093860">"撰寫新簡訊"</string>
+    <string name="menu_send_sms">傳送訊息到<xliff:g id="name">%s</xliff:g></string>
+    <string name="menu_undelivered_messages" msgid="3896857623211780616">"無法傳送的簡訊"</string>
+    <string name="broadcast_from_to" msgid="2050376286109362539">"<xliff:g id="SENDER">%1$s</xliff:g>寄送給<xliff:g id="RECIPIENT">%2$s</xliff:g>"</string>
+    <string name="anonymous_recipient" msgid="2501437626187039034">"匿名"</string>
+    <string name="view_picture" msgid="4356315935277709195">"檢視圖片"</string>
+ <string name="sent_on" msgid="5868288548564632354">"傳送時間：<xliff:g id="DATE">%s</xliff:g>"</string>
+    <string name="received_on" msgid="5868288548564632354">"接收時間：<xliff:g id="DATE">%s</xliff:g>"</string>
+    <string name="menu_reply" >"回覆"</string>
+    <string name="menu_sim_sms" >"SIM卡簡訊"</string>
+    <string name="name_colon" msgid="7069560650889479120"><b>"<xliff:g id="NAME">%s</xliff:g>"</b>"： "</string>
+    <string name="compose_title" msgid="558578836596816068">"撰寫"</string>
+    <string name="image_too_large" msgid="261880224164478061">"圖片太大"</string>
+    <string name="ask_for_automatically_resize" msgid="7657603662407738758">"傳送前是否自動重新調整相片大小？"</string>
+    <string name="cannot_load_message" msgid="2577010607550849892">"無法載入簡訊。"</string>
+    <string name="locked_message_cannot_be_deleted" msgid="6369452071783350219">"無法刪除鎖定的訊息。"</string>
+    <string name="cannot_add_recipient">"收件者數量已達上限，無法再添加。"</string>
+    <string name="multiple_recipients" msgid="8747754491343248141">"<xliff:g id="RECIPIENTCOUNT">%1$s</xliff:g> 位收件者"</string>
+    <string name="resize" msgid="4308912589984220360">"調整大小"</string>
+    <string name="to_label" msgid="2355268818058389047">"給 "</string>
+    <string name="confirm_delete_all_messages" msgid="5836389073199814660">"刪除整個會話群組？"</string>
+    <string name="mms_priority_label">"優先權"</string>
+    <string name="menu_retry_sending" msgid="3146582005568302643">"重新傳送"</string>
+    <string name="menu_retry_sending_all" msgid="1870529976966340616">"全部重新傳送"</string>
+    <string name="retrying_dialog_body" msgid="4738260459043003431">"由於連線問題，此簡訊 (<xliff:g id="MESSAGE">%s</xliff:g>) 傳送失敗。"\n"重新傳送中..."</string>
+    <string name="notification_multiple_cb"><xliff:g id="count">%s</xliff:g> 未閱讀的廣播訊息</string>
+    <string name="notification_multiple_cb_title">新的廣播訊息</string>
+    <string name="dl_expired_notification" msgid="950390029992535809">"訊息已過期，系統將予以刪除。"</string>
+    <string name="add_attachment_activity" msgid="5324811371129695320">"新增附件："</string>
+    <string name="select_layout_activity" msgid="5041916695464513848">"選取版面配置"</string>
+    <string name="edit_text_activity" msgid="5915226413346879213">"編輯文字"</string>
+    <string name="pick_numbers_activity" msgid="2083330191224178637">"選擇號碼"</string>
+    <string name="send_using_mms_activity" msgid="3703434556280345726">"傳送多媒體訊息…"</string>
+    <string name="select_contact_method_activity" msgid="1743384358979323991">"選取聯絡方式"</string>
+    <string name="fdn_enabled">固定撥號已啟用</string>
+    <string name="cannot_send_message_reason_no_content">無內容可傳送。</string>
+    <string name="cb_read_message">閱讀廣播訊息</string>
+    <string name="cb_read_message2">閱讀廣播訊息</string>
+    <string name="cb_message">廣播訊息</string>
+    <string name="cb_default_channel_name">來自頻道</string>
+    <string name="message_open_email_fail">抱歉，請先設定電子郵件帳號。</string>
+    <string name="add_contacts">聯絡人</string>
+    <string name="me">"我"</string>
+    <string name="send_by_sim2">由 SIM2 傳送</string>
+    <string name="send_by_sim1">由 SIM1 傳送</string>
+    <string name="menu_item_send_by">傳送</string>
+    <string name="data_connected_confirm_title">確認傳送</string>
+    <string name="data_connected_confirm_message">用此一 SIM 卡傳送 MMS可能使目前的下載暫停一陣子，是否繼續？ </string>
+    <string name="menu_item_sim1">SIM1</string>
+    <string name="menu_item_sim2">SIM2</string>
+    <string name="no_sim_1">SIM 1未插入。</string>
+    <string name="no_sim_2">SIM 2 未插入。</string>
+    <string name="no_sim">SIM %d 未插入。</string>
+    <string name="sim1_full_title">SIM 卡 1 已滿</string>
+    <string name="sim2_full_title">SIM 卡 2 已滿</string>
+    <string name="select_all">	選擇全部</string>
+    <string name="confirm_delete_selected_messages">所選的訊息將被刪除。</string>
+    <string name="confirm_delete_selected_theads">選取的對話將會刪除。</string>
+    <string name="restricted_forward_title">"多媒體訊息"</string>
+    <string name="restricted_forward_message">此一媒體可能無法被收件人正確播放，繼續？</string>
+    <string name="strOk">訊息已傳送</string>
+    <string name="strFail">訊息發送失敗</string>
+    <string name="menu_insert_text_vcard">插入聯絡人</string>
+    <string name="contact_name">名稱</string>
+    <string name="contact_tel">電話</string>
+    <string name="contact_email">電子郵件</string>
+    <string name="contact_organization">組織</string>
+    <string name="contact_address">位址</string>
+    <string name="max_recipients_title">已達個數上限</string>
+    <string name="max_recipients_message">多媒體訊息最多只允許  <xliff:g id="maxLimit">%s</xliff:g> 位收件者。將移除部分收件者，是否要繼續？</string>
+    <string name="via_without_time_for_send">經由</string>
+    <string name="via_without_time_for_recieve">接收由</string>
+    <string name="sim_selected_dialog_title">選擇SIM卡</string>
+    <string name="suggested">建議</string>
+    <string name="add_contact_dialog_message">"新增電話號碼 %s 給原有或新聯絡人？"</string>
+    <string name="add_contact_dialog_existing">現存的</string>
+    <string name="add_contact_dialog_new">新增</string>    
+    <string name="deleting">刪除中</string>
+    <!-- Context menu item on an sms for saving message to sim card -->
+    <string name="save_message_to_sim">儲存訊息到SIM卡</string>
+    <!-- Toast message for saving message to sim card successful-->
+    <string name="save_message_to_sim_successful">儲存完成</string>
+    <!-- Toast message for saving message to sim card unsuccessful-->
+    <string name="save_message_to_sim_unsuccessful">儲存失敗</string>
+    <!-- Toast message for transmission transiently failed-->
+    <string name="transmission_transiently_failed">傳輸失敗，將於稍後再試。</string>
+    <!-- Toast message for downloading failed due to full memory-->
+    <string name="download_failed_due_to_full_memory">記憶體已滿，訊息下載失敗。</string>
+    <!-- Toast message for downloading failed due to message size exceed limitation-->
+    <string name="mms_too_big_to_download">訊息過大無法自網路下載。</string>
+    <!-- Title of storage status in settings -->
+    <string name="pref_title_storage_status">目前儲存空間用量</string>
+    <string name="storage_dialog_mms">多媒體訊息：\u0020<xliff:g id="number">%s</xliff:g>條</string>
+    <string name="storage_dialog_sms">簡訊：\u0020<xliff:g id="number">%s</xliff:g>條</string>
+    <string name="storage_dialog_attachments">多媒體訊息附件：\u0020</string>
+    <string name="storage_dialog_database">資料庫：\u0020</string>
+    <string name="storage_dialog_available_space">可用的空間：\u0020</string>
+    <!-- Status in "Report" window -->
+    <string name="status_expired">逾期</string>
+    <string name="status_deferred">延後的</string>
+    <string name="status_unrecognized">不明的</string>
+    <string name="status_indeterminate">不確定</string>
+    <string name="status_unreachable">無法連線</string>
+    
+    <!-- Show SIM capacity -->
+    <string name="menu_show_icc_sms_capacity">查看容量</string>
+    <string name="show_icc_sms_capacity_title">容量</string>
+    <string name="icc_sms_used">已使用的：</string>
+    <string name="icc_sms_total">合計：</string>
+    <string name="get_icc_sms_capacity_failed">獲取SIM卡容量失敗。</string>
+    <plurals name="read_report_toast_msg">
+        <item quantity="other">"%d個已讀報告正在發送"</item>
+        <item quantity="one">傳送 %d 讀取報告</item>
+    </plurals>
+    <string name="pref_title_mms_auto_reply_read_reports">傳送已讀報告</string>
+    <string name="pref_summary_mms_auto_reply_read_reports">MMS 寄件人如有要求，發送閱讀報告</string>
+		
+	<plurals name="message_view_selected_message_count">
+		<item quantity="one" msgid="5064657358375178519">已選 <xliff:g id="message_count" example="1">%d</xliff:g> 個</item>
+		<item quantity="other" msgid="7901361399231876038">已選 <xliff:g id="message_count" example="9">%d</xliff:g>  個</item>
+	</plurals>
+	
+	    <!--    Export/Import SMS -->
+    <string name="pref_title_io_settings">匯入匯出簡訊</string>
+    <string name="pref_summary_import_msg">從SD卡匯入簡訊</string>
+    <string name="pref_title_import_msg">匯入簡訊</string>
+    <string name="pref_summary_export_msg">匯出簡訊到SD卡</string>
+    <string name="pref_title_export_msg">匯出簡訊</string>
+    <string name="no_sd_card">SD 卡不可使用</string>
+    <string name="export_message_ongoing">正在匯出簡訊到SD卡，請等待...</string>
+    <string name="import_message_ongoing">正在從SD卡匯入簡訊，請等待...</string>
+    <string name="export_message_success">匯出簡訊到SD卡已成功</string>
+    <string name="import_message_success">從SD卡匯入簡訊已成功</string>
+    <string name="import_message_fail">從SD卡匯入簡訊失敗</string>
+    <string name="export_message_fail">匯出簡訊到SD卡失敗</string>
+    <string name="import_message_list">SD卡上的簡訊備份列表</string>
+    <string name="import_message_list_empty">在SD卡上沒有找到簡訊備份文件</string>
+    <string name="export_message_empty">沒有簡訊可匯出</string>
+    <string name="whether_export_item">確定要將簡訊匯出到SD卡？</string>
+    <string name="whether_import_item">確定要匯入文件</string>
+    <string name="export_disk_problem">SD卡已滿或不可寫入</string> 
+    <!--   Settings item for inputmode of SMS messages  --> 
+    <string name="sms_input_mode_title">輸入模式</string> 
+    <string name="sms_input_mode_dialog_title">選擇輸入模式</string> 
+    <string name="sms_input_mode_summary">簡訊文字輸入格式</string> 
+    <!-- Cell broadcast SMS strings -->
+    <string name="select_text">選擇文字</string>
+    <string name="unselect_all">取消全選</string>
+
+    <!-- SMS forward with sender's information -->
+    <string name="forward_from">轉寄者：</string>
+    <string name="sms_forward_setting">SMS 轉發設定</string>
+    <string name="sms_forward_setting_summary">轉發已接收簡訊時附帶附加寄件者訊息</string>
+    <string name="forward_byself">我</string>
+    <!-- add for vcard -->
+   <string name="file_attachment_vcard_name">vCard(<xliff:g id="text">%s</xliff:g>)</string>
+    <string name="attach_vcalendar" msgid="5452708708398908131">"Google 日曆"</string>
+    <string name="file_attachment_import_vcard">匯入 vCard</string>
+   <string name="attach_vcard">聯絡人</string>
+   <string name="type_common_file">檔案</string>
+    <string name="failed_to_parse_vcard">無法剖析 vCard 檔案!</string>
+    <string name="empty_vcard">vCard 內無聯絡人</string>
+   <string name="parse_vcard">解析vCard</string>
+    <string name="vcard_no_details">本聯絡人無其他資訊</string>
+    <string name="call_custom">"<xliff:g id="CUSTOM">%s</xliff:g>"</string>
+    <string name="call_home">自宅</string>
+    <string name="call_mobile">行動電話</string>
+    <string name="call_work">工作</string>
+    <string name="call_fax_work">工作傳真</string>
+    <string name="call_fax_home">住家傳真</string>
+    <string name="call_pager">傳呼器</string>
+    <string name="call_other">"通話"</string>
+    <string name="call_callback">"回撥號碼"</string>
+    <string name="call_car">"汽車電話"</string>
+    <string name="call_company_main">"公司代表號"</string>
+    <string name="call_isdn">"ISDN"</string>
+    <string name="call_main">"代表號"</string>
+    <string name="call_other_fax">"傳真"</string>
+    <string name="call_radio">收音機</string>
+    <string name="call_telex">電報</string>
+    <string name="call_tty_tdd">"TTY/TDD"</string>
+    <string name="call_work_mobile">工作電話號碼</string>
+    <string name="call_work_pager">工作傳呼機</string>
+    <string name="call_assistant">"<xliff:g id="ASSISTANT">%s</xliff:g>"</string>
+    <string name="call_mms">"MMS"</string>
+    <string name="email_home">"傳送電子郵件至住家電子郵件地址"</string>
+    <string name="email_mobile">"傳送電子郵件至行動裝置"</string>
+    <string name="email_work">"傳送電子郵件至公司電子郵件地址"</string>
+    <string name="email_other">"傳送電子郵件"</string>
+    <string name="email_custom">"傳送電子郵件至<xliff:g id="CUSTOM">%s</xliff:g>"</string>
+    <string name="email">"傳送電子郵件"</string>
+    <string name="map_home">"檢視住家地址"</string>
+    <string name="map_work">"檢視公司地址"</string>
+    <string name="map_other">"檢視地址"</string>
+    <string name="map_custom">"檢視<xliff:g id="CUSTOM">%s</xliff:g>地址"</string>
+    <string name="chat_aim">用 AIM 聊天</string>
+    <string name="chat_msn">用 Windows Live 聊天</string>
+    <string name="chat_yahoo">用 Yahoo 聊天</string>
+    <string name="chat_skype">用 Skype 聊天</string>
+    <string name="chat_qq">用 QQ 聊天</string>
+    <string name="chat_gtalk">用 Google Talk 聊天</string>
+    <string name="chat_icq">用 ICQ 聊天</string>
+    <string name="chat_jabber">用 Jabber 聊天</string>
+    <string name="chat">"即時通訊"</string>
+   <string name="please_wait">"請稍候..."</string>
+   <string name="note">備註</string>
+   <string name="organization">組織</string>
+   <string name="website">"網站： "</string>
+    <string name="nickname">暱稱</string>
+   <!-- add for vcard -->
+    <string name="inbox">"收件箱"</string>
+    <string name="outbox">寄件匣</string>
+    <string name="draftbox">草稿匣</string>
+    <string name="sentbox">"已發送"</string>
+    <string name="simbox">SIM 信箱</string>
+    <string name="changeview">變更模式</string>
+    <string name="viewer_title_sms">"簡訊"</string>
+    <string name="viewer_title_wappush">"推送訊息"</string>
+    <string name="viewer_title_cb">區域廣播</string>
+    <string name="slideshow_details">訊息詳細資料</string>
+    <string name="open">開啟</string>
+    <string name="delete_all_confirm">"刪除信箱內的全部訊息？"</string>
+    
+    <string name="confirm_download_message">"確認下載訊息" </string>
+    <string name="folder_download">"多媒體訊息下載中..."</string>
+    <string name="download_disabled_toast">"這不是預設的簡訊應用程式，無法讓您下載多媒體訊息。"</string>
+    <string name="play_as_slideshow">播放多媒體訊息</string>
+    <string name="invalid_contact_message" msgid="8215051456181842274">"聯絡人不存在。"</string>
+    <string name="by_card">藉由：</string>
+    <string name="no_messages">"無訊息"</string>
+    <string name="page">第 %d頁: </string>
+    <!-- Menu item for Video Call -->
+    <string name="call_video_call">視訊通話</string>
+
+    <string name="exceed_subject_length_limitation">已達到最大長度</string>
+    <!-- MMS memory size -->
+    <string name="storage_dialog_mms_size">多媒體訊息所占空間:\u0020</string>
+    <string name="error_add_attachment">"不明的錯誤，無法新增<xliff:g id="NAME">%1$s</xliff:g> 到您的訊息。"</string>
+    <!-- For no activity to handle the intent -->
+    <string name="no_application_response">"無可處理請求的應用程式"</string>
+
+    <string name="cdma_not_support">CDMA不支持該功能</string>
+    <string name="allmessage">"所有訊息"</string> 
+    <string name="select_message">"選擇訊息"</string>
+    <string name="confirm_delete_allmessage">"全部訊息將被刪除。"</string>
+    <string name="space_not_enough_for_audio">剩餘空間不足，無法錄製音訊</string>
+    <string name="space_not_enough">剩餘空間不足, 取消擷取影片</string> 
+    
+    <!-- Dialog mode-->
+    <string name="mark_as_read_btn_str">標示為已讀</string>
+    <string name="delete_btn_str">刪除</string>
+    <string name="reply_send">傳送</string>
+    <string name="via_test">"通過 "</string>
+    <string name="received_header">接收時間：</string>
+
+    <string name="no_item_selected">無已選擇的檔案。</string>
+    <string name="sync_mms_to_db">"正在載入"</string> 
+    <string name="pref_title_font_size_setting">字體大小設定</string>
+    <string name="pref_title_message_font_size">訊息字體大小</string>
+    <string name="pref_summary_message_font_size">訊息字體大小</string>
+    <string name="message_font_size_dialog_title">訊息字體大小</string>
+    <string name="message_font_size_dialog_cancel">取消</string>
+    <string name="finish">"完成"</string>
+    <string name="failed_to_add_image">已達訊息大小上限，某些部分未加入。</string>
+    <string name="ipmsg_conversation_list_all">訊息</string>
+    <string name="ipmsg_conversation_list_important">重要</string>  
+    <string name="ipmsg_conversation_list_group_chats">群組聊天</string>  
+    <string name="ipmsg_conversation_list_spam">垃圾郵件</string>  
+    <string name="ipmsg_create_group_chat">新建群組聊天</string>
+    <string name="ipmsg_send_invitation">已傳送邀請</string>
+    <string name="str_ipmsg_download_history_dlg">正在下載…</string>  
+    <string name="to_hint_ipmsg">"輸入名稱或號碼"</string>
+    <string name="type_to_compose_text_enter_to_send_ipmsg">"請輸入 SMS/iSMS 訊息"</string>  
+    <string name="ipmsg_ipmsg_hint">"請輸入 iSMS 訊息"</string>  
+    <string name="ipmsg_sms_hint">"輸入文字訊息"</string>
+    <string name="ipmsg_caption_hint">"請輸入標題"</string>  
+    <string name="ipmsg_cancel">"取消"</string>  
+    <string name="ipmsg_invite_chat_frequently"><b>經常與 %s 聊天？</b>\n何不邀請 %s 使用 iSMS 兩邊都省錢？</string>
+    <string name="ipmsg_enable_chat_frequently"><b>%s 使用的是 iSMS！</b>\n為何不啟用 iSMS 服務節省金錢？ </string>
+    <string name="ipmsg_invite">"邀請"</string>  
+    <string name="ipmsg_dismiss">"跳過"</string>  
+    <string name="ipmsg_enable">"啟用"</string>  
+    <string name="ipmsg_enable_notice">確定要啟用 iSMS 服務？</string>
+    <string name="ipmsg_activate">啟動</string>  
+    <string name="ipmsg_activate_chat_frequently">經常與好友聊天？\n何不啟動 iSMS 服務免用 SMS 費率聊天？</string>
+    <string name="ipmsg_activate_note">確定要啟動 iSMS？</string>  
+    <string name="ipmsg_dismiss_content">確定要捨棄通知？</string>
+    <string name="ipmsg_send_exception">發送錯誤</string>  
+    <string name="ipmsg_ipmsg">IP 訊息</string>  
+    <string name="ipmsg_dailog_multi_forward">轉寄訊息</string>
+    <string name="ipmsg_dialog_send_result">傳送結果</string>
+    <string name="ipmsg_dlg_send_all">全部的：%s</string>
+    <string name="ipmsg_dlg_send_sucess">已傳送：%s</string>
+    <string name="ipmsg_dlg_send_failed">失敗：%s</string>  
+    <string name="multi_forward_sim_info">正在獲取 SIM 卡資訊</string>
+    <string name="ipmsg_multi_forward_no_sim">無 SIM資料</string>  
+    <string name="ipmsg_divider_online">%s 在線上</string>
+    <string name="ipmsg_divider_offline">上次上線時間於：%s </string>
+    <string name="ipmsg_divider_never_online">從未上線</string>  
+    <string name="ipmsg_vcard_file_name">"SIM 聯絡人"</string>  
+    <string name="ipmsg_getsim_failed">獲取 SIM 卡資訊失敗</string>
+    <string name="ipmsg_sim_status_error">SIM 狀態錯誤</string>  
+    <string name="ipmsg_forward_failed">轉寄失敗</string>
+    <string name="ipmsg_forward_norecipients">轉發訊息無收件人</string>
+    <string name="ipmsg_multiforward_no_message">無可轉發的訊息</string>
+    <string name="ipmsg_need_input_recipients">請先至少指定一位收件人。</string>
+    <string name="str_ipmsg_unread_format">%1$d 未讀的訊息</string>
+    <string name="str_ipmsg_not_delivered_title">尚未傳送</string>
+    <string name="str_ipmsg_failed_title">傳送失敗</string>
+    <string name="str_ipmsg_cant_share">無 SD 卡，無法共享多媒體訊息</string>  
+    <string name="str_ipmsg_file_limit">太大</string>  
+    <string name="str_ipmsg_no_app">無應用程式可用於執行此一動作。</string>
+    <string name="str_ipmsg_today">今天</string>
+    <string name="str_ipmsg_yesterday">"昨天"</string>  
+    <string name="ip_message_typing_text">輸入</string>
+    <string name="ipmsg_try_again">"再試一次"</string>  
+    <string name="ipmsg_try_all_again">請全部再試</string>
+    <string name="ipmsg_resend_via_sms">改送 SMS</string>
+    <string name="ipmsg_resend_via_mms">改送 MMS</string>
+    <string name="str_ipmsg_no_such_file">無此種檔案</string>  
+    <string name="str_ipmsg_over_file_limit">檔案大小超過限制</string>  
+    <string name="str_ipmsg_invalid_file_type">不支援此一類型</string>  
+    <string name="invite_friends_to_ipmsg">邀請朋友使用 iSMS</string>  
+    <string name="invite_friends_to_chat">邀請好友聊天</string>
+    <string name="invite_friends_to_ipmsg_dialog_msg">傳送邀請會使訊息捨棄。</string>
+    <string name="invite_friends_to_ipmsg_content">iSMS 是一套很棒的聊天工具，免費又好用。詳細的資料請瀏覽 http://isms.hissage.com 網站。</string>
+    <string name="export">"匯出"</string>  
+    <string name="mark_as_spam">移到垃圾清單</string>
+    <string name="mark_as_spam_tips">標示為垃圾的訊息會移入垃圾郵件清單，其通知會自動關閉。</string>
+    <string name="remove_frome_spam">自垃圾郵件清單移除</string>
+    <string name="add_shortcut">新增快速鍵</string>
+    <string name="view_all_media">檢視全部媒體</string>  
+    <string name="view_all_location">檢視全部位置</string>  
+    <string name="ipmsg_export_to_sdcard">匯出到 SD 卡</string>
+    <string name="ipmsg_copy">"複製"</string>  
+    <string name="ipmsg_send_via_text_msg">經文字訊息傳送</string>
+    <string name="ipmsg_send_via_mms">經多媒體訊息傳送</string>
+    <string name="ipmsg_retry">再試一次</string>
+    <string name="ipmsg_delete">刪除</string>
+    <string name="ipmsg_share">"分享"</string>  
+    <string name="ipmsg_mark_as_important">標示為重要</string>  
+    <string name="ipmsg_remove_from_important">移除重要標示</string>
+    <string name="str_ipmsg_save_file">檔案儲存到 %1$s</string>  
+    <string name="continue_str">"繼續"</string>  
+    <string name="convert_to_mms">轉為 MMS。</string>  
+    <string name="convert_to_sms">轉為 SMS。</string>  
+    <string name="ipmsg_convert_to_ipmsg">轉為 iSMS。</string>
+    <string name="ip_message_convert_to_mms_message_for_service">所選的 SIM 卡不可使用 iSMS 服務。訊息只能以本卡的 MMS 發送，繼續？ </string>
+    <string name="ip_message_convert_to_sms_message_for_service">所選的 SIM 卡不可使用 iSMS 服務。訊息只能以本卡的 MMS 發送，繼續？ </string>
+    <string name="ip_message_convert_to_mms_message_for_recipients">收件人非 iSMS 使用者，本訊息只能以 MMS 發送。仍然繼續？ </string>
+    <string name="ip_message_convert_to_sms_message_for_recipients">收件人非 iSMS 使用者，本訊息只能以 SMS 發送。仍然繼續？ </string>
+    <string name="ipmsg_sms_convert_to_ipmsg">iSMS 服務可在所選的 SIM 上使用。謂節省 SMS 費用，可將訊息轉為 iSMS，現在轉？</string>
+    <string name="ipmsg_mms_convert_to_ipmsg">iSMS 服務可在所選的 SIM 上使用。謂節省 MMS 費用，可將訊息轉為 iSMS，現在轉？</string>
+    <string name="keep_mms">保持 MMS</string>
+    <string name="keep_sms">保持 SMS</string>
+    <string name="switch_ipmsg">切換</string>
+    <string name="ip_message_load_all_message">載入全部訊息</string>  
+    <string name="ipmsg_err_file">無法開啟檔案</string>
+    <string name="pref_title_display_preference_settings">顯示及偏好</string>
+    <string name="pref_chat_wallpaper">聊天桌布</string>  
+    <string name="pref_auto_rotation">"自動旋轉"</string>  
+    <string name="pref_show_email_address">顯示電子郵件位址</string>  
+    <string name="pref_summary_show_email_address">聯絡人結果包含電子郵件位址</string>
+    <string name="pref_title_backup_restore_settings">備份及還原</string>  
+    <string name="pref_backage_message">備份訊息</string>  
+    <string name="pref_summary_backup_message">上次備份：從未</string>  
+    <string name="pref_restore_message">還原訊息</string>  
+    <string name="pref_summary_restore_message">還原您備份的訊息</string>  
+    <string name="pref_mute">"靜音"</string>  
+    <string name="pref_summary_mute">"關閉"</string>  
+    <string name="pref_vibrate">振動</string>  
+    <string name="pref_summary_vibrate">收到通知時振動</string>  
+    <string name="pref_popup_notification">彈限通知</string>
+    <string name="pref_summary_popup_notification">以彈現視窗顯示推送通知 </string>
+    <string name="pref_title_display_settings">"顯示"</string>  
+    <string name="pref_title_actions_settings">動作</string>  
+    <string name="pref_download_chat_history">下載聊天歷史</string>  
+    <string name="pref_summary_download_chat_history">以 ZIP 格式儲存於 SD 卡 </string>
+    <string name="pref_email_chat_history">電子郵件聊天記錄</string>
+    <string name="pref_summary_email_chat_history">壓縮格式電子郵件聊天記錄</string>
+    <string name="pref_clear_chat_history">清除全部聊天記錄</string>
+    <string name="pref_summary_notification_ringtone">設定新通知的鈴聲</string>
+    <string name="pref_setting_title">訊息設定</string>  
+    <string name="pref_setting_sms">文字訊息(SMS)</string>  
+    <string name="pref_setting_mms">多媒體訊息(MMS)</string>  
+    <string name="pref_setting_notification">"通知"</string>  
+    <string name="pref_setting_general">"一般"</string>  
+    <string name="pref_setting_chat">聊天設定</string>  
+    <string name="chat_setting_saving">正在儲存...</string>
+    <string name="chat_setting_updating">正在更新…</string>  
+    <string name="chat_setting_sending">正在傳送...</string>
+    <string name="dialog_save_title">儲存到 SD 卡</string>  
+    <string name="dialog_save_description">以 ZIP 格式儲存本聊天執行緒於 SD 卡 </string>
+    <string name="dialog_email_title">以電子郵件分享</string>
+    <string name="dialog_email_description">以壓縮格式經電子郵件附件分享本聊天對話 </string>
+    <string name="dialog_clear_title">"清除"</string>  
+    <string name="dialog_clear_description">本聊天室的全部聊天歷史將被清除</string>
+    <string name="dialog_wallpaper_chooser_wallpapers">桌布</string>  
+    <string name="dialog_wallpaper_chooser_gallery">"圖庫"</string>  
+    <string name="dialog_wallpaper_chooser_take">拍照</string>
+    <string name="dialog_wallpaper_chooser_default">"預設"</string>  
+    <string name="dialog_wallpaper_title">選擇桌布</string>  
+    <string name="mute_one_hour">1 小時</string>  
+    <string name="mute_four_hours">4 小時</string>  
+    <string name="mute_eight_hours">8 小時</string>  
+    <string name="save_chat_history_failed">儲存失敗</string>  
+    <string name="send_chat_history_failed">電子郵件失敗</string>  
+    <string name="actionbar_sms_setting">SMS 設定</string>  
+    <string name="actionbar_mms_setting">MMS 設定</string>  
+    <string name="actionbar_notification_setting">"通知設定"</string>  
+    <string name="actionbar_general_setting">一般設定</string>  
+    <string name="save_history_file">儲存為</string>  
+    <string name="no_sdcard_suggestion">無 SD 卡</string>
+    <string name="save_wallpaper_success">桌布已變更</string>
+    <string name="save_wallpaper_fail">無法改變桌布</string>  
+    <string name="adding_wallpaper_title">正在儲存桌布...</string>
+    <string name="ip_message_delete_important">"附加標示為重要的訊息"</string>
+    <string name="str_ipmsg_spam_empty">您沒有任何垃圾對話。 \nSPAM 會收集全部標示為垃圾的對話。其通知預設會關閉，讓您免受不相干的打擾。 \n\n您可按住某個對話，選擇「標示為垃圾」圖示，將其發件者標示為垃圾。將對話標示為垃圾後，通知關閉圖示會自動顯示出來，對話也會被轉入此處。</string>  
+    <string name="str_ipmsg_spam_example_from">+86123456789</string>  
+    <string name="str_ipmsg_spam_example_subject">這是垃圾郵件訊息的例子。</string>
+    <string name="str_ipmsg_groupchat_empty">您沒有任何群組聊天訊息。 \nGROUP CHATS 會收集您新建或加入的群組聊天訊息，以便輕鬆搜尋管理群組聊天。 \n\n新建群組聊天的方法為：輕點此一螢幕下方的新建群組聊天按鈕，然後邀請親朋好友加入群組。</string>  
+    <string name="str_ipmsg_group_example_from">"群組名稱"</string>  
+    <string name="str_ipmsg_group_example_subject">您的好友：\n我喜歡群組聊天功能！ </string>
+    <string name="str_ipmsg_important_empty">您沒有·任何重要訊息。 \nIMPORTANT  會收集任何標示為重要的訊息，以便輕鬆找到重要的訊息。 \n\n標示重要訊息的方法如下：按住訊息，選擇選項功能表內的標示為重要。訊息標示為重要時，會顯示如下的紅旗圖示。</string>  
+    <string name="str_ipmsg_important_example_title">這是標示為重要的訊息的例子，請注意所顯示的紅旗圖示。</string>  
+    <string name="str_ipmsg_important_example_time">上午10時55分</string>  
+    <string name="str_ipmsg_allchat_empty">"無會話群組"</string>  
+    <string name="str_ipmsg_empty_activate_content">使用此一功能前，請先啟動 iSMS 服務。儘管啟動，無需擔心。您隨時可在設定功能表停用此一功能。立即試用！</string>  
+    <string name="str_ipmsg_empty_activate_title">啟動 iSMS</string>  
+    <string name="str_ipmsg_service_title">iSMS 服務中心</string>  
+    <string name="str_ipmsg_introduction">iSMS 可讓您免費傳送即時訊息，並將聊天記錄全部儲存在單一位置。請按任一鍵立即體驗！ </string>
+    <string name="time_now">剛剛</string>
+    <string name="str_ipmsg_active">啟動 iSMS</string>  
+    <string name="str_ipmsg_welcome_active">歡迎使用 iSMS</string>  
+    <string name="str_ipmsg_term_warn_welcome">iSMS 服務可讓您隨時隨地與好友經 WiFi 或數據連接聊天及分享多媒體檔案。\n\n簡簡單單 3 步驟即可啟用！\n\n條款 </string>
+    <string name="str_ipmsg_term_warn_activate">只有 iSMS 服務支援此一功能。\n\n iSMS 服務可讓您隨時隨地與好友經 WiFi 或數據連接聊天及分享多媒體檔案。\n\n簡簡單單 3 步驟即可啟用！\n\n條款 </string>
+    <string name="str_ipmsg_term_key">條款</string>  
+    <string name="str_ipmsg_agree_and_continue">同意並繼續</string>  
+    <string name="no_sim_card">無 SIM 卡！</string>  
+    <string name="ip_message_activate_title">啟動 iSMS</string>  
+    <string name="ip_message_current_sim_enabled">目前的 SIM 卡已啟用。</string>  
+    <string name="sim_selected_dialog_title_for_activate">選擇啟動 iSMS 的 SIM 卡</string>
+    <string name="ip_message_activate_message">只有 iSMS 服務支援此一功能，現在啟動 iSMS 帳號？</string>
+    <string name="typing">"輸入中…"</string>
+    <string name="ip_message_enable_title">啟用 iSMS</string>  
+    <string name="ip_message_enable_message">只有 iSMS 服務支援此一功能，現在啟動 iSMS 帳號？</string>
+    <string name="sim_selected_dialog_title_for_enable">選擇啟動 iSMS 的 SIM 卡</string>
+    <string name="ip_message_switch_sim_title">切換 SIM 卡</string>  
+    <string name="ip_message_switch_sim_message">目前的 SIM卡不支援 iSMS，改用其他 SIM卡？</string>
+    <string name="ip_message_switch_sim_button">切換</string>
+    <string name="ip_message_switch_sim_successfully">SIM卡切換成功！</string>
+    <string name="close">關閉頻道</string>  
+    <string name="nointernet">"無可用的網際網路連接，請稍候再試。"</string>
+    <plurals name="deleted_conversations"> 
+        <item quantity="one">已刪除一個對話</item>  
+        <item quantity="other"><xliff:g id="number" example="15">%1$s</xliff:g> 對話已刪除</item> 
+    </plurals> 
+
+    <!-- Multi forward Message-->
+    <string name="discard_mms_title">捨棄多媒體訊息</string>
+    <string name="discard_mms_content">合併轉發不支持多媒體訊息，您選中的多媒體訊息將被捨棄。</string>
+    <string name="toast_sms_forward">無轉寄的 SMS </string>
+    <string name="sms_size_limit">已達大小限制</string>
+    <string name="dialog_sms_limit">已達訊息大小上限，超過的部分會捨棄 </string>
+    <string name="dialog_continue">繼續</string>
+
+    <!-- Add for fix ALPS380788-->
+    <string name="sum_search_networks">搜尋全部可用的網路</string>
+    <string name="set_service_center_OK">設定 SMS 服務中心完成</string>
+    <string name="set_service_center_fail">設定 SMS 服務中心失敗</string>
+    <string name="OK">"確定"</string>
+    <string name="Cancel">"取消"</string>
+    <string name="menu_omacp">配置訊息</string>
+    <string name="disable_notifications_dialog_message" msgid="7644011234972074096">"要停止預設「簡訊」應用程式發出重複的簡訊通知嗎？"</string>
+    <string name="file_attachment_vcalendar_name">
+        vCalendar(
+        <xliff:g id="text">%s</xliff:g>
+        )
+    </string>
+    <string name="folder_recipient">收件人：</string>
+    <string name="folder_recieve_date">日期：</string>
+    <string name="change">變更設定</string>
+    <string name="ipmsg_accept">"接受"</string>
+    <string name="ipmsg_resend">重送</string>
+    <string name="ipmsg_resend_discard_message">目前編寫的訊息捨棄後，才能發送此一訊息。</string>
+    <string name="change_default_disk">手機儲存空間不足，請騰出一些空間或在設定中更改"預設的寫入硬碟"。</string>
+    <string name="ipmsg_reject">"取消"</string>
+
+    <string name="view_mms_notification">無法查看多媒體訊息通知</string>
+
+    <string name="type_to_quick_text">"輸入快速文字"</string>
+    <string name="menu_wappush">"推送訊息"</string>
+    <string name="visit_website">"瀏覽網站"</string>
+    <string name="str_ipmsg_replace_attach">取代附件</string>
+    <string name="str_ipmsg_replace_attach_msg">附件已存在，是否覆寫？</string>
+    <string name="forward_tips_title">"丟棄多媒體訊息通知"</string>
+    <string name="forward_tips_body">"不支援多媒體訊息通知轉發，通知將被忽略。"</string>
+    <string name="meet_emoticon_limit">已達情緒符號限制</string>
+    <string name="ipmsg_multi_forward_tips_content">多方轉發前，某些 iSMS 需先下載。</string>
+    <string name="multi_forward_failed_all">下載失敗，多方轉寄取消。</string>
+    <string name="ipmsg_multi_forward_failed_part">某些訊息轉發失敗。</string>
+
+    <string name="confirm_delete_allwappush">"全部推送訊息將被刪除。"</string>
+    <string name="confirm_delete_selected_wappush">"所選的推送訊息將被刪除。"</string>
+    <string name="menu_delete_allwappush">刪除全部</string>
+    <string name="duplicated_recipient">重複的收件人</string>
+    <string name="sms_not_ready">SMS 模組正在初始化，請稍候...</string>
+
+    <!--For preview vcard -->
+    <string name="label_full_name">名稱</string>
+    <string name="label_phone">"電話"</string>
+    <string name="label_email">"電子郵件"</string>
+    <string name="label_postal">位址</string>
+    <string name="label_organization">組織</string>
+    <string name="label_im">"即時訊息"</string>
+    <string name="label_website">"網站"</string>
+    <string name="label_sip_address">網際網路通話</string>
+    <string name="label_nick_name">"暱稱"</string>
+    <string name="label_notes">備註</string>
+    <string name="label_event">事件</string>
+
+    <!--For CellBroadcast Settings -->
+    <string name="ok" msgid="3811371167865772377">"確定"</string>
+    <string name="cancel" msgid="5044513931633602634">"取消"</string>
+    <string name="enable" msgid="1059008390636773574">"啟用"</string>
+    <string name="disable" msgid="7274240979164762320">"停用"</string>
+    <string name="cell_broadcast_setting">區域廣播設定</string>
+    <string name="cb_menu_language">語言</string>
+    <string name="cb_menu_add_channel">新增頻道</string>
+    <string name="cb_menu_channel_list">頻道清單</string>
+    <string name="cb_dialog_title_language_choice">選擇語言</string>
+    <string name="cb_channel_dialog_channel_name">頻道名稱（0-10 個字符）</string>
+    <string name="cb_channel_dialog_channel_number">頻道號碼 (0-65534)</string>
+    <string name="cb_channel_dialog_channel_state">啟用此頻道</string>
+    <string name="cb_channel_dialog_edit_channel">編輯頻道</string>
+    <string name="cb_menu_edit">"編輯"</string>
+    <string name="cb_menu_delete">刪除</string>
+    <string name="cb_error_channel_num">請輸入頻道號碼 (0-65534)。</string>
+    <string name="cb_error_channel_name">頻道名稱長度錯誤（1-10 個字符）。</string>
+    <string name="cb_error_language_select">請選擇至少一種語言。</string>
+    <string name="cb_error_channel_id_exist">頻道編號已經存在。</string>
+    <string name="cb_all_languages">全部語言</string>
+    <string name="cb_default_new_channel_name">新頻道</string>
+    <string name="sum_cell_broadcast_control_on">啟用區域廣播</string>
+    <string name="sum_cell_broadcast_control_off">停用區域廣播</string>
+    <string name="sum_cell_broadcast_setting">區域廣播的與語言頻道設定</string>
+    <string name="close_dialog" msgid="2365884406356986917">"確定"</string>
+    <string name="updating_title" msgid="6146755386174019046">"通話設定"</string>
+    <string name="error_updating_title" msgid="7970259216988931777">"通話設定錯誤"</string>
+    <string name="reading_settings" msgid="1920291699287055284">"正在讀取設定…"</string>
+    <string name="updating_settings" msgid="8171225533884883252">"更新設定中…"</string>
+    <string name="reverting_settings" msgid="4752151682666912828">"正在還原設定…"</string>
+    <string name="exception_error" msgid="7027667130619518211">"網路或 SIM 卡錯誤。"</string>
+    <string-array name="language_list_values" translatable="false">
+        <item>所有語言</item>
+        <item>德文</item>
+        <item>英文</item>
+        <item>義大利文</item>
+        <item>法文</item>
+        <item>西班牙文</item>
+        <item>荷蘭文</item>
+        <item>瑞典文</item>
+        <item>丹麥文</item>
+        <item>葡萄牙文</item>
+        <item>芬蘭文</item>
+        <item>挪威文</item>
+        <item>希臘文</item>
+        <item>土耳其文</item>
+        <item>匈牙利文</item>
+        <item>波蘭文</item>
+        <item>其他</item>
+        <item>捷克文</item>
+        <item>希伯來文</item>
+        <item>阿拉伯文</item>
+        <item>俄文</item>
+        <item>冰島文</item>
+    </string-array>
+    <string name="done_text">"完成"</string>
+    <string name="add_duplicate_recipients">重複的聯絡人</string>
+
+    <!-- begin of mwi -->
+    <string name="mwi_title">語音訊息</string>
+    <string name="type_voice_msg">語音訊息</string>
+    <string name="type_video_msg">視訊訊息</string>
+    <string name="type_fax_msg">傳真訊息</string>
+    <string name="type_text_msg">"簡訊"</string>
+    <string name="priority_urgent">緊急</string>
+    <string name="date_label">日期:\u0020</string>
+    <string name="message_id_label">Message-ID:\u0020</string>
+    <string name="voice_message_count_notification"><xliff:g id="number" example="3">%1$s</xliff:g> 新語音訊息</string>
+    <string name="confirm_delete_allmwi">"全部語音訊息將被刪除。"</string>
+    <string name="confirm_delete_selected_mwi">"所選的語音訊息將被刪除。"</string>
+    <!-- end of mwi -->
+
+    <!-- sms priority begin-->
+    <string name="sms_priority_setting">UIM優先權</string>
+    <string name="sms_priority_Interactive">交互</string>
+    <string name="sms_priority_Urgent">急</string>
+    <string name="sms_priority_Emergency">緊急</string>
+    <!-- sms priority end -->
+
+    <string name="empty_sim_name">SIM 卡槽 <xliff:g id="subId" example="2">%1$d</xliff:g></string>
+
+    <string name="drm_not_support">MMS 不支援有版權保護的內容。</string>
+    <string name="user_has_no_premission">此一使用者禁止使用 SMS</string>
+    <string name="slot" translatable="false">卡 %1$d</string>
+
+    <!-- op09 setting string -->
+    <string name="manage_card_msg_title">管理 UIM/SIM 卡上的簡訊</string>
+    <string name="manage_card_msg_summary">管理 UIM/SIM 卡上的簡訊</string>
+    <string name="disable_delivery_report">國際漫游狀態下，此設置無效。</string>
+    <string name="wfc_no_cellular_network">無手機網路</string>
+    <string name="wfc_connect_to_available_wifi">連接可用的 Wi-FI 進行傳訊</string>
+    <string name="wfc_notification_title">連接 Wi-FI 進行傳訊</string>
+    <string name="ct_om_switch_notification"><xliff:g id="op1">%s</xliff:g> 暫時無法使用。<xliff:g id="op2">%s</xliff:g> 上預設的通話、簡訊、數據將改為<xliff:g id="op3">%s</xliff:g>。</string>
+    <string name="can_not_switch_account_during_call">通話中無法切換喜好的SIM卡進行簡訊。</string>
+    <string name="can_not_switch_account_temporarily">暫時無法切換至喜好的簡訊SIM卡。</string>
+    <string name="omh_exceed_message_size_limitation">「已達R-UIM訊息長度上限」</string>
+    <string name="omh_failed_to_add_image">已達 R-UIM 訊息上限，請刪除某些部分。 </string>
+    <string name="missing_required_permission">權限被拒絕，請到"設定 > 應用"中修改權限。</string>
+    <string name="fore_service_notify_title">訊息傳送中</string>
+    <string name="fore_service_notify_content">您有訊息正在傳送中。</string>
+    <string name="smart_req_mms_indicator">不能發送MMS，請改試發SMS。</string>
+</resources>

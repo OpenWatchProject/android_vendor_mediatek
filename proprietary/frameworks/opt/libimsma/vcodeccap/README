@@ -1,0 +1,26 @@
+This module creates the libvcodec_cap.so libary file.
+
+WHAT IT DOES?
+=============
+libvcodec_cap mainly used for providing vcodec capability API for ViLTE
+
+
+HOW IT WAS BUILT?
+==================
+It needs the following library from AOSP:
+
+    libcutils, libutils, libui, libinder, libexpat
+
+and the following libs from MediaTek:
+
+    libvcodecdrv
+
+
+HOW TO USE IT?
+==============
+
+The libvcodec_cap libraries should not be used directly by an application developer.
+Used by JNI layer
+
+The majority of source code for this library were written by MediaTek.  Various
+open source libraries are also used and contained in this folder.

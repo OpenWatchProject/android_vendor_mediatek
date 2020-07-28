@@ -1,0 +1,25 @@
+This bin is pre-built by MediaTek internal.
+
+
+WHAT IT DOES?
+=============
+
+flashessd is responsable for image download and remote file system support for C2K modem.
+
+
+HOW IT WAS BUILT?
+==================
+
+It needs the following library from AOSP:
+
+and the following libs from MediaTek:
+1. libviatelutils.so
+
+All source/dependency modules of this module are already put in
+'vendor/mediatek/libs' folder.
+
+
+HOW TO USE IT?
+==============
+
+The bin file is a system service, and it's started at system booting up while parsing init.via.rc.

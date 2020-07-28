@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" 
+	android:layout_width="match_parent" 
+	android:layout_height="wrap_content" 
+	android:orientation="horizontal" 
+	android:gravity="center_vertical"
+	android:minHeight="?android:attr/listPreferredItemHeight"
+	>
+	
+    <CheckBox android:id="@+id/log_files_check_box" 
+		android:layout_width="wrap_content" 
+		android:layout_height="match_parent"
+		android:clickable="false"
+		android:focusable="false"
+		android:layout_centerVertical="true" >
+	</CheckBox>
+	<LinearLayout 
+		android:layout_width="0dip" 
+		android:layout_height="wrap_content"  
+		android:layout_weight="1"
+		android:layout_centerVertical="true"
+		android:orientation="vertical">
+		<TextView android:id="@+id/log_files_name" 
+			android:layout_width="wrap_content" 
+			android:layout_height="wrap_content" 
+			android:textAppearance="?android:attr/textAppearanceMedium" 
+			android:singleLine="true"  
+			android:gravity="center_vertical"/>
+		<TextView android:id="@+id/log_files_size" 
+			android:layout_width="wrap_content" 
+			android:layout_height="wrap_content"
+			android:textAppearance="?android:attr/textAppearanceSmall" 
+			android:singleLine="true"
+			android:textColor="#333333" />
+	</LinearLayout>
+</LinearLayout>

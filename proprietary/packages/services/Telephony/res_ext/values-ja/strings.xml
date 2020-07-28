@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2007 The Android Open Source Project
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+          http://www.apache.org/licenses/LICENSE-2.0
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="incall_status_dialed_mmi" msgid="3672498861336189563">"MMIシーケンスを開始中..."</string>
+    <string name="dual_mic_title">ノイズリダクション</string>
+    <string name="dual_mic_summary">通話中の背景ノイズを除去します</string>
+    <string name="fdn_errorcode_unknown_info">失敗しました。不明なエラーが発生しました。しばらくしてからもう一度お試しください。</string>
+    <string name="fdn_errorcode_number_info">失敗しました。連絡先番号が長すぎます。</string>
+    <string name="fdn_errorcode_name_info">失敗しました。連絡先名が長すぎます。</string>
+    <string name="fdn_errorcode_storage_info">失敗しました。空き容量がありません。</string>
+    <string name="fdn_errorcode_phb_info">失敗しました。電話帳がビジーです。しばらくしてからもう一度お試しください。</string>
+    <string name="fdn_errorcode_pin2_info">失敗しました。PIN2が無効です。</string>
+    <string name="fdn_contact_number_invalid">連絡先番号が無効です。</string>
+    <string name="fdn_puk_need_tips">PIN2がブロックされました。PIN2を変更し、再試行してください。</string>
+    <string name="fdn_phone_book_busy">電話帳がビジーです。しばらくしてからもう一度お試しください。</string>
+    <string name="retries_left"><xliff:g id="number">%d</xliff:g>回の再試行が可能です</string>
+    <string name="cdma_labelCFU">"常に転送"</string>
+    <string name="cdma_labelCFB">"通話中の着信時に転送"</string>
+    <string name="cdma_labelCFNRy">"不在着信時に転送"</string>
+    <string name="cdma_labelCFNRc">"着信不能時に転送"</string>
+    <string name="cdma_labelCFC">全ての転送をキャンセル</string>
+    <string name="cdma_cnir_title">CNIR</string>
+    <string name="cdma_cnir_turnoff">発信者番号識別制限を無効にする</string>
+    <string name="cdma_cnir_turnon">発信者番号識別制限を有効にする</string>
+    <string name="volte_is_adding_participants">会議メンバーを追加しています。お待ちください。</string>
+    <string name="volte_fail_to_invit_participants">会議にすべてのメンバーを追加できませんでした。</string>
+    <string name="volte_conf_member_reach_max">すでに会議は最大数のメンバーに到達しました。</string>
+    <string name="wfc_wifi_call_drop">Wi-Fi通話が途切れました</string>
+    <string name="wfc_internet_connection_lost">インターネット接続が失われました</string>
+    <string name="wfc_no_network">利用可能な正規のモバイルネットワークがありません</string>
+    <string name="volte_ss_not_available_tips">操作を完了するには、<xliff:g id="sub_name">%s</xliff:g>のデータ接続を開く必要があります。</string>
+    <string name="volte_ss_not_available_tips_data">操作を完了するには、<xliff:g id="sub_name">%s</xliff:g>のデータ接続をオンにする必要があります。</string>
+    <string name="volte_ss_not_available_tips_roaming">操作を完了するには、<xliff:g id="sub_name">%s</xliff:g>のデータローミングをオンにする必要があります。</string>
+    <string name="volte_ss_not_available_tips_data_roaming">操作を完了するには、データ接続と<xliff:g id="sub_name">%s</xliff:g>のデータローミングをオンにする必要があります。</string>
+    <string name="vilte_srvcc_tip">ネットワークが原因で、音声通話に切り替わります。</string>
+    <string name="vilte_to_voice_call">音声通話に切り替えました</string>
+    <string name="volte_ss_not_available_tips_data_traffic">Slight <xliff:g id="sub_name">%s</xliff:g> セルラーデータが一時的に使用されます。続行しますか？</string>
+    <string name="labelCFVoice">音声通話転送</string>
+    <string name="actionBarCFVoice">音声通話転送 (<xliff:g id="subscriptionlabel" example="Verizon">%s</xliff:g>)</string>
+    <string name="labelCFVideo">ビデオ通話転送</string>
+    <string name="actionBarCFVideo">ビデオ通話転送 (<xliff:g id="subscriptionlabel" example="Verizon">%s</xliff:g>)</string>
+    <string name="labelCBVoice">音声通話制限</string>
+    <string name="actionBarCBVoice">音声通話制限 (<xliff:g id="subscriptionlabel" example="Verizon">%s</xliff:g>)</string>
+    <string name="labelCBVideo">ビデオ通話制限</string>
+    <string name="actionBarCBVideo">ビデオ通話制限 (<xliff:g id="subscriptionlabel" example="Verizon">%s</xliff:g>)</string>
+    <string name="alert_turn_off_volte">操作を完了させるために、VoLTE をオフに切り替える必要があります。</string>
+    <string name="alert_volte_no_service"><xliff:g id="sub_name">%s</xliff:g> 現在、VoLTE および通話サービスは利用できません。VoLTE をオフにしますか ?</string>
+</resources>

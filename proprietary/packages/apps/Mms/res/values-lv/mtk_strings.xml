@@ -1,0 +1,609 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+/*
+ * Copyright (C) 2007-2008 Esmertec AG.
+ * Copyright (C) 2007-2008 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+ --><resources xmlns:android="http://schemas.android.com/apk/res/android" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+<!-- MTK Resources -->
+    <string name="create_new_message" msgid="8735943333953093860">"Rakstīt jaunu ziņojumu"</string>
+    <string name="menu_undelivered_messages" msgid="3896857623211780616">"Nepiegādātie ziņojumi"</string>
+    <string name="broadcast_from_to" msgid="2050376286109362539">"No: <xliff:g id="SENDER">%1$s</xliff:g>; kam: <xliff:g id="RECIPIENT">%2$s</xliff:g>"</string>
+    <string name="anonymous_recipient" msgid="2501437626187039034">"Anonīms"</string>
+    <string name="view_picture" msgid="4356315935277709195">"Skatīt attēlu"</string>
+    <string name="sent_on" msgid="5868288548564632354">"Nosūtīts: <xliff:g id="DATE">%s</xliff:g>"</string>
+    <string name="name_colon" msgid="7069560650889479120"><b>"<xliff:g id="NAME">%s</xliff:g>"</b>": "</string>
+    <string name="compose_title" msgid="558578836596816068">"Rakstīt"</string>
+    <string name="image_too_large" msgid="261880224164478061">"Attēls ir pārāk liels"</string>
+    <string name="ask_for_automatically_resize" msgid="7657603662407738758">"Vai pirms sūtīšanas automātiski mainīt attēla lielumu?"</string>
+    <string name="cannot_load_message" msgid="2577010607550849892">"Nevar ielādēt ziņojumu."</string>
+    <string name="locked_message_cannot_be_deleted" msgid="6369452071783350219">"Bloķētu ziņojumu nevar dzēst."</string>
+    <string name="multiple_recipients" msgid="8747754491343248141">"<xliff:g id="RECIPIENTCOUNT">%1$s</xliff:g> adresāti"</string>
+    <string name="resize" msgid="4308912589984220360">"Mainīt lielumu"</string>
+    <string name="to_label" msgid="2355268818058389047">"Kam: "</string>
+    <string name="confirm_delete_all_messages" msgid="5836389073199814660">"Tiks dzēsts viss pavediens."</string>
+    <string name="mms_priority_label">"Prioritāte"</string>
+    <string name="menu_retry_sending" msgid="3146582005568302643">"Sūtīt atkārtoti"</string>
+    <string name="menu_retry_sending_all" msgid="1870529976966340616">"Sūtīt atkārtoti visus ziņojumus"</string>
+    <string name="retrying_dialog_body" msgid="4738260459043003431">"Šis ziņojums <xliff:g id="MESSAGE">%s</xliff:g> netika nosūtīts, jo radās savienojuma problēma."\n"Notiek atkārtota sūtīšana..."</string>
+    <string name="dl_expired_notification" msgid="950390029992535809">"Šim ziņojumam ir beidzies derīguma termiņš, un tas tiks dzēsts."</string>
+    <string name="add_attachment_activity" msgid="5324811371129695320">"Pievienot pielikumu:"</string>
+    <string name="select_layout_activity" msgid="5041916695464513848">"Atlasīt izkārtojumu"</string>
+    <string name="edit_text_activity" msgid="5915226413346879213">"Rediģēt tekstu"</string>
+    <string name="pick_numbers_activity" msgid="2083330191224178637">"Izvēlēties numurus"</string>
+    <string name="send_using_mms_activity" msgid="3703434556280345726">"Sūtīt kā multiziņu..."</string>
+    <string name="select_contact_method_activity" msgid="1743384358979323991">"Atlasīt saziņas metodi"</string>
+    <string name="me" msgid="341726346007839961">"Es"</string>
+    <string name="invalid_contact_message" msgid="8215051456181842274">"Šāda kontaktpersona nepastāv."</string>
+    <string name="finish">"Gatavs"</string>
+<string name="more_recipients">adresāts(-i)</string>
+    <string name="Insert_sdcard">Lūdzu, ievietojiet SD karti!</string>
+    <string name="pref_title_mms_enable_to_send_delivery_reports">Sūtīt saņemto ziņu pārskatu</string>
+    <string name="pref_summary_mms_enable_to_send_delivery_reports">Sūtīt pārskatu par katras saņemtās ziņas piegādi</string>
+    <string name="set_service_center_OK">SMS pakalpojuma centra iestatīšana sekmīga</string>
+    <string name="set_service_center_fail">SMS pakalpojuma centra iestatīšanas kļūme</string>
+    <string name="OK">Labi</string>
+    <string name="Cancel">"Atcelt"</string>
+    <string name="sms_save_location">SMS atmiņas atrašanās vieta</string>
+    <string name="sms_service_center">SMS pakalpojumu centrs</string>
+    <string name="sms_validity_period">SMS derīguma termiņš</string>
+    <string name="sms_validity_period_nosetting">Nav iestatīts</string>
+    <string name="sms_validity_period_1hour">"1 stunda"</string>
+    <string name="sms_validity_period_6hours">6 stundas</string>
+    <string name="sms_validity_period_12hours">12 stundas</string>
+    <string name="sms_validity_period_1day">"1 diena"</string>
+    <string name="sms_validity_period_max">Maksimums</string>
+    <string name="service_center_label">Pakalpojumu centrs:\u0020</string>
+    <string name="cu_subject">Lemei temats</string>
+    <string name="pref_title_mms_creation_mode">Izveidošanas režīms</string>
+    <string name="pref_summary_mms_creation_mode">MMS izveidošanas režīms ziņas izveidei</string>
+    <string name="pref_title_mms_size_limit">Izmēra ierobežojums</string>
+    <string name="pref_summary_mms_size_limit">MMS izmēra ierobežojums ziņas izveidei</string>
+    <string name="confirm_restricted_audio">Ierobežots audio satura veids. Vai vienalga vēlaties pievienot?</string>
+    <string name="confirm_restricted_image">Ierobežots attēla satura veids. Vai vienalga vēlaties pievienot?</string>
+    <string name="confirm_restricted_video">Ierobežots video satura veids. Vai vienalga vēlaties pievienot?</string>
+    <string name="unsupport_media_type">Neatbalstīts multivides veids</string>
+    <string name="select_different_media_type">Atlasīt citu multividi</string>
+    <string name="image_resolution_too_large">Attēla izšķirtspēja ir par lielu, lai ievietotu</string>
+    <string name="wp_msg_type">Pakalpojuma ziņojums</string>
+    <string name="wp_msg_created_label">Izveidots:\u0020</string>
+    <string name="wp_msg_created_unknown">"Nezināms"</string>
+    <string name="wp_msg_priority_label">Prioritāte:\u0020</string>
+    <string name="wp_msg_priority_low">Zems</string>
+    <string name="wp_msg_priority_medium">"Vidējs"</string>
+    <string name="wp_msg_priority_high">Augsts</string>
+    <string name="menu_goto_browser">Atvērt pārlūku</string>
+    <string name="menu_add_to_bookmark">Pievienot grāmatzīmei</string>
+    <string name="wp_msg_expiration_label">Beidzies termiņš: <xliff:g id="DATE">%s</xliff:g></string>
+    <string name="error_unsupported_scheme">Šī darbība pašlaik netiek atbalstīta.</string>
+    <string name="pref_title_wappush_settings">Pakalpojuma ziņojuma iestatīšana</string>
+    <string name="pref_title_wappush_enable">Iespējot WAP INFOZIŅU</string>
+    <string name="pref_summary_wappush_enable">Iespējot, lai saņemtu WAP INFOZIŅU</string>
+    <string name="pref_title_wappush_sl_autoloading">Automātiski palaist SL</string>
+    <string name="pref_summary_wappush_sl_autoloading">Automātiski palaist pakalpojuma ielādes (SL) ziņojumu, kad saņemts</string>
+    <string name="menu_send_sms">Sūtīt ziņas kontaktam <xliff:g id="name">%s</xliff:g></string>
+    <string name="menu_omacp">Konfigurācijas ziņojums</string>
+    <string name="save_message_to_sim">Saglabāt īsziņu SIM kartē</string>
+    <string name="received_on">"Saņemtā: <xliff:g id="date">%s</xliff:g>"</string>
+    <string name="save_message_to_sim_successful">Saglabāts sekmīgi</string>
+    <string name="save_message_to_sim_unsuccessful">Nav sekmīgi saglabāts</string>
+    <string name="transmission_transiently_failed">Pārsūtīšanas kļūme. Vēlāk mēģinās vēlreiz.</string>
+    <string name="download_failed_due_to_full_memory">Neizdevās lejupielādēt īsziņu, jo atmiņa ir pilna.</string>
+    <string name="mms_too_big_to_download">Īsziņa ir par lielu, lai lejupielādētu no tīkla.</string>
+    <string name="menu_reply">"Atbildēt"</string>
+    <string name="menu_sim_sms">"SIM SMS"</string>
+    <string name="cannot_add_recipient">Sasniegts adresātu ierobežojums. Vairs nevarat pievienot nevienu adresātu.</string>
+    <string name="status_expired">Beidzies termiņš</string>
+    <string name="status_deferred">Atlikts</string>
+    <string name="status_unrecognized">Nepazīstams</string>
+    <string name="status_indeterminate">Nenoteikts</string>
+    <string name="status_unreachable">Nav sasniedzams</string>
+    <string name="attach_ringtone">"Zvana signāls"</string>
+    <string name="notification_multiple_cb"><xliff:g id="count">%s</xliff:g> Nelasīti CB ziņojumi</string>
+    <string name="notification_multiple_cb_title">Jauni mobilās apraides ziņojumi</string>
+    <string name="fdn_enabled">FDN iespējots</string>
+    <string name="cannot_send_message_reason_no_content">Nav nosūtāma satura</string>
+    <string name="ok">"Labi"</string>
+    <string name="cancel">"Atcelt"</string>
+    <string name="enable">"Iespējot"</string>
+    <string name="disable">"Atspējot"</string>
+    <string name="cb_read_message">Lasīt CB ziņojumu</string>
+    <string name="cb_read_message2">Lasīt mobilās apraides ziņojumu</string>
+    <string name="cb_message">Mobilās apraides ziņojums</string>
+    <string name="cb_default_channel_name">No kanāla</string>
+    <string name="cell_broadcast_setting">"Šūnu apraides iestatījumi"</string>
+    <string name="cb_menu_language">"Valoda"</string>
+    <string name="cb_menu_add_channel">Pievienot kanālu</string>
+    <string name="cb_menu_channel_list">Kanālu saraksts</string>
+    <string name="cb_dialog_title_language_choice">Atlasīt valodu</string>
+    <string name="cb_channel_dialog_channel_name">Kanāla nosaukums (0-10 rakstzīmes)</string>
+    <string name="cb_channel_dialog_channel_number">Kanāla numurs (0-65534)</string>
+    <string name="cb_channel_dialog_channel_state">Iespējot kanālu</string>
+    <string name="cb_channel_dialog_edit_channel">Rediģēt kanālu</string>
+    <string name="cb_menu_edit">"Rediģēt"</string>
+    <string name="cb_menu_delete">"Dzēšanas taustiņš"</string>
+    <string name="cb_error_channel_num">Ievadiet kanāla numuru (0-65534).</string>
+    <string name="cb_error_channel_name">Kanāla nosaukums garums nav pareizs (1–10 rakstzīmes).</string>
+    <string name="cb_error_language_select">Lūdzu, atlasiet vismaz vienu valodu.</string>
+    <string name="cb_error_channel_id_exist">Kanāla ID jau pastāv.</string>
+    <string name="cb_all_languages">"Visas valodas"</string>
+    <string name="cb_default_new_channel_name">Jauns kanāls</string>
+    <string name="sum_cell_broadcast_control_on">Iespējot mobilo apraidi</string>
+    <string name="sum_cell_broadcast_control_off">Atspējot mobilo apraidi</string>
+    <string name="sum_cell_broadcast_setting">Valodu un kanālu iestatījumi mobilajai apraidei</string>
+    <string name="message_open_email_fail">Vispirms iestatiet savu e-pasta kontu.</string>
+    <string name="add_contacts">"Kontaktpersonas"</string>
+    <string name="close_dialog">Labi</string>
+    <string name="updating_title">"Zvanu iestatījumi"</string>
+    <string name="error_updating_title">"Zvanu iestatījumu kļūda"</string>
+    <string name="reading_settings">"Notiek iestatījumu lasīšana..."</string>
+    <string name="updating_settings">"Notiek iestatījumu atjaunināšana..."</string>
+    <string name="reverting_settings">"Notiek iestatījumu atsaukšana..."</string>
+    <string name="exception_error">"Tīkla vai SIM kartes kļūda."</string>
+    <string name="send_by_sim2">Sūtīt, izmantojot SIM2</string>
+    <string name="send_by_sim1">Sūtīt, izmantojot SIM1</string>
+    <string name="menu_item_send_by">Sūtīt, izmantojot</string>
+    <string name="data_connected_confirm_title">Apstiprināt sūtīšanu</string>
+    <string name="data_connected_confirm_message">Multiziņas sūtīšana, izmantojot šo SIM karti, uz kādu laiku var atlikt pašreizējo datu lejupielādi. Vai turpināt?</string>
+    <string name="menu_item_sim1">SIM 1</string>
+    <string name="menu_item_sim2">SIM 2</string>
+    <string name="no_sim_1">1. SIM karte nav ievietota.</string>
+    <string name="no_sim_2">2. SIM karte nav ievietota.</string>
+    <string name="no_sim">SIM karte %d nav ievietota.</string>
+    <string name="sim1_full_title">1. SIM karte ir pilna</string>
+    <string name="sim2_full_title">2. SIM karte ir pilna</string>
+    <string name="select_all">"Atlasīt visu"</string>
+    <string name="confirm_delete_selected_messages">Atlasītās ziņas tiks izdzēstas.</string>
+    <string name="confirm_delete_selected_theads">Atlasītie pavedieni tiks izdzēsti.</string>
+    <string name="restricted_forward_title">"Multiziņa"</string>
+    <string name="restricted_forward_message">Šī multivide, iespējams, netiks pareizi rādīta adresātiem. Vai turpināt?</string>
+    <string name="strOk">Īsziņa nosūtīta</string>
+    <string name="strFail">Īsziņas nosūtīšana neizdevās</string>
+    <string name="menu_insert_text_vcard">Ievietot kontaktu</string>
+    <string name="contact_name">"Nosaukums"</string>
+    <string name="contact_tel">Tālr.</string>
+    <string name="contact_email">E-pasts</string>
+    <string name="contact_organization">Organizācija</string>
+    <string name="contact_address">Adr.</string>
+    <string name="max_recipients_title">Sasniegts maks. skaits</string>
+    <string name="max_recipients_message">MMS atļauj tikai maks. <xliff:g id="maxLimit">%s</xliff:g> adresātus. Daži adresāti ir jānoņem. Vai vēlaties turpināt?</string>
+    <string name="via_without_time_for_send">Izmantojot</string>
+    <string name="via_without_time_for_recieve">Izmantojot</string>
+    <string name="sim_selected_dialog_title">Izvēlēties SIM</string>
+    <string name="suggested">Ieteikts</string>
+    <string name="add_contact_dialog_message">"Vai numuru %s pievienot esošam vai jaunam kontaktam?"</string>
+    <string name="add_contact_dialog_new">"Jauns"</string>
+    <string name="add_contact_dialog_existing">Esošs</string>
+    <string name="deleting">Dzēš</string>
+    <string name="pref_title_storage_status">Pašreizējais atmiņas lietojums</string>
+    <string name="storage_dialog_mms">Mms:\u0020<xliff:g id="number">%s</xliff:g> vienums(-i)</string>
+    <string name="storage_dialog_sms">Sms:\u0020<xliff:g id="number">%s</xliff:g> vienums(-i)</string>
+    <string name="storage_dialog_attachments">Mms pielikumi:\u0020</string>
+    <string name="storage_dialog_database">Datubāze:\u0020</string>
+    <string name="storage_dialog_available_space">Pieejamā vieta:\u0020</string>
+    <string name="menu_show_icc_sms_capacity">Skatīt kapacitāti</string>
+    <string name="show_icc_sms_capacity_title">Kapacitāte</string>
+    <string name="icc_sms_used">Izmantots:</string>
+    <string name="icc_sms_total">Kopā:</string>
+    <string name="get_icc_sms_capacity_failed">Neizdevās iegūt SIM kartes kapacitāti.</string>
+    <plurals name="read_report_toast_msg">
+     <item quantity="one">sūta %d lasīšanas pārskatu</item>
+     <item quantity="other">sūta %d lasīšanas pārskatus</item>
+   </plurals>
+    <string name="pref_title_mms_auto_reply_read_reports">Sūtīt lasīšanas pārskatu</string>
+    <string name="pref_summary_mms_auto_reply_read_reports">Sūtīt lasīšanas pārskatu, ja to pieprasījis MMS sūtītājs</string>
+    <string name="exceed_subject_length_limitation">Sasniegts maksimālais garums</string>
+    <plurals name="message_view_selected_message_count">
+     <item quantity="one">Atlasīts <xliff:g id="message_count" example="1">%d</xliff:g></item>
+     <item quantity="other">Atlasīti <xliff:g id="message_count" example="9">%d</xliff:g></item>
+   </plurals>
+    <string name="disable_notifications_dialog_message">"Vai pārtraukt sūtīt dublētus paziņojumus par īsziņām no noklusējuma ziņojumapmaiņas lietotnes?"</string>
+    <string name="sms_input_mode_title">Ievades režīms</string>
+    <string name="sms_input_mode_dialog_title">Atlasīt ievades metodi</string>
+    <string name="sms_input_mode_summary">SMS ievades režīms īsziņas izveidei</string>
+    <string name="pref_title_io_settings">Importēt/eksportēt SMS</string>
+    <string name="pref_summary_import_msg">Importēt SMS no SD kartes</string>
+    <string name="pref_title_import_msg">Importēt SMS</string>
+    <string name="pref_summary_export_msg">Eksportēt SMS uz SD karti</string>
+    <string name="pref_title_export_msg">Eksportēt SMS</string>
+    <string name="no_sd_card">SD karte nav gatava</string>
+    <string name="export_message_ongoing">Eksportē SMS uz SD karti, lūdzu, uzgaidiet...</string>
+    <string name="import_message_ongoing">Importē SMS no SD karti, lūdzu, uzgaidiet...</string>
+    <string name="export_message_success">SMS eksportēšana uz SD karti sekmīga</string>
+    <string name="import_message_success">SMS importēšana no SD kartes sekmīga</string>
+    <string name="import_message_fail">Neizdevās importēt SMS no SD kartes</string>
+    <string name="export_message_fail">Neizdevās eksportēt SMS uz SD karti</string>
+    <string name="import_message_list">SD kartes SMS DB saraksts</string>
+    <string name="import_message_list_empty">SD kartē nav SMS DB failu</string>
+    <string name="export_message_empty">Nav eksportējamu SMS!</string>
+    <string name="whether_export_item">Vai vēlaties eksportēt SMS?</string>
+    <string name="whether_import_item">Vai vēlaties importēt?</string>
+    <string name="export_disk_problem">SD karte ir pilna, vai tajā nevar ierakstīt</string>
+    <string name="select_text">Atzīmēt tekstu</string>
+    <string name="unselect_all">"Atcelt atlasi"</string>
+    <string name="forward_from">Pārsūtīt no:</string>
+    <string name="sms_forward_setting">SMS pārsūtīšanas iestatījums</string>
+    <string name="sms_forward_setting_summary">Pārsūtīt SMS ar sūtītāja vārdu un numuru</string>
+    <string name="forward_byself">"Man"</string>
+    <string name="file_attachment_vcalendar_name">vCalendar (<xliff:g id="text">%s</xliff:g>)</string>
+    <string name="file_attachment_vcard_name">vCard(<xliff:g id="text">%s</xliff:g>)</string>
+    <string name="attach_vcalendar">"Kalendārs"</string>
+    <string name="file_attachment_import_vcard">Importēt vCard</string>
+    <string name="attach_vcard">Kontakts</string>
+    <string name="type_common_file">fails</string>
+    <string name="please_wait">"Lūdzu, uzgaidiet..."</string>
+    <string name="failed_to_parse_vcard">Neizdevās parsēt vCard failu!</string>
+    <string name="empty_vcard">vCard nav kontaktu</string>
+    <string name="parse_vcard">Parsēt vCard</string>
+    <string name="vcard_no_details">Nav papildinformācijas par šo kontaktu"</string>
+    <string name="note">Piezīme</string>
+    <string name="organization">Organizācija</string>
+    <string name="website">Vietne:\u0020</string>
+    <string name="nickname">Aizstājvārds</string>
+    <string name="call_custom"><xliff:g id="custom">%s</xliff:g></string>
+    <string name="call_home">"Mājas"</string>
+    <string name="call_mobile">"Mobilais"</string>
+    <string name="call_work">"Darbā"</string>
+    <string name="call_fax_work">"Faksa numurs darbā"</string>
+    <string name="call_fax_home">"Faksa numurs mājās"</string>
+    <string name="call_pager">"Peidžers"</string>
+    <string name="call_other">cits</string>
+    <string name="call_callback">atzvanīšana</string>
+    <string name="call_car">"Automobiļa"</string>
+    <string name="call_company_main">"Uzņēmuma galvenais tālruņa numurs"</string>
+    <string name="call_isdn">"ISDN"</string>
+    <string name="call_main">"Galvenais"</string>
+    <string name="call_other_fax">"FAKSS"</string>
+    <string name="call_radio">"Radio"</string>
+    <string name="call_telex">"Telekss"</string>
+    <string name="call_tty_tdd">TTY/TDD</string>
+    <string name="call_work_mobile">"Mobilā tālruņa numurs darbā"</string>
+    <string name="call_work_pager">"Peidžera numurs darbā"</string>
+    <string name="call_assistant"><xliff:g id="assistant">%s</xliff:g></string>
+    <string name="call_mms">MMS</string>
+    <string name="email_home">Sūtīt e-pastu uz mājām</string>
+    <string name="email_mobile">Sūtīt e-pastu uz mobilo tālruni</string>
+    <string name="email_work">Sūtīt e-pastu uz darbu</string>
+    <string name="email_other">E-pasts</string>
+    <string name="email_custom">E-pasts <xliff:g id="custom">%s</xliff:g></string>
+    <string name="email">E-pasts</string>
+    <string name="map_home">Skatīt mājas adresi</string>
+    <string name="map_work">Skatīt darba adresi</string>
+    <string name="map_other">Skatīt adresi</string>
+    <string name="map_custom">Skatīt <xliff:g id="custom">%s</xliff:g> adresi</string>
+    <string name="chat_aim">Tērzēt, izmantojot AIM</string>
+    <string name="chat_msn">Tērzēt, izmantojot Windows Live</string>
+    <string name="chat_yahoo">Tērzēt, izmantojot Yahoo</string>
+    <string name="chat_skype">Tērzēt, izmantojot Skype</string>
+    <string name="chat_qq">Tērzēt, izmantojot QQ</string>
+    <string name="chat_gtalk">Tērzēt, izmantojot Google Talk</string>
+    <string name="chat_icq">Tērzēt, izmantojot ICQ</string>
+    <string name="chat_jabber">Tērzēt, izmantojot Jabber</string>
+    <string name="chat">Tērzēt</string>
+    <string name="inbox">"Iesūtne"</string>
+    <string name="outbox">"Izsūtne"</string>
+    <string name="draftbox">Melnraksti</string>
+    <string name="sentbox">Izsūtne</string>
+    <string name="simbox">SIMbox</string>
+    <string name="changeview">Mainīt režīmu</string>
+    <string name="viewer_title_sms">"Īsziņa"</string>
+    <string name="viewer_title_wappush">WAP infoziņa</string>
+    <string name="viewer_title_cb">Mobilā apraide</string>
+    <string name="slideshow_details">Informācija par ziņojumu</string>
+    <string name="open">"Atvērt"</string>
+    <string name="delete_all_confirm">"Vai dzēst visus pastkastes ziņojumus?"</string>
+    <string name="folder_recipient">Adresāts:</string>
+    <string name="folder_recieve_date">Datums:</string>
+    <string name="folder_download">MMS tiek lejupielādēta</string>
+    <string name="confirm_download_message">"Apstiprināt īsziņas lejupielādi"</string>
+    <string name="play_as_slideshow">Rādīt MMS kā slaidrādi</string>
+    <string name="by_card">Sūtītājs:</string>
+    <string name="page">%d. lapa</string>
+    <string name="space_not_enough">Atlikusī vieta nav pietiekoša, lai tvertu video</string>
+    <string name="space_not_enough_for_audio">Atlikusī vieta nav pietiekoša, lai ierakstītu audio</string>
+    <string name="no_messages">"Nav īsziņu"</string>
+    <string name="call_video_call">Video zvans</string>
+    <string name="storage_dialog_mms_size">MMS lielums:\u0020</string>
+    <string name="error_add_attachment">"Nezināma kļūda, ziņai nevar pievienot šo vienumu: <xliff:g id="name">%1$s</xliff:g>".</string>
+    <string name="no_application_response">"Nav lietojumprogrammas, kas var apstrādāt pieprasījumu"</string>
+    <string name="cdma_not_support">CDMA neatbalsta šo funkciju</string>
+    <string name="allmessage">"Visas īsziņas"</string>
+    <string name="select_message">Atlasīt īsziņu</string>
+    <string name="confirm_delete_allmessage">"Visas īsziņas tiks dzēstas."</string>
+    <string name="mark_as_read_btn_str">Atzīmēt kā izlasītu</string>
+    <string name="delete_btn_str">"Dzēst"</string>
+    <string name="reply_send">"Sūtīt"</string>
+    <string name="via_test">"izmantojot "</string>
+    <string name="received_header">"Saņemts:"</string>
+    <string name="no_item_selected">Nav atlasīts neviens vienums.</string>
+    <string name="sync_mms_to_db">Notiek ielāde...</string>
+    <string name="pref_title_font_size_setting">FONTA LIELUMA IESTATĪJUMS</string>
+    <string name="pref_title_message_font_size">Īsziņas fonta lielums</string>
+    <string name="pref_summary_message_font_size">Īsziņas fonta lielums</string>
+    <string name="message_font_size_dialog_title">Īsziņas fonta lielums</string>
+    <string name="message_font_size_dialog_cancel">"Atcelt"</string>
+    <string name="change">Mainīt</string>
+    <string name="change_default_disk">Tālruņa atmiņā nepietiek vietas. Atbrīvojiet nedaudz vietas vai iestatījumos mainiet iestatījumu "pēc noklusējuma rakstīt diskā".</string>
+    <string name="failed_to_add_image">Sasniegts īsziņas izmēra ierobežojums, dažas daļas nav pievienotas.</string>
+    <string name="ipmsg_conversation_list_all">"Ziņojumi"</string>
+    <string name="ipmsg_conversation_list_important">Svarīgi</string>
+    <string name="ipmsg_conversation_list_group_chats">Grupas tērzēšana</string>
+    <string name="ipmsg_conversation_list_spam">Surogātpasts</string>
+    <string name="ipmsg_create_group_chat">Izveidot grupas tērzēšanu</string>
+    <string name="ipmsg_send_invitation">Nosūtīt ielūgumus</string>
+    <string name="str_ipmsg_download_history_dlg">Lejupielādē...</string>
+    <string name="to_hint_ipmsg">"Ievadiet nosaukumu vai numuru"</string>
+    <string name="type_to_compose_text_enter_to_send_ipmsg">"Ievadiet SMS/iSMS ziņu"</string>
+    <string name="ipmsg_ipmsg_hint">"Ievadiet iSMS ziņu"</string>
+    <string name="ipmsg_sms_hint">"Ievadiet īsziņu"</string>
+    <string name="ipmsg_caption_hint">"Ievadiet parakstus"</string>
+    <string name="ipmsg_cancel">"Atcelt"</string>
+    <string name="ipmsg_invite_chat_frequently"><b>Vai bieži tērzējat ar %s?</b>\nKādēļ neuzaicināt %s lietot iSMS, lai abi ietaupītu naudu?</string>
+    <string name="ipmsg_enable_chat_frequently"><b>%s lieto iSMS!</b>\nKādēļ neiespējot iSMS pakalpojumu un abiem ietaupīt naudu?</string>
+    <string name="ipmsg_invite">Ielūgt</string>
+    <string name="ipmsg_dismiss">"Noraidīt"</string>
+    <string name="ipmsg_enable">"Iespējot"</string>
+    <string name="ipmsg_enable_notice">Vai tiešām iespējot iSMS pakalpojumu?</string>
+    <string name="ipmsg_activate">"Aktivizēt"</string>
+    <string name="ipmsg_activate_chat_frequently">&lt;/b&gt;Vai bieži tērzējat ar draugiem?&lt;/b&gt;\nKādēļ neaktivizējat iSMS pakalpojumu, lai tērzētu, nemaksājot par īsziņām?Vai bieži tērzējat ar draugiem?&lt;/b&gt;\nKādēļ neaktivizējat iSMS pakalpojumu, lai tērzētu, nemaksājot par īsziņām?\nKādēļ neaktivizējat iSMS pakalpojumu, lai tērzētu, nemaksājot par īsziņām?</string>
+    <string name="ipmsg_activate_note">Vai tiešām aktivizēt iSMS?</string>
+    <string name="ipmsg_dismiss_content">Vai tiešām atmest šo piezīmi?</string>
+    <string name="ipmsg_ipmsg">IP ziņojums</string>
+    <string name="ipmsg_dailog_multi_forward">Pārsūta īsziņas</string>
+    <string name="ipmsg_dialog_send_result">Rezultāta sūtīšana</string>
+    <string name="ipmsg_dlg_send_all">Viss: %s</string>
+    <string name="ipmsg_dlg_send_sucess">Nosūtīts: %s</string>
+    <string name="ipmsg_dlg_send_failed">Nesekmīgi: %s</string>
+    <string name="multi_forward_sim_info">Iegūst SIM kartes informāciju</string>
+    <string name="ipmsg_multi_forward_no_sim">Nav SIM kartes informācijas</string>
+    <string name="ipmsg_divider_online">%s ir tiešsaistē</string>
+    <string name="ipmsg_divider_offline">Pēdējo reizi tiešsaistē %s</string>
+    <string name="ipmsg_divider_never_online">Nekad nav tiešsaistē</string>
+    <string name="ipmsg_vcard_file_name">%s kontakti</string>
+    <string name="ipmsg_getsim_failed">Neizdevās iegūt SIM kartes informāciju</string>
+    <string name="ipmsg_sim_status_error">SIM kartes statusa kļūda</string>
+    <string name="ipmsg_forward_failed">Pārsūtīšana neizdevās</string>
+    <string name="ipmsg_forward_norecipients">Pārsūtāmajai īsziņai nav adresāta(-u)</string>
+    <string name="ipmsg_multiforward_no_message">Nav pārsūtāmas(-u) īsziņas(-u)</string>
+    <string name="ipmsg_need_input_recipients">Vispirms norādiet vismaz vienu adresātu</string>
+    <string name="str_ipmsg_unread_format">%1$d nelasītas īsziņas</string>
+    <string name="str_ipmsg_not_delivered_title">Vēl nav piegādāta</string>
+    <string name="str_ipmsg_failed_title">Neizdevās nosūtīt</string>
+    <string name="ipmsg_try_again">"Mēģināt vēlreiz"</string>
+    <string name="ipmsg_try_all_again">Mēģināt visu vēlreiz</string>
+    <string name="ipmsg_resend_via_sms">Tā vietā sūtīt SMS</string>
+    <string name="ipmsg_resend_via_mms">Tā vietā sūtīt MMS</string>
+    <string name="str_ipmsg_cant_share">SD karte nav pieejama, nevar koplietot multiziņu</string>
+    <string name="str_ipmsg_file_limit">par lielu</string>
+    <string name="str_ipmsg_no_app">Nav lietojumprogrammas, kas var veikt šo darbību.</string>
+    <string name="str_ipmsg_today">"Šodien"</string>
+    <string name="str_ipmsg_yesterday">"vakar"</string>
+    <string name="ip_message_typing_text">Raksta</string>
+    <string name="str_ipmsg_no_such_file">Nav tāda faila</string>
+    <string name="str_ipmsg_over_file_limit">Faila lielums pārsniedz ierobežojumu</string>
+    <string name="str_ipmsg_invalid_file_type">Neatbalsta šo tipu</string>
+    <string name="invite_friends_to_ipmsg">Uzaiciniet draugus izmantot iSMS</string>
+    <string name="invite_friends_to_chat">Uzaiciniet draugus tērzēšanai</string>
+    <string name="invite_friends_to_ipmsg_dialog_msg">Lai nosūtītu uzaicinājumu, izveidotie ziņojumi tiks atmesti.</string>
+    <string name="invite_friends_to_ipmsg_content">Sveicināti! iSMS ir lielisks tērzēšanas rīks. Tas ir bezmaksas un ērts. Lai uzzinātu vairāk, apmeklējiet http://isms.hissage.com.</string>
+    <string name="export">"Eksportēšana"</string>
+    <string name="mark_as_spam">Pārvietot uz surogātpasta sarakstu</string>
+    <string name="mark_as_spam_tips">Ziņojums, kas apzīmēts kā surogātpasts, tiks pārvietots uz surogātpasta sarakstu un automātiski tiks izslēgts paziņojums.</string>
+    <string name="remove_frome_spam">Noņemt no surogātpasta saraksta</string>
+    <string name="add_shortcut">Pievienot īsceļus</string>
+    <string name="view_all_media">Skatīt visu multividi</string>
+    <string name="view_all_location">Skatīt visas atrašanās vietas</string>
+    <string name="ipmsg_export_to_sdcard">Eksportēt uz SD karti</string>
+    <string name="ipmsg_copy">"Kopēt"</string>
+    <string name="ipmsg_send_via_text_msg">Sūtīt, izmantojot īsziņu</string>
+    <string name="ipmsg_send_via_mms">Sūtīt, izmantojot multiziņu</string>
+    <string name="ipmsg_retry">"Mēģināt vēlreiz"</string>
+    <string name="ipmsg_delete">"Dzēšanas taustiņš"</string>
+    <string name="ipmsg_share">"Kopīgot"</string>
+    <string name="ipmsg_mark_as_important">Atzīmēt ar karodziņu kā svarīgu</string>
+    <string name="ipmsg_remove_from_important">Noņemt svarīgu karodziņu</string>
+    <string name="str_ipmsg_save_file">Fails saglabāts šeit: %1$s</string>
+    <string name="continue_str">"Turpināt"</string>
+    <string name="convert_to_mms">Pārveidot uz MMS.</string>
+    <string name="convert_to_sms">Pārveidot uz SMS.</string>
+    <string name="ipmsg_convert_to_ipmsg">Pārveidot uz iSMS.</string>
+    <string name="ip_message_convert_to_mms_message_for_service">Atlasītajai SIM kartei iSMS pakalpojums nav pieejams. Šai SIM kartei šo īsziņu var nosūtīt tikai, izmantojot MMS. Vai turpināt jebkurā gadījumā?</string>
+    <string name="ip_message_convert_to_sms_message_for_service">Atlasītajai SIM kartei iSMS pakalpojums nav pieejams. Šai SIM kartei šo īsziņu var nosūtīt tikai, izmantojot SMS. Vai turpināt jebkurā gadījumā?</string>
+    <string name="ip_message_convert_to_mms_message_for_recipients">Adresāts(-i) nav iSMS lietotājs(-i). Šo īsziņu var nosūtīt tikai, izmantojot MMS. Vai turpināt jebkurā gadījumā?</string>
+    <string name="ip_message_convert_to_sms_message_for_recipients">Adresāts(-i) nav iSMS lietotājs(-i). Šo īsziņu var nosūtīt tikai, izmantojot SMS. Vai turpināt jebkurā gadījumā?</string>
+    <string name="ipmsg_sms_convert_to_ipmsg">Atlasītajai SIM kartei iSMS pakalpojums ir pieejams. Lai samazinātu maksu par SMS, ieteicams īsziņu pārslēgt uz iSMS. Vai ieslēgt tūlīt?</string>
+    <string name="ipmsg_mms_convert_to_ipmsg">Atlasītajai SIM kartei iSMS pakalpojums ir pieejams. Lai samazinātu maksu par MMS, ieteicams īsziņu pārslēgt uz iSMS. Vai ieslēgt tūlīt?</string>
+    <string name="keep_mms">Atstāt MMS</string>
+    <string name="keep_sms">Atstāt SMS</string>
+    <string name="switch_ipmsg">Pārslēgt</string>
+    <string name="ip_message_load_all_message">Ielādēt visas īsziņas</string>
+    <string name="str_ipmsg_replace_attach">Aizstāt pielikumu</string>
+    <string name="str_ipmsg_replace_attach_msg">Pastāv pielikums. Vai aizvietot?</string>
+    <string name="ipmsg_err_file">Neizdevās atvērt failu</string>
+    <string name="pref_title_display_preference_settings">RĀDĪŠANA UN PREFERENCES</string>
+    <string name="pref_chat_wallpaper">Tērzēšanas ekrāna tapete</string>
+    <string name="pref_auto_rotation">Automātiska pagriešana</string>
+    <string name="pref_show_email_address">Rādīt e-pasta adresi</string>
+    <string name="pref_summary_show_email_address">Kontaktu rezultātos iekļaut e-pasta adresi</string>
+    <string name="pref_title_backup_restore_settings">DUBLĒŠANA UN ATJAUNOŠANA</string>
+    <string name="pref_backage_message">Dublējuma ziņojums</string>
+    <string name="pref_summary_backup_message">Pēdējo reizi dublēts:nekad</string>
+    <string name="pref_restore_message">Atjaunot ziņojumu</string>
+    <string name="pref_summary_restore_message">Atjaunot dublējuma ziņojumus</string>
+    <string name="pref_mute">"Izslēgt skaņu"</string>
+    <string name="pref_summary_mute">"Izslēgts"</string>
+    <string name="pref_vibrate">"Vibrē"</string>
+    <string name="pref_summary_vibrate">Vibrēt, kad tiek saņemts paziņojums</string>
+    <string name="pref_popup_notification">Uznirstošais paziņojums</string>
+    <string name="pref_summary_popup_notification">Infoziņas paziņojumus rādīt uznirstošus</string>
+    <string name="pref_title_display_settings">"Attēls"</string>
+    <string name="pref_title_actions_settings">Darbības</string>
+    <string name="pref_download_chat_history">Lejupielādēt tērzēšanas vēsturi</string>
+    <string name="pref_summary_download_chat_history">Saglabāt SD kartē zip formātā</string>
+    <string name="pref_email_chat_history">E-pasta tērzēšanas vēsture</string>
+    <string name="pref_summary_email_chat_history">E-pasta tērzēšanas vēsture zip formātā</string>
+    <string name="pref_clear_chat_history">Dzēst tērzēšanas vēsturi</string>
+    <string name="pref_summary_notification_ringtone">Iestatīt jaunu paziņojumu zvana signālu</string>
+    <string name="pref_setting_title">Ziņojuma iestatījums</string>
+    <string name="pref_setting_sms">Īsziņa (SMS)</string>
+    <string name="pref_setting_mms">Multiziņa (MMS)</string>
+    <string name="pref_setting_notification">"Paziņojumi"</string>
+    <string name="pref_setting_general">"Vispārīgi"</string>
+    <string name="pref_setting_chat">Tērzēšanas iestatījumi</string>
+    <string name="chat_setting_saving">saglabā...</string>
+    <string name="chat_setting_updating">atjaunina...</string>
+    <string name="chat_setting_sending">sūta...</string>
+    <string name="dialog_save_title">Saglabāt SD kartē</string>
+    <string name="dialog_save_description">Saglabāt šo tērzēšanas pavedienu SD kartē kā zip failu</string>
+    <string name="dialog_email_title">Koplietot, izmantojot e-pastu</string>
+    <string name="dialog_email_description">Koplietot šo tērzēšanas pavedienu kā zip formāta pielikumu, izmantojot e-pastu</string>
+    <string name="dialog_clear_title">"Notīrīt"</string>
+    <string name="dialog_clear_description">Visa tērzēšanas vēsture šajā tērzētavā tiks notīrīta</string>
+    <string name="dialog_wallpaper_chooser_wallpapers">Sienas tapetes</string>
+    <string name="dialog_wallpaper_chooser_gallery">Galerija</string>
+    <string name="dialog_wallpaper_chooser_take">"Uzņemt fotoattēlu"</string>
+    <string name="dialog_wallpaper_chooser_default">"Noklusējums"</string>
+    <string name="dialog_wallpaper_title">Izvēlēties ekrāna tapeti</string>
+    <string name="mute_one_hour">"1 stunda"</string>
+    <string name="mute_four_hours">4 stundas</string>
+    <string name="mute_eight_hours">8 stundas</string>
+    <string name="save_chat_history_failed">neizdevās saglabāt</string>
+    <string name="send_chat_history_failed">Neizdevās nosūtīt e-pasta ziņojumu</string>
+    <string name="actionbar_sms_setting">SMS iestatījumi</string>
+    <string name="actionbar_mms_setting">MMS iestatījumi</string>
+    <string name="actionbar_notification_setting">"Paziņojumu iestatījumi"</string>
+    <string name="actionbar_general_setting">Vispārīgie iestatījumi</string>
+    <string name="save_history_file">saglabāt kā</string>
+    <string name="no_sdcard_suggestion">"Nav SD kartes"</string>
+    <string name="save_wallpaper_success">Ekrāna tapete nomainīta.</string>
+    <string name="save_wallpaper_fail">Nevar nomainīt ekrāna tapeti.</string>
+    <string name="ip_message_delete_important">"Ietvert īsziņas, kas ar karodziņu atzīmētas kā svarīgas"</string>
+    <string name="str_ipmsg_spam_empty">Jums nav nevienas surogātpasta sarunas. \nSUROGĀTPASTS apkopo visas sarunas, kas atzīmētas kā surogātpasts. Paziņojums pēc noklusējuma ir izslēgts. Tas palīdz izvairīties no nevajadzīgas traucēšanas. \n\nTurot nospiestu sarunu un atlasot ikonu Atzīmēt kā surogātpastu, sūtītāju varat atzīmēt kā surogātpastu. Kad saruna ir atzīmēta kā surogātpasts, automātiski tiek parādīta izslēgta paziņojuma ikona un saruna tiek novietota tur.</string>
+    <string name="str_ipmsg_spam_example_subject">Šis ir surogātpasta ziņojuma piemērs.</string>
+    <string name="str_ipmsg_groupchat_empty">Jums nav nevienas grupas tērzēšanas ziņas. \nGRUPAS TĒRZĒŠANA apkopo visas grupas tērzēšanas ziņas, kuras jūs izveidojāt vai kurām pievienojāties. Tas palīdz vieglāk atrast un pārvaldīt grupas tērzēšanu. \n\nLai izveidotu grupas tērzēšanu, varat šī ekrāna apakšdaļā pieskarties pogai Izveidot grupas tērzēšanu un uzaicināt draugus pievienoties grupai.</string>
+    <string name="str_ipmsg_group_example_from">Grupas nosaukums</string>
+    <string name="str_ipmsg_group_example_subject">Jūsu draugs:\nMan patīk grupas tērzēšanas funkcija!</string>
+    <string name="str_ipmsg_important_empty">Jums nav nevienas svarīgas ziņas. \nSVARĪGI apkopo visas ziņas, kas ar karodziņu atzīmētas kā svarīgas. Tā iespējams vieglāk atrast svarīgas ziņas. \n\nTurot nospiestu ziņu un opciju izvēlnē atlasot Atzīmēt ar karodziņu kā svarīgu, varat atzīmēt ziņu ar karodziņu kā svarīgu. Kad ziņa ir atzīmēta ar karodziņu kā svarīga, varat redzēt tālāk redzamo sarkana karoga ikonu.</string>
+    <string name="str_ipmsg_important_example_title">Šis ir piemērs ziņai, kas ar karodziņu atzīmēta kā svarīga. Parādās sarkanais karogs.</string>
+    <string name="str_ipmsg_important_example_time">10:55 AM</string>
+    <string name="str_ipmsg_allchat_empty">"Nav sarunu."</string>
+    <string name="str_ipmsg_empty_activate_content">Lai lietotu šo funkciju, vispirms nepieciešams aktivizēt iSMS pakalpojumu. Neuztraucaties! Ja jums nepatīk šis pakalpojums, iestatījumos vienmēr varat to izslēgt. Pamēģiniet to tūlīt!</string>
+    <string name="str_ipmsg_empty_activate_title">Aktivizēt iSMS</string>
+    <string name="str_ipmsg_service_title">iSMS servisa centrs</string>
+    <string name="str_ipmsg_introduction">Izmantojot iSMS, varat tieši saņemt bezmaksas ziņas un saglabāt tērzēšanas vēsturi vienā vietā. Nospiežot vienu pogu, iegūstiet jaunu pieredzi!</string>
+    <string name="time_now">"TŪLĪT"</string>
+    <string name="str_ipmsg_active">Aktivizēt iSMS</string>
+    <string name="str_ipmsg_welcome_active">Laipni lūdzam iSMS!</string>
+    <string name="str_ipmsg_term_warn_welcome">Izmantojot iSMS pakalpojumu, ar Wi-Fi vai datu savienojuma palīdzību jebkurā laikā un jebkurā vietā iespējams tērzēt un koplietot multivides failus ar draugiem.\n\nTikai trīs darbības, lai aktivizētu!\n\n Noteikumi un nosacījumi\n</string>
+    <string name="str_ipmsg_term_warn_activate">Šo funkciju atbalsta tikai iSMS pakalpojums.\n\nIzmantojot iSMS pakalpojumu, ar Wi-Fi vai datu savienojuma palīdzību jebkurā laikā un jebkurā vietā iespējams tērzēt un koplietot multivides failus ar draugiem.\n\n Noteikumi un nosacījumi</string>
+    <string name="str_ipmsg_term_key">Noteikumi un nosacījumi</string>
+    <string name="str_ipmsg_agree_and_continue">Piekrist un turpināt</string>
+    <string name="no_sim_card">Nav SIM kartes!</string>
+    <string name="ip_message_activate_title">Aktivizēt iSMS</string>
+    <string name="ip_message_current_sim_enabled">Pašreizējā SIM karte ir iespējota.</string>
+    <string name="sim_selected_dialog_title_for_activate">iSMS aktivizēšanai atlasiet SIM karti</string>
+    <string name="ip_message_activate_message">Šo funkciju atbalsta tikai iSMS pakalpojums. Vai aktivizēt iSMS kontu tūlīt?</string>
+    <string name="typing">"Notiek rakstīšana..."</string>
+    <string name="ip_message_enable_title">Iespējot iSMS</string>
+    <string name="ip_message_enable_message">Šo funkciju atbalsta tikai iSMS pakalpojums. Vai iespējot iSMS kontu tūlīt?</string>
+    <string name="sim_selected_dialog_title_for_enable">iSMS iespējošanai atlasiet SIM karti</string>
+    <string name="ip_message_switch_sim_title">Pārslēgt SIM karti</string>
+    <string name="ip_message_switch_sim_message">Pašreizējā SIM karte neatbalsta iSMS. Vai pārslēgt uz citu SIM karti?</string>
+    <string name="ip_message_switch_sim_button">Pārslēgt</string>
+    <string name="ip_message_switch_sim_successfully">SIM kartes pārslēgšana veiksmīga!</string>
+    <string name="close">"Aizvērt"</string>
+    <string name="nointernet">"Netika atrasts interneta savienojums, kas darbojas. Vēlāk mēģiniet vēlreiz."</string>
+    <string name="ipmsg_reject">Noraidīt</string>
+    <string name="ipmsg_accept">"Piekrist"</string>
+    <string name="ipmsg_resend">Nosūtīt atkārtoti</string>
+    <string name="ipmsg_resend_discard_message">Lai pārsūtītu īsziņas, pašreiz rakstītā īsziņa tiks atmesta.</string>
+    <plurals name="deleted_conversations">
+     <item quantity="one">Viena saruna tika dzēsta</item>
+     <item quantity="other"><xliff:g id="number" example="15">%1$s</xliff:g> sarunas tika dzēstas</item>
+   </plurals>
+    <string name="discard_mms_title">Atmest MMS</string>
+    <string name="discard_mms_content">Visas vairāku pārsūtījumu ziņu multiziņas tiks atmestas</string>
+    <string name="toast_sms_forward">Īsziņa nav pārsūtīta</string>
+    <string name="dialog_continue">"Turpināt"</string>
+    <string name="sms_size_limit">Sasniegts lieluma ierobežojums</string>
+    <string name="dialog_sms_limit">Sasniegts īsziņas lieluma ierobežojums. Pārsniegtā īsziņa tiks atmesta</string>
+    <string name="forward_tips_title">"Atmest multiziņas paziņojumu"</string>
+    <string name="forward_tips_body">"Multiziņas paziņojums neatbalsta pārsūtīšanu; tas tiks atmests."</string>
+    <string name="type_to_quick_text">"Ievadiet ātro tekstu"</string>
+    <string name="menu_wappush">"WAP pārsūtīšanas īsziņas"</string>
+    <string name="visit_website">"Apmeklēt vietni"</string>
+    <string name="meet_emoticon_limit">Ievērot emocijzīmju ierobežojumus</string>
+    <string name="view_mms_notification">Nevar skatīt mms paziņojumu</string>
+    <string name="ipmsg_multi_forward_tips_content">Lai izpildītu vairākas pārsūtīšanas, vispirms nepieciešams lejupielādēt dažas iSMS.</string>
+    <string name="multi_forward_failed_all">Lejupielāde neizdevās, pārsūtīšana vairākiem adresātiem atmesta.</string>
+    <string name="ipmsg_multi_forward_failed_part">Dažu iSMS pārsūtīšana neizdevās.</string>
+    <string name="sum_search_networks">"Meklēt visus pieejamos tīklus"</string>
+    <string name="confirm_delete_allwappush">"Visi WAP infoziņu ziņojumi tiks dzēsti."</string>
+    <string name="confirm_delete_selected_wappush">"Atlasītie WAP infoziņu ziņojumi tiks dzēsti."</string>
+    <string name="menu_delete_allwappush">Dzēst visu</string>
+    <string name="duplicated_recipient">Dublēts adresāts</string>
+    <string name="sms_not_ready">SMS modulis tiek inicializēts, lūdzu, uzgaidiet...</string>
+    <string name="label_full_name">"Nosaukums"</string>
+    <string name="label_phone">"Tālrunis"</string>
+    <string name="label_email">"E-pasts"</string>
+    <string name="label_postal">Adrese</string>
+    <string name="label_organization">Organizācija</string>
+    <string name="label_im">IM</string>
+    <string name="label_website">Tīmekļa vietne</string>
+    <string name="label_sip_address">"Interneta zvans"</string>
+    <string name="label_nick_name">"Segvārds"</string>
+    <string name="label_notes">Piezīmes</string>
+    <string name="label_event">Notikumi</string>
+    <string name="search_time_period_label">Laika periods</string>
+    <string name="done_text">"Gatavs"</string>
+    <string name="add_duplicate_recipients">Dublēts adresāts</string>
+    <string name="download_disabled_toast">Nevar lejupielādēt. Nav noklusējuma īsziņu lietotnes.</string>
+    <string name="adding_wallpaper_title">Saglabā ekrāna tapeti…</string>
+    <string name="mwi_title">Balss ziņojumi</string>
+    <string name="type_voice_msg">Balss ziņojums</string>
+    <string name="type_video_msg">Video ziņojums</string>
+    <string name="type_fax_msg">Faksa ziņojums</string>
+    <string name="priority_urgent">Steidzami</string>
+    <string name="date_label">"Datums: "</string>
+    <string name="message_id_label">Ziņojuma ID:\u0020</string>
+    <string name="voice_message_count_notification"><xliff:g id="number" example="3">%1$s</xliff:g> jauni balss ziņojumi</string>
+    <string name="confirm_delete_allmwi">"Visi balss ziņojumi tiks dzēsti."</string>
+    <string name="confirm_delete_selected_mwi">"Atlasītie balss ziņojumi tiks dzēsti."</string>
+    <string name="sms_priority_setting">UIM prioritāte</string>
+    <string name="sms_priority_Interactive">Interaktīvs</string>
+    <string name="sms_priority_Urgent">Steidzami</string>
+    <string name="sms_priority_Emergency">Ārkārtas situācija</string>
+    <string name="type_text_msg">"Īsziņa"</string>
+    <string name="empty_sim_name"><xliff:g id="subId" example="2">%1$d</xliff:g>. SIM atvere</string>
+
+    <string name="drm_not_support">MMS neatbalsta ar kopiju aizsargāto saturu.</string>
+    <string name="user_has_no_premission">Šim lietotājam nav atļauts lietot SMS</string>
+    <string name="wfc_no_cellular_network">Nav mobilā tīkla</string>
+    <string name="wfc_connect_to_available_wifi">Ziņojumu sūtīšanai savienot ar pieejamu WI-Fi tīklu.</string>
+    <string name="wfc_notification_title">Ziņojumu sūtīšanai savienot ar WI-Fi tīklu</string>
+    <string name="ct_om_switch_notification"><xliff:g id="op1">%s</xliff:g> pārejoši nedarbosies, ja būs noklusējuma zvans, SMS, dati uz <xliff:g id="op2">%s</xliff:g>, tie tiks attiecīgi mainīti uz <xliff:g id="op3">%s</xliff:g>.</string>
+    <string name="can_not_switch_account_during_call">NevarpārslēgtvēlamoSIMpriekšSMS,kadnotiekzvans.</string>
+    <string name="can_not_switch_account_temporarily">NevaruzlaikupārslēgtvēlamoSIM kartiīsziņām.</string>
+    <string name="omh_exceed_message_size_limitation">SasniegtsR-UIMziņojumaizmēraierobežojums</string>
+    <string name="omh_failed_to_add_image">R-UIM ziņojuma apjoma limits sasniegts, lūdzu, noņemiet dažas daļas.</string>
+    <string name="missing_required_permission">Atļaujas atteiktas. Jūs varat tās mainīt no Iestatījumi &gt; Lietotnes.</string>
+    <string name="manage_card_msg_title">Pārvaldīt UIM/SIM kartes īsziņas</string>
+    <string name="manage_card_msg_summary">Pārvaldīt UIM/SIM kartē saglabātās īsziņas</string>
+    <string name="disable_delivery_report">Viesbonēšanas laikā nevar to iespējot.</string>
+    <string name="fore_service_notify_title">Pārsūta īsziņas</string>
+    <string name="fore_service_notify_content">Notiek īsziņu pārsūtīšana.</string>
+    <string name="smart_req_mms_indicator">MMS nav atļautas, mēģiniet vēlreiz ar SMS.</string>
+</resources>

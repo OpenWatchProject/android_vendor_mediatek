@@ -1,0 +1,28 @@
+Library of MTK MSIM feature for meta mode, including MSIM switch functions.
+
+WHAT IT DOES?
+=============
+Provide meta mode MSIM switch function
+
+HOW IT WAS BUILT?
+==================
+It needs the following libs from AOSP:
+1.  libc.so
+2.  libcutils
+3.  libutils
+4.  libsysenv
+
+and the following libs from MediaTek:
+1. libft.so
+
+
+HOW TO USE IT?
+==============
+Files in this directory is used to
+generate a library which name is 'libmeta_msim'
+
+The lib 'libmeta_msim' is loaded when target enter meta mode,
+Meta main thread will call META_MSIM_OP API, if meta MSIM tool is launched.
+
+All the source code of this library were written by MediaTek co..
+

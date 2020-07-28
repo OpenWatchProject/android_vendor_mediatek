@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2007 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <string name="Camera">Camera</string>
+    <string name="app_name">EmCamera</string>
+
+    <string name="menu_done">Done</string>
+    <string name="menu_doNotSave">Revert</string>
+    <!-- Auto calibration start -->
+    <string name="autoCalibration">AutoCalibration</string>
+    <string name="setting">Setting :</string>
+    <string name="capture">Capture :</string>
+    <string name="capture_picture"> Capture </string>
+    <string name="capture_abort">Abort</string>
+    <string name="led_flash">Strobe Mode</string>
+    <string name="tv_flicker">Flicker</string>
+    <string name="auto_clibr_iso_setting">Set ISO Speed</string>
+    <string name="auto_clibr_af_setting">AF</string>
+    <string name="auto_clibr_key_capture_mode">capture_mode</string>
+    <string name="auto_clibr_key_capture_size">capture_size</string>
+    <string name="auto_clibr_key_capture_type">capture_type</string>
+    <string name="auto_clibr_key_capture_number">capture_number</string>
+    <string name="auto_clibr_key_capture_resolution">capture_resolution</string>
+    <string name="auto_clibr_key_iso_speed">iso_speed</string>
+    <string name="auto_clibr_key_flicker">flicker_type</string>
+    <string name="auto_clibr_key_led_flash">led_flash</string>
+    <string name="auto_clibr_key_pre_flash">pre_flash</string>
+    <string name="auto_clibr_key_main_flash">main_flash</string>
+    <string name="auto_clibr_key_af_mode">af_mode</string>
+    <string name="auto_clibr_key_branket_range">branket_range</string>
+    <string name="auto_clibr_key_branket_interval">branket_interval</string>
+    <string name="auto_clibr_key_through_focus_dirct">through_focus_direction</string>
+    <string name="auto_clibr_key_through_focus_interval">through_focus_interval</string>
+    <string name="auto_clibr_key_through_manual_start_pos">through_focus_start_pos</string>
+    <string name="auto_clibr_key_through_manual_end_pos">through_focus_end_pos</string>
+    <string name="auto_clibr_sdcard_tips">Please make sure your sd-card is available!</string>
+    <string name="auto_clibr_capture_mode">Capture mode</string>
+    <string name="auto_clibr_capture_normal">Normal Capture</string>
+    <string name="auto_clibr_capture_type">Capture type</string>
+    <string name="auto_clibr_capture_ratio">Capture ratio</string>
+    <string name="auto_clibr_capture_ratio_standard">4:3</string>
+    <string name="auto_clibr_capture_ratio_full">16:9</string>
+    <string name="auto_clibr_capture_number">Capture number</string>
+    <string name="auto_clibr_iso_manual_switch">Manual ISO</string>
+    <string name="auto_clibr_manual_iso_input">ISO</string>
+    <string name="auto_clibr_multi_frame">MFLL</string>
+    <string name="auto_clibr_video_clip">Video Clip Raw Dump</string>
+    <string name="auto_clibr_video_dump_buffer">Dump Buffer</string>
+    <string name="auto_clibr_isp_profile">ISP profile</string>
+    <string name="auto_clibr_sensor_mode">Sensor mode</string>
+    <string name="auto_clibr_video_resolution">Resolution</string>
+    <string name="auto_clibr_iso_speed">ISO Speed</string>
+    <string name="auto_clibr_af_auto">Auto</string>
+    <string name="auto_clibr_af_bracket">AF Bracket</string>
+    <string name="auto_clibr_af_bracket_range">Bracket Range(0~511):</string>
+    <string name="auto_clibr_af_bracket_interval">Interval:</string>
+    <string name="auto_clibr_af_full">Full Scan</string>
+    <string name="auto_clibr_af_through">Through Focus Dump</string>
+    <string name="auto_clibr_af_through_interval">Interval(1~511):</string>
+    <string name="auto_clibr_af_through_dirct">Scan Direction</string>
+    <string name="auto_clibr_af_bracket_range_tip">AF Bracket Range is 0~511!</string>
+    <string name="auto_clibr_af_through_interval_tip">AF Through Focus Interval is 1~511!</string>
+    <string name="auto_clibr_manual_start">Start position:</string>
+    <string name="auto_clibr_manual_end">End position:</string>
+    <string name="auto_clibr_iso_tips">Any one of the ISO is not selected, use the default: Auto!</string>
+    <!-- message for the dialog showing the error of camera hardware -->
+    <string name="cannot_connect_camera">Can\'t connect to the camera.</string>
+    <!-- title for the dialog showing the error of camera hardware -->
+    <string name="camera_error_title">Camera error</string>
+    <!-- alert to the user that the SD card is too full to complete the operation -->
+    <string name="not_enough_space" product="default">Please chmod 777 for data/vendor/camera_dump/.</string>
+    <!-- alert to the user that the SD card is being disk-checked -->
+    <string name="preparing_sd" product="default">Preparing SD card\u2026</string>
+    <!-- message for the dialog showing the camera is disabled because of security policies. Camera cannot be used. -->
+    <string name="camera_disabled">Camera has been disabled because of security policies.</string>
+    <string name="auto_clibr_af_continuous">Continuous</string>
+    <string name="auto_clibr_af_through_repeat">Repeat</string>
+    <string name="auto_clibr_full_scan_frame_interval">Frame Interval</string>
+    <string name="auto_clibr_key_full_frame_interval">full_frame_interval_</string>
+    <string name="auto_clibr_full_scan_dac_step">DAC Step</string>
+    <string name="auto_clibr_key_full_scan_dac_step">dac_step</string>
+    <!-- Adv Full Scan -->
+    <string name="auto_clibr_full_scan_focus_win_width">"FocusWin Width(%)"</string>
+    <string name="auto_clibr_key_full_scan_focus_win_width">focus_window_width</string>
+    <string name="auto_clibr_full_scan_focus_win_height">"FocusWin Height(%)"</string>
+    <string name="auto_clibr_key_full_scan_focus_win_height">focus_window_height</string>
+    <string name="auto_clibr_advanced_full_scan">"Advanced Full Scan"</string>
+    <string name="auto_clibr_key_advanced_full_scan">advanced_full_scan</string>
+    <string name="auto_clibr_full_scan_repeat">"Repeat Times"</string>
+    <string name="auto_clibr_key_full_scan_repeat">full_scan_repeat</string>
+    <!-- Adv Full Scan End -->
+    <!-- Temp Cali -->
+    <string name="auto_clibr_af_temp_cali">Temp Calibration</string>
+    <string name="auto_clibr_key_through_repeat">through_repeat</string>
+    <string name="camera_ae">AE</string>
+    <string name="camera_ev">EV</string>
+    <string name="camera_strobe_duty">Strobe duty</string>
+    <string name="camera_custom_parameter">Custom Parameter</string>
+    <string name="camera_key_custom_parameter">key_custom_parameter</string>
+    <string name="camera_custom_param_hint_delimiter">delimiter is ;</string>
+    <string name="auto_clibr_camera_sensor">Camera Sensor</string>
+    <string name="auto_clibr_camera_sensor_main">Main</string>
+    <string name="auto_clibr_camera_sensor_main2">Main2</string>
+    <string name="auto_clibr_camera_sensor_sub">Sub</string>
+    <string name="auto_clibr_camera_sensor_sub2">Sub2</string>
+    <string name="camera_key_selected_sensor_id">key_selected_sensor_id</string>
+    <string name="auto_clibr_shutter_delay">Shutter Delay</string>
+    <string name="camera_key_shutter_delay">key_shutter_delay</string>
+    <string name="auto_clibr_shading_table">Shading Table</string>
+    <string name="camera_key_shading_table">key_shading_table</string>
+    <string name="auto_clibr_output_sdblk_file">Output sdblk File</string>
+    <string name="camera_key_output_sdblk">key_output_sdblk</string>
+    <string name="camera_ev_calibration">EV Calibration</string>
+    <string name="camera_key_ev_calibration">key_ev_calibration</string>
+    <string name="camera_key_gis_calibration">key_gis_calibration</string>
+    <string name="camera_ev_calibr_input_tip">LV(10 based):</string>
+    <string name="auto_clibr_capture_number_range_tip">Capture Number Range is 1~100!</string>
+    <string name="auto_clibr_video_clip_2M">Resize to 2M</string>
+    <string name="auto_clibr_video_clip_2K4K">Resize to 4K2K</string>
+    <string name="auto_clibr_video_clip_center_2M">Crop at center to 2M</string>
+    <string name="auto_clibr_video_frame">Mannul Frame Rate</string>
+    <string name="auto_clibr_video_frame_high">High Frame Rate</string>
+    <string name="auto_clibr_video_frame_low">Low Frame Rate</string>
+    <string name="auto_clibr_video_frame_enable">Frame Rate Enabled</string>
+    <string name="auto_clibr_video_frame_range_tip">Frame Rate Range is 15~30!</string>
+    <string name="auto_clibr_key_mfll_enable">Multi frame enabled</string>
+    <string name="auto_clibr_key_mfll_count">Multi frame count</string>
+    <string name="auto_clibr_mfll_count_range_tip">Mfll Count Range is 1~8!</string>
+    <string name="auto_clibr_verification_awb">AWB Verification</string>
+    <string name="auto_clibr_veri_awb_mtk">MTK</string>
+    <string name="auto_clibr_veri_awb_sensor">SENSOR</string>
+    <string name="auto_clibr_verification_shading">Shading Verification</string>
+    <string name="auto_clibr_veri_shading_sensor">SENSOR</string>
+    <string name="auto_clibr_veri_shading_mtk_1to3">MTK+ONE-THREE</string>
+    <string name="auto_clibr_veri_shading_mtk">MTK</string>
+    <string name="video_hdr">VHDR</string>
+    <string name="multi_pass_nr">Multi Pass NR</string>
+    <string name="vhdr_set_mode">Mode</string>
+    <string name="vhdr_set_ratio">Ratio</string>
+    <string name="vhdr_ratio_range_tip">VHDR Ratio Range is 1000~9999!</string>
+    <string name="auto_clibr_capture_shutter_speed">Shutter speed(ms)</string>
+    <string name="auto_clibr_capture_sensor_gain">Sensor gain(1.0=1024)</string>
+    <string name="capture_shutter_range_tip">Please input right shutter speed!</string>
+    <string name="capture_sensor_range_tip">please input right sensor gain!</string>
+    <string name="auto_clibr_iso_interpolation">ISO interpolation</string>
+    <string name="auto_clibr_iso_inter_ratio">Ratio(%)</string>
+    <string name="auto_clibr_scene_mode">Scene mode</string>
+    <string name="sys_property_hint">System Property</string>
+    <string name="sys_set_button">Set</string>
+    <string name="sys_get_button">Get</string>
+    <string name="camera_gis_calibration">GIS Calibration</string>
+    <string name="auto_clibr_flash_calibration">Flash Calibration</string>
+    <string name="auto_clibr_face_detection">Face Detection</string>
+    <string name="auto_clibr_ae_mode">AE Mode</string>
+    <string name="auto_clibr_ae_minus">Minus EV</string>
+    <string name="auto_clibr_ae_plus">Plus EV</string>
+    <string name="auto_clibr_ae_interval">EV interval</string>
+    <string name="ae_ev_input_hint">unit:10</string>
+    <string name="auto_clibr_ae_range_tip">AE bracket Range is 0~200, and 10 base!</string>
+    <string name="denied_required_permission">Permissions denied. You can change them in Settings->Apps</string>
+    <string name="auto_clibr_assembly_verify">Assembly verify</string>
+    <string name="auto_clibr_by_one_location">Verify by only one location</string>
+    <string name="auto_clibr_by_two_location">Verify by two locations</string>
+    <string name="auto_clibr_location_settings">Configure the location</string>
+    <string name="auto_clibr_location_num">Location number</string>
+    <string name="auto_clibr_location_type">Near or far</string>
+    <string name="auto_clibr_assembly_verify_warning_msg">Warning!!\nWe strongly recommend verifying by two locations!
+        Otherwise you must do a large number of production-line tests, evaluate the feasibility
+        and bear all the consequences by yourself.</string>
+    <string name="auto_clibr_switch_sensor_warning">Switch camera, please wait&#8230;</string>
+    <string name="auto_clibr_switch_location">Please move to the next location and capture again.</string>
+    <string name="auto_clibr_assembly_verify_start">All capture done, start verify</string>
+    <string name="auto_clibr_supported_fps_range">Select FPS range</string>
+    <string name="auto_clibr_min_fps">Minimum FPS</string>
+    <string name="auto_clibr_max_fps">Maximum FPS</string>
+    <string name="gis_cali_fail_result">"GIS calibration result"</string>
+    <string name="gis_cali_fail_tittle">"GIS calibration fail"</string>
+    <string name="gis_cali_fail_msg">"Cannot find %s, please check Read/Write permission."</string>
+    <string name="camera_hal_switch_title">"Warning"</string>
+    <string name="camera_hal_switch_msg">"Need switch to camera HAL3, Please reboot!"</string>
+    <!-- Auto calibration end -->
+</resources>

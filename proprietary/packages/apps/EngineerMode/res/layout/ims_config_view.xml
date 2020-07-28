@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:layout_marginTop="5dp"
+        android:id="@+id/ims_config_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp" />
+
+    <LinearLayout
+        android:id="@+id/ims_config_edit_layout"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <EditText
+            android:id="@+id/ims_config_edit_text"
+            android:singleLine="true"
+            android:inputType="textNoSuggestions"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content">
+        </EditText>
+
+        <TextView
+            android:id="@+id/ims_config_suffix"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <RadioGroup
+        android:id="@+id/ims_config_radio_group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:visibility="gone"
+        android:gravity="left"
+        android:orientation="vertical" >
+
+        <RadioButton
+            android:id="@+id/ims_config_radio_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:text="@string/ims_pdn_type_ip" >
+        </RadioButton>
+
+        <RadioButton
+            android:id="@+id/ims_config_radio_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:text="@string/ims_pdn_type_ipv6" >
+        </RadioButton>
+
+        <RadioButton
+            android:id="@+id/ims_config_radio_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:text="@string/ims_pdn_type_ipv4v6" >
+        </RadioButton>
+
+        <RadioButton
+            android:id="@+id/ims_config_radio_4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:text="@string/ims_pdn_type_ipv4v6" >
+        </RadioButton>
+    </RadioGroup>
+
+    <LinearLayout
+        android:id="@+id/ims_config_checkbox_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:visibility="gone"
+        android:orientation="vertical" >
+        <CheckBox
+            android:id="@+id/ims_pdn_type_ip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:text="@string/ims_pdn_type_ip" >
+        </CheckBox>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ims_config_spinner_layout"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <Spinner
+            android:id="@+id/ims_config_spinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="40dip"
+            android:minWidth="90dip" >
+        </Spinner>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/ims_config_set"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="@string/ims_pdn_set" >
+    </Button>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1dip"
+        android:layout_marginTop="5dp"
+        android:background="#FF909090" >
+    </View>
+
+</LinearLayout>

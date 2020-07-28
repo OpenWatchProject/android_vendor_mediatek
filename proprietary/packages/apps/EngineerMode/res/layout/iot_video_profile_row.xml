@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal" >
+
+    <CheckBox
+        android:id="@+id/video_profile_check"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center" />
+
+    <TextView
+        android:id="@+id/video_quality"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginLeft="10dp"
+        android:gravity="center"
+        android:singleLine="true"
+        android:text="@+id/quality" />
+
+    <TextView
+        android:id="@+id/video_profile_name"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginLeft="10dp"
+        android:gravity="center"
+        android:singleLine="true"
+        android:text="@+id/name" />
+
+    <TextView
+        android:id="@+id/video_profile_profile"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginLeft="10dp"
+        android:gravity="center"
+        android:singleLine="true"
+        android:text="@+id/profile" />
+
+    <TextView
+        android:id="@+id/video_profile_level"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginLeft="10dp"
+        android:gravity="center"
+        android:singleLine="true"
+        android:text="@+id/level" />
+
+    <TextView
+        android:id="@+id/video_profile_width"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginLeft="10dp"
+        android:gravity="center"
+        android:singleLine="true"
+        android:text="@+id/width" />
+
+    <TextView
+        android:id="@+id/video_profile_height"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginLeft="10dp"
+        android:gravity="center"
+        android:singleLine="true"
+        android:text="@+id/height" />
+
+    <TextView
+        android:id="@+id/video_profile_framerate"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginLeft="10dp"
+        android:gravity="center"
+        android:singleLine="true"
+        android:text="@+id/framerate" />
+
+    <TextView
+        android:id="@+id/video_profile_Iinterval"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginLeft="10dp"
+        android:gravity="center"
+        android:singleLine="true"
+        android:text="@+id/Iinterval" />
+
+    <TextView
+        android:id="@+id/video_profile_minBitRate"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginLeft="10dp"
+        android:gravity="center"
+        android:singleLine="true"
+        android:text="@+id/minBitRate" />
+
+    <TextView
+        android:id="@+id/video_profile_maxBitRate"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginLeft="10dp"
+        android:gravity="center"
+        android:singleLine="true"
+        android:text="@+id/maxBitRate" />
+
+</LinearLayout>

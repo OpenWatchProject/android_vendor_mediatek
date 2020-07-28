@@ -1,0 +1,48 @@
+//
+// Copyright (C) 2014 MediaTek Inc.
+// Modification based on code covered by the mentioned copyright
+// and/or permission notice(s).
+//
+
+// libpartition (static library)
+// ===============================
+
+cc_library_static {
+    name: "libpartition",
+    recovery_available: true,
+
+    include_dirs: [
+        "external/selinux/libselinux/include",
+        "system/core/fs_mgr",
+        "system/core/fs_mgr/include",
+        "system/core/fs_mgr/include_fstab",
+        "system/core/libziparchive/include",
+        "system/extras/ext4_utils/include",
+        "bootable/recovery",
+        "bootable/recovery/otautil/include",
+        "bootable/recovery/install/include",
+        "bootable/recovery/recovery_ui/include",
+        "bootable/recovery/install",
+        "system/core/base/include",
+        "bionic/libc",
+        "device/mediatek/common/kernel-headers",
+    ],
+
+    local_include_dirs: ["include"],
+
+    srcs: [
+        "mt_gpt.cpp",
+        "mt_pmt.cpp",
+        "mt_partition.cpp",
+        "mt_roots.cpp",
+        "mt_install.cpp",
+        "mt_check_partition.cpp",
+    ],
+
+    shared_libs: [
+        "libfs_mgr",
+        "libcrypto",
+        "libssl",
+    ],
+
+}

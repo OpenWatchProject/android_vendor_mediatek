@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginLeft="10dip"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/iatype_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:layout_marginTop="10dp"
+            android:text="@string/iatype_name_text" >
+        </TextView>
+        <TextView
+            android:id="@+id/iatype_apn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:layout_marginTop="10dp"
+            android:text="@string/iatype_apn_text" >
+        </TextView>
+        <TextView
+            android:id="@+id/iatype_type"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:layout_marginTop="10dp"
+            android:text="@string/iatype_type_text" >
+        </TextView>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="10dp"
+            android:background="#FF909090" >
+        </View>
+        <TextView
+            android:id="@+id/iatype_protocol"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:text="@string/iatype_protocol_text" >
+        </TextView>
+
+        <RadioGroup
+            android:id="@+id/iatype_radio_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:orientation="vertical" >
+
+            <RadioButton
+                android:id="@+id/iatype_ip_radio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/iatype_ip" >
+            </RadioButton>
+
+            <RadioButton
+                android:id="@+id/iatype_ipv6_radio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/iatype_ipv6" >
+            </RadioButton>
+
+            <RadioButton
+                android:id="@+id/iatype_ipv4v6_radio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/iatype_ipv4v6" >
+            </RadioButton>
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/iatype_set_button"
+            android:layout_width="100dip"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dip"
+            android:text="@string/iatype_set" >
+        </Button>
+    </LinearLayout>
+
+</LinearLayout>

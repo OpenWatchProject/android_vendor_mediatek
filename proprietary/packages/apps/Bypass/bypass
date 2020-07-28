@@ -1,0 +1,10 @@
+#!/system/bin/sh
+if [ $# -lt 2 ]; then echo -1; return; fi
+time=`date +%Y%M%d%H%m%s`
+file=/sdcard/bypass_$time
+rm $file >/dev/null 2>&1
+am force-stop com.via.bypass >/dev/null 2>&1
+am start -e cmd_name $1 -e cmd_code $2 -e cmd_file $file com.via.bypass/.BypassSettings >/dev/null 2>&1
+while [ ! -f $file ]; do sleep 1; done
+cat $file
+rm $file >/dev/null 2>&1

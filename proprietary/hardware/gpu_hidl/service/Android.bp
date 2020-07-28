@@ -1,0 +1,63 @@
+bootstrap_go_package {
+    name:"soong-ged_srv-mediatek",
+    pkgPath:"android/soong/ged_srv/mediatek",
+    deps: [
+        "soong-android",
+        "soong-cc",
+    ],
+    srcs: [
+        "mtk_gpu_hidl.go",
+    ],
+    pluginFor: ["soong_build"],
+}
+
+mtk_gpu_hidl_defaults {
+    name: "mtk_gpu_hidl_defaults",
+}
+
+cc_binary {
+    name: "vendor.mediatek.hardware.gpu@1.0-service",
+    vintf_fragments: ["android.hardware.gpu@1.0-service.xml"],
+    relative_install_path: "hw",
+
+    defaults: [
+        "mtk_gpu_hidl_defaults"
+    ],
+
+    srcs: [
+        "GraphicExt.cpp",
+        "gpu_service.cpp",
+        "ged_service.cpp"
+    ],
+
+    include_dirs: [
+        "vendor/mediatek/proprietary/hardware/gralloc_extra/include/ui",
+    ],
+
+    shared_libs: [
+        "libbase",
+        "libhidlbase",
+        "liblog",
+        "libutils",
+        "libcutils",
+        "vendor.mediatek.hardware.gpu@1.0",
+        "libged",
+        "libui",
+        "libc",
+        "libdl",
+        "libgralloc_extra",
+    ],
+
+    init_rc: [
+        "vendor.mediatek.hardware.gpu@1.0-service.rc"
+    ],
+
+    cflags: [
+        //"-DMTK_GED_KPI",
+        //"-DGED_KPI_DEBUG",
+    ],
+
+    proprietary: true,
+    owner: "mtk",
+}
+

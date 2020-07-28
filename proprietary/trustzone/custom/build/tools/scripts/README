@@ -1,0 +1,78 @@
+===================================================================================
+Script : createTEE.pl
+This is a script used to turn on/off TEE options in MediaTek platform.
+===================================================================================
+
+Usage:
+  1. Modify ProjectConfig.mk for the following feature options:
+     MTK_TEE_SUPPORT
+     TRUSTONIC_TEE_SUPPORT
+     MICROTRUST_TEE_SUPPORT
+     MTK_GOOGLE_TRUSTY_SUPPORT
+     TRUSTKERNEL_TEE_SUPPORT
+
+  2. cd vendor/mediatek/proprietary/trustzone/custom/build/tools/scripts
+
+  3. ./createTEE.pl --prj_name=$(project) --prj_cfg=../../../../../../../../device/mediatekprojects/$(project)/ProjectConfig.mk --base_prj_cfg=../../../../../../../../device/mediatekprojects/$(base_project)/full_$(base_project).mk --flavor=$(flavor) --action=$(action)
+
+Example:
+  1. Modify ProjectConfig.mk as below:
+     MTK_TEE_SUPPORT = yes
+     TRUSTONIC_TEE_SUPPORT = yes
+     MICROTRUST_TEE_SUPPORT = no
+     MTK_GOOGLE_TRUSTY_SUPPORT = no
+     TRUSTKERNEL_TEE_SUPPORT = no
+
+  2. cd vendor/mediatek/proprietary/trustzone/custom/build/tools/scripts
+
+  3. Turn on/off for main projects:
+     ./createTEE.pl --prj_name=k63v1_64_bsp --prj_cfg=../../../../../../../../device/mediatekprojects/k63v1_64_bsp/ProjectConfig.mk --base_prj_cfg=../../../../../../../../device/mediatekprojects/k63v1_64_bsp/full_k63v1_64_bsp.mk --flavor=no --action=on
+     ./createTEE.pl --prj_name=k63v1_64_bsp --prj_cfg=../../../../../../../../device/mediatekprojects/k63v1_64_bsp/ProjectConfig.mk --base_prj_cfg=../../../../../../../../device/mediatekprojects/k63v1_64_bsp/full_k63v1_64_bsp.mk --flavor=no --action=off
+
+     Turn on/off for flavor projects:
+     ./createTEE.pl --prj_name=k63v1_64_bsp_tee --prj_cfg=../../../../../../../../device/mediatekprojects/k63v1_64_bsp_tee/ProjectConfig.mk --base_prj_cfg=../../../../../../../../device/mediatekprojects/k63v1_64_bsp_tee/full_k63v1_64_bsp_tee.mk --flavor=yes --action=on
+     ./createTEE.pl --prj_name=k63v1_64_bsp_tee --prj_cfg=../../../../../../../../device/mediatekprojects/k63v1_64_bsp_tee/ProjectConfig.mk --base_prj_cfg=../../../../../../../../device/mediatekprojects/k63v1_64_bsp_tee/full_k63v1_64_bsp_tee.mk --flavor=yes --action=off
+
+===================================================================================
+Script : changeTEE.pl (deprecated)
+This is a script used to turn on/off TEE options in MediaTek platform.
+===================================================================================
+
+Usage:
+  ./changeTEE.pl --config=ConfigFile --project=Project --kernel=Kernel_Version
+
+Example:
+  ./changeTEE.pl --config=trustonicArmv8_on.xml --project=k53v1_64 --kernel=kernel-3.18
+  ./changeTEE.pl --config=trustonicArmv7_on.xml --project=k80hd --kernel=kernel-3.18
+  ./changeTEE.pl --config=trustonicArmv8_off.xml --project=k53v1_64 --kernel=kernel-3.18
+  ./changeTEE.pl --config=trustonicArmv7_off.xml --project=k80hd --kernel=kernel-3.18
+  ./changeTEE.pl --config=trustyArmv8_on.xml --project=k53v1_64 --kernel=kernel-3.18
+  ./changeTEE.pl --config=trustyArmv7_on.xml --project=k80hd --kernel=kernel-3.18
+  ./changeTEE.pl --config=trustyArmv8_off.xml --project=k53v1_64 --kernel=kernel-3.18
+  ./changeTEE.pl --config=trustyArmv7_off.xml --project=k80hd --kernel=kernel-3.18
+  ./changeTEE.pl --config=teeiArmv8_on.xml --project=k53v1_64 --kernel=kernel-3.18
+  ./changeTEE.pl --config=teeiArmv8_off.xml --project=k53v1_64 --kernel=kernel-3.18
+  ./changeTEE.pl --config=watchdataArmv8_on.xml --project=k53v1_64 --kernel=kernel-3.18
+  ./changeTEE.pl --config=watchdataArmv8_off.xml --project=k53v1_64 --kernel=kernel-3.18
+
+===================================================================================
+Script : checkTEE.py
+This is a script used to check TEE options in MediaTek platform.
+===================================================================================
+
+Usage:
+  ./checkTEE.py --project=Project --platform=Platform --kernel=Kernel_Version ConfigFile.json
+
+Example:
+  ./checkTEE.py --project=k53v1_64 --platform=mt6735 --kernel=kernel-3.18 foc_trustonic_enable.json
+  ./checkTEE.py --project=k53v1_64 --platform=mt6735 --kernel=kernel-3.18 foc_trustonic_disable.json
+  ./checkTEE.py --project=k80hd --platform=mt6580 --kernel=kernel-3.18 foc_trustonic_enable.json
+  ./checkTEE.py --project=k80hd --platform=mt6580 --kernel=kernel-3.18 foc_trustonic_disable.json
+  ./checkTEE.py --project=k53v1_64 --platform=mt6735 --kernel=kernel-3.18 foc_trusty_enable.json
+  ./checkTEE.py --project=k53v1_64 --platform=mt6735 --kernel=kernel-3.18 foc_trusty_disable.json
+  ./checkTEE.py --project=k80hd --platform=mt6580 --kernel=kernel-3.18 foc_trusty_enable.json
+  ./checkTEE.py --project=k80hd --platform=mt6580 --kernel=kernel-3.18 foc_trusty_disable.json
+  ./checkTEE.py --project=k53v1_64 --platform=mt6735 --kernel=kernel-3.18 foc_teei_enable.json
+  ./checkTEE.py --project=k53v1_64 --platform=mt6735 --kernel=kernel-3.18 foc_teei_disable.json
+  ./checkTEE.py --project=k53v1_64 --platform=mt6735 --kernel=kernel-3.18 foc_watchdata_enable.json
+  ./checkTEE.py --project=k53v1_64 --platform=mt6735 --kernel=kernel-3.18 foc_watchdata_disable.json

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="60dip"
+    android:focusable="false" >
+
+    <TextView android:id="@+id/sd_index"
+        android:layout_width="48dip"
+        android:layout_height="48dip"
+        android:paddingLeft="2dip"
+        android:paddingTop="2dip"
+        android:paddingBottom="2dip"
+        android:textStyle="normal"
+        android:textSize="30sp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
+        android:gravity="center"
+    />
+
+ 	<ImageView
+        android:id="@+id/sd_photo"
+        android:layout_width="50dip"
+        android:layout_height="50dip"
+        android:layout_marginTop="5dip"
+        android:layout_marginRight="3dip"
+        android:layout_toRightOf="@id/sd_index"
+        style="@*android:style/Widget.QuickContactBadge.WindowMedium"
+        android:gravity="center"
+    />
+
+    <TextView android:id="@+id/sd_label"
+        android:textStyle="bold"
+        android:textSize="13sp"
+        android:singleLine="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="4dip"
+        android:paddingRight="2dip"
+        android:layout_toRightOf="@id/sd_photo"
+        android:layout_alignWithParentIfMissing="true"
+        android:layout_alignParentBottom="true"
+        android:ellipsize="end"
+        android:maxWidth="100dip"
+        android:visibility="gone" />
+
+    <com.mediatek.op01.dialer.speeddial.DontPressWithParentImageView
+        android:id="@+id/sd_remove"
+        android:src="@drawable/ic_remove"
+        android:layout_width="@android:dimen/app_icon_size"
+        android:layout_height="match_parent"
+        android:minHeight="?android:attr/listPreferredItemHeight"
+        android:background="@drawable/remove_icon_selector"        
+        android:layout_alignParentRight="true"
+        android:layout_marginLeft="3dip"
+        android:layout_marginRight="14dip"
+        android:layout_marginTop="8dip"
+        android:visibility="gone" />
+
+    <TextView android:id="@+id/sd_number"
+        android:textStyle="normal"
+        android:textSize="13sp"
+        android:singleLine="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="4dip"
+        android:paddingRight="2dip"
+        android:layout_toRightOf="@id/sd_label"
+        android:layout_toLeftOf="@id/sd_remove"
+        android:layout_alignWithParentIfMissing="true"
+        android:layout_alignParentBottom="true"
+        android:ellipsize="marquee"
+        android:visibility="gone" />
+
+    <TextView android:id="@+id/sd_name"
+        android:textStyle="normal"
+        android:textSize="20sp"
+        android:textAlignment="viewStart"
+        android:gravity="left"
+        android:textDirection="ltr"
+        android:singleLine="true"
+        android:paddingRight="2dip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@id/sd_photo"
+        android:layout_toLeftOf="@id/sd_remove"
+        android:layout_above="@id/sd_number" 
+        android:ellipsize="marquee"/>
+
+</RelativeLayout>

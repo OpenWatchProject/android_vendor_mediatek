@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.android.camera.v2.ui.SettingListLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:splitMotionEvents="false">
+    <ListView android:id="@+id/settingList"
+        style="@style/SettingItemList"
+        android:descendantFocusability="blocksDescendants"
+        android:layout_gravity="top" 
+        android:splitMotionEvents="false"/>
+</com.android.camera.v2.ui.SettingListLayout>

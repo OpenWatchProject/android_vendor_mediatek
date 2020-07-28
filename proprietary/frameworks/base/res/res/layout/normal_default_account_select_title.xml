@@ -1,0 +1,36 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/normal_default_account_select_title_container" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <FrameLayout
+            android:layout_width="64dp"
+            android:layout_height="64dp" >
+
+            <ImageView
+                android:id="@+id/account_select_notification_img"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="9dp"
+                android:layout_gravity="center"
+                android:src="@drawable/account_select_notification" 
+                android:background="@drawable/notification_icon_legacy_bg"/>
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/default_account_select_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:paddingStart="10dp"
+            android:text="@string/Default_Account_Selection_Content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="#000000" />
+    </LinearLayout>
+
+</FrameLayout>

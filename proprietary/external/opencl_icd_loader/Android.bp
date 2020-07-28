@@ -1,0 +1,27 @@
+cc_library_shared {
+    srcs: [
+        "icd_loader_v2/icd.cpp",
+        "icd_loader_v2/icd_dispatch.cpp",
+        "icd_loader_v2/icd_mtk.cpp",
+    ],
+    export_include_dirs: [
+        "icd_loader_v2/inc",
+    ],
+    header_libs: [
+        "gl_headers",
+    ],
+    shared_libs: [
+        "libcutils",
+        "libutils",
+        "liblog",
+    ],
+    name: "libOpenCL",
+    cppflags: [
+        "-DLOG_TAG=\"OPENCL_ICD_LOADER\"",
+        "-DCL_TRACE",
+	"-DCL_TARGET_OPENCL_VERSION=200",
+    ],
+    proprietary: true,
+    owner: "mtk",
+}
+

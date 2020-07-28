@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:orientation="horizontal"
+        android:visibility="gone">
+        <ImageView
+                android:id="@+id/raw_indicator"
+                android:src="@drawable/raw_indicator"
+                android:contentDescription="@string/indicator_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"/>
+</RelativeLayout>

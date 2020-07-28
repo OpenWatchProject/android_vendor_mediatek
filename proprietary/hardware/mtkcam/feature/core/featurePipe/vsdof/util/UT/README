@@ -1,0 +1,31 @@
+Unit-test cases of MTK camera vsdof utility module
+
+WHAT IT DOES?
+=============
+This contains the unit test cases for vsdof utitily modules
+
+HOW IT WAS BUILT?
+==================
+It needs the following library from AOSP:
+- liblog.so
+- libnativewindow.so
+- libutils.so
+- libcutils.so
+
+
+
+and the following libs from MediaTek:
+- libmtkcam_stdutils
+- libdpframework
+- libmtkcam.featurepipe.vsdof_util
+- libmtkcam_imgbuf
+- libmtkcam.featurepipe.core
+
+
+
+All source/dependency modules of this module are already put in
+'vendor/mediatek/libs' folder.
+
+HOW TO USE IT?
+==============
+This should not be used directly by an application developer.

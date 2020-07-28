@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          xmlns:androidprv="http://schemas.android.com/apk/prv/res/android"
+          package="com.mediatek.callrecorder"
+          android:sharedUserId="android.uid.system">
+
+    <!-- M: [ALPS04105012] Permission for call recorder service -->
+    <permission android:label="Process call record"
+                android:protectionLevel="signatureOrSystem"
+                android:name="android.permission.PROCESS_CALL_RECORD">
+    </permission>
+
+    <!-- M: [ALPS01969005] add permission for write external storage -->
+    <uses-permission android:name="android.permission.WRITE_MEDIA_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+
+    <application>
+        <!-- M: [ALPS04105012] Permission for call recorder service -->
+        <service android:name=".CallRecorderService" android:label="CallRecorderService"
+                 android:permission="android.permission.PROCESS_CALL_RECORD">
+            <intent-filter>
+                <action android:name="mediatek.telecom.action.CALL_RECORD" />
+            </intent-filter>
+        </service>
+    </application>
+</manifest>

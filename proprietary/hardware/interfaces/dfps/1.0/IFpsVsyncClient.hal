@@ -1,0 +1,14 @@
+package vendor.mediatek.hardware.dfps@1.0;
+
+import IFpsVsync;
+import IVsyncCallback;
+
+interface IFpsVsyncClient {
+
+    regVsync(IFpsVsync vsync, IVsyncCallback callback);
+
+    enableTracker(int32_t enable) generates (Error error);
+
+    dumpInfo() generates (string debugInfo);
+
+};

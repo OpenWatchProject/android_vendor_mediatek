@@ -1,0 +1,1861 @@
+<?xml version="1.0" encoding="utf-8"?>
+<settings>
+    <setting>
+        <label>local_port</label>
+        <category>Registration</category>
+        <default>5060</default>
+    </setting>
+    <setting>
+        <label>expire_time_by_user</label>
+        <category>Registration</category>
+        <default>600</default>
+    </setting>
+    <setting>
+        <label>ipsec_local_port_start</label>
+        <category>Registration</category>
+        <default>50000</default>
+    </setting>
+    <setting>
+        <label>ipsec_local_port_range</label>
+        <category>Registration</category>
+        <default>50</default>
+    </setting>
+    <setting>
+        <label>video_action_precondition</label>
+        <category>Call</category>
+        <default>1</default>
+    </setting>
+    <setting>
+        <label>upgrade_cancel_feature</label>
+        <category>Call</category>
+        <default>1</default>
+    </setting>
+    <setting>
+        <label>upgrade_with_Tupo</label>
+        <category>Call</category>
+        <default>1</default>
+    </setting>
+    <setting>
+        <label>support_early_upgrade</label>
+        <category>Call</category>
+        <default>1</default>
+    </setting>
+    <setting>
+        <label>pqos_timer_timeout</label>
+        <category>Call</category>
+        <default>1</default>
+    </setting>
+    <setting>
+        <label>mod_session_cnf_timer_timeout</label>
+        <category>Call</category>
+        <default>1</default>
+    </setting>
+
+    <setting>
+        <label>transfer_conf_call_as_1to1</label>
+        <category>Call</category>
+        <default>0</default>
+    </setting>
+    <setting>
+        <label>force_srvcc_transfer</label>
+        <category>Call</category>
+        <type>3</type>
+        <default>7</default>
+        <options>
+            <option name="hold call(mid-call SRVCC)" value="1" />
+            <option name="conference call(mid-call SRVCC)" value="2" />
+            <option name="alerting call(aSRVCC)" value="4" />
+            <option name="pre-alerting call(bSRVCC)" value="8" />
+        </options>
+    </setting>
+    <setting>
+        <label>rtp_rtcp_local_port_start</label>
+        <category>Call</category>
+        <default>40000</default>
+    </setting>
+    <setting>
+        <label>rtp_rtcp_local_port_range</label>
+        <category>Call</category>
+        <default>5000</default>
+    </setting>
+    <setting>
+        <label>rtcp_interval</label>
+        <category>Call</category>
+        <default>5000</default>
+    </setting>
+    <setting>
+        <label>register_expiry</label>
+        <category>Registration</category>
+        <default>600000</default>
+    </setting>
+    <setting>
+        <label>UA_reg_t1_timer</label>
+        <category>Registration</category>
+        <default>500</default>
+        <suffix>ms</suffix>
+    </setting>
+    <setting>
+        <label>UA_reg_t2_timer</label>
+        <category>Registration</category>
+        <default>4000</default>
+        <suffix>ms</suffix>
+    </setting>
+    <setting>
+        <label>UA_reg_t4_timer</label>
+        <category>Registration</category>
+        <default>5000</default>
+        <suffix>ms</suffix>
+    </setting>
+    <setting>
+        <label>UA_reg_a_timer</label>
+        <category>Registration</category>
+        <default>0</default>
+        <suffix>ms</suffix>
+    </setting>
+    <setting>
+        <label>UA_reg_b_timer</label>
+        <category>Registration</category>
+        <default>0</default>
+        <suffix>ms</suffix>
+    </setting>
+    <setting>
+        <label>UA_reg_c_timer</label>
+        <category>Registration</category>
+        <default>0</default>
+        <suffix>ms</suffix>
+    </setting>
+    <setting>
+        <label>UA_reg_d_timer</label>
+        <category>Registration</category>
+        <default>0</default>
+        <suffix>ms</suffix>
+    </setting>
+    <setting>
+        <label>UA_reg_e_timer</label>
+        <category>Registration</category>
+        <default>0</default>
+        <suffix>ms</suffix>
+    </setting>
+    <setting>
+        <label>UA_reg_f_timer</label>
+        <category>Registration</category>
+        <default>0</default>
+        <suffix>ms</suffix>
+    </setting>
+    <setting>
+        <label>UA_reg_g_timer</label>
+        <category>Registration</category>
+        <default>0</default>
+        <suffix>ms</suffix>
+    </setting>
+    <setting>
+        <label>UA_reg_h_timer</label>
+        <category>Registration</category>
+        <default>0</default>
+        <suffix>ms</suffix>
+    </setting>
+    <setting>
+        <label>UA_reg_i_timer</label>
+        <category>Registration</category>
+        <default>0</default>
+        <suffix>ms</suffix>
+    </setting>
+    <setting>
+        <label>UA_reg_j_timer</label>
+        <category>Registration</category>
+        <default>0</default>
+        <suffix>ms</suffix>
+    </setting>
+    <setting>
+        <label>UA_reg_k_timer</label>
+        <category>Registration</category>
+        <default>0</default>
+        <suffix>ms</suffix>
+    </setting>
+    <setting>
+        <label>UA_call_conf_subtimer</label>
+        <category>Call</category>
+        <default>3600</default>
+        <suffix>sec</suffix>
+    </setting>
+    <setting>
+        <label>UA_call_session_timer</label>
+        <category>Call</category>
+        <default>60000</default>
+        <suffix>sec</suffix>
+    </setting>
+    <setting>
+        <label>UA_call_amr_fmt_variant</label>
+        <category>Call</category>
+        <type>3</type>
+        <default>4112</default>
+        <options>
+            <option name="VOLTE_CALL_AMR_NB_FMT_VARIANT_OCTET" value="1" />
+            <option name="VOLTE_CALL_AMR_NB_FMT_VARIANT_EFFEC" value="16" />
+            <option name="VOLTE_CALL_AMR_WB_FMT_VARIANT_OCTET" value="256" />
+            <option name="VOLTE_CALL_AMR_WB_FMT_VARIANT_EFFEC" value="4096" />
+        </options>
+    </setting>
+    <setting>
+        <label>VoLTE_Setting_SIP_Force_Use_UDP</label>
+        <category>Registration</category>
+        <default>1</default>
+    </setting>
+    <setting>
+        <label>VoLTE_Setting_SIP_TCP_On_Demand</label>
+        <category>Registration</category>
+        <default>1</default>
+    </setting>
+    <setting>
+        <label>VoLTE_Setting_SIP_TCP_MTU_Size</label>
+        <category>Registration</category>
+        <default>1300</default>
+    </setting>
+    <setting>
+        <label>UA_call_session_min_se</label>
+        <category>Call</category>
+        <default>1800</default>
+        <suffix>sec</suffix>
+    </setting>
+    <setting>
+        <label>UA_call_rej_code</label>
+        <category>Call</category>
+        <default>486</default>
+    </setting>
+    <setting>
+        <label>UA_call_no_resource_code</label>
+        <category>Call</category>
+        <default>480</default>
+    </setting>
+    <setting>
+        <label>UA_call_rej_media_code</label>
+        <category>Call</category>
+        <default>488</default>
+    </setting>
+    <setting>
+        <label>UA_call_rej_by_user_code</label>
+        <category>Call</category>
+        <default>486</default>
+    </setting>
+    <setting>
+        <label>operator_code</label>
+        <category>Common</category>
+        <type>2</type>
+        <default>65249</default>
+        <options>
+            <option name="VoLTE_Operator_Default" value="0" />
+            <option name="VoLTE_Operator_CMCC" value="1" />
+            <option name="VoLTE_Operator_CU" value="2" />
+            <option name="VoLTE_Operator_Orange" value="3" />
+            <option name="VoLTE_Operator_TMOEU" value="5" />
+            <option name="VoLTE_Operator_VDF" value="6" />
+            <option name="VoLTE_Operator_ATT" value="7" />
+            <option name="VoLTE_Operator_TMOUS" value="8" />
+            <option name="VoLTE_Operator_CT" value="9" />
+            <option name="VoLTE_Operator_Tier2" value="10" />
+            <option name="VoLTE_Operator_H3G" value="11" />
+            <option name="VoLTE_Operator_Vzw" value="12" />
+            <option name="VoLTE_Operator_Telefonica" value="15" />
+            <option name="VoLTE_Operator_EE" value="16" />
+            <option name="VoLTE_Operator_Docomo" value="17" />
+            <option name="VoLTE_Operator_RJIL" value="18" />
+            <option name="VoLTE_Operator_TelStra" value="19" />
+            <option name="VoLTE_Operator_Sprint" value="20" />
+            <option name="VoLTE_Operator_SoftBank" value="50" />
+            <option name="VoLTE_Operator_CSL" value="100" />
+            <option name="VoLTE_Operator_PCCW" value="101" />
+            <option name="VoLTE_Operator_SMT" value="102" />
+            <option name="VoLTE_Operator_SingTel" value="103" />
+            <option name="VoLTE_Operator_Starhub" value="104" />
+            <option name="VoLTE_Operator_AMX" value="105" />
+            <option name="VoLTE_Operator_3HK" value="106" />
+            <option name="VoLTE_Operator_SFR" value="107" />
+            <option name="VoLTE_Operator_TWN" value="108" />
+            <option name="VoLTE_Operator_CHT" value="109" />
+            <option name="VoLTE_Operator_FET" value="110" />
+            <option name="VoLTE_Operator_Telcel" value="112" />
+            <option name="VoLTE_Operator_BeeLine" value="113" />
+            <option name="VoLTE_Operator_KT" value="114" />
+            <option name="VoLTE_Operator_SKT" value="115" />
+            <option name="VoLTE_Operator_Uplus" value="116" />
+            <option name="VoLTE_Operator_Smartfren" value="117" />
+            <option name="VoLTE_Operator_YTL" value="118" />
+            <option name="VoLTE_Operator_Natcom" value="119" />
+            <option name="VoLTE_Operator_Claro" value="120" />
+            <option name="VoLTE_Operator_Bell" value="121" />
+            <option name="VoLTE_Operator_Ais" value="122" />
+            <option name="VoLTE_Operator_CMCC_2" value="123" />
+            <option name="VoLTE_Operator_APTG" value="124" />
+            <option name="VoLTE_Operator_Dtac" value="125" />
+            <option name="VoLTE_Operator_Turkey_Avea" value="126" />
+            <option name="VoLTE_Operator_Megafon" value="127" />
+            <option name="VoLTE_Operator_DNA" value="128" />
+            <option name="VoLTE_Operator_KDDI" value="129" />
+            <option name="VoLTE_Operator_TIM" value="130" />
+            <option name="VoLTE_Operator_True_Move" value="131" />
+            <option name="VoLTE_Operator_Movistar_Peru" value="132" />
+            <option name="VoLTE_Operator_DU" value="133" />
+            <option name="VoLTE_Operator_Elisa" value="134" />
+            <option name="VoLTE_Operator_MTS" value="135" />
+            <option name="VoLTE_Operator_Entel_PERU" value="136" />
+            <option name="VoLTE_Operator_Tele2" value="137" />
+            <option name="VoLTE_Operator_CellC" value="141" />
+            <option name="VoLTE_Operator_TurkCell" value="143" />
+            <option name="VoLTE_Operator_Cricket" value="145" />
+            <option name="VoLTE_Operator_Etisalat" value="146" />
+            <option name="VoLTE_Operator_Airtel" value="147" />
+            <option name="VoLTE_Operator_Seatel_Cambodia" value="148" />
+            <option name="VoLTE_Operator_CMHK" value="149" />
+            <option name="VoLTE_Operator_Swisscom" value="150" />
+            <option name="VoLTE_Operator_M1_SG" value="151" />
+            <option name="VoLTE_Operator_OPTUS" value="152" />
+            <option name="VoLTE_Operator_VHA" value="153" />
+            <option name="VoLTE_Operator_Telia" value="154" />
+            <option name="VoLTE_Operator_Telus" value="157" />
+            <option name="VoLTE_Operator_Freedom" value="162" />
+            <option name="VoLTE_Operator_ERICSSON_IMS_IWLAN" value="1001" />
+            <option name="VoLTE_Operator_Nokia" value="1002" />
+            <option name="VoLTE_Operator_Ericsson" value="1003" />
+            <option name="VoLTE_Operator_8475" value="16384" />
+            <option name="VoLTE_Operator_CMW500" value="16386" />
+            <option name="VoLTE_Operator_PCT" value="16387" />
+            <option name="VoLTE_Operator_NSN" value="20480" />
+            <option name="VoLTE_Operator_FREE_TEST" value="65248" />
+            <option name="Not_In_List_Check_TextField" value="65249" />
+        </options>
+    </setting>
+    <setting>
+        <label>operator_code_textview</label>
+        <category>Common</category>
+        <default></default>
+    </setting>
+    <setting>
+        <label>sms_rspcode</label>
+        <category>SMS</category>
+        <default>200</default>
+    </setting>
+    <setting>
+        <label>UA_g711_ptime</label>
+        <category>Call</category>
+        <default>20</default>
+        <suffix>ms</suffix>
+    </setting>
+    <setting>
+        <label>UA_g726_ptime</label>
+        <category>Call</category>
+        <default>20</default>
+        <suffix>ms</suffix>
+    </setting>
+    <setting>
+        <label>UA_call_codec_order1</label>
+        <category>Call</category>
+        <default>2</default>
+    </setting>
+    <setting>
+        <label>UA_call_codec_order2</label>
+        <category>Call</category>
+        <default>1</default>
+    </setting>
+    <setting>
+        <label>UA_call_codec_order3</label>
+        <category>Call</category>
+        <default>0</default>
+    </setting>
+    <setting>
+        <label>UA_call_def_max_ptime</label>
+        <category>Call</category>
+        <default>80</default>
+        <suffix>ms</suffix>
+    </setting>
+    <setting>
+        <label>UA_call_def_ptime</label>
+        <category>Call</category>
+        <default>20</default>
+        <suffix>ms</suffix>
+    </setting>
+    <setting>
+        <label>UA_call_amr_pt</label>
+        <category>Call</category>
+        <default>97</default>
+    </setting>
+    <setting>
+        <label>UA_call_amr_wb_pt</label>
+        <category>Call</category>
+        <default>98</default>
+    </setting>
+    <setting>
+        <label>UA_call_h264_pt</label>
+        <category>Call</category>
+        <default>99</default>
+    </setting>
+    <setting>
+        <label>UA_call_g729_annexb</label>
+        <category>Call</category>
+        <default>1</default>
+    </setting>
+    <setting>
+        <label>UA_call_g729_ptime</label>
+        <category>Call</category>
+        <default>20</default>
+        <suffix>ms</suffix>
+    </setting>
+    <setting>
+        <label>UA_call_priority</label>
+        <category>Call</category>
+        <default>0</default>
+    </setting>
+    <setting>
+        <label>UA_call_privacy</label>
+        <category>Call</category>
+        <default>0</default>
+    </setting>
+    <setting>
+        <label>UA_call_session_flag</label>
+        <category>Call</category>
+        <default>1</default>
+    </setting>
+    <setting>
+        <label>UA_call_tel_evt</label>
+        <category>Call</category>
+        <default>1</default>
+    </setting>
+    <setting>
+        <label>UA_call_tel_evt_pt</label>
+        <category>Call</category>
+        <default>101</default>
+    </setting>
+    <setting>
+        <label>UA_call_precondition</label>
+        <category>Call</category>
+        <default>1</default>
+    </setting>
+    <setting>
+        <label>early_media</label>
+        <category>Call</category>
+        <default>0</default>
+    </setting>
+    <setting>
+        <label>mwi_license</label>
+        <category>Call</category>
+        <default>0</default>
+    </setting>
+    <setting>
+        <label>UA_reg_keep_alive</label>
+        <category>Registration</category>
+        <default>0</default>
+    </setting>
+    <setting>
+        <label>Security</label>
+        <category>Registration</category>
+        <type>2</type>
+        <default>1</default>
+        <options>
+            <option name="None" value="0"/>
+            <option name="IPSec" value="1"/>
+        </options>
+    </setting>
+    <setting>
+        <label>Authentication</label>
+        <category>Registration</category>
+        <type>2</type>
+        <default>1</default>
+        <options>
+            <option name="MD5" value="1"/>
+            <option name="AKAv1_MD5" value="0"/>
+            <option name="AKAv2_MD5" value="2"/>
+        </options>
+    </setting>
+    <setting>
+        <label>UA_reg_uri_with_port</label>
+        <category>Registration</category>
+        <default>0</default>
+    </setting>
+    <setting>
+        <label>UA_reg_ipsec_algo</label>
+        <category>Registration</category>
+        <type>3</type>
+        <default>3</default>
+        <options>
+            <option name="NULL+MD5" value="1" />
+            <option name="NULL+SHA1" value="2" />
+            <option name="3DES+MD5" value="4" />
+            <option name="3DES+SHA1" value="8" />
+            <option name="AES+MD5" value="16" />
+            <option name="AES+SHA1" value="32" />
+        </options>
+    </setting>
+    <setting>
+        <label>UA_reg_specific_ipsec_algo</label>
+        <category>Registration</category>
+        <type>3</type>
+        <default>3</default>
+        <options>
+            <option name="NULL+MD5" value="1" />
+            <option name="NULL+SHA1" value="2" />
+            <option name="3DES+MD5" value="4" />
+            <option name="3DES+SHA1" value="8" />
+            <option name="AES+MD5" value="16" />
+            <option name="AES+SHA1" value="32" />
+        </options>
+    </setting>
+    <setting>
+        <label>user_agent</label>
+        <category>Common</category>
+        <type>1</type>
+        <default>VoLTE UA</default>
+    </setting>
+    <setting>
+        <label>UA_call_amr_mode_set</label>
+        <category>Call</category>
+        <type>1</type>
+        <default>0,1,2,3,4,5,6,7</default>
+    </setting>
+    <setting>
+        <label>UA_call_amr_wb_mode_set</label>
+        <category>Call</category>
+        <type>1</type>
+        <default>0,1,2,3,4,5,6,7,8</default>
+    </setting>
+    <setting>
+        <label>UA_reg_auth_name</label>
+        <category>Registration</category>
+        <type>1</type>
+        <default>+18860000042@srnims3.srnnam.nsn-rdnet.net</default>
+    </setting>
+    <setting>
+        <label>UA_reg_auth_password</label>
+        <category>Registration</category>
+        <type>1</type>
+        <default>ims123456</default>
+    </setting>
+    <setting>
+        <label>UA_conf_factory_uri</label>
+        <category>Call</category>
+        <type>1</type>
+        <default></default>
+    </setting>
+    <setting>
+        <label>resource_retain_timer</label>
+        <category>Bearer</category>
+        <default>3000</default>
+        <suffix>ms</suffix>
+    </setting>
+    <setting>
+        <label>emergency_pdn_retain_timer</label>
+        <category>Bearer</category>
+        <default>10000</default>
+        <suffix>ms</suffix>
+    </setting>
+    <setting>
+        <label>auto_re_reg_timer</label>
+        <category>Registration</category>
+        <default>5000</default>
+        <suffix>ms</suffix>
+    </setting>
+    <setting>
+        <label>poweroff_ims_dereg_timer</label>
+        <category>Registration</category>
+        <default>5</default>
+        <suffix>sec</suffix>
+    </setting>
+    <setting>
+        <label>emergency_reg_retain_timer</label>
+        <category>Registration</category>
+        <default>10000</default>
+        <suffix>ms</suffix>
+    </setting>
+    <setting>
+        <label>set_pcscf_discovery_via_nas</label>
+        <category>Bearer</category>
+        <default>1</default>
+    </setting>
+    <setting>
+        <label>force_user_account_by_manual</label>
+        <category>Registration</category>
+        <type>2</type>
+        <default>0</default>
+        <options>
+            <option name="From SIM Card" value="0" />
+            <option name="Manual" value="1" />
+        </options>
+    </setting>
+    <setting>
+        <label>set_ue_im_cn_signaling_flag</label>
+        <category>Bearer</category>
+        <default>1</default>
+    </setting>
+    <setting>
+        <label>ims_signaling_qci</label>
+        <category>Bearer</category>
+        <default>5</default>
+    </setting>
+    <setting>
+        <label>ims_voice_qci</label>
+        <category>Bearer</category>
+        <default>1</default>
+    </setting>
+    <setting>
+        <label>ims_video_qci</label>
+        <category>Bearer</category>
+        <default>2</default>
+    </setting>
+    <setting>
+        <label>ims_v4v6_preference</label>
+        <category>Bearer</category>
+        <type>2</type>
+        <default>3</default>
+        <options>
+            <option name="v4_only" value="0" />
+            <option name="v6_only" value="1" />
+            <option name="v4_prefer" value="2" />
+            <option name="v6_prefer" value="3" />
+        </options>
+    </setting>
+    <setting>
+        <label>sms_support</label>
+        <category>Common</category>
+        <default>1</default>
+    </setting>
+    <setting>
+        <label>voice_support</label>
+        <category>Common</category>
+        <default>1</default>
+    </setting>
+    <setting>
+        <label>video_over_ps_support</label>
+        <category>Common</category>
+        <default>0</default>
+    </setting>
+    <setting>
+        <label>resource_allocation_mode</label>
+        <category>Bearer</category>
+        <default>1</default>
+    </setting>
+    <setting>
+        <label>default_psismsc</label>
+        <category>SMS</category>
+        <type>1</type>
+        <default>sip:smsc@ims.mnc001.mcc001.3gppnetwork.org</default>
+    </setting>
+    <setting>
+        <label>manual_impi</label>
+        <category>Registration</category>
+        <type>1</type>
+        <default>310886000000042@ims.mnc688.mcc310.3gppnetwork.org</default>
+    </setting>
+    <setting>
+        <label>manual_impu</label>
+        <category>Registration</category>
+        <type>1</type>
+        <default>sip:+18860000042@srnims3.srnnam.nsn-rdnet.net</default>
+    </setting>
+    <setting>
+        <label>manual_domain_name</label>
+        <category>Registration</category>
+        <type>1</type>
+        <default>srnims3.srnnam.nsn-rdnet.net</default>
+    </setting>
+    <setting>
+        <label>dtx_enable</label>
+        <category>Call</category>
+        <default>1</default>
+    </setting>
+    <setting>
+        <label>silence_dropcall_threshold</label>
+        <category>Call</category>
+        <default>30000</default>
+        <suffix>ms</suffix>
+    </setting>
+    <setting>
+        <label>jbm_load_params_enable</label>
+        <category>Call</category>
+        <default>0</default>
+    </setting>
+    <setting>
+        <label>jbm_prebuf_len</label>
+        <category>Call</category>
+        <default>3</default>
+    </setting>
+    <setting>
+        <label>jbm_jitter_max_depth</label>
+        <category>Call</category>
+        <default>10</default>
+    </setting>
+    <setting>
+        <label>jbm_jitter_full_offset</label>
+        <category>Call</category>
+        <default>4</default>
+    </setting>
+    <setting>
+        <label>ltecsr_common_para0</label>
+        <category>Call</category>
+        <default>0</default>
+    </setting>
+    <setting>
+        <label>ltecsr_common_para1</label>
+        <category>Call</category>
+        <default>0</default>
+    </setting>
+    <setting>
+        <label>ltecsr_common_para2</label>
+        <category>Call</category>
+        <default>0</default>
+    </setting>
+    <setting>
+        <label>ltecsr_common_para3</label>
+        <category>Call</category>
+        <default>0</default>
+    </setting>
+    <setting>
+        <label>ltecsr_common_para4</label>
+        <category>Call</category>
+        <default>0</default>
+    </setting>
+    <setting>
+        <label>ipv6_zero_compression</label>
+        <category>Common</category>
+        <type>2</type>
+        <default>0</default>
+        <options>
+            <option name="Off" value="0" />
+            <option name="On" value="1" />
+        </options>
+    </setting>
+    <setting>
+        <label>USSD Support</label>
+        <category>USSD</category>
+        <type>2</type>
+        <default>1</default>
+        <options>
+            <option name="On" value="1" />
+            <option name="Off" value="0" />
+        </options>
+    </setting>
+    <setting>
+        <label>USSD NW Timeout</label>
+        <category>USSD</category>
+        <default>0</default>
+    </setting>
+    <setting>
+        <label>USSD Setup Timeout</label>
+        <category>USSD</category>
+        <default>0</default>
+    </setting>
+
+    <setting>
+        <label>mncmcc check</label>
+        <category>Common</category>
+        <type>2</type>
+        <default>0</default>
+        <options>
+            <option name="Off" value="0" />
+            <option name="On" value="1" />
+        </options>
+    </setting>
+    <setting>
+        <label>white list</label>
+        <category>Common</category>
+    </setting>
+    <setting>
+        <label>Setting Rule:&lt;digit of list num&gt;&lt;list num&gt;&lt;mnc_len&gt;&lt;MNC&gt;&lt;mcc_len&gt;&lt;MCC&gt;...</label>
+        <category>Common</category>
+        <type>0</type>
+    </setting>
+    <setting>
+        <label>authorization_with_algo</label>
+        <category>Registration</category>
+        <default>0</default>
+    </setting>
+    <setting>
+        <label>auto_re_reg_base_timer</label>
+        <category>Registration</category>
+        <default>30000</default>
+    </setting>
+    <setting>
+        <label>auto_re_reg_max_timer</label>
+        <category>Registration</category>
+        <default>180000</default>
+    </setting>
+    <setting>
+        <label>call_id_with_host_inReg</label>
+        <category>Registration</category>
+        <default>0</default>
+    </setting>
+    <setting>
+        <label>check_msisdn</label>
+        <category>Registration</category>
+        <default>0</default>
+    </setting>
+    <setting>
+        <label>contact_with_accesstype</label>
+        <category>Registration</category>
+        <default>0</default>
+    </setting>
+    <setting>
+        <label>contact_with_expires</label>
+        <category>Registration</category>
+        <default>0</default>
+    </setting>
+    <setting>
+        <label>contact_with_mobility</label>
+        <category>Registration</category>
+        <default>0</default>
+    </setting>
+    <setting>
+        <label>contact_with_regid</label>
+        <category>Registration</category>
+        <default>0</default>
+    </setting>
+    <setting>
+        <label>contact_with_transport</label>
+        <category>Registration</category>
+        <default>1</default>
+    </setting>
+    <setting>
+        <label>contact_with_username</label>
+        <category>Registration</category>
+        <default>1</default>
+    </setting>
+    <setting>
+        <label>contact_with_video_feature_tag_in_subscribe</label>
+        <category>Registration</category>
+        <default>0</default>
+    </setting>
+    <setting>
+        <label>de_subscribe</label>
+        <category>Registration</category>
+        <default>1</default>
+    </setting>
+    <setting>
+        <label>dereg_clear_ipsec</label>
+        <category>Registration</category>
+        <default>0</default>
+    </setting>
+    <setting>
+        <label>dereg_reset_tcp_client</label>
+        <category>Registration</category>
+        <default>0</default>
+    </setting>
+    <setting>
+        <label>emergency_use_imsi</label>
+        <category>Registration</category>
+        <default>0</default>
+    </setting>
+    <setting>
+        <label>ems_mode_ind</label>
+        <category>Registration</category>
+        <default>0</default>
+    </setting>
+    <setting>
+        <label>ims_reg_allowed_at_23g</label>
+        <category>Registration</category>
+        <default>0</default>
+    </setting>
+    <setting>
+        <label>initial_reg_without_pani</label>
+        <category>Registration</category>
+        <default>0</default>
+    </setting>
+    <setting>
+        <label>ipsec_fail_allowed</label>
+        <category>Registration</category>
+        <default>1</default>
+    </setting>
+    <setting>
+        <label>keep_alive_mode</label>
+        <category>Registration</category>
+        <type>2</type>
+        <default>0</default>
+        <options>
+            <option name="Keep_Alive_Transsaction" value="0"/>
+            <option name="Keep_Alive_Connection" value="1"/>
+            <option name="Keep_Alive_Connection_Call_Control" value="2"/>
+        </options>
+    </setting>
+    <setting>
+        <label>local_sip_protocol_type</label>
+        <category>Registration</category>
+        <type>2</type>
+        <default>0</default>
+        <options>
+            <option name="UDP" value="0"/>
+            <option name="TCP" value="1"/>
+        </options>
+    </setting>
+    <setting>
+        <label>not_auto_reg_403</label>
+        <category>Registration</category>
+        <default>0</default>
+    </setting>
+    <setting>
+        <label>notify_sms_notify_done</label>
+        <category>Registration</category>
+        <default>0</default>
+    </setting>
+    <setting>
+        <label>poweroff_detach_timer</label>
+        <category>Registration</category>
+        <default>0</default>
+    </setting>
+    <setting>
+        <label>reg_after_nw_dereg_60s</label>
+        <category>Registration</category>
+        <default>0</default>
+    </setting>
+    <setting>
+        <label>reg_gruu_support</label>
+        <category>Registration</category>
+        <default>1</default>
+    </setting>
+    <setting>
+        <label>reg_route_hdr</label>
+        <category>Registration</category>
+        <default>0</default>
+    </setting>
+    <setting>
+        <label>rereg_23g4</label>
+        <category>Registration</category>
+        <default>0</default>
+    </setting>
+    <setting>
+        <label>rereg_in_oos_end</label>
+        <category>Registration</category>
+        <default>0</default>
+    </setting>
+    <setting>
+        <label>rereg_in_rat_change</label>
+        <category>Registration</category>
+        <default>0</default>
+    </setting>
+    <setting>
+        <label>resub_23g4</label>
+        <category>Registration</category>
+        <default>0</default>
+    </setting>
+    <setting>
+        <label>retry_interval_after_403</label>
+        <category>Registration</category>
+        <default>0</default>
+    </setting>
+    <setting>
+        <label>stop_reg_md_lower_layer_err</label>
+        <category>Registration</category>
+        <default>0</default>
+    </setting>
+    <setting>
+        <label>sub_contact_with_sip_instance</label>
+        <category>Registration</category>
+        <default>0</default>
+    </setting>
+    <setting>
+        <label>support_throttling_algo</label>
+        <category>Registration</category>
+        <default>0</default>
+    </setting>
+    <setting>
+        <label>tcp_connect_max_time_invite</label>
+        <category>Registration</category>
+        <default>10</default>
+    </setting>
+    <setting>
+        <label>treg</label>
+        <category>Registration</category>
+        <default>0</default>
+    </setting>
+    <setting>
+        <label>try_next_pcscf</label>
+        <category>Registration</category>
+        <default>0</default>
+    </setting>
+    <setting>
+        <label>UA_reg_retry_base_time</label>
+        <category>Registration</category>
+        <default>0</default>
+    </setting>
+    <setting>
+        <label>UA_reg_retry_max_time</label>
+        <category>Registration</category>
+        <default>0</default>
+    </setting>
+    <setting>
+        <label>use_specific_ipsec_algo</label>
+        <category>Registration</category>
+        <default>0</default>
+    </setting>
+    <setting>
+        <label>use_udp_on_tcp_fail</label>
+        <category>Registration</category>
+        <default>1</default>
+    </setting>
+    <setting>
+        <label>via_uri_with_default_port</label>
+        <category>Registration</category>
+        <default>0</default>
+    </setting>
+    <setting>
+        <label>via_without_rport</label>
+        <category>Registration</category>
+        <default>0</default>
+    </setting>
+    <setting>
+        <label>VoLTE_Setting_SIP_TCP_MSS</label>
+        <category>Registration</category>
+        <default>1200</default>
+    </setting>
+    <setting>
+        <label>wfc_with_plani</label>
+        <category>Registration</category>
+        <default>0</default>
+    </setting>
+    <setting>
+        <label>add_3gpp_ims_in_Accept</label>
+        <category>Call</category>
+        <default>0</default>
+    </setting>
+    <setting>
+        <label>add_no_fork</label>
+        <category>Call</category>
+        <default>0</default>
+    </setting>
+    <setting>
+        <label>add_precondition_in_hold_unhold_sdp</label>
+        <category>Call</category>
+        <default>1</default>
+    </setting>
+    <setting>
+        <label>add_rtcp_port_into_sdp</label>
+        <category>Call</category>
+        <default>0</default>
+    </setting>
+    <setting>
+        <label>add_sdp_in_180_for_non_precond</label>
+        <category>Call</category>
+        <default>0</default>
+    </setting>
+    <setting>
+        <label>always_use_sip_uri_for_mo_call</label>
+        <category>Call</category>
+        <default>0</default>
+    </setting>
+    <setting>
+        <label>always_use_UPDATE_for_prcd</label>
+        <category>Call</category>
+        <default>0</default>
+    </setting>
+    <setting>
+        <label>attempt_reg_when_receive403</label>
+        <category>Call</category>
+        <default>1</default>
+    </setting>
+    <setting>
+        <label>audio_dscp</label>
+        <category>Call</category>
+        <default>0</default>
+    </setting>
+    <setting>
+        <label>audio_priority</label>
+        <category>Call</category>
+        <default>0</default>
+    </setting>
+    <setting>
+        <label>bcsfb_feature_enable</label>
+        <category>Call</category>
+        <default>0</default>
+    </setting>
+    <setting>
+        <label>call_callend_timer_timeout</label>
+        <category>Call</category>
+        <default>10</default>
+    </setting>
+    <setting>
+        <label>call_id_with_host_inCall</label>
+        <category>Call</category>
+        <default>0</default>
+    </setting>
+    <setting>
+        <label>call_refreshcall_timer_expire</label>
+        <category>Call</category>
+        <default>0</default>
+    </setting>
+    <setting>
+        <label>call_ringback_timer_timeout</label>
+        <category>Call</category>
+        <default>0</default>
+    </setting>
+    <setting>
+        <label>call_ringing_timer_timeout</label>
+        <category>Call</category>
+        <default>0</default>
+    </setting>
+    <setting>
+        <label>call_tcall_timer_timeout</label>
+        <category>Call</category>
+        <default>10</default>
+    </setting>
+    <setting>
+        <label>check_conference_subscribe</label>
+        <category>Call</category>
+        <default>0</default>
+    </setting>
+    <setting>
+        <label>check_contact_380</label>
+        <category>Call</category>
+        <default>0</default>
+    </setting>
+    <setting>
+        <label>check_reason_phrase</label>
+        <category>Call</category>
+        <default>0</default>
+    </setting>
+    <setting>
+        <label>conf_participant_not_subscribe</label>
+        <category>Call</category>
+        <default>0</default>
+    </setting>
+    <setting>
+        <label>conf_sub_timer_timeout</label>
+        <category>Call</category>
+        <default>3600</default>
+    </setting>
+    <setting>
+        <label>conference_subscribe_timing</label>
+        <category>Call</category>
+        <default>0</default>
+    </setting>
+    <setting>
+        <label>contact_with_username_inCall</label>
+        <category>Call</category>
+        <default>1</default>
+    </setting>
+    <setting>
+        <label>disable_conf_call_prcd</label>
+        <category>Call</category>
+        <default>0</default>
+    </setting>
+    <setting>
+        <label>ecc_session_timer_enable</label>
+        <category>Call</category>
+        <default>1</default>
+    </setting>
+    <setting>
+        <label>emergency_call_learning_support</label>
+        <category>Call</category>
+        <default>1</default>
+    </setting>
+    <setting>
+        <label>follow_nw_ims_vops_support</label>
+        <category>Call</category>
+        <default>0</default>
+    </setting>
+    <setting>
+        <label>general_amr_nb_wb</label>
+        <category>Call</category>
+        <default>0</default>
+    </setting>
+    <setting>
+        <label>home_detect_emergency_call_support</label>
+        <category>Call</category>
+        <default>1</default>
+    </setting>
+    <setting>
+        <label>join_send_bye</label>
+        <category>Call</category>
+        <default>1</default>
+    </setting>
+    <setting>
+        <label>merge_need_swap</label>
+        <category>Call</category>
+        <default>0</default>
+    </setting>
+    <setting>
+        <label>merge_send_bye</label>
+        <category>Call</category>
+        <default>1</default>
+    </setting>
+    <setting>
+        <label>mo_invite_to_bw_cnf_timer_timeout</label>
+        <category>Call</category>
+        <default>0</default>
+    </setting>
+    <setting>
+        <label>no_auto_retry_for_dcm_mo_call</label>
+        <category>Call</category>
+        <default>0</default>
+    </setting>
+    <setting>
+        <label>no_auto_retry_for_mo_call</label>
+        <category>Call</category>
+        <default>0</default>
+    </setting>
+    <setting>
+        <label>not_add_SDP_in_OPTIONS</label>
+        <category>Call</category>
+        <default>0</default>
+    </setting>
+    <setting>
+        <label>oir_privacy_to_header</label>
+        <category>Call</category>
+        <default>0</default>
+    </setting>
+    <setting>
+        <label>pcscf_error_when663</label>
+        <category>Call</category>
+        <default>0</default>
+    </setting>
+    <setting>
+        <label>refer_dialog_to_server</label>
+        <category>Call</category>
+        <default>0</default>
+    </setting>
+    <setting>
+        <label>register_cap_whenever</label>
+        <category>Call</category>
+        <default>0</default>
+    </setting>
+    <setting>
+        <label>reject_1w_if_1A1H</label>
+        <category>Call</category>
+        <default>0</default>
+    </setting>
+    <setting>
+        <label>reject_code_in23G</label>
+        <category>Call</category>
+        <default>503</default>
+    </setting>
+    <setting>
+        <label>reject_mtcall_by_vops</label>
+        <category>Call</category>
+        <default>0</default>
+    </setting>
+    <setting>
+        <label>reject_mtcall_when_vilte</label>
+        <category>Call</category>
+        <default>0</default>
+    </setting>
+    <setting>
+        <label>rel_conf_if_no_participant</label>
+        <category>Call</category>
+        <default>0</default>
+    </setting>
+    <setting>
+        <label>send_183_when_prcd_none</label>
+        <category>Call</category>
+        <default>1</default>
+    </setting>
+    <setting>
+        <label>send_refer_to_peer</label>
+        <category>Call</category>
+        <default>0</default>
+    </setting>
+    <setting>
+        <label>sendrecv_before_prcd</label>
+        <category>Call</category>
+        <default>1</default>
+    </setting>
+    <setting>
+        <label>set_rtcp_0</label>
+        <category>Call</category>
+        <default>0</default>
+    </setting>
+    <setting>
+        <label>set_strength_mandatory</label>
+        <category>Call</category>
+        <default>0</default>
+    </setting>
+    <setting>
+        <label>set_zero_cell_id_in_wifi</label>
+        <category>Call</category>
+        <default>0</default>
+    </setting>
+    <setting>
+        <label>sip_dscp</label>
+        <category>Call</category>
+        <default>0</default>
+    </setting>
+    <setting>
+        <label>sip_priority</label>
+        <category>Call</category>
+        <default>0</default>
+    </setting>
+    <setting>
+        <label>subscribe_dialog_to_server</label>
+        <category>Call</category>
+        <default>0</default>
+    </setting>
+    <setting>
+        <label>terminal_based_cw</label>
+        <category>Call</category>
+        <default>1</default>
+    </setting>
+    <setting>
+        <label>TMO_specific_SDP</label>
+        <category>Call</category>
+        <default>0</default>
+    </setting>
+    <setting>
+        <label>UA_call_amr_oct_pt</label>
+        <category>Call</category>
+        <default>108</default>
+    </setting>
+    <setting>
+        <label>UA_call_amr_open_pt</label>
+        <category>Call</category>
+        <default>106</default>
+    </setting>
+    <setting>
+        <label>UA_call_amr_wb_oct_pt</label>
+        <category>Call</category>
+        <default>110</default>
+    </setting>
+    <setting>
+        <label>UA_call_h264_pt2</label>
+        <category>Call</category>
+        <default>100</default>
+    </setting>
+    <setting>
+        <label>UA_call_h265_pt</label>
+        <category>Call</category>
+        <default>101</default>
+    </setting>
+    <setting>
+        <label>UA_call_h265_pt2</label>
+        <category>Call</category>
+        <default>102</default>
+    </setting>
+    <setting>
+        <label>UA_call_mo_invite_to_bw_cnf_time</label>
+        <category>Call</category>
+        <default>0</default>
+    </setting>
+    <setting>
+        <label>UA_call_tel_evt_wb_pt</label>
+        <category>Call</category>
+        <default>105</default>
+    </setting>
+    <setting>
+        <label>UA_icsi_1</label>
+        <category>Call</category>
+        <type>1</type>
+        <default>urn:urn-7:3gpp-service.ims.icsi.mmtel</default>
+    </setting>
+    <setting>
+        <label>UA_icsi_2</label>
+        <category>Call</category>
+        <type>1</type>
+        <default>urn:urn-7:3gpp-service.ims.icsi.mmtel</default>
+    </setting>
+    <setting>
+        <label>UA_icsi_3</label>
+        <category>Call</category>
+        <type>1</type>
+        <default>urn:urn-7:3gpp-service.ims.icsi.mmtel</default>
+    </setting>
+    <setting>
+        <label>UA_icsi_4</label>
+        <category>Call</category>
+        <type>1</type>
+        <default>urn:urn-7:3gpp-service.ims.icsi.mmtel</default>
+    </setting>
+    <setting>
+        <label>UA_phone_context</label>
+        <category>Call</category>
+        <type>1</type>
+        <default></default>
+    </setting>
+    <setting>
+        <label>UA_phone_context_associated_impu</label>
+        <category>Call</category>
+        <type>1</type>
+        <default></default>
+    </setting>
+    <setting>
+        <label>uri_type</label>
+        <category>Call</category>
+        <default>3</default>
+    </setting>
+    <setting>
+        <label>use_eps_prefix_in_phone_context</label>
+        <category>Call</category>
+        <default>1</default>
+    </setting>
+    <setting>
+        <label>use_org_sdp_for_invite_without_sdp</label>
+        <category>Call</category>
+        <default>0</default>
+    </setting>
+    <setting>
+        <label>video_dscp</label>
+        <category>Call</category>
+        <default>0</default>
+    </setting>
+    <setting>
+        <label>video_priority</label>
+        <category>Call</category>
+        <default>0</default>
+    </setting>
+    <setting>
+        <label>wait_cancel_in_srvcc_end</label>
+        <category>Call</category>
+        <default>0</default>
+    </setting>
+    <setting>
+        <label>waiting_487_for_cancel_timer_timeout</label>
+        <category>Call</category>
+        <default>0</default>
+    </setting>
+    <setting>
+        <label>waiting_mt_cnf_timer_timeout</label>
+        <category>Call</category>
+        <default>30</default>
+    </setting>
+    <setting>
+        <label>when_stop_tcall</label>
+        <category>Call</category>
+        <default>101</default>
+    </setting>
+    <setting>
+        <label>add_no_fork_in_SMS</label>
+        <category>SMS</category>
+        <default>0</default>
+    </setting>
+    <setting>
+        <label>add_user_phone</label>
+        <category>SMS</category>
+        <default>0</default>
+    </setting>
+    <setting>
+        <label>force_psi_scheme_to_tel</label>
+        <category>SMS</category>
+        <default>1</default>
+    </setting>
+    <setting>
+        <label>imsi_reged_disable_sms</label>
+        <category>SMS</category>
+        <default>0</default>
+    </setting>
+    <setting>
+        <label>mo_retry_after_504</label>
+        <category>SMS</category>
+        <default>0</default>
+    </setting>
+    <setting>
+        <label>nsn_specific</label>
+        <category>SMS</category>
+        <default>0</default>
+    </setting>
+    <setting>
+        <label>psismsc_from_user</label>
+        <category>SMS</category>
+        <default>0</default>
+    </setting>
+    <setting>
+        <label>send_timerF_expiry</label>
+        <category>SMS</category>
+        <default>0</default>
+    </setting>
+    <setting>
+        <label>update_call_id_with_host</label>
+        <category>SMS</category>
+        <default>0</default>
+    </setting>
+    <setting>
+        <label>check_nw_im_cn_signaling_flag</label>
+        <category>Bearer</category>
+        <default>1</default>
+    </setting>
+    <setting>
+        <label>dedicated_fallback_support</label>
+        <category>Bearer</category>
+        <default>0</default>
+    </setting>
+    <setting>
+        <label>default_fallback_support</label>
+        <category>Bearer</category>
+        <default>0</default>
+    </setting>
+    <setting>
+        <label>icsi_resource_allocation_mode_1</label>
+        <category>Bearer</category>
+        <default>1</default>
+    </setting>
+    <setting>
+        <label>icsi_resource_allocation_mode_2</label>
+        <category>Bearer</category>
+        <default>1</default>
+    </setting>
+    <setting>
+        <label>icsi_resource_allocation_mode_3</label>
+        <category>Bearer</category>
+        <default>1</default>
+    </setting>
+    <setting>
+        <label>icsi_resource_allocation_mode_4</label>
+        <category>Bearer</category>
+        <default>1</default>
+    </setting>
+    <setting>
+        <label>ignore_media_qos_check</label>
+        <category>Bearer</category>
+        <default>0</default>
+    </setting>
+    <setting>
+        <label>ignore_sgn_qci_check</label>
+        <category>Bearer</category>
+        <default>0</default>
+    </setting>
+    <setting>
+        <label>imcb_setting_string</label>
+        <category>Bearer</category>
+        <type>1</type>
+        <default>""</default>
+    </setting>
+    <setting>
+        <label>not_acquire_audio_rtcp</label>
+        <category>Bearer</category>
+        <default>0</default>
+    </setting>
+    <setting>
+        <label>not_acquire_video_rtcp</label>
+        <category>Bearer</category>
+        <default>0</default>
+    </setting>
+    <setting>
+        <label>voice_bearer_ctrl</label>
+        <category>Bearer</category>
+        <default>0</default>
+    </setting>
+    <setting>
+        <label>pcscf_home_policy_list</label>
+        <category>PCSCF</category>
+        <type>1</type>
+        <default>0,2,1,4,5,3,6,0</default>
+    </setting>
+    <setting>
+        <label>pcscf_port_number</label>
+        <category>PCSCF</category>
+        <default>5060</default>
+    </setting>
+    <setting>
+        <label>pcscf_visit_policy_list</label>
+        <category>PCSCF</category>
+        <type>1</type>
+        <default>0,2,1,4,5,3,6,0</default>
+    </setting>
+    <setting>
+        <label>restore_pcscf</label>
+        <category>PCSCF</category>
+        <default>0</default>
+    </setting>
+    <setting>
+        <label>evs_support</label>
+        <category>Call</category>
+        <type>2</type>
+        <default>0</default>
+        <options>
+            <option name="0" value="0" />
+            <option name="1" value="1" />
+        </options>
+    </setting>
+    <setting>
+        <label>evs_mode_switch</label>
+        <category>Call</category>
+        <type>2</type>
+        <default>0</default>
+        <options>
+            <option name="0" value="0" />
+            <option name="1" value="1" />
+        </options>
+    </setting>
+    <setting>
+        <label>hf_only</label>
+        <category>Call</category>
+        <type>2</type>
+        <default>0</default>
+        <options>
+            <option name="0" value="0" />
+            <option name="1" value="1" />
+        </options>
+    </setting>
+    <setting>
+        <label>dtx</label>
+        <category>Call</category>
+        <type>2</type>
+        <default>1</default>
+        <options>
+            <option name="0" value="0" />
+            <option name="1" value="1" />
+        </options>
+    </setting>
+    <setting>
+        <label>dtx_recv</label>
+        <category>Call</category>
+        <type>2</type>
+        <default>1</default>
+        <options>
+            <option name="0" value="0" />
+            <option name="1" value="1" />
+        </options>
+    </setting>
+    <setting>
+        <label>br_begin</label>
+        <category>Call</category>
+        <type>4</type>
+        <default>0</default>
+        <options>
+            <option name="5.9kbps" value="0" />
+            <option name="7.2kbps" value="1" />
+            <option name="8.0kbps" value="2" />
+            <option name="9.6kbps" value="3" />
+            <option name="13.2kbps" value="4" />
+            <option name="16.4kbps" value="5" />
+            <option name="24.4kbps" value="6" />
+            <option name="32.0kbps" value="7" />
+            <option name="48.0kbps" value="8" />
+            <option name="64.0kbps" value="9" />
+            <option name="96.0kbps" value="10" />
+            <option name="128.0kbps" value="11" />
+        </options>
+    </setting>
+    <setting>
+        <label>br_end</label>
+        <category>Call</category>
+        <type>4</type>
+        <default>11</default>
+        <options>
+            <option name="5.9kbps" value="0" />
+            <option name="7.2kbps" value="1" />
+            <option name="8.0kbps" value="2" />
+            <option name="9.6kbps" value="3" />
+            <option name="13.2kbps" value="4" />
+            <option name="16.4kbps" value="5" />
+            <option name="24.4kbps" value="6" />
+            <option name="32.0kbps" value="7" />
+            <option name="48.0kbps" value="8" />
+            <option name="64.0kbps" value="9" />
+            <option name="96.0kbps" value="10" />
+            <option name="128.0kbps" value="11" />
+        </options>
+    </setting>
+    <setting>
+        <label>br_send_begin</label>
+        <category>Call</category>
+        <type>4</type>
+        <default>0</default>
+        <options>
+            <option name="5.9kbps" value="0" />
+            <option name="7.2kbps" value="1" />
+            <option name="8.0kbps" value="2" />
+            <option name="9.6kbps" value="3" />
+            <option name="13.2kbps" value="4" />
+            <option name="16.4kbps" value="5" />
+            <option name="24.4kbps" value="6" />
+            <option name="32.0kbps" value="7" />
+            <option name="48.0kbps" value="8" />
+            <option name="64.0kbps" value="9" />
+            <option name="96.0kbps" value="10" />
+            <option name="128.0kbps" value="11" />
+        </options>
+    </setting>
+    <setting>
+        <label>br_send_end</label>
+        <category>Call</category>
+        <type>4</type>
+        <default>11</default>
+        <options>
+            <option name="5.9kbps" value="0" />
+            <option name="7.2kbps" value="1" />
+            <option name="8.0kbps" value="2" />
+            <option name="9.6kbps" value="3" />
+            <option name="13.2kbps" value="4" />
+            <option name="16.4kbps" value="5" />
+            <option name="24.4kbps" value="6" />
+            <option name="32.0kbps" value="7" />
+            <option name="48.0kbps" value="8" />
+            <option name="64.0kbps" value="9" />
+            <option name="96.0kbps" value="10" />
+            <option name="128.0kbps" value="11" />
+        </options>
+    </setting>
+    <setting>
+        <label>br_recv_begin</label>
+        <category>Call</category>
+        <type>4</type>
+        <default>0</default>
+        <options>
+            <option name="5.9kbps" value="0" />
+            <option name="7.2kbps" value="1" />
+            <option name="8.0kbps" value="2" />
+            <option name="9.6kbps" value="3" />
+            <option name="13.2kbps" value="4" />
+            <option name="16.4kbps" value="5" />
+            <option name="24.4kbps" value="6" />
+            <option name="32.0kbps" value="7" />
+            <option name="48.0kbps" value="8" />
+            <option name="64.0kbps" value="9" />
+            <option name="96.0kbps" value="10" />
+            <option name="128.0kbps" value="11" />
+        </options>
+    </setting>
+    <setting>
+        <label>br_recv_end</label>
+        <category>Call</category>
+        <type>4</type>
+        <default>11</default>
+        <options>
+            <option name="5.9kbps" value="0" />
+            <option name="7.2kbps" value="1" />
+            <option name="8.0kbps" value="2" />
+            <option name="9.6kbps" value="3" />
+            <option name="13.2kbps" value="4" />
+            <option name="16.4kbps" value="5" />
+            <option name="24.4kbps" value="6" />
+            <option name="32.0kbps" value="7" />
+            <option name="48.0kbps" value="8" />
+            <option name="64.0kbps" value="9" />
+            <option name="96.0kbps" value="10" />
+            <option name="128.0kbps" value="11" />
+        </options>
+    </setting>
+    <setting>
+        <label>bw_begin</label>
+        <category>Call</category>
+        <type>4</type>
+        <default>0</default>
+        <options>
+            <option name="NB" value="0" />
+            <option name="WB" value="1" />
+            <option name="SWB" value="2" />
+            <option name="FB" value="3" />
+        </options>
+    </setting>
+    <setting>
+        <label>bw_end</label>
+        <category>Call</category>
+        <type>4</type>
+        <default>1</default>
+        <options>
+            <option name="NB" value="0" />
+            <option name="WB" value="1" />
+            <option name="SWB" value="2" />
+            <option name="FB" value="3" />
+        </options>
+    </setting>
+    <setting>
+        <label>bw_send_begin</label>
+        <category>Call</category>
+        <type>4</type>
+        <default>0</default>
+        <options>
+            <option name="NB" value="0" />
+            <option name="WB" value="1" />
+            <option name="SWB" value="2" />
+            <option name="FB" value="3" />
+        </options>
+    </setting>
+    <setting>
+        <label>bw_send_end</label>
+        <category>Call</category>
+        <type>4</type>
+        <default>1</default>
+        <options>
+            <option name="NB" value="0" />
+            <option name="WB" value="1" />
+            <option name="SWB" value="2" />
+            <option name="FB" value="3" />
+        </options>
+    </setting>
+    <setting>
+        <label>bw_recv_begin</label>
+        <category>Call</category>
+        <type>4</type>
+        <default>0</default>
+        <options>
+            <option name="NB" value="0" />
+            <option name="WB" value="1" />
+            <option name="SWB" value="2" />
+            <option name="FB" value="3" />
+        </options>
+    </setting>
+    <setting>
+        <label>bw_recv_end</label>
+        <category>Call</category>
+        <type>4</type>
+        <default>1</default>
+        <options>
+            <option name="NB" value="0" />
+            <option name="WB" value="1" />
+            <option name="SWB" value="2" />
+            <option name="FB" value="3" />
+        </options>
+    </setting>
+    <setting>
+        <label>ch_send</label>
+        <category>Call</category>
+        <default>1</default>
+    </setting>
+    <setting>
+        <label>ch_recv</label>
+        <category>Call</category>
+        <default>1</default>
+    </setting>
+    <setting>
+        <label>ch_aw_recv</label>
+        <category>Call</category>
+        <type>4</type>
+        <default>0</default>
+        <options>
+            <option name="-1" value="-1" />
+            <option name="0" value="0" />
+            <option name="2" value="2" />
+            <option name="3" value="3" />
+            <option name="5" value="5" />
+            <option name="7" value="7" />
+        </options>
+    </setting>
+    <setting>
+        <label>cmr</label>
+        <category>Call</category>
+        <type>4</type>
+        <default>0</default>
+        <options>
+            <option name="-1" value="-1" />
+            <option name="0" value="0" />
+            <option name="1" value="1" />
+        </options>
+    </setting>
+    <setting>
+        <label>tty_enable</label>
+        <category>Call</category>
+        <default>0</default>
+    </setting>
+    <setting>
+        <label>tty_t140_pt</label>
+        <category>Call</category>
+        <default>0</default>
+    </setting>
+    <setting>
+        <label>tty_red_pt</label>
+        <category>Call</category>
+        <default>0</default>
+    </setting>
+    <setting>
+        <label>tty_red_level</label>
+        <category>Call</category>
+        <default>0</default>
+    </setting>
+    <setting>
+        <label>tty_cps</label>
+        <category>Call</category>
+        <default>0</default>
+    </setting>
+    <setting>
+        <label>reset_ims_to_default</label>
+        <category>Common</category>
+    </setting>
+    <setting>
+        <label>no_auto_retry_errcode</label>
+        <category>Call</category>
+        <type>1</type>
+        <default></default>
+    </setting>
+</settings>

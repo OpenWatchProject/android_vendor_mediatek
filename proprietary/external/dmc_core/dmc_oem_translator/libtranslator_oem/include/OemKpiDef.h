@@ -1,0 +1,60 @@
+
+/* Copyright Statement:
+ *
+ * This software/firmware and related documentation ("MediaTek Software") are
+ * protected under relevant copyright laws. The information contained herein is
+ * confidential and proprietary to MediaTek Inc. and/or its licensors. Without
+ * the prior written permission of MediaTek inc. and/or its licensors, any
+ * reproduction, modification, use or disclosure of MediaTek Software, and
+ * information contained herein, in whole or in part, shall be strictly
+ * prohibited.
+ *
+ * MediaTek Inc. (C) 2019. All rights reserved.
+ *
+ * BY OPENING THIS FILE, RECEIVER HEREBY UNEQUIVOCALLY ACKNOWLEDGES AND AGREES
+ * THAT THE SOFTWARE/FIRMWARE AND ITS DOCUMENTATIONS ("MEDIATEK SOFTWARE")
+ * RECEIVED FROM MEDIATEK AND/OR ITS REPRESENTATIVES ARE PROVIDED TO RECEIVER
+ * ON AN "AS-IS" BASIS ONLY. MEDIATEK EXPRESSLY DISCLAIMS ANY AND ALL
+ * WARRANTIES, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED
+ * WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE OR
+ * NONINFRINGEMENT. NEITHER DOES MEDIATEK PROVIDE ANY WARRANTY WHATSOEVER WITH
+ * RESPECT TO THE SOFTWARE OF ANY THIRD PARTY WHICH MAY BE USED BY,
+ * INCORPORATED IN, OR SUPPLIED WITH THE MEDIATEK SOFTWARE, AND RECEIVER AGREES
+ * TO LOOK ONLY TO SUCH THIRD PARTY FOR ANY WARRANTY CLAIM RELATING THERETO.
+ * RECEIVER EXPRESSLY ACKNOWLEDGES THAT IT IS RECEIVER'S SOLE RESPONSIBILITY TO
+ * OBTAIN FROM ANY THIRD PARTY ALL PROPER LICENSES CONTAINED IN MEDIATEK
+ * SOFTWARE. MEDIATEK SHALL ALSO NOT BE RESPONSIBLE FOR ANY MEDIATEK SOFTWARE
+ * RELEASES MADE TO RECEIVER'S SPECIFICATION OR TO CONFORM TO A PARTICULAR
+ * STANDARD OR OPEN FORUM. RECEIVER'S SOLE AND EXCLUSIVE REMEDY AND MEDIATEK'S
+ * ENTIRE AND CUMULATIVE LIABILITY WITH RESPECT TO THE MEDIATEK SOFTWARE
+ * RELEASED HEREUNDER WILL BE, AT MEDIATEK'S OPTION, TO REVISE OR REPLACE THE
+ * MEDIATEK SOFTWARE AT ISSUE, OR REFUND ANY SOFTWARE LICENSE FEES OR SERVICE
+ * CHARGE PAID BY RECEIVER TO MEDIATEK FOR SUCH MEDIATEK SOFTWARE AT ISSUE.
+ *
+ * The following software/firmware and/or related documentation ("MediaTek
+ * Software") have been modified by MediaTek Inc. All revisions are subject to
+ * any receiver's applicable license agreements with MediaTek Inc.
+ */
+
+#ifndef __OEM_KPI_DEF_H__
+#define __OEM_KPI_DEF_H__
+
+// The definition of KPI object types of KPIs (OEM_OBJ_TYPE_XXX),
+// where XXX must be aligned with TranslateList_v1.0.inc
+typedef enum {
+    OEM_OBJ_TYPE_UNDEFINED = -1,
+    OEM_OBJ_TYPE_KPI_BEGIN = 0, // KPI TYPE must start from 0
+    OEM_OBJ_TYPE_translatorA = OEM_OBJ_TYPE_KPI_BEGIN,
+    OEM_OBJ_TYPE_translatorB,
+    OEM_OBJ_TYPE_translatorC,
+    OEM_OBJ_TYPE_KPI_END = OEM_OBJ_TYPE_translatorC,
+    OEM_OBJ_TYPE_SIZE = OEM_OBJ_TYPE_KPI_END - OEM_OBJ_TYPE_KPI_BEGIN + 1
+} OEM_OBJ_TYPE;
+
+typedef enum {
+    OEM_GROUP_UNDEFINED = -1,
+    OEM_GROUP_NORMAL = 0,
+    OEM_GROUP_MAX
+} OEM_GROUP_TYPE;
+
+#endif // __OEM_KPI_DEF_H__

@@ -1,0 +1,238 @@
+bootstrap_go_package {
+    name: "soong-framework-mediatek",
+    pkgPath: "android/soong/framework/mediatek",
+    deps: [
+        "soong-android",
+        "soong-java",
+    ],
+    srcs: [
+        "framework.go",
+    ],
+    pluginFor: ["soong_build"],
+}
+
+mtk_framework_defaults {
+    name: "mediatek-framework_defaults",
+}
+
+java_library {
+    name: "mediatek-framework",
+    installable: true,
+    libs: [
+        "voip-common",
+        "mediatek-common",
+        "android.hardware.power-V1.0-java",
+        "vendor.mediatek.hardware.power-V2.0-java",
+        "vendor.mediatek.hardware.mtkpower-V1.0-java",
+    ],
+    defaults: [
+        "mediatek-framework_defaults",
+    ],
+    srcs: [
+        "camera/advcam/java/**/*.java",
+        "custom/java/**/*.java",
+        "filesystemprovider/java/**/*.java",
+        "gnssdebugreport/java/**/*.java",
+        "media/camcorder/java/**/*.java",
+        "media/dcfDecoder/java/**/*.java",
+//      "media/matrixeffect/java/**/*.java",
+        "media/java/**/*.java",
+        "media/pq/java/**/*.java",
+        "sdkversion/java/**/*.java",
+        "settingsprovider/java/**/*.java",
+        "storage/java/**/*.java",
+        "util/java/**/*.java",
+        "widget/java/**/*.java",
+        "camera/mmsdk/java/**/*.java",
+        "core/java/**/*.java",
+        "services/core/java/com/mediatek/location/**/*.java",
+
+        // MMSDK
+        "camera/mmsdk/java/com/mediatek/mmsdk/IMMSdkService.aidl",
+
+        // AdvCam
+        "camera/mmsdk/java/com/mediatek/mmsdk/IEffectUser.aidl",
+
+        // for CaptureRequest
+        "camera/mmsdk/java/com/mediatek/mmsdk/IEffectUpdateListener.aidl",
+
+        // PowerHal
+        "camera/mmsdk/java/com/mediatek/mmsdk/ImageInfo.java",
+
+        //GnssDebugReport
+        "camera/mmsdk/java/com/mediatek/mmsdk/IMemory.aidl",
+        "camera/mmsdk/java/com/mediatek/mmsdk/IMemoryHeap.aidl",
+        "camera/mmsdk/java/com/mediatek/mmsdk/IImageTransformUser.aidl",
+        "camera/mmsdk/java/com/mediatek/mmsdk/IFeatureManager.aidl",
+        "camera/mmsdk/java/com/mediatek/mmsdk/IEffectFactory.aidl",
+        "camera/mmsdk/java/com/mediatek/mmsdk/IEffectHalClient.aidl",
+        "camera/mmsdk/java/com/mediatek/mmsdk/IEffectHal.aidl",
+        "camera/mmsdk/java/com/mediatek/mmsdk/IEffectListener.aidl",
+        "camera/mmsdk/java/com/mediatek/mmsdk/TrasformOptions.java",
+        "camera/mmsdk/java/com/mediatek/mmsdk/Rect.java",
+        "camera/mmsdk/java/com/mediatek/mmsdk/EffectHalVersion.java",
+        "camera/mmsdk/java/com/mediatek/mmsdk/BaseParameters.java",
+        "camera/mmsdk/java/com/mediatek/mmsdk/BinderHolder.java",
+        "core/java/com/mediatek/search/ISearchEngineManagerService.aidl",
+        "core/java/com/mediatek/datashaping/IDataShapingManager.aidl",
+        "core/java/com/mediatek/vow/IVoiceWakeupBridge.aidl",
+        "camera/mmsdk/java/com/mediatek/mmsdk/callback/ICallbackClient.aidl",
+        "camera/advcam/java/com/mediatek/advcam/IAdvCamService.aidl",
+        "core/java/com/mediatek/powerhalmgr/IPowerHalMgr.aidl",
+        "gnssdebugreport/java/com/mediatek/gnssdebugreport/IDebugReportCallback.aidl",
+        "gnssdebugreport/java/com/mediatek/gnssdebugreport/IGnssDebugReportService.aidl",
+    ],
+    aidl: {
+        include_dirs: [
+            "frameworks/native/aidl/gui",
+            "frameworks/av/camera/aidl",
+        ],
+        local_include_dirs: [
+            "camera/mmsdk/java",
+            "gnssdebugreport/java",
+            "core/java",
+        ],
+    },
+    required: [
+        "libmediatek_exceptionlog",
+        "libpowerhalwrap_jni",
+        "libcustom_jni",
+        "libjni_pq",
+    ],
+/*
+    required: [
+        "libmpojni",
+        "libgifEncoder_jni",
+    ],
+*/
+}
+
+// MTK PRODUCT API
+mtk_product_api_check_defaults {
+    name: "mtk_product_api_check_defaults",
+}
+
+bootstrap_go_package  {
+    name:"soong-mtk_product_api_check_defaults-mediatek",
+    pkgPath:"android/soong/mtkproductapi/mediatek",
+    deps:[
+        "soong-android",
+        "soong-java",
+     ],
+    srcs:[
+        "mtk_productapi_check.go",
+      ],
+    pluginFor:["soong_build"],
+}
+
+mtk_frameworks_base_subdirs = [
+        "camera/advcam/java",
+        "custom/java",
+        "filesystemprovider/java",
+        "gnssdebugreport/java",
+        "media/camcorder/java",
+        "media/dcfDecoder/java",
+        "media/java",
+        "media/pq/java",
+        "sdkversion/java",
+        "settingsprovider/java",
+        "storage/java",
+        "util/java",
+        "widget/java",
+        "camera/mmsdk/java",
+        "core/java",
+        "services/core/java",
+]
+
+mtk_packages_to_document = [
+    "com.mediatek",
+]
+
+stubs_defaults {
+    name: "mtk-metalava-api-stubs-default",
+    srcs: [
+        ":opt-telephony-srcs",
+        ":opt-net-voip-srcs",
+        ":core_public_api_files",
+        ":updatable-media-srcs-without-aidls",
+	":mtk-product-api-define",
+	":mediatek-common-srcs",
+        ":mediatek-telephony-common-srcs",
+        ":mediatek-telephony-base-srcs",
+        ":mediatek-telecom-common-srcs",
+        ":mediatek-ims-common-srcs",
+    ],
+    srcs_lib: "mediatek-framework",
+    srcs_lib_whitelist_dirs: mtk_frameworks_base_subdirs,
+    srcs_lib_whitelist_pkgs: mtk_packages_to_document,
+    libs: [
+        "ext",
+        "framework",
+        "mediatek-framework",
+	"mediatek-common",
+        "voip-common",
+        "mediatek-telephony-common",
+        "mediatek-telecom-common",
+        "mediatek-telephony-base",
+        "mediatek-ims-common",
+    ],
+    aidl: {
+        include_dirs: [
+            // FRAMEWORKS_BASE_JAVA_SRC_DIRS
+            "frameworks/base/core/java",
+            "frameworks/base/graphics/java",
+            "frameworks/base/location/java",
+            "frameworks/base/lowpan/java",
+            "frameworks/base/media/java",
+            "frameworks/base/media/mca/effect/java",
+            "frameworks/base/media/mca/filterfw/java",
+            "frameworks/base/media/mca/filterpacks/java",
+            "frameworks/base/drm/java",
+            "frameworks/base/opengl/java",
+            "frameworks/base/sax/java",
+            "frameworks/base/telecomm/java",
+            "frameworks/base/telephony/java",
+            "frameworks/base/wifi/java",
+            "frameworks/base/keystore/java",
+            "frameworks/base/rs/java",
+            "vendor/mediatek/proprietary/frameworks/base/core/java",
+	    "vendor/mediatek/proprietary/frameworks/common/src",
+            "vendor/mediatek/proprietary/frameworks/opt/telephony/src/java",
+            "vendor/mediatek/proprietary/frameworks/opt/telephony-base/java",
+            "vendor/mediatek/proprietary/frameworks/opt/telecomm/src/java",
+        ],
+    },
+    local_sourcepaths: mtk_frameworks_base_subdirs,
+    installable: false,
+    annotations_enabled: true,
+    previous_api: ":last-released-public-api",
+    merge_annotations_dirs: [
+        "metalava-manual",
+        "ojluni-annotated-sdk-stubs",
+    ],
+    api_levels_annotations_enabled: false,
+}
+
+mtk_metalava_framework_docs_args = "--manifest $(location res/AndroidManifest.xml) " +
+    "--hide-package com.android.okhttp " +
+    "--hide-package com.android.org.conscrypt --hide-package com.android.server " +
+    " --hide ReferencesHidden " +
+    " --hide UnhiddenSystemApi " +
+    " --hide ShowingMemberInHiddenClass " +
+    "--hide MissingPermission --hide BroadcastBehavior " +
+    "--hide SdkConstant --hide HiddenTypeParameter --hide Todo --hide Typo"
+
+droidstubs {
+    name: "mtk-product-api-stubs-docs",
+    defaults: ["mtk-metalava-api-stubs-default", "mtk_product_api_check_defaults"],
+    api_tag_name: "PRODUCT",
+    api_filename: "product-api.txt",
+    private_api_filename: "product-private.txt",
+    private_dex_api_filename: "product-private-dex.txt",
+    removed_api_filename: "product-removed.txt",
+    arg_files: [
+        "res/AndroidManifest.xml",
+    ],
+    args: mtk_metalava_framework_docs_args +  " --show-annotation android.annotation.ProductApi",
+    jdiff_enabled: false,
+}

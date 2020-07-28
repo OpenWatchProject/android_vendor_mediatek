@@ -1,0 +1,49 @@
+{
+    "android-base": {
+        "CONFIG": "device/mediateksample/${PROJECT}/ProjectConfig.mk",
+        "OPTIONS": {
+            "MTK_ENABLE_GENIEZONE": "no",
+            "MTK_NEBULA_VM_SUPPORT": "no"
+        }
+    },
+    "android": {
+        "CONFIG": "device/mediatekprojects/${PROJECT}/ProjectConfig.mk",
+        "OPTIONS": {
+            "MTK_ENABLE_GENIEZONE": "no"
+        }
+    },
+    "preloader": {
+        "CONFIG": "vendor/mediatek/proprietary/bootable/bootloader/preloader/custom/${PROJECT}/${PROJECT}.mk",
+        "OPTIONS": {
+            "MTK_ENABLE_GENIEZONE": "no",
+            "MTK_NEBULA_VM_SUPPORT": "no"
+        }
+    },
+    "lk": {
+        "CONFIG": "vendor/mediatek/proprietary/bootable/bootloader/lk/project/${PROJECT}.mk",
+        "OPTIONS": {
+            "MTK_ENABLE_GENIEZONE": "no"
+        }
+    },
+    "trustzone": {
+        "CONFIG": "vendor/mediatek/proprietary/trustzone/custom/build/project/${PROJECT}.mk",
+        "OPTIONS": {
+            "MTK_ENABLE_GENIEZONE": "no"
+        }
+    },
+    "kernel-debug": {
+        "CONFIG": "${KERNEL}/arch/${ARCH}/configs/${PROJECT}_debug_defconfig",
+        "OPTIONS": {
+            "CONFIG_MTK_ENABLE_GENIEZONE": "is not set",
+            "CONFIG_MTK_NEBULA_VM_SUPPORT": "is not set"
+        }
+    },
+    "kernel": {
+        "CONFIG": "${KERNEL}/arch/${ARCH}/configs/${PROJECT}_defconfig",
+        "OPTIONS": {
+            "CONFIG_MTK_ENABLE_GENIEZONE": "is not set",
+            "CONFIG_MTK_NEBULA_VM_SUPPORT": "is not set"
+        }
+    }
+}
+

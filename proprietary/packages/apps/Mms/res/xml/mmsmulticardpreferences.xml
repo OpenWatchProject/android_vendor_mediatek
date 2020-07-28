@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <!--
+        /* * Copyright (C) 2007-2008 Esmertec AG. * Copyright (C) 2007-2008 The
+        Android Open Source Project * * Licensed under the Apache License,
+        Version 2.0 (the "License"); * you may not use this file except in
+        compliance with the License. * You may obtain a copy of the License at *
+        * http://www.apache.org/licenses/LICENSE-2.0 * * Unless required by
+        applicable law or agreed to in writing, software * distributed under the
+        License is distributed on an "AS IS" BASIS, * WITHOUT WARRANTIES OR
+        CONDITIONS OF ANY KIND, either express or implied. * See the License for
+        the specific language governing permissions and * limitations under the
+        License. */
+    -->
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="@string/pref_mms_settings_title"
+        android:key="pref_key_mms_settings">
+        <CheckBoxPreference android:defaultValue="false"
+            android:key="pref_key_mms_group_mms"
+            android:summary="@string/pref_summary_mms_group_mms"
+            android:title="@string/pref_title_mms_group_mms" />
+        <Preference android:key="pref_key_mms_delivery_reports"
+            android:summary="@string/pref_summary_mms_delivery_reports"
+            android:title="@string/pref_title_mms_delivery_reports" />
+        <Preference android:key="pref_key_mms_read_reports"
+            android:summary="@string/pref_summary_mms_read_reports"
+            android:title="@string/pref_title_mms_read_reports" />
+        <Preference android:key="pref_key_mms_auto_reply_read_reports"
+            android:summary="@string/pref_summary_mms_auto_reply_read_reports"
+            android:title="@string/pref_title_mms_auto_reply_read_reports" />
+        <Preference android:key="pref_key_mms_auto_retrieval"
+            android:title="@string/pref_title_mms_auto_retrieval"
+            android:summary="@string/pref_summary_mms_auto_retrieval" />
+        <Preference android:layout="?android:attr/preferenceLayoutChild"
+            android:key="pref_key_mms_retrieval_during_roaming" android:title="@string/pref_title_mms_retrieval_during_roaming"
+            android:summary="@string/pref_summary_mms_retrieval_during_roaming" />
+        <ListPreference android:key="pref_key_mms_creation_mode"
+            android:title="@string/pref_title_mms_creation_mode"
+            android:defaultValue="FREE" android:entries="@array/pref_mms_creation_mode_choices"
+            android:entryValues="@array/pref_mms_creation_mode_values"
+            android:dialogTitle="@string/pref_title_mms_creation_mode"
+            android:summary="@string/pref_summary_mms_creation_mode" />
+        <ListPreference android:key="pref_key_mms_size_limit"
+            android:title="@string/pref_title_mms_size_limit"
+            android:dialogTitle="@string/pref_title_mms_size_limit"
+            android:summary="@string/pref_summary_mms_size_limit"
+            android:defaultValue="300" android:entries="@array/pref_mms_size_limit_choices"
+            android:entryValues="@array/pref_mms_size_limit_values" />
+        <ListPreference android:key="pref_key_mms_priority"
+            android:title="@string/mms_priority_label" android:dialogTitle="@string/mms_priority_label"
+            android:summary="@string/mms_priority_label" android:defaultValue="Normal"
+            android:entries="@array/pref_key_mms_priority_choices"
+            android:entryValues="@array/pref_key_mms_priority_values" />
+    </PreferenceCategory>
+</PreferenceScreen>
+

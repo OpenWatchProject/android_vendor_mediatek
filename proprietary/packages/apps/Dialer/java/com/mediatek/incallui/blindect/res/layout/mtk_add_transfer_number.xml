@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:theme="@style/Dialpad_Light"
+    android:background="@android:color/transparent">
+
+  <EditText
+    android:id="@+id/add_transfer_call_number"
+    android:hint="@string/add_transfer_number_hint"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:inputType="phone"
+    android:layout_weight="1"
+    android:textColor="#000000" />
+  <ImageButton
+    android:id="@+id/contact_icon"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    style="?android:attr/borderlessButtonStyle"
+    android:src="@drawable/mtk_volte_ic_conference_add_member"
+    android:scaleType="center"
+    android:contentDescription="@string/onscreenEndCallText" />
+</LinearLayout>

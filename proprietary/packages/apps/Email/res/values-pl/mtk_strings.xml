@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    Copyright Statement:
+
+    This software/firmware and related documentation ("MediaTek Software") are
+    protected under relevant copyright laws. The information contained herein
+    is confidential and proprietary to MediaTek Inc. and/or its licensors.
+    Without the prior written permission of MediaTek inc. and/or its licensors,
+    any reproduction, modification, use or disclosure of MediaTek Software,
+    and information contained herein, in whole or in part, shall be strictly prohibited.
+
+    MediaTek Inc. (C) 2012. All rights reserved.
+
+    BY OPENING THIS FILE, RECEIVER HEREBY UNEQUIVOCALLY ACKNOWLEDGES AND AGREES
+    THAT THE SOFTWARE/FIRMWARE AND ITS DOCUMENTATIONS ("MEDIATEK SOFTWARE")
+    RECEIVED FROM MEDIATEK AND/OR ITS REPRESENTATIVES ARE PROVIDED TO RECEIVER ON
+    AN "AS-IS" BASIS ONLY. MEDIATEK EXPRESSLY DISCLAIMS ANY AND ALL WARRANTIES,
+    EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF
+    MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE OR NONINFRINGEMENT.
+    NEITHER DOES MEDIATEK PROVIDE ANY WARRANTY WHATSOEVER WITH RESPECT TO THE
+    SOFTWARE OF ANY THIRD PARTY WHICH MAY BE USED BY, INCORPORATED IN, OR
+    SUPPLIED WITH THE MEDIATEK SOFTWARE, AND RECEIVER AGREES TO LOOK ONLY TO SUCH
+    THIRD PARTY FOR ANY WARRANTY CLAIM RELATING THERETO. RECEIVER EXPRESSLY ACKNOWLEDGES
+    THAT IT IS RECEIVER'S SOLE RESPONSIBILITY TO OBTAIN FROM ANY THIRD PARTY ALL PROPER LICENSES
+    CONTAINED IN MEDIATEK SOFTWARE. MEDIATEK SHALL ALSO NOT BE RESPONSIBLE FOR ANY MEDIATEK
+    SOFTWARE RELEASES MADE TO RECEIVER'S SPECIFICATION OR TO CONFORM TO A PARTICULAR
+    STANDARD OR OPEN FORUM. RECEIVER'S SOLE AND EXCLUSIVE REMEDY AND MEDIATEK'S ENTIRE AND
+    CUMULATIVE LIABILITY WITH RESPECT TO THE MEDIATEK SOFTWARE RELEASED HEREUNDER WILL BE,
+    AT MEDIATEK'S OPTION, TO REVISE OR REPLACE THE MEDIATEK SOFTWARE AT ISSUE,
+    OR REFUND ANY SOFTWARE LICENSE FEES OR SERVICE CHARGE PAID BY RECEIVER TO
+    MEDIATEK FOR SUCH MEDIATEK SOFTWARE AT ISSUE.
+
+    The following software/firmware and/or related documentation ("MediaTek Software")
+    have been modified by MediaTek Inc. All revisions are subject to any receiver's
+    applicable license agreements with MediaTek Inc.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="not_add_more_text">"Nie można dodać więcej tekstu"</string>
+    <string name="attach_image">Zdjęcie</string>
+    <string name="attach_video">"Wideo"</string>
+    <string name="attach_sound">"Muzyka"</string>
+    <string name="attach_contact">"Kontakty"</string> 
+    <string name="attach_file">Plik</string> 
+    <string name="attach_calender">"Kalendarz"</string>    
+    <string name="attach_error_occurred">Żadna aplikacja nie obsługuje tego typu załącznika.</string>  
+    <string name="low_storage_service_stop">Usługa poczty e-mail została zatrzymana z powodu małej ilości pamięci.</string>
+    <string name="low_storage_hint_delete_mail">Możesz usunąć zbędne wiadomości e-mail lub aplikacje, aby odzyskać miejsce w pamięci.</string>
+    <string name="low_storage_service_start">Usługa poczty e-mail została uruchomiona ponownie, ponieważ dostępna jest teraz wystarczająca ilość pamięci.</string>
+    <string name="low_storage_attachment_cannot_download">Nie można pobrać załącznika z powodu małej ilości pamięci.</string>
+    <string name="low_storage_attachment_cannot_view">Nie można wyświetlić załącznika z powodu małej ilości pamięci.</string>
+    <string name="download_remaining">Pobieranie nie zostało ukończone</string>
+    <string name="downloading_remaining">Trwa ładowanie...</string>
+    <string name="unable_to_connect">Nie można połączyć</string>
+    <string name="need_connection_prompt">"Do korzystania z tej aplikacji konieczne jest połączenie z siecią. Włącz sieć komórkową lub Wi-Fi w pozycji Ustawienia."</string>
+    <string name="need_wifi_connection_prompt">"Do korzystania z tej aplikacji konieczne jest połączenie z siecią. Włącz sieć Wi-Fi w pozycji Ustawienia."</string>
+    <string name="connection_settings">"Ustawienia"</string>
+    <string name="too_many_attachments">Nie można dodać zbyt wielu załączników. Liczba załączników, które zostaną dodane: pierwsze <xliff:g id="currentCount">%1$d</xliff:g>.</string>
+    <string name="not_add_more_attachments">Nie można dodać więcej załączników. Limit załączników: <xliff:g id="maxLimit">%1$d</xliff:g>.</string>
+    <string name="attachment_overflow">Za dużo załączników</string>
+    <string name="cannot_add_this_attachment">Nie można dodać tego załącznika.</string>
+    <string name="loading_attachment">Trwa ładowanie załączników...</string>
+    <string name="send_attachment_fail">Wysłanie załącznika nie powiodło się.</string>
+    <string name="open_message_parsing">Trwa analizowanie wiadomości...</string>
+    <string name="open_message_update_db">Trwa aktualizowanie bazy danych...</string>
+    <string name="open_message_update_ui">Trwa ładowanie wiadomości...</string>
+    <string name="please_wait">Czekaj, trwa wykonywanie czynności...</string>
+    <string name="delete_message_dialog_title">Usuń wiadomość</string>
+    <string name="delete_message_confirm">"Usunąć tę wiadomość?"</string>
+    <string name="attachment_info_deleted">"Załącznika nie można zapisać ani otworzyć, ponieważ mógł zostać on usunięty."</string>
+    <string name="send_failed_ticker">Wysłanie wiadomości e-mail z konta <xliff:g id="account_name">%s</xliff:g> nie powiodło się.</string>
+    <string name="send_failed_title">Nie można wysłać wiad. e-mail</string>
+    <string name="always_bcc_myself">Zawsze wysyłaj do mnie kopię ukrytą</string>
+    <string name="always_bcc_myself_summary">Zawsze wysyłaj do mnie kopię ukrytą w przypadku redagowania, odpowiadania i przesyłania dalej wiadomości</string>
+    <string name="remote_search_failed">Wyszukanie serwera nie powiodło się!</string>
+    <string name="searching_on_server">Wyszukaj na serwerze</string>
+    <string name="searching_on_server_title">Wyszukaj konto \"<xliff:g id="account_name">%s</xliff:g>\" na serwerze</string>
+    <string name="searching_all_fields_on_sever">Wyszukaj wszystkie pola na serwerze</string>
+    <string name="search_field_subject">"Temat"</string>
+    <string name="search_field_receiver">Odbiorca</string>
+    <string name="search_field_sender">Nadawca</string>
+    <string name="search_field_body">Treść</string>
+    <string name="search_field_all">"Wszystkie"</string>
+    <string name="select_all">"Wybierz wszystkie"</string>
+    <string name="deselect_all">"Usuń zaznaczenie wszystkich"</string>
+    <string name="vip_settings">USTAWIENIA VIP</string>
+    <string name="vip_members">Członkowie VIP</string>
+    <string name="vip_notifications">Powiadomienia VIP</string>
+    <string name="vip_settings_notify_summary">Powiadom na pasku systemu o odebraniu wiadomości e-mail VIP</string>
+    <string name="vip_members_count">Członkowie VIP (<xliff:g example="2">%1$d</xliff:g>)</string>
+    <string name="vip_remove_title">Usuń z listy VIP</string>
+    <string name="vip_choose_contact">Dodaj do listy VIP</string>
+    <string name="vip_remove_prompt">Liczba członków VIP, którzy zostaną usunięci: <xliff:g example="2">%1$s</xliff:g>.</string>
+    <string name="not_add_duplicate_vip">Zduplikowany kontakt nie zostanie dodany do listy VIP.</string>
+    <string name="can_not_add_vip_over_99">Nie można dodać więcej niż 99 członków VIP.</string>
+    <string name="vip_settings_ringtone">"Wybierz dzwonek"</string>
+    <string name="vip_settings_vibrate_label">"Wibracje"</string>
+    <string name="vip_settings_vibrate_summary">Włącz także wibracje po odebraniu wiadomości e-mail VIP</string>
+    <string name="account_setup_options_mail_check_frequency_smartpush">Smart push</string>
+    <string name="smart_push_alert_dialog_title">Opcja oszczędzania energii</string>
+    <string name="smart_push_alert_dialog_message"> zapewnia rzadsze sprawdzanie nowych wiadomości e-mail w celu oszczędzania energii. Wraz z używaniem tego trybu wiadomości e-mail będą odbierane bardziej terminowo.\n\nMożna zmienić to w dowolnej chwili w ustawieniach.</string>
+    <string name="global_search_label">"E-mail"</string>
+    <string name="global_search_hint">"Wyszukaj w wiadomościach e-mail"</string>
+    <string name="global_search_description">Nadawcy, tematy i treści</string>
+    <string name="account_settings_oof_label">Poza biurem</string>
+    <string name="account_settings_oof_unchecked_summary">Jestem teraz w biurze</string>
+    <string name="account_settings_oof_checked_summary">Jestem teraz poza biurem</string>
+    <string name="account_settings_oof_from_label">"Od"</string>
+    <string name="account_settings_oof_to_label">"Do"</string>
+    <string name="account_settings_oof_auto_reply_label">Automatyczne odpowiedzi, gdy użytkownik jest poza biurem</string>
+    <string name="account_settings_oof_auto_reply_summary">Odpowiedz automatycznie na wiadomość od każdego nadawcy</string>
+    <string name="account_settings_oof_external_server_label">Wysyłaj automatyczne odpowiedzi do serwera zewnętrznego</string>
+    <string name="account_settings_oof_get_status">Uzyskiwanie informacji o stanie z serwera</string>
+    <string name="account_settings_oof_save_sets">Zapisywanie ustawień na serwerze</string>
+    <string name="account_settings_oof_get_status_fail">Nie można uzyskać informacji o stanie</string>
+    <string name="account_settings_oof_get_status_fail_summary">Nie można uzyskać teraz z serwera informacji o stanie. Spróbuj ponownie później.</string>
+    <string name="account_settings_oof_cancel">Bez zapisania?</string>
+    <string name="account_settings_oof_cancel_summary">Wszystkie zmiany zostaną odrzucone.</string>
+    <string name="account_settings_oof_save_fail">Nie można zapisać</string>
+    <string name="account_settings_oof_save_fail_summary">Nie można zapisać ustawień na serwerze. Serwer może być niedostępny lub automatyczne odpowiedzi mogły przekroczyć limit serwera lub w urządzeniu ustawiono nieprawidłową datę lub godzinę.</string>
+    <string name="account_settings_oof_time_alert">Powinno to być później niż bieżąca godzina.</string>
+    <string name="no_application_response">"Aplikacja została wyłączona"</string>
+    <string name="extension_choose_provider_title">Wybierz dostawcę poczty e-mail</string>
+    <string name="not_add_more_recipients">Jednorazowo nie można dodać więcej niż <xliff:g id="maxLimit">%1$d</xliff:g> odbiorców.</string>
+    <string name="message_view_status_sdcard_not_enough">Za mało miejsca, aby zapisać załącznik na karcie SD.</string>
+    <string name="vip_emails_from_accounts_fmt">Wiadomości e-mail z <xliff:g id="vipAccountCount">%d</xliff:g> kont</string>
+    <string name="notification_multiple_new_vip_messages_fmt">Liczba nowych wiadomości e-mail VIP: <xliff:g example="2">%1$d</xliff:g></string>
+    <string name="message_body_too_large">Nie można wczytać całej zawartości ponieważ wiadomość jest za duża.</string>
+    <string name="cannot_move_multiple_mailbox_toast">Trwa przenoszenie niektórych wiadomości e-mail; spróbuj ponownie później.</string>
+    <string name="certificate_request_ssl">Certyfikat klienta musi korzystać z zabezpieczonego połączenia.</string>
+    <string name="auto_clear_cache_title">Wyczyść pamięć podręczną automatycznie</string>
+    <string name="auto_clear_cache_description">Wyczyść regularnie buforowane lokalnie załączniki</string>
+    <string name="edit_quoted_dialog_title">Maksymalna liczba znaków</string>
+    <string name="edit_quoted_not_append_all">Osiągnięto maksymalną liczbę znaków. Część wcześniejszej treści zostanie utracona; kontynuować?</string>
+   <string name="single_message_view_attachment_saved">Załącznik został zapisany w pliku <xliff:g id="filename">%s</xliff:g></string>
+    <string name="choose_attachment_dialog_title">"Wybierz załącznik"</string>
+    <string name="message_compose_error_invalid_email">"Niektóre adresy e-mail są nieprawidłowe."</string>
+</resources>

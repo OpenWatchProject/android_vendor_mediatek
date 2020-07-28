@@ -1,0 +1,5 @@
+package vendor.mediatek.hardware.apmonitor@1.0;
+
+interface IAPMonitorClientCallback {
+    sendKpiData(vec<uint8_t> data) generates (bool success);
+};

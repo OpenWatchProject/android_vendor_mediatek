@@ -1,0 +1,28 @@
+Library of MTK ISP internal driver.
+
+This library is pre-built by MediaTek internal.
+
+
+WHAT IT DOES?
+=============
+libcamdrv.so contains MediaTek ISP internal driver.
+Without this, MTK ISP will not work¡¨
+
+HOW IT WAS BUILT?
+==================
+It needs the following library from AOSP:
+none
+
+and the following libs from MediaTek:
+none
+
+All source/dependency modules of this module are already put in
+'vendor\mediatek\proprietary\platform\mtxxx\hardware\mtkcam\core' folder.
+
+HOW TO USE IT?
+==============
+
+Provide api for ISP driver to control kernel isp device driver.
+all api interface are at (vendor\mediatek\proprietary\platform\mtxxx\hardware\include\mtkcam\drv)
+
+All the source code of this library were written by MediaTek co..

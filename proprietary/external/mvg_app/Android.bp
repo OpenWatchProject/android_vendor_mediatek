@@ -1,0 +1,10 @@
+cc_binary {
+    shared_libs: [
+        "libc",
+        "libcutils",
+    ],
+    srcs: ["MVG_Powerloss_App.c"],
+    name: "mvg_app",
+    proprietary: true,
+    owner: "mtk",
+}

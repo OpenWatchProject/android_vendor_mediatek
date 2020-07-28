@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:minHeight="50dip"
+    android:orientation="horizontal" >
+
+    <CheckBox
+        android:id="@+id/aas_item_check"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="10dp"
+        android:clickable="false"
+        android:focusable="false"
+        android:gravity="center_vertical"
+        android:visibility="gone"
+        android:background="@android:drawable/checkbox_off_background" />
+
+    <TextView
+        android:id="@+id/aas_item_tag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="10dp"
+        android:gravity="center_vertical|left"
+        android:layout_toEndOf="@+id/aas_item_check"
+        android:textColor="#000000" />
+
+    <ImageView
+        android:id="@+id/aas_edit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/ic_aas_edit"
+        android:clickable="false"
+        android:gravity="center_vertical" />
+
+</RelativeLayout>

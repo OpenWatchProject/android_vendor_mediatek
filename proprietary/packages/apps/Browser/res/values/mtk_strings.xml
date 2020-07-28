@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2007 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+  
+          http://www.apache.org/licenses/LICENSE-2.0
+  
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- M: Strings for Add "delete folder" item in option menu -->
+    <!-- Confirmation dialog message confirming that the user wishes to delete
+            the folder they selected for deletion -->
+    <string name="delete_folder_warning">Delete folder \"<xliff:g id="bookmark">%s</xliff:g>\"?</string>
+    <!-- Save link to bookmark -->
+    <string name="contextmenu_savelinkbookmark">Save link as bookmark</string>
+
+    <string name="pref_default_text_encoding_default_choice" translatable="false">auto-detector</string>
+	<!-- Dialog title-->
+	<string name="download_path_unavailable_dlg_title">Download Directory Unavailable</string>
+	<!-- Dialog message -->
+	<string name="download_path_unavailable_dlg_msg">Please modify the Download Directory of Browser</string>
+    <!-- Do not translate.  Testing only -->
+    <string name="dump_counters" translatable="false">Dump V8 counters</string>
+
+    <!-- The default url for the instant_base_page. -->
+    <string name="instant_base" translatable="false">
+        http://www.google.com/webhp?client={CID}&amp;source=android-instant&amp;ion=1</string>
+    <!--  The build-in bookmark for yahoo -->
+    <string-array name="bookmarks_for_yahoo" translatable="false">
+        <item>Yahoo</item>
+        <item>https://yahoo.com/?.tsrc=mtkandroid</item>
+        <item>Yahoo Search</item>
+        <item>https://search.yahoo.com/?.tsrc=mtkandroid</item>
+        <item>Yahoo News</item>
+        <item>https://news.yahoo.com/?.tsrc=mtkandroid</item>
+    </string-array>
+    <!-- M: Strings for Add "Home" item in option menu -->
+    <string name="home">Home</string>
+    <!-- M: Strings for Add "Close" item in option menu -->
+    <string name="close">Close</string>
+    <!-- M: Strings for Add "Option" title for "Close" option menu -->
+    <string name="option">Option</string>
+    <!-- M: Strings for Add "Minimize" item in "Close" option menu -->
+    <string name="minimize">Minimize</string>
+    <!-- M: Strings for Add "Quit" item in "Close" option menu -->
+    <string name="quit">Quit</string>
+    
+    <!-- M: Strings for download path setting preference category title for OP01 integrated with File Manager -->
+    <string name="pref_download_title">Download settings</string>
+    <!-- M: Strings for download path setting preference item title for OP01 integrated with File Manager -->
+    <string name="pref_extras_set_download_directory_title">Set download directory</string>
+
+    <!-- M: site navigation start @{ -->   
+    <!-- The default homepage. If it starts with "http://www.google" and the
+            user signs up the device with a Google sites account, the site's
+            domain will be appended. -->
+    <string name="homepage_base_site_navigation" translatable="false">
+        content://com.android.browser.site_navigation/websites</string>
+    <string name="sitenavigation_add">Add website</string>
+    <!-- Name of tab containing the user's most visited websites, organized by number of visits -->
+    <string name="tab_site_navigation">Site navigation</string>
+    <string-array name="pref_homepage_choices_site_navigation">
+        <!-- Setting choice to set the homepage to the current page [CHAR LIMIT=40] -->
+        <item>Current page</item>
+        <!-- Setting choice to set the homepage to a blank page [CHAR LIMIT=40] -->
+        <item>Blank page</item>
+        <!-- Setting choice to set the homepage to the default page [CHAR LIMIT=40] -->
+        <item>Default page</item>
+        <!-- Setting choice to set the homepage to the "Most Visited" homepage feature, which is a list of most visited sites [CHAR LIMIT=40] -->
+        <item>Most visited sites</item>
+        <!-- Setting choice to set the homepage to the "Site Navigation" homepage feature, which is a list of site navigation sites [CHAR LIMIT=40] -->
+        <item>Site Navigation</item>
+        <!-- Setting choice to set the homepage to a user entered URL [CHAR LIMIT=40] -->
+        <item>Other</item>
+    </string-array>
+    <string-array name="pref_homepage_values_site_navigation" translatable="false">
+        <item>current</item>
+        <item>blank</item>
+        <item>default</item>
+        <item>most_visited</item>
+        <item>site_navigation</item>
+        <item>other</item>
+    </string-array>
+    
+    <!-- Content description for site navigation transition [CHAR LIMIT=NONE] -->
+	<!-- Predefined websites Site Navigation for default operator, six of them -->
+	<!-- DO NOT TRANSLATE -->
+    <string-array name="predefined_websites_default_optr" translatable="false">
+        <item>START NEWS</item>
+        <item>https://locale.searchhtt.com/bm/index/54</item>
+        <item>site_navigation_default_startnews</item>
+
+        <item>Ctrip</item>
+        <item>https://locale.searchhtt.com/bm/index/43</item>
+        <item>site_navigation_default_ctrip</item>
+
+        <item>Facebook</item>
+        <item>https://locale.searchhtt.com/bm/index/26</item>
+        <item>site_navigation_default_facebook</item>
+
+        <item>Aliexpress</item>
+        <item>https://locale.searchhtt.com/bm/index/31</item>
+        <item>site_navigation_default_aliexpress</item>
+
+        <item>Hotel.com</item>
+        <item>https://locale.searchhtt.com/bm/index/28</item>
+        <item>site_navigation_default_hotels</item>
+
+        <item>Booking.com</item>
+        <item>https://locale.searchhtt.com/bm/index/27</item>
+        <item>site_navigation_default_booking</item>
+
+        <item>Games</item>
+        <item>https://locale.searchhtt.com/bm/index/41</item>
+        <item>site_navigation_default_games</item>
+
+        <item>Yahoo</item>
+        <item>https://yahoo.com/?.tsrc=mtkandroid/</item>
+        <item>site_navigation_default_ymobile</item>
+
+        <item>Uber</item>
+        <item>https://m.uber.com/ul/?action=applyPromo&amp;client_id=_T1DSklhLduAL6WESJviup7jzzFzNzwy&amp;promo=U88M</item>
+        <item>site_navigation_default_uber</item>
+    </string-array>
+    <!-- @} -->   
+    <!-- For DM read & write homepage permission -->
+    <string name="permlab_readHomepage">read homepage in browser</string>
+    <string name="permdesc_readHomepage">Allows the application to read homepage information in browser without your intervention.</string>
+    <string name="permlab_writeHomepage">modify homepage in browser</string>
+    <string name="permdesc_writeHomepage">Allows the application to modify homepage information in browser without your intervention.</string>
+    <!-- Alert dialog title for duplicate bookmark-->
+    <string name="duplicated_bookmark">Duplicated bookmark </string>
+    <!-- Alert dialog message telling the user the bookmark have same name or url already exists -->
+    <string name="duplicated_bookmark_warning">The bookmark has same name or location already exists, overwrite?</string>
+
+    <!-- M: Add string for add bookmark folder failed -->
+    <!-- Alert dialog message telling the user the folder have same name or url already exists -->
+    <string name="duplicated_folder_warning">The folder has same name already exists.</string>
+
+        <!-- Search Engine Settings label -->
+    <!-- Settings summary -->
+    <string name="pref_content_search_engine_consistency">Search engine consistency</string>
+    <string name="pref_search_engine_unify">Unify search engine</string>
+    <string name="pref_search_engine_unify_summary">Apply the change of search engine to QuickSearchBox</string>
+    
+    <!-- M: Support download or open content -->
+    <string name="download_or_open_content">Which operation do you select?</string>
+    <string name="save_content">Save</string>
+    <string name="open_content">Open</string>
+    
+    <!-- M: No voice search alert dialog -->
+    <string name="no_voice_search_alert_dialog_title">Voice Search</string>
+    <string name="no_voice_search_alert_dialog_msg">The voice search is not available, due to there is no voice search application. Please install it first.</string>
+
+    <!-- M: Site navigation menu and dialog -->
+    <string name="delete">Delete</string>
+    <string name="edit">Edit</string>
+    <string name="add">Add</string>
+    <string name="delete_site_navigation_msg">Delete this item?</string>
+    <string name="site_navigation_name">Name</string>
+    <string name="site_navigation_address">Address</string>
+    <string name="website_needs_title">"Website must have a name."</string>
+    <string name="website_needs_url">"Website must have a location."</string>
+    <string name="site_navigation_cannot_save_url">This URL cannot be website.</string>
+    <string name="add_site_navigation">Add Website</string>
+    <string name="edit_site_navigation">Edit Site Navigation</string>
+    <string name="site_navigation_edit_button">Edit</string>
+    <string name="save_webpage">Save</string>
+    <string name="duplicate_site_navigation_url">This URL has already existed.</string>
+    <string name="duplicate_site_navigation_title">This lable has already existed.</string>
+    
+    <!-- M: OP01 url input length limitation -->
+    <string name="max_input_browser_search">Your input has reached the max limit.</string>
+    <string name="max_input_browser_search_title">Input limit</string>
+    <string name="max_input_browser_search_button">OK</string>
+    
+    <!-- M: Option menu change string: Bookmarks -> Bookmarks/History -->
+    <string name="bookmarks_history">Bookmarks/History</string>
+    <string name="save_bookmark">Save bookmark</string>
+    <!-- M: Bottom bar strings -> -->
+    <string name="tabs">Tab</string>
+
+    <!-- M: Dialog informing the user that opening the saved page has failed -->
+    <string name="open_saved_page_failed">Can\'t open saved page.</string>
+    
+    <!-- M: add for save page -->
+    <string name="saved_page_failed">Failed to save web page.</string>
+    <string name="saved_page_complete">Download complete.</string>
+    <string name="saved_page_fail">"Failed to save "</string>
+    <string name="create_folder_fail">Can\'t create save page folder</string>
+    <string name="saving_page">Saving web page</string>
+    <string name="need_login_email">Please register your Email account first.</string>
+    <string name="folder_needs_title">"Folder must have a name."</string>
+    <string name="denied_required_permission">Permissions denied. You can change them in Settings &gt; Apps.</string>
+    <string-array name="bookmarks_for_op03" translatable="false">
+    <item>Orange world</item>
+    <item translatable="false">http://www.orange.fr</item>
+    <item>Orange Entreprises</item>
+    <item translatable="false">http://accueil.orangemib.net</item>
+    <item>Actu</item>
+    <item translatable="false">http://info.mob1.orange.fr</item>
+    <item>Meteo</item>
+    <item translatable="false">http://meteo.mob1.orange.fr</item>
+    <item>Jeux</item>
+    <item translatable="false">http://jeux.mob1.orange.fr</item>
+    <item>Sport</item>
+    <item translatable="false">http://sport.mob1.orange.fr</item>
+    <item>Trafic</item>
+    <item translatable="false">http://trafic2.mob1.orange.fr</item>
+    <item>Business Lounge</item>
+    <item translatable="false">http://business.lounge.orange.fr</item>
+    <item>My Friends</item>
+    <item translatable="false">http://www.orange.fr/0/accueil/Retour?SA=MOCDEVICE</item>
+    <item>BlackBerry-touch</item>
+    <item translatable="false">http://www.blackberry-touch.com</item>
+    </string-array>
+</resources>

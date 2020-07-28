@@ -1,0 +1,91 @@
+apply plugin: 'com.android.application'
+
+dependencies {
+    compile(name:'TeeClient', ext:'aar')
+}
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "26.0.0"
+    sourceSets {
+        main {
+            jniLibs.srcDir  'src/main/libs'
+            // Disable automatic ndk-build call
+            jni.srcDirs = []
+        }
+    }
+
+    // Task schedule
+    task ndkBuild(type: Exec) {
+        doFirst {
+            println('   Compiling native code for plateform(s) : ' + System.getenv('PLATFORM'))
+        }
+        commandLine System.getenv('NDK_BUILD'), \
+            '-C', file('src/main').absolutePath, \
+            '-j', System.getenv('CORES'), \
+            'NDK_DEBUG=1', \
+            'NDK_PROJECT_PATH=.', \
+            'NDK_APPLICATION_MK=Application.mk', \
+            'NDK_MODULE_PATH=.', \
+            'APP_BUILD_SCRIPT=Android.mk', \
+            'APP_OPTIM='+System.getenv('lower_MODE')
+    }
+
+    task postNdkBuildHook(type: Exec) {
+        doFirst {
+            println('   Deleting libMcClient.so potentially present in the apk.')
+        }
+        commandLine 'find', \
+            'src/main/libs', '-name', 'libMcClient.so', '-delete'
+    }
+
+    postNdkBuildHook.dependsOn ndkBuild
+    tasks.withType(JavaCompile) {
+        compileTask -> compileTask.dependsOn postNdkBuildHook
+    }
+
+
+    // Apk signature
+    signingConfigs {
+        debug {
+            storeFile       file(DEBUG_KEY_STORE)
+            storePassword   DEBUG_KEY_STORE_PASSWORD
+            keyAlias        DEBUG_KEY_ALIAS
+            keyPassword     DEBUG_KEY_ALIAS_PASSWORD
+        }
+        release {
+            storeFile       file(KEY_STORE)
+            storePassword   KEY_STORE_PASSWORD
+            keyAlias        KEY_ALIAS
+            keyPassword     KEY_ALIAS_PASSWORD
+        }
+    }
+
+    buildTypes {
+        debug {
+            signingConfig   signingConfigs.debug
+        }
+        release {
+            signingConfig   signingConfigs.release
+        }
+    }
+
+    productFlavors {
+        signed {
+            signingConfig
+        }
+        unsigned {}
+    }
+
+    // Lint
+    lintOptions {
+        abortOnError         true
+        quiet                false
+        checkReleaseBuilds   true
+        ignoreWarnings       false
+        checkAllWarnings     true
+        showAll              true
+        absolutePaths        true
+        lintConfig           file('lint_conf.xml')
+    }
+}

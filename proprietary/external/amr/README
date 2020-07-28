@@ -1,0 +1,29 @@
+static Library of MTK libamr_mtk, including amr swip related file.
+
+This library is pre-built by MediaTek internal.
+
+
+WHAT IT DOES?
+=============
+libamr_mtk contains MediaTek developed amr swip.  
+Without it, amr will not decode.
+
+HOW IT WAS BUILT?
+==================
+It needs the following library from AOSP:              
+              
+        
+
+and the following libs from MediaTek:
+
+
+All source/dependency modules of this module are already put in
+'alps/vendor/mediatek/proprietary/external/amr' folder.
+
+HOW TO USE IT?
+==============
+
+Provide decode for omx component  
+
+
+All the source code of this library were written by MediaTek co..

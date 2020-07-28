@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2007 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+  
+          http://www.apache.org/licenses/LICENSE-2.0
+  
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    
+    <!-- M: site navigation start @{ -->   
+    <string name="sitenavigation_add">Add website</string>
+    <string name="tab_site_navigation">Sivuston siirtymistoiminto</string>
+    <string-array name="pref_homepage_choices_site_navigation">
+        <item msgid="844041670142910837">"Nykyinen sivu"</item>
+        <item msgid="4430498748295169195">"Tyhjä sivu"</item>
+        <item msgid="5747608191946904074">"Oletussivu"</item>
+        <item msgid="6092441301001006473">"Avatuimmat sivustot"</item>
+        <item>Sivuston siirtymistoiminto</item>
+        <item msgid="6569304572171444894">"Muu"</item>    
+    </string-array>
+    <!-- @} -->   
+
+
+    <!-- M: Option menu change string: Bookmarks -> Bookmarks/History -->
+    <string name="bookmarks_history">Kirjanmerkit/Historia</string>
+
+    <string name="close">"Sulje"</string>
+    <string name="pref_content_search_engine_consistency">Hakukoneyhdenmukaisuus</string>
+    <string name="pref_search_engine_unify">Yhdistä hakukone</string>
+    <string name="save_content">"Tallenna"</string>
+    <string name="open_content">"Avaa"</string>
+    <string name="delete">"Poista"</string>
+    <string name="edit">"Muokkaa"</string>
+    <string name="add">"Lisää"</string>
+    <string name="site_navigation_name">"Nimi"</string>
+    <string name="site_navigation_edit_button">"Muokkaa"</string>
+    <string name="save_webpage">"Tallenna"</string>
+    <string name="delete_folder_warning">Poista kansio \"<xliff:g id="bookmark">%s</xliff:g>\"?</string>
+    <string name="contextmenu_savelinkbookmark">Tallenna linkki kirjanmerkkinä</string>
+    <string name="download_path_unavailable_dlg_title">Lataushakemisto ei käytettävissä</string>
+    <string name="download_path_unavailable_dlg_msg">Mukauta selaimen lataushakemistoa</string>
+    <string name="home">Koti</string>
+    <string name="option">Valinta</string>
+    <string name="minimize">Pienennä</string>
+    <string name="quit">Poistu</string>
+    <string name="pref_download_title">Latausasetukset</string>
+    <string name="pref_extras_set_download_directory_title">Aseta lataushakemisto</string>
+    <string name="permlab_readHomepage">lue kotisivu selaimessa</string>
+    <string name="permdesc_readHomepage">Antaa sovelluksen lukea kotisivutiedot selaimessa ilman sinun toimenpiteitäsi.</string>
+    <string name="permlab_writeHomepage">muokkaa kotisivua selaimessa</string>
+    <string name="permdesc_writeHomepage">Antaa sovelluksen muokata kotisivutietoja selaimessa ilman sinun toimenpiteitäsi.</string>
+    <string name="duplicated_bookmark">Kaksinkertainen kirjanmerkki</string>
+    <string name="duplicated_bookmark_warning">Kirjanmerkillä on sama nimi tai sijainti on jo olemassa. Korvataanko?</string>
+    <string name="duplicated_folder_warning">Saman niminen kansio on jo olemassa.</string>
+    <string name="pref_search_engine_unify_summary">Ota hakukoneen muutos käyttöön QuickSearchBox-sovelluksessa</string>
+    <string name="download_or_open_content">Minkä toiminnan valitset?</string>
+    <string name="no_voice_search_alert_dialog_title">Äänihaku</string>
+    <string name="no_voice_search_alert_dialog_msg">Äänihaku ei ole käytettävissä, koska äänihakusovellusta ei ole. Asenna se ensin.</string>
+    <string name="delete_site_navigation_msg">Poistetaanko tämä kohde?</string>
+    <string name="site_navigation_address">Osoite</string>
+    <string name="website_needs_title">"Web-sivustolla on oltava nimi."</string>
+    <string name="website_needs_url">"Web-sivustolla on oltava sijainti."</string>
+    <string name="site_navigation_cannot_save_url">Tämä URL ei voi olla web-sivusto.</string>
+    <string name="add_site_navigation">Add website</string>
+    <string name="edit_site_navigation">Muokkaa sivuston navigointia</string>
+    <string name="duplicate_site_navigation_url">Tämä URL on jo olemassa.</string>
+    <string name="max_input_browser_search">Syötteesi maksimiraja on saavutettu.</string>
+    <string name="max_input_browser_search_title">Syötteen raja</string>
+    <string name="max_input_browser_search_button">"OK"</string>
+    <string name="save_bookmark">"Tallenna kirjanmerkkeihin"</string>
+    <string name="tabs">"Sarkain"</string>
+    <string name="open_saved_page_failed">Tallennettua sivua ei voi avata.</string>
+    <!-- M: add for save page -->
+    <string name="saved_page_failed">Web-sivun tallennus epäonnistui.</string>
+    <string name="saved_page_complete">Lataus valmis.</string>
+    <string name="saved_page_fail">"Tallennus epäonnistui "</string>
+    <string name="create_folder_fail">Ei voi luoda tallenna sivu -kansiota</string>
+    <string name="saving_page">Web-sivun tallennus</string>
+    <string name="duplicate_site_navigation_title">Tämä otsikko on jo käytössä.</string>
+    <string name="need_login_email">Rekisteröi ensin sähköpostitilisi.</string>
+    <string name="folder_needs_title">"Kansiolla on oltava nimi."</string>
+    <string name="denied_required_permission">Käyttöoikeudet kielletty. Voit muuttaa ne kohdassa Asetukset &gt; Sovellukset.</string>
+</resources>

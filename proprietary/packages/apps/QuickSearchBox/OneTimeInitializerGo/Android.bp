@@ -1,0 +1,12 @@
+
+android_app {
+    name: "OneTimeInitializerGo",
+    overrides: [
+        "OneTimeInitializer",
+    ],
+    platform_apis: true,
+    static_libs: [
+        "android-common",
+    ],
+}
+

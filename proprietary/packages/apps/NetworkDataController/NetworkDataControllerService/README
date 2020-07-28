@@ -1,0 +1,18 @@
+WHAT IT DOES?
+=============
+CTA feature , it controls all apps' permission to access network include wlan and cellualar data.
+This is the service part. will run persistent and can't be killed.
+
+
+HOW IT WAS BUILT?
+==================
+It's dependent on the MtkIpConnectivityMetrics and mtk netdagent.
+
+HOW TO USE IT?
+==============
+1) enter Settings --- > Network & internet--- > Data usage ---> Overflow menu ----> Network data
+control , set apps' permission.
+2) launch the app use network , if the app requires some network permissions , will show
+notification dialog.
+
+All the source code of this module were written by MediaTek co..

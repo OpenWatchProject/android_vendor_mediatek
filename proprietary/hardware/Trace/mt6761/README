@@ -1,0 +1,25 @@
+Usage:
+  project.cmm
+    - replace with your project name here (for symbol path)
+  preloader.cmm
+    - for Preloader debug usage
+  lk.cmm
+    - for LK debug usage
+  kernel.cmm
+    - for Kernel debug usage with CVD
+  kernel_singlecore.cmm
+    - for Kernel debug usage with Trace32 (before smp_cpus_done function)
+  kernel_attach_multicore.cmm
+    - for Kernel debug usage with Trace32 (after smp_cpus_done function)
+
+Note:
+  1. Disable MCDI feature to avoid being stuck in Kernel
+    - Modify function mcdi_status_init() in kenrel-4.9/drivers/misc/mediatek/base/power/mcdi/mt6761/mtk_mcdi_plat.c
+
+        set_mcdi_enable_status(false);
+
+  2. Disable CONFIG_RANDOMIZE_BASE Kconfig in 64-bit Kernel for matching with Kernel symbols
+
+  3. How to use Trace32 to debug Kernel
+    a. run kernel_singlecore.cmm first
+    b. run kenrel_attach_multicore.cmm when breaking at smp_cpus_done function

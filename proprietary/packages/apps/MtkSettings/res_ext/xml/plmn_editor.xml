@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:settings="http://schemas.android.com/apk/res-auto"
+        android:title="@string/plmn_settings">
+    <Preference
+        android:title="@string/plmn_network_id"
+        android:dialogTitle="@string/plmn_network_id"
+        android:key="plmn_network_id"
+        android:persistent="false"
+        />
+    <MultiSelectListPreference
+        android:title="@string/plmn_network_type"
+        android:key="plmn_network_type"
+        android:entries="@array/plmn_network_type_entries"
+        android:entryValues="@array/plmn_network_type_values"
+        android:persistent="false"
+        style="@style/SettingsMultiSelectListPreference"
+        />
+</PreferenceScreen>

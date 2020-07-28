@@ -1,0 +1,28 @@
+Library of MTK TSF HW User Interface driver.
+
+This library is pre-built by MediaTek internal.
+
+
+WHAT IT DOES?
+=============
+libmtkcam_tsf.so provides a interface to access Mediatek TSF HW. The interface includes virtual and physical tsf interface to access the TSF HW.
+It will interact with user driver(tsf_drv.cpp) and kernel driver(camera_tsf.c) throught system call. It provides the bridage to access TSF HW when the user who is belong to user space want to access TSF HW.
+Besides, you can wait for hw frame done signal using this interface.
+Without this, MTK TSF HW will not work!!
+
+HOW IT WAS BUILT?
+==================
+It needs the following library from AOSP:
+1.  liblog.so
+2.  libcutils.so
+
+All source/dependency modules of this module are already put in
+'vendor\mediatek\proprietary\hardware\mtkcam\drv\src\tsf\1.0' folder.
+
+HOW TO USE IT?
+==============
+
+Provide api for user who is belong to user space to control MTK TSF HW.
+all api interface are at (vendor\mediatek\proprietary\hardware\mtkcam\drv\src\tsf\1.0)
+
+All the source code of this library were written by MediaTek co..

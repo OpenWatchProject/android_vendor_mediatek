@@ -1,0 +1,15 @@
+service atcid-daemon-e /vendor/bin/atcid
+    interface vendor.mediatek.hardware.atci@1.0::IAtcid default
+    class hal
+    class core
+    socket adb_atci_socket stream 660 radio system
+    user root
+    group radio system
+    disabled
+    oneshot
+
+on property:ro.build.type=eng
+start atcid-daemon-e
+
+on property:sys.boot_completed=1
+setprop vendor.mtk.atci.boot_completed 1

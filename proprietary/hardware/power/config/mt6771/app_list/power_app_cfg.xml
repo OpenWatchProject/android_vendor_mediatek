@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- The source code provided herein is for optimizing power and performance of gaming software and
+certain applications (e.g. Sina Weibo, QQ) only and should not be used and/or included in any
+software that is unrelated to enhancing end-user experience. -->
+<WHITELIST>
+    <PerfService>
+        <Package name="com.imangi.templerun2">
+            <Activity name="Common">
+                <PERF_RES_SCHED_BOOST_VALUE_TA Param1="5"/>
+            </Activity>
+        </Package>
+        <Package name="com.estrongs.android.pop.pro">
+            <Activity name="Common">
+                 <PERF_RES_SCHED_PLUS_DOWN_THROTTLE_NS Param1="1000000"/>
+                 <PERF_RES_SCHED_PLUS_UP_THROTTLE_NS Param1="0"/>
+                 <PERF_RES_IO_BLKDEV_READAHEAD Param1="512"/>
+             </Activity>
+        </Package>
+        <Package name="com.tencent.tmgp.sgame">
+            <Activity name="Common">
+                <PERF_RES_POWERHAL_WHITELIST_APP_LAUNCH_TIME_COLD Param1="25"/>
+                <PERF_RES_FPS_FBT_FLOOR_BOUND Param1="1"/>
+                <PERF_RES_FPS_FBT_KMIN Param1="10"/>
+                <PERF_RES_THERMAL_POLICY Param1="8"/>
+                <PERF_RES_DRAM_CM_MGR Param1="1"/>
+                <PERF_RES_GPU_GED_MARGIN_MODE Param1="110"/>
+                <PERF_RES_FPS_FPSGO_MARGIN_MODE Param1="1"/>
+                <PERF_RES_FPS_EARA_THERMAL_ENABLE Param1="1"/>
+            </Activity>
+        </Package>
+        <Package name="com.tencent.tmgp.sgamece">
+            <Activity name="Common">
+                <PERF_RES_POWERHAL_WHITELIST_APP_LAUNCH_TIME_COLD Param1="25"/>
+                <PERF_RES_FPS_FBT_FLOOR_BOUND Param1="1"/>
+                <PERF_RES_FPS_FBT_KMIN Param1="10"/>
+                <PERF_RES_THERMAL_POLICY Param1="8"/>
+                <PERF_RES_DRAM_CM_MGR Param1="1"/>
+                <PERF_RES_GPU_GED_MARGIN_MODE Param1="110"/>
+                <PERF_RES_FPS_FPSGO_MARGIN_MODE Param1="1"/>
+                <PERF_RES_FPS_EARA_THERMAL_ENABLE Param1="1"/>
+            </Activity>
+        </Package>
+        <Package name="my.beautyCamera">
+            <Activity name="Common">
+                <PERF_RES_THERMAL_POLICY Param1="8"/>
+            </Activity>
+        </Package>
+        <Package name="com.tencent.mobileqq">
+            <Activity name="Common">
+                <PERF_RES_THERMAL_POLICY Param1="8"/>
+            </Activity>
+        </Package>
+        <Package name="air.tv.douyu.android">
+            <Activity name="Common">
+                <PERF_RES_THERMAL_POLICY Param1="8"/>
+            </Activity>
+        </Package>
+        <Package name="com.meitu.makeup">
+            <Activity name="Common">
+                <PERF_RES_THERMAL_POLICY Param1="8"/>
+            </Activity>
+        </Package>
+        <Package name="com.netease.ko">
+            <Activity name="Common">
+                <PERF_RES_THERMAL_POLICY Param1="8"/>
+            </Activity>
+        </Package>
+        <Package name="com.netease.hyxd">
+            <Activity name="Common">
+                <PERF_RES_THERMAL_POLICY Param1="8"/>
+                <PERF_RES_GPU_GED_MARGIN_MODE Param1="110"/>
+                <PERF_RES_FPS_FPSGO_MARGIN_MODE Param1="1"/>
+                <PERF_RES_FPS_FBT_RESCUE_F Param1="100"/>
+                <PERF_RES_FPS_FBT_RESCUE_PERCENT Param1="50"/>
+                <PERF_RES_FPS_FBT_ULTRA_RESCUE Param1="1"/>
+                <PERF_RES_FPS_FBT_SHORT_RESCUE_NS Param1="16666666"/>
+                <PERF_RES_FPS_FBT_MIN_RESCUE_PERCENT Param1="50"/>
+                <PERF_RES_FPS_FBT_BOOST_TA Param1="1"/>
+            </Activity>
+        </Package>
+        <Package name="com.netease.mrzh">
+            <Activity name="Common">
+                <PERF_RES_THERMAL_POLICY Param1="8"/>
+                <PERF_RES_GPU_GED_MARGIN_MODE Param1="110"/>
+                <PERF_RES_FPS_FPSGO_MARGIN_MODE Param1="1"/>
+            </Activity>
+        </Package>
+        <Package name="com.maimiao.live.tv">
+            <Activity name="Common">
+                <PERF_RES_THERMAL_POLICY Param1="8"/>
+            </Activity>
+        </Package>
+        <Package name="com.tencent.tmgp.cf">
+            <Activity name="Common">
+                <PERF_RES_THERMAL_POLICY Param1="8"/>
+                <PERF_RES_GPU_GED_MARGIN_MODE Param1="110"/>
+                <PERF_RES_FPS_FPSGO_MARGIN_MODE Param1="1"/>
+            </Activity>
+        </Package>
+        <Package name="com.tencent.tmgp.pubgmhd">
+            <Activity name="Common">
+                <PERF_RES_THERMAL_POLICY Param1="8"/>
+                <PERF_RES_GPU_GED_MARGIN_MODE Param1="110"/>
+                <PERF_RES_FPS_FPSGO_MARGIN_MODE Param1="1"/>
+            </Activity>
+        </Package>
+        <Package name="com.tencent.tmgp.pubgm">
+            <Activity name="Common">
+                <PERF_RES_THERMAL_POLICY Param1="8"/>
+                <PERF_RES_GPU_GED_MARGIN_MODE Param1="110"/>
+                <PERF_RES_FPS_FPSGO_MARGIN_MODE Param1="1"/>
+            </Activity>
+        </Package>
+        <Package name="com.miHoYo.bh3twmycard">
+            <Activity name="Common">
+                <PERF_RES_THERMAL_POLICY Param1="8"/>
+            </Activity>
+        </Package>
+    </PerfService>
+</WHITELIST>

@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+/* //device/apps/common/assets/res/any/strings.xml
+**
+** Copyright 2006, The Android Open Source Project
+**
+** Licensed under the Apache License, Version 2.0 (the "License");
+** you may not use this file except in compliance with the License.
+** You may obtain a copy of the License at
+**
+**     http://www.apache.org/licenses/LICENSE-2.0
+**
+** Unless required by applicable law or agreed to in writing, software
+** distributed under the License is distributed on an "AS IS" BASIS,
+** WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+** See the License for the specific language governing permissions and
+** limitations under the License.
+*/
+ -->
+
+<resources xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <!-- MTK new add Strings -->
+    <string name="badPin2">"您輸入的舊 PIN2 不正確。"</string>
+    <string name="badPuk2">"您輸入的 PUK2 不正確。"</string>
+    <string name="checkPwdLen">"輸入4到8位數字的密碼。"</string>
+    <string name="pinNotEnabled">"變更PIN碼前，請先啟用PIN功能。"</string>
+    <string name="puk1Blocked">"PIN已鎖定。"</string>
+    <string name="puk2Blocked">"PIN2已鎖定。"</string>
+    <string name="fdnFailMmi">"固定撥號檢查時發生錯誤。"</string>
+    <string name="callBarringFailMmi">"通話限制時發生錯誤。"</string>
+    <string name="Pin2Mmi">"變更PIN2碼"</string>
+    <string name="PukMmi">"解鎖PIN碼"</string>
+    <string name="Puk2Mmi">"解鎖PIN2碼"</string>
+    <string name="serviceProvisioned">服務已提供。</string>
+    <string name="serviceUnknown">"未知的服務狀態。"</string>
+    <string name="cfServiceNotForwarded">"未轉接"</string>
+
+    <string name="invalidPuk">"輸入 8 個數字。"</string>
+
+    <string name="invalid_imei">"無效的IMEI"</string>
+    <string name="same_imei">"相同的IMEI"</string>
+
+    <string name="sim_close">"SIM 卡關閉"</string>
+
+    <!-- Operator name mapping table -->
+    <string name="oper_long_46000">中國移動</string>
+    <string name="oper_long_46001">中國聯通</string>
+    <string name="oper_long_46003">中國電信</string>    
+    <string name="oper_long_46601">遠傳電信</string>
+    <string name="oper_long_46692">中華電信</string>
+    <string name="oper_long_46697">台灣大哥大</string>
+
+    <string name="serviceClassVideo">影片</string>
+
+  <string name="free_memory_btn">"釋放記憶體"</string>
+
+  <string name="contact_widget_loading">載入中\u2026</string>
+
+   <!-- add new style for mtk streaming video player start -->
+   <string name="media_controller_buffering">"緩衝中 %d%%..."</string>
+   <string name="media_controller_live">"即時串流"</string>
+   <string name="media_controller_playing">"播放中"</string>
+   <string name="media_controller_connecting">"連線中..."</string>
+
+   <string name="VideoView_error_text_bad_file">"檔案發生錯誤，無法播放此影片。"</string>
+   <string name="VideoView_error_text_cannot_connect_to_server">"無法與伺服器連線。"</string>
+   <string name="VideoView_error_text_type_not_supported">"不支援此媒體檔案類型。"</string>
+   <string name="VideoView_error_text_drm_not_supported">"此影片受數位版權管理 (DRM) 保護，因此無法播放。 "</string>
+   <string name="VideoView_error_text_invalid_connection">"連線無效 (403 禁止)"</string>
+   <!-- add new style for mtk streaming video player end -->
+
+   <!-- added new string for SearchDialog, used to indicate WikiPedia--> 
+
+    <!-- support TextView undo tool bar -->
+
+   <string name="new_sim">SIM 卡</string>
+
+    <!-- support RecipientsView recipient bar -->
+
+    <string name="delete">刪除</string>
+
+   <!-- string for gemini enhancement start-->
+
+   <string name="searching_simcard">正在偵測…</string>
+
+    <!-- string for gemini enhancement end-->
+
+    <!-- For the unlock screen, Information message shown in dialog when user has too many failed attempts -->
+
+     <!-- add for drm start -->
+    <string name="drm_protection_status">保護狀態：</string>
+    <string name="drm_can_forward">可轉寄。</string>
+    <string name="drm_can_not_forward">無法轉寄。</string>
+    <string name="drm_no_limitation">無限制。</string>
+    <string name="drm_no_license">無可用的 DRM 授權。</string>
+    <string name="drm_begin">開始：</string>
+    <string name="drm_end">結束：</string>
+    <string name="drm_use_left">剩餘次數：</string>
+    <string name="drm_protectioninfo_renew">更新</string>
+    <string name="drm_protectioninfo_title">保護資訊</string>
+    <string name="drm_licenseacquisition_title">取得 DRM 授權</string>
+    <string name="drm_licenseacquisition_message">%1$s 沒有可用的 DRM 授權。按下 [更新] 按鈕可取得 DRM 授權。</string>
+    <string name="drm_toast_license_expired">DRM 授權已過期。</string>
+    <string name="drm_forwardforbidden_title">禁止轉寄。</string>
+    <string name="drm_forwardforbidden_message">無法轉寄部分受保護的檔案。</string>
+    <string name="drm_license_install_success">DRM 授權安裝成功。</string>
+    <string name="drm_license_install_fail">DRM 授權安裝失敗。</string>
+    <string name="drm_secure_timer_title">DRM 資訊安全時鐘無效</string>
+    <string name="drm_secure_timer_message">無法使用受 DRM 保護的檔案。請確認數據連線是否可用。</string>
+    <string name="drm_consume_title">使用 DRM 權限</string>
+    <string name="drm_consume_message">此動作需使用 DRM 權限才能執行。</string>
+
+    <string name="drm_first_time_use">這是首次使用，</string>
+    <string name="drm_use_now">現在使用？</string>
+    <string name="drm_consume_interval">該檔案將在開始使用後%1$s內有效，</string>
+    <string name="drm_effective_duration">維持有效時間：</string>
+    <string name="drm_expire_dialog_future">該文件有效期為</string>
+    <string name="validity_period">"有效期間："</string>
+    <!-- add for drm end -->
+
+    <string name="url_dialog_choice_title">資訊</string>
+    <string name="url_dialog_choice_message">將打開瀏覽器，是否繼續？</string>
+
+    <string name="deleteMail">備份郵件並且釋放空間</string>  
+    <!--     add for alarm boot           -->
+     <!-- Default label to display for an alarm -->
+    <!-- button to Dismiss and power on device -->
+
+    <!-- button to Dismiss and power off device -->
+
+    <string name="storage_withsd">手機儲存空間不足，請釋放部分空間或到系統設定更改預設儲存位置。</string>
+    <string name="storage_withoutsd">手機儲存空間不足，請釋放部分空間或插入SD卡。</string>
+    <string name="storage_sd">SD卡剩餘空間不足，請釋放部分空間或到系統設定中更改預設儲存位置。</string> 
+
+    <string name="gps_time_sync_fail_str">使用 GPS 提供時間失敗</string>
+
+    <string name="usb_ums_notification_title">已視為 USB 儲存裝置使用</string>
+    <string name="usb_charging_notification_title">僅限 USB 充電使用</string>
+
+    <!-- Shown when the phone does not download calibration data -->
+
+    <string name="invalid_card">無效卡</string>     
+
+    <string name="sim_missing_slot1">插槽1：未偵測到SIM卡</string>  
+    <string name="sim_missing_slot2">插槽2：未偵測到SIM卡</string>
+    <string name="sim_missing_slot3">插槽3：未偵測到SIM卡</string>
+    <string name="sim_missing_slot4">插槽4：未偵測到SIM卡</string>  
+    <string name="sim_missing">未偵測到SIM卡</string>  
+    <string name="sim_missing_detail">請檢查SIM卡是否已經正確插入插槽</string> 
+    <string name="sim_missing_slot1_card">插槽1：未偵測到卡片</string>  
+    <string name="sim_missing_slot2_card">插槽2：未偵測到卡片</string>  
+    <string name="sim_missing_card">未偵測到卡片</string>  
+    <string name="sim_missing_detail_card">請檢查卡片是否已經正確插入插槽</string> 
+
+    <!-- Cell conn service string [START] -->
+    <string name="confirm_flight_mode_title">飛航模式已啟用</string>
+    <string name="confirm_flight_mode_msg">使用此號碼前，請先關閉飛航模式。</string>
+    <string name="confirm_radio_title">SIM 已關閉</string>
+    <string name="confirm_radio_msg">使用此號碼前，請先啟動此 SIM 卡。</string>
+    <string name="confirm_flight_mode_radio_title">飛航模式已啟用且SIM 已關閉</string>    
+    <string name="confirm_flight_mode_radio_msg">使用此號碼前，請先關閉飛航模式並啟動此 SIM 卡。</string>
+    <string name="confirm_unlock_title">SIM 已鎖定</string>
+    <string name="confirm_unlock_msg">您要使用的 SIM 卡目前鎖定中，請先解鎖。</string>
+    <string name="confirm_roaming_title">漫遊警告</string>
+    <string name="confirm_roaming_msg">您要使用的 SIM 卡正處於漫遊狀態，是否要繼續？</string>
+    <string name="confirm_noimsreg_for_ctvolte_title"> </string>
+    <string name="confirm_noimsreg_for_ctvolte_msg">中國電信當前無VoLTE服務，該卡無法正常通話，是否將該卡VoLTE功能關閉?</string>
+
+    <string name="confirm_button_ok">確定</string>
+    <string name="confirm_button_cancel">取消</string>
+    <string name="confirm_button_unlock">解鎖</string>
+    <string name="confirm_button_turn_off">關閉</string>
+    <string name="confirm_button_turn_on">啟動</string>
+    <string name="confirm_button_yes">是</string>
+    <string name="confirm_button_no">否</string>
+    <!-- Cell conn service string [END] -->
+
+    <!-- Cell conn service string for UIM [START] -->
+    <string name="confirm_flight_mode_radio_title_UIM">飛航模式已啟用且UIM 已關閉</string>
+    <string name="confirm_flight_mode_radio_msg_UIM">使用此號碼前，請先關閉飛航模式並啟動此 UIM 卡。</string>
+    <string name="confirm_radio_title_UIM">UIM 已關閉</string>
+    <string name="confirm_radio_msg_UIM">使用此號碼前，請先啟動此 UIM 卡。</string>
+    <string name="confirm_unlock_title_UIM">UIM 已鎖定</string>
+    <string name="confirm_unlock_msg_UIM">您要使用的 UIM 卡目前鎖定中，請先解鎖。</string>
+    <!-- Cell conn service string for UIM [END] -->
+
+    <!-- add for webview find -->
+
+    <string name="tethered_notification_message_for_hotspot">
+        <xliff:g id="connected">%1$d</xliff:g>已連接，
+        <xliff:g id="blocked">%2$d</xliff:g> 已封鎖
+    </string>
+    <string name="tethered_notification_message_bandwidth_set">頻寬已設置</string>
+    <string name="default_wallpaper_name">"預設"</string> 
+
+    <!-- voice unlock start -->
+    <!-- voice unlock end -->
+    <!-- voice ui end -->
+
+    <string name="wifi_display_bt_hdmi_off_wfd_on">當您開啟無線螢幕分享時，HDMI將被關閉。您要繼續嗎？</string> 
+    <string name="wifi_display_wfd_off_hdmi_on">當您開啟HDMI時，無線螢幕分享將被關閉。您要繼續嗎？</string> 
+
+    <string name="wifi_display_wifi_p2p_disconnect_wfd_connect">當您連接到無線螢幕分享，目前的WLAN連線將被切斷。您要繼續嗎？</string>
+    <string name="wifi_display_unstable_connection">連線不穩</string>
+    <string name="wifi_display_connection_is_not_steady">目前的無線螢幕連線不穩。</string>
+    <string name="wifi_display_unstable_suggestion">目前的無線螢幕連線不穩。請靠近顯示裝置。</string>
+    <string name="wifi_display_reconnect">重新連線</string>
+    <string name="wifi_display_disconnect_then_reconnect">無線螢幕斷線。您要重新連線嗎?</string> 
+    <string name="wifi_display_disconnected">無線螢幕斷線。</string>
+    <string name="wifi_wps_failed_overlap">"偵測到另一個 WPS 工作階段，請稍候再試。"</string>
+    <string name="wifi_p2p_frequency_conflict_message">"手機與 <xliff:g id="DEVICE_NAME">%1$s</xliff:g> 連線期間將暫時中斷 Wi-Fi 連線 (只有改變當前無線基地台頻帶至<xliff:g id="oper_freq">%2$s</xliff:g>才能同時連線)"</string>
+    <string name="wifi_display_wfd_and_wifi_are_turned_on">已打開無線螢幕和Wi-Fi。</string>
+    <string name="wifi_display_sound_path_reminder">多媒體音效將不會從耳機傳出。</string>  
+    <string name="wifi_display_change_resolution_reminder">變更解析度將使無線螢幕自動重新連線。</string>  
+    <string name="wifi_display_do_not_remind_again">不再提示。</string>
+    <string name="wifi_display_wifi_ap_affects_quality">目前的Wi-Fi AP可能會影響無線螢幕品質。</string>
+    <string name="wifi_display_wait_connection">正在等待其他設備發起連接邀請。</string>
+    <string name="wifi_display_confirm_connection">邀請建立連接。</string>
+    <string name="wifi_display_build_connection">正在建立連接。</string>
+    <string name="wifi_display_connected_to_wifi_network">已連接到WLAN網路 <xliff:g id="wifi_ap_name">%1$s</xliff:g>。</string>
+    <string name="wifi_display_wifi_network_disconnected">WLAN網路 <xliff:g id="wifi_ap_name">%1$s</xliff:g> 已斷開連接。</string>
+    <string name="wifi_display_channel_confliction">通道衝突</string>
+    <string name="wifi_display_wifi_network_cannot_coexist">當前WLAN網路無法和投射屏幕連接共存。</string>
+
+    <!-- MountService start -->
+    <string name="sdcard_ready_title">SD卡已準備好</string>
+    <string name="sdcard_select_default_path">是否需要變更預設儲存裝置？</string>
+    <string name="sdcard_default_path_change">預設儲存裝置已變更。</string>
+    <string name="usb_storage_ready_title">外接 USB 儲存裝置已可使用</string>
+    <!-- MountService end -->
+    <!-- Add for AT&T to show toast when pass pin/puk lock -->
+
+		<!-- msensor toast text -->
+
+    <string name="usb_autorun_cdrom_notification_title">接上作為自動執行光碟</string>
+
+    <!-- This is CT customization info for APN -->
+    <string name="ct_net_name">"中國電信互聯網(CTNET)"</string>
+    <string name="ct_wap_name">"中國電信互聯星空(CTWAP)"</string> 
+
+    <string name="hdmi_notification_title">HDMI 纜線已連接</string>  
+    <string name="hdmi_notification_content">按一下即可設定 HDMI</string>
+    <string name="hdmi_hdvideo_toast">﻿﻿HDMI無法播放4K視訊，即將中斷連線</string>
+    <string name="hdmi_mutex_call_content">很抱歉，HDMI已因目前電話來電而停止。</string>
+    <string name="hdmi_audio_output">音訊輸出</string>
+    <string name="hdmi_audio_output_stereo">立體聲</string>
+    <string name="hdmi_audio_output_multi_channel">多通道</string>
+
+    <!-- VolumePanel -->
+
+    <!-- For CS domain network not registered, PS is registered scenario -->
+    <string name="data_conn_only">僅限數據連線</string>
+
+    <!-- Low Storage -->
+    <string name="aerr_application_lowstorage">內部儲存已滿，應用程式已終止。請釋放一些空間後再試。</string>
+    <string name="aerr_process_lowstorage">內部儲存已滿，程式已終止。請釋放一些空間後再試。</string>
+    <string name="low_internal_storage_view_title">內部儲存已滿</string>
+    <string name="deleteMails">刪除郵件</string>
+    <string name="low_storage_warning_message">請釋放一些空間，否則可能造成應用程式意外關閉。</string>
+
+    <!-- KK translation task -->
+    <string name="virtual_sim_on_slot1">虛擬 SIM 1 開啟</string>
+    <string name="virtual_sim_on_slot2">虛擬 SIM 2 開啟</string>
+    <string name="virtual_sim_on_slot3">虛擬 SIM 3 開啟</string>
+    <string name="virtual_sim_on_slot4">虛擬 SIM 4 開啟</string>
+    <string name="virtual_sim_on">虛擬 SIM 開啟</string>
+    <string name="RejectCauseTitle">網路被拒原因</string>
+    <string name="MMRejectCause2">SIM 卡未提供 MM #2</string>
+    <string name="MMRejectCause3">SIM 遭禁止 MM #3</string>
+    <string name="MMRejectCause5">撥號失敗 MM #5</string>
+    <string name="MMRejectCause6">不允許電話 MM #6</string>
+    <string name="MMRejectCause13">僅限 SOS／緊急通話</string>
+
+    <string name="press_color_to_apply">按 Color（顏色）進行套用</string>
+    <string name="oper_long_99998">Android1</string>
+    <string name="oper_long_99999">Android</string>
+    <string name="oper_short_46000">中國移動</string>
+    <string name="oper_short_46001">CU-GSM</string>
+    <string name="oper_short_46003">中國電信</string>
+    <string name="oper_short_46601">FET</string>
+    <string name="oper_short_46692">中華電信</string>
+    <string name="oper_short_46697">TWN</string>
+    <string name="oper_short_99997">AD1</string>
+    <string name="oper_short_99999">AD</string>
+
+    <string name="description_direction_right">"向右滑動可關閉鈴響"</string>
+    <string name="description_direction_left">"向左滑動以啟動貪睡"</string>
+    <string name="description_direction_up">"向上滑動可關閉鈴響"</string>
+    <string name="description_direction_down">"向下滑動以啟動貪睡"</string>
+    <string name="headset_pin_recognition">您的耳機無法與手機相容，請改用別的耳機。</string>
+
+    <string name="Special_Card_Type_Title_Lte_Not_Available">無 LTE 網路可用。</string>
+    <string name="Suggest_To_Change_USIM">請改用 4G SIM 卡。</string>    
+
+    <!-- For Networklist add CU String forbidden -->
+    <string name="network_forbidden">禁用</string>
+
+    <string name="media_info_audio_not_supported">"無法播放音頻。"</string>
+    <string name="media_info_video_not_supported">"不支援此影片。"</string>
+    <string name="save_password_label">"確認"</string>
+    <string name="save_password_message">"是否記住此密碼？"</string>
+    <string name="save_password_notnow">"現在不要"</string>
+    <string name="save_password_remember">"記住"</string>
+    <string name="save_password_never">"永不"</string>
+
+    <string name="Default_Account_Selection_Content">預設帳號挑選</string>
+
+    <string name="account_always_ask_title">"先詢問我"</string>
+    <string name="permlab_wake_device_sensorhub" product="tablet">喚醒平板電腦</string>
+    <string name="permlab_wake_device_sensorhub" product="default">喚醒手機</string>
+    <string name="permdesc_wake_device_sensorhub" product="tablet">許可 app 經感測器樞紐喚醒待機狀態的平板電腦。</string>
+    <string name="permdesc_wake_device_sensorhub" product="default">許可 app 經感測器樞紐喚醒待機狀態的手機。</string>
+    <string name="lockscreen_pin_too_many_failed_attempts_dialog_message">"您已輸入錯誤的 PIN 碼達  <xliff:g id="NUMBER_0">%d</xliff:g> 次。"\n\n" 請在 <xliff:g id="NUMBER_1">%d</xliff:g> 秒後再試一次。"</string>
+    <string name="lockscreen_password_too_many_failed_attempts_dialog_message">"您已輸入錯誤的密碼達 <xliff:g id="NUMBER_0">%d</xliff:g> 次。"\n\n" 請在 <xliff:g id="NUMBER_1">%d</xliff:g> 秒後再試一次。"</string>
+    <string name="permdesc_receiveCbSms">"允許應用程式接收及處理簡訊廣播服務訊息。惡意應用程式可能會監控您的訊息，或在您查看前將訊息刪除。"</string>
+    <string name="permdesc_receiveDmRegisterSms">允許應用程式接收並處理 DM 註冊簡訊。DM APP 以外的其他應用程式都不應使用此設定</string>
+    <!-- CT customization -->
+    <string name="roaming_message">"您目前處於國際漫遊狀態，移動數據已打開，請注意當地資費。"</string>
+    <string name="known">"已確認"</string>
+</resources>

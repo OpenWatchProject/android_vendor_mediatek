@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2008 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:persistent="false"
+    android:orderingFromXml="true">
+    <com.mediatek.nfc.NfcDescriptionPreference
+        android:title="@string/nfc_quick_toggle_summary"
+        android:selectable="false"/>
+    <PreferenceCategory
+        android:title="@string/nfc_p2p_mode"/>
+        <SwitchPreference
+            android:key="nfc_p2p_mode"
+            android:title="@string/nfc_p2p_mode"
+            android:summary="@string/nfc_p2p_mode_summary"/>
+        <Preference
+            android:key="nfc_android_beam"
+            android:title="@string/android_beam_settings_title"
+            android:dependency="nfc_p2p_mode"/>
+
+    <PreferenceCategory
+        android:title="@string/nfc_tag_mode_category"/>
+        <SwitchPreference
+            android:key="nfc_rw_tag"
+            android:title="@string/nfc_rw_tag_title"
+            android:summary="@string/nfc_rw_tag_summary"/>
+
+    <PreferenceCategory
+        android:key="nfc_card_emulation_category"
+        android:title="@string/nfc_card_emulation_category_title">
+        <Preference
+            android:key="nfc_card_emulation"
+            android:title="@string/nfc_card_emulation"/>
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:title="@string/nfc_payment_settings_title"/>
+        <SwitchPreference
+            android:key="nfc_hce_pay"
+            android:title="@string/nfc_payment_settings_title"
+            android:summary="@string/nfc_hce_pay_summary"/>
+</PreferenceScreen>

@@ -1,0 +1,157 @@
+// ==============================================================
+// libc_unwind.a
+// ==============================================================
+// Used by libmemunreachable
+cc_library_static {
+
+    name: "libc_unwind",
+
+    arch: {
+        arm: {
+            srcs: [
+                "libdf/libc_unwind/backtrace.cpp",
+                "libdf/libc_unwind/backtrace-helper.cpp",
+                "libdf/libc_unwind/map_info.cpp",
+                "libdf/libc_unwind/ptrace.cpp",
+                "libdf/libc_unwind/arch-arm/backtrace-arm.cpp",
+            ],
+
+            instruction_set: "arm",
+        },
+    },
+
+    srcs: [
+        "libdf/fp_unwind.cpp",
+        "libdf/white_list.cpp",
+    ],
+
+    stl: "libc++_static",
+
+    static_libs: ["libasync_safe"],
+
+    include_dirs: ["bionic/libc"],
+    export_include_dirs: ["libdf"],
+
+    sanitize: {
+        never: true,
+    },
+    native_coverage: false,
+
+    // -Wno-error=format-zero-length needed for gcc to compile.
+    cflags: [
+        "-Wall",
+        "-Werror",
+        "-Wno-error=format-zero-length",
+    ],
+
+}
+
+cc_binary {
+    srcs: [
+        "ubrd_test/ubrd_test.cpp",
+    ],
+
+    shared_libs: [
+        "libc",
+        "libdl",
+        "libcutils",
+        "liblog",
+        "libbase",
+    ],
+
+    include_dirs: [
+        "bionic/libc",
+    ],
+
+    local_include_dirs: ["include"],
+
+    cflags: [
+      "-DWORKAROUND_MALLOC_ITERATE",
+    ],
+
+    name: "ubrd_utest",
+    owner: "mtk",
+    proprietary: true,
+}
+
+// ========================================================
+// libudf.so
+// ========================================================
+cc_library_shared {
+    srcs: [
+        "malloc_debug/recorder.c",
+        "ubrd_core/recorder.c",
+        "ubrd_core/backtrace.cpp",
+        "ubrd_core/sighandler.c",
+        "ubrd_core/dump.c",
+        "mmap_debug/mmap_debug.c",
+        "fdleak_debug/fdleak_debug.cpp",
+        // "pthread_debug/pthread_debug.cpp",
+    ],
+
+    arch: {
+        arm: {
+            srcs: [
+                "unwind/backtrace.c",
+                "unwind/backtrace-helper.c",
+                "unwind/map_info.c",
+                "unwind/ptrace.c",
+                "unwind/arch-arm/backtrace-arm.c",
+            ],
+        },
+	// Added temporarily to build x86 binary for Cuttlestone
+        x86: {
+            srcs: [
+                "unwind/arch-x86/backtrace.c",
+            ],
+        },
+    },
+
+    static_libs: [
+        "libasync_safe",
+    ],
+
+    shared_libs: [
+        "liblog",
+        "libdl",
+        "libbase",
+        "libunwindstack",
+    ],
+
+    cflags: [
+      "-DCORKSCREW_HAVE_ARCH",
+      "-DSELF_UNWIND_NO_GCC",
+      "-fvisibility=hidden",
+      "-Wno-strict-aliasing",
+      "-Wno-null-pointer-arithmetic",
+      "-Werror",
+    ],
+
+    //todo: distinguish mtk internal or customer
+    product_variables: {
+        eng: {
+            cflags: [
+                "-D_MTK_ENG_",
+                // "-D_MTK_PTHREAD_DEBUG_",
+            ],
+        },
+    },
+
+    include_dirs: [
+        "vendor/mediatek/proprietary/external/aee/binary/inc",
+        "system/core/libunwindstack/include"
+    ],
+
+    local_include_dirs: ["include"],
+
+    name: "libudf",
+    vendor_available: true,
+    compile_multilib: "both",
+
+    clang: true,
+    sanitize: {
+        never: true,
+    },
+}
+
+

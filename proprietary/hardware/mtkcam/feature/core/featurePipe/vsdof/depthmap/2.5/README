@@ -1,0 +1,45 @@
+Library of MTK camera depthmap feature pipe
+
+This library is pre-built by MediaTek internal.
+
+
+WHAT IT DOES?
+=============
+This contains MediaTek developed library for camera depthMap feature pipe
+
+HOW IT WAS BUILT?
+==================
+It needs the following library from AOSP:
+- liblog.so
+- libnativewindow.so
+- libutils.so
+- libcutils.so
+- libstdc++.so
+
+
+and the following libs from MediaTek:
+- libcam.halsensor
+- libcam.iopipe
+- libcam_utils
+- libfeature.vsdof.hal
+- libmmsdkservice.feature
+- libgralloc_extra
+- libfeature.face
+- libcam.hal3a.v3
+- libcam.metadata
+
+All source/dependency modules of this module are already put in
+'vendor/mediatek/libs' folder.
+
+HOW TO USE IT?
+==============
+This should not be used directly by an application developer.
+
+include $(TOP)/$(MTK_PATH_SOURCE)/hardware/mtkcam/mtkcam.mk
+LOCAL_C_INCLUDES += $(TOP)/$(MTK_PATH_SOURCE)/hardware/mtkcam/feature/include
+LOCAL_C_INCLUDES += $(TOP)/$(MTK_PATH_SOURCE)/hardware/gralloc_extra/include
+LOCAL_SHARED_LIBRARIES += libutils
+LOCAL_SHARED_LIBRARIES += liblog
+LOCAL_SHARED_LIBRARIES += libmtkcam.featurepipe.bmdepthmap
+
+All the source code of this library were written by MediaTek co..

@@ -1,0 +1,26 @@
+Library of MTK IMS extension interfaces. These interfaces extends the
+original interface.
+
+This library is pre-built by MediaTek internal.
+
+
+WHAT IT DOES?
+=============
+mediatek-im-common.jar contains Mediatek developed ims related
+functionality. Application can use these interfaces to activate the MIMS
+features.
+
+HOW IT WAS BUILT?
+==================
+It needs the following library from AOSP:
+1.  telephony-common.jar
+2.  ims-common.jar
+and the following libs from MediaTek:
+1.  mediatek-ims-common.jar
+
+HOW TO USE IT?
+==============
+Provide api for applications to configure ims feature by different SIMs. Applications
+can call related interface to finish their requirement.
+
+All the source code of this library were written by MediaTek co..

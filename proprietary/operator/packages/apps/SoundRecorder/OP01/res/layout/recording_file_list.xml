@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" 
+    android:splitMotionEvents="false">
+
+    <ListView
+        android:id="@+id/recording_file_list_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/bottomLinearLayout"
+        android:layout_alignParentTop="true" />
+
+    <TextView
+        android:id="@+id/empty_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/divider_img"
+        android:gravity="center"
+        android:text="@string/no_recording_file"
+        android:textDirection="locale"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:visibility="gone" />
+        
+   <ImageView
+         android:src="@android:drawable/divider_horizontal_dark"
+         android:id="@+id/divider_img"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:scaleType="fitXY"
+         android:layout_above="@+id/bottomLinearLayout"/>
+
+    <LinearLayout
+        android:id="@+id/bottomLinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="60dip"
+        android:layout_alignParentBottom="true"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:splitMotionEvents="false" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal" 
+            android:weightSum="2"
+            android:splitMotionEvents="false">
+
+            <ImageButton
+                android:id="@+id/recordButton"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:src="@drawable/record" />
+
+            <ImageButton
+                android:id="@+id/deleteButton"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:src="@drawable/delete"
+                android:visibility="gone" />
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

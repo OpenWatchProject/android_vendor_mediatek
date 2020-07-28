@@ -1,0 +1,19 @@
+on post-fs-data
+    mkdir /data/vendor/doe 0711 root root
+    mkdir /data/vendor/doe/data 0700 root root
+    mkdir /data/vendor/doe/testers 0700 root root
+    mkdir /data/vendor/doe/dexecutor 0700 root root
+    mkdir /data/vendor/doe/results 0755 root root
+
+service dplanner-2-0 /vendor/bin/hw/vendor.mediatek.hardware.dplanner@2.0-service
+    interface vendor.mediatek.hardware.dplanner@2.0::IDPlanner default
+    disabled
+    class hal
+    user root
+    group system
+
+on property:init.svc.zygote=stopping && property:init.svc.dplanner-2-0=running
+    restart dplanner-2-0
+
+on property:init.svc.zygote=restarting && property:init.svc.dplanner-2-0=running
+    restart dplanner-2-0

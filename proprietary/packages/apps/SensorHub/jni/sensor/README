@@ -1,0 +1,32 @@
+JNI Library of engineermode sensor, which contain the interfaces
+to communicate with sensor driver
+
+This library is pre-built by MediaTek internal.
+
+WHAT IT DOES?
+=============
+libem_sensor_jni.so provide jni interface to SensorHub application to
+access native interface of sensor
+
+HOW IT WAS BUILT?
+==================
+It needs the following library from AOSP:
+1. libandroid_runtime
+2. libutils
+3. libui
+4. libcutils
+5. libnativehelper
+
+and the following libs from MediaTek:
+1. libhwm
+
+All source/dependency modules of this module are already put in
+'vendor/mediatek/libs' folder.
+
+HOW TO USE IT?
+==============
+
+provide jni interface to SensorHub to access native interface of sensor
+all api interface are at (vendor/mediatek/proprietary/packages/apps/SensorHub/jni/sensor)
+
+All the source code of this library were written by MediaTek co..

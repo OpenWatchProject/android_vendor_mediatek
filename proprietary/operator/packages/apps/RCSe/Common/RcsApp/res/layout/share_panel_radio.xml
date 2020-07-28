@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <RadioGroup
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/rg_share_dot"
+        android:layout_width="fill_parent"
+        android:layout_height="38dip"
+        android:background="@drawable/ipmsg_below_the_status_bar"
+        android:gravity="center"
+        android:orientation="horizontal" >
+
+        <RadioButton
+            android:id="@+id/rb_dot_first"
+            android:layout_width="6dp"
+            android:layout_height="6dp"
+            android:layout_margin="6dip"
+            android:button="@drawable/radio_selector"
+            android:enabled="false" />
+
+        <RadioButton
+            android:id="@+id/rb_dot_sec"
+            android:layout_width="6dp"
+            android:layout_height="6dp"
+            android:layout_margin="6dip"
+            android:button="@drawable/radio_selector"
+            android:enabled="false" />
+    </RadioGroup>

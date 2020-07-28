@@ -1,0 +1,37 @@
+/*
+ * Copyright (c) 2015-2016 MICROTRUST Incorporated
+ * All rights reserved
+ *
+ * This file and software is confidential and proprietary to MICROTRUST Inc.
+ * Unauthorized copying of this file and software is strictly prohibited.
+ * You MUST NOT disclose this file and software unless you get a license
+ * agreement from MICROTRUST Incorporated.
+ */
+
+package vendor.microtrust.hardware.capi@2.0;
+
+/**
+ * Client Api error codes.
+ */
+enum ErrorCode : int32_t {
+    OK = 0,
+    ERROR_INVALID_INPUT_BLOB = -1,
+    ERROR_INVALID_INPUT_LENGTH = -2,
+    ERROR_OUTPUT_PARAMETER_NULL = -3,
+    ERROR_UNSUPPORTED_COMMAND = -4,
+    ERROR_MEMORY_ALLOCATION_FAILED = -5,
+    ERROR_SECURE_HW_COMMUNICATION_FAILED = -6,
+
+    ERROR_VERSION_MISMATCH = -100,
+    ERROR_UNKNOWN = -1000,
+};
+
+
+/**
+ * Mmap buffer descriptor returned by IStream.createMmapBuffer().
+ * Used by streams opened in mmap mode.
+ */
+struct MmapBufferInfo {
+    memory  sharedMemory;         // mmap memory buffer
+    uint64_t bufferSize;
+};

@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2008 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- When an activity requests a theme with an action bar from its manifest,
+         the activity preview window created by the system process while the
+         real activity is loading will also contain an action bar. Set this to
+         NoActionBar and change the theme in onCreate. -->
+     <style name="ThemeCamera" parent="android:Theme.Material">
+        <item name="android:windowBackground">@android:color/black</item>
+        <item name="panelBackground">@*android:drawable/menu_hardkey_panel_holo_dark</item>
+        <item name="panelMenuListTheme">@*android:style/Theme.Material.CompactMenu</item>
+    </style>
+    <style name="OnScreenHintTextAppearance">
+        <item name="android:textColor">@android:color/primary_text_dark</item>
+        <item name="android:textColorHighlight">#FFFF9200</item>
+        <item name="android:textColorHint">#808080</item>
+        <item name="android:textColorLink">#5C5CFF</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+    <style name="OnScreenHintTextAppearance.Small">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">@android:color/secondary_text_dark</item>
+    </style>
+    <style name="Animation_OnScreenHint">
+        <item name="android:windowEnterAnimation">@anim/on_screen_hint_enter</item>
+        <item name="android:windowExitAnimation">@anim/on_screen_hint_exit</item>
+    </style>
+    <style name="PopupTitleSeparator">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">2dp</item>
+        <item name="android:background">@color/popup_title_color</item>
+    </style>
+    <style name="PanoCustomDialogText">
+        <item name="android:textAppearance">@android:style/TextAppearance.Medium</item>
+    </style>
+    <style name="EffectSettingGrid">
+        <item name="android:layout_marginLeft">@dimen/camera_setting_item_list_margin</item>
+        <item name="android:layout_marginRight">@dimen/camera_setting_item_list_margin</item>
+        <item name="android:paddingBottom">3dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:numColumns">3</item>
+        <item name="android:verticalSpacing">3dp</item>
+        <item name="android:horizontalSpacing">3dp</item>
+        <item name="android:choiceMode">singleChoice</item>
+    </style>
+    <style name="EffectSettingItem">
+        <item name="android:orientation">vertical</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingTop">9dp</item>
+        <item name="android:paddingBottom">9dp</item>
+        <item name="android:paddingLeft">2dp</item>
+        <item name="android:paddingRight">2dp</item>
+        <item name="android:background">@drawable/setting_picker</item>
+    </style>
+    <style name="EffectSettingItemTitle">
+        <item name="android:textSize">@dimen/camera_effect_setting_item_text_size</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingTop">1dp</item>
+    </style>
+    <style name="EffectSettingTypeTitle">
+        <item name="android:textSize">@dimen/camera_effect_setting_type_text_size</item>
+        <item name="android:gravity">left|center_vertical</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:alpha">0.7</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:minHeight">@dimen/camera_effect_setting_type_text_min_height</item>
+        <item name="android:paddingLeft">@dimen/camera_effect_setting_type_text_left_padding</item>
+    </style>
+    <style name="EffectTypeSeparator">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_marginLeft">8dp</item>
+        <item name="android:layout_marginRight">8dp</item>
+        <item name="android:layout_marginBottom">14dp</item>
+        <item name="android:layout_height">2dp</item>
+        <item name="android:background">#2c2c2c</item>
+    </style>
+    <style name="EffectTitleSeparator">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">2dp</item>
+        <item name="android:paddingBottom">4dp</item>
+        <item name="android:background">@android:drawable/divider_horizontal_dark</item>
+    </style>
+    <style name="ReviewControlGroup">
+        <item name="android:orientation">horizontal</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_alignParentLeft">true</item>
+        <item name="android:layout_marginLeft">50dp</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+        <item name="android:background">@drawable/bg_pressed</item>
+    </style>
+    <style name="styleName">
+        <item name="android:gravity">bottom</item>
+        <item name="android:layout_marginRight">80dp</item>
+    </style>
+</resources>

@@ -1,0 +1,17 @@
+ifneq ($(strip $(MSSI_MTK_TC1_COMMON_SERVICE)), yes)
+LOCAL_PATH := $(call my-dir)
+include $(CLEAR_VARS)
+
+LOCAL_MODULE_PATH := $(TARGET_OUT_PRODUCT)/app/MtkGallery2/galleryfeature
+LOCAL_MODULE_TAGS := optional
+
+LOCAL_SRC_FILES := $(LOCAL_PATH)/src
+LOCAL_RESOURCE_DIR += $(LOCAL_PATH)/res
+LOCAL_PACKAGE_NAME := Gallery2Root
+LOCAL_PRODUCT_MODULE := true
+LOCAL_PRIVATE_PLATFORM_APIS := true
+LOCAL_PROGUARD_FLAG_FILES := proguard.flags
+
+include $(BUILD_PACKAGE)
+
+endif

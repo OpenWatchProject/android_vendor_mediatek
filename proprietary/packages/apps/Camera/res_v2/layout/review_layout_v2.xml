@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/frame_layout"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent">
+    <ImageView android:id="@+id/review_image"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:clickable="true"
+        android:focusable="false"
+        android:background="@android:color/black"/>
+       <LinearLayout android:id="@+id/mode_picker"
+        style="@style/ReviewIconGroup">
+        <com.android.camera.v2.ui.RotateImageView
+            android:id="@+id/btn_retake"
+            style="@style/ReviewControlIcon"
+            android:background="@drawable/bg_pressed"
+            android:src="@drawable/ic_retake"/>
+        <com.android.camera.v2.ui.RotateImageView
+            android:id="@+id/btn_play"
+            style="@style/ReviewControlIcon"
+            android:background="@drawable/bg_pressed"
+            android:src="@drawable/ic_play"/>
+        </LinearLayout>
+</FrameLayout>
+

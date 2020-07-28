@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="5dp"
+	    android:paddingTop="5dp"
+        >
+        <TextView
+            android:text="@string/ALS_Value"
+            android:layout_width="0dp"
+            android:layout_height='wrap_content'
+            android:layout_weight="1"
+            android:keepScreenOn="true"
+            android:id="@+id/ALS_Value_name" />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height='wrap_content'
+            android:layout_weight="1"
+            android:id="@+id/ALS_Value_value" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="5dp"
+        >
+        <TextView
+            android:text="@string/PS_Value"
+            android:layout_width="0dp"
+            android:layout_height='wrap_content'
+            android:layout_weight="1"
+            android:id="@+id/PS_Value_name" />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height='wrap_content'
+            android:layout_weight="1"
+            android:id="@+id/PS_Value_value" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="5dp"
+        >
+        <TextView
+            android:text="@string/Target_SSID"
+            android:layout_width="0dp"
+            android:layout_height='wrap_content'
+            android:layout_weight="1"
+            android:id="@+id/Target_SSID_name" />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height='wrap_content'
+            android:layout_weight="1"
+            android:id="@+id/Target_SSID_value" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="5dp"
+        >
+        <TextView
+            android:text="@string/Auto_Connect_RSSI"
+            android:layout_width="0dp"
+            android:layout_height='wrap_content'
+            android:layout_weight="1"
+            android:id="@+id/Auto_Connect_RSSI_name" />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height='wrap_content'
+            android:layout_weight="1"
+            android:id="@+id/Auto_Connect_RSSI_value" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="5dp"
+        >
+        <TextView
+            android:text="@string/Auto_Disconnect_RSSI"
+            android:layout_width="0dp"
+            android:layout_height='wrap_content'
+            android:layout_weight="1"
+            android:id="@+id/Auto_Disconnect_RSSI_name" />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height='wrap_content'
+            android:layout_weight="1"
+            android:id="@+id/Auto_Disconnect_RSSI_value" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="5dp"
+        >
+        <TextView
+            android:text="@string/Target_Channel"
+            android:layout_width="0dp"
+            android:layout_height='wrap_content'
+            android:layout_weight="1"
+            android:id="@+id/Target_Channel_name" />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height='wrap_content'
+            android:layout_weight="1"
+            android:id="@+id/Target_Channel_value" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="5dp"
+        >
+        <TextView
+            android:text="@string/Target_IP"
+            android:layout_width="0dp"
+            android:layout_height='wrap_content'
+            android:layout_weight="1"
+            android:id="@+id/Target_IP_name" />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height='wrap_content'
+            android:layout_weight="1"
+            android:id="@+id/Target_IP_value" />
+    </LinearLayout>
+
+    <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+        android:layout_marginBottom="5dp"
+    >
+    <TextView
+        android:text="@string/Target_DNS"
+        android:layout_width="0dp"
+        android:layout_height='wrap_content'
+        android:layout_weight="1"
+        android:id="@+id/Target_DNS_name" />
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height='wrap_content'
+        android:layout_weight="1"
+        android:id="@+id/Target_DNS_value" />
+</LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="5dp"
+        >
+        <TextView
+            android:text="@string/Target_Gateway"
+            android:layout_width="0dp"
+            android:layout_height='wrap_content'
+            android:layout_weight="1"
+            android:id="@+id/Target_Gateway_name" />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height='wrap_content'
+            android:layout_weight="1"
+            android:id="@+id/Target_Gateway_value" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="5dp"
+        >
+        <TextView
+            android:text="@string/Auto_Connect_Retry"
+            android:layout_width="0dp"
+            android:layout_height='wrap_content'
+            android:layout_weight="1"
+            android:id="@+id/Auto_Connect_Retry_name" />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height='wrap_content'
+            android:layout_weight="1"
+            android:id="@+id/Auto_Connect_Retry_value" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="5dp"
+        >
+        <TextView
+            android:text="@string/Auto_Disconnect_Retry"
+            android:layout_width="0dp"
+            android:layout_height='wrap_content'
+            android:layout_weight="1"
+            android:id="@+id/Auto_Disconnect_Retry_name" />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height='wrap_content'
+            android:layout_weight="1"
+            android:id="@+id/Auto_Disconnect_Retry_value" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="5dp"
+        >
+        <TextView
+            android:text="@string/WIFI_Status"
+            android:layout_width="0dp"
+            android:layout_height='wrap_content'
+            android:layout_weight="1"
+            android:id="@+id/WIFI_Status_name" />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height='wrap_content'
+            android:layout_weight="1"
+            android:id="@+id/WIFI_Status_value" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="5dp"
+        >
+        <TextView
+            android:text="@string/Current_RSSI"
+            android:layout_width="0dp"
+            android:layout_height='wrap_content'
+            android:layout_weight="1"
+            android:id="@+id/Current_RSSI_name" />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height='wrap_content'
+            android:layout_weight="1"
+            android:id="@+id/Current_RSSI_value" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="5dp"
+        >
+        <TextView
+            android:text="@string/MAC_Address"
+            android:layout_width="0dp"
+            android:layout_height='wrap_content'
+            android:layout_weight="1"
+            android:id="@+id/MAC_Address_name" />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height='wrap_content'
+            android:layout_weight="1"
+            android:id="@+id/MAC_Address_value" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="5dp"
+        >
+        <TextView
+            android:text="@string/Connect_Type"
+            android:layout_width="0dp"
+            android:layout_height='wrap_content'
+            android:layout_weight="1"
+            android:id="@+id/Connect_Type_name" />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height='wrap_content'
+            android:layout_weight="1"
+            android:id="@+id/Connect_Type_value" />
+    </LinearLayout>
+
+    <Button
+        android:text="@string/Exit"
+        android:layout_width="wrap_content"
+        android:layout_height='wrap_content'
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center_horizontal|center_vertical"
+        android:id="@+id/Exit_Button" />
+
+</LinearLayout>

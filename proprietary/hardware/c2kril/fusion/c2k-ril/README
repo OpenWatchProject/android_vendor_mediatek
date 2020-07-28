@@ -1,0 +1,24 @@
+Library of VIA telephony extension interfaces.
+
+This library is pre-built by MediaTek internal.
+
+
+WHAT IT DOES?
+=============
+libvia-ril.so contains VIA developed telephony realted functionality.
+Including Mobile Network Framework, SIM Framework, Call Control, AGPS
+functions.
+Mobile Network Framework: VIA signal strength algrithm and PRL version...
+SIM framework: Some VIA proprietary AT command handling
+AGPS: Via AGPS AT command handling
+
+HOW IT WAS BUILT?
+==================
+Build the following libs from MediaTek:
+1.  libvia-ril.so
+
+HOW TO USE IT?
+==============
+Provide api for mtk-ril.so to handling VIA related function.
+
+All the source code of this library were originally written by Viatelecom Inc.

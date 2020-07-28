@@ -1,0 +1,837 @@
+// Copyright (C) 2017 The Android Open Source Project
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//      http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+cc_defaults {
+    name: "tflite_mtk_kernel_test_defaults",
+    proprietary: true,
+    owner: "mtk",
+    header_libs: [
+        "tensorflow_mtk_headers",
+        "flatbuffer_headers",
+        "gemmlowp_headers",
+        "libeigen",
+    ],
+    cflags: [
+        "-DTF_LITE_DISABLE_X86_NEON",
+        "-DTFLITE_WITH_RUY",
+        "-Wall",
+        "-Werror",
+        "-Wextra",
+        "-Wno-extern-c-compat",
+        "-Wno-sign-compare",
+        "-Wno-unused-parameter",
+        "-Wno-unused-value",
+        "-Wno-unused-private-field",
+    ],
+    shared_libs: [
+        "liblog",
+        "libtflite_mtk",
+    ],
+    static_libs: [
+        "libgtest",
+        "libgmock",
+        "libtflite_mtk_test_util",
+        "libtflite_mtk_command_line_flags",
+    ],
+}
+
+cc_library_static {
+    name: "libtflite_mtk_test_util",
+    proprietary: true,
+    owner: "mtk",
+    rtti: true,
+    srcs: [
+        "subgraph_test_util.cc",
+        "test_util.cc",
+    ],
+    header_libs: [
+        "tensorflow_mtk_headers",
+        "flatbuffer_headers",
+    ],
+    cflags: [
+        "-DTF_LITE_DISABLE_X86_NEON",
+        "-Wno-extern-c-compat",
+        "-Wno-sign-compare",
+        "-Wno-unused-parameter",
+    ],
+    whole_static_libs: [
+        "libgtest",
+        "libgmock",
+        "libtf_mtk_logging",
+        "libtflite_mtk_optimize",
+    ],
+}
+
+cc_test {
+    name: "tflite_activations_test",
+    defaults: ["tflite_mtk_kernel_test_defaults"],
+    srcs: [
+        "activations_test.cc",
+        "test_main.cc",
+    ],
+}
+
+cc_test {
+    name: "tflite_add_n_test",
+    defaults: ["tflite_mtk_kernel_test_defaults"],
+    srcs: [
+        "add_n_test.cc",
+        "test_main.cc",
+    ],
+}
+
+cc_test {
+    name: "tflite_add_test",
+    defaults: ["tflite_mtk_kernel_test_defaults"],
+    srcs: [
+        "add_test.cc",
+        "test_main.cc",
+    ],
+}
+
+cc_test {
+    name: "tflite_arg_min_max_test",
+    defaults: ["tflite_mtk_kernel_test_defaults"],
+    srcs: [
+        "arg_min_max_test.cc",
+        "test_main.cc",
+    ],
+}
+
+cc_test {
+    name: "tflite_basic_rnn_test",
+    defaults: ["tflite_mtk_kernel_test_defaults"],
+    srcs: [
+        "basic_rnn_test.cc",
+        "test_main.cc",
+    ],
+}
+
+cc_test {
+    name: "tflite_batch_to_space_nd_test",
+    defaults: ["tflite_mtk_kernel_test_defaults"],
+    srcs: [
+        "batch_to_space_nd_test.cc",
+        "test_main.cc",
+    ],
+}
+
+cc_test {
+    name: "tflite_bidirectional_sequence_lstm_test",
+    defaults: ["tflite_mtk_kernel_test_defaults"],
+    srcs: [
+        "bidirectional_sequence_lstm_test.cc",
+        "test_main.cc",
+    ],
+}
+
+cc_test {
+    name: "tflite_bidirectional_sequence_rnn_test",
+    defaults: ["tflite_mtk_kernel_test_defaults"],
+    srcs: [
+        "bidirectional_sequence_rnn_test.cc",
+        "test_main.cc",
+    ],
+}
+
+cc_test {
+    name: "tflite_cast_test",
+    defaults: ["tflite_mtk_kernel_test_defaults"],
+    srcs: [
+        "cast_test.cc",
+        "test_main.cc",
+    ],
+}
+
+cc_test {
+    name: "tflite_ceil_test",
+    defaults: ["tflite_mtk_kernel_test_defaults"],
+    srcs: [
+        "ceil_test.cc",
+        "test_main.cc",
+    ],
+}
+
+cc_test {
+    name: "tflite_comparisons_test",
+    defaults: ["tflite_mtk_kernel_test_defaults"],
+    srcs: [
+        "comparisons_test.cc",
+        "test_main.cc",
+    ],
+}
+
+cc_test {
+    name: "tflite_concatenation_test",
+    defaults: ["tflite_mtk_kernel_test_defaults"],
+    srcs: [
+        "concatenation_test.cc",
+        "test_main.cc",
+    ],
+}
+
+cc_test {
+    name: "tflite_conv_test",
+    defaults: ["tflite_mtk_kernel_test_defaults"],
+    srcs: [
+        "conv_test.cc",
+        "test_main.cc",
+    ],
+}
+
+cc_test {
+    name: "tflite_depthwise_conv_test",
+    defaults: ["tflite_mtk_kernel_test_defaults"],
+    srcs: [
+        "depthwise_conv_test.cc",
+        "test_main.cc",
+        "internal/test_util.cc"
+    ],
+}
+
+cc_test {
+    name: "tflite_dequantize_test",
+    defaults: ["tflite_mtk_kernel_test_defaults"],
+    srcs: [
+        "dequantize_test.cc",
+        "test_main.cc",
+    ],
+}
+
+cc_test {
+    name: "tflite_detection_postprocess_test",
+    defaults: ["tflite_mtk_kernel_test_defaults"],
+    srcs: [
+        "detection_postprocess_test.cc",
+        "test_main.cc",
+    ],
+}
+
+cc_test {
+    name: "tflite_div_test",
+    defaults: ["tflite_mtk_kernel_test_defaults"],
+    srcs: [
+        "div_test.cc",
+        "test_main.cc",
+    ],
+}
+
+cc_test {
+    name: "tflite_elementwise_test",
+    defaults: ["tflite_mtk_kernel_test_defaults"],
+    srcs: [
+        "elementwise_test.cc",
+        "test_main.cc",
+    ],
+}
+
+cc_test {
+    name: "tflite_embedding_lookup_sparse_test",
+    defaults: ["tflite_mtk_kernel_test_defaults"],
+    srcs: [
+        "embedding_lookup_sparse_test.cc",
+        "test_main.cc",
+    ],
+}
+
+cc_test {
+    name: "tflite_embedding_lookup_test",
+    defaults: ["tflite_mtk_kernel_test_defaults"],
+    srcs: [
+        "embedding_lookup_test.cc",
+        "test_main.cc",
+    ],
+}
+
+cc_test {
+    name: "tflite_exp_test",
+    defaults: ["tflite_mtk_kernel_test_defaults"],
+    srcs: [
+        "exp_test.cc",
+        "test_main.cc",
+    ],
+}
+
+cc_test {
+    name: "tflite_expand_dims_test",
+    defaults: ["tflite_mtk_kernel_test_defaults"],
+    srcs: [
+        "expand_dims_test.cc",
+        "test_main.cc",
+    ],
+}
+
+cc_test {
+    name: "tflite_fake_quant_test",
+    defaults: ["tflite_mtk_kernel_test_defaults"],
+    srcs: [
+        "fake_quant_test.cc",
+        "test_main.cc",
+    ],
+}
+
+cc_test {
+    name: "tflite_fill_test",
+    defaults: ["tflite_mtk_kernel_test_defaults"],
+    srcs: [
+        "fill_test.cc",
+        "test_main.cc",
+    ],
+}
+
+cc_test {
+    name: "tflite_floor_div_test",
+    defaults: ["tflite_mtk_kernel_test_defaults"],
+    srcs: [
+        "floor_div_test.cc",
+        "test_main.cc",
+    ],
+}
+
+cc_test {
+    name: "tflite_floor_mod_test",
+    defaults: ["tflite_mtk_kernel_test_defaults"],
+    srcs: [
+        "floor_mod_test.cc",
+        "test_main.cc",
+    ],
+}
+
+cc_test {
+    name: "tflite_floor_test",
+    defaults: ["tflite_mtk_kernel_test_defaults"],
+    srcs: [
+        "floor_test.cc",
+        "test_main.cc",
+    ],
+}
+
+cc_test {
+    name: "tflite_fully_connected_test",
+    defaults: ["tflite_mtk_kernel_test_defaults"],
+    srcs: [
+        "fully_connected_test.cc",
+        "test_main.cc",
+    ],
+}
+
+cc_test {
+    name: "tflite_gather_nd_test",
+    defaults: ["tflite_mtk_kernel_test_defaults"],
+    srcs: [
+        "gather_nd_test.cc",
+        "test_main.cc",
+    ],
+}
+
+cc_test {
+    name: "tflite_gather_test",
+    defaults: ["tflite_mtk_kernel_test_defaults"],
+    srcs: [
+        "gather_test.cc",
+        "test_main.cc",
+    ],
+}
+
+cc_test {
+    name: "tflite_hashtable_lookup_test",
+    defaults: ["tflite_mtk_kernel_test_defaults"],
+    srcs: [
+        "hashtable_lookup_test.cc",
+        "test_main.cc",
+    ],
+}
+
+cc_test {
+    name: "tflite_if_test",
+    defaults: ["tflite_mtk_kernel_test_defaults"],
+    srcs: [
+        "if_test.cc",
+        "test_main.cc",
+    ],
+}
+
+cc_test {
+    name: "tflite_kernel_util_test",
+    defaults: ["tflite_mtk_kernel_test_defaults"],
+    srcs: [
+        "kernel_util_test.cc",
+    ],
+}
+
+cc_test {
+    name: "tflite_l2norm_test",
+    defaults: ["tflite_mtk_kernel_test_defaults"],
+    srcs: [
+        "l2norm_test.cc",
+        "test_main.cc",
+    ],
+}
+
+cc_test {
+    name: "tflite_local_response_norm_test",
+    defaults: ["tflite_mtk_kernel_test_defaults"],
+    srcs: [
+        "local_response_norm_test.cc",
+        "test_main.cc",
+    ],
+}
+
+cc_test {
+    name: "tflite_log_softmax_test",
+    defaults: ["tflite_mtk_kernel_test_defaults"],
+    srcs: [
+        "log_softmax_test.cc",
+        "test_main.cc",
+    ],
+}
+
+cc_test {
+    name: "tflite_logical_test",
+    defaults: ["tflite_mtk_kernel_test_defaults"],
+    srcs: [
+        "logical_test.cc",
+        "test_main.cc",
+    ],
+}
+
+cc_test {
+    name: "tflite_lsh_projection_test",
+    defaults: ["tflite_mtk_kernel_test_defaults"],
+    srcs: [
+        "lsh_projection_test.cc",
+        "test_main.cc",
+    ],
+}
+
+cc_test {
+    name: "tflite_lstm_test",
+    defaults: ["tflite_mtk_kernel_test_defaults"],
+    srcs: [
+        "lstm_test.cc",
+        "test_main.cc",
+    ],
+}
+
+cc_test {
+    name: "tflite_maximum_minimum_test",
+    defaults: ["tflite_mtk_kernel_test_defaults"],
+    srcs: [
+        "maximum_minimum_test.cc",
+        "test_main.cc",
+    ],
+}
+
+cc_test {
+    name: "tflite_mirror_pad_test",
+    defaults: ["tflite_mtk_kernel_test_defaults"],
+    srcs: [
+        "mirror_pad_test.cc",
+        "test_main.cc",
+    ],
+}
+
+cc_test {
+    name: "tflite_mul_test",
+    defaults: ["tflite_mtk_kernel_test_defaults"],
+    srcs: [
+        "mul_test.cc",
+        "test_main.cc",
+    ],
+}
+
+cc_test {
+    name: "tflite_neg_test",
+    defaults: ["tflite_mtk_kernel_test_defaults"],
+    srcs: [
+        "neg_test.cc",
+        "test_main.cc",
+    ],
+}
+
+cc_test {
+    name: "tflite_one_hot_test",
+    defaults: ["tflite_mtk_kernel_test_defaults"],
+    srcs: [
+        "one_hot_test.cc",
+        "test_main.cc",
+    ],
+}
+
+cc_test {
+    name: "tflite_optional_tensor_test",
+    defaults: ["tflite_mtk_kernel_test_defaults"],
+    srcs: [
+        "optional_tensor_test.cc",
+    ],
+}
+
+cc_test {
+    name: "tflite_pack_test",
+    defaults: ["tflite_mtk_kernel_test_defaults"],
+    srcs: [
+        "pack_test.cc",
+        "test_main.cc",
+    ],
+}
+
+cc_test {
+    name: "tflite_pad_test",
+    defaults: ["tflite_mtk_kernel_test_defaults"],
+    srcs: [
+        "pad_test.cc",
+        "test_main.cc",
+    ],
+}
+
+cc_test {
+    name: "tflite_pooling_test",
+    defaults: ["tflite_mtk_kernel_test_defaults"],
+    srcs: [
+        "pooling_test.cc",
+        "test_main.cc",
+    ],
+}
+
+cc_test {
+    name: "tflite_pow_test",
+    defaults: ["tflite_mtk_kernel_test_defaults"],
+    srcs: [
+        "pow_test.cc",
+        "test_main.cc",
+        "internal/test_util.cc"
+    ],
+}
+
+cc_test {
+    name: "tflite_range_test",
+    defaults: ["tflite_mtk_kernel_test_defaults"],
+    srcs: [
+        "range_test.cc",
+        "test_main.cc",
+    ],
+}
+
+cc_test {
+    name: "tflite_rank_test",
+    defaults: ["tflite_mtk_kernel_test_defaults"],
+    srcs: [
+        "rank_test.cc",
+        "test_main.cc",
+    ],
+}
+
+cc_test {
+    name: "tflite_reduce_test",
+    defaults: ["tflite_mtk_kernel_test_defaults"],
+    srcs: [
+        "reduce_test.cc",
+        "test_main.cc",
+    ],
+}
+
+cc_test {
+    name: "tflite_reshape_test",
+    defaults: ["tflite_mtk_kernel_test_defaults"],
+    srcs: [
+        "reshape_test.cc",
+        "test_main.cc",
+    ],
+}
+
+cc_test {
+    name: "tflite_resize_bilinear_test",
+    defaults: ["tflite_mtk_kernel_test_defaults"],
+    srcs: [
+        "resize_bilinear_test.cc",
+        "test_main.cc",
+    ],
+}
+
+cc_test {
+    name: "tflite_resize_nearest_neighbor_test",
+    defaults: ["tflite_mtk_kernel_test_defaults"],
+    srcs: [
+        "resize_nearest_neighbor_test.cc",
+        "test_main.cc",
+    ],
+}
+
+cc_test {
+    name: "tflite_reverse_sequence_test",
+    defaults: ["tflite_mtk_kernel_test_defaults"],
+    srcs: [
+        "reverse_sequence_test.cc",
+        "test_main.cc",
+    ],
+}
+
+cc_test {
+    name: "tflite_reverse_test",
+    defaults: ["tflite_mtk_kernel_test_defaults"],
+    srcs: [
+        "reverse_test.cc",
+        "test_main.cc",
+    ],
+}
+
+cc_test {
+    name: "tflite_select_test",
+    defaults: ["tflite_mtk_kernel_test_defaults"],
+    srcs: [
+        "select_test.cc",
+        "test_main.cc",
+    ],
+}
+
+cc_test {
+    name: "tflite_shape_test",
+    defaults: ["tflite_mtk_kernel_test_defaults"],
+    srcs: [
+        "shape_test.cc",
+        "test_main.cc",
+    ],
+}
+
+cc_test {
+    name: "tflite_skip_gram_test",
+    defaults: ["tflite_mtk_kernel_test_defaults"],
+    srcs: [
+        "skip_gram_test.cc",
+        "test_main.cc",
+    ],
+}
+
+cc_test {
+    name: "tflite_slice_test",
+    defaults: ["tflite_mtk_kernel_test_defaults"],
+    srcs: [
+        "slice_test.cc",
+        "test_main.cc",
+    ],
+}
+
+cc_test {
+    name: "tflite_softmax_test",
+    defaults: ["tflite_mtk_kernel_test_defaults"],
+    srcs: [
+        "softmax_test.cc",
+        "test_main.cc",
+    ],
+}
+
+cc_test {
+    name: "tflite_space_to_batch_nd_test",
+    defaults: ["tflite_mtk_kernel_test_defaults"],
+    srcs: [
+        "space_to_batch_nd_test.cc",
+        "test_main.cc",
+    ],
+}
+
+cc_test {
+    name: "tflite_space_to_depth_test",
+    defaults: ["tflite_mtk_kernel_test_defaults"],
+    srcs: [
+        "space_to_depth_test.cc",
+        "test_main.cc",
+    ],
+}
+
+cc_test {
+    name: "tflite_sparse_to_dense_test",
+    defaults: ["tflite_mtk_kernel_test_defaults"],
+    srcs: [
+        "sparse_to_dense_test.cc",
+        "test_main.cc",
+    ],
+}
+
+cc_test {
+    name: "tflite_split_test",
+    defaults: ["tflite_mtk_kernel_test_defaults"],
+    srcs: [
+        "split_test.cc",
+        "test_main.cc",
+    ],
+}
+
+cc_test {
+    name: "tflite_split_v_test",
+    defaults: ["tflite_mtk_kernel_test_defaults"],
+    srcs: [
+        "split_v_test.cc",
+        "test_main.cc",
+    ],
+}
+
+cc_test {
+    name: "tflite_squared_difference_test",
+    defaults: ["tflite_mtk_kernel_test_defaults"],
+    srcs: [
+        "squared_difference_test.cc",
+        "test_main.cc",
+    ],
+}
+
+cc_test {
+    name: "tflite_squeeze_test",
+    defaults: ["tflite_mtk_kernel_test_defaults"],
+    srcs: [
+        "squeeze_test.cc",
+        "test_main.cc",
+    ],
+}
+
+cc_test {
+    name: "tflite_strided_slice_test",
+    defaults: ["tflite_mtk_kernel_test_defaults"],
+    srcs: [
+        "strided_slice_test.cc",
+        "test_main.cc",
+    ],
+}
+
+cc_test {
+    name: "tflite_sub_test",
+    defaults: ["tflite_mtk_kernel_test_defaults"],
+    srcs: [
+        "sub_test.cc",
+        "test_main.cc",
+    ],
+}
+
+cc_test {
+    name: "tflite_subgraph_test_util_test",
+    defaults: ["tflite_mtk_kernel_test_defaults"],
+    srcs: [
+        "subgraph_test_util_test.cc",
+    ],
+}
+
+cc_test {
+    name: "tflite_svdf_test",
+    defaults: ["tflite_mtk_kernel_test_defaults"],
+    srcs: [
+        "svdf_test.cc",
+        "test_main.cc",
+    ],
+}
+
+cc_test {
+    name: "tflite_test_util_test",
+    defaults: ["tflite_mtk_kernel_test_defaults"],
+    srcs: [
+        "test_util_test.cc",
+    ],
+}
+
+cc_test {
+    name: "tflite_tile_test",
+    defaults: ["tflite_mtk_kernel_test_defaults"],
+    srcs: [
+        "tile_test.cc",
+        "test_main.cc",
+    ],
+}
+
+cc_test {
+    name: "tflite_topk_v2_test",
+    defaults: ["tflite_mtk_kernel_test_defaults"],
+    srcs: [
+        "topk_v2_test.cc",
+        "test_main.cc",
+    ],
+}
+
+cc_test {
+    name: "tflite_transpose_conv_test",
+    defaults: ["tflite_mtk_kernel_test_defaults"],
+    srcs: [
+        "transpose_conv_test.cc",
+        "test_main.cc",
+    ],
+}
+
+cc_test {
+    name: "tflite_transpose_test",
+    defaults: ["tflite_mtk_kernel_test_defaults"],
+    srcs: [
+        "transpose_test.cc",
+        "test_main.cc",
+    ],
+}
+
+cc_test {
+    name: "tflite_unidirectional_sequence_lstm_test",
+    defaults: ["tflite_mtk_kernel_test_defaults"],
+    srcs: [
+        "unidirectional_sequence_lstm_test.cc",
+        "test_main.cc",
+    ],
+}
+
+cc_test {
+    name: "tflite_unidirectional_sequence_rnn_test",
+    defaults: ["tflite_mtk_kernel_test_defaults"],
+    srcs: [
+        "unidirectional_sequence_rnn_test.cc",
+        "test_main.cc",
+    ],
+}
+
+cc_test {
+    name: "tflite_unique_test",
+    defaults: ["tflite_mtk_kernel_test_defaults"],
+    srcs: [
+        "unique_test.cc",
+        "test_main.cc",
+    ],
+}
+
+cc_test {
+    name: "tflite_unpack_test",
+    defaults: ["tflite_mtk_kernel_test_defaults"],
+    srcs: [
+        "unpack_test.cc",
+        "test_main.cc",
+    ],
+}
+
+cc_test {
+    name: "tflite_where_test",
+    defaults: ["tflite_mtk_kernel_test_defaults"],
+    srcs: [
+        "where_test.cc",
+        "test_main.cc",
+    ],
+}
+
+cc_test {
+    name: "tflite_while_test",
+    defaults: ["tflite_mtk_kernel_test_defaults"],
+    srcs: [
+        "while_test.cc",
+        "test_main.cc",
+    ],
+}
+
+cc_test {
+    name: "tflite_zeros_like_test",
+    defaults: ["tflite_mtk_kernel_test_defaults"],
+    srcs: [
+        "zeros_like_test.cc",
+        "test_main.cc",
+    ],
+}

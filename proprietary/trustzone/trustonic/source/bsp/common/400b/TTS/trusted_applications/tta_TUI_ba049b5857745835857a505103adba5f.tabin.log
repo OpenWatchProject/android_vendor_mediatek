@@ -1,0 +1,58 @@
+MODE = Creating Trusted Application/Driver from ELF
+KEY  = keySpTl.xml
+
+###### ELF Header ######
+Maschine Class                   = ELFCLASS32 (32-bit)
+Maschine Data                    = ELFDATA2LSB (Little endian)
+Header version                   = EV_CURRENT (Current version)
+File Type                        = ET_EXEC (2: Executable)
+Entry Addr.                      = 0x1ae1
+Program header offset            = 0x42558
+Program header entry size        = 32
+Program header number            = 1
+Section header offset            = 0x42578
+Section header entry size        = 40
+Section header number            = 7
+Section header string index      = 6
+
+###### Program Header ######
+Type		Offset		VirtAddr	FileSize	MemSize		Flags		Allign
+LOAD		0x34		0x1000		271580		2975728		RWE		4096
+
+###### Section Header ######
+Name			Type	Flags	Addr		Offset		Size		Link	Info	Align	Entry Size
+                	0	0	0x0		0x0		0		0	0	0	0
+.text           	1	6	0x1000		0x34		267232		0	0	4096	0
+.init           	1	6	0x423e0		0x41414		4		0	0	4	0
+.data           	1	3	0x44000		0x42034		1244		0	0	4096	0
+.bss            	8	3	0x444dc		0x42510		2704148		0	0	8	0
+.note           	7	0	0x0		0x42510		32		0	0	4	0
+.shstrtab       	3	0	0x0		0x42530		40		0	0	1	0
+
+###### Trustlet header: ######
+Magic                            = MCLF
+Version                          = 2.5
+Flags                            = Debuggable
+Flags                            = New layout
+MemType                          = external
+Service type                     = Service Provider Trustlet
+Service Type                     = Service Provider Trustlet
+NumberOfInstances                = 1
+UUID                             = 078a0000000000000000000000000008
+DriverID                         = 0
+NumberOfThreads                  = 1
+CodeAddr                         = 0x1000
+CodeLength                       = 267236
+DataAddr                         = 0x44000
+DataLength                       = 1244
+BssLength                        = 2704148
+Entry Addr.                      = 0x1AE1
+Interface Version                = 0.0
+permittedHwCfg                   = 0
+permittedSuid                    = ffffffffffffffff0000000000000000
+GPLevel                          = 1
+attestationOffset                = 268528
+textHeaderVersion                = 2.5
+textHeaderLen                    = 60
+InitHeapSize                     = 524288
+MaxHeapSize                      = 10485760

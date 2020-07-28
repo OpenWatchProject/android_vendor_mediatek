@@ -1,0 +1,6 @@
+service fuelgauged_nvram /vendor/bin/fuelgauged_nvram
+    class main
+    user system
+    group system
+    oneshot
+

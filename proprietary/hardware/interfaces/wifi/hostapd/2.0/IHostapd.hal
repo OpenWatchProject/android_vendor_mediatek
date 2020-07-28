@@ -1,0 +1,135 @@
+/*
+ * Copyright 2016 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package vendor.mediatek.hardware.wifi.hostapd@2.0;
+
+import android.hardware.wifi.hostapd@1.0::HostapdStatus;
+import android.hardware.wifi.hostapd@1.0::IHostapd;
+import android.hardware.wifi.supplicant@1.0::Ssid;
+import IHostapdCallback;
+
+/**
+ * Top-level object for managing SoftAPs.
+ */
+interface IHostapd {
+    /**
+     * Parameters to use for setting up the access point network.
+     */
+    struct NetworkParams {
+        /** SSID to set for the network */
+        Ssid ssid;
+        /** Whether the network needs to be hidden or not. */
+        bool isHidden;
+        /** Key management mask for the network. */
+        EncryptionType encryptionType;
+        /** Passphrase for WPA_PSK network. */
+        string pskPassphrase;
+        /** Maximum number of stations allowed to connect. */
+        uint32_t maxNumSta;
+        /** Station MAC address -based authentication. */
+        string macAddrAcl;
+        /** Content of accepted MAC list. */
+        string acceptMacFileContent;
+    };
+
+    /**
+     * Adds a new access point for hostapd to control.
+     *
+     * This should trigger the setup of an access point with the specified
+     * interface and network params.
+     *
+     * @param ifaceParams AccessPoint Params for the access point.
+     * @param nwParams Network Params for the access point.
+     * @return status Status of the operation.
+     *         Possible status codes:
+     *         |HostapdStatusCode.SUCCESS|,
+     *         |HostapdStatusCode.FAILURE_ARGS_INVALID|,
+     *         |HostapdStatusCode.FAILURE_UNKNOWN|,
+     *         |HostapdStatusCode.FAILURE_IFACE_EXISTS|
+     */
+    addAccessPoint(IfaceParams ifaceParams, NetworkParams nwParams)
+        generates(HostapdStatus status);
+
+    /**
+     * Register for callbacks from the hostapd service.
+     *
+     * These callbacks are invoked for global events that are not specific
+     * to any interface or network. Registration of multiple callback
+     * objects is supported. These objects must be deleted when the corresponding
+     * client process is dead.
+     *
+     * @param callback An instance of the |IHostapdCallback| HIDL interface
+     *        object.
+     * @return status Status of the operation.
+     *         Possible status codes:
+     *         |HostapdStatusCode.SUCCESS|,
+     *         |HostapdStatusCode.FAILURE_UNKNOWN|
+     */
+    registerCallback(IHostapdCallback callback)
+        generates (HostapdStatus status);
+
+    /**
+     * Block client.
+     *
+     * @param deviceAddress MAC address of client to be blocked.
+     * @return status Status of the operation.
+     *         Possible status codes:
+     *         |HostapdStatusCode.SUCCESS|,
+     *         |HostapdStatusCode.FAILURE_UNKNOWN|,
+     *         |HostapdStatusCode.FAILURE_IFACE_INVALID|
+     */
+    blockClient(string deviceAddress)
+        generates (HostapdStatus status);
+
+    /**
+     * Unblock client.
+     *
+     * @param deviceAddress MAC address of client to be unblocked.
+     * @return status Status of the operation.
+     *         Possible status codes:
+     *         |HostapdStatusCode.SUCCESS|,
+     *         |HostapdStatusCode.FAILURE_UNKNOWN|,
+     *         |HostapdStatusCode.FAILURE_IFACE_INVALID|
+     */
+    unblockClient(string deviceAddress)
+        generates (HostapdStatus status);
+
+    /**
+     * Update allowed list.
+     *
+     * @param acceptMacFileContent File content of allowed list which wanna update.
+     * @return status Status of the operation.
+     *         Possible status codes:
+     *         |HostapdStatusCode.SUCCESS|,
+     *         |HostapdStatusCode.FAILURE_UNKNOWN|,
+     *         |HostapdStatusCode.FAILURE_IFACE_INVALID|
+     */
+    updateAllowedList(string acceptMacFileContent)
+        generates (HostapdStatus status);
+
+    /**
+     * Set all devices allowed.
+     *
+     * @param enable true to enable, false to disable.
+     * @return status Status of the operation.
+     *         Possible status codes:
+     *         |HostapdStatusCode.SUCCESS|,
+     *         |HostapdStatusCode.FAILURE_UNKNOWN|,
+     *         |HostapdStatusCode.FAILURE_IFACE_INVALID|
+     */
+    setAllDevicesAllowed(bool enable)
+        generates (HostapdStatus status);
+};

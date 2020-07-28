@@ -1,0 +1,23 @@
+WHAT IT DOES?
+=============
+VSDoF feature GF HAL unit test files.
+
+
+HOW IT WAS BUILT?
+==================
+It can build the following executable native binary :
+TestGFHAL
+
+
+HOW TO USE IT?
+==============
+Provide unit test for OCC HAL of VSDoF feature.
+- UT case inputs are in /data/nativetest/VSDoF_HAL_Test/GF_UT/in
+    DBuf_xxxxx: depth map
+    m_pDownU8420_V_xxxxx: U channel of down scaled image
+    m_pDownV8420_V_xxxxx: V channel of down scaled image
+    m_pDownY8_V_xxxxx: Y channel of down scaled imagew:
+- Golden samples are in /data/nativetest/VSDoF_HAL_Test/GF_UT/out
+    Bmap_GF_xxxxx: DMBG file
+- GF HAL output bmap files are in /data/nativetest/VSDoF_HAL_Test/GF_UT/out/hal
+    Bmap_GF_HAL_xxxxx.raw: DMBG file output by GF HAL

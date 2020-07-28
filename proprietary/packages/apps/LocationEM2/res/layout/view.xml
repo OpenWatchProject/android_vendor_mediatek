@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    >
+<LinearLayout
+    android:id="@+id/linearLayout2"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
+
+<RadioGroup        android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="horizontal">
+<RadioButton    android:id="@+id/RadioButton_GNSS" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/gnss" android:textSize="13sp"/>
+<RadioButton    android:id="@+id/RadioButton_GPS" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/gps" android:textSize="13sp" android:visibility="gone"/>
+<RadioButton    android:id="@+id/RadioButton_NMEA" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/nmea" android:textSize="13sp"/>
+<RadioButton    android:id="@+id/RadioButton_INFO" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/info" android:textSize="13sp"/>
+</RadioGroup>
+
+<RadioGroup        android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="right">
+<RadioButton    android:id="@+id/RadioButton_Page1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/page1" android:textSize="13sp"/>
+<RadioButton    android:id="@+id/RadioButton_Page2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/page2" android:textSize="13sp"/>
+<RadioButton    android:id="@+id/RadioButton_Page3" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/page3" android:textSize="13sp"/>
+</RadioGroup>
+
+</LinearLayout>
+
+
+<com.mediatek.lbs.em2.ui.ViewGnss android:id="@+id/viewgnss" android:layout_width="fill_parent" android:layout_height="fill_parent"/>
+<com.mediatek.lbs.em2.ui.ViewGps android:id="@+id/viewgps" android:layout_width="fill_parent" android:layout_height="fill_parent"/>
+<com.mediatek.lbs.em2.ui.ViewNmea android:id="@+id/viewnmea" android:layout_width="fill_parent" android:layout_height="fill_parent"/>
+
+</LinearLayout>

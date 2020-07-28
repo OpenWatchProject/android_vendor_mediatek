@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dip"
+        android:orientation="horizontal" >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/low_power_stop_txt"
+            android:minWidth="200dip" />
+         <Spinner
+            android:id="@+id/low_power_stop_select"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:entries="@array/low_battery_protect_stop" />
+    </LinearLayout>
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dip"
+        android:orientation="horizontal" >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/low_power_ut_txt"
+            android:minWidth="200dip" />
+        <Spinner
+            android:id="@+id/low_power_ut_select"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" 
+            android:entries="@array/low_battery_protect_ut"/>
+   </LinearLayout>
+    
+</LinearLayout>

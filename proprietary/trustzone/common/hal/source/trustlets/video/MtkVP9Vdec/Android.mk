@@ -1,0 +1,23 @@
+LOCAL_PATH := $(call my-dir)
+
+include $(CLEAR_VARS)
+
+LOCAL_MODULE := VP9SecureVdecCA
+LOCAL_MODULE_TAGS := optional
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_OWNER := mtk
+
+ifeq ($(TRUSTONIC_TEE_SUPPORT),yes)
+LOCAL_WHOLE_STATIC_LIBRARIES += VP9SecureVdecCA.trustonic
+LOCAL_SHARED_LIBRARIES += libTEECommon
+else ifeq ($(MICROTRUST_TEE_SUPPORT),yes)
+LOCAL_WHOLE_STATIC_LIBRARIES += VP9SecureVdecCA.microtrust
+LOCAL_SHARED_LIBRARIES += libTEECommon
+endif
+
+LOCAL_SHARED_LIBRARIES += liblog
+LOCAL_SHARED_LIBRARIES += libion libion_mtk
+LOCAL_SHARED_LIBRARIES += libcutils libutils
+
+include $(BUILD_SHARED_LIBRARY)
+

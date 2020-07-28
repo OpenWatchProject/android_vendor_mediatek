@@ -1,0 +1,220 @@
+#define FSTYPE_RAW emmc
+
+#define DEVPATH(_part) /dev/block/platform/bootdevice/by-name/_part
+#ifdef __DYNAMIC_PARTITION_SUPPORT
+#define LP_DEVPATH(_part) _part
+#else
+#define LP_DEVPATH(_part) DEVPATH(_part)
+#endif
+#define FSTAB_RAW(_part)        DEVPATH(_part) /_part FSTYPE_RAW defaults defaults
+#define FSTAB_RAW2(_part,_mnt)  DEVPATH(_part) /_mnt FSTYPE_RAW defaults defaults
+
+#if defined(__MTK_UFS_SUPPORT) || defined(__MTK_EMMC_SUPPORT)
+#ifndef __MTK_SYSIMG_FSTYPE
+#define __MTK_SYSIMG_FSTYPE ext4
+#endif
+
+#ifndef __MTK_VNDIMG_FSTYPE
+#define __MTK_VNDIMG_FSTYPE ext4
+#endif
+
+#ifndef __MTK_ODMIMG_FSTYPE
+#define __MTK_ODMIMG_FSTYPE ext4
+#endif
+
+#ifndef __MTK_DATAIMG_FSTYPE
+#ifndef __USERDATA_USE_F2FS
+#define __MTK_DATAIMG_FSTYPE ext4
+#else
+#define __MTK_DATAIMG_FSTYPE f2fs
+#endif
+#endif
+
+#ifndef __MTK_METADATA_FSTYPE
+#define __MTK_METADATA_FSTYPE ext4
+#endif
+
+/* Can overwrite FDE setting by defining __MTK_FDE_NO_FORCE and __MTK_FDE_TYPE_FILE in this file */
+/* For example, you can un-comment the following line to disable FDE for all projects in this platform. */
+//#define __MTK_FDE_NO_FORCE
+#ifdef __MTK_FDE_NO_FORCE
+  #define FLAG_FDE_AUTO encryptable
+#else
+  #define FLAG_FDE_AUTO forceencrypt
+#endif
+#ifdef __MTK_FDE_TO_FBE
+  #define FLAG_FDE_TYPE forcefdeorfbe
+#else
+#ifdef __MTK_FDE_TYPE_FILE
+  #define FLAG_FDE_TYPE fileencryption
+#else
+  #define FLAG_FDE_TYPE
+#endif
+#endif
+
+#define FLAG_QUOTA quota
+
+#define FSTAB_RAW_FIRST_STAGE(_part)        DEVPATH(_part) /_part FSTYPE_RAW defaults first_stage_mount,nofail,FLAG_SLOT_SELECT
+
+#ifdef __MAIN_VBMETA_IN_BOOT
+  #define VBMETA_DEV    boot
+#else
+#ifdef __DYNAMIC_PARTITION_SUPPORT
+  #define VBMETA_DEV    vbmeta_system
+#else
+  #define VBMETA_DEV    vbmeta
+#endif
+#endif
+
+#define FLAG_RESERVEDSIZE reservedsize=128m
+
+#ifdef __MTK_AB_OTA_UPDATER
+  #define FLAG_SLOT_SELECT slotselect
+#else
+  #define FLAG_SLOT_SELECT
+#endif
+
+#ifdef __DYNAMIC_PARTITION_SUPPORT
+  #define FLAG_LOGICAL  logical
+#else
+  #define FLAG_LOGICAL
+#endif
+
+#ifdef __BOARD_AVB_ENABLE
+  #define FSMGR_FLAG_SYSTEM wait,FLAG_SLOT_SELECT,avb=VBMETA_DEV,FLAG_LOGICAL,first_stage_mount,avb_keys=/avb/q-gsi.avbpubkey:/avb/r-gsi.avbpubkey:/avb/s-gsi.avbpubkey
+  #define FSMGR_FLAG_VENDOR wait,FLAG_SLOT_SELECT,avb,FLAG_LOGICAL,first_stage_mount
+#else
+  #define FSMGR_FLAG_SYSTEM wait,FLAG_SLOT_SELECT,first_stage_mount
+  #define FSMGR_FLAG_VENDOR FSMGR_FLAG_SYSTEM
+#endif
+
+#ifdef __BOARD_USES_METADATA_PARTITION
+#ifndef __USERDATA_USE_F2FS
+  #define CHECKPOINT checkpoint=block
+#else
+  #define CHECKPOINT checkpoint=fs
+#endif
+#else /* match with __BOARD_USES_METADATA_PARTITION */
+  #define CHECKPOINT
+#endif
+
+#define FS_FLAG_DISCARD noatime,nosuid,nodev,noauto_da_alloc,discard
+#define FS_FLAG_NO_DISCARD noatime,nosuid,nodev,noauto_da_alloc
+#define FS_FLAG_COMMIT  noatime,nosuid,nodev,noauto_da_alloc,commit=1,nodelalloc
+#define FS_FLAG_CP noatime,nosuid,nodev,discard
+#define FSMGR_FLAG_FMT  wait,check,formattable
+#define FSMGR_FLAG_CHK  wait,check
+#define FSMGR_FLAG_CP  wait,formattable,first_stage_mount
+
+#ifndef __USERDATA_USE_F2FS
+#define FS_FLAG_DATA FS_FLAG_NO_DISCARD,errors=panic
+#else
+#define FS_FLAG_DATA noatime,nosuid,nodev,discard,noflush_merge,reserve_root=134217,resgid=1065
+#endif
+
+#ifdef __MTK_FDE_TYPE_FILE
+#ifdef __MTK_FDE_TO_FBE
+  #define FSMGR_FLAG_DATA FSMGR_FLAG_FMT,FLAG_QUOTA,resize,FLAG_RESERVEDSIZE,FLAG_FDE_TYPE=DEVPATH(metadata)
+#else
+  #define FSMGR_FLAG_DATA FSMGR_FLAG_FMT,FLAG_QUOTA,resize,FLAG_RESERVEDSIZE,CHECKPOINT,FLAG_FDE_TYPE=aes-256-xts
+#endif
+#else
+  #define FSMGR_FLAG_DATA FSMGR_FLAG_FMT,FLAG_QUOTA,resize,FLAG_RESERVEDSIZE,FLAG_FDE_AUTO=DEVPATH(metadata),FLAG_FDE_TYPE
+#endif
+
+LP_DEVPATH(system)     /system              __MTK_SYSIMG_FSTYPE ro  FSMGR_FLAG_SYSTEM
+#ifdef __VENDOR_PARTITION_SUPPORT
+LP_DEVPATH(vendor)     /vendor              __MTK_VNDIMG_FSTYPE ro  FSMGR_FLAG_VENDOR
+#endif
+#ifdef __PRODUCT_PARTITION_SUPPORT
+LP_DEVPATH(product)    /product             __MTK_VNDIMG_FSTYPE ro  FSMGR_FLAG_VENDOR
+#endif
+#ifdef __ODM_PARTITION_SUPPORT
+LP_DEVPATH(odm)        /odm                 __MTK_ODMIMG_FSTYPE ro  FSMGR_FLAG_VENDOR
+#endif
+#ifdef __BOARD_USES_METADATA_PARTITION
+DEVPATH(md_udc)      /metadata       __MTK_METADATA_FSTYPE  FS_FLAG_CP  FSMGR_FLAG_CP
+#endif
+DEVPATH(userdata)   /data        __MTK_DATAIMG_FSTYPE   FS_FLAG_DATA  FSMGR_FLAG_DATA
+#ifndef __MTK_AB_OTA_UPDATER
+DEVPATH(cache)      /cache       ext4   FS_FLAG_DISCARD  FSMGR_FLAG_FMT
+#endif
+DEVPATH(protect1)   /mnt/vendor/protect_f   ext4   FS_FLAG_COMMIT   FSMGR_FLAG_FMT
+DEVPATH(protect2)   /mnt/vendor/protect_s   ext4   FS_FLAG_COMMIT   FSMGR_FLAG_FMT
+DEVPATH(nvdata)     /mnt/vendor/nvdata      ext4   FS_FLAG_COMMIT   FSMGR_FLAG_FMT
+DEVPATH(nvcfg)      /mnt/vendor/nvcfg       ext4   FS_FLAG_COMMIT   FSMGR_FLAG_FMT
+
+#ifdef __PERSIST_PARTITION_SUPPORT
+DEVPATH(persist)    /mnt/vendor/persist     ext4   FS_FLAG_COMMIT  FSMGR_FLAG_FMT
+#endif
+
+/devices/platform/externdevice*   auto      auto      defaults        voldmanaged=sdcard1:auto,encryptable=userdata
+/devices/platform/11200000.usb3_xhci*      auto      vfat      defaults        voldmanaged=usbotg:auto
+#ifdef __MTK_FACTORY_RESET_PROTECTION_SUPPORT
+FSTAB_RAW2(frp,persistent)
+#endif
+FSTAB_RAW(nvram)
+FSTAB_RAW(proinfo)
+FSTAB_RAW2(lk,bootloader)
+FSTAB_RAW2(lk2,bootloader2)
+FSTAB_RAW2(para,misc)
+#ifndef __SYSTEM_AS_ROOT
+#ifndef __BOARD_USES_RECOVERY_AS_BOOT
+FSTAB_RAW_FIRST_STAGE(recovery)
+#endif
+FSTAB_RAW_FIRST_STAGE(boot)
+#else
+FSTAB_RAW(recovery)
+FSTAB_RAW(boot)
+#endif
+#ifdef __DYNAMIC_PARTITION_SUPPORT
+FSTAB_RAW_FIRST_STAGE(vbmeta_vendor)
+DEVPATH(vbmeta_system)  /vbmeta_system FSTYPE_RAW defaults first_stage_mount,nofail,FLAG_SLOT_SELECT,avb=vbmeta
+#endif
+FSTAB_RAW(logo)
+FSTAB_RAW(expdb)
+FSTAB_RAW(seccfg)
+#if (defined(__MTK_TEE_SUPPORT) || defined(__MTK_ATF_SUPPORT))
+FSTAB_RAW(tee1)
+FSTAB_RAW(tee2)
+#endif
+#ifdef __MTK_TINYSYS_SCP_SUPPORT
+FSTAB_RAW(scp1)
+FSTAB_RAW(scp2)
+#endif
+#ifdef __MTK_TINYSYS_SSPM_SUPPORT
+FSTAB_RAW(sspm_1)
+FSTAB_RAW(sspm_2)
+#endif
+#ifdef __MTK_EFUSE_WRITER_SUPPORT
+FSTAB_RAW(efuse)
+#endif
+FSTAB_RAW(md1img)
+FSTAB_RAW(md1dsp)
+FSTAB_RAW(md1arm7)
+FSTAB_RAW(md3img)
+#ifdef __MTK_VPU_SUPPORT
+FSTAB_RAW(cam_vpu1)
+FSTAB_RAW(cam_vpu2)
+FSTAB_RAW(cam_vpu3)
+#endif
+FSTAB_RAW(gz1)
+FSTAB_RAW(gz2)
+#ifdef __SPM_FW_USE_PARTITION
+FSTAB_RAW(spmfw)
+#endif
+#ifdef __MCUPM_FW_USE_PARTITION
+FSTAB_RAW(mcupmfw)
+#endif
+FSTAB_RAW(boot_para)
+#ifdef __MTK_DTBO_FEATURE
+FSTAB_RAW(odmdtbo)
+FSTAB_RAW(dtbo)
+#endif
+#ifdef __MTK_OTP_SUPPORT
+FSTAB_RAW(otp)
+#endif
+#ifdef __BOARD_AVB_ENABLE
+FSTAB_RAW(vbmeta)
+#endif
+#endif

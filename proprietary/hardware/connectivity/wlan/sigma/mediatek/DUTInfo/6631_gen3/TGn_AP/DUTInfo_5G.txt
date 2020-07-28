@@ -1,0 +1,116 @@
+######### DUT (Device Under Test) Information #########################
+
+#### Wi-Fi Test Suite Control Agent Support ########
+# 1-If DUT supports configuration using CAPI commands.
+# 0-If not supported.
+WTS_ControlAgent_Support!1!
+
+# DUT AC : DUT support for transmission of WMM Access Categories
+AC_VO!1!
+AC_VI!1!
+AC_BE!1!
+AC_BK!1!
+
+#### Wi-Fi Test Suite Traffic Agent Support ########
+# 1-If DUT supports data traffic generation using WTS.
+# 0-If not supported (DUT uses other data traffic tools).
+WTS_TrafficAgent_Support!1!
+
+# DUTType : WPA2-Personal or WPA2-Enterprise
+DUTType!WPA2-Personal!
+
+# DUT Band : ABG or BG or B (B only) or ABGN or GN
+DUTBand!ABGN!
+
+#DUT Category : c1 or c2 or c3 if device is WPA2-Enterprise
+DUTCategory!c1!
+
+#DUT security configuration 0-WPA2-PSK 1-OPEN
+Open_Mode!1!
+
+#Supported EAP Methods 0-No 1-Yes
+TLS!0!
+TTLS!0!
+PEAP0!0!
+PEAP1!0!
+SIM!0!
+AKA!0!
+FAST!0!
+AKA'!0!
+PWD!0!
+
+# WEP Support 0-No 1-Yes
+WEP!0!
+
+#Pre Authentication Support 0-No 1-Yes
+PreAuth!0!
+
+#802.11h Support 0-No 1-Yes
+11h!0!
+
+#802.11d Support 0-No 1-Yes - Only for Device APUT
+11d!0!
+
+#Power Management Capability of STAUT
+## 0-not supported    1-supported
+## Ref - test 5.2.2
+STAUT_PM!0!
+
+####### MIMO Parameters ############
+
+## Supported Channel Width 20-20Mhz 40-20/40Mhz
+SupportedChannelWidth!40!
+
+
+## Number of Streams Support
+## 1 - 1X1, 2 - 2X2, 3-3X3
+
+Streams!1!
+
+## Greenfield Support 0-N0 1-Yes
+Greenfield!1!
+
+## Short Guard Interval(SGI) Support 0-N0 1-Yes
+SGI20!1!
+SGI40!1!
+
+
+## RIFS Tx 0-N0 1-Yes
+RIFS_TX!0!
+ 
+## 20/40 Coexistence - 0-N0 1-Yes
+Coexistence_2040!0!
+
+### STBC Receive 0-N0 1-Yes
+
+STBC_RX!1!
+
+### STBC Transmit 0-N0 1-Yes
+
+STBC_TX!0!
+
+### OBSS on Extension Channel 0-N0 1-Yes
+
+OBSS!0!
+
+### A-MPDU Tx Support 0-N0 1-Yes
+
+AMPDU_TX!0!
+
+### AP Concurrent Opn in 2.4GHz and 5GHz 0-N0 1-Yes
+
+AP_Concurrent!0!
+
+### HT Duplication Mode (MCS 32) 0-N0 1-Yes
+
+MCS32!0!
+
+### DUT Support for Mixed mode WPA2/WPA Security 0-No 1-Yes
+
+Mixedmode_WPA2WPA!0!
+
+#### STAUT supports PMF in OOB 0-No 1-Yes
+PMF_OOB!0!
+
+### ASD device testing 0-No 1-handset 2-TV 3-Printer 4-SetTopBox 5-MobileAP 6-Audio 7-NwCamera 8-ClientCard
+ASD!5!  

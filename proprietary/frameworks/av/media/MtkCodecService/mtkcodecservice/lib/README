@@ -1,0 +1,29 @@
+Library of MTK ape decode features, including Bn codec service.
+
+This library is pre-built by MediaTek internal.
+
+WHAT IT DOES?
+=============
+vendor.mediatek.hardware.mtkcodecservice@1.1-impl.so contains MediaTek developed ape decoder related  modules.  
+Without it, ape will not decode.
+
+HOW IT WAS BUILT?
+==================
+It needs the following library from AOSP:
+1.  libutils
+2.  libcutils
+3.  libhidlbase
+4.  libhidltransport
+5.  libhwbinder
+6.  liblog          
+7.  libdl.so                   
+8.  libui.so
+
+and the following libs from MediaTek:
+1.  libapedec_mtk.so
+All source/dependency modules of this module are already put in current folder
+
+HOW TO USE IT?
+==============
+Will be linked with the vendor.mediatek.hardware.mtkcodeservice@1.1-service executable and any other modules need to
+control mtkcodecservice.

@@ -1,0 +1,32 @@
+Library of MTK MtkOmxAudioEncBase, including audio omx component related file.
+
+This library is pre-built by MediaTek internal.
+
+
+WHAT IT DOES?
+=============
+libMtkOmxAudioEncBase.a contains MediaTek developed audio omx component base class.  
+Without it, all audio format will not encode.
+
+HOW IT WAS BUILT?
+==================
+It needs the following library from AOSP:              
+1.libutils                
+2.libcutils               
+3.libdl                   
+4.libui			  
+          
+
+and the following libs from MediaTek:
+1.libMtkOmxOsalUtils.a
+
+All source/dependency modules of this module are already put in
+'vendor/mediatek/proprietary/hardware/libomx/audio/MtkOmxAudioEncBase' folder.
+
+HOW TO USE IT?
+==============
+
+Provide audio omx component base class for all audio component 
+
+
+All the source code of this library were written by MediaTek co..

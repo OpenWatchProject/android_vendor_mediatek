@@ -1,0 +1,130 @@
+/* Copyright Statement:
+ *
+ * This software/firmware and related documentation ("MediaTek Software") are
+ * protected under relevant copyright laws. The information contained herein
+ * is confidential and proprietary to MediaTek Inc. and/or its licensors.
+ * Without the prior written permission of MediaTek inc. and/or its licensors,
+ * any reproduction, modification, use or disclosure of MediaTek Software,
+ * and information contained herein, in whole or in part, shall be strictly prohibited.
+ */
+/* MediaTek Inc. (C) 2015. All rights reserved.
+ *
+ * BY OPENING THIS FILE, RECEIVER HEREBY UNEQUIVOCALLY ACKNOWLEDGES AND AGREES
+ * THAT THE SOFTWARE/FIRMWARE AND ITS DOCUMENTATIONS ("MEDIATEK SOFTWARE")
+ * RECEIVED FROM MEDIATEK AND/OR ITS REPRESENTATIVES ARE PROVIDED TO RECEIVER ON
+ * AN "AS-IS" BASIS ONLY. MEDIATEK EXPRESSLY DISCLAIMS ANY AND ALL WARRANTIES,
+ * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE OR NONINFRINGEMENT.
+ * NEITHER DOES MEDIATEK PROVIDE ANY WARRANTY WHATSOEVER WITH RESPECT TO THE
+ * SOFTWARE OF ANY THIRD PARTY WHICH MAY BE USED BY, INCORPORATED IN, OR
+ * SUPPLIED WITH THE MEDIATEK SOFTWARE, AND RECEIVER AGREES TO LOOK ONLY TO SUCH
+ * THIRD PARTY FOR ANY WARRANTY CLAIM RELATING THERETO. RECEIVER EXPRESSLY ACKNOWLEDGES
+ * THAT IT IS RECEIVER'S SOLE RESPONSIBILITY TO OBTAIN FROM ANY THIRD PARTY ALL PROPER LICENSES
+ * CONTAINED IN MEDIATEK SOFTWARE. MEDIATEK SHALL ALSO NOT BE RESPONSIBLE FOR ANY MEDIATEK
+ * SOFTWARE RELEASES MADE TO RECEIVER'S SPECIFICATION OR TO CONFORM TO A PARTICULAR
+ * STANDARD OR OPEN FORUM. RECEIVER'S SOLE AND EXCLUSIVE REMEDY AND MEDIATEK'S ENTIRE AND
+ * CUMULATIVE LIABILITY WITH RESPECT TO THE MEDIATEK SOFTWARE RELEASED HEREUNDER WILL BE,
+ * AT MEDIATEK'S OPTION, TO REVISE OR REPLACE THE MEDIATEK SOFTWARE AT ISSUE,
+ * OR REFUND ANY SOFTWARE LICENSE FEES OR SERVICE CHARGE PAID BY RECEIVER TO
+ * MEDIATEK FOR SUCH MEDIATEK SOFTWARE AT ISSUE.
+ */
+
+#ifndef AUDIO_TASK_ATTR_H
+#define AUDIO_TASK_ATTR_H
+
+#include <tinysys_config.h>
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdint.h>
+#include <string.h>
+
+#include <FreeRTOS.h>
+#include <task.h>
+#include <semphr.h>
+
+#include <driver_api.h>
+
+#include <audio_log.h>
+#include <audio_assert.h>
+#include <audio_ringbuf.h>
+
+/* task command*/
+enum {
+    AUDIO_DSP_TASK_OPEN = 0x1,
+    AUDIO_DSP_TASK_CLOSE,
+    AUDIO_DSP_TASK_PREPARE,
+    AUDIO_DSP_TASK_HWPARAM,
+    AUDIO_DSP_TASK_MSGA2DSHAREMEM,
+    AUDIO_DSP_TASK_MSGD2ASHAREMEM,
+    AUDIO_DSP_TASK_EINGBUFASHAREMEM,
+    AUDIO_DSP_TASK_HWFREE,
+    AUDIO_DSP_TASK_DLCOPY,
+    AUDIO_DSP_TASK_ULCOPY,
+    AUDIO_DSP_TASK_DATAREAD,
+    AUDIO_DSP_TASK_CONSUMEDATA,
+    AUDIO_DSP_TASK_START,
+    AUDIO_DSP_TASK_STOP,
+    AUDIO_DSP_TASK_SETPRAM,
+    AUDIO_DSP_TASK_IRQDL,
+    AUDIO_DSP_TASK_IRQUL,
+    AUDIO_DSP_TASK_AURISYS_INIT,
+    AUDIO_DSP_TASK_AURISYS_DEINIT,
+    AUDIO_DSP_TASK_AURISYS_LIB_PARAM,
+    AUDIO_DSP_TASK_AURISYS_PARAM_LIST,
+    AUDIO_DSP_TASK_PCMDUMP_ON = 0x100,
+    AUDIO_DSP_TASK_PCMDUMP_DATA,
+    AUDIO_DSP_TASK_PCMDUMP_OK,
+    AUDIO_DSP_TASK_SHAREMEMORY_SET = 0x200,
+    AUDIO_DSP_TASK_PCM_HWPARAM,
+    AUDIO_DSP_TASK_PCM_HWFREE,
+    AUDIO_DSP_TASK_PCM_PREPARE,
+    AUDIO_DSP_TASK_AURISYS_SET_BUF,
+    AUDIO_DSP_TASK_AURISYS_GET_BUF
+};
+
+/* task command param1 */
+
+enum {
+    AUDIO_DSP_TASK_PCM_HWPARAM_DL = 0x1,
+    AUDIO_DSP_TASK_PCM_HWPARAM_UL = 0x2,
+    AUDIO_DSP_TASK_PCM_HWPARAM_REF = 0x4,
+} ;
+
+
+enum {
+    AUDIO_TASK_VOIP_ID = 0,
+    AUDIO_TASK_PRIMARY_ID,
+    AUDIO_TASK_DEEPBUFFER_ID,
+    AUDIO_TASK_PLAYBACK_ID,
+    AUDIO_TASK_CAPTURE_UL1_ID,
+    AUDIO_TASK_A2DP_ID,
+    AUDIO_TASK_DATAPROVIDER_ID,
+    AUDIO_TASK_CALL_FINAL_ID,
+    AUDIO_TASK_KTV_ID,
+    AUDIO_TASK_DAI_NUM,
+};
+
+enum ADSP_PCMDUMP_TYPE {
+    DEBUG_PCMDUMP_IN,
+    DEBUG_PCMDUMP_OUT,
+    DEBUG_PCMDUMP_RESERVED,
+    DEBUG_PCMDUMP_IV,
+    DEBUG_PCMDUMP_NUM,
+};
+
+struct mtk_dsp_base {
+    struct audio_hw_buffer mtask_audio_buf;
+    struct RingBuf mtask_audio_ring_buf;
+};
+
+
+struct task_time_info {
+    unsigned long long start_time; /* trigger start time */
+    unsigned long long current_time;  /* current system time stamp */
+    unsigned long long frames; /* number of frame write/read */
+    unsigned long long remaind_frames_hw;  /* number of frame in hw */
+};
+
+#endif // end of AUDIO_TASK_ATTR_H
+

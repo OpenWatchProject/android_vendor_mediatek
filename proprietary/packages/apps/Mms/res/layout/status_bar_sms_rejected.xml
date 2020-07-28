@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/status_bar_latest_event_content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+    <ImageView android:id="@+id/icon"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:background="@drawable/notify_panel_notification_icon_bg_tile"
+        android:scaleType="center"
+    />
+    <LinearLayout android:id="@+id/status_bar_latest_event_content_large_icon"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:paddingLeft="12dp"
+        android:paddingRight="12dp"
+        >
+        <TextView android:id="@+id/title"
+            android:textAppearance="@android:style/TextAppearance.StatusBar.EventContent.Title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="4dip"
+            android:singleLine="true"
+            android:ellipsize="none"
+            android:requiresFadingEdge="horizontal"
+            android:fadingEdge="horizontal"
+            />
+        <TextView android:id="@+id/text"
+            android:textAppearance="@android:style/TextAppearance.StatusBar.EventContent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fadingEdge="horizontal"
+            />
+    </LinearLayout>
+</LinearLayout>

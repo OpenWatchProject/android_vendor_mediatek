@@ -1,0 +1,21 @@
+cc_library_headers {
+    name: "libcam_p1mt6765_inc_headers",
+    proprietary: true,
+    owner: "mtk",
+
+    export_include_dirs: [
+        "inc",
+    ],
+}
+
+cc_library_headers {
+    name: "libcam_p1mt6765_imageio_headers",
+    proprietary: true,
+    owner: "mtk",
+
+    export_include_dirs: [
+        "imageio/inc",
+        "imageio/inc/cam",
+        "imageio/pipe/inc"
+    ],
+}

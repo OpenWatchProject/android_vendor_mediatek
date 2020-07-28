@@ -1,0 +1,15 @@
+Sensor HAL code
+
+WHAT IT DOES?
+=============
+This is sensor hardware abstract layer, it provider commuicate interface with SensorService,e.g. enable(),setDelay()...
+
+HOW IT WAS BUILT?
+==================
+It needs the following library from AOSP:
+liblog libcutils libutils
+
+
+HOW TO USE IT?
+==============
+It compile to path of "/system/lib/hw", and it will be link to system when boot up.

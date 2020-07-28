@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    Copyright Statement:
+
+    This software/firmware and related documentation ("MediaTek Software") are
+    protected under relevant copyright laws. The information contained herein
+    is confidential and proprietary to MediaTek Inc. and/or its licensors.
+    Without the prior written permission of MediaTek inc. and/or its licensors,
+    any reproduction, modification, use or disclosure of MediaTek Software,
+    and information contained herein, in whole or in part, shall be strictly prohibited.
+
+    MediaTek Inc. (C) 2012. All rights reserved.
+
+    BY OPENING THIS FILE, RECEIVER HEREBY UNEQUIVOCALLY ACKNOWLEDGES AND AGREES
+    THAT THE SOFTWARE/FIRMWARE AND ITS DOCUMENTATIONS ("MEDIATEK SOFTWARE")
+    RECEIVED FROM MEDIATEK AND/OR ITS REPRESENTATIVES ARE PROVIDED TO RECEIVER ON
+    AN "AS-IS" BASIS ONLY. MEDIATEK EXPRESSLY DISCLAIMS ANY AND ALL WARRANTIES,
+    EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF
+    MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE OR NONINFRINGEMENT.
+    NEITHER DOES MEDIATEK PROVIDE ANY WARRANTY WHATSOEVER WITH RESPECT TO THE
+    SOFTWARE OF ANY THIRD PARTY WHICH MAY BE USED BY, INCORPORATED IN, OR
+    SUPPLIED WITH THE MEDIATEK SOFTWARE, AND RECEIVER AGREES TO LOOK ONLY TO SUCH
+    THIRD PARTY FOR ANY WARRANTY CLAIM RELATING THERETO. RECEIVER EXPRESSLY ACKNOWLEDGES
+    THAT IT IS RECEIVER'S SOLE RESPONSIBILITY TO OBTAIN FROM ANY THIRD PARTY ALL PROPER LICENSES
+    CONTAINED IN MEDIATEK SOFTWARE. MEDIATEK SHALL ALSO NOT BE RESPONSIBLE FOR ANY MEDIATEK
+    SOFTWARE RELEASES MADE TO RECEIVER'S SPECIFICATION OR TO CONFORM TO A PARTICULAR
+    STANDARD OR OPEN FORUM. RECEIVER'S SOLE AND EXCLUSIVE REMEDY AND MEDIATEK'S ENTIRE AND
+    CUMULATIVE LIABILITY WITH RESPECT TO THE MEDIATEK SOFTWARE RELEASED HEREUNDER WILL BE,
+    AT MEDIATEK'S OPTION, TO REVISE OR REPLACE THE MEDIATEK SOFTWARE AT ISSUE,
+    OR REFUND ANY SOFTWARE LICENSE FEES OR SERVICE CHARGE PAID BY RECEIVER TO
+    MEDIATEK FOR SUCH MEDIATEK SOFTWARE AT ISSUE.
+
+    The following software/firmware and/or related documentation ("MediaTek Software")
+    have been modified by MediaTek Inc. All revisions are subject to any receiver's
+    applicable license agreements with MediaTek Inc.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="not_add_more_text">"Не мога да добавя повече текст"</string>
+    <string name="attach_image">Фото</string>
+    <string name="attach_video">"Видео"</string>
+    <string name="attach_sound">"Музика"</string>
+    <string name="attach_contact">"Контакти"</string> 
+    <string name="attach_file">Файл</string> 
+    <string name="attach_calender">"Календар"</string>    
+    <string name="attach_error_occurred">Няма приложение, поддържащо този вид прикачени файлове.</string>  
+    <string name="low_storage_service_stop">Услугата е-мейл спряна поради недостатъчно памет.</string>
+    <string name="low_storage_hint_delete_mail">Можете да изтриете неизползвани е-мейли или приложения за освобождаване на памет.</string>
+    <string name="low_storage_service_start">Услугата е-мейл рестартирана - сега има достатъчно памет.</string>
+    <string name="low_storage_attachment_cannot_download">Прикаченият файл не е свален - недостатъчно памет.</string>
+    <string name="low_storage_attachment_cannot_view">Приложението не е свалено - недостатъчно памет.</string>
+    <string name="download_remaining">Остава за сваляне</string>
+    <string name="downloading_remaining">Зареждане…</string>
+    <string name="unable_to_connect">Връзката невъзможна</string>
+    <string name="need_connection_prompt">"Трябва ви мрежова връзка за използване на това приложение. Включете мобилна мрежа или Wi-Fi от настройките."</string>
+    <string name="need_wifi_connection_prompt">"Трябва ви мрежова връзка за използване на това приложение. Включете Wi-Fi от настройките."</string>
+    <string name="connection_settings">"Настройки"</string>
+    <string name="too_many_attachments">Не може да се добавят много прикачени файлове. Само първият <xliff:g id="currentCount">%1$d</xliff:g> ще бъде добавен.</string>
+    <string name="not_add_more_attachments">Не може да се добавят повече прикачени файлове. Лимитът е <xliff:g id="maxLimit">%1$d</xliff:g> прикачени файла.</string>
+    <string name="attachment_overflow">Препълване на прикачени файлове</string>
+    <string name="cannot_add_this_attachment">Не мога да добавя този прикачен файл.</string>
+    <string name="loading_attachment">Зареждане на прикачени файлове…</string>
+    <string name="send_attachment_fail">Неуспешно изпращане на прикачен файл.</string>
+    <string name="open_message_parsing">Анализ на съобщението…</string>
+    <string name="open_message_update_db">Актуализиране на базата данни…</string>
+    <string name="open_message_update_ui">Зареждане на съобщението…</string>
+    <string name="please_wait">Процесът върви. Изчакайте…</string>
+    <string name="delete_message_dialog_title">Изтриване на съобщението</string>
+    <string name="delete_message_confirm">"Да се изтрие ли това съобщение?"</string>
+    <string name="attachment_info_deleted">"Прикаченият файл не може да се отвори или запише - може би той е изтрит."</string>
+    <string name="send_failed_ticker"><xliff:g id="account_name">%s</xliff:g> не успя да прати е-мейл.</string>
+    <string name="send_failed_title">Неуспешно изпращане на е-мейл.</string>
+    <string name="always_bcc_myself">Винаги скрито копие до мен</string>
+    <string name="always_bcc_myself_summary">Винаги скрито копие до мен, когато съставям, отговарям или препращам</string>
+    <string name="remote_search_failed">Неуспешно търсене на сървъра!</string>
+    <string name="searching_on_server">Търсене в сървъра</string>
+    <string name="searching_on_server_title">Търсене на \"<xliff:g id="account_name">%s</xliff:g>\" в сървъра</string>
+    <string name="searching_all_fields_on_sever">Търсене по всички полета в сървъра</string>
+    <string name="search_field_subject">"Тема"</string>
+    <string name="search_field_receiver">Получател</string>
+    <string name="search_field_sender">Изпращач</string>
+    <string name="search_field_body">Текст</string>
+    <string name="search_field_all">"Всички"</string>
+    <string name="select_all">"Избиране на всички"</string>
+    <string name="deselect_all">"Премахване на избора"</string>
+    <string name="vip_settings">VІР НАСТРОЙКИ</string>
+    <string name="vip_members">VІР членове</string>
+    <string name="vip_notifications">VІР известия</string>
+    <string name="vip_settings_notify_summary">Известие в системната лента при получаване на VІР е-мейл</string>
+    <string name="vip_members_count">VІР членове (<xliff:g пример="2">%1$d</xliff:g>)</string>
+    <string name="vip_remove_title">Изтриване от VІР</string>
+    <string name="vip_choose_contact">Добавяне към VІР</string>
+    <string name="vip_remove_prompt"><xliff:g пример="2">%1$s</xliff:g> ще бъде изтрит от VIP членове.</string>
+    <string name="not_add_duplicate_vip">Дублираният контакт няма да бъде добавен в списъка VІР.</string>
+    <string name="can_not_add_vip_over_99">VІР членове над 99 не могат да се добавят.</string>
+    <string name="vip_settings_ringtone">"Избор на мелодия"</string>
+    <string name="vip_settings_vibrate_label">"Вибриране"</string>
+    <string name="vip_settings_vibrate_summary">Също вибриране при получаване на VІР е-мейл.</string>
+    <string name="account_setup_options_mail_check_frequency_smartpush">интелигентно вмъкване</string>
+    <string name="smart_push_alert_dialog_title">Опция енергоспестяване</string>
+    <string name="smart_push_alert_dialog_message"> проверява по-рядко за нови е-мейли за икономия на енергия. Поддържайте този режим. Е-мейлите ще бъдат получавани навреме.\n\nМожете да промените настройките във всеки момент.</string>
+    <string name="global_search_label">"Имейл"</string>
+    <string name="global_search_hint">"Търсете по имейл"</string>
+    <string name="global_search_description">Изпращачи, теми и текстове</string>
+    <string name="account_settings_oof_label">Извън офиса</string>
+    <string name="account_settings_oof_unchecked_summary">Сега съм в офиса</string>
+    <string name="account_settings_oof_checked_summary">Сега съм извън офиса</string>
+    <string name="account_settings_oof_from_label">"От"</string>
+    <string name="account_settings_oof_to_label">"До"</string>
+    <string name="account_settings_oof_auto_reply_label">Автом. отговор отсъствам от офиса</string>
+    <string name="account_settings_oof_auto_reply_summary">Автоматичен отговор съобщение до всеки изпращач</string>
+    <string name="account_settings_oof_external_server_label">Изпращане на автом. отговори до външен сървър</string>
+    <string name="account_settings_oof_get_status">Получаване на статуса от сървъра</string>
+    <string name="account_settings_oof_save_sets">Запазване настройките в сървъра</string>
+    <string name="account_settings_oof_get_status_fail">Получаване на статус невъзможно</string>
+    <string name="account_settings_oof_get_status_fail_summary">Получаването на статус от сървъра точно сега е невъзможно. Опитайте по-късно.</string>
+    <string name="account_settings_oof_cancel">Без запазване?</string>
+    <string name="account_settings_oof_cancel_summary">Всички промени ще бъдат изтрити.</string>
+    <string name="account_settings_oof_save_fail">Запазването невъзможно</string>
+    <string name="account_settings_oof_save_fail_summary">Запазването на настройките в сървъра невъзможно. Или сървърът е недостъпен, или автом. отговори са надхвърлили лимита, или у-вата ви са с неточни дата и час.</string>
+    <string name="account_settings_oof_time_alert">Трябва да е по-късен от този час.</string>
+    <string name="no_application_response">"Приложението е блокирано"</string>
+    <string name="extension_choose_provider_title">Изберете провайдър на поща</string>
+    <string name="not_add_more_recipients">Не може да се добавят над <xliff:g id="maxLimit">%1$d</xliff:g> получателя едновременно.</string>
+    <string name="message_view_status_sdcard_not_enough">Няма достатъчно място за запазване на прикачения файл на SD картата.</string>
+    <string name="vip_emails_from_accounts_fmt">Е-мейли от <xliff:g id="vipAccountCount">%d</xliff:g> акаунти</string>
+    <string name="notification_multiple_new_vip_messages_fmt"><xliff:g example="2">%1$d</xliff:g> VІР е-мейли.</string>
+    <string name="message_body_too_large">Не може да се зареди цялото съдържание - твърде дълго съобщение.</string>
+    <string name="cannot_move_multiple_mailbox_toast">Някои е-мейли са в движение. Опитайте по-късно.</string>
+    <string name="certificate_request_ssl">Сертификатът на клиент трябва да ползва защитена връзка.</string>
+    <string name="auto_clear_cache_title">Автоматично изчистване на кеша</string>
+    <string name="auto_clear_cache_description">Редовно изчистване на локално буферираните прикачени файлове</string>
+    <string name="edit_quoted_dialog_title">Максимален брой символи</string>
+    <string name="edit_quoted_not_append_all">Достигнат е максималният брой символи. Част от старото съдържание ще изчезне. Продължаваме ли?</string>
+   <string name="single_message_view_attachment_saved">Прикаченият файл е запазен в <xliff:g id="filename">%s</xliff:g></string>
+    <string name="choose_attachment_dialog_title">"Избор на прикачен файл"</string>
+    <string name="message_compose_error_invalid_email">"Някои имейл адреси са невалидни."</string>
+</resources>

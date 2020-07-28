@@ -1,0 +1,19 @@
+# Format: src_file [des_file] [func]
+# if "des_file" NOT set, src_file will be combined to file 'properties'
+# if "func" NOT set or 'default', src_file will just copy to des_file
+# example: /proc/last_kmsg	last_kmsg default
+
+property properties sys_prop
+/proc/last_kmsg last_kmsg default
+/proc/bootprof bootprof default
+/system/etc/ale-database.dat ale-database.dat default
+/system/data/misc/ProjectConfig.mk ProjectConfig.mk default
+/proc/version 
+/proc/cmdline
+/proc/pvr/version
+/data/misc/mblog/mblog_history
+/data/misc/mblog/mblog_config
+/data/misc/mblog/inter_sd_folder
+/data/misc/mblog/outer_sd_folder
+/system/etc/dump_files
+/cache/recovery/last_log

@@ -1,0 +1,5 @@
+service spm_script /vendor/bin/spm_loader
+    user system
+    group system
+    class core
+    oneshot

@@ -1,0 +1,125 @@
+// Copyright (C) 2017 The Android Open Source Project
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//      http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+cc_defaults {
+    name: "tflite_mtk_test_defaults",
+    proprietary: true,
+    owner: "mtk",
+    header_libs: [
+        "tensorflow_mtk_headers",
+        "flatbuffer_headers",
+        "libeigen",
+    ],
+    cflags: [
+        "-DTF_LITE_DISABLE_X86_NEON",
+        "-Wall",
+        "-Werror",
+        "-Wextra",
+        "-Wno-extern-c-compat",
+        "-Wno-missing-field-initializers",
+        "-Wno-sign-compare",
+        "-Wno-unused-parameter",
+        "-Wno-unused-private-field",
+    ],
+    shared_libs: [
+        "liblog",
+        "libtflite_mtk",
+    ],
+    static_libs: [
+        "libgtest",
+        "libgmock",
+        "libtf_mtk_logging",
+    ],
+}
+
+cc_test {
+    name: "tflite_string_util_test",
+    defaults: ["tflite_mtk_test_defaults"],
+    srcs: [
+        "string_util_test.cc",
+    ],
+}
+
+cc_test {
+    name: "tflite_simple_memory_arena_test",
+    defaults: ["tflite_mtk_test_defaults"],
+    srcs: [
+        "simple_memory_arena_test.cc",
+    ],
+}
+
+cc_test {
+    name: "tflite_arena_planner_test",
+    defaults: ["tflite_mtk_test_defaults"],
+    srcs: [
+        "arena_planner_test.cc",
+    ],
+}
+
+cc_test {
+    name: "tflite_graph_info_test",
+    defaults: ["tflite_mtk_test_defaults"],
+    srcs: [
+        "graph_info_test.cc",
+    ],
+}
+
+cc_test {
+    name: "tflite_interpreter_test",
+    defaults: ["tflite_mtk_test_defaults"],
+    srcs: [
+        "interpreter_test.cc",
+    ],
+}
+
+cc_test {
+    name: "tflite_minimal_logging_test",
+    defaults: ["tflite_mtk_test_defaults"],
+    srcs: [
+        "minimal_logging_test.cc",
+    ],
+}
+
+cc_test {
+    name: "tflite_mutable_op_resolver_test",
+    defaults: ["tflite_mtk_test_defaults"],
+    srcs: [
+        "mutable_op_resolver_test.cc",
+    ],
+}
+
+cc_test {
+    name: "tflite_util_test",
+    defaults: ["tflite_mtk_test_defaults"],
+    srcs: [
+        "util_test.cc",
+    ],
+}
+
+cc_test {
+    name: "tflite_c_api_internal_test",
+    defaults: ["tflite_mtk_test_defaults"],
+    srcs: [
+        "c/c_api_internal_test.cc",
+    ],
+}
+
+cc_test {
+    name: "tflite_nnapi_delegate_test",
+    defaults: ["tflite_mtk_test_defaults"],
+    srcs: [
+        "delegates/nnapi/nnapi_delegate_test.cc",
+        "kernels/test_util.cc",
+    ],
+}

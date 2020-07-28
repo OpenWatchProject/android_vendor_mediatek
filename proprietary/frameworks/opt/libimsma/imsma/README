@@ -1,0 +1,32 @@
+Library of MTK ViLTE features, controlling uplink and downlink data path
+
+WHAT IT DOES?
+=============
+libimsma.so control the uplink and downlink
+
+HOW IT WAS BUILT?
+==================
+It needs the following library from AOSP:
+libcutils.so         
+libstagefright_foundation.so
+libutils.so
+libstagefright.so
+libbinder.so
+libmedia.so
+libutils.so
+
+and the following libs from MediaTek:
+
+libsink.so
+libsource.so
+libvcodec_cap.so
+libimsma_rtp.so
+libcomutils.so
+libimsma_socketwrapper.so
+
+
+HOW TO USE IT?
+==============
+used by the libmtk_vtservice module to do the multimedia and rtp data process
+
+

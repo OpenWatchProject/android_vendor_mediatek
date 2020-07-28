@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.mediatek.sensorhub.ui.PedometerLayoutPreference
+        android:key="pedometer_set_view"
+        android:layout="@layout/sensor_pedometer_view"
+        android:selectable="false" />
+
+    <Preference android:key="0"
+        android:title="@string/accumulated_step_string"/>
+
+    <Preference android:key="total_steps"
+        android:title="@string/total_step_string"/>
+
+    <Preference android:key="start_step"
+        android:title="@string/start_step_string"/>
+</PreferenceScreen>

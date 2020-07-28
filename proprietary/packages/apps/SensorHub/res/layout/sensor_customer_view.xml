@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:minHeight="?android:attr/listPreferredItemHeight"
+    android:gravity="center_vertical"
+    android:orientation="vertical"
+    android:paddingStart="8dip"
+    android:paddingEnd="?android:attr/scrollbarSize">
+    <TextView
+            android:text="@string/report_rate"
+            android:layout_height="30dp"
+            android:layout_width="wrap_content"
+            android:paddingStart="8dip"
+            android:textSize="15dp" />
+    <EditText
+            android:id="@+id/report_rate"
+            android:layout_height="40dp"
+            android:layout_width="match_parent"
+            android:paddingStart="8dip"
+            android:textSize="15dp"
+            android:inputType="number" />
+    <TextView
+            android:text="@string/report_latency"
+            android:layout_height="30dp"
+            android:layout_width="wrap_content"
+            android:paddingStart="8dip"
+            android:textSize="15dp" />
+    <EditText
+            android:id="@+id/report_latency"
+            android:layout_height="40dp"
+            android:layout_width="match_parent"
+            android:paddingStart="8dip"
+            android:textSize="15dp"
+            android:inputType="number" />
+</LinearLayout>

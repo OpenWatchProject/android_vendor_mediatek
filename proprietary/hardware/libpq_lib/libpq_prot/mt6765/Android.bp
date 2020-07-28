@@ -1,0 +1,33 @@
+cc_prebuilt_library_shared {
+    arch: {
+        arm: {
+            shared_libs: [
+                "libdl",
+                "liblog",
+            ],
+            srcs: [
+                "arm/libpq_prot.so",
+            ],
+        },
+        arm64: {
+            shared_libs: [
+                "libdl",
+                "liblog",
+            ],
+            srcs: [
+                "arm64/libpq_prot.so",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    export_include_dirs: [
+        "include",
+    ],
+    name: "libpq_prot@MTK,smart_phone,mt6765",
+    owner: "mtk",
+    proprietary: true,
+    strip: {
+        none: true,
+    },
+}
+

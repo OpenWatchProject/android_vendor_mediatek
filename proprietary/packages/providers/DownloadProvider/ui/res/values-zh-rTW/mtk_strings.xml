@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright (C) 2010 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+  
+          http://www.apache.org/licenses/LICENSE-2.0
+  
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">      
+        
+    <!-- Status messages -->
+    <string name="download_error_insufficient_memory">記憶空間不足</string>
+    <string name="download_error_invalid_descriptor">錯誤的描述項</string>
+    <string name="download_error_invalid_ddversion">版本錯誤</string>
+    <string name="download_error_attribute_mismatch">屬性不相符</string>
+    <string name="download_paused">已暫停</string>
+    
+    <!-- Dialog messages -->
+    <!-- ALert dialog title to show authenticate -->
+    <string name="authenticate_dialog_title">請輸入使用者名稱及密碼。</string>
+    <string name="username">名稱</string>
+    <string name="password">密碼</string>
+    <string name="action">登入</string>
+    <string name="cancel">"取消"</string>
+    <string name="ok">確定</string>
+    
+    <!-- Prompt dialog to show oma download information -->
+    <string name="confirm_oma_download_title">確認下載？</string>
+    <string name="oma_download_name">名稱：</string>
+    <string name="oma_download_vendor">廠商:</string>
+    <string name="oma_download_type">類型:</string>
+    <string name="oma_download_size">大小：</string>
+    <string name="oma_download_description">說明：</string>
+    <string name="oma_download_content_not_supported" product="tablet">本機不支援此內容，裝置中的應用程式也無法開啟檔案。您確定要下載?</string> 
+    <string name="oma_download_content_not_supported" product="default">本機不支援此內容，手機中的應用程式也無法開啟檔案。您確定要下載?</string>
+    <string name="confirm_oma_download_next_url">下載完成，連接下一個 URL？</string>
+    
+    <!-- Add to support Reusme download  -->
+    <string name="pause">暫停</string>
+    <string name="resume">恢復</string>
+    
+    <!-- Add to show delete download failed  -->
+    <string name="delete_failed_with_SDcard">無法刪除檔案，SD 卡有誤。</string>
+    
+    <string name="share_download">分享</string>
+    
+    <!-- Add to show share failed -->
+    <string name="share_failed_with_download_error">檔案下載失敗，無法繼續分享。 </string>
+</resources>

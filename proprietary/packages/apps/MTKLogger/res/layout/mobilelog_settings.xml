@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:key="mobilelog_preference_screen" 
+    android:title="@string/mobile_log_name" >
+
+	    <CheckBoxPreference
+	        android:defaultValue="true"
+	        android:key="mobilelog_androidlog"
+	        android:summary="@string/enable_android_log_summary"
+	        android:title="@string/enable_android_log_title" />
+	
+	    <CheckBoxPreference
+	        android:defaultValue="true"
+	        android:key="mobilelog_kernellog"
+	        android:summary="@string/enable_kernel_log_summary"
+	        android:title="@string/enable_kernel_log_title" />
+	
+	    <CheckBoxPreference
+	        android:defaultValue="true"
+	        android:key="mobilelog_atflog"
+	        android:summary="@string/enable_atf_log_summary"
+	        android:title="@string/enable_atf_log_title" />
+	    
+	     <CheckBoxPreference
+	        android:defaultValue="true"
+	        android:key="mobilelog_scplog"
+	        android:summary="@string/enable_scp_log_summary"
+	        android:title="@string/enable_scp_log_title" />
+
+	     <CheckBoxPreference
+	        android:defaultValue="true"
+	        android:key="mobilelog_bsplog"
+	        android:summary="@string/enable_bsp_log_summary"
+	        android:title="@string/enable_bsp_log_title" />
+	     
+	     <CheckBoxPreference
+	        android:defaultValue="true"
+	        android:key="mobilelog_mmedialog"
+	        android:summary="@string/enable_mmedia_log_summary"
+	        android:title="@string/enable_mmedia_log_title" />
+ 
+	     <CheckBoxPreference
+	        android:defaultValue="true"
+	        android:key="mobilelog_sspmlog"
+	        android:summary="@string/enable_sspm_log_summary"
+	        android:title="@string/enable_sspm_log_title" />
+
+	     <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="mobilelog_adsp_log"
+            android:summary="@string/enable_adsp_log_summary"
+            android:title="@string/enable_adsp_log_title" />
+	     <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="mobilelog_mcupm_log"
+            android:summary="@string/enable_mcupm_log_summary"
+            android:title="@string/enable_mcupm_log_title" />
+	    <EditTextPreference
+	        android:defaultValue="500"
+	        android:key="mobilelog_logsize"
+	        android:summary="@string/limit_single_log_size_summary"
+	        android:title="@string/limit_single_log_size_title" />
+       
+	    <EditTextPreference
+            android:defaultValue="1000"
+            android:key="mobilelog_total_logsize"
+            android:summary="@string/limit_total_log_size_summary"
+            android:title="@string/limit_total_log_size_title" />
+	
+</PreferenceScreen>

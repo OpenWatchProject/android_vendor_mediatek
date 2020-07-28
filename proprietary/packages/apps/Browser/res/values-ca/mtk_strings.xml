@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2007 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+  
+          http://www.apache.org/licenses/LICENSE-2.0
+  
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="delete_folder_warning">Voleu esborrar la carpeta \"<xliff:g id="bookmark">%s</xliff:g>\"?</string>
+    <string name="contextmenu_savelinkbookmark">"Desa l'enllaç com adreça d'interés"</string>
+    <string name="download_path_unavailable_dlg_title">Directori de descàrrega no disponible</string>
+	<string name="download_path_unavailable_dlg_msg">Modifiqueu el directori de descàrrega del navegador</string>
+    <string name="home">"Pàgina d\'inici"</string>
+    <string name="close">"Tanca"</string>
+    <string name="option">Opció</string>
+    <string name="minimize">Minimitza</string>
+    <string name="quit">Surt</string>
+    <string name="pref_download_title">Configuració de descàrregues</string>
+    <string name="pref_extras_set_download_directory_title">Estableix directori de descàrrega</string>
+    
+    <!-- M: site navigation start @{ -->   
+    <string name="sitenavigation_add">Add website</string>
+    <string name="tab_site_navigation">Site Navigation</string>
+    <string-array name="pref_homepage_choices_site_navigation">
+        <item msgid="844041670142910837">"Pàgina actual"</item>
+        <item msgid="4430498748295169195">"Pàgina en blanc"</item>
+        <item msgid="5747608191946904074">"Pàgina predeterminada"</item>
+        <item msgid="6092441301001006473">"Llocs més visitats"</item>
+        <item>Site Navigation</item>
+        <item msgid="6569304572171444894">"Altres"</item>
+    </string-array>
+    <!-- @} -->   
+
+
+    <!-- M: Option menu change string: Bookmarks -> Bookmarks/History -->
+    <string name="permlab_readHomepage">"Llegeix la pàgina d'inici en navegador"</string>
+    <string name="permdesc_readHomepage">"Permet que l'aplicació llegeixi la informació de la pàgina d'inici del navegador sense la vostra intervenció"</string>
+    <string name="permlab_writeHomepage">"Modifica la pàgina d'inici del navegador"</string>
+    <string name="permdesc_writeHomepage">"Permet que l'aplicació modifiqui la informació de la pàgina d'inici del navegador sense la vostra intervenció"</string>
+    <string name="duplicated_bookmark">"Adreça d'interés duplicada"</string>
+    <string name="duplicated_bookmark_warning">"L'adreçad'interés té el mateix nom o ubicació, voleu sobreescriure-la?"</string>
+    <string name="duplicated_folder_warning">La carpeta té un nom que ja existeix.</string>
+    <string name="pref_content_search_engine_consistency">Consistència del motor de cerques</string>
+    <string name="pref_search_engine_unify">Unifica el motor de cerques</string>
+    <string name="pref_search_engine_unify_summary">Aplica el canvi de motor de navegació a QuickSearchBox</string>
+    <string name="download_or_open_content">Quina operació voleu fer?</string>
+    <string name="save_content">"Desa"</string>
+    <string name="open_content">"Obre"</string>
+    <string name="no_voice_search_alert_dialog_title">"Cerca per veu"</string>
+    <string name="no_voice_search_alert_dialog_msg">La cerca per veu no està disponible perquè no hi ha cap aplicació de cerca per veu. Instal·leu-ne una primer.</string>
+    <string name="delete">"Suprimeix"</string>
+    <string name="edit">"Edita"</string>
+    <string name="add">"Afegeix"</string>
+    <string name="delete_site_navigation_msg">Esborrar aquest objecte?</string>
+    <string name="site_navigation_name">"Nom"</string>
+    <string name="site_navigation_address">"Adreça"</string>
+    <string name="website_needs_title">"El lloc web ha de tenir un nom."</string>
+    <string name="website_needs_url">"El lloc web ha de tenir una ubicació."</string>
+    <string name="site_navigation_cannot_save_url">Aquesta URL no pot ser un lloc web</string>
+    <string name="add_site_navigation">Add website</string>
+    <string name="edit_site_navigation">Edita navegació del lloc</string>
+    <string name="site_navigation_edit_button">"Edita"</string>
+    <string name="save_webpage">"Desa"</string>
+    <string name="duplicate_site_navigation_url">Aquesta URL ja ha existit.</string>
+    <string name="duplicate_site_navigation_title">This lable has already existed.</string>
+    <string name="max_input_browser_search">La vostra entrada ha assolit el límit màxim.</string>
+    <string name="max_input_browser_search_title">"Límit d'entrada"</string>
+    <string name="max_input_browser_search_button">"D\'acord"</string>
+    <string name="bookmarks_history">Adreces d\'interès/Historial</string>
+    <string name="save_bookmark">"Desa l\'adreça d\'interès"</string>
+    <string name="tabs">"Pestanya"</string>
+    <string name="open_saved_page_failed">No es pot obrir la pàgina desada.</string>
+    <!-- M: add for save page -->
+    <string name="saved_page_failed">"No s'ha pogut desar la pàgina web."</string>
+    <string name="saved_page_complete">Ha finalitzat la descàrrega.</string>
+    <string name="saved_page_fail">"No s'ha pogut desar "</string>
+    <string name="create_folder_fail">"No s'ha pogut crear la carpeta per desar-hi la pàgina"</string>
+    <string name="saving_page">"S'està desant la pàgina web"</string>
+    <string name="need_login_email">En primer lloc registreu el vostre compte de correu.</string>
+    <string name="folder_needs_title">"La carpeta ha de tenir un nom."</string>
+    <string name="denied_required_permission">Permisos denegats. Podeu canviar-los a Configuració &gt; Aplicacions.</string>
+</resources>

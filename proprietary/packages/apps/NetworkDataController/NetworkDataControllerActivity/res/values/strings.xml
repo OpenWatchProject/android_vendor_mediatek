@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="app_name">Permission Control</string>
+    <string name="accept_perm">Allow</string>
+    <string name="deny_perm">Deny</string>
+    <string name="wifi_only">Wi-Fi Only</string>
+
+    <!-- Dialog message body for different permission -->
+    <string name="notify_dialog_title">Security warning</string>
+    <string name="notify_dialog_msg_body"><xliff:g id="pkg_name">%s</xliff:g> is accessing your network, including cellular and Wi-Fi.</string>
+    <string name="time_count_down_hint">(Deny automatically after <xliff:g id="time">%s</xliff:g> seconds.)</string>
+
+    <!-- Notification on power on -->
+    <string name="notification_control_state_title">App permission</string>
+    <string name="notification_control_state_summary">App permission management is closed.</string>
+    <!-- Toast information for different permission -->
+    <string name="toast_deny_msg_body"><xliff:g id="pkg_name">%s</xliff:g> is denied to <xliff:g id="perm_name">%s</xliff:g>.</string>
+
+    <!-- Permission manager UI  -->
+    <string name="manage_permission_app_label">App permissions</string>
+    <string name="foreground_notification_summary">Network Data Control is running </string>
+    <string name="foreground_notification_title">Touch to check and modify network permissions.</string>
+    <string name="manage_permission_summary">Manage app permissions for security and privacy protection</string>
+    <string name="normal_apps">Normal Apps</string>
+    <string name="system_apps">System Apps</string>
+    <string name="no_applications">No apps.</string>
+    <string name="version_text">version <xliff:g id="version_num">%1$s</xliff:g></string>
+
+    <!-- app count/permission count -->
+    <string name="app_count_unit_single">app</string>
+    <string name="app_count_unit_plural">apps</string>
+    <string name="perm_count_unit_single">permission</string>
+    <string name="perm_count_unit_plural">permissions</string>
+
+    <!-- empty text for listview -->
+    <string name="no_app_use_perm">No apps use this permission.</string>
+    <string name="no_perm_is_used">No permissions are used this app.</string>
+    <string name="notify_user_switch_on">Turn on the switch to manage app permissions.</string>
+
+    <!-- alert dialog when turn off the switch -->
+    <string name="alert_dlg_title">Turn off protection?</string>
+    <string name="alert_dlg_mgs">Apps will directly get permissions without your confirmation.</string>
+
+    <!-- auto boot part begin -->
+    <string  name="auto_boot_pref_title">Auto-start management</string>
+    <string  name="auto_boot_pref_summary">Allow or deny app auto-start during system bootup</string>
+    <string  name="no_auto_boot_app">No auto-start apps.</string>
+
+    <string  name="no_network_data_app">Empty</string>
+    <string  name="trigger_history_pref_title">Permission request</string>
+    <string  name="trigger_history_pref_summary">Show app permission request records</string>
+    <string  name="network_data_control_title">Network data controller</string>
+    <string  name="network_data_message">use your Network data</string>
+    <string  name="no_permission_request">Empty</string>
+    <string  name="loading">Loading</string>
+    <string  name="refresh">Refresh</string>
+    <string  name="on">On</string>
+    <string  name="off">Off</string>
+    <string  name="prompt">If denied, you can change the setting from \"Settings->Network &amp; Internet->Data usage->Network data controller\".</string>
+    <string  name="channel_name">Network Data Controller</string>
+    <string  name="channel_description">Control APP to use Network data</string>
+    <string  name="ok">OK</string>
+    <string  name="cancel">Cancel</string>
+    <string  name="network_review_title">Following system applications will access cellular data and Wi-Fi network.</string>
+    <string  name="no_network_permission">No network permission</string>
+    <string  name="warning_network">Some system app can not work</string>
+    <string  name="multiple_apps">Multiple applications</string>
+    <string  name="warning_network_title">Forbid system applications from accessing network will bring serious situations for usage.</string>
+
+    <plurals name="autoboot_app_desc_allow">
+        <item quantity="one"><xliff:g id="app_count">%1$d</xliff:g> app allowed,</item>
+        <item quantity="other"><xliff:g id="app_count">%1$d</xliff:g> apps allowed,</item>
+    </plurals>
+
+   <plurals name="autoboot_app_desc_deny">
+        <item quantity="one"><xliff:g id="app_count">%1$d</xliff:g> app denied.</item>
+        <item quantity="other"><xliff:g id="app_count">%1$d</xliff:g> apps denied.</item>
+   </plurals>
+   <!-- auto boot part end -->
+</resources>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2007 The Android Open Source Project
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+          http://www.apache.org/licenses/LICENSE-2.0
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="incall_status_dialed_mmi" msgid="3672498861336189563">"Iniciar la secuencia de MMI"</string>
+    <string name="dual_mic_title">Reducción de ruido</string>
+    <string name="dual_mic_summary">Suprimir ruido de fondo durante las llamadas</string>
+    <string name="fdn_errorcode_unknown_info">Fallo, ocurrió un error desconocido, inténtelo más tarde.</string>
+    <string name="fdn_errorcode_number_info">Fallo, el largo del número de contacto es demasiado largo.</string>
+    <string name="fdn_errorcode_name_info">Fallo, el largo del nombre del contacto es demasiado largo.</string>
+    <string name="fdn_errorcode_storage_info">Fallo, almacenamiento lleno.</string>
+    <string name="fdn_errorcode_phb_info">Fallo, la Agenda telefónica no está lista aún. Inténtelo más tarde.</string>
+    <string name="fdn_errorcode_pin2_info">Fallo, PIN2 inválido.</string>
+    <string name="fdn_contact_number_invalid">Número de contacto inválido.</string>
+    <string name="fdn_puk_need_tips">PIN2 Bloqueado. Canbiar PIN2 y intentar nuevamente!</string>
+    <string name="fdn_phone_book_busy">La libreta telefónica está ocupada ahora, inténtelo más tarde.</string>
+    <string name="retries_left">quedan <xliff:g id="number">%d</xliff:g> intentos</string>
+    <string name="cdma_labelCFU">"Reenviar siempre"</string>
+    <string name="cdma_labelCFB">"Reenviar cuando está ocupado"</string>
+    <string name="cdma_labelCFNRy">"Reenviar si no contesta"</string>
+    <string name="cdma_labelCFNRc">"Reenviar si no llega"</string>
+    <string name="cdma_labelCFC">Cancelar todos los reenvíos</string>
+    <string name="cdma_cnir_title">CNIR</string>
+    <string name="cdma_cnir_turnoff">Desact restr de id del núm de llam</string>
+    <string name="cdma_cnir_turnon">Hab restr de id del núm de llam</string>
+    <string name="volte_is_adding_participants">Añadiendo miembro(s) de conferencia, por favor, espere...</string>
+    <string name="volte_fail_to_invit_participants">Falla al añadir todos los miembros a la conferencia.</string>
+    <string name="volte_conf_member_reach_max">La conferencia ya ha alcanzado el límite máximo de miembros.</string>
+    <string name="wfc_wifi_call_drop">Se cayó la llamada por Wi-Fi</string>
+    <string name="wfc_internet_connection_lost">Se perdió la conexión a Internet</string>
+    <string name="wfc_no_network">Ninguna red móvil cualificada disponible</string>
+    <string name="volte_ss_not_available_tips">Para completar la operación, es necesario abrir conexión de datos de <xliff:g id="sub_name">%s</xliff:g>.</string>
+    <string name="volte_ss_not_available_tips_data">Para completar la operación, deberá activar la conexión de datos de <xliff:g id="sub_name">%s</xliff:g>.</string>
+    <string name="volte_ss_not_available_tips_roaming">Para completar la operación, deberá activar la itinerancia de datos de <xliff:g id="sub_name">%s</xliff:g>.</string>
+    <string name="volte_ss_not_available_tips_data_roaming">Para completar la operación, deberá activar la conexión de datos y la itinerancia de datos de <xliff:g id="sub_name">%s</xliff:g>.</string>
+    <string name="vilte_srvcc_tip">Motivo de la red, cambiado a llamada de voz.</string>
+    <string name="vilte_to_voice_call">Cambiado a llamada de voz</string>
+    <string name="volte_ss_not_available_tips_data_traffic">Se utilizará temporalmente una cantidad pequeña de datos celulares de <xliff:g id="sub_name">%s</xliff:g>. ¿Desea continuar?</string>
+    <string name="labelCFVoice">Reenvío de llamadas de voz</string>
+    <string name="actionBarCFVoice">Reenvío de llamadas de voz (<xliff:g id="subscriptionlabel" example="Verizon">%s</xliff:g>)</string>
+    <string name="labelCFVideo">Reenvío de llamadas de video</string>
+    <string name="actionBarCFVideo">Reenvío de llamadas de video (<xliff:g id="subscriptionlabel" example="Verizon">%s</xliff:g>)</string>
+    <string name="labelCBVoice">Restricción de llamadas de voz</string>
+    <string name="actionBarCBVoice">Restricción de llamadas de voz (<xliff:g id="subscriptionlabel" example="Verizon">%s</xliff:g>)</string>
+    <string name="labelCBVideo">Restricción de llamadas de video</string>
+    <string name="actionBarCBVideo">Restricción de llamadas de video (<xliff:g id="subscriptionlabel" example="Verizon">%s</xliff:g>)</string>
+    <string name="alert_turn_off_volte">Para completar la operación, deberá desactivar VoLTE.</string>
+    <string name="alert_volte_no_service"><xliff:g id="sub_name">%s</xliff:g> Los servicios VoLTE y de llamadas están actualmente no disponibles. ¿Desactivar VoLTE?</string>
+</resources>

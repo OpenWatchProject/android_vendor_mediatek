@@ -1,0 +1,21 @@
+library of Drm features, including modular drm function in tee.
+
+This library is pre-built by MediaTek internal.
+
+WHAT IT DOES?
+=============
+libtlcModularDRMWidevine is a connection between non-secure and secure world, it provide modular api to
+access secure world.
+
+HOW IT WAS BUILT?
+==================
+It needs the following library from AOSP:
+
+and the following libs from MediaTek:
+
+All source/dependency modules of this module are already put in
+'system/lib' folder.
+
+HOW TO USE IT?
+==============
+It is used by modular drm.

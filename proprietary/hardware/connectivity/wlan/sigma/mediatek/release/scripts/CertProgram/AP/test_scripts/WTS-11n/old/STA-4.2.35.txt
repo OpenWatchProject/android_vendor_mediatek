@@ -1,0 +1,65 @@
+info![ Configuring STA1 ]!
+# STA1 Configuration for No-Security
+
+define!$Band!11na!
+define!$SSID!4.2.35!
+
+$STA1_control_agent!ca_get_version!DEFAULT
+$STA1_control_agent!device_get_info!DEFAULT
+$STA1_control_agent!device_list_interfaces,interfaceType,802.11!INTERFACEID,$STA1_IF
+$STA1_control_agent!sta_preset_testparameters,interface,$STA1_IF,supplicant,$STASupplicantName,mode,$Band,RTS,2347,FRGMNT,$STA_Frag,preamble,long,powersave,$STA_Legacy_PS,wmm,$WMMFlag,HT,$HTFlag,reset,11n!DEFAULT
+$STA1_control_agent!sta_get_info,interface,$STA1_IF!DEFAULT
+#MIMO
+$STA1_control_agent!sta_set_11n,interface,$STA1_IF,reset_default,11n!DEFAULT
+$STA1_control_agent!sta_set_11n,interface,$STA1_IF,width,$STAChannelWidth!DEFAULT
+$STA1_control_agent!sta_set_11n,interface,$STA1_IF,ampdu,disable!DEFAULT
+$STA1_control_agent!sta_set_11n,interface,$STA1_IF,amsdu,disable!DEFAULT
+$STA1_control_agent!sta_set_11n,interface,$STA1_IF,addba_reject,enable!DEFAULT
+$STA1_control_agent!sta_set_11n,interface,$STA1_IF,TXSP_STREAM,$TX-SS!DEFAULT
+$STA1_control_agent!sta_set_11n,interface,$STA1_IF,RXSP_STREAM,$RX-SS!DEFAULT
+
+#Changes as per 11n Test Plan v2.0.24
+#$STA1_control_agent!sta_set_encryption,interface,$STA1_IF,ssid,$SSID,encpType,none!DEFAULT
+$STA1_control_agent!sta_set_psk,interface,$STA1_IF,ssid,$SSID,passphrase,12345678,encpType,aes-ccmp,keymgmttype,wpa2!DEFAULT
+
+$STA1_control_agent!sta_set_ip_config,interface,$STA1_IF,dhcp,0,ip,$STA1_wireless_ip,mask,$netmask!DEFAULT
+$STA1_control_agent!sta_associate,interface,$STA1_IF,ssid,$SSID!DEFAULT
+$STA1_control_agent!sta_is_connected,interface,$STA1_IF!DEFAULT
+$STA1_control_agent!sta_get_bssid,interface,$STA1_IF!DEFAULT
+$STA1_control_agent!sta_get_ip_config,interface,$STA1_IF!DEFAULT
+
+$STA1_control_agent!traffic_agent_reset!DEFAULT
+sleep!10!
+$STA1_control_agent!traffic_send_ping,destination,wfa_console_tg,framesize,1000,frameRate,1,duration,10!STREAMID,$STA1_PING
+sleep!10!
+$STA1_control_agent!traffic_stop_ping,streamID,$STA1_PING!DEFAULT
+
+
+
+### STA2 Configuration and Association
+info![ Configuring STA2 ]!
+
+define!$Band!11a!
+define!$SSID!AP2-4.2.35!
+
+$STA2_control_agent!ca_get_version!DEFAULT
+$STA2_control_agent!device_get_info!DEFAULT
+$STA2_control_agent!device_list_interfaces,interfaceType,802.11!INTERFACEID,$STA2_IF
+$STA2_control_agent!sta_preset_testparameters,interface,$STA2_IF,supplicant,$STASupplicantName,mode,$Band,RTS,2347,FRGMNT,$STA_Frag,preamble,long,powersave,$STA_Legacy_PS,wmm,$WMMFlag,HT,$HTFlag!DEFAULT
+$STA2_control_agent!sta_get_info,interface,$STA2_IF!DEFAULT
+
+#Changes as per 11n Test Plan v2.0.24
+#$STA2_control_agent!sta_set_encryption,interface,$STA2_IF,ssid,$SSID,encpType,none!DEFAULT
+$STA2_control_agent!sta_set_psk,interface,$STA2_IF,ssid,$SSID,passphrase,12345678,encpType,aes-ccmp,keymgmttype,wpa2!DEFAULT
+
+$STA2_control_agent!sta_set_ip_config,interface,$STA2_IF,dhcp,0,ip,$STA2_wireless_ip,mask,$netmask!DEFAULT
+$STA2_control_agent!sta_associate,interface,$STA2_IF,ssid,$SSID!DEFAULT
+$STA2_control_agent!sta_is_connected,interface,$STA2_IF!DEFAULT
+$STA2_control_agent!sta_get_bssid,interface,$STA2_IF!DEFAULT
+$STA2_control_agent!sta_get_ip_config,interface,$STA2_IF!DEFAULT
+
+$STA2_control_agent!traffic_agent_reset!DEFAULT
+sleep!10!
+$STA2_control_agent!traffic_send_ping,destination,wfa_console_tg,framesize,1000,frameRate,1,duration,10!STREAMID,$STA2_PING
+sleep!10!
+$STA2_control_agent!traffic_stop_ping,streamID,$STA2_PING!DEFAULT

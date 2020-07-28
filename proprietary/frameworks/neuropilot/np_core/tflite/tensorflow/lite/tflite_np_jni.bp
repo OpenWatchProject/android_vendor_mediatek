@@ -1,0 +1,88 @@
+/* MediaTek Inc. (C) 2019. All rights reserved.
+ *
+ * BY OPENING THIS FILE, RECEIVER HEREBY UNEQUIVOCALLY ACKNOWLEDGES AND AGREES
+ * THAT THE SOFTWARE/FIRMWARE AND ITS DOCUMENTATIONS ("MEDIATEK SOFTWARE")
+ * RECEIVED FROM MEDIATEK AND/OR ITS REPRESENTATIVES ARE PROVIDED TO RECEIVER ON
+ * AN "AS-IS" BASIS ONLY. MEDIATEK EXPRESSLY DISCLAIMS ANY AND ALL WARRANTIES,
+ * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE OR NONINFRINGEMENT.
+ * NEITHER DOES MEDIATEK PROVIDE ANY WARRANTY WHATSOEVER WITH RESPECT TO THE
+ * SOFTWARE OF ANY THIRD PARTY WHICH MAY BE USED BY, INCORPORATED IN, OR
+ * SUPPLIED WITH THE MEDIATEK SOFTWARE, AND RECEIVER AGREES TO LOOK ONLY TO SUCH
+ * THIRD PARTY FOR ANY WARRANTY CLAIM RELATING THERETO. RECEIVER EXPRESSLY ACKNOWLEDGES
+ * THAT IT IS RECEIVER'S SOLE RESPONSIBILITY TO OBTAIN FROM ANY THIRD PARTY ALL PROPER LICENSES
+ * CONTAINED IN MEDIATEK SOFTWARE. MEDIATEK SHALL ALSO NOT BE RESPONSIBLE FOR ANY MEDIATEK
+ * SOFTWARE RELEASES MADE TO RECEIVER'S SPECIFICATION OR TO CONFORM TO A PARTICULAR
+ * STANDARD OR OPEN FORUM. RECEIVER'S SOLE AND EXCLUSIVE REMEDY AND MEDIATEK'S ENTIRE AND
+ * CUMULATIVE LIABILITY WITH RESPECT TO THE MEDIATEK SOFTWARE RELEASED HEREUNDER WILL BE,
+ * AT MEDIATEK'S OPTION, TO REVISE OR REPLACE THE MEDIATEK SOFTWARE AT ISSUE,
+ * OR REFUND ANY SOFTWARE LICENSE FEES OR SERVICE CHARGE PAID BY RECEIVER TO
+ * MEDIATEK FOR SUCH MEDIATEK SOFTWARE AT ISSUE.
+ *
+ * The following software/firmware and/or related documentation ("MediaTek Software")
+ * have been modified by MediaTek Inc. All revisions are subject to any receiver's
+ * applicable license agreements with MediaTek Inc.
+ */
+
+// JNI library for Java API.
+cc_library_shared {
+    name: "libneuropilot_jni",
+    proprietary: true,
+    owner: "mtk",
+    rtti: true,
+    srcs: [
+        "mtk/java/src/main/native/builtin_ops_jni.cc",
+        "mtk/java/src/main/native/init_tensorflow_jni.cc",
+        "mtk/java/src/main/native/jni_utils.cc",
+        "mtk/java/src/main/native/nativeinterpreterwrapper_jni.cc",
+        "mtk/java/src/main/native/tensor_jni.cc",
+        "mtk/java/src/main/native/tensorflow_lite_jni.cc",
+        "mtk/java/src/main/native/platform_jni.cc",
+    ],
+    include_dirs: [
+        "external/eigen",
+        "external/flatbuffers/include",
+        "external/gemmlowp",
+        "external/libtextclassifier",
+        "vendor/mediatek/proprietary/frameworks/neuropilot/np_core/tflite/",
+    ],
+    shared_libs: [
+        "libcutils",
+        "libnativewindow",
+        "libc++",
+        "liblog",
+        "libtextclassifier_hash",
+    ],
+    header_libs: [
+        "jni_headers",
+    ],
+    whole_static_libs: [
+        "libtflite_mtk_static_build",
+    ],
+    cflags: [
+        "-DTF_LITE_DISABLE_X86_NEON",
+        "-DTFLITE_WITH_RUY",
+        "-DNAMESPACE_FOR_HASH_FUNCTIONS=farmhash",
+        "-fexceptions",
+        "-Wall",
+        "-Werror",
+        "-Wextra",
+        "-Wno-array-bounds",
+        "-Wno-deprecated-declarations",
+        "-Wno-extern-c-compat",
+        "-Wno-invalid-partial-specialization",
+        "-Wno-mismatched-tags",
+        "-Wno-missing-field-initializers",
+        "-Wno-sign-compare",
+        "-Wno-typedef-redefinition",
+        "-Wno-unused-function",
+        "-Wno-unused-lambda-capture",
+        "-Wno-unused-local-typedef",
+        "-Wno-unused-parameter",
+        "-Wno-unused-private-field",
+        "-Wno-unused-variable",
+        "-Wno-invalid-partial-specialization",
+        "-Wno-mismatched-tags",
+        "-Wno-visibility",
+    ],
+}

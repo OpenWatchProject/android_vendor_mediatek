@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+**
+** Copyright 2014, The Android Open Source Project
+**
+** Licensed under the Apache License, Version 2.0 (the "License");
+** you may not use this file except in compliance with the License.
+** You may obtain a copy of the License at
+**
+**     http://www.apache.org/licenses/LICENSE-2.0
+**
+** Unless required by applicable law or agreed to in writing, software
+** distributed under the License is distributed on an "AS IS" BASIS,
+** WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+** See the License for the specific language governing permissions and
+** limitations under the License.
+*/
+-->
+
+<merge xmlns:latin="http://schemas.android.com/apk/res/com.android.inputmethod.latin">
+    <switch>
+        <case latin:keyboardLayoutSetElement="alphabetManualShifted|alphabetShiftLocked|alphabetShiftLockShifted">
+            <!-- U+0913: "ओ" BENGALI LETTER O
+                 U+0913/U+0902: "ओं" BENGALI LETTER O/BENGALI SIGN ANUSVARA
+                 U+0911: "ऑ" BENGALI LETTER CANDRA O
+                 U+0912: "ऒ" BENGALI LETTER SHORT O -->
+            <Key
+                latin:keySpec="&#x0A93;"
+                latin:moreKeys="&#x0A93;,&#x0A91;" />
+            <!-- U+090F: "ए" BENGALI LETTER E
+                 U+090F/U+0902: "एं" BENGALI LETTER E/BENGALI SIGN ANUSVARA
+                 U+090F/U+0901: "एँ" BENGALI LETTER E/BENGALI SIGN CANDRABINDU
+                 U+090D: "ऍ" BENGALI LETTER CANDRA E
+                 U+090E: "ऎ" BENGALI LETTER SHORT E -->
+            <Key
+                latin:keySpec="&#x0A8F;"
+                latin:moreKeys="&#x0A8F;&#x0A82;,&#x0A8F;&#x0A81;,&#x0A8D;" />
+            <!-- U+0905: "अ" BENGALI LETTER A
+                 U+0905/U+0902: "अं" BENGALI LETTER A/BENGALI SIGN ANUSVARA
+                 U+0905/U+0901: "अँ" BENGALI LETTER A/BENGALI SIGN CANDRABINDU -->
+            <Key
+                latin:keySpec="&#x0A85;"
+                latin:moreKeys="&#x0A85;&#x0A82;,&#x0A85;&#x0A81;" />
+            <!-- U+0907: "इ" BENGALI LETTER I
+                 U+0907/U+0902: "इं" BENGALI LETTER I/BENGALI SIGN ANUSVARA
+                 U+0907/U+0901: "इं" BENGALI LETTER I/BENGALI SIGN CANDRABINDU -->
+            <Key
+                latin:keySpec="&#x0A87;"
+                latin:moreKeys="&#x0A87;&#x0A82;,&#x0A87;&#x0A81;,&#x0A8C;" />
+            <!-- U+0909: "उ" BENGALI LETTER U
+                 U+0909/U+0902: "उं" BENGALI LETTER U/BENGALI SIGN ANUSVARA
+                 U+0909/U+0901: "उँ" BENGALI LETTER U/BENGALI SIGN CANDRABINDU -->
+            <Key
+                latin:keySpec="&#x0A89;"
+                latin:moreKeys="&#x0A89;&#x0A82;,&#x0A89;" />
+            <!-- U+092B: "फ" BENGALI LETTER PHA
+                 U+092B/U+093C: "फ़" BENGALI LETTER PHA/BENGALI SIGN NUKTA -->
+            <Key
+                latin:keySpec="&#x0AAB;"
+                latin:moreKeys="&#x0AAB;&#x0ABC;" />
+            <!-- U+0931: "ऱ" BENGALI LETTER RRA
+                 U+094D/U+0930: "्र" BENGALI SIGN VIRAMA/BENGALI LETTER RA
+                 U+0930/U+094D: "र्" BENGALI LETTER RA/BENGALI SIGN VIRAMA -->
+            
+            <!-- U+0916: "ख" BENGALI LETTER KHA
+                 U+0916/U+093C: "ख़" BENGALI LETTER KHA/BENGALI SIGN NUKTA -->
+            <Key
+                latin:keySpec="&#x0A96;"
+                latin:moreKeys="&#x0A96;&#x0ABC;" />
+            <!-- U+0925: "थ" BENGALI LETTER THA -->
+            <Key latin:keySpec="&#x0AA5;" />
+            <!-- U+091B: "छ" BENGALI LETTER CHA -->
+            <Key latin:keySpec="&#x0A9B;" />
+            <!-- U+0920: "ठ" BENGALI LETTER TTHA -->
+            <Key latin:keySpec="&#x0AA0;" />
+            <Key latin:keySpec="&#x0A81;" />
+        </case>
+        <default>
+            <!-- Because the font rendering system prior to API version 16 can't automatically
+                 render dotted circle for incomplete combining letter of some scripts, different
+                 set of Key definitions are needed based on the API version. -->
+            <include latin:keyboardLayout="@xml/keystyle_gujarati_vowel_sign_o" />
+            <Key latin:keyStyle="baseKeyGujaratiVowelSignO" />
+            <!-- Because the font rendering system prior to API version 16 can't automatically
+                 render dotted circle for incomplete combining letter of some scripts, different
+                 set of Key definitions are needed based on the API version. -->
+            <include latin:keyboardLayout="@xml/keystyle_gujarati_vowel_sign_e" />
+            <Key latin:keyStyle="baseKeyGujaratiVowelSignE" />
+            <!-- Because the font rendering system prior to API version 16 can't automatically
+                 render dotted circle for incomplete combining letter of some scripts, different
+                 set of Key definitions are needed based on the API version. -->
+            <include latin:keyboardLayout="@xml/keystyle_gujarati_sign_virama" />
+            <Key latin:keyStyle="baseKeyGujaratiSignVirama" />
+            <!-- Because the font rendering system prior to API version 16 can't automatically
+                 render dotted circle for incomplete combining letter of some scripts, different
+                 set of Key definitions are needed based on the API version. -->
+            <include latin:keyboardLayout="@xml/keystyle_gujarati_vowel_sign_i" />
+            <Key latin:keyStyle="baseKeyGujaratiVowelSignI" 
+            	   latin:moreKeys="&#x0AE2;" />
+            <!-- Because the font rendering system prior to API version 16 can't automatically
+                 render dotted circle for incomplete combining letter of some scripts, different
+                 set of Key definitions are needed based on the API version. -->
+            <include latin:keyboardLayout="@xml/keystyle_gujarati_vowel_sign_u" />
+            <Key latin:keyStyle="baseKeyGujaratiVowelSignU" />
+            <!-- U+092A: "प" BENGALI LETTER PA -->
+            <Key latin:keySpec="&#x0AAA;" />
+            <!-- U+0930: "र" BENGALI LETTER RA
+                 U+090B: "ऋ" BENGALI LETTER VOCALIC R
+                 U+0930/U+093C: "ऱ" BENGALI LETTER RA/BENGALI SIGN NUKTA
+                 U+0960: "ॠ" BENGALI LETTER VOCALIC RR -->
+            <Key
+                latin:keySpec="&#x0AB0;"
+                latin:moreKeys="&#x0A8B;,&#x0AB0;&#x0ABC;,&#x0AE0;" />
+            <!-- U+0915: "क" BENGALI LETTER KA
+                 U+0915/U+093C: "क़" BENGALI LETTER KA/BENGALI SIGN NUKTA -->
+            <Key
+                latin:keySpec="&#x0A95;"
+                latin:moreKeys="&#x0A95;&#x0ABC;" />
+            <!-- U+0924: "त" BENGALI LETTER TA
+                 U+0924/U+094D/U+0930: "त्र" BENGALI LETTER TA/BENGALI SIGN VIRAMA/BENGALI LETTER RA -->
+            <Key
+                latin:keySpec="&#x0AA4;"
+                latin:moreKeys="&#x0AA4;&#x0ACD;&#x0AB0;" />
+            <!-- U+091A: "च" BENGALI LETTER CA -->
+            <Key latin:keySpec="&#x0A9A;" />
+            <!-- U+091F: "ट" BENGALI LETTER TTA -->
+            <Key latin:keySpec="&#x0A9F;" />
+        </default>
+    </switch>
+</merge>

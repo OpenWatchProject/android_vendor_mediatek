@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <Button
+        android:id="@+id/api_test_start"
+        android:layout_height="wrap_content" 
+        android:layout_width="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/desense_at_start"
+        android:textSize="16sp" >
+    </Button>   
+         <View
+        android:layout_width="match_parent"
+        android:layout_height="1dip"
+        android:background="#FF909090" >
+    </View>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:text="@string/desense_at_result_title"
+        android:gravity="center_horizontal"
+        android:textSize="16sp" >
+    </TextView>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dip"
+        android:background="#FF909090" >
+    </View>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp" >
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/desense_at_result_title_1"
+            android:gravity="center" >
+        </TextView>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/desense_at_result_title_2"
+            android:gravity="center" >
+        </TextView>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dip"
+        android:background="#FF909090" >
+    </View>
+
+    
+    <ListView
+        android:id="@+id/desense_at_api_test_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</LinearLayout>

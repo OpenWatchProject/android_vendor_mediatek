@@ -1,0 +1,12 @@
+package vendor.mediatek.hardware.presence@1.0;
+
+interface IPresenceIndication {
+    /*
+     * Indicates data from UA socket
+     *
+     * @param data, the data buffer
+     * @param offset, the offset of data buffer
+     * @param length, the length of data
+     */
+    oneway readEvent(vec<int8_t> data, int32_t offset, int32_t length);
+};

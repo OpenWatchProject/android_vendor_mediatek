@@ -1,0 +1,215 @@
+/* Copyright Statement:
+ *
+ * This software/firmware and related documentation ("MediaTek Software") are
+ * protected under relevant copyright laws. The information contained herein
+ * is confidential and proprietary to MediaTek Inc. and/or its licensors.
+ * Without the prior written permission of MediaTek inc. and/or its licensors,
+ * any reproduction, modification, use or disclosure of MediaTek Software,
+ * and information contained herein, in whole or in part, shall be strictly prohibited.
+ */
+/* MediaTek Inc. (C) 2010. All rights reserved.
+ *
+ * BY OPENING THIS FILE, RECEIVER HEREBY UNEQUIVOCALLY ACKNOWLEDGES AND AGREES
+ * THAT THE SOFTWARE/FIRMWARE AND ITS DOCUMENTATIONS ("MEDIATEK SOFTWARE")
+ * RECEIVED FROM MEDIATEK AND/OR ITS REPRESENTATIVES ARE PROVIDED TO RECEIVER ON
+ * AN "AS-IS" BASIS ONLY. MEDIATEK EXPRESSLY DISCLAIMS ANY AND ALL WARRANTIES,
+ * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE OR NONINFRINGEMENT.
+ * NEITHER DOES MEDIATEK PROVIDE ANY WARRANTY WHATSOEVER WITH RESPECT TO THE
+ * SOFTWARE OF ANY THIRD PARTY WHICH MAY BE USED BY, INCORPORATED IN, OR
+ * SUPPLIED WITH THE MEDIATEK SOFTWARE, AND RECEIVER AGREES TO LOOK ONLY TO SUCH
+ * THIRD PARTY FOR ANY WARRANTY CLAIM RELATING THERETO. RECEIVER EXPRESSLY ACKNOWLEDGES
+ * THAT IT IS RECEIVER'S SOLE RESPONSIBILITY TO OBTAIN FROM ANY THIRD PARTY ALL PROPER LICENSES
+ * CONTAINED IN MEDIATEK SOFTWARE. MEDIATEK SHALL ALSO NOT BE RESPONSIBLE FOR ANY MEDIATEK
+ * SOFTWARE RELEASES MADE TO RECEIVER'S SPECIFICATION OR TO CONFORM TO A PARTICULAR
+ * STANDARD OR OPEN FORUM. RECEIVER'S SOLE AND EXCLUSIVE REMEDY AND MEDIATEK'S ENTIRE AND
+ * CUMULATIVE LIABILITY WITH RESPECT TO THE MEDIATEK SOFTWARE RELEASED HEREUNDER WILL BE,
+ * AT MEDIATEK'S OPTION, TO REVISE OR REPLACE THE MEDIATEK SOFTWARE AT ISSUE,
+ * OR REFUND ANY SOFTWARE LICENSE FEES OR SERVICE CHARGE PAID BY RECEIVER TO
+ * MEDIATEK FOR SUCH MEDIATEK SOFTWARE AT ISSUE.
+ *
+ * The following software/firmware and/or related documentation ("MediaTek Software")
+ * have been modified by MediaTek Inc. All revisions are subject to any receiver's
+ * applicable license agreements with MediaTek Inc.
+ */
+
+/********************************************************************************************
+ *     LEGAL DISCLAIMER
+ *
+ *     (Header of MediaTek Software/Firmware Release or Documentation)
+ *
+ *     BY OPENING OR USING THIS FILE, BUYER HEREBY UNEQUIVOCALLY ACKNOWLEDGES AND AGREES
+ *     THAT THE SOFTWARE/FIRMWARE AND ITS DOCUMENTATIONS ("MEDIATEK SOFTWARE") RECEIVED
+ *     FROM MEDIATEK AND/OR ITS REPRESENTATIVES ARE PROVIDED TO BUYER ON AN "AS-IS" BASIS
+ *     ONLY. MEDIATEK EXPRESSLY DISCLAIMS ANY AND ALL WARRANTIES, EXPRESS OR IMPLIED,
+ *     INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR
+ *     A PARTICULAR PURPOSE OR NONINFRINGEMENT. NEITHER DOES MEDIATEK PROVIDE ANY WARRANTY
+ *     WHATSOEVER WITH RESPECT TO THE SOFTWARE OF ANY THIRD PARTY WHICH MAY BE USED BY,
+ *     INCORPORATED IN, OR SUPPLIED WITH THE MEDIATEK SOFTWARE, AND BUYER AGREES TO LOOK
+ *     ONLY TO SUCH THIRD PARTY FOR ANY WARRANTY CLAIM RELATING THERETO. MEDIATEK SHALL ALSO
+ *     NOT BE RESPONSIBLE FOR ANY MEDIATEK SOFTWARE RELEASES MADE TO BUYER'S SPECIFICATION
+ *     OR TO CONFORM TO A PARTICULAR STANDARD OR OPEN FORUM.
+ *
+ *     BUYER'S SOLE AND EXCLUSIVE REMEDY AND MEDIATEK'S ENTIRE AND CUMULATIVE LIABILITY WITH
+ *     RESPECT TO THE MEDIATEK SOFTWARE RELEASED HEREUNDER WILL BE, AT MEDIATEK'S OPTION,
+TO REVISE OR REPLACE THE MEDIATEK SOFTWARE AT ISSUE, OR REFUND ANY SOFTWARE LICENSE
+ *     FEES OR SERVICE CHARGE PAID BY BUYER TO MEDIATEK FOR SUCH MEDIATEK SOFTWARE AT ISSUE.
+ *
+ *     THE TRANSACTION CONTEMPLATED HEREUNDER SHALL BE CONSTRUED IN ACCORDANCE WITH THE LAWS
+ *     OF THE STATE OF CALIFORNIA, USA, EXCLUDING ITS CONFLICT OF LAWS PRINCIPLES.
+ ************************************************************************************************/
+#ifndef _ISP_MGR_AF_STAT_H_
+#define _ISP_MGR_AF_STAT_H_
+
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+//  AF statistics config
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+#define INIT_AF_REG_INFO_ADDR_P1_MULTI(index,reg, name)\
+    REG_INFO_ADDR_MULTI(index,name##reg) = REG_ADDR_P1(name##reg)
+
+#define INIT_AFO_ADDR(reg) INIT_AF_REG_INFO_ADDR_P1_MULTI(EAF_R1 ,reg, AFO_R1_);
+
+#define INIT_AF_ADDR(reg) INIT_AF_REG_INFO_ADDR_P1_MULTI(EAF_R1 ,reg, AF_R1_);
+
+#define REG_AF_R1_INFO_VALUE(reg) REG_INFO_VALUE_MULTI(EAF_R1, reg)
+
+typedef class ISP_MGR_AF_STAT_CONFIG : public ISP_MGR_BASE_T
+{
+    typedef ISP_MGR_AF_STAT_CONFIG    MyType;
+private:
+    enum
+    {
+        EAF_R1,
+        ESubModule_NUM
+    };
+
+    mutable std::mutex m_Lock;
+
+    MBOOL   m_bIsApplied;
+    MBOOL   m_bIsAFSupport;
+    MUINT32 m_u4ConfigNum;
+    MINT32  m_i4DebugEnable;
+
+    RegInfo_T m_rIspRegInfo[ESubModule_NUM][EAFRegInfo_NUM];
+    RegInfo_T m_rIspRegInfoPre[ESubModule_NUM][EAFRegInfo_NUM];
+
+protected:
+    ISP_MGR_AF_STAT_CONFIG(ESensorDev_T const eSensorDev)
+        : ISP_MGR_BASE_T(m_rIspRegInfo, EAFRegInfo_NUM, eSensorDev, ESubModule_NUM)
+    {
+        for (MUINT32 i = 0; i < ESubModule_NUM; i++)
+        {
+            ::memset(m_rIspRegInfo[i],    0, sizeof(RegInfo_T)*EAFRegInfo_NUM);
+            ::memset(m_rIspRegInfoPre[i], 0, sizeof(RegInfo_T)*EAFRegInfo_NUM);
+        }
+
+        INIT_AFO_ADDR(AFO_XSIZE);
+        INIT_AFO_ADDR(AFO_YSIZE);
+        //INIT_AFO_ADDR(AFO_STRIDE);
+
+        INIT_AF_ADDR(AF_CON);
+        INIT_AF_ADDR(AF_CON2);
+        INIT_AF_ADDR(AF_SIZE);
+        INIT_AF_ADDR(AF_VLD);
+        INIT_AF_ADDR(AF_BLK_PROT);
+        INIT_AF_ADDR(AF_BLK_0);
+        INIT_AF_ADDR(AF_BLK_1);
+        INIT_AF_ADDR(AF_HFLT0_1);
+        INIT_AF_ADDR(AF_HFLT0_2);
+        INIT_AF_ADDR(AF_HFLT0_3);
+        INIT_AF_ADDR(AF_HFLT1_1);
+        INIT_AF_ADDR(AF_HFLT1_2);
+        INIT_AF_ADDR(AF_HFLT1_3);
+        INIT_AF_ADDR(AF_HFLT2_1);
+        INIT_AF_ADDR(AF_HFLT2_2);
+        INIT_AF_ADDR(AF_HFLT2_3);
+        INIT_AF_ADDR(AF_VFLT_1);
+        INIT_AF_ADDR(AF_VFLT_2);
+        INIT_AF_ADDR(AF_VFLT_3);
+        INIT_AF_ADDR(AF_PL_HFLT_1);
+        INIT_AF_ADDR(AF_PL_HFLT_2);
+        INIT_AF_ADDR(AF_PL_HFLT_3);
+        INIT_AF_ADDR(AF_PL_VFLT_1);
+        INIT_AF_ADDR(AF_PL_VFLT_2);
+        INIT_AF_ADDR(AF_PL_VFLT_3);
+        INIT_AF_ADDR(AF_TH_0);
+        INIT_AF_ADDR(AF_TH_1);
+        INIT_AF_ADDR(AF_TH_2);
+        INIT_AF_ADDR(AF_TH_3);
+        INIT_AF_ADDR(AF_TH_4);
+        INIT_AF_ADDR(AF_LUT_H0_0);
+        INIT_AF_ADDR(AF_LUT_H0_1);
+        INIT_AF_ADDR(AF_LUT_H0_2);
+        INIT_AF_ADDR(AF_LUT_H0_3);
+        INIT_AF_ADDR(AF_LUT_H0_4);
+        INIT_AF_ADDR(AF_LUT_H1_0);
+        INIT_AF_ADDR(AF_LUT_H1_1);
+        INIT_AF_ADDR(AF_LUT_H1_2);
+        INIT_AF_ADDR(AF_LUT_H1_3);
+        INIT_AF_ADDR(AF_LUT_H1_4);
+        INIT_AF_ADDR(AF_LUT_H2_0);
+        INIT_AF_ADDR(AF_LUT_H2_1);
+        INIT_AF_ADDR(AF_LUT_H2_2);
+        INIT_AF_ADDR(AF_LUT_H2_3);
+        INIT_AF_ADDR(AF_LUT_H2_4);
+        INIT_AF_ADDR(AF_LUT_V_0);
+        INIT_AF_ADDR(AF_LUT_V_1);
+        INIT_AF_ADDR(AF_LUT_V_2);
+        INIT_AF_ADDR(AF_LUT_V_3);
+        INIT_AF_ADDR(AF_LUT_V_4);
+        INIT_AF_ADDR(AF_SGG1_0);
+        INIT_AF_ADDR(AF_SGG1_1);
+        INIT_AF_ADDR(AF_SGG1_2);
+        INIT_AF_ADDR(AF_SGG1_3);
+        INIT_AF_ADDR(AF_SGG1_4);
+        INIT_AF_ADDR(AF_SGG1_5);
+        INIT_AF_ADDR(AF_SGG5_0);
+        INIT_AF_ADDR(AF_SGG5_1);
+        INIT_AF_ADDR(AF_SGG5_2);
+        INIT_AF_ADDR(AF_SGG5_3);
+        INIT_AF_ADDR(AF_SGG5_4);
+        INIT_AF_ADDR(AF_SGG5_5);
+
+        m_bIsAFSupport = MFALSE;
+    }
+
+    virtual ~ISP_MGR_AF_STAT_CONFIG() {}
+
+public:
+    static MyType&  getInstance(ESensorDev_T const eSensorDev);
+
+public: //Interfaces
+
+    MVOID start(MINT32 i4SensorDev, MINT32 i4SensorIdx);
+
+    MVOID configReg(AFRESULT_ISPREG_T *pResultConfig);
+
+    MVOID configUpdate();
+
+    MBOOL apply(TuningMgr& rTuning, MINT32 &i4Magic, MINT32 i4SubsampleIdex=0);
+
+} ISP_MGR_AF_STAT_CONFIG_T;
+
+template <ESensorDev_T const eSensorDev>
+class ISP_MGR_AF_STAT_CONFIG_DEV : public ISP_MGR_AF_STAT_CONFIG_T
+{
+public:
+    static
+    ISP_MGR_AF_STAT_CONFIG_T&
+    getInstance()
+    {
+        static ISP_MGR_AF_STAT_CONFIG_DEV<eSensorDev> singleton;
+        return singleton;
+    }
+    virtual MVOID destroyInstance() {}
+
+    ISP_MGR_AF_STAT_CONFIG_DEV()
+        : ISP_MGR_AF_STAT_CONFIG_T(eSensorDev)
+    {}
+
+    virtual ~ISP_MGR_AF_STAT_CONFIG_DEV() {}
+
+};
+
+#endif

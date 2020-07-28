@@ -1,0 +1,422 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+ * Copyright (C) 2007-2008 Esmertec AG.
+ * Copyright (C) 2007-2008 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+--><resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <string name="app_label">বার্তা আদান-প্রদান</string>
+    <string name="new_message">নতুন বার্তা </string>
+    <string name="menu_call_back">কল করুন <xliff:g id="name">%s</xliff:g></string>
+    <string name="menu_send_email" msgid="671366308915241664"><xliff:g id="name">%s</xliff:g> ইমেইল পাঠান</string>
+    <string name="menu_compose_new">লিখুন</string>
+    <string name="menu_preferences">সেটিং</string>
+    <string name="menu_search">খোঁজ করুন</string>
+    <string name="menu_add_address_to_contacts" msgid="2313624913486309940">পরিচিতজনের সাথে <xliff:g id="name">%s</xliff:g> যোগ করুন</string>
+    <string name="menu_call" msgid="5877123227307074690">কল করুন</string>
+    <string name="menu_delete_all" msgid="8853352701914512057">থ্রেড মুছে ফেলুন</string>
+    <string name="menu_delete">থ্রেড মুছে ফেলুন</string>
+    <string name="menu_view">থ্রেড দেখুন</string>
+    <string name="menu_debug_dump">ডিবাগ ডাম্প</string>
+    <string name="refreshing" msgid="987335057871404222">রিফ্রেশ করা\u2026</string>
+    <string name="menu_cell_broadcasts">সেল সম্প্রচার</string>
+    <string name="has_draft">খসড়া</string>
+    <string name="no_subject_view">(কোন বিষয় নেই)</string>
+    <string name="messagelist_sender_self">আমি</string>
+    <string name="view_slideshow">স্লাইডশো দেখুন</string>
+    <string name="view_message_details">বিস্তারিত বার্তা দেখুন</string>
+    <string name="view_delivery_report">রিপোর্ট দেখুন</string>
+    <string name="delete_message">পরিচিতজন মুছুন</string>
+    <string name="expire_on">"মেয়াদোত্তীর্ণ হবে: <xliff:g id="date">%s</xliff:g>"</string>
+    <string name="kilobyte">কেবি</string>
+    <string name="undelivered_msg_dialog_title">যেসব বার্তা পৌছেনি</string>
+    <string name="undelivered_msg_dialog_body">এই বার্তাটি পাঠাতে অক্ষম।\nAttempt made: <xliff:g id="message">%s</xliff:g>.</string>
+    <string name="undelivered_sms_dialog_body">এই বার্তাটি পাঠাতে অক্ষম।</string>
+    <string name="delete_thread">থ্রেড মুছে ফেলুন</string>
+    <string name="menu_forward">ফরওয়ার্ড করুন</string>
+    <string name="download">ডাউনলোড করুন</string>
+    <string name="downloading">ডাউনলোড করা হচ্ছে</string>
+    <string name="inline_subject">&lt;বিষয়: <xliff:g id="subject">%s</xliff:g>&gt;</string>
+    <string name="drm_protected_text">"* ডিআরএম সুরক্ষিত টেক্সট *"</string>
+    <string name="insufficient_drm_rights">অপর্যাপ্ত ডিআরএম অধিকার সনাক্ত করা হয়েছে।</string>
+    <string name="copy_message_text"> বার্তার লেখা কপি করুন</string>
+    <string name="message_options"> বার্তা বিকল্প</string>
+    <string name="slideshow_options">স্লাইডশো বাছাই</string>
+    <string name="move_up">ওপরের দিকে যান</string>
+    <string name="move_down">নিচের দিকে নামুন</string>
+    <string name="remove_slide">স্লাইড সরিয়ে ফেলুন</string>
+    <string name="add_slide">স্লাইড যোগ করুন</string>
+    <string name="add_slide_hint">নতুন স্লাইড তৈরি করার জন্য নির্বাচন করুন।</string>
+    <string name="discard_slideshow">স্লাইড বাতিল করুন</string>
+    <string name="slide_show_part">অংশ <xliff:g id="part">%1$s</xliff:g>/<xliff:g id="total">%2$s</xliff:g></string>
+    <string name="remove_text">লেখা মুছে ফেলুন</string>
+    <string name="add_picture">ছবি যোগ করুন</string>
+    <string name="remove_picture">ছবি সরিয়ে ফেলুন</string>
+    <string name="add_music">মিউজিক যোগ করুন</string>
+    <string name="remove_music">মিউজিক সরিয়ে ফেলুন</string>
+    <string name="add_video">ভিডিও যোগ করুন</string>
+    <string name="remove_video">ভিডিও সরিয়ে ফেলুন</string>
+    <string name="to_hint">প্রতি </string>
+    <string name="subject_hint">বিষয়</string>
+    <string name="add_attachment">সংযুক্ত করুন</string>
+    <string name="add_subject">বিষয় যোগ করুন</string>
+    <string name="discard">বাতিল করুন</string>
+    <string name="view">দেখুন</string>
+    <string name="replace">প্রতিস্থাপন করুন</string>
+    <string name="remove">সরান</string>
+    <string name="send">পাঠান</string>
+    <string name="mms">এমএমএস </string>
+    <string name="send_mms">এমএমএস পাঠান</string>
+    <string name="all_threads">সব থ্রেড</string>
+    <string name="type_to_compose_text_enter_to_send">লেখার জন্য টাইপ করুন</string>
+    <string name="open_keyboard_to_compose_message"> বার্তা লেখার জন্য কিবোর্ড খুলুন</string>
+    <string name="compressing">ছবি অনেক বড়।সংকুচিত করা হচ্ছে\u2026</string>
+    <string name="unsupported_media_format">অসমর্থিত<xliff:g id="name">%1$s</xliff:g>ফরম্যাট </string>
+    <string name="select_different_media">অন্য আরেকটি<xliff:g id="name">%1$s</xliff:g>নির্বাচন করুন</string>
+    <string name="exceed_message_size_limitation"> বার্তা আয়তন সীমায় পৌছেছে।</string>
+    <string name="message_too_big_for_video"> বার্তা অনেক বড়। এর সাথে ভিডিও সংযুক্ত করা যাবে না।</string>
+    <string name="failed_to_add_media">দুঃখিত, আপনি আপনার বার্তার সাথে <xliff:g id="name">%1$s</xliff:g>যোগ করতে পারবেন না।</string>
+    <string name="failed_to_resize_image">ছবি রিসাইজ করা হয়নি।</string>
+    <string name="resize_image_error_information">দুঃখিত, এমন কি রিসাইজ করার পরও ছবি এত বড় যে তা পাঠানো যাবে না।</string>
+    <string name="forward_prefix">ফরওয়ার্ড:\u0020</string>
+    <string name="discard_message">বাতিল করুন</string>
+    <string name="discard_message_reason">আপনার বার্তা বাতিল করা হবে কেননা এর কোন বৈধ প্রাপক নেই।</string>
+    <string name="has_invalid_recipient">প্রাপক: &lt;<xliff:g id="name">%1$s</xliff:g>&gt;</string>
+    <string name="invalid_destination">আপনি একটি অকার্যকর ঠিকানা প্রবেশ করিয়েছেন।</string>
+    <string name="service_not_activated">নেটওয়ার্কে সেবা কার্যকর করা নেই।</string>
+    <string name="service_message_not_found">বার্তার মেয়াদ শেষ বা পাওয়া যায়নি। </string>
+    <string name="service_network_problem">ত্রুটিপূর্ণ নেটওয়ার্কের সমস্যা।</string>
+    <string name="invalid_recipient_message">প্রাপক(দের) কথা সঠিকভাবে লিখুন নতুবা তারা বার্তাটি পাবে না।</string>
+    <string name="cannot_send_message"> বার্তাটি পাঠাতে পারেনি</string>
+    <string name="cannot_send_message_reason">আপনার বার্তার কোন বৈধ প্রাপক নেই।</string>
+    <string name="cannot_forward_drm_obj"> বার্তার অন্তর্ভুক্ত ডিআরএম অবজেক্ট ফরওয়ার্ড করা যায়নি।</string>
+    <string name="converting_to_picture_message">মাল্টিমিডিয়া বার্তায় রূপান্তর করা\u2026</string>
+    <string name="converting_to_text_message">টেক্সট বার্তায় রূপান্তর করা\u2026</string>
+    <string name="cannot_add_slide_anymore">আরো স্লাইড যোগ করতে পারেনি।</string>
+    <string name="cannot_add_picture_and_video">একই স্লাইডে ভিডিও এবং ছবি যোগ করতে পারেনি।</string>
+    <string name="cannot_save_message"> বার্তা সংরক্ষণ করতে পারেনি।</string>
+    <string name="message_saved_as_draft"> বার্তা খসড়া হিসেবে সংরক্ষিত হয়েছে।</string>
+    <string name="too_many_recipients">এই বার্তার প্রাপক সংখ্যা অনেক (<xliff:g id="currentCount">%1$s</xliff:g>). প্রাপকের সংখ্যার একটি নির্দিষ্ট সীমা  <xliff:g id="maxLimit">%2$s</xliff:g> আছে।</string>
+    <string name="too_many_attachments"><xliff:g id="maxLimit">%1$s</xliff:g> সংযুক্তির একটি নির্দিষ্ট সীমা আছে। কেবল প্রথমটি <xliff:g id="currentCount">%2$s</xliff:g> যোগ করা হবে।</string>
+    <string name="adding_attachments_title">সংযুক্তি যোগ করুন।</string>
+    <string name="adding_attachments">স্লাইড শোতে যখন আইটেম যোগ করা হয় তখন অপেক্ষা করুন।</string>
+    <string name="building_slideshow_title">স্লাইডশো বানানো</string>
+    <string name="cannot_play_audio">অডিও চালাতে পারছে না।</string>
+    <string name="preview">প্রাকবীক্ষণ</string>
+    <string name="preview_slideshow">প্রাকবীক্ষণ</string>
+    <string name="replace_image">ছবি প্রতিস্থাপন করুন</string>
+    <string name="duration_sec">ব্যাপ্তিকাল(<xliff:g id="duration">%s</xliff:g> sec)</string>
+    <string name="duration_selector_title">"স্লাইডের ব্যপ্তিকাল"</string>
+    <string name="layout_selector_title">"স্লাইডশো'র লেআউট"</string>
+    <string name="layout_top">লেআউট (ওপরে)</string>
+    <string name="layout_bottom">লেআউট (নিচে)</string>
+    <string name="type_to_compose_text_or_leave_blank">লেখার জন্য টাইপ করুন, অথবা খালি রাখুন</string>
+    <string name="duration_not_a_number">ব্যাপ্তিকাল অবশ্যই একটি সংখ্যা হতে হবে।</string>
+    <string name="duration_zero">ব্যাপ্তিকাল শূণ্য সেকেন্ডের চেয়ে বেশি হতে হবে </string>
+    <string name="secs">সেকেন্ড</string>
+
+    <string-array name="select_dialog_items">
+        <item>১ সেকেন্ড</item>
+        <item>২ সেকেন্ড</item>
+        <item>৩ সেকেন্ড</item>
+        <item>৪ সেকেন্ড</item>
+        <item>৫ সেকেন্ড</item>
+        <item>৬ সেকেন্ড</item>
+        <item>৭ সেকেন্ড</item>
+        <item>৮ সেকেন্ড</item>
+        <item>৯ সেকেন্ড</item>
+        <item>১০ সেকেন্ড</item>
+        <item>অন্যান্য\u2026</item>
+    </string-array>
+
+    <string name="menu_view_contact">পরিচিতজন দেখুন</string>
+    <string name="menu_add_to_contacts">পরিচিতিজনে যোগ করুন</string>
+    <string name="hidden_sender_address">প্রেরকের ঠিকানা লুকায়িত</string>
+    <string name="yes">ঠিক আছে </string>
+    <string name="no">বাতিল করুন</string>
+    <string name="set">সেট করুন</string>
+    <string name="play">চালু করুন</string>
+    <string name="edit">সম্পাদনা করুন</string>
+    <string name="try_to_send">পাঠানোর চেষ্টা করে</string>
+    <string name="preferences_title">কিছু সিম কার্ড সরানো হয়েছে। এখন ডিফল্ট সিম সেটিং হলো:</string>
+    <string name="restore_default">"ডিফল্ট সেটিং পুনপ্রতিষ্ঠা করুন"</string>
+    <string name="pref_notification_settings_title">নোটিফিকেশন সেটিং</string>
+    <string name="pref_mms_settings_title">"মাল্টি মিডিয়া বার্তা (এমএমএস) সেটিং"</string>
+    <string name="pref_sms_settings_title">"টেক্সট মেসেজ (এসএমএস)সেটিং"</string>
+    <string name="pref_sms_storage_title">স্টোরেজ সেটিং </string>
+    <string name="pref_summary_manage_sim_messages">আপনার সিম কার্ডে মজুত বার্তা ম্যানেজ করুন</string>
+    <string name="pref_summary_mms_delivery_reports">আপনার পাঠানো প্রতিটি বার্তার পৌছানোর প্রতিবেদনের জন্য অনুরোধ জানান</string>
+    <string name="pref_summary_mms_read_reports">আপনার পাঠানো প্রতিটি বার্তার পঠন প্রতিবেদনের জন্য অনুরোধ জানান</string>
+    <string name="pref_summary_sms_delivery_reports">আপনার পাঠানো প্রতিটি বার্তার পৌছানোর প্রতিবেদনের জন্য অনুরোধ জানান</string>
+    <string name="pref_summary_auto_delete">সর্বোচ্চ সীমায় পৌছে গেছে, তাই পুরানো বার্তাগুলো মুছে ফেলুন</string>
+    <string name="pref_summary_delete_limit"><xliff:g id="count">%1$s</xliff:g> প্রতি কথপোকথনের জন্য বার্তা</string>
+    <string name="pref_summary_mms_group_mms">যখন বহু গ্রহণকারী থাকে তখন একটি বার্তা পাঠানোর জন্য এমএমএস ব্যবহার করুন</string>
+    <string name="pref_title_manage_sim_messages">সিম কার্ড বার্তা ম্যানেজ করুন</string>
+    <string name="pref_title_mms_delivery_reports">ডেলিভারি রিপোর্টের অনুরোধ জানান</string>
+    <string name="pref_title_mms_group_mms">দলগত বার্তা আদানপ্রদান চলছে</string>
+    <string name="pref_title_mms_read_reports">পাঠের প্রতিবেদনের অনুরোধ জানান</string>
+    <string name="pref_title_sms_delivery_reports">ডেলিভারি রিপোর্টের অনুরোধ জানান</string>
+    <string name="pref_title_auto_delete">পুরানো বার্তাগুলো মুছে ফেলুন</string>
+    <string name="pref_title_sms_delete">টেক্সট বার্তার সর্বোচ্চ সীমা</string>
+    <string name="pref_title_mms_delete">মাল্টিমিডিয়ার বার্তার সর্বোচ্চ সীমা</string>
+    <string name="pref_title_notification_enabled">নোটিস পাঠানো</string>
+    <string name="pref_summary_notification_enabled">স্ট্যাটাস বারে নোটিফিকেশন বার্তা প্রদর্শন করুন </string>
+    <string name="pref_title_notification_vibrateWhen">কম্পন</string>
+    <string name="pref_summary_notification_vibrateWhen">নোটিফাই করার সময়ও কাঁপবে</string>
+    <string name="pref_title_notification_ringtone">রিংটোন</string>
+    <string name="pref_messages_to_save">সংরক্ষণ করার জন্য বার্তার সংখ্যা সেট করুন</string>
+
+    <string-array name="prefEntries_vibrateWhen">
+        <item>সবসময়</item>
+        <item>কেবল নিঃশব্দ অবস্থায়</item>
+        <item>কখনও নয়</item>
+    </string-array>
+
+    <string name="prefDefault_vibrateWhen" translatable="false">never</string>
+    <string name="prefDefault_vibrate_true" translatable="false">always</string>
+    <string name="prefDefault_vibrate_false" translatable="false">never</string>
+
+    <string-array name="prefValues_vibrateWhen" translatable="false">
+        <item>always</item>
+        <item>silent</item>
+        <item>never</item>
+    </string-array>
+
+    <string name="prefDialogTitle_vibrateWhen">কম্পন</string>
+    <string name="pref_title_mms_auto_retrieval">স্বয়ংক্রিয়-পুনরুদ্ধার</string>
+    <string name="pref_summary_mms_auto_retrieval">স্বয়ংক্রিয়ভাবে বার্তা পুনরুদ্ধার করে</string>
+    <string name="pref_title_mms_retrieval_during_roaming">রোমিংয়ের সময় স্বয়ংক্রিয়-পুনরুদ্ধার  </string>
+    <string name="pref_summary_mms_retrieval_during_roaming">রোমিংয়ের সময় স্বয়ংক্রিয়ভাবে বার্তা পুনরুদ্ধার করুন  </string>
+    <string name="confirm_dialog_title">মুছে ফেলুন</string>
+    <string name="confirm_dialog_locked_title">লক করা বার্তা মুছে ফেলবেন?</string>
+
+    <plurals name="confirm_delete_conversation">
+        <item quantity="one">একটি আলাপচারিতা মুছে যাবে</item>
+        <item quantity="other"><xliff:g id="number" example="15">%1$s</xliff:g> আলাপচারিতা মুছে যাবে</item>
+    </plurals>
+
+    <string name="confirm_delete_conversation">পুরো থ্রেডটি মুছে যাবে।</string>
+    <string name="confirm_delete_all_conversations">সব থ্রেডগুলো মুছে যাবে।</string>
+    <string name="confirm_delete_message"> বার্তাটি মুছে যাবে।</string>
+    <string name="confirm_delete_locked_message"> আপনি কি নিশ্চিত আপনি এই লক করা বার্তাটি মুছে ফেলতে চান?</string>
+    <string name="confirm_delete_all_SIM_messages">সিমের সব বার্তা মুছে যাবে।</string>
+    <string name="confirm_delete_SIM_message">সিমের এই বার্তা মুছে যাবে।</string>
+    <string name="delete_unlocked">লক করা বার্তা মুছে ফেলুন</string>
+    <string name="delete">মুছে ফেলুন</string>
+    <string name="select_conversations">"আলাপচারিতা নির্বাচন করুন"</string>
+    <string name="no_conversations">আলাপচারিতা নেই</string>
+    <string name="loading_conversations">আলাপচারিতা লোড হচ্ছে।</string> 
+    <string name="cannot_get_details">বিস্তারিত বিবরন পাইনি</string>
+    <string name="message_details_title"> বিস্তারিত বার্তা</string>
+    <string name="message_type_label">ধরন:\u0020</string>
+    <string name="text_message">টেক্সট বার্তা</string>
+    <string name="multimedia_message">মাল্টিমিডিয়া বার্তা</string>
+    <string name="multimedia_notification">মাল্টিমিডিয়া বার্তা</string>
+    <string name="from_label">থেকে:\u0020</string>
+    <string name="to_address_label">প্রতি:\u0020</string>
+    <string name="bcc_label">বিসিসি:\u0020</string>
+    <string name="sent_label">প্রেরিত:\u0020</string>
+    <string name="received_label">প্রাপ্ত:\u0020</string>
+    <string name="saved_label">সংরক্ষিত:\u0020</string>
+    <string name="subject_label">বিষয়:\u0020</string>
+    <string name="message_size_label"> বার্তার আয়তন:\u0020</string>
+    <string name="priority_label">অগ্রাধিকার:\u0020</string>
+    <string name="priority_high">উচ্চ</string>
+    <string name="priority_normal">সাধারণ</string>
+    <string name="priority_low">নিম্ন</string>
+    <string name="message_class_label">বার্তা শ্রেণি:\u0020</string>
+    <string name="error_code_label">ত্রুটি কোড:\u0020</string>
+    <string name="menu_edit">পরিচিতজন সম্পাদনা করুন</string>
+    <string name="menu_delete_messages"> বার্তা মুছে ফেলুন</string>
+    <string name="menu_lock"> বার্তা লক করুন</string>
+    <string name="menu_unlock"> বার্তা  আনলক করুন</string>
+    <string name="sim_copy_to_phone_memory" product="tablet">ট্যাবলেটের মেমোরিতে কপি করুন</string>
+    <string name="sim_copy_to_phone_memory" product="default">ফোন মেমোরিতে কপি করুন</string>
+    <string name="sim_delete">পরিচিতজন মুছুন</string>
+    <string name="sim_manage_messages_title">সিম কার্ডের টেক্সট মেসেজ</string>
+    <string name="sim_view">দেখুন</string>
+    <string name="sim_empty">সিম কার্ডে কোন বার্তা নেই।</string>
+    <string name="delivery_header_title">প্রতিবেদন</string>
+    <string name="status_none">(কোনটি নয়)</string>
+    <string name="status_pending">ঝুলন্ত</string>
+    <string name="status_read">পঠিত</string>
+    <string name="status_received">প্রাপ্ত</string>
+    <string name="status_failed">অসফল</string>
+    <string name="status_unread">অপঠিত</string>
+    <string name="status_rejected">প্রত্যাখাত</string>
+    <string name="recipient_label">প্রাপক:\u0020</string>
+    <string name="status_label">স্ট্যাটাস:\u0020</string>
+    <string name="delivered_label">বিতরণ করা হয়েছে:\u0020</string>
+    <string name="attach_image">ছবি</string>
+    <string name="attach_take_photo">ছবি তুলুন</string>
+    <string name="attach_video">ভিডিও</string>
+    <string name="attach_record_video">ভিডিও ধারণ করুন</string>
+    <string name="attach_sound">অডিও</string>
+    <string name="attach_record_sound">অডিও রেকর্ড করুন</string>
+    <string name="attach_slideshow">স্লাইডশো </string>
+    <string name="select_bottom_text">লেখা একেবারে নিচে </string>
+    <string name="select_top_text">লেখা একেবারে ওপরে</string>
+    <string name="delivery_toast_body">%s দ্বারা বার্তা গৃহীত হয়েছে</string>
+
+    <plurals name="notification_multiple">
+        <item quantity="one">%d অপঠিত বার্তা।</item>
+        <item quantity="other">%d অপঠিত বার্তা।</item>
+    </plurals>
+
+    <string name="notification_multiple_title">নতুন বার্তা</string>
+    <string name="notification_failed_multiple"><xliff:g id="count">%s</xliff:g> বার্তা পাঠানো যায়নি।</string>
+    <string name="notification_failed_multiple_title">বার্তা পাঠানো হয়নি</string>
+    <string name="sim_full_title">সিম কার্ড পূর্ণ</string>
+    <string name="sim_full_body">আরো বার্তার জন্য জায়গা খালি করতে কিছু বার্তা মুছে ফেলুন</string>
+    <string name="sms_full_title">টেক্সট মেসেজের মেমোরি পূর্ণ</string>
+    <string name="sms_full_body">মেমোরি পূর্ণ থাকার কারণে ইনকামিং বার্তা প্রত্যাখাত হয়েছে। পুরানো বার্তাগুলো মুছে ফেলুন।</string>
+    <string name="sms_rejected_title">টেক্সট বার্তা প্রত্যাখাত হয়েছে</string>
+    <string name="sms_rejected_body">অজ্ঞাত কারণে ইনকামিং বার্তা প্রত্যাখাত হয়েছে।</string>
+    <string name="type_audio">অডিও</string>
+    <string name="type_picture">ছবি</string>
+    <string name="type_video">ভিডিও</string>
+    <string name="confirm">নিশ্চিত করুন</string>
+    <string name="message_send_read_report">একটি পঠন প্রতিবেদন পাঠানো হবে।</string>
+    <string name="message_queued">বর্তমানে আপনার বার্তা পাঠাতে অক্ষম। যখন সেবা লভ্য হবে  তখন তা পাঠানো হবে।</string>
+    <string name="fdn_check_failure">আপনি কেবল আপনার নির্ধারিত ডায়াল নম্বরগুলোতে বার্তা পাঠাতে পারবেন।</string>
+    <string name="no_subject">(কোন বিষয় নেই)</string>
+    <string name="unknown_sender">অপরিচিত প্রেরক</string>
+    <string name="dl_failure_notification"><xliff:g id="subject">%1$s</xliff:g> from <xliff:g id="from">%2$s</xliff:g>বার্তা ডাউনলোড করতে অসফল হয়েছিল।</string>
+    <string name="rate_limit_surpassed">নিশ্চিত করুন</string>
+    <string name="confirm_rate_limit">ব্যাপক সংখ্যক মাল্টিমিডিয়া বার্তা পাঠানো হচ্ছে। এটা কি ঠিক আছে?</string>
+    <string name="message_download_failed_title">বার্তা ডাউনলোড করা হয়নি</string>
+    <string name="message_send_failed_title">বার্তা পাঠানো হয়নি</string>
+    <string name="message_failed_body"> বার্তা পর্যালোচনা করতে নির্বাচন করুন এবং আবার চেষ্টা করুন।</string>
+    <string name="download_later">বর্তমানে ডাউনলোড করতে অক্ষম। পরে আবার চেষ্টা করুন।</string>
+    <string name="select_audio">অডিও নির্বাচন করুন</string>
+    <string name="copy_to_sdcard">সংযুক্তি সংরক্ষণ করুন</string>
+    <string name="copy_to_sdcard_success">সংযুক্তি সংরক্ষণ করা হয়েছে</string>
+    <string name="copy_to_sdcard_fail">সংযুক্তি সংরক্ষণ করতে অক্ষম</string>
+    <string name="save_ringtone">রিংটোন হিসেবে সংরক্ষণ করুন</string>
+    <string name="saved_ringtone">রিংটোন সংরক্ষণ করা হয়েছে</string>
+    <string name="saved_ringtone_fail">রিংটোন সংরক্ষণে ব্যর্থ হয়েছে</string>
+    <string name="menu_insert_smiley">স্মাইলি বসান</string>
+    <string name="menu_group_participants">দলগত অংশগ্রহণকারী</string>
+    <string name="select_link_title">পদক্ষেপ নির্বাচন করুন</string>
+    <string name="slide_number">স্লাইড<xliff:g id="number" example="5">%s</xliff:g></string>
+
+    <plurals name="slide_duration">
+        <item quantity="one"><xliff:g id="number" example="1">%s</xliff:g> সেকেন্ড</item>
+        <item quantity="few"><xliff:g id="number" example="2">%s</xliff:g> সেকেন্ড</item>
+        <item quantity="other"><xliff:g id="number" example="15">%s</xliff:g> সেকেন্ড</item>
+    </plurals>
+
+    <string name="delivery_report_activity">পৌছানোর প্রতিবেদন</string>
+    <string name="storage_limits_activity">স্টোর করার সর্বোচ্চ সীমা</string>
+    <string name="change_duration_activity">ব্যাপ্তিকাল পরিবর্তন করুন</string>
+    <string name="edit_slideshow_activity">স্লাইডশো সম্পাদনা করুন</string>
+    <string name="recipient_list_activity">দলগত অংশগ্রহণকারী</string>
+    <string name="edit_slide_activity">স্লাইড সম্পাদনা করুন</string>
+    <string name="slideshow_activity">স্লাইডশো</string>
+    <string name="class_0_message_activity">০ শ্রেণির বার্তা</string>
+    <string name="search_label">বার্তা আদান-প্রদান</string>
+    <string name="search_hint">বার্তা আদান-প্রদান অনুসন্ধান করুন</string>
+    <string name="search">বার্তা আদান-প্রদান</string>
+    <string name="search_setting_description">আপনার বার্তার লেখা</string>
+    <string name="search_empty">কোন মিল নেই</string>
+
+    <plurals name="search_results_title">
+        <item quantity="one"><xliff:g id="number" example="1">%1$s</xliff:g> result for \"<xliff:g id="search" example="???">%2$s</xliff:g>\"</item>
+        <item quantity="other"><xliff:g id="number" example="15">%1$s</xliff:g> ফলাফল \"<xliff:g id="search" example="???">%2$s</xliff:g>\"</item>
+    </plurals>
+
+    <string name="search_history"><xliff:g id="count">%1$s</xliff:g> results for \"<xliff:g id="search">%2$s</xliff:g>\"</string>
+    <string name="confirm_clear_search_title">মুছুন</string>
+    <string name="confirm_clear_search_text">অনুসন্ধানের ইতিহাস মুছে ফেলা হবে।</string>
+    <string name="pref_mms_clear_search_history_title">অনুসন্ধানের ইতিহাস মুছে ফেলুন</string>
+    <string name="pref_mms_clear_search_history_summary">অনুসন্ধান ঘরে পূর্ববর্তী বার্তার অনুসন্ধান যাতে না দেখায় সেজন্য তা মুছে ফেলুন</string>
+    <string name="save">সংরক্ষণ করুন</string>
+    <string name="storage_limits_title">বার্তার সর্বোচ্চ সীমা</string>
+    <string name="storage_limits_message">প্রতি আলাপচারিতায় আপনি যতগুলো বার্তা সংরক্ষণ করেন তা কি আপনি সীমিত করতে চান?</string>
+    <string name="storage_limits_setting">সীমা নির্ধারণ করুন</string>
+    <string name="storage_limits_setting_dismiss">কোন সীমা নেই</string>
+    <string name="too_many_unsent_mms">এখনই বার্তা পাঠাতে পারছে না। অনেকগুলো অপ্রেরিত মাল্টিমিডিয়া বার্তা রয়েছে।</string>
+    <string name="sending_message">পাঠানো হচ্ছে\u2026</string>
+    <string name="pick_too_many_recipients">অনেক বেশি প্রাপক</string>
+    <string name="adding_recipients">প্রাপক যোগ করা হচ্ছে\u2026</string>
+    <string name="draft_separator">,\u0020</string>
+    <string name="message_count_format">\u00a0<xliff:g id="number" example="1">%1$s</xliff:g></string>
+    <string name="message_count_notification"><xliff:g id="number" example="3">%1$s</xliff:g> নতুন বার্তা</string>
+
+    <plurals name="message_count_notification_overflow">
+        <item quantity="one"><xliff:g id="number" example="15">%1$s</xliff:g>অন্যান্য বার্তা</item>
+        <item quantity="other"><xliff:g id="number" example="15">%1$s</xliff:g>অন্যান্য বার্তা</item>
+    </plurals>
+
+    <string name="error_state">অসংগতিপূর্ণ অবস্থা</string>
+    <string name="error_state_text">থ্রেড এবং প্রাপকের অবস্থা অসংগতিপূর্ণ। একটি বাগ রিপোর্ট ক্যাপচার করে android-sms-bugs@google.com-এর কাছে পাঠিয়ে দিন।</string>
+
+    <plurals name="recipient_count">
+        <item quantity="other"><xliff:g id="number" example="15">%1$s</xliff:g> জন মানুষ</item>
+    </plurals>
+
+    <string name="view_more_conversations">আরো আলাপচারিতা দেখুন</string>
+    <string name="attachment_audio">অডিও</string>
+    <string name="attachment_slideshow">স্লাইডশো </string>
+    <string name="attachment_video">ভিডিও</string>
+    <string name="attachment_picture">ছবি</string>
+    <string name="notification_separator">\u0020\u2014\u0020</string>
+    <string name="enumeration_comma">,\u0020</string>
+    <string name="message_timestamp_format"><xliff:g id="string" example="FredFlinstone">%1$s</xliff:g>\u0020-\u0020<xliff:g id="string" example="9:39AM">%2$s</xliff:g></string>
+    <!-- Cell broadcast SMS strings -->  
+    <string name="cell_broadcast">সেল সম্প্রচার</string>  
+    <string name="cell_broadcast_title">সেল সম্প্রচার সেটিং</string>  
+    <string name="cell_broadcast_settings">সিম কার্ড সেল ব্রডকাস্ট সেটিং</string>  
+    <string name="menu_insert_quick_text">কুইক টেক্সট বসান</string>
+    <string name="select_quick_text">কুইক টেক্সট নির্বাচন করুন</string>
+    <string name="add">যোগ করুন</string>
+    <string name="quick_text_editor">কুইক টেক্সট সম্পাদনা করুন</string>
+    <string name="modify_successful">পরিমার্জন সফল হয়েছে!</string>
+    <string name="modify_unsuccessful">পরিমার্জন ব্যর্থ হয়েছে!</string>
+    <string name="delete_successful">মুছতে সফল হয়েছে!</string>
+    <string name="delete_unsuccessful">মুছতে সফল হয়েছে!</string>
+    <string name="add_quick_text_successful">কুইক টেক্সট যোগ করতে সফল হয়েছে</string>
+    <string name="already_have_quick_text">আপনার কাছে ইতিমধ্যেই এই কুইক টেক্সট রয়েছে!</string>
+    <string name="file_attachment_common_name">(<xliff:g id="text">%s</xliff:g>) বহু ফাইল</string>
+    <string name="file_attachment_contains">ধারণ করে</string>
+    <string name="file_attachment_files">ফাইল</string>
+    <string name="save_attachment">সংযুক্তি সংরক্ষণ করুন</string>
+    <string name="save_multi_attachment_notes">বহু-ফাইলে বিভিন্ন ধরনের ফাইল আছে। যাচাই এবং এগুলোকে সংরক্ষণ করবেন?</string>
+    <string name="save_single_attachment_notes">এটি এমএমএসে একটি অসমর্থিত ফরমেটের ফাইল। ফাইলম্যানেজারে এটিকে সংরক্ষণ করবেন?</string>
+    <string name="multi_files">বহু-ফাইল</string>
+    <string name="save_single_supportformat_attachment_notes">এটিকে ফাইলম্যানেজারে সংরক্ষণ করবেন?</string>
+
+<string name="sending_disabled_not_default_app">প্রেরণ নিষ্ক্রিয়</string>
+    <string name="compose_disabled_toast">লেখা যাচ্ছে না। ডিফল্ট এসএমএস অ্যাপ নয়।</string>
+    <string name="pref_title_sms_disabled">এসএমএস নিষ্ক্রিয়</string>
+    <string name="pref_summary_sms_disabled">বার্তা পাঠানোকে আপনার ডিফল্ট এসএমএস অ্যাপ করতে স্পর্শ করুন</string>
+    <string name="pref_title_sms_enabled">এসএমএস সক্রিয়</string>
+    <string name="pref_summary_sms_enabled">আপনার ডিফল্ট এসএমএস অ্যাপকে পরিবর্তন করতে স্পর্শ করুন</string>
+    <string name="silent_ringtone">নিশ্চুপ</string>
+    <string name="menu_delete_all_messages">সব বার্তা মুছে ফেলুন</string>
+    <string name="no_apn">ডিভাইসে কোনো এপিএন নির্দিষ্ট করা নেই।</string>
+    <string name="exceed_editor_size_limitation">টেক্সট সীমায় পৌঁছে গেছে।</string>
+    <string name="add_top_slide">উপরে যেতে স্লাইড যোগ করুন</string>
+    <string name="add_bottom_slide">নিচে যেতে স্লাইড যোগ করুন</string>
+    <string name="label_mms_send_outbox_msg">এমএমএস ওয়েকআপ</string>
+    <string name="desc_mms_send_outbox_msg">সব এমএমএস আউটবক্স থেকে নেটওয়ার্কে পাঠায়</string>
+    <string name="banner_sms_promo_title_initial">বার্তা পাঠানো আপনার এসএমএস অ্যাপ নয়</string>
+    <string name="banner_sms_promo_title_application"><xliff:g id="appName">%s</xliff:g> আপনার এসএমএস অ্যাপ</string>
+    <string name="banner_sms_promo_message">আপনি সেটিংয়ে গিয়ে এটা পরিবর্তন করতে পারেন</string>
+    <string name="storage_warning_title">"আপনার ফোনের স্টোরেজ পূর্ণ"</string>
+    <string name="storage_warning_content">"আপনি নতুন এসএমএস/এমএমএস বার্তা পাবেন না"</string>
+        <string name="omh_exceed_message_size_limitation">রিম বার্তার সাইজের সীমায় পৌঁছেছে</string>
+</resources>

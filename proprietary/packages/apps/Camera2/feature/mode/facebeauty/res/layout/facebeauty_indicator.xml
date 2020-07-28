@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/facebeauty_indicator"
+    style="@style/OnScreenFacebeautyIcon">
+
+
+    <LinearLayout
+        android:id="@+id/effcts_bg"
+        style="@style/OnScreenFacebeautyBg"
+        android:gravity="center">
+
+        <ScrollView
+            android:layout_width="@dimen/picker_button_size"
+            android:layout_height="200dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <com.mediatek.camera.feature.mode.facebeauty.widget.RotateImageView
+                    android:id="@+id/facebeauty_smooth"
+                    style="@style/OnScreenFacebeautyFixed"
+                    android:contentDescription="@string/pref_facebeauty_smooth_title" />
+
+                <com.mediatek.camera.feature.mode.facebeauty.widget.RotateImageView
+                    android:id="@+id/facebeauty_bright"
+                    style="@style/OnScreenFacebeautyFixed"
+                    android:contentDescription="@string/pref_facebeauty_bright_title" />
+
+                <com.mediatek.camera.feature.mode.facebeauty.widget.RotateImageView
+                    android:id="@+id/facebeauty_slim_face"
+                    style="@style/OnScreenFacebeautyFixed"
+                    android:contentDescription="@string/pref_facebeauty_slim_face_title" />
+
+                <com.mediatek.camera.feature.mode.facebeauty.widget.RotateImageView
+                    android:id="@+id/facebeauty_enlarge_eye"
+                    style="@style/OnScreenFacebeautyFixed"
+                    android:contentDescription="@string/pref_facebeauty_enlarge_eye_title" />
+
+                <com.mediatek.camera.feature.mode.facebeauty.widget.RotateImageView
+                    android:id="@+id/facebeauty_ruddy"
+                    style="@style/OnScreenFacebeautyFixed"
+                    android:contentDescription="@string/pref_facebeauty_ruddy_title" />
+            </LinearLayout>
+        </ScrollView>
+
+        <com.mediatek.camera.feature.mode.facebeauty.widget.VerticalSeekBar
+            android:id="@+id/facebeauty_changevalue"
+            style="@style/OnScreenFacebeautySeekBar"
+            android:layout_marginBottom="3dp"
+            android:paddingLeft="13dp"
+            android:paddingRight="13dp"
+            android:visibility="invisible" />
+
+        <com.mediatek.camera.feature.mode.facebeauty.widget.RotateImageView
+            android:id="@+id/facebeauty_modify"
+            style="@style/OnScreenFacebeautyFixed" />
+    </LinearLayout>
+
+    <com.mediatek.camera.feature.mode.facebeauty.widget.RotateImageView
+        android:id="@+id/facebeauty_icon"
+        style="@style/OnScreenFacebeautyFixed" />
+
+</LinearLayout>

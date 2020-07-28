@@ -1,0 +1,25 @@
+cc_library_headers {
+    name: "libmtkcam_pipelinemodel_headers",
+    proprietary: true,
+    owner: "mtk",
+
+    header_libs: [
+        "liblog_headers",
+        "libutils_headers",
+        "libcutils_headers",
+        "libhardware_headers",
+        "libsystem_headers",
+    ],
+    export_header_lib_headers: [
+        "liblog_headers",
+        "libutils_headers",
+        "libcutils_headers",
+        "libhardware_headers",
+        "libsystem_headers",
+    ],
+
+    export_include_dirs: [
+        "include",
+    ],
+}
+

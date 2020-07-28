@@ -1,0 +1,4 @@
+service wlan_assistant /vendor/bin/wlan_assistant
+    class main
+    user wifi
+    group system gps inet

@@ -1,0 +1,23 @@
+
+<set xmlns:android="http://schemas.android.com/apk/res/android" >
+    <set android:ordering="sequentially">
+        <objectAnimator
+            android:duration="80"
+            android:propertyName="translateX"
+            android:valueFrom="0"
+            android:valueTo="-4"
+            android:interpolator="@android:interpolator/fast_out_slow_in" />
+        <objectAnimator
+            android:duration="80"
+            android:propertyName="translateX"
+            android:valueFrom="-4"
+            android:valueTo="4"
+            android:interpolator="@android:interpolator/fast_out_slow_in" />
+        <objectAnimator
+            android:duration="80"
+            android:propertyName="translateX"
+            android:valueFrom="4"
+            android:valueTo="0"
+            android:interpolator="@android:interpolator/fast_out_slow_in" />
+    </set>
+</set>

@@ -1,0 +1,26 @@
+OP02 customization features.
+
+This apk is pre-built by MediaTek internal.
+
+
+WHAT IT DOES?
+=============
+It is a mms plugin apk which contains the OP02 customization for Mms Host App
+
+HOW IT WAS BUILT?
+==================
+It needs the following library from Mediatek:
+1. mediatek-common.jar
+2. Host App api interface,for example:com.mediatek.mms.ext
+
+All the OP02 customization for mms will be built as OP02Mms.apk  installed under system/plugin
+
+HOW TO USE IT?
+==============
+
+Implement the interface provided by Mms Host App to do customization.
+all api interface are at (packages/apps/Mms/ext).
+
+when run time, framework will find the OP02Mms customization implementation.
+
+All the source code of  were written by MediaTek.

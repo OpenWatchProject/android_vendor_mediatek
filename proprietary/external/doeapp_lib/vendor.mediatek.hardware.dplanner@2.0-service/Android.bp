@@ -1,0 +1,87 @@
+cc_prebuilt_binary {
+    arch: {
+        arm: {
+            cortex_a53: {
+                shared_libs: [
+                    "libhidlbase",
+                    "libutils",
+                    "vendor.mediatek.hardware.dplanner@2.0",
+                    "libziparchive",
+                    "libcutils",
+                    "liblog",
+                ],
+                srcs: [
+                    "arm_armv8-a_cortex-a53/vendor.mediatek.hardware.dplanner@2.0-service",
+                ],
+            },
+            cortex_a55: {
+                shared_libs: [
+                    "libhidlbase",
+                    "libutils",
+                    "vendor.mediatek.hardware.dplanner@2.0",
+                    "libziparchive",
+                    "libcutils",
+                    "liblog",
+                ],
+                srcs: [
+                    "arm_armv8-2a_cortex-a55/vendor.mediatek.hardware.dplanner@2.0-service",
+                ],
+            },
+            cortex_a7: {
+                shared_libs: [
+                    "libhidlbase",
+                    "libutils",
+                    "vendor.mediatek.hardware.dplanner@2.0",
+                    "libziparchive",
+                    "libcutils",
+                    "liblog",
+                ],
+                srcs: [
+                    "arm_armv7-a-neon_cortex-a7/vendor.mediatek.hardware.dplanner@2.0-service",
+                ],
+            },
+        },
+        arm64: {
+            cortex_a53: {
+                shared_libs: [
+                    "libhidlbase",
+                    "libutils",
+                    "vendor.mediatek.hardware.dplanner@2.0",
+                    "libziparchive",
+                    "libcutils",
+                    "liblog",
+                ],
+                srcs: [
+                    "arm64_armv8-a_cortex-a53/vendor.mediatek.hardware.dplanner@2.0-service",
+                ],
+            },
+            cortex_a55: {
+                shared_libs: [
+                    "libhidlbase",
+                    "libutils",
+                    "vendor.mediatek.hardware.dplanner@2.0",
+                    "libziparchive",
+                    "libcutils",
+                    "liblog",
+                ],
+                srcs: [
+                    "arm64_armv8-2a_cortex-a55/vendor.mediatek.hardware.dplanner@2.0-service",
+                ],
+            },
+        },
+    },
+    compile_multilib: "first",
+    init_rc: [
+        "2.0/vendor.mediatek.hardware.dplanner@2.0-service.rc",
+    ],
+    name: "vendor.mediatek.hardware.dplanner@2.0-service@MTK,smart_phone",
+    relative_install_path: "hw",
+    strip: {
+        none: true,
+    },
+    vendor: true,
+    vintf_fragments: [
+        "2.0/vendor.mediatek.hardware.dplanner@2.0-service.xml",
+    ],
+}
+

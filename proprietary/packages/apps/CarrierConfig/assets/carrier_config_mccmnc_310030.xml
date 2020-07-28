@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<carrier_config_list>
+    <carrier_config>
+        <!-- Supplementary Service WWOP Config -->
+        <boolean name="mtk_carrier_ss_gsm_ut_support" value="true" />
+        <boolean name="mtk_carrier_ss_tb_clir" value="true" />
+        <boolean name="mtk_carrier_ss_ims_nw_cw" value="true" />
+        <boolean name="mtk_carrier_ss_support_save_cf_number" value="true" />
+        <boolean name="rtt_supported_bool" value="true" />
+        <boolean name="mtk_domestic_roaming_enabled_only_by_mobile_data_setting" value="true" />
+        <boolean name="mtk_intl_roaming_enabled_only_by_roaming_data_setting" value="true" />
+        <boolean name="support_video_conference_call_bool" value="true" />
+        <boolean name="mtk_wfc_remove_preference_mode_bool" value="true" />
+        <boolean name="mtk_vt_over_wifi_check_data_enable_bool" value="true" />
+        <boolean name="mtk_vt_over_wifi_check_wfc_enable_bool" value="false" />
+        <!-- Dont's show roaming icon -->
+        <boolean name="mtk_key_carrier_need_show_roaming_icon" value="false" />
+        <string-array name="carrier_metered_apn_types_strings" num="3">
+            <item value="default" />
+            <item value="dun" />
+            <item value="supl" />
+        </string-array>
+        <string-array name="carrier_metered_roaming_apn_types_strings" num="3">
+            <item value="default" />
+            <item value="dun" />
+            <item value="supl" />
+        </string-array>
+        <!-- International roaming list -->
+        <string-array name="carrier_international_roaming_exception_list_strings" num="5">
+            <item value="310110" />
+            <item value="310140" />
+            <item value="310400" />
+            <item value="310470" />
+            <item value="311170" />
+        </string-array>
+    </carrier_config>
+</carrier_config_list>

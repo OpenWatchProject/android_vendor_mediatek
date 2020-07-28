@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="3pt"
+                android:text="@string/StrPattern" >
+            </TextView>
+
+            <Spinner
+                android:id="@+id/PatternSpinner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+            </Spinner>
+        </TableRow>
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="3pt"
+                android:text="@string/StrChannel" >
+            </TextView>
+
+            <Spinner
+                android:id="@+id/ChannelsSpinner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+            </Spinner>
+        </TableRow>
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="3pt"
+                android:text="@string/StrFrequency" >
+            </TextView>
+
+            <EditText
+                android:id="@+id/edtFrequency"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxLength="10"
+                android:inputType="number"
+                android:singleLine="true">
+            </EditText>
+        </TableRow>
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="3pt"
+                android:text="@string/StrPocketType" >
+            </TextView>
+
+            <Spinner
+                android:id="@+id/PocketTypeSpinner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+            </Spinner>
+        </TableRow>
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/PockLenText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="3pt"
+                android:text="@string/StrPocketLength" >
+            </TextView>
+
+            <EditText
+                android:id="@+id/edtPocketLength"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxLength="10"
+                android:singleLine="true"
+                android:inputType="number">
+            </EditText>
+        </TableRow>
+    </TableLayout>

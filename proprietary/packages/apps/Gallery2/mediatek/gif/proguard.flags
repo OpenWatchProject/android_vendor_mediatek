@@ -1,0 +1,24 @@
+-dontwarn org.apache.http.client.HttpClient
+-dontwarn org.apache.http.params.CoreProtocolPNames
+-dontwarn org.apache.http.HttpVersion
+-dontwarn org.apache.http.conn.params.ConnManagerParams
+-dontwarn android.media.MediaPlayer
+-dontwarn com.mediatek.common.util.*
+-dontwarn com.mediatek.internal.*
+-dontwarn com.mediatek.storage.StorageManagerEx
+-dontwarn android.os.PowerManager
+-dontwarn android.support.design.animation.*
+-dontwarn android.support.design.bottomappbar.*
+-dontwarn android.support.design.button.*
+-dontwarn android.support.design.card.*
+-dontwarn android.support.design.chip.*
+-dontwarn android.support.design.internal.*
+-dontwarn android.support.v7.appcompat.*
+-dontwarn android.support.design.resources.*
+-dontwarn android.support.design.transformation.*
+-dontwarn android.support.design.widget.*
+-dontwarn android.support.v7.appcompat.*
+-dontwarn com.google.android.flexbox.*
+
+-keep class com.mediatek.gallerygif.** { *; }
+-keep class com.mediatek.gallerybasic.** { *; }

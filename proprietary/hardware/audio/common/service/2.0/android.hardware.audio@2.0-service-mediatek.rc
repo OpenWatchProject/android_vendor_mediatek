@@ -1,0 +1,16 @@
+on post-fs-data
+    mkdir /data/vendor/audiohal 0771 system audio
+
+service audio-hal-2-0 /vendor/bin/hw/android.hardware.audio@2.0-service-mediatek
+    class hal
+    user audioserver
+    # media gid needed for /dev/fm (radio) and for /data/misc/media (tee)
+    # group audio camera drmrpc inet media mediadrm net_bt net_bt_admin net_bw_acct system net_bt_stack sdcard_rw
+    # audio-hal-2-0 cannot run if adding net_bt_stack
+    group audio camera drmrpc inet media mediadrm net_bt net_bt_admin net_bw_acct system sdcard_rw
+    ioprio rt 4
+    writepid /dev/cpuset/foreground/tasks /dev/stune/foreground/tasks
+    # audioflinger restarts itself when it loses connection with the hal
+    # and its .rc file has an "onrestart restart audio-hal" rule, thus
+    # an additional auto-restart from the init process isn't needed.
+    oneshot

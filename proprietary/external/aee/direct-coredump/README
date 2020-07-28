@@ -1,0 +1,20 @@
+The shared library 'libdirect-coredump.so' registers sig_handler for some signals.
+This library is pre-built by MediaTek internal.
+
+
+WHAT IT DOES?
+=============
+
+Libdirect-coredump.so includes only a simple function with attribute constructor, used to register sig_handler to kernel for SIGABRT,SIGBUS,SIGFPE,SIGILL,SIGSEGV,SIGTRAP. 
+We want this function called during an app start-up. L project realizes direct core dump function with this.
+
+HOW IT WAS BUILT?
+==================
+
+Libdirect-coredump.so has no dependency module, and all source is put in 'vendor/mediatek/proprietary/external/aee/direct-coredump' folder.
+
+
+HOW TO USE IT?
+==============
+
+Once we add libdirect-coredump.so to LD_PRELOAD environment variable, the function with attribute constructor is called while linker loading libdirect-coredump.so.

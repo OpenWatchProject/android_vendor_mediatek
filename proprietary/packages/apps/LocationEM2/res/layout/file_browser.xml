@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:gravity="left">
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <Button
+            android:id="@+id/button_Sdcard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/file_sdcard" android:textSize="15dp"/>
+
+        <Button
+            android:id="@+id/button_LocationEm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/file_location_em" android:textSize="15dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+    </LinearLayout>
+
+<TextView     android:layout_width="fill_parent" android:layout_height="wrap_content" android:id="@+id/TextView_FilePath"/>
+
+<ListView android:id="@android:id/list" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+
+<!-- <ListView android:id="@+id/ListView01" android:layout_width="fill_parent" android:layout_height="fill_parent"/> -->
+
+
+</LinearLayout>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SCNTABLE>
+	<scenario powerhint="MTKPOWER_HINT_ACT_SWITCH"> 
+		<data cmd="PERF_RES_CPUCORE_MIN_CLUSTER_0" param1="4"></data>
+		<data cmd="PERF_RES_CPUFREQ_MIN_CLUSTER_0" param1="1300000"></data>
+	</scenario>
+	<scenario powerhint="MTKPOWER_HINT_PACK_SWITCH"> 
+		<data cmd="PERF_RES_CPUCORE_MIN_CLUSTER_0" param1="4"></data>
+		<data cmd="PERF_RES_CPUFREQ_MIN_CLUSTER_0" param1="1300000"></data>
+	</scenario>
+	<scenario powerhint="LAUNCH"> 
+		<data cmd="PERF_RES_CPUCORE_MIN_CLUSTER_0" param1="4"></data>
+		<data cmd="PERF_RES_CPUFREQ_MIN_CLUSTER_0" param1="1300000"></data>
+	</scenario>
+	<scenario powerhint="MTKPOWER_HINT_APP_ROTATE"> 
+		<data cmd="PERF_RES_CPUCORE_MIN_CLUSTER_0" param1="2"></data>
+		<data cmd="PERF_RES_CPUFREQ_MIN_CLUSTER_0" param1="1300000"></data>
+	</scenario>
+	<scenario powerhint="MTKPOWER_HINT_APP_TOUCH"> 
+		<data cmd="PERF_RES_CPUCORE_MIN_CLUSTER_0" param1="3"></data>
+		<data cmd="PERF_RES_CPUFREQ_MIN_CLUSTER_0" param1="1105000"></data>
+	</scenario>
+	<scenario powerhint="MTKPOWER_HINT_TEST_MODE"> 
+		<data cmd="PERF_RES_CPUCORE_MIN_CLUSTER_0" param1="4"></data>
+	</scenario>
+	<scenario powerhint="MTKPOWER_HINT_GALLERY_BOOST"> 
+		<data cmd="PERF_RES_CPUFREQ_PERF_MODE" param1="1"></data>
+	</scenario>
+</SCNTABLE>

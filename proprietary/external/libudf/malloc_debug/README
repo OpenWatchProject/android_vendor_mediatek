@@ -1,0 +1,19 @@
+:debug15 signal handler configure
+adb shell setprop persist.libc.debug15.prog "$PROGRAM" //such as "system/bin/mediaserver"
+adb shell setprop persist.libc.debug.malloc 15
+adb shell setprop persist.debug15.config 0x54002040
+adb shell setprop persist.debug15.statis 1
+adb reboot
+
+
+:make selinux allow access /data
+adb shell
+setenforce 0
+
+:SIGUSR2
+ps | grep $PROGRAM // such as mediaserver
+kill -12 $PID
+
+:check /data/debug15.txt or /data/debug15_statistics.txt
+exit
+adb shell cat /data/debug15_statistics.txt > d:\debug15_statistics.txt

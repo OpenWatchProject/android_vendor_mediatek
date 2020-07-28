@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This XML file declares which signature|privileged permissions should be granted to privileged
+applications that come with the platform
+-->
+<permissions>
+    <privapp-permissions package="com.magiear.handsfree.assistant">
+        <permission name="android.permission.CAPTURE_AUDIO_HOTWORD"/>
+        <permission name="android.permission.INTERACT_ACROSS_USERS"/>
+        <permission name="android.permission.START_ACTIVITIES_FROM_BACKGROUND"/>
+    </privapp-permissions>
+</permissions>

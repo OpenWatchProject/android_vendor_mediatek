@@ -1,0 +1,23 @@
+java_library {
+    name: "mediatek-cta",
+    installable: true,
+    srcs: [
+        "java/**/*.java",
+        "java/com/mediatek/cta/IPermRecordsController.aidl",
+        "java/com/mediatek/cta/IAutoBootService.aidl",
+    ],
+    aidl: {
+        local_include_dirs: [
+            "java",
+        ],
+    },
+    optimize: {
+        enabled: false,
+    },
+    libs: [
+        "services",
+        "framework",
+        "mediatek-framework",
+    ],
+}
+

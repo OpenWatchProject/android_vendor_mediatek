@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/mipi_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/ant_tuner_debug_mipi" />
+
+        <TableLayout
+            android:id="@+id/TableLayout01"
+            style="@style/list_content_style"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp" >
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" >
+
+                <Button
+                    android:id="@+id/mipi_signaling"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/ant_tuner_debug_signaling" />
+
+                <Button
+                    android:id="@+id/mipi_non_signaling"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/ant_tuner_debug_non_signaling" />
+            </TableRow>
+
+            <ImageView
+                style="@style/list_spiner_style"
+                android:contentDescription="@null" />
+
+            <TableRow
+                android:id="@+id/TableRow01"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp" >
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/ant_tuner_debug_mipi_port" >
+                </TextView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/ant_tuner_debug_0x" >
+                </TextView>
+
+                <EditText
+                    android:id="@+id/ant_tuner_debug_mipi_port"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/selector_edit_frame"
+                    android:singleLine="true" >
+                </EditText>
+            </TableRow>
+
+            <ImageView
+                style="@style/list_spiner_style"
+                android:contentDescription="@null" />
+
+            <TableRow
+                android:id="@+id/TableRow02"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp" >
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/ant_tuner_debug_mipi_rw_type" >
+                </TextView>
+
+                <Spinner
+                    android:id="@+id/ant_tuner_debug_mipi_rw_type"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" >
+                </Spinner>
+            </TableRow>
+
+            <ImageView
+                style="@style/list_spiner_style"
+                android:contentDescription="@null" />
+
+            <TableRow
+                android:id="@+id/TableRow03"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp" >
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/ant_tuner_debug_mipi_usid" >
+                </TextView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/ant_tuner_debug_0x" >
+                </TextView>
+
+                <EditText
+                    android:id="@+id/ant_tuner_debug_mipi_usid"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/selector_edit_frame"
+                    android:maxLength="1"
+                    android:singleLine="true" >
+                </EditText>
+            </TableRow>
+
+            <ImageView
+                style="@style/list_spiner_style"
+                android:contentDescription="@null" />
+
+            <TableRow
+                android:id="@+id/TableRow04"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp" >
+
+                <TextView
+                    android:id="@+id/ant_tuner_debug_mipi_address_tv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/ant_tuner_debug_mipi_address" >
+                </TextView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/ant_tuner_debug_0x" >
+                </TextView>
+
+                <EditText
+                    android:id="@+id/ant_tuner_debug_mipi_address"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/selector_edit_frame"
+                    android:maxLength="2"
+                    android:singleLine="true" >
+                </EditText>
+            </TableRow>
+
+            <ImageView
+                style="@style/list_spiner_style"
+                android:contentDescription="@null" />
+
+            <TableRow
+                android:id="@+id/TableRow05"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp" >
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/ant_tuner_debug_mipi_data" >
+                </TextView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/ant_tuner_debug_0x" >
+                </TextView>
+
+                <EditText
+                    android:id="@+id/ant_tuner_debug_mipi_data"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/selector_edit_frame"
+                    android:maxLength="2"
+                    android:singleLine="true" >
+                </EditText>
+            </TableRow>
+        </TableLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/ant_tuner_debug_mipi_read"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/ant_tuner_debug_mipi_read" />
+
+            <Button
+                android:id="@+id/ant_tuner_debug_mipi_write"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/ant_tuner_debug_mipi_write" />
+        </LinearLayout>
+    </LinearLayout>
+
+</ScrollView>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.mediatek.engineermodecmas">
+
+    <permission
+        android:label="engineer mode cmas usage"
+        android:name="com.mediatek.engineermodecmas.USAGE"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.DIAGNOSTIC" />
+    <uses-permission android:name="android.permission.HARDWARE_TEST" />
+    <uses-permission android:name="com.google.android.gm.permission.WRITE_GMAIL" />
+    <uses-permission android:name="com.google.android.gm.permission.READ_GMAIL" />
+    <uses-permission android:name="android.permission.DEVICE_POWER" />
+    <uses-permission android:name="android.permission.CHANGE_CONFIGURATION" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.HARDWARE_TEST" />
+    <uses-permission android:name="android.permission.MASTER_CLEAR" />
+    <uses-permission android:name="android.permission.USE_CREDENTIALS" />
+    <uses-permission android:name="com.google.android.googleapps.permission.GOOGLE_AUTH" />
+    <uses-permission android:name="android.permission.ACCESS_DOWNLOAD_MANAGER" />
+    <uses-permission android:name="android.permission.CLEAR_APP_USER_DATA" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.MODIFY_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_CHECKIN_PROPERTIES" />
+    <uses-permission android:name="android.permission.READ_USER_DICTIONARY" />
+    <uses-permission android:name="android.permission.WRITE_USER_DICTIONARY" />
+    <uses-permission android:name="android.permission.FORCE_STOP_PACKAGES" />
+    <uses-permission android:name="android.permission.PACKAGE_USAGE_STATS" />
+    <uses-permission android:name="android.permission.BATTERY_STATS" />
+    <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS" />
+    <uses-permission android:name="com.android.launcher.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.MOVE_PACKAGE" />
+    <uses-permission android:name="android.permission.MANAGE_USB" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.SET_WALLPAPER" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.REBOOT" />
+    <uses-permission android:name="com.mediatek.cellbroadcastreceiver.permission.receive" />
+
+    <protected-broadcast android:name="com.mediatek.cmasengmode.rmtkey"/>
+    <protected-broadcast android:name="com.mediatek.cmasengmode.exerkey"/>
+    <protected-broadcast android:name="com.mediatek.cmasengmode.operatorChoicekey"/>
+
+
+    <application android:label="@string/app_name" >
+        <activity
+            android:name=".CmasSettings"
+            android:label="Wireless Emergency Alerts"
+            android:permission="com.mediatek.engineermodecmas.USAGE"
+            android:screenOrientation="portrait" >
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+
+       <activity
+            android:name=".CmasTabPageActivity"
+            android:label="Wireless Emergency Alerts"
+            android:exported="false"
+            android:screenOrientation="portrait" >
+        </activity>
+    </application>
+
+</manifest>

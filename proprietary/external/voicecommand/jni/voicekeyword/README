@@ -1,0 +1,21 @@
+This module creates the libvoicerecognition_jni.so libary file.
+
+WHAT IT DOES?
+=============
+libvoicerecognition_jni is JNI layer of voice ui, voice unlock, voice contact search and VOW, Java app can call native layer APIS by it
+and it will reveive the messages from native, and pass to java service.
+
+HOW IT WAS BUILT?
+==================
+It needs the following library from AOSP:
+
+libui, libutils, libbinder, libandroid_runtime, libnativehelper, libcutils 
+
+and the following libs from MediaTek:
+
+libvoicerecognition, libmedia, libmedia_jni
+
+HOW TO USE IT?
+==============
+
+java app call call the fuctions in this library.

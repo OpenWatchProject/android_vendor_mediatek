@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONTABLE>
+	<CMD name="PERF_RES_POWER_HPS_THRESH_UP" id="0X01C10000">
+		<Entry path="/proc/hps/up_threshold"></Entry>
+		<LegacyCmdID>16</LegacyCmdID>
+		<Compare>less</Compare>
+		<MaxValue>100</MaxValue>
+		<MinValue>0</MinValue>
+	</CMD>
+	<CMD name="PERF_RES_POWER_HPS_THRESH_DOWN" id="0X01C10100">
+		<Entry path="/proc/hps/down_threshold"></Entry>
+		<LegacyCmdID>17</LegacyCmdID>
+		<Compare>less</Compare>
+		<MaxValue>100</MaxValue>
+		<MinValue>0</MinValue>
+	</CMD>
+	<CMD name="PERF_RES_POWER_CPUFREQ_HISPEED_FREQ" id="0X01C00000">
+		<Entry path="/sys/devices/system/cpu/cpufreq/interactive/hispeed_freq"></Entry>
+		<LegacyCmdID>12</LegacyCmdID>
+		<Compare>more</Compare>
+		<MaxValue>1950000</MaxValue>
+		<MinValue>0</MinValue>
+	</CMD>
+	<CMD name="PERF_RES_POWER_CPUFREQ_MIN_SAMPLE_TIME" id="0X01C04000"> 
+		<Entry path="/sys/devices/system/cpu/cpufreq/interactive/min_sample_time"></Entry>
+		<LegacyCmdID>13</LegacyCmdID>
+		<Compare>more</Compare>
+		<MaxValue>800000</MaxValue>
+		<MinValue>0</MinValue>
+	</CMD>
+	<CMD name="PERF_RES_POWER_CPUFREQ_ABOVE_HISPEED_DELAY" id="0X01C08000" > 
+		<Entry path="/sys/devices/system/cpu/cpufreq/interactive/above_hispeed_delay"></Entry>
+		<LegacyCmdID>14</LegacyCmdID>
+		<Compare>less</Compare>
+		<MaxValue>200000</MaxValue>
+		<MinValue>0</MinValue>
+	</CMD>
+</CONTABLE>

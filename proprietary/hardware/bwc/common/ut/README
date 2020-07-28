@@ -1,0 +1,26 @@
+Unite Test Case for MTK bandwidth control module (BWC)
+
+
+WHAT IT DOES?
+=============
+bwc_test provides the unit test cases for libbwc.so.
+libbwc.so optimizes the bus access latency in multimedia scenarios to meet realtime 
+requirement. BWC is required for all MTK multimedia middleware implementation including
+camera and video middlewares.
+
+
+HOW IT WAS BUILT?
+==================
+It needs the following library from AOSP:
+1.  liblog.so
+2.  libcutils.so
+
+
+
+HOW TO USE IT?
+==============
+
+The developer can launch bwc_test with adb shell and check the console output for the unit 
+test result.
+
+All the source code of this library were written by MediaTek co..

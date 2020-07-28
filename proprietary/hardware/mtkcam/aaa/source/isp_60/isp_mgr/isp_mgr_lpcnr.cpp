@@ -1,0 +1,198 @@
+/* Copyright Statement:
+ *
+ * This software/firmware and related documentation ("MediaTek Software") are
+ * protected under relevant copyright laws. The information contained herein
+ * is confidential and proprietary to MediaTek Inc. and/or its licensors.
+ * Without the prior written permission of MediaTek inc. and/or its licensors,
+ * any reproduction, modification, use or disclosure of MediaTek Software,
+ * and information contained herein, in whole or in part, shall be strictly prohibited.
+ */
+/* MediaTek Inc. (C) 2010. All rights reserved.
+ *
+ * BY OPENING THIS FILE, RECEIVER HEREBY UNEQUIVOCALLY ACKNOWLEDGES AND AGREES
+ * THAT THE SOFTWARE/FIRMWARE AND ITS DOCUMENTATIONS ("MEDIATEK SOFTWARE")
+ * RECEIVED FROM MEDIATEK AND/OR ITS REPRESENTATIVES ARE PROVIDED TO RECEIVER ON
+ * AN "AS-IS" BASIS ONLY. MEDIATEK EXPRESSLY DISCLAIMS ANY AND ALL WARRANTIES,
+ * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE OR NONINFRINGEMENT.
+ * NEITHER DOES MEDIATEK PROVIDE ANY WARRANTY WHATSOEVER WITH RESPECT TO THE
+ * SOFTWARE OF ANY THIRD PARTY WHICH MAY BE USED BY, INCORPORATED IN, OR
+ * SUPPLIED WITH THE MEDIATEK SOFTWARE, AND RECEIVER AGREES TO LOOK ONLY TO SUCH
+ * THIRD PARTY FOR ANY WARRANTY CLAIM RELATING THERETO. RECEIVER EXPRESSLY ACKNOWLEDGES
+ * THAT IT IS RECEIVER'S SOLE RESPONSIBILITY TO OBTAIN FROM ANY THIRD PARTY ALL PROPER LICENSES
+ * CONTAINED IN MEDIATEK SOFTWARE. MEDIATEK SHALL ALSO NOT BE RESPONSIBLE FOR ANY MEDIATEK
+ * SOFTWARE RELEASES MADE TO RECEIVER'S SPECIFICATION OR TO CONFORM TO A PARTICULAR
+ * STANDARD OR OPEN FORUM. RECEIVER'S SOLE AND EXCLUSIVE REMEDY AND MEDIATEK'S ENTIRE AND
+ * CUMULATIVE LIABILITY WITH RESPECT TO THE MEDIATEK SOFTWARE RELEASED HEREUNDER WILL BE,
+ * AT MEDIATEK'S OPTION, TO REVISE OR REPLACE THE MEDIATEK SOFTWARE AT ISSUE,
+ * OR REFUND ANY SOFTWARE LICENSE FEES OR SERVICE CHARGE PAID BY RECEIVER TO
+ * MEDIATEK FOR SUCH MEDIATEK SOFTWARE AT ISSUE.
+ *
+ * The following software/firmware and/or related documentation ("MediaTek Software")
+ * have been modified by MediaTek Inc. All revisions are subject to any receiver's
+ * applicable license agreements with MediaTek Inc.
+ */
+
+/********************************************************************************************
+ *     LEGAL DISCLAIMER
+ *
+ *     (Header of MediaTek Software/Firmware Release or Documentation)
+ *
+ *     BY OPENING OR USING THIS FILE, BUYER HEREBY UNEQUIVOCALLY ACKNOWLEDGES AND AGREES
+ *     THAT THE SOFTWARE/FIRMWARE AND ITS DOCUMENTATIONS ("MEDIATEK SOFTWARE") RECEIVED
+ *     FROM MEDIATEK AND/OR ITS REPRESENTATIVES ARE PROVIDED TO BUYER ON AN "AS-IS" BASIS
+ *     ONLY. MEDIATEK EXPRESSLY DISCLAIMS ANY AND ALL WARRANTIES, EXPRESS OR IMPLIED,
+ *     INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR
+ *     A PARTICULAR PURPOSE OR NONINFRINGEMENT. NEITHER DOES MEDIATEK PROVIDE ANY WARRANTY
+ *     WHATSOEVER WITH RESPECT TO THE SOFTWARE OF ANY THIRD PARTY WHICH MAY BE USED BY,
+ *     INCORPORATED IN, OR SUPPLIED WITH THE MEDIATEK SOFTWARE, AND BUYER AGREES TO LOOK
+ *     ONLY TO SUCH THIRD PARTY FOR ANY WARRANTY CLAIM RELATING THERETO. MEDIATEK SHALL ALSO
+ *     NOT BE RESPONSIBLE FOR ANY MEDIATEK SOFTWARE RELEASES MADE TO BUYER'S SPECIFICATION
+ *     OR TO CONFORM TO A PARTICULAR STANDARD OR OPEN FORUM.
+ *
+ *     BUYER'S SOLE AND EXCLUSIVE REMEDY AND MEDIATEK'S ENTIRE AND CUMULATIVE LIABILITY WITH
+ *     RESPECT TO THE MEDIATEK SOFTWARE RELEASED HEREUNDER WILL BE, AT MEDIATEK'S OPTION,
+TO REVISE OR REPLACE THE MEDIATEK SOFTWARE AT ISSUE, OR REFUND ANY SOFTWARE LICENSE
+ *     FEES OR SERVICE CHARGE PAID BY BUYER TO MEDIATEK FOR SUCH MEDIATEK SOFTWARE AT ISSUE.
+ *
+ *     THE TRANSACTION CONTEMPLATED HEREUNDER SHALL BE CONSTRUED IN ACCORDANCE WITH THE LAWS
+ *     OF THE STATE OF CALIFORNIA, USA, EXCLUDING ITS CONFLICT OF LAWS PRINCIPLES.
+ ************************************************************************************************/
+#define LOG_TAG "isp_mgr_lpcnr"
+
+#ifndef ENABLE_MY_LOG
+    #define ENABLE_MY_LOG       (1)
+#endif
+
+#include <cutils/properties.h>
+#include <aaa_types.h>
+#include <aaa_error_code.h>
+#include <mtkcam/utils/std/Log.h>
+#include "isp_mgr.h"
+#include <private/aaa_utils.h>
+#include <array>
+
+using namespace NSIspTuning;
+
+#define MY_INST NS3Av3::INST_T<ISP_MGR_LPCNR_T>
+static std::array<MY_INST, SENSOR_IDX_MAX> gMultiton;
+
+namespace NSIspTuning
+{
+
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// LPCNR
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ISP_MGR_LPCNR_T&
+ISP_MGR_LPCNR_T::
+getInstance(MUINT32 const eSensorDev)
+{
+    ISP_MGR_MODULE_GET_INSTANCE(LPCNR);
+}
+
+
+template <>
+ISP_MGR_LPCNR_T&
+ISP_MGR_LPCNR_T::
+put(MUINT8 SubModuleIndex, ISP_NVRAM_LPCNR_T const& rParam)
+{
+    //PUT_REG_INFO_MULTI(SubModuleIndex, TOP,             top);
+    //PUT_REG_INFO_MULTI(SubModuleIndex, ATPG,            atpg);
+    //PUT_REG_INFO_MULTI(SubModuleIndex, SIZE,            size);
+    PUT_REG_INFO_MULTI(SubModuleIndex, NR_W1,           nr_w1);
+    PUT_REG_INFO_MULTI(SubModuleIndex, NR_W2,           nr_w2);
+    PUT_REG_INFO_MULTI(SubModuleIndex, NR_W3,           nr_w3);
+    PUT_REG_INFO_MULTI(SubModuleIndex, NR_W4,           nr_w4);
+    PUT_REG_INFO_MULTI(SubModuleIndex, NR_W5,           nr_w5);
+    PUT_REG_INFO_MULTI(SubModuleIndex, NR_W6,           nr_w6);
+    PUT_REG_INFO_MULTI(SubModuleIndex, NR_W7,           nr_w7);
+    PUT_REG_INFO_MULTI(SubModuleIndex, NR_W8,           nr_w8);
+    PUT_REG_INFO_MULTI(SubModuleIndex, NR_W9,           nr_w9);
+    PUT_REG_INFO_MULTI(SubModuleIndex, NR_W10,          nr_w10);
+    PUT_REG_INFO_MULTI(SubModuleIndex, NR_W11,          nr_w11);
+    PUT_REG_INFO_MULTI(SubModuleIndex, NR_W12,          nr_w12);
+    PUT_REG_INFO_MULTI(SubModuleIndex, NR_W13,          nr_w13);
+    PUT_REG_INFO_MULTI(SubModuleIndex, NR_W14,          nr_w14);
+    PUT_REG_INFO_MULTI(SubModuleIndex, SM,              sm);
+    PUT_REG_INFO_MULTI(SubModuleIndex, BLD,             bld);
+    PUT_REG_INFO_MULTI(SubModuleIndex, NTRL_Y,          ntrl_y);
+    PUT_REG_INFO_MULTI(SubModuleIndex, NTRL_C,          ntrl_c);
+    //PUT_REG_INFO_MULTI(SubModuleIndex, DUMMY,           dummy);
+    //PUT_REG_INFO_MULTI(SubModuleIndex, IN1_CNT,         in1_cnt);
+    //PUT_REG_INFO_MULTI(SubModuleIndex, IN2_CNT,         in2_cnt);
+    //PUT_REG_INFO_MULTI(SubModuleIndex, IN3_CNT,         in3_cnt);
+    //PUT_REG_INFO_MULTI(SubModuleIndex, OUT_CNT,         out_cnt);
+    //PUT_REG_INFO_MULTI(SubModuleIndex, STATUS,          status);
+
+    return  (*this);
+}
+
+
+template <>
+ISP_MGR_LPCNR_T&
+ISP_MGR_LPCNR_T::
+get(MUINT8 SubModuleIndex, ISP_NVRAM_LPCNR_T & rParam)
+{
+    //GET_REG_INFO_MULTI(SubModuleIndex, TOP,             top);
+    //GET_REG_INFO_MULTI(SubModuleIndex, ATPG,            atpg);
+    //GET_REG_INFO_MULTI(SubModuleIndex, SIZE,            size);
+    GET_REG_INFO_MULTI(SubModuleIndex, NR_W1,           nr_w1);
+    GET_REG_INFO_MULTI(SubModuleIndex, NR_W2,           nr_w2);
+    GET_REG_INFO_MULTI(SubModuleIndex, NR_W3,           nr_w3);
+    GET_REG_INFO_MULTI(SubModuleIndex, NR_W4,           nr_w4);
+    GET_REG_INFO_MULTI(SubModuleIndex, NR_W5,           nr_w5);
+    GET_REG_INFO_MULTI(SubModuleIndex, NR_W6,           nr_w6);
+    GET_REG_INFO_MULTI(SubModuleIndex, NR_W7,           nr_w7);
+    GET_REG_INFO_MULTI(SubModuleIndex, NR_W8,           nr_w8);
+    GET_REG_INFO_MULTI(SubModuleIndex, NR_W9,           nr_w9);
+    GET_REG_INFO_MULTI(SubModuleIndex, NR_W10,          nr_w10);
+    GET_REG_INFO_MULTI(SubModuleIndex, NR_W11,          nr_w11);
+    GET_REG_INFO_MULTI(SubModuleIndex, NR_W12,          nr_w12);
+    GET_REG_INFO_MULTI(SubModuleIndex, NR_W13,          nr_w13);
+    GET_REG_INFO_MULTI(SubModuleIndex, NR_W14,          nr_w14);
+    //GET_REG_INFO_MULTI(SubModuleIndex, SM,              sm);
+    //GET_REG_INFO_MULTI(SubModuleIndex, BLD,             bld);
+    //GET_REG_INFO_MULTI(SubModuleIndex, NTRL_Y,          ntrl_y);
+    //GET_REG_INFO_MULTI(SubModuleIndex, NTRL_C,          ntrl_c);
+    //GET_REG_INFO_MULTI(SubModuleIndex, DUMMY,           dummy);
+    //GET_REG_INFO_MULTI(SubModuleIndex, IN1_CNT,         in1_cnt);
+    //GET_REG_INFO_MULTI(SubModuleIndex, IN2_CNT,         in2_cnt);
+    //GET_REG_INFO_MULTI(SubModuleIndex, IN3_CNT,         in3_cnt);
+    //GET_REG_INFO_MULTI(SubModuleIndex, OUT_CNT,         out_cnt);
+    //GET_REG_INFO_MULTI(SubModuleIndex, STATUS,          status);
+
+    return  (*this);
+}
+
+MBOOL
+ISP_MGR_LPCNR_T::
+apply_P2(MUINT8 SubModuleIndex, const RAWIspCamInfo& rRawIspCamInfo, dip_x_reg_t* pReg)
+{
+
+    if(SubModuleIndex >= ESubModule_NUM){
+        return MFALSE;
+    }
+
+    MBOOL bEnable = isEnable(SubModuleIndex);
+
+    //Top Control
+    switch (SubModuleIndex)
+    {
+        case ELPCNR_D1:
+            ISP_WRITE_ENABLE_BITS(pReg, DIPCTL_D1A_DIPCTL_YUV_EN2, DIPCTL_LPCNR_D1_EN, bEnable);
+            break;
+        default:
+            CAM_LOGE("Apply Error Submodule Index: %d", SubModuleIndex);
+            return  MFALSE;
+    }
+
+    writeRegs(static_cast<RegInfo_T*>(m_rIspRegInfo[SubModuleIndex]), m_u4RegInfoNum, pReg);
+
+    dumpRegInfoP2("LPCNR", SubModuleIndex);
+
+    return  MTRUE;
+
+}
+
+}
+

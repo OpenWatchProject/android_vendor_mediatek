@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+     >
+
+    
+    
+
+    <RadioGroup android:id="@+id/group_type" 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="top"
+        android:visibility="visible"
+        android:orientation="horizontal">
+    
+        <RadioButton android:id="@+id/group_chat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/group_chat"
+        android:checked="true" 
+        />
+        
+	    <RadioButton android:id="@+id/multi_chat"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:text="@string/multi_chat"/>
+    
+    
+    </RadioGroup>
+    <TextView
+        android:id="@+id/titleTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/group_type"
+        
+         />
+
+</RelativeLayout>

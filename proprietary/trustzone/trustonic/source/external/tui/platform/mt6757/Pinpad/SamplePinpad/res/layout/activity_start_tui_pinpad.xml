@@ -1,0 +1,65 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:paddingBottom="0dp"
+    android:paddingLeft="0dp"
+    android:paddingRight="0dp"
+    android:paddingTop="0dp"
+    tools:context=".PinpadHomeActivity" >
+
+    <LinearLayout
+        android:id="@+id/home_header_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/layout_header"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/home_header_text"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/home_header_title"
+            android:textColor="@color/white"
+            android:textIsSelectable="false"
+            android:textSize="24sp" />
+
+        <ImageView
+            android:id="@+id/home_header_picture"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/home_header_picture" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/home_body_text"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/home_header_layout"
+        android:gravity="left"
+        android:padding="16dp"
+        android:text="@string/home_body_text"
+        android:textColor="@color/trustonic_grey"
+        android:textIsSelectable="false"
+        android:textSize="15sp" />
+
+
+    <Button
+        android:id="@+id/home_main_button"
+        style="@style/trustonicButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="10dp"
+        android:text="@string/home_footer_button">
+    </Button>
+
+</RelativeLayout>

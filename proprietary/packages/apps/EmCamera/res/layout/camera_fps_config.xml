@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/fps_range_ll"
+    android:layout_marginLeft="8dip"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal" >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minHeight="50dip"
+        android:minWidth="200dip"
+        android:text="@string/auto_clibr_supported_fps_range"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp" />
+
+    <Spinner
+        android:id="@+id/auto_clibr_supported_fps_range_spnr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minHeight="50dip"
+        android:minWidth="90dip"
+        android:textSize="18sp" >
+    </Spinner>
+</LinearLayout>

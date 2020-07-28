@@ -1,0 +1,27 @@
+Library of MTK ViLTE features, controlling uplink  data path
+
+WHAT IT DOES?
+=============
+libsource.so control the uplink 
+
+HOW IT WAS BUILT?
+==================
+It needs the following library from AOSP:
+libcutils.so         
+libstagefright_foundation.so
+libutils.so
+libstagefright.so
+libbinder.so
+libmedia.so
+libutils.so
+
+and the following libs from MediaTek:
+
+libvcodec_cap.so
+libcomutils.so
+
+
+HOW TO USE IT?
+==============
+used by the libimsma.so module to do the multimedia uplink process
+

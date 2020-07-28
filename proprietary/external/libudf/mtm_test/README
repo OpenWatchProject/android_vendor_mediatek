@@ -1,0 +1,16 @@
+//mtm_test : for memory performance test£¬ refer dex2oat behavior on L to simulate memory useage
+
+:usage
+  /system/bin/mtm_test -t <thread_num> -r <ratio>
+
+/*
+explain:
+  -t to adjust thread num
+    -t <num> : <num> stand for thread number, it must less than the project cpu total number
+  -r to adjust the ratio [0-10]
+    -r <num> : with a bigger number following the '-r' option, the proporation of the memory
+               freed after the whole chunk malloc is higher, which means more time is needed
+               to free the memory.
+  cmd /system/bin/mtm_test
+    default stand for /system/bin/mtm_test ¨Ct <project_cpu_total_number> -r 5
+*/

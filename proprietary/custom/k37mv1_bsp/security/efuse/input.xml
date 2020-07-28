@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<flashtool-config version="2.0">
+  <general>
+    <chip-name>MT6735M</chip-name>
+    <storage-type>EMMC</storage-type>
+    <download-agent>6735m.bin</download-agent>
+    <scatter>MT6735M_Android_scatter.txt</scatter>
+    <rom-list>
+      <rom index="0" enable="true">preloader_k37mv1_bsp.bin</rom>
+    </rom-list>
+    <connection
+      type="BromUSB"
+      high-speed="false"
+      without-battery="false" />
+  </general>
+  <commands>
+    <efuse>
+      <magic-key 
+        key1="87654321"
+        key2="ABCDEF90" />
+      <common-ctrl
+        Disable_EMMC_boot="false"
+        Disable_NAND_boot="false"
+        Disable_NAND_boot_speedup="false"    
+        USB_download_type="0" />
+      <secure-ctrl
+        Disable_DBGPORT_LOCK="false"
+        Enable_ACC="false"
+        Enable_ACK="false"
+        Enable_SBC="false"
+        Enable_SLA="false"
+        Enable_DAA="false"
+        Disable_JTAG="false"
+        Enable_Root_Cert="false"
+        Enable_SW_JTAG_CON="false" />
+      <sbc-pub-key>
+        <pub-key-e></pub-key-e>
+        <pub-key-n></pub-key-n>
+      </sbc-pub-key>
+      <common-lock
+        com_ctrl_lock="false"
+        usb_id_lock="false" />
+      <secure-lock
+        sec_attr_lock="false"
+        ackey_lock="false"
+        sbc_pubk_hash_lock="false" />
+      <cust-common-ctrl 
+        DISABLE_EFUSE_BLOW="false"
+        c_ctrl="00" />
+      <cust-secure-ctrl 
+        c_sec_ctrl="00" />  
+      <usb-id
+        vid="0000"
+        pid="0000" />
+      <ac-key>00000000000000000000000000000000</ac-key>     
+      <read-back
+        dir="."
+        name="efuse_dump.txt"
+        time-prefix="false" />
+    </efuse>
+  </commands>
+</flashtool-config>

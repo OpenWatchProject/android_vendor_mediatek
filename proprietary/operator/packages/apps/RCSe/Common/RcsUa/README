@@ -1,0 +1,16 @@
+The RCS UA service is developed by MediaTek.  
+
+
+WHAT IT DOES?
+=============
+Used as IMS B2B UA and SIP proxy. Providing platform interface for user to use Mediatek IMS stack capabilitto use Mediatek IMS stack capability.
+This is mandatory for IMS single registration approach applied.
+
+HOW IT WAS BUILT?
+==================
+Built as java library for user to linked to and apk which provide implementation by Android Service.
+
+HOW TO USE IT?
+==============
+The RCS enabler can use this module to support IMS single registraion by receive IMS event changing
+notification and by sending/receiving SIP messages.

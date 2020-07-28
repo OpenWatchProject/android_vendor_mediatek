@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<carrier_config>
+    <boolean name="carrier_default_wfc_ims_roaming_enabled_bool" value="true"/>
+    <boolean name="carrier_supports_ss_over_ut_bool" value="true"/>
+    <boolean name="mtk_domestic_roaming_enabled_only_by_mobile_data_setting" value="true" />
+    <boolean name="mtk_intl_roaming_enabled_only_by_roaming_data_setting" value="true" />
+    <boolean name="rtt_supported_bool" value="true"/>
+    <boolean name="rtt_auto_upgrade_bool" value="false"/>
+    <boolean name="rtt_supported_for_vt_bool" value="false"/>
+    <boolean name="rtt_upgrade_supported_bool" value="true"/>
+    <boolean name="rtt_downgrade_supported_bool" value="true"/>
+    <boolean name="mtk_rtt_video_switch_supported_bool" value="true"/>
+    <boolean name="mtk_rtt_call_merge_supported_bool" value="true"/>
+    <boolean name="mtk_rtt_auto_accept_request_bool" value="true"/>
+    <boolean name="mtk_multi_rtt_calls_supported_bool" value="true"/>
+    <boolean name="mtk_mt_rtt_without_precondition_bool" value="false"/>
+    <boolean name="skip_cf_fail_to_disable_dialog_bool" value="true"/>
+    <boolean name="mtk_rtt_video_capability_coexist_bool" value="true"/>
+    <boolean name="support_video_conference_call_bool" value="true" />
+    <boolean name="mtk_vt_over_wifi_check_wfc_enable_bool" value="false" />
+    <boolean name="mtk_vt_over_wifi_check_data_enable_bool" value="true" />
+    <int name="carrier_default_wfc_ims_mode_int" value="1" />
+    <boolean name="mtk_carrier_wfc_mode_domestic_roaming_to_home" value="true" />
+    <!-- Dont's show roaming icon -->
+    <boolean name="mtk_key_carrier_need_show_roaming_icon" value="false" />
+</carrier_config>

@@ -1,0 +1,16 @@
+===============================
+ WHAT IT DOES?
+===============================
+There are two major components in this make file
+1. Diagnostic Monitoring Collector(DMC)
+The daemon collects KPIs from
+- Modem Monitor(MDM), a daemon forward modem KPI with EM/ICD format.
+- AP Monitor (APM), collects KPI from submission layer in AP vendor and system partition.
+and provide DMC interface to clients (DMC APP) to collect KPIs.
+
+As the result, DMC includs two lazy HIDL server:
+- libdmc_server: to service DMA APP, currently, we only support single client.
+- libapmonitor_server: to service submission layer in AP side.
+
+2. Packet Monitor (PKM)
+A daemon hooks TCP/IP stack and forward OTA packets to DMC core.

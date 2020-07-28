@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+ * Copyright (C) 2007-2008 Esmertec AG.
+ * Copyright (C) 2007-2008 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+--><resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+   <string name="alerts">Alertes</string>
+    <string name="select_all">"Tout sélectionner"</string>
+    <string name="unselect_all">"Tout désélectionner"</string>
+    <string name="delete">"Supprimer"</string>
+    <string name="select_cellbroadcasts">"Sélectionnez alerte d'urgence"</string>
+    <plurals name="message_view_selected_message_count">
+        <item quantity="one"><xliff:g id="message_count" example="1">%d</xliff:g> sélectionné</item>
+        <item quantity="other"><xliff:g id="message_count" example="9">%d</xliff:g> sélectionnés</item>
+    </plurals>
+    <plurals name="confirm_delete_broadcast">
+        <item quantity="one">"1 message d'alerte sélectionné sera supprimé"</item>
+        <item quantity="other">"<xliff:g id="number" example="15">%1$s</xliff:g> messages d'alerte sélectionnés seront supprimés"</item>
+    </plurals>
+    <string name="enable_cmas_presidential_threat_alerts_title">"Afficher l'alerte présidentielle"</string>
+    <string name="enable_cmas_presidential_threat_alerts_summary">Afficher les alertes de niveau présidentiel</string>
+    <string name="enable_cmas_imminent_threat_alerts_title">Alerte imminente</string>
+    <string name="enable_cmas_imminent_threat_alerts_summary">Afficher les alertes mettant en danger imminent la vie ou les biens</string>
+    <string name="cmas_preview_alert_tone_title">"Aperçu tonalité d'alerte"</string>
+    <string name="cmas_preview_alert_tone_summary">"Prévisualiser la tonalité d'alerte"</string>
+    <string name="cmas_change_settings">Confirmer la modification des réglages?</string>
+    <string name="cmas_disable_cmas">Aucune alerte ne sera reçue si vous désactivez la diffusion cellulaire.</string>
+    <string name="cmas_enable_cmas_failed">"Echec de l'ouverture."</string>
+    <string name="enable_repeat_alert_title">"Répéter l'alarme"</string>
+    <string name="enable_repeat_alert_summary">"Pour rappeler par intermittence à l'utilisateur le message non lu"</string>
+    <string name="enable_all_alert_title">Toutes les alertes activées</string>
+    <string name="enable_all_imminent_alerts_title">Tous les messages de danger imminent</string>
+    <string name="enable_cell_broadcast_title">"Alertes d'urgence"</string>
+    <string name="alert_sound_volume">Volume alerte sonore</string>
+    <string name="alert_volume_summary">Réglage du volume sonore des alertes</string>
+</resources>

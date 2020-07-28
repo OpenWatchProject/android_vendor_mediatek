@@ -1,0 +1,2 @@
+0x60c, 0x0,           //TOP.CAM_CAM_1.SENINF_TG1.TM_SIZE
+0x610, 0x0,             //TOP.CAM_CAM_1.SENINF_TG1.TM_CLK

@@ -1,0 +1,39 @@
+package vendor.mediatek.hardware.apmonitor@2.0;
+
+// Common Definition
+typedef int32_t SID;
+typedef uint16_t APM_MSGID;
+typedef uint8_t SIMID;
+typedef uint64_t timestamp;
+
+enum apmResult_e : uint32_t {
+    APM_SUCCESS,
+    APM_FAILED,
+    APM_NOT_INITIALIZED,
+    APM_INVALID_ARGUMENTS,
+    APM_TIMEOUT
+};
+
+enum apmSubmissionMode_e : uint32_t {
+    APM_SUBMISSION_MODE_ON_EVENT,
+    APM_SUBMISSION_MODE_ON_QUERY
+};
+
+struct apmKpiHeader_t {
+    APM_MSGID msgId;
+    SIMID simId;
+    timestamp timestampMs;
+    apmSubmissionMode_e submissionMode;
+};
+
+// Metric Definition
+// Test Purpose
+struct FooBar_t {
+    uint8_t foo;
+    uint8_t bar;
+};
+
+struct PacketEvent_t {
+    vec<uint8_t> header;
+    vec<uint8_t> data;
+};

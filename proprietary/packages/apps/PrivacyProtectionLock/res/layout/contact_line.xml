@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal" >
+
+    <EditText
+        android:id="@+id/et_contact_line_edit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_weight="1"
+        android:ems="10"
+        android:hint="@string/hint_trusted_contact"
+        android:imeOptions="actionDone"
+        android:inputType="phone"
+        android:textAppearance="?android:attr/textAppearanceMedium" >
+
+    </EditText>
+
+    <ImageButton
+        android:id="@+id/ib_contact_line_add"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="44dp"
+        android:layout_height="match_parent"
+        android:layout_weight="0"
+        android:contentDescription="@string/image_button_description_add"
+        android:src="@drawable/ic_add" />
+
+    <ImageButton
+        android:id="@+id/ib_contact_line_delete"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="44dp"
+        android:layout_height="match_parent"
+        android:layout_weight="0"
+        android:contentDescription="@string/image_button_description_delete"
+        android:src="@drawable/ic_del" />
+
+</LinearLayout>

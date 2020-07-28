@@ -1,0 +1,21 @@
+package vendor.mediatek.hardware.rcs@2.0;
+
+import IRcsIndication;
+
+interface IRcs {
+    /*
+     * Set callback used to send event to UA user.
+     *
+     * @param rcsIndication callback used to get event notify.
+     */
+    setResponseFunctions(IRcsIndication rcsIndication);
+
+    /*
+     * Write event to UA daemon.
+     *
+     * @param account indicate specific SIM account event sent to.
+     * @param request indicate event type.
+     * @param data request event payload.
+     */
+    oneway writeEvent(int32_t account, int32_t request, vec<int8_t> data);
+};

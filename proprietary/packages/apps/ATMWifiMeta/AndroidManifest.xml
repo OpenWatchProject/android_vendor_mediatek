@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.mediatek.atmwifimeta"
+    android:versionCode="210000"
+    android:versionName="2.1.00.00"
+    coreApp="true"
+    android:sharedUserId="android.uid.system">
+
+    <uses-sdk
+        android:minSdkVersion="20"
+        android:targetSdkVersion="28" />
+
+    <permission
+        android:protectionLevel="signature"
+        android:name="com.mediatek.permission.ATM_WIFI">
+    </permission>
+
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.RAISED_THREAD_PRIORITY"/>
+    <uses-permission android:name="android.permission.DUMP"/>
+    <uses-permission android:name="android.permission.REQUEST_NETWORK_SCORES" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.PACKAGE_USAGE_STATS"/>
+    <uses-permission android:name="android.permission.BATTERY_STATS"/>
+    <uses-permission android:name="android.permission.STATUS_BAR" />
+    <uses-permission android:name="android.permission.SET_KEYBOARD_LAYOUT" />
+    <uses-permission android:name="android.permission.READ_PROFILE" />
+    <uses-permission android:name="android.permission.CONFIGURE_WIFI_DISPLAY" />
+    <uses-permission android:name="android.permission.CONFIGURE_DISPLAY_COLOR_MODE" />
+    <uses-permission android:name="android.permission.ACCESS_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.OVERRIDE_WIFI_CONFIG" />
+    <uses-permission android:name="android.permission.USER_ACTIVITY" />
+    <uses-permission android:name="android.permission.PEERS_MAC_ADDRESS"/>
+    <uses-permission android:name="android.permission.NETWORK_SETTINGS"/>
+
+    <application
+
+        android:label="@string/app_name" >
+
+        <!-- ///M: Add WIFI activity for ATM mode -->
+        <activity android:name="Atm_Wifi_Activity"
+                android:label="@string/Atm_Wifi_Activity_Title"
+                android:permission="com.mediatek.permission.ATM_WIFI"
+                android:screenOrientation="portrait"
+                android:configChanges="orientation|keyboardHidden|screenSize"
+                android:exported="true">
+            <intent-filter>
+                <action android:name="com.mediatek.atmwifimeta.Atm_Wifi_Activity" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+    </application>
+
+</manifest>

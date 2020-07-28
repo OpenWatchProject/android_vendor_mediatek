@@ -1,0 +1,39 @@
+cc_prebuilt_library_shared {
+    name: "libmllitd",
+    arch: {
+        arm: {
+            srcs: ["libmllitd.so"],
+        },
+    },
+    compile_multilib: "32",
+    strip: {
+        none: true,
+    },
+}
+
+cc_prebuilt_library_shared {
+    name: "libmplmpd",
+    arch: {
+        arm: {
+            srcs: ["libmplmpd.so"],
+        },
+    },
+    compile_multilib: "32",
+    strip: {
+        none: true,
+    },
+}
+
+cc_prebuilt_binary {
+    name: "mpud6050",
+    arch: {
+        arm: {
+            srcs: ["mpud6050"],
+        },
+    },
+    compile_multilib: "32",
+    strip: {
+        none: true,
+    },
+}
+

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+ * Copyright (C) 2007-2008 Esmertec AG.
+ * Copyright (C) 2007-2008 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+--><resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+   <string name="alerts">Märguanded</string>
+    <string name="select_all">Vali kõik</string>
+    <string name="unselect_all">"Tühista kõik valikud"</string>
+    <string name="delete">"Kustuta"</string>
+    <string name="select_cellbroadcasts">Vali hädaolukorra märguanne</string>
+    <plurals name="message_view_selected_message_count">
+        <item quantity="one"><xliff:g id="message_count" example="1">%d</xliff:g> valitud</item>
+        <item quantity="other"><xliff:g id="message_count" example="9">%d</xliff:g> valitud</item>
+    </plurals>
+    <plurals name="confirm_delete_broadcast">
+        <item quantity="one">1 valitud hoiatusteade kustutatakse</item>
+        <item quantity="other"><xliff:g id="number" example="15">%1$s</xliff:g> valitud hoiatusteade(t) kustutatakse</item>
+    </plurals>
+    <string name="enable_cmas_presidential_threat_alerts_title">Kuva presidentlik hoiatus</string>
+    <string name="enable_cmas_presidential_threat_alerts_summary">Kuva presidentliku taseme hoiatused</string>
+    <string name="enable_cmas_imminent_threat_alerts_title">Vahetu hoiatus</string>
+    <string name="enable_cmas_imminent_threat_alerts_summary">Kuva hoiatused, kui esineb vahetu oht elule ja varale</string>
+    <string name="cmas_preview_alert_tone_title">Alarmtooni eelvaade</string>
+    <string name="cmas_preview_alert_tone_summary">Kuva alarmtooni eelvaade</string>
+    <string name="cmas_change_settings">Kas soovid kindlasti sätteid muuta?</string>
+    <string name="cmas_disable_cmas">Kui keelad kärjeteated, ei saa ühtegi teadet vastu võtta.</string>
+    <string name="cmas_enable_cmas_failed">Avamine ebaõnnestus.</string>
+    <string name="enable_repeat_alert_title">Korda alarmi</string>
+    <string name="enable_repeat_alert_summary">Lugemata teate perioodiline meeldetuletus kasutajale</string>
+    <string name="enable_all_alert_title">Kõik hoiatused on sees</string>
+    <string name="enable_all_imminent_alerts_title">Kõik vahetu ohu teated</string>
+    <string name="enable_cell_broadcast_title">Erakorralised teated</string>
+    <string name="alert_sound_volume">Teate märguande helitugevus</string>
+    <string name="alert_volume_summary">Reguleeri teate märguande helitugevust</string>
+</resources>

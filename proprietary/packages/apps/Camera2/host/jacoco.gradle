@@ -1,0 +1,92 @@
+apply plugin: 'jacoco'
+
+jacoco {
+    toolVersion = '0.7.7.201606060606'
+}
+
+FileTree getJacocoClassDirs() {
+    def classDirs = fileTree(
+            dir: '../host/build/intermediates/classes/debug',
+            excludes: ['**/R.class',
+                       '**/R$*.class',
+                       '**/*$ViewInjector*.*',
+                       '**/BuildConfig.*',
+                       '**/Manifest*.*'])
+    classDirs +=  fileTree(
+            dir: '../ext/build/intermediates/classes/debug',
+            excludes: ['**/R.class',
+                       '**/R$*.class',
+                       '**/*$ViewInjector*.*',
+                       '**/BuildConfig.*',
+                       '**/Manifest*.*']
+    )
+    return classDirs
+}
+
+FileCollection getJacocoSrcDirs() {
+    Set srcDirs = android.sourceSets.main.java.srcDirs;
+    return files(srcDirs)
+}
+
+task jacocoAllTestReport(type:JacocoReport) {
+    group = "Reporting"
+    description = "Generate Jacoco coverage reports"
+
+    classDirectories = getJacocoClassDirs()
+
+    additionalSourceDirs = getJacocoSrcDirs()
+    sourceDirectories = getJacocoSrcDirs()
+    executionData = files(['../host/build/jacoco/testDebugUnitTest.exec',
+                           '../host/build/outputs/code-coverage/connected/coverage.ec'])
+    reports {
+        xml.enabled = true
+        html.enabled = true
+    }
+}
+
+//task jacocoUnitTestReport(type:JacocoReport, dependsOn: ['testDebugUnitTest']) {
+task jacocoUnitTestReport(type:JacocoReport) {
+    group = "Reporting"
+    description = "Generate Jacoco Unit Test Coverage Reports"
+
+    classDirectories = getJacocoClassDirs()
+
+    additionalSourceDirs = getJacocoSrcDirs()
+    sourceDirectories = getJacocoSrcDirs()
+    executionData = files(['../host/build/jacoco/testDebugUnitTest.exec'])
+    reports {
+        xml.enabled = true
+        html.enabled = true
+    }
+}
+
+task jacocoAndroidTest(type:JacocoReport, dependsOn: ['connectedDebugAndroidTest']) {
+//task jacocoAndroidTestReport(type:JacocoReport) {
+    group = "Reporting"
+    description = "Generate Jacoco Instrumentation Test Coverage Reports"
+
+    classDirectories = getJacocoClassDirs()
+
+    additionalSourceDirs = getJacocoSrcDirs()
+    sourceDirectories = getJacocoSrcDirs()
+    executionData = files(['../host/build/outputs/code-coverage/connected/coverage.ec'])
+    reports {
+        xml.enabled = true
+        html.enabled = true
+    }
+}
+
+task jacocoAndroidTestReport(type:JacocoReport, dependsOn: ['createDebugCoverageReport']) {
+    group = "Reporting"
+    description = "Generate Jacoco Instrumentation Test Coverage Reports"
+
+    classDirectories = getJacocoClassDirs()
+
+    additionalSourceDirs = getJacocoSrcDirs()
+    sourceDirectories = getJacocoSrcDirs()
+    executionData = files(['../host/build/outputs/code-coverage/connected/coverage.ec'])
+    reports {
+        xml.enabled = true
+        html.enabled = true
+    }
+}

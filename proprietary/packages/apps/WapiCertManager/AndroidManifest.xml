@@ -1,0 +1,70 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    coreApp="true"
+    package="com.wapi.wapicertmanager"
+    android:sharedUserId="android.uid.system" >
+
+    <permission
+        android:name="com.wapi.permission.ACCESS_CERTIFICATE"
+        android:label="@string/wapi_cert_permission_text"
+        android:protectionLevel="signatureOrSystem" >
+    </permission>
+    <!-- add for avoid "install failed older sdk" issue -->
+    <uses-sdk
+        android:minSdkVersion="16" />
+
+    <application
+        android:icon="@drawable/icon"
+        android:label="@string/wapi_cert_title_name"
+        android:uiOptions="splitActionBarWhenNarrow" >
+
+        <!-- android:theme="@style/AppTheme" -->
+        <activity
+            android:name=".WapiCertManagerActivity"
+            android:label="@string/wapi_cert_title_name" >
+            <intent-filter>
+                <action android:name="android.Wapi.CertManager" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".CertDetailsActivity"
+            android:label="@string/cert_details_title_name" >
+        </activity>
+        <activity
+            android:name=".WapiCertInstaller"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:permission="com.wapi.permission.ACCESS_CERTIFICATE"
+            android:exported="false"
+            android:theme="@android:style/Theme.Translucent" >
+
+            <!-- android:theme="@android:style/Theme.Black.NoTitleBar" -->
+
+            <intent-filter>
+                <action android:name="com.wapi.certificate.INSTALL" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.wapi.certificate.DELETE" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.wapi.certificate.GET_ALIASES" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.wapi.certificate.RESET_CFG" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+    </application>
+
+    <uses-permission android:name="android.permission.USE_CREDENTIALS" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+</manifest>

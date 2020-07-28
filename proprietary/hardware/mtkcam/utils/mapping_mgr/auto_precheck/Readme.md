@@ -1,0 +1,2 @@
+- generate-input.h-labels.py is copy from Google Android toolboxto generate "input.h-labels.h"
+- "input.h-labels.h" is some definition for "recordevent.c"

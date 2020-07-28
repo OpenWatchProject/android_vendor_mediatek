@@ -1,0 +1,23 @@
+
+const ISP_NVRAM_UDM_T UDM_%04d = {
+        .intp_crs  ={.bits ={.UDM_CDG_SL=4, .UDM_CDG_OFST=20, .UDM_CDG_RAT=16, .UDM_CD_KNL=0, .rsv_18=0, .UDM_BYP=0, .UDM_MN_MODE=0}},
+        .int_ctl   ={.bits ={.UDM_INT_LTH=3, .UDM_INT_CDTH=5, .rsv_8=0}},
+        .p1_act    ={.bits ={.UDM_P1_UPB=85, .UDM_P1_LWB=85, .rsv_16=0}},
+        .est_ctl   ={.bits ={.UDM_P2_CLIP=0, .UDM_P1_BLD=0, .rsv_6=0}},
+        .intp_nat  ={.bits ={.UDM_HL_OFST=63, .UDM_L0_SL=6, .UDM_L0_OFST=0, .UDM_CD_SLL=3, .UDM_CD_SLC=10, .rsv_30=0}},
+        .intp_aug  ={.bits ={.UDM_DN_OFST=0, .UDM_L2_SL=6, .UDM_L2_OFST=0, .UDM_L1_SL=6, .UDM_L1_OFST=0}},
+        .luma_lut1 ={.bits ={.UDM_LM_Y2=256, .UDM_LM_Y1=384, .UDM_LM_Y0=511, .rsv_27=0}},
+        .luma_lut2 ={.bits ={.UDM_LM_Y5=32, .UDM_LM_Y4=64, .UDM_LM_Y3=128, .rsv_27=0}},
+        .sl_ctl    ={.bits ={.UDM_SL_EN=0, .UDM_SL_HR=16, .UDM_SL_Y2=255, .UDM_SL_Y1=255, .rsv_22=0}},
+        .hftd_ctl  ={.bits ={.UDM_CORE_TH1=0, .UDM_HD_GN2=16, .UDM_HD_GN1=16, .UDM_HT_GN2=16, .UDM_HT_GN1=16, .rsv_28=0}},
+        .hftd_ctl2 ={.bits ={.UDM_HD_GN3=16, .UDM_HFRB_GN=16, .rsv_12=0}},
+        .hf_str    ={.bits ={.UDM_CORE_TH2=0, .UDM_HI_RAT=0, .UDM_H3_GN=0, .UDM_H2_GN=0, .UDM_H1_GN=0, .UDM_HA_STR=0}},
+        .hf_act1   ={.bits ={.UDM_H2_UPB=220, .UDM_H2_LWB=52, .UDM_H1_UPB=80, .UDM_H1_LWB=20}},
+        .hf_act2   ={.bits ={.UDM_HSLL=5, .UDM_HSLR=5, .UDM_H3_UPB=255, .UDM_H3_LWB=52, .rsv_24=0}},
+        .clip      ={.bits ={.UDM_CLIP_TH=100, .UDM_UN_TH=32, .UDM_OV_TH=223, .rsv_24=0}},
+        .ee        ={.bits ={.UDM_HPOS_GN=16, .UDM_HNEG_GN=16, .rsv_10=0}},
+        .nr_str    ={.bits ={.UDM_N2_STR=0, .UDM_N1_STR=0, .UDM_N0_STR=0, .UDM_XTK_SL=5, .UDM_XTK_OFST=32, .UDM_XTK_RAT=16}},
+        .nr_act    ={.bits ={.UDM_NGR=0, .UDM_NSL=5, .UDM_N2_OFST=0, .UDM_N1_OFST=0, .UDM_N0_OFST=0}},
+        .dsb       ={.bits ={.UDM_SC_RAT=0, .UDM_SL_RAT=0, .UDM_FL_MODE=0, .rsv_11=0}},
+        .lr_rat    ={.bits ={.UDM_LR_RAT=15, .rsv_4=0}},
+};

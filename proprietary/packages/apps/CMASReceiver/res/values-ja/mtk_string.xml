@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+ * Copyright (C) 2007-2008 Esmertec AG.
+ * Copyright (C) 2007-2008 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+--><resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+   <string name="alerts">アラート</string>
+    <string name="select_all">"すべて選択"</string>
+    <string name="unselect_all">"選択をすべて解除"</string>
+    <string name="delete">"削除"</string>
+    <string name="select_cellbroadcasts">緊急アラートを選択します</string>
+    <plurals name="message_view_selected_message_count">
+        <item quantity="one"><xliff:g id="message_count" example="1">%d</xliff:g>つ選択済み</item>
+        <item quantity="other"><xliff:g id="message_count" example="9">%d</xliff:g>つ選択済み</item>
+    </plurals>
+    <plurals name="confirm_delete_broadcast">
+        <item quantity="one">1つの選択したアラートメッセージが削除されます</item>
+        <item quantity="other"><xliff:g id="number" example="15">%1$s</xliff:g>の選択したアラートメッセージが削除されます</item>
+    </plurals>
+    <string name="enable_cmas_presidential_threat_alerts_title">緊急アラートを表示する</string>
+    <string name="enable_cmas_presidential_threat_alerts_summary">緊急レベルのアラートを表示する</string>
+    <string name="enable_cmas_imminent_threat_alerts_title">差し迫ったアラート</string>
+    <string name="enable_cmas_imminent_threat_alerts_summary">生命や財産への差し迫った脅威のアラートを表示する</string>
+    <string name="cmas_preview_alert_tone_title">アラート音のテスト</string>
+    <string name="cmas_preview_alert_tone_summary">アラート音をテストする</string>
+    <string name="cmas_change_settings">設定を変更しますか？</string>
+    <string name="cmas_disable_cmas">セルブロードキャストを無効にすると、アラートは受信されません。</string>
+    <string name="cmas_enable_cmas_failed">開けません。</string>
+    <string name="enable_repeat_alert_title">アラームを繰り返す</string>
+    <string name="enable_repeat_alert_summary">未読のアラートは断続的にユーザーにリマインドする</string>
+    <string name="enable_all_alert_title">すべてのアラートをオン</string>
+    <string name="enable_all_imminent_alerts_title">すべての差し迫った脅威メッセージ</string>
+    <string name="enable_cell_broadcast_title">緊急アラート</string>
+    <string name="alert_sound_volume">警告音量</string>
+    <string name="alert_volume_summary">警告音量の調節</string>
+</resources>

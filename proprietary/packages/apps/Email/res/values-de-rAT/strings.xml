@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2008 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="permission_read_attachment_label">E-Mail-Anhänge lesen</string>
+    <string name="permission_read_attachment_desc">Ermöglicht der App das Lesen Ihrer E-Mail-Anhänge.</string>
+    <string name="permission_access_provider_label">Zugriff auf E-Mail-Anbieterdaten</string>
+    <string name="permission_access_provider_desc">Ermöglicht der App Zugriff auf Ihre E-Mail-Datenbank einschließlich empfangenen Mitteilungen, gesendeten Mitteilungen, Benutzernamen und Kennwörtern.</string>
+    <string name="app_name">E-Mail</string>
+    <skip/>
+    <string name="okay_action">"OK"</string>
+    <string name="cancel_action">Abbrechen</string>
+    <string name="create_action">Neu erstellen</string>
+    <string name="quick_responses_empty_view">Keine Schnellantworten.</string>
+    <string name="account_settings_action">Kontoeinstellungen</string>
+    <string name="mailbox_name_display_inbox">Posteingang</string>
+    <string name="mailbox_name_display_outbox">Postausgang</string>
+    <string name="mailbox_name_display_drafts">Entwürfe</string>
+    <string name="mailbox_name_display_trash">Papierkorb</string>
+    <string name="mailbox_name_display_sent">Gesendet</string>
+    <string name="mailbox_name_display_junk">Müll</string>
+    <string name="mailbox_name_display_starred">Mit Stern gekennzeichnet</string>
+    <string name="mailbox_name_display_unread">Ungelesen</string>
+    <string name="debug_title">Fehler bereinigen</string>
+    <string name="mailbox_list_account_selector_combined_view">Kombiansicht</string>
+    <string name="message_compose_fwd_header_fmt">\n\n-------- Originalmitteilung --------\nBetreff: <xliff:g id="subject">%1$s</xliff:g>\nVon: <xliff:g id="sender">%2$s</xliff:g>\nAn: <xliff:g id="to">%3$s</xliff:g>\nCC: <xliff:g id="cc">%4$s</xliff:g>\n\n</string>
+    <string name="message_compose_insert_quick_response_list_title">Schnellantwort einfügen</string>
+    <string name="message_compose_insert_quick_response_menu_title">Schnellantwort einfügen</string>
+    <string name="message_view_attachment_background_load">Mindestens ein Anhang Ihrer weitergeleiteten Mitteilung wird vor dem Senden herunterladen.</string>
+    <string name="message_decode_error">Fehler beim Dekodieren der Mitteilung aufgetreten.</string>
+    <string name="forward_download_failed_ticker">Mindestens ein Anhang konnte nicht weitergeleitet werden.</string>
+    <string name="forward_download_failed_title">Anhang nicht weitergeleitet</string>
+    <string name="login_failed_ticker"><xliff:g id="account_name">%s</xliff:g>-Anmeldung fehlgeschlagen.</string>
+    <string name="login_failed_title">Kann mich nicht anmelden.</string>
+    <string name="account_setup_basics_title">Kontoeinrichtung</string>
+    <string name="oauth_authentication_title">Autorisierung wird angefordert</string>
+    <string name="sign_in_title">Anmelden</string>
+    <string name="oauth_error_description">Authentifizierung fehlgeschlagen</string>
+    <string name="password_warning_label">E-Mail-Adresse oder Kennwort falsch</string>
+    <string name="email_confirmation_label">E-Mail-Adresse:</string>
+    <string name="account_setup_basics_headline">E-Mail-Konto</string>
+    <string name="accounts_welcome">Sie können Ihr Konto mit nur wenigen Schritten einrichten.</string>
+    <string name="account_setup_basics_email_label">E-Mail-Adresse</string>
+    <string name="or_label">oder</string>
+    <string name="sign_in_with_google">Mit Google anmelden</string>
+    <string name="account_setup_basics_password_label">Kennwort</string>
+    <string name="password_hint">Kennwort</string>
+    <string name="signed_in_with_service_label">Angemeldet mit %s</string>
+    <string name="authentication_label">AUTHENTIFIZIERUNG</string>
+    <string name="add_authentication_label">Authentifizierung hinzufügen</string>
+    <string name="clear_authentication_label">Authentifizierung löschen</string>
+    <string name="account_setup_basics_manual_setup_action">Manuelle Einrichtung</string>
+    <string name="account_setup_username_password_toast">Geben Sie eine gültige E-Mail-Adresse nebst Kennwort ein.</string>
+    <string name="account_duplicate_dlg_title">Doppeltes Konto</string>
+    <string name="account_duplicate_dlg_message_fmt">Sie verwenden für das Konto \"<xliff:g id="duplicate">%s</xliff:g>\" bereits diesen Benutzernamen.</string>
+    <string name="account_setup_check_settings_retr_info_msg">Kontodaten abrufen\u2026</string>
+    <string name="account_setup_check_settings_check_incoming_msg">Servereinstellungen prüfen\u2026</string>
+    <string name="account_setup_check_settings_check_outgoing_msg">SMTP-Einstellungen prüfen\u2026</string>
+    <string name="account_setup_creating_account_msg">Konto erstellen\u2026</string>
+    <string name="account_setup_ab_headline">Kontentyp bestätigen</string>
+    <string name="account_setup_ab_instructions_format">Ihre angegebene <xliff:g id="email">%1$s</xliff:g> verwendet <xliff:g id="userProtocol">%2$s</xliff:g>, aber das Konto verwendet möglicherweise <xliff:g id="providerProtocol">%3$s</xliff:g></string>
+    <string name="account_setup_names_headline">Ihr Konto ist eingerichtet, E-Mails steht nichts mehr im Wege!</string>
+    <string name="account_setup_names_account_name_label">Geben Sie diesem Konto einen Namen (wenn Sie mögen)</string>
+    <string name="account_setup_names_user_name_label">Ihr Name (wird in gesendeten Mitteilungen angezeigt)</string>
+    <string name="account_setup_account_type_headline">Kontotyp</string>
+    <string name="account_setup_account_type_instructions">Von welchem Typ ist dieses Konto?</string>
+    <string name="account_setup_incoming_headline">Eingangsservereinstellungen</string>
+    <string name="account_setup_incoming_username_label">Benutzername</string>
+    <string name="account_setup_incoming_password_label">Kennwort</string>
+    <string name="account_setup_password_subheading">Kennwort</string>
+    <string name="account_setup_incoming_server_label">Server</string>
+    <string name="account_setup_incoming_port_label">Port</string>
+    <string name="account_setup_incoming_security_label">Sicherheitstyp</string>
+    <string name="account_setup_incoming_security_none_label">"Keine"</string>
+    <string name="account_setup_incoming_security_ssl_trust_certificates_label">SSL/TLS (sämtliche Zertifikate akzeptieren)</string>
+    <string name="account_setup_incoming_security_ssl_label">SSL/TLS</string>
+    <string name="account_setup_incoming_security_tls_trust_certificates_label">STARTTLS (sämtliche Zertifikate akzeptieren)</string>
+    <string name="account_setup_incoming_security_tls_label">STARTTLS</string>
+    <string name="account_setup_incoming_delete_policy_label">E-Mail von Server löschen</string>
+    <string name="account_setup_incoming_delete_policy_never_label">Nie</string>
+    <string name="account_setup_incoming_delete_policy_delete_label">Beim Löschen aus dem Posteingang</string>
+    <string name="account_setup_incoming_imap_path_prefix_label">IMAP-Pfadpräfix</string>
+    <string name="account_setup_incoming_imap_path_prefix_hint">Wahlweise</string>
+    <string name="account_setup_outgoing_headline">Ausgangsservereinstellungen</string>
+    <string name="account_setup_outgoing_smtp_server_label">SMTP-Server</string>
+    <string name="account_setup_outgoing_port_label">Port</string>
+    <string name="account_setup_outgoing_security_label">Sicherheitstyp</string>
+    <string name="account_setup_outgoing_require_login_label">Anmeldung erforderlich</string>
+    <string name="account_setup_outgoing_username_label">Benutzername</string>
+    <string name="account_setup_exchange_certificate_title">Client-Zertifikat</string>
+    <string name="account_setup_exchange_select_certificate">Auswahl</string>
+    <string name="account_setup_exchange_use_certificate">Client-Zertifikat verwenden</string>
+    <string name="account_setup_exchange_remove_certificate">Entfernen</string>
+    <string name="account_setup_exchange_no_certificate">"Keine"</string>
+    <string name="account_setup_exchange_device_id_label">Mobilgerät-ID</string>
+    <string name="account_setup_options_headline">Kontooptionen</string>
+    <string name="account_setup_options_mail_check_frequency_label">Posteingang-Abruffrequenz</string>
+    <string name="account_setup_options_mail_check_frequency_never">Nie</string>
+    <string name="account_setup_options_mail_check_frequency_push">Automatisch (Push)</string>
+    <string name="account_setup_options_mail_check_frequency_5min">Alle 5 Minuten</string>
+    <string name="account_setup_options_mail_check_frequency_10min">Alle 10 Minuten</string>
+    <string name="account_setup_options_mail_check_frequency_15min">Alle 15 Minuten</string>
+    <string name="account_setup_options_mail_check_frequency_30min">Alle 30 Minuten</string>
+    <string name="account_setup_options_mail_check_frequency_1hour">Stündlich</string>
+    <string name="account_setup_options_notify_label">Bei ankommenden E-Mails benachrichtigen</string>
+    <string name="account_setup_options_sync_contacts_label">Kontakte dieses Kontos synchronisieren</string>
+    <string name="account_setup_options_sync_calendar_label">Kalender dieses Kontos synchronisieren</string>
+    <string name="account_setup_options_sync_email_label">E-Mails dieses Kontos synchronisieren</string>
+    <string name="account_setup_options_background_attachments_label">Anhänge bei Wi-Fi-Verbindung automatisch herunterladen</string>
+    <string name="account_setup_failed_dlg_title">Abschluss nicht möglich</string>
+    <string name="account_setup_options_mail_window_label">Synchronisierungstage</string>
+    <string name="account_setup_options_mail_window_auto">Automatisch</string>
+    <string name="account_setup_options_mail_window_1day">Letzter Tag</string>
+    <string name="account_setup_options_mail_window_3days">Letzte drei Tage</string>
+    <string name="account_setup_options_mail_window_1week">Letzte Woche</string>
+    <string name="account_setup_options_mail_window_2weeks">Letzte zwei Wochen</string>
+    <string name="account_setup_options_mail_window_1month">Letzter Monat</string>
+    <string name="account_setup_options_mail_window_all">Alles</string>
+    <string name="account_setup_options_mail_window_default">Kontostandardvorgabe verwenden</string>
+    <string name="account_setup_failed_dlg_auth_message">Benutzername oder Kennwort nicht korrekt.</string>
+    <string name="account_setup_autodiscover_dlg_authfail_title">Problem mit Kontoeinrichtung</string>
+    <string name="account_setup_autodiscover_dlg_authfail_message">Vergewissern Sie sich, dass Konto, Kennwort und Konteneinstellungen richtig sind.</string>
+    <string name="account_setup_failed_dlg_certificate_message">Kann nicht sicher mit Server verbinden.</string>
+    <string name="account_setup_failed_dlg_certificate_message_fmt">Kann nicht sicher mit Server verbinden.\n(<xliff:g id="error">%s</xliff:g>)</string>
+    <string name="account_setup_failed_certificate_required">Ein Client-Zertifikat wird benötigt. Möchten Sie sich mit einem Client-Zertifikat mit dem Server verbinden?</string>
+    <string name="account_setup_failed_certificate_inaccessible">Das Zertifikat ist ungültig oder nicht abrufbar.</string>
+    <string name="account_setup_failed_check_credentials_message">Der Server antwortete mit einem Fehler. Prüfen Sie Ihren Benutzernamen und Ihr Kennwort, versuchen Sie es dann noch einmal.</string>
+    <string name="account_setup_failed_dlg_server_message">Kann nicht mit Server verbinden.</string>
+    <string name="account_setup_failed_dlg_server_message_fmt">Kann nicht mit Server verbinden.\n(<xliff:g id="error">%s</xliff:g>)</string>
+    <string name="account_setup_failed_tls_required">TLS erforderlich, aber nicht vom Server unterstützt.</string>
+    <string name="account_setup_failed_auth_required">Authentifizierungsmethoden werden vom Server nicht unterstützt.</string>
+    <string name="account_setup_failed_security">Kann wegen Sicherheitsfehler die Verbindung zum Server nicht öffnen.</string>
+    <string name="account_setup_failed_ioerror">Kann Verbindung zum Server nicht öffnen.</string>
+    <string name="account_setup_failed_protocol_unsupported">Sie haben eine falsche Server-Adresse eingegeben oder der Server verlangt eine Protokollversion, die E-Mail nicht unterstützt.</string>
+    <string name="account_setup_failed_access_denied">Sie haben keine Erlaubnis, mit diesem Server zu synchronisieren. Weitere Informationen erhalten Sie von Ihrem Server-Administrator.</string>
+    <string name="account_setup_security_required_title">Externe Sicherheitsadministration</string>
+    <string name="account_setup_security_policies_required_fmt">Der Server <xliff:g id="server">%s</xliff:g> erwartet, dass Sie ihm externen Zugriff auf einige Sicherheitsfunktionen Ihres Android-Gerätes einräumen. Möchten Sie die Einrichtung dieses Kontos abschließen?</string>
+    <string name="account_setup_failed_security_policies_unsupported">Der Server fordert einige Sicherheitsfunktionen an, die von Ihrem Android-Gerät nicht unterstützt werden, einschließlich: <xliff:g id="error">%s</xliff:g></string>
+    <string name="disable_admin_warning">WARNUNG: Wenn Sie zur Administration Ihres Gerätes die Befugnisse Ihrer E-Mail-App deaktivieren, werden Ihre E-Mail-Konten, welche diese verwenden, zusammen mit ihren E-Mails, Kontakten, Kalenderereignissen und anderen Daten gelöscht.</string>
+    <string name="account_security_dialog_title">Sicherheitsaktualisierung</string>
+    <string name="account_security_dialog_content_fmt"><xliff:g id="account">%s</xliff:g> benötigt eine Aktualisierung Ihrer Sicherheitseinstellungen.</string>
+    <string name="security_unsupported_ticker_fmt">Konto \"<xliff:g id="account">%s</xliff:g>\" kann wegen Sicherheitsvoraussetzungen nicht synchronisiert werden.</string>
+    <string name="security_needed_ticker_fmt">Konto \"<xliff:g id="account">%s</xliff:g>\" benötigt eine Aktualisierung der Sicherheitseinstellungen.</string>
+    <string name="security_changed_ticker_fmt">Die Sicherheitseinstellungen des Kontos \"<xliff:g id="account">%s</xliff:g>\" wurden geändert; kein Benutzereingriff erforderlich.</string>
+    <string name="security_notification_content_update_title">Sicherheitsaktualisierung erforderlich</string>
+    <string name="security_notification_content_change_title">Sicherheitsrichtlinien wurden geändert</string>
+    <string name="security_notification_content_unsupported_title">Sicherheitsrichtlinien können nicht erfüllt werden</string>
+    <string name="account_security_title">Gerätesicherheit</string>
+    <string name="account_security_policy_explanation_fmt">Der Server <xliff:g id="server">%s</xliff:g> erwartet, dass Sie ihm externen Zugriff auf einige Sicherheitsfunktionen Ihres Android-Gerätes einräumen.</string>
+    <string name="account_setup_failed_dlg_edit_details_action">Details bearbeiten</string>
+    <string name="password_expire_warning_ticker_fmt">\"<xliff:g id="account">%s</xliff:g>\" erwartet eine Änderung Ihrer Sperrbildschirm-PIN oder Ihres Kennwortes.</string>
+    <string name="password_expire_warning_content_title">Sperrbildschirm-Kennwort läuft ab</string>
+    <string name="password_expired_ticker">Startbildschirm-PIN oder -Kennwort abgelaufen.</string>
+    <string name="password_expired_content_title">Sperrbildschirm-Kennwort abgelaufen</string>
+    <string name="password_expire_warning_dialog_title">Sperrbildschirm-Kennwort läuft ab</string>
+    <string name="password_expire_warning_dialog_content_fmt">Sie müssen PIN oder Kennwort Ihres Startbildschirms bald ändern; andernfalls werden die Daten des Kontos <xliff:g id="account">%s</xliff:g> gelöscht. Jetzt ändern?</string>
+    <string name="password_expired_dialog_title">Sperrbildschirm-Kennwort abgelaufen</string>
+    <string name="password_expired_dialog_content_fmt">Die Daten des Kontos <xliff:g id="account">%s</xliff:g> werden von Ihrem Gerät gelöscht. Sie können die Daten durch Ändern von PIN oder Kennwort Ihres Sperrbildschirms wiederherstellen. Jetzt ändern?</string>
+    <string name="account_settings_exit_server_settings">Nicht gespeicherte Änderungen verwerfen?</string>
+    <string name="account_settings_background_attachments_label">Anhänge herunterladen</string>
+    <string name="account_settings_background_attachments_summary">Anhänge der letzten Mitteilungen automatisch per Wi-Fi herunterladen</string>
+    <string name="account_settings_notify_label">E-Mail-Benachrichtigungen</string>
+    <string name="account_settings_summary">Synchronisierungsfrequenz, Benachrichtigungen etc.</string>
+    <string name="account_settings_notify_summary">Bei ankommenden E-Mails benachrichtigen</string>
+    <string name="account_settings_mail_check_frequency_label">Synchronisierungsfrequenz</string>
+    <string name="account_settings_incoming_label">Eingangseinstellungen</string>
+    <string name="account_settings_incoming_summary">Benutzername, Kennwort und weitere Eingangsservereinstellungen</string>
+    <string name="account_settings_outgoing_label">Ausgangseinstellungen</string>
+    <string name="account_settings_outgoing_summary">Benutzername, Kennwort und weitere Ausgangsservereinstellungen</string>
+    <string name="account_settings_enforced_label">Durchgesetzte Richtlinien</string>
+    <string name="account_settings_enforced_summary">"Keine"</string>
+    <string name="account_settings_unsupported_label">Nicht unterstützte Richtlinien</string>
+    <string name="account_settings_unsupported_summary">"Keine"</string>
+    <string name="account_settings_retry_label">Synchronisierung versuchen</string>
+    <string name="account_settings_retry_summary">Zur Synchronisierung dieses Kontos hier antippen</string>
+    <string name="account_settings_description_label">Kontobezeichnung</string>
+    <string name="account_settings_name_label">Ihr Name</string>
+    <string name="account_settings_edit_quick_responses_label">Schnellantworten</string>
+    <string name="account_settings_edit_quick_responses_summary">Text bearbeiten, den Sie häufig bei der E-Mail-Erstellung verwenden</string>
+    <string name="account_settings_notifications">App-Info</string>
+    <string name="account_settings_data_usage">Datennutzung</string>
+    <string name="account_settings_policies">Sicherheitsrichtlinien</string>
+    <string name="system_folders_title">Systemordner</string>
+    <string name="system_folders_trash_title">Papierkorb-Ordner</string>
+    <string name="system_folders_trash_summary">Papierkorb-Ordner Ihres Servers wählen</string>
+    <string name="system_folders_trash_dlg">Papierkorb-Ordner Ihres Servers wählen</string>
+    <string name="system_folders_sent_title">Gesendet-Ordner</string>
+    <string name="system_folders_sent_summary">Gesendet-Ordner Ihres Servers wählen</string>
+    <string name="system_folders_sent_dlg">Gesendet-Ordner Ihres Servers wählen</string>
+    <string name="edit_quick_response_dialog">Schnellantwort</string>
+    <string name="save_action">"Speichern"</string>
+    <string name="account_settings_sync_contacts_enable">Kontakte synchronisieren</string>
+    <string name="account_settings_sync_contacts_summary">Kontakte dieses Kontos synchronisieren</string>
+        <string name="account_settings_sync_calendar_enable">Kalender synchronisieren</string>
+    <string name="account_settings_sync_calendar_summary">Kalenderereignisse dieses Kontos synchronisieren</string>
+    <string name="account_settings_sync_email_enable">E-Mails synchronisieren</string>
+    <string name="account_settings_sync_email_summary">E-Mails dieses Kontos synchronisieren</string>
+    <string name="label_notification_vibrate_title">Vibrieren</string>
+    <string name="account_settings_ringtone">Klingelton wählen</string>
+    <string name="account_settings_servers">Servereinstellungen</string>
+    <string name="mailbox_settings_activity_title">Synchronisierungsoptionen</string>
+    <string name="mailbox_settings_activity_title_with_mailbox">Synchronisierungsoptionen (<xliff:g id="mailboxx_name" example="Family">%s</xliff:g>)</string>
+    <string name="mailbox_settings_sync_enabled_label">Diesen Ordner synchronisieren</string>
+    <string name="mailbox_settings_sync_enabled_summary">Mitteilungen werden bei Verbindung heruntergeladen</string>
+    <string name="mailbox_settings_mailbox_sync_window_label">Mail-Tage zur Synchronisierung</string>
+    <string name="provider_note_t_online">Besuchen Sie die T-Online-Internetseiten und legen Sie ein Kennwort zum POP3-E-Mail-Zugang an, bevor Sie dieses E-Mail-Konto einrichten.</string>
+    <string name="exchange_name_alternate">Microsoft Exchange-ActiveSync</string>
+    <string name="system_account_create_failed">Konto konnte nicht erstellt werden. Erneut versuchen.</string>
+    <string name="device_admin_label">E-Mail</string>
+    <string name="device_admin_description">Ermöglicht serverspezifische Sicherheitsrichtlinien</string>
+    <string name="policy_dont_allow_camera">Nutzung der Gerätekamera verbieten</string>
+    <string name="policy_require_password">Gerätekennwort erforderlich</string>
+    <string name="policy_password_history">Wiederverwendung benutzter Kennwörter verbieten</string>
+    <string name="policy_password_expiration">Kennwortablauf erforderlich</string>
+    <string name="policy_screen_timeout">Leerlauf zum Sperren des Bildschirms erforderlich</string>
+    <string name="policy_calendar_age">Anzahl synchronisierter Kalenderereignisse begrenzen</string>
+    <string name="policy_email_age">Anzahl synchronisierter E-Mails begrenzen</string>
+    <string name="quick_1">Danke!</string>
+    <string name="quick_2">Klingt gut!</string>
+    <string name="quick_3">Ich lese dies später in Ruhe und melde mich dann wieder.</string>
+    <string name="quick_4">Das sollten wir bei einem Treffen besprechen.</string>
+    <string name="confirm_response">Antwort senden…</string>
+    <string name="imap_name">IMAP</string>
+    <string name="pop3_name">POP3</string>
+    <string name="trash_folder_selection_title">Server-Papierkorbordner für <xliff:g id="account">%s</xliff:g> wählen</string>
+    <string name="sent_folder_selection_title">Server-Gesendet-Ordner für <xliff:g id="account">%s</xliff:g> wählen</string>
+    <string name="account_waiting_for_folders_msg">Ordnerliste laden…</string>
+    <string name="no_quick_responses">Nicht verfügbar</string>
+    <string name="gmail_name">Gmail</string>
+    <string name="folder_sync_settings_pref_title">Ordner-Synchronisierungseinstellungen</string>
+</resources>

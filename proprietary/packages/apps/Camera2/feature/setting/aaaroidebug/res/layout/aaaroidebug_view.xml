@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:colorRectView="http://schemas.android.com/apk/res-auto"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent">
+
+    <com.mediatek.camera.feature.setting.aaaroidebug.ColorRectView
+        android:id="@+id/aeRect"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        colorRectView:color="#ffff0000"
+        colorRectView:lineWidth="20"
+    />
+    <com.mediatek.camera.feature.setting.aaaroidebug.ColorRectView
+        android:id="@+id/afRect"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        colorRectView:color="#ff00ff00"
+        colorRectView:lineWidth="15"
+    />
+    <com.mediatek.camera.feature.setting.aaaroidebug.ColorRectView
+        android:id="@+id/awbRect"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        colorRectView:color="#ff0000ff"
+        colorRectView:lineWidth="10"
+    />
+</FrameLayout>

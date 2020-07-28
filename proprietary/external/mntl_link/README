@@ -1,0 +1,26 @@
+This directory contains mkmntl host tool and gpt resize binary
+
+
+WHAT IT DOES?
+=============
+
+It provide make mntl image host tool.
+And it provide update mntl gpt resize binary.
+
+HOW IT WAS BUILT?
+==================
+
+It needs the following libs from AOSP:
+1.  libc.so
+2.  libcutils.so
+
+HOW TO USE IT?
+==============
+
+The host tool 'mkmntl' is used to generate a image which's name is 'mntl.img' when build.
+
+The binary  'mntl_gpt_resize' is execved before fs mount when bootip,
+it would update nand gpt table before filesystem mount.
+
+
+All the source code of this library were written by MediaTek co..

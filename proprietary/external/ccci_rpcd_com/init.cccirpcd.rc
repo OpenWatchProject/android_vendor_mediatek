@@ -1,0 +1,8 @@
+#
+
+service vendor.ccci_rpcd /vendor/bin/ccci_rpcd 0
+    user radio
+    group radio system
+    class core
+    oneshot
+

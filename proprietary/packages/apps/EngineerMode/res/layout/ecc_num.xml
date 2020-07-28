@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/app_root" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:orientation="vertical"
+    android:gravity="center">
+    <EditText
+    	android:id="@+id/ecc_number"
+    	android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:inputType="text" android:digits="0,1,2,3,4,5,6,7,8,9,;,#,*,+"
+      android:textSize="14sp"/>
+    <Button android:id="@+id/ok_btn" android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dip" android:text="@string/pref_ecc_num_ok"
+        android:textSize="16sp">
+    </Button>
+
+</LinearLayout>

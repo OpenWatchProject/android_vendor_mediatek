@@ -1,0 +1,11 @@
+// File permission check daemon
+cc_binary {
+    srcs: ["permission_check.c"],
+    shared_libs: [
+        "libc",
+        "libcutils",
+    ],
+    name: "permission_check",
+    proprietary: true,
+    owner: "mtk",
+}

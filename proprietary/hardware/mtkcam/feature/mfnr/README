@@ -1,0 +1,104 @@
+MFNR / AIS core middleware
+
+
+WHAT IT DOES?
+=============
+
+An platform-independent MFNR core and platform-dependent modules that do MFNR.
+
+
+HOW IT WAS BUILT?
+==================
+
+User can choose MFNR core version by configuring these in Android.mk:
+
+    MFLL_CORE_VERSION_MAJOR
+    MFLL_CORE_VERSION_MINOR
+
+Notice that, makes sure the version you specified is available for your platform.
+And each of MFNR core module has his own version, different platforms may need
+to select the correct module version.
+
+Some other software configurations are also available to be configured in
+Android.mk.
+
+Here are library dependency list:
+MFNR core , which needs the following libs from AOSP:
+- libutils.so
+- libcutils.so
+- libstdc++.so
+
+and the following libs from MFNR modules:
+- libmfllbss.a
+- libmfllcaptuer.a
+- libmfllexifinfo.a
+- libmfllperfserv.a
+- libmfllimagebuf.a
+- libmfllmemc.a
+- libmfllmfb.a
+- libmfllnvram.a
+- libmfllstrategy.a
+
+
+Module bss, which needs the following libs from MTK:
+[v1.0]
+- libcamalgo.so
+
+
+Module capturer, which needs the following libs from MTK:
+[v1.0]
+(none)
+
+
+Module exifinfo, which needs the following libs from MTK:
+[v1.0]
+- libcameracustom.so
+
+
+Module imagebuffer, which needs the following libs from MTK:
+[v1.0]
+- libm4u.so
+- libmedia.so
+- libcam_utils.so
+
+
+Module memc, which needs the following libs from MTK:
+[v1.0]
+- libcamalgo.so
+
+
+Module mfb, which needs the following libs from MTK:
+[v1.0]
+- libcam.iopipe.so
+- libcam_hwutils.so
+- libmtkcam_modulehelper.so
+- libcam.metadata.so
+
+
+Module nvram, which needs the following libs from MTK:
+[v1.0]
+- libcameracustom.so
+- libmtkcam_modulehelper.so
+
+
+Module perfserv, which needs the following libs from MTK:
+[mt6797]
+- libperfservicenative.so
+
+
+Module strategy, which needs the following libs from MTK:
+- libcamalgo.so
+
+
+HOW TO USE IT?
+==============
+
+All modules (e.g. Camera HAL or an unit test) should use
+IMfllCore as the public interface to talk with MFNR core.
+
+Caller can use all interfaces from
+
+    feature/include/common/mfnr/*.h
+
+
+All the source code of this program were written by MediaTek co..

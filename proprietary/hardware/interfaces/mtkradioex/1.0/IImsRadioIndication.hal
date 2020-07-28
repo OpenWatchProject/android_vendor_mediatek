@@ -1,0 +1,569 @@
+/* Copyright Statement:
+ *
+ * This software/firmware and related documentation ("MediaTek Software") are
+ * protected under relevant copyright laws. The information contained herein
+ * is confidential and proprietary to MediaTek Inc. and/or its licensors.
+ * Without the prior written permission of MediaTek inc. and/or its licensors,
+ * any reproduction, modification, use or disclosure of MediaTek Software,
+ * and information contained herein, in whole or in part, shall be strictly prohibited.
+ */
+/* MediaTek Inc. (C) 2018. All rights reserved.
+ *
+ * BY OPENING THIS FILE, RECEIVER HEREBY UNEQUIVOCALLY ACKNOWLEDGES AND AGREES
+ * THAT THE SOFTWARE/FIRMWARE AND ITS DOCUMENTATIONS ("MEDIATEK SOFTWARE")
+ * RECEIVED FROM MEDIATEK AND/OR ITS REPRESENTATIVES ARE PROVIDED TO RECEIVER ON
+ * AN "AS-IS" BASIS ONLY. MEDIATEK EXPRESSLY DISCLAIMS ANY AND ALL WARRANTIES,
+ * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE OR NONINFRINGEMENT.
+ * NEITHER DOES MEDIATEK PROVIDE ANY WARRANTY WHATSOEVER WITH RESPECT TO THE
+ * SOFTWARE OF ANY THIRD PARTY WHICH MAY BE USED BY, INCORPORATED IN, OR
+ * SUPPLIED WITH THE MEDIATEK SOFTWARE, AND RECEIVER AGREES TO LOOK ONLY TO SUCH
+ * THIRD PARTY FOR ANY WARRANTY CLAIM RELATING THERETO. RECEIVER EXPRESSLY ACKNOWLEDGES
+ * THAT IT IS RECEIVER'S SOLE RESPONSIBILITY TO OBTAIN FROM ANY THIRD PARTY ALL PROPER LICENSES
+ * CONTAINED IN MEDIATEK SOFTWARE. MEDIATEK SHALL ALSO NOT BE RESPONSIBLE FOR ANY MEDIATEK
+ * SOFTWARE RELEASES MADE TO RECEIVER'S SPECIFICATION OR TO CONFORM TO A PARTICULAR
+ * STANDARD OR OPEN FORUM. RECEIVER'S SOLE AND EXCLUSIVE REMEDY AND MEDIATEK'S ENTIRE AND
+ * CUMULATIVE LIABILITY WITH RESPECT TO THE MEDIATEK SOFTWARE RELEASED HEREUNDER WILL BE,
+ * AT MEDIATEK'S OPTION, TO REVISE OR REPLACE THE MEDIATEK SOFTWARE AT ISSUE,
+ * OR REFUND ANY SOFTWARE LICENSE FEES OR SERVICE CHARGE PAID BY RECEIVER TO
+ * MEDIATEK FOR SUCH MEDIATEK SOFTWARE AT ISSUE.
+ *
+ * The following software/firmware and/or related documentation ("MediaTek Software")
+ * have been modified by MediaTek Inc. All revisions are subject to any receiver's
+ * applicable license agreements with MediaTek Inc.
+ */
+/*
+ * Copyright (C) 2016 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package vendor.mediatek.hardware.mtkradioex@1.0;
+
+import android.hardware.radio@1.2::IRadioIndication;
+import android.hardware.radio@1.2::types;
+import android.hardware.radio@1.0::CdmaSmsMessage;
+import android.hardware.radio@1.0::SuppSvcNotification;
+import android.hardware.radio@1.0::RadioIndicationType;
+import vendor.mediatek.hardware.mtkradioex@1.0::types;
+
+/**
+ * Interface declaring unsolicited radio indications.
+ */
+interface IImsRadioIndication {
+
+
+    /**
+     * [IMS] Reports incoming call indication from the network.
+     * URC: RIL_UNSOL_INCOMING_CALL_INDICATION
+     *
+     * @param type Type of radio indication
+     * @param inCallNotify IncomingCallNotification as defined in types.hal
+     */
+    oneway incomingCallIndication(RadioIndicationType type, IncomingCallNotification inCallNotify);
+
+    /**
+     * [IMS] Call info Indiciation
+     * @param type Indication Type
+     * @param Indication data
+     */
+    oneway callInfoIndication(RadioIndicationType type, vec<string> data);
+
+    /**
+     * [IMS] ECONF Result Indiciation
+     * @param type Indication Type
+     * @param confCallId Conference call id
+     * @param op Operator
+     * @param num Number
+     * @param result Result
+     * @param cause Cause
+     * @param joinedCallId
+     */
+     oneway econfResultIndication(RadioIndicationType type, string confCallId,
+                                  string op, string num, string result,
+                                  string cause, string joinedCallId);
+
+    /**
+     * [IMS] SIP Call Progress Indiciation
+     * @param type Indication type
+     * @param callid Call Id
+     * @param dir Dir
+     * @param sipMsgType SIP message type
+     * @param method Method
+     * @param responseCode Response code
+     * @param reasonText Reason text
+     */
+     oneway sipCallProgressIndicator(RadioIndicationType type, string callId,
+                                     string dir, string sipMsgType,
+                                     string method, string responseCode,
+                                     string reasonText);
+
+    /**
+     * [IMS] Call Mod Change Indiciation
+     * @param type Indication type
+     * @param callId Call id
+     * @param callMode Call mode
+     * @param videoState Video State
+     * @param audioDirection Audio direction
+     * @param pau PAU
+     */
+     oneway callmodChangeIndicator(RadioIndicationType type, string callId,
+                                   string callMode, string videoState,
+                                   string audioDirection, string pau);
+
+    /**
+     * [IMS] Video Capability Indiciation
+     * @param type Indication type
+     * @param callId Call id
+     * @param localVideoCap Local video capabilities
+     * @param remoteVideoCap Remote video capabilities
+     */
+     oneway videoCapabilityIndicator(RadioIndicationType type, string callId,
+                                     string localVideoCap, string remoteVideoCap);
+
+    /**
+     * [IMS] On USSI Indiciation
+     * Indicates when a new USSD message is received.
+     * The USSD session is assumed to persist if the type code is REQUEST, otherwise
+     * the current session (if any) is assumed to have terminated.
+     *
+     * @param type Type of radio indication
+     * @param modeType USSD type code
+     * @param msg Message string in UTF-8, if applicable
+     */
+    oneway onUssi(RadioIndicationType type, int32_t modeType, string msg);
+
+    /**
+     * [IMS] Provision Done Indiciation
+     * @param type Indication type
+     * @param result1 Indication Data 1
+     * @param result2 Indication Data 2
+     */
+     oneway getProvisionDone(RadioIndicationType type, string result1, string result2);
+
+    /**
+     * [IMS] On Xui Indiciation
+     * @param type Indication type
+     * @param accountId Account Id
+     * @param broadcastFlag Broadcast Flag
+     * @param xuiInfo XUI Infomation
+     */
+     oneway onXui(RadioIndicationType type, string accountId, string broadcastFlag,
+                  string xuiInfo);
+
+    /**
+     * [IMS] On VoLTE Subscription
+     * @param type Indication type
+     * @param status 0: Unknown, 1: is VoLTE card, 2: non VoLTE card
+     */
+    oneway onVolteSubscription(RadioIndicationType type, int32_t status);
+
+    /**
+     * [IMS] Reports supplementary service related notification from the network.
+     * @param type Type of radio indication
+     * @param suppSvc SuppSvcNotification as defined in types.hal
+     */
+    oneway suppSvcNotify(RadioIndicationType type, SuppSvcNotification suppSvc);
+
+    /**
+     * [IMS] IMS Event Package Indiciation
+     * @param type Indication type
+     * @param callId Call Id
+     * @param ptype Package Type
+     * @param urcIdx URC Index
+     * @param totalUrCount Total URC count
+     * @param rawData
+     */
+     oneway imsEventPackageIndication(RadioIndicationType type,
+                                      string callId, string ptype, string urcIdx,
+                                      string totalUrcCount, string rawData);
+
+    /**
+     * [IMS] IMS Registration Info Indiciation
+     * @param type Indication type
+     * @param registerState If IMS is registered or not
+     * @param capability IMS capabilities
+     */
+     oneway imsRegistrationInfo(RadioIndicationType type,
+                                int32_t registerState, int32_t capability);
+
+    /**
+     * [IMS] IMS Enable Done Indiciation
+     * @param type Indication type
+     *
+     * Valid errors returned:
+     *   RadioError:NONE
+     *   RadioError:INVALID_ARGUMENTS
+     *   RadioError:GENERIC_FAILURE
+     */
+     oneway imsEnableDone(RadioIndicationType type);
+
+    /**
+     * [IMS] IMS Disable Done Indiciation
+     * @param type Indication type
+     */
+     oneway imsDisableDone(RadioIndicationType type);
+
+    /**
+     * [IMS] IMS Enable Start Indiciation
+     * @param type Indication type
+     *
+     */
+     oneway imsEnableStart(RadioIndicationType type);
+
+    /**
+     * [IMS] IMS Diable Start Indiciation
+     * @param type Indication type
+     *
+     */
+     oneway imsDisableStart(RadioIndicationType type);
+
+    /**
+     * [IMS] ECT Indiciation
+     * @param type Indication type
+     * @param call_id Call Id
+     * @param ectResult ECT result
+     * @param cause Cause
+     */
+     oneway ectIndication(RadioIndicationType type, int32_t call_id,
+                          int32_t ectResult, int32_t cause);
+
+    /**
+     * [IMS] VoLTE Setting Indiciation
+     * @param Type Indication type
+     * @param isEnable Is enable
+     */
+     oneway volteSetting(RadioIndicationType type, bool isEnable);
+
+    /**
+     * [IMS] IMS Bearer State Notify Activation/Deactivation
+     * @param type Indication type
+     * @param aid AID
+     * @param capabilities Capability
+     */
+     oneway imsBearerStateNotify(RadioIndicationType type, int32_t aid, int32_t action, string capability);
+
+    /**
+     * [IMS] IMS Bearer Initialization
+     * @param type Indication type
+     */
+     oneway imsBearerInit(RadioIndicationType type);
+
+    /**
+     * [IMS] IMS Deregister Done Indication
+     * @param type Indication type
+     */
+     oneway imsDeregDone(RadioIndicationType type);
+
+    /**
+     * [IMS] MD support multiple IMS Indication
+     * @param type Indication type
+     * @param count MD support IMS count
+     */
+     oneway multiImsCount(RadioIndicationType type, int32_t count);
+
+    /**
+     * [IMS] network support LTE emergency call or not
+     * @param type Indication type
+     * @param 1 for support ecc, 0 not
+     */
+     oneway imsSupportEcc(RadioIndicationType type, int32_t supportLteEcc);
+
+    /**
+     * [IMS] Radio Info Change Indiciation
+     * @param type Indication type
+     * @param iid info id
+     * @param info radio info
+     */
+     oneway imsRadioInfoChange(RadioIndicationType type, string iid, string info);
+
+     /**
+     * Reports speech codec information
+     *
+     * @param type Type of radio indication
+     * @param info integer type speech codec info
+     */
+    oneway speechCodecInfoIndication(RadioIndicationType type, int32_t info);
+
+     /**
+     * [IMS] Udate IMS Conference participants info
+     * @param type Indication type
+     * @param arrays of ims conference participant info
+     */
+     oneway imsConferenceInfoIndication(RadioIndicationType type, vec<ImsConfParticipant> participants);
+
+     /**
+     * [IMS] Lte Message waiting Indiciation
+     * @param type Indication type
+     * @param callId Call Id
+     * @param ptype Package Type
+     * @param urcIdx URC Index
+     * @param totalUrCount Total URC count
+     * @param rawData
+     */
+     oneway lteMessageWaitingIndication(RadioIndicationType type,
+                                      string callId, string ptype, string urcIdx,
+                                      string totalUrcCount, string rawData);
+
+    /**
+     * [IMS] IMS Dialog Event Package Indiciation
+     *
+     * @param type Type of radio indication
+     * @param dialogList the dialog info list
+     */
+    oneway imsDialogIndication(RadioIndicationType type, vec<Dialog> dialogList);
+
+     /**
+     * [IMS] Ims Config Dynamic IMS Switch Complete
+     * @param type Indication type
+     */
+     oneway imsCfgDynamicImsSwitchComplete(RadioIndicationType type);
+
+     /**
+     * [IMS] Ims Config Feature Changed
+     * @param type Indication type
+     * @param phoneId Phone Id
+     * @param featureId Feature Id
+     * @param value Feature value
+     */
+     oneway imsCfgFeatureChanged(RadioIndicationType type, int32_t phoneId, int32_t featureId, int32_t value);
+
+     /**
+     * [IMS] Ims Config Config Changed
+     * @param type Indication type
+     * @param phoneId Phone Id
+     * @param configId config Id
+     * @param value Config value
+     */
+     oneway imsCfgConfigChanged(RadioIndicationType type, int32_t phoneId, string configId, string value);
+
+      /**
+      * [IMS] Ims Config Data Loaded
+      * @param type Indication type
+      */
+      oneway imsCfgConfigLoaded(RadioIndicationType type);
+
+     /*
+     * [IMS] IMS Data event info Indication
+     * @param type Indication type
+     * @param capabilities Capability
+     * @param event Event type
+     * @param extra Extra info
+     */
+     oneway imsDataInfoNotify(RadioIndicationType type, string capability,
+                              string event, string extra);
+
+
+    /**
+     * Indicates when new Ims SMS is received.
+     * Callee must subsequently confirm the receipt of the SMS with a
+     * acknowledgeLastIncomingGsmSmsEx()
+     * ImsSmsDispatcher is waitting for it.
+     *
+     * Server must not send newSms() nor newSmsStatusReport() messages until a
+     * acknowledgeLastIncomingGsmSms() has been received
+     *
+     * @param type Type of radio indication
+     * @param pdu PDU of SMS-DELIVER represented as byte array.
+     *        The PDU starts with the SMSC address per TS 27.005 (+CMT:)
+     */
+    oneway newSmsEx(RadioIndicationType type, vec<uint8_t> pdu);
+
+    /**
+     * Indicates when new SMS Status Report is received.
+     * Callee must subsequently confirm the receipt of the SMS with a
+     * acknowledgeLastIncomingGsmSmsEx()
+     * ImsSmsDispatcher is waitting for it.
+     *
+     * Server must not send newSms() nor newSmsStatusReport() messages until a
+     * acknowledgeLastIncomingGsmSms() has been received
+     *
+     * @param type Type of radio indication
+     * @param pdu PDU of SMS-STATUS-REPORT represented as byte array.
+     *        The PDU starts with the SMSC address per TS 27.005 (+CMT:)
+     */
+    oneway newSmsStatusReportEx(RadioIndicationType type, vec<uint8_t> pdu);
+
+    /**
+     * Indicates when new CDMA SMS is received
+     * Callee must subsequently confirm the receipt of the SMS with
+     * acknowledgeLastIncomingCdmaSmsEx()
+     * Server must not send cdmaNewSms() messages until
+     * acknowledgeLastIncomingCdmaSmsEx() has been received
+     *
+     * @param type Type of radio indication
+     * @param msg Cdma Sms Message
+     */
+    oneway cdmaNewSmsEx(RadioIndicationType type, CdmaSmsMessage msg);
+
+    /**
+     * Indicates that the radio system selection module
+     * won't enter emergency callback mode when the emergency call end.
+     *
+     * @param type Type of radio indication
+     */
+    oneway noEmergencyCallbackMode(RadioIndicationType type);
+
+    /**
+     * [IMS] Ims Redial As ECC Indication
+     * @param type Indication type
+     * @param callId Call Id
+     */
+     oneway imsRedialEmergencyIndication(RadioIndicationType type, string callId);
+
+    /**
+     * [IMS] IMS RTP Indiciation Report
+     * @param type Indication type
+     * @param pdnId PDN Id
+     * @param networkId Network Id
+     * @param timer Timer
+     * @param sendPktLost Send packet lost
+     * @param recvPktLost Receive packet lost
+     * @param jetter Jitter in ms
+     * @param delay Delay in ms
+     */
+     oneway imsRtpInfo(RadioIndicationType type, string pdnId, string networkId,
+                             string timer, string sendPktLost, string recvPktLost,
+                             string jitter, string delay);
+
+    /**
+     * Indication for RTT Capability
+     * RIL_UNSOL_RTT_CAPABILITY_INDICATION
+     *
+     * @param type Type of radio indication
+     * @param callId Call Id
+     * @param localCap Local text capability
+     * @param remoteCap Remote text capability
+     * @param localStatus Local Text Status
+     * @param remoteStatus Real Remote Text Capability
+     */
+    oneway rttCapabilityIndication(RadioIndicationType type, int32_t callId,
+                                   int32_t localCap, int32_t remoteCap,
+                                   int32_t localStatus, int32_t remoteStatus);
+
+    /**
+     * Indication for RTT Modify Response
+     * RIL_UNSOL_RTT_MODIFY_RESPONSE
+     *
+     * @param type Type of radio indication
+     * @param callId Call Id
+     * @param result 0: Success, 1: Fail
+     */
+    oneway rttModifyResponse(RadioIndicationType type, int32_t callId, int32_t result);
+
+    /**
+     * Indication for receiving RTT Text
+     * RIL_UNSOL_RTT_TEXT_RECEIVE
+     *
+     * @param type Type of radio indication
+     * @param callId Call Id
+     * @param lenOfString Length of String
+     * @param text Text
+     */
+    oneway rttTextReceive(RadioIndicationType type, int32_t callId,
+                          int32_t lenOfString, string text);
+
+    /**
+     * Indication for Pear Upgrade/Downgrade Request
+     * RIL_UNSOL_RTT_MODIFY_REQUEST_RECEIVE
+     *
+     * @param type Type of radio indication
+     * @param callId Call Id
+     * @param rttType 0: Peer Request RTT downgrade
+     *             1: Peer Request RTT upgrade
+     * @param text Text
+     */
+    oneway rttModifyRequestReceive(RadioIndicationType type, int32_t callId, int32_t rttType);
+
+    /**
+     * Indication for RTT Audio
+     * RIL_UNSOL_RTT_AUDIO_INDICATION
+     *
+     * @param type Type of radio indication
+     * @param callId Call Id
+     * @param audio 0: Silence, 1: Speech
+     */
+    oneway audioIndication(RadioIndicationType type, int32_t callId, int32_t audio);
+
+    /*
+    * Indication for IMS VoPS
+    * RIL_UNSOL_IMSVOPS_INDICATION
+    *
+    * @param type Type of radio indication
+    * @param vops IMS VoPS value
+    */
+    oneway sendVopsIndication(RadioIndicationType type, int32_t vops);
+
+    /**
+     * Call Additional Information
+     *
+     * @param type Type of radio indication
+     * @param info Call additional info
+     */
+    oneway callAdditionalInfoInd(RadioIndicationType type, CallInfoType ciType, vec<string> info);
+
+    /**
+     * Report Sip header info
+     * @param type Indication Type
+     * @param data Indication data
+     */
+     oneway sipHeaderReport(RadioIndicationType type, vec<string> data);
+
+    /**
+     * Report Voice call domain select result
+     * @param type Indication Type
+     * @param domain 0 = CS; 1 = IMS
+     * @param rat The rat of IMS call, 1 = LTE; 2 = Wifi
+     */
+     oneway callRatIndication(RadioIndicationType type, int32_t domain, int32_t rat);
+
+     /**
+     * [IMS] SIP registration info Indication
+     * @param type Indication type
+     * @param account_id account id
+     * @param response_code registration response code
+     * @param info 1. direction
+     *             2. SIP_msg_type
+     *             3. method
+     *             4. reason_phrase
+     *             5. warn_text
+     */
+     oneway sipRegInfoInd(RadioIndicationType type, int32_t account_id, int32_t response_code, vec<string> info);
+
+     /**
+     * Report IMS registration status
+     * @param report IMS registration status
+     */
+     oneway imsRegStatusReport(RadioIndicationType type, ImsRegStatusInfo report);
+
+     /**
+     * [IMS] Detail IMS registration info Indication
+     * @param type Indication type
+     * @param info 1. reg_state
+     *             2. reg_type
+     *             3. ext_info
+     *             4. dereg_cause
+     *             5. ims_retry
+     *             6. rat
+     *             7. sip_uri_type
+     */
+     oneway imsRegInfoInd(RadioIndicationType type, vec<int32_t> info);
+
+     /**
+     * Indicates the onSsacStatus
+     *
+     * @param type Type of radio indication
+     * @param indStgs detail info
+     */
+    oneway onSsacStatus(RadioIndicationType type, vec<int32_t> status);
+};

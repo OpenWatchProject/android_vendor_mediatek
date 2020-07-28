@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.mediatek.camera.common.widget.RotateLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/dof_rotate_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/dof_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:shadowColor="#BB000000">
+
+        <TextView
+            android:id="@+id/dof_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/dof_bottom_controls"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="4dp"
+            android:background="@drawable/dof_text_background"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:textColor="#FFFFFFFF"
+            android:visibility="gone"></TextView>
+
+        <RelativeLayout
+            android:id="@+id/dof_bottom_controls"
+            android:layout_width="330dp"
+            android:layout_height="38dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="130dp"
+            android:layout_alignParentBottom="true"
+            android:background="#bf333333"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/small_aperture"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/ic_sdof_small_aperture"></ImageView>
+
+            <SeekBar
+                android:id="@+id/dof_bar"
+                android:layout_width="260dp"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:max="100"
+                android:progress="1"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/big_aperture"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/ic_dof_large_aperture"></ImageView>
+        </RelativeLayout>
+    </RelativeLayout>
+</com.mediatek.camera.common.widget.RotateLayout>

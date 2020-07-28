@@ -1,0 +1,86 @@
+/*
+ * Copyright (C) 2016 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package vendor.mediatek.hardware.radio@3.16;
+
+import @3.15::IRadio;
+import IRadioResponse;
+import IRadioIndication;
+import IEmRadioResponse;
+import IEmRadioIndication;
+
+/**
+ * This interface is used by telephony & telecom to talk to cellular radio.
+ * All the functions have minimum one parameter:
+ * serial: which corresponds to serial no. of request. Serial numbers must only be memorized for the
+ * duration of a method call. If clients provide colliding serials (including passing the same
+ * serial to different methods), multiple responses (one for each method call) must still be served.
+ */
+interface IRadio extends @3.15::IRadio {
+    /**
+      * Set response functions for EM radio requests & radio indications.
+      *
+      * @param radioResponse Object containing response functions
+      * @param radioIndication Object containing radio indications
+      */
+     setResponseFunctionsEm(IEmRadioResponse radioResponse,
+             IEmRadioIndication radioIndication);
+
+    /**
+     * Return string value indicating the operator name of MCCMNC
+     *
+     * @param serial Serial number of request
+     *
+     * Response function is IRadioResponse.getPlmnNameFromSE13TableResponse()
+     */
+    oneway getPlmnNameFromSE13Table (int32_t serial, int32_t mcc, int32_t mnc);
+
+    /**
+     * Return true on success; false on any failure.
+     *
+     * @param enable: enable/disable CA+ bandwidth filter
+     *
+     * Response function is IRadioResponse.enableCAPlusBandWidthFilterResponse()
+     */
+    oneway enableCAPlusBandWidthFilter(int32_t serial, bool enable);
+
+    /**
+     * Activate uicc card
+     *
+     * @param serial Serial number of request.
+     *
+     * Response function is IRadioResponse.activateUiccCardRsp()
+     */
+    oneway activateUiccCard(int32_t serial);
+
+    /**
+     * Deactivate uicc card
+     *
+     * @param serial Serial number of request.
+     *
+     * Response function is IRadioResponse.deactivateUiccCardRsp()
+     */
+    oneway deactivateUiccCard(int32_t serial);
+
+    /**
+     * Get current uicc card provisioning status
+     *
+     * @param serial Serial number of request.
+     *
+     * Response function is IRadioResponse.getCurrentUiccCardProvisioningStatusRsp()
+     */
+    oneway getCurrentUiccCardProvisioningStatus(int32_t serial);
+};

@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.mediatek"
+    coreApp = "true"
+    android:sharedUserId="android.uid.system"
+    >
+
+    <!-- ================================================ -->
+    <!-- Special broadcasts that only the system can send -->
+    <!-- ================================================ -->
+    <eat-comment />
+
+    <protected-broadcast android:name="android.intent.action.SCREEN_OFF" />
+    <protected-broadcast android:name="android.intent.action.SCREEN_ON" />
+    <protected-broadcast android:name="android.intent.action.USER_PRESENT" />
+    <protected-broadcast android:name="android.intent.action.TIME_TICK" />
+    <protected-broadcast android:name="android.intent.action.TIMEZONE_CHANGED" />
+    <protected-broadcast android:name="android.intent.action.BOOT_COMPLETED" />
+    <protected-broadcast android:name="android.intent.action.PACKAGE_INSTALL" />
+    <protected-broadcast android:name="android.intent.action.PACKAGE_ADDED" />
+    <protected-broadcast android:name="android.intent.action.PACKAGE_REPLACED" />
+    <protected-broadcast android:name="android.intent.action.PACKAGE_REMOVED" />
+    <protected-broadcast android:name="android.intent.action.PACKAGE_CHANGED" />
+    <protected-broadcast android:name="android.intent.action.PACKAGE_RESTARTED" />
+    <protected-broadcast android:name="android.intent.action.PACKAGE_DATA_CLEARED" />
+    <protected-broadcast android:name="android.intent.action.UID_REMOVED" />
+    <protected-broadcast android:name="android.intent.action.CONFIGURATION_CHANGED" />
+    <protected-broadcast android:name="android.intent.action.LOCALE_CHANGED" />
+    <protected-broadcast android:name="android.intent.action.BATTERY_CHANGED" />
+    <protected-broadcast android:name="android.intent.action.BATTERY_LOW" />
+    <protected-broadcast android:name="android.intent.action.BATTERY_OKAY" />
+    <protected-broadcast android:name="android.intent.action.ACTION_POWER_CONNECTED" />
+    <protected-broadcast android:name="android.intent.action.ACTION_POWER_DISCONNECTED" />
+    <protected-broadcast android:name="android.intent.action.ACTION_SHUTDOWN" />
+    <protected-broadcast android:name="android.intent.action.DEVICE_STORAGE_LOW" />
+    <protected-broadcast android:name="android.intent.action.DEVICE_STORAGE_OK" />
+    <protected-broadcast android:name="android.intent.action.NEW_OUTGOING_CALL" />
+    <protected-broadcast android:name="android.intent.action.REBOOT" />
+    <protected-broadcast android:name="android.intent.action.DOCK_EVENT" />
+
+    <protected-broadcast android:name="android.app.action.ENTER_CAR_MODE" />
+    <protected-broadcast android:name="android.app.action.EXIT_CAR_MODE" />
+    <protected-broadcast android:name="android.app.action.ENTER_DESK_MODE" />
+    <protected-broadcast android:name="android.app.action.EXIT_DESK_MODE" />
+    <protected-broadcast android:name="android.backup.intent.RUN" />
+    <protected-broadcast android:name="android.backup.intent.CLEAR" />
+    <protected-broadcast android:name="android.backup.intent.INIT" />
+
+    <protected-broadcast android:name="android.bluetooth.adapter.action.STATE_CHANGED" />
+    <protected-broadcast android:name="android.bluetooth.adapter.action.SCAN_MODE_CHANGED" />
+    <protected-broadcast android:name="android.bluetooth.adapter.action.DISCOVERY_STARTED" />
+    <protected-broadcast android:name="android.bluetooth.adapter.action.DISCOVERY_FINISHED" />
+    <protected-broadcast android:name="android.bluetooth.adapter.action.LOCAL_NAME_CHANGED" />
+    <protected-broadcast android:name="android.bluetooth.device.action.FOUND" />
+    <protected-broadcast android:name="android.bluetooth.device.action.DISAPPEARED" />
+    <protected-broadcast android:name="android.bluetooth.device.action.CLASS_CHANGED" />
+    <protected-broadcast android:name="android.bluetooth.device.action.ACL_CONNECTED" />
+    <protected-broadcast android:name="android.bluetooth.device.action.ACL_DISCONNECT_REQUESTED" />
+    <protected-broadcast android:name="android.bluetooth.device.action.ACL_DISCONNECTED" />
+    <protected-broadcast android:name="android.bluetooth.device.action.NAME_CHANGED" />
+    <protected-broadcast android:name="android.bluetooth.device.action.BOND_STATE_CHANGED" />
+    <protected-broadcast android:name="android.bluetooth.device.action.NAME_FAILED" />
+    <protected-broadcast android:name="android.bluetooth.device.action.PAIRING_REQUEST" />
+    <protected-broadcast android:name="android.bluetooth.device.action.PAIRING_CANCEL" />
+    <protected-broadcast android:name="com.via.bypass.action.setbypass_result" />
+    <protected-broadcast android:name="com.via.bypass.action.getbypass_result" />
+
+    <!-- Action used for WiFi display -->
+    <protected-broadcast android:name="com.mediatek.wfd.connection" />
+
+    <!-- Action used for Batterywarning -->
+    <protected-broadcast android:name="mediatek.intent.action.BATTERY_WARNING" />
+    <protected-broadcast android:name="mediatek.intent.action.BATTERY_NORMAL" />
+
+    <!-- Action used for MTK Sim framework -->
+    <protected-broadcast android:name="com.mediatek.phone.ACTION_EF_RAT_CONTENT_NOTIFY" />
+    <protected-broadcast android:name="com.mediatek.phone.ACTION_EF_CSP_CONTENT_NOTIFY" />
+    <protected-broadcast android:name="com.mediatek.phone.ACTION_COMMON_SLOT_NO_CHANGED" />
+    <protected-broadcast android:name="com.mediatek.phone.ACTION_UNLOCK_SIM_LOCK" />
+    <protected-broadcast android:name="com.mediatek.phone.ACTION_SIM_RECOVERY_DONE" />
+    <protected-broadcast android:name="SilverHelper.trigger.started" />
+    <protected-broadcast android:name="com.mediatek.phone.ACTION_SIM_SLOT_LOCK_POLICY_INFORMATION" />
+    <protected-broadcast android:name="com.mediatek.phone.ACTION_SIM_SLOT_SIM_MOUNT_CHANGE" />
+    <protected-broadcast android:name="com.slc.action.ACTION_SUBSIDYLOCK_STATE" />
+    <protected-broadcast android:name="com.mediatek.phone.ACTION_CARD_DETECTED" />
+
+    <!-- Action used for Thermal & ShutdownThread -->
+    <protected-broadcast android:name="mediatek.intent.action.THERMAL_DIAG" />
+    <protected-broadcast android:name="mediatek.intent.action.THERMAL_WARNING" />
+    <protected-broadcast android:name="mediatek.intent.action.THERMAL_SHUTDOWN" />
+    <protected-broadcast android:name="com.mediatek.server.action.ACTION_NETWORK_OVERLIMIT_CHANGED" />
+
+    <!-- Action used for WorldPhone -->
+    <protected-broadcast android:name="mediatek.intent.action.ACTION_WORLD_MODE_CHANGED" />
+    <protected-broadcast android:name="mediatek.intent.action.ACTION_MD_TYPE_CHANGE" />
+
+    <!-- M-ADD Action used for IVSR -->
+    <protected-broadcast android:name="com.mediatek.intent.action.IVSR_NOTIFY" />
+
+    <!-- M-ADD Action used for Vzw debug screen feature -->
+    <protected-broadcast android:name="com.mediatek.location.debug_message" />
+    <!-- M-ADD Action used for NlpUtils inject nlp locations -->
+    <protected-broadcast android:name="com.mediatek.location.INJECT_NLP_LOC" />
+    <!-- M-ADD Action used for MtkNlp reponse bound 3rd party nlp pakcage name -->
+    <protected-broadcast android:name="com.mediatek.location.RESPONSE_NLP_PACKAGE" />
+
+   <!-- eMBMS Framework -->
+    <protected-broadcast android:name="com.mediatek.intent.action.EMBMS_SESSION_STATUS_CHANGED" />
+    <!-- MTK-END -->
+
+    <!-- M-ADD Action used for PLMN change -->
+    <protected-broadcast android:name="com.mediatek.intent.action.LOCATED_PLMN_CHANGED" />
+
+    <!-- M-ADD Action used for Network Event (RAU/TAU event) -->
+    <protected-broadcast android:name="com.mediatek.intent.action.ACTION_NETWORK_EVENT" />
+
+    <!-- M-ADD Action used for Modulation Info -->
+    <protected-broadcast android:name="com.mediatek.intent.action.ACTION_NOTIFY_MODULATION_INFO" />
+
+    <!-- M-ADD Action used for SMS Self Register -->
+    <protected-broadcast android:name="com.mediatek.deviceregister.MESSAGE_SEND" />
+    <protected-broadcast android:name="com.mediatek.deviceregister.MESSAGE_SEND_IMS" />
+
+    <!-- M-ADD Action used for USB CBA -->
+    <protected-broadcast android:name="com.mediatek.cba.CHECKER_FINISH" />
+    <protected-broadcast android:name="com.mediatek.cba.USB_ACTIVATION" />
+
+    <!-- M-ADD Action used for PHB State change -->
+    <protected-broadcast android:name="mediatek.intent.action.PHB_STATE_CHANGED" />
+
+    <!-- Allows applications to write the apn settings -->
+
+    <!-- OMH card ready notification for application -->
+    <protected-broadcast android:name="com.mediatek.internal.omh.cardcheck" />
+
+    <!-- M-ADD Action used for SMS State change -->
+    <protected-broadcast android:name="android.provider.Telephony.SMS_STATE_CHANGED" />
+
+    <!-- M-ADD Action used for NETWORK type change -->
+    <protected-broadcast android:name="com.mediatek.intent.action.ACTION_NETWORK_CHANGED" />
+
+    <!-- M-ADD Action used to send command to MTK STK APP -->
+    <protected-broadcast android:name="com.mediatek.internal.stk.command" />
+    <protected-broadcast android:name="mediatek.intent.action.BIP_STATE_CHANGED" />
+
+    <!-- M-ADD Action used for uplink data shaping -->
+    <protected-broadcast android:name="com.mediatek.intent.action.LTE_ACCESS_STRATUM_STATE_CHANGED" />
+    <protected-broadcast android:name="com.mediatek.intent.action.PS_NETWORK_TYPE_CHANGED" />
+    <protected-broadcast android:name="com.mediatek.intent.action.SHARED_DEFAULT_APN_STATE_CHANGED" />
+
+    <!-- Telephony power-on broadcast-->
+    <protected-broadcast android:name="com.mediatek.intent.action.RADIO_STATE_CHANGED" />
+    <protected-broadcast android:name="com.mediatek.intent.action.AIRPLANE_CHANGE_DONE" />
+    <protected-broadcast android:name="com.mediatek.intent.action.MODEM_POWER_CHANGE" />
+    <protected-broadcast android:name="com.mediatek.internal.telephony.RadioManager.intent.action.FORCE_SET_RADIO_POWER" />
+    <protected-broadcast android:name="com.mediatek.intent.action.MSIM_MODE" />
+
+    <!-- M-ADD Action used for notify dedicate data connection state change -->
+    <protected-broadcast android:name="com.mediatek.intent.action.ACTION_ANY_DEDICATE_DATA_CONNECTION_STATE_CHANGED" />
+
+    <!-- M-ADD Action used for SMS State change -->
+    <protected-broadcast android:name="android.provider.Telephony.SMS_STATE_CHANGED" />
+
+    <!-- M-ADD Action used for World Phone change -->
+    <protected-broadcast android:name="mediatek.intent.action.ACTION_MODEM_SWITCH_DONE" />
+
+    <!-- M-ADD Action used for Search Engine change -->
+    <protected-broadcast android:name="com.mediatek.search.SEARCH_ENGINE_CHANGED" />
+
+    <!-- M-ADD Action used for CarrierExpress service -->
+    <protected-broadcast android:name="com.mediatek.common.carrierexpress.operator_config_changed" />
+    <protected-broadcast android:name="com.mediatek.common.carrierexpress.action.user_notification_intent" />
+    <protected-broadcast android:name="com.mediatek.common.carrierexpress.cxp_reset_modem" />
+    <protected-broadcast android:name="com.mediatek.common.carrierexpress.cxp_notify_feature" />
+    <protected-broadcast android:name="com.mediatek.common.carrierexpress.cxp_set_vendor_prop" />
+
+    <!-- M-ADD Action used for CTM -->
+    <protected-broadcast android:name="com.dmyk.android.telephony.action.VOLTE_STATE_SETTING" />
+    <protected-broadcast android:name="com.dmyk.android.telephony.action.VOLTE_STATE_CHANGE" />
+    <protected-broadcast android:name="android.dmyk.net.conn.CONNECTIVITY_CHANGE" />
+    <protected-broadcast android:name="com.dmyk.android.telephony.action.APN_STATE_CHANGE" />
+    <protected-broadcast android:name="com.dmyk.android.telephony.action.SIM_STATE_CHANGED" />
+    <protected-broadcast android:name="cn.richinfo.dmyk.action.APN" />
+    <protected-broadcast android:name="cn.richinfo.dmyk.action.APN_RETRY" />
+    <protected-broadcast android:name="cn.richinfo.dmyk.action.HEARTBEAT" />
+    <protected-broadcast android:name="cn.richinfo.dmyk.action.HEARTBEAT_SUCCESS" />
+    <protected-broadcast android:name="cn.richinfo.dmyk.action.HEARTBEAT_RETRY" />
+    <protected-broadcast android:name="cn.richinfo.dmyk.action.APPINFO" />
+    <protected-broadcast android:name="cn.richinfo.dmyk.action.APPINFO_RETRY" />
+    <protected-broadcast android:name="cn.richinfo.dmyk.action.REGISITER_RETRY" />
+    <protected-broadcast android:name="cn.richinfo.dmyk.action.VOLTE_CONFIG_CHANGED_REPORT" />
+    <protected-broadcast android:name="cn.richinfo.dmyk.action.THIRD_REQUEST" />
+    <protected-broadcast android:name="cn.richinfo.dmyk.action.DM_RESPONSE" />
+
+    <!-- M-ADD Action used for WiFi OP -->
+    <protected-broadcast android:name="com.mediatek.intent.WIFI_FAILOVER_GPRS_DIALOG" />
+    <protected-broadcast android:name="com.mediatek.common.wifi.AUTOCONNECT_SETTINGS_CHANGE" />
+    <protected-broadcast android:name="com.mediatek.wifi.ACTION_SUSPEND_NOTIFICATION" />
+
+    <!-- M-ADD Action used for sms sanity test -->
+    <protected-broadcast android:name="SIM1_SANITY_SMS_SEND_ACTION" />
+    <protected-broadcast android:name="SIM2_SANITY_SMS_SEND_ACTION" />
+
+    <!-- M-ADD Action used for Alarm-Aware Uplink Traffic Shaping -->
+    <protected-broadcast android:name="com.mediatek.datashaping.CLOSE_TIME_EXPIRED" />
+
+    <!-- M-add it  for 4G/3G dongle -->
+    <protected-broadcast android:name="tedongle.intent.action.SIM_STATE_CHANGED" />
+    <protected-broadcast android:name="tedongle.intent.action.ANY_DATA_STATE" />
+    <protected-broadcast android:name="tedongle.intent.action.NETWORK_SET_TIMEZONE" />
+    <protected-broadcast android:name="tedongle.intent.action.NETWORK_SET_TIME" />
+    <protected-broadcast android:name="tedongle.intent.action.DATA_CONNECTION_FAILED" />
+    <protected-broadcast android:name="tedongle.intent.action.SERVICE_STATE" />
+    <protected-broadcast android:name="tedongle.intent.action.RADIO_TECHNOLOGY" />
+    <protected-broadcast android:name="tedongle.intent.action.EMERGENCY_CALLBACK_MODE_CHANGED" />
+    <protected-broadcast android:name="tedongle.intent.action.EMERGENCY_CALL_STATE_CHANGED" />
+    <protected-broadcast android:name="tedongle.intent.action.SIG_STR" />
+    <protected-broadcast android:name="tedongle.intent.action.ACTION_SHOW_NOTICE_ECM_BLOCK_OTHERS" />
+    <protected-broadcast android:name="tedongle.intent.action.ACTION_CARRIER_SETUP" />
+    <protected-broadcast android:name="tedongle.intent.action.ACTION_FORBIDDEN_NO_SERVICE_AUTHORIZATION" />
+    <protected-broadcast android:name="tedongle.intent.action.ACTION_SUBINFO_CONTENT_CHANGE" />
+    <protected-broadcast android:name="tedongle.intent.action.ACTION_SUBINFO_RECORD_UPDATED" />
+    <protected-broadcast android:name="tedongle.intent.action.ACTION_DEFAULT_SUBSCRIPTION_CHANGED" />
+    <protected-broadcast android:name="tedongle.intent.action.ACTION_DEFAULT_DATA_SUBSCRIPTION_CHANGED" />
+    <protected-broadcast android:name="tedongle.intent.action.ACTION_DEFAULT_VOICE_SUBSCRIPTION_CHANGED" />
+    <protected-broadcast android:name="tedongle.intent.action.ACTION_DEFAULT_SMS_SUBSCRIPTION_CHANGED" />
+    <protected-broadcast android:name="tedongle.intent.action.ACTION_SET_RADIO_CAPABILITY_DONE" />
+    <protected-broadcast android:name="tedongle.intent.action.ACTION_SET_RADIO_CAPABILITY_FAILED" />
+    <protected-broadcast android:name="tedongle.intent.action.REDIRECTION_DETECTED" />
+    <protected-broadcast android:name="tedongle.intent.action.REQUEST_NETWORK_FAILED" />
+    <protected-broadcast android:name="tedongle.provider.Telephony.SPN_STRINGS_UPDATED" />
+    <protected-broadcast android:name="tedongle.provider.Telephony.SECRET_CODE" />
+
+    <!-- Action used for DuraSpeed -->
+    <protected-broadcast android:name="mediatek.intent.action.ACTION_START_DURASPEED_APP" />
+
+    <!-- ADD Action used for AOD -->
+    <protected-broadcast android:name="com.android.dreams.alwaysondisplay.ACTION_AOD" />
+
+    <!-- Action used for RTT EMC Guard Timer 180s -->
+    <protected-broadcast android:name="com.mediatek.internal.telephony.imsphone.rtt_emc_guard_timer_180" />
+
+    <!-- Action used for Microphone Mute State Changed -->
+    <protected-broadcast android:name="android.media.action.MICROPHONE_MUTE_CHANGED" />
+
+    <!-- Action used for Wi-Fi framework -->
+    <protected-broadcast android:name="mediatek.intent.action.WIFI_ASSOCIATION_REJECT" />
+    <protected-broadcast android:name="mediatek.intent.action.WIFI_NETWORK_DISCONNECT" />
+    <protected-broadcast android:name="mediatek.intent.action.WIFI_PS_CHANGED" />
+    <protected-broadcast android:name="mediatek.intent.action.WIFI_PROVISION_FAIL" />
+
+    <!-- M-ADD Action used for Data framework -->
+    <protected-broadcast android:name="com.mediatek.intent.action.ACTION_NETWORK_REJECT_CAUSE" />
+
+    <!-- M-ADD Action used for background mobile data usage -->
+    <protected-broadcast android:name="com.mediatek.intent.action.ACTION_BACKGROUND_MOBILE_DATA_USAGE" />
+
+    <!-- Telephony Emergency SMS callback mode broadcast-->
+    <protected-broadcast android:name="com.mediatek.intent.action.ACTION_SCBM_CHANGED" />
+
+    <!-- Action used for APC(Anti Pseudo Cell) info -->
+    <protected-broadcast android:name="com.mediatek.phone.ACTION_APC_INFO_NOTIFY" />
+
+    <!-- MTK-ADD Action used for Privacy Protection Lock -->
+    <protected-broadcast android:name="com.mediatek.ppl.NOTIFY_LOCK" />
+    <protected-broadcast android:name="com.mediatek.ppl.NOTIFY_UNLOCK" />
+
+  <!-- This permission can be used on content providers to allow the global
+         search system to access their data.  Typically it used when the
+         provider has some permissions protecting it (which global search
+         would not be expected to hold), and added as a read-only permission
+         to the path in the provider where global search queries are
+         performed.  This permission can not be held by regular applications;
+         it is used by applications to protect themselves from everyone else
+         besides global search. -->
+    <permission android:name="android.permission.GLOBAL_SEARCH"
+        android:permissionGroup="android.permission-group.SYSTEM_TOOLS"
+        android:protectionLevel="signatureOrSystem" />
+
+    <!-- Internal permission protecting access to the global search
+         system: ensures that only the system can access the provider
+         to perform queries (since this otherwise provides unrestricted
+         access to a variety of content providers), and to write the
+         search statistics (to keep applications from gaming the source
+         ranking).
+         @hide -->
+    <permission android:name="android.permission.GLOBAL_SEARCH_CONTROL"
+        android:permissionGroup="android.permission-group.SYSTEM_TOOLS"
+        android:protectionLevel="signature" />
+
+    <!-- Allows applications to set a live wallpaper.
+         @hide XXX Change to signature once the picker is moved to its
+         own apk as Ghod Intended. -->
+    <permission android:name="android.permission.SET_WALLPAPER_COMPONENT"
+        android:permissionGroup="android.permission-group.SYSTEM_TOOLS"
+        android:protectionLevel="signatureOrSystem" />
+
+    <!-- Allow an application to read and write the cache partition.
+         @hide -->
+    <permission android:name="android.permission.ADVANCED_WIDGET_API"
+        android:protectionLevel="normal" />
+
+    <!-- Allows an application to wakeup system when it is in suspend mode
+         @hide -->
+    <permission android:name="com.mediatek.permission.WAKE_DEVICE_SENSORHUB"
+        android:permissionGroup="android.permission-group.AFFECTS_BATTERY"
+        android:protectionLevel="dangerous"
+        android:label="@string/permlab_wake_device_sensorhub"
+        android:description="@string/permdesc_wake_device_sensorhub" />
+
+    <!-- Must be required by default container service so that only
+         the system can bind to it and use it to copy
+         protected data to secure containers or files
+         accessible to the system.
+         @hide -->
+
+
+    <!-- C2DM permission.
+         @hide Used internally.
+     -->
+
+    <!-- M: SmartCardService (OMAPI) @{ -->
+    <!-- Indicates that this OMAPI Terminal is a "system terminal".
+         <p>Not for use by third-party applications.
+         @hide -->
+    <permission android:name="org.simalliance.openmobileapi.SYSTEM_TERMINAL"
+                android:protectionLevel="signature|system"
+                android:label="@string/permlab_systemTerminal"
+                android:description="@string/permdesc_systemTerminal" />
+
+    <!-- Permission used by SmartcardService to be able to bind to
+         system terminals.
+         <p>Not for use by third-party applications.
+         @hide -->
+    <permission android:name="org.simalliance.openmobileapi.BIND_TERMINAL"
+                android:protectionLevel="signature|system"
+                android:label="@string/permlab_bindTerminal"
+                android:description="@string/permdesc_bindTerminal" />
+    <!-- M: SmartCardService (OMAPI) @} -->
+
+    <!-- Allows an application to initiate a conference phone call @hide -->
+    <permission android:name="com.mediatek.permission.CTA_CONFERENCE_CALL"
+        android:permissionGroup="android.permission-group.PHONE"
+        android:permissionFlags="costsMoney"
+        android:label="@string/permlab_cta_conference_call"
+        android:description="@string/permdesc_cta_conference_call"
+        android:protectionLevel="dangerous" />
+
+    <!-- Allows an application to settings call forwarding -->
+    <permission android:name="com.mediatek.permission.CTA_CALL_FORWARD"
+        android:permissionGroup="android.permission-group.PHONE"
+        android:permissionFlags="costsMoney"
+        android:label="@string/permlab_cta_call_forward"
+        android:description="@string/permdesc_cta_call_forward"
+        android:protectionLevel="dangerous" />
+
+    <!-- Allows an application to send MMS
+         @hide -->
+    <permission android:name="com.mediatek.permission.CTA_SEND_MMS"
+        android:permissionGroup="android.permission-group.SMS"
+        android:label="@string/permlab_cta_send_mms"
+        android:description="@string/permdesc_cta_send_mms"
+        android:protectionLevel="dangerous" />
+
+    <!-- Allows an application to send email
+         @hide -->
+    <permission android:name="com.mediatek.permission.CTA_SEND_EMAIL"
+        android:permissionGroup="com.mediatek.permission-group.EMAIL"
+        android:label="@string/permlab_cta_send_email"
+        android:description="@string/permdesc_cta_send_email"
+        android:protectionLevel="dangerous" />
+
+    <!-- Used for runtime permissions related to email settings.
+         @hide -->
+    <permission-group android:name="com.mediatek.permission-group.EMAIL"
+        android:icon="@drawable/perm_group_email"
+        android:label="@string/permgrouplab_email"
+        android:description="@string/permgroupdesc_email"
+        android:priority="1000" />
+
+    <!-- permission for ctm snapshot broadcast-->
+    <permission android:name="com.dm.permission.THIRD_SEND" />
+
+    <!-- Allows PPL to clear storage -->
+    <permission android:name="com.mediatek.permission.MOUNT_SERVICE_WIPE"
+        android:permissionGroup="android.permission-group.SYSTEM_TOOLS"
+        android:label="@string/permlab_mount_service_wipe"
+        android:description="@string/permdesc_mount_service_wipe"
+        android:protectionLevel="signatureOrSystem" />
+</manifest>

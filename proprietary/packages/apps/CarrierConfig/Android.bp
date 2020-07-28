@@ -1,0 +1,37 @@
+bootstrap_go_package {
+    name: "soong-CarrierConfig-mediatek",
+    pkgPath: "android/soong/CarrierConfig/mediatek",
+    deps: [
+        "soong-android",
+        "soong-java",
+    ],
+    srcs: [
+       "CarrierConfig.go",
+    ],
+    pluginFor: ["soong_build"],
+}
+
+mtk_CarrierConfig_defaults {
+    name: "mediatek-CarrierConfig_defaults",
+}
+
+android_app {
+    name: "MtkCarrierConfig",
+    overrides: [
+        "CarrierConfig",
+    ],
+    srcs: ["src/**/*.java"],
+    libs: ["telephony-common"],
+    defaults: [
+        "mediatek-CarrierConfig_defaults",
+    ],
+    platform_apis: true,
+    certificate: "platform",
+    product_specific: true,
+    privileged: true,
+    required: ["privapp_whitelist_com.android.carrierconfig"],
+    optimize: {
+        proguard_flags_files: ["proguard.flags"],
+    },
+    aaptflags: ["--keep-raw-values"],
+}

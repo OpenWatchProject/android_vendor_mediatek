@@ -1,0 +1,25 @@
+Library of MTK telephony extension interfaces. These interfaces extends the
+original interface with MSIM functionality.
+
+This library is pre-built by MediaTek internal.
+
+
+WHAT IT DOES?
+=============
+mediatek-telephony-common.jar contains Mediatek developed telephony realted
+MSIM functionality. Application can use these interfaces to activate the MSIM
+features.
+
+HOW IT WAS BUILT?
+==================
+It needs the following library from AOSP:
+1.  telephony-common.jar
+
+and the following libs from MediaTek:
+1.  mediatek-telephony-common.jar
+
+HOW TO USE IT?
+==============
+Add mediatek-telephony-common to LOCAL_JAVA_LIBRARIES to use it.
+
+All the source code of this library were written by MediaTek co..

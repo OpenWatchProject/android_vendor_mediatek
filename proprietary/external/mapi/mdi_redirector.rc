@@ -1,0 +1,7 @@
+# MTK platform .rc configure
+service mdi_redirector /system/bin/mdi_redirector
+    class main
+    user system
+    group inet net_admin net_raw system
+    disabled
+    oneshot

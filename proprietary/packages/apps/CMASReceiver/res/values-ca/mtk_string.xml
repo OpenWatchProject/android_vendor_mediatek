@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+ * Copyright (C) 2007-2008 Esmertec AG.
+ * Copyright (C) 2007-2008 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+--><resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+   <string name="alerts">Alertes</string>
+    <string name="select_all">"Selecciona-ho tot"</string>
+    <string name="unselect_all">"Anul·la la selecció de tot"</string>
+    <string name="delete">"Suprimeix"</string>
+    <string name="select_cellbroadcasts">"Selecciona l'alerta d'emergència"</string>
+    <plurals name="message_view_selected_message_count">
+        <item quantity="one"><xliff:g id="message_count" example="1">%d</xliff:g> seleccionat</item>
+        <item quantity="other"><xliff:g id="message_count" example="9">%d</xliff:g> seleccionats</item>
+    </plurals>
+    <plurals name="confirm_delete_broadcast">
+        <item quantity="one">"S'esborrarà 1 missatge d'alerta seleccionat"</item>
+        <item quantity="other">"S'esborraran <xliff:g id="number" example="15">%1$s</xliff:g> missatges d'alerta seleccionats"</item>
+    </plurals>
+    <string name="enable_cmas_presidential_threat_alerts_title">Mostra alerta presidencial</string>
+    <string name="enable_cmas_presidential_threat_alerts_summary">Mostra alertes de nivell presidencial</string>
+    <string name="enable_cmas_imminent_threat_alerts_title">Alerta imminent</string>
+    <string name="enable_cmas_imminent_threat_alerts_summary">"Mostra alertes d'amenaces imminents per a la vida i per a la propietat"</string>
+    <string name="cmas_preview_alert_tone_title">"Previsualització del to d'avís"</string>
+    <string name="cmas_preview_alert_tone_summary">"Previsualitza el to d'avís"</string>
+    <string name="cmas_change_settings">Segur que vols canviar la configuració?</string>
+    <string name="cmas_disable_cmas">Si desactives la difusió de cel·la no es rebrà cap alerta.</string>
+    <string name="cmas_enable_cmas_failed">"No s'ha pogut obrir."</string>
+    <string name="enable_repeat_alert_title">Repeteix l’alarma</string>
+    <string name="enable_repeat_alert_summary">Recorda intermitentment a l’usuari l’alerta de no llegit</string>
+    <string name="enable_all_alert_title">Totes les alertes actives</string>
+    <string name="enable_all_imminent_alerts_title">"Tots els missatges d'amenaça imminent"</string>
+    <string name="enable_cell_broadcast_title">Alertes d’emergència</string>
+    <string name="alert_sound_volume">Volum del so de les alertes</string>
+    <string name="alert_volume_summary">Ajusta el volum del so de les alertes</string>
+</resources>

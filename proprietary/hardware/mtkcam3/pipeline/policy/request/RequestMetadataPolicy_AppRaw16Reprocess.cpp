@@ -1,0 +1,158 @@
+/* Copyright Statement:
+ *
+ * This software/firmware and related documentation ("MediaTek Software") are
+ * protected under relevant copyright laws. The information contained herein is
+ * confidential and proprietary to MediaTek Inc. and/or its licensors. Without
+ * the prior written permission of MediaTek inc. and/or its licensors, any
+ * reproduction, modification, use or disclosure of MediaTek Software, and
+ * information contained herein, in whole or in part, shall be strictly
+ * prohibited.
+ *
+ * MediaTek Inc. (C) 2010. All rights reserved.
+ *
+ * BY OPENING THIS FILE, RECEIVER HEREBY UNEQUIVOCALLY ACKNOWLEDGES AND AGREES
+ * THAT THE SOFTWARE/FIRMWARE AND ITS DOCUMENTATIONS ("MEDIATEK SOFTWARE")
+ * RECEIVED FROM MEDIATEK AND/OR ITS REPRESENTATIVES ARE PROVIDED TO RECEIVER
+ * ON AN "AS-IS" BASIS ONLY. MEDIATEK EXPRESSLY DISCLAIMS ANY AND ALL
+ * WARRANTIES, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED
+ * WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE OR
+ * NONINFRINGEMENT. NEITHER DOES MEDIATEK PROVIDE ANY WARRANTY WHATSOEVER WITH
+ * RESPECT TO THE SOFTWARE OF ANY THIRD PARTY WHICH MAY BE USED BY,
+ * INCORPORATED IN, OR SUPPLIED WITH THE MEDIATEK SOFTWARE, AND RECEIVER AGREES
+ * TO LOOK ONLY TO SUCH THIRD PARTY FOR ANY WARRANTY CLAIM RELATING THERETO.
+ * RECEIVER EXPRESSLY ACKNOWLEDGES THAT IT IS RECEIVER'S SOLE RESPONSIBILITY TO
+ * OBTAIN FROM ANY THIRD PARTY ALL PROPER LICENSES CONTAINED IN MEDIATEK
+ * SOFTWARE. MEDIATEK SHALL ALSO NOT BE RESPONSIBLE FOR ANY MEDIATEK SOFTWARE
+ * RELEASES MADE TO RECEIVER'S SPECIFICATION OR TO CONFORM TO A PARTICULAR
+ * STANDARD OR OPEN FORUM. RECEIVER'S SOLE AND EXCLUSIVE REMEDY AND MEDIATEK'S
+ * ENTIRE AND CUMULATIVE LIABILITY WITH RESPECT TO THE MEDIATEK SOFTWARE
+ * RELEASED HEREUNDER WILL BE, AT MEDIATEK'S OPTION, TO REVISE OR REPLACE THE
+ * MEDIATEK SOFTWARE AT ISSUE, OR REFUND ANY SOFTWARE LICENSE FEES OR SERVICE
+ * CHARGE PAID BY RECEIVER TO MEDIATEK FOR SUCH MEDIATEK SOFTWARE AT ISSUE.
+ *
+ * The following software/firmware and/or related documentation ("MediaTek
+ * Software") have been modified by MediaTek Inc. All revisions are subject to
+ * any receiver's applicable license agreements with MediaTek Inc.
+ */
+
+#define LOG_TAG "mtkcam-RequestMetadataPolicy-AppRaw16Reprocess"
+
+#include "RequestMetadataPolicy.h"
+//
+#include <mtkcam/utils/std/ULog.h>
+#include "MyUtils.h"
+
+CAM_ULOG_DECLARE_MODULE_ID(MOD_PIPELINE_POLICY);
+
+
+/******************************************************************************
+ *
+ ******************************************************************************/
+using namespace android;
+
+
+/******************************************************************************
+ *
+ ******************************************************************************/
+#define MY_LOGV(fmt, arg...)        CAM_ULOGMV("[%s] " fmt, __FUNCTION__, ##arg)
+#define MY_LOGD(fmt, arg...)        CAM_ULOGMD("[%s] " fmt, __FUNCTION__, ##arg)
+#define MY_LOGI(fmt, arg...)        CAM_ULOGMI("[%s] " fmt, __FUNCTION__, ##arg)
+#define MY_LOGW(fmt, arg...)        CAM_ULOGMW("[%s] " fmt, __FUNCTION__, ##arg)
+#define MY_LOGE(fmt, arg...)        CAM_ULOGME("[%s] " fmt, __FUNCTION__, ##arg)
+#define MY_LOGA(fmt, arg...)        CAM_LOGA("[%s] " fmt, __FUNCTION__, ##arg)
+#define MY_LOGF(fmt, arg...)        CAM_LOGF("[%s] " fmt, __FUNCTION__, ##arg)
+//
+#define MY_LOGV_IF(cond, ...)       do { if (            (cond) ) { MY_LOGV(__VA_ARGS__); } }while(0)
+#define MY_LOGD_IF(cond, ...)       do { if (            (cond) ) { MY_LOGD(__VA_ARGS__); } }while(0)
+#define MY_LOGI_IF(cond, ...)       do { if (            (cond) ) { MY_LOGI(__VA_ARGS__); } }while(0)
+#define MY_LOGW_IF(cond, ...)       do { if ( CC_UNLIKELY(cond) ) { MY_LOGW(__VA_ARGS__); } }while(0)
+#define MY_LOGE_IF(cond, ...)       do { if ( CC_UNLIKELY(cond) ) { MY_LOGE(__VA_ARGS__); } }while(0)
+#define MY_LOGA_IF(cond, ...)       do { if ( CC_UNLIKELY(cond) ) { MY_LOGA(__VA_ARGS__); } }while(0)
+#define MY_LOGF_IF(cond, ...)       do { if ( CC_UNLIKELY(cond) ) { MY_LOGF(__VA_ARGS__); } }while(0)
+
+
+/******************************************************************************
+ *
+ ******************************************************************************/
+namespace NSCam {
+namespace v3 {
+namespace pipeline {
+namespace policy {
+namespace requestmetadata {
+
+
+/******************************************************************************
+ *
+ ******************************************************************************/
+class RequestMetadataPolicy_AppRaw16Reprocess : public IRequestMetadataPolicy
+{
+private:
+    CreationParams  mPolicyParams;
+
+public:
+                    RequestMetadataPolicy_AppRaw16Reprocess(CreationParams const& params)
+                        : mPolicyParams(params)
+                    {
+                    }
+
+public:
+    virtual auto    evaluateRequest(
+                        EvaluateRequestParams const& params
+                    ) -> int
+                    {
+                        auto pRequest_AppImageStreamInfo = params.pRequest_AppImageStreamInfo;
+
+                        /**
+                         * [A] Input RAW16
+                         *
+                         */
+                        if ( pRequest_AppImageStreamInfo->pAppImage_Input_RAW16 != nullptr ) {
+                            CAM_ULOGMD("[requestNo:%u] Input RAW16: force to enable EXIF", params.requestNo);
+
+                            auto tempParams = params;
+                            tempParams.needExif = true;
+                            return mPolicyParams.pRequestMetadataPolicy->evaluateRequest(tempParams);
+                        }
+
+                        /**
+                         * [B] Output RAW16 (like Preview scenario + Output RAW16)
+                         *
+                         */
+                        if ( pRequest_AppImageStreamInfo->vAppImage_Output_RAW16.size() != 0 ||
+                             pRequest_AppImageStreamInfo->vAppImage_Output_RAW16_Physical.size() != 0 )
+                        {
+                            CAM_ULOGMD("[requestNo:%u] Output RAW16: force to enable EXIF", params.requestNo);
+
+                            auto tempParams = params;
+                            tempParams.needExif = true;
+                            return mPolicyParams.pRequestMetadataPolicy->evaluateRequest(tempParams);
+                        }
+
+                        /**
+                         * [C] No Input/Output RAW16 (like Preview scenario)
+                         *
+                         */
+                        return mPolicyParams.pRequestMetadataPolicy->evaluateRequest(params);
+                    }
+
+};
+
+
+/******************************************************************************
+ *
+ ******************************************************************************/
+auto makePolicy_RequestMetadata_AppRaw16Reprocess(
+    CreationParams const& params
+) -> std::shared_ptr<IRequestMetadataPolicy>
+{
+    MY_LOGF_IF(params.pRequestMetadataPolicy==nullptr, "CreationParams::pRequestMetadataPolicy==nullptr");
+    return std::make_shared<RequestMetadataPolicy_AppRaw16Reprocess>(params);
+}
+
+
+};  //namespace requestmetadata
+};  //namespace policy
+};  //namespace pipeline
+};  //namespace v3
+};  //namespace NSCam
+

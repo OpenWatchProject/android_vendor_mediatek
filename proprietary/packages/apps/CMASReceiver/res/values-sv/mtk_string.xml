@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+ * Copyright (C) 2007-2008 Esmertec AG.
+ * Copyright (C) 2007-2008 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+--><resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+   <string name="alerts">Meddelanden</string>
+    <string name="select_all">"Markera alla"</string>
+    <string name="unselect_all">"Avmarkera alla"</string>
+    <string name="delete">"Delete"</string>
+    <string name="select_cellbroadcasts">Välj nödmeddelande</string>
+    <plurals name="message_view_selected_message_count">
+        <item quantity="one"><xliff:g id="message_count" example="1">%d</xliff:g> har valts</item>
+        <item quantity="other"><xliff:g id="message_count" example="9">%d</xliff:g> har valts</item>
+    </plurals>
+    <plurals name="confirm_delete_broadcast">
+        <item quantity="one">1 markerat varningsmeddelande kommer att tas bort</item>
+        <item quantity="other"><xliff:g id="number" example="15">%1$s</xliff:g> markerade varningsmeddelande kommer att tas bort</item>
+    </plurals>
+    <string name="enable_cmas_presidential_threat_alerts_title">Visa "Presidential"-meddelande</string>
+    <string name="enable_cmas_presidential_threat_alerts_summary">Visa nivå för "Presidential"-meddelande</string>
+    <string name="enable_cmas_imminent_threat_alerts_title">Omedelbart meddelande</string>
+    <string name="enable_cmas_imminent_threat_alerts_summary">Visa meddelanden för omedelbara hot mot liv och egendom</string>
+    <string name="cmas_preview_alert_tone_title">Meddelandeton förhandsgranska</string>
+    <string name="cmas_preview_alert_tone_summary">Förhandsgranska meddelandeton</string>
+    <string name="cmas_change_settings">Är du säker på att du vill ändra inställningarna?</string>
+    <string name="cmas_disable_cmas">Inget meddelande kommer att tas emot om du inaktiverar cellsändning.</string>
+    <string name="cmas_enable_cmas_failed">Kunde inte öppna.</string>
+    <string name="enable_repeat_alert_title">Upprepa alarm</string>
+    <string name="enable_repeat_alert_summary">För att påminna användaren om olästa omedelbara varningar</string>
+    <string name="enable_all_alert_title">Alla meddelanden På</string>
+    <string name="enable_all_imminent_alerts_title">Alla omedelbara hotmeddelanden</string>
+    <string name="enable_cell_broadcast_title">Nödmeddelanden</string>
+    <string name="alert_sound_volume">Varningsvolym</string>
+    <string name="alert_volume_summary">Justera ljudvolym för varningar</string>
+</resources>

@@ -1,0 +1,16 @@
+cc_library_shared {
+    name: "libtouchfilter",
+    owner: "mtk",
+    srcs: [
+        "TouchFilter.cpp",
+    ],
+
+    shared_libs: [
+        "libcutils",
+        "liblog",
+        "libutils",
+        "libinput",
+        "libc",
+    ],
+}
+

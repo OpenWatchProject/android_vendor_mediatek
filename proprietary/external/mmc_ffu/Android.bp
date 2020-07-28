@@ -1,0 +1,13 @@
+cc_binary {
+    srcs: ["mmc.c"],
+    name: "mmc_ffu",
+    proprietary: true,
+    owner: "mtk",
+    shared_libs: [
+        "libcutils",
+        "libc",
+    ],
+    header_libs: [
+        "device_kernel_headers",
+    ],
+}

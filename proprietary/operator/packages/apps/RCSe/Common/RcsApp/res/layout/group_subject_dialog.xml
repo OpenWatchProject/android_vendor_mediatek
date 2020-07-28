@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+     >
+
+    
+    
+
+    <RadioGroup android:id="@+id/group_type" 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="top"
+        android:visibility="gone"
+        android:orientation="horizontal">
+    
+    <RadioButton android:id="@+id/open_group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/open_group"
+        android:checked="true" />
+    
+    <RadioButton android:id="@+id/closed_group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/closed_group"
+        />
+    </RadioGroup>
+    <TextView
+        android:id="@+id/titleTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/group_type"
+        
+         />
+
+     
+     <EditText
+        android:id="@+id/inputEditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="22dp"
+        android:layout_below="@id/group_type"
+        android:inputType="textMultiLine|textShortMessage"
+        android:ems="10" />
+
+     <ImageButton
+                android:id="@+id/btn_chat_emoticon_subject"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="@dimen/input_text_height"
+                android:layout_height="@dimen/input_text_height"
+                android:drawablePadding="0dip"
+                android:layout_below="@id/group_type"
+                android:layout_toRightOf="@id/inputEditText"
+        android:layout_marginTop="22dp"
+                android:src="@drawable/emoticon" />
+     
+    <LinearLayout android:id="@+id/emotions_area_subject"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_below="@id/inputEditText"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:orientation="vertical"
+                android:visibility="gone">
+                <com.mediatek.rcse.emoticons.ScrollLayout
+                    android:id="@+id/chat_emotions_subject"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+                <LinearLayout
+                    android:id="@+id/page_indicator_subject"
+                    android:layout_width="match_parent"
+                    android:layout_height="5dp"
+                    android:gravity="center"/>
+        </LinearLayout>
+
+    
+
+</RelativeLayout>

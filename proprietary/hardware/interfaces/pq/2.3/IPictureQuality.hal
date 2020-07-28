@@ -1,0 +1,130 @@
+/*
+ * Copyright (C) 2016 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package vendor.mediatek.hardware.pq@2.3;
+
+import @2.2::IPictureQuality;
+import @2.0::types;
+
+/*
+ * Interface declaring display quality enhancement.
+ */
+
+interface IPictureQuality extends @2.2::IPictureQuality {
+    typedef vendor.mediatek.hardware.pq@2.0::Result Result;
+
+    /**
+     * Set specific AAL Sub-Feature on/off
+     *
+     * @param funcFlags the AAL Sub-Feature flag.
+     * @param PropFlag change AAL Sub-Feature with property setting.
+     * @return retval OK if setFunction successfully executed.
+     */
+    setFunction(uint32_t funcFlags, bool PropFlag) generates (Result retval);
+
+    /**
+     * Set screen state for AAL
+     *
+     * @param state the screen state.
+     * @param brightness backlight value.
+     * @return retval OK if setScreenState successfully executed.
+     */
+    setScreenState(int32_t state, int32_t brightness) generates (Result retval);
+
+    /**
+     * Set ESS smart backlight range.
+     *
+     * @param level decides ESS smart backlight range level (Range: 0 ~ 255).
+     * @return retval OK if setSmartBacklightRange successfully executed.
+     */
+    setSmartBacklightRange(int32_t level) generates (Result retval);
+
+    /**
+     * Set DRE readability.
+     *
+     * @param level decides DRE readability level (Range: 0 ~ 255).
+     * @return retval OK if setReadabilityLevel successfully executed.
+     */
+    setReadabilityLevel(int32_t level) generates (Result retval);
+
+    /**
+     * Set DRE low backlight readability.
+     *
+     * @param level decides DRE low backlight readability level (Range: 0 ~ 255).
+     * @return retval OK if setLowBLReadabilityLevel successfully executed.
+     */
+    setLowBLReadabilityLevel(int32_t level) generates (Result retval);
+
+    /**
+     * Get LED minimum step of ESS
+     *
+     * @return value the LED minimum step of ESS
+     * @return retval OK if getESSLEDMinStep successfully executed.
+     */
+    getESSLEDMinStep() generates (Result retval, uint32_t value);
+
+    /**
+     * Set LED minimum step of ESS.
+     *
+     * @param value the LED minimum step of ESS (Range: 0 ~ 4095).
+     * @return retval OK if setESSLEDMinStep successfully executed.
+     */
+    setESSLEDMinStep(uint32_t value) generates (Result retval);
+
+    /**
+     * Get OLED minimum step of ESS
+     *
+     * @return value the OLED minimum step of ESS
+     * @return retval OK if getESSOLEDMinStep successfully executed.
+     */
+    getESSOLEDMinStep() generates (Result retval, uint32_t value);
+
+    /**
+     * Set OLED minimum step of ESS.
+     *
+     * @param value the OLED minimum step of ESS (Range: 0 ~ 4095).
+     * @return retval OK if setESSOLEDMinStep successfully executed.
+     */
+    setESSOLEDMinStep(uint32_t value) generates (Result retval);
+
+    /**
+     * AAL custom invoke function.
+     *
+     * @param cmd the input parameter for AAL custom invoke function.
+     * @param arg the input parameter for AAL custom invoke function.
+     * @return retval OK if custInvoke successfully executed.
+     */
+    custInvoke(int32_t cmd, int64_t arg) generates (Result retval);
+
+    /**
+     * Get value of specific address for AAL tuning.
+     *
+     * @param field the offeset address.
+     * @return value the value of specific address.
+     * @return retval OK if readField successfully executed.
+     */
+    readField(uint32_t field) generates (Result retval, uint32_t value);
+
+
+    /**
+     * Set value of specific address for AAL tuning.
+     *
+     * @param field the offeset address/
+     * @param value the value setting to specific address.
+     * @return retval OK if writeField successfully executed.
+     */
+    writeField(uint32_t field, uint32_t value) generates (Result retval);
+};

@@ -1,0 +1,25 @@
+cc_binary {
+    name: "mtkcam-debug",
+    proprietary: true,
+    owner: "mtk",
+    cflags: [
+        "-Werror",
+        "-Wall",
+        "-Wextra",
+    ],
+    cppflags: [
+        "-fexceptions",
+    ],
+    srcs: [
+        "mtkcam-debug.cpp",
+    ],
+    shared_libs: [
+        "liblog",
+        "libutils",
+        "libcutils",
+        "libhidlbase",
+        "android.hardware.camera.provider@2.4",
+    ],
+}
+
+optional_subdirs = ["*"]

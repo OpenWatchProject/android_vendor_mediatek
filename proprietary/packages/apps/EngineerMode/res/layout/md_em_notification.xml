@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content" 
+    android:orientation="vertical" >
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dip"
+        android:minHeight="40dip"
+        android:text="@string/md_ca_detected_string"
+        android:textSize="16sp" >
+    </TextView>
+    <RadioGroup
+        android:id="@+id/ca_detected_radio_group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+        <RadioButton
+            android:id="@+id/radio_ca_detected_on"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minHeight="40dip"
+            android:text="@string/modem_notification_on"
+            android:textSize="16sp" />
+
+        <RadioButton
+            android:id="@+id/radio_ca_detected_off"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minHeight="40dip"
+            android:text="@string/modem_notification_off"
+            android:textSize="16sp" />
+    </RadioGroup>
+
+    </LinearLayout>
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dip"
+        android:minHeight="40dip"
+        android:text="@string/md_ca_to_ca_string"
+        android:textSize="16sp" >
+    </TextView>
+    <RadioGroup
+        android:id="@+id/ca_to_ca_radio_group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+        <RadioButton
+            android:id="@+id/radio_ca_to_ca_on"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minHeight="40dip"
+            android:text="@string/modem_notification_on"
+            android:textSize="16sp" />
+
+        <RadioButton
+            android:id="@+id/radio_ca_to_ca_off"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minHeight="40dip"
+            android:text="@string/modem_notification_off"
+            android:textSize="16sp" />
+    </RadioGroup>
+
+    </LinearLayout>
+
+</LinearLayout>

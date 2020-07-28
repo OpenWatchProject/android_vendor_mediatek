@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+ * Copyright (C) 2007-2008 Esmertec AG.
+ * Copyright (C) 2007-2008 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+--><resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+   <string name="alerts">경고</string>
+    <string name="select_all">"모두 선택"</string>
+    <string name="unselect_all">"모두 선택취소"</string>
+    <string name="delete">"Delete 키"</string>
+    <string name="select_cellbroadcasts">비상 경고 선택</string>
+    <plurals name="message_view_selected_message_count">
+        <item quantity="one"><xliff:g id="message_count" example="1">%d</xliff:g>개가 선택됨</item>
+        <item quantity="other"><xliff:g id="message_count" example="9">%d</xliff:g>개가 선택됨</item>
+    </plurals>
+    <plurals name="confirm_delete_broadcast">
+        <item quantity="one">1개의 선택된 경고 메시지가 삭제됩니다</item>
+        <item quantity="other"><xliff:g id="number" example="15">%1$s</xliff:g>개의 선택된 경고 메시지가 삭제됩니다</item>
+    </plurals>
+    <string name="enable_cmas_presidential_threat_alerts_title">Presidential 경고 표시</string>
+    <string name="enable_cmas_presidential_threat_alerts_summary">Presidential 수준 경고 표시</string>
+    <string name="enable_cmas_imminent_threat_alerts_title">임박한 경고</string>
+    <string name="enable_cmas_imminent_threat_alerts_summary">생명과 재산에 임박한 위협에 대한 경고 표시</string>
+    <string name="cmas_preview_alert_tone_title">경고 톤 미리보기</string>
+    <string name="cmas_preview_alert_tone_summary">경고 톤 미리보기</string>
+    <string name="cmas_change_settings">설정을 변경하시겠습니까?</string>
+    <string name="cmas_disable_cmas">재난문자방송서비스를 사용 안 함으로 설정하면 경고를 받지 않습니다.</string>
+    <string name="cmas_enable_cmas_failed">여는 데 실패했습니다.</string>
+    <string name="enable_repeat_alert_title">알람 반복</string>
+    <string name="enable_repeat_alert_summary">사용자에게 읽지 않은 알람을 간헐적으로 알립니다.</string>
+    <string name="enable_all_alert_title">모든 경고 켜기</string>
+    <string name="enable_all_imminent_alerts_title">모든 임박한 위협 메시지</string>
+    <string name="enable_cell_broadcast_title">비상 경고</string>
+    <string name="alert_sound_volume">경고 사운드 볼륨</string>
+    <string name="alert_volume_summary">경고음 볼륨 조정</string>
+</resources>

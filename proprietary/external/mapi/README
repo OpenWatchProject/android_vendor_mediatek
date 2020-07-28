@@ -1,0 +1,21 @@
+===============================
+ WHAT IT DOES?
+===============================
+Modem Analysis Public Interface(MAPI), a Mediatek proprietary diagnostic interface
+for PC tool to collect KPIs from device.
+And MAPI, be a Diagnostic Monitoring Collector(DMC)'s client (called DMC APP),
+subscribe and retrive KPIs from DMC through DMC HIDL interface.
+
+===============================
+ HOW TO USE IT?
+===============================
+We have two modules in the make file
+1. mdi_redirector: (MAPI data path)
+A native daemon interacts with DMC service, subscribe KPI and
+forward payload to PC side through ADB network socket with port 10567.
+
+2. mdi_redirector_ctrl: (MAPI control path)
+An executable provide serveral commands to control the behavior of mdi_redirector daemon.
+We provide our sample window batch file for reference under tools folder.
+
+To get more detail, please get our "MAPI_User_Guideline_Android" from Mediatek DMS server.

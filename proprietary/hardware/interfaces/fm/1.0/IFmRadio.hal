@@ -1,0 +1,171 @@
+/*
+ * Copyright (C) 2016 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package vendor.mediatek.hardware.fm@1.0;
+
+import IFmRadioCallback;
+
+interface IFmRadio {
+
+    /**
+     * Enable an FM device for the requested configuration.
+     * @param callback the callback interface
+     * @return result Operation completion status: OK in case of success,
+     *                INVALID_ARGUMENTS if configuration requested is invalid,
+     *                INVALID_STATE if called out of sequence
+     */
+    enable(IFmRadioCallback callback)
+                generates (Result result);
+
+
+    /**
+     * Disable an FM device.
+     * @return result Operation completion status: OK in case of success,
+     *                INVALID_ARGUMENTS if configuration requested is invalid,
+     *                INVALID_STATE if called out of sequence
+     */
+    disable() generates (Result result);
+
+    /**
+     * Start an FM scan or seek operation.
+     * @param dir the direction to do FM scan or seek.
+     * @return result Operation completion status: OK in case of success,
+     *                INVALID_ARGUMENTS if configuration requested is invalid,
+     *                INVALID_STATE if called out of sequence
+     */
+    startSearch(Direction dir) generates (Result result);
+
+    /**
+     * Cancel current search operation.
+     * @return result Operation completion status: OK in case of success,
+     *                INVALID_ARGUMENTS if configuration requested is invalid,
+     *                INVALID_STATE if called out of sequence
+     */
+    cancelSearch() generates (Result result);
+
+    /**
+     * Configure an FM configurable value.
+     * @param id specifies the variable to be set.
+     * @param value new value to set.
+     * @return result Operation completion status: OK in case of success,
+     *                INVALID_ARGUMENTS if configuration requested is invalid,
+     *                INVALID_STATE if called out of sequence
+     */
+    setControl(Control id, uint32_t value) generates (Result result);
+
+    /**
+     * Get current configured value of a specified variable.
+     * @param id specifies the variable to get.
+     * @return result Operation completion status: OK in case of success,
+     *                INVALID_ARGUMENTS if configuration requested is invalid,
+     *                INVALID_STATE if called out of sequence
+     */
+    getControl(Control id) generates (Result result);
+
+    /**
+     * Get current tuned frequency.
+     * @return result Operation completion status: OK in case of success,
+     *                INVALID_ARGUMENTS if configuration requested is invalid,
+     *                INVALID_STATE if called out of sequence
+     * @return freq current tuned frequency.
+     */
+    getFreq() generates (Result result, uint32_t freq);
+
+    /**
+     * Tune to a specific frequency.
+     * @param freq the frequency to be tuned.
+     * @return result Operation completion status: OK in case of success,
+     *                INVALID_ARGUMENTS if configuration requested is invalid,
+     *                INVALID_STATE if called out of sequence
+     */
+    setFreq(uint32_t freq) generates (Result result);
+
+    /**
+     * Get RSSI of current tuned frequency.
+     * @return result Operation completion status: OK in case of success,
+     *                INVALID_ARGUMENTS if configuration requested is invalid,
+     *                INVALID_STATE if called out of sequence
+     * @return rssi current rssi of tuned frequency.
+     */
+    getRssi() generates (Result result, int32_t rssi);
+
+    /**
+     * Set band boundary.
+     * @param low the lowest band.
+     * @param high the highest band.
+     * @return result Operation completion status: OK in case of success,
+     *                INVALID_ARGUMENTS if configuration requested is invalid,
+     *                INVALID_STATE if called out of sequence
+     */
+    setBand(uint32_t low, uint32_t high) generates (Result result);
+
+    /**
+     * Enable or disable RDS.
+     * @param onOff Turn on or turn off RDS.
+     * @return result Operation completion status: OK in case of success,
+     *                INVALID_ARGUMENTS if configuration requested is invalid,
+     *                FAILED if failed for unknown reason
+     */
+    setRdsOnOff(uint32_t onOff) generates (Result result);
+
+    /**
+     * Get RDS status code.
+     * @return result Operation completion status: OK in case of success,
+     *                FAILED if failed for unknown reason
+     * @return status current RDS status code.
+     */
+    getRdsStatus() generates (Result result, uint32_t status);
+
+    /**
+     * Get radio text data.
+     * @return result Operation completion status: OK in case of success,
+     *                FAILED if failed for unknown reason
+     * @return rt current radio text.
+     */
+    getRadioText() generates (Result result, string rt);
+
+    /**
+     * Get programe services.
+     * @return result Operation completion status: OK in case of success,
+     *                FAILED if failed for unknown reason
+     * @return services current programe services.
+     */
+    getPrgmServices() generates (Result result, string services);
+
+    /**
+     * Get programe Id.
+     * @return result Operation completion status: OK in case of success,
+     *                FAILED if failed for unknown reason
+     * @return id current programe id.
+     */
+    getPrgmId() generates (Result result, int32_t id);
+
+    /**
+     * Get programe type.
+     * @return result Operation completion status: OK in case of success,
+     *                FAILED if failed for unknown reason
+     * @return type current programe type.
+     */
+    getPrgmType() generates (Result result, int32_t type);
+
+    /**
+     * Get AF info list.
+     * @return result Operation completion status: OK in case of success,
+     *                FAILED if failed for unknown reason
+     * @return afList AF info list.
+     */
+    getAfInfo() generates (Result result, int32_t[50] afList);
+};

@@ -1,0 +1,83 @@
+extern char tc00_frame_0_rsc_apli_c_frame_00[];
+#define tc00_frame_0_rsc_apli_c_frame_00_size 8
+extern char tc00_frame_0_rsc_apli_p_frame_00[];
+#define tc00_frame_0_rsc_apli_p_frame_00_size 8
+extern char tc00_frame_0_rsc_bvo_frame_00_00[];
+#define tc00_frame_0_rsc_bvo_frame_00_00_size 90112
+extern char tc00_frame_0_rsc_bvo_frame_00_01[];
+#define tc00_frame_0_rsc_bvo_frame_00_01_size 90112
+extern char tc00_frame_0_rsc_bvo_frame_00_02[];
+#define tc00_frame_0_rsc_bvo_frame_00_02_size 90112
+extern char tc00_frame_0_rsc_bvo_frame_00_03[];
+#define tc00_frame_0_rsc_bvo_frame_00_03_size 90112
+extern char tc00_frame_0_rsc_bvo_frame_00_04[];
+#define tc00_frame_0_rsc_bvo_frame_00_04_size 90112
+extern char tc00_frame_0_rsc_bvo_frame_00_05[];
+#define tc00_frame_0_rsc_bvo_frame_00_05_size 90112
+extern char tc00_frame_0_rsc_bvo_frame_00_06[];
+#define tc00_frame_0_rsc_bvo_frame_00_06_size 90112
+extern char tc00_frame_0_rsc_bvo_frame_00_07[];
+#define tc00_frame_0_rsc_bvo_frame_00_07_size 90112
+extern char tc00_frame_0_rsc_bvo_frame_00_08[];
+#define tc00_frame_0_rsc_bvo_frame_00_08_size 90112
+extern char tc00_frame_0_rsc_bvo_frame_00_09[];
+#define tc00_frame_0_rsc_bvo_frame_00_09_size 90112
+extern char tc00_frame_0_rsc_bvo_frame_00_10[];
+#define tc00_frame_0_rsc_bvo_frame_00_10_size 90112
+extern char tc00_frame_0_rsc_bvo_frame_00_11[];
+#define tc00_frame_0_rsc_bvo_frame_00_11_size 90112
+extern char tc00_frame_0_rsc_bvo_frame_00_12[];
+#define tc00_frame_0_rsc_bvo_frame_00_12_size 90112
+extern char tc00_frame_0_rsc_bvo_frame_00_13[];
+#define tc00_frame_0_rsc_bvo_frame_00_13_size 90112
+extern char tc00_frame_0_rsc_bvo_frame_00_14[];
+#define tc00_frame_0_rsc_bvo_frame_00_14_size 90112
+extern char tc00_frame_0_rsc_imgi_c_frame_00[];
+#define tc00_frame_0_rsc_imgi_c_frame_00_size 163520
+extern char tc00_frame_0_rsc_imgi_p_frame_00[];
+#define tc00_frame_0_rsc_imgi_p_frame_00_size 171696
+extern char tc00_frame_0_rsc_mvi_frame_00[];
+#define tc00_frame_0_rsc_mvi_frame_00_size 86016
+extern char tc00_frame_0_rsc_mvo_frame_00_00[];
+#define tc00_frame_0_rsc_mvo_frame_00_00_size 131072
+extern char tc00_frame_0_rsc_mvo_frame_00_01[];
+#define tc00_frame_0_rsc_mvo_frame_00_01_size 131072
+extern char tc00_frame_0_rsc_mvo_frame_00_02[];
+#define tc00_frame_0_rsc_mvo_frame_00_02_size 131072
+extern char tc00_frame_0_rsc_mvo_frame_00_03[];
+#define tc00_frame_0_rsc_mvo_frame_00_03_size 131072
+extern char tc00_frame_0_rsc_mvo_frame_00_04[];
+#define tc00_frame_0_rsc_mvo_frame_00_04_size 131072
+extern char tc00_frame_0_rsc_mvo_frame_00_05[];
+#define tc00_frame_0_rsc_mvo_frame_00_05_size 131072
+extern char tc00_frame_0_rsc_mvo_frame_00_06[];
+#define tc00_frame_0_rsc_mvo_frame_00_06_size 131072
+extern char tc00_frame_0_rsc_mvo_frame_00_07[];
+#define tc00_frame_0_rsc_mvo_frame_00_07_size 131072
+extern char tc00_frame_0_rsc_mvo_frame_00_08[];
+#define tc00_frame_0_rsc_mvo_frame_00_08_size 131072
+extern char tc00_frame_0_rsc_mvo_frame_00_09[];
+#define tc00_frame_0_rsc_mvo_frame_00_09_size 131072
+extern char tc00_frame_0_rsc_mvo_frame_00_10[];
+#define tc00_frame_0_rsc_mvo_frame_00_10_size 131072
+extern char tc00_frame_0_rsc_mvo_frame_00_11[];
+#define tc00_frame_0_rsc_mvo_frame_00_11_size 131072
+extern char tc00_frame_0_rsc_mvo_frame_00_12[];
+#define tc00_frame_0_rsc_mvo_frame_00_12_size 131072
+extern char tc00_frame_0_rsc_mvo_frame_00_13[];
+#define tc00_frame_0_rsc_mvo_frame_00_13_size 131072
+extern char tc00_frame_0_rsc_mvo_frame_00_14[];
+#define tc00_frame_0_rsc_mvo_frame_00_14_size 131072
+/*
+extern void getframe_0GoldPointer(
+	unsigned long* golden_dpe_dvo_l_frame,
+	unsigned long* golden_dpe_dvo_r_frame,
+	unsigned long* golden_dpe_confo_l_frame,
+	unsigned long* golden_dpe_confo_r_frame,
+	unsigned long* golden_dpe_respo_l_frame,
+	unsigned long* golden_dpe_respo_r_frame,
+	unsigned long* golden_dpe_wmf_dpo_frame_0,
+	unsigned long* golden_dpe_wmf_dpo_frame_1,
+	unsigned long* golden_dpe_wmf_dpo_frame_2
+);
+*/

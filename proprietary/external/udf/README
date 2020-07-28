@@ -1,0 +1,13 @@
+init.preload.eng.rc config libudf.so LD_PRELOAD mechanism, only enable it on eng load;
+
+
+libudf.so: 
+user space debug framework library which includes MTK memory/fdleak/ubrd debug feature, 
+it load through LD_PRELOAD mechanism, and rehook libc system call for add intermediate debug;
+
+
+Terminology:
+udf - user space debug framework
+ubrd - user space backtrace record
+
+20141107

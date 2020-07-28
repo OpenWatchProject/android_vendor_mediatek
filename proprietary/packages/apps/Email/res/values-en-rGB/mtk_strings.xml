@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    Copyright Statement:
+
+    This software/firmware and related documentation ("MediaTek Software") are
+    protected under relevant copyright laws. The information contained herein
+    is confidential and proprietary to MediaTek Inc. and/or its licensors.
+    Without the prior written permission of MediaTek inc. and/or its licensors,
+    any reproduction, modification, use or disclosure of MediaTek Software,
+    and information contained herein, in whole or in part, shall be strictly prohibited.
+
+    MediaTek Inc. (C) 2012. All rights reserved.
+
+    BY OPENING THIS FILE, RECEIVER HEREBY UNEQUIVOCALLY ACKNOWLEDGES AND AGREES
+    THAT THE SOFTWARE/FIRMWARE AND ITS DOCUMENTATIONS ("MEDIATEK SOFTWARE")
+    RECEIVED FROM MEDIATEK AND/OR ITS REPRESENTATIVES ARE PROVIDED TO RECEIVER ON
+    AN "AS-IS" BASIS ONLY. MEDIATEK EXPRESSLY DISCLAIMS ANY AND ALL WARRANTIES,
+    EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF
+    MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE OR NONINFRINGEMENT.
+    NEITHER DOES MEDIATEK PROVIDE ANY WARRANTY WHATSOEVER WITH RESPECT TO THE
+    SOFTWARE OF ANY THIRD PARTY WHICH MAY BE USED BY, INCORPORATED IN, OR
+    SUPPLIED WITH THE MEDIATEK SOFTWARE, AND RECEIVER AGREES TO LOOK ONLY TO SUCH
+    THIRD PARTY FOR ANY WARRANTY CLAIM RELATING THERETO. RECEIVER EXPRESSLY ACKNOWLEDGES
+    THAT IT IS RECEIVER'S SOLE RESPONSIBILITY TO OBTAIN FROM ANY THIRD PARTY ALL PROPER LICENSES
+    CONTAINED IN MEDIATEK SOFTWARE. MEDIATEK SHALL ALSO NOT BE RESPONSIBLE FOR ANY MEDIATEK
+    SOFTWARE RELEASES MADE TO RECEIVER'S SPECIFICATION OR TO CONFORM TO A PARTICULAR
+    STANDARD OR OPEN FORUM. RECEIVER'S SOLE AND EXCLUSIVE REMEDY AND MEDIATEK'S ENTIRE AND
+    CUMULATIVE LIABILITY WITH RESPECT TO THE MEDIATEK SOFTWARE RELEASED HEREUNDER WILL BE,
+    AT MEDIATEK'S OPTION, TO REVISE OR REPLACE THE MEDIATEK SOFTWARE AT ISSUE,
+    OR REFUND ANY SOFTWARE LICENSE FEES OR SERVICE CHARGE PAID BY RECEIVER TO
+    MEDIATEK FOR SUCH MEDIATEK SOFTWARE AT ISSUE.
+
+    The following software/firmware and/or related documentation ("MediaTek Software")
+    have been modified by MediaTek Inc. All revisions are subject to any receiver's
+    applicable license agreements with MediaTek Inc.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="not_add_more_text">"Cannot add more text"</string>
+    <string name="attach_image">Photo</string>
+    <string name="attach_video">"Video"</string>
+    <string name="attach_sound">"Music"</string>
+    <string name="attach_contact">"Contacts"</string> 
+    <string name="attach_file">File</string> 
+    <string name="attach_calender">"Calendar"</string>    
+    <string name="attach_error_occurred">No application supports this kind of attachment.</string>  
+    <string name="low_storage_service_stop">Email service stopped, storage running low.</string>
+    <string name="low_storage_hint_delete_mail">Delete unnecessary emails or applications to reclaim storage.</string>
+    <string name="low_storage_service_start">Storage now sufficient, Email service has been restarted.</string>
+    <string name="low_storage_attachment_cannot_download">Cannot download attachment, storage space too low.</string>
+    <string name="low_storage_attachment_cannot_view">Cannot view attachment, storage space too low.</string>
+    <string name="download_remaining">Download Remaining</string>
+    <string name="downloading_remaining">Loading ...</string>
+    <string name="unable_to_connect">Unable to connect</string>
+    <string name="need_connection_prompt">"A network connection is needed to use this application. Turn on the mobile network or WiFi in Settings."</string>
+    <string name="need_wifi_connection_prompt">"You need a network connection to use this application. Please turn on WiFi in Settings."</string>
+    <string name="connection_settings">"Settings"</string>
+    <string name="too_many_attachments">Cannot add too many attachments. Only the first <xliff:g id="currentCount">%1$d</xliff:g> will be added.</string>
+    <string name="not_add_more_attachments">Cannot add more files. The limit is <xliff:g id="maxLimit">%1$d</xliff:g> attachments.</string>
+    <string name="attachment_overflow">Attachment overflow</string>
+    <string name="cannot_add_this_attachment">Cannot add this attachment.</string>
+    <string name="loading_attachment">Loading attachments...</string>
+    <string name="send_attachment_fail">Failed to send attachment.</string>
+    <string name="open_message_parsing">Parsing the message...</string>
+    <string name="open_message_update_db">Updating the database...</string>
+    <string name="open_message_update_ui">Loading the message...</string>
+    <string name="please_wait">Action ongoing. Please wait...</string>
+    <string name="delete_message_dialog_title">Delete Message</string>
+    <string name="delete_message_confirm">"Delete this message"</string>
+    <string name="attachment_info_deleted">"This attachment cannot be saved or opened, it may have been deleted."</string>
+    <string name="send_failed_ticker"><xliff:g id="account_name">%s</xliff:g> failed to send email.</string>
+    <string name="send_failed_title">Failed to send email</string>
+    <string name="always_bcc_myself">Always bcc myself</string>
+    <string name="always_bcc_myself_summary">Always bcc myself for compose, reply and forward</string>
+    <string name="remote_search_failed">Server search failed!</string>
+    <string name="searching_on_server">Search on Server</string>
+    <string name="searching_on_server_title">Search \"<xliff:g id="account_name">%s</xliff:g>\" on server</string>
+    <string name="searching_all_fields_on_sever">Search all fields on Server</string>
+    <string name="search_field_subject">"Subject"</string>
+    <string name="search_field_receiver">Receiver</string>
+    <string name="search_field_sender">Sender</string>
+    <string name="search_field_body">Body</string>
+    <string name="search_field_all">"All"</string>
+    <string name="select_all">"Select all"</string>
+    <string name="deselect_all">"Deselect all"</string>
+    <string name="vip_settings">VIP SETTINGS</string>
+    <string name="vip_members">VIP members</string>
+    <string name="vip_notifications">VIP notifications</string>
+    <string name="vip_settings_notify_summary">Notify in System bar when VIP email arrives</string>
+    <string name="vip_members_count">VIP members (<xliff:g example="2">%1$d</xliff:g>)</string>
+    <string name="vip_remove_title">Remove from VIP</string>
+    <string name="vip_choose_contact">Add to VIP</string>
+    <string name="vip_remove_prompt"><xliff:g example="2">%1$s</xliff:g> will be removed from VIP members.</string>
+    <string name="not_add_duplicate_vip">The duplicate contact will not be added to the VIP list.</string>
+    <string name="can_not_add_vip_over_99">Cannot add more than 99 VIP members.</string>
+    <string name="vip_settings_ringtone">"Choose ringtone"</string>
+    <string name="vip_settings_vibrate_label">"Vibrate"</string>
+    <string name="vip_settings_vibrate_summary">Also vibrate when VIP email arrives</string>
+    <string name="account_setup_options_mail_check_frequency_smartpush">Smart push</string>
+    <string name="smart_push_alert_dialog_title">Power saving option</string>
+    <string name="smart_push_alert_dialog_message"> checks for new email less frequently to save power. Using this mode, email will be received more regularly.\n\nYou can change this in settings at any time.</string>
+    <string name="global_search_label">"Email"</string>
+    <string name="global_search_hint">"Search emails"</string>
+    <string name="global_search_description">Senders, subjects and bodies</string>
+    <string name="account_settings_oof_label">Out of the office</string>
+    <string name="account_settings_oof_unchecked_summary">I am in the office</string>
+    <string name="account_settings_oof_checked_summary">I am out of the office</string>
+    <string name="account_settings_oof_from_label">"From"</string>
+    <string name="account_settings_oof_to_label">"To"</string>
+    <string name="account_settings_oof_auto_reply_label">Out of office auto-replies</string>
+    <string name="account_settings_oof_auto_reply_summary">Send automatic reply message to each sender</string>
+    <string name="account_settings_oof_external_server_label">Send auto-replies to external server</string>
+    <string name="account_settings_oof_get_status">Getting status from server</string>
+    <string name="account_settings_oof_save_sets">Saving settings to server</string>
+    <string name="account_settings_oof_get_status_fail">Cannot get status</string>
+    <string name="account_settings_oof_get_status_fail_summary">Cannot get status from server. Please try again later.</string>
+    <string name="account_settings_oof_cancel">Without saving?</string>
+    <string name="account_settings_oof_cancel_summary">All the changes will be discarded.</string>
+    <string name="account_settings_oof_save_fail">Cannot save</string>
+    <string name="account_settings_oof_save_fail_summary">Cannot save settings to the server. The server may be unavailable, your auto-replies might have exceeded the server limit, or your device date and time may be wrong.</string>
+    <string name="account_settings_oof_time_alert">It should be later than the current time.</string>
+    <string name="no_application_response">"Application has been disabled"</string>
+    <string name="extension_choose_provider_title">Choose a mail provider</string>
+    <string name="not_add_more_recipients">Cannot add more than <xliff:g id="maxLimit">%1$d</xliff:g> at one time.</string>
+    <string name="message_view_status_sdcard_not_enough">No enough space to save attachment to SD card.</string>
+    <string name="vip_emails_from_accounts_fmt">Emails from <xliff:g id="vipAccountCount">%d</xliff:g> accounts</string>
+    <string name="notification_multiple_new_vip_messages_fmt"><xliff:g example="2">%1$d</xliff:g> new VIP emails</string>
+    <string name="message_body_too_large">Message too big, cannot load full content.</string>
+    <string name="cannot_move_multiple_mailbox_toast">Some emails are being moved, please try again later.</string>
+    <string name="certificate_request_ssl">Client certificate must use security connection.</string>
+    <string name="auto_clear_cache_title">Clear cache automatically</string>
+    <string name="auto_clear_cache_description">Clear locally cached attachments regularly</string>
+    <string name="edit_quoted_dialog_title">Maximum characters</string>
+    <string name="edit_quoted_not_append_all">Maximum number of characters reached. Some old content will be lost, continue?</string>
+   <string name="single_message_view_attachment_saved">Attachment saved to <xliff:g id="filename">%s</xliff:g></string>
+    <string name="choose_attachment_dialog_title">"Choose attachment"</string>
+    <string name="message_compose_error_invalid_email">"Some email addresses are invalid."</string>
+</resources>

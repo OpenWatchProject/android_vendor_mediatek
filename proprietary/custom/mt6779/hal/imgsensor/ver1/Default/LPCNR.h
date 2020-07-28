@@ -1,0 +1,21 @@
+
+const ISP_NVRAM_LPCNR_T LPCNR_%04d = {
+    .nr_w1     ={.bits ={.LPCNR_NR_W00=253, .LPCNR_NR_W01=178, .LPCNR_NR_W02=125, .LPCNR_NR_W03=88}},
+    .nr_w2     ={.bits ={.LPCNR_NR_W04=61, .LPCNR_NR_W05=43, .LPCNR_NR_W06=31, .LPCNR_NR_W07=22}},
+    .nr_w3     ={.bits ={.LPCNR_NR_W08=15, .LPCNR_NR_W09=11, .LPCNR_NR_W10=7, .LPCNR_NR_W11=5}},
+    .nr_w4     ={.bits ={.LPCNR_NR_W12=4, .LPCNR_NR_W13=3, .LPCNR_NR_W14=2, .LPCNR_NR_W15=1}},
+    .nr_w5     ={.bits ={.LPCNR_NR_W16=1, .LPCNR_NR_W17=1, .LPCNR_NR_W18=0, .LPCNR_NR_W19=0}},
+    .nr_w6     ={.bits ={.LPCNR_NR_W20=0, .LPCNR_NR_W21=0, .LPCNR_NR_W22=0, .LPCNR_NR_W23=0}},
+    .nr_w7     ={.bits ={.LPCNR_NR_W24=0, .LPCNR_NR_W25=0, .LPCNR_NR_W26=0, .LPCNR_NR_W27=0}},
+    .nr_w8     ={.bits ={.LPCNR_NR_W28=0, .LPCNR_NR_W29=0, .LPCNR_NR_W30=0, .LPCNR_NR_W31=0}},
+    .nr_w9     ={.bits ={.LPCNR_NR_W32=0, .LPCNR_NR_W33=0, .LPCNR_NR_W34=0, .LPCNR_NR_W35=0}},
+    .nr_w10    ={.bits ={.LPCNR_NR_W36=0, .LPCNR_NR_W37=0, .LPCNR_NR_W38=0, .LPCNR_NR_W39=0}},
+    .nr_w11    ={.bits ={.LPCNR_NR_W40=0, .LPCNR_NR_W41=0, .LPCNR_NR_W42=0, .LPCNR_NR_W43=0}},
+    .nr_w12    ={.bits ={.LPCNR_NR_W44=0, .LPCNR_NR_W45=0, .LPCNR_NR_W46=0, .LPCNR_NR_W47=0}},
+    .nr_w13    ={.bits ={.LPCNR_NR_W48=0, .LPCNR_NR_W49=0, .LPCNR_NR_W50=0, .LPCNR_NR_W51=0}},
+    .nr_w14    ={.bits ={.LPCNR_NR_W52=0, .LPCNR_NR_W53=0, .rsv_16=0}},
+    .sm        ={.bits ={.LPCNR_NR_SD=55552, .LPCNR_SM_TH=16, .rsv_21=0}},
+    .bld       ={.bits ={.LPCNR_BLD_TH=5, .LPCNR_BLD_SP=6, .rsv_13=0, .LPCNR_BLD_W0=0, .rsv_23=0, .LPCNR_BLD_W1=32, .rsv_31=0}},
+    .ntrl_y    ={.bits ={.LPCNR_NTRL_Y_TH0=2, .LPCNR_NTRL_Y_TH1=251, .LPCNR_NTRL_Y_SP0=4, .LPCNR_NTRL_Y_SP1=4, .rsv_24=0}},
+    .ntrl_c    ={.bits ={.LPCNR_NTRL_C_TH=4, .LPCNR_NTRL_C_SP=4, .rsv_12=0}},
+};

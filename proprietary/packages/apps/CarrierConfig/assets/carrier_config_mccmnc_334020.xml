@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<carrier_config_list>
+    <carrier_config>
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxMessageSize" value="1048576" />
+        <int name="maxImageWidth" value="2592" />
+        <!-- M: [General Operator] Data Framework - CC 33: Telcel @{ -->
+        <string-array name="carrier_data_call_permanent_failure_strings" num="17">
+            <item value="OPERATOR_BARRED" />
+            <item value="MISSING_UNKNOWN_APN" />
+            <item value="UNKNOWN_PDP_ADDRESS_TYPE" />
+            <item value="USER_AUTHENTICATION" />
+            <item value="ACTIVATION_REJECT_GGSN" />
+            <item value="SERVICE_OPTION_NOT_SUPPORTED" />
+            <item value="SERVICE_OPTION_NOT_SUBSCRIBED" />
+            <item value="NSAPI_IN_USE" />
+            <item value="ONLY_IPV4_ALLOWED" />
+            <item value="ONLY_IPV6_ALLOWED" />
+            <item value="PROTOCOL_ERRORS" />
+            <item value="RADIO_POWER_OFF" />
+            <item value="TETHERED_CALL_ACTIVE" />
+            <item value="RADIO_NOT_AVAILABLE" />
+            <item value="UNACCEPTABLE_NETWORK_PARAMETER" />
+            <item value="SIGNAL_LOST" />
+            <item value="MULTI_CONN_TO_SAME_PDN_NOT_ALLOWED" />
+        </string-array>
+        <!-- M: [General Operator] Data Framework - CC 33 : Telcel @} -->
+    </carrier_config>
+</carrier_config_list>

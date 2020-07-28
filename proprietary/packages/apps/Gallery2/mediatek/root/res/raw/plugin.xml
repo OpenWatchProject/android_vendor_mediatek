@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    id="Gallery2Root"
+    name="Gallery2Root"
+    version="1"
+    xmlns="http://www.plugin.com"
+    xsi:schemaLocation="http://www.plugin.com ../../../plugin/assets/plugin.xsd" >
+
+    <extension-point
+        id="IActivityCallback"
+        name="Gallery activity life cycle extension point"
+        class="com.mediatek.gallerybasic.base.IActivityCallback" >
+    </extension-point>
+    <extension-point
+        id="IActionBar"
+        name="Gallery single image view action bar/menu extension point"
+        class="com.mediatek.gallerybasic.base.IActionBar" >
+    </extension-point>
+    <extension-point
+        id="IActionMode"
+        name="Gallery thumbnail image view action mode extension point"
+        class="com.mediatek.gallerybasic.base.IActionMode" >
+    </extension-point>
+    <extension-point
+        id="IDecodeOptionsProcessor"
+        name="Gallery decode options extension point"
+        class="com.mediatek.gallerybasic.base.IDecodeOptionsProcessor" >
+    </extension-point>
+    <extension-point
+        id="IFieldDefinition"
+        name="Gallery data field extension point"
+        class="com.mediatek.gallerybasic.base.IFieldDefinition" >
+    </extension-point>
+    <extension-point
+        id="IFilter"
+        name="Gallery data filter extension point"
+        class="com.mediatek.gallerybasic.base.IFilter" >
+    </extension-point>
+    <extension-point
+        id="IFilterShowImageLoader"
+        name="Filter show load image extension point"
+        class="com.mediatek.gallerybasic.base.IFilterShowImageLoader" >
+    </extension-point>
+    <extension-point
+        id="IFilterShowImageSaver"
+        name="Filter show save image extension point"
+        class="com.mediatek.gallerybasic.base.IFilterShowImageSaver" >
+    </extension-point>
+    <extension-point
+        id="ISlideshowRenderer"
+        name="Gallery slide show view render extension point"
+        class="com.mediatek.gallerybasic.base.ISlideshowRenderer" >
+    </extension-point>
+    <extension-point
+        id="IAlbumSlotRenderer"
+        name="Gallery thumbnail image view render extension point"
+        class="com.mediatek.gallerybasic.base.IAlbumSlotRenderer" >
+    </extension-point>
+    <extension-point
+        id="MediaMember"
+        name="Gallery media format(Player/Layer/Generator/ExtItem) extension point"
+        class="com.mediatek.gallerybasic.base.MediaMember" >
+    </extension-point>
+    <extension-point
+        id="IShareTransform"
+        name="Gallery share media extension point"
+        class="com.mediatek.gallerybasic.base.IShareTransform" >
+    </extension-point>
+    <extension-point
+        id="IBottomControl"
+        name="Gallery bottom control extension point in full image view"
+        class="com.mediatek.gallerybasic.base.IBottomControl" >
+    </extension-point>
+    <extension-point
+        id="IPhotoRenderer"
+        name="Gallery single image view render extension point"
+        class="com.mediatek.gallerybasic.base.IPhotoRenderer" >
+    </extension-point>
+    <extension-point
+        id="IDataParserCallback"
+        name="Media data parser extension point"
+        class="com.mediatek.gallerybasic.base.IDataParserCallback" >
+    </extension-point>
+</plugin>

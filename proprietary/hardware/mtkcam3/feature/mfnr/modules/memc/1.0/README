@@ -1,0 +1,90 @@
+MFNR core module: MEMC v1.0
+
+
+WHAT IT DOES?
+=============
+
+ME (Motion Estimation) and MC (Motion Compensation) are two common algorithm
+for the kind of motion-based algorithm, such as H.264.
+
+This module is to control MEMC algorithm to preform MEMC and makes all images
+are the same as the reference frames. For example, we have 6 continuous images,
+but there's some local motion or global motion. We select the one of these
+frames as the reference frame, using MEMC algorithm to generate the new 5 images
+which is alost the same as the reference frame (it's the aim, lol).
+
+
+HOW IT WAS BUILT?
+==================
+
+You cannot partial build this module only, but to build libmfllcore indeed.
+
+libmfllcore partial build path:
+
+    feature/mfnr/Android.mk
+
+Library dependency:
+  AOSP:
+  - libutils.so
+  - libcutils.so
+  - libstdc++.so
+
+  MTK:
+  - libmtkcam_stdutils.so
+  - libcamalgo.so
+  - libmfllnvram.a
+  - libmfllexifinfo.a
+
+
+HOW TO USE IT?
+==============
+
+Create an IMfllMemc instance by invoking
+
+    IMfllMemc::createInstance();
+
+After created, caller needs to set the information to IMfllMemc:
+
+    setMfllCore                         // To update ExifInfo
+    setMotionVector                     // GMV that MEMC needs
+    setMotionEstimationResolution       // Set the resolution of image to ME
+    setMotionCompensationResolution     // Set the resolution of image to MC
+
+And then caller can init IMfllMemc by invoking method:
+
+    init(sp<IMfllNvram> &nvramProvider);
+
+where nvramProvider is responsibility to provide NVRAM information.
+IMfllMemc needs a working buffer for MEMC algorithm, to get buffer size caller
+could invoke mthod:
+
+    getAlgorithmWorkBufferSize();
+
+And gives image buffers pointers and perform ME and MC by methods:
+
+    motionEstimation();
+    motionCompensation();
+
+Notice that, after ME done, caller should check if it's necessary to perform MC
+because the motion may be too large to have a good image. To check if it's
+necessary to perform MC by invoking method:
+
+    isIgnoredMotionCompensation()
+
+
+[Revisions]
+^^^^^^^^^^^
+- v1.0
+  The first version
+
+
+* This module will be compiled as a static libary and be used by libmfllcore,
+  which means you can only use the interfaces defined in:
+
+      feature/include/common/mfnr/IMfllMemc.h
+
+  by linking shared libary
+
+      libmfllcore.so
+
+*** All the source code of this program were written by MediaTek co. ***

@@ -1,0 +1,140 @@
+######### DUT (Device Under Test) Information #########################
+
+#### Wi-Fi Test Suite Control Agent Support ########
+# 1-If DUT has WTS Control Agent support. 0-If not supported.
+
+
+WTS_ControlAgent_Support!1!
+
+#Any other notes about DUT - Optional
+DUT_Notes!-!
+
+#DUT Type - source/P-Sink/S-Sink
+WFD_DUTTYPE!source!
+
+# DUT Band : ABG or BG or B (B only) or ABGN or GN or AN
+DUTBand!ABGN!
+
+# WPS Methods Support. 0-Not Supported 1-Supported
+
+WPS_PushButton!1!
+WPS_Display!1!
+WPS_Keypad!1!
+WPS_Label!0!
+
+# PLEASE SELECT THE WFD FEATURES SUPPORTED BY DUT #
+############### 0-Not Supported 1-Supported ###########
+
+#DUT support for 5GHz
+WFD_5GHz_Support!1!
+
+#DUT support for TDLS
+WFD_TDLS_Support!0!
+
+#DUT support for Preferred Connectivity for WFD Connection in OOB mode
+#TDLS - 1/ P2P - 0
+WFD_PC_Scheme!0!
+
+#DUT support for Provision Discovery
+#WFD_Prov_Discovery_Support!1!
+
+#DUT support for P2P Service Discovery
+#WFD_Service_Discovery_Support!1!
+
+#DUT support for Persistent WFD Group
+WFD_Persistent_Support!1!
+
+#DUT support for Concurrent WLANs
+WFD_Concurrency_Support!0!
+
+#DUT support for Frame Skipping
+WFD_Frame_Skipping_Support!0!
+
+#DUT support for Frame Recovery - VALID ONLY FOR SINK UNDER TEST DEVICES
+WFD_Frame_Recovery_Support!1!
+
+#DUT support for Preferred Display Mode
+#WFD_Preferred_Display_Mode_Support!1!
+
+#DUT support for I2C
+WFD_I2C_Support!0!
+
+#DUT support for EDID - VALID ONLY FOR SINK UNDER TEST DEVICES
+WFD_EDID_Support!1!
+
+#DUT support for Source Sink Standby
+WFD_Standby_Support!0!
+
+#DUT support for Optional Video Mode
+WFD_Optional_Video_Mode_Support!0!
+
+#########UIBC Capabilities###########START################
+
+#DUT support for UIBC-Generic
+WFD_UIBC_Gen_Support!0!
+
+#DUT support for UIBC-HID
+WFD_UIBC_HID_Support!0!
+
+#DUT Support for Generic UIBC Mouse 
+WFD_UIBCMouse!0!
+
+#DUT Support for Generic UIBC Keyboard 
+WFD_UIBCKeyboard!0!
+
+#DUT Support for UIBC HID USB Mouse
+WFD_UIBCUSBMouse!0!
+
+#DUT Support for UIBC HID USB Keyboard 
+WFD_UIBCUSBKeyboard!0!
+
+#DUT support for inclusion of WFD UIBC-Generic capability in M4 request message
+WFD_UIBC_Gen_M4Req!0!
+
+#DUT support for inclusion of WFD UIBC-HID capability in M4 request message
+WFD_UIBC_HID_M4Req!0!
+
+#DUT support for UIBC in OOB mode
+WFD_UIBC_OOB!0!
+
+#DUT support for sending automatic M14 and/or M15 RTSP requests
+auto_M14Req!0!
+auto_M15Req!0!
+
+#########UIBC Capabilities###########END################
+
+#########HDCP Capabilities###########START##############
+#DUT support for HDCP
+WFD_HDCP_Support!0!
+
+#HDCP version that DUT supports - 0 - HDCPv2.0, 1 - HDCPv2.1, 2 - HDCPv2.2
+WFD_HDCP_Version!2!
+
+#DUT Support for Video Only Encryption - HDCP
+WFD_VideoOnlyEncryption!1!
+
+#DUT Support for Video and Audio Encryption - HDCP
+WFD_VideoAudioEncryption!0!
+
+#########HDCP Capabilities###########END################
+
+#########AV Format Change###########START###############
+
+#DUT support for AV format change
+WFD_AV_Format_Change_Support!0!
+
+#DUT support for Video Format-1 - This parameter will always be set to Mandatory Video Format
+#***This value can be modified only for TEST CASE 6.1.23b***
+WFD_VideoFormat1!CEA-0!
+
+#DUT support for Video Format-2 ?Should be set to Video Format with FrameRate=60, Resolution= Different from CEA-0
+WFD_VideoFormat2!CEA-6!
+
+#DUT support for Video Format-3 - This parameter should be set to 0 if Dynamic Frame Rate Change is not Supported
+#FrameRate= Other than 60fps, Resolution = Same as Video Format 2
+WFD_VideoFormat3!CEA-5!
+
+#########AV Format Change###########END################
+
+#DUT support for Optional Video formats - Provide the list here - to be tested
+WFD_OPTIONAL_VIDEO_LIST!CEA-0 HH-1 HH-0!

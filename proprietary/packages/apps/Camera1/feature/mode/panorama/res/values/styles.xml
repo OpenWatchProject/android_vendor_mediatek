@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android" >
+    <style name="PanoPreviewLayout"><!--  parent="ScreenOnMargin" -->
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:visibility">gone</item>
+    </style>
+    <style name="IndicatorUp">
+        <item name="android:layout_marginTop">@dimen/pano_indicator_margin_long</item>
+    </style>
+    <style name="IndicatorBottom">
+        <item name="android:layout_marginBottom">@dimen/pano_indicator_margin_long</item>
+    </style>
+    <style name="IndicatorLeft">
+        <item name="android:layout_marginLeft">@dimen/pano_indicator_margin_short</item>
+    </style>
+    <style name="IndicatorRight">
+        <item name="android:layout_marginRight">@dimen/pano_indicator_margin_short</item>
+    </style>
+</resources>

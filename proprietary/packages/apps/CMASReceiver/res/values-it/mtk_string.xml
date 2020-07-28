@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+ * Copyright (C) 2007-2008 Esmertec AG.
+ * Copyright (C) 2007-2008 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+--><resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+   <string name="alerts">Avvisi</string>
+    <string name="select_all">"Seleziona tutti"</string>
+    <string name="unselect_all">"Deseleziona tutto"</string>
+    <string name="delete">"Canc"</string>
+    <string name="select_cellbroadcasts">Seleziona avviso emergenza</string>
+    <plurals name="message_view_selected_message_count">
+        <item quantity="one"><xliff:g id="message_count" example="1">%d</xliff:g> selezionato</item>
+        <item quantity="other"><xliff:g id="message_count" example="9">%d</xliff:g> selezionati</item>
+    </plurals>
+    <plurals name="confirm_delete_broadcast">
+        <item quantity="one">1 messaggio d’avviso emergenza selezionato sarà eliminato</item>
+        <item quantity="other"><xliff:g id="number" example="15">%1$s</xliff:g> messaggi d’avviso emergenza selezionati saranno eliminati</item>
+    </plurals>
+    <string name="enable_cmas_presidential_threat_alerts_title">Mostra avviso di pericolo</string>
+    <string name="enable_cmas_presidential_threat_alerts_summary">Visualizza livelli di avviso di pericolo</string>
+    <string name="enable_cmas_imminent_threat_alerts_title">Avviso Imminente</string>
+    <string name="enable_cmas_imminent_threat_alerts_summary">Visualizza avvisi di minacce imminenti di morte o distruzione</string>
+    <string name="cmas_preview_alert_tone_title">Anteprima suono avviso</string>
+    <string name="cmas_preview_alert_tone_summary">Anteprima del suono dell’avviso</string>
+    <string name="cmas_change_settings">Si è certi di volere modificare le impostazioni?</string>
+    <string name="cmas_disable_cmas">Se si disabilita il cell broadcast non sarà ricevuto alcun avviso.</string>
+    <string name="cmas_enable_cmas_failed">Apertura non riuscita.</string>
+    <string name="enable_repeat_alert_title">Ripeti allarme</string>
+    <string name="enable_repeat_alert_summary">"Ricorda in modo intermittente l'avviso non letto"</string>
+    <string name="enable_all_alert_title">Tutti gli avvisi attivi</string>
+    <string name="enable_all_imminent_alerts_title">Tutti i messaggi di minaccia imminente</string>
+    <string name="enable_cell_broadcast_title">Avvisi emergenza</string>
+    <string name="alert_sound_volume">Volume suono d’avviso</string>
+    <string name="alert_volume_summary">Regola volume avviso</string>
+</resources>

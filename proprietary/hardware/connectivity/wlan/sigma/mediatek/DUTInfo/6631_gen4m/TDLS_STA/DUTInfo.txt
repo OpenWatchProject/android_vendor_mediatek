@@ -1,0 +1,22 @@
+######### DUT (Device Under Test) Information #########################
+
+#### Wi-Fi Test Suite Control Agent Support ########
+# 1-If DUT has Wi-Fi Test Suite Control Agent support. 0-If not supported.
+
+WTS_ControlAgent_Support!1!
+
+
+# Ability to send Discovery Request frames : 1 - if supported, 0 - if not supported
+DiscoveryRequest_Support!1!
+
+# DUT Band : ABG or BG or B (B only) or ABGN or GN
+DUTBand!ABGN!
+
+#Peer UAPSD Buffer STA sleep support : 1 - if supported, 0 - if not supported
+PUAPSDSleepSTA_Support!0!
+
+# WEP Support 0-No 1-Yes
+WEP!1!
+
+# WPA Support 0-No 1-Yes
+WPA!1!

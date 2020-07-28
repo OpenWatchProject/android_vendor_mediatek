@@ -1,0 +1,80 @@
+/*
+ * Copyright (C) 2019 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+
+package vendor.mediatek.hardware.camera.postproc@1.0;
+
+struct ChromaNRParam {
+    /* open id */
+    int32_t open_id;
+
+    /* open id */
+    int32_t current_iso;
+
+    /* src width */
+    int32_t src_width;
+
+    /* src height */
+    int32_t src_height;
+
+    /* src yPitch */
+    int32_t src_yPitch;
+
+    /* src uvPitch */
+    int32_t src_uvPitch;
+
+    /* src color format */
+    int32_t src_format;
+
+    /* src size list*/
+    uint32_t[3] src_sizeList;
+
+    /* src plane number */
+    int32_t src_planeNumber;
+
+    /* src usage */
+    int32_t src_usage;
+
+    /* handle to the input image */
+    handle inputHandle;
+
+    /* dst width */
+    int32_t dst_width;
+
+    /* dst height */
+    int32_t dst_height;
+
+    /* dst yPitch */
+    int32_t dst_yPitch;
+
+    /* dst uvPitch */
+    int32_t dst_uvPitch;
+
+    /* dst format */
+    int32_t dst_format;
+
+    /* dst size list */
+    uint32_t[3] dst_sizeList;
+
+    /* dst plane number */
+    int32_t dst_planeNumber;
+
+    /* dst usage */
+    int32_t dst_usage;
+
+    /* handle to the output image */
+    handle outputHandle;
+};

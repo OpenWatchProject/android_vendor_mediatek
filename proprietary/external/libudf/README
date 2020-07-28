@@ -1,0 +1,35 @@
+libudf description:
+user space debug framework library which includes MTK debug15/fdleak/ubrd debug feature, 
+it load through LD_PRELOAD mechanism, and rehook libc system call for add intermediate debug;
+
+libudf build and release:
+source code maintain in alps performance in MTK, binary release to customer;
+
+libudf usage:
+debug15/fdleak debug in libudf "default on" on MTK eng load, and MTK user/userdebug buildin/default off;
+customer eng/user/userdebug buildin/default off;
+For MTK eng load related issue please reference debug15/fdleak debug guide for analyze.
+
+
+Notes:
+if want to enable it on MTK user/userdebug or customer load step by step:
+1. add libudf.so to init.environ.rc.in
+file path: 
+system/core/rootdir/init.environ.rc.in
+
+need modify:
+	on init
+    	export LD_PRELOAD libsigchain.so:libudf.so
+
+2.build load and down load again, check libudf.so in LD_PRELOAD list, you can reproduce issue
+adb shell "echo $LD_PRELOAD"
+
+if libudf.so not preload, contact MTK for support;
+
+
+Terminology:
+udf - user space debug framework
+ubrd - user space backtrace record
+debug15 - memory debug feature, cover Android memory debug 5/10
+
+20141107

@@ -1,0 +1,655 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+/*
+ * Copyright (C) 2007-2008 Esmertec AG.
+ * Copyright (C) 2007-2008 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+ --><resources xmlns:android="http://schemas.android.com/apk/res/android" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+<!-- MTK Resources -->
+  <string translatable="false" name="prefDefault_vibrateWhen">never</string>
+  <string translatable="false" name="prefDefault_vibrate_true">always</string>
+  <string translatable="false" name="prefDefault_vibrate_false">never</string>
+  <string-array translatable="false" name="prefValues_vibrateWhen">
+    <item>always</item>
+    <item>silent</item>
+    <item>never</item>
+  </string-array>
+  <string name="more_recipients">수신자</string>
+  <string name="Insert_sdcard">SD 카드를 삽입하십시오!</string>
+  <string name="pref_title_mms_enable_to_send_delivery_reports">수신 확인 보내기</string>
+  <string name="pref_summary_mms_enable_to_send_delivery_reports">수신한 각 메시지에 대한 수신 확인 보내기</string>
+  <string name="set_service_center_OK">SMS 서비스 센터 정상 설정</string>
+  <string name="set_service_center_fail">SMS 서비스 센터 장애 설정</string>
+  <string name="OK">확인</string>
+  <string name="Cancel">"취소"</string>
+  <string name="sms_save_location">SMS 스토리지 위치</string>
+  <string name="gemini_3g_indic" translatable="false">3G</string>
+  <string name="sms_service_center">SMS 서비스 센터</string>
+  <string name="sms_validity_period">SMS 유효 기간</string>
+  <string name="sms_validity_period_nosetting">설정되지 않음</string>
+  <string name="sms_validity_period_1hour">1시간</string>
+  <string name="sms_validity_period_6hours">6시간</string>
+  <string name="sms_validity_period_12hours">12시간</string>
+  <string name="sms_validity_period_1day">1일</string>
+  <string name="sms_validity_period_max">최대</string>
+  <string name="service_center_label">서비스 센터:\u0020</string>
+  <string name="cu_subject">Lemei 제목</string>
+  <string name="pref_title_mms_creation_mode">작성 모드</string>
+  <string name="pref_summary_mms_creation_mode">메시지 작성을 위한 MMS 작성 모드</string>
+  <string name="pref_title_mms_size_limit">크기 한계</string>
+  <string name="pref_summary_mms_size_limit">메시지 작성에 대한 MMS 크기 한계</string>
+  <string name="confirm_restricted_audio">제한된 오디오 콘텐트 유형입니다. 그래도 첨부하시겠습니까?</string>
+  <string name="confirm_restricted_image">제한된 이미지 콘텐트 유형입니다. 그래도 첨부하시겠습니까?</string>
+  <string name="confirm_restricted_video">제한된 동영상 콘텐트 유형입니다. 그래도 첨부하시겠습니까?</string>
+  <string name="unsupport_media_type">지원되지 않는 미디어 유형입니다.</string>
+  <string name="select_different_media_type">다른 미디어를 선택하십시오.</string>
+  <string name="image_resolution_too_large">이미지 해상도가 너무 커서 삽입할 수 없습니다.</string>
+  <string name="wp_msg_type">서비스 메시지</string>
+  <string name="wp_msg_created_label">작성:\u0020</string>
+  <string name="wp_msg_created_unknown">알 수 없음</string>
+  <string name="wp_msg_priority_label">우선순위:\u0020</string>
+  <string name="wp_msg_priority_low">낮음</string>
+  <string name="wp_msg_priority_medium">중간</string>
+  <string name="wp_msg_priority_high">높음</string>
+  <string name="menu_goto_browser">브라우저 열기</string>
+  <string name="menu_add_to_bookmark">북마크에 추가</string>
+  <string name="wp_msg_expiration_label"> <g id="DATE">%s</g> </string>
+  <string name="error_unsupported_scheme">해당 동작이 현재 지원되지 않습니다.</string>
+  <string name="pref_title_wappush_settings">서비스 메시지 설정</string>
+  <string name="pref_title_wappush_enable">WAP PUSH 활성화</string>
+  <string name="pref_summary_wappush_enable">WAP PUSH를 수신하도록 활성화합니다.</string>
+  <string name="pref_title_wappush_sl_autoloading">SL 자동 시작</string>
+  <string name="pref_summary_wappush_sl_autoloading">수신 시 서비스 로딩(SL) 메시지를 자동으로 시작합니다.</string>
+  <string name="create_new_message">새 메시지 작성</string>
+  <string name="menu_send_sms"><xliff:g id="name">%s</xliff:g>님에게 메시지 보내기</string>
+
+  <string name="menu_omacp">메시지 확인</string>
+  <string name="menu_undelivered_messages">전달되지 않은 메시지</string>
+  <string name="broadcast_from_to"> <g id="sender" example="me">%1$s</g> <g id="recipient" example="Megan">%2$s</g> </string>
+  <string name="anonymous_recipient">익명</string>
+  <string name="view_picture">그림 보기</string>
+  <string name="save_message_to_sim">SIM 카드에 메시지 저장</string>
+  <string name="sent_on"> <g id="date">%s</g> </string>
+  <string name="received_on"> <g id="date">%s</g> </string>
+  <string name="save_message_to_sim_successful">성공적으로 저장되었습니다.</string>
+  <string name="save_message_to_sim_unsuccessful">저장에 실패했습니다.</string>
+  <string name="transmission_transiently_failed">전송 실패. 나중에 다시 시도하겠습니다.</string>
+  <string name="download_failed_due_to_full_memory">메모리가 가득 차서 메시지 다운로드에 실패했습니다.</string>
+  <string name="mms_too_big_to_download">메시지가 너무 커서 네트워크에서 다운로드할 수 없습니다.</string>
+  <string name="menu_reply">"답장"</string>
+  <string name="menu_sim_sms">"SIM SMS"</string>
+  <string name="name_colon"> <b> <g id="name" example="Me">%s</g> </b> </string>
+  <string name="compose_title">"새 메시지"</string>
+  <string name="image_too_large">그림이 너무 큽니다.</string>
+  <string name="ask_for_automatically_resize">보내기 전에 그림 크기를 자동으로 조절하시겠습니까?</string>
+  <string name="cannot_load_message">메시지를 로드할 수 없습니다.</string>
+  <string name="locked_message_cannot_be_deleted">잠근 메시지는 삭제할 수 없습니다.</string>
+  <string name="cannot_add_recipient">수신자 수가 한계에 도달했습니다. 수신자를 추가할 수 없습니다.</string>
+  <string name="multiple_recipients"> <g id="recipientCount">%1$s</g> </string>
+  <string name="resize">크기 조절</string>
+  <string name="to_label">"애플리케이션이 이메일 첨부파일을 읽도록 허용합니다."</string>
+  <string name="confirm_delete_all_messages">"전체 대화목록이 삭제됩니다."</string>
+  <string name="mms_priority_label">우선순위\u0020</string>
+  <string name="menu_retry_sending">보내기 재시도</string>
+  <string name="menu_retry_sending_all">모두 보내기 재시도</string>
+  <string name="retrying_dialog_body"> <g id="message">%s</g> </string>
+  <string name="status_expired">만료됨</string>
+  <string name="status_deferred">연기됨</string>
+  <string name="status_unrecognized">인식할 수 없음</string>
+  <string name="status_indeterminate">결정하기 힘듬</string>
+  <string name="status_unreachable">도달할 수 없음</string>
+  <string name="attach_ringtone">벨소리</string>
+  <string name="notification_multiple_cb"> <g id="count">%s</g> </string>
+  <string name="notification_multiple_cb_title">새 셀 브로드캐스트 메시지</string>
+  <string name="dl_expired_notification">이 메시지는 만료되어 삭제됩니다.</string>
+  <string name="add_attachment_activity">첨부 파일 추가:</string>
+  <string name="select_layout_activity">레이아웃 선택</string>
+  <string name="edit_text_activity">텍스트 편집</string>
+  <string name="pick_numbers_activity">번호 선택</string>
+  <string name="send_using_mms_activity">멀티미디어 메시지로 보내기\u2026</string>
+  <string name="select_contact_method_activity">연락처 방법 선택</string>
+  <string name="fdn_enabled">FDN 활성화</string>
+  <string name="cannot_send_message_reason_no_content">보낼 내용이 없음</string>
+  <string name="cb_read_message">CB 메시지 읽기</string>
+  <string name="cb_read_message2">셀 브로드캐스트 메시지 읽기</string>
+  <string name="cb_message">셀 브로드캐스트 메시지</string>
+  <string name="cb_default_channel_name">채널에서</string>
+  <string name="message_open_email_fail">죄송합니다. 먼저 이메일 계정을 설정하십시오.</string>
+  <string name="add_contacts">연락처</string>
+  <string name="me">"나"</string>
+  <string name="send_by_sim2">SIM2로 보내기</string>
+  <string name="send_by_sim1">SIM1로 보내기</string>
+  <string name="menu_item_send_by">보내기 방법</string>
+  <string name="data_connected_confirm_title">보내기 확인</string>
+  <string name="data_connected_confirm_message">이 SIM으로 MMS를 보내면 현재의 데이터 다운로드가 잠시 보류될 수 있습니다. 계속하시겠습니까?</string>
+  <string name="menu_item_sim1">SIM 1</string>
+  <string name="menu_item_sim2">SIM 2</string>
+  <string name="no_sim_1">SIM 1이 연결되지 않았습니다.</string>
+  <string name="no_sim_2">SIM2가 연결되지 않았습니다.</string>
+  <string name="sim1_full_title">SIM 카드 1이 가득 참</string>
+  <string name="sim2_full_title">SIM 카드 2가 가득 참</string>
+  <string name="select_all">"모두 선택"</string>
+  <string name="confirm_delete_selected_messages">선택한 메시지가 삭제됩니다.</string>
+  <string name="confirm_delete_selected_theads">선택한 스레드가 삭제됩니다.</string>
+  <string name="restricted_forward_title">"멀티미디어 메시지"</string>
+  <string name="restricted_forward_message">이 미디어는 수신자에게 올바로 표시되지 않을 수 있습니다. 계속하시겠습니까?</string>
+  <string name="strOk">메시지가 보내짐</string>
+  <string name="strFail">메시지 보내기에 실패했습니다.</string>
+  <string name="menu_insert_text_vcard">연락처 삽입</string>
+  <string name="contact_name">"이름"</string>
+  <string name="contact_tel">전화</string>
+  <string name="contact_email">"이메일"</string>
+  <string name="contact_organization">조직</string>
+  <string name="contact_address">주소</string>
+  <string name="max_recipients_title">최대수에 도달했습니다.</string>
+  <string name="max_recipients_message"> <g id="maxLimit">%s</g> </string>
+  <string name="via_without_time_for_send">보내기 방법</string>
+  <string name="via_without_time_for_recieve">받는 방법</string>
+  <string name="sim_selected_dialog_title">SIM 선택</string>
+  <string name="suggested">제안</string>
+  <string name="add_contact_dialog_message">"기존 또는 새 연락처에 번호 %s을(를) 추가하시겠습니까?"</string>
+  <string name="add_contact_dialog_new">새 연락처</string>
+  <string name="add_contact_dialog_existing">기존 연락처</string>
+  <string name="deleting">삭제 중</string>
+  <string name="pref_title_storage_status">현재 스토리지 사용량</string>
+  <string name="storage_dialog_mms"> <g id="number">%s</g> </string>
+  <string name="storage_dialog_sms"> <g id="number">%s</g> </string>
+  <string name="storage_dialog_attachments">Mms 첨부 파일:\u0020</string>
+  <string name="storage_dialog_database">데이터베이스:\u0020</string>
+  <string name="storage_dialog_available_space">사용 가능한 공간:\u0020</string>
+  <string name="menu_show_icc_sms_capacity">용량 보기</string>
+  <string name="show_icc_sms_capacity_title">용량</string>
+  <string name="icc_sms_used">사용된 용량:</string>
+  <string name="icc_sms_total">총 용량:</string>
+  <string name="get_icc_sms_capacity_failed">SIM 용량 불러오기에 실패했습니다.</string>
+  <plurals name="read_report_toast_msg">
+    <item quantity="one">%d개의 읽기 확인 보내는 중</item>
+    <item quantity="other">%d개의 읽기 확인 보내는 중</item>
+  </plurals>
+  <string name="pref_title_mms_auto_reply_read_reports">읽기 확인 보내기</string>
+  <string name="pref_summary_mms_auto_reply_read_reports">MMS 발신자가 요청할 경우 읽기 확인 보내기</string>
+  <string name="exceed_subject_length_limitation">최대 길이에 도달함</string>
+  <plurals name="message_view_selected_message_count">
+    <item quantity="one"><xliff:g id="message_count" example="1">%d</xliff:g>개가 선택됨</item>
+    <item quantity="other"><xliff:g id="message_count" example="9">%d</xliff:g>개가 선택됨</item>
+  </plurals>
+  <string name="sms_input_mode_title">입력 모드</string>
+  <string name="sms_input_mode_dialog_title">입력 모드 선택</string>
+  <string name="sms_input_mode_summary">메시지 작성용 SMS 입력 모드</string>
+  <string name="pref_title_io_settings">SMS 가져오기/내보내기</string>
+  <string name="pref_summary_import_msg">SD 카드에서 SMS 가져오기</string>
+  <string name="pref_title_import_msg">SMS 가져오기</string>
+  <string name="pref_summary_export_msg">SD 카드로 SMS 내보내기</string>
+  <string name="pref_title_export_msg">SMS 내보내기</string>
+  <string name="no_sd_card">SD 카드가 준비되지 않음</string>
+  <string name="export_message_ongoing">SD 카드로 SMS를 내보내는 중입니다. 기다리십시오…</string>
+  <string name="import_message_ongoing">SD 카드에서 SMS를 가져오는 중입니다. 기다립시오…</string>
+  <string name="export_message_success">SD 카드로 SMS 내보내기 성공</string>
+  <string name="import_message_success">SD 카드에서 SMS 가져오기 성공</string>
+  <string name="import_message_fail">SD 카드에서 SMS 가져오기 실패</string>
+  <string name="export_message_fail">SD 카드로 SMS 내보내기 실패</string>
+  <string name="import_message_list">SD 카드의 SMS DB 목록</string>
+  <string name="import_message_list_empty">SD 카드에 SMS DB 파일이 없습니다.</string>
+  <string name="export_message_empty">내보낼 SMS가 없습니다!</string>
+  <string name="whether_export_item">SMS를 내보내시겠습니까?</string>
+  <string name="whether_import_item">가져오시겠습니까?</string>
+  <string name="export_disk_problem">SD 카드가 가득 찼거나 기록할 수 없습니다.</string>
+  <string name="select_text">텍스트 선택</string>
+  <string name="unselect_all">모두 선택 해제</string>
+  <string name="forward_from">전달 소스:</string>
+  <string name="sms_forward_setting">SMS 전달 설정</string>
+  <string name="sms_forward_setting_summary">발신자 이름 및 번호와 함께 SMS 전달</string>
+    <string name="forward_byself">"나"</string>
+  <string name="file_attachment_vcalendar_name"> <g id="text">%s</g> </string>
+  <string name="file_attachment_vcard_name"> <g id="text">%s</g> </string>
+  <string name="attach_vcalendar">달력</string>
+  <string name="file_attachment_import_vcard">vCard 가져오기</string>
+  <string name="attach_vcard">연락처</string>
+  <string name="type_common_file">파일</string>
+  <string name="please_wait">"기다리십시오…"</string>
+  <string name="failed_to_parse_vcard">vCard 파일의 구문을 분석하는 데 실패했습니다!</string>
+  <string name="empty_vcard">vCard에 연락처가 없습니다.</string>
+  <string name="parse_vcard">vCard 구문 분석</string>
+  <string name="vcard_no_details">이 연락처에 대한 추가 정보가 없습니다."</string>
+  <string name="note">참고</string>
+  <string name="organization">조직</string>
+  <string name="website">웹사이트:\u0020</string>
+  <string name="nickname">별명</string>
+  <string name="call_custom"> <g id="custom">%s</g> </string>
+  <string name="call_home">집</string>
+  <string name="call_mobile">휴대폰</string>
+  <string name="call_work">회사</string>
+  <string name="call_fax_work">회사 팩스</string>
+  <string name="call_fax_home">집 팩스</string>
+  <string name="call_pager">페이저</string>
+  <string name="call_other">기타</string>
+  <string name="call_callback">답신 전화</string>
+  <string name="call_car">자동차</string>
+  <string name="call_company_main">회사 대표전화</string>
+  <string name="call_isdn">ISDN</string>
+  <string name="call_main">대표전화</string>
+  <string name="call_other_fax">팩스</string>
+  <string name="call_radio">무선</string>
+  <string name="call_telex">텔렉스</string>
+  <string name="call_tty_tdd">TTY/TDD</string>
+  <string name="call_work_mobile">회사 휴대폰</string>
+  <string name="call_work_pager">회사 페이저</string>
+  <string name="call_assistant"> <g id="assistant">%s</g> </string>
+  <string name="call_mms">MMS</string>
+  <string name="email_home">집으로 이메일 보내기</string>
+  <string name="email_mobile">휴대폰으로 이메일 보내기</string>
+  <string name="email_work">회사로 이메일 보내기</string>
+  <string name="email_other">"이메일"</string>
+  <string name="email_custom"> <g id="custom">%s</g> </string>
+  <string name="email">"이메일"</string>
+  <string name="map_home">집 주소 보기</string>
+  <string name="map_work">회사 주소 보기</string>
+  <string name="map_other">주소 보기</string>
+  <string name="map_custom"> <g id="custom">%s</g> </string>
+  <string name="chat_aim">AIM을 사용하여 채팅하기</string>
+  <string name="chat_msn">Windows Live를 사용하여 채팅하기</string>
+  <string name="chat_yahoo">Yahoo를 사용하여 채팅하기</string>
+  <string name="chat_skype">Skype를 사용하여 채팅하기</string>
+  <string name="chat_qq">QQ를 사용하여 채팅하기</string>
+  <string name="chat_gtalk">Google Talk를 사용하여 채팅하기</string>
+  <string name="chat_icq">ICQ를 사용하여 채팅하기</string>
+  <string name="chat_jabber">Jabber를 사용하여 채팅하기</string>
+  <string name="chat">채팅</string>
+  <string name="inbox">"받은편지함"</string>
+  <string name="outbox">"보낼편지함"</string>
+  <string name="draftbox">임시 보관함</string>
+  <string name="sentbox">보낸 편지함</string>
+  <string name="simbox">SIMbox</string>
+  <string name="changeview">변경 모드</string>
+  <string name="viewer_title_sms">SMS</string>
+  <string name="viewer_title_wappush">Wappush</string>
+  <string name="viewer_title_cb">셀 브로드캐스트</string>
+  <string name="slideshow_details">메시지 세부사항</string>
+  <string name="open">열기</string>
+  <string name="delete_all_confirm">"편지함의 모든 메시지를 삭제하시겠습니까?"</string>
+  <string name="folder_recipient">수신자:</string>
+  <string name="folder_recieve_date">날짜:</string>
+  <string name="folder_download">mms가 다운로드 중</string>
+  <string name="confirm_download_message">"다운로드 메시지 확인"</string>
+  <string name="play_as_slideshow">MMS를 슬라이드쇼로 재생</string>
+  <string name="invalid_contact_message">연락처가 존재하지 않습니다.</string>
+  <string name="by_card">기준:</string>
+  <string name="page">%d페이지</string>
+  <string name="space_not_enough">남은 공간이 부족하여 동영상을 캡처할 수 없습니다.</string>
+  <string name="space_not_enough_for_audio">남은 공간이 부족하여 오디오를 녹음할 수 없습니다.</string>
+  <string name="no_messages">"메일이 없습니다."</string>
+  <string name="call_video_call">영상 통화</string>
+  <string name="storage_dialog_mms_size">MMS 크기:\u0020</string>
+  <string name="error_add_attachment"> <g id="name">%1$s</g> </string>
+  <string name="no_application_response">"요청을 처리할 애플리케이션이 없습니다."</string>
+  <string name="cdma_not_support">CDMA는 이 기능을 지원하지 않습니다.</string>
+  <string name="allmessage">"메일 모두 보내기"</string>
+  <string name="select_message">메시지 선택</string>
+  <string name="confirm_delete_allmessage">"모든 메시지가 삭제됩니다."</string>
+  <string name="mark_as_read_btn_str">읽은 것으로 표시</string>
+  <string name="delete_btn_str">"삭제"</string>
+  <string name="reply_send">"전송"</string>
+  <string name="via_test">"Wi-Fi를 통해 최근 메일의 첨부파일을 자동으로 다운로드합니다."</string>
+  <string name="received_header">수신됨:</string>
+  <string name="pref_title_long_press_operation_guide">길게 누름 작업 안내</string>
+  <string name="pref_title_watch_animation">애니메이션 시청</string>
+  <string name="long_press_conversationlist_title">메시지 삭제</string>
+  <string name="long_press_conversationlist_content">메시지를 삭제하려면 길게 누르십시오.</string>
+  <string name="long_press_composer_content">옵션을 더 보려면 길게 누르십시오.</string>
+  <string name="no_item_selected">선택한 항목이 없습니다.</string>
+  <string name="sync_mms_to_db">로드하는 중…</string>
+  <string name="pref_title_font_size_setting">글꼴 크기 설정</string>
+  <string name="pref_title_message_font_size">메시지 글꼴 크기</string>
+  <string name="pref_summary_message_font_size">메시지 글꼴 크기</string>
+  <string name="message_font_size_dialog_title">메시지 글꼴 크기</string>
+  <string name="message_font_size_dialog_cancel">"취소"</string>
+  <string name="finish">"완료"</string>
+  <string name="failed_to_add_image">메시지 크기 한계에 도달했습니다. 메시지 일부가 추가되지 않습니다.</string>
+    <string name="ipmsg_conversation_list_all">메시지</string>  
+    <string name="ipmsg_conversation_list_important">중요</string>  
+    <string name="ipmsg_conversation_list_group_chats">그룹 채팅</string>  
+    <string name="ipmsg_conversation_list_spam">스팸</string>  
+    <string name="ipmsg_create_group_chat">그룹 채팅 만들기</string>  
+    <string name="ipmsg_send_invitation">초대장 보내기</string>  
+    <string name="str_ipmsg_download_history_dlg">다운로드 중…</string>  
+    <string name="to_hint_ipmsg">"이름 또는 번호 입력"</string>  
+    <string name="type_to_compose_text_enter_to_send_ipmsg">"SMS/iSMS 메시지 입력"</string>  
+    <string name="ipmsg_ipmsg_hint">"iSMS 메시지 입력"</string>  
+    <string name="ipmsg_sms_hint">"텍스트 메시지 입력"</string>  
+    <string name="ipmsg_caption_hint">"캡션 입력"</string>  
+    <string name="ipmsg_cancel">"취소"</string>  
+    <string name="ipmsg_invite_chat_frequently"><b>%s 과(와) 자주 채팅하시겠습니까 ?</b>\n%s 을(를) iSMS를 사용하도록 초대하여 양쪽 모두 요금을 절약하십시오.</string>  
+    <string name="ipmsg_enable_chat_frequently"><b>%s 이(가) iSMS를 사용 중입니다!</b>\niSMS 서비스를 활성화하여 양쪽 모두 요금을 절약하십시오.</string>  
+    <string name="ipmsg_invite">"초대"</string>  
+    <string name="ipmsg_dismiss">"무시"</string>  
+    <string name="ipmsg_enable">"사용"</string>  
+    <string name="ipmsg_enable_notice">iSMS 서비스를 활성화하시겠습니까?</string>  
+    <string name="ipmsg_activate">활성화</string>  
+    <string name="ipmsg_activate_chat_frequently"><b>친구와 자주 채팅하십니까?</b>\niSMS서비스를 활성화하여 SMS 요금 없이 채팅하십시오.</string>  
+    <string name="ipmsg_activate_note">iSMS를 활성화하시겠습니까?</string>  
+    <string name="ipmsg_dismiss_content">메모를 무시하시겠습니까?</string>  
+    <string name="ipmsg_send_exception">보내기 오류</string>  
+    <string name="ipmsg_ipmsg">IP 메시지</string>  
+    <string name="ipmsg_dailog_multi_forward">메시지 전달</string>  
+    <string name="ipmsg_dialog_send_result">보내기 결과</string>  
+    <string name="ipmsg_dlg_send_all">모두: %s</string>  
+    <string name="ipmsg_dlg_send_sucess">보냄: %s</string>  
+    <string name="ipmsg_dlg_send_failed">실패: %s</string>  
+    <string name="multi_forward_sim_info">SIM 정보 가져오기</string>  
+    <string name="ipmsg_multi_forward_no_sim">SIM 정보 없음</string>  
+    <string name="ipmsg_divider_online">%s 이(가) 온라인 상태입니다</string>  
+    <string name="ipmsg_divider_offline">마지막 온라인 시간 %s </string>  
+    <string name="ipmsg_divider_never_online">온라인 사용 안 함</string>  
+    <string name="ipmsg_vcard_file_name">%s 개의 연락처</string>  
+    <string name="ipmsg_getsim_failed">SIM 정보 가져오기 실패</string>  
+    <string name="ipmsg_sim_status_error">SIM 상태 오류</string>  
+    <string name="ipmsg_forward_failed">전달 실패</string>  
+    <string name="ipmsg_forward_norecipients">메시지 전달에 대한 수신자가 없습니다</string>  
+    <string name="ipmsg_multiforward_no_message">전달할 수 있는 메시지가 없습니다</string>  
+    <string name="ipmsg_need_input_recipients">먼저 최소 1명의 수신자를 지정하십시오</string>  
+    <string name="str_ipmsg_unread_format">%1$d 개의 읽지 않은 메시지</string>  
+    <string name="str_ipmsg_not_delivered_title">아직 전달되지 않음</string>  
+    <string name="str_ipmsg_failed_title">실패</string>  
+    <string name="str_ipmsg_cant_share">SD 카드를 사용할 수 없습니다. 미디어 메시지를 공유할 수 없습니다</string>  
+    <string name="str_ipmsg_file_limit">너무 큽니다</string>  
+    <string name="str_ipmsg_no_app">"작업을 수행할 수 있는 애플리케이션이 없습니다."</string>  
+    <string name="str_ipmsg_today">오늘</string>  
+    <string name="str_ipmsg_yesterday">"어제"</string>  
+    <string name="ip_message_typing_text">입력</string>  
+    <string name="ipmsg_try_again">"다시 시도"</string>  
+    <string name="ipmsg_try_all_again">모든 걸 다시 시도하십시오</string>  
+    <string name="ipmsg_resend_via_sms">SMS를 통해 보내기</string>  
+    <string name="ipmsg_resend_via_mms">MMS를 통해 보내기</string>  
+    <string name="str_ipmsg_no_such_file">이러한 파일 없음</string>  
+    <string name="str_ipmsg_over_file_limit">파일 크기가 한계를 초과했습니다</string>  
+    <string name="str_ipmsg_invalid_file_type">이 형식은 지원되지 않습니다</string>  
+    <string name="invite_friends_to_ipmsg">iSMS를 사용하도록 친구를 초대</string>  
+    <string name="invite_friends_to_chat">친구를 채팅에 초대</string>  
+    <string name="invite_friends_to_ipmsg_dialog_msg">초대장을 보내려면 작성한 메시지가 취소됩니다.</string>  
+    <string name="invite_friends_to_ipmsg_content">안녕, iSMS는 근사한 채팅 도구야. 무료이고 편리하고. 자세한 내용을 보려면 http://isms.hissage.com을 참조해봐.</string>  
+    <string name="export">"내보내기"</string>  
+    <string name="mark_as_spam">스팸으로 표시</string>  
+    <string name="mark_as_spam_tips">스팸으로 표시된 메시지는 스팸 목록으로 이동하고 알림이 자동으로 꺼집니다.</string>  
+    <string name="remove_frome_spam">스팸에서 제거</string>  
+    <string name="add_shortcut">바로가기 추가</string>  
+    <string name="view_all_media">모든 미디어 보기</string>  
+    <string name="view_all_location">모든 위치 보기</string>  
+    <string name="ipmsg_export_to_sdcard">SD 카드로 내보내기</string>  
+    <string name="ipmsg_copy">"복사"</string>  
+    <string name="ipmsg_send_via_text_msg">텍스트 메시지를 통해 보내기</string>  
+    <string name="ipmsg_send_via_mms">멀티미디어 메시지를 통해 보내기 </string>  
+    <string name="ipmsg_retry">재시도</string>  
+    <string name="ipmsg_delete">"삭제"</string>  
+    <string name="ipmsg_share">"공유"</string>  
+    <string name="ipmsg_mark_as_important">중요로 표시</string>  
+    <string name="ipmsg_remove_from_important">중요에서 제거</string>  
+    <string name="str_ipmsg_save_file">파일이 %1$s에 저장되었습니다.</string>  
+    <string name="continue_str">계속</string>  
+    <string name="convert_to_mms">MMS로 변환.</string>  
+    <string name="convert_to_sms">SMS로 변환.</string>  
+    <string name="ipmsg_convert_to_ipmsg">iSMS로 변환.</string>
+    <string name="ip_message_convert_to_mms_message_for_service">선택한 이 SIM 카드에서 iSMS 서비스를 사용할 수 없습니다. 이 메시지는 이 SIM 카드에서 MMS를 통해서만 보낼 수 있습니다. 계속하시겠습니까?</string>  
+    <string name="ip_message_convert_to_sms_message_for_service">선택한 이 SIM 카드에서 iSMS 서비스를 사용할 수 없습니다. 이 메시지는 이 SIM 카드에서 SMS를 통해서만 보낼 수 있습니다. 계속하시겠습니까?</string>  
+    <string name="ip_message_convert_to_mms_message_for_recipients">수신자가 iSMS 사용자가 아닙니다. 이 메시지는 MMS를 통해서만 보낼 수 있습니다. 계속하시겠습니까?</string>  
+    <string name="ip_message_convert_to_sms_message_for_recipients">수신자가 iSMS 사용자가 아닙니다. 이 메시지는 SMS를 통해서만 보낼 수 있습니다. 계속하시겠습니까?</string>  
+    <string name="ipmsg_sms_convert_to_ipmsg">선택한 이 SIM 카드에서 iSMS 서비스를 사용할 수 있습니다. SMS 요금을 절약하려면 메시지를 iSMS로 전환할 것을 권장합니다. 지금 전환하시겠습니까?</string>
+    <string name="ipmsg_mms_convert_to_ipmsg">선택한 이 SIM 카드에서 iSMS 서비스를 사용할 수 있습니다. MMS 요금을 절약하려면 메시지를 iSMS로 전환할 것을 권장합니다. 지금 전환하시겠습니까?</string>
+    <string name="keep_mms">MMS 유지</string>  
+    <string name="keep_sms">SMS 유지</string>  
+    <string name="switch_ipmsg">전환</string>  
+    <string name="ip_message_load_all_message">모든 메시지 로드</string>  
+    <string name="pref_title_display_preference_settings">표시 및 기본 설정</string>  
+    <string name="pref_chat_wallpaper">채팅 바탕화면</string>  
+    <string name="pref_auto_rotation">자동 순환</string>  
+    <string name="pref_show_email_address">이메일 주소 표시</string>  
+    <string name="pref_summary_show_email_address">연락처 결과에 이메일 주소 포함</string>  
+    <string name="pref_title_backup_restore_settings">백업 및 복원</string>  
+    <string name="pref_backage_message">메시지 백업</string>  
+    <string name="pref_summary_backup_message">마지막 백업:안 함</string>  
+    <string name="pref_restore_message">메시지 복원</string>  
+    <string name="pref_summary_restore_message">백업 메시지를 복원합니다</string>  
+    <string name="pref_mute">"음소거"</string>  
+    <string name="pref_summary_mute">"꺼짐"</string>  
+    <string name="pref_vibrate">진동</string>  
+    <string name="pref_summary_vibrate">알림 수신 시 진동</string>  
+    <string name="pref_popup_notification">팝업 알림</string>  
+    <string name="pref_summary_popup_notification">푸시 알림에 대해 팝업 표시</string>  
+    <string name="pref_title_display_settings">"디스플레이"</string>  
+    <string name="pref_title_actions_settings">동작</string>  
+    <string name="pref_download_chat_history">채팅 기록 다운로드</string>  
+    <string name="pref_summary_download_chat_history">압축 형식으로 SD 카드에 저장</string>  
+    <string name="pref_email_chat_history">채팅 기록 이메일로 보내기</string>  
+    <string name="pref_summary_email_chat_history">압축 형식으로 채팅 기록 이메일로 보내기</string>  
+    <string name="pref_clear_chat_history">채팅 기록 지우기</string>  
+    <string name="pref_summary_notification_ringtone">새 알림용 벨소리 설정</string>  
+    <string name="pref_setting_title">메시지 설정</string>  
+    <string name="pref_setting_sms">텍스트 메시지(SMS)</string>  
+    <string name="pref_setting_mms">멀티미디어 메시지(MMS)</string>  
+    <string name="pref_setting_notification">"알림"</string>  
+    <string name="pref_setting_general">"일반"</string>  
+    <string name="pref_setting_chat">채팅 설정</string>  
+    <string name="chat_setting_saving">저장하는 중…</string>  
+    <string name="chat_setting_updating">업데이트 중…</string>  
+    <string name="chat_setting_sending">"보내는 중..."</string>  
+    <string name="dialog_save_title">SD 카드에 저장</string>  
+    <string name="dialog_save_description">이 채팅 스레드를 SD 카드에 압축 파일로 저장</string>  
+    <string name="dialog_email_title">이메일을 통해 공유</string>  
+    <string name="dialog_email_description">이 채팅 스레드를 이메일을 통한 압축 형식의 첨부 파일로 공유</string>  
+    <string name="dialog_clear_title">"지우기"</string>  
+    <string name="dialog_clear_description">이 채팅방에서 모든 채팅 기록이 지워집니다</string>  
+    <string name="dialog_wallpaper_chooser_wallpapers">배경화면</string>  
+    <string name="dialog_wallpaper_chooser_gallery">"갤러리"</string>  
+    <string name="dialog_wallpaper_chooser_take">"사진 찍기"</string>  
+    <string name="dialog_wallpaper_chooser_default">"기본값"</string>  
+    <string name="dialog_wallpaper_title">바탕화면 선택</string>  
+    <string name="mute_one_hour">1시간</string>  
+    <string name="mute_four_hours">4시간</string>  
+    <string name="mute_eight_hours">8시간</string>  
+    <string name="save_chat_history_failed">저장 실패</string>  
+    <string name="send_chat_history_failed">이메일 실패</string>  
+    <string name="actionbar_sms_setting">SMS 설정</string>  
+    <string name="actionbar_mms_setting">MMS 설정</string>  
+    <string name="actionbar_notification_setting">"알림 설정"</string>  
+    <string name="actionbar_general_setting">일반 설정</string>  
+    <string name="save_history_file">다른 이름으로 저장</string>  
+    <string name="no_sdcard_suggestion">"SD 카드 없음"</string>  
+    <string name="save_wallpaper_success">바탕화면이 변경되었습니다.</string>  
+    <string name="save_wallpaper_fail">바탕화면을 변경할 수 없습니다.</string>  
+    <string name="ip_message_delete_important">"중요로 플래그가 표시된 메시지 포함"</string>  
+    <string name="str_ipmsg_spam_empty">스팸 대화가 없습니다. \n스팸은 스팸으로 표시된 모든 대화를 수집합니다. 기본으로 알림이 꺼집니다. 이로써 불필요한 방해를 방지합니다. \n\n대화를 누른 채로 스팸으로 표시 아이콘을 선택하여 발신자를 스팸으로 표시할 수 있습니다. 대화가 스팸으로 표시되면, 알림 꺼짐 아이콘이 자동으로 표시되고 대화가 여기에 위치합니다.</string>  
+    <string name="str_ipmsg_spam_example_from">+86123456789</string>  
+    <string name="str_ipmsg_spam_example_subject">다음은 스팸 메시지의 예입니다.</string>  
+    <string name="str_ipmsg_groupchat_empty">그룹 채팅 메시지가 없습니다. \n그룹 채팅은 사용자가 만들거나 가입한 모든 그룹 채팅 메시지를 수집합니다. 이로써 그룹 채팅을 쉽게 찾고 관리할 수 있습니다. \n\n그룹 채팅을 만들려면 이 화면의 하단에 있는 그룹 채팅 만들기 버튼을 누르고 친구를 그룹에 가입하도록 초대할 수 있습니다.</string>  
+    <string name="str_ipmsg_group_example_from">"그룹 이름"</string>  
+    <string name="str_ipmsg_group_example_subject">친구:\n그룹 채팅 기능을 좋아해요!</string>  
+    <string name="str_ipmsg_important_empty">중요 메시지가 없습니다. \n중요는 중요로 플래그가 표시된 모든 메시지를 수집합니다. 이로써 중요 메시지를 쉽게 찾고 관리할 수 있습니다. \n\n메시지를 누른 채로 옵션 메뉴에서 중요로 플래그 표시 아이콘을 선택하여 메시지에 중요 플래그를 표시할 수 있습니다. 메시지를 중요 플래그로 설정하면, 아래와 같이 빨간색 플래그 아이콘이 표시됩니다.</string>  
+    <string name="str_ipmsg_important_example_title">다음은 중요로 플래그가 표시된 메시지의 예입니다. 빨간색 플래그가 표시됩니다.</string>  
+    <string name="str_ipmsg_important_example_time">10:55 AM</string>  
+    <string name="str_ipmsg_allchat_empty">"대화가 없습니다."</string>  
+    <string name="str_ipmsg_empty_activate_content">이 기능을 사용하려면 먼저 iSMS 서비스를 활성화해야 합니다. 이 서비스를 좋아하지 않을 경우 걱정하지 마십시오. 설정에서 이 기능을 언제나 끌 수 있습니다. 지금 시도해보십시오.</string>  
+    <string name="str_ipmsg_empty_activate_title">iSMS 활성화</string>  
+    <string name="str_ipmsg_service_title">iSMS 서비스 센터</string>  
+    <string name="str_ipmsg_introduction">iSMS를 사용하면 무료 메시지를 즉시 전달하고 한 위치에 채팅 기록을 보관할 수 있습니다. 버튼을 눌러 새 기능을 경험해보십시오!</string>  
+    <string name="time_now">알 수 없는 아티스트 이름</string>  
+    <string name="str_ipmsg_active">iSMS 활성화</string>  
+    <string name="str_ipmsg_welcome_active">iSMS에 오신 것을 환영합니다</string>  
+    <string name="str_ipmsg_term_warn_welcome">iSMS 서비스에서는 언제 어디서든 WIFI 또는 데이터 연결을 통해 친구와 멀티미디어 파일을 공유할 수 있습니다.\n\n활성화를 완료하는 데 3개의 단계만 필요합니다!\n\n 약관\n</string>  
+    <string name="str_ipmsg_term_warn_activate">이 기능은 iSMS 서비스에서만 지원됩니다.\n\niSMS 서비스에서는 언제 어디서든 WIFI 또는 데이터 연결을 통해 친구와 멀티미디어 파일을 공유할 수 있습니다.\n\n 입니다 이용 조건</string>  
+    <string name="str_ipmsg_term_key">이용 조건</string>  
+    <string name="str_ipmsg_agree_and_continue">동의하고 계속</string>  
+    <string name="no_sim_card">SIM 카드가 없습니다!</string>  
+    <string name="ip_message_activate_title">iSMS 활성화</string>  
+    <string name="ip_message_current_sim_enabled">현재 SIM이 활성화되었습니다.</string>  
+    <string name="sim_selected_dialog_title_for_activate">iSMS 활성화를 위해 SIM 선택</string>  
+    <string name="ip_message_activate_message">이 기능은 iSMS 서비스에서만 지원됩니다. 지금 사용자의 iSMS 계정을 활성화하시겠습니까?</string>  
+    <string name="typing">"입력 중…"</string>  
+    <string name="ip_message_enable_title">iSMS 활성화</string>  
+    <string name="ip_message_enable_message">이 기능은 iSMS 서비스에서만 지원됩니다. 지금 사용자의 iSMS 계정을 활성화하시겠습니까?</string>  
+    <string name="sim_selected_dialog_title_for_enable">iSMS 활성화를 우이해 SIM 선택</string>  
+    <string name="ip_message_switch_sim_title">SIM 전환</string>  
+    <string name="ip_message_switch_sim_message">현재의 SIM은 iSMS를 지원하지 않습니다. 다른 SIM으로 전환하시겠습니까?</string>  
+    <string name="ip_message_switch_sim_button">전환</string>  
+    <string name="ip_message_switch_sim_successfully">SIM을 성공적으로 전환했습니다!</string>  
+    <string name="close">채널 닫기</string>  
+    <string name="nointernet">"작동 중인 인터넷 연결을 찾을 수 없습니다. 나중에 다시 시도하십시오."</string>  
+    <plurals name="deleted_conversations"> 
+        <item quantity="one">1개의 대화가 삭제되었습니다</item>  
+        <item quantity="other"><xliff:g id="number" example="15">%1$s</xliff:g>개의 대화가 삭제되었습니다</item> 
+    </plurals> 
+    <string name="disable_notifications_dialog_message" msgid="7644011234972074096">"기본 메시지 앱에서 중복 문자 메시지 알림을 중단하시겠습니까?"</string>
+    <string name="change">변경</string>
+    <string name="ipmsg_accept">"동의"</string>
+    <string name="sum_search_networks">"사용 가능한 모든 네트워크 검색"</string>
+      <string name="ipmsg_resend">다시 보내기</string>
+      <string name="change_default_disk">전화 저장소의 공간이 부족합니다. 일부 저장소를 해제하거나 설정에서 "기본 쓰기 디스크" 를 변경하세요.</string>
+      <string name="ipmsg_reject">거부</string>
+      <string name="discard_mms_title">MMS 폐기</string>
+      <string name="discard_mms_content">복수 전달 메시지에 있는 모든 MMS가 폐기됩니다</string>
+      <string name="toast_sms_forward">전달된 SMS가 없습니다</string>
+      <string name="dialog_continue">계속</string>
+      <string name="sms_size_limit">크기 한계에 도달했습니다</string>
+      <string name="dialog_sms_limit">메시지 크기 한계에 도달했습니다. 초과된 메시지가 폐기됩니다</string>
+      <string name="str_ipmsg_replace_attach">첨부파일 교체</string>
+    <string name="str_ipmsg_replace_attach_msg">기존의 첨부파일이 있습니다. 교체하시겠습니까?</string>
+    <string name="ipmsg_err_file">파일을 여는 데 실패했습니다.</string>
+    <string name="forward_tips_title">"MMS 알림 폐기"</string>
+    <string name="forward_tips_body">"MMS 알림이 전환을 지원하지 않습니다. 알림이 폐기됩니다."</string>
+    <string name="ipmsg_resend_discard_message">메시지를 다시 보내려면, 현재 작성 중인 메시지가 취소됩니다.</string>
+    <string name="type_to_quick_text">"빠른 텍스트 입력"</string>
+    <string name="menu_wappush">"왑 푸시 메시지"</string>
+    <string name="visit_website">"웹사이트 방문"</string>
+    <string name="meet_emoticon_limit">이모티콘 한계 도달</string>
+    <string name="view_mms_notification">mms 알림을 볼 수 없습니다.</string>
+    <string name="ipmsg_multi_forward_tips_content">복수 전달을 실행하려면, 먼저특정 iSMS를 다운로드해야 합니다.</string>
+    <string name="multi_forward_failed_all">다운로드가 실패했습니다. 복수 전달이 취소됩니다.</string>
+    <string name="ipmsg_multi_forward_failed_part">일부 iSMS 전달이 실패했습니다.</string>
+    <string name="confirm_delete_allwappush">"모든 WAP 푸시 메시지가 삭제됩니다."</string>
+    <string name="confirm_delete_selected_wappush">"선택한 WAP 푸시 메시지가 삭제됩니다."</string>
+    <string name="menu_delete_allwappush">모두 삭제</string>
+    <string name="duplicated_recipient">중복 수신인</string>
+
+<string name="ok">"확인"</string>
+    <string name="cancel">"취소"</string>
+    <string name="enable">"사용"</string>
+    <string name="disable">"사용 중지"</string>
+    <string name="cell_broadcast_setting">"셀 브로드캐스트 설정"</string>
+    <string name="cb_menu_language">"언어"</string>
+    <string name="cb_menu_add_channel">채널 추가</string>
+    <string name="cb_menu_channel_list">채널 목록</string>
+    <string name="cb_dialog_title_language_choice">언어 선택</string>
+    <string name="cb_channel_dialog_channel_name">채널 이름(1-10개의 문자)</string>
+    <string name="cb_channel_dialog_channel_number">채널 번호(0-65534)</string>
+    <string name="cb_channel_dialog_channel_state">채널 사용 설정</string>
+    <string name="cb_channel_dialog_edit_channel">주파수 편집</string>
+    <string name="cb_menu_edit">"수정"</string>
+    <string name="cb_menu_delete">"삭제"</string>
+    <string name="cb_error_channel_num">채널 번호를 입력하세요(0-65534).</string>
+    <string name="cb_error_channel_name">채널 이름의 길이가 잘못되었습니다(1-10개의 문자).</string>
+    <string name="cb_error_language_select">최소 1개의 언어를 선택하세요.</string>
+    <string name="cb_error_channel_id_exist">채널 ID가 존재합니다.</string>
+    <string name="cb_all_languages">"모든 언어"</string>
+    <string name="cb_default_new_channel_name">새 주파수</string>
+    <string name="sum_cell_broadcast_control_on">셀 브로드캐스트 사용</string>
+    <string name="sum_cell_broadcast_control_off">셀 브로드캐스트 사용 안함</string>
+    <string name="sum_cell_broadcast_setting">셀 브로드캐스트에 대한 언어 및 채널 설정</string>
+    <string name="close_dialog">확인</string>
+    <string name="updating_title">"통화 설정"</string>
+    <string name="error_updating_title">"통화 설정 오류"</string>
+    <string name="reading_settings">"설정을 읽는 중..."</string>
+    <string name="updating_settings">"설정 업데이트 중..."</string>
+    <string name="reverting_settings">"원래 설정으로 되돌리는 중..."</string>
+    <string name="exception_error">"네트워크 또는 SIM 카드 오류입니다."</string>
+    <string name="no_sim">SIM %d이(가) 연결되지 않았습니다.</string>
+    <string name="sms_not_ready">SIM 모듈이 초기화 중입니다. 기다리십시오…</string>
+    <string name="label_full_name">"이름"</string>
+    <string name="label_phone">"전화"</string>
+    <string name="label_email">"이메일"</string>
+    <string name="label_postal">"주소"</string>
+    <string name="label_organization">"조직"</string>
+    <string name="label_im">"메신저"</string>
+    <string name="label_website">웹사이트</string>
+    <string name="label_sip_address">"인터넷 전화"</string>
+    <string name="label_nick_name">"닉네임"</string>
+    <string name="label_notes">"메모"</string>
+    <string name="label_event">"이벤트"</string>
+    <string name="search_time_period_label">기간</string>
+    <string name="done_text">"완료"</string>
+    <string-array name="language_list_values" translatable="false">
+        <item>모든 언어</item>
+        <item>독일어</item>
+        <item>영어</item>
+        <item>이탈리아어</item>
+        <item>프랑스어</item>
+        <item>스페인어</item>
+        <item>네덜란드어</item>
+        <item>스웨덴어</item>
+        <item>덴마크어</item>
+        <item>포르투갈어</item>
+        <item>핀란드어</item>
+        <item>노르웨이어</item>
+        <item>그리스어</item>
+        <item>터키어</item>
+        <item>헝가리어</item>
+        <item>폴란드어</item>
+        <item>기타</item>
+        <item>체코어</item>
+        <item>히브리어</item>
+        <item>아랍어</item>
+        <item>러시아어</item>
+        <item>아이슬랜드어</item>
+    </string-array>
+    <string name="add_duplicate_recipients">중복 수신인</string>
+
+    <!-- begin of mwi -->
+    <string name="mwi_title">음성 메시지</string>
+    <string name="type_voice_msg">음성 메시지</string>
+    <string name="type_video_msg">영상 메시지</string>
+    <string name="type_fax_msg">팩스 메시지</string>
+    <string name="type_text_msg">"문자 메시지"</string>
+    <string name="priority_urgent">긴급</string>
+    <string name="date_label">날짜:\u0020</string>
+    <string name="message_id_label">메시지-ID:\u0020</string>
+    <string name="voice_message_count_notification"><xliff:g id="number" example="3">%1$s</xliff:g> 새 음성 메시지</string>
+    <string name="confirm_delete_allmwi">"모든 음성 메시지가 삭제됩니다."</string>
+    <string name="confirm_delete_selected_mwi">"선택한 음성 메시지가 삭제됩니다."</string>
+    <!-- end of mwi -->
+
+    <string name="download_disabled_toast">다운로드할 수 없습니다. 기본 SMS 앱이 아닙니다.</string>
+    <string name="adding_wallpaper_title">배경화면을 저장하는 중…</string>
+    <string name="sms_priority_setting">UIM 우선순위</string>
+    <string name="sms_priority_Interactive">대화형</string>
+    <string name="sms_priority_Urgent">긴급</string>
+    <string name="sms_priority_Emergency">비상</string>
+    <string name="empty_sim_name">SIM 슬롯 <xliff:g id="subId" example="2">%1$d</xliff:g></string>
+
+    <string name="drm_not_support">MMS에서 복사 방지 콘텐츠는 지원되지 않습니다.</string>
+    <string name="user_has_no_premission">이 사용자에게는 SMS 사용이 허용되지 않습니다.</string>
+    <string name="wfc_no_cellular_network">셀룰러 네트워크 없음</string>
+    <string name="wfc_connect_to_available_wifi">이용 가능한 Wi-Fi에 연결하여 메시지를 보냅니다.</string>
+    <string name="wfc_notification_title">Wi-Fi에 연결하여 메시지를 보냅니다.</string>
+    <string name="ct_om_switch_notification"><xliff:g id="op1">%s</xliff:g>이(가) 일시적으로 작동하지 않게 되며, <xliff:g id="op2">%s</xliff:g> 의 모든 기본 통화, SMS 및 데이터는 그에 따라 <xliff:g id="op3">%s</xliff:g>(으)로 변경됩니다.</string>
+    <string name="can_not_switch_account_during_call">통화중에는SMS에기본설정된SIM을전환할수없습니다.</string>
+    <string name="can_not_switch_account_temporarily">기본설정된SMS용SIM을일시적으로전환할수없습니다.</string>
+    <string name="omh_exceed_message_size_limitation">R-UIM메시지크기한계값에도달함</string>
+    <string name="omh_failed_to_add_image">R-UIM 메시지 크기 한도에 도달했습니다. 일부분을 삭제하여 주십시오.</string>
+    <string name="missing_required_permission">권한이 거부되었습니다. 설정 &gt; 앱에서 이를 변경할 수 있습니다.</string>
+    <string name="manage_card_msg_title">UIM/SIM 카드 메시지를 관리합니다.</string>
+    <string name="manage_card_msg_summary">UIM/SIM 카드에 저장된 메시지를 관리합니다.</string>
+    <string name="disable_delivery_report">로밍 중에는 이를 활성화할 수 없습니다.</string>
+    <string name="fore_service_notify_title">메시지 전송 중입니다.</string>
+    <string name="fore_service_notify_content">전숭 중인 메시지가 있습니다.</string>
+    <string name="smart_req_mms_indicator">MMS는 사용할 수 없습니다. SMS로 다시 시도하십시오.</string>
+</resources>

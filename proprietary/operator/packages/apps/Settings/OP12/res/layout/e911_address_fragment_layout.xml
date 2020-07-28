@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin">
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/scrollView"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:fillViewport="true"
+        android:fadeScrollbars="true">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/emergency_description1"
+                android:id="@+id/descriptionTextView1" />
+
+            <EditText
+                android:id="@+id/addressNumberEditText"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="number"
+                android:layout_below="@+id/descriptionTextView1"
+                android:hint="@string/address_number" />
+
+            <EditText
+                android:id="@+id/streetEditText"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="text"
+                android:layout_below="@+id/addressNumberEditText"
+                android:hint="@string/street" />
+
+            <EditText
+                android:id="@+id/aptEditText"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="text"
+                android:layout_below="@+id/streetEditText"
+                android:hint="@string/apt_etc" />
+
+            <EditText
+                android:id="@+id/cityEditText"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="text"
+                android:layout_below="@+id/aptEditText"
+                android:hint="@string/city" />
+
+            <Spinner
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/stateSpinner"
+                android:entries="@array/state_array"
+                android:prompt="@string/state"
+                android:layout_below="@+id/cityEditText"/>
+
+            <EditText
+                android:id="@+id/zipText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="number"
+                android:layout_below="@+id/stateSpinner"
+                android:hint="zip" />
+
+            <TextView
+                android:id="@+id/descriptionTextView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/emergency_description2"
+                android:layout_below="@+id/ZipText" />
+
+            <LinearLayout android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="2"
+                android:orientation="horizontal"
+                android:layout_alignParentBottom="true">
+                <Button android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/cancel"
+                    android:id="@+id/cancel" />
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/save"
+                    android:id="@+id/save" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+    </RelativeLayout>

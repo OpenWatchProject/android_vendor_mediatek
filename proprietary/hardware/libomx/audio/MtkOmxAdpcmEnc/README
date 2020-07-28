@@ -1,0 +1,33 @@
+Library of MTK Adpcm encode omx component.
+
+This library is pre-built by MediaTek internal.
+
+
+WHAT IT DOES?
+=============
+libMtkOmxAdpcmEnc contains MediaTek developed Adpcm encode omx component.  
+Without it, Adpcm will not encode.
+
+HOW IT WAS BUILT?
+==================
+It needs the following library from AOSP:
+1.libutils                
+2.libcutils               
+3.libdl                   
+4.libui			  
+5.libbinder
+
+and the following libs from MediaTek:
+1.libMtkOmxOsalUtils.a
+2.libMtkOmxAudioEncBase.a
+3.libadpcmenc_mtk.a
+
+All source/dependency modules of this module are already put in
+'vendor/mediatek/proprietary/hardware/libomx/audio/MtkOmxAdpcmEnc' folder.
+
+HOW TO USE IT?
+==============
+
+use openmax api.
+
+All the source code of this library were written by MediaTek co..

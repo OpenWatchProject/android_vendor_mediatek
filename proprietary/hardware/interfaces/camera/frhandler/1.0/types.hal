@@ -1,0 +1,18 @@
+package vendor.mediatek.hardware.camera.frhandler@1.0;
+
+/* SecureCam related */
+import vendor.mediatek.hardware.camera.security@1.0::types;
+
+/**
+ * A descriptor for a single secure camera output stream.
+ */
+struct FRCbParam {
+    int64_t bufferId;
+    handle buffer;
+    Stream stream;
+};
+
+struct FRImageFormat
+{
+    Stream stream;
+};

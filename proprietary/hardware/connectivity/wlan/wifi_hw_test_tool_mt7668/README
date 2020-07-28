@@ -1,0 +1,5 @@
+SOP
+1. modify device interface in libwifitest.c (default is "wlan0"
+(optional)1.1. if you want to cal freq. offset, modify WIFI_TEST_TOOL_VER101 compile flag in main.c to 1, default 0.
+2. make 
+3. Enter test mode: ./wifitest -O 

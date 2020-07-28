@@ -1,0 +1,94 @@
+/*
+ * Copyright 2016 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package vendor.mediatek.hardware.wifi.supplicant@2.0;
+
+import android.hardware.wifi.supplicant@1.0::SupplicantStatus;
+import ISupplicantNetwork;
+import ISupplicantStaNetworkCallback;
+/**
+ * Interface exposed by the supplicant for each station mode network
+ * configuration it controls.
+ */
+interface ISupplicantStaNetwork extends ISupplicantNetwork {
+  /** wapi key mgmt, should be same as the definition in defs.h */
+  enum KeyMgmtMask : uint32_t {
+    WPA_EAP_SHA256 = 1 << 7,
+    WAPI_PSK = 1 << 12,
+    WAPI_CERT = 1 << 13
+  };
+  /** wapi proto mask, should be same as WPA_PROTO_WAPI that defined in defs.h */
+  enum ProtoMask : uint32_t {
+    WAPI = 1 << 2
+  };
+  /** cipher suite mask for wapi, should be same as definition in defs.h */
+  enum GroupCipherMask : uint32_t {
+    SM4 = 1 << 7
+  };
+  enum PairwiseCipherMask : uint32_t {
+    SM4 = 1 << 7
+  };
+  /** Possble values for OCSP param. */
+  enum Ocsp : uint32_t {
+    NO_OCSP,
+    OPTIONAL_OCSP,
+    MANDATORY_OCSP
+  };
+  /**
+   * Register for callbacks from this network.
+   *
+   * These callbacks are invoked for events that are specific to this network.
+   * Registration of multiple callback objects is supported. These objects must
+   * be automatically deleted when the corresponding client process is dead or
+   * if this network is removed.
+   *
+   * @param callback An instance of the |ISupplicantStaNetworkCallback| HIDL
+   *        interface object.
+   * @return status Status of the operation.
+   *         Possible status codes:
+   *         |SupplicantStatusCode.SUCCESS|,
+   *         |SupplicantStatusCode.FAILURE_UNKNOWN|,
+   *         |SupplicantStatusCode.FAILURE_NETWORK_INVALID|
+   */
+
+  registerCallback(ISupplicantStaNetworkCallback callback)
+      generates (SupplicantStatus status);
+  /**
+   * Set WAPI cert alias which is selected by end-user,
+   * it will be used when connect to the Access Point.
+   *
+   * @param a string represented the wapi cert suite.
+   * @return Possible status codes:
+   *         |SupplicantStatusCode.SUCCESS|,
+   *         |SupplicantStatusCode.FAILURE_UNKNOWN|
+   */
+
+  setWapiCertAlias(string alias)
+        generates (SupplicantStatus status);
+
+  /**
+   * Set EAP OCSP for this network
+   *
+   * @param ocsp value to set
+   * @return status Status of the operation.
+   *         Possible status codes:
+   *         |SupplicantStatusCode.SUCCESS|,
+   *         |SupplicantStatusCode.FAILURE_ARGS_INVALID|,
+   *         |SupplicantStatusCode.FAILURE_UNKNOWN|,
+   *         |SupplicantStatusCode.FAILURE_NETWORK_INVALID|
+   */
+  setEapOcsp(Ocsp ocsp) generates (SupplicantStatus status);
+};

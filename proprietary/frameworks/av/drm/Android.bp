@@ -1,0 +1,11 @@
+cc_library_headers {
+    name: "mtk_drm_headers",
+    export_include_dirs: [
+        "include",
+    ],
+    vendor_available: true,
+}
+
+subdirs = [
+    "mtkwhitelist",
+]

@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+/* //device/apps/common/assets/res/any/strings.xml
+**
+** Copyright 2006, The Android Open Source Project
+**
+** Licensed under the Apache License, Version 2.0 (the "License");
+** you may not use this file except in compliance with the License.
+** You may obtain a copy of the License at
+**
+**     http://www.apache.org/licenses/LICENSE-2.0
+**
+** Unless required by applicable law or agreed to in writing, software
+** distributed under the License is distributed on an "AS IS" BASIS,
+** WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+** See the License for the specific language governing permissions and
+** limitations under the License.
+*/
+ -->
+
+<resources xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+        <!-- MTK new add Strings -->
+    <string name="badPin2">"Girdiğiniz eski PIN2 yanlış."</string>
+    <string name="badPuk2">"Girdiğiniz PUK2 yanlış."</string>
+    <string name="checkPwdLen">"Paroanızın 4-8 haneli olup olmadığını kontrol edin."</string>
+    <string name="pinNotEnabled">"Lütfen değiştirmeden mnce PIN kodunu etkinleştirin."</string>
+    <string name="puk1Blocked">"PIN bloke edildi."</string>
+    <string name="puk2Blocked">"PIN2 bloke edildi."</string>
+    <string name="fdnFailMmi">"FDN Kontrolü başarısız."</string>
+    <string name="callBarringFailMmi">"Çağrı Engelleme başarısız."</string>
+    <string name="Pin2Mmi">"PIN2 değişikliği"</string>
+    <string name="PukMmi">"PIN'in blokesini kaldır"</string>
+    <string name="Puk2Mmi">"PIN2'in blokesini kaldır"</string>
+    <string name="serviceProvisioned">"Servis sağlandı."</string>
+    <string name="serviceUnknown">"Bağlantı sorunu veya geçersiz MMI kodu."</string>
+    <string name="cfServiceNotForwarded">"Yönlendirilmedi"</string>
+
+    <string name="invalidPuk">"8 basamak girin."</string>
+
+    <string name="invalid_imei">"Geçersiz IMEI"</string>
+    <string name="same_imei">"Aynı IMEI"</string>
+
+    <string name="sim_close">"SIM kartı kapalı"</string>
+
+   <string name="aerr_application_lowmem">"<xliff:g id="application">%1$s</xliff:g>
+        (uygulaması <xliff:g id="process">%2$s</xliff:g>) beklenmedik biçimde durdu. Bunun nedeni düşük bellek alanı olabilir. Lütfen belleği boşaltıp tekrar deneyin."</string>
+
+   <string name="free_memory_btn">"Belleği boşalt"</string>
+
+   <string name="contact_widget_loading">Yükleniyor\u2026</string>
+
+   <!-- add new style for mtk streaming video player start -->
+   <string name="media_controller_buffering">"Arabelleğe alınıyor %d%%..."</string>
+   <string name="media_controller_live">"Canlı akış"</string>
+   <string name="media_controller_playing">"Oynatılıyor"</string>
+   <string name="media_controller_connecting">"Bağlanıyor..."</string>
+
+   <string name="VideoView_error_text_bad_file">"Hatalı dosya, bu dosya oynatılamaz."</string>
+   <string name="VideoView_error_text_cannot_connect_to_server">"Sunucuya bağlanamadı."</string>
+   <string name="VideoView_error_text_type_not_supported">"Ortam dosyası türü desteklenmiyor."</string>
+   <string name="VideoView_error_text_drm_not_supported">"DRM korumalı, bu dosya oynatılamaz."</string>
+   <!-- add new style for mtk streaming video player end -->
+
+   <!-- added new string for SearchDialog, used to indicate WikiPedia--> 
+
+    <!-- support TextView undo tool bar -->
+
+   <string name="new_sim">Yeni SIM</string>
+
+    <!-- support RecipientsView recipient bar -->
+
+    <string name="delete">Sil</string>
+
+        <!-- string for gemini enhancement-->
+
+    <string name="searching_simcard">Detecting...</string>
+
+     <!-- string for gemini enhancement end-->
+
+    <!-- For the unlock screen, Information message shown in dialog when user has too many failed attempts -->
+
+    <!-- add for drm start -->
+    <string name="drm_protection_status">Koruma durumu:</string>
+    <string name="drm_can_forward">İletilebilir.</string>
+    <string name="drm_can_not_forward">İletilemez.</string>
+    <string name="drm_no_limitation">Sınırlama yok.</string>
+    <string name="drm_no_license">Kullanılabilir DRM lisansı yok.</string>
+    <string name="drm_begin">Başla:</string>
+    <string name="drm_end">Sonlandır:</string>
+    <string name="drm_use_left">Kalan sayım:</string>
+    <string name="drm_protectioninfo_renew">Yenile</string>
+    <string name="drm_protectioninfo_title">Koruma Bilgisi</string>
+    <string name="drm_licenseacquisition_title">DRM Lisansı Edinme</string>
+    <string name="drm_licenseacquisition_message">%1$s\'in kullanılabilir bir DRM lisansı yok. DRM lisansını edinmek için "Renew" (Yenile) düğmesine basabilirsiniz.</string>
+    <string name="drm_toast_license_expired">DRM Lisansının süresi dolmuş </string>
+    <string name="drm_forwardforbidden_title">İletmek Yasak</string>
+    <string name="drm_forwardforbidden_message">Bazı korumalı dosyalar iletilemez.</string>
+    <string name="drm_license_install_success">DRM Lisansı kurulumu başarılı.</string>
+    <string name="drm_license_install_fail">DRM Lisansı kurulumu başarısız.</string>
+    <string name="drm_secure_timer_title">Geçersiz DRM güvenli saati</string>
+    <string name="drm_secure_timer_message">DRM korumalı dosyalarını kullanamazsınız. Lütfen veri bağlantısının kullanılabilir olduğundan emin olun.</string>
+    <string name="drm_consume_title">DRM haklarını kullan</string>
+    <string name="drm_consume_message">İşleminiz DRM haklarını kullanacak.</string>
+    <!-- add for drm end -->
+
+    <string name="gps_time_sync_fail_str">GPS zamanı alınamadı</string>
+
+    <string name="usb_ums_notification_title">USB Depolama olarak bağlı</string>
+    <string name="usb_charging_notification_title">Yalnızca USB Şarj</string>        
+
+    <string name="sim_missing_slot1">Yuva 1: SIM kart algılanmadı</string>  
+    <string name="sim_missing_slot2">Yuva 2: SIM kart algılanmadı</string>  
+    <string name="sim_missing">SIM kart algılanmadı</string>  
+    <string name="sim_missing_detail">Lütfen SIM kartın hazır olup olmadığını kontrol edin</string> 
+
+    <!-- add for webview find -->
+
+    <string name="tethered_notification_message_for_hotspot">
+        <xliff:g id="connected">%1$d</xliff:g> bağlandı, 
+        <xliff:g id="blocked">%2$d</xliff:g> engellendi
+    </string>
+    <string name="tethered_notification_message_bandwidth_set">Bant genişliği ayarlandı</string>
+    <string name="default_wallpaper_name">"Varsayılan"</string> 
+    <!-- voice unlock start -->
+    <!-- voice unlock end -->
+
+    <string name="wifi_display_bt_hdmi_off_wfd_on">Kablosuz görüntü açtığınızda Bluetooth ve HDMI kapatılacaktır. Devam etmek istiyor musunuz?</string> 
+    <string name="wifi_display_wfd_off_hdmi_on">HDMI açıldığında kablosuz görüntü kapatılacaktır. Devam etmek istiyor musunuz?</string> 
+
+    <string name="wifi_display_wifi_p2p_disconnect_wfd_connect">Mevcut Wi-Fi Direct bağlantısı kablosuz görüntüleme cihazına bağlandığınızda kesilecektir. Devam etmek istiyor musunuz? </string>
+    <string name="wifi_display_unstable_connection">Kararsız bağlantı</string>
+    <string name="wifi_display_connection_is_not_steady">Mevcut kablosuz görüntü bağlantısı kararlı değil.</string>
+    <string name="wifi_display_unstable_suggestion">Mevcut kablosuz görüntü bağlantısı kararlı değil, lütfen görüntüleme cihazınıza yaklaşmayı deneyin.</string>
+    <string name="wifi_display_reconnect">Yeniden bağlan</string> 
+    <string name="wifi_display_disconnect_then_reconnect">Kablosuz ekran bağlantısı kesildi. Yeniden bağlanmak ister misiniz?</string> 
+    <string name="wifi_display_disconnected">Kablosuz ekran bağlantısı kesildi.</string>
+    <string name="wifi_wps_failed_overlap">"Başka bir WPS oturumu saptandı. Lütfen birkaç dakika sonra tekrar deneyin."</string>
+    <string name="wifi_p2p_frequency_conflict_message">Telefon, <xliff:g id="device_name">%1$s</xliff:g> cihazına bağlandığında Wi-Fi bağlantısını geçici olarak kesecek (yalnızca geçerli Wi-Fi erişim noktalarının kanal bandı ve kimliği <xliff:g id="oper_freq">%2$s</xliff:g> olarak değiştirilirse)</string>
+    <string name="wifi_display_wfd_and_wifi_are_turned_on">Kablosuz gösterim ve Wi-Fi açık.</string>
+    <string name="wifi_display_sound_path_reminder">Multimedya sesi kulaklığınızdan duyulmaz.</string>  
+    <string name="wifi_display_change_resolution_reminder">Çözünürlüğün değiştirilmesi kablosuz gösterimi otomatik olarak yeniden bağlayacaktır.</string>  
+    <string name="wifi_display_do_not_remind_again">Yeniden hatırlatma.</string>
+    <string name="wifi_display_wifi_ap_affects_quality">Mevcut Wi-Fi AP Kablosuz ekran kalitesini etkileyebilir.</string>
+    <string name="wifi_display_wait_connection">Diğer cihazlardan bağlantı daveti bekleniyor.</string>
+    <string name="wifi_display_confirm_connection">sizinle bağlantı kurmak istiyor.</string>
+    <string name="wifi_display_build_connection">Bağlantı kuruluyor.</string>
+
+    <!-- Add for AT&T to show toast when pass pin/puk lock -->
+    <!-- MountService start -->
+    <string name="sdcard_ready_title">SD kart hazır</string>
+    <string name="sdcard_select_default_path">Varsayılan yazma diskini değiştirmek istiyor musunuz?</string>
+    <string name="sdcard_default_path_change">Varsayılan yazma diski değişti.</string>
+    <string name="usb_storage_ready_title">Harici USB depolama hazır</string>
+    <!-- MountService end -->
+
+    <string name="serviceClassVideo">Video</string>
+    <string name="VideoView_error_text_invalid_connection">"Geçersiz bağlantı. (403 Yasak)"</string>
+
+    <string name="url_dialog_choice_title">İletiler</string>
+    <string name="url_dialog_choice_message">Tarayıcı açılacak, devam edilsin mi?</string>
+
+    <string name="deleteMail">Postaları yedekleyin ve depolama aygıtını serbest bırakın</string>
+    <string name="storage_withsd">Telefon depolama aygıtında yeterli alan yok. Lütfen biraz depolama alanı boşaltın veya ayarlarda varsayılan yazma diskini değiştirin.</string>
+    <string name="storage_withoutsd">Telefon depolama aygıtında yeterli alan yok. Lütfen biraz depolama alanını boşaltın veya SD kart takın.</string>
+    <string name="storage_sd">SD kartta yeterli alan yok. Lütfen biraz depolama alanı boşaltın veya ayarlarda varsayılan yazma diskini değiştirin.</string>
+
+    <string name="invalid_card">Geçersiz Kart</string>
+
+    <string name="hdmi_notification_title">HDMI kablosu bağlı</string>  
+    <string name="hdmi_notification_content">HDMI yapılandırmak için tıklayın</string>
+    <string name="hdmi_hdvideo_toast">HDMI 4K video oynatamaz, bağlantı kesilecektir.</string>
+    <string name="hdmi_mutex_call_content">Üzgünüz, HDMI şu anda yapılan telefon çağrısı nedeniyle durdu.</string>
+    <string name="hdmi_audio_output">Ses çıkışı</string>
+    <string name="hdmi_audio_output_stereo">Stereo</string>
+    <string name="hdmi_audio_output_multi_channel">Çoklu Kanal</string>
+
+    <!-- VolumePanel -->
+
+    <!-- Low Storage -->
+    <string name="aerr_application_lowstorage">Dahili depolama alanı tükenmek üzere, uygulama durdu. Lütfen boş depolama alanı oluşturduktan sonra yeniden deneyin.</string>
+    <string name="aerr_process_lowstorage">Dahili depolama alanı tükenmek üzere, işlem durdu. Lütfen boş depolama alanı oluşturduktan sonra yeniden deneyin.</string>
+    <string name="low_internal_storage_view_title">Dahili depolama alanı tükenmek üzere</string>
+    <string name="deleteMails">Postaları Sil</string>
+    <string name="low_storage_warning_message">Lütfen boş alan oluşturun aksi halde bazı uygulamalar sistem işlevselliği doğru şekilde çalışmayabilir.</string>
+
+    <!-- KK translation task -->
+    <string name="virtual_sim_on_slot1">Sanal SIM 1 AÇIK</string>
+    <string name="virtual_sim_on_slot2">Sanal SIM 2 AÇIK</string>
+    <string name="virtual_sim_on_slot3">Sanal SIM 3 AÇIK</string>
+    <string name="virtual_sim_on_slot4">Sanal SIM 4 AÇIK</string>
+    <string name="virtual_sim_on">Sanal SIM AÇIK</string>
+    <string name="RejectCauseTitle">Ağ Reddetme Nedeni</string>
+    <string name="MMRejectCause2">SIM onaylanmadı MM No.2</string>
+    <string name="MMRejectCause3">"SIM'e izin verilmedi MM No.3"</string>
+    <string name="MMRejectCause5">Çağrı Başarısız MM No.5</string>
+    <string name="MMRejectCause6">Telefona izin verilmedi MM No.6</string>
+    <string name="MMRejectCause13">Yalnız acil aramalar</string>
+
+    <string name="press_color_to_apply">Uygulamak için Renge Basın</string>
+    <string name="oper_long_46000">CMCC</string>
+    <string name="oper_long_46001">CU</string>
+    <string name="oper_long_46003">China Telecom</string>
+    <string name="oper_long_46601">Far EasTone</string>
+    <string name="oper_long_46692">Chunghwa Telecom</string>
+    <string name="oper_long_46697">Taiwan Mobile</string>
+    <string name="oper_long_99998">Android1</string>
+    <string name="oper_long_99999">Android</string>
+    <string name="oper_short_46000">CMCC</string>
+    <string name="oper_short_46001">CU-GSM</string>
+    <string name="oper_short_46003">China Telecom</string>
+    <string name="oper_short_46601">FET</string>
+    <string name="oper_short_46692">Chunghwa</string>
+    <string name="oper_short_46697">TWN</string>
+    <string name="oper_short_99997">AD1</string>
+    <string name="oper_short_99999">AD</string>
+
+    <string name="sim_missing_slot3">Yuva 3: SIM kart algılanmadı</string>
+    <string name="sim_missing_slot4">Yuva 4: SIM kart algılanmadı</string>
+    <string name="sim_missing_slot1_card">Yuva 1: Kart algılanmadı</string>
+    <string name="sim_missing_slot2_card">Yuva 2: Kart algılanmadı</string>
+    <string name="sim_missing_card">Kart algılanmadı</string>
+    <string name="sim_missing_detail_card">Kartın hazır olup olmadığını kontrol edin</string>
+
+    <string name="description_direction_right">"Kapatmak için sağa kaydırın"</string>
+    <string name="description_direction_left">"Ertelemek için sola kaydırın"</string>
+    <string name="description_direction_up">"Kapatmak için yukarı kaydırın"</string>
+    <string name="description_direction_down">"Ertelemek için aşağı kaydırın"</string>
+    <string name="headset_pin_recognition">Kulaklıklarınız Telefonla uyumlu değil.Lütfen başka kulaklık deneyin.</string>
+
+    <string name="usb_autorun_cdrom_notification_title">Oto. çalıştırılan cdrom olarak bağlandı</string>
+    <string name="ct_net_name">"CTNET"</string>
+    <string name="ct_wap_name">"CTWAP"</string>
+
+    <string name="data_conn_only">Yalnızca veri bağlantısı</string>
+
+    <string name="Special_Card_Type_Title_Lte_Not_Available">LTE şebekesi mevcut değil.</string>
+    <string name="Suggest_To_Change_USIM">Bir 4G SIM karta değiştirme önerilir.</string>
+    <string name="confirm_flight_mode_title">Uçak modu açık</string>
+    <string name="confirm_flight_mode_msg">Uçak modu açık. Uçak modunu kapatmak istiyor musunuz?</string>
+    <string name="confirm_radio_title">SIM kapalı</string>
+    <string name="confirm_radio_msg">Bu SIM kartını açmak ister misiniz?</string>
+    <string name="confirm_flight_mode_radio_title">Uçak modu açık ve SIM kapalı</string>
+    <string name="confirm_flight_mode_radio_msg">Uçak modunu kapatmak ve bu SIM kartı açmak istiyor musunuz?</string>
+    <string name="confirm_unlock_msg">Kullanmak üzere olduğunuz SIM kartı şu anda kilitli. Kilidi açmak ister misiniz?</string>
+    <string name="confirm_roaming_msg">Kullanmak üzere olduğunuz SIM kart şu an dolaşımda. Şu an yerel SIM mevcut değil. Devam etmek istiyor musunuz?</string>
+    <string name="confirm_button_turn_off">Kapat</string>
+    <string name="media_info_audio_not_supported">"Ses çalınamadı."</string>
+    <string name="media_info_video_not_supported">"Bu video desteklenmiyor."</string>
+    <string name="save_password_label">"Doğrula"</string>
+    <string name="save_password_message">"Tarayıcının bu şifreyi anımsamasını istiyor musunuz?"</string>
+    <string name="save_password_notnow">"Şimdi değil"</string>
+    <string name="save_password_remember">"Anımsa"</string>
+    <string name="save_password_never">"Hiçbir zaman"</string>
+
+    <string name="confirm_unlock_title">PIN Kilidi</string>
+    <string name="confirm_roaming_title">Dolaşım uyarısı</string>
+    <string name="confirm_button_ok">"Tamam"</string>
+    <string name="confirm_button_cancel">"İptal"</string>
+    <string name="confirm_button_unlock">"Kilit Aç"</string>
+    <string name="confirm_button_turn_on">"Aç"</string>
+    <string name="confirm_button_yes">"Evet"</string>
+    <string name="confirm_button_no">Hayır</string>
+    <string name="Default_Account_Selection_Content">Varsayılan Hesap Seçimi</string>
+    <string name="network_forbidden">Devre dışı bırak</string>
+
+    <string name="account_always_ask_title">"Her zaman sor"</string>
+    <string name="permlab_wake_device_sensorhub" product="tablet">tableti uyandır</string>
+    <string name="permlab_wake_device_sensorhub" product="default">telefonu uyandır</string>
+    <string name="permdesc_wake_device_sensorhub" product="tablet">Sensör merkezi aracılığıyla askıda modunda olduğunda, uygulamanın tableti uyandırmasını sağlar.</string>
+    <string name="permdesc_wake_device_sensorhub" product="default">Sensör merkezi aracılığıyla askıda modunda olduğunda, uygulamanın telefonu uyandırmasını sağlar.</string>
+    <string name="lockscreen_pin_too_many_failed_attempts_dialog_message">"PIN kodunuzu <xliff:g id="NUMBER_0">%d</xliff:g> kez yanlış girdiniz. "\n\n"Lütfen <xliff:g id="NUMBER_1">%d</xliff:g> saniye içinde yeniden deneyin."</string>
+    <string name="lockscreen_password_too_many_failed_attempts_dialog_message">"Parolanızı <xliff:g id="NUMBER_0">%d</xliff:g> kez yanlış girdiniz. "\n\n"Lütfen <xliff:g id="NUMBER_1">%d</xliff:g> saniye içinde yeniden deneyin."</string>
+    <string name="wifi_display_connected_to_wifi_network">Wi-Fi ağına bağlanıldı<xliff:g id="wifi_ap_name">%1$s</xliff:g> .</string>
+    <string name="wifi_display_wifi_network_disconnected">Wi-Fi ağının bağlantısı <xliff:g id="wifi_ap_name">%1$s</xliff:g> kesildi.</string>
+    <string name="wifi_display_channel_confliction">Kanal çakışması</string>
+    <string name="wifi_display_wifi_network_cannot_coexist">Geçerli Wi-Fi ağı, yayın ekranı bağlantısıyla aynı anda var olamaz.</string>
+    <string name="permdesc_receiveCbSms">"Uygulamanın Hücre Yayın SMS mesajlarını almasına ve işlemesine izin verir. Kötü niyetli uygulamalar mesajlarınızı izleyebilir veya size göstermeden silebilir."</string>
+    <string name="permdesc_receiveDmRegisterSms">Uygulamanın DM Kaydı SMS iletilerini alıp işlem yapmasını sağlar. DM UYGULAMASI dışında Uygulamalar bunu kullanmamalıdır</string>
+    <string name="drm_first_time_use">Bu ilk kullanım.</string>
+    <string name="drm_use_now">Şimdi kullanılsın mı?</string>
+    <string name="drm_consume_interval">Kullanmaya başlamanızın ardından bu dosya %1$s sonra mevcut olacak.</string>
+    <string name="drm_effective_duration">Etkin süre:</string>
+    <string name="drm_expire_dialog_future">Geçerli dönem:</string>
+    <string name="validity_period" msgid="8818886137545983110">"Geçerlilik:"</string>
+</resources>

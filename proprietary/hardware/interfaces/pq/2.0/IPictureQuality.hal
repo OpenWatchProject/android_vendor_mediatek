@@ -1,0 +1,400 @@
+/*
+ * Copyright (C) 2016 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package vendor.mediatek.hardware.pq@2.0;
+
+import types;
+
+/*
+ * Interface declaring display quality enhancement.
+ */
+
+interface IPictureQuality {
+    typedef vendor.mediatek.hardware.pq@2.0::Result Result;
+
+    /**
+     * Set disp color demo window parameters.
+     *
+     * @param split_en decides color effect is in/out of demo window.
+     * @param start_x the start position on x-axis of demo window (Range: 0x0 ~ 0xFFFE).
+     * @param end_x the end position on x-axis of demo window (Range: 0x1 ~ 0xFFFF).
+     * @param start_y the start position on y-axis of demo window (Range: 0x0 ~ 0xFFFE).
+     * @param end_y the end position on y-axis of demo window (Range: 0x1 ~ 0xFFFF).
+     * @return retval OK if setColorRegion successfully executed.
+     */
+    setColorRegion(int32_t split_en, int32_t start_x, int32_t start_y, int32_t end_x, int32_t end_y) generates (Result retval);
+
+    /**
+     * Get disp color demo window parameters.
+     *
+     * @return win_param a struct contains information of color demo window.
+     * @return retval OK if getColorRegion successfully executed.
+     */
+    getColorRegion() generates (Result retval, dispPQWinParams win_param);
+
+    /**
+     * Set Picture Mode for different PQ settings.
+     *
+     * @param mode the Picture Mode for different PQ settings, defualtly we have three modes:
+     *      Standard Mode : 0
+     *      Vivid Mode : 1
+     *      User defined Mode : 2
+     *  these mode are defined in \vendor\mediatek\proprietary\hardware\pq\v2.0\include\Cust_color.h
+     * @param step the transition speed when PQ effect changed
+     * @return retval OK if setPQMode successfully executed.
+     */
+    setPQMode(int32_t mode, int32_t step) generates (Result retval);
+
+    /**
+     * Set TDSHP tuning flag
+     *
+     * @param TDSHPFlag the flag set by tuning tool, will notify MDP not to write TDSHP HW.
+     * @return retval OK if setTDSHPFlag successfully executed.
+     */
+    setTDSHPFlag(int32_t TDSHPFlag) generates (Result retval);
+
+    /**
+     * Get TDSHP tuning flag
+     *
+     * @return TDSHPFlag the tuning flag set by tuning tool, it may tell tool what
+     *  tuning status is it now.
+     * @return retval OK if setPQMode successfully executed.
+     */
+    getTDSHPFlag() generates (Result retval, int32_t TDSHPFlag);
+
+    /**
+     * Get Calculated Color Index for different level of enhancement
+     *
+     * @param scenario the usage scenario given by user
+     * @param mode the Picture Mode set by user, which is unused now.
+     * @return dispPQIndexParams the structure of PQ level index
+     * @return retval OK if getMappedColorIndex successfully executed.
+     */
+    getMappedColorIndex(int32_t scenario, int32_t mode) generates (Result retval, dispPQIndexParams index);
+
+    /**
+     * Get Calculated TDSHP Index for different level of enhancement
+     *
+     * @param scenario the usage scenario given by user(picture/video/camera)
+     * @param mode the Picture Mode set by user, which is unused now.
+     * @return dispPQIndexParams the structure of PQ level index
+     * @return retval OK if getMappedTDSHPIndex successfully executed.
+     */
+    getMappedTDSHPIndex(int32_t scenario, int32_t mode) generates (Result retval, dispPQIndexParams index);
+
+    /**
+     * Get Origin Color Index for different level of enhancement
+     *
+     * @param scenario the usage scenario given by user(picture/video/camera)
+     * @param mode the Picture Mode set by user, which is unused now.
+     * @return dispPQIndexParams the structure of PQ level index
+     * @return retval OK if getColorIndex successfully executed.
+     */
+    getColorIndex(int32_t scenario, int32_t mode) generates (Result retval, dispPQIndexParams index);
+
+    /**
+     * Get Origin TDSHP Index for different level of enhancement
+     *
+     * @param scenario the usage scenario given by user
+     * @param mode the Picture Mode set by user, which is unused now.
+     * @return dispPQIndexParams the structure of PQ level index
+     * @return retval OK if getTDSHPIndex successfully executed.
+     */
+    getTDSHPIndex(int32_t scenario, int32_t mode) generates (Result retval, dispPQIndexParams index);
+
+    /**
+     * Set level of specific PQ parameter
+     *
+     * @param level the strength of specofic PQ parameter
+     * @param scenario the usage scenario given by user(picture/video/camera)
+     * @param tuning_mode the hint of whether the user is Gallery apk or not
+     * @param index the PQ parameter item(ex:brightness)
+     * @param step the transition speed when PQ effect changed
+     * @return retval OK if setPQIndex successfully executed.
+     */
+    setPQIndex(int32_t level, int32_t scenario, int32_t tuning_mode, int32_t index, int32_t step) generates (Result retval);
+
+    /**
+     * Set scenario for changing DISP PQ parameters
+     *
+     * @param scenario the usage scenario given by user(picture/video/camera)
+     * @param step the transition speed when PQ effect changed
+     * @return retval OK if setDISPScenario successfully executed.
+     */
+    setDISPScenario(int32_t scenario, int32_t step) generates (Result retval);
+
+    /**
+     * Set specific PQ Feature on/off
+     *
+     * @param id the PQ Feature enum.
+     * @param value the status of switch, 0 for off and 1 for on
+     * @return retval OK if setFeatureSwitch successfully executed.
+     */
+    setFeatureSwitch(PQFeatureID id, uint32_t value) generates (Result retval);
+
+    /**
+     * Get status of specific PQ Feature
+     *
+     * @param id the PQ Feature enum.
+     * @return value the status of switch, 0 for off and 1 for on
+     * @return retval OK if getFeatureSwitch successfully executed.
+     */
+    getFeatureSwitch(PQFeatureID id) generates (Result retval, uint32_t value);
+
+    /**
+     * Set Blulight defender algorithm on/off
+     *
+     * @param enable the on/off switch, false for off and true for on
+     * @param step the transition speed when PQ effect changed
+     * @return retval OK if enableBlueLight successfully executed.
+     */
+    enableBlueLight(bool enable, int32_t step) generates (Result retval);
+
+    /**
+     * Get Blulight defender on/off status
+     *
+     * @return isEnable the on/off status, false for off and true for on
+     * @return retval OK ifgetBlueLightEnabled successfully executed.
+     */
+    getBlueLightEnabled() generates (Result retval, bool isEnabled);
+
+    /**
+     * Set Blulight defender strength
+     *
+     * @param strength the strength of blulight defender
+     * @param step the transition speed when PQ effect changed
+     * @return retval OK if enableBlueLight successfully executed.
+     */
+    setBlueLightStrength(int32_t strength, int32_t step) generates (Result retval);
+
+    /**
+     * Get Blulight defender strength
+     *
+     * @return strength the strength of blulight defender
+     * @return retval OK if enableBlueLight successfully executed.
+     */
+    getBlueLightStrength() generates (Result retval, int32_t strength);
+
+    /**
+     * Set Chameleon on/off
+     *
+     * @param enable the on/off switch, false for off and true for on
+     * @param step the transition speed when PQ effect changed
+     * @return retval OK if enableChameleon successfully executed.
+     */
+    enableChameleon(bool enable, int32_t step) generates (Result retval);
+
+    /**
+     * Get Chameleon on/off status
+     *
+     * @return isEnable the on/off status, false for off and true for on
+     * @return retval OK if getChameleonEnabled successfully executed.
+     */
+    getChameleonEnabled() generates (Result retval, bool isEnabled);
+
+    /**
+     * Set Chameleon strength
+     *
+     * @param strength the strength of Chameleon display
+     * @param step the transition speed when PQ effect changed
+     * @return retval OK if setChameleonStrength successfully executed.
+     */
+    setChameleonStrength(int32_t strength, int32_t step) generates (Result retval);
+
+    /**
+     * Get Chameleon strength
+     *
+     * @return strength the strength of Chameleon display
+     * @return retval OK if getChameleonStrength successfully executed.
+     */
+    getChameleonStrength() generates (Result retval, int32_t strength);
+
+    /**
+     * Set value to specific address for PQ Tuning
+     *
+     * @param pqModule the base address of module
+     * @param field the offeset address (based on pqModule)
+     * @param value the value setting to specific address (combined by pqModule and field )
+     * @return retval OK if setTuningField successfully executed.
+     */
+    setTuningField(int32_t pqModule, int32_t field, int32_t value) generates (Result retval);
+
+    /**
+     * Get value of specific address for PQ Tuning
+     *
+     * @param pqModule the base address of module
+     * @param field the offeset address (based on pqModule)
+     * @return value the value of specific address (combined by pqModule and field )
+     * @return retval OK if getTuningField successfully executed.
+     */
+    getTuningField(int32_t pqModule, int32_t field) generates (Result retval, int32_t value);
+
+    /**
+     * Get shared memory base address for accessing field in it
+     *
+     * @return mem the shared memory base address in PQService.
+     * @return retval OK if getAshmem successfully executed.
+     */
+    getAshmem() generates(Result retval, memory mem);
+
+    /**
+     * Set color temperture for ambient light
+     *
+     * @param input_x debounced x value of color temperture for ambient light
+     * @param input_y debounced y value of color temperture for ambient light
+     * @param input_Y debounced Y value of color temperture for ambient light
+     * @return retval OK if setAmbientLightCT successfully executed.
+     */
+    setAmbientLightCT(double input_x, double input_y, double input_Y) generates(Result retval);
+
+    /**
+     * Set ambient RGBW light value
+     *
+     * @param input_R undebounced R value of ambient RGBW light
+     * @param input_G undebounced G value of ambient RGBW light
+     * @param input_B undebounced B value of ambient RGBW light
+     * @param input_W undebounced W value of ambient RGBW light
+     * @return retval OK if setAmbientLightRGBW successfully executed.
+     */
+    setAmbientLightRGBW(int32_t input_R, int32_t input_G, int32_t input_B, int32_t input_W) generates(Result retval);
+
+    /**
+     * Set Gamma Strength
+     *
+     * @param index the level of gamma strength
+     * @param step the transition speed when PQ effect changed
+     * @return retval OK if setGammaIndex successfully executed.
+     */
+    setGammaIndex(int32_t index, int32_t step) generates (Result retval);
+
+    /**
+     * Get Gamma Strength
+     *
+     * @return index the level of gamma strength
+     * @return retval OK if getGammaIndex successfully executed.
+     */
+    getGammaIndex() generates (Result retval, int32_t index);
+
+    /**
+     * Set External Panel Nits for Video HDR
+     *
+     * @param externalPanelNits the Panel Nits set to External display
+     * @return retval OK if setExternalPanelNits successfully executed.
+     */
+    setExternalPanelNits(uint32_t externalPanelNits) generates (Result retval);
+
+    /**
+     * Get External Panel Nits for Video HDR
+     *
+     * @return externalPanelNits the Panel Nits of External display
+     * @return retval OK if getExternalPanelNits successfully executed.
+     */
+    getExternalPanelNits() generates (Result retval, uint32_t externalPanelNits);
+
+    /**
+     * Set color Transform matrix for compatibility of Android NightLight and MTK Blulight Defender
+     *
+     * @param matrix the 4x4 color transform matrix passed by HWC
+     * @param hint the preserved parameter, unused now.
+     * @param step the transition speed when PQ effect changed
+     * @return retval OK if setColorTransform successfully executed.
+     */
+    setColorTransform(float[4][4] matrix, int32_t hint, int32_t step) generates (Result retval);
+
+    /**
+     * Execute disp pq ioctl for tuning
+     *
+     * @param dispPQIoctlParams the ioctl parameters
+     * @return dispPQIoctlParams the ioctl parameters(for ioctl of reading register)
+     * @return retval OK if setColorTransform successfully executed.
+     */
+    execIoctl(dispPQIoctlParams arg) generates (Result retval, dispPQIoctlParams retParam);
+
+    /**
+     * Set R, G, B channel Gain Value
+     *
+     * @param r_gain is Red color channel ratio of display
+     * @param g_gain is Green color channel ratio of display
+     * @param b_gain is Blue color channel ratio of display
+     * @param step the transition speed when PQ effect changed
+     * @return retval OK if setGlobalPQStrength successfully executed.
+     */
+    setRGBGain(uint32_t r_gain, uint32_t g_gain, uint32_t b_gain, int32_t step) generates (Result retval);
+
+    /**
+     * Set Global PQ Switch
+     *
+     * @param switch_value controls DC and Sharpness
+     * @return retval OK if setGlobalPQSwitch successfully executed.
+     */
+    setGlobalPQSwitch(int32_t switch_value) generates (Result retval);
+
+    /**
+     * Get Global PQ Switch
+     *
+     * @return the switch of Global PQ
+     * @return retval OK if getGlobalPQSwitch successfully executed.
+     */
+    getGlobalPQSwitch() generates (Result retval, int32_t switch_value);
+
+    /**
+     * Set Global PQ Strength
+     *
+     * @param strength is the value of DC and Sharpness
+     * @return retval OK if setGlobalPQStrength successfully executed.
+     */
+    setGlobalPQStrength(int32_t strength) generates (Result retval);
+
+    /**
+     * Get Global PQ Strength
+     *
+     * @return the strength of Global PQ
+     * @return retval OK if getGlobalPQStrength successfully executed.
+     */
+    getGlobalPQStrength() generates (Result retval, int32_t strength);
+
+    /**
+     * Get Global PQ Strength Range
+     *
+     * @return the strength range of Global PQ
+     * @return retval OK if getGlobalPQStrengthRange successfully executed.
+     */
+    getGlobalPQStrengthRange() generates (Result retval, int32_t strength_range);
+
+    /**
+     * Get Global PQ Index
+     *
+     * @return the Sharpness and DC of Global PQ
+     * @return retval OK if getGlobalPQIndex successfully executed.
+     */
+    getGlobalPQIndex() generates (Result retval, globalPQIndex_t index);
+
+    /**
+     * Set Global PQ stable status
+     *
+     * @param the stable status of Global PQ
+     * @return retval OK if setGlobalPQStableStatus successfully executed.
+     */
+    setGlobalPQStableStatus(int32_t stable_status) generates (Result retval);
+
+    /**
+     * Get Global PQ stable status
+     *
+     * @return the stable status of Global PQ
+     * @return retval OK if getGlobalPQStableStatus successfully executed.
+     */
+    getGlobalPQStableStatus() generates (Result retval, int32_t stable_status);
+};

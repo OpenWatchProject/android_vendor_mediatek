@@ -1,0 +1,107 @@
+/* Copyright Statement:
+ *
+ * This software/firmware and related documentation ("MediaTek Software") are
+ * protected under relevant copyright laws. The information contained herein is
+ * confidential and proprietary to MediaTek Inc. and/or its licensors. Without
+ * the prior written permission of MediaTek inc. and/or its licensors, any
+ * reproduction, modification, use or disclosure of MediaTek Software, and
+ * information contained herein, in whole or in part, shall be strictly
+ * prohibited.
+ *
+ * MediaTek Inc. (C) 2018. All rights reserved.
+ *
+ * BY OPENING THIS FILE, RECEIVER HEREBY UNEQUIVOCALLY ACKNOWLEDGES AND AGREES
+ * THAT THE SOFTWARE/FIRMWARE AND ITS DOCUMENTATIONS ("MEDIATEK SOFTWARE")
+ * RECEIVED FROM MEDIATEK AND/OR ITS REPRESENTATIVES ARE PROVIDED TO RECEIVER
+ * ON AN "AS-IS" BASIS ONLY. MEDIATEK EXPRESSLY DISCLAIMS ANY AND ALL
+ * WARRANTIES, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED
+ * WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE OR
+ * NONINFRINGEMENT. NEITHER DOES MEDIATEK PROVIDE ANY WARRANTY WHATSOEVER WITH
+ * RESPECT TO THE SOFTWARE OF ANY THIRD PARTY WHICH MAY BE USED BY,
+ * INCORPORATED IN, OR SUPPLIED WITH THE MEDIATEK SOFTWARE, AND RECEIVER AGREES
+ * TO LOOK ONLY TO SUCH THIRD PARTY FOR ANY WARRANTY CLAIM RELATING THERETO.
+ * RECEIVER EXPRESSLY ACKNOWLEDGES THAT IT IS RECEIVER'S SOLE RESPONSIBILITY TO
+ * OBTAIN FROM ANY THIRD PARTY ALL PROPER LICENSES CONTAINED IN MEDIATEK
+ * SOFTWARE. MEDIATEK SHALL ALSO NOT BE RESPONSIBLE FOR ANY MEDIATEK SOFTWARE
+ * RELEASES MADE TO RECEIVER'S SPECIFICATION OR TO CONFORM TO A PARTICULAR
+ * STANDARD OR OPEN FORUM. RECEIVER'S SOLE AND EXCLUSIVE REMEDY AND MEDIATEK'S
+ * ENTIRE AND CUMULATIVE LIABILITY WITH RESPECT TO THE MEDIATEK SOFTWARE
+ * RELEASED HEREUNDER WILL BE, AT MEDIATEK'S OPTION, TO REVISE OR REPLACE THE
+ * MEDIATEK SOFTWARE AT ISSUE, OR REFUND ANY SOFTWARE LICENSE FEES OR SERVICE
+ * CHARGE PAID BY RECEIVER TO MEDIATEK FOR SUCH MEDIATEK SOFTWARE AT ISSUE.
+ *
+ * The following software/firmware and/or related documentation ("MediaTek
+ * Software") have been modified by MediaTek Inc. All revisions are subject to
+ * any receiver's applicable license agreements with MediaTek Inc.
+ */
+
+#define LOG_TAG "mtkcam-scenario_mgr"
+//
+#include <mtkcam/utils/std/Log.h>
+#include <mtkcam/utils/std/ULog.h>
+#include <mtkcam/utils/std/Trace.h>
+//
+#include <mtkcam3/3rdparty/core/scenario_mgr.h>
+#include <mtkcam3/3rdparty/customer/customer_scenario_mgr.h>
+#include <mtkcam3/3rdparty/customer/customer_scenario_mgr_ISP.h>
+
+CAM_ULOG_DECLARE_MODULE_ID(MOD_FEATURE_SETTING_POLICY);
+
+namespace NSCam {
+namespace v3 {
+namespace pipeline {
+namespace policy {
+namespace scenariomgr {
+
+bool get_capture_scenario(
+    int32_t &scenario, /*eCameraScenarioCustomer or eCameraScenarioMtk*/
+    ScenarioFeatures &scenarioFeatures,
+    CaptureScenarioConfig &scenarioConfig,
+    const ScenarioHint &scenarioHint,
+    const IMetadata *pAppMetadata
+)
+{
+    bool ret = true;
+    if (!scenarioHint.isIspHidl) {
+        // camera capture scenario
+        ret &= customer_get_capture_scenario(scenario,
+                                             scenarioFeatures,
+                                             scenarioConfig,
+                                             scenarioHint,
+                                             pAppMetadata);
+    }
+    else {
+        // isp hidl capture feature scenario
+        ret &= customer_get_isp_hidl_capture_scenario(scenario,
+                                             scenarioFeatures,
+                                             scenarioConfig,
+                                             scenarioHint,
+                                             pAppMetadata);
+    }
+
+    ret &= customer_update_capture_feature_combination(scenarioFeatures, pAppMetadata);
+
+    return ret;
+}
+
+bool get_streaming_scenario(
+    int32_t &scenario, /*eCameraScenarioCustomer or eCameraScenarioMtk*/
+    ScenarioFeatures &scenarioFeatures,
+    StreamingScenarioConfig &scenarioConfig,
+    const ScenarioHint &scenarioHint,
+    const IMetadata *pAppMetadata
+)
+{
+    return customer_get_streaming_scenario(scenario,
+                                         scenarioFeatures,
+                                         scenarioConfig,
+                                         scenarioHint,
+                                         pAppMetadata);
+}
+
+};  //namespace scenariomgr
+};  //namespace policy
+};  //namespace pipeline
+};  //namespace v3
+};  //namespace NSCam
+

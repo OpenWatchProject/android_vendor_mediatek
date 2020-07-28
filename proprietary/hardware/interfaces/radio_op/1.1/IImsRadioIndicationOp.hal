@@ -1,0 +1,76 @@
+/*
+ * Copyright (C) 2016 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package vendor.mediatek.hardware.radio_op@1.1;
+
+import android.hardware.radio@1.0::IRadio;
+import android.hardware.radio@1.0::types;
+
+/*
+ * Interface declaring unsolicited radio op indications.
+ */
+interface IImsRadioIndicationOp {
+
+    /*
+     * Indication for GTT Capability
+     * RIL_UNSOL_GTT_CAPABILITY_INDICATION
+     *
+     * @param type Type of radio indication
+     * @param callId Call Id
+     * @param localCap Local text capability
+     * @param remoteCap Remote text capability
+     * @param localStatus Local Text Status
+     * @param remoteStatus Real Remote Text Capability
+     */
+    oneway gttCapabilityIndication(RadioIndicationType type, int32_t callId,
+                                   int32_t localCap, int32_t remoteCap,
+                                   int32_t localStatus, int32_t remoteStatus);
+
+    /*
+     * Indication for RTT Modify Response
+     * RIL_UNSOL_RTT_MODIFY_RESPONSE
+     *
+     * @param type Type of radio indication
+     * @param callId Call Id
+     * @param result 0: Success, 1: Fail
+     */
+    oneway rttModifyResponse(RadioIndicationType type, int32_t callId, int32_t result);
+
+    /*
+     * Indication for receiving RTT Text
+     * RIL_UNSOL_RTT_TEXT_RECEIVE
+     *
+     * @param type Type of radio indication
+     * @param callId Call Id
+     * @param lenOfString Length of String
+     * @param text Text
+     */
+    oneway rttTextReceive(RadioIndicationType type, int32_t callId,
+                          int32_t lenOfString, string text);
+
+    /*
+     * Indication for GTT Capa
+     * RIL_UNSOL_RTT_MODIFY_REQUEST_RECEIVE
+     *
+     * @param type Type of radio indication
+     * @param callId Call Id
+     * @param rttType 0: Peer Request RTT downgrade
+     *             1: Peer Request RTT upgrade
+     * @param text Text
+     */
+    oneway rttModifyRequestReceive(RadioIndicationType type, int32_t callId, int32_t rttType);
+
+};

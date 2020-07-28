@@ -1,0 +1,164 @@
+######### DUT (Device Under Test) Information #########################
+
+#### WTS Control Agent Support ########
+# 1-If DUT has WTS Control Agent support. 0-If not supported.
+
+WTS_ControlAgent_Support!1!
+
+# DUTType : VHT-5G
+# DUTType : WPA2-Personal or WPA2-Enterprise
+DUTType!WPA2-Enterprise!
+
+# DUT Band : ABG or BG or B (B only) or ABGN or GN or AC
+DUTBand!AC!
+
+#DUT Category : c1 or c2 or c3 if device is WPA2-Enterprise
+# Internal used, vendor could ignore it and keep it is
+DUTCategory!c1!
+
+#--------------------------OOB test case 4.2.1----------------------------
+#DUT OOB SSID 
+DUTOOBSSID!wi-fi!
+
+#DUT OOB security configuration - OPEN or WPA2-PSK
+DUTOOBSecurity!OPEN!
+
+
+#DUT OOB Passphrase - applicable only if DUT OOB security configuration is WPA2-PSK
+#if not applicable leave it blank
+DUTOOBPassPhrase!12345678!
+#-------------------------------------------------------------------------
+
+#Supported EAP Methods 0-No 1-Yes
+TLS!1!
+TTLS!1!
+PEAP0!1!
+PEAP1!1!
+FAST!0!
+SIM!1!
+AKA!1!
+
+## Number of Streams Support for both APUT/STAUT
+## 1 - 1X1, 2 - 2X2, 3-3X3, 
+# for test case  4.2.27 4.2.42  5.2.36  5.2.49  
+Streams!1!
+
+## Spectrum Management Bit check.
+# for test case 5.2.22
+Spectrum_Management_Bit!0!
+
+## Country code support or not, 1/0 for APUT
+# for test case 4.2.16
+Country_Code!0!
+
+## Transmit Power Control Support -->802.11h support
+# for test case 4.2.16 
+TPC_Support!0!
+
+###Channel Switch Support - 802.11h
+# for test case 4.2.16  5.2.23
+Channel_Switch!0!
+
+## Both Transmit Power Control + Channel Switch Support
+# for test case 4.2.16
+TPC_Channel_Switch!0!
+
+#Concurrent Dual Band AP (2.4 GHz and 5 GHz operation) 0-N0 1-Yes
+# for AP/STA both, but AP may not support both bands in same time
+Dual_band!1!
+
+
+##Receive Short GI for 80 MHz Operation 0-N0 1-Yes
+# for test case  4.2.34  5.2.42
+SGI80_RX!1!
+
+## Short Guard Interval(SGI) Support 0-N0 1-Yes
+### this is used for sniffer check, change it as per DUT support.
+SGI20!1!
+SGI40!1!
+SGI80!1!
+
+### STBC Receive Test 0-N0 1-Yes
+# for test case  5.2.46
+STBC_RX!1!
+
+### STBC Transmission for 80 MHz 0-N0 1-Yes
+# for test case 4.2.39
+STBC_TX!1!
+
+# WEP Support 0-No 1-Yes
+WEP!1!
+
+##### APUT/STAUT Receiving 256-QAM MCSs(MCS8 and 9) 0-N0 1-Yes
+# for test case  4.2.47  5.2.54
+Rx_MCS_8-9!1!
+
+
+#### Ability to Receive A-MPDU with A-MSDU  0-N0 1-Yes
+# for test case  4.2.49  5.2.56
+Rx_A-MPDU_of_A-MSDU!1!
+
+##### Single User (SU) Transmit beamforming when APUT is the beamformer 0-N0 1-Yes
+# for test case 4.2.52
+Tx_SU_beamformer!0!
+
+#### Single User (SU)Transmit Beamforming when STAUT is the Beamformee 0-N0 1-Yes
+# for test case 5.2.58
+Tx_SU_beamformee!1!
+
+##### LDPC where the APUT/STAUT is the Transmitter 0-N0 1-Yes
+# test case 4.2.53  5.2.59
+Tx_LDPC!1!
+
+#### LDPC where the APUT/STAUT is the Receiver 0-N0 1-Yes
+# test case 4.2.54  5.2.60; 
+RX_LDPC!1!
+
+#Pre Authentication Support 0-No 1-Yes
+PreAuth!0!
+
+## Supported Channel Widht 20-20Mhz 40-20/40Mhz 80-20/40/80Mhz
+SupportedChannelWidth!80!
+
+### AP Concurrent Opn in 2.4GHz and 5GHz 0-N0 1-Yes
+# AP support both bands in same time for different STAs
+# for test case 4.2.19
+AP_Concurrent!0!
+
+### To check for mobile and non-mobile AP, Mobile_AP=1 implies Mobile AP otherwise non-mobile AP
+# for test case 4.2.27
+Mobile_AP!0!
+
+### powered by an internal battery for the APUT
+# for test case 4.2.27
+Internal_Battery_Powered!0!
+
+########## VHT R2 related option feature definition in the following  ##############
+####  0 : NO;  1 : YES
+
+#### Channel 44 Supported
+# for test case 4.2.56  5.2.67
+Channel_44_Supported!1!
+
+#### Multiple User (MU) Transmit beamforming when APUT is the beamformer 0-N0 1-Yes
+# for test case 4.2.56
+Tx_MU_beamformer!0!
+
+#### Multiple User (MU)Transmit Beamforming when STAUT is the Beamformee 0-N0 1-Yes
+# for test case 5.2.63
+Tx_MU_beamformee!1!
+
+#### Extended 5 GHz Channel Support
+# for test case  5.2.66
+Extended_5G_channels!0!
+
+
+#### RTS with Bandwidth Signaling
+# for test case 4.2.59, 5.2.67
+RTS_Bandwidth_signaling!0!
+
+#4 SS support for test case 4.2.57 and 5.2.64
+SS_4_Support!0!
+
+#160 MHz bandwidth support for test case 4.2.58 and 5.2.65
+BW_160_Support!0!

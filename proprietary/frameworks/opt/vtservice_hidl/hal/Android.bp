@@ -1,0 +1,23 @@
+cc_library_shared {
+    name: "vendor.mediatek.hardware.videotelephony@1.0-impl",
+    relative_install_path: "hw",
+    proprietary: true,
+    srcs: [
+        "src/VideoTelephony.cpp",
+    ],
+    local_include_dirs: [
+        "inc",
+    ],
+    shared_libs: [
+        "libhidlbase",
+        "libhidltransport",
+        "libfmq",
+        "vendor.mediatek.hardware.videotelephony@1.0",
+        "libc",
+        "libutils",
+        "libcutils",
+        "liblog",
+        "libbase",
+    ],
+
+}

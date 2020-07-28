@@ -1,0 +1,26 @@
+*******************************************************************
+********Will introduce how to use facedetection by 3rd party*******
+*******************************************************************
+Step 1: create the FaceDetcionMode and FaceDetecionView
+   mIFaceDetectionRequest = new FaceDetectionMode(activity);
+   mIFaceDetectionView = new FaceDetectionView(activity,asert,mIFaceDetectionRequest,rootview);
+   
+Step 2: open/close the FaceDetection
+    //0:CameraCharacteristics.STATISTICS_FACE_DETECT_MODE_OFF
+    //1:CameraCharacteristics.STATISTICS_FACE_DETECT_MODE_SIMPLE
+    //2:CameraCharacteristics.STATISTICS_FACE_DETECT_MODE_FULL
+    mIFaceDetectionRequest.controlFaceDetection(1);
+    
+Step3: transelate the faceDetecion Callback by mIFaceDetectionView:
+     mIFaceDetectionView.onFaceDetected(faces);
+     so will draw the relative UI,about how to draw draw the UI,please see the function:onDraw()
+     
+     
+     
+**************************************************************************************************
+**************************************************************************************************
+**************************************************************************************************
+   <TODO: will add the class diagram in here ,so every one can know how this Vendor Tag running>
+**************************************************************************************************
+**************************************************************************************************
+**************************************************************************************************

@@ -1,0 +1,9 @@
+cc_library_headers {
+    name: "libcam_p1cam_headers",
+    proprietary: true,
+    owner: "mtk",
+
+    export_include_dirs: [
+        "Cam",
+    ],
+}

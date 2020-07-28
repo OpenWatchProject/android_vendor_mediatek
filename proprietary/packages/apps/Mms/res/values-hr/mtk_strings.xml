@@ -1,0 +1,610 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+/*
+ * Copyright (C) 2007-2008 Esmertec AG.
+ * Copyright (C) 2007-2008 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+ --><resources xmlns:android="http://schemas.android.com/apk/res/android" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+
+<!--- MTK Resources -->
+    <string name="create_new_message" msgid="8735943333953093860">"Stvaranje nove poruke"</string>
+    <string name="menu_undelivered_messages" msgid="3896857623211780616">"Neisporučene poruke"</string>
+    <string name="broadcast_from_to" msgid="2050376286109362539">"Od pošiljatelja <xliff:g id="SENDER">%1$s</xliff:g> za primatelja <xliff:g id="RECIPIENT">%2$s</xliff:g>"</string>
+    <string name="anonymous_recipient" msgid="2501437626187039034">"Anonimni"</string>
+    <string name="view_picture" msgid="4356315935277709195">"Prikaz slike"</string>
+    <string name="sent_on" msgid="5868288548564632354">"Poslano: <xliff:g id="DATE">%s</xliff:g>"</string>
+    <string name="name_colon" msgid="7069560650889479120"><b>"<xliff:g id="NAME">%s</xliff:g>"</b>": "</string>
+    <string name="compose_title" msgid="558578836596816068">"Stvori novu poruku"</string>
+    <string name="image_too_large" msgid="261880224164478061">"Slika je prevelika"</string>
+    <string name="ask_for_automatically_resize" msgid="7657603662407738758">"Automatski promijeniti veličinu prije slanja?"</string>
+    <string name="cannot_load_message" msgid="2577010607550849892">"Nije moguće učitati poruku."</string>
+    <string name="locked_message_cannot_be_deleted" msgid="6369452071783350219">"Zaključana poruka ne može biti izbrisana."</string>
+    <string name="multiple_recipients" msgid="8747754491343248141">"Broj primatelja: <xliff:g id="RECIPIENTCOUNT">%1$s</xliff:g>"</string>
+    <string name="resize" msgid="4308912589984220360">"Promijeni veličinu"</string>
+    <string name="to_label" msgid="2355268818058389047">"Prima: "</string>
+    <string name="confirm_delete_all_messages" msgid="5836389073199814660">"Cijela će nit biti izbrisana."</string>
+    <string name="mms_priority_label">"Prioritet"</string>
+    <string name="menu_retry_sending" msgid="3146582005568302643">"Pokušaj poslati ponovo"</string>
+    <string name="menu_retry_sending_all" msgid="1870529976966340616">"Pokušaj sve poslati ponovo"</string>
+    <string name="retrying_dialog_body" msgid="4738260459043003431">"Poruka <xliff:g id="MESSAGE">%s</xliff:g> nije poslana zbog problema s vezom."\n"Pokušaj ponovnog slanja..."</string>
+    <string name="dl_expired_notification" msgid="950390029992535809">"Ova je poruka istekla i bit će izbrisana."</string>
+    <string name="add_attachment_activity" msgid="5324811371129695320">"Dodaj privitak:"</string>
+    <string name="select_layout_activity" msgid="5041916695464513848">"Odabir izgleda"</string>
+    <string name="edit_text_activity" msgid="5915226413346879213">"Uređivanje teksta"</string>
+    <string name="pick_numbers_activity" msgid="2083330191224178637">"Odaberite brojeve"</string>
+    <string name="send_using_mms_activity" msgid="3703434556280345726">"Pošalji kao multimedijsku poruku…"</string>
+    <string name="select_contact_method_activity" msgid="1743384358979323991">"Odaberite način kontaktiranja"</string>
+    <string name="me" msgid="341726346007839961">"Ja"</string>
+    <string name="invalid_contact_message" msgid="8215051456181842274">"Kontakt ne postoji."</string>
+    <string name="finish">"Gotovo"</string>
+<string name="more_recipients">primatelj(a)</string>
+    <string name="Insert_sdcard">Umetnite SD karticu!</string>
+    <string name="pref_title_mms_enable_to_send_delivery_reports">Pošalji izvještaj o isporuci</string>
+    <string name="pref_summary_mms_enable_to_send_delivery_reports">Pošalji izvještaj o isporuci za svaku primljenu poruku</string>
+    <string name="set_service_center_OK">postavljanje centra za SMS uslugu uspjelo</string>
+    <string name="set_service_center_fail">postavljanje SMS servisnog centra neuspj.</string>
+    <string name="OK">U redu</string>
+    <string name="Cancel">"Odustani"</string>
+    <string name="sms_save_location">Lokacija za pohranu SMS-a</string>
+    <string name="sms_service_center">SMS servisni centar</string>
+    <string name="sms_validity_period">Rok valjanosti SMS-a</string>
+    <string name="sms_validity_period_nosetting">Nije postavljeno</string>
+    <string name="sms_validity_period_1hour">"1 sat"</string>
+    <string name="sms_validity_period_6hours">6 sati</string>
+    <string name="sms_validity_period_12hours">12 sati</string>
+    <string name="sms_validity_period_1day">"1 dan"</string>
+    <string name="sms_validity_period_max">Maksimalno</string>
+    <string name="service_center_label">Servisni centar:\u0020</string>
+    <string name="cu_subject">Lemei predmet</string>
+    <string name="pref_title_mms_creation_mode">Način izrade</string>
+    <string name="pref_summary_mms_creation_mode">Način izrade MMS-a prilikom sastavljanja poruke</string>
+    <string name="pref_title_mms_size_limit">Ograničenje veličine</string>
+    <string name="pref_summary_mms_size_limit">Ograničenje veličine MMS-a prilikom sastavljanja poruke</string>
+    <string name="confirm_restricted_audio">Ograničena vrsta audio sadržaja, želite li ga svejedno priložiti?</string>
+    <string name="confirm_restricted_image">Ograničena vrsta slikovnog sadržaja, želite li ga svejedno priložiti?</string>
+    <string name="confirm_restricted_video">Ograničena vrsta video sadržaja, želite li ga svejedno priložiti?</string>
+    <string name="unsupport_media_type">Nepodržana vrsta medija</string>
+    <string name="select_different_media_type">Odaberite drugi medij</string>
+    <string name="image_resolution_too_large">Razlučivost slike prevelika je za umetanje</string>
+    <string name="wp_msg_type">Servisna poruka</string>
+    <string name="wp_msg_created_label">Izrađeno:\u0020</string>
+    <string name="wp_msg_created_unknown">"Nepoznato"</string>
+    <string name="wp_msg_priority_label">Prioritet:\u0020</string>
+    <string name="wp_msg_priority_low">Nisko</string>
+    <string name="wp_msg_priority_medium">"Srednji"</string>
+    <string name="wp_msg_priority_high">Visoko</string>
+    <string name="menu_goto_browser">Otvori preglednik</string>
+    <string name="menu_add_to_bookmark">Dodaj u zabilješke</string>
+    <string name="wp_msg_expiration_label">Isteklo: <xliff:g id="DATE">%s</xliff:g></string>
+    <string name="error_unsupported_scheme">Ta radnja trenutno nije podržana.</string>
+    <string name="pref_title_wappush_settings">Postavljanje servisne poruke</string>
+    <string name="pref_title_wappush_enable">Omogući WAP PUSH</string>
+    <string name="pref_summary_wappush_enable">Aktiviraj za primanje WAP PUSH poruke</string>
+    <string name="pref_title_wappush_sl_autoloading">Automatski pokreni SL</string>
+    <string name="pref_summary_wappush_sl_autoloading">Automatski pokreni poruku o učitavanju usluge (SL) nakon njena primanja</string>
+    <string name="menu_send_sms">Pošalji poruku <xliff:g id="name">%s</xliff:g></string>
+    <string name="menu_omacp">Konfiguracijska poruka</string>
+    <string name="save_message_to_sim">Spremi poruku na SIM karticu</string>
+    <string name="received_on">"Primljeno: <xliff:g id="date">%s</xliff:g>"</string>
+    <string name="save_message_to_sim_successful">Uspješno spremljeno</string>
+    <string name="save_message_to_sim_unsuccessful">Neuspješno spremljeno</string>
+    <string name="transmission_transiently_failed">Prijenos nije uspio. Pokušajte ponovno kasnije.</string>
+    <string name="download_failed_due_to_full_memory">Preuzimanje poruke nije uspjelo zbog pune memorije.</string>
+    <string name="mms_too_big_to_download">Poruka je prevelika za preuzimanje s mreže.</string>
+    <string name="menu_reply">"Odgovori"</string>
+    <string name="menu_sim_sms">"SIM SMS"</string>
+    <string name="cannot_add_recipient">Dosegnuto je ograničenje primatelja. Ne možete dodati primatelja.</string>
+    <string name="status_expired">Isteklo</string>
+    <string name="status_deferred">Odloženo</string>
+    <string name="status_unrecognized">Neprepoznato</string>
+    <string name="status_indeterminate">Neodređeno</string>
+    <string name="status_unreachable">Nedostupno</string>
+    <string name="attach_ringtone">"Zvuk zvona"</string>
+    <string name="notification_multiple_cb"><xliff:g id="count">%s</xliff:g> nepročitanih CB poruka</string>
+    <string name="notification_multiple_cb_title">Nova poruka s mobilne mreže</string>
+    <string name="fdn_enabled">FDN aktiviran</string>
+    <string name="cannot_send_message_reason_no_content">Nema sadržaja za slanje</string>
+    <string name="ok">"U redu"</string>
+    <string name="cancel">"Odustani"</string>
+    <string name="enable">"Omogući"</string>
+    <string name="disable">"Onemogući"</string>
+    <string name="cb_read_message">Pročitaj CB poruku</string>
+    <string name="cb_read_message2">Pročitaj poruku s mobilne mreže</string>
+    <string name="cb_message">Poruka s mobilne mreže</string>
+    <string name="cb_default_channel_name">Od kanala</string>
+    <string name="cell_broadcast_setting">"Postavke emitiranja na mobitele"</string>
+    <string name="cb_menu_language">"Jezik"</string>
+    <string name="cb_menu_add_channel">Dodaj kanal</string>
+    <string name="cb_menu_channel_list">Popis kanala</string>
+    <string name="cb_dialog_title_language_choice">Odaberi jezik</string>
+    <string name="cb_channel_dialog_channel_name">Naziv kanala (0-10 znakova)</string>
+    <string name="cb_channel_dialog_channel_number">Broj kanala (0-65534)</string>
+    <string name="cb_channel_dialog_channel_state">Aktiviraj kanal</string>
+    <string name="cb_channel_dialog_edit_channel">Uredi kanal</string>
+    <string name="cb_menu_edit">"Uređivanje"</string>
+    <string name="cb_menu_delete">"Izbriši"</string>
+    <string name="cb_error_channel_num">Unesite broj kanala (0-65534).</string>
+    <string name="cb_error_channel_name">Duljina naziva kanala nije ispravna (1-10 znakova).</string>
+    <string name="cb_error_language_select">Odaberite barem jedan jezik.</string>
+    <string name="cb_error_channel_id_exist">Taj ID kanala već postoji.</string>
+    <string name="cb_all_languages">"Svi jezici"</string>
+    <string name="cb_default_new_channel_name">Novi kanal</string>
+    <string name="sum_cell_broadcast_control_on">Aktiviraj mobilnu mrežu</string>
+    <string name="sum_cell_broadcast_control_off">Deaktiviraj mobilnu mrežu</string>
+    <string name="sum_cell_broadcast_setting">Postavljanje jezika i kanala za mobilnu mrežu</string>
+    <string name="message_open_email_fail">Žao nam je, prvo postavite račun e-pošte.</string>
+    <string name="add_contacts">"Kontakti"</string>
+    <string name="close_dialog">U redu</string>
+    <string name="updating_title">"Postavke poziva"</string>
+    <string name="error_updating_title">"Pogreška postavki poziva"</string>
+    <string name="reading_settings">"Postavke čitanja..."</string>
+    <string name="updating_settings">"Ažuriranje postavki..."</string>
+    <string name="reverting_settings">"Povrat postavki…"</string>
+    <string name="exception_error">"Pogreška mreže ili SIM kartice."</string>
+    <string name="send_by_sim2">Pošalji putem SIM2</string>
+    <string name="send_by_sim1">Pošalji putem SIM1</string>
+    <string name="menu_item_send_by">Pošalji putem</string>
+    <string name="data_connected_confirm_title">Potvrdi slanje</string>
+    <string name="data_connected_confirm_message">Slanje MMS-a putem ove SIM kartice može na određeno vrijeme obustaviti trenutno preuzimanje podataka. Nastaviti?</string>
+    <string name="menu_item_sim1">SIM 1</string>
+    <string name="menu_item_sim2">SIM 2</string>
+    <string name="no_sim_1">SIM 1 nije priključena.</string>
+    <string name="no_sim_2">SIM 2 nije priključena.</string>
+    <string name="no_sim">SIM %d nije priključena.</string>
+    <string name="sim1_full_title">SIM kartica 1 je puna</string>
+    <string name="sim2_full_title">SIM kartica 2 je puna</string>
+    <string name="select_all">"Odaberi sve"</string>
+    <string name="confirm_delete_selected_messages">Odabrane poruke će biti izbrisane.</string>
+    <string name="confirm_delete_selected_theads">Odabrane teme će biti izbrisane.</string>
+    <string name="restricted_forward_title">"Multimedijska poruka"</string>
+    <string name="restricted_forward_message">Ovi medijski sadržaji neće biti pravilno prikazani primateljima. Želite li nastaviti?</string>
+    <string name="strOk">Poruka je poslana</string>
+    <string name="strFail">Slanje poruke nije uspjelo</string>
+    <string name="menu_insert_text_vcard">Umetni kontakt</string>
+    <string name="contact_name">"Naziv"</string>
+    <string name="contact_tel">Tel.</string>
+    <string name="contact_email">E-pošta</string>
+    <string name="contact_organization">Organizacija</string>
+    <string name="contact_address">Adresa</string>
+    <string name="max_recipients_title">Dosegnut je maksimalni broj</string>
+    <string name="max_recipients_message">MMS dozvoljava najviše <xliff:g id="maxLimit">%s</xliff:g> primatelja. Neki primatelji će biti uklonjeni. Želite li nastaviti?</string>
+    <string name="via_without_time_for_send">Putem</string>
+    <string name="via_without_time_for_recieve">Putem</string>
+    <string name="sim_selected_dialog_title">Odaberite SIM</string>
+    <string name="suggested">Predloženo</string>
+    <string name="add_contact_dialog_message">"Dodati broj %s postojećem ili novom kontaktu?"</string>
+    <string name="add_contact_dialog_new">"Novo"</string>
+    <string name="add_contact_dialog_existing">Postojeći</string>
+    <string name="deleting">Brisanje</string>
+    <string name="pref_title_storage_status">Trenutna iskorištenost pohrane</string>
+    <string name="storage_dialog_mms">Mms:\u0020<xliff:g id="number">%s</xliff:g> stavki</string>
+    <string name="storage_dialog_sms">Sms:\u0020<xliff:g id="number">%s</xliff:g> stavki</string>
+    <string name="storage_dialog_attachments">Mms privici:\u0020</string>
+    <string name="storage_dialog_database">Baza podataka:\u0020</string>
+    <string name="storage_dialog_available_space">Dostupni prostor:\u0020</string>
+    <string name="menu_show_icc_sms_capacity">Prikaz kapaciteta</string>
+    <string name="show_icc_sms_capacity_title">Kapacitet</string>
+    <string name="icc_sms_used">Iskorišteno:</string>
+    <string name="icc_sms_total">Ukupno:</string>
+    <string name="get_icc_sms_capacity_failed">Dohvaćanje kapaciteta SIM kartice neuspjelo.</string>
+    <plurals name="read_report_toast_msg">
+     <item quantity="one">slanje %d izvještaja o čitanju</item>
+     <item quantity="other">slanje %d izvještaja o čitanju</item>
+   </plurals>
+    <string name="pref_title_mms_auto_reply_read_reports">Pošalji izvještaja o čitanju</string>
+    <string name="pref_summary_mms_auto_reply_read_reports">Pošalji izvještaj o čitanju ako to zatraži pošiljatelj MMS-a</string>
+    <string name="exceed_subject_length_limitation">Dosegnuta je maksimalna duljina</string>
+    <plurals name="message_view_selected_message_count">
+     <item quantity="one"><xliff:g id="message_count" example="1">%d</xliff:g> odabrana</item>
+     <item quantity="other"><xliff:g id="message_count" example="9">%d</xliff:g> odabranih</item>
+   </plurals>
+    <string name="disable_notifications_dialog_message">"Prestati s dupliciranjem obavijesti putem tekstualnih poruka iz zadane aplikacije za slanje poruka?"</string>
+    <string name="sms_input_mode_title">Način unosa</string>
+    <string name="sms_input_mode_dialog_title">Odaberite način unosa</string>
+    <string name="sms_input_mode_summary">Način unosa SMS-a pri sastavljanju poruke</string>
+    <string name="pref_title_io_settings">Uvoz/izvoz SMS-a</string>
+    <string name="pref_summary_import_msg">Uvoz SMS-a sa SD kartice</string>
+    <string name="pref_title_import_msg">Uvezi SMS</string>
+    <string name="pref_summary_export_msg">Izvoz SMS-a na SD karticu</string>
+    <string name="pref_title_export_msg">Izvezi SMS</string>
+    <string name="no_sd_card">SD kartica nije spremna</string>
+    <string name="export_message_ongoing">Izvozi se SMS na SD karticu, pričekajte...</string>
+    <string name="import_message_ongoing">Uvozi se SMS na SD karticu, pričekajte...</string>
+    <string name="export_message_success">Izvoz SMS-a na SD je uspio</string>
+    <string name="import_message_success">Uvoz SMS-a sa SD kartice je uspio</string>
+    <string name="import_message_fail">Uvoz SMS-a sa SD kartice nije uspio</string>
+    <string name="export_message_fail">Izvoz SMS-a na SD karticu nije uspio</string>
+    <string name="import_message_list">SMS DB popis na SD kartici</string>
+    <string name="import_message_list_empty">Nema SMS DB datoteka na SD kartici</string>
+    <string name="export_message_empty">Nema SMS-a za izvoz!</string>
+    <string name="whether_export_item">Želite li izvesti SMS?</string>
+    <string name="whether_import_item">Želite li uvesti</string>
+    <string name="export_disk_problem">SD kartica je puna ili nije moguć upis</string>
+    <string name="select_text">Odabir teksta</string>
+    <string name="unselect_all">"Poništi sve"</string>
+    <string name="forward_from">Proslijedi od:</string>
+    <string name="sms_forward_setting">Postavljanje prosljeđivanja SMS-a</string>
+    <string name="sms_forward_setting_summary">Proslijedi SMS s imenom i brojem pošiljatelja</string>
+    <string name="forward_byself">"Ja"</string>
+    <string name="file_attachment_vcalendar_name">vCalendar (<xliff:g id="text">%s</xliff:g>)</string>
+    <string name="file_attachment_vcard_name">vCard (<xliff:g id="text">%s</xliff:g>)</string>
+    <string name="attach_vcalendar">"Kalendar"</string>
+    <string name="file_attachment_import_vcard">Uvezi vCard</string>
+    <string name="attach_vcard">Kontakt</string>
+    <string name="type_common_file">datoteka</string>
+    <string name="please_wait">"Pričekajte..."</string>
+    <string name="failed_to_parse_vcard">Nije uspjelo raščlanjivanje vCard datoteke!</string>
+    <string name="empty_vcard">Nema kontakata na vCard</string>
+    <string name="parse_vcard">Raščlani vCard</string>
+    <string name="vcard_no_details">Nema dodatnih podataka za ovaj kontakt"</string>
+    <string name="note">Napomena</string>
+    <string name="organization">Organizacija</string>
+    <string name="website">Web stranica:\u0020</string>
+    <string name="nickname">Nadimak</string>
+    <string name="call_custom"><xliff:g id="custom">%s</xliff:g></string>
+    <string name="call_home">"Početna"</string>
+    <string name="call_mobile">"Mobilni"</string>
+    <string name="call_work">"Posao"</string>
+    <string name="call_fax_work">"Službeni faks"</string>
+    <string name="call_fax_home">"Faks kod kuće"</string>
+    <string name="call_pager">"Dojavljivač"</string>
+    <string name="call_other">ostalo</string>
+    <string name="call_callback">povratni poziv</string>
+    <string name="call_car">"Automobil"</string>
+    <string name="call_company_main">"Primarni broj za tvrtku"</string>
+    <string name="call_isdn">"ISDN"</string>
+    <string name="call_main">"Glavni telefon"</string>
+    <string name="call_other_fax">"Faks"</string>
+    <string name="call_radio">"Radio"</string>
+    <string name="call_telex">"Teleks"</string>
+    <string name="call_tty_tdd">TTY/TDD</string>
+    <string name="call_work_mobile">"Poslovni mobitel"</string>
+    <string name="call_work_pager">"Poslovni dojavljivač"</string>
+    <string name="call_assistant"><xliff:g id="assistant">%s</xliff:g></string>
+    <string name="call_mms">MMS</string>
+    <string name="email_home">Kućna e-pošta</string>
+    <string name="email_mobile">Mobilna e-pošta</string>
+    <string name="email_work">E-pošta na poslu</string>
+    <string name="email_other">E-pošta</string>
+    <string name="email_custom">E-pošta <xliff:g id="custom">%s</xliff:g></string>
+    <string name="email">E-pošta</string>
+    <string name="map_home">Prikaži kućnu adresu</string>
+    <string name="map_work">Prikaži adresu na poslu</string>
+    <string name="map_other">Prikaži adresu</string>
+    <string name="map_custom">Prikaži <xliff:g id="custom">%s</xliff:g> adresu</string>
+    <string name="chat_aim">Čavrljaj koristeći AIM</string>
+    <string name="chat_msn">Čavrljaj koristeći Windows Live</string>
+    <string name="chat_yahoo">Čavrljaj koristeći Yahoo</string>
+    <string name="chat_skype">Čavrljaj koristeći Skype</string>
+    <string name="chat_qq">Čavrljaj koristeći QQ</string>
+    <string name="chat_gtalk">Čavrljaj koristeći Google Talk</string>
+    <string name="chat_icq">Čavrljaj koristeći ICQ</string>
+    <string name="chat_jabber">Čavrljaj koristeći Jabber</string>
+    <string name="chat">Čavrljanje</string>
+    <string name="inbox">"Pristigla pošta"</string>
+    <string name="outbox">"Izlazna pošta"</string>
+    <string name="draftbox">Spremnik s nacrtima</string>
+    <string name="sentbox">Spremnik poslanih poruka</string>
+    <string name="simbox">SIM spremnik</string>
+    <string name="changeview">Promijeni način</string>
+    <string name="viewer_title_sms">"SMS"</string>
+    <string name="viewer_title_wappush">Wappush</string>
+    <string name="viewer_title_cb">Mobilna mreža</string>
+    <string name="slideshow_details">Detalji o poruci</string>
+    <string name="open">"Otvaranje"</string>
+    <string name="delete_all_confirm">"Izbrisati sve poruke u spremniku?"</string>
+    <string name="folder_recipient">Primatelj:</string>
+    <string name="folder_recieve_date">Datum:</string>
+    <string name="folder_download">MMS se preuzima</string>
+    <string name="confirm_download_message">"Potvrdi poruku o preuzimanju"</string>
+    <string name="play_as_slideshow">Reproduciraj MMS kao dijaprojekciju</string>
+    <string name="by_card">Prema:</string>
+    <string name="page">Stranica %d</string>
+    <string name="space_not_enough">Preostali prostor nije dovoljan za snimanje video zapisa</string>
+    <string name="space_not_enough_for_audio">Preostali prostor nije dovoljan za snimanje zvučnog zapisa</string>
+    <string name="no_messages">"Nema poruka"</string>
+    <string name="call_video_call">Videopoziv</string>
+    <string name="storage_dialog_mms_size">Veličina MMS-a:\u0020</string>
+    <string name="error_add_attachment">"Nepoznata greška, ne može se dodati <xliff:g id="name">%1$s</xliff:g> u vašu poruku."</string>
+    <string name="no_application_response">"Nema aplikacije za obradu zahtjeva"</string>
+    <string name="cdma_not_support">CDMA ne podržava ovu značajku</string>
+    <string name="allmessage">"Sve poruke"</string>
+    <string name="select_message">Odaberite poruku</string>
+    <string name="confirm_delete_allmessage">"Sve poruke će biti izbrisane."</string>
+    <string name="mark_as_read_btn_str">Označi kao pročitano</string>
+    <string name="delete_btn_str">"Izbriši"</string>
+    <string name="reply_send">"Pošalji"</string>
+    <string name="via_test">"putem"</string>
+    <string name="received_header">"Primljeno:"</string>
+    <string name="no_item_selected">Nema odabrane stavke.</string>
+    <string name="sync_mms_to_db">Učitavanje...</string>
+    <string name="pref_title_font_size_setting">POSTAVLJANJE VELIČINE FONTA</string>
+    <string name="pref_title_message_font_size">Veličina fonta poruke</string>
+    <string name="pref_summary_message_font_size">Veličina fonta poruke</string>
+    <string name="message_font_size_dialog_title">Veličina fonta poruke</string>
+    <string name="message_font_size_dialog_cancel">"Odustani"</string>
+    <string name="change">Promijeni</string>
+    <string name="change_default_disk">U pohrani telefona nema dovoljno mjesta. Oslobodite nešto mjesta za pohranu ili u postavkama promijenite "zadani disk za upis".</string>
+    <string name="failed_to_add_image">Dosegnuto je ograničenje za veličinu poruke, neki dijelovi nisu dodani.</string>
+    <string name="ipmsg_conversation_list_all">"Poruke"</string>
+    <string name="ipmsg_conversation_list_important">Važno</string>
+    <string name="ipmsg_conversation_list_group_chats">Grupna čavrljanja</string>
+    <string name="ipmsg_conversation_list_spam">Neželjena pošta</string>
+    <string name="ipmsg_create_group_chat">Stvori grupno čavrljanje</string>
+    <string name="ipmsg_send_invitation">Pošalji pozivnice</string>
+    <string name="str_ipmsg_download_history_dlg">Preuzimanje...</string>
+    <string name="to_hint_ipmsg">"Unesite ime ili broj"</string>
+    <string name="type_to_compose_text_enter_to_send_ipmsg">"Upišite SMS/iSMS poruku"</string>
+    <string name="ipmsg_ipmsg_hint">"Upišite iSMS poruku"</string>
+    <string name="ipmsg_sms_hint">"Upišite tekstualnu poruku"</string>
+    <string name="ipmsg_caption_hint">"Upišite opise"</string>
+    <string name="ipmsg_cancel">"Odustani"</string>
+    <string name="ipmsg_invite_chat_frequently"><b>Često čavrljate sa %s ?</b>\nZašto ne biste pozvali %s da koristi iSMS i tako oboma uštedjeli novac?</string>
+    <string name="ipmsg_enable_chat_frequently"><b>%s koristi iSMS!</b>\nZašto ne biste aktivirali uslugu iSMS i oboma uštedjeli novac?</string>
+    <string name="ipmsg_invite">Pozovi</string>
+    <string name="ipmsg_dismiss">"Odbaci"</string>
+    <string name="ipmsg_enable">"Omogući"</string>
+    <string name="ipmsg_enable_notice">Jeste li sigurni da želite aktivirati uslugu iSMS?</string>
+    <string name="ipmsg_activate">"Aktiviraj"</string>
+    <string name="ipmsg_activate_chat_frequently"><b>Često čavrljate s prijateljima?</b>\nZašto ne biste aktivirali uslugu iSMS i čavrljali bez naplate SMS poruka?</string>
+    <string name="ipmsg_activate_note">Jeste li sigurni da želite aktivirati iSMS?</string>
+    <string name="ipmsg_dismiss_content">Jeste li sigurni da želite odbaciti napomenu?</string>
+    <string name="ipmsg_ipmsg">IP poruka</string>
+    <string name="ipmsg_dailog_multi_forward">Prosljeđivanje poruka</string>
+    <string name="ipmsg_dialog_send_result">Pošalji rezultat</string>
+    <string name="ipmsg_dlg_send_all">Sve: %s</string>
+    <string name="ipmsg_dlg_send_sucess">Poslano: %s</string>
+    <string name="ipmsg_dlg_send_failed">Neuspješno: %s</string>
+    <string name="multi_forward_sim_info">Dohvaćanje podataka za SIM</string>
+    <string name="ipmsg_multi_forward_no_sim">Nema podataka za SIM</string>
+    <string name="ipmsg_divider_online">%s je na mreži</string>
+    <string name="ipmsg_divider_offline">Posljednje vrijeme na mreži %s</string>
+    <string name="ipmsg_divider_never_online">Nikada nije na mreži</string>
+    <string name="ipmsg_vcard_file_name">%s kontakata</string>
+    <string name="ipmsg_getsim_failed">Dohvaćanje podataka za SIM neuspjelo</string>
+    <string name="ipmsg_sim_status_error">Greška statusa SIM kartice</string>
+    <string name="ipmsg_forward_failed">Prosljeđivanje neuspjelo</string>
+    <string name="ipmsg_forward_norecipients">Nema primatelja za prosljeđivanje poruke</string>
+    <string name="ipmsg_multiforward_no_message">Nema poruke/a koje se mogu proslijediti</string>
+    <string name="ipmsg_need_input_recipients">Prvo odredite barem jednog primatelja</string>
+    <string name="str_ipmsg_unread_format">%1$d nepročitanih poruka</string>
+    <string name="str_ipmsg_not_delivered_title">Još nije isporučeno</string>
+    <string name="str_ipmsg_failed_title">Slanje nije uspjelo</string>
+    <string name="ipmsg_try_again">"Pokušajte ponovo"</string>
+    <string name="ipmsg_try_all_again">Pokušaj sve ponovno</string>
+    <string name="ipmsg_resend_via_sms">U zamjenu pošalji SMS</string>
+    <string name="ipmsg_resend_via_mms">U zamjenu pošalji MMS</string>
+    <string name="str_ipmsg_cant_share">SD kartica nije dostupna, ne može se podijeliti medijska poruka</string>
+    <string name="str_ipmsg_file_limit">preveliko</string>
+    <string name="str_ipmsg_no_app">Tu radnju ne može izvesti nijedna aplikacija</string>
+    <string name="str_ipmsg_today">"Danas"</string>
+    <string name="str_ipmsg_yesterday">"jučer"</string>
+    <string name="ip_message_typing_text">Upisivanje</string>
+    <string name="str_ipmsg_no_such_file">Nema takve datoteke</string>
+    <string name="str_ipmsg_over_file_limit">Veličina datoteke premašuje ograničenje</string>
+    <string name="str_ipmsg_invalid_file_type">Ne podržava ovu vrstu</string>
+    <string name="invite_friends_to_ipmsg">Pozovite prijatelje da koriste iSMS</string>
+    <string name="invite_friends_to_chat">Pozovite prijatelje na čavrljanje</string>
+    <string name="invite_friends_to_ipmsg_dialog_msg">Da biste mogli poslati pozivnicu, poruke u sastavljanju će biti odbačene.</string>
+    <string name="invite_friends_to_ipmsg_content">Bok, iSMS je zabavan alat za čavrljanje. Besplatan je i zgodan. Saznajte više na http://isms.hissage.com.</string>
+    <string name="export">"Izvezi"</string>
+    <string name="mark_as_spam">Premjesti na popis neželjene pošte</string>
+    <string name="mark_as_spam_tips">Poruke označene kao neželjena pošta premjestit će se na popis neželjene pošte i automatski će se isključiti obavijest.</string>
+    <string name="remove_frome_spam">Ukloni sa popisa neželjene pošte</string>
+    <string name="add_shortcut">Dodaj prečac</string>
+    <string name="view_all_media">Prikaži sve medije</string>
+    <string name="view_all_location">Prikaži sve lokacije</string>
+    <string name="ipmsg_export_to_sdcard">Izvoz na SD karticu</string>
+    <string name="ipmsg_copy">"Kopiraj"</string>
+    <string name="ipmsg_send_via_text_msg">Pošalji putem tekstualne poruke</string>
+    <string name="ipmsg_send_via_mms">Pošalji putem multimedijske poruke</string>
+    <string name="ipmsg_retry">"Pokušajte ponovo"</string>
+    <string name="ipmsg_delete">"Izbriši"</string>
+    <string name="ipmsg_share">"Dijeli"</string>
+    <string name="ipmsg_mark_as_important">Označi kao važno</string>
+    <string name="ipmsg_remove_from_important">Ukloni oznaku za važno</string>
+    <string name="str_ipmsg_save_file">Datoteka je spremljena u %1$s</string>
+    <string name="continue_str">"Nastavi"</string>
+    <string name="convert_to_mms">Pretvori u MMS.</string>
+    <string name="convert_to_sms">Pretvori u SMS.</string>
+    <string name="ipmsg_convert_to_ipmsg">Pretvori u iSMS.</string>
+    <string name="ip_message_convert_to_mms_message_for_service">Usluga iSMS nije dostupna na ovoj odabranoj SIM kartici. Ova poruka može se poslati samo kao MMS na ovoj SIM kartici. Svejedno nastaviti?</string>
+    <string name="ip_message_convert_to_sms_message_for_service">Usluga iSMS nije dostupna na ovoj odabranoj SIM kartici. Ova poruka može se poslati samo kao SMS na ovoj SIM kartici. Svejedno nastaviti?</string>
+    <string name="ip_message_convert_to_mms_message_for_recipients">Primatelj(i) nije/nisu iSMS korisnik/ci. Ova poruka može se poslati samo kao MMS. Svejedno nastaviti?</string>
+    <string name="ip_message_convert_to_sms_message_for_recipients">Primatelj(i) nije/nisu iSMS korisnik/ci. Ova poruka može se poslati samo kao SMS. Svejedno nastaviti?</string>
+    <string name="ipmsg_sms_convert_to_ipmsg">Usluga iSMS je dostupna na ovoj odabranoj SIM kartici. Za uštedu na troškovima SMS-a, preporučamo da prebacite poruku na iSMS. Prebaciti sada?</string>
+    <string name="ipmsg_mms_convert_to_ipmsg">Usluga iSMS je dostupna na ovoj odabranoj SIM kartici. Za uštedu na troškovima MMS-a, preporučamo da prebacite poruku na iSMS. Prebaciti sada?</string>
+    <string name="keep_mms">Zadrži MMS</string>
+    <string name="keep_sms">Zadrži SMS</string>
+    <string name="switch_ipmsg">Prebaci</string>
+    <string name="ip_message_load_all_message">Učitaj sve poruke</string>
+    <string name="str_ipmsg_replace_attach">Zamijeni privitak</string>
+    <string name="str_ipmsg_replace_attach_msg">Već postoji privitak, želite li ga zamijeniti?</string>
+    <string name="ipmsg_err_file">Nije uspjelo otvaranje datoteke</string>
+    <string name="pref_title_display_preference_settings">PRIKAZ I OSOBNE POSTAVKE</string>
+    <string name="pref_chat_wallpaper">Pozadina za čavrljanje</string>
+    <string name="pref_auto_rotation">Automatsko zaokretanje</string>
+    <string name="pref_show_email_address">Prikaži adresu e-pošte</string>
+    <string name="pref_summary_show_email_address">Uključi adresu e-pošte u rezultate kontakata</string>
+    <string name="pref_title_backup_restore_settings">ARHIVIRANJE I VRAĆANJE</string>
+    <string name="pref_backage_message">Arhiviraj poruku</string>
+    <string name="pref_summary_backup_message">Posljednje arhiviranje: nikada</string>
+    <string name="pref_restore_message">Vrati poruku</string>
+    <string name="pref_summary_restore_message">Vrati arhivirane poruke</string>
+    <string name="pref_mute">"Isključi zvuk"</string>
+    <string name="pref_summary_mute">"Isključeno"</string>
+    <string name="pref_vibrate">"Vibracija"</string>
+    <string name="pref_summary_vibrate">Vibriraj u slučaju primanja obavijesti</string>
+    <string name="pref_popup_notification">Skočna obavijest</string>
+    <string name="pref_summary_popup_notification">Prikaži skočnu poruku za obavijesti o slanju</string>
+    <string name="pref_title_display_settings">"Prikaz"</string>
+    <string name="pref_title_actions_settings">Radnje</string>
+    <string name="pref_download_chat_history">Preuzmi povijest čavrljanja</string>
+    <string name="pref_summary_download_chat_history">Spremi na SD karticu u komprimiranom formatu</string>
+    <string name="pref_email_chat_history">Povijest čavrljanja e-poštom</string>
+    <string name="pref_summary_email_chat_history">Povijest čavrljanja e-poštom u komprimiranom formatu</string>
+    <string name="pref_clear_chat_history">Obriši povijest čavrljanja</string>
+    <string name="pref_summary_notification_ringtone">Postavi melodiju zvona za nove obavijesti</string>
+    <string name="pref_setting_title">Postavljanje poruke</string>
+    <string name="pref_setting_sms">Tekstualna poruka (SMS)</string>
+    <string name="pref_setting_mms">Multimedijska poruka (MMS)</string>
+    <string name="pref_setting_notification">"Obavijesti"</string>
+    <string name="pref_setting_general">"Općenito"</string>
+    <string name="pref_setting_chat">Postavke čavrljanje</string>
+    <string name="chat_setting_saving">spremanje...</string>
+    <string name="chat_setting_updating">ažuriranje...</string>
+    <string name="chat_setting_sending">slanje...</string>
+    <string name="dialog_save_title">Spremi na SD karticu</string>
+    <string name="dialog_save_description">Spremi temu ovog čavrljanja na SD karticu u obliku komprimirane datoteke</string>
+    <string name="dialog_email_title">Podijeli putem e-pošte</string>
+    <string name="dialog_email_description">Podijeli temu ovog čavrljanja kao privitak putem e-pošte u komprimiranom formatu</string>
+    <string name="dialog_clear_title">"Očisti"</string>
+    <string name="dialog_clear_description">Cijela povijest čavrljanja će biti obrisana u ovoj sobi za čavrljanje</string>
+    <string name="dialog_wallpaper_chooser_wallpapers">Pozadine</string>
+    <string name="dialog_wallpaper_chooser_gallery">Galerija</string>
+    <string name="dialog_wallpaper_chooser_take">"Snimi fotografiju"</string>
+    <string name="dialog_wallpaper_chooser_default">"Zadano"</string>
+    <string name="dialog_wallpaper_title">Odaberi pozadinu</string>
+    <string name="mute_one_hour">"1 sat"</string>
+    <string name="mute_four_hours">4 sata</string>
+    <string name="mute_eight_hours">8 sati</string>
+    <string name="save_chat_history_failed">spremanje neuspješno</string>
+    <string name="send_chat_history_failed">E-pošta neuspjela</string>
+    <string name="actionbar_sms_setting">Postavke SMS-a</string>
+    <string name="actionbar_mms_setting">Postavke MMS-a</string>
+    <string name="actionbar_notification_setting">"Postavke obavijesti"</string>
+    <string name="actionbar_general_setting">Opće postavke</string>
+    <string name="save_history_file">spremi kao</string>
+    <string name="no_sdcard_suggestion">"Nema SD kartice"</string>
+    <string name="save_wallpaper_success">Pozadina se promijenila.</string>
+    <string name="save_wallpaper_fail">Nije bilo moguće promijeniti pozadinu.</string>
+    <string name="ip_message_delete_important">"Uključi poruke označene kao važne"</string>
+    <string name="str_ipmsg_spam_empty">Nemate neželjenih razgovora. \nNEŽELJENA POŠTA prikuplja sve razgovore označene kao neželjene. Obavijest se isključuje automatski. Tako se izbjegavaju neželjena ometanja. \n\nPošiljatelja možete označiti kao neželjenog tako da zadržite razgovor i odaberete ikonu Označi kao neželjeno. Kada je razgovor označen kao neželjen, automatski će se prikazati ikona o isključivanju obavijesti, a razgovor će se postaviti ovdje.</string>
+    <string name="str_ipmsg_spam_example_subject">Ovo je primjer neželjene poruke</string>
+    <string name="str_ipmsg_groupchat_empty">Nemate poruka u grupnom čavrljanju. \nGRUPNA ČAVRLJANJA prikupljaju sve poruke u grupnom čavrljanju koje ste vi stvorili ili kojima ste se pridružili. To vam omogućava jednostavno traženje i upravljanje grupnim čavrljanjima. \n\nAko želite stvoriti grupno čavrljanje, dodirnite gumb Stvori grupno čavrljanje u dnu ovog ekrana i pozovite prijatelje da se pridruže grupi.</string>
+    <string name="str_ipmsg_group_example_from">Naziv grupe</string>
+    <string name="str_ipmsg_group_example_subject">Vaš prijatelj:\nSviđa mi se značajka grupnog čavrljanja!</string>
+    <string name="str_ipmsg_important_empty">Nemate važnih poruka. \nVAŽNO prikuplja sve poruke označene kao važne. To vam omogućava lagano traženje važnjih poruka. \n\nPoruku možete označiti kao važnu tako da je zadržite i u izborniku s mogućnostima odaberete Označi kao važno. Kada je poruka označena kao važna, vidjet ćete crven ikonu zastavice, kao što je prikazano u nastavku.</string>
+    <string name="str_ipmsg_important_example_title">To je primjer poruke označene kao važne. Pojavit će se crvena zastavica.</string>
+    <string name="str_ipmsg_important_example_time">10:55 AM</string>
+    <string name="str_ipmsg_allchat_empty">"Nema razgovora"</string>
+    <string name="str_ipmsg_empty_activate_content">Za korištenje ove značajke prvo treba aktivirati uslugu iSMS. Ne brinite - ako vam se usluga ne sviđa, uvijek je možete isključiti u postavkama. Isprobajte je odmah!</string>
+    <string name="str_ipmsg_empty_activate_title">Aktiviraj iSMS</string>
+    <string name="str_ipmsg_service_title">iSMS servisni centar</string>
+    <string name="str_ipmsg_introduction">iSMS vam omogućava da trenutačno dostavite besplatne poruke, a čuva povijest vašeg čavrljanja na jednom mjestu. Pritiskom na jedan gumb stiže novo iskustvo!</string>
+    <string name="time_now">"SADA"</string>
+    <string name="str_ipmsg_active">Aktiviraj iSMS</string>
+    <string name="str_ipmsg_welcome_active">Dobrodošli u iSMS</string>
+    <string name="str_ipmsg_term_warn_welcome">Usluga iSMS vam omogućava čavrljanje i dijeljenje multimedijskih datoteka s prijateljima u bilo kojem trenutku i na bilo kojem mjestu putem WIFI mreže ili podatkovne veze.\n\nZa dovršenje aktivacije potrebna su samo 3 koraka!\n\n Uvjeti korištenja\n</string>
+    <string name="str_ipmsg_term_warn_activate">Ovu značajku podržava samo usluga iSMS.\n\nUsluga iSMS vam omogućava čavrljanje i dijeljenje multimedijskih sadržaja s prijateljima u bilo kojem trenutku i bilo gdje putem WIFI mreže ili podatkovne veze.\n\n Uvjeti korištenja</string>
+    <string name="str_ipmsg_term_key">Uvjeti korištenja</string>
+    <string name="str_ipmsg_agree_and_continue">Prihvati i nastavi</string>
+    <string name="no_sim_card">Nema SIM kartice!</string>
+    <string name="ip_message_activate_title">Aktiviraj iSMS</string>
+    <string name="ip_message_current_sim_enabled">Trenutna SIM je aktivirana.</string>
+    <string name="sim_selected_dialog_title_for_activate">Odaberite SIM da aktivirate iSMS</string>
+    <string name="ip_message_activate_message">Ovu značajku podržava samo usluga iSMS. Želite li sada aktivirati vaš iSMS račun?</string>
+    <string name="typing">"Upisivanje..."</string>
+    <string name="ip_message_enable_title">Aktiviraj iSMS</string>
+    <string name="ip_message_enable_message">Ovu značajku podržava samo usluga iSMS. Želite li sada aktivirati vaš iSMS račun?</string>
+    <string name="sim_selected_dialog_title_for_enable">Odaberite SIM da aktivirate iSMS</string>
+    <string name="ip_message_switch_sim_title">Prebaci SIM</string>
+    <string name="ip_message_switch_sim_message">Trenutna SIM kartica ne podržava iSMS. Želite li prijeći na drugu SIM?</string>
+    <string name="ip_message_switch_sim_button">Promijeni</string>
+    <string name="ip_message_switch_sim_successfully">SIM kartica uspješno promijenjena!</string>
+    <string name="close">"Zatvori"</string>
+    <string name="nointernet">"Nije pronađena funkcionalna internetska veza! Pokušajte ponovno kasnije."</string>
+    <string name="ipmsg_reject">Odbij</string>
+    <string name="ipmsg_accept">"Prihvaćam"</string>
+    <string name="ipmsg_resend">Ponovno pošalji</string>
+    <string name="ipmsg_resend_discard_message">Ako želite ponovno poslati poruku, vaša poruka koju trenutno pišete bit će odbačena.</string>
+    <plurals name="deleted_conversations">
+     <item quantity="one">Jedan razgovor je izbrisan</item>
+     <item quantity="other"><xliff:g id="number" example="15">%1$s</xliff:g> razgovora je izbrisano</item>
+   </plurals>
+    <string name="discard_mms_title">Odbaci MMS</string>
+    <string name="discard_mms_content">Sve MMS poruke u višestruko proslijeđenoj poruci će biti odbačene</string>
+    <string name="toast_sms_forward">Nije proslijeđen nijedan SMS</string>
+    <string name="dialog_continue">"Nastavi"</string>
+    <string name="sms_size_limit">Dosegnuto je ograničenje veličine</string>
+    <string name="dialog_sms_limit">Dosegnuto je ograničenje veličine poruke. Prevelika poruka će biti odbačena</string>
+    <string name="forward_tips_title">"Odbaci obavijest putem MMS-a"</string>
+    <string name="forward_tips_body">"Obavijest putem MMS-a ne podržava prosljeđivanje, bit će odbačena."</string>
+    <string name="type_to_quick_text">"Upišite brzi tekst"</string>
+    <string name="menu_wappush">"Wap slanje"</string>
+    <string name="visit_website">"Posjetite mrežnu stranicu"</string>
+    <string name="meet_emoticon_limit">Držite se ograničenja za emotikone</string>
+    <string name="view_mms_notification">Ne može se vidjeti obavijest za mms</string>
+    <string name="ipmsg_multi_forward_tips_content">Ako želite višestruko proslijediti, najprije preuzmite iSMS.</string>
+    <string name="multi_forward_failed_all">Preuzimanje nije uspjelo, višestruko prosljeđivanje</string>
+    <string name="ipmsg_multi_forward_failed_part">Nije uspjelo prosljeđivanje iSMS-a.</string>
+    <string name="sum_search_networks">"Pretraži sve dostupne mreže"</string>
+    <string name="confirm_delete_allwappush">"Sve wappush poruke će biti izbrisane."</string>
+    <string name="confirm_delete_selected_wappush">"Odabrane wappush poruke će biti izbrisane."</string>
+    <string name="menu_delete_allwappush">Izbriši sve</string>
+    <string name="duplicated_recipient">Podvostručen primatelj</string>
+    <string name="sms_not_ready">SMS modul se inicijalizira, pričekajte...</string>
+    <string name="label_full_name">"Naziv"</string>
+    <string name="label_phone">"Telefon"</string>
+    <string name="label_email">"E-pošta"</string>
+    <string name="label_postal">Adresa</string>
+    <string name="label_organization">Organizacija</string>
+    <string name="label_im">IM</string>
+    <string name="label_website">Web stranica</string>
+    <string name="label_sip_address">"Internetski poziv"</string>
+    <string name="label_nick_name">"Nadimak"</string>
+    <string name="label_notes">Napomene</string>
+    <string name="label_event">Događaji</string>
+    <string name="search_time_period_label">Vremensko razdoblje</string>
+    <string name="done_text">"Gotovo"</string>
+    <string name="add_duplicate_recipients">Podvostručen primatelj</string>
+    <string name="download_disabled_toast">Preuzimanje nije moguće. Nije zadana SMS aplikacija.</string>
+    <string name="adding_wallpaper_title">Spremanje pozadine…</string>
+    <string name="mwi_title">Glasovne poruke</string>
+    <string name="type_voice_msg">Glasovna poruka</string>
+    <string name="type_video_msg">Video poruka</string>
+    <string name="type_fax_msg">Faks poruka</string>
+    <string name="priority_urgent">Hitno</string>
+    <string name="date_label">"Datum: "</string>
+    <string name="message_id_label">Poruka-ID:\u0020</string>
+    <string name="voice_message_count_notification"><xliff:g id="number" example="3">%1$s</xliff:g> nove glasovne poruke</string>
+    <string name="confirm_delete_allmwi">"Sve glasovne poruke će se izbrisati."</string>
+    <string name="confirm_delete_selected_mwi">"Odabrane glasovne poruke će se izbrisati."</string>
+    <string name="sms_priority_setting">UIM prioritet</string>
+    <string name="sms_priority_Interactive">Interaktivno</string>
+    <string name="sms_priority_Urgent">Hitno</string>
+    <string name="sms_priority_Emergency">Hitan slučaj</string>
+    <string name="type_text_msg">"Tekstualna poruka"</string>
+    <string name="empty_sim_name">Sim utor <xliff:g id="subId" example="2">%1$d</xliff:g></string>
+
+    <string name="drm_not_support">MMS ne podržava sadržaj sa zaštićenim pravima.</string>
+    <string name="user_has_no_premission">Ovom korisniku nije dozvoljena upotreba SMS-a.</string>
+    <string name="wfc_no_cellular_network">Nema mobilne mreže</string>
+    <string name="wfc_connect_to_available_wifi">Povezivanje na dostupnu Wi-Fi mrežu za slanje poruka.</string>
+    <string name="wfc_notification_title">Povezivanje na Wi-Fi mrežu za slanje poruka.</string>
+    <string name="ct_om_switch_notification"><xliff:g id="op1">%s</xliff:g> privremeno neće raditi i po zadanom uključeni pozivi, SMS i podaci na <xliff:g id="op2">%s</xliff:g> bit će promijenjeni u <xliff:g id="op3">%s</xliff:g> u skladu s time.</string>
+    <string name="can_not_switch_account_during_call">NemožesepretvoritiželjeniSIMnaSMStijekompoziva.</string>
+    <string name="can_not_switch_account_temporarily">ŽeljeniSIMnemožeseprivremenoprebacitinaSMS.</string>
+    <string name="omh_exceed_message_size_limitation">DosegnutajemaksimalnaveličinaR-UIMporuke</string>
+    <string name="omh_failed_to_add_image">Dosegnuto je ograničenje veličine R-UIM poruke, uklonite neke dijelove.</string>
+    <string name="missing_required_permission">Dopuštenja su uskraćena. Možete ih promijeniti u Postavke &gt; Aplikacije.</string>
+    <string name="manage_card_msg_title">Upravljanje porukama UIM/SIM kartice</string>
+    <string name="manage_card_msg_summary">Upravljanje porukama pohranjenima na UIM/SIM kartici</string>
+    <string name="disable_delivery_report">Ne možete se omogućiti u roamingu</string>
+    <string name="fore_service_notify_title">Prenošenje poruka</string>
+    <string name="fore_service_notify_content">Nema poruka u prijenosu.</string>
+    <string name="smart_req_mms_indicator">MMS nije dozvoljen, pokušajte opet u SMS poruci.</string>
+</resources>

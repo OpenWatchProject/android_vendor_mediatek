@@ -1,0 +1,94 @@
+/* Copyright Statement:
+ *
+ * This software/firmware and related documentation ("MediaTek Software") are
+ * protected under relevant copyright laws. The information contained herein
+ * is confidential and proprietary to MediaTek Inc. and/or its licensors.
+ * Without the prior written permission of MediaTek inc. and/or its licensors,
+ * any reproduction, modification, use or disclosure of MediaTek Software,
+ * and information contained herein, in whole or in part, shall be strictly prohibited.
+ *
+ * MediaTek Inc. (C) 2016. All rights reserved.
+ *
+ * BY OPENING THIS FILE, RECEIVER HEREBY UNEQUIVOCALLY ACKNOWLEDGES AND AGREES
+ * THAT THE SOFTWARE/FIRMWARE AND ITS DOCUMENTATIONS ("MEDIATEK SOFTWARE")
+ * RECEIVED FROM MEDIATEK AND/OR ITS REPRESENTATIVES ARE PROVIDED TO RECEIVER ON
+ * AN "AS-IS" BASIS ONLY. MEDIATEK EXPRESSLY DISCLAIMS ANY AND ALL WARRANTIES,
+ * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE OR NONINFRINGEMENT.
+ * NEITHER DOES MEDIATEK PROVIDE ANY WARRANTY WHATSOEVER WITH RESPECT TO THE
+ * SOFTWARE OF ANY THIRD PARTY WHICH MAY BE USED BY, INCORPORATED IN, OR
+ * SUPPLIED WITH THE MEDIATEK SOFTWARE, AND RECEIVER AGREES TO LOOK ONLY TO SUCH
+ * THIRD PARTY FOR ANY WARRANTY CLAIM RELATING THERETO. RECEIVER EXPRESSLY ACKNOWLEDGES
+ * THAT IT IS RECEIVER'S SOLE RESPONSIBILITY TO OBTAIN FROM ANY THIRD PARTY ALL PROPER LICENSES
+ * CONTAINED IN MEDIATEK SOFTWARE. MEDIATEK SHALL ALSO NOT BE RESPONSIBLE FOR ANY MEDIATEK
+ * SOFTWARE RELEASES MADE TO RECEIVER'S SPECIFICATION OR TO CONFORM TO A PARTICULAR
+ * STANDARD OR OPEN FORUM. RECEIVER'S SOLE AND EXCLUSIVE REMEDY AND MEDIATEK'S ENTIRE AND
+ * CUMULATIVE LIABILITY WITH RESPECT TO THE MEDIATEK SOFTWARE RELEASED HEREUNDER WILL BE,
+ * AT MEDIATEK'S OPTION, TO REVISE OR REPLACE THE MEDIATEK SOFTWARE AT ISSUE,
+ * OR REFUND ANY SOFTWARE LICENSE FEES OR SERVICE CHARGE PAID BY RECEIVER TO
+ * MEDIATEK FOR SUCH MEDIATEK SOFTWARE AT ISSUE.
+ *
+ * The following software/firmware and/or related documentation ("MediaTek Software")
+ * have been modified by MediaTek Inc. All revisions are subject to any receiver's
+ * applicable license agreements with MediaTek Inc.
+ */
+
+#include <string.h>
+#include <telephony/ril.h>
+#include "RfxCallForwardInfoExData.h"
+
+RFX_IMPLEMENT_DATA_CLASS(RfxCallForwardInfoExData);
+
+RfxCallForwardInfoExData::RfxCallForwardInfoExData(void *data, int length) : RfxBaseData(data, length)  {
+    RIL_CallForwardInfoEx* pTmp = (RIL_CallForwardInfoEx*) data;
+    RIL_CallForwardInfoEx *pData = (RIL_CallForwardInfoEx *) calloc(1, sizeof(RIL_CallForwardInfoEx));
+
+    if (pData != NULL) {
+        pData -> status       = pTmp -> status;
+        pData -> reason       = pTmp -> reason;
+        pData -> serviceClass = pTmp -> serviceClass;
+        pData -> toa          = pTmp -> toa;
+
+        if (pTmp->number != NULL) {
+            int len = strlen(pTmp->number);
+            pData->number = (char *) calloc(len + 1, sizeof(char));
+            if (pData->number != NULL) {
+                strncpy(pData->number, pTmp->number, len);
+            }
+        }
+
+        pData -> timeSeconds  = pTmp -> timeSeconds;
+
+        if (pTmp->timeSlotBegin != NULL) {
+            int len = strlen(pTmp->timeSlotBegin);
+            pData->timeSlotBegin = (char *) calloc(len + 1, sizeof(char));
+            if (pData->timeSlotBegin != NULL) {
+                strncpy(pData->timeSlotBegin, pTmp->timeSlotBegin, len);
+            }
+        }
+        if (pTmp->timeSlotEnd != NULL) {
+            int len = strlen(pTmp->timeSlotEnd);
+            pData->timeSlotEnd = (char *) calloc(len + 1, sizeof(char));
+            if (pData->timeSlotEnd != NULL) {
+                strncpy(pData->timeSlotEnd, pTmp->timeSlotEnd, len);
+            }
+        }
+
+        m_data = pData;
+        m_length = length;
+    }
+}
+
+RfxCallForwardInfoExData::~RfxCallForwardInfoExData() {
+    if (m_data != NULL && ((RIL_CallForwardInfoEx *)m_data) ->number != NULL) {
+        free(((RIL_CallForwardInfoEx *)m_data) -> number);
+    }
+    if (m_data != NULL && ((RIL_CallForwardInfoEx *)m_data) ->timeSlotBegin != NULL) {
+        free(((RIL_CallForwardInfoEx *)m_data) -> timeSlotBegin);
+    }
+    if (m_data != NULL && ((RIL_CallForwardInfoEx *)m_data) ->timeSlotEnd != NULL) {
+        free(((RIL_CallForwardInfoEx *)m_data) -> timeSlotEnd);
+    }
+    free(m_data);
+    m_data = NULL;
+}

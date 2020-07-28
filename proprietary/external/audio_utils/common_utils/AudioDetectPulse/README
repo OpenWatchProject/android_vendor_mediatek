@@ -1,0 +1,27 @@
+The shared library 'libmtkaudio_utils.so' is a pool of MTK audio utils.
+
+
+WHAT IT DOES?
+=============
+
+1. Driver for libmtkaudio_utils.so which will detect the pulse.
+
+
+HOW IT WAS BUILT?
+==================
+
+source code build.
+It needs the following library from AOSP:
+1.  liblog
+2.  libcutils.so
+3.  libutils.so
+4.  libaudioutils
+
+
+HOW TO USE IT?
+==============
+
+1. Audio HAL and framework will use the related API to detect the pulse.
+
+
+All the source code of this library were written by MediaTek co..

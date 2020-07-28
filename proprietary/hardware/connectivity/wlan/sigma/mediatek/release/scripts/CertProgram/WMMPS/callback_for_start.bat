@@ -1,0 +1,1 @@
+adb shell getprop | findstr persist.vendor.connsys.chipid | findstr 6630 > nul && (adb shell /data/bin/iwpriv wlan0 set_sw_ctrl 0xa0400000 0x1)

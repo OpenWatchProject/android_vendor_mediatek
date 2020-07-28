@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="app_name">DebugLoggerUI</string>
+    <string name="notification_title_network">Network log</string>
+    <string name="notification_title_mobile">Mobile log</string>
+    <string name="notification_title_modem">Modem log</string>
+    <string name="notification_title_met">MET log</string>
+    <string name="notification_title_connsys">Connsys log</string>
+    <string name="notification_title_gps">GPS log</string>
+    <string name="notification_title_connsysfw">ConnsysFW log</string>
+    <string name="notification_title_bthost">BTHost log</string>
+    <string name="notification_title">DebugLoggerUI service 正在運行</string>
+    <string name="notification_on_summary_suffix">已打開.</string>
+    <string name="notification_on_summary_suffixes"> 已打開.</string>
+    <string name="notification_off_summary_suffix">已關閉.</string>
+    <string name="notification_off_summary_suffixes"> 已關閉.</string>
+    <string name="notification_nearly_out_of_storage">日誌存儲結束.</string>
+    <string name="notification_out_of_storage_summary">點擊已獲取更多資訊.</string>
+
+    <!-- Main UI -->
+    <string name="network_log_name">NetworkLog</string>
+    <string name="mobile_log_name">MobileLog</string>
+    <string name="modem_log_name">ModemLog</string>
+    <string name="modem_log_name1">ModemLog1</string>
+    <string name="modem_log_name2">ModemLog2</string>
+    <string name="modem_log_name3">ModemLog3</string>
+    <string name="modem_log_name4">ModemLog4</string>
+    <string name="modem_log_name5">ModemLog5</string>
+    <string name="modem_log_name6">ModemLog6</string>
+    <string name="modem_log_name7">ModemLog7</string>
+    <string name="modem_log_name8">ModemLog8</string>
+    
+    <string name="met_log_name">METLog</string>
+    <string name="gps_log_name">GPSHostLog</string>
+    <string name="connsys_log_name">ConnsysLog</string>
+    <string name="connsysFW_log_name">ConnsysFWLog</string>
+    <string name="bthost_log_name">BTHostLog</string>
+    <string name="ext_modem_log_name">ExtModemLog</string>
+    <string name="tag_log_name">TagLog</string>
+    <string name="menu_settings">設定</string>
+    <string name="mobilelog_unselected">mobilelog未成功啟動，因為旗下未勾選任何日誌類型!</string>
+    <string name="no_log_on">沒有日誌開啟!</string>
+    <string name="log_path_str">日誌路徑</string>
+    <string name="log_used_storage">已用</string>
+    <string name="log_free_storage">空閒</string>
+    <string name="log_start"><xliff:g id="type">%s</xliff:g> 開始錄製</string>
+    <string name="log_stop"><xliff:g id="type">%s</xliff:g> 停止錄製</string>
+    <string name="log_uncontrolled"><xliff:g id="type">%s</xliff:g>不受控制</string>
+    <string name="time_default">0:00:00</string>
+    <string name="log_path_type_label_system_data">System Data</string>
+    <string name="log_path_type_label_sd">便攜式存儲設備</string>
+    <string name="log_path_type_label_emmc" product="tablet">內部存儲</string>
+    <string name="log_path_type_label_emmc" product="default">內部存儲設備</string>
+    <string name="log_path_type_label_data">內寘存儲</string>
+    <string name="log_path_not_exist">存储路径<xliff:g id="logpath">%s</xliff:g>不存在!</string>
+    <string name="low_storage_warning_dialog_title">警告:空間不足</string>
+    <string name="low_storage_warning_dialog_msg">可用空間小于 
+        <xliff:g id="logpath">%d</xliff:g>M,請清理存儲空間，否則將立即停止錄製日誌!</string>
+
+    <string name="info_mokey_test_running">Monkey測試正在運行，無法啟動/停止日誌！</string>
+    <string name="info_not_device_owner">當前不是機主，無法啟動/停止日誌！</string>
+    <string name="security_warning_dlg_title">安全警告</string>
+    <string name="message_start_log_confirm">日誌將被保存到公共存儲空間，它可能會導致隱私數據洩露，你確定仍然要開啟日誌嗎？</string>
+    <string name="message_stop_log_confirm">日誌已保存在公共存儲空間，請盡快刪除，以防止隱私數據洩露！</string>
+    	<!-- Waiting dialog -->
+    <string name="waiting_dialog_title_start_log">開始錄製</string>
+    <string name="waiting_dialog_message_start_log">等待開啟錄製...</string>
+    <string name="waiting_dialog_title_stop_log">停止錄製</string>
+    <string name="waiting_dialog_message_stop_log">等待停止錄製...</string>
+    <string name="waiting_dialog_title_restart_log">重啟日誌</string>
+    <string name="waiting_dialog_message_restart_log">等待重啟日誌...</string>
+    <string name="waiting_dialog_title_poll_log">匯出日誌</string>
+    <string name="waiting_dialog_message_poll_log">等待匯出日誌</string>
+    <string name="waiting_dialog_title_flush_log">匯出日誌</string>
+    <string name="waiting_dialog_message_flush_log">等待匯出日誌...</string>
+    <string name="waiting_service_dialog_message">等待日誌初始化...</string>
+    <string name="waiting_getstatus_dialog_message">等待獲取modem log 狀態...</string>
+    <string name="waiting_checking_log_dialog_message">檢查日誌檔...</string>
+    
+    <string name="service_state_init">DebugLoggerUIService 初始化...</string>
+    <string name="service_state_starting_log">DebugLoggerUIService 正在開始錄製日誌...</string>
+    <string name="service_state_stopping_log">DebugLoggerUIService 正在停止錄製日誌...</string>
+    <string name="service_state_restarting_log">DebugLoggerUIService 正在重啟日誌...</string>
+    <string name="service_state_all_log_stopped">警告 : 全部日誌已停止!!!</string>
+    
+    <!-- Settings -->
+    <string name="settings_title">設定</string>
+    <string name="general_settings_title">一般設定</string>
+    <string name="advanced_settings_title">高级設定</string>
+    <string name="enable_tag_log_title">啟用Tag Log</string>
+    <string name="enable_tag_log_summary">啟用/禁用tag log功能</string>
+        <string name="enable_always_tag_modem_log_title">總是Tag Modem Log</string>
+    <string name="enable_always_tag_modem_log_summary">啟用/禁用總是Tag Modem Log功能</string>
+    <string name="log_storage_location_title">日誌存储路径</string>
+    <string name="warning_no_permission_for_setting">只有设备管理员可以修改日誌配置信息.</string>
+    <string name="file_info_path">文件路徑：</string>
+    <string name="file_info_modified_time">修改時間：</string>
+    <string name="file_info_size">文件大小：</string>
+    <string name="uncontrolled_warning_dialog_title">警示：正在錄製Log</string>
+    <string name="uncontrolled_warning_dialog_message">當log不受控制時，會被停止錄製！</string>
+    <string name="not_support_metlog_dialog_title">不支持METLog警示</string>
+    <string name="not_support_metlog_dialog_message">不支持 : metlogd 回复!</string>
+    <string name="not_support_metlog_dialog_message_timeout">不支持 : metlogd 超時!</string>
+
+    <string name="limit_single_log_size_title">設定日誌容量最大值(MB)</string>
+    <string name="limit_single_log_size_summary">日誌達到設定的最大值時會自動删除當前日誌</string>
+    <string name="limit_single_log_size_dialog_message">
+        <xliff:g id="log_type">%1$s</xliff:g>的容量應該在區間
+        <xliff:g id="min_size">%2$d</xliff:g>MB ~ 
+        <xliff:g id="max_size">%3$d</xliff:g>MB( 
+        <xliff:g id="store_type">%4$s</xliff:g>的容量).</string>
+    <string name="limit_total_log_size_title">總日誌容量最大值(MB)</string>
+    <string name="limit_total_log_size_summary">總日誌容量將不會超過這個最大值</string>
+    <string name="limit_total_log_size_dialog_message">
+        <xliff:g id="log_type">%1$s</xliff:g>總日誌容量最大值應在區間
+        <xliff:g id="current_size">%2$s</xliff:g>MB ~
+        <xliff:g id="max_size">%3$s</xliff:g>MB ( 
+        <xliff:g id="current_size">%4$s</xliff:g> 的整數倍 ).\n若所有log最大值之和大於記憶體值，可能出現空間被占滿log停止.
+        </string>
+    <!-- metlog settings -->
+       <string name="enable_met_log_title">開啟MET Log</string>
+    <string name="enable_met_log_summary">啟用/禁用MET log功能 </string>
+ 
+    <string name="metlog_settings">METLog 設定</string>
+   
+    <string name="limit_metlog_size_title">日誌容量(MB per cpu)</string>
+    <string name="limit_metlog_size_summary">當達到日誌最大容量時將會删除日誌</string>
+    <string name="limit_sspmlog_size_title">SSPM Log Size (MB)</string>
+    <string name="limit_sspmlog_size_summary">Recycle log when it reaches the limit log size</string>
+    <string name="metlog_period_title">时間週期(ms)</string>
+    <string name="metlog_period_summary">設定 METLog时間周期</string>
+    
+    <string name="metlog_cpu_buffer_title">CPU緩存(KB)</string>
+    <string name="metlog_cpu_buffer_summary">設定METLog CPU緩存大小</string>
+    
+    <string name="metlog_heavy_load_recording_title">開啟重載錄製</string>
+    <string name="metlog_heavy_load_recording_summary">启啟用/禁用重載錄製</string>
+    
+    <string name="limit_met_log_size_dialog_message">(每個cpu均有一份自己的log file, 此設定值會套用在各個CPU上)\n
+        <xliff:g id="log_type">%1$s</xliff:g>的容量應該在區間
+        <xliff:g id="min_size">%2$d</xliff:g> MB ~ 
+        <xliff:g id="max_size">%3$d</xliff:g> MB.\n\n
+                            最大總日志容量 = 日志容量 * CPU數量\n
+        EX: 設定日志容量 = 100MB, CPU數量=8,那麼最大總日志容量 = 100MB*8 = 800MB
+        </string>
+
+    <string name="limit_sspm_log_size_dialog_message">The limit log size of current recording SSPM Log should be between 
+        <xliff:g id="min_size">%1$d</xliff:g> MB and 
+        <xliff:g id="max_size">%2$d</xliff:g> MB. </string>
+   
+   <string name="limit_period_dialog_message">
+        <xliff:g id="log_type">%1$s</xliff:g>的拼接持續時間週期應該在區間
+        <xliff:g id="min_size">%2$d</xliff:g> ms ~ 
+        <xliff:g id="max_size">%3$d</xliff:g> ms.</string>
+
+   <string name="limit_cpu_buffer_dialog_message">
+        <xliff:g id="log_type">%1$s</xliff:g>的跟踪緩存容量應該在區間
+        <xliff:g id="min_size">%2$d</xliff:g> KB ~ 
+        <xliff:g id="max_size">%3$d</xliff:g> KB.</string>
+   <string name="wait_for_check_gps_location">Waitting for Checking is GPS location support</string>
+
+    <!-- MobileLog Settings -->
+    <string name="mobilelog_settings">MobileLog設定</string>
+   	<string name="enable_mobilelog">啟用MobileLog</string>
+    <string name="enable_android_log_title">Android Log</string>
+    <string name="enable_android_log_summary">啟用/禁用android log</string>
+    <string name="enable_kernel_log_title">Kernel Log</string>
+    <string name="enable_kernel_log_summary">啟用/禁用kernel log</string>
+    <string name="enable_scp_log_title">SCP Log</string>
+    <string name="enable_scp_log_summary">Enable or disable scp log</string>
+    <string name="enable_atf_log_title">ATF Log</string>
+    <string name="enable_atf_log_summary">啟用/禁用ATF Log</string>
+    <string name="enable_bsp_log_title">BSP Log</string>
+    <string name="enable_bsp_log_summary">啟用/禁用BSP log</string>
+    <string name="enable_mmedia_log_title">Mmedia Log</string>
+    <string name="enable_mmedia_log_summary">啟用/禁用Mmedia log</string>
+    <string name="enable_sspm_log_title">SSPM Log</string>
+    <string name="enable_sspm_log_summary">啟用/禁用SSPM log</string>
+    <string name="enable_adsp_log_title">ADSP Log</string>
+    <string name="enable_adsp_log_summary">啟用/禁用 ADSP log</string>
+    <string name="limit_log_size_title">日誌容量(MB)</string>
+    <string name="limit_log_size_summary">當達到日誌最大容量時將會删除日誌</string>
+    <string name="limit_log_size_dialog_message">
+        <xliff:g id="log_type">%1$s</xliff:g>的容量應該在區間 
+        <xliff:g id="min_size">%2$d</xliff:g>MB ~ 
+        <xliff:g id="max_size">%3$d</xliff:g>MB(
+        <xliff:g id="store_type">%4$s</xliff:g>的容量).\n若所有log最大值之和大於記憶體值，可能出現空間被占滿log停止.
+        </string>
+    <string name="limit_log_size_store_type">
+        <xliff:g id="log_type">%s</xliff:g>最大
+        </string>
+    <!-- ModemLog Settings -->
+    <string name="modemlog_settings">ModemLog設定</string>
+   	<string name="enable_modemlog">啟用ModemLog</string>
+    <string name="log_mode_title">日誌模式</string>
+    <string name="log_mode_summary">設定modem log模式</string>
+    <string name="ccb_gear_title">CCB Gear ID(Control+Raw Buffer)</string>
+    <string name="ccb_gear_summary">設置CCB Gear ID</string>
+    <string name="ccb_gear_warning_dialog_title">CCB Gear ID設置警示</string>
+    <string name="ccb_gear_warning_dialog_context">新的設置在手機重新啟動後生效！</string>
+    <string name="ccb_gear_warning_dialog_context_more">當設置為gear 3後，Modem Log將不能正常工作！</string>
+    <string name="reset_automatically_modem_title">重置Modem自動運行</string>
+    <string name="reset_automatically_modem_summary">發生EE後 Modem自動運行</string>
+    <string name="monitor_modme_abnormal_event_title">監控Modem异常事件</string>
+    <string name="monitor_modme_abnormal_event_summary">Modem异常事件發生時，會自動存儲日誌到SD卡</string>
+    <string name="save_location_in_log_title">在日誌中保存方位資訊(仅Md1)</string>
+    <string name="save_location_in_log_summary">啟用全球定位系統設備，全球定位系統訊號啟動後，在modem日誌中儲存設備調製資訊</string>
+    <string name="save_location_in_log_dialog_title">在日誌中保存方位資訊警示</string>
+    <string name="save_location_in_log_dialog_context">啟用此功能將迫使GPS總是打開的。這可能會新增對Android和Modem的功率消耗。\n\n若您在室內使用，或者進行性能測試或者測試功耗，請禁用此功能.</string>
+    <!-- NetworkLog Settings -->
+    <string name="networklog_settings">NetworkLog設定</string>
+   	<string name="enable_networklog">啟用NetworkLog</string>
+    <string name="networklog_ping_title">啟動環境檢測</string>
+    <string name="networklog_ping_summary">停止錄製時檢查network運行環境請等待.</string>
+    <string name="networklog_enable_rohc_compression_title">Rohc Compression</string>
+    <string name="networklog_enable_rohc_compression_summary">Enable network log rohc compression</string>
+    <string name="networklog_set_rohc_total_file_number_title">Rohc Total File Number</string>
+    <string name="networklog_set_rohc_total_file_number_summary">Set rohc total number of file</string>
+    <string name="networklog_limit_package_enabler">啟用包容量限制</string>
+    <string name="networklog_limit_package_enabler_summary">檢查每個network log包的大小是否符合給定值</string>
+    <string name="networklog_limit_package_size">設定包大小</string>
+    <string name="networklog_limit_package_size_summary">每個包的大小不能超過給定值</string>
+    <string name="networklog_limit_package_size_note">每個包的大小設定區間為 0 ~ 65535.</string>
+    	<!-- ConnsysLog Settings -->
+    <string name="connsysfw_log_settings_title">ConnsysFW Log</string>
+    <string name="gps_log_settings_title">GPS Log</string>
+    <string name="gps_host_log_name">Host Log</string>
+    <string name="bluetooth_log_settings_title">Bluetooth Log</string>
+    <string name="bt_hci_log_name">HCI Log</string>
+    <string name="bthostlog_switch_summary">Capture Bluetooth HCI packets in files.</string>
+    <string name="bt_stack_log_name">Stack Log</string>
+    <string name="btstacklog_enable_summary">Dump more BT stack log in main log.</string>
+    <string name="btstacklog_restart_once_info">Restart Bluetooth manually to make BT stack 
+        <xliff:g id="reduce_to">%1$s</xliff:g> dump more log in main log.
+        <xliff:g id="log_too_much_info">%2$s</xliff:g>
+    </string>
+    <string name="btstacklog_restart_twice_info">Turn on Bluetooth first, and then restart it manually to make BT stack 
+        <xliff:g id="reduce_to">%1$s</xliff:g> dump more log in main log.
+        <xliff:g id="log_too_much_info">%2$s</xliff:g>
+    </string>
+    <string name="reduce_to">reduce to</string>
+    <string name="log_too_much_warning_info">\n“Log too much issue” may occur if there is too much BT stack log in main log.</string>
+    <string name="limit_hci_snoop_log_size_title">Limit HCI Snoop Log Size(MB)</string>
+    <string name="limit_hci_snoop_log_size_summary">Recycle log when it reaches the limit log size</string>
+    <string name="btfw_Log_level_title">BT Firmware Log Level</string>
+    <string name="btfw_Log_level_summary">Set BT Firmware log level</string>
+    <string name="wifi_log_settings_title">Wi-Fi Log</string>
+    <string name="open_wifi_log_tool_title">Open Wi-Fi Log Tool</string>
+    <string name="open_wifi_log_tool_summary">Enter Wi-Fi Log Setting UI</string>
+
+    <!-- Clear logs -->
+    <!-- LogFolderListActivity -->
+    <string name="title_activity_log_folder_list">删除DebugLogger檔案</string>
+    <string name="cancel_menu">取消</string>
+    <string name="clear_all_menu">全部删除</string>
+    <string name="clear_all_dlg_title">全部删除</string>
+    <string name="message_delete_all_log">確認全部删除?</string>
+    <string name="cancel_button">取消</string>
+    <string name="ok_button">確定</string>
+    <string name="clear_dialog_title">正在删除日誌</string>
+    <string name="clear_dialog_content">請耐心等待...</string>
+    <string name="clear_modem_boot_up_log">删除modem開機日誌</string>
+    	<!-- LogFileListActivity -->
+    <string name="selected_item_count"><xliff:g id="count">%d</xliff:g> 選擇</string>
+    <string name="menu_select_all">全選</string>
+    <string name="menu_unselect_all">全不選</string>
+    <string name="menu_clear">删除</string>
+    <string name="clear_non_selected_item">請至少選擇一個日誌檔案!</string>
+    <string name="clear_dlg_title">删除</string>
+    <string name="message_deletelog">删除所選檔案?</string>
+    
+    <!-- Error handler -->
+    <string name="error_deamon_unable">Native不可用</string>
+    <string name="error_storage_not_ready">存儲還未就緒!</string>
+    <string name="error_storage_full">存儲空間已滿</string>
+    <string name="error_send_cmd_fail">發送命令失敗</string>
+    <string name="error_deamon_die">Native 已消亡</string>
+	<string name="error_unsupport_log">不支持日誌类型</string>
+	<string name="error_storage_unavailable">日誌存儲不再可用.</string>
+    <string name="error_log_folder_deleted">當前運行日誌檔已不存在.</string>
+    <string name="error_cmd_timeout">命令超時.</string>
+    <string name="error_create_log_folder_fail">创建日誌文件失敗.</string>
+    <string name="error_wait_sd_timeout">等待儲存設備就緒超時.</string>
+    <string name="error_common">錯誤.</string>
+    <string name="error_tcpdump_failed">Tcpdump 失敗</string>
+    <string name="info_wait_sd_ready">等待儲存設備就緒...</string>
+    <string name="info_modem_log_in_flight_mode">Modem log未工作在flight模式</string>
+    <!-- METlog information -->
+    <string name="met_start_failed">MET Log 啟动失敗.</string>
+    <!-- Tag Log -->
+    <string name="taglog">Tag Log</string>
+    <string name="taglog_title">Tag Log</string>
+    <string name="notification_title_taglog_compressing">Compressing log</string>
+    <string name="notification_title_taglog_compress_success">Compressed successfully</string>
+    <string name="taglog_title_warning">Tag Log 警告!</string>
+    <string name="taglog_msg_input">Tag Log將壓縮當前日誌檔以節省空間.\n\n請輸入tag名稱:</string>
+    <string name="taglog_msg_tag_log">Tagging log ... </string>
+
+    <!-- For Modem log -->
+    <string name="memorydump_done">dumping memory 已完成！\n點擊確定重啓modem.\n dump檔案為: </string>
+    <string name="dump_warning">Modem Log警告</string>
+    
+</resources>

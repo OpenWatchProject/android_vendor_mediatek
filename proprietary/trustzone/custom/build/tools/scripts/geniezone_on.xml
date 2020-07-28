@@ -1,0 +1,24 @@
+<GenieZoneConfig>
+  <ProjectConfig>
+    <config feature="MTK_ENABLE_GENIEZONE" value="yes" />
+    <config feature="MTK_NEBULA_VM_SUPPORT" value="no" />
+  </ProjectConfig>
+  <TrustzoneConfig>
+    <config feature="MTK_ENABLE_GENIEZONE" value="yes" />
+  </TrustzoneConfig>
+  <LKConfig>
+    <config feature="MTK_ENABLE_GENIEZONE" value="yes" />
+  </LKConfig>
+  <PreloadConfig>
+    <config feature="MTK_ENABLE_GENIEZONE" value="yes" />
+    <config feature="MTK_NEBULA_VM_SUPPORT" value="no" />
+  </PreloadConfig>
+  <KernelConfig>
+    <config feature="CONFIG_MTK_ENABLE_GENIEZONE" value="y" />
+    <config feature="CONFIG_MTK_NEBULA_VM_SUPPORT" value="is not set" />
+  </KernelConfig>
+  <KernelDebugConfig>
+    <config feature="CONFIG_MTK_ENABLE_GENIEZONE" value="y" />
+    <config feature="CONFIG_MTK_NEBULA_VM_SUPPORT" value="is not set" />
+  </KernelDebugConfig>
+</GenieZoneConfig>

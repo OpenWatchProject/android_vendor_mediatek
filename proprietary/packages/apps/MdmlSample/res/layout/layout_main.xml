@@ -1,0 +1,106 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity"
+    >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:weightSum="1"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:orientation="vertical">
+
+        <Switch
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:text="@string/enable"
+            android:id="@+id/swEnable"
+            android:layout_gravity="right"
+            android:checked="false"
+            android:textSize="20dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="@string/subscription"
+            android:id="@+id/textView2"
+            android:paddingTop="5dp" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:weightSum="1">
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="@string/EM"
+                android:id="@+id/btnEM"
+                android:padding="10dp"
+                android:layout_weight="0.33"
+                android:clickable="false"
+                android:onClick="setContentView"
+                android:nestedScrollingEnabled="true" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="GLOBAL"
+                android:id="@+id/btnGLOBAL"
+                android:padding="10dp"
+                android:layout_weight="0.33" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="@string/OTA"
+                android:id="@+id/btnOTA"
+                android:padding="10dp"
+                android:layout_weight="0.33" />
+
+            <ProgressBar
+                style="?android:attr/progressBarStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/progressBar_Circle"
+                android:layout_gravity="center_horizontal" />
+        </LinearLayout>
+
+        <ProgressBar
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/progressBar_Horizontal"
+            android:layout_gravity="fill_horizontal" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="@string/information"
+            android:id="@+id/textView3"
+            android:paddingTop="2dp"
+            android:paddingBottom="5dp" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true"
+            android:id="@+id/scrollview">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textviewResult"
+                android:padding="10dp" />
+        </ScrollView>
+
+    </LinearLayout>
+
+</RelativeLayout>

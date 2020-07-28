@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+      package="com.via.bypass.test"
+      android:versionName="1.0">
+
+    <uses-sdk android:minSdkVersion="10"/>
+    <application>
+        <uses-library android:name="android.test.runner" />
+    </application>
+
+    <instrumentation
+        android:name="com.via.bypass.test.BypassTestRunner"
+        android:targetPackage="com.via.bypass"
+        android:label="BypassTest" >
+    </instrumentation>
+</manifest>

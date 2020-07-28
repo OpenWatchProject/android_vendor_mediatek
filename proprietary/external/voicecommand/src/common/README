@@ -1,0 +1,22 @@
+This module creates the libaudiostream.a libary file.
+
+WHAT IT DOES?
+=============
+libaudiostream is common module, is used by all voice features.
+it can be seen as recorder, it can record the PCM of different sample rate, different channel from mic.
+it can read down link data from speaker and sync with uplink data from mic
+
+HOW IT WAS BUILT?
+==================
+It needs the following library from AOSP:
+
+libutils, libcutils 
+
+and the following libs from MediaTek:
+
+    libstagefright, libmedia
+
+HOW TO USE IT?
+==============
+
+user can call the fuctions in this library to control record and read uplink data/downlink data.

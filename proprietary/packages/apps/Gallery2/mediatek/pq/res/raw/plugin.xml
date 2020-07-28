@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    id="PQ"
+    name="PQ"
+    require-plugin-id="Roots"
+    version="2"
+    xmlns="http://www.plugin.com"
+    xsi:schemaLocation="http://www.plugin.com ../../../plugin/assets/plugin.xsd" >
+    <extension
+        id="PictureQuality"
+        name="pq"
+        class="com.mediatek.galleryfeature.picturequality.PictureQuality"
+        plugin-id="Gallery2Root"
+        point-id="IDecodeOptionsProcessor" >
+    </extension>
+</plugin>

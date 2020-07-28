@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        id="Drm"
+        name="Drm"
+        version="1"
+        xmlns="http://www.plugin.com"
+        xsi:schemaLocation="http://www.plugin.com ../../../plugin/assets/plugin.xsd">
+    <extension
+            id="HostActivityCallback"
+            name="Host activity life"
+            class="com.mediatek.galleryfeature.drm.ActivityCallback"
+            plugin-id="Gallery2Root"
+            point-id="IActivityCallback">
+    </extension>
+    <extension
+            id="DrmSlideshowRenderer"
+            name="Draw drm icon in slide show"
+            class="com.mediatek.galleryfeature.drm.DrmSlideshowRenderer"
+            plugin-id="Gallery2Root"
+            point-id="ISlideshowRenderer">
+    </extension>
+    <extension
+            id="DrmProtectionMenu"
+            name="Drm protection menu"
+            class="com.mediatek.galleryfeature.drm.DrmActionBarMenu"
+            plugin-id="Gallery2Root"
+            point-id="IActionBar">
+    </extension>
+    <extension
+            id="DrmActionModeMenu"
+            name="Drm Action Mode Menu"
+            class="com.mediatek.galleryfeature.drm.DrmActionMode"
+            plugin-id="Gallery2Root"
+            point-id="IActionMode">
+    </extension>
+    <extension
+            id="DrmField"
+            name="Drm field"
+            class="com.mediatek.galleryfeature.drm.DrmField"
+            plugin-id="Gallery2Root"
+            point-id="IFieldDefinition">
+    </extension>
+
+    <extension
+            id="DrmFilter"
+            name="Drm filter"
+            class="com.mediatek.galleryfeature.drm.DrmFilter"
+            plugin-id="Gallery2Root"
+            point-id="IFilter">
+    </extension>
+
+    <extension
+            id="DrmMember"
+            name="Show indicator for drm image"
+            class="com.mediatek.galleryfeature.drm.DrmMember"
+            plugin-id="Gallery2Root"
+            point-id="MediaMember">
+    </extension>
+
+    <extension
+            id="DrmAlbumSlotRenderer"
+            name="Show Drm icon at album slot view"
+            class="com.mediatek.galleryfeature.drm.DrmAlbumSlotRenderer"
+            plugin-id="Gallery2Root"
+            point-id="IAlbumSlotRenderer">
+    </extension>
+    <extension
+            id="DrmBottomControl"
+            name="Drm bottom control"
+            class="com.mediatek.galleryfeature.drm.DrmBottomControl"
+            plugin-id="Gallery2Root"
+            point-id="IBottomControl" >
+    </extension>
+</plugin>

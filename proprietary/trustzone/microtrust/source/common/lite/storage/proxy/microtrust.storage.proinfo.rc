@@ -1,0 +1,9 @@
+# If support proinfo sector, define this service, and start on fs,
+# if meta mode or factory mode need this service, also need to start this service in meta_init.rc, factory.rc
+service storage_proinfo /vendor/bin/istorageproxyd  -d /dev/trusty-ipc-dev0 -p com.android.trusty.storage.proinfo -i proinfo
+    group system
+    disabled
+    oneshot
+
+on fs
+    start storage_proinfo

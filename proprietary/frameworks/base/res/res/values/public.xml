@@ -1,0 +1,223 @@
+<!-- This file defines the base public resources exported by the
+     platform, which must always exist. -->
+
+<!-- ***************************************************************
+     ***************************************************************
+     IMPORTANT NOTE FOR ANYONE MODIFYING THIS FILE
+     READ THIS BEFORE YOU MAKE ANY CHANGES
+
+     This file defines the binary compatibility for resources.  As such,
+     you must be very careful when making changes here, or you will
+     completely break backwards compatibility with old applications.
+
+     To avoid breaking compatibility, all new resources must be placed
+     at the end of the list of resources of the same type.  Placing a resource
+     in the middle of type will cause all following resources to be
+     assigned new resource numbers, breaking compatibility.
+
+     ***************************************************************
+     *************************************************************** -->
+<resources>
+
+  <!-- We don't want to publish private symbols in com.mediatek.R as part of the
+       SDK.  Instead, put them here. -->
+<!-- ===============================================================
+     Resources for version 1 of the platform.
+     =============================================================== -->
+  <eat-comment />
+  <public type="array" name="bootup_mode" id="0x08040000" />
+  <public type="array" name="gprs_mode_1" id="0x08040001" />
+  <public type="array" name="gprs_mode_2" id="0x08040002" />
+  <public type="drawable" name="ic_clock" id="0x08020001" />
+  <public type="drawable" name="ic_dialog_menu_generic" id="0x08020002" />
+  <public type="raw" name="gemini_sac" id="0x08030000" />
+  <public type="string" name="Pin2Mmi" id="0x08050009" />
+  <public type="string" name="Puk2Mmi" id="0x0805000b" />
+  <public type="string" name="PukMmi" id="0x0805000a" />
+  
+  
+  <public type="string" name="VideoView_error_text_bad_file" id="0x08050057" />
+  <public type="string" name="VideoView_error_text_cannot_connect_to_server" id="0x08050058" />
+  <public type="string" name="VideoView_error_text_drm_not_supported" id="0x0805005a" />
+  <public type="string" name="VideoView_error_text_type_not_supported" id="0x08050059" />
+  
+  
+  <public type="string" name="badPin2" id="0x08050001" />
+  <public type="string" name="badPuk2" id="0x08050002" />
+  <public type="string" name="callBarringFailMmi" id="0x08050008" />
+  <public type="string" name="cfServiceNotForwarded" id="0x0805000e" />
+  <public type="string" name="checkPwdLen" id="0x08050003" />
+  
+  
+  <public type="string" name="contact_widget_loading" id="0x08050050" />
+  <public type="string" name="fdnFailMmi" id="0x08050007" />
+  <public type="string" name="free_memory_btn" id="0x08050047" />
+  
+  <public type="string" name="invalidPuk" id="0x08050015" />
+  <public type="string" name="invalid_imei" id="0x0805001b" />
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <public type="string" name="media_controller_buffering" id="0x0805004f" />
+  <public type="string" name="media_controller_connecting" id="0x08050055" />
+  <public type="string" name="media_controller_live" id="0x08050053" />
+  <public type="string" name="media_controller_playing" id="0x08050054" />
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <public type="string" name="oper_long_46000" id="0x0805001d" />
+  <public type="string" name="oper_long_46001" id="0x0805001e" />
+  <public type="string" name="oper_long_46601" id="0x0805001f" />
+  <public type="string" name="oper_long_46692" id="0x08050020" />
+  <public type="string" name="oper_long_46697" id="0x08050021" />
+  <public type="string" name="oper_long_99998" id="0x08050022" />
+  <public type="string" name="oper_long_99999" id="0x08050023" />
+  <public type="string" name="oper_short_46000" id="0x08050024" />
+  <public type="string" name="oper_short_46001" id="0x08050025" />
+  <public type="string" name="oper_short_46601" id="0x08050026" />
+  <public type="string" name="oper_short_46692" id="0x08050027" />
+  <public type="string" name="oper_short_46697" id="0x08050028" />
+  <public type="string" name="oper_short_99997" id="0x08050029" />
+  <public type="string" name="oper_short_99999" id="0x0805002a" />
+  
+  
+  
+  
+  <public type="string" name="pinNotEnabled" id="0x08050004" />
+  
+  <public type="string" name="puk1Blocked" id="0x08050005" />
+  <public type="string" name="puk2Blocked" id="0x08050006" />
+  
+  <public type="string" name="same_imei" id="0x0805001c" />
+  <public type="string" name="serviceClassVideo" id="0x08050044" />
+  <public type="string" name="serviceProvisioned" id="0x0805000c" />
+  <public type="string" name="serviceUnknown" id="0x0805000d" />
+  <public type="string" name="sim_close" id="0x08050038" />
+  
+  
+  
+  
+  
+  
+  
+  <public type="string" name="drm_protectioninfo_title" id="0x08050062" />
+
+<public type="string" name="oper_long_46003" id="0x08050063" />
+  <public type="string" name="oper_short_46003" id="0x08050064" />
+  
+
+  <public type="string" name="invalid_card" id="0x08050066" />
+  <public type="string" name="RejectCauseTitle" id="0x08050067" />
+  <public type="string" name="MMRejectCause2" id="0x08050068" />  
+  <public type="string" name="MMRejectCause3" id="0x08050069" />
+  <public type="string" name="MMRejectCause5" id="0x08050070" />  
+  <public type="string" name="MMRejectCause6" id="0x08050071" />  
+    
+  <public type="string" name="wifi_display_bt_hdmi_off_wfd_on" id="0x08050073" />
+  <public type="string" name="wifi_display_wfd_off_hdmi_on" id="0x08050074" />
+  <public type="string" name="MMRejectCause13" id="0x08050075" />  
+  
+  <public type="string" name="wifi_display_wifi_p2p_disconnect_wfd_connect" id="0x08050076" />
+  <public type="string" name="sdcard_ready_title" id="0x08050077" />
+  <public type="string" name="sdcard_select_default_path" id="0x08050078" />
+  <public type="string" name="sdcard_default_path_change" id="0x08050079" />
+  <public type="string" name="wifi_display_unstable_connection" id="0x08050080" />
+  <public type="string" name="wifi_display_connection_is_not_steady" id="0x08050081" />
+  <public type="string" name="wifi_display_unstable_suggestion" id="0x08050082" />
+  <public type="string" name="usb_storage_ready_title" id="0x08050083" />
+  <public type="string" name="wifi_display_reconnect" id="0x08050084" />
+  <public type="string" name="wifi_display_disconnect_then_reconnect" id="0x08050085" />
+  <public type="string" name="wifi_display_disconnected" id="0x08050086" />
+  <public type="string" name="wifi_wps_failed_overlap" id="0x08050087" />
+  <public type="string" name="wifi_display_wfd_and_wifi_are_turned_on" id="0x08050088" />
+  <public type="string" name="wifi_display_sound_path_reminder" id="0x08050089" />
+  <public type="string" name="wifi_display_change_resolution_reminder" id="0x08050090" />
+  <public type="string" name="wifi_display_do_not_remind_again" id="0x08050091" />
+  <public type="string" name="wifi_display_wifi_ap_affects_quality" id="0x08050092" />
+  <public type="string" name="data_conn_only" id="0x08050093" />
+	<public type="string" name="wifi_display_wait_connection" id="0x08050094" />
+	<public type="string" name="wifi_display_confirm_connection" id="0x08050095" />
+	<public type="string" name="wifi_display_build_connection" id="0x08050096" />
+	
+  <public type="string" name="Special_Card_Type_Title_Lte_Not_Available" id="0x08050097" />
+  <public type="string" name="Suggest_To_Change_USIM" id="0x08050098" />
+  <public type="string" name="network_forbidden" id="0x08050099" />
+
+  <public type="string" name="wifi_display_connected_to_wifi_network" id="0x08050100" />
+  <public type="string" name="wifi_p2p_frequency_conflict_message" id="0x08050101" />
+  <public type="string" name="wifi_display_wifi_network_disconnected" id="0x08050102" />
+  <public type="string" name="wifi_display_channel_confliction" id="0x08050103" />
+  <public type="string" name="wifi_display_wifi_network_cannot_coexist" id="0x08050104" />
+  <!-- ===============================================================
+     Resource attributes proposed for MTK.
+     =============================================================== -->
+  <public type="attr" name="promptHorzOffset" id="0x08010000" />  
+  <public type="attr" name="promptVertOffset" id="0x08010001" />
+  <public type="attr" name="sectionFontSize" id="0x08010002" />
+  <public type="attr" name="fullSectionsId" id="0x08010003" />
+  <public type="attr" name="replacedSectionsId" id="0x08010004" />
+  <public type="attr" name="sectionBaselinesId" id="0x08010005" />
+  <public type="attr" name="bladeIndicator" id="0x08010006" />
+  <public type="attr" name="indicatorTopsId" id="0x08010007" />
+  <public type="attr" name="promptAnimationDuration" id="0x08010008" />
+  <public type="attr" name="bladeIndicatorWidth" id="0x08010009" />
+  <public type="attr" name="bladeIndicatorHeight" id="0x0801000a" />
+  <public type="attr" name="enableSectionColor" id="0x0801000b" />
+  <public type="attr" name="disableSectionColor" id="0x0801000c" />
+  <public type="attr" name="enablePromptColor" id="0x0801000d" />
+  <public type="attr" name="disablePromptColor" id="0x0801000e" />
+  
+  <!--for MTKAppWidgetProviderInfo -->
+  <public type="attr" name="hasUsedCustomerView" id="0x08010011" />
+
+  <!--for bookmarkview -->
+  <public type="attr" name="imageDispWidth" id="0x08010012" />
+  <public type="attr" name="imageDispHeight" id="0x08010013" />
+  <public type="attr" name="spaceBetweenItems" id="0x08010014" />
+  <public type="attr" name="dotGap" id="0x08010015" />
+  <public type="attr" name="imageReflection" id="0x08010016" />
+  <public type="attr" name="maxZoomOut" id="0x08010017" />
+  <public type="attr" name="titleColor" id="0x08010018" />
+  <public type="attr" name="infoColor" id="0x08010019" />
+  
+  <!-- for TextView SmartFit -->
+  <public type="attr" name="smartFit" id="0x0801001a" />
+
+  <public type="color" name="theme_slicer_backgroud_color" id="0x08060000" />
+  <public type="color" name="theme_slicer_pressed_color" id="0x08060001" />
+  <public type="color" name="theme_slicer_focused_color" id="0x08060002" />
+
+  <public type="color" name="theme_slicer_email_item_background_unread" id="0x08060003" />
+  <public type="color" name="theme_slicer_email_item_background_read" id="0x08060004" />
+
+  <public type="color" name="theme_slicer_mms_item_background_unread" id="0x08060005" />
+  <public type="color" name="theme_slicer_mms_item_background_read" id="0x08060006" />
+
+  <public type="color" name="theme_slicer_expandinglist_child_background_color" id="0x08060007" />
+
+  <!-- Long string feature for ImageSwitch -->
+  <public type="style" name="ImageSwitch" id="0x080f0000" />
+
+  <!-- Default Account selection -->
+  <public type="drawable" name="account_always_ask_icon" id="0x08020003"/>
+  <public type="drawable" name="other_accounts_icon" id="0x08020004"/>
+  <public type="string" name="account_always_ask_title" id="0x0805009a"/>
+</resources>

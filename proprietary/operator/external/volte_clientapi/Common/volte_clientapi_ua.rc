@@ -1,0 +1,16 @@
+#
+# volte_clientapi_ua specific system properties
+#
+on property:sys.boot_completed=1
+        start volte_clientapi_ua
+
+#
+# volte_clientapi_ua specific system service and socket information
+#
+service volte_clientapi_ua /vendor/bin/volte_clientapi_ua
+    class hal
+    socket volte_clientapi stream 666 root system
+    user system
+    group system log inet radio
+    disabled
+

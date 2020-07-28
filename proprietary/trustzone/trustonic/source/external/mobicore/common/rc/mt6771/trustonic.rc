@@ -1,0 +1,40 @@
+# Start Daemon (Registry directories should already be present)
+service mobicore /vendor/bin/mcDriverDaemon --P1 /mnt/vendor/persist/mcRegistry \
+	-r /vendor/app/mcRegistry/06090000000000000000000000000000.drbin \
+	-r /vendor/app/mcRegistry/020f0000000000000000000000000000.drbin \
+	-r /vendor/app/mcRegistry/05120000000000000000000000000000.drbin \
+	-r /vendor/app/mcRegistry/020b0000000000000000000000000000.drbin \
+	-r /vendor/app/mcRegistry/05070000000000000000000000000000.drbin \
+	-r /vendor/app/mcRegistry/030b0000000000000000000000000000.drbin \
+	-r /vendor/app/mcRegistry/03100000000000000000000000000000.drbin \
+	-r /vendor/app/mcRegistry/030c0000000000000000000000000000.drbin \
+	-r /vendor/app/mcRegistry/40188311faf343488db888ad39496f9a.drbin \
+	-r /vendor/app/mcRegistry/070c0000000000000000000000000000.drbin \
+	-r /vendor/app/mcRegistry/090b0000000000000000000000000000.drbin \
+	-r /vendor/app/mcRegistry/0f5eed3c3b5a47afacca69a84bf0efad.drbin \
+	-r /vendor/app/mcRegistry/07060000000000000000000000007169.drbin \
+	-r /vendor/app/mcRegistry/07407000000000000000000000000000.drbin \
+	-r /vendor/app/mcRegistry/9073f03a9618383bb1856eb3f990babd.drbin
+    user system
+    group system
+    class core
+    priority -20
+
+# t-Drv naming
+# 020f0000000000000000000000000000.drbin : utils
+# 05120000000000000000000000000000.drbin : sec
+# 070b0000000000000000000000000000.drbin : play
+# 020b0000000000000000000000000000.drbin : cmdq
+# 05070000000000000000000000000000.drbin : goodix_fp
+# 030b0000000000000000000000000000.drbin : spi
+# 030c0000000000000000000000000000.drbin : spi5
+# 07070000000000000000000000000000.drbin : MtkH264Venc
+# 07060000000000000000000000007169.drbin : MtkH264Vdec
+# 5020170115e016302017012521300000.drbin : drm_hdcp_common
+# 40188311faf343488db888ad39496f9a.drbin : widevine
+# 070c0000000000000000000000000000.drbin : IRIS_GPIO
+# 090b0000000000000000000000000000.drbin : IRIS_I2C
+# 0f5eed3c3b5a47afacca69a84bf0efad.drbin : isp
+# 07407000000000000000000000000000.drbin : sensor
+# 06090000000000000000000000000000.drbin : drm keyinstall
+

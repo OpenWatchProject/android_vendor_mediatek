@@ -1,0 +1,5 @@
+service camerapostalgo /system/bin/camerapostalgo
+    class main
+    user cameraserver
+    disabled
+    group camera input system media graphics sdcard_rw

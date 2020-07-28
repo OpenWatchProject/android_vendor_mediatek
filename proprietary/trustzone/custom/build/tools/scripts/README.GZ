@@ -1,0 +1,27 @@
+===================================================================================
+Script : changeGZ.pl
+This is a script used to turn on/off GenieZone/Nebula options in MediaTek platform.
+===================================================================================
+
+Usage:
+  ./changeGZ.pl --config=ConfigFile --project=Project --kernel=Kernel_Version
+
+Example:
+  ./changeGZ.pl --config=geniezone_on.xml --project=k68v1_64 --kernel=kernel-4.14
+  ./changeGZ.pl --config=geniezone_off.xml --project=k68v1_64 --kernel=kernel-4.14
+  ./changeGZ.pl --config=gz_nebula_on.xml --project=k68v1_64 --kernel=kernel-4.14
+  ./changeGZ.pl --config=gz_nebula_off.xml --project=k68v1_64 --kernel=kernel-4.14
+
+===================================================================================
+Script : checkGZ.py
+This is a script used to check GenieZone/Nebula options in MediaTek platform.
+===================================================================================
+
+Usage:
+  ./checkGZ.py --project=Project --platform=Platform --kernel=Kernel_Version ConfigFile.json
+
+Example:
+  ./checkGZ.py --project=k68v1_64 --platform=mt6768 --kernel=kernel-4.14 foc_geniezone_enable.json
+  ./checkGZ.py --project=k68v1_64 --platform=mt6768 --kernel=kernel-4.14 foc_geniezone_disable.json
+  ./checkGZ.py --project=k68v1_64 --platform=mt6768 --kernel=kernel-4.14 foc_gz_nebula_enable.json
+  ./checkGZ.py --project=k68v1_64 --platform=mt6768 --kernel=kernel-4.14 foc_gz_nebula_disable.json

@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+** Copyright 2007, The Android Open Source Project
+**
+** Licensed under the Apache License, Version 2.0 (the "License"); 
+** you may not use this file except in compliance with the License. 
+** You may obtain a copy of the License at 
+**
+**     http://www.apache.org/licenses/LICENSE-2.0 
+**
+** Unless required by applicable law or agreed to in writing, software 
+** distributed under the License is distributed on an "AS IS" BASIS, 
+** WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. 
+** See the License for the specific language governing permissions and 
+** limitations under the License.
+*/
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="onesong">1 ән</string>
+    <plurals name="Nsongs">
+        <item quantity="other"><xliff:g id="count">%d</xliff:g> ән</item>
+    </plurals>
+    <plurals name="Nsongscomp">
+        <item quantity="other"><xliff:g id="total_count">%1$d</xliff:g> ішінен <xliff:g id="count_for_artist">%2$d</xliff:g> ән</item>
+    </plurals>
+    <plurals name="Nalbums">
+        <item quantity="one">1 альбом</item>
+        <item quantity="other"><xliff:g id="count">%d</xliff:g> альбом</item>
+    </plurals>
+    <skip/>
+    <string name="goto_start">Кітапхана</string>
+    <string name="party_shuffle">Микс жасау</string>
+    <string name="party_shuffle_off">Микс жасауды өшіру</string>
+    <string name="delete_item">Жою</string>
+    <string name="shuffle_all">Барлығын кездейсоқ ретпен ойнату</string>
+    <string name="play_all">Барлығын ойнату</string>
+    <string name="delete_artist_desc"><xliff:g id="artist">%s</xliff:g> орындайтын барлық әндер жойылады.</string>
+    <string name="delete_artist_desc_nosdcard">USB жадынан <xliff:g id="artist">%s</xliff:g> орындайтын барлық әндерді тұрақты түрде жою керек пе?</string>
+    <string name="delete_album_desc">\"<xliff:g id="album">%s</xliff:g>\" альбомы толығымен жойылады.</string>
+    <string name="delete_album_desc_nosdcard">USB жадынан \"<xliff:g id="album">%s</xliff:g>\" альбомын тұрақты түрде толығымен жою керек пе?</string>
+    <string name="delete_song_desc">\"<xliff:g id="song">%s</xliff:g>\" жойылады.</string>
+    <string name="delete_song_desc_nosdcard">USB жадынан \"<xliff:g id="song">%s</xliff:g>\" әнін тұрақты түрде жою керек пе?</string>
+    <string name="delete_confirm_button_text">OK</string>
+    <plurals name="NNNtracksdeleted">
+        <item quantity="one">1 ән жойылды.</item>
+        <item quantity="other"><xliff:g id="songs_to_delete">%d</xliff:g> ән жойылды.</item>
+    </plurals>
+    <string name="scanning">SD картасын сканерлеу\u2026</string>
+    <string name="scanning_nosdcard">USB жады сканерленуде\u2026</string>
+    <string name="nowplaying_title">Қазір ойнатылуда</string>
+    <string name="partyshuffle_title">Микс жасау</string>
+    <string name="artists_title">Әншілер</string>
+    <string name="albums_menu">Альбомдар</string>
+    <string name="albums_title">Альбомдар</string>
+    <string name="tracks_menu">Әндер</string>
+    <string name="tracks_title">Әндер</string>
+    <string name="playlists_menu">Ойнату тізімдері</string>
+    <string name="playlists_title">Ойнату тізімдері</string>
+    <string name="videos_title">Видео</string>
+    <string name="all_title">Барлық мультимедиа</string>
+    <string name="browse_menu">Әншілер</string>
+    <string name="search_title">Іздеу</string>
+    <string name="no_tracks_title">Әндер жоқ</string>
+    <string name="no_videos_title">Бейнелер жоқ</string>
+    <string name="no_playlists_title">Ойнату тізімдері жоқ</string>
+    <string name="delete_playlist_menu">Жою</string>
+    <string name="edit_playlist_menu">Өңдеу</string>
+    <string name="rename_playlist_menu">Атын өзгерту</string>
+    <string name="playlist_deleted_message">Ойнату тізімі жойылды.</string>
+    <string name="playlist_renamed_message">Ойнату тізімінің аты өзгертілді.</string>
+    <string name="recentlyadded">Жақында қосылған</string>
+    <string name="recentlyadded_title">Жақында қосылған</string>
+    <string name="podcasts_listitem">Подкасттар</string>
+    <string name="podcasts_title">Подкасттар</string>
+    <string name="sdcard_missing_title">SD карта жоқ</string>
+    <string name="sdcard_missing_title_nosdcard">USB жады жоқ</string>
+    <string name="sdcard_missing_message">Телефоныңызға SD картасы салынбаған.</string>
+    <string name="sdcard_missing_message_nosdcard">Телефоныңызда USB жады жоқ.</string>
+    <string name="sdcard_busy_title">SD картасы қолжетімсіз</string>
+    <string name="sdcard_busy_title_nosdcard">USB жады қолжетімсіз</string>
+    <string name="sdcard_busy_message">Мультимедиа жады бос емес.</string>
+    <string name="sdcard_busy_message_nosdcard">USB жады бос емес.</string>
+    <string name="sdcard_error_title">SD картасындағы қате</string>
+    <string name="sdcard_error_title_nosdcard">USB жадындағы қате</string>
+    <string name="sdcard_error_message">SD картасында қате орын алды.</string>
+    <string name="sdcard_error_message_nosdcard">USB жадында қате орын алды.</string>
+    <string name="unknown_artist_name">Белгісіз орындаушы</string>
+    <string name="unknown_album_name">Белгісіз альбом</string>
+    <string name="shuffle_on_notif">Кездейсоқ ретпен ойнату қосулы.</string>
+    <string name="shuffle_off_notif">Кездейсоқ ретпен ойнату өшірулі.</string>
+    <string name="repeat_off_notif">Қайталау өшірулі.</string>
+    <string name="repeat_current_notif">Ағымдағы әнді қайталау.</string>
+    <string name="repeat_all_notif">Барлық әндерді қайталау.</string>
+    <string name="ringtone_menu">Телефон рингтоны ретінде пайдалану</string>
+    <string name="ringtone_menu_short">Рингтон ретінде пайдалану</string>
+    <string name="ringtone_set">\"<xliff:g id="name" example="AlarmBell">%s</xliff:g>\" әні телефон рингтоны ретінде орнатылған.</string>
+    <string name="play_selection">Ойнату</string>
+    <string name="add_to_playlist">Ойнату тізіміне қосу</string>
+    <string name="queue">Ағымдағы ойнату тізімі</string>
+    <string name="new_playlist">Жаңа хабар жазу</string>
+    <string name="new_playlist_name_template">Жаңа ойнату тізімі <xliff:g id="number">%d</xliff:g></string>
+    <plurals name="NNNtrackstoplaylist">
+        <item quantity="one">1 ән ойнату тізіміне қосылды.</item>
+        <item quantity="other"><xliff:g id="number" example="27">%d</xliff:g> ән ойнату тізіміне қосылды.</item>
+    </plurals>
+    <string name="emptyplaylist">Таңдалған ойнату тізімі бос.</string>
+    <string name="create_playlist_create_text">Сақтау</string>
+    <string name="create_playlist_overwrite_text">Қайта жазу</string>
+    <string name="service_start_error_title">Ойнатудағы ақаулық</string>
+    <string name="service_start_error_msg">Әнді ойнату мүмкін емес.</string>
+    <string name="service_start_error_button">OK</string>
+    <string-array name="weeklist">
+        <item>"1 апта"</item>
+        <item>"2 апта"</item>
+        <item>"3 апта"</item>
+        <item>"4 апта"</item>
+        <item>"5 апта"</item>
+        <item>"6 апта"</item>
+        <item>"7 апта"</item>
+        <item>"8 апта"</item>
+        <item>"9 апта"</item>
+        <item>"10 апта"</item>
+        <item>"11 апта"</item>
+        <item>"12 апта"</item>
+    </string-array>
+    <string name="weekpicker_set">Дайын</string>
+    <string name="weekpicker_title">Уақытты орнату</string>
+    <color name="dragndrop_background">#e0103010</color>
+    <color name="expanding_child_background">#ff404040</color>
+    <string name="save_as_playlist">Ойнату тізімі ретінде сақтау</string>
+    <string name="clear_playlist">Ойнату тізімін өшіру</string>
+    <string name="musicbrowserlabel">Музыка</string>
+    <string name="musicshortcutlabel">Музыканы ойнату тізімі</string>
+    <string name="mediaplaybacklabel">Музыка</string>
+    <string name="videobrowserlabel">Видео</string>
+    <string name="mediapickerlabel">Музыка</string>
+    <string name="playback_failed">Өкінішке орай файлды ашу мүмкін емес.</string>
+    <string name="cancel">Болдырмау</string>
+    <string name="remove_from_playlist">Ойнату тізімінен жою</string>
+    <string name="streamloadingtext"><xliff:g id="host">%s</xliff:g> ағынына қосылуда\u2026</string>
+    <string name="mediasearch">Келесі көмегімен <xliff:g id="term" example="Beethoven">%s</xliff:g> іздеу:</string>
+    <string name="working_artists">Әншілер\u2026</string>
+    <string name="working_albums">Альбомдар\u2026</string>
+    <string name="working_songs">Әндер\u2026</string>
+    <string name="working_playlists">Ойнату тізімдері\u2026</string>
+    <string name="loading">Жүктеу\u2026</string>
+    <string name="sort_by_track">Жолдар</string>
+    <string name="sort_by_album">Альбомдар</string>
+    <string name="sort_by_artist">Әншілер</string>
+    <string name="music_picker_title">Музыка жолын таңдау</string>
+    <string name="search_settings_description">Әншілер, альбомдар және жолдар</string>
+    <string name="search_hint">Музыканы іздеу</string>
+    <string name="fast_scroll_alphabet">\u0020ABCDEFGHIJKLMNOPQRSTUVWXYZ</string>
+    <string name="widget_initial_text">Музыканы таңдау үшін түртіңіз.</string>
+    <string name="effectspanel">Дыбыс әсерлері</string>
+</resources>

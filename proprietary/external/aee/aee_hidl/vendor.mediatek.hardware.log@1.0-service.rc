@@ -1,0 +1,7 @@
+service aee.log-1-0 /vendor/bin/hw/vendor.mediatek.hardware.log@1.0-service
+    interface vendor.mediatek.hardware.log@1.0::ILog aee
+    class hal
+    oneshot
+    disabled
+    user root
+    group root debuggerd

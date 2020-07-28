@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.android.internal.widget.LinearLayoutWithDefaultTouchRecepient xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/topLayout"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <!-- takes up all space above button bar at bottom -->
+
+
+    <!--
+        <TextView
+            android:id="@+id/headerText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:minHeight="40dp"
+            android:text="@string/pattern_header_draw_unlocking_pattern"
+            android:textSize="18sp" />
+    -->
+
+    <TextView
+        android:id="@+id/headerText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/pattern_header_draw_unlocking_pattern"
+        android:textSize="18sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dip"
+        android:background="@*android:drawable/code_lock_top" />
+
+    <com.android.internal.widget.LockPatternView
+        android:id="@+id/lockPattern"
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:gravity="center_horizontal"
+        android:layout_weight="1.0" />
+
+    <!--
+              android:layout_width="500dip"
+             android:layout_height="250dip"
+    -->
+
+
+    <!--
+         <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        android:background="@*android:drawable/btn_group_disabled_holo_dark"
+        left : cancel, or re-try
+
+        <Button
+            android:id="@+id/footerLeftButton"
+            style="@style/PatternButtonStyle"
+            android:text="@string/lockpattern_cancel" />
+    </LinearLayout>
+    -->
+
+</com.android.internal.widget.LinearLayoutWithDefaultTouchRecepient>

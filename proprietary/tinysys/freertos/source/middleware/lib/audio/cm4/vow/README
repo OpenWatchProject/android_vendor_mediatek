@@ -1,0 +1,20 @@
+NOTICE:
+libvow.a:
+This library contains the MagiEar feature that can detect pre-defined spoken keyword in real-time.
+The library, libvow.a, is built and can be linked already.
+For people who may like to use these APIs, just inludes vowAPI_SCP.h and see the definitions in header file.
+
+libblisrc_vow.a:
+This library is handling sampling rate convert.
+If project using PMIC6358, then there is a hardware limitation which sampling rate is 16.93kHz, so need a blisrc library to convert into 15.98kHz sampling rate.
+For people who may like to use these APIs, just inludes blisrc_accurate_vow.h and see the definitions in header file.
+
+libblisrc_accurate_vow.a:
+This library is handling sampling rate convert which is more accurate than libblisrc_vow.
+It is use for Barge In feature.
+If project using PMIC6358, then there is a hardware limitation which sampling rate is 16.93kHz, so need a blisrc library to convert into 16kHz sampling rate.
+For people who may like to use these APIs, just inludes blisrc_vow.h and see the definitions in header file.
+
+libaec.a:
+This library is uesd to echo cancellation which is for VOW BARGE IN
+For people who may like to use these APIs, just inludes BargeInProcessor.h and see the definitions in header file.

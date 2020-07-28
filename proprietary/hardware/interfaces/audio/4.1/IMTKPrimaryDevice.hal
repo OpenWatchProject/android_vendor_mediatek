@@ -1,0 +1,169 @@
+/*
+ * Copyright (C) 2016 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package vendor.mediatek.hardware.audio@4.1;
+import android.hardware.audio@4.0;
+import android.hardware.audio.common@4.0;
+import android.hardware.audio@4.0::IPrimaryDevice;
+import IAudioParameterChangedCallback;
+import IMTKPrimaryDeviceCallback;
+
+interface IMTKPrimaryDevice extends android.hardware.audio@4.0::IPrimaryDevice {
+    typedef android.hardware.audio@4.0::Result Result;
+
+    /*
+     * Set the callback interface for AudioSystem setParameters and getParameters
+     *
+     *
+     * @return retval operation completion status.
+     */
+    setupParametersCallback(IMTKPrimaryDeviceCallback callback) generates (Result retval);
+
+    /*
+     * Commands that can be executed on the driver reader thread.
+     */
+    enum VOWReadCommand : int32_t {
+        VOW_READ
+    };
+
+    /*
+     * Data structure passed to the driver for executing commands
+     * on the driver reader thread.
+     */
+    struct VOWReadParameters {
+        VOWReadCommand command;  // discriminator
+        union Params {
+            uint64_t read;    // VOW_READ command, amount of bytes to read, >= 0.
+        } params;
+    };
+
+    /*
+     * Data structure passed back to the client via status message queue
+     * of 'read' operation.
+     *
+     * Possible values of 'retval' field:
+     *  - OK, read operation was successful;
+     *  - INVALID_ARGUMENTS, stream was not configured properly;
+     *  - INVALID_STATE, stream is in a state that doesn't allow reads.
+     */
+    struct VOWReadStatus {
+        Result retval;
+        VOWReadCommand replyTo;  // discriminator
+        union Reply {
+            uint64_t read;    // VOW_READ command, amount of bytes read, >= 0.
+        } reply;
+    };
+
+    /*
+     * Set up required transports for receiving audio buffers from the driver.
+     *
+     * The transport consists of three message queues:
+     *  -- command queue is used to instruct the reader thread what operation
+     *     to perform;
+     *  -- data queue is used for passing audio data from the driver
+     *     to the client;
+     *  -- status queue is used for reporting operation status
+     *     (e.g. amount of bytes actually read or error code).
+     *
+     * The driver operates on a dedicated thread. The client must ensure that
+     * the thread is given an appropriate priority and assigned to correct
+     * scheduler and cgroup. For this purpose, the method returns identifiers
+     * of the driver thread.
+     *
+     * @param frameSize the size of a single frame, in bytes.
+     * @param framesCount the number of frames in a buffer.
+     * @param threadPriority priority of the driver thread.
+     * @return retval OK if both message queues were created successfully.
+     *                INVALID_STATE if the method was already called.
+     *                INVALID_ARGUMENTS if there was a problem setting up
+     *                                  the queues.
+     * @return commandMQ a message queue used for passing commands.
+     * @return dataMQ a message queue used for passing audio data in the format
+     *                specified at the stream opening.
+     * @return statusMQ a message queue used for passing status from the driver
+     *                  using ReadStatus structures.
+     * @return threadInfo identifiers of the driver's dedicated thread.
+     * @return downlink tv_sec time.
+     * @return downlink tv_nsec time.
+     */
+    prepareForVOWReading(uint32_t frameSize, uint32_t framesCount)
+    generates (
+               Result retval,
+               fmq_sync<VOWReadParameters> commandMQ,
+               fmq_sync<uint8_t> dataMQ,
+               fmq_sync<VOWReadStatus> statusMQ,
+               ThreadInfo threadInfo,
+               uint32_t tv_sec,
+               uint32_t tv_nsec);
+
+    /*
+     * VOW training need to get uplink data time.
+     *
+     * @param ULtime means uplink data time.
+     * @return retval operation completion status.
+     * @return uplink tv_sec time.
+     * @return uplink tv_nsec time.
+     */
+     getVoiceUnlockULTime()
+     generates (
+                Result retval,
+                uint32_t tv_sec,
+                uint32_t tv_nsec);
+
+     /*
+     * VOW training need to set sample rate and channel to record downlink data.
+     *
+     * @param outSR means sample rate.
+     * @param outChannel means channel number.
+     * @return retval operation completion status.
+     */
+    setVoiceUnlockSRC(uint32_t outSR, uint32_t outChannel) generates (Result retval);
+
+    /*
+     * VOW training need to start record downlink data.
+     *
+     * @return retval operation completion status.
+     */
+    startVoiceUnlockDL() generates (Result retval);
+
+    /*
+     * VOW training need to stop record downlink data.
+     *
+     * @return retval operation completion status.
+     */
+    stopVoiceUnlockDL() generates (Result retval);
+
+    /*
+     * VOW training need to check downlink instance is created.
+     *
+     * @return retval operation completion status.
+     */
+    getVoiceUnlockDLInstance() generates (Result retval);
+
+    /**
+     * Set the audio parameter changed HIDL callback function
+     *
+     * @return retval operation completion status.
+     */
+    setAudioParameterChangedCallback(IAudioParameterChangedCallback callback) generates (Result retval);
+
+    /**
+     * Clear the audio parameter changed HIDL callback function
+     *
+     * @return retval operation completion status.
+     */
+    clearAudioParameterChangedCallback() generates (Result retval);
+};

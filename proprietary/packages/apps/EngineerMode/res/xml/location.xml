@@ -1,0 +1,51 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Auto Dialer -->
+    <Preference android:key="auto_dialer" android:title="@string/auto_dialer"
+        android:persistent="false">
+        <intent android:action="android.intent.action.MAIN"
+            android:targetPackage="com.mediatek.autodialer"
+            android:targetClass="com.mediatek.autodialer.AutoDialerActivity" />
+    </Preference>
+    <!-- Clock Quality Auto-Test tool -->
+    <Preference android:key="clk_quality_at" android:title="@string/clk_quality_at"
+        android:persistent="false">
+        <intent android:action="android.intent.action.MAIN"
+            android:targetPackage="com.mediatek.engineermode"
+            android:targetClass="com.mediatek.engineermode.clkqualityat.ClkQualityAtActivity" />
+    </Preference>
+    <!-- CW Test -->
+    <Preference android:key="cw_test" android:title="@string/cw_test"
+        android:persistent="false">
+        <intent android:action="android.intent.action.MAIN"
+            android:targetPackage="com.mediatek.engineermode"
+            android:targetClass="com.mediatek.engineermode.cwtest.CWTest" />
+    </Preference>
+    <!-- Fused Location Provider -->
+    <Preference android:key="fused_location_provider"
+        android:title="@string/fused_location_provider" android:persistent="false">
+        <intent android:action="android.intent.action.MAIN"
+            android:targetPackage="com.mediatek.flp.em"
+            android:targetClass="com.mediatek.flp.em.FlpTabActivity" />
+    </Preference>
+    <!-- GNSS De-sense Auto Test -->
+    <Preference android:key="desense_at" android:title="@string/desense_at"
+        android:persistent="false">
+        <intent android:action="android.intent.action.MAIN"
+            android:targetPackage="com.mediatek.engineermode"
+            android:targetClass="com.mediatek.engineermode.desenseat.DesenseAtActivity" />
+    </Preference>
+    <!-- Location Based Service -->
+    <Preference android:key="location_basedservice" android:title="@string/location_basedservice"
+        android:persistent="false">
+        <intent android:action="android.intent.action.MAIN"
+            android:targetPackage="com.mediatek.lbs.em2.ui"
+            android:targetClass="com.mediatek.lbs.em2.ui.MyTabActivity" />
+    </Preference>
+    <!-- YGPS -->
+    <Preference android:key="ygps" android:title="@string/YGPS"
+        android:persistent="false">
+        <intent android:action="android.intent.action.MAIN"
+            android:targetPackage="com.mediatek.ygps"
+            android:targetClass="com.mediatek.ygps.YgpsActivity" />
+    </Preference>
+</PreferenceScreen>

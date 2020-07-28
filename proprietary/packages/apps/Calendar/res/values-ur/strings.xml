@@ -1,0 +1,642 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Copyright (C) 2006 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">  
+    <!-- This is the label underneath the icon for Calendar -->  
+    <string name="app_label">کیلنڈر</string>  
+    <!-- Shared Labels. These labels are shared among the activities. -->  
+    <skip/>  
+    <!-- This is the label for the title or name of an event -->  
+    <string name="what_label">کیا</string>  
+    <!-- This is the label for the location of an event -->  
+    <string name="where_label">کہاں</string>  
+    <!-- This is the label for the time of an event [CHAR LIMIT=30] -->  
+    <string name="when_label">کب</string>  
+    <!-- This is the label for the timezone of an event [CHAR LIMIT=30] -->  
+    <string name="timezone_label">منطقہ وقت</string>  
+    <!-- This is the label for the Guests/Attendees of an event -->  
+    <string name="attendees_label">مہمان</string>  
+    <!-- Some events repeat daily, weekly, monthly, or yearly.  This is the label
+           for all the choices about how often an event repeats (including the choice
+           of not repeating). -->  
+    <string name="repeats_label">تکرار</string>  
+    <!-- Title of event when no explicit title is specified by the user -->  
+    <string name="no_title_label">(کوئی عنوان نہيں)</string>  
+    <!-- Reminder format strings -->  
+    <plurals name="Nminutes"> 
+      <!-- This is the label for a 1-minute reminder. -->  
+      <item quantity="one">1 منٹ</item>  
+      <!-- This is the label for 2 or more minutes. The actual number of
+               minutes is a parameter. -->  
+      <item quantity="other"> 
+        <xliff:g id="count">%d</xliff:g> منٹ
+      </item> 
+    </plurals>  
+    <!-- We use the abbreviation "mins" instead of "minutes" to keep the string short.
+           This is the number of minutes displayed for a calendar reminder.  For example,
+           a reminder of 10 minutes would be displayed as '10 mins'.  The translation
+           should use the shortest acceptable abbreviation to save space. -->  
+    <plurals name="Nmins"> 
+      <!-- This is the label for a 1-minute reminder. -->  
+      <item quantity="one">1 منٹ</item>  
+      <!-- This is the label for 2 or more minutes. The actual number of
+               minutes is a parameter. -->  
+      <item quantity="other"> 
+        <xliff:g id="count">%d</xliff:g> منٹ
+      </item> 
+    </plurals>  
+    <!-- This is the number of hours displayed for a calendar reminder.  For example,
+           a reminder of 1 hour would be displayed as '1 hour'.  The translation
+           should use the shortest acceptable abbreviation of 'hour' to save space. -->  
+    <plurals name="Nhours"> 
+      <!-- This is the label for a 1-hour reminder. -->  
+      <item quantity="one">1 گھنٹہ</item>  
+      <!-- This is the label for a reminder of 2 or more hours. The actual number of
+               hours is a parameter. -->  
+      <item quantity="other"> 
+        <xliff:g id="count">%d</xliff:g> گھنٹے
+      </item> 
+    </plurals>  
+    <!-- This is the number of days displayed for a calendar reminder.  For example,
+           a reminder of 2 days would be displayed as '2 days'.  The translation
+           should use the shortest acceptable abbreviation of 'day' to save space. -->  
+    <plurals name="Ndays"> 
+      <!-- This is the label for a reminder of 1 day. -->  
+      <item quantity="one">1 دن</item>  
+      <!-- This is the label for a reminder of 2 or more days. The actual number of
+               days is a parameter. -->  
+      <item quantity="other"> 
+        <xliff:g id="count">%d</xliff:g> دن
+      </item> 
+    </plurals>  
+    <!-- This is for displaying the week of the year near the date. Eg. "January, 2011 Week 1" -->  
+    <plurals name="weekN"> 
+      <!-- Label for displaying week of the year for all week values [CHAR LIMIT=16] -->  
+      <item quantity="other">ہفتہ 
+        <xliff:g id="count">%d</xliff:g> 
+      </item> 
+    </plurals>  
+    <!-- Menu items: -->  
+    <skip/>  
+    <!-- This is a label on a context menu item. Pressing this menu item to initiate
+          syncing of your Calendar data with the server. [CHAR LIMIT=11] -->  
+    <string name="calendar_refresh">"دوبارہ تازہ کریں"</string>  
+    <!-- This is a label on a context menu item. Pressing this menu item displays the
+           Agenda view. -->  
+    <!-- This is a label on a context menu item. Pressing this menu item displays the
+           Day view. -->  
+    <string name="show_day_view">"دن دکھائيں"</string>  
+    <!-- This is a label on a menu item. Pressing this menu item displays the
+           Agenda view. -->  
+    <string name="agenda_view">"ایجنڈا"</string>  
+    <!-- This is a label on a menu item. Pressing this menu item displays the
+           Day view. -->  
+    <string name="day_view">"دن"</string>  
+    <!-- This is a label on a menu item. Pressing this menu item displays the
+           Week view. -->  
+    <string name="week_view">"ہفتہ"</string>  
+    <!-- This is a label on a menu item. Pressing this menu item displays the
+           Month view. -->  
+    <string name="month_view">"مہینہ"</string>  
+    <!-- This is a label on a menu item. Pressing this menu item displays the
+           details of an event. -->  
+    <string name="event_view">"واقعہ دیکھیں"</string>  
+    <!-- This is a label on a menu item. Pressing this menu item allows the
+           user to create a new event. -->  
+    <string name="event_create">"نیا واقعہ"</string>  
+    <!-- This is a label on a menu item in a popup window. Pressing this menu
+           item allows the user to edit or change an existing event. -->  
+    <string name="event_edit">"واقعہ ترمیم کريں"</string>  
+    <!-- This is a label on a menu item in a popup window. Pressing this menu
+           item allows the user to delete an existing event. -->  
+    <string name="event_delete">"واقعہ مٹائيں"</string>  
+    <!-- This is a label on a menu item. Pressing this menu
+           item takes the user to the current day (today) in whatever view
+           (Day view, Week view, Agenda view, Month view) they are currently in. -->  
+    <string name="goto_today">"آج"</string>  
+    <!-- This is a label on a menu item. Pressing this menu item allows the
+           user to see the list of calendars that he is viewing and to then add
+           or remove selected calendars. -->  
+    <!-- This is a label on a menu item. Pressing this menu item allows the
+           user to view and edit his Settings (or Preferences) -->  
+    <string name="menu_preferences">"ترتیبات"</string>  
+    <!-- This is a label on a menu item. Pressing this menu item allows the
+           user to select the calendars to display [CHAR LIMIT=20] -->  
+    <string name="menu_select_visible_calendars">"دکھانے کے لئے کیلنڈر"</string>  
+    <!-- This is a label on a menu item. Pressing this menu item allows the
+           user to select the calendars to display [CHAR LIMIT=20] -->  
+    <string name="search">"تلاش"</string>  
+    <!-- This is a label on a menu item. Pressing this menu item hides
+           the navigation controls on the right side. [CHAR LIMIT=20] -->  
+    <string name="hide_controls">"کنٹرول چھپائيں"</string>  
+    <!-- This is a label on a menu item. Pressing this menu item shows the
+           navigation controls on the right side. [CHAR LIMIT=20] -->  
+    <string name="show_controls">"کنٹرول دکھائيں"</string>  
+    <!-- Month view -->  
+    <skip/>  
+    <!-- Select Visible Calendars activity -->  
+    <skip/>  
+    <!-- Title of "My calendars" screen -->  
+    <string name="select_visible_calendars_title">"دکھانے کے لئے کیلنڈر"</string>  
+    <!-- Synced and visible status message -->  
+    <!-- Synced but not visible status message -->  
+    <!-- not Synced or visible status message -->  
+    <!-- Synced status message displayed when the given calendar is stored/synced on the device
+          [CHAR LIMIT=60] -->  
+    <string name="synced">سنک ہوئے</string>  
+    <!-- Not synced status message displayed when the given calendar is not stored/synced on the
+          device [CHAR LIMIT=60] -->  
+    <string name="not_synced">سنک نہيں ہوئے</string>  
+    <!-- Message displayed to user when an account with Calendars is not being auto-synced
+          [CHAR LIMIT=120]-->  
+    <string name="acct_not_synced">یہ اکاؤنٹ سنک نہیں کیا گيا لہذا ممکن ہے کہ آپ کے کیلنڈر جدید نہ ہوں۔</string>  
+    <!-- Label on button that takes user to the Accounts and Sync settings page [CHAR LIMIT=60] -->  
+    <string name="accounts">اکاؤنٹس اور سنک</string>  
+    <!-- Select Synced Calendars activity -->  
+    <!-- Select the set of calendars to sync [CHAR LIMIT=60] -->  
+    <string name="select_synced_calendars_title">سنک کرنے کے کیلنڈر</string>  
+    <!-- Select the set of calendars to sync [CHAR LIMIT=60] -->  
+    <string name="select_synced_calendars_button">سنک کرنے کے کیلنڈر</string>  
+    <!-- Event edit activity -->  
+    <skip/>  
+    <!-- The title of the screen where the user edits an event [CHAR LIMIT=17] -->  
+    <!-- Default value of What field (as a hint to the user) [CHAR LIMIT=15] -->  
+    <string name="hint_what">"واقعے کا نام"</string>  
+    <!-- Default value of Where field (as a hint to the user)[CHAR LIMIT=15] -->  
+    <string name="hint_where">"مقام"</string>  
+    <!-- Default value of Description field (as a hint to the user) [CHAR LIMIT=15]-->  
+    <string name="hint_description">"وضاحت"</string>  
+    <!-- Default value of Attendees/Guests field (as a hint to the user) [CHAR LIMIT=10] -->  
+    <string name="hint_attendees">"مہمان"</string>  
+    <!-- Toast message displayed when a new event is created -->  
+    <string name="creating_event">"واقعہ بنایا گيا۔"</string>  
+    <!-- Toast message displayed when an existing event is saved after being modified -->  
+    <string name="saving_event">"واقعہ محفوظ کیا گيا۔"</string>  
+    <!-- Toast message displayed when a new event was not saved because it was empty [CHAR LIMIT=30] -->  
+    <string name="empty_event">"خالی واقعہ بنایا نہیں گيا۔"</string>  
+    <!-- Toast message displayed when a new event with guests is created -->  
+    <string name="creating_event_with_guest">"دعوتیں بھیجی گئيں۔"</string>  
+    <!-- Toast message displayed when an existing event with guests is saved after being modified -->  
+    <string name="saving_event_with_guest">"تجدیدات بھیجی گئيں۔"</string>  
+    <!-- Title of message displayed to indicate available calendars are being loaded when creating
+           a new event -->  
+    <!-- Body of message displayed to indicate available calendars are being loaded when creating
+           a new event -->  
+    <!-- The alert toast is not actually being displayed for some reason. -->  
+    <skip/>  
+    <!-- the title of the alert/notification activity -->  
+    <string name="alert_title">کیلنڈر کی اطلاعات</string>  
+    <!-- Notification window messages: -->  
+    <skip/>  
+    <!-- Event info/edit screen labels:-->  
+    <skip/>  
+    <!-- This is the title of the screen used to view the details of an event -->  
+    <string name="event_info_title">واقعہ دیکھیں</string>  
+    <!-- This is the title of the screen used to view the details of an invitation
+           to a meeting or event -->  
+    <string name="event_info_title_invite">میٹنگ کی دعوت</string>  
+    <!-- EditEventActivity specific strings: -->  
+    <skip/>  
+    <!-- Events have a start date/time and an end date/time. The display shows
+           the start and end times like 'From start date To end date'. This is the
+           label before the 'end date'. -->  
+    <string name="edit_event_to_label">کو</string>  
+    <!-- Events have a start date/time and an end date/time. The display shows
+           the start and end times like 'From start date To end date'. This is the
+           label before the 'start date'. -->  
+    <string name="edit_event_from_label">بطرف</string>  
+    <!-- Check box label that specifies if this is an all-day event -->  
+    <string name="edit_event_all_day_label">پورا دن</string>  
+    <!-- Label for choosing one of the calendars -->  
+    <string name="edit_event_calendar_label">کیلنڈر</string>  
+    <!-- Menu item to show all choices [CHAR LIMIT=22]-->  
+    <string name="edit_event_show_all">تمام دکھائيں</string>  
+    <!-- Label for the event description -->  
+    <string name="description_label">وضاحت</string>  
+    <!-- Label for the 'Presence' of an event, which can be either 'busy' (the default)
+           or 'available'  [CHAR LIMIT=15] -->  
+    <string name="presence_label">مجھے بطور دکھائيں</string>  
+    <!-- Label for the 'Privacy' of an event, which can be either 'private'
+           or 'public' [CHAR LIMIT=15] -->  
+    <string name="privacy_label">رازداری</string>  
+    <!-- Label for the list of reminders for an event [CHAR LIMIT=20] -->  
+    <string name="reminders_label">یاددہانی شامل کریں</string>  
+    <!-- Title of alert shown if the user tries to create an event and has no calendars -->  
+    <string name="no_syncable_calendars">کوئی کیلنڈر نہيں</string>  
+    <!-- Body of alert shown if the user tries to create an event and has no calendars. Users can start adding an account here. [CHAR LIMIT=NONE] -->  
+    <string name="no_calendars_found">اس سے قبل کہ آپ کوئی واقعہ شامل کرسکیں، آپ کو اپنے آلے میں کم از کم ایک کیلنڈر کا اکاؤنٹ شامل کرنے اور اپنے کیلنڈر کو ظاہر کروانے کی ضرورت ہے۔ اکاؤنٹ شامل کرنے کے لئے اکاؤنٹ شامل کریں چھوئيں (اگر آپ نے ابھی ہی اکاؤنٹ شامل کیا ہو تو سنک مکمل کرنے کا انتظار کریں اور دوبارہ کوشش کریں)۔ یا منسوخ چھو کر کم از کم ایک کیلنڈر کو ظاہر کروائيں۔</string>  
+    <!-- Body of dialog prompting the user to create an account.[CHAR LIMIT=NONE] -->  
+    <string name="create_an_account_desc">"کیلنڈر Googleاکاؤنٹ کے ساتھ بہتر طور پر کام کرتا ہے\n\n\u2022 کسی بھی ویب براؤز سے رسائی کریںr\n\u2022 اپنے واقعات کو محفوظ طور پر بیک اپ کریں"</string>  
+    <!-- Title of a button shown when there is no account available and the system prompt a user to add one. [CHAR LIMIT=none] -->  
+    <string name="add_account">اکاؤنٹ شامل کریں</string>  
+    <!-- View Event -->  
+    <skip/>  
+    <!-- Label for which calendar an event is part of -->  
+    <string name="view_event_calendar_label">کیلنڈر:</string>  
+    <!-- Label for the event organizer -->  
+    <string name="view_event_organizer_label">ناظم:</string>  
+    <!-- Label for the local timezone -->  
+    <!-- Label for whether the user is attending this event. This is shown when
+           a user is invited to a meeting or event.  The possible answers are
+           'yes', 'no', and 'maybe' (and, initially, 'no response'). -->  
+    <string name="view_event_response_label">شرکت کررہے ہيں؟</string>  
+    <!-- Response for whether attending an event - accepted [CHAR LIMIT=10]-->  
+    <string name="response_yes">ہاں</string>  
+    <!-- Response for whether attending an event - tentative [CHAR LIMIT=10]-->  
+    <string name="response_maybe">شاید</string>  
+    <!-- Response for whether attending an event - declined [CHAR LIMIT=10]-->  
+    <string name="response_no">نہیں</string>  
+    <!-- Event Info strings-->  
+    <!-- Time Zone Label [CHAR LIMIT=12]-->  
+    <!-- Repetition Label [CHAR LIMIT=12]-->  
+    <!-- Organizer Label [CHAR LIMIT=12]-->  
+    <string name="event_info_organizer">ناظم:</string>  
+    <!-- Reminders label [CHAR LIMIT=15]-->  
+    <string name="event_info_reminders_label">یاددہانیاں</string>  
+    <!-- Agenda View strings -->  
+    <skip/>  
+    <!-- This is shown as part of the heading at the top of a list of today's events. -->  
+    <string name="agenda_today">آج 
+      <xliff:g id="date">%1$s</xliff:g> 
+    </string>  
+    <!-- This is shown as part of the heading at the top of a list of today's events. -->  
+    <string name="agenda_yesterday">کل 
+      <xliff:g id="date">%1$s</xliff:g> 
+    </string>  
+    <!-- This is shown as part of the heading at the top of a list of today's events. -->  
+    <string name="agenda_tomorrow">کل 
+      <xliff:g id="date">%1$s</xliff:g> 
+    </string>  
+    <!-- This is shown while the calendar events are being loading to the screen. -->  
+    <string name="loading">لوڈنگ\u2026</string>  
+    <!-- This is shown at the top of the agenda view showing the beginning of the searched range. If the user taps on this string and Calendar will find events older than what is visible and display them to the user -->  
+    <string name="show_older_events"> 
+      <xliff:g id="oldest_search_range">%1$s</xliff:g> سے پہلے واقعات دیکھنے کے لئے چھوئيں
+    </string>  
+    <!-- This is shown at the bottom of the agenda view showing the end of the searched range. If the user taps on this string and Calendar will find events later/newer than what is visible and display them to the user -->  
+    <string name="show_newer_events"> 
+      <xliff:g id="newest_search_range">%1$s</xliff:g> کے بعد واقعات دیکھنے کے لئے چھوئيں
+    </string>  
+    <!-- Search activity strings -->  
+    <skip/>  
+    <!-- Title of the search screen [CHAR LIMIT=30] -->  
+    <string name="search_title">میرے کیلنڈر تلاش کریں</string>  
+    <!-- Button labels: -->  
+    <skip/>  
+    <!-- This is the title of a popup window that is displayed when the user
+           edits a repeating event. [CHAR LIMIT=20]-->  
+    <string name="edit_event_label">"تفصیلات"</string>  
+    <!-- This is a menu button for switching into edit mode when viewing an event.
+          [CHAR LIMIT=10] -->  
+    <string name="edit_label">"ترمیم"</string>  
+    <!-- The button label for deleting an event -->  
+    <string name="delete_label">"مٹائيں"</string>  
+    <!-- A menu item for deleting an event -->  
+    <!-- The button label for saving an event -->  
+    <string name="save_label">ہوگیا</string>  
+    <!-- The button label for discarding changes to an event -->  
+    <string name="discard_label">منسوخ</string>  
+    <!-- Button labels on expanded notification reminders: -->  
+    <skip/>  
+    <!-- The button label for making the reminder alarms go away temporarily.
+           The reminder alarms will fire off again in 5 minutes. -->  
+    <string name="snooze_all_label">"تمام ملتوی کریں"</string>  
+    <!-- The button label for dismissing all the current reminder alarms. This
+           causes them to disappear from the notification screen. -->  
+    <string name="dismiss_all_label">"تمام مسترد کریں"</string>  
+    <!-- Repetition dialog options: -->  
+    <skip/>  
+    <!-- A label in a multiple-choice list for the specifying that an event does
+           not repeat -->  
+    <string name="does_not_repeat">ایک دفعہ کا واقعہ</string>  
+    <!-- A label in a multiple-choice list for the specifying that an event
+           repeats daily -->  
+    <string name="daily">روزانہ</string>  
+    <!-- A label in a multiple-choice list for the specifying that an event
+           repeats every weekday (Monday through Friday) -->  
+    <string name="every_weekday">"ہفتے کے ہر روز (پیر\u2013جمعہ)"</string>  
+    <!-- A label in a multiple-choice list for the specifying that an event
+           repeats weekly on some day of the week.  For example,
+           'Weekly (every Tuesday)'. -->  
+    <string name="weekly">"ہفتہ وار (ہر 
+      <xliff:g id="days_of_week">%s</xliff:g>)"
+    </string>  
+    <!-- Example: 'Monthly (every first Sunday)' -->  
+    <!--   1st parameter is an ordinal number, like 'first' -->  
+    <!--   2nd parameter is a day of the week, like 'Sunday' -->  
+    <string name="monthly_on_day_count">"ماہانہ (ہر 
+      <xliff:g id="ordinal_number">%1$s</xliff:g>  
+      <xliff:g id="day_of_week">%2$s</xliff:g>)"
+    </string>  
+    <!-- The common portion of a string describing how often an event repeats,
+           example: 'Monthly (on day 2)' -->  
+    <string name="monthly">ماہانہ</string>  
+    <!-- Calendar spinner item, to select that an event recurs every year. -->  
+    <string name="yearly_plain">سالانہ</string>  
+    <!-- Example: "Monthly (on day 15)" -->  
+    <string name="monthly_on_day">"ماہانہ (اس روز 
+      <xliff:g id="day_of_month">%s</xliff:g>)"
+    </string>  
+    <!-- Example: "Yearly (on April 15)" -->  
+    <string name="yearly">"سالانہ (اس وقت 
+      <xliff:g id="dates">%s</xliff:g>)"
+    </string>  
+    <!-- This is a label for telling the user that this event repeats in
+           custom (non-standard) way from the usual repeat rates (such as daily,
+           weekly, etc.) and that the user cannot change this on the phone
+           (but only on the web). -->  
+    <string name="custom" product="tablet">"ذاتی (ٹیبلیٹ پر ذاتی نہيں بناسکتا)"</string>  
+    <!-- This is a label for telling the user that this event repeats in
+           custom (non-standard) way from the usual repeat rates (such as daily,
+           weekly, etc.) and that the user cannot change this on the phone
+           (but only on the web). -->  
+    <string name="custom" product="default">"ذاتی (فون پر ذاتی نہيں بناسکتا)"</string>  
+    <!-- This is a choice in a list that the user sees when he tries to modify
+           a repeating event.  This choice says to change just this one instance
+           of this repeating event. -->  
+    <string name="modify_event">صرف یہ واقعہ تبدیل کریں</string>  
+    <!-- This is a choice in a list that the user sees when he tries to modify
+           a repeating event.  This choice says to change all occurrences of
+           this repeating event. -->  
+    <string name="modify_all">سلسلے میں تمام واقعات تبدیل کریں</string>  
+    <!-- This is a choice in a list that the user sees when he tries to modify
+           a repeating event.  This choice says to change this instance and all
+           future occurrences of this repeating event. -->  
+    <string name="modify_all_following">اسے اور تمام آئیندہ واقعات تبدیل کریں</string>  
+    <!-- Dialogs -->  
+    <!-- This is a label on the dialog for creating a new event. [CHAR LIMIT=30] -->  
+    <string name="new_event_dialog_label">"نیا واقعہ"</string>  
+    <!-- This is the button to create a new event in a dialog window. [CHAR LIMIT=30] -->  
+    <string name="new_event_dialog_option">"نیا واقعہ"</string>  
+    <!-- Confirmation dialog message -->  
+    <skip/>  
+    <!-- This is a confirmation message in a popup dialog that appears when the
+           user has asked to delete an event. The user still has a chance to cancel
+           this operation. -->  
+    <string name="delete_this_event_title">یہ مٹائيں؟</string>  
+    <!-- This is the title of a popup dialog that asks for confirmation before
+           changing the response to an invitation. -->  
+    <string name="change_response_title">جواب تبدیل کریں</string>  
+    <!-- This the title of a menu for General Preferences.
+           Pressing the menu item lets user to view and edit his general settings
+           (or preferences) [CHAR LIMIT=30] -->  
+    <string name="menu_general_preferences">عام ترتیبات</string>  
+    <!-- This the title of a menu for "About Calendar" Preferences.
+           Pressing the menu item lets user to view the current settings
+           [CHAR LIMIT=30] -->  
+    <string name="menu_about_preferences">کیلنڈر کے متعلق</string>  
+    <!-- This is the title of the screen for setting user preferences. -->  
+    <string name="preferences_title">"ترتیبات"</string>  
+    <!-- This is the title of a section in the Settings screen for settings
+           related to viewing calendar events -->  
+    <string name="preferences_general_title">کیلنڈر ویو کی ترتیب</string>  
+    <!-- This is the title of a section in the Settings screen for settings
+           related to reminders for calendar events -->  
+    <string name="preferences_reminder_title">یاددہانی کی ترتیبات</string>  
+    <!-- Settings check box label to hide events that the user has declined to attend -->  
+    <string name="preferences_hide_declined_title">مسترد کردہ واقعات چھٹائيں</string>  
+    <!-- Settings week start label to start week on specific day-->  
+    <string name="preferences_week_start_day_title">ہفتہ کب شروع ہوتا ہے</string>  
+    <!-- Title of popup for week start day setting-->  
+    <string name="preferences_week_start_day_dialog">ہفتہ کب شروع ہوتا ہے</string>  
+    <!-- Title of the settings item to clear the recent search history [CHAR LIMIT=40] -->  
+    <string name="preferences_clear_search_history_title">تلاش ہسٹری ختم کریں</string>  
+    <!-- Summary of the settings item to clear the recent search history [CHAR LIMIT=70]-->  
+    <string name="preferences_clear_search_history_summary">اپنی تمام تلاشیں ہٹائيں</string>  
+    <!-- Message to show in a toast when the history is cleared [CHAR LIMIT=40] -->  
+    <string name="search_history_cleared">تلاش کی ہسٹری صاف ہوئی</string>  
+    <!-- Settings check box label to enable or disable notifications -->  
+    <string name="preferences_alerts_title">اطلاعات</string>  
+    <!-- Settings dialog label that specifies when the phone should vibrate -->  
+    <string name="preferences_alerts_vibrateWhen_title">وائبریٹ</string>  
+    <!-- Title of ringtone selector dialog -->  
+    <string name="preferences_alerts_ringtone_title">رنگ ٹون منتخب کريں</string>  
+    <!-- Title of check box label to enable or disable pop-up notifications -->  
+    <string name="preferences_alerts_popup_title">پاپ اپ اطلاع</string>  
+    <!-- List item label for setting the default number of reminder minutes -->  
+    <string name="preferences_default_reminder_title">ڈیفالٹ یاددہانی کا وقت</string>  
+    <!-- Title of dialog for setting the default number of reminder minutes -->  
+    <string name="preferences_default_reminder_dialog">ڈیفالٹ یاددہانی کا وقت</string>  
+    <!-- Default value for the number of reminder minutes -->  
+    <string name="preferences_default_reminder_default">10</string>  
+    <!-- Settings check box label to keep Calendar in a fixed 'home' time zone [CHAR LIMIT = 18] -->  
+    <string name="preferences_use_home_tz_title">مقامی منطقہ وقت استعمال کریں</string>  
+    <!-- Settings description of what setting Calendar to use a fixed 'home' time
+          zone does [CHAR LIMIT = 60]-->  
+    <string name="preferences_use_home_tz_descrip">سفر کے دوران آپ کے مقامی منطقہ وقت میں کیلنڈر اور واقعے کے اوقات دکھاتا ہے</string>  
+    <!-- Settings title for selecting a 'home' time zone to display Calendar in [CHAR LIMIT = 18] -->  
+    <string name="preferences_home_tz_title">مقامی منطقہ وقت</string>  
+    <!-- Title of the settings item to show week number in week view [CHAR LIMIT=40] -->  
+    <string name="preferences_show_week_num_title">ہفتہ نمبر دکھائيں</string>  
+    <!-- This is the title of a section in the Settings screen for "About" this application -->  
+    <string name="preferences_about_title">متعلق</string>  
+    <!-- Build version of the application -->  
+    <string name="preferences_build_version">بلڈ ورژن</string>  
+    <!-- The vibrate notification modes -->  
+    <string-array name="prefEntries_alerts_vibrateWhen"> 
+      <!-- Always -->  
+      <item>ہمیشہ</item>  
+      <!-- Only when the phone is in Silent mode -->  
+      <item>صرف جب خاموش ہو</item>  
+      <!-- Never -->  
+      <item>کبھی نہيں</item> 
+    </string-array>
+    <!-- Dialog title for the Vibrate dialog -->  
+    <string name="prefDialogTitle_vibrateWhen">وائبریٹ</string>  
+    <!-- Widget -->  
+    <skip/>  
+    <!-- Title for calendar gadget when displayed in list of all other gadgets -->  
+    <string name="gadget_title">کیلنڈر</string>  
+    <!-- Shown in month view next to event icon when additional events exist for that day, but no
+          room remaining -->  
+    <plurals name="month_more_events"> 
+      <!-- additional events message for 1 event, the quotes force a literal interpretation of the
+              string [CHAR LIMIT = 10] -->  
+      <item quantity="one">"+1"</item>  
+      <!-- additional events message for multiple events [CHAR LIMIT = 10] -->  
+      <item quantity="other">+ 
+        <xliff:g id="number">%d</xliff:g> 
+      </item> 
+    </plurals>  
+    <!-- Caption to show on gadget when there are no upcoming calendar events -->  
+    <string name="gadget_no_events">کوئے عنقریب کیلنڈر کے واقعات نہيں</string>  
+    <!-- Text to show on gadget when an event starts on the next day -->  
+    <string name="tomorrow">کل</string>  
+    <!-- Text to show on gadget when an event is currently in progress -->  
+    <!-- Text to show on gadget when an all-day event is in progress -->  
+    <!-- Send a copy of the database to developers for debugging [CHAR LIMIT="NONE"] -->  
+    <string name="copy_db">ڈیٹابیس بھیجیں</string>  
+    <!-- Displayed in email address autocomplete list when searching for contacts
+           in corporate directories. Example:  "Searching bigcompany.com..." [CHAR LIMIT=64] -->  
+    <string name="directory_searching_fmt">تلاش کررہا ہے 
+      <xliff:g id="domain">%s</xliff:g>\u2026
+    </string>  
+    <!-- Accessibility Events -->  
+    <!-- Strings that describes actions for buttons without text -->  
+    <!-- Create a new calendar event [CHAR LIMIT = NONE]-->  
+    <!-- Remove a name of an attendee from a calendar event [CHAR LIMIT = NONE]-->  
+    <string name="accessibility_remove_attendee">حاضرین ہٹائيں</string>  
+    <!-- Pick a starting date for a new event [CHAR LIMIT = NONE]-->  
+    <string name="accessibility_pick_start_date">شروعاتی تاریخ</string>  
+    <!-- Pick a starting time for a new event [CHAR LIMIT = NONE]-->  
+    <string name="accessibility_pick_start_time">شروعاتی وقت</string>  
+    <!-- Pick the ending date for a new event [CHAR LIMIT = NONE]-->  
+    <string name="accessibility_pick_end_date">اختتامی تاریخ</string>  
+    <!-- Pick the ending time for a new event[CHAR LIMIT = NONE]-->  
+    <string name="accessibility_pick_end_time">اختتامی وقت</string>  
+    <!-- Select a time zone for a new event [CHAR LIMIT = NONE]-->  
+    <string name="accessibility_pick_time_zone">منطقہ وقت</string>  
+    <!-- Add a reminder to an event [CHAR LIMIT = NONE]-->  
+    <string name="accessibility_add_reminder">یاددہانی شامل کریں</string>  
+    <!-- Remove a reminder from an event [CHAR LIMIT = NONE]-->  
+    <string name="accessibility_remove_reminder">یاددہانی ہٹائيں</string>  
+    <!-- Add a new attendee to an event [CHAR LIMIT = NONE]-->  
+    <string name="accessibility_add_attendee">حاضرین شامل کریں</string>  
+    <!-- Choose if to sync/unsync this calendar with its server [CHAR LIMIT = NONE]-->  
+    <string name="accessibility_sync_cal">کیلنڈر سنک کریں</string>  
+    <!-- Mark this event as an "all day event" [CHAR LIMIT = NONE]-->  
+    <string name="accessibility_all_day">پورے دن کا واقعہ</string>  
+    <!-- Refresh the data in the calendar [CHAR LIMIT = NONE]-->  
+    <!-- Choose the type of repetition for the event (daily, weekly, etc.[CHAR LIMIT = NONE]-->  
+    <string name="accessibility_repeats">تکرار</string>  
+    <!-- Set the time for the reminder[CHAR LIMIT = NONE]-->  
+    <string name="accessibility_reminder_time">یاددہانی کا وقت</string>  
+    <!-- Set the type of the reminder (popup/email/sms)[CHAR LIMIT = NONE]-->  
+    <string name="accessibility_reminder_type">یاددہانی کی قسم</string>  
+    <!-- Select the way you are visible for the event (busy/free) [CHAR LIMIT = NONE]-->  
+    <string name="accessibility_reminder_showmeas">مجھے بطور دکھائيں</string>  
+    <!-- Set the event as private/public/default [CHAR LIMIT = NONE]-->  
+    <string name="accessibility_reminder_privacy">رازداری</string>  
+    <!-- A "new event" hint for the user when selecting a specific hour in the day view [CHAR LIMIT = 30]-->  
+    <string name="day_view_new_event_hint">+ نیا واقعہ</string>  
+    <!--
+        Source: A value for announcing the current event index (example: "Event 2 of 6").
+        Description: This is spoken to the user. [CHAR LIMIT="NONE"]
+      -->  
+    <string name="template_announce_item_index">واقعہ 
+      <xliff:g id="item_index">%1$s</xliff:g> of 
+      <xliff:g id="item_count">%2$s</xliff:g>.
+    </string>  
+
+    <string name="today">آج</string>  
+    <string name="today_at_time_fmt">"آج بوقت 
+        <xliff:g id="time_interval">%s</xliff:g>"
+    </string>  
+    <string name="tomorrow_at_time_fmt">"آئندہ کل بوقت 
+        <xliff:g id="time_interval">%s</xliff:g>"
+    </string>  
+    <string name="date_time_fmt">" 
+        <xliff:g id="date">%s</xliff:g>, 
+        <xliff:g id="time_interval">%s</xliff:g>"
+    </string>  
+    <string name="email_guests_label">ای میل مہمانان</string>  
+    <string name="email_organizer_label">ای میل کا منتظم</string>
+    <string name="email_picker_label">ای میل کریں مع</string>
+    <string name="event_not_found">"ایونٹ نہیں ملا۔"</string>
+    <string name="quick_response_settings">فوری جوابات</string>  
+    <string name="quick_response_settings_summary">مہمانوں کو ای میل کرتے وقت ڈیفالٹ جوابات میں تدوین کریں</string>  
+    <string name="quick_response_settings_title">فوری جوابات میں تدوین کریں</string>  
+    <string name="quick_response_settings_edit_title">فوری جواب</string>  
+    <string name="quick_response_dialog_title">فوری جواب چنیں</string>  
+    <string name="quick_response_email_failed">ایک ای میل پروگرام تلاش کرنے میں ناکام ہوگیا</string>  
+    <string-array name="quick_response_defaults"> 
+        <item>بس دو منٹ تاخیر سے چل رہا ہے۔</item>  
+        <item>قریب 10 میں وہاں حاضر ہوں۔</item>  
+        <item>آگے بڑھیں اور میرے بغیر شروع کریں۔</item>  
+        <item>افسوس، میں اسے نہیں کرسکتا۔ ہمیں دوبارہ وقت طے کرنا ہوگا۔</item> 
+    </string-array>  
+    <string name="quick_response_custom_msg">حسب ضرورت پیغام\u2026</string>  
+    <string name="snooze_label">"اسنوز"</string>  
+    <string name="delete_recurring_event_title"> 
+        <xliff:g id="eventtitle">%s</xliff:g> حذف کریں؟
+    </string>  
+    <string name="acessibility_cal_notification">کیلنڈر کی اطلاع</string>  
+    <string name="acessibility_snooze_notification">اسنوز کی اطلاع</string>
+    <string name="accessibility_email_notification">ای میل مہمانان</string>
+    <plurals name="Nevents"> 
+        <item quantity="one">1 واقعہ</item>  
+        <item quantity="other"><xliff:g id="count">%d</xliff:g> واقعات</item> 
+    </plurals>  
+    <plurals name="N_remaining_events"> 
+        <item quantity="one">، +1 واقعہ</item>  
+        <item quantity="other"><xliff:g id="count">%d</xliff:g> واقعات</item> 
+    </plurals>  
+    <string name="acessibility_selected_marker_description">منتخب کردہ واقعہ</string>  
+    <string name="do_not_check">چیک نہ کریں -&gt;</string>  
+    <string name="create_event_dialog_save">محفوظ کریں</string>
+    <string name="choose_event_color_label">ایونٹ کا رنگ منتخب کریں</string>
+    <string name="event_color_picker_dialog_title">ایونٹ کا رنگ</string>
+    <string name="event_color_set_to_default">ڈیفالٹ کیلنڈر کا رنگ پر متعین کریں</string>
+    <string name="calendar_color_picker_dialog_title">کیلنڈر کا رنگ</string>
+    <string name="calendar_square_color_picker_description">رنگ کا انتخاب کار</string>
+    <string name="map_label">نقشہ</string>
+    <string name="call_label">کال کریں</string>
+    <string name="endByDate">؛ <xliff:g id="date">%s</xliff:g> تک</string>
+    <plurals name="endByCount">
+     <item quantity="one">؛ ایک بار کیلئے</item>
+     <item quantity="other">؛ <xliff:g id="number">%d</xliff:g> بار کیلئے</item>
+   </plurals>
+    <plurals name="daily">
+     <item quantity="one">روزانہ</item>
+     <item quantity="other">ہر <xliff:g id="number">%d</xliff:g> دن</item>
+   </plurals>
+    <plurals name="weekly">
+     <item quantity="one">ہفتہ وار <xliff:g id="days_of_week">%2$s</xliff:g> کو</item>
+     <item quantity="other">ہر <xliff:g id="number">%1$d</xliff:g> ہفتے پر <xliff:g id="days_of_week">%2$s</xliff:g> کو</item>
+   </plurals>
+    <string name="preferences_experimental_category">تجرباتی</string>
+    <string name="preferences_reminders_category">یاددہانیاں</string>
+    <string name="preferences_reminders_responded_label">یاد دہانیاں چھوڑیں</string>
+    <string name="preferences_reminders_responded_dialog">یاد دہانیاں چھوڑیں</string>
+    <string name="preferences_reminders_quiet_hours_label">پرسکون گھنٹے</string>
+    <string name="preferences_reminders_quiet_hours_description">متعینہ وقت کے دوران خاموشی کے ایونٹ کی یاد دہانیاں۔</string>
+    <string name="preferences_reminders_quiet_hours_start">پرسکون گھنٹے کا وقت آغاز</string>
+    <string name="preferences_reminders_quiet_hours_end">پرسکون گھنٹے کا وقت اختتام</string>
+    <string name="preferences_debug_category">ڈیبگ کر رہا ہے</string>
+    <string name="accessibility_pick_recurrence">ایونٹ دوہرائیں</string>
+    <string name="recurrence_dialog_title">دہرائيں</string>
+    <string name="recurrence_dialog_title_never">کبھی نہ دوہرائیں</string>
+    <plurals name="recurrence_interval_daily">
+     <item quantity="one">ہر <xliff:g id="count">%d</xliff:g> دن</item>
+     <item quantity="other">ہر <xliff:g id="count">%d</xliff:g> دن</item>
+   </plurals>
+    <plurals name="recurrence_interval_weekly">
+     <item quantity="one">ہر <xliff:g id="count">%d</xliff:g> ہفتہ</item>
+     <item quantity="other">ہر <xliff:g id="count">%d</xliff:g> ہفتے</item>
+   </plurals>
+    <plurals name="recurrence_interval_monthly">
+     <item quantity="one">ہر <xliff:g id="count">%d</xliff:g> مہینہ</item>
+     <item quantity="other">ہر <xliff:g id="count">%d</xliff:g> مہینے</item>
+   </plurals>
+    <plurals name="recurrence_interval_yearly">
+     <item quantity="one">ہر <xliff:g id="count">%d</xliff:g> سال</item>
+     <item quantity="other">ہر <xliff:g id="count">%d</xliff:g> سال</item>
+   </plurals>
+    <string name="recurrence_month_pattern_by_day">ہر مہینے اسی دن</string>
+    <string name="recurrence_end_continously">ہمیشہ کیلئے</string>
+    <string name="recurrence_end_date_label">ایک تاریخ تک</string>
+    <string name="recurrence_end_date"><xliff:g id="date">%s</xliff:g> تک</string>
+    <string name="recurrence_end_count_label">ایونٹس کی ایک تعداد کیلئے</string>
+    <plurals name="recurrence_end_count">
+     <item quantity="one"><xliff:g id="event_count">%d</xliff:g> ایونٹ کیلئے</item>
+     <item quantity="other"><xliff:g id="event_count">%d</xliff:g> ایونٹس کیلئے</item>
+   </plurals>
+    <string name="acessibility_recurrence_choose_end_date_description">اختتامی تاریخ تبدیل کریں</string>
+    
+    <string name="rsvp_accepted">"ہاں میں جواب دیا۔"</string>
+    <string name="rsvp_tentative">"شاید میں جواب دیا۔"</string>
+    <string name="rsvp_declined">"نہیں میں جواب دیا۔"</string>
+</resources>

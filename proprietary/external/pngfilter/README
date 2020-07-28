@@ -1,0 +1,16 @@
+
+WHAT IT DOES?
+=============
+This module works for png decode filter optimization to let png decode faster.
+
+HOW IT WAS BUILT?
+==================
+It can be built independently and after build this module, should also build libpng.so, the opt can effect.
+
+HOW TO USE IT?
+==============
+
+Provide png decode filter optimization's implementation.
+Call this api in external/libpng/pngrutil.c (png_read_filter_row_neon())
+
+All the source code of this library were written by MediaTek co..

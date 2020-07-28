@@ -1,0 +1,20 @@
+package vendor.mediatek.hardware.keyinstall@1.0;
+
+/*
+ * This interface is used by meta_tst to communicate with DRM key installation TLC.
+ */
+interface IKeyinstall {
+    /*
+     * The current version (1.0) of keyinstall HIDL only supports the data defined
+     * in the following key types,
+     * 1. HDCP 1.X TX/RX
+     * 2. HDCP 2.X RX
+     * 3. Widevine
+     *
+     * @param fromClient_req contains req parameters from meta_tst
+     * @param fromClient_cnf contains cnf parameters from meta_tst
+     * @param data is partial data from meta_tst
+     * @param len is data size
+     */
+    meta_drmkey_install_op(HIDL_FT_DRMKEY_INSTALL_REQ fromClient_req, HIDL_FT_DRMKEY_INSTALL_CNF fromClient_cnf, vec<uint8_t> data, uint16_t len) generates(HIDL_FT_DRMKEY_INSTALL_CNF toClient_cnf);
+};

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2007 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+  
+          http://www.apache.org/licenses/LICENSE-2.0
+  
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <!-- M: site navigation start @{ -->   
+    <string name="delete_folder_warning">フォルダー \"<xliff:g id="bookmark">%s</xliff:g>\"を削除しますか？</string>
+    <string name="contextmenu_savelinkbookmark">リンクをブックマークとして保存</string>
+    <string name="download_path_unavailable_dlg_title">ダウンロード用ディレクトリが存在しません</string>
+	<string name="download_path_unavailable_dlg_msg">ブラウザのダウンロード用ディレクトリを修正してください</string>
+    <string name="home">"ホーム"</string>
+    <string name="close">"閉じる"</string>
+    <string name="option">オプション</string>
+    <string name="minimize">最小化</string>
+    <string name="quit">終了</string>
+    <string name="pref_download_title">ダウンロード設定</string>
+    <string name="pref_extras_set_download_directory_title">ダウンロードディレクトリの設定</string>
+    <string name="sitenavigation_add">Add website</string>
+    <string name="tab_site_navigation">サイトナビゲーション</string>
+    <string-array name="pref_homepage_choices_site_navigation">
+        <item msgid="844041670142910837">"現在のページ"</item>
+        <item msgid="4430498748295169195">"空白ページ"</item>
+        <item msgid="5747608191946904074">"デフォルトページ"</item>
+        <item msgid="6092441301001006473">"よくアクセスするサイト"</item>
+        <item>サイトナビゲーション</item>
+        <item msgid="6569304572171444894">"その他"</item>
+    </string-array>
+    <!-- @} -->   
+
+
+    <!-- M: Option menu change string: Bookmarks -> Bookmarks/History -->
+    <string name="permlab_readHomepage">ホームページをブラウザで読む</string>
+    <string name="permdesc_readHomepage">中断されることなしに、アプリがブラウザでホームページ情報を読みます。</string>
+    <string name="permlab_writeHomepage">ホームページをブラウザで修正する</string>
+    <string name="permdesc_writeHomepage">中断されることなしに、アプリがブラウザでホームページ情報を修正します。</string>
+    <string name="duplicated_bookmark">重複したブックマーク</string>
+    <string name="duplicated_bookmark_warning">ブックマークは同じ名前や場所を持つか、既に存在します。上書きしますか？</string>
+    <string name="duplicated_folder_warning">同じ名前のフォルダが既に存在します。</string>
+    <string name="pref_content_search_engine_consistency">サーチエンジンの一貫性</string>
+    <string name="pref_search_engine_unify">サーチエンジンを統合する</string>
+    <string name="pref_search_engine_unify_summary">サーチエンジンの変更をQuickSearchBoxに適用する</string>
+    <string name="download_or_open_content">どの操作を選択しますか？</string>
+    <string name="save_content">"保存"</string>
+    <string name="open_content">"開く"</string>
+    <string name="no_voice_search_alert_dialog_title">"音声検索"</string>
+    <string name="no_voice_search_alert_dialog_msg">音声検索アプリが存在しないため、音声検索は利用できません。まず、インストールしてください。</string>
+    <string name="delete">"削除"</string>
+    <string name="edit">"編集"</string>
+    <string name="add">"追加"</string>
+    <string name="delete_site_navigation_msg">アイテムを削除しますか？</string>
+    <string name="site_navigation_name">"名前"</string>
+    <string name="site_navigation_address">"アドレス"</string>
+    <string name="website_needs_title">"ウェブサイトの名前を指定してください。"</string>
+    <string name="website_needs_url">"ウェブサイトの場所を指定してください。"</string>
+    <string name="site_navigation_cannot_save_url">URLはウェブサイトにはなりません。</string>
+    <string name="add_site_navigation">Add website</string>
+    <string name="edit_site_navigation">サイトナビゲーションを編集する</string>
+    <string name="site_navigation_edit_button">"編集"</string>
+    <string name="save_webpage">"保存"</string>
+    <string name="duplicate_site_navigation_url">このURLは既に存在します。</string>
+    <string name="duplicate_site_navigation_title">This lable has already existed.</string>
+    <string name="max_input_browser_search">入力は最大限度に達しました。</string>
+    <string name="max_input_browser_search_title">入力制限</string>
+    <string name="max_input_browser_search_button">"OK"</string>
+    <string name="bookmarks_history">ブックマーク/履歴</string>
+    <string name="save_bookmark">"ブックマークを保存"</string>
+    <string name="tabs">"Tab"</string>
+    <string name="open_saved_page_failed">保存したページを開けません。</string>
+    <!-- M: add for save page -->
+    <string name="saved_page_failed">Webページを保存できませんでした.</string>
+    <string name="saved_page_complete">ダウンロードしました.</string>
+    <string name="saved_page_fail">"保存できません "</string>
+    <string name="create_folder_fail">ページ保存フォルダーを作成できません</string>
+    <string name="saving_page">Webページを保存</string>
+    <string name="need_login_email">最初にメールアカウントを登録してください。</string>
+    <string name="folder_needs_title">"フォルダーには名前が必要です。"</string>
+    <string name="denied_required_permission">アクセス権が拒否されました。設定 &gt; アプリからこれを変更できます。</string>
+</resources>

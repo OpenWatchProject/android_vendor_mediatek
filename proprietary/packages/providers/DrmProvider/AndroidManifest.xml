@@ -1,0 +1,81 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+        package="com.mediatek.providers.drm"
+        android:sharedUserId="android.uid.system">
+
+    <!-- Allows an application to access DRM content -->
+    <permission android:name="android.permission.ACCESS_DRM"
+        android:label="@string/permlab_accessDrm"
+        android:description="@string/permdesc_accessDrm"
+        android:protectionLevel="signature" />
+
+    <permission android:name="android.permission.INSTALL_DRM"
+        android:label="@string/permlab_installDrm"
+        android:description="@string/permdesc_installDrm"
+        android:protectionLevel="normal" />
+
+    <uses-permission android:name="android.permission.RECEIVE_WAP_PUSH" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.CONNECTIVITY_INTERNAL" />
+    <uses-permission android:name="android.permission.WRITE_MEDIA_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-permission android:name="android.permission.SYSTEM_OVERLAY_WINDOW"/>
+
+
+    <application android:process="com.mediatek.providers.drm"
+                 android:allowBackup="false"
+                 android:label="@string/app_label">
+
+        <receiver android:name=".DrmPushReceiver"
+                   android:permission="android.permission.BROADCAST_WAP_PUSH">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.WAP_PUSH_RECEIVED" />
+                <data android:mimeType="application/vnd.oma.drm.rights+xml" />
+                <data android:mimeType="application/vnd.oma.drm.rights+wbxml" />
+            </intent-filter>
+        </receiver>
+
+        <receiver android:name=".TimeChangedReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.TIME_SET" />
+            </intent-filter>
+        </receiver>
+
+        <service  android:name=".DrmSyncTimeService"
+                  android:exported="false"
+                  android:permission="android.permission.BIND_JOB_SERVICE" />
+
+        <service android:name=".DrmDialogService"
+                android:exported="true"
+                android:enabled="true">
+            <intent-filter>
+                <action android:name="mediatek.intent.action.DRM_DIALOG" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </service>
+
+        <receiver android:name=".BootCompletedReceiver" >
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+
+        <receiver android:name=".DrmRescanReceiver" >
+            <intent-filter>
+                <action android:name="mediatek.intent.action.DRM_RESCAN" />
+            </intent-filter>
+        </receiver>
+
+        <service
+            android:name=".ConnectionChangeJobService"
+            android:exported="true"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
+
+    </application>
+</manifest>

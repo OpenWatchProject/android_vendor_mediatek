@@ -1,0 +1,27 @@
+OP01 Dialer customization features.
+
+This apk is pre-built by MediaTek internal.
+
+
+WHAT IT DOES?
+=============
+It is a plugin apk which contains the OP01 customization for Host App (dialer,incallui)
+
+HOW IT WAS BUILT?
+==================
+It needs the following library from Mediatek:
+1. mediatek-common.jar
+2. Host App api interface,for example:com.mediatek.dialer.ext
+
+All the OP01 customization for dialer  will be built as OP01Dialer.apk  installed under system/plugin, 
+and the OP01Dialer.mpinfo also be copied to the installed path when build time
+
+HOW TO USE IT?
+==============
+
+Implement the interface provided by Host App(dialer,incallui) to do customization.
+all api interface are at (packages/apps/Dialer/ext).
+
+when run time, framework will find the OP01Dialer customization implementation via OP01Dialer.mpinfo.
+
+All the source code of  were written by MediaTek.

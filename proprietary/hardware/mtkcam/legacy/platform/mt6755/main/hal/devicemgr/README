@@ -1,0 +1,20 @@
+WHAT IT DOES?
+=============
+camera device manager related files.
+
+
+HOW IT WAS BUILT?
+==================
+A general implementation is under:
+  $(MTK_PATH_SOURCE)/hardware/mtkcam/legacy/main/hal/devicemgr/depend/
+
+and it can be built via:
+  include $(MTK_PATH_SOURCE)/hardware/mtkcam/legacy/main/hal/devicemgr/depend/build.mk
+
+If the general implementation cannot meet the requirement,
+add a copy of it here and then modify it.
+
+
+HOW TO USE IT?
+==============
+Provide related api for camera device manager.

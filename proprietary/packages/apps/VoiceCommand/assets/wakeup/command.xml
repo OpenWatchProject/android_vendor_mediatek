@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<VoiceWakeupInfos>
+    <!-- voice wakeup command list array size less than 5 is best -->
+	<VoiceWakeupInfo PackageName="com.android.contacts" CheckGMS="0" 
+		ClassName="com.android.contacts.activities.PeopleActivity" ID="0" />
+	<!-- This is added for the loads containing google contacts app(GSM LOAD) -->
+	<VoiceWakeupInfo PackageName="com.google.android.contacts" CheckGMS="1"
+		ClassName="com.android.contacts.activities.PeopleActivity" ID="0" />
+</VoiceWakeupInfos>

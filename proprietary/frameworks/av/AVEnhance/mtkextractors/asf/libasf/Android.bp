@@ -1,0 +1,17 @@
+cc_library_static {
+    name: "libasf",
+
+    srcs: [
+    	"src/asf.cpp",
+     	"src/byteio.cpp",
+     	"src/data.cpp",
+     	"src/guid.cpp",
+     	"src/header.cpp",
+     	"src/parse.cpp",
+     	"src/utf.cpp",
+    ],
+
+    include_dirs: [
+        "vendor/mediatek/proprietary/frameworks/av/AVEnhance/mtkextractors/asf/libasf/inc"
+    ],
+}

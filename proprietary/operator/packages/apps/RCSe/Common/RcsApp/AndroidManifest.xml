@@ -1,0 +1,389 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!-- # Copyright Statement:
+#
+# This software/firmware and related documentation ("MediaTek Software") are
+# protected under relevant copyright laws. The information contained herein
+# is confidential and proprietary to MediaTek Inc. and/or its licensors.
+# Without the prior written permission of MediaTek inc. and/or its licensors,
+# any reproduction, modification, use or disclosure of MediaTek Software,
+# and information contained herein, in whole or in part, shall be strictly prohibited.
+
+# MediaTek Inc. (C) 2010. All rights reserved.
+#
+# BY OPENING THIS FILE, RECEIVER HEREBY UNEQUIVOCALLY ACKNOWLEDGES AND AGREES
+# THAT THE SOFTWARE/FIRMWARE AND ITS DOCUMENTATIONS ("MEDIATEK SOFTWARE")
+# RECEIVED FROM MEDIATEK AND/OR ITS REPRESENTATIVES ARE PROVIDED TO RECEIVER ON
+# AN "AS-IS" BASIS ONLY. MEDIATEK EXPRESSLY DISCLAIMS ANY AND ALL WARRANTIES,
+# EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF
+# MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE OR NONINFRINGEMENT.
+# NEITHER DOES MEDIATEK PROVIDE ANY WARRANTY WHATSOEVER WITH RESPECT TO THE
+# SOFTWARE OF ANY THIRD PARTY WHICH MAY BE USED BY, INCORPORATED IN, OR
+# SUPPLIED WITH THE MEDIATEK SOFTWARE, AND RECEIVER AGREES TO LOOK ONLY TO SUCH
+# THIRD PARTY FOR ANY WARRANTY CLAIM RELATING THERETO. RECEIVER EXPRESSLY ACKNOWLEDGES
+# THAT IT IS RECEIVER'S SOLE RESPONSIBILITY TO OBTAIN FROM ANY THIRD PARTY ALL PROPER LICENSES
+# CONTAINED IN MEDIATEK SOFTWARE. MEDIATEK SHALL ALSO NOT BE RESPONSIBLE FOR ANY MEDIATEK
+# SOFTWARE RELEASES MADE TO RECEIVER'S SPECIFICATION OR TO CONFORM TO A PARTICULAR
+# STANDARD OR OPEN FORUM. RECEIVER'S SOLE AND EXCLUSIVE REMEDY AND MEDIATEK'S ENTIRE AND
+# CUMULATIVE LIABILITY WITH RESPECT TO THE MEDIATEK SOFTWARE RELEASED HEREUNDER WILL BE,
+# AT MEDIATEK'S OPTION, TO REVISE OR REPLACE THE MEDIATEK SOFTWARE AT ISSUE,
+# OR REFUND ANY SOFTWARE LICENSE FEES OR SERVICE CHARGE PAID BY RECEIVER TO
+# MEDIATEK FOR SUCH MEDIATEK SOFTWARE AT ISSUE.
+#
+# The following software/firmware and/or related documentation ("MediaTek Software")
+# have been modified by MediaTek Inc. All revisions are subject to any receiver's
+# applicable license agreements with MediaTek Inc. -->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    android:versionCode="1"
+    android:versionName="2.5.13"
+    package="com.mediatek.rcs"
+    coreApp="true">
+
+    <uses-sdk android:minSdkVersion="26"
+        android:targetSdkVersion="29"/>
+
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
+    <uses-permission android:name="android.permission.READ_SMS"/>
+    <uses-permission android:name="android.permission.WRITE_SMS"/>
+    <uses-permission android:name="android.permission.SEND_SMS"/>
+    <uses-permission android:name="android.permission.SEND_SMS_NO_CONFIRMATION"/>
+    <uses-permission android:name="android.permission.WRITE_CONTACTS"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.MODIFY_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.MANAGE_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.AUTHENTICATE_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.WRITE_SYNC_SETTINGS"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.ACCESS_ALL_DOWNLOADS" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS"/>
+    <uses-permission android:name="android.permission.SET_ORIENTATION" />
+    <uses-permission android:name="android.permission.BROADCAST_STICKY"/>
+    <uses-permission android:name="android.permission.READ_CALENDAR"/>
+    <uses-permission android:name="android.permission.WRITE_CALENDAR"/>
+    <uses-permission android:name="android.permission.WRITE_MEDIA_STORAGE"/>
+    <uses-permission android:name="android.permission.START_ACTIVITIES_FROM_BACKGROUND"/>
+    <uses-permission android:name="com.gsma.services.permission.RCS"/>
+    <uses-permission android:name="com.gsma.services.permission.RCS_INTERNAL_ACCESS_ONLY"/>
+    <uses-permission android:name="com.mediatek.presence.permission.PRESENCE"/>
+    <uses-permission android:name="com.mediatek.rcse.permission.RCS_ACCESS_MESSAGE"/>
+    <uses-permission android:name="com.mediatek.contacts.MULTICHOICE"/>
+    <permission
+            android:name="com.mediatek.rcse.permission.RCS_ACCESS_MESSAGE"
+            android:protectionLevel="signature"/>
+
+    <application
+        android:icon="@drawable/rcs_icon"
+        android:label="@string/rcs_core_application_title"
+        android:name="com.mediatek.rcse.service.CoreApplication"
+        android:theme="@style/RcsTheme"
+        android:resizeableActivity = "true" >
+
+        <!--the following meta-data is used to identify the application as a joyn client-->
+        <meta-data android:name="gsma.joyn.client" android:value="true"/>
+
+        <!--the following meta-data is used to provide the value of the intent action that can be
+         used by other applications to start the joyn client settings screen -->
+        <meta-data android:name="gsma.joyn.settings.activity" android:value="com.mediatek.rcse.RCSE_SETTINGS"/>
+
+        <!-- the following meta-data is used to separate the various joyn client implementations -->
+        <meta-data android:name="gsma.joyn.preferences"
+            android:value="com.orangelabs.rcs.gsma.joyn.preferences" />
+
+        <provider android:authorities="com.mediatek.rcse.unreg_messages"
+            android:exported="true"
+            android:name="com.mediatek.rcse.provider.UnregMessageProvider"
+            android:readPermission="com.mediatek.rcse.permission.RCS_ACCESS_MESSAGE"
+            android:writePermission="com.mediatek.rcse.permission.RCS_ACCESS_MESSAGE"/>
+
+        <provider android:authorities="com.mediatek.rcse.unreg_group_messages"
+            android:exported="true"
+            android:name="com.mediatek.rcse.provider.UnregGroupMessageProvider"
+            android:readPermission="com.mediatek.rcse.permission.RCS_ACCESS_MESSAGE"
+            android:writePermission="com.mediatek.rcse.permission.RCS_ACCESS_MESSAGE"/>
+
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.mediatek.rcs.fileprovider"
+            android:grantUriPermissions="true"
+            android:exported="false">
+            <meta-data android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/filepaths" />
+        </provider>
+
+        <provider android:authorities="com.mediatek.rcs.appsettings"
+                  android:exported="true"
+                  android:name="com.mediatek.rcse.settings.AppSettingsProvider"
+                  android:readPermission="com.mediatek.rcse.permission.RCS_ACCESS_MESSAGE"
+                  android:writePermission="com.mediatek.rcse.permission.RCS_ACCESS_MESSAGE"/>
+
+        <provider android:authorities="com.mediatek.rcs.messaging.integrated"
+                android:exported="true"
+                android:name="com.mediatek.rcse.provider.IntegratedMessageMappingProvider"
+                android:readPermission="com.mediatek.rcse.permission.RCS_ACCESS_MESSAGE"
+                android:writePermission="com.mediatek.rcse.permission.RCS_ACCESS_MESSAGE"/>
+
+        <!-- Device events receiver -->
+        <activity android:name="com.mediatek.rcse.activities.ConfigMessageActicity"
+            android:process=":core"
+            android:theme="@style/Theme.Transparent"
+            android:excludeFromRecents="true">
+        </activity>
+
+        <activity
+            android:icon="@drawable/rcs_icon"
+            android:screenOrientation="portrait"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:name="com.mediatek.rcse.activities.RcsPermissionCheckActivity">
+            <intent-filter >
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <!-- API encapsulation -->
+        <service android:name="com.mediatek.rcse.service.ApiService"
+                 android:permission="com.mediatek.rcse.permission.RCS_ACCESS_MESSAGE"
+                 android:exported="true"/>
+
+        <!-- Chat application -->
+        <activity
+            android:icon="@drawable/rcs_icon"
+            android:label="@string/text_chat_main"
+            android:launchMode="singleTop"
+            android:name="com.mediatek.rcse.activities.ChatMainActivity"
+            android:uiOptions="splitActionBarWhenNarrow"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:taskAffinity="com.mediatek.rcse.activities.ChatMainActivity"
+            android:alwaysRetainTaskState="true">
+            <intent-filter>
+                <action android:name="com.mediatek.rcse.action.CHAT_MAIN"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:icon="@drawable/rcs_icon"
+            android:label="@string/text_chats"
+            android:launchMode="singleTop"
+            android:name="com.mediatek.rcse.activities.ChatScreenActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:windowSoftInputMode="stateHidden|adjustResize"
+            android:allowTaskReparenting="true"
+            android:taskAffinity="com.mediatek.rcse.activities.ChatMainActivity"
+            android:alwaysRetainTaskState="true">
+            <intent-filter>
+                <action android:name="com.mediatek.rcse.action.CHAT_INSTANCE_MESSAGE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.mediatek.rcse.action.CHAT_FILE_TRANSFER"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.mediatek.rcse.action.CHAT_SEND_MESSAGE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name="com.mediatek.rcse.activities.GeolocActivity"
+            android:theme="@style/Theme.Transparent">
+        </activity>
+
+        <activity
+            android:allowTaskReparenting="true"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:label="@string/text_chats"
+            android:launchMode="singleTop"
+            android:name="com.mediatek.rcse.plugin.message.PluginGroupChatActivity"
+            android:windowSoftInputMode="stateHidden|adjustResize"
+            android:alwaysRetainTaskState="true">
+            <intent-filter >
+                <action android:name="com.mediatek.rcse.action.PLUGIN_GROUP_CHAT" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:allowTaskReparenting="true"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:label="@string/text_chats"
+            android:launchMode="singleTop"
+            android:name="com.mediatek.rcse.plugin.message.PluginMultiChatActivity"
+            android:windowSoftInputMode="stateHidden|adjustResize"
+            android:alwaysRetainTaskState="true">
+            <intent-filter >
+                <action android:name="com.mediatek.rcse.action.PLUGIN_MULTI_CHAT" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name="com.mediatek.rcse.activities.InvitationDialog"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:configChanges="keyboardHidden|orientation|screenSize">
+            <intent-filter>
+                <action android:name="com.mediatek.rcse.action.INVITE_DIALOG"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="com.mediatek.rcse.activities.SelectContactsActivity"
+            android:theme="@android:style/Theme.Holo"
+            android:uiOptions="splitActionBarWhenNarrow"
+            android:configChanges="keyboardHidden|orientation|screenSize">
+            <intent-filter>
+                <action android:name="com.mediatek.rcse.action.SELECT_CONTACT"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.mediatek.rcse.action.SELECT_CONTACT_BY_MULTIMEDIA"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="com.mediatek.rcse.activities.ParticipantsListActivity"
+            android:theme="@android:style/Theme.Holo"
+            android:uiOptions="splitActionBarWhenNarrow"
+            android:configChanges="keyboardHidden|orientation|screenSize">
+            <intent-filter>
+                <action android:name="com.mediatek.rcse.action.SHOW_PARTICIPANTS"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:clearTaskOnLaunch="true"
+            android:icon="@drawable/rcs_icon"
+            android:label="@string/text_blacklist"
+            android:launchMode="singleInstance"
+            android:name="com.mediatek.rcse.activities.BlackListActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize">
+        </activity>
+        <activity
+            android:name="com.mediatek.rcse.activities.RcseSystemSettingsActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/rcse_settings_title"
+            android:launchMode="singleTask"
+            android:theme="@android:style/Theme.Holo">
+            <intent-filter>
+                <action android:name="com.mediatek.rcse.RCSE_SETTINGS" />
+                <action android:name="com.gsma.services.rcs.action.VIEW_SETTINGS" />
+                <action android:name="com.gsma.services.rcs.client.action.SETTINGS" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name="com.mediatek.rcse.activities.PluginProxyActivity"
+            android:theme="@style/Theme.Transparent"
+            android:configChanges="keyboardHidden|orientation|screenSize|fontScale|locale"
+            android:excludeFromRecents="true">
+            <intent-filter>
+                <action android:name="com.mediatek.rcse.action.PROXY" />
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <intent-filter android:icon="@drawable/rcs_file_share"
+                android:label="@string/file_transfer_enhance_title">
+                <action android:name="android.intent.action.SEND" />
+                <data android:mimeType="*/*" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.mediatek.rcse.action.PluginSelectContact" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.gsma.services.rcs.action.VIEW_CHAT" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.gsma.services.rcs.action.INITIATE_CHAT" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <intent-filter android:icon="@drawable/rcs_file_share" android:label="@string/file_transfer_enhance_title">
+                <action android:name="android.intent.action.SEND_MULTIPLE" />
+                <data android:mimeType="*/*" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/text_settings"
+            android:name="com.mediatek.rcse.activities.SettingsActivity" >
+            <intent-filter>
+                <action android:name="com.mediatek.rcse.action.SETTINGS_ACTIVITY" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name="com.mediatek.rcse.plugin.phone.RichcallProxyActivity" android:theme="@style/Theme.Transparent"
+            android:excludeFromRecents="true">
+            <intent-filter>
+                <action android:name="com.mediatek.rcse.plugin.phone.IMAGE_SHARING_SELECTION" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="com.mediatek.rcse.activities.ChatWallPaperSettingsActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:icon="@drawable/ic_launcher_wallpaper"
+            android:label="@string/text_wallpaper">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+                <action android:name="com.mediatek.rcse.action.CHAT_WALLPAPER_SETTING" />
+                <action android:name="android.intent.action.GET_CONTENT" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="com.mediatek.rcse.activities.ChatGalleryWallPaperSettingsActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:icon="@drawable/ic_launcher_gallery"
+            android:label="@string/text_gallery">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+                <action android:name="com.mediatek.rcse.action.CHAT_WALLPAPER_SETTING" />
+                <action android:name="android.intent.action.GET_CONTENT" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="com.mediatek.rcse.activities.ChatCameraWallPaperSettingsActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:icon="@drawable/ic_launcher_camera"
+            android:label="@string/text_camera">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+                <action android:name="com.mediatek.rcse.action.CHAT_WALLPAPER_SETTING" />
+                <action android:name="android.intent.action.GET_CONTENT" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="com.mediatek.rcse.activities.DialogActivity"
+            android:theme="@style/Theme.Transparent"
+            android:icon="@drawable/ic_launcher_wallpaper"
+            android:label="@string/text_choose_wallpaper_title">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+                <action android:name="com.mediatek.rcse.action.DIALOG_ACTIVITY" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="com.mediatek.rcse.activities.DirectoryPicker"
+            android:label="@string/title_activity_joyn_introduction_video">
+        </activity>
+    </application>
+
+</manifest>

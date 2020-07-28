@@ -1,0 +1,46 @@
+/*
+ * Copyright 2016 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package vendor.mediatek.hardware.wifi.hostapd@1.0;
+
+/**
+ * Callback Interface exposed by the hostapd service
+ * for each ap mode interface (IHostapdIface).
+ *
+ * Clients need to host an instance of this HIDL interface object and
+ * pass a reference of the object to the hostapd via the
+ * corresponding |IHostapdIface.registerCallback| method.
+ */
+interface IHostapdIfaceCallback {
+  /**
+   * Used to indicate the overlap of a WPS PBC connection attempt.
+   */
+  oneway onWpsEventPbcOverlap();
+
+  /**
+   * Used to indicate when a STA device is connected to this device.
+   *
+   * @param staAddress MAC address of the device that was authorized.
+   */
+  oneway onStaAuthorized(MacAddress staAddress);
+
+  /**
+   * Used to indicate when a STA device is disconnected from this device.
+   *
+   * @param staAddress MAC address of the device that was deauthorized.
+   */
+  oneway onStaDeauthorized(MacAddress staAddress);
+};

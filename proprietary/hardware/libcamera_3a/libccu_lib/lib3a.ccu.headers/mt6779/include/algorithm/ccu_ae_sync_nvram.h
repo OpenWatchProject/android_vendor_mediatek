@@ -1,0 +1,29 @@
+#ifndef _CCU_AE_SYNC_NVRAM_H_
+#define _CCU_AE_SYNC_NVRAM_H_
+
+#include "ccu_ext_interface/ccu_types.h"
+
+#define CCU_AESYNC_DENOISE_MAPPING_TABLE_MAX 30
+#define CCU_AESYNC_EVOFFSET_ARRAY_MAX 5
+#define CCU_AESYNC_REVERSED_ARRAY_MAX 30
+
+typedef enum
+{
+    CCU_AESYNC_DENOISE_BMDN = 0,
+    CCU_AESYNC_DENOISE_MFNR,
+    CCU_AESYNC_DENOISE_MAX
+}CCU_AESYNC_DENOISE_ENUM;
+
+typedef struct
+{
+    MBOOL bGainRegression;
+    MUINT16 u2RegressionType;
+    MUINT16 u2AlignMode;
+    MINT32 i4EvOffset[CCU_AESYNC_EVOFFSET_ARRAY_MAX];
+    MUINT32 u4RGB2YCoef[3];
+    MUINT32 u4FixSyncGain;
+    MUINT32 pDeltaBvToRatioArray[CCU_AESYNC_DENOISE_MAX][CCU_AESYNC_DENOISE_MAPPING_TABLE_MAX];
+    MINT32 pReserved[CCU_AESYNC_REVERSED_ARRAY_MAX];
+}CCU_AESYNC_NVRAM_T;
+
+#endif

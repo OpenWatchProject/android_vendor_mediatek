@@ -1,0 +1,48 @@
+cc_library_shared {
+    srcs: [
+        "MtkADPCMExtractor.cpp",
+    ],
+
+    include_dirs: [
+        "frameworks/av/media/libstagefright/include",
+        "vendor/mediatek/proprietary/frameworks/av/AVEnhance/libmtkavenhancements",
+		"vendor/mediatek/proprietary/frameworks/av/AVEnhance/libavextensions",
+    ],
+
+    shared_libs: [
+        "libmtkavenhancements",
+        "libbinder_ndk",
+        "liblog",
+        "libmediandk",
+        "libcutils",
+        "libstagefright_foundation",
+    ],
+
+    static_libs: [
+        "libaudioutils",
+        "libfifo",
+        "libutils",
+        "libavextensions",
+    ],
+
+    name: "libmtkadpcmextractor",
+    owner: "mtk",
+    relative_install_path: "extractors",
+
+    compile_multilib: "first",
+
+    cflags: [
+        "-Werror",
+        "-Wall",
+        "-fvisibility=hidden",
+    ],
+    version_script: "exports.lds",
+
+    sanitize: {
+        cfi: true,
+        misc_undefined: [
+            "unsigned-integer-overflow",
+            "signed-integer-overflow",
+        ],
+    },
+}

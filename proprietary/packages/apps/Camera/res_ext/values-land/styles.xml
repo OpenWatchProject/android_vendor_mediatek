@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+    <style name="ScreenOnPadding">
+        <item name="android:paddingTop">@dimen/screen_on_margin_top</item>
+        <item name="android:paddingBottom">@dimen/screen_on_margin_bottom</item>
+        <item name="android:paddingLeft">@dimen/screen_on_margin_right</item>
+        <item name="android:paddingRight">@dimen/screen_on_margin_right</item>
+    </style>
+    <style name="ScreenMargin">
+        <item name="android:layout_marginTop">@dimen/screen_margin_top</item>
+        <item name="android:layout_marginBottom">@dimen/screen_margin_bottom</item>
+        <item name="android:layout_marginLeft">@dimen/screen_margin_left</item>
+        <item name="android:layout_marginRight">@dimen/screen_margin_right</item>
+    </style>
+    <style name="ScreenOnStereoPadding">
+        <item name="android:paddingTop">@dimen/screen_on_stereo_margin</item>
+        <item name="android:paddingBottom">@dimen/screen_on_stereo_margin</item>
+        <item name="android:paddingLeft">@dimen/screen_on_stereo_left</item>
+        <item name="android:paddingRight">@dimen/screen_on_stereo_right</item>
+    </style>
+    <style name="ScreenOnCSMargin">
+         <item name="android:layout_marginTop">@dimen/screen_on_margin_top</item>
+        <item name="android:layout_marginBottom">@dimen/screen_on_margin_bottom</item>
+        <item name="android:layout_marginLeft">@dimen/screen_on_cs_margin_left</item>
+        <item name="android:layout_marginRight">@dimen/screen_on_cs_margin_right</item>
+     </style>
+     
+     <style name="ScreenOnMargin">
+         <item name="android:layout_marginTop">@dimen/screen_on_margin_top</item>
+        <item name="android:layout_marginBottom">@dimen/screen_on_margin_bottom</item>
+        <item name="android:layout_marginLeft">@dimen/screen_on_margin_left</item>
+        <item name="android:layout_marginRight">@dimen/screen_on_margin_right</item>
+     </style> 
+    <style name="ScreenOnFBMargin">
+         <item name="android:layout_marginTop">@dimen/screen_on_margin_top</item>
+        <item name="android:layout_marginBottom">@dimen/screen_on_margin_left</item>
+        <item name="android:layout_marginLeft">@dimen/screen_on_margin_bottom</item>
+        <item name="android:layout_marginRight">@dimen/screen_on_margin_right</item>
+     </style>
+    
+    <style name="ReviewThumbnailGroup">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_alignParentTop">true</item>
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:layout_margin">@dimen/camera_thumbnail_margin</item>
+    </style>
+    <style name="ReviewControlIcon">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:layout_margin">@dimen/review_sperator_width</item>
+        <item name="android:gravity">center</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+        <item name="android:background">@drawable/bg_pressed</item>
+    </style>
+    <style name="ReviewIconGroup">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+    <style name="RemainingLayout" parent="ScreenOnMargin">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_alignParentTop">true</item>
+        <item name="android:layout_alignParentLeft">true</item>
+    </style>
+    <style name="RecordingLayout" parent="ScreenMargin">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_alignParentLeft">true</item>
+        <item name="android:layout_alignParentBottom">true</item>
+    </style>
+    <style name="OnScreenPickerGroup" parent="ScreenOnMargin">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_marginTop">0dp</item>
+        <item name="android:layout_alignParentTop">true</item>
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:gravity">top</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:visibility">gone</item>
+    </style>
+    
+    <style name="OnScreenFacebeautyFixed">
+        <item name="android:layout_height">@dimen/picker_button_size</item>
+        <item name="android:layout_width">@dimen/picker_button_size</item>
+        <item name="android:focusable">true</item>
+        <item name="android:clickable">true</item>
+        <item name="android:visibility">invisible</item>
+        <item name="android:background">@drawable/bg_pressed</item>    
+    </style>
+
+    <style name="OnScreenFacebeautyIcon">
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:gravity">bottom|right</item>
+        <item name ="android:orientation">horizontal</item>
+        <item name = "android:paddingRight">92dp</item>
+        <item name="android:visibility">visible</item>
+    </style>
+    
+    <style name="OnScreenFacebeautyBg">
+        <item name="android:layout_height">@dimen/picker_button_size</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:background">@drawable/bg_icon</item>
+        <item name="android:visibility">gone</item>
+    </style>
+    
+    <style name="OnScreenIndicatorGroup" parent="ScreenOnMargin">
+        <item name="android:layout_height">@dimen/icon_normal_size</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_marginRight">@dimen/indicator_padding</item>
+        <item name="android:layout_alignParentTop">true</item>
+        <item name="android:layout_alignParentLeft">true</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+    <style name="ModePickerLayout">
+        <item name="android:layout_height">match_parent</item> 
+        <item name="android:layout_width">@dimen/mode_picker_width</item> 
+        <item name="android:layout_alignParentLeft">true</item>
+    </style>
+    <style name="PipSettingLayout">
+        <item name="android:layout_height">@dimen/pip_setting_layout_width</item> 
+        <item name="android:layout_width">match_parent</item> 
+        <item name="android:layout_alignParentBottom">true</item>
+    </style>
+        <style name="PipSettingScroll">
+        <item name="android:layout_height">@dimen/pip_setting_scroll_width</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:scrollbars">none</item>
+        
+    </style>
+    <style name="PipSettingGroup">
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+    <style name="PipItemLayout">
+        <item name="android:layout_height">match_parent</item> 
+        <item name="android:layout_width">@dimen/pip_setting_icon_height</item>
+    </style>
+    <style name="PipSettingIcon">
+        <item name="android:layout_width">@dimen/pip_setting_icon_height</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:scaleType">fitCenter</item>
+    </style>
+    <style name="ShutterGroup" parent="ScreenMargin">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_gravity">right|center_vertical</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/bg_shutter_background</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+    <style name="ShutterButtonSeperator">
+        <item name="android:layout_height">@dimen/shutter_sperator</item>
+        <item name="android:layout_width">@dimen/shutter_size</item>
+        <item name="android:clickable">false</item>
+        <item name="android:focusable">false</item>
+        <item name="android:background">@drawable/ic_shutter_seperator</item>
+    </style>
+    <style name="SettingIndicator">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:layout_alignParentBottom">true</item>
+    </style>
+    
+    <style name="SubSettingIndicator">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_centerHorizontal">true</item>
+        <item name="android:layout_alignParentBottom">true</item>
+    </style>
+    <style name="SettingContainer2Parent">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_marginTop">@dimen/screen_setting_margin_top</item>
+        <item name="android:layout_marginBottom">@dimen/screen_setting_margin_bottom</item>
+        <item name="android:layout_marginLeft">@dimen/screen_setting_margin_left</item>
+        <item name="android:layout_marginRight">@dimen/screen_setting_margin_right</item>
+    </style>
+    
+    <style name ="SettingNewContainerParent">
+    	<item name="android:layout_width">wrap_content</item>
+    	<item name="android:layout_height">wrap_content</item>
+    	<item name="android:layout_gravity">center|bottom</item>
+    </style>
+    
+    <style name ="SettingGridContainerParent">
+    	<item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+    	<item name="android:horizontalSpacing">@dimen/setting_grid_horizontalSpacing</item>
+    	<item name="android:verticalSpacing">@dimen/setting_grid_verticalSpacing</item>
+    	<item name="android:paddingTop">@dimen/setting_grid_paddingTop</item>
+    	<item name="android:paddingBottom">@dimen/setting_grid_paddingBottom</item>
+    	<item name="android:numColumns">auto_fit</item>
+    	<item name="android:columnWidth">@dimen/setting_grid_columnWidth</item>   	
+    	<item name="android:paddingLeft">@dimen/setting_grid_paddingLeft</item>
+    	<item name="android:stretchMode">columnWidth</item>
+    	<item name="android:gravity">center</item>
+    </style>
+    <style name="SettingNewContainer2Parent">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+  		<item name="android:layout_gravity">center</item>
+    </style>
+    
+    <style name="ModeToastLayout" parent="ScreenOnMargin">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_alignParentLeft">true</item>
+    </style>
+    
+    <style name="EffectToastLayout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_alignParentLeft">true</item>
+    </style>
+    <style name="SelectScreen">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:paddingTop">@dimen/select_screen_top</item>
+        <item name="android:paddingBottom">@dimen/select_screen_bottom</item>
+        <item name="android:paddingLeft">@dimen/select_screen_left</item>
+        <item name="android:paddingRight">@dimen/select_screen_right</item>
+        <item name="android:background">@color/seletct_image_background</item>
+    </style>
+    <style name="IndicatorUp">
+        <item name="android:layout_marginTop">@dimen/pano_indicator_margin_short</item>
+    </style>
+    <style name="IndicatorBottom">
+        <item name="android:layout_marginBottom">@dimen/pano_indicator_margin_short</item>
+    </style>
+    <style name="IndicatorLeft">
+        <item name="android:layout_marginLeft">@dimen/pano_indicator_margin_long</item>
+    </style>
+    <style name="IndicatorRight">
+        <item name="android:layout_marginRight">@dimen/pano_indicator_margin_long</item>
+    </style>
+    
+    <style name="OnScreenFaceBeautyInfoLayout" parent="ScreenOnFBMargin">
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:visibility">gone</item>
+    </style>
+    
+    <style name="OnScreenFBInfoText">
+    	<item name="android:layout_alignParentBottom">true</item>
+    	<item name="android:layout_alignParentRight">true</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textAppearance">?android:attr/textAppearance</item>
+        <item name="android:textColor">@color/setting_item_text_color_normal</item>
+    </style>
+    <style name="videoFaceBeautyInfo">
+        <!-- 
+        why is 451?
+        //864+104=968,but the view width is 64,so view margin_right will be :
+        (968 - 64)/2 =452,but we need the view is in the middle of the left icon
+        so, the finally value need:452 - (104 - 44)/2/2 = 441dp
+         <item name="android:layout_marginRight">441dp</item>
+        -->
+
+        <item name="android:layout_marginBottom">52dp</item>
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:layout_alignParentBottom">true</item>
+    </style>
+    
+            
+    <style name="OnScreenFacebeautySeekBar">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">180dp</item>
+        <item name="android:focusable">true</item>
+        <item name="android:visibility">invisible</item>
+    </style>
+</resources>

@@ -1,0 +1,36 @@
+cc_test {
+    name: "fod_ca",
+    proprietary: true,
+    owner: "mtk",
+    defaults: ["mtk_fod_defaults"],
+    cflags: [
+        "-Wall",
+        "-Werror",
+        "-Wno-unused-parameter",
+        "-Wno-unused-function",
+    ],
+    compile_multilib: "both",
+    srcs: [
+        "fod_ca.c",
+    ],
+    header_libs: [
+        "device_kernel_headers",
+    ]
+}
+
+mtk_fod_defaults {
+    name: "mtk_fod_defaults",
+}
+
+bootstrap_go_package {
+    name: "soong-fod-mediatek",
+    pkgPath: "android/soong/fod/mediatek",
+    deps: [
+        "soong-android",
+        "soong-cc",
+    ],
+    srcs: [
+        "fod.go",
+    ],
+    pluginFor: ["soong_build"],
+}

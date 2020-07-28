@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/lomo_effect_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <com.mediatek.camera.addition.effect.EffectRotateLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true" >
+
+        <com.mediatek.camera.addition.effect.EffectLayout
+            android:id="@+id/lomo_effect_gridview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:splitMotionEvents="false" >
+        </com.mediatek.camera.addition.effect.EffectLayout>
+    </com.mediatek.camera.addition.effect.EffectRotateLayout>
+
+</RelativeLayout>

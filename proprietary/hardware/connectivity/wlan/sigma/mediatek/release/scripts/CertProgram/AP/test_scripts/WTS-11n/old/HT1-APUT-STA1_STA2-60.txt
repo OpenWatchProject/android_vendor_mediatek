@@ -1,0 +1,18 @@
+wfa_console_ctrl!traffic_agent_reset!DEFAULT
+$STA1_control_agent!traffic_agent_reset!DEFAULT
+$STA2_control_agent!traffic_agent_reset!DEFAULT
+
+
+wfa_console_ctrl!traffic_agent_config,profile,IPTV,direction,send,destination,$STA1_wireless_ip,destinationPort,4600,sourcePort,4600,duration,60,payloadSize,payloadValue,trafficClass,BestEffort,frameRate,$FrameRate!STREAMID,$APUT-TX-STA1
+$STA1_control_agent!traffic_agent_config,profile,IPTV,direction,receive,source,wfa_console_tg,sourcePort,4600,destinationPort,4600!STREAMID,$APUT-RX-STA1
+
+wfa_console_ctrl!traffic_agent_config,profile,IPTV,direction,send,destination,$STA2_wireless_ip,destinationPort,4601,sourcePort,4601,duration,60,payloadSize,payloadValue,trafficClass,BestEffort,frameRate,$FrameRate2!STREAMID,$APUT-TX-STA2
+$STA2_control_agent!traffic_agent_config,profile,IPTV,direction,receive,source,wfa_console_tg,sourcePort,4601,destinationPort,4601!STREAMID,$APUT-RX-STA2
+
+$STA1_control_agent!traffic_agent_receive_start,streamID,$APUT-RX-STA1!DEFAULT
+$STA2_control_agent!traffic_agent_receive_start,streamID,$APUT-RX-STA2!DEFAULT
+
+wfa_console_ctrl!traffic_agent_send,streamID,$APUT-TX-STA1 $APUT-TX-STA2!RECV_ID,$APUT-RX-STA1 $APUT-RX-STA2
+
+$STA1_control_agent!traffic_agent_receive_stop,streamID,$APUT-RX-STA1!DEFAULT
+$STA2_control_agent!traffic_agent_receive_stop,streamID,$APUT-RX-STA2!DEFAULT

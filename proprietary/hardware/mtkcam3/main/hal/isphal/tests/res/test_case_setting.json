@@ -1,0 +1,1716 @@
+ {
+   "ISPDeviceTest": {
+      "singleRequestYUV2JPEG": {
+        "cameraId": "",
+        "rootDirectory": "/sdcard/singleRequestYUV2JPEG",
+        "totalRequests": 1,
+        "inputFiles": [
+          { "requestGroup": 0, "name": "data/1/image_01.yuv", "size": 0, "width": 0, "height": 0, "format": 0, "rowStrides": [ 0, 0, 0 ] },
+          { "requestGroup": 0, "name": "data/1/metadata_01.tuning", "size": 0 }
+        ],
+        "outputFiles": [
+          { "name": "result/result_01.jpeg" }
+        ],
+        "cameraStreamConfiguration": {
+            "inputStreams": [ 1 ],
+            "outputStreams": [ 2 ],
+            "metadata": { }
+        },
+        "cameraRequestConfiguration": [
+            {
+                "requestNumber": 1,
+                "metadata": { },
+                "inputBuffers": [ 1 ],
+                "outputBuffers": [ 2 ]
+            }
+        ],
+        "ispStreamConfiguration": {
+            "inputStreams": [ 1 ],
+            "outputStreams": [ 2 ],
+            "metadata": { }
+        },
+        "ispRequestConfiguration": [
+            {
+                "requestNumber": 1,
+                "metadata": { },
+                "inputBuffers": [ 1 ],
+                "outputBuffers": [ 2 ]
+            }
+        ]
+      },
+      "singleRequestRAW2YUV_Logical_multicam": {
+        "cameraId": "",
+        "rootDirectory": "/sdcard/singleRequestRAW2YUV_Logical_multicam",
+        "totalRequests": 1,
+        "inputFiles": [
+          { "requestGroup": 0, "name": "data/1/image_01.raw", "size": 0, "width": 0, "height": 0, "format": 0, "rowStrides": [ 0, 0, 0 ] },
+          { "requestGroup": 0, "name": "data/1/metadata_01.tuning", "size": 0 }
+        ],
+        "outputFiles": [
+          { "name": "result/result_01.yuv" },
+          { "name": "result/result_metadata_01.tuning", "size": 0 }
+        ],
+        "cameraStreamConfiguration": {
+            "inputStreams": [ 1 ],
+            "outputStreams": [ 2 ],
+            "metadata": { }
+        },
+        "cameraRequestConfiguration": [
+            {
+                "requestNumber": 1,
+                "metadata": { },
+                "inputBuffers": [ 1 ],
+                "outputBuffers": [ 2 ]
+            }
+        ],
+        "ispStreamConfiguration": {
+            "inputStreams": [ 1 ],
+            "outputStreams": [ 2 ],
+            "metadata": { }
+        },
+        "ispRequestConfiguration": [
+            {
+                "requestNumber": 1,
+                "metadata": { },
+                "inputBuffers": [ 1 ],
+                "outputBuffers": [ 2 ]
+            }
+        ]
+      },
+      "singleZSL_RAW2YUV_Logical_multicam": {
+        "cameraId": "",
+        "rootDirectory": "/sdcard/singleZSL_RAW2YUV_Logical_multicam",
+        "totalRequests": 1,
+        "inputFiles": [
+          { "requestGroup": 0, "name": "data/1/image_01.raw", "size": 0, "width": 0, "height": 0, "format": 0, "rowStrides": [ 0, 0, 0 ] },
+          { "requestGroup": 0, "name": "data/1/metadata_01.tuning", "size": 0 }
+        ],
+        "outputFiles": [
+          { "name": "result/result_01.yuv" },
+          { "name": "result/result_metadata_01.tuning", "size": 0 }
+        ],
+        "cameraStreamConfiguration": {
+            "inputStreams": [ 1 ],
+            "outputStreams": [ 2 ],
+            "metadata": { "com.mediatek.control.capture.zsl.mode": { "type": 0, "value": 1 }}
+        },
+        "cameraRequestConfiguration": [
+            {
+                "requestNumber": 1,
+                "metadata": { "android.control.enableZsl": { "type": 11, "value": 1 }},
+                "inputBuffers": [ 1 ],
+                "outputBuffers": [ 2 ]
+            }
+        ],
+        "ispStreamConfiguration": {
+            "inputStreams": [ 1 ],
+            "outputStreams": [ 2 ],
+            "metadata": { }
+        },
+        "ispRequestConfiguration": [
+            {
+                "requestNumber": 1,
+                "metadata": { },
+                "inputBuffers": [ 1 ],
+                "outputBuffers": [ 2 ]
+            }
+        ]
+      },
+      "singleRequestYUV2YUV": {
+        "cameraId": "",
+        "rootDirectory": "/sdcard/singleRequestYUV2YUV",
+        "totalRequests": 1,
+        "inputFiles": [
+          { "requestGroup": 0, "name": "data/1/image_01.yuv", "size": 0, "width": 0, "height": 0, "format": 0, "rowStrides": [ 0, 0, 0 ] },
+          { "requestGroup": 0, "name": "data/1/metadata_01.tuning", "size": 0 }
+        ],
+        "outputFiles": [
+          { "name": "result/result_01.yuv" },
+          { "name": "result/result_metadata_01.tuning", "size": 0 }
+        ],
+        "cameraStreamConfiguration": {
+            "inputStreams": [ 1 ],
+            "outputStreams": [ 2 ],
+            "metadata": { }
+        },
+        "cameraRequestConfiguration": [
+            {
+                "requestNumber": 1,
+                "metadata": { },
+                "inputBuffers": [ 1 ],
+                "outputBuffers": [ 2 ]
+            }
+        ],
+        "ispStreamConfiguration": {
+            "inputStreams": [ 1 ],
+            "outputStreams": [ 2 ],
+            "metadata": { }
+        },
+        "ispRequestConfiguration": [
+            {
+                "requestNumber": 1,
+                "metadata": { },
+                "inputBuffers": [ 1 ],
+                "outputBuffers": [ 2 ]
+            }
+        ]
+      },
+      "singleRequestRAW2YUV": {
+        "cameraId": "",
+        "rootDirectory": "/sdcard/singleRequestRAW2YUV",
+        "totalRequests": 1,
+        "inputFiles": [
+          { "requestGroup": 0, "name": "data/1/image_01.raw", "size": 0, "width": 0, "height": 0, "format": 0, "rowStrides": [ 0, 0, 0 ] },
+          { "requestGroup": 0, "name": "data/1/metadata_01.tuning", "size": 0 }
+        ],
+        "outputFiles": [
+          { "name": "result/result_01.yuv" },
+          { "name": "result/result_metadata_01.tuning", "size": 0 }
+        ],
+        "cameraStreamConfiguration": {
+            "inputStreams": [ 1 ],
+            "outputStreams": [ 2 ],
+            "metadata": {}
+        },
+        "cameraRequestConfiguration": [
+            {
+                "requestNumber": 1,
+                "metadata": {},
+                "inputBuffers": [ 1 ],
+                "outputBuffers": [ 2 ]
+            }
+        ],
+        "ispStreamConfiguration": {
+            "inputStreams": [ 1 ],
+            "outputStreams": [ 2 ],
+            "metadata": { }
+        },
+        "ispRequestConfiguration": [
+            {
+                "requestNumber": 1,
+                "metadata": { },
+                "inputBuffers": [ 1 ],
+                "outputBuffers": [ 2 ]
+            }
+        ]
+      },
+      "singleZSL_RAW2YUV": {
+        "cameraId": "",
+        "rootDirectory": "/sdcard/singleZSL_RAW2YUV",
+        "totalRequests": 1,
+        "inputFiles": [
+          { "requestGroup": 0, "name": "data/1/image_01.raw", "size": 0, "width": 0, "height": 0, "format": 0, "rowStrides": [ 0, 0, 0 ] },
+          { "requestGroup": 0, "name": "data/1/metadata_01.tuning", "size": 0 }
+        ],
+        "outputFiles": [
+          { "name": "result/result_01.yuv" },
+          { "name": "result/result_metadata_01.tuning", "size": 0 }
+        ],
+        "cameraStreamConfiguration": {
+            "inputStreams": [ 1 ],
+            "outputStreams": [ 2 ],
+            "metadata": {
+                "com.mediatek.control.capture.zsl.mode": { "type": 0, "value": 1 }
+                }
+        },
+        "cameraRequestConfiguration": [
+            {
+                "requestNumber": 1,
+                "metadata": {
+                     "android.control.enableZsl": { "type": 11, "value": 1 },
+                     "com.mediatek.control.capture.packedRaw.enable": { "type": 1, "value": 0 }
+                     },
+                "inputBuffers": [ 1 ],
+                "outputBuffers": [ 2 ]
+            }
+        ],
+        "ispStreamConfiguration": {
+            "inputStreams": [ 1 ],
+            "outputStreams": [ 2 ],
+            "metadata": { }
+        },
+        "ispRequestConfiguration": [
+            {
+                "requestNumber": 1,
+                "metadata": { 
+                    "com.mediatek.control.capture.packedRaw.enable": { "type": 1, "value": 0 }
+                },
+                "inputBuffers": [ 1 ],
+                "outputBuffers": [ 2 ]
+            }
+        ]
+      },      
+      "singleRequestAINR2YUV": {
+        "cameraId": "",
+        "rootDirectory": "/sdcard/singleRequestAINR2YUV",
+        "totalRequests": 1,
+        "inputFiles": [
+          { "requestGroup": 0, "name": "data/1/image_0.raw", "size": 0, "width": 0, "height": 0, "format": 0, "rowStrides": [ 0, 0, 0 ] },
+          { "requestGroup": 1, "name": "data/1/image_1.raw", "size": 0, "width": 0, "height": 0, "format": 0, "rowStrides": [ 0, 0, 0 ] },
+          { "requestGroup": 2, "name": "data/1/image_2.raw", "size": 0, "width": 0, "height": 0, "format": 0, "rowStrides": [ 0, 0, 0 ] },
+          { "requestGroup": 3, "name": "data/1/image_3.raw", "size": 0, "width": 0, "height": 0, "format": 0, "rowStrides": [ 0, 0, 0 ] },
+          { "requestGroup": 4, "name": "data/1/image_4.raw", "size": 0, "width": 0, "height": 0, "format": 0, "rowStrides": [ 0, 0, 0 ] },
+          { "requestGroup": 5, "name": "data/1/image_5.raw", "size": 0, "width": 0, "height": 0, "format": 0, "rowStrides": [ 0, 0, 0 ] },
+          { "requestGroup": 0, "name": "data/1/metadata_01.tuning", "size": 24416064 },
+          { "requestGroup": 1, "name": "data/1/metadata_02.tuning", "size": 24416064 },
+          { "requestGroup": 2, "name": "data/1/metadata_03.tuning", "size": 24416064 },
+          { "requestGroup": 3, "name": "data/1/metadata_04.tuning", "size": 24416064 },
+          { "requestGroup": 4, "name": "data/1/metadata_05.tuning", "size": 24416064 },
+          { "requestGroup": 5, "name": "data/1/metadata_06.tuning", "size": 24416064 }
+        ],
+        "outputFiles": [
+          { "name": "result/result_01.yuv" },
+          { "name": "result/result_metadata_01.tuning", "size": 0 }
+        ],
+        "cameraStreamConfiguration": {
+            "inputStreams": [ 1 ],
+            "outputStreams": [ 2 ],
+            "metadata": { }
+        },
+        "cameraRequestConfiguration": [
+            {
+                "requestNumber": 1,
+                "metadata": {
+                    "com.mediatek.control.capture.hintForIspTuning": { "type": 1, "value": 2 },
+                    "com.mediatek.control.capture.hintForIspFrameCount": { "type": 1, "value": 6 },
+                    "com.mediatek.control.capture.hintForIspFrameIndex": { "type": 1, "value": 0 },
+                    "com.mediatek.control.capture.packedRaw.enable": { "type": 1, "value": 1 }
+                },
+                "inputBuffers": [ 1 ],
+                "outputBuffers": [ 2 ]
+            },
+            {
+                "requestNumber": 2,
+                "metadata": {
+                    "com.mediatek.control.capture.hintForIspTuning": { "type": 1, "value": 2 },
+                    "com.mediatek.control.capture.hintForIspFrameCount": { "type": 1, "value": 6 },
+                    "com.mediatek.control.capture.hintForIspFrameIndex": { "type": 1, "value": 1 },
+                    "com.mediatek.control.capture.packedRaw.enable": { "type": 1, "value": 1 }
+                },
+                "inputBuffers": [ 1 ],
+                "outputBuffers": [ 2 ]
+            },
+            {
+                "requestNumber": 3,
+                "metadata": {
+                    "com.mediatek.control.capture.hintForIspTuning": { "type": 1, "value": 2 },
+                    "com.mediatek.control.capture.hintForIspFrameCount": { "type": 1, "value": 6 },
+                    "com.mediatek.control.capture.hintForIspFrameIndex": { "type": 1, "value": 2 },
+                    "com.mediatek.control.capture.packedRaw.enable": { "type": 1, "value": 1 }
+                },
+                "inputBuffers": [ 1 ],
+                "outputBuffers": [ 2 ]
+            },
+            {
+                "requestNumber": 4,
+                "metadata": {
+                    "com.mediatek.control.capture.hintForIspTuning": { "type": 1, "value": 2 },
+                    "com.mediatek.control.capture.hintForIspFrameCount": { "type": 1, "value": 6 },
+                    "com.mediatek.control.capture.hintForIspFrameIndex": { "type": 1, "value": 3 },
+                    "com.mediatek.control.capture.packedRaw.enable": { "type": 1, "value": 1 }
+                },
+                "inputBuffers": [ 1 ],
+                "outputBuffers": [ 2 ]
+            },
+            {
+                "requestNumber": 5,
+                "metadata": {
+                    "com.mediatek.control.capture.hintForIspTuning": { "type": 1, "value": 2 },
+                    "com.mediatek.control.capture.hintForIspFrameCount": { "type": 1, "value": 6 },
+                    "com.mediatek.control.capture.hintForIspFrameIndex": { "type": 1, "value": 4 },
+                    "com.mediatek.control.capture.packedRaw.enable": { "type": 1, "value": 1 }
+                },
+                "inputBuffers": [ 1 ],
+                "outputBuffers": [ 2 ]
+            },
+            {
+                "requestNumber": 6,
+                "metadata": {
+                    "com.mediatek.control.capture.hintForIspTuning": { "type": 1, "value": 2 },
+                    "com.mediatek.control.capture.hintForIspFrameCount": { "type": 1, "value": 6 },
+                    "com.mediatek.control.capture.hintForIspFrameIndex": { "type": 1, "value": 5 },
+                    "com.mediatek.control.capture.packedRaw.enable": { "type": 1, "value": 1 }
+                },
+                "inputBuffers": [ 1 ],
+                "outputBuffers": [ 2 ]
+            }
+        ],
+        "ispStreamConfiguration": {
+            "inputStreams": [ 1 ],
+            "outputStreams": [ 2 ],
+            "metadata": { }
+        },
+        "ispRequestConfiguration": [
+            {
+                "requestNumber": 1,
+                "metadata": {
+                    "com.mediatek.control.capture.hintForIspTuning": { "type": 1, "value": 2 }
+                },
+                "inputBuffers": [ 1 ],
+                "outputBuffers": [ 2 ]
+            }
+        ]
+      },
+      "singleRequestAINR2RAW": {
+        "cameraId": "",
+        "rootDirectory": "/sdcard/singleRequestAINR2RAW",
+        "totalRequests": 1,
+        "inputFiles": [
+          { "requestGroup": 0, "name": "data/1/image_0.raw", "size": 0, "width": 0, "height": 0, "format": 0, "rowStrides": [ 0, 0, 0 ] },
+          { "requestGroup": 1, "name": "data/1/image_1.raw", "size": 0, "width": 0, "height": 0, "format": 0, "rowStrides": [ 0, 0, 0 ] },
+          { "requestGroup": 2, "name": "data/1/image_2.raw", "size": 0, "width": 0, "height": 0, "format": 0, "rowStrides": [ 0, 0, 0 ] },
+          { "requestGroup": 3, "name": "data/1/image_3.raw", "size": 0, "width": 0, "height": 0, "format": 0, "rowStrides": [ 0, 0, 0 ] },
+          { "requestGroup": 4, "name": "data/1/image_4.raw", "size": 0, "width": 0, "height": 0, "format": 0, "rowStrides": [ 0, 0, 0 ] },
+          { "requestGroup": 5, "name": "data/1/image_5.raw", "size": 0, "width": 0, "height": 0, "format": 0, "rowStrides": [ 0, 0, 0 ] },
+          { "requestGroup": 0, "name": "data/1/metadata_01.tuning", "size": 24416064 },
+          { "requestGroup": 1, "name": "data/1/metadata_02.tuning", "size": 24416064 },
+          { "requestGroup": 2, "name": "data/1/metadata_03.tuning", "size": 24416064 },
+          { "requestGroup": 3, "name": "data/1/metadata_04.tuning", "size": 24416064 },
+          { "requestGroup": 4, "name": "data/1/metadata_05.tuning", "size": 24416064 },
+          { "requestGroup": 5, "name": "data/1/metadata_06.tuning", "size": 24416064 }
+        ],
+        "outputFiles": [
+          { "name": "result/result_01.raw" },
+          { "name": "result/result_metadata_01.tuning", "size": 0 }
+        ],
+        "cameraStreamConfiguration": {
+            "inputStreams": [ 1 ],
+            "outputStreams": [ 2 ],
+            "metadata": { }
+        },
+        "cameraRequestConfiguration": [
+            {
+                "requestNumber": 1,
+                "metadata": {
+                    "com.mediatek.control.capture.hintForIspTuning": { "type": 1, "value": 2 },
+                    "com.mediatek.control.capture.hintForIspFrameCount": { "type": 1, "value": 6 },
+                    "com.mediatek.control.capture.hintForIspFrameIndex": { "type": 1, "value": 0 },
+                    "com.mediatek.control.capture.packedRaw.enable": { "type": 1, "value": 1 }
+                },
+                "inputBuffers": [ 1 ],
+                "outputBuffers": [ 2 ]
+            },
+            {
+                "requestNumber": 2,
+                "metadata": {
+                    "com.mediatek.control.capture.hintForIspTuning": { "type": 1, "value": 2 },
+                    "com.mediatek.control.capture.hintForIspFrameCount": { "type": 1, "value": 6 },
+                    "com.mediatek.control.capture.hintForIspFrameIndex": { "type": 1, "value": 1 },
+                    "com.mediatek.control.capture.packedRaw.enable": { "type": 1, "value": 1 }
+                },
+                "inputBuffers": [ 1 ],
+                "outputBuffers": [ 2 ]
+            },
+            {
+                "requestNumber": 3,
+                "metadata": {
+                    "com.mediatek.control.capture.hintForIspTuning": { "type": 1, "value": 2 },
+                    "com.mediatek.control.capture.hintForIspFrameCount": { "type": 1, "value": 6 },
+                    "com.mediatek.control.capture.hintForIspFrameIndex": { "type": 1, "value": 2 },
+                    "com.mediatek.control.capture.packedRaw.enable": { "type": 1, "value": 1 }
+                },
+                "inputBuffers": [ 1 ],
+                "outputBuffers": [ 2 ]
+            },
+            {
+                "requestNumber": 4,
+                "metadata": {
+                    "com.mediatek.control.capture.hintForIspTuning": { "type": 1, "value": 2 },
+                    "com.mediatek.control.capture.hintForIspFrameCount": { "type": 1, "value": 6 },
+                    "com.mediatek.control.capture.hintForIspFrameIndex": { "type": 1, "value": 3 },
+                    "com.mediatek.control.capture.packedRaw.enable": { "type": 1, "value": 1 }
+                },
+                "inputBuffers": [ 1 ],
+                "outputBuffers": [ 2 ]
+            },
+            {
+                "requestNumber": 5,
+                "metadata": {
+                    "com.mediatek.control.capture.hintForIspTuning": { "type": 1, "value": 2 },
+                    "com.mediatek.control.capture.hintForIspFrameCount": { "type": 1, "value": 6 },
+                    "com.mediatek.control.capture.hintForIspFrameIndex": { "type": 1, "value": 4 },
+                    "com.mediatek.control.capture.packedRaw.enable": { "type": 1, "value": 1 }
+                },
+                "inputBuffers": [ 1 ],
+                "outputBuffers": [ 2 ]
+            },
+            {
+                "requestNumber": 6,
+                "metadata": {
+                    "com.mediatek.control.capture.hintForIspTuning": { "type": 1, "value": 2 },
+                    "com.mediatek.control.capture.hintForIspFrameCount": { "type": 1, "value": 6 },
+                    "com.mediatek.control.capture.hintForIspFrameIndex": { "type": 1, "value": 5 },
+                    "com.mediatek.control.capture.packedRaw.enable": { "type": 1, "value": 1 }
+                },
+                "inputBuffers": [ 1 ],
+                "outputBuffers": [ 2 ]
+            }
+        ],
+        "ispStreamConfiguration": {
+            "inputStreams": [ 1 ],
+            "outputStreams": [ 2 ],
+            "metadata": { }
+        },
+        "ispRequestConfiguration": [
+            {
+                "requestNumber": 1,
+                "metadata": {
+                    "com.mediatek.control.capture.hintForIspTuning": { "type": 1, "value": 2 }
+                },
+                "inputBuffers": [ 1 ],
+                "outputBuffers": [ 2 ]
+            }
+        ]
+      },
+      "singleRequestAINR2JPEG": {
+        "cameraId": "",
+        "rootDirectory": "/sdcard/singleRequestAINR2JPEG",
+        "totalRequests": 1,
+        "inputFiles": [
+          { "requestGroup": 0, "name": "data/1/image_0.raw", "size": 0, "width": 0, "height": 0, "format": 0, "rowStrides": [ 0, 0, 0 ] },
+          { "requestGroup": 1, "name": "data/1/image_1.raw", "size": 0, "width": 0, "height": 0, "format": 0, "rowStrides": [ 0, 0, 0 ] },
+          { "requestGroup": 2, "name": "data/1/image_2.raw", "size": 0, "width": 0, "height": 0, "format": 0, "rowStrides": [ 0, 0, 0 ] },
+          { "requestGroup": 3, "name": "data/1/image_3.raw", "size": 0, "width": 0, "height": 0, "format": 0, "rowStrides": [ 0, 0, 0 ] },
+          { "requestGroup": 4, "name": "data/1/image_4.raw", "size": 0, "width": 0, "height": 0, "format": 0, "rowStrides": [ 0, 0, 0 ] },
+          { "requestGroup": 5, "name": "data/1/image_5.raw", "size": 0, "width": 0, "height": 0, "format": 0, "rowStrides": [ 0, 0, 0 ] },
+          { "requestGroup": 0, "name": "data/1/metadata_01.tuning", "size": 24416064 },
+          { "requestGroup": 1, "name": "data/1/metadata_02.tuning", "size": 24416064 },
+          { "requestGroup": 2, "name": "data/1/metadata_03.tuning", "size": 24416064 },
+          { "requestGroup": 3, "name": "data/1/metadata_04.tuning", "size": 24416064 },
+          { "requestGroup": 4, "name": "data/1/metadata_05.tuning", "size": 24416064 },
+          { "requestGroup": 5, "name": "data/1/metadata_06.tuning", "size": 24416064 }
+        ],
+        "outputFiles": [
+          { "name": "result/result_01.jpg" },
+          { "name": "result/result_metadata_01.tuning", "size": 0 }
+        ],
+        "cameraStreamConfiguration": {
+            "inputStreams": [ 1 ],
+            "outputStreams": [ 2 ],
+            "metadata": { }
+        },
+        "cameraRequestConfiguration": [
+            {
+                "requestNumber": 1,
+                "metadata": {
+                    "com.mediatek.control.capture.hintForIspTuning": { "type": 1, "value": 2 },
+                    "com.mediatek.control.capture.hintForIspFrameCount": { "type": 1, "value": 6 },
+                    "com.mediatek.control.capture.hintForIspFrameIndex": { "type": 1, "value": 0 },
+                    "com.mediatek.control.capture.packedRaw.enable": { "type": 1, "value": 1 }
+                },
+                "inputBuffers": [ 1 ],
+                "outputBuffers": [ 2 ]
+            },
+            {
+                "requestNumber": 2,
+                "metadata": {
+                    "com.mediatek.control.capture.hintForIspTuning": { "type": 1, "value": 2 },
+                    "com.mediatek.control.capture.hintForIspFrameCount": { "type": 1, "value": 6 },
+                    "com.mediatek.control.capture.hintForIspFrameIndex": { "type": 1, "value": 1 },
+                    "com.mediatek.control.capture.packedRaw.enable": { "type": 1, "value": 1 }
+                },
+                "inputBuffers": [ 1 ],
+                "outputBuffers": [ 2 ]
+            },
+            {
+                "requestNumber": 3,
+                "metadata": {
+                    "com.mediatek.control.capture.hintForIspTuning": { "type": 1, "value": 2 },
+                    "com.mediatek.control.capture.hintForIspFrameCount": { "type": 1, "value": 6 },
+                    "com.mediatek.control.capture.hintForIspFrameIndex": { "type": 1, "value": 2 },
+                    "com.mediatek.control.capture.packedRaw.enable": { "type": 1, "value": 1 }
+                },
+                "inputBuffers": [ 1 ],
+                "outputBuffers": [ 2 ]
+            },
+            {
+                "requestNumber": 4,
+                "metadata": {
+                    "com.mediatek.control.capture.hintForIspTuning": { "type": 1, "value": 2 },
+                    "com.mediatek.control.capture.hintForIspFrameCount": { "type": 1, "value": 6 },
+                    "com.mediatek.control.capture.hintForIspFrameIndex": { "type": 1, "value": 3 },
+                    "com.mediatek.control.capture.packedRaw.enable": { "type": 1, "value": 1 }
+                },
+                "inputBuffers": [ 1 ],
+                "outputBuffers": [ 2 ]
+            },
+            {
+                "requestNumber": 5,
+                "metadata": {
+                    "com.mediatek.control.capture.hintForIspTuning": { "type": 1, "value": 2 },
+                    "com.mediatek.control.capture.hintForIspFrameCount": { "type": 1, "value": 6 },
+                    "com.mediatek.control.capture.hintForIspFrameIndex": { "type": 1, "value": 4 },
+                    "com.mediatek.control.capture.packedRaw.enable": { "type": 1, "value": 1 }
+                },
+                "inputBuffers": [ 1 ],
+                "outputBuffers": [ 2 ]
+            },
+            {
+                "requestNumber": 6,
+                "metadata": {
+                    "com.mediatek.control.capture.hintForIspTuning": { "type": 1, "value": 2 },
+                    "com.mediatek.control.capture.hintForIspFrameCount": { "type": 1, "value": 6 },
+                    "com.mediatek.control.capture.hintForIspFrameIndex": { "type": 1, "value": 5 },
+                    "com.mediatek.control.capture.packedRaw.enable": { "type": 1, "value": 1 }
+                },
+                "inputBuffers": [ 1 ],
+                "outputBuffers": [ 2 ]
+            }
+        ],
+        "ispStreamConfiguration": {
+            "inputStreams": [ 1 ],
+            "outputStreams": [ 2 ],
+            "metadata": { }
+        },
+        "ispRequestConfiguration": [
+            {
+                "requestNumber": 1,
+                "metadata": {
+                    "com.mediatek.control.capture.hintForIspTuning": { "type": 1, "value": 2 }
+                },
+                "inputBuffers": [ 1 ],
+                "outputBuffers": [ 2 ]
+            }
+        ]
+      },
+      "singleRequestMFNR": {
+        "cameraId": "",
+        "rootDirectory": "/sdcard/singleRequestMFNR",
+        "totalRequests": 1,
+        "inputFiles": [
+          { "requestGroup": 0, "name": "data/1/image_0.raw", "size": 0, "width": 0, "height": 0, "format": 0, "rowStrides": [ 0, 0, 0 ] },
+          { "requestGroup": 1, "name": "data/1/image_1.raw", "size": 0, "width": 0, "height": 0, "format": 0, "rowStrides": [ 0, 0, 0 ] },
+          { "requestGroup": 2, "name": "data/1/image_2.raw", "size": 0, "width": 0, "height": 0, "format": 0, "rowStrides": [ 0, 0, 0 ] },
+          { "requestGroup": 3, "name": "data/1/image_3.raw", "size": 0, "width": 0, "height": 0, "format": 0, "rowStrides": [ 0, 0, 0 ] },
+          { "requestGroup": 4, "name": "data/1/image_4.raw", "size": 0, "width": 0, "height": 0, "format": 0, "rowStrides": [ 0, 0, 0 ] },
+          { "requestGroup": 5, "name": "data/1/image_5.raw", "size": 0, "width": 0, "height": 0, "format": 0, "rowStrides": [ 0, 0, 0 ] },
+          { "requestGroup": 0, "name": "data/1/metadata_01.tuning", "size": 24416064 },
+          { "requestGroup": 1, "name": "data/1/metadata_02.tuning", "size": 24416064 },
+          { "requestGroup": 2, "name": "data/1/metadata_03.tuning", "size": 24416064 },
+          { "requestGroup": 3, "name": "data/1/metadata_04.tuning", "size": 24416064 },
+          { "requestGroup": 4, "name": "data/1/metadata_05.tuning", "size": 24416064 },
+          { "requestGroup": 5, "name": "data/1/metadata_06.tuning", "size": 24416064 }
+        ],
+        "outputFiles": [
+          { "name": "result/result_01.yuv" },
+          { "name": "result/result_metadata_01.tuning", "size": 0 }
+        ],
+        "cameraStreamConfiguration": {
+            "inputStreams": [ 1 ],
+            "outputStreams": [ 2 ],
+            "metadata": { }
+        },
+        "cameraRequestConfiguration": [
+            {
+                "requestNumber": 1,
+                "metadata": {
+                    "com.mediatek.control.capture.hintForIspTuning": { "type": 1, "value": 1 },
+                    "com.mediatek.control.capture.hintForIspFrameCount": { "type": 1, "value": 6 },
+                    "com.mediatek.control.capture.hintForIspFrameIndex": { "type": 1, "value": 0 },
+                    "com.mediatek.control.capture.packedRaw.enable": { "type": 1, "value": 1 }
+                },
+                "inputBuffers": [ 1 ],
+                "outputBuffers": [ 2 ]
+            },
+            {
+                "requestNumber": 2,
+                "metadata": {
+                    "com.mediatek.control.capture.hintForIspTuning": { "type": 1, "value": 1 },
+                    "com.mediatek.control.capture.hintForIspFrameCount": { "type": 1, "value": 6 },
+                    "com.mediatek.control.capture.hintForIspFrameIndex": { "type": 1, "value": 1 },
+                    "com.mediatek.control.capture.packedRaw.enable": { "type": 1, "value": 1 }
+                },
+                "inputBuffers": [ 1 ],
+                "outputBuffers": [ 2 ]
+            },
+            {
+                "requestNumber": 3,
+                "metadata": {
+                    "com.mediatek.control.capture.hintForIspTuning": { "type": 1, "value": 1 },
+                    "com.mediatek.control.capture.hintForIspFrameCount": { "type": 1, "value": 6 },
+                    "com.mediatek.control.capture.hintForIspFrameIndex": { "type": 1, "value": 2 },
+                    "com.mediatek.control.capture.packedRaw.enable": { "type": 1, "value": 1 }
+                },
+                "inputBuffers": [ 1 ],
+                "outputBuffers": [ 2 ]
+            },
+            {
+                "requestNumber": 4,
+                "metadata": {
+                    "com.mediatek.control.capture.hintForIspTuning": { "type": 1, "value": 1 },
+                    "com.mediatek.control.capture.hintForIspFrameCount": { "type": 1, "value": 6 },
+                    "com.mediatek.control.capture.hintForIspFrameIndex": { "type": 1, "value": 3 },
+                    "com.mediatek.control.capture.packedRaw.enable": { "type": 1, "value": 1 }
+                },
+                "inputBuffers": [ 1 ],
+                "outputBuffers": [ 2 ]
+            },
+            {
+                "requestNumber": 5,
+                "metadata": {
+                    "com.mediatek.control.capture.hintForIspTuning": { "type": 1, "value": 1 },
+                    "com.mediatek.control.capture.hintForIspFrameCount": { "type": 1, "value": 6 },
+                    "com.mediatek.control.capture.hintForIspFrameIndex": { "type": 1, "value": 4 },
+                    "com.mediatek.control.capture.packedRaw.enable": { "type": 1, "value": 1 }
+                },
+                "inputBuffers": [ 1 ],
+                "outputBuffers": [ 2 ]
+            },
+            {
+                "requestNumber": 6,
+                "metadata": {
+                    "com.mediatek.control.capture.hintForIspTuning": { "type": 1, "value": 1 },
+                    "com.mediatek.control.capture.hintForIspFrameCount": { "type": 1, "value": 6 },
+                    "com.mediatek.control.capture.hintForIspFrameIndex": { "type": 1, "value": 5 },
+                    "com.mediatek.control.capture.packedRaw.enable": { "type": 1, "value": 1 }
+                },
+                "inputBuffers": [ 1 ],
+                "outputBuffers": [ 2 ]
+            }
+        ],
+        "ispStreamConfiguration": {
+            "inputStreams": [ 1 ],
+            "outputStreams": [ 2 ],
+            "metadata": { }
+        },
+        "ispRequestConfiguration": [
+            {
+                "requestNumber": 1,
+                "metadata": {
+                    "com.mediatek.control.capture.hintForIspTuning": { "type": 1, "value": 1 }
+                },
+                "inputBuffers": [ 1 ],
+                "outputBuffers": [ 2 ]
+            }
+        ]
+      },
+      "singleRequestMFNRnoDrop": {
+        "cameraId": "",
+        "rootDirectory": "/sdcard/singleRequestMFNRnoDrop",
+        "totalRequests": 1,
+        "inputFiles": [
+          { "requestGroup": 0, "name": "data/1/image_0.raw", "size": 0, "width": 0, "height": 0, "format": 0, "rowStrides": [ 0, 0, 0 ] },
+          { "requestGroup": 1, "name": "data/1/image_1.raw", "size": 0, "width": 0, "height": 0, "format": 0, "rowStrides": [ 0, 0, 0 ] },
+          { "requestGroup": 2, "name": "data/1/image_2.raw", "size": 0, "width": 0, "height": 0, "format": 0, "rowStrides": [ 0, 0, 0 ] },
+          { "requestGroup": 3, "name": "data/1/image_3.raw", "size": 0, "width": 0, "height": 0, "format": 0, "rowStrides": [ 0, 0, 0 ] },
+          { "requestGroup": 4, "name": "data/1/image_4.raw", "size": 0, "width": 0, "height": 0, "format": 0, "rowStrides": [ 0, 0, 0 ] },
+          { "requestGroup": 5, "name": "data/1/image_5.raw", "size": 0, "width": 0, "height": 0, "format": 0, "rowStrides": [ 0, 0, 0 ] },
+          { "requestGroup": 0, "name": "data/1/metadata_01.tuning", "size": 24416064 },
+          { "requestGroup": 1, "name": "data/1/metadata_02.tuning", "size": 24416064 },
+          { "requestGroup": 2, "name": "data/1/metadata_03.tuning", "size": 24416064 },
+          { "requestGroup": 3, "name": "data/1/metadata_04.tuning", "size": 24416064 },
+          { "requestGroup": 4, "name": "data/1/metadata_05.tuning", "size": 24416064 },
+          { "requestGroup": 5, "name": "data/1/metadata_06.tuning", "size": 24416064 }
+        ],
+        "outputFiles": [
+          { "name": "result/result_01.yuv" },
+          { "name": "result/result_metadata_01.tuning", "size": 0 }
+        ],
+        "cameraStreamConfiguration": {
+            "inputStreams": [ 1 ],
+            "outputStreams": [ 2 ],
+            "metadata": { }
+        },
+        "cameraRequestConfiguration": [
+            {
+                "requestNumber": 1,
+                "metadata": {
+                    "com.mediatek.control.capture.hintForIspTuning": { "type": 1, "value": 1 },
+                    "com.mediatek.control.capture.hintForIspFrameCount": { "type": 1, "value": 6 },
+                    "com.mediatek.control.capture.hintForIspFrameIndex": { "type": 1, "value": 0 },
+                    "com.mediatek.control.capture.packedRaw.enable": { "type": 1, "value": 1 }
+                },
+                "inputBuffers": [ 1 ],
+                "outputBuffers": [ 2 ]
+            },
+            {
+                "requestNumber": 2,
+                "metadata": {
+                    "com.mediatek.control.capture.hintForIspTuning": { "type": 1, "value": 1 },
+                    "com.mediatek.control.capture.hintForIspFrameCount": { "type": 1, "value": 6 },
+                    "com.mediatek.control.capture.hintForIspFrameIndex": { "type": 1, "value": 1 },
+                    "com.mediatek.control.capture.packedRaw.enable": { "type": 1, "value": 1 }
+                },
+                "inputBuffers": [ 1 ],
+                "outputBuffers": [ 2 ]
+            },
+            {
+                "requestNumber": 3,
+                "metadata": {
+                    "com.mediatek.control.capture.hintForIspTuning": { "type": 1, "value": 1 },
+                    "com.mediatek.control.capture.hintForIspFrameCount": { "type": 1, "value": 6 },
+                    "com.mediatek.control.capture.hintForIspFrameIndex": { "type": 1, "value": 2 },
+                    "com.mediatek.control.capture.packedRaw.enable": { "type": 1, "value": 1 }
+                },
+                "inputBuffers": [ 1 ],
+                "outputBuffers": [ 2 ]
+            },
+            {
+                "requestNumber": 4,
+                "metadata": {
+                    "com.mediatek.control.capture.hintForIspTuning": { "type": 1, "value": 1 },
+                    "com.mediatek.control.capture.hintForIspFrameCount": { "type": 1, "value": 6 },
+                    "com.mediatek.control.capture.hintForIspFrameIndex": { "type": 1, "value": 3 },
+                    "com.mediatek.control.capture.packedRaw.enable": { "type": 1, "value": 1 }
+                },
+                "inputBuffers": [ 1 ],
+                "outputBuffers": [ 2 ]
+            },
+            {
+                "requestNumber": 5,
+                "metadata": {
+                    "com.mediatek.control.capture.hintForIspTuning": { "type": 1, "value": 1 },
+                    "com.mediatek.control.capture.hintForIspFrameCount": { "type": 1, "value": 6 },
+                    "com.mediatek.control.capture.hintForIspFrameIndex": { "type": 1, "value": 4 },
+                    "com.mediatek.control.capture.packedRaw.enable": { "type": 1, "value": 1 }
+                },
+                "inputBuffers": [ 1 ],
+                "outputBuffers": [ 2 ]
+            },
+            {
+                "requestNumber": 6,
+                "metadata": {
+                    "com.mediatek.control.capture.hintForIspTuning": { "type": 1, "value": 1 },
+                    "com.mediatek.control.capture.hintForIspFrameCount": { "type": 1, "value": 6 },
+                    "com.mediatek.control.capture.hintForIspFrameIndex": { "type": 1, "value": 5 },
+                    "com.mediatek.control.capture.packedRaw.enable": { "type": 1, "value": 1 }
+                },
+                "inputBuffers": [ 1 ],
+                "outputBuffers": [ 2 ]
+            }
+        ],
+        "ispStreamConfiguration": {
+            "inputStreams": [ 1 ],
+            "outputStreams": [ 2 ],
+            "metadata": { }
+        },
+        "ispRequestConfiguration": [
+            {
+                "requestNumber": 1,
+                "metadata": {
+                    "com.mediatek.control.capture.hintForIspTuning": { "type": 1, "value": 1 }
+                },
+                "inputBuffers": [ 1 ],
+                "outputBuffers": [ 2 ]
+            }
+        ]
+      },
+      "singleRequestMFNRDropN": {
+        "cameraId": "",
+        "rootDirectory": "/sdcard/singleRequestMFNRDropN",
+        "totalRequests": 1,
+        "inputFiles": [
+          { "requestGroup": 0, "name": "data/1/image_0.raw", "size": 0, "width": 0, "height": 0, "format": 0, "rowStrides": [ 0, 0, 0 ] },
+          { "requestGroup": 1, "name": "data/1/image_1.raw", "size": 0, "width": 0, "height": 0, "format": 0, "rowStrides": [ 0, 0, 0 ] },
+          { "requestGroup": 2, "name": "data/1/image_2.raw", "size": 0, "width": 0, "height": 0, "format": 0, "rowStrides": [ 0, 0, 0 ] },
+          { "requestGroup": 3, "name": "data/1/image_3.raw", "size": 0, "width": 0, "height": 0, "format": 0, "rowStrides": [ 0, 0, 0 ] },
+          { "requestGroup": 4, "name": "data/1/image_4.raw", "size": 0, "width": 0, "height": 0, "format": 0, "rowStrides": [ 0, 0, 0 ] },
+          { "requestGroup": 5, "name": "data/1/image_5.raw", "size": 0, "width": 0, "height": 0, "format": 0, "rowStrides": [ 0, 0, 0 ] },
+          { "requestGroup": 0, "name": "data/1/metadata_01.tuning", "size": 24416064 },
+          { "requestGroup": 1, "name": "data/1/metadata_02.tuning", "size": 24416064 },
+          { "requestGroup": 2, "name": "data/1/metadata_03.tuning", "size": 24416064 },
+          { "requestGroup": 3, "name": "data/1/metadata_04.tuning", "size": 24416064 },
+          { "requestGroup": 4, "name": "data/1/metadata_05.tuning", "size": 24416064 },
+          { "requestGroup": 5, "name": "data/1/metadata_06.tuning", "size": 24416064 }
+        ],
+        "outputFiles": [
+          { "name": "result/result_01.yuv" },
+          { "name": "result/result_metadata_01.tuning", "size": 0 }
+        ],
+        "cameraStreamConfiguration": {
+            "inputStreams": [ 1 ],
+            "outputStreams": [ 2 ],
+            "metadata": { }
+        },
+        "cameraRequestConfiguration": [
+            {
+                "requestNumber": 1,
+                "metadata": {
+                    "com.mediatek.control.capture.hintForIspTuning": { "type": 1, "value": 1 },
+                    "com.mediatek.control.capture.hintForIspFrameCount": { "type": 1, "value": 6 },
+                    "com.mediatek.control.capture.hintForIspFrameIndex": { "type": 1, "value": 0 },
+                    "com.mediatek.control.capture.packedRaw.enable": { "type": 1, "value": 1 }
+                },
+                "inputBuffers": [ 1 ],
+                "outputBuffers": [ 2 ]
+            },
+            {
+                "requestNumber": 2,
+                "metadata": {
+                    "com.mediatek.control.capture.hintForIspTuning": { "type": 1, "value": 1 },
+                    "com.mediatek.control.capture.hintForIspFrameCount": { "type": 1, "value": 6 },
+                    "com.mediatek.control.capture.hintForIspFrameIndex": { "type": 1, "value": 1 },
+                    "com.mediatek.control.capture.packedRaw.enable": { "type": 1, "value": 1 }
+                },
+                "inputBuffers": [ 1 ],
+                "outputBuffers": [ 2 ]
+            },
+            {
+                "requestNumber": 3,
+                "metadata": {
+                    "com.mediatek.control.capture.hintForIspTuning": { "type": 1, "value": 1 },
+                    "com.mediatek.control.capture.hintForIspFrameCount": { "type": 1, "value": 6 },
+                    "com.mediatek.control.capture.hintForIspFrameIndex": { "type": 1, "value": 2 },
+                    "com.mediatek.control.capture.packedRaw.enable": { "type": 1, "value": 1 }
+                },
+                "inputBuffers": [ 1 ],
+                "outputBuffers": [ 2 ]
+            },
+            {
+                "requestNumber": 4,
+                "metadata": {
+                    "com.mediatek.control.capture.hintForIspTuning": { "type": 1, "value": 1 },
+                    "com.mediatek.control.capture.hintForIspFrameCount": { "type": 1, "value": 6 },
+                    "com.mediatek.control.capture.hintForIspFrameIndex": { "type": 1, "value": 3 },
+                    "com.mediatek.control.capture.packedRaw.enable": { "type": 1, "value": 1 }
+                },
+                "inputBuffers": [ 1 ],
+                "outputBuffers": [ 2 ]
+            },
+            {
+                "requestNumber": 5,
+                "metadata": {
+                    "com.mediatek.control.capture.hintForIspTuning": { "type": 1, "value": 1 },
+                    "com.mediatek.control.capture.hintForIspFrameCount": { "type": 1, "value": 6 },
+                    "com.mediatek.control.capture.hintForIspFrameIndex": { "type": 1, "value": 4 },
+                    "com.mediatek.control.capture.packedRaw.enable": { "type": 1, "value": 1 }
+                },
+                "inputBuffers": [ 1 ],
+                "outputBuffers": [ 2 ]
+            },
+            {
+                "requestNumber": 6,
+                "metadata": {
+                    "com.mediatek.control.capture.hintForIspTuning": { "type": 1, "value": 1 },
+                    "com.mediatek.control.capture.hintForIspFrameCount": { "type": 1, "value": 6 },
+                    "com.mediatek.control.capture.hintForIspFrameIndex": { "type": 1, "value": 5 },
+                    "com.mediatek.control.capture.packedRaw.enable": { "type": 1, "value": 1 }
+                },
+                "inputBuffers": [ 1 ],
+                "outputBuffers": [ 2 ]
+            }
+        ],
+        "ispStreamConfiguration": {
+            "inputStreams": [ 1 ],
+            "outputStreams": [ 2 ],
+            "metadata": { }
+        },
+        "ispRequestConfiguration": [
+            {
+                "requestNumber": 1,
+                "metadata": {
+                    "com.mediatek.control.capture.hintForIspTuning": { "type": 1, "value": 1 }
+                },
+                "inputBuffers": [ 1 ],
+                "outputBuffers": [ 2 ]
+            }
+        ]
+      },
+      "singleRequestMFNRDropTo1": {
+        "cameraId": "",
+        "rootDirectory": "/sdcard/singleRequestMFNRDropTo1",
+        "totalRequests": 1,
+        "inputFiles": [
+          { "requestGroup": 0, "name": "data/1/image_0.raw", "size": 0, "width": 0, "height": 0, "format": 0, "rowStrides": [ 0, 0, 0 ] },
+          { "requestGroup": 1, "name": "data/1/image_1.raw", "size": 0, "width": 0, "height": 0, "format": 0, "rowStrides": [ 0, 0, 0 ] },
+          { "requestGroup": 2, "name": "data/1/image_2.raw", "size": 0, "width": 0, "height": 0, "format": 0, "rowStrides": [ 0, 0, 0 ] },
+          { "requestGroup": 3, "name": "data/1/image_3.raw", "size": 0, "width": 0, "height": 0, "format": 0, "rowStrides": [ 0, 0, 0 ] },
+          { "requestGroup": 4, "name": "data/1/image_4.raw", "size": 0, "width": 0, "height": 0, "format": 0, "rowStrides": [ 0, 0, 0 ] },
+          { "requestGroup": 5, "name": "data/1/image_5.raw", "size": 0, "width": 0, "height": 0, "format": 0, "rowStrides": [ 0, 0, 0 ] },
+          { "requestGroup": 0, "name": "data/1/metadata_01.tuning", "size": 24416064 },
+          { "requestGroup": 1, "name": "data/1/metadata_02.tuning", "size": 24416064 },
+          { "requestGroup": 2, "name": "data/1/metadata_03.tuning", "size": 24416064 },
+          { "requestGroup": 3, "name": "data/1/metadata_04.tuning", "size": 24416064 },
+          { "requestGroup": 4, "name": "data/1/metadata_05.tuning", "size": 24416064 },
+          { "requestGroup": 5, "name": "data/1/metadata_06.tuning", "size": 24416064 }
+        ],
+        "outputFiles": [
+          { "name": "result/result_01.yuv" },
+          { "name": "result/result_metadata_01.tuning", "size": 0 }
+        ],
+        "cameraStreamConfiguration": {
+            "inputStreams": [ 1 ],
+            "outputStreams": [ 2 ],
+            "metadata": { }
+        },
+        "cameraRequestConfiguration": [
+            {
+                "requestNumber": 1,
+                "metadata": {
+                    "com.mediatek.control.capture.hintForIspTuning": { "type": 1, "value": 1 },
+                    "com.mediatek.control.capture.hintForIspFrameCount": { "type": 1, "value": 6 },
+                    "com.mediatek.control.capture.hintForIspFrameIndex": { "type": 1, "value": 0 },
+                    "com.mediatek.control.capture.packedRaw.enable": { "type": 1, "value": 1 }
+                },
+                "inputBuffers": [ 1 ],
+                "outputBuffers": [ 2 ]
+            },
+            {
+                "requestNumber": 2,
+                "metadata": {
+                    "com.mediatek.control.capture.hintForIspTuning": { "type": 1, "value": 1 },
+                    "com.mediatek.control.capture.hintForIspFrameCount": { "type": 1, "value": 6 },
+                    "com.mediatek.control.capture.hintForIspFrameIndex": { "type": 1, "value": 1 },
+                    "com.mediatek.control.capture.packedRaw.enable": { "type": 1, "value": 1 }
+                },
+                "inputBuffers": [ 1 ],
+                "outputBuffers": [ 2 ]
+            },
+            {
+                "requestNumber": 3,
+                "metadata": {
+                    "com.mediatek.control.capture.hintForIspTuning": { "type": 1, "value": 1 },
+                    "com.mediatek.control.capture.hintForIspFrameCount": { "type": 1, "value": 6 },
+                    "com.mediatek.control.capture.hintForIspFrameIndex": { "type": 1, "value": 2 },
+                    "com.mediatek.control.capture.packedRaw.enable": { "type": 1, "value": 1 }
+                },
+                "inputBuffers": [ 1 ],
+                "outputBuffers": [ 2 ]
+            },
+            {
+                "requestNumber": 4,
+                "metadata": {
+                    "com.mediatek.control.capture.hintForIspTuning": { "type": 1, "value": 1 },
+                    "com.mediatek.control.capture.hintForIspFrameCount": { "type": 1, "value": 6 },
+                    "com.mediatek.control.capture.hintForIspFrameIndex": { "type": 1, "value": 3 },
+                    "com.mediatek.control.capture.packedRaw.enable": { "type": 1, "value": 1 }
+                },
+                "inputBuffers": [ 1 ],
+                "outputBuffers": [ 2 ]
+            },
+            {
+                "requestNumber": 5,
+                "metadata": {
+                    "com.mediatek.control.capture.hintForIspTuning": { "type": 1, "value": 1 },
+                    "com.mediatek.control.capture.hintForIspFrameCount": { "type": 1, "value": 6 },
+                    "com.mediatek.control.capture.hintForIspFrameIndex": { "type": 1, "value": 4 },
+                    "com.mediatek.control.capture.packedRaw.enable": { "type": 1, "value": 1 }
+                },
+                "inputBuffers": [ 1 ],
+                "outputBuffers": [ 2 ]
+            },
+            {
+                "requestNumber": 6,
+                "metadata": {
+                    "com.mediatek.control.capture.hintForIspTuning": { "type": 1, "value": 1 },
+                    "com.mediatek.control.capture.hintForIspFrameCount": { "type": 1, "value": 6 },
+                    "com.mediatek.control.capture.hintForIspFrameIndex": { "type": 1, "value": 5 },
+                    "com.mediatek.control.capture.packedRaw.enable": { "type": 1, "value": 1 }
+                },
+                "inputBuffers": [ 1 ],
+                "outputBuffers": [ 2 ]
+            }
+        ],
+        "ispStreamConfiguration": {
+            "inputStreams": [ 1 ],
+            "outputStreams": [ 2 ],
+            "metadata": { }
+        },
+        "ispRequestConfiguration": [
+            {
+                "requestNumber": 1,
+                "metadata": {
+                    "com.mediatek.control.capture.hintForIspTuning": { "type": 1, "value": 1 }
+                },
+                "inputBuffers": [ 1 ],
+                "outputBuffers": [ 2 ]
+            }
+        ]
+      },
+      "multipleRequestMFNR": {
+        "cameraId": "",
+        "rootDirectory": "/sdcard/multipleRequestMFNR",
+        "totalRequests": 2,
+        "inputFiles": [
+          { "requestGroup": 0, "name": "data/1/image_01.raw", "size": 0, "width": 0, "height": 0, "format": 0, "rowStrides": [ 0, 0, 0 ] },
+          { "requestGroup": 1, "name": "data/1/image_02.raw", "size": 0, "width": 0, "height": 0, "format": 0, "rowStrides": [ 0, 0, 0 ] },
+          { "requestGroup": 2, "name": "data/1/image_03.raw", "size": 0, "width": 0, "height": 0, "format": 0, "rowStrides": [ 0, 0, 0 ] },
+          { "requestGroup": 3, "name": "data/1/image_04.raw", "size": 0, "width": 0, "height": 0, "format": 0, "rowStrides": [ 0, 0, 0 ] },
+          { "requestGroup": 0, "name": "data/1/metadata_01.tuning", "size": 0 },
+          { "requestGroup": 1, "name": "data/1/metadata_02.tuning", "size": 0 },
+          { "requestGroup": 2, "name": "data/1/metadata_03.tuning", "size": 0 },
+          { "requestGroup": 3, "name": "data/1/metadata_04.tuning", "size": 0 },
+          { "requestGroup": 0, "name": "data/2/image_01.raw", "size": 0, "width": 0, "height": 0, "format": 0, "rowStrides": [ 0, 0, 0 ] },
+          { "requestGroup": 1, "name": "data/2/image_02.raw", "size": 0, "width": 0, "height": 0, "format": 0, "rowStrides": [ 0, 0, 0 ] },
+          { "requestGroup": 2, "name": "data/2/image_03.raw", "size": 0, "width": 0, "height": 0, "format": 0, "rowStrides": [ 0, 0, 0 ] },
+          { "requestGroup": 3, "name": "data/2/image_04.raw", "size": 0, "width": 0, "height": 0, "format": 0, "rowStrides": [ 0, 0, 0 ] },
+          { "requestGroup": 0, "name": "data/2/metadata_01.tuning", "size": 0 },
+          { "requestGroup": 1, "name": "data/2/metadata_02.tuning", "size": 0 },
+          { "requestGroup": 2, "name": "data/2/metadata_03.tuning", "size": 0 },
+          { "requestGroup": 3, "name": "data/2/metadata_04.tuning", "size": 0 }
+        ],
+        "outputFiles": [
+          { "name": "result/result_01.jpeg" },
+          { "name": "result/result_02.jpeg" }
+        ],
+        "streamConfiguration": {
+            "inputStreams": [ 1 ],
+            "outputStreams": [ 2 ],
+            "metadata": { }
+        },
+        "requestConfiguration": [
+            {
+                "requestNumber": 1,
+                "metadata": {
+                    "com.mediatek.control.capture.hintForIspTuning": { "type": 2, "value": 1 }
+                },
+                "inputBuffers": [ 1 ],
+                "outputBuffers": [ 2 ]
+            },
+            {
+                "requestNumber": 2,
+                "metadata": {
+                    "com.mediatek.control.capture.hintForIspTuning": { "type": 2, "value": 1 }
+                },
+                "inputBuffers": [ 1 ],
+                "outputBuffers": [ 2 ]
+            }
+        ]
+      },
+
+      "//": "Below are multicam test cases",
+      "singleRequestYUV2JPEG_multicam": {
+        "cameraId": "",
+        "rootDirectory": "/sdcard/singleRequestYUV2JPEG_multicam",
+        "totalRequests": 1,
+        "inputFiles": [
+          { "requestGroup": 0, "physicalId": 0, "name": "data/1/image_01.yuv", "size": 0, "width": 0, "height": 0, "format": 0, "rowStrides": [ 0, 0, 0 ] },
+          { "requestGroup": 0, "physicalId": 0, "name": "data/1/metadata_01.tuning", "size": 0 },
+          { "requestGroup": 0, "physicalId": 2, "name": "data/2/image_01.yuv", "size": 0, "width": 0, "height": 0, "format": 0, "rowStrides": [ 0, 0, 0 ] },
+          { "requestGroup": 0, "physicalId": 2, "name": "data/2/metadata_01.tuning", "size": 0 }
+        ],
+        "outputFiles": [
+          { "name": "result/result_01.jpeg" },
+          { "name": "result/result_02.jpeg" }
+        ],
+        "cameraStreamConfiguration": {
+            "inputStreams": [ 1 ],
+            "outputStreams": [ 2 ],
+            "metadata": { }
+        },
+        "cameraRequestConfiguration": [
+            {
+                "requestNumber": 1,
+                "metadata": { },
+                "inputBuffers": [ 1 ],
+                "outputBuffers": [ 2 ]
+            }
+        ],
+        "ispStreamConfiguration": {
+            "inputStreams": [ 1 ],
+            "outputStreams": [ 2 ],
+            "metadata": { }
+        },
+        "ispRequestConfiguration": [
+            {
+                "requestNumber": 1,
+                "metadata": { },
+                "inputBuffers": [ 1 ],
+                "outputBuffers": [ 2 ]
+            }
+        ]
+      },
+      "singleRequestRAW2YUV_multicam": {
+        "cameraId": "",
+        "rootDirectory": "/sdcard/singleRequestRAW2YUV_multicam",
+        "totalRequests": 1,
+        "inputFiles": [
+          { "requestGroup": 0, "physicalId": 0, "name": "data/1/image_01.raw", "size": 0, "width": 0, "height": 0, "format": 0, "rowStrides": [ 0, 0, 0 ] },
+          { "requestGroup": 0, "physicalId": 0, "name": "data/1/metadata_01.tuning", "size": 0 },
+          { "requestGroup": 0, "physicalId": 2, "name": "data/2/image_01.raw", "size": 0, "width": 0, "height": 0, "format": 0, "rowStrides": [ 0, 0, 0 ] },
+          { "requestGroup": 0, "physicalId": 2, "name": "data/2/metadata_01.tuning", "size": 0 }
+        ],
+        "outputFiles": [
+          { "name": "result/result_01.yuv" }
+        ],
+        "cameraStreamConfiguration": {
+            "inputStreams": [ 1 ],
+            "outputStreams": [ 2 ],
+            "metadata": { }
+        },
+        "cameraRequestConfiguration": [
+            {
+                "requestNumber": 1,
+                "metadata": { },
+                "inputBuffers": [ 1 ],
+                "outputBuffers": [ 2 ]
+            }
+        ],
+        "ispStreamConfiguration": {
+            "inputStreams": [ 1 ],
+            "outputStreams": [ 2 ],
+            "metadata": { }
+        },
+        "ispRequestConfiguration": [
+            {
+                "requestNumber": 1,
+                "metadata": { },
+                "inputBuffers": [ 1 ],
+                "outputBuffers": [ 2 ]
+            }
+        ]
+      },
+      "singleRequestAINR2YUV_multicam": {
+        "cameraId": "",
+        "rootDirectory": "/sdcard/singleRequestAINR2YUV_multicam",
+        "totalRequests": 1,
+        "inputFiles": [
+          { "requestGroup": 0, "physicalId": 0, "name": "data/1/image_0.raw", "size": 0, "width": 0, "height": 0, "format": 0, "rowStrides": [ 0, 0, 0 ] },
+          { "requestGroup": 1, "physicalId": 0, "name": "data/1/image_1.raw", "size": 0, "width": 0, "height": 0, "format": 0, "rowStrides": [ 0, 0, 0 ] },
+          { "requestGroup": 2, "physicalId": 0, "name": "data/1/image_2.raw", "size": 0, "width": 0, "height": 0, "format": 0, "rowStrides": [ 0, 0, 0 ] },
+          { "requestGroup": 3, "physicalId": 0, "name": "data/1/image_3.raw", "size": 0, "width": 0, "height": 0, "format": 0, "rowStrides": [ 0, 0, 0 ] },
+          { "requestGroup": 4, "physicalId": 0, "name": "data/1/image_4.raw", "size": 0, "width": 0, "height": 0, "format": 0, "rowStrides": [ 0, 0, 0 ] },
+          { "requestGroup": 5, "physicalId": 0, "name": "data/1/image_5.raw", "size": 0, "width": 0, "height": 0, "format": 0, "rowStrides": [ 0, 0, 0 ] },
+          { "requestGroup": 0, "physicalId": 0, "name": "data/1/metadata_01.tuning", "size": 24416064 },
+          { "requestGroup": 1, "physicalId": 0, "name": "data/1/metadata_02.tuning", "size": 24416064 },
+          { "requestGroup": 2, "physicalId": 0, "name": "data/1/metadata_03.tuning", "size": 24416064 },
+          { "requestGroup": 3, "physicalId": 0, "name": "data/1/metadata_04.tuning", "size": 24416064 },
+          { "requestGroup": 4, "physicalId": 0, "name": "data/1/metadata_05.tuning", "size": 24416064 },
+          { "requestGroup": 5, "physicalId": 0, "name": "data/1/metadata_06.tuning", "size": 24416064 },
+
+          { "requestGroup": 0, "physicalId": 2, "name": "data/2/image_0.raw", "size": 0, "width": 0, "height": 0, "format": 0, "rowStrides": [ 0, 0, 0 ] },
+          { "requestGroup": 1, "physicalId": 2, "name": "data/2/image_1.raw", "size": 0, "width": 0, "height": 0, "format": 0, "rowStrides": [ 0, 0, 0 ] },
+          { "requestGroup": 2, "physicalId": 2, "name": "data/2/image_2.raw", "size": 0, "width": 0, "height": 0, "format": 0, "rowStrides": [ 0, 0, 0 ] },
+          { "requestGroup": 3, "physicalId": 2, "name": "data/2/image_3.raw", "size": 0, "width": 0, "height": 0, "format": 0, "rowStrides": [ 0, 0, 0 ] },
+          { "requestGroup": 4, "physicalId": 2, "name": "data/2/image_4.raw", "size": 0, "width": 0, "height": 0, "format": 0, "rowStrides": [ 0, 0, 0 ] },
+          { "requestGroup": 5, "physicalId": 2, "name": "data/2/image_5.raw", "size": 0, "width": 0, "height": 0, "format": 0, "rowStrides": [ 0, 0, 0 ] },
+          { "requestGroup": 0, "physicalId": 2, "name": "data/2/metadata_01.tuning", "size": 24416064 },
+          { "requestGroup": 1, "physicalId": 2, "name": "data/2/metadata_02.tuning", "size": 24416064 },
+          { "requestGroup": 2, "physicalId": 2, "name": "data/2/metadata_03.tuning", "size": 24416064 },
+          { "requestGroup": 3, "physicalId": 2, "name": "data/2/metadata_04.tuning", "size": 24416064 },
+          { "requestGroup": 4, "physicalId": 2, "name": "data/2/metadata_05.tuning", "size": 24416064 },
+          { "requestGroup": 5, "physicalId": 2, "name": "data/2/metadata_06.tuning", "size": 24416064 }
+        ],
+        "outputFiles": [
+          { "name": "result/result_01.yuv" },
+          { "name": "result/result_metadata_01.tuning", "size": 0 }
+        ],
+        "cameraStreamConfiguration": {
+            "inputStreams": [ 1 ],
+            "outputStreams": [ 2 ],
+            "metadata": { }
+        },
+        "cameraRequestConfiguration": [
+            {
+                "requestNumber": 1,
+                "metadata": {
+                    "com.mediatek.control.capture.hintForIspTuning": { "type": 1, "value": 2 },
+                    "com.mediatek.control.capture.hintForIspFrameCount": { "type": 1, "value": 6 },
+                    "com.mediatek.control.capture.hintForIspFrameIndex": { "type": 1, "value": 0 },
+                    "com.mediatek.control.capture.packedRaw.enable": { "type": 1, "value": 1 }
+                },
+                "inputBuffers": [ 1 ],
+                "outputBuffers": [ 2 ]
+            },
+            {
+                "requestNumber": 2,
+                "metadata": {
+                    "com.mediatek.control.capture.hintForIspTuning": { "type": 1, "value": 2 },
+                    "com.mediatek.control.capture.hintForIspFrameCount": { "type": 1, "value": 6 },
+                    "com.mediatek.control.capture.hintForIspFrameIndex": { "type": 1, "value": 1 },
+                    "com.mediatek.control.capture.packedRaw.enable": { "type": 1, "value": 1 }
+                },
+                "inputBuffers": [ 1 ],
+                "outputBuffers": [ 2 ]
+            },
+            {
+                "requestNumber": 3,
+                "metadata": {
+                    "com.mediatek.control.capture.hintForIspTuning": { "type": 1, "value": 2 },
+                    "com.mediatek.control.capture.hintForIspFrameCount": { "type": 1, "value": 6 },
+                    "com.mediatek.control.capture.hintForIspFrameIndex": { "type": 1, "value": 2 },
+                    "com.mediatek.control.capture.packedRaw.enable": { "type": 1, "value": 1 }
+                },
+                "inputBuffers": [ 1 ],
+                "outputBuffers": [ 2 ]
+            },
+            {
+                "requestNumber": 4,
+                "metadata": {
+                    "com.mediatek.control.capture.hintForIspTuning": { "type": 1, "value": 2 },
+                    "com.mediatek.control.capture.hintForIspFrameCount": { "type": 1, "value": 6 },
+                    "com.mediatek.control.capture.hintForIspFrameIndex": { "type": 1, "value": 3 },
+                    "com.mediatek.control.capture.packedRaw.enable": { "type": 1, "value": 1 }
+                },
+                "inputBuffers": [ 1 ],
+                "outputBuffers": [ 2 ]
+            },
+            {
+                "requestNumber": 5,
+                "metadata": {
+                    "com.mediatek.control.capture.hintForIspTuning": { "type": 1, "value": 2 },
+                    "com.mediatek.control.capture.hintForIspFrameCount": { "type": 1, "value": 6 },
+                    "com.mediatek.control.capture.hintForIspFrameIndex": { "type": 1, "value": 4 },
+                    "com.mediatek.control.capture.packedRaw.enable": { "type": 1, "value": 1 }
+                },
+                "inputBuffers": [ 1 ],
+                "outputBuffers": [ 2 ]
+            },
+            {
+                "requestNumber": 6,
+                "metadata": {
+                    "com.mediatek.control.capture.hintForIspTuning": { "type": 1, "value": 2 },
+                    "com.mediatek.control.capture.hintForIspFrameCount": { "type": 1, "value": 6 },
+                    "com.mediatek.control.capture.hintForIspFrameIndex": { "type": 1, "value": 5 },
+                    "com.mediatek.control.capture.packedRaw.enable": { "type": 1, "value": 1 }
+                },
+                "inputBuffers": [ 1 ],
+                "outputBuffers": [ 2 ]
+            }
+        ],
+        "ispStreamConfiguration": {
+            "inputStreams": [ 1 ],
+            "outputStreams": [ 2 ],
+            "metadata": { }
+        },
+        "ispRequestConfiguration": [
+            {
+                "requestNumber": 1,
+                "metadata": {
+                    "com.mediatek.control.capture.hintForIspTuning": { "type": 1, "value": 2 }
+                },
+                "inputBuffers": [ 1 ],
+                "outputBuffers": [ 2 ]
+            }
+        ]
+      },
+      "singleRequestAINR2RAW_multicam": {
+        "cameraId": "",
+        "rootDirectory": "/sdcard/singleRequestAINR2RAW_multicam",
+        "totalRequests": 1,
+        "inputFiles": [
+          { "requestGroup": 0, "physicalId": 0, "name": "data/1/image_0.raw", "size": 0, "width": 0, "height": 0, "format": 0, "rowStrides": [ 0, 0, 0 ] },
+          { "requestGroup": 1, "physicalId": 0, "name": "data/1/image_1.raw", "size": 0, "width": 0, "height": 0, "format": 0, "rowStrides": [ 0, 0, 0 ] },
+          { "requestGroup": 2, "physicalId": 0, "name": "data/1/image_2.raw", "size": 0, "width": 0, "height": 0, "format": 0, "rowStrides": [ 0, 0, 0 ] },
+          { "requestGroup": 3, "physicalId": 0, "name": "data/1/image_3.raw", "size": 0, "width": 0, "height": 0, "format": 0, "rowStrides": [ 0, 0, 0 ] },
+          { "requestGroup": 4, "physicalId": 0, "name": "data/1/image_4.raw", "size": 0, "width": 0, "height": 0, "format": 0, "rowStrides": [ 0, 0, 0 ] },
+          { "requestGroup": 5, "physicalId": 0, "name": "data/1/image_5.raw", "size": 0, "width": 0, "height": 0, "format": 0, "rowStrides": [ 0, 0, 0 ] },
+          { "requestGroup": 0, "physicalId": 0, "name": "data/1/metadata_01.tuning", "size": 244160604 },
+          { "requestGroup": 1, "physicalId": 0, "name": "data/1/metadata_02.tuning", "size": 24416064 },
+          { "requestGroup": 2, "physicalId": 0, "name": "data/1/metadata_03.tuning", "size": 24416064 },
+          { "requestGroup": 3, "physicalId": 0, "name": "data/1/metadata_04.tuning", "size": 24416064 },
+          { "requestGroup": 4, "physicalId": 0, "name": "data/1/metadata_05.tuning", "size": 24416064 },
+          { "requestGroup": 5, "physicalId": 0, "name": "data/1/metadata_06.tuning", "size": 24416064 },
+
+          { "requestGroup": 0, "physicalId": 2, "name": "data/2/image_0.raw", "size": 0, "width": 0, "height": 0, "format": 0, "rowStrides": [ 0, 0, 0 ] },
+          { "requestGroup": 1, "physicalId": 2, "name": "data/2/image_1.raw", "size": 0, "width": 0, "height": 0, "format": 0, "rowStrides": [ 0, 0, 0 ] },
+          { "requestGroup": 2, "physicalId": 2, "name": "data/2/image_2.raw", "size": 0, "width": 0, "height": 0, "format": 0, "rowStrides": [ 0, 0, 0 ] },
+          { "requestGroup": 3, "physicalId": 2, "name": "data/2/image_3.raw", "size": 0, "width": 0, "height": 0, "format": 0, "rowStrides": [ 0, 0, 0 ] },
+          { "requestGroup": 4, "physicalId": 2, "name": "data/2/image_4.raw", "size": 0, "width": 0, "height": 0, "format": 0, "rowStrides": [ 0, 0, 0 ] },
+          { "requestGroup": 5, "physicalId": 2, "name": "data/2/image_5.raw", "size": 0, "width": 0, "height": 0, "format": 0, "rowStrides": [ 0, 0, 0 ] },
+          { "requestGroup": 0, "physicalId": 2, "name": "data/2/metadata_01.tuning", "size": 24416064 },
+          { "requestGroup": 1, "physicalId": 2, "name": "data/2/metadata_02.tuning", "size": 24416064 },
+          { "requestGroup": 2, "physicalId": 2, "name": "data/2/metadata_03.tuning", "size": 24416064 },
+          { "requestGroup": 3, "physicalId": 2, "name": "data/2/metadata_04.tuning", "size": 24416064 },
+          { "requestGroup": 4, "physicalId": 2, "name": "data/2/metadata_05.tuning", "size": 24416064 },
+          { "requestGroup": 5, "physicalId": 2, "name": "data/2/metadata_06.tuning", "size": 24416064 }
+        ],
+        "outputFiles": [
+          { "name": "result/result_01.raw" },
+          { "name": "result/result_metadata_01.tuning", "size": 0 }
+        ],
+        "cameraStreamConfiguration": {
+            "inputStreams": [ 1 ],
+            "outputStreams": [ 2 ],
+            "metadata": { }
+        },
+        "cameraRequestConfiguration": [
+            {
+                "requestNumber": 1,
+                "metadata": {
+                    "com.mediatek.control.capture.hintForIspTuning": { "type": 1, "value": 2 },
+                    "com.mediatek.control.capture.hintForIspFrameCount": { "type": 1, "value": 6 },
+                    "com.mediatek.control.capture.hintForIspFrameIndex": { "type": 1, "value": 0 },
+                    "com.mediatek.control.capture.packedRaw.enable": { "type": 1, "value": 1 }
+                },
+                "inputBuffers": [ 1 ],
+                "outputBuffers": [ 2 ]
+            },
+            {
+                "requestNumber": 2,
+                "metadata": {
+                    "com.mediatek.control.capture.hintForIspTuning": { "type": 1, "value": 2 },
+                    "com.mediatek.control.capture.hintForIspFrameCount": { "type": 1, "value": 6 },
+                    "com.mediatek.control.capture.hintForIspFrameIndex": { "type": 1, "value": 1 },
+                    "com.mediatek.control.capture.packedRaw.enable": { "type": 1, "value": 1 }
+                },
+                "inputBuffers": [ 1 ],
+                "outputBuffers": [ 2 ]
+            },
+            {
+                "requestNumber": 3,
+                "metadata": {
+                    "com.mediatek.control.capture.hintForIspTuning": { "type": 1, "value": 2 },
+                    "com.mediatek.control.capture.hintForIspFrameCount": { "type": 1, "value": 6 },
+                    "com.mediatek.control.capture.hintForIspFrameIndex": { "type": 1, "value": 2 },
+                    "com.mediatek.control.capture.packedRaw.enable": { "type": 1, "value": 1 }
+                },
+                "inputBuffers": [ 1 ],
+                "outputBuffers": [ 2 ]
+            },
+            {
+                "requestNumber": 4,
+                "metadata": {
+                    "com.mediatek.control.capture.hintForIspTuning": { "type": 1, "value": 2 },
+                    "com.mediatek.control.capture.hintForIspFrameCount": { "type": 1, "value": 6 },
+                    "com.mediatek.control.capture.hintForIspFrameIndex": { "type": 1, "value": 3 },
+                    "com.mediatek.control.capture.packedRaw.enable": { "type": 1, "value": 1 }
+                },
+                "inputBuffers": [ 1 ],
+                "outputBuffers": [ 2 ]
+            },
+            {
+                "requestNumber": 5,
+                "metadata": {
+                    "com.mediatek.control.capture.hintForIspTuning": { "type": 1, "value": 2 },
+                    "com.mediatek.control.capture.hintForIspFrameCount": { "type": 1, "value": 6 },
+                    "com.mediatek.control.capture.hintForIspFrameIndex": { "type": 1, "value": 4 },
+                    "com.mediatek.control.capture.packedRaw.enable": { "type": 1, "value": 1 }
+                },
+                "inputBuffers": [ 1 ],
+                "outputBuffers": [ 2 ]
+            },
+            {
+                "requestNumber": 6,
+                "metadata": {
+                    "com.mediatek.control.capture.hintForIspTuning": { "type": 1, "value": 2 },
+                    "com.mediatek.control.capture.hintForIspFrameCount": { "type": 1, "value": 6 },
+                    "com.mediatek.control.capture.hintForIspFrameIndex": { "type": 1, "value": 5 },
+                    "com.mediatek.control.capture.packedRaw.enable": { "type": 1, "value": 1 }
+                },
+                "inputBuffers": [ 1 ],
+                "outputBuffers": [ 2 ]
+            }
+        ],
+        "ispStreamConfiguration": {
+            "inputStreams": [ 1 ],
+            "outputStreams": [ 2 ],
+            "metadata": { }
+        },
+        "ispRequestConfiguration": [
+            {
+                "requestNumber": 1,
+                "metadata": {
+                    "com.mediatek.control.capture.hintForIspTuning": { "type": 1, "value": 2 }
+                },
+                "inputBuffers": [ 1 ],
+                "outputBuffers": [ 2 ]
+            }
+        ]
+      },
+      "singleRequestAINR2JPEG_multicam": {
+        "cameraId": "",
+        "rootDirectory": "/sdcard/singleRequestAINR2JPEG_multicam",
+        "totalRequests": 1,
+        "inputFiles": [
+          { "requestGroup": 0, "physicalId": 0, "name": "data/1/image_0.raw", "size": 0, "width": 0, "height": 0, "format": 0, "rowStrides": [ 0, 0, 0 ] },
+          { "requestGroup": 1, "physicalId": 0, "name": "data/1/image_1.raw", "size": 0, "width": 0, "height": 0, "format": 0, "rowStrides": [ 0, 0, 0 ] },
+          { "requestGroup": 2, "physicalId": 0, "name": "data/1/image_2.raw", "size": 0, "width": 0, "height": 0, "format": 0, "rowStrides": [ 0, 0, 0 ] },
+          { "requestGroup": 3, "physicalId": 0, "name": "data/1/image_3.raw", "size": 0, "width": 0, "height": 0, "format": 0, "rowStrides": [ 0, 0, 0 ] },
+          { "requestGroup": 4, "physicalId": 0, "name": "data/1/image_4.raw", "size": 0, "width": 0, "height": 0, "format": 0, "rowStrides": [ 0, 0, 0 ] },
+          { "requestGroup": 5, "physicalId": 0, "name": "data/1/image_5.raw", "size": 0, "width": 0, "height": 0, "format": 0, "rowStrides": [ 0, 0, 0 ] },
+          { "requestGroup": 0, "physicalId": 0, "name": "data/1/metadata_01.tuning", "size": 24416064 },
+          { "requestGroup": 1, "physicalId": 0, "name": "data/1/metadata_02.tuning", "size": 24416064 },
+          { "requestGroup": 2, "physicalId": 0, "name": "data/1/metadata_03.tuning", "size": 24416064 },
+          { "requestGroup": 3, "physicalId": 0, "name": "data/1/metadata_04.tuning", "size": 24416064 },
+          { "requestGroup": 4, "physicalId": 0, "name": "data/1/metadata_05.tuning", "size": 24416064 },
+          { "requestGroup": 5, "physicalId": 0, "name": "data/1/metadata_06.tuning", "size": 24416064 },
+
+          { "requestGroup": 0, "physicalId": 2, "name": "data/2/image_0.raw", "size": 0, "width": 0, "height": 0, "format": 0, "rowStrides": [ 0, 0, 0 ] },
+          { "requestGroup": 1, "physicalId": 2, "name": "data/2/image_1.raw", "size": 0, "width": 0, "height": 0, "format": 0, "rowStrides": [ 0, 0, 0 ] },
+          { "requestGroup": 2, "physicalId": 2, "name": "data/2/image_2.raw", "size": 0, "width": 0, "height": 0, "format": 0, "rowStrides": [ 0, 0, 0 ] },
+          { "requestGroup": 3, "physicalId": 2, "name": "data/2/image_3.raw", "size": 0, "width": 0, "height": 0, "format": 0, "rowStrides": [ 0, 0, 0 ] },
+          { "requestGroup": 4, "physicalId": 2, "name": "data/2/image_4.raw", "size": 0, "width": 0, "height": 0, "format": 0, "rowStrides": [ 0, 0, 0 ] },
+          { "requestGroup": 5, "physicalId": 2, "name": "data/2/image_5.raw", "size": 0, "width": 0, "height": 0, "format": 0, "rowStrides": [ 0, 0, 0 ] },
+          { "requestGroup": 0, "physicalId": 2, "name": "data/2/metadata_01.tuning", "size": 24416064 },
+          { "requestGroup": 1, "physicalId": 2, "name": "data/2/metadata_02.tuning", "size": 24416064 },
+          { "requestGroup": 2, "physicalId": 2, "name": "data/2/metadata_03.tuning", "size": 24416064 },
+          { "requestGroup": 3, "physicalId": 2, "name": "data/2/metadata_04.tuning", "size": 24416064 },
+          { "requestGroup": 4, "physicalId": 2, "name": "data/2/metadata_05.tuning", "size": 24416064 },
+          { "requestGroup": 5, "physicalId": 2, "name": "data/2/metadata_06.tuning", "size": 24416064 }
+        ],
+        "outputFiles": [
+          { "name": "result/result_01.jpg" },
+          { "name": "result/result_metadata_01.tuning", "size": 0 }
+        ],
+        "cameraStreamConfiguration": {
+            "inputStreams": [ 1 ],
+            "outputStreams": [ 2 ],
+            "metadata": { }
+        },
+        "cameraRequestConfiguration": [
+            {
+                "requestNumber": 1,
+                "metadata": {
+                    "com.mediatek.control.capture.hintForIspTuning": { "type": 1, "value": 2 },
+                    "com.mediatek.control.capture.hintForIspFrameCount": { "type": 1, "value": 6 },
+                    "com.mediatek.control.capture.hintForIspFrameIndex": { "type": 1, "value": 0 },
+                    "com.mediatek.control.capture.packedRaw.enable": { "type": 1, "value": 1 }
+                },
+                "inputBuffers": [ 1 ],
+                "outputBuffers": [ 2 ]
+            },
+            {
+                "requestNumber": 2,
+                "metadata": {
+                    "com.mediatek.control.capture.hintForIspTuning": { "type": 1, "value": 2 },
+                    "com.mediatek.control.capture.hintForIspFrameCount": { "type": 1, "value": 6 },
+                    "com.mediatek.control.capture.hintForIspFrameIndex": { "type": 1, "value": 1 },
+                    "com.mediatek.control.capture.packedRaw.enable": { "type": 1, "value": 1 }
+                },
+                "inputBuffers": [ 1 ],
+                "outputBuffers": [ 2 ]
+            },
+            {
+                "requestNumber": 3,
+                "metadata": {
+                    "com.mediatek.control.capture.hintForIspTuning": { "type": 1, "value": 2 },
+                    "com.mediatek.control.capture.hintForIspFrameCount": { "type": 1, "value": 6 },
+                    "com.mediatek.control.capture.hintForIspFrameIndex": { "type": 1, "value": 2 },
+                    "com.mediatek.control.capture.packedRaw.enable": { "type": 1, "value": 1 }
+                },
+                "inputBuffers": [ 1 ],
+                "outputBuffers": [ 2 ]
+            },
+            {
+                "requestNumber": 4,
+                "metadata": {
+                    "com.mediatek.control.capture.hintForIspTuning": { "type": 1, "value": 2 },
+                    "com.mediatek.control.capture.hintForIspFrameCount": { "type": 1, "value": 6 },
+                    "com.mediatek.control.capture.hintForIspFrameIndex": { "type": 1, "value": 3 },
+                    "com.mediatek.control.capture.packedRaw.enable": { "type": 1, "value": 1 }
+                },
+                "inputBuffers": [ 1 ],
+                "outputBuffers": [ 2 ]
+            },
+            {
+                "requestNumber": 5,
+                "metadata": {
+                    "com.mediatek.control.capture.hintForIspTuning": { "type": 1, "value": 2 },
+                    "com.mediatek.control.capture.hintForIspFrameCount": { "type": 1, "value": 6 },
+                    "com.mediatek.control.capture.hintForIspFrameIndex": { "type": 1, "value": 4 },
+                    "com.mediatek.control.capture.packedRaw.enable": { "type": 1, "value": 1 }
+                },
+                "inputBuffers": [ 1 ],
+                "outputBuffers": [ 2 ]
+            },
+            {
+                "requestNumber": 6,
+                "metadata": {
+                    "com.mediatek.control.capture.hintForIspTuning": { "type": 1, "value": 2 },
+                    "com.mediatek.control.capture.hintForIspFrameCount": { "type": 1, "value": 6 },
+                    "com.mediatek.control.capture.hintForIspFrameIndex": { "type": 1, "value": 5 },
+                    "com.mediatek.control.capture.packedRaw.enable": { "type": 1, "value": 1 }
+                },
+                "inputBuffers": [ 1 ],
+                "outputBuffers": [ 2 ]
+            }
+        ],
+        "ispStreamConfiguration": {
+            "inputStreams": [ 1 ],
+            "outputStreams": [ 2 ],
+            "metadata": { }
+        },
+        "ispRequestConfiguration": [
+            {
+                "requestNumber": 1,
+                "metadata": {
+                    "com.mediatek.control.capture.hintForIspTuning": { "type": 1, "value": 2 }
+                },
+                "inputBuffers": [ 1 ],
+                "outputBuffers": [ 2 ]
+            }
+        ]
+      },
+      "singleRequestMFNR_multicam": {
+        "cameraId": "",
+        "rootDirectory": "/sdcard/singleRequestMFNR_multicam",
+        "totalRequests": 1,
+        "inputFiles": [
+          { "requestGroup": 0, "physicalId": 0, "name": "data/1/image_0.raw", "size": 0, "width": 0, "height": 0, "format": 0, "rowStrides": [ 0, 0, 0 ] },
+          { "requestGroup": 1, "physicalId": 0, "name": "data/1/image_1.raw", "size": 0, "width": 0, "height": 0, "format": 0, "rowStrides": [ 0, 0, 0 ] },
+          { "requestGroup": 2, "physicalId": 0, "name": "data/1/image_2.raw", "size": 0, "width": 0, "height": 0, "format": 0, "rowStrides": [ 0, 0, 0 ] },
+          { "requestGroup": 3, "physicalId": 0, "name": "data/1/image_3.raw", "size": 0, "width": 0, "height": 0, "format": 0, "rowStrides": [ 0, 0, 0 ] },
+          { "requestGroup": 4, "physicalId": 0, "name": "data/1/image_4.raw", "size": 0, "width": 0, "height": 0, "format": 0, "rowStrides": [ 0, 0, 0 ] },
+          { "requestGroup": 5, "physicalId": 0, "name": "data/1/image_5.raw", "size": 0, "width": 0, "height": 0, "format": 0, "rowStrides": [ 0, 0, 0 ] },
+          { "requestGroup": 0, "physicalId": 0, "name": "data/1/metadata_01.tuning", "size": 24416064 },
+          { "requestGroup": 1, "physicalId": 0, "name": "data/1/metadata_02.tuning", "size": 24416064 },
+          { "requestGroup": 2, "physicalId": 0, "name": "data/1/metadata_03.tuning", "size": 24416064 },
+          { "requestGroup": 3, "physicalId": 0, "name": "data/1/metadata_04.tuning", "size": 24416064 },
+          { "requestGroup": 4, "physicalId": 0, "name": "data/1/metadata_05.tuning", "size": 24416064 },
+          { "requestGroup": 5, "physicalId": 0, "name": "data/1/metadata_06.tuning", "size": 24416064 },
+
+          { "requestGroup": 0, "physicalId": 2, "name": "data/2/image_0.raw", "size": 0, "width": 0, "height": 0, "format": 0, "rowStrides": [ 0, 0, 0 ] },
+          { "requestGroup": 1, "physicalId": 2, "name": "data/2/image_1.raw", "size": 0, "width": 0, "height": 0, "format": 0, "rowStrides": [ 0, 0, 0 ] },
+          { "requestGroup": 2, "physicalId": 2, "name": "data/2/image_2.raw", "size": 0, "width": 0, "height": 0, "format": 0, "rowStrides": [ 0, 0, 0 ] },
+          { "requestGroup": 3, "physicalId": 2, "name": "data/2/image_3.raw", "size": 0, "width": 0, "height": 0, "format": 0, "rowStrides": [ 0, 0, 0 ] },
+          { "requestGroup": 4, "physicalId": 2, "name": "data/2/image_4.raw", "size": 0, "width": 0, "height": 0, "format": 0, "rowStrides": [ 0, 0, 0 ] },
+          { "requestGroup": 5, "physicalId": 2, "name": "data/2/image_5.raw", "size": 0, "width": 0, "height": 0, "format": 0, "rowStrides": [ 0, 0, 0 ] },
+          { "requestGroup": 0, "physicalId": 2, "name": "data/2/metadata_01.tuning", "size": 24416064 },
+          { "requestGroup": 1, "physicalId": 2, "name": "data/2/metadata_02.tuning", "size": 24416064 },
+          { "requestGroup": 2, "physicalId": 2, "name": "data/2/metadata_03.tuning", "size": 24416064 },
+          { "requestGroup": 3, "physicalId": 2, "name": "data/2/metadata_04.tuning", "size": 24416064 },
+          { "requestGroup": 4, "physicalId": 2, "name": "data/2/metadata_05.tuning", "size": 24416064 },
+          { "requestGroup": 5, "physicalId": 2, "name": "data/2/metadata_06.tuning", "size": 24416064 }
+        ],
+        "outputFiles": [
+          { "name": "result/result_01.yuv" }
+        ],
+        "cameraStreamConfiguration": {
+            "inputStreams": [ 1 ],
+            "outputStreams": [ 2 ],
+            "metadata": { }
+        },
+        "cameraRequestConfiguration": [
+            {
+                "requestNumber": 1,
+                "metadata": {
+                    "com.mediatek.control.capture.hintForIspTuning": { "type": 1, "value": 1 },
+                    "com.mediatek.control.capture.hintForIspFrameCount": { "type": 1, "value": 6 },
+                    "com.mediatek.control.capture.hintForIspFrameIndex": { "type": 1, "value": 0 },
+                    "com.mediatek.control.capture.packedRaw.enable": { "type": 1, "value": 1 }
+                },
+                "inputBuffers": [ 1 ],
+                "outputBuffers": [ 2 ]
+            },
+            {
+                "requestNumber": 2,
+                "metadata": {
+                    "com.mediatek.control.capture.hintForIspTuning": { "type": 1, "value": 1 },
+                    "com.mediatek.control.capture.hintForIspFrameCount": { "type": 1, "value": 6 },
+                    "com.mediatek.control.capture.hintForIspFrameIndex": { "type": 1, "value": 1 },
+                    "com.mediatek.control.capture.packedRaw.enable": { "type": 1, "value": 1 }
+                },
+                "inputBuffers": [ 1 ],
+                "outputBuffers": [ 2 ]
+            },
+            {
+                "requestNumber": 3,
+                "metadata": {
+                    "com.mediatek.control.capture.hintForIspTuning": { "type": 1, "value": 1 },
+                    "com.mediatek.control.capture.hintForIspFrameCount": { "type": 1, "value": 6 },
+                    "com.mediatek.control.capture.hintForIspFrameIndex": { "type": 1, "value": 2 },
+                    "com.mediatek.control.capture.packedRaw.enable": { "type": 1, "value": 1 }
+                },
+                "inputBuffers": [ 1 ],
+                "outputBuffers": [ 2 ]
+            },
+            {
+                "requestNumber": 4,
+                "metadata": {
+                    "com.mediatek.control.capture.hintForIspTuning": { "type": 1, "value": 1 },
+                    "com.mediatek.control.capture.hintForIspFrameCount": { "type": 1, "value": 6 },
+                    "com.mediatek.control.capture.hintForIspFrameIndex": { "type": 1, "value": 3 },
+                    "com.mediatek.control.capture.packedRaw.enable": { "type": 1, "value": 1 }
+                },
+                "inputBuffers": [ 1 ],
+                "outputBuffers": [ 2 ]
+            },
+            {
+                "requestNumber": 5,
+                "metadata": {
+                    "com.mediatek.control.capture.hintForIspTuning": { "type": 1, "value": 1 },
+                    "com.mediatek.control.capture.hintForIspFrameCount": { "type": 1, "value": 6 },
+                    "com.mediatek.control.capture.hintForIspFrameIndex": { "type": 1, "value": 4 },
+                    "com.mediatek.control.capture.packedRaw.enable": { "type": 1, "value": 1 }
+                },
+                "inputBuffers": [ 1 ],
+                "outputBuffers": [ 2 ]
+            },
+            {
+                "requestNumber": 6,
+                "metadata": {
+                    "com.mediatek.control.capture.hintForIspTuning": { "type": 1, "value": 1 },
+                    "com.mediatek.control.capture.hintForIspFrameCount": { "type": 1, "value": 6 },
+                    "com.mediatek.control.capture.hintForIspFrameIndex": { "type": 1, "value": 5 },
+                    "com.mediatek.control.capture.packedRaw.enable": { "type": 1, "value": 1 }
+                },
+                "inputBuffers": [ 1 ],
+                "outputBuffers": [ 2 ]
+            }
+        ],
+        "ispStreamConfiguration": {
+            "inputStreams": [ 1 ],
+            "outputStreams": [ 2 ],
+            "metadata": { }
+        },
+        "ispRequestConfiguration": [
+            {
+                "requestNumber": 1,
+                "metadata": {
+                    "com.mediatek.control.capture.hintForIspTuning": { "type": 1, "value": 1 }
+                },
+                "inputBuffers": [ 1 ],
+                "outputBuffers": [ 2 ]
+            }
+        ]
+      },
+      "multipleRequestMFNR_multicam": {
+        "cameraId": "",
+        "rootDirectory": "/sdcard/multipleRequestMFNR_multicam",
+        "totalRequests": 2,
+        "inputFiles": [
+          { "requestGroup": 0, "physicalId": 0, "name": "data/1/image_01.raw", "size": 0, "width": 0, "height": 0, "format": 0, "rowStrides": [ 0, 0, 0 ] },
+          { "requestGroup": 1, "physicalId": 0, "name": "data/1/image_02.raw", "size": 0, "width": 0, "height": 0, "format": 0, "rowStrides": [ 0, 0, 0 ] },
+          { "requestGroup": 2, "physicalId": 0, "name": "data/1/image_03.raw", "size": 0, "width": 0, "height": 0, "format": 0, "rowStrides": [ 0, 0, 0 ] },
+          { "requestGroup": 3, "physicalId": 0, "name": "data/1/image_04.raw", "size": 0, "width": 0, "height": 0, "format": 0, "rowStrides": [ 0, 0, 0 ] },
+          { "requestGroup": 0, "physicalId": 0, "name": "data/1/metadata_01.tuning", "size": 0 },
+          { "requestGroup": 1, "physicalId": 0, "name": "data/1/metadata_02.tuning", "size": 0 },
+          { "requestGroup": 2, "physicalId": 0, "name": "data/1/metadata_03.tuning", "size": 0 },
+          { "requestGroup": 3, "physicalId": 0, "name": "data/1/metadata_04.tuning", "size": 0 },
+          { "requestGroup": 0, "physicalId": 0, "name": "data/2/image_01.raw", "size": 0, "width": 0, "height": 0, "format": 0, "rowStrides": [ 0, 0, 0 ] },
+          { "requestGroup": 1, "physicalId": 0, "name": "data/2/image_02.raw", "size": 0, "width": 0, "height": 0, "format": 0, "rowStrides": [ 0, 0, 0 ] },
+          { "requestGroup": 2, "physicalId": 0, "name": "data/2/image_03.raw", "size": 0, "width": 0, "height": 0, "format": 0, "rowStrides": [ 0, 0, 0 ] },
+          { "requestGroup": 3, "physicalId": 0, "name": "data/2/image_04.raw", "size": 0, "width": 0, "height": 0, "format": 0, "rowStrides": [ 0, 0, 0 ] },
+          { "requestGroup": 0, "physicalId": 0, "name": "data/2/metadata_01.tuning", "size": 0 },
+          { "requestGroup": 1, "physicalId": 0, "name": "data/2/metadata_02.tuning", "size": 0 },
+          { "requestGroup": 2, "physicalId": 0, "name": "data/2/metadata_03.tuning", "size": 0 },
+          { "requestGroup": 3, "physicalId": 0, "name": "data/2/metadata_04.tuning", "size": 0 },
+
+          { "requestGroup": 0, "physicalId": 2, "name": "data/3/image_01.raw", "size": 0, "width": 0, "height": 0, "format": 0, "rowStrides": [ 0, 0, 0 ] },
+          { "requestGroup": 1, "physicalId": 2, "name": "data/3/image_02.raw", "size": 0, "width": 0, "height": 0, "format": 0, "rowStrides": [ 0, 0, 0 ] },
+          { "requestGroup": 2, "physicalId": 2, "name": "data/3/image_03.raw", "size": 0, "width": 0, "height": 0, "format": 0, "rowStrides": [ 0, 0, 0 ] },
+          { "requestGroup": 3, "physicalId": 2, "name": "data/3/image_04.raw", "size": 0, "width": 0, "height": 0, "format": 0, "rowStrides": [ 0, 0, 0 ] },
+          { "requestGroup": 0, "physicalId": 2, "name": "data/3/metadata_01.tuning", "size": 0 },
+          { "requestGroup": 1, "physicalId": 2, "name": "data/3/metadata_02.tuning", "size": 0 },
+          { "requestGroup": 2, "physicalId": 2, "name": "data/3/metadata_03.tuning", "size": 0 },
+          { "requestGroup": 3, "physicalId": 2, "name": "data/3/metadata_04.tuning", "size": 0 },
+          { "requestGroup": 0, "physicalId": 2, "name": "data/4/image_01.raw", "size": 0, "width": 0, "height": 0, "format": 0, "rowStrides": [ 0, 0, 0 ] },
+          { "requestGroup": 1, "physicalId": 2, "name": "data/4/image_02.raw", "size": 0, "width": 0, "height": 0, "format": 0, "rowStrides": [ 0, 0, 0 ] },
+          { "requestGroup": 2, "physicalId": 2, "name": "data/4/image_03.raw", "size": 0, "width": 0, "height": 0, "format": 0, "rowStrides": [ 0, 0, 0 ] },
+          { "requestGroup": 3, "physicalId": 2, "name": "data/4/image_04.raw", "size": 0, "width": 0, "height": 0, "format": 0, "rowStrides": [ 0, 0, 0 ] },
+          { "requestGroup": 0, "physicalId": 2, "name": "data/4/metadata_01.tuning", "size": 0 },
+          { "requestGroup": 1, "physicalId": 2, "name": "data/4/metadata_02.tuning", "size": 0 },
+          { "requestGroup": 2, "physicalId": 2, "name": "data/4/metadata_03.tuning", "size": 0 },
+          { "requestGroup": 3, "physicalId": 2, "name": "data/4/metadata_04.tuning", "size": 0 }
+        ],
+        "outputFiles": [
+          { "name": "result/result_01.jpeg" },
+          { "name": "result/result_02.jpeg" }
+        ],
+        "streamConfiguration": {
+            "inputStreams": [ 1 ],
+            "outputStreams": [ 2 ],
+            "metadata": { }
+        },
+        "requestConfiguration": [
+            {
+                "requestNumber": 1,
+                "metadata": {
+                    "com.mediatek.control.capture.hintForIspTuning": { "type": 2, "value": 1 }
+                },
+                "inputBuffers": [ 1 ],
+                "outputBuffers": [ 2 ]
+            },
+            {
+                "requestNumber": 2,
+                "metadata": {
+                    "com.mediatek.control.capture.hintForIspTuning": { "type": 2, "value": 1 }
+                },
+                "inputBuffers": [ 1 ],
+                "outputBuffers": [ 2 ]
+            }
+        ]
+      }
+   }
+ }

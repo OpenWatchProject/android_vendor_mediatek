@@ -1,0 +1,132 @@
+/*
+ * Copyright 2016 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package vendor.mediatek.hardware.wifi.hostapd@1.0;
+
+import IHostapdIfaceCallback;
+
+/**
+ * Interface exposed by the hostapd for each interface (e.g ap0) it controls.
+ */
+interface IHostapdIface{
+  /**
+   * Register for callbacks from this interface.
+   *
+   * These callbacks are invoked for events that are specific to this interface.
+   * Registration of multiple callback objects is supported. These objects must
+   * be automatically deleted when the corresponding client process is dead or
+   * if this interface is removed.
+   *
+   * @param callback An instance of the |IHostapdIfaceCallback| HIDL
+   *        interface object.
+   * @return status Status of the operation.
+   *         Possible status codes:
+   *         |HostapdStatusCode.SUCCESS|,
+   *         |HostapdStatusCode.FAILURE_UNKNOWN|,
+   *         |HostapdStatusCode.FAILURE_IFACE_INVALID|
+   */
+  registerCallback(IHostapdIfaceCallback callback)
+      generates (HostapdStatus status);
+
+  /**
+   * Initiate WPS Push Button setup.
+   * The PBC operation requires that a button is also pressed at the
+   * STA at about the same time (2 minute window).
+   *
+   * @return status Status of the operation.
+   *         Possible status codes:
+   *         |HostapdStatusCode.SUCCESS|,
+   *         |HostapdStatusCode.FAILURE_UNKNOWN|,
+   *         |HostapdStatusCode.FAILURE_IFACE_INVALID|,
+   *         |HostapdStatusCode.NOT_SUPPORTED|
+   */
+  startWpsPbc() generates (HostapdStatus status);
+
+  /**
+   * Initiate WPS Pin Keypad setup.
+   *
+   * @param pin 8 digit pin to be used.
+   * @return status Status of the operation.
+   *         Possible status codes:
+   *         |HostapdStatusCode.SUCCESS|,
+   *         |HostapdStatusCode.FAILURE_UNKNOWN|,
+   *         |HostapdStatusCode.FAILURE_IFACE_INVALID|,
+   *         |HostapdStatusCode.NOT_SUPPORTED|
+   */
+  startWpsPinKeypad(string pin) generates (HostapdStatus status);
+
+  /**
+   * Initiate WPS Pin check.
+   *
+   * @param pin 8 digit pin to be checked.
+   * @return status Status of the operation.
+   *         Possible status codes:
+   *         |HostapdStatusCode.SUCCESS|,
+   *         |HostapdStatusCode.FAILURE_UNKNOWN|,
+   *         |HostapdStatusCode.FAILURE_IFACE_INVALID|,
+   *         |HostapdStatusCode.NOT_SUPPORTED|
+   * @return validPin 8 digit valid pin.
+   */
+  startWpsCheckPin(string pin) generates (HostapdStatus status, string validPin);
+
+  /**
+   * Block client.
+   *
+   * @param deviceAddress MAC address of client to be blocked.
+   * @return status Status of the operation.
+   *         Possible status codes:
+   *         |HostapdStatusCode.SUCCESS|,
+   *         |HostapdStatusCode.FAILURE_UNKNOWN|,
+   *         |HostapdStatusCode.FAILURE_IFACE_INVALID|
+   */
+  blockClient(string deviceAddress) generates (HostapdStatus status);
+
+  /**
+   * Unblock client.
+   *
+   * @param deviceAddress MAC address of client to be unblocked.
+   * @return status Status of the operation.
+   *         Possible status codes:
+   *         |HostapdStatusCode.SUCCESS|,
+   *         |HostapdStatusCode.FAILURE_UNKNOWN|,
+   *         |HostapdStatusCode.FAILURE_IFACE_INVALID|
+   */
+  unblockClient(string deviceAddress) generates (HostapdStatus status);
+
+  /**
+   * Update allowed list.
+   *
+   * @param filePath File path of allowed list which wanna update.
+   * @return status Status of the operation.
+   *         Possible status codes:
+   *         |HostapdStatusCode.SUCCESS|,
+   *         |HostapdStatusCode.FAILURE_UNKNOWN|,
+   *         |HostapdStatusCode.FAILURE_IFACE_INVALID|
+   */
+  updateAllowedList(string filePath) generates (HostapdStatus status);
+
+  /**
+   * Set all devices allowed.
+   *
+   * @param enable true to enable, false to disable.
+   * @return status Status of the operation.
+   *         Possible status codes:
+   *         |HostapdStatusCode.SUCCESS|,
+   *         |HostapdStatusCode.FAILURE_UNKNOWN|,
+   *         |HostapdStatusCode.FAILURE_IFACE_INVALID|
+   */
+  setAllDevicesAllowed(bool enable) generates (HostapdStatus status);
+};

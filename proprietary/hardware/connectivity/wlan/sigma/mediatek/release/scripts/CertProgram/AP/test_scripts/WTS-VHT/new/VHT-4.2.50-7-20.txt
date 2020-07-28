@@ -1,0 +1,82 @@
+#Step 7 for VHT-4.2.50
+info!Inside VHT-4.2.50-7-20.txt file!
+info!Starting simultaneous downstream traffic to STA1 and STA2 from APUT and AP1 respectively!
+define!$HT1!0!
+define!$HT2!0!
+define!$HT3!0!
+info!default values!
+echo!$HT1!
+echo!$HT2!
+echo!$HT3!
+
+Phase!2!
+
+info![ Starting Traffic from APUT to STA1]!
+wfa_console_ctrl!traffic_agent_reset!DEFAULT
+$STA1_control_agent!traffic_agent_reset!DEFAULT
+$STA2_control_agent!traffic_agent_reset!DEFAULT
+env_pce_control_agent_ip!traffic_agent_reset!DEFAULT
+
+wfa_console_ctrl!traffic_agent_config,profile,IPTV,direction,send,destination,$STA1_wireless_ip,destinationPort,5600,sourcePort,5600,duration,$HT_Duration,payloadSize,payloadValue,trafficClass,BestEffort,frameRate,5000!STREAMID,$RTP1-P1-TX
+$STA1_control_agent!traffic_agent_config,profile,IPTV,direction,receive,source,wfa_console_tg,sourcePort,5600,destinationPort,5600!STREAMID,$RTP1-P1-RX
+
+wfa_console_ctrl!traffic_agent_config,profile,IPTV,direction,send,destination,$STA1_wireless_ip,destinationPort,5601,sourcePort,5601,duration,$HT_Duration,payloadSize,payloadValue,trafficClass,BestEffort,frameRate,5000!STREAMID,$RTP2-P1-TX
+$STA1_control_agent!traffic_agent_config,profile,IPTV,direction,receive,source,wfa_console_tg,sourcePort,5601,destinationPort,5601!STREAMID,$RTP2-P1-RX
+
+wfa_console_ctrl!traffic_agent_config,profile,IPTV,direction,send,destination,$STA1_wireless_ip,destinationPort,5602,sourcePort,5602,duration,$HT_Duration,payloadSize,payloadValue,trafficClass,BestEffort,frameRate,5000!STREAMID,$RTP3-P1-TX
+$STA1_control_agent!traffic_agent_config,profile,IPTV,direction,receive,source,wfa_console_tg,sourcePort,5602,destinationPort,5602!STREAMID,$RTP3-P1-RX
+
+info![ Starting Traffic  AP1 to STA2]!
+
+env_pce_control_agent_ip!traffic_agent_config,profile,IPTV,direction,send,destination,$STA2_wireless_ip,destinationPort,5605,sourcePort,5605,duration,$HT_Duration,payloadSize,payloadValue,trafficClass,BestEffort,frameRate,5100!STREAMID,$RTP1-P2-TX
+$STA2_control_agent!traffic_agent_config,profile,IPTV,direction,receive,source,env_pce_wireless_ip,sourcePort,5605,destinationPort,5605!STREAMID,$RTP1-P2-RX
+
+#wfa_console_ctrl!traffic_agent_config,profile,IPTV,direction,send,destination,$STA2_wireless_ip,destinationPort,5606,sourcePort,5606,duration,$HT_Duration,payloadSize,payloadValue,trafficClass,BestEffort,frameRate,0!STREAMID,$RTP2-P2-TX
+#$STA2_control_agent!traffic_agent_config,profile,IPTV,direction,receive,source,wfa_console_tg,sourcePort,5606,destinationPort,5606!STREAMID,$RTP2-P2-RX
+
+#wfa_console_ctrl!traffic_agent_config,profile,IPTV,direction,send,destination,$STA2_wireless_ip,destinationPort,5607,sourcePort,5607,duration,$HT_Duration,payloadSize,payloadValue,trafficClass,BestEffort,frameRate,0!STREAMID,$RTP3-P2-TX
+#$STA2_control_agent!traffic_agent_config,profile,IPTV,direction,receive,source,wfa_console_tg,sourcePort,5607,destinationPort,5607!STREAMID,$RTP3-P2-RX
+
+$STA1_control_agent!traffic_agent_receive_start,streamID,$RTP1-P1-RX!DEFAULT
+$STA1_control_agent!traffic_agent_receive_start,streamID,$RTP2-P1-RX!DEFAULT
+$STA1_control_agent!traffic_agent_receive_start,streamID,$RTP3-P1-RX!DEFAULT
+$STA2_control_agent!traffic_agent_receive_start,streamID,$RTP1-P2-RX!DEFAULT
+
+
+#$STA2_control_agent!traffic_agent_receive_start,streamID,$RTP2-P2-RX!DEFAULT
+#$STA2_control_agent!traffic_agent_receive_start,streamID,$RTP3-P2-RX!DEFAULT
+
+
+wfa_console_ctrl!traffic_agent_send,streamID,$RTP1-P1-TX $RTP2-P1-TX $RTP3-P1-TX!RECV_ID,$RTP1-P1-RX $RTP2-P1-RX $RTP3-P1-RX
+env_pce_control_agent_ip!traffic_agent_send,streamID,$RTP1-P2-TX!RECV_ID,$RTP1-P2-RX
+#wfa_console_ctrl!traffic_agent_send,streamID,$RTP1-P1-TX $RTP2-P1-TX $RTP3-P1-TX!RECV_ID,$RTP1-P1-RX $RTP2-P1-RX $RTP3-P1-RX
+$STA2_control_agent!traffic_agent_receive_stop,streamID,$RTP1-P2-RX!DEFAULT
+$STA1_control_agent!traffic_agent_receive_stop,streamID,$RTP1-P1-RX $RTP2-P1-RX $RTP3-P1-RX!DEFAULT
+
+
+
+sleep!2!
+define!$HT_Duration!60!
+StoreThroughput!$HT1!$RTP1-P1-RX,2,$HT_Duration,100!
+StoreThroughput!$HT2!$RTP2-P1-RX,2,$HT_Duration,100!
+StoreThroughput!$HT3!$RTP3-P1-RX,2,$HT_Duration,100!
+math!$HT2!+!$HT3!
+math!$HT1!+!$HT2!
+info!Total throughput from APUT to STA1!
+#echo!$HT1!
+
+define!$X2!$HT1!
+echo!$X2!
+
+
+
+define!$HT1!0!
+sleep!2!
+info!Total throughput from AP1 to STA2!
+define!$HT_Duration!60!
+StoreThroughput!$HT1!$RTP1-P2-RX,2,$HT_Duration,100!
+#echo!$HT1!
+define!$Z1!$HT1!
+echo!$Z1!
+
+

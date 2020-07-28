@@ -1,0 +1,34 @@
+Library of MTK key installation management features, icluding key installation, key query and key decryption.
+
+This library is pre-built by MediaTek internal.
+
+
+WHAT IT DOES?
+=============
+libTlcKeyInstall.so contains MediaTek developed DRM proprietary key management. This Normal World TLC receive encrypted DRM key and transfer to 
+corresponding TA/Driver in Secure World to do key installation and key decryption.
+
+HOW IT WAS BUILT?
+==================
+It needs the following library from TRUSTONIC:
+1.  libMcClient.so
+2.  libsec_mem.so
+
+It needs the following library from AOSP:
+1.  libcutils.so
+2.  libnetutils.so
+3.  libc.so
+
+and the following libs from MediaTek:
+1.  liburee_meta_drmkeyinstall.so
+
+
+All source/dependency modules of this module are already put in
+'vendor/mediatek/libs' folder.
+
+HOW TO USE IT?
+==============
+
+Include Provide api for key installation.
+all api interface are at (vendor/mediatek/proprietary/external/include/key_install)
+

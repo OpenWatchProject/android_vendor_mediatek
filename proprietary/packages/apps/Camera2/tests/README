@@ -1,0 +1,30 @@
+This directory contains sources and resources to perform automated testing of Camera.
+
+WHAT IT DOES?
+=============
+It is the test for Camera.
+
+HOW IT WAS BUILT?
+==================
+mmm vendor/mediatek/proprietary/tests/packages/apps/Camera
+
+HOW TO ADD TEST CASE FOR A NEW FEATURE?
+==============
+   1.All feature should have an independent test case folder.
+   2.The name of the folder should be the feature name.
+   3.There maybe performance,functional,stress and unit test cases the feature, all the cases
+     should include in the corresponding folder.
+   4.Every feature has its personal runner to run the feature related cases.
+   5.Common feature will have a special annotation to run its related cases.
+   6.The case version should be updated.
+
+HOW TO USE IT?
+==============
+1. Install CameraTests.apk.
+2. Use adb command to run the cases
+   (1)Run all camera test:
+   adb shell am instrument -w com.mediatek.camera.tests/android.test.InstrumentationTestRunner
+   (2)Run a special feature:
+   eg:adb shell am instrument -w com.mediatek.camera.tests/com.mediatek.camera.pip.PipTestRunner
+   (3)Run common feautre:
+   eg:adb shell am instrument –w –e annotation com.mediatek.camera.FocusTest com.mediatek.camera.tests/com.test.InstrumentationTestRunner

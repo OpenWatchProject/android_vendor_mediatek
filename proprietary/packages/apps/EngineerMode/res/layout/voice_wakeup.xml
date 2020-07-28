@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <TextView
+        android:layout_width="170dip"
+        android:layout_height="wrap_content"
+        android:text="@string/voice_wakeup_function_switch" >
+    </TextView>
+
+    <RadioGroup
+        android:id="@+id/voice_wakeup_function_switch"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="20dip"
+        android:orientation="vertical" >
+        <RadioButton
+            android:id="@+id/voice_switch_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/voice_wakeup_switch_1" />
+        <RadioButton
+            android:id="@+id/voice_switch_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/voice_wakeup_switch_2" />
+   </RadioGroup>
+</LinearLayout>

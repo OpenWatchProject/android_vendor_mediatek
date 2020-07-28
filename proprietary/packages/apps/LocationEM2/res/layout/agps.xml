@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    >
+<LinearLayout
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:gravity="left"
+    >
+
+<!-- Debug -->
+<LinearLayout    android:id="@+id/LinearLayout_Debug" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent" android:gravity="left">
+<Button           android:id="@+id/Button_TriggerTest" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/trigger_test" android:textSize="15sp"/>
+<Button           android:id="@+id/Button_TestButton" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/test_button" android:textSize="15sp"/>
+<Button           android:id="@+id/Button_ResetAgpsd" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/reset_agpsd" android:textSize="15sp"/>
+<TextView        android:id="@+id/TextView_Property" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+</LinearLayout> <!-- End of LinearLayout_Debug-->
+
+<TextView        android:id="@+id/TextView_EmulatorMode" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="15dp"/>
+
+<!-- LPPe Service info -->
+<View            android:layout_height="1dip" android:layout_width="fill_parent" android:background="#FF909090"/>
+<TextView        android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/lppe_service_info" android:textColor="#ff00ff" android:textSize="20sp" android:textStyle="bold"/>
+ <LinearLayout style="@style/entry_layout">
+     <TextView android:text="@string/lppe_service_installed" style="@style/info_label" />
+     <TextView android:id="@+id/TextView_LppeServiceInstalledValue" style="@style/info_state_value" />
+ </LinearLayout>
+ <LinearLayout style="@style/entry_layout">
+     <TextView android:text="@string/uncali_pressure_supported" style="@style/info_label" />
+     <TextView android:id="@+id/TextView_UncaliPressureSupportedValue" style="@style/info_state_value" />
+ </LinearLayout>
+ <LinearLayout style="@style/entry_layout">
+     <TextView android:text="@string/cp_lppe_supported" style="@style/info_label" />
+     <TextView android:id="@+id/TextView_CpLppeSupportedValue" style="@style/info_state_value" />
+ </LinearLayout>
+ <LinearLayout style="@style/entry_layout">
+     <TextView android:text="@string/gnss_lppe_supported" style="@style/info_label" />
+     <TextView android:id="@+id/TextView_GnssLppeSupportedValue" style="@style/info_state_value" />
+ </LinearLayout>
+
+<!-- A-GPS profiling info -->
+<View            android:layout_height="1dip" android:layout_width="fill_parent" android:background="#FF909090"/>
+<TextView        android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/agps_profiling_info" android:textColor="#ff00ff" android:textSize="20sp" android:textStyle="bold"/>
+<TextView        android:id="@+id/TextView_ProfilingInfo" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="12dp"/>
+
+<!-- A-GPS on/off -->
+<View            android:layout_height="1dip" android:layout_width="fill_parent" android:background="#FF909090"/>
+<TextView        android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/agps_onoff" android:textColor="#ff00ff" android:textSize="20sp" android:textStyle="bold"/>
+<CheckBox        android:id="@+id/CheckBox_EnableAgps" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/enable_agps" android:textSize="15sp"/>
+
+<!-- UP/CP switching -->
+<View            android:layout_height="1dip" android:layout_width="fill_parent" android:background="#FF909090"/>
+<TextView        android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/cp_up_switch" android:textColor="#ff00ff" android:textSize="20sp" android:textStyle="bold"/>
+<RadioGroup     android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="horizontal">
+<RadioButton    android:id="@+id/RadioButton_Up" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/user_plane" android:textSize="15sp"/>
+<RadioButton    android:id="@+id/RadioButton_Cp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/control_plane" android:textSize="15sp"/>
+</RadioGroup>
+
+<!-- UP Setting -->
+<LinearLayout    android:id="@+id/LinearLayout_UpSettings" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent" android:gravity="left">
+
+<!-- UP Setting -> CDMA Setting -->
+<LinearLayout    android:id="@+id/LinearLayout_CdmaSetting" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent" android:gravity="left">
+<View            android:layout_height="1dip" android:layout_width="fill_parent" android:background="#FF909090"/>
+<TextView        android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/cdma_settings" android:textColor="#ff00ff" android:textSize="20sp" android:textStyle="bold"/>
+<RadioGroup        android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="vertical">
+<RadioButton    android:id="@+id/RadioButton_WCDMAPrefer" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/wcdma_prefer" android:textSize="15sp"/>
+<RadioButton    android:id="@+id/RadioButton_CDMAForce" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/cdma_force" android:textSize="15sp"/>
+</RadioGroup>
+</LinearLayout> <!-- End of LinearLayout_CdmaSetting-->
+
+<!-- UP Setting -> SUPL Setting -->
+<View            android:layout_height="1dip" android:layout_width="fill_parent" android:background="#FF909090"/>
+<TextView        android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/supl_settings" android:textColor="#ff00ff" android:textSize="20sp" android:textStyle="bold"/>
+
+<TextView        android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/up_prefmethod" android:width="200dp" android:textColor="#00ff00" android:textSize="15sp"/>
+<RadioGroup        android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="horizontal" >
+<RadioButton    android:id="@+id/RadioButton_MSA" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/msa" android:textSize="15sp"/>
+<RadioButton    android:id="@+id/RadioButton_MSB" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/msb" android:textSize="15sp"/>
+<RadioButton    android:id="@+id/RadioButton_NoPref" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/no_prefer" android:textSize="15sp"/>
+</RadioGroup>
+
+<View            android:layout_height="1dip" android:layout_width="fill_parent" android:background="#FF909090"/>
+<TextView        android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/up_pos_technology" android:width="200dp" android:textColor="#00ff00" android:textSize="15sp"/>
+
+<LinearLayout    android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent">
+<CheckBox        android:id="@+id/CheckBox_MSA" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/msa" android:textSize="15sp"/>
+<CheckBox        android:id="@+id/CheckBox_MSB" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/msb" android:textSize="15sp"/>
+<CheckBox        android:id="@+id/CheckBox_ECID" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/ecid" android:textSize="15sp"/>
+<CheckBox        android:id="@+id/CheckBox_OTDOA" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/otdoa" android:textSize="15sp" android:visibility="gone"/>
+</LinearLayout>
+
+<LinearLayout    android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent">
+<CheckBox        android:id="@+id/CheckBox_Auto" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/autonomous" android:textSize="15sp"/>
+<CheckBox        android:id="@+id/CheckBox_AFLT" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/aflt" android:textSize="15sp"/>
+</LinearLayout>
+
+<View            android:layout_height="1dip" android:layout_width="fill_parent" android:background="#FF909090"/>
+<TextView        android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/up_pos_protocol" android:width="200dp" android:textColor="#00ff00" android:textSize="15sp"/>
+<CheckBox        android:id="@+id/CheckBox_LPP" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/lpp" android:textSize="15sp"/>
+
+<View            android:layout_height="1dip" android:layout_width="fill_parent" android:background="#FF909090"/>
+
+<LinearLayout    android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent">
+<TextView        android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/supl_version" android:width="100dp" android:height="40dp" android:gravity="center" android:textColor="#00ff00" android:textSize="15sp"/>
+<RadioGroup        android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="horizontal" >
+<RadioButton    android:id="@+id/RadioButton_supl1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/supl_1" android:textSize="15sp"/>
+<RadioButton    android:id="@+id/RadioButton_supl2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/supl_2" android:textSize="15sp"/>
+</RadioGroup>
+</LinearLayout>
+
+<LinearLayout    android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent">
+<TextView        android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/tls_version" android:width="100dp" android:height="40dp" android:gravity="center" android:textColor="#00ff00" android:textSize="15sp"/>
+<RadioGroup        android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="horizontal" >
+<RadioButton    android:id="@+id/RadioButton_tls1_0" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/tls1_0" android:textSize="15sp"/>
+<RadioButton    android:id="@+id/RadioButton_tls1_1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/tls1_1" android:textSize="15sp"/>
+<RadioButton    android:id="@+id/RadioButton_tls1_2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/tls1_2" android:textSize="15sp"/>
+</RadioGroup>
+</LinearLayout>
+
+<CheckBox        android:id="@+id/CheckBox_certVerfiy" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/ca_enable" android:textSize="15sp"/>
+<CheckBox        android:id="@+id/CheckBox_UdpEnable" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/udp_enable" android:textSize="15sp"/>
+
+<LinearLayout    android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent">
+<Button            android:id="@+id/Button_SuplUt2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/change_supl_ut2" android:textSize="15sp"/>
+<TextView        android:id="@+id/TextView_suplUt2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/change_supl_ut2" android:textSize="15sp"/>
+</LinearLayout>
+
+<LinearLayout    android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent">
+<Button            android:id="@+id/Button_SuplUt3" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/change_supl_ut3" android:textSize="15sp"/>
+<TextView        android:id="@+id/TextView_suplUt3" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/change_supl_ut2" android:textSize="15sp"/>
+</LinearLayout>
+
+<LinearLayout    android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent">
+<Button            android:id="@+id/Button_SuplVerMinor" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/change_supl_version_minor" android:textSize="15sp"/>
+<TextView        android:id="@+id/TextView_suplVerMinor" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/change_supl_version_minor" android:textSize="15sp"/>
+</LinearLayout>
+
+<LinearLayout    android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent">
+<Button            android:id="@+id/Button_SuplVerSerInd" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/change_supl_version_serind" android:textSize="15sp"/>
+<TextView        android:id="@+id/TextView_suplVerSerInd" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/change_supl_version_serind" android:textSize="15sp"/>
+</LinearLayout>
+
+<View            android:layout_height="1dip" android:layout_width="fill_parent" android:background="#FF909090"/>
+
+<LinearLayout    android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent" android:gravity="left">
+<Button            android:id="@+id/Button_SlpTemplate" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="center" android:text="@string/slp_template" android:textSize="15sp"/>
+</LinearLayout>
+
+<LinearLayout    android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent" android:gravity="left">
+<TextView        android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/slp_addr" android:width="100dp" android:ellipsize="end" android:singleLine="true" android:textSize="15sp"/>
+<TextView        android:id="@+id/TextView_SlpAddr" android:layout_width="wrap_content" android:layout_height="wrap_content" android:width="150dp" android:ellipsize="end" android:singleLine="true" android:textColor="#00ffff" android:textSize="15sp"/>
+<Button           android:id="@+id/Button_SlpAddr" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/edit" android:width="70dp" android:textSize="15sp"/>
+</LinearLayout>
+
+<LinearLayout    android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent" android:gravity="left">
+<TextView        android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/slp_port" android:width="100dp" android:textSize="15sp"/>
+<TextView        android:id="@+id/TextView_SlpPort" android:layout_width="wrap_content" android:layout_height="wrap_content" android:width="150dp" android:textColor="#00ffff" android:maxLength="5" android:textSize="15sp"/>
+<Button           android:id="@+id/Button_SlpPort" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/edit" android:width="70dp" android:textSize="15sp"/>
+</LinearLayout>
+
+<CheckBox        android:id="@+id/CheckBox_Tls" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/tls_enable" android:textSize="15sp"/>
+
+
+<!-- UP Setting -> SUPL2.0 Setting -->
+<LinearLayout    android:id="@+id/LinearLayout_SUPL2" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent" android:gravity="left">
+
+<View            android:layout_height="1dip" android:layout_width="fill_parent" android:background="#FF909090"/>
+<TextView        android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/periodic_settings" android:width="150dp" android:textColor="#00ff00" android:textSize="15sp"/>
+
+<LinearLayout    android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent" android:gravity="left">
+<Button            android:id="@+id/Button_PeriodicStart" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/periodic_start" android:textSize="15sp"/>
+<Button            android:id="@+id/Button_PeriodicAbort" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/abort" android:textSize="15sp"/>
+</LinearLayout>
+
+<View            android:layout_height="1dip" android:layout_width="fill_parent" android:background="#FF909090"/>
+<TextView        android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/area_settings" android:width="150dp" android:textColor="#00ff00" android:textSize="15sp"/>
+<LinearLayout    android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent" android:gravity="left">
+<Button            android:id="@+id/Button_AreaStart" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/area_start" android:textSize="15sp"/>
+<Button            android:id="@+id/Button_AreaAbort" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/abort" android:textSize="15sp"/>
+</LinearLayout>
+
+<RadioGroup        android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="vertical">
+<RadioButton    android:id="@+id/RadioButton_Enter" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/enter" android:textSize="15sp" android:checked="true"/>
+<RadioButton    android:id="@+id/RadioButton_Inside" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/inside" android:textSize="15sp"/>
+<RadioButton    android:id="@+id/RadioButton_Outside" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/outside" android:textSize="15sp"/>
+<RadioButton    android:id="@+id/RadioButton_Leave" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/leave" android:textSize="15sp"/>
+</RadioGroup>
+
+</LinearLayout> <!-- End of LinearLayout_SUPL2-->
+
+<View            android:layout_height="1dip" android:layout_width="fill_parent" android:background="#FF909090"/>
+
+
+<ToggleButton android:id="@+id/Button_ShowQoP" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textOff="@string/show_si_qop_editor" android:textOn="@string/show_si_qop_editor" android:textSize="15sp" />
+
+<!-- UP Setting -> QoP Setting -->
+<LinearLayout    android:id="@+id/LinearLayout_QoP" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent" android:gravity="left">
+<LinearLayout    android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent" android:gravity="left">
+<TextView        android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/accuracy_unit" android:width="80dp" android:textColor="#00ff00" android:textSize="15sp"/>
+<RadioGroup        android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="horizontal">
+<RadioButton    android:id="@+id/RadioButton_KValue" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/k_value" android:textSize="15sp" android:checked="true"/>
+<RadioButton    android:id="@+id/RadioButton_Meter" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/meter" android:textSize="15sp"/>
+</RadioGroup>
+</LinearLayout>
+
+<LinearLayout    android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent" android:gravity="left">
+<TextView        android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/horizontal_accuracy" android:width="150dp" android:textColor="#00ff00" android:textSize="15sp"/>
+<TextView        android:id="@+id/TextView_HAcc" android:layout_width="wrap_content" android:layout_height="wrap_content" android:width="50dp" android:textColor="#00ffff" android:text="@string/num_10" android:maxLength="9" android:textSize="15sp"/>
+<Button           android:id="@+id/Button_HAcc" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/edit" android:width="100dp" android:textSize="15sp"/>
+</LinearLayout>
+
+<LinearLayout     android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent" android:gravity="left">
+<TextView        android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/vertical_accuracy" android:width="150dp" android:textColor="#00ff00" android:textSize="15sp"/>
+<TextView        android:id="@+id/TextView_VAcc" android:layout_width="wrap_content" android:layout_height="wrap_content" android:width="50dp" android:textColor="#00ffff" android:text="@string/num_16" android:maxLength="9" android:textSize="15sp"/>
+<Button           android:id="@+id/Button_VAcc" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/edit" android:width="100dp" android:textSize="15sp"/>
+</LinearLayout>
+
+<LinearLayout     android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent" android:gravity="left">
+<TextView        android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/location_age" android:width="150dp" android:textColor="#00ff00" android:textSize="15sp"/>
+<TextView        android:id="@+id/TextView_LocationAge" android:layout_width="wrap_content" android:layout_height="wrap_content" android:width="50dp" android:textColor="#00ffff" android:text="@string/num_0" android:maxLength="9" android:textSize="15sp"/>
+<Button           android:id="@+id/Button_LocationAge" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/edit" android:width="100dp" android:textSize="15sp"/>
+</LinearLayout>
+
+<LinearLayout     android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent" android:gravity="left">
+<TextView        android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/delay" android:width="150dp" android:textColor="#00ff00" android:textSize="15sp"/>
+<TextView        android:id="@+id/TextView_Delay" android:layout_width="wrap_content" android:layout_height="wrap_content" android:width="50dp" android:textColor="#00ffff" android:text="@string/num_0" android:maxLength="9" android:textSize="15sp"/>
+<Button           android:id="@+id/Button_Delay" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/edit" android:width="100dp" android:textSize="15sp"/>
+</LinearLayout>
+
+</LinearLayout> <!-- End of LinearLayout_QoP-->
+
+</LinearLayout> <!-- End of LinearLayout_UpSettings-->
+
+<!-- CP Setting -->
+<LinearLayout    android:id="@+id/LinearLayout_CpSettings" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent" android:gravity="left">
+
+<View            android:layout_height="1dip" android:layout_width="fill_parent" android:background="#FF909090"/>
+<TextView        android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/cp_settings" android:textColor="#ff00ff" android:textSize="20sp" android:textStyle="bold"/>
+
+<LinearLayout    android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent" android:gravity="left">
+<TextView        android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/molr_position_method" android:width="80dp" android:textColor="#00ff00" android:textSize="15sp"/>
+<RadioGroup        android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="vertical">
+<RadioButton    android:id="@+id/RadioButton_LocationEstimate" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/location_estimate" android:textSize="15sp" android:checked="true"/>
+<RadioButton    android:id="@+id/RadioButton_AssistanceData" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/assistance_data" android:textSize="15sp"/>
+</RadioGroup>
+</LinearLayout>
+
+<LinearLayout    android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent" android:gravity="left">
+<CheckBox       android:id="@+id/CheckBox_ExternalAddr" android:layout_width="wrap_content" android:layout_height="wrap_content" android:width="150dp" android:text="@string/external_addr" android:textSize="15sp"/>
+<TextView        android:id="@+id/TextView_ExternalAddr" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="15sp"/>
+</LinearLayout>
+
+<LinearLayout    android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent" android:gravity="left">
+<CheckBox        android:id="@+id/CheckBox_MlcNumber" android:layout_width="wrap_content" android:layout_height="wrap_content" android:width="150dp" android:text="@string/mlc_number" android:textSize="15sp"/>
+<TextView        android:id="@+id/TextView_MlcNumber" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="15sp"/>
+</LinearLayout>
+
+<CheckBox         android:id="@+id/CheckBox_EpcMolrPduEnable" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/epc_molr_pdu_enable" android:textSize="15sp"/>
+
+</LinearLayout> <!-- End of LinearLayout_CpSettings-->
+
+<!-- Feature Enabler -->
+<View            android:layout_height="1dip" android:layout_width="fill_parent" android:background="#FF909090"/>
+<TextView        android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/feature_enabler" android:textColor="#ff00ff" android:textSize="20sp" android:textStyle="bold" />
+
+<CheckBox        android:id="@+id/CheckBox_NiAllow" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/allow_ni" android:textSize="15sp"/>
+<CheckBox         android:id="@+id/CheckBox_RoamingAllow" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/allow_roaming" android:textSize="15sp"/>
+<CheckBox         android:id="@+id/CheckBox_CPAutoReset" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/cp_auto_reset" android:textSize="15sp"/>
+<CheckBox         android:id="@+id/CheckBox_Supl2File" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/log_supl_to_file" android:textSize="15sp"/>
+<CheckBox         android:id="@+id/CheckBox_LogSensitiveData" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/log_sensitive_data" android:textSize="15sp"/>
+<CheckBox         android:id="@+id/CheckBox_CertFromSdcard" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/cert_from_sdcard" android:textSize="15sp" android:filterTouchesWhenObscured="true" />
+<CheckBox         android:id="@+id/CheckBox_AutoProfileEnable" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/auto_profile_enable" android:textSize="15sp" android:filterTouchesWhenObscured="true" />
+<CheckBox         android:id="@+id/CheckBox_SuplApnEnable" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/supl_apn_enable" android:textSize="15sp"/>
+<CheckBox         android:id="@+id/CheckBox_SyncToSlp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/sync_to_slp" android:textSize="15sp"/>
+<CheckBox         android:id="@+id/CheckBox_ImsiEnable" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/imsi_enable" android:textSize="15sp"/>
+<CheckBox         android:id="@+id/CheckBox_E911GpsIconEnable" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/e911_gps_icon_enable" android:textSize="15sp"/>
+<CheckBox         android:id="@+id/CheckBox_LppeHideWifiBtStatus" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/lppe_hide_wifi_bt_status" android:textSize="15sp"/>
+<CheckBox         android:id="@+id/CheckBox_LppeNetworkLocationDisable" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/lppe_network_location_disable" android:textSize="15sp"/>
+<CheckBox         android:id="@+id/CheckBox_LppeCpEnable" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/lppe_cp_enable" android:textSize="15sp"/>
+<CheckBox         android:id="@+id/CheckBox_LppeUpEnable" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/lppe_up_enable" android:textSize="15sp"/>
+<CheckBox         android:id="@+id/CheckBox_AospProfileEnable" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/aosp_profile_enable" android:textSize="15sp"/>
+<CheckBox         android:id="@+id/CheckBox_NlpSettings2SuplEnable" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/nlp_settings_2_supl_enable" android:textSize="15sp"/>
+<CheckBox         android:id="@+id/CheckBox_LbsLogEnable" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/lbs_log_enable" android:textSize="15sp"/>
+
+<CheckBox         android:id="@+id/CheckBox_IngoreSiForE911" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/lbs_ingore_si_for_e911" android:textSize="15sp"/>
+<CheckBox         android:id="@+id/CheckBox_LppeCpWlanEnable" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/lbs_lppe_cp_wlan_enable" android:textSize="15sp"/>
+<CheckBox         android:id="@+id/CheckBox_LppeCpSrnEnable" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/lbs_lppe_cp_srn_enable" android:textSize="15sp"/>
+<CheckBox         android:id="@+id/CheckBox_LppeCpSensorEnable" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/lbs_lppe_cp_sensor_enable" android:textSize="15sp"/>
+<CheckBox         android:id="@+id/CheckBox_LppeCpDbhEnable" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/lbs_lppe_cp_dbh_enable" android:textSize="15sp"/>
+<CheckBox         android:id="@+id/CheckBox_LppeUpWlanEnable" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/lbs_lppe_up_wlan_enable" android:textSize="15sp"/>
+<CheckBox         android:id="@+id/CheckBox_LppeUpSrnEnable" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/lbs_lppe_up_srn_enable" android:textSize="15sp"/>
+<CheckBox         android:id="@+id/CheckBox_LppeUpSensorEnable" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/lbs_lppe_up_sensor_enable" android:textSize="15sp"/>
+<CheckBox         android:id="@+id/CheckBox_LppeUpDbhEnable" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/lbs_lppe_up_dbh_enable" android:textSize="15sp"/>
+<CheckBox         android:id="@+id/CheckBox_UpLppIn2g3gDisable" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/lbs_up_lpp_in_2g3g_disable" android:textSize="15sp"/>
+<CheckBox         android:id="@+id/CheckBox_UpRrlpIn4gDisable" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/lbs_up_rrlp_in_4g_disable" android:textSize="15sp"/>
+<CheckBox         android:id="@+id/CheckBox_UpSiDisable" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/lbs_up_si_disable" android:textSize="15sp"/>
+<CheckBox         android:id="@+id/CheckBox_DefaultNlpEnable" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/default_nlp_enable" android:textSize="15sp"/>
+<CheckBox         android:id="@+id/CheckBox_ForceOtdoaAssistEnable" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/force_otdoa_assist" android:textSize="15sp"/>
+<CheckBox         android:id="@+id/CheckBox_AospPosModeEnable" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/aosp_pos_mode_enable" android:textSize="15sp"/>
+<CheckBox         android:id="@+id/CheckBox_PrivacyOverrideEnable" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/privacy_override_enable" android:textSize="15sp"/>
+<CheckBox         android:id="@+id/CheckBox_AllowNiForGpsOffEnable" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/allow_ni_for_gps_off_enable" android:textSize="15sp"/>
+
+<LinearLayout    android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent">
+<TextView        android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/lbs_ip_version_prefer" android:width="150dp" android:height="40dp" android:gravity="center" android:textColor="#00ff00" android:textSize="15sp"/>
+<RadioGroup        android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="horizontal" >
+<RadioButton    android:id="@+id/RadioButton_Ipv6" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/lbs_ip_v6" android:textSize="15sp"/>
+<RadioButton    android:id="@+id/RadioButton_Ipv4" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/lbs_ip_v4" android:textSize="15sp"/>
+</RadioGroup>
+</LinearLayout>
+
+<LinearLayout    android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent" android:gravity="left">
+<TextView        android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/tcp_keep_alive" android:width="150dp" android:textSize="15sp"/>
+<TextView        android:id="@+id/TextView_TcpKeepAliveInterval" android:layout_width="wrap_content" android:layout_height="wrap_content" android:width="80dp" android:textColor="#00ffff" android:maxLength="5" android:textSize="15sp"/>
+<Button           android:id="@+id/Button_TcpKeepAlive" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/edit" android:width="70dp" android:textSize="15sp"/>
+</LinearLayout>
+
+<LinearLayout    android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent" android:gravity="left">
+<TextView        android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/lppe_crowd_source_confident" android:width="150dp" android:textSize="15sp"/>
+<TextView        android:id="@+id/TextView_LppeCrowdSourceConfident" android:layout_width="wrap_content" android:layout_height="wrap_content" android:width="80dp" android:textColor="#00ffff" android:maxLength="5" android:textSize="15sp"/>
+<Button           android:id="@+id/Button_LppeCrowdSourceConfident" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/edit" android:width="70dp" android:textSize="15sp"/>
+</LinearLayout>
+
+<!-- GNSS Setting -->
+<View            android:layout_height="1dip" android:layout_width="fill_parent" android:background="#FF909090"/>
+<TextView        android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/gnss_setting" android:textColor="#ff00ff" android:textSize="20sp" android:textStyle="bold"/>
+
+<CheckBox        android:id="@+id/CheckBox_Sib8_Sib16_Enable" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/sib8_sib16_enable" android:textSize="15sp"/>
+<CheckBox        android:id="@+id/CheckBox_GpsSatelliteEnable" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/gps_satellite_enable" android:textSize="15sp" android:visibility="gone"/>
+<CheckBox        android:id="@+id/CheckBox_AgpsEnable" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/agps_enable" android:textSize="15sp" android:visibility="gone"/>
+<CheckBox        android:id="@+id/CheckBox_GlonassSatelliteEnable" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/glonass_satellite_enable" android:textSize="15sp"/>
+<CheckBox        android:id="@+id/CheckBox_AglonassEnable" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/aglonass_enable" android:textSize="15sp"/>
+<CheckBox        android:id="@+id/CheckBox_BeidouSatelliteEnable" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/beidou_satellite_enable" android:textSize="15sp"/>
+<CheckBox        android:id="@+id/CheckBox_AbeidouEnable" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/abeidou_enable" android:textSize="15sp"/>
+<CheckBox        android:id="@+id/CheckBox_GalileoSatelliteEnable" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/galileo_satellite_enable" android:textSize="15sp"/>
+<CheckBox        android:id="@+id/CheckBox_AgalileoEnable" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/agalileo_enable" android:textSize="15sp"/>
+
+<!-- Reset To Default -->
+<View            android:layout_height="1dip" android:layout_width="fill_parent" android:background="#FF909090"/>
+<TextView        android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/reset_to_default" android:textColor="#ff00ff" android:textSize="20sp" android:textStyle="bold"/>
+<Button           android:id="@+id/Button_Reset2Default" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/reset_to_default" android:textSize="15sp"/>
+
+<View            android:layout_height="1dip" android:layout_width="fill_parent" android:background="#FF909090"/>
+
+</LinearLayout>
+</ScrollView>

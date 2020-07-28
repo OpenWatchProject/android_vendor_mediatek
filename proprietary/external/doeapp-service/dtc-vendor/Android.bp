@@ -1,0 +1,37 @@
+// Copyright 2016 The Android Open Source Project
+cc_binary {
+    name: "dtc_vendor",
+    srcs: [
+        "checks.c",
+        "data.c",
+        "dtc.c",
+        "dtc-lexer.l",
+        "dtc-parser.y",
+        "flattree.c",
+        "fstree.c",
+        "livetree.c",
+        "srcpos.c",
+        "treesource.c",
+        "util.c",
+    ],
+
+    cflags: [
+        "-Wall",
+        "-Werror",
+        "-Wno-sign-compare",
+        "-Wno-missing-field-initializers",
+        "-Wno-unused-parameter",
+    ],
+
+    proprietary: true,
+    owner: "mtk",
+
+    stl: "none",
+    dist: {
+        targets: [
+            "dist_files",
+        ],
+        dir: "dtc_vendor",
+    },
+
+}

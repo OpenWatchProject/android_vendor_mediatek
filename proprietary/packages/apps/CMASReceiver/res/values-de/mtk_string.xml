@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+ * Copyright (C) 2007-2008 Esmertec AG.
+ * Copyright (C) 2007-2008 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+--><resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+   <string name="alerts">Alarme</string>
+    <string name="select_all">"Alle auswählen"</string>
+    <string name="unselect_all">"Auswahl für alle aufheben"</string>
+    <string name="delete">"Löschen"</string>
+    <string name="select_cellbroadcasts">Notruf wählen</string>
+    <plurals name="message_view_selected_message_count">
+        <item quantity="one"><xliff:g id="message_count" example="1">%d</xliff:g> ausgewählt</item>
+        <item quantity="other"><xliff:g id="message_count" example="9">%d</xliff:g> ausgewählt</item>
+    </plurals>
+    <plurals name="confirm_delete_broadcast">
+        <item quantity="one">1 ausgewählte Alarmmeldung wird gelöscht</item>
+        <item quantity="other"><xliff:g id="number" example="15">%1$s</xliff:g> ausgewählte Alarmmeldungen werden gelöscht</item>
+    </plurals>
+    <string name="enable_cmas_presidential_threat_alerts_title">Präsidialalarm anzeigen</string>
+    <string name="enable_cmas_presidential_threat_alerts_summary">Präsidialalarme anzeigen</string>
+    <string name="enable_cmas_imminent_threat_alerts_title">Bevorstehender Alarm</string>
+    <string name="enable_cmas_imminent_threat_alerts_summary">Alarme zu bevorstehenden Bedrohungen für Leben und Eigentum anzeigen </string>
+    <string name="cmas_preview_alert_tone_title">Alarmtonvorschau</string>
+    <string name="cmas_preview_alert_tone_summary">Vorschau des Alarmtons</string>
+    <string name="cmas_change_settings">Einstellungen wirklich ändern?</string>
+    <string name="cmas_disable_cmas">Wenn Sie Cell Broadcast deaktivieren, werden keine Alarme empfangen.</string>
+    <string name="cmas_enable_cmas_failed">Öffnen fehlgeschlagen.</string>
+    <string name="enable_repeat_alert_title">Alarm wiederholen</string>
+    <string name="enable_repeat_alert_summary">Erinnert den Anwender immer wieder an ungelesene Alarme.</string>
+    <string name="enable_all_alert_title">Alle Alarme ein</string>
+    <string name="enable_all_imminent_alerts_title">Alle Meldungen zu bevorstehenden Bedrohungen</string>
+    <string name="enable_cell_broadcast_title">Notrufe</string>
+    <string name="alert_sound_volume">Alarmlautstärke</string>
+    <string name="alert_volume_summary">Alarmtonlautstärke anpassen</string>
+</resources>

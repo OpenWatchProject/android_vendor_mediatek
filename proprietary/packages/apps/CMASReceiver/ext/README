@@ -1,0 +1,22 @@
+JAR for CMAS plugin 
+
+This library is pre-built by MediaTek internal.
+
+WHAT IT DOES?
+=============
+com.mediatek.cmas.ext.jar defines interface for plugin.
+1. Check for Call over CMAS Notification.
+2. Check for Hyperlink support on Number, URL
+3. Different scenario of showing the New CMAS CB and checking for Duplicate CMAS CB.
+
+HOW IT WAS BUILT?
+==================
+It needs the following feature options opened for the main APK in WWOP flavor:
+MTK_CMAS_APP
+
+HOW TO USE IT?
+==============
+use this com.mediatek.cmas.ext.jar to build CMASReceiver.apk in mediatek platform.
+Install the APK to phone.
+Check the CMAS Channels enabled or not in the CMAS Setting.
+It can receive the CMAS CB messages with better and advanced feature set of Android provided WEA APK.

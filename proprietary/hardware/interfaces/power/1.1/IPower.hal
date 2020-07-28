@@ -1,0 +1,80 @@
+/*
+ * Copyright (C) 2016 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+package vendor.mediatek.hardware.power@1.1;
+import android.hardware.power@1.0::types;
+import android.hardware.power@1.0::IPower;
+import vendor.mediatek.hardware.power@1.1::types;
+
+interface IPower extends android.hardware.power@1.0::IPower{
+    /**
+     * mtkPowerHint() is called to pass hints on power/performance requirements
+     * which may result in adjustment of power/performance parameters of the
+     * cpufreq governor and other controls.
+     *
+     * @param hint PowerHint which is passed
+     * @param data contains additional information about the hint
+     *
+     */
+    oneway mtkPowerHint(MtkPowerHint hint, int32_t data);
+
+    /**
+     * mtkCusPowerHint() is called to pass hints on power/performance requirements
+     * which may result in adjustment of power/performance parameters of the
+     * cpufreq governor and other controls. User has to implement policy.
+     *
+     * @param hint PowerHint which is passed
+     * @param data contains additional information about the hint
+     *
+     */
+    oneway mtkCusPowerHint(MtkCusPowerHint hint, int32_t data);
+
+    /**
+     * notifyAppState() is called to pass information of foreground application
+     * It should called by AMS. MTK power service could use these info to
+     * implement some power/performance enhancement
+     *
+     * @param packName Package name of foreground app
+     * @param actName  Activity name of foreground
+     * @param pid      pid of foreground app
+     * @param state    Activity state
+     */
+    oneway notifyAppState(string packName, string actName, int32_t pid, MtkActState state);
+
+    /**
+     * querySysInfo() is called to query system information
+     *
+     * @param cmd    Query command
+     * @param param  Input parameter of command
+     */
+    querySysInfo(MtkQueryCmd cmd, int32_t param) generates (int32_t value);
+
+    /**
+     * Following functions provide mechanism for user program to control
+     * power/performance parameters themshelves. It is used to substitute for
+     * MTK PerfService. Please refer to following flow
+     *
+     * example:
+     *     handle = scnReg();
+     *     scnConfig(handle, CMD_SET_CLUSTER_CPU_CORE_MIN, 0, 2, -1, -1); // cluster 0: 2 core
+     *     scnEnable(handle, 1000);  // enable for 1000ms
+     *     scnDisable*handle);
+     */
+    scnReg() generates (int32_t hdl);
+    oneway scnConfig(int32_t hdl, MtkPowerCmd cmd, int32_t param1, int32_t param2, int32_t param3, int32_t param4);
+    oneway scnUnreg(int32_t hdl);
+    oneway scnEnable(int32_t hdl, int32_t timeout);
+    oneway scnDisable(int32_t hdl);
+};

@@ -1,0 +1,16 @@
+WHAT IT DOES?
+=============
+Metadata vendor tags.
+
+HOW IT WAS BUILT?
+==================
+The following libs from MediaTek:
+libmtkcam_metadata.vendortag.a
+
+HOW TO USE IT?
+==============
+[Users' Android.mk]
+LOCAL_SHARED_LIBRARIES += libmtkcam_metadata
+
+[Users' sources]
+#include <mtkcam/utils/metadata/IVendorTagDescriptor.h>

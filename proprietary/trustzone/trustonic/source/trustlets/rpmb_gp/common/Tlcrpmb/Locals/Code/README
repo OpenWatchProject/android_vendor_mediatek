@@ -1,0 +1,19 @@
+This is the README for RPMB test program
+
+WHAT IT DOES?
+=============
+Provide an example to access RPMB through TEE TA and TEE driver or through
+kernel driver.
+
+HOW IT WAS BUILT?
+==================
+Native program bulid flow of android.
+
+HOW TO USE IT?
+==============
+Usage:
+    tlcrpmb ioctl setkey
+    tlcrpmb ioctl read [length] [blkaddr]
+    tlcrpmb ioctl write [length] [blkaddr] [value]
+    tlcrpmb read [length]
+    tlcrpmb write [length] [value]

@@ -1,0 +1,16 @@
+WHAT IT DOES?
+=============
+The test apk is a application which used to test Omacp apk.
+Omacp apk is used to install configuration messages such as APN settings, Bookmarks from Operators.
+This test apk is pre-built by MediaTek internal.
+
+HOW IT WAS BUILT?
+==================
+It will be pre-built automatically by build process.
+
+HOW TO USE IT?
+==============
+Run the test apk via adb command given below:
+adb shell am instrument -w com.mediatek.omacp.tests/android.test.InstrumentationTestRunner
+
+All the source code of this library were written by MediaTek co..

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android"
+           xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!--
+        Override for GMS build.
+        When we build GMS load, the overlay in GMS resources cannot work because
+        we use MtkContactsProvider to override ContactsProvider at package level.
+        So we have to set this to pass GTS.
+     -->
+    <!-- Package name for the contacts metadata syncadapter [DO NOT TRANSLATE] -->
+    <string name="metadata_sync_pacakge" translatable="false">com.google.android.gms</string>
+</resources>

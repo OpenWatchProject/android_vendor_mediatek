@@ -1,0 +1,26 @@
+var group_____t_e_e___get_cancellation_flag =
+[
+    [ "TestCase_GC00101_MonoSession_InvokeCommandUnmaskNoCancel", "group_____t_e_e___get_cancellation_flag.html#ga1ea7e5b946547fecb135803234422e02", null ],
+    [ "TestCase_GC00102_TEECtoMonoSession_InvokeCommandUnmaskNoCancel", "group_____t_e_e___get_cancellation_flag.html#ga49f553d8a67e488cd83542a631d667ec", null ],
+    [ "TestCase_GC00110_MultiSession_OpenSessionUnmaskNoCancel", "group_____t_e_e___get_cancellation_flag.html#ga6afc9c944744c8fef0d0cd7fc8f0c1ad", null ],
+    [ "TestCase_GC00111_MultiSession_InvokeCommandUnmaskNoCancel", "group_____t_e_e___get_cancellation_flag.html#ga877eee28ca29a43fb36235ea5649b7b5", null ],
+    [ "TestCase_GC00120_MultiInstance_OpenSessionUnmaskNoCancel", "group_____t_e_e___get_cancellation_flag.html#ga534411bf5728507cf310120b2f738bc4", null ],
+    [ "TestCase_GC00121_MultiInstance_InvokeCommandUnmaskNoCancel", "group_____t_e_e___get_cancellation_flag.html#gabd7ed6d569ddbd34a15c789884b49717", null ],
+    [ "TestCase_GC00200_MonoSession_OpenSessionUnmaskCancel", "group_____t_e_e___get_cancellation_flag.html#ga9816447c672a0e64c503cf5b67e8fe02", null ],
+    [ "TestCase_GC00201_MonoSession_InvokeCommandUnmaskCancel", "group_____t_e_e___get_cancellation_flag.html#gaab7c00517634efd0a724ba98a2203ea9", null ],
+    [ "TestCase_GC00205_MonoSession_OpenSessionNoUnmaskCancel", "group_____t_e_e___get_cancellation_flag.html#ga7d55ba48c348a6f3a64ca3141b98f8cf", null ],
+    [ "TestCase_GC00210_MultiSession_OpenSessionUnmaskCancel", "group_____t_e_e___get_cancellation_flag.html#gad817a28b50033f93cd551a091c401644", null ],
+    [ "TestCase_GC00211_MultiSession_InvokeCommandUnmaskCancel", "group_____t_e_e___get_cancellation_flag.html#ga435c6594e120bad5ada9f6566185b750", null ],
+    [ "TestCase_GC00212_MultiSession_OpenSessionUnmaskCancelParallel", "group_____t_e_e___get_cancellation_flag.html#ga6aca57336f5838c9c0db5166fb742b33", null ],
+    [ "TestCase_GC00213_MultiSession_InvokeCommandUnmaskCancelParallel", "group_____t_e_e___get_cancellation_flag.html#ga6c264115ece15f63f13470c2d1d8d7ad", null ],
+    [ "TestCase_GC00215_MultiSession_OpenSessionNoUnmaskCancel", "group_____t_e_e___get_cancellation_flag.html#gaab4c8f7a1b775f009282c68b81bdd611", null ],
+    [ "TestCase_GC00220_MultiInstance_OpenSessionUnmaskCancel", "group_____t_e_e___get_cancellation_flag.html#ga83d0bd5a2967445e3b75518704285033", null ],
+    [ "TestCase_GC00221_MultiInstance_InvokeCommandUnmaskCancel", "group_____t_e_e___get_cancellation_flag.html#ga3d62d9850522431b95f777b5a0f2dfc8", null ],
+    [ "TestCase_GC00222_MultiInstance_OpenSessionUnmaskCancelParallel", "group_____t_e_e___get_cancellation_flag.html#gaffc9b2016e4b637ed74191513824ccef", null ],
+    [ "TestCase_GC00223_MultiInstance_InvokeCommandUnmaskCancelParallel", "group_____t_e_e___get_cancellation_flag.html#ga8e1073f35f1237030e81c8cbbd997228", null ],
+    [ "TestCase_GC00225_MultiInstance_OpenSessionNoUnmaskCancel", "group_____t_e_e___get_cancellation_flag.html#gad64083d697a76ebc648a318ef2bdcca3", null ],
+    [ "TestCase_GC00300_MonoSessionKeepAlive_OpenSessionUnmaskCancel", "group_____t_e_e___get_cancellation_flag.html#ga47f5686a1a72ed7c5074cb83afb6b3bf", null ],
+    [ "TestCase_GC00301_MonoSessionKeepAlive_InvokeCommandUnmaskCancel", "group_____t_e_e___get_cancellation_flag.html#gaa7bea5cba9b9c28d4e168cee2949305c", null ],
+    [ "TestCase_GC00310_MultiSessionKeepAlive_OpenSessionUnmaskCancelParallel", "group_____t_e_e___get_cancellation_flag.html#ga3778e1c06e5bfe8e571acf47b547e591", null ],
+    [ "TestCase_GC00311_MultiSessionKeepAlive_InvokeCommandUnmaskCancelParallel", "group_____t_e_e___get_cancellation_flag.html#ga47f35cbf1a73f22c15ffb3bbb170b33e", null ]
+];

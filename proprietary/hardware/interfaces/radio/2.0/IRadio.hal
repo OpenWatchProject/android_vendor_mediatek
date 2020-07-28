@@ -1,0 +1,1431 @@
+/*
+ * Copyright (C) 2016 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package vendor.mediatek.hardware.radio@2.0;
+
+import android.hardware.radio@1.0::DataProfileInfo;
+import android.hardware.radio@1.1::IRadio;
+import android.hardware.radio@1.0::Dial;
+
+import IRadioResponse;
+import IRadioIndication;
+import IAtciResponse;
+import IAtciIndication;
+import IImsRadioResponse;
+import IImsRadioIndication;
+
+/*
+ * This interface is used by telephony & telecom to talk to cellular radio.
+ * All the functions have minimum one parameter:
+ * serial: which corresponds to serial no. of request. Serial numbers must only be memorized for the
+ * duration of a method call. If clients provide colliding serials (including passing the same
+ * serial to different methods), multiple responses (one for each method call) must still be served.
+ */
+interface IRadio extends android.hardware.radio@1.1::IRadio {
+    /*
+     * Set response functions for mtk radio requests & radio indications.
+     *
+     * @param radioResponse Object containing response functions
+     * @param radioIndication Object containing radio indications
+     */
+    setResponseFunctionsMtk(IRadioResponse radioResponse,
+            IRadioIndication radioIndication);
+
+    /*
+     * Set response functions for mtk radio requests & radio indications.
+     *
+     * @param radioResponse Object containing response functions
+     * @param radioIndication Object containing radio indications
+     */
+    setResponseFunctionsIms(IImsRadioResponse radioResponse,
+            IImsRadioIndication radioIndication);
+
+    /**
+     * Reset modem.
+     *
+     * @param serial Serial number of request
+     * @param mode 1: framework just want an exception from modem;
+     *             2: framework want reset modem.
+     */
+    oneway setTrm(int32_t serial, int32_t mode);
+
+    // MTK-START: SIM COMMON
+    /**
+     * Get ATR
+     *
+     * @param serial Serial number of request.
+     *
+     * Response function is IRadioResponse.getATRResponse
+     */
+    oneway getATR(int32_t serial);
+
+    /**
+     * Set SIM Power
+     *
+     * @param serial Serial number of request.
+     * @param mode Set SIM power mode.
+     *
+     * Response function is IRadioResponse.setSimPowerResponse
+     */
+    oneway setSimPower(int32_t serial, int32_t mode);
+
+    // MTK-END
+
+    /// M: CC @{
+    /**
+     * Hang up all
+     * After this HANGUP request returns, Radio must show the connection is NOT
+     * active anymore in next getCurrentCalls() query.
+     *
+     * @param serial Serial number of request.
+     *
+     * Response function is IRadioResponse.hangupAllResponse()
+     *
+     */
+    oneway hangupAll(int32_t serial);
+
+    /**
+     * Proprietary incoming call handling.
+     * RIL Request: "RIL_REQUEST_SET_CALL_INDICATION"
+     */
+    oneway setCallIndication(int32_t serial, int32_t mode, int32_t callId, int32_t seqNumber);
+
+    /**
+     * Proprietary ECC handling
+     * RIL Request: RIL_REQUEST_EMERGENCY_DIAL
+     *
+     * @param serial Serail Number
+     * @param dialInfo DialInfo
+     */
+    oneway emergencyDial(int32_t serial, Dial dialInfo);
+
+    /**
+     * Proprietary ECC handling
+     * RIL Request: RIL_REQUEST_SET_ECC_SERVICE_CATEGORY
+     *
+     * @param serial Serail Number
+     * @param serviceCategory Service Category
+     */
+    oneway setEccServiceCategory(int32_t serial, int32_t serviceCategory);
+
+    /*
+     * Set ecc list to MD
+     *
+     * @param serial Serial number of request.
+     * @param list1 Ecc list set to MD
+     * @param list2 Ecc list set to MD
+     *
+     * Response function is IRadioResponse.setEccListResponse()
+     *
+     */
+    oneway setEccList(int32_t serial, string list1, string list2);
+
+    /**
+     * VT Dial
+     * RIL Request: RIL_REQUEST_VT_DIAL
+     *
+     * @param serial Serail Number
+     * @param dialInfo DialInfo
+     */
+    oneway vtDial(int32_t serial, Dial dialInfo);
+
+    /**
+     * Accept VT Call with voice only
+     * RIL Request: RIL_REQUEST_VOICE_ACCEPT
+     *
+     * @param serial Serail Number
+     * @param callId Call ID
+     */
+    oneway voiceAccept(int32_t serial, int32_t callId);
+
+    /**
+     * Replace VT Call
+     * RIL Request: RIL_REQUEST_REPLACE_VT_CALL
+     *
+     * @param serial Serail Number
+     * @param index Index
+     */
+    oneway replaceVtCall(int32_t serial, int32_t index);
+    /// @}
+
+    /**
+     * E911 Request current status
+     * RIL Request: RIL_REQUEST_CURRENT_STATUS
+     *
+     * @param serial Serail Number
+     * @param airplaneMode airplane mode (0: off, 1: on)
+     * @param imsReg IMS Registration State
+     */
+    oneway currentStatus(int32_t serial, int32_t airplaneMode, int32_t imsReg);
+
+    /**
+     * E911 Set ECC preferred Rat
+     * RIL Request: RIL_REQUEST_ECC_PREFERRED_RAT
+     *
+     * @param serial Serail Number
+     * @param phoneType (1: gsm, 2: cdma)
+     */
+    oneway eccPreferredRat(int32_t serial, int32_t phoneType);
+
+    // IMS Interfaces // ***************************************************************
+
+    /*
+     * Accept a video call
+     *
+     * @param serial Serail Number
+     * @param videoMode Video Mode
+     * @param callId Call ID
+     */
+    oneway videoCallAccept(int32_t serial, int32_t videoMode,
+            int32_t callId);
+
+    /*
+     * IMS ECT Command
+     *
+     * @param serial Serail Number
+     * @param number Number
+     * @param type Type
+     */
+    oneway imsEctCommand(int32_t serial, string number, int32_t type);
+
+    /*
+     * Hold a call
+     *
+     * @param serial Serail Number
+     * @param callid Call ID
+     */
+    oneway holdCall(int32_t serial, int32_t callId);
+
+    /*
+     * Resume a call
+     *
+     * @param serial Serail Number
+     * @param callid Call ID
+     */
+    oneway resumeCall(int32_t serial, int32_t callId);
+
+    /*
+     * Deregister IMS with cause
+     *
+     * @param serial Serail Number
+     * @param cause Cause
+     */
+    oneway imsDeregNotification(int32_t serial, int32_t cause);
+
+    /*
+     * Turn On IMS
+     *
+     * @param serial Serail Number
+     * @param isOn Is IMS turn ON
+     */
+    oneway setImsEnable(int32_t serial, bool isOn);
+
+    /*
+     * Turn On VoLTE (Voice on LTE)
+     *
+     * @param serial Serail Number
+     * @param isOn Is VOLTE turn ON
+     */
+    oneway setVolteEnable(int32_t serial, bool isOn);
+
+    /*
+     * Turn On WFC (Voice on Wi-Fi)
+     *
+     * @param serial Serail Number
+     * @param isOn Is WFC turn ON
+     */
+    oneway setWfcEnable(int32_t serial, bool isOn);
+
+    /*
+     * Turn On Video on LTE
+     *
+     * @param serial Serail Number
+     * @param isOn Is VILTE turn ON
+     */
+    oneway setVilteEnable(int32_t serial, bool isOn);
+
+    /*
+     * Turn On Video on Wi-Fi
+     *
+     * @param serial Serail Number
+     * @param isOn Is VILTE turn ON
+     */
+    oneway setViWifiEnable(int32_t serial, bool isOn);
+
+    /*
+     * Turn On IMS Voice
+     *
+     * @param serial Serail Number
+     * @param isOn Is IMS Voice turn ON
+     */
+    oneway setImsVoiceEnable(int32_t serial, bool isOn);
+
+    /*
+     * Turn On IMS Video
+     *
+     * @param serial Serail Number
+     * @param isOn Is IMS Video turn ON
+     */
+    oneway setImsVideoEnable(int32_t serial, bool isOn);
+
+    /*
+     * Turn On/Off IMS Features
+     *
+     * @param serial Serail Number
+     * @param volteEnable Is VoLTE turn ON/OFF
+     * @param vilteEnable Is ViLTE turn ON/OFF
+     * @param vowifiEnable Is VoWifi turn ON/OFF
+     * @param viwifiEnable ViWifi VoLTE turn ON/OFF
+     * @param smsEnable Is SMS turn ON/OFF
+     * @param eimsEnable Is EIMS turn ON/OFF
+     */
+    oneway setImscfg(int32_t serial,
+                     bool volteEnable,
+                     bool vilteEnable,
+                     bool vowifiEnable,
+                     bool viwifiEnable,
+                     bool smsEnable,
+                     bool eimsEnable);
+
+    /*
+     * Get provision value
+     *
+     * @param serial Serail Number
+     * @param provisionstring Key of the provision data
+     */
+    oneway getProvisionValue(int32_t serial,string provisionstring);
+
+    /*
+     * Set provision value
+     *
+     * @param serial Serail Number
+     * @param provisionstring Key of the provision data
+     * @param provisionValue Value of the provision data
+     */
+    oneway setProvisionValue(int32_t serial, string provisionstring,
+            string provisionValue);
+
+    /*
+     * Add Conference Member
+     *
+     * @param serial Serail Number
+     * @param confCallId Conference call ID
+     * @param address Address
+     * @param callToAdd Call to add
+     */
+    oneway addImsConferenceCallMember(int32_t serial, int32_t confCallId,
+            string address, int32_t callToAdd);
+
+    /*
+     * Remove Conference Member
+     *
+     * @param serial Serail Number
+     * @param confCallId Conference call ID
+     * @param address Address
+     * @param callToAdd Call to add
+     */
+    oneway removeImsConferenceCallMember(int32_t serial, int32_t confCallId,
+            string address, int32_t callToRemove);
+
+    /*
+     * Set WFC Profile Information
+     * RIL_REQUEST_SET_WFC_PROFILE
+     *
+     * @param serial Serail Number
+     * @param wfcPreference WFC Perference
+     */
+    oneway setWfcProfile(int32_t serial, int32_t wfcPreference);
+
+    /*
+     * Conference Dial
+     *
+     * @param serial Serail Number
+     * @param dailInfo Conference Dial Information
+     */
+    oneway conferenceDial(int32_t serial, ConferenceDial dailInfo);
+
+    /*
+     * VT Dial with SIP URI
+     *
+     * @param serial Serail Number
+     * @param address Address
+     */
+    oneway vtDialWithSipUri(int32_t serial, string address);
+
+    /*
+     * Dial with SIP URI
+     *
+     * @param serial Serail Number
+     * @param address Address
+     */
+    oneway dialWithSipUri(int32_t serial, string address);
+
+    /*
+     * Send USSI
+     *
+     * @param serial Serail Number
+     * @param action Action
+     * @param ussiString USSI String
+     */
+    oneway sendUssi(int32_t serial, int32_t action,
+             string ussiString);
+
+    /*
+     * Cancel Pending USSI
+     *
+     * @param serial Serail Number
+     */
+    oneway cancelUssi(int32_t serial);
+
+    /*
+     * Force Hangup
+     *
+     * @param serial Serail Number
+     * @param callId Call ID
+     */
+    oneway forceReleaseCall(int32_t serial, int32_t callId);
+
+    /*
+     * Response message of 'Bearer Activiation Done' - Void
+     *
+     * @param serial Serail Number
+     * @param action Action
+     * @param ussiString USSI String
+     */
+    oneway imsBearerActivationDone(int32_t serial, int32_t aid,
+             int32_t status);
+
+    /*
+     * Response message of 'Bearer Deactiviation Done' - Void
+     *
+     * @param serial Serail Number
+     * @param action Action
+     * @param ussiString USSI String
+     */
+    oneway imsBearerDeactivationDone(int32_t serial, int32_t aid,
+             int32_t status);
+
+    /*
+     * Request Report for IMS RTP
+     *
+     * @param serial Serail Number
+     * @param pdnId PDN Id
+     * @param networkId Network Id
+     * @param timer Timer
+     */
+    oneway setImsRtpReport(int32_t serial, int32_t pdnId, int32_t networkId,
+             int32_t timer);
+
+    /*
+     * Request Pull Call
+     *
+     * @param serial Serail Number
+     * @param target Target
+     * @param isVideoCall isVideoCall
+     */
+    oneway pullCall(int32_t serial, string target, bool isVideoCall);
+
+     /*
+     * Set IMS Registration Report
+     *
+     * @param serial Serail Number
+     */
+    oneway setImsRegistrationReport(int32_t serial);
+
+    /**
+     * Set response functions for ATCI requests & ATCI indications.
+     *
+     * @param atciResponse Object containing response functions
+     * @param atciIndication Object containing indications
+     */
+    oneway setResponseFunctionsForAtci(IAtciResponse atciResponse, IAtciIndication atciIndication);
+
+    /**
+     * This request passes raw byte arrays from ATCI.
+     *
+     * @param serial Serial number of request.
+     * @param data data passed as raw bytes
+     *
+     * Response function is IAtciResponse.sendAtciResponse()
+     */
+    oneway sendAtciRequest(int32_t serial, vec<uint8_t> data);
+
+     /*
+     * Set Modem power
+     *
+     * @param serial Serial number of request.
+     * @param isOn desired modem power.
+     *
+     * Response function is IRadioResponse.setsetModemPower
+     */
+    oneway setModemPower(int32_t serial, bool isOn);
+
+    /*
+     * Manually select a specified network with Act.
+     * This request must not respond until the new operator is selected and registered.
+     *
+     * @param serial Serial number of request.
+     * @param operatorNumeric string specifying MCCMNC of network to select (eg "310170")
+     * @param act string specifying act of network to select (eg "7" is LTE)
+     * @param mode string specifying semi auto mode or not
+     *
+     * Response function is IRadioResponse.setNetworkSelectionModeManualWithActResponse()
+     */
+    oneway setNetworkSelectionModeManualWithAct(int32_t serial, string operatorNumeric, string act, string mode);
+
+    /*
+     * Scans for available networks with ACT
+     *
+     * @param serial Serial number of request.
+     *
+     * Response function is IRadioResponse.getAvailableNetworksWithActResponse()
+     */
+    oneway getAvailableNetworksWithAct(int32_t serial);
+
+    /*
+     * cancel scan available networks
+     *
+     * @param serial Serial number of request.
+     *
+     * Response function is IRadioResponse.cancelAvailableNetworksResponse()
+     */
+    oneway cancelAvailableNetworks(int32_t serial);
+
+    // SMS-START
+    /**
+     * Get SMS parameters
+     *
+     * @param serial Serial number of request.
+     *
+     * Response function is IRadioResponse.getSmsParametersResponse
+     */
+    oneway getSmsParameters(int32_t serial);
+
+    /**
+     * Set SMS parameters
+     *
+     * @param serial Serial number of request.
+     * @param message Sms parameters(pid, vp, format, dcs) refer to the structure SmsParams
+     *                 defined in type.hal
+     *
+     * Response function is IRadioResponse.setSmsParametersResponse
+     */
+    oneway setSmsParameters(int32_t serial, SmsParams message);
+
+    /**
+     * Get SMS memory status
+     *
+     * @param serial Serial number of request.
+     *
+     * Response function is IRadioResponse.getSmsMemStatusResponse
+     */
+    oneway getSmsMemStatus(int32_t serial);
+
+    /**
+     * Set Earthquake and Tsunami Warning System on/off
+     *
+     * @param serial Serial number of request.
+     * @param mode identifies to turn on or off
+     *
+     * Response function is IRadioResponse.setEtwsResponse
+     */
+    oneway setEtws(int32_t serial, int32_t mode);
+
+    /**
+     * Remove cell broadcast message id
+     *
+     * @param serial Serial number of request.
+     * @param channelId removed channel id
+     * @param serialId removed serial id
+     *
+     * Response function is IRadioResponse.removeCbMsgResponse
+     */
+    oneway removeCbMsg(int32_t serial, int32_t channelId, int32_t serialId);
+
+    /**
+     * Set GSM cell broadcast language
+     *
+     * @param serial Serial number of request.
+     * @param langs language setting string
+     *
+     * Response function is IRadioResponse.setGsmBroadcastLangsResponse
+     */
+    oneway setGsmBroadcastLangs(int32_t serial, string langs);
+
+    /**
+     * Get GSM cell broadcast language
+     *
+     * @param serial Serial number of request.
+     *
+     * Response function is IRadioResponse.getGsmBroadcastLangsResponse
+     */
+    oneway getGsmBroadcastLangs(int32_t serial);
+
+    /**
+     * Get GSM cell broadcast activation
+     *
+     * @param serial Serial number of request.
+     *
+     * Response function is IRadioResponse.getGsmBroadcastActivationRsp
+     */
+    oneway getGsmBroadcastActivation(int32_t serial);
+    // SMS-END
+
+    /// M: eMBMS feature
+    /**
+     * Send eMBMS Command String
+     *
+     * @param serial Serial number of request.
+     * @param data command string
+     *
+     * Response function is IRadioResponse.sendEmbmsAtCommandResponse
+     */
+    oneway sendEmbmsAtCommand(int32_t serial, string data);
+    /// M: eMBMS end
+
+    /*
+     * Set APC mode
+     *
+     * @param serial Serial number of request.
+     * @param mode APC mode.
+     * @param reportMode URC report on or off.
+     * @param interVal URC report interval.
+     *
+     * Response function is IRadioResponse.setApcModeResponse
+     */
+    oneway setApcMode(int32_t serial, int32_t mode, int32_t reportMode, int32_t interval);
+
+     /*
+     * Get detected pseudo cell
+     *
+     * @param serial Serial number of request.
+     *
+     * Response function is IRadioResponse.getApcInfoResponse
+     */
+    oneway getApcInfo(int32_t serial);
+
+    /**
+     * Trigger mode switch by Ecc
+     *
+     * @param serial Serial number of request.
+     * @param mode the target mode.
+     *
+     * Response function is IRadioResponse.triggerModeSwitchByEccResponse
+     */
+    oneway triggerModeSwitchByEcc(int32_t serial, int32_t mode);
+
+    /*
+     * Get the memory status of the SMS in RUIM.
+     *
+     * @param serial Serial number of request.
+     *
+     * Response function is IRadioResponse.getSmsRuimMemoryStatusResponse()
+     */
+    oneway getSmsRuimMemoryStatus(int32_t serial);
+
+    /*
+     * Set Fast dormancy configuration
+     *
+     * @param serial ril-request serial
+     * @param mode fastdormancy mode
+     * @param param1 screen status
+     * @param param2 timer value
+     */
+    oneway setFdMode(int32_t serial, int32_t mode, int32_t param1, int32_t param2);
+
+    /**
+     * set resume registration.
+     *
+     * @param serial Serial number of request.
+     * @param sessionId
+     */
+    oneway setResumeRegistration(int32_t serial, int32_t sessionId);
+
+    /**
+     * store modem.
+     *
+     * @param serial Serial number of request.
+     * @param modemType which world mode id is stored.
+     */
+    oneway storeModemType(int32_t serial, int32_t modemType);
+
+    /**
+     * reload modem.
+     *
+     * @param serial Serial number of request.
+     * @param modemType which world mode is reloaded when reboot.
+     */
+    oneway reloadModemType(int32_t serial, int32_t modemType);
+
+    /*
+     * Set an apn to initial attach network with support canHandleIms.
+     * This API overrides AOSP's setInitialAttachApn.
+     *
+     * @param canHandleIms indicate if the APN can handle IMS
+     *
+     * Response callback is IRadioResponse.setInitialAttachApnResponse()
+     */
+    oneway setInitialAttachApnEx(int32_t serial, DataProfileInfo dataProfileInfo,
+            bool modemCognitive, bool isRoaming, bool canHandleIms);
+
+    /*
+     * When STK application gets stkCallSetup(), the call actually has
+     * been initialized by mobile device already. (We could see the call has been in the 'call
+     * list') So, STK application needs to accept/reject the call according to user
+     * operations.
+     *
+     * @param serial Serial number of request.
+     * @param resultCode 1:accept the call setup,0:reject the call setup,
+     *         0x20:TERMINAL_CRNTLY_UNABLE_TO_PROCESS
+     *         0x21:NETWORK_CRNTLY_UNABLE_TO_PROCESS
+     *
+     * Response callback is IRadioResponse.handleStkCallSetupRequestFromSimWithResCodeResponse()
+     */
+    oneway handleStkCallSetupRequestFromSimWithResCode(int32_t serial, int32_t resultCode);
+
+    /**
+     * Get Femtocell List
+     *
+     * @param serial Serial number of request.
+     *
+     * Response function is IRadioResponse.getFemtocellListResponse
+     */
+    oneway getFemtocellList(int32_t serial);
+
+    /**
+     * Abort Femtocell List
+     *
+     * @param serial Serial number of request.
+     *
+     * Response function is IRadioResponse.abortFemtocellListResponse
+     */
+    oneway abortFemtocellList(int32_t serial);
+
+    /**
+     * Select femtocell
+     *
+     * @param serial Serial number of request.
+     * @param operatorNumeric of femtocell
+     * @param act preferred radio access type
+     * @param csgId femtocell id
+     *
+     * Response function is IRadioResponse.selectFemtocellResponse
+     */
+    oneway selectFemtocell(int32_t serial, string operatorNumeric, string act ,string csgId);
+
+    /**
+     * Query femtoCell system selection mode
+     *
+     * @param serial Serial number of request.
+     *
+     * Response function is IRadioResponse.queryFemtoCellSystemSelectionModeResponse
+     */
+    oneway queryFemtoCellSystemSelectionMode(int32_t serial);
+
+    /**
+     * Set femto Cell system selection mode
+     *
+     * @param serial Serial number of request.
+     * @param mode of femtocell selection
+     *
+     * Response function is IRadioResponse.setFemtoCellSystemSelectionModeResponse
+     */
+    oneway setFemtoCellSystemSelectionMode(int32_t serial, int32_t mode);
+
+    /* MTK SS Feature : Start */
+    /**
+     * Change call barring facility password (Checked By Network)
+     *
+     * @param serial Serial number of request.
+     * @param facility facility string code from TS 27.007 7.4 (eg "AO" for BAOC)
+     * @param oldPassword old password
+     * @param newPassword new password
+     * @param cfmPassword confirm password
+     *
+     * Response function is IRadioResponse.setBarringPasswordResponse()
+     */
+    oneway setBarringPasswordCheckedByNW(int32_t serial, string facility,
+            string oldPassword, string newPassword, string cfmPassword);
+
+    /**
+     * Set CLIP (Calling Line Identification Presentation), for MMI code *30# and #30#
+     *
+     * @param serial Serial number of request.
+     * @param clipEnable CLIP mode to set.
+     *
+     * Response function is IRadioResponse.setCLIPResponse
+     */
+    oneway setClip(int32_t serial, int32_t clipEnable);
+
+    /**
+     * Query COLP (Connected Line Identification Presentation), for MMI code *#76*
+     *
+     * @param serial Serial number of request.
+     *
+     * Response function is IRadioResponse.getColpResponse
+     */
+    oneway getColp(int32_t serial);
+
+    /**
+     * Query COLR (Connected Line Identification Restriction), for MMI code *#77#
+     *
+     * @param serial Serial number of request.
+     *
+     * Response function is IRadioResponse.getColrResponse
+     */
+    oneway getColr(int32_t serial);
+
+    /**
+     * Query CNAP (Calling Name Presentation), for MMI code *#300#
+     *
+     * @param serial Serial number of request.
+     *
+     * Response function is IRadioResponse.sendCnapResponse
+     */
+    oneway sendCnap(int32_t serial, string cnapssMessage);
+
+    /**
+     * Set COLP
+     *
+     * @param serial Serial number of request.
+     * @param colpEnable COLP mode to set.
+     *
+     * Response function is IRadioResponse.setCOLPResponse
+     */
+    oneway setColp(int32_t serial, int32_t colpEnable);
+
+    /**
+     * Set COLR
+     *
+     * @param serial Serial number of request.
+     * @param colrEnable COLR mode to set.
+     *
+     * Response function is IRadioResponse.setCOLRResponse
+     */
+    oneway setColr(int32_t serial, int32_t colrEnable);
+
+    /**
+     * Request call forward in time slot status.
+     *
+     * @param serial Serial number of request.
+     * @param callInfoEx CallForwardInfoEx
+     *
+     * Response function is IRadioResponse.queryCallForwardInTimeSlotStatusResponse()
+     */
+    oneway queryCallForwardInTimeSlotStatus(int32_t serial,
+            CallForwardInfoEx callInfoEx);
+
+    /**
+     * Configure call forward rule in time slot
+     *
+     * @param serial Serial number of request.
+     * @param callInfoEx CallForwardInfoEx
+     *
+     * Response function is IRadioResponse.setCallForwardInTimeSlotResponse()
+     */
+    oneway setCallForwardInTimeSlot(int32_t serial, CallForwardInfoEx callInfoEx);
+
+    /**
+     * Run Gba Authentication
+     *
+     * @param serial Serial number of request.
+     *
+     * Response function is IRadioResponse.runGbaAuthenticationResponse()
+     */
+    oneway runGbaAuthentication(int32_t serial, string nafFqdn, string nafSecureProtocolId,
+            bool forceRun, int32_t netId);
+    /* MTK SS Feature : End */
+
+    // PHB START
+    /*
+     * Request the information of the given storage type.
+     *
+     * @param serial Serial number of request.
+     * @param type The type of the storage, refer to PHB_XDN defined in the RilConstants
+     *
+     * Response function is IRadioResponse.queryPhbStorageInfoResponse()
+     */
+    oneway queryPhbStorageInfo(int32_t serial, int32_t type);
+
+    /*
+     * Request update a PHB entry using the given PhbEntry.
+     *
+     * @param serial Serial number of request.
+     * @param phbEntry A PHB entry strucutre, PhbEntryStructure as defined in types.hal
+     *          when one of the following occurs, it means delete the entry.
+     *          1. phbEntry.number is NULL
+     *          2. phbEntry.number is empty and phbEntry.ton = 0x91
+     *          3. phbEntry.alphaId is NULL
+     *          4. both phbEntry.number and phbEntry.alphaId are empty.
+     *
+     * Response function is IRadioResponse.writePhbEntryResponse()
+     */
+    oneway writePhbEntry(int32_t serial, PhbEntryStructure phbEntry);
+
+    /*
+     * Request read PHB entries from the given storage.
+     *
+     * @param serial Serial number of request.
+     * @param type The type of the storage, refer to PHB_* defined in the RilConstants
+     * @param bIndex The begin index of the entries to be read
+     * @param eIndex The end index of the entries to be read, note that the (eIndex - bIndex +1)
+     *               should not exceed the value RilConstants.PHB_MAX_ENTRY
+     *
+     * Response function is IRadioResponse.readPhbEntryResponse()
+     */
+    oneway readPhbEntry(int32_t serial, int32_t type, int32_t bIndex, int32_t eIndex);
+
+    /*
+     * Query capability of USIM PHB.
+     *
+     * @param serial Serial number of request.
+     *
+     * Response function is IRadioResponse.queryUPBCapabilityResponse()
+     */
+    oneway queryUPBCapability(int32_t serial);
+
+    /*
+     * Update a USIM PHB field's entry.
+     *
+     * @param serial Serial number of request.
+     * @param data may be int[4] or int[6](only when entryType is 0),
+     *        which contains:
+     *        entryType must be 0(ANR), 1(EMAIL), 2(SNE), 3(AAS), or 4(GAS)
+     *        adnIndex ADN index
+     *        entryIndex the i-th EF_(EMAIL/ANR/SNE)
+     *        strVal is the value string to be updated
+     *        tonForNum TON for ANR
+     *        aasAnrIndex AAS index of the ANR
+     *
+     * Response function is IRadioResponse.editUPBEntryResponse()
+     */
+    oneway editUPBEntry(int32_t serial, vec<string> data);
+
+    /*
+     * Delete a USIM PHB field's entry.
+     *
+     * @param serial Serial number of request.
+     * @param entryType must be 0(ANR), 1(EMAIL), 2(SNE), 3(AAS), or 4(GAS)
+     * @param adnIndex ADN index
+     * @param entryIndex The i-th EF_(EMAIL/ANR/SNE)
+     *
+     * Response function is IRadioResponse.deleteUPBEntryResponse()
+     */
+    oneway deleteUPBEntry(int32_t serial, int32_t entryType, int32_t adnIndex, int32_t entryIndex);
+
+    /*
+     * Read GAS entry by giving range.
+     *
+     * @param serial Serial number of request.
+     * @param startIndex GAS index start to read
+     * @param endIndex GAS index end to read
+     *
+     * Response function is IRadioResponse.readUPBGasListResponse()
+     */
+    oneway readUPBGasList(int32_t serial, int32_t startIndex, int32_t endIndex);
+
+    /*
+     * Read a GRP entry by ADN index.
+     *
+     * @param serial Serial number of request.
+     * @param adnIndex ADN index
+     *
+     * Response function is IRadioResponse.readUPBGrpEntryResponse()
+     */
+    oneway readUPBGrpEntry(int32_t serial, int32_t adnIndex);
+
+    /*
+     * Update a GRP entry by ADN index.
+     *
+     * @param serial Serial number of request.
+     * @param adnIndex ADN index
+     * @param grpIds Group id list to be updated
+     *
+     * Response function is IRadioResponse.writeUPBGrpEntryResponse()
+     */
+    oneway writeUPBGrpEntry(int32_t serial, int32_t adnIndex, vec<int32_t> grpIds);
+
+    /*
+     * Get maximum length of some phonebook fields.
+     *
+     * @param serial Serial number of request.
+     *
+     * Response function is IRadioResponse.getPhoneBookStringsLengthResponse()
+     */
+    oneway getPhoneBookStringsLength(int32_t serial);
+
+    /*
+     * Get phonebook storage info.
+     *
+     * @param serial Serial number of request.
+     *
+     * Response function is IRadioResponse.getPhoneBookMemStorageResponse()
+     */
+    oneway getPhoneBookMemStorage(int32_t serial);
+
+    /*
+     * Set phonebook storage to given type.
+     *
+     * @param serial Serial number of request.
+     * @param storage The type of the storage
+     * @param password PIN2 for FDN
+     *
+     * Response function is IRadioResponse.setPhoneBookMemStorageResponse()
+     */
+    oneway setPhoneBookMemStorage(int32_t serial, string storage, string password);
+
+    /*
+     * Request read PHB entries with some UPB fields value.
+     *
+     * @param serial Serial number of request.
+     * @param index1 The begin index of the entries to be read
+     * @param index2 The end index of the entries to be read, note that the (index2 - index1 +1)
+     *               should not exceed the value RilConstants.PHB_MAX_ENTRY
+     *
+     * Response function is IRadioResponse.readPhoneBookEntryExtResponse()
+     */
+    oneway readPhoneBookEntryExt(int32_t serial, int32_t index1, int32_t index2);
+
+    /*
+     * Request update a PHB entry using the given PhbEntryExt.
+     *
+     * @param serial Serial number of request.
+     * @param phbEntryExt A extended PHB entry strucutre, PhbEntryExt as defined in types.hal
+     *
+     * Response function is IRadioResponse.writePhoneBookEntryExtResponse()
+     */
+    oneway writePhoneBookEntryExt(int32_t serial, PhbEntryExt phbEntryExt);
+
+    /*
+     * Query info of the EF_EMAIL/EF_ANR/EF_Sne.
+     *
+     * @param serial Serial number of request.
+     * @param eftype 0:EF_ANR, 1:EF_EMAIL, 2: EF_SNE
+     * @param fileIndex the i-th EF_EMAIL/EF_ANR/EF_SNE (1-based)
+     *
+     * Response function is IRadioResponse.queryUPBAvailableResponse()
+     */
+    oneway queryUPBAvailable(int32_t serial, int32_t eftype, int32_t fileIndex);
+
+    /*
+     * Read a Email entry by ADN index.
+     *
+     * @param serial Serial number of request.
+     * @param adnIndex ADN index
+     * @param fileIndex the i-th EF_EMAIL (1-based)
+     *
+     * Response function is IRadioResponse.readUPBEmailEntryResponse()
+     */
+    oneway readUPBEmailEntry(int32_t serial, int32_t adnIndex, int32_t fileIndex);
+
+    /*
+     * Read a SNE entry by ADN index.
+     *
+     * @param serial Serial number of request.
+     * @param adnIndex ADN index
+     * @param fileIndex the i-th EF_SNE (1-based)
+     *
+     * Response function is IRadioResponse.readUPBSneEntryResponse()
+     */
+    oneway readUPBSneEntry(int32_t serial, int32_t adnIndex, int32_t fileIndex);
+
+    /*
+     * Read a ANR entry by ADN index.
+     *
+     * @param serial Serial number of request.
+     * @param adnIndex ADN index
+     * @param fileIndex the i-th EF_ANR (1-based)
+     *
+     * Response function is IRadioResponse.readUPBAnrEntryResponse()
+     */
+    oneway readUPBAnrEntry(int32_t serial, int32_t adnIndex, int32_t fileIndex);
+
+    /*
+     * Read AAS entry by giving range.
+     *
+     * @param serial Serial number of request.
+     * @param startIndex AAS index start to read
+     * @param endIndex AAS index end to read
+     *
+     * Response function is IRadioResponse.readUPBAasListResponse()
+     */
+    oneway readUPBAasList(int32_t serial, int32_t startIndex, int32_t endIndex);
+    // PHB END
+
+    // MTK-START: SIM GBA
+    /*
+     * Request to do general sim authentication using the given parameters.
+     *
+     * @param serial Serial number of request.
+     * @param simAuth A SIM Auth strucutre, SimAuthStructure as defined in types.hal
+     *
+     * Response function is IRadioResponse.writePhoneBookEntryExtResponse()
+     */
+    oneway doGeneralSimAuthentication(int32_t serial, SimAuthStructure simAuth);
+     // MTK-END
+
+    // MTK-START: SIM ME LOCK
+    /*
+     * Request to query NetworkLock using the given category.
+     *
+     * @param serial Serial number of request.
+     * @param category the lock category
+     *
+     * Response function is IRadioResponse.queryNetworkLockResponse()
+     */
+    oneway queryNetworkLock(int32_t serial, int32_t category);
+
+    /*
+     * Request to query NetworkLock using the given category.
+     *
+     * @param serial Serial number of request.
+     * @param category the lock category
+     *
+     * Response function is IRadioResponse.setNetworkLockResponse()
+     */
+    oneway setNetworkLock(int32_t serial, int32_t category, int32_t lockop, string password,
+            string data_imsi, string gid1, string gid2);
+     // MTK-END
+
+    /**
+     * Reset RILD and modem
+     */
+    oneway resetRadio(int32_t serial);
+
+    /*
+     * M: Data Framework - common part enhancement
+     * Sync data settings to modem
+     *
+     * @param serial Serial number of request.
+     * @param settings contain the status of data setting, the status of data roaming setting,
+     *        and the selection of the default data SIM consecutively
+     *
+     */
+    oneway syncDataSettingsToMd(int32_t serial, vec<int32_t> settings);
+
+    /*
+     * M: Data Framework - Data Retry enhancement
+     * Reset the modem's maintained retry count for the apn name
+     *
+     * @param serial Serial number of request.
+     * @param apn the associated apn name
+     *
+     */
+    oneway resetMdDataRetryCount(int32_t serial, string apn);
+
+    /**
+     * M: Data Framework - CC 33
+     *
+     * @param serial Serial number of request.
+     * @param type Enable/Disable(1/0) the CC33 support mode
+     *
+     *  Response function is IRadioResponse.setRemoveRestrictEutranModeResponse
+     */
+    oneway setRemoveRestrictEutranMode(int32_t serial, int32_t type);
+
+    /**
+     * Set LTE access stratum report on/off
+     * @param enable switch report on or off
+     * @param response the responding message.
+     */
+    oneway setLteAccessStratumReport(int32_t serial, int32_t enable);
+
+    /**
+     * Set LTE uplink data transfer state by interface ID
+     * @param state
+     * @param interfaceId the interface ID the state used to apply for
+     * @param response the responding message.
+     */
+    oneway setLteUplinkDataTransfer(int32_t serial, int32_t state, int32_t interfaceId);
+
+    /*
+     * Set Rx Test Config
+     *
+     * @param serial Serial number of request.
+     * @param antType antType of the test
+     *
+     * Response function is IRadioResponse.setRxTestConfigResponse
+     */
+    oneway setRxTestConfig(int32_t serial, int32_t antType);
+
+    /*
+     * Get Rx Test result
+     *
+     * @param serial Serial number of request.
+     * @param mode test mode
+     *
+     * Response function is IRadioResponse.getRxTestResultResponse
+     */
+    oneway getRxTestResult(int32_t serial, int32_t mode);
+
+    /**
+     * Get Preferred Operator List Capability
+     *
+     * @param serial Serial number of request.
+     *
+     * Response function is IRadioResponse.getPOLCapabilityResponse
+     */
+    oneway getPOLCapability(int32_t serial);
+
+    /**
+     * Get Preferred Operator List
+     *
+     * @param serial Serial number of request.
+     *
+     * Response function is IRadioResponse.getCurrentPOLListResponse
+     */
+    oneway getCurrentPOLList(int32_t serial);
+
+    /**
+     * Set Preferred Operator List
+     *
+     * @param serial Serial number of request.
+     * @param index index of POL
+     * @param numeric operator's mccmnc
+     * @param nAct preferred radio access type
+     *
+     * Response function is IRadioResponse.setPOLEntryResponse
+     */
+    oneway setPOLEntry(int32_t serial, int32_t index, string numeric, int32_t nAct);
+
+    /// M: [Network][C2K] Sprint roaming control @{
+    /**
+     * Set the roaming enabling.
+     *
+     * @param serial Serial number of request.
+     * @param config the configuration.
+     *  config[0]: phone id
+     *  config[1]: international_voice_text_roaming (0,1)
+     *  config[2]: international_data_roaming (0,1)
+     *  config[3]: domestic_voice_text_roaming (0,1)
+     *  config[4]: domestic_data_roaming (0,1)
+     *  config[5]: domestic_LTE_data_roaming (1)
+     *
+     * Response function is IRadioResponse.setRoamingEnableResponse
+     */
+    oneway setRoamingEnable(int32_t serial, vec<int32_t> config);
+
+    /**
+     * Get the roaming enabling.
+     *
+     * @param serial Serial number of request.
+     * @param phoneId the id of the phone.
+     *
+     * Response function is IRadioResponse.getRoamingEnableResponse
+     */
+    oneway getRoamingEnable(int32_t serial, int32_t phoneId);
+    /// @}
+
+    /**
+     * Extend SetDataProfile() using MtkDataProfile to set inactive timer for operator requirement.
+     * Modem must erase existed profiles from framework, and apply new profiles
+     *
+     * @param serial Serial number of request.
+     * @param profiles Array of MtkDataProfiles to set.
+     * @param MtkDataProfiles extend DataProfiles and it add new number "inactiveTimer"
+     *                  for special operator requirement.
+     *
+     * Response callback is IRadioResponse.setDataProfileResponse()
+     */
+    oneway setDataProfileEx(int32_t serial, vec<MtkDataProfileInfo> profiles, bool isRoaming);
+
+    // External SIM [Start]
+    /*
+     * Request to send vsim notification to modem.
+     *
+     * @param serial Serial number of request.
+     * @param transactionId Serial number of request
+     * @param eventId event id to indicated the notification
+     * @param simType sim type according to event id
+     *
+     * Response function is IVsimResponse.vsimNotificationResponse()
+     */
+    oneway sendVsimNotification(int32_t serial, uint32_t transactionId, uint32_t eventId, uint32_t simType);
+
+    /*
+     * Request to send vsim operation to modem.
+     *
+     * @param serial Serial number of request.
+     * @param transactionId Serial number of request
+     * @param eventId event id to indicated the deital operation
+     * @param result the apdu execute result
+     * @param dataLength apdu raw data length
+     * @param data apdu raw data
+     *
+     * Response function is IVsimResponse.vsimOperationResponse()
+     */
+    oneway sendVsimOperation(int32_t serial, uint32_t transactionId, uint32_t eventId, int32_t result, int32_t dataLength, vec<uint8_t> data);
+    // External SIM [End]
+
+    /**
+     * Request set voice domain preference to modem.
+     *
+     * @param vdp Voice domain preference
+     *
+     */
+    oneway setVoiceDomainPreference(int32_t serial, int32_t vdp);
+
+    /**
+     * To set multiple IMS configurations to modem in a RIL request
+     * RIL Request: RIL_REQUEST_SET_MD_IMSCFG
+     *
+     * @param serial Serail Number
+     * @param keys Defined in ImsConfig.ConfigConstants, entries divided by ",".
+     * @param values The values for each keys, divided by ",".
+     * @param type The type of the config, maps to AT+ECFGSET, AT+EWOCFGSET and AT+EIWLCFGSET AT commands.
+     *
+     * Response callback is IRadioResponse.setModemImsCfgResponse()
+     */
+    oneway setModemImsCfg(int32_t serial, string keys, string values, int32_t type);
+
+    /*
+     * Notify Wi-Fi enable/disable status to MD.
+     *
+     * @param serial Serial number of socket command
+     * @param phoneId SIM index
+     * @param ifName Wi-Fi interface name
+     * @param isEnabled Wi-Fi enable/disable status
+     */
+    oneway setWifiEnabled(int32_t serial, int32_t phoneId, string ifName, int32_t isEnabled);
+
+    /*
+     * Notify Wi-Fi association information to MD.
+     *
+     * @param serial Serial number of socket command
+     * @param phoneId SIM index
+     * @param ifName Wi-Fi interface name
+     * @param associated Wi-Fi association status
+     * @param ssid Wi-Fi AP SSID
+     * @param apMac Wi-Fi AP MAC address
+     */
+    oneway setWifiAssociated(int32_t serial, int32_t phoneId, string ifName, int32_t associated,
+            string ssid, string apMac);
+
+    /*
+     * Notify Wi-Fi signal infromation to MD.
+     *
+     * @param serial Serial number of socket command
+     * @param phoneId SIM index
+     * @param rssi Wi-Fi RSSI strength
+     * @param snr Wi-Fi SNR value
+     */
+    oneway setWifiSignalLevel(int32_t serial, int32_t phoneId, int32_t rssi, int32_t snr);
+
+    /*
+     * Notify Wi-Fi IP address information to MD.
+     *
+     * @param serial Serial number of socket command
+     * @param phoneId SIM index
+     * @param ifName Wi-Fi interface name
+     * @param ipv4Addr IPV4 address
+     * @param ipv6Addr IPV6 address
+     */
+    oneway setWifiIpAddress(int32_t serial, int32_t phoneId, string ifName, string ipv4Addr,
+            string ipv6Addr);
+
+    /*
+     * Notify location information to MD.
+     *
+     * @param serial Serial number of socket command
+     * @param phoneId SIM index
+     * @param accountId Account ID
+     * @param broadcastFlag Broadcast Flag
+     * @param latitude Latitude value
+     * @param longitude Longitude value
+     * @param accuracy Accuracy
+     * @param method Positioning method
+     * @param city City
+     * @param state State
+     * @param zip Zip code
+     * @param countryCode Two-letter country code defined by ISO 3166-1
+     */
+    oneway setLocationInfo(int32_t serial, int32_t phoneId, string accountId, string broadcastFlag,
+            string latitude, string longitude, string accuracy, string method, string city,
+            string state, string zip, string countryCode);
+
+    /*
+     * Notify Emergency address ID to MD.
+     *
+     * @param serial Serial number of socket command
+     * @param phoneId SIM index
+     * @param aid Address ID for emergency
+     */
+    oneway setEmergencyAddressId(int32_t serial, int32_t phoneId, string aid);
+
+
+    /**
+     * Sync modem1 and modem3 E911 state
+     *
+     * @param serial Serial number of request.
+     * @param state State
+     *
+     *  Response function is IRadioResponse.setE911StateResponse
+     */
+    oneway setE911State(int32_t serial, int32_t state);
+
+    /*
+     * Notify SST registration infromation to MD.
+     *
+     * @param serial Serial number of socket command
+     * @param phoneId SIM index
+     * @param voiceRegState Voice registration state
+     * @param dataRegState Data registration state
+     * @param voiceRoamingType Voice roaming type
+     * @param dataRoamingType Data romaing type
+     * @param rilVoiceRegState RIL voice registration state
+     * @param rilDataRegState RIL data registration state
+     */
+    oneway setServiceStateToModem(int32_t serial, int32_t voiceRegState,
+            int32_t dataRegState, int32_t voiceRoamingType, int32_t dataRoamingType,
+            int32_t rilVoiceRegState, int32_t rilDataRegState);
+
+    /**
+     * This request passes raw byte arrays between framework and vendor code.
+     * It's used to send AT command to modem for internal testing.
+     *
+     * @param serial Serial number of request.
+     * @param data data passed as raw bytes
+     *
+     * Response function is IRadioResponse.sendRequestRawResponse()
+     */
+    oneway sendRequestRaw(int32_t serial, vec<uint8_t> data);
+
+    /**
+     * This request passes strings between framework and vendor code.
+     * It's used to send AT command to modem for internal testing.
+     *
+     * @param serial Serial number of request.
+     * @param data data passed as strings
+     *
+     * Response function is IRadioResponse.sendRequestStringsResponse()
+     */
+    oneway sendRequestStrings(int32_t serial, vec<string> data);
+
+    /*
+     * Notify Wi-Fi Keepalive Status to MD.
+     *
+     * @param serial Serial number of socket command
+     * @param phoneId SIM index
+     * @param ifName Wi-Fi interface name
+     * @param enable enabled or not
+     * @param srcIp source IP
+     * @param srcPort source port
+     * @param dstIp destination IP
+     * @param dstPort destination port
+     */
+    oneway setNattKeepAliveStatus(int32_t serial, int32_t phoneId, string ifName, bool enable,
+            string srcIp, int32_t srcPort, string dstIp, int32_t dstPort);
+};

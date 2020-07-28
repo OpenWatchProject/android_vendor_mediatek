@@ -1,0 +1,17 @@
+# uniservice pack native service
+
+service usp_service /system/bin/usp_service
+    user system
+    group root system radio
+    disabled
+    oneshot
+
+on property:persist.vendor.mtk_usp_native_start=1
+    start usp_service
+    stop vtservice
+    stop vtservice_hidl
+    setprop persist.vendor.mtk_usp_native_start 0
+
+on property:persist.vendor.mtk_usp_native_start=0
+    start vtservice
+    start vtservice_hidl

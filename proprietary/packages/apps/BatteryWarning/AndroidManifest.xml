@@ -1,0 +1,48 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+        package="com.mediatek.batterywarning"
+        android:sharedUserId="android.uid.system">
+
+       <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+
+       <application
+            android:taskAffinity=""
+            android:theme="@android:style/Theme.Material.Settings"
+            android:uiOptions="splitActionBarWhenNarrow"
+            android:supportsRtl="true" >
+           <activity android:name="com.mediatek.batterywarning.BatteryWarningActivity"
+               android:theme="@*android:style/Theme.Material.Light.Dialog.Alert"
+               android:configChanges="orientation|keyboardHidden|screenSize|mcc|mnc"
+               android:directBootAware="true"
+               android:exported="false">
+                <intent-filter>
+                    <action android:name="android.intent.action.MAIN" />
+                    <category android:name="android.intent.category.DEFAULT" />
+                </intent-filter>
+            </activity>
+            <activity android:name="com.mediatek.batterywarning.ThermalWarningActivity"
+               android:theme="@*android:style/Theme.Material.Light.Dialog.Alert"
+               android:configChanges="orientation|keyboardHidden|screenSize|mcc|mnc"
+               android:exported="false">
+                <intent-filter>
+                    <action android:name="android.intent.action.MAIN" />
+                    <category android:name="android.intent.category.DEFAULT" />
+                </intent-filter>
+            </activity>
+        <receiver android:name="com.mediatek.batterywarning.BatteryWarningReceiver"
+            android:directBootAware="true"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="mediatek.intent.action.BATTERY_WARNING" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="mediatek.intent.action.BATTERY_NORMAL" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="mediatek.intent.action.THERMAL_DIAG" />
+            </intent-filter>
+        </receiver>
+    </application>
+</manifest>

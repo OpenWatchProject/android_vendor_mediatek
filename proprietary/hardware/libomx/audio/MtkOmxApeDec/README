@@ -1,0 +1,35 @@
+Library of MTK MtkOmxApeDec, including ape omx component related file.
+
+This library is pre-built by MediaTek internal.
+
+
+WHAT IT DOES?
+=============
+libMtkOmxApeDec.so contains MediaTek developed ape omx component.  
+Without it, ape will not decode.
+
+HOW IT WAS BUILT?
+==================
+It needs the following library from AOSP:
+1.libbinder               
+2.libutils                
+3.libcutils               
+4.libdl                   
+5.libui			  
+6.libstagefright_omx
+7.libstagefright_foundation            
+
+and the following libs from MediaTek:
+1.libMtkOmxAudioEncBase.a
+2.libMtkOmxOsalUtils.a
+
+All source/dependency modules of this module are already put in
+'vendor/mediatek/proprietary/hardware/libomx/audio/MtkOmxApeDec' folder.
+
+HOW TO USE IT?
+==============
+
+Provide ape omx componenet for ape swip 
+
+
+All the source code of this library were written by MediaTek co..

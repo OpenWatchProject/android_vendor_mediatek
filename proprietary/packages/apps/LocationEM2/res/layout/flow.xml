@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:gravity="left">
+
+<View          android:layout_height="1dip" android:layout_width="fill_parent" android:background="#FF909090"/>
+
+<LinearLayout    android:id="@+id/LinearLayout_Debug" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent" android:gravity="left">
+<Button           android:id="@+id/Button_ResetAgpsd" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/reset_agpsd" android:textSize="15sp"/>
+<Button           android:id="@+id/Button_EmulatorMode" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/emulator_mode" android:textSize="15sp"/>
+<Button           android:id="@+id/Button_TestCase" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/test_case" android:textSize="15sp"/>
+</LinearLayout>
+
+<LinearLayout    android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent" android:gravity="left">
+<Button           android:id="@+id/Button_ClearScreen" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/clear_screen" android:textSize="15sp"/>
+</LinearLayout>
+
+<ScrollView android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+<TextView        android:id="@+id/TextView_Message" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="12dp"/>
+</ScrollView>
+
+<View          android:layout_height="1dip" android:layout_width="fill_parent" android:background="#FF909090"/>
+
+</LinearLayout>
+</LinearLayout>

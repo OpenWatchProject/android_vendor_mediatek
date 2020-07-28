@@ -1,0 +1,11 @@
+on post-fs-data
+    mkdir /data/mdlog 0775 system system
+    mkdir /data/ramdump 0775 shell system
+    mkdir /data/debuglogger 0770 shell log
+
+service emdlogger3 /system/bin/emdlogger3
+    class main
+    user shell
+    group log system shell radio sdcard_rw inet sdcard_r media_rw
+    disabled
+    oneshot

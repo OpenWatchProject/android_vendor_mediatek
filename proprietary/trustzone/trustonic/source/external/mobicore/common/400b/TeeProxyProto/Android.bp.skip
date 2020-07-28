@@ -1,0 +1,12 @@
+cc_library_static {
+    name: "libteeproxy_proto",
+
+    proto: {
+        export_proto_headers: true,
+        type: "lite",
+    },
+
+    srcs: [
+        "proxy.proto",
+    ]
+}

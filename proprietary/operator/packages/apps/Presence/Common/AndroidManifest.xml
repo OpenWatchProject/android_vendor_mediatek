@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!-- # Copyright Statement:
+#
+# This software/firmware and related documentation ("MediaTek Software") are
+# protected under relevant copyright laws. The information contained herein
+# is confidential and proprietary to MediaTek Inc. and/or its licensors.
+# Without the prior written permission of MediaTek inc. and/or its licensors,
+# any reproduction, modification, use or disclosure of MediaTek Software,
+# and information contained herein, in whole or in part, shall be strictly prohibited.
+
+# MediaTek Inc. (C) 2010. All rights reserved.
+#
+# BY OPENING THIS FILE, RECEIVER HEREBY UNEQUIVOCALLY ACKNOWLEDGES AND AGREES
+# THAT THE SOFTWARE/FIRMWARE AND ITS DOCUMENTATIONS ("MEDIATEK SOFTWARE")
+# RECEIVED FROM MEDIATEK AND/OR ITS REPRESENTATIVES ARE PROVIDED TO RECEIVER ON
+# AN "AS-IS" BASIS ONLY. MEDIATEK EXPRESSLY DISCLAIMS ANY AND ALL WARRANTIES,
+# EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF
+# MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE OR NONINFRINGEMENT.
+# NEITHER DOES MEDIATEK PROVIDE ANY WARRANTY WHATSOEVER WITH RESPECT TO THE
+# SOFTWARE OF ANY THIRD PARTY WHICH MAY BE USED BY, INCORPORATED IN, OR
+# SUPPLIED WITH THE MEDIATEK SOFTWARE, AND RECEIVER AGREES TO LOOK ONLY TO SUCH
+# THIRD PARTY FOR ANY WARRANTY CLAIM RELATING THERETO. RECEIVER EXPRESSLY ACKNOWLEDGES
+# THAT IT IS RECEIVER'S SOLE RESPONSIBILITY TO OBTAIN FROM ANY THIRD PARTY ALL PROPER LICENSES
+# CONTAINED IN MEDIATEK SOFTWARE. MEDIATEK SHALL ALSO NOT BE RESPONSIBLE FOR ANY MEDIATEK
+# SOFTWARE RELEASES MADE TO RECEIVER'S SPECIFICATION OR TO CONFORM TO A PARTICULAR
+# STANDARD OR OPEN FORUM. RECEIVER'S SOLE AND EXCLUSIVE REMEDY AND MEDIATEK'S ENTIRE AND
+# CUMULATIVE LIABILITY WITH RESPECT TO THE MEDIATEK SOFTWARE RELEASED HEREUNDER WILL BE,
+# AT MEDIATEK'S OPTION, TO REVISE OR REPLACE THE MEDIATEK SOFTWARE AT ISSUE,
+# OR REFUND ANY SOFTWARE LICENSE FEES OR SERVICE CHARGE PAID BY RECEIVER TO
+# MEDIATEK FOR SUCH MEDIATEK SOFTWARE AT ISSUE.
+#
+# The following software/firmware and/or related documentation ("MediaTek Software")
+# have been modified by MediaTek Inc. All revisions are subject to any receiver's
+# applicable license agreements with MediaTek Inc. -->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+ android:versionCode="1"
+ android:versionName="2.5.13"
+ android:sharedUserId="android.uid.system"
+ android:protectionLevel="signature|system"
+ package="com.mediatek.presence"
+ coreApp="true">
+
+    <uses-sdk android:minSdkVersion="5"
+        android:targetSdkVersion="28"/>
+
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
+    <uses-permission android:name="android.permission.READ_SMS"/>
+    <uses-permission android:name="android.permission.READ_PRIVILEGED_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_SMS"/>
+    <uses-permission android:name="android.permission.WRITE_CONTACTS"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.MODIFY_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.MANAGE_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.AUTHENTICATE_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.WRITE_SYNC_SETTINGS"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS"/>
+    <uses-permission android:name="android.permission.BROADCAST_STICKY"/>
+    <uses-permission android:name="android.permission.SET_ORIENTATION" />
+    <uses-permission android:name="com.mediatek.ims.rcsua.permission.USE_SERVICE"/>
+    <uses-permission android:name="com.mediatek.presence.permission.PRESENCE"/>
+
+    <permission android:name="com.mediatek.presence.permission.PRESENCE"
+        android:protectionLevel="signatureOrSystem" />
+
+    <application
+        android:name="com.mediatek.presence.service.CoreApplication"
+        android:persistent="true">
+
+        <uses-library android:name="com.mediatek.ims.rcsua"/>
+
+        <!-- the following meta-data is used to separate the various joyn client implementations -->
+        <meta-data android:name="gsma.joyn.preferences"
+            android:value="com.mediatek.presence.gsma.joyn.preferences" />
+
+        <!-- RCS service -->
+        <service android:name="com.mediatek.presence.service.RcsCoreService"
+            android:permission="com.mediatek.presence.permission.PRESENCE"
+            android:exported="true">
+        </service>
+
+    <!-- Mediatek data providers -->
+
+    <!-- RCS data providers -->
+       <provider android:authorities="com.mediatek.presence.cb"
+            android:name="com.mediatek.presence.provider.eab.ContactsBackup"
+            android:permission="com.mediatek.presence.permission.PRESENCE"
+            android:exported="true"/>
+
+        <provider android:authorities="com.mediatek.presence.settings"
+            android:name="com.mediatek.presence.provider.settings.RcsSettingsProvider"
+            android:permission="com.mediatek.presence.permission.PRESENCE"
+            android:exported="true"/>
+
+        <provider android:authorities="com.mediatek.presence.eab"
+            android:name="com.mediatek.presence.provider.eab.RichAddressBookProvider"
+            android:permission="com.mediatek.presence.permission.PRESENCE"
+            android:exported="true"/>
+
+
+
+        <!-- Device events receiver -->
+        <receiver android:name="com.mediatek.presence.service.DataSimChanged">
+            <intent-filter>
+                 <action android:name="android.intent.action.ACTION_DEFAULT_DATA_SUBSCRIPTION_CHANGED"/>
+                 <action android:name="android.intent.action.SIM_STATE_CHANGED"/>
+                 <!--action android:name="android.intent.action.PRECISE_DATA_CONNECTION_STATE_CHANGED"/>-->
+            </intent-filter>
+        </receiver>
+
+        <receiver android:name="com.mediatek.presence.service.DeviceShutdown">
+            <intent-filter>
+                 <action android:name="android.intent.action.ACTION_SHUTDOWN"/>
+            </intent-filter>
+        </receiver>
+
+        <!-- Changing locale -->
+
+        <!-- Changing locale -->
+        <receiver android:name="com.mediatek.presence.addressbook.LocaleChangedReceiver">
+               <intent-filter>
+                   <action android:name="android.intent.action.LOCALE_CHANGED"/>
+               </intent-filter>
+        </receiver>
+
+        <service android:name="com.mediatek.presence.addressbook.LocaleChangedReceiver$LocaleChangedService"/>
+
+        <!-- External capability monitoring -->
+        <receiver android:name="com.mediatek.presence.core.ims.service.capability.ExternalCapabilityMonitoring">
+             <intent-filter>
+                 <action android:name="android.intent.action.PACKAGE_ADDED"/>
+                 <action android:name="android.intent.action.PACKAGE_REMOVED"/>
+                <data android:scheme="package"/>
+             </intent-filter>
+        </receiver>
+
+        <!-- RCS Start service -->
+        <service android:name="com.mediatek.presence.service.StartService"
+                 android:singleUser="true">
+        </service>
+
+
+
+    <!-- Add a new broadcast to listener application version changes. @{T-Mobile-->
+    <!-- //comment it now. add it when you need implement T-Mobile requirements.
+    <receiver android:name="com.mediatek.rcse.receiver.PackageReceiver">
+        <intent-filter>
+            <action android:name="android.intent.action.PACKAGE_REPLACED"/>
+            <data android:scheme="package"/>
+        </intent-filter>
+    </receiver> -->
+    <!-- T-Mobile@} -->
+ 				<!-- Local provisioning (only for debug) -->
+
+</application>
+
+<protected-broadcast android:name="android.intent.presence.IMS_DEREG_START" />
+<protected-broadcast android:name="android.intent.presence.IMS_DEREG_UNPUBLISH_DONE" />
+<protected-broadcast android:name="android.intent.presence.RESET_ETAG" />
+<protected-broadcast android:name="android.intent.presence.RESET_489_STATE" />
+<protected-broadcast android:name="com.mediatek.presence.CORE_SERVICE_STATE" />
+<protected-broadcast android:name="COM.MEDIATEK.PRESENCE.IMS.VOLTE_SERVICE_NOTIFICATION" />
+<protected-broadcast android:name="com.android.ims.IMS_STACK_DISABLED" />
+<protected-broadcast android:name="com.mediatek.presence.SIP_489_BAD_EVENT_STATE"/>
+<protected-broadcast android:name="com.mediatek.ROAMING_MOCKED_ACTION"/>
+<protected-broadcast android:name="com.orangelabs.rcs.RCSE_ONLY_APN_STATUS"/>
+<protected-broadcast android:name="com.mediatek.presence.SHOW_403_NOTIFICATION"/>
+<protected-broadcast android:name="mediatek.presence.provisioning.status"/>
+<protected-broadcast android:name="com.mediatek.presence.CONFIGURATION_STATUS"/>
+<protected-broadcast android:name="com.mediatek.presence.CONFIGURATION_STATUS_TO_APP"/>
+<protected-broadcast android:name="com.mediatek.mms.ipmessage.dbChange"/>
+<protected-broadcast android:name="com.mediatek.presence.refresher.Publish"/>
+<protected-broadcast android:name="com.mediatek.presence.refresher.KeepAlive"/>
+<protected-broadcast android:name="com.mediatek.presence.refresher.Polling"/>
+<protected-broadcast android:name="com.mediatek.presence.refresher.Registration"/>
+<protected-broadcast android:name="com.mediatek.presence.refresher.Subscribe"/>
+<protected-broadcast android:name="com.mediatek.presence.refresher.Subscription"/>
+<protected-broadcast android:name="com.mediatek.presence.refresher.SessionTimer"/>
+<protected-broadcast android:name="com.mediatek.presence.refresher.XCAPOperation"/>
+<protected-broadcast android:name="com.mediatek.presence.provisioning.https.HttpsProvisioningService.ACTION_RETRY" />
+<protected-broadcast android:name="com.mediatek.presence.PublishManagerEx.DeBounce"/>
+<protected-broadcast android:name="com.mediatek.presence.PublishManagerEx.BadEvent"/>
+<protected-broadcast android:name="com.mediatek.uce.service.startservice.on"/>
+<protected-broadcast android:name="com.mediatek.uce.service.startservice.off"/>
+<protected-broadcast android:name="com.mediatek.uce.service.rcscoreservice.on"/>
+<protected-broadcast android:name="com.mediatek.uce.service.rcscoreservice.off"/>
+</manifest>

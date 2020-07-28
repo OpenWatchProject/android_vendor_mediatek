@@ -1,0 +1,19 @@
+WHAT IT DOES?
+=============
+This is a service APK for Generic Bootstrap Function (GBA).
+It provides service APIs to run bootstrap authentication with BSF server
+and create GBA credentials for client applications.
+
+
+HOW IT WAS BUILT?
+==================
+The MSSI_MTK_IMS_SUPPORT feature optin should be true.
+
+[Build Method]
+make Gba
+or
+mmm vendor/mediatek/proprietary/packages/apps/Gba/
+
+HOW TO USE IT?
+==============
+It is launched after receiving RECEIVE_BOOT_COMPLETED intent.

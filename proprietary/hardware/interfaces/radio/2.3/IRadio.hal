@@ -1,0 +1,63 @@
+/*
+ * Copyright (C) 2016 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package vendor.mediatek.hardware.radio@2.3;
+
+import @2.2::IRadio;
+import IRadioResponse;
+import IRadioIndication;
+
+/**
+ * This interface is used by telephony & telecom to talk to cellular radio.
+ * All the functions have minimum one parameter:
+ * serial: which corresponds to serial no. of request. Serial numbers must only be memorized for the
+ * duration of a method call. If clients provide colliding serials (including passing the same
+ * serial to different methods), multiple responses (one for each method call) must still be served.
+ */
+interface IRadio extends @2.2::IRadio {
+    /**
+     * Notify Wi-Fi and flight mode enable/disable status to MD.
+     *
+     * @param serial Serial number of socket command
+     * @param phoneId SIM index
+     * @param ifName Wi-Fi interface name
+     * @param isEnabled Wi-Fi enable/disable status
+     * @param isFlightModeOn Flight mode enable/disable status
+     */
+    oneway setWifiFlightModeEnabled(int32_t serial, int32_t pheonId, string ifName,
+            int32_t isWifiEnabled, int32_t isFlightModeOn);
+
+    /**
+     * Notify location information and UE Wi-FI interface MAC to MD.
+     *
+     * @param serial Serial number of socket command
+     * @param phoneId SIM index
+     * @param accountId Account ID
+     * @param broadcastFlag Broadcast Flag
+     * @param latitude Latitude value
+     * @param longitude Longitude value
+     * @param accuracy Accuracy
+     * @param method Positioning method
+     * @param city City
+     * @param state State
+     * @param zip Zip code
+     * @param countryCode Two-letter country code defined by ISO 3166-1
+     * @param ueWlanMac UE Wi-FI interface MAC
+     */
+    oneway setLocationInfoWlanMac(int32_t serial, int32_t phoneId, string accountId, string broadcastFlag,
+            string latitude, string longitude, string accuracy, string method, string city,
+            string state, string zip, string countryCode, string ueWlanMac);
+};

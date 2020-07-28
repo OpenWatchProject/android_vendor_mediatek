@@ -1,0 +1,6 @@
+package vendor.mediatek.hardware.apmonitor@2.0;
+
+interface IApmControlCallback {
+    onUpdateKpiSubscriptionState(vec<APM_MSGID> subscribedMessages) generates (apmResult_e result);
+    onQueryKpi(APM_MSGID msgId) generates (apmResult_e result);
+};

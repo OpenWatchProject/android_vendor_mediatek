@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.mediatek.sensorhub.ui"
+    android:versionCode="2"
+    android:versionName="2.1">
+
+    <permission
+        android:label="SensorHub usage"
+        android:name="com.mediatek.sensorhub.ui.permission.USAGE"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="android.permission.WRITE_MEDIA_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.DEVICE_POWER" />
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="com.mediatek.permission.WAKE_DEVICE_SENSORHUB" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+    <uses-permission android:name="android.permission.ACTIVITY_RECOGNITION"/>
+
+    <application
+        android:name="com.mediatek.sensorhub.service.SensorhubApplication"
+        android:icon="@drawable/icon"
+        android:label="@string/sensor_hub_entry"
+        android:theme="@android:style/Theme.Material.Settings"
+        android:requestLegacyExternalStorage="true"
+        android:allowBackup="false"
+        android:configChanges="orientation|keyboardHidden|keyboard|screenSize|mcc|mnc">
+       <activity
+            android:name="SensorSettings"
+            android:label="@string/sensor_hub_entry"
+            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|mcc|mnc"
+            android:launchMode="singleTask"
+            android:excludeFromRecents="true"
+            android:permission="com.mediatek.sensorhub.ui.permission.USAGE" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="SensorStressTestActivity"
+            android:label="@string/stress_title"
+            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|mcc|mnc"
+            android:excludeFromRecents="true"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="SensorStressFullTestActivity"
+            android:label="@string/stress_full_title"
+            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|mcc|mnc"
+            android:excludeFromRecents="true"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="StepCounterSensorActivity"
+            android:label="@string/step_counter_title"
+            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|mcc|mnc"
+            android:excludeFromRecents="true"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+        <service android:name="com.mediatek.sensorhub.service.SensorEventListenerService" />
+
+        <activity
+            android:name="com.mediatek.sensorhub.sensor.Sensor"
+            android:label="@string/sensor"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="com.mediatek.sensorhub.sensor.SensorCalibrationNew"
+            android:label="@string/sensor_calibration_gsensor"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="com.mediatek.sensorhub.sensor.MSensorCurrentActivity"
+            android:label="@string/msensor_current_data"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="com.mediatek.sensorhub.sensor.MSensor"
+            android:label="@string/sensor_data"
+            android:screenOrientation="portrait">
+        </activity>
+
+        <activity
+            android:name="com.mediatek.sensorhub.sensor.PSensorCollection"
+            android:label="@string/psensor_data_collection"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="com.mediatek.sensorhub.sensor.PSensor"
+            android:label="@string/sensor_ps"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="com.mediatek.sensorhub.sensor.PSensorCalibration"
+            android:label="@string/psensor_calibration"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="com.mediatek.sensorhub.sensor.PSensorChangeThreshold"
+            android:label="@string/psensor_change_threshold"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="com.mediatek.sensorhub.sensor.PSensorCalibrationSelect"
+            android:label="@string/psensor_calibration_select"
+            android:screenOrientation="portrait">
+        </activity>
+    </application>
+</manifest>

@@ -1,0 +1,10 @@
+# do not warn the build warning, or else may cause build failed.
+-dontwarn com.mediatek.incallui.ext.**
+
+-verbose
+
+# Phone plugin @{
+-keep class com.mediatek.op01.phone.plugin.** { *; }
+-keep class com.mediatek.op01.phone.callforward.** { *; }
+-keep class com.mediatek.phone.ext.** { *; }
+# @}

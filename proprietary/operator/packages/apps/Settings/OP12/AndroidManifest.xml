@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- # Copyright Statement:
+#
+# This software/firmware and related documentation ("MediaTek Software") are
+# protected under relevant copyright laws. The information contained herein
+# is confidential and proprietary to MediaTek Inc. and/or its licensors.
+# Without the prior written permission of MediaTek inc. and/or its licensors,
+# any reproduction, modification, use or disclosure of MediaTek Software,
+# and information contained herein, in whole or in part, shall be strictly prohibited.
+
+# MediaTek Inc. (C) 2012. All rights reserved.
+#
+# BY OPENING THIS FILE, RECEIVER HEREBY UNEQUIVOCALLY ACKNOWLEDGES AND AGREES
+# THAT THE SOFTWARE/FIRMWARE AND ITS DOCUMENTATIONS ("MEDIATEK SOFTWARE")
+# RECEIVED FROM MEDIATEK AND/OR ITS REPRESENTATIVES ARE PROVIDED TO RECEIVER ON
+# AN "AS-IS" BASIS ONLY. MEDIATEK EXPRESSLY DISCLAIMS ANY AND ALL WARRANTIES,
+# EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF
+# MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE OR NONINFRINGEMENT.
+# NEITHER DOES MEDIATEK PROVIDE ANY WARRANTY WHATSOEVER WITH RESPECT TO THE
+# SOFTWARE OF ANY THIRD PARTY WHICH MAY BE USED BY, INCORPORATED IN, OR
+# SUPPLIED WITH THE MEDIATEK SOFTWARE, AND RECEIVER AGREES TO LOOK ONLY TO SUCH
+# THIRD PARTY FOR ANY WARRANTY CLAIM RELATING THERETO. RECEIVER EXPRESSLY ACKNOWLEDGES
+# THAT IT IS RECEIVER'S SOLE RESPONSIBILITY TO OBTAIN FROM ANY THIRD PARTY ALL PROPER LICENSES
+# CONTAINED IN MEDIATEK SOFTWARE. MEDIATEK SHALL ALSO NOT BE RESPONSIBLE FOR ANY MEDIATEK
+# SOFTWARE RELEASES MADE TO RECEIVER'S SPECIFICATION OR TO CONFORM TO A PARTICULAR
+# STANDARD OR OPEN FORUM. RECEIVER'S SOLE AND EXCLUSIVE REMEDY AND MEDIATEK'S ENTIRE AND
+# CUMULATIVE LIABILITY WITH RESPECT TO THE MEDIATEK SOFTWARE RELEASED HEREUNDER WILL BE,
+# AT MEDIATEK'S OPTION, TO REVISE OR REPLACE THE MEDIATEK SOFTWARE AT ISSUE,
+# OR REFUND ANY SOFTWARE LICENSE FEES OR SERVICE CHARGE PAID BY RECEIVER TO
+# MEDIATEK FOR SUCH MEDIATEK SOFTWARE AT ISSUE.
+#
+# The following software/firmware and/or related documentation ("MediaTek Software")
+# have been modified by MediaTek Inc. All revisions are subject to any receiver's
+# applicable license agreements with MediaTek Inc. -->
+
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.mediatek.op12.settings"
+          coreApp="true"
+          android:versionCode="1"
+          android:versionName="1.0"
+          android:sharedUserId="android.uid.system">
+
+    <uses-sdk android:minSdkVersion="5" android:targetSdkVersion="28"/>
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <uses-permission android:name="android.permission.MODIFY_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_PRECISE_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.READ_PRIVILEGED_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="com.mediatek.permission.version.wfc" />
+
+    <protected-broadcast android:name="com.mediatek.intent.action.ACTIVATE_WFC_RSP" />
+    <protected-broadcast android:name="com.mediatek.intent.action.WFC_UPDATE_E911" />
+    <protected-broadcast android:name="com.mediatek.intent.action.ACTIVATE_WFC_REQ" />
+    <protected-broadcast android:name="com.mediatek.intent.action.WFC_UPDATE_E911_RSP" />
+
+    <!-- Add your plug-in service here -->
+    <application android:label="OP12Settings"
+                 android:networkSecurityConfig="@xml/network_security_config">
+
+        <activity android:name=".wfc.ui.E911AddressActivity"
+            android:configChanges="orientation|screenSize"
+            android:theme="@android:style/Theme.Material.Settings"
+            android:label="@string/emergency_activity_title"
+            android:exported="false"
+            android:launchMode="singleTop">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <action android:name="com.mediatek.intent.action.WFC_UPDATE_E911" />
+                <action android:name="com.mediatek.intent.action.ACTIVATE_WFC_REQ" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <receiver android:name=".wfc.E911Receiver">
+            <intent-filter>
+                <action android:name="android.intent.action.SIM_STATE_CHANGED" />
+            </intent-filter>
+        </receiver>
+
+        <service android:name=".wfc.E911ReceiverService"
+            android:exported="false">
+        </service>
+
+        <activity android:name="com.mediatek.op12.settings.AdvancedCallingSettings"
+                android:icon="@drawable/ic_advanced_calling"
+                android:label="@string/advanced_calling_title"
+                android:configChanges="orientation|screenSize|keyboardHidden|mcc|mnc"
+                android:launchMode="singleTask"
+                android:exported="false"
+                android:clearTaskOnLaunch="true">
+            <intent-filter android:priority="0">
+                <action android:name="com.android.settings.action.EXTRA_SETTINGS" />
+            </intent-filter>
+            <meta-data android:name="com.android.settings.category"
+                android:value="com.android.settings.category.ia.wireless" />
+            <meta-data android:name="com.android.settings.icon"
+                android:resource="@drawable/ic_advanced_calling" />
+            <intent-filter>
+                <action android:name="com.mediatek.OP12.ADVANCED_CALLING" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <receiver android:name="com.mediatek.op12.settings.RoamingReceiver"
+            android:exported="false">
+            <intent-filter>
+                    <action android:name="mediatek.intent.action.LOCATED_PLMN_CHANGED" />
+            </intent-filter>
+        </receiver>
+        <service android:name="com.mediatek.op12.settings.RoamingReceiverService"
+            android:exported="false">
+        </service>
+
+        <!-- M: WifiCalling receiver -->
+        <receiver android:name="com.mediatek.op12.settings.AdvancedCallingReceiver">
+            <intent-filter>
+                <action android:name="com.android.intent.action.IMS_CONFIG_CHANGED" />
+            </intent-filter>
+        </receiver>
+
+        <service android:name="com.mediatek.op12.settings.AdvancedCallingReceiverService"
+            android:exported="false"
+            android:persistent="true">
+        </service>
+    </application>
+</manifest>

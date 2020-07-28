@@ -1,0 +1,20 @@
+WHAT IT DOES?
+=============
+Customization library of MediaTek AAL. The AAL executable will
+load this library and read parameters from or link to it.
+
+HOW IT WAS BUILT?
+==================
+It needs the following library from AOSP:
+1.  libcutils.so
+2.  libutils.so
+3.  libdl.so
+4.  liblog.so
+
+and the following libs from MediaTek:
+1.  libaal_config.a
+2.  libaal_mtk.so
+
+HOW TO USE IT?
+==============
+Will be put into /vendor/lib/libaalservice.so and /vendor/lib/libaal_cust.so automatically.

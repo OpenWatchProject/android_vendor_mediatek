@@ -1,0 +1,36 @@
+The bin file 'cmddumper'is a daemon service.
+This bin is pre-built by MediaTek internal for evdo projects.
+
+
+WHAT IT DOES?
+=============
+
+cmddumper is native service to process modem crash flow, as the AP side for memory dump and reset Modem.
+It reads modem memory dump images from CCCI channel, and writes them to files on SD card or data.
+
+
+HOW IT WAS BUILT?
+==================
+
+It needs the following library from AOSP:
+1.  libutils.so
+2.  libcutils.so
+
+and the following libs from MediaTek:
+1.  libmdloggerrecycle.so
+2.  libmemoryDumpEncoder.so
+
+All source/dependency modules of this module as below:
+vendor/mediatek/proprietary/protect-app/external/mdloggerrecycle
+vendor/mediatek/proprietary/protect-bsp/external/include
+vendor/mediatek/proprietary/hardware/ril/viatelecom/include
+hardware/libhardware_legacy/include
+hardware/libhardware/include
+
+
+HOW TO USE IT?
+==============
+
+This bin file is automatically started by ccci service, and it behavior is controlled by MTKLogger.
+
+

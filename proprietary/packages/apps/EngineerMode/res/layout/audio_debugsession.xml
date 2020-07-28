@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="3dp"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/Audio_MagiAsr_Group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:orientation="vertical" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/Audio_MagiAsr_Text" >
+        </TextView>
+
+        <CheckBox
+            android:id="@+id/Audio_MagiAsr"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="@string/Audio_MagiAsr" >
+        </CheckBox>
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="1dp"
+            android:layout_marginTop="5dp"
+            android:background="#FF909090" >
+        </View>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="@string/Audio_AecRec_Text" >
+    </TextView>
+
+    <CheckBox
+        android:id="@+id/Audio_AecRec"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="@string/Audio_AecRec" >
+    </CheckBox>
+
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="1dp"
+        android:layout_marginTop="5dp"
+        android:background="#FF909090" >
+    </View>
+
+    <TextView
+        android:id="@+id/Audio_Headset_Detect_Hint"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="@string/Audio_Headset_Detect_Hint" >
+    </TextView>
+
+    <LinearLayout
+        android:id="@+id/Audio_Headset_Detect"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/Audio_Headset_Detect_Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:text="@string/Audio_Headset_Detect_Button" >
+        </Button>
+
+        <TextView
+            android:id="@+id/Audio_Headset_Detect_Text"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_marginLeft="10dp"
+            android:gravity="center"
+            android:text="@string/Audio_Headset_None" >
+        </TextView>
+    </LinearLayout>
+
+    <View
+        android:id="@+id/Audio_Custom_Param_Divider"
+        android:layout_width="wrap_content"
+        android:layout_height="1dp"
+        android:layout_marginTop="5dp"
+        android:background="#FF909090" >
+    </View>
+
+    <TextView
+        android:id="@+id/Audio_Custom_Param_Title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="@string/Audio_Custom_Param_Title" >
+    </TextView>
+
+    <CheckBox
+        android:id="@+id/Audio_Custom_Param"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="@string/Audio_Custom_Param" >
+    </CheckBox>
+
+	<View
+        android:id="@+id/Audio_Custom_Param_Divider"
+        android:layout_width="wrap_content"
+        android:layout_height="1dp"
+        android:layout_marginTop="5dp"
+        android:background="#FF909090" >
+    </View>
+	<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/Audio_Hybrid_Dynamic_LinearLayout"
+	android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+	<TextView
+        android:id="@+id/Audio_Hybrid_Dynamic_Title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="@string/Audio_Hybrid_Dynamic_Title" >
+    </TextView>
+
+
+    <CheckBox
+        android:id="@+id/Audio_Hybrid_Dynamic"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="@string/Audio_Hybrid_Dynamic" >
+    </CheckBox>
+
+	    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/Audio_Hybrid_Dynamic_edit_Text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dip"
+            android:layout_marginTop="10dip"
+            android:text="@string/Audio_Hybrid_Dynamic_edit_Text" >
+        </TextView>
+
+        <EditText
+            android:id="@+id/Audio_Hybrid_Dynamic_edit"
+            android:layout_width="50dip"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dip"
+            android:inputType="numberSigned"
+
+            >
+        </EditText>
+		<Button
+            android:id="@+id/Audio_Hybrid_Dynamic_set"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/Audio_Hybrid_Dynamic_set" >
+        </Button>
+    </LinearLayout>
+	    </LinearLayout>
+</LinearLayout>

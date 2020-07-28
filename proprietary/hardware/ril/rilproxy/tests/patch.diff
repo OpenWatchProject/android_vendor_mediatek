@@ -1,0 +1,94 @@
+diff --git a/rilproxy/mtk-rilproxy/Android.mk b/rilproxy/mtk-rilproxy/Android.mk
+index 332d958..3af8d1c 100644
+--- a/rilproxy/mtk-rilproxy/Android.mk
++++ b/rilproxy/mtk-rilproxy/Android.mk
+@@ -239,7 +239,7 @@ ifeq (foo,foo)
+   LOCAL_SHARED_LIBRARIES += \
+       libcutils libutils libmtkrilutils
+   LOCAL_CFLAGS += -DRIL_SHLIB
+-  LOCAL_MODULE:= mtk-rilproxy
++  LOCAL_MODULE:= libmtk-rilproxy
+ LOCAL_PROPRIETARY_MODULE := true
+ LOCAL_MODULE_OWNER := mtk
+   include $(MTK_SHARED_LIBRARY)
+diff --git a/rilproxy/mtk-rilproxy/framework/core/RfxRilAdapter.cpp b/rilproxy/mtk-rilproxy/framework/core/RfxRilAdapter.cpp
+index 663fe90..483cc39 100644
+--- a/rilproxy/mtk-rilproxy/framework/core/RfxRilAdapter.cpp
++++ b/rilproxy/mtk-rilproxy/framework/core/RfxRilAdapter.cpp
+@@ -544,18 +544,18 @@ bool RfxRilAdapter::responseToRilj(const sp<RfxMessage>& message) {
+     return ret;
+ }
+ 
+-extern "C" void RIL_onRequestComplete(RIL_Token t, RIL_Errno e, void *response, size_t
++extern "C" void RIL_onRequestComplete__(RIL_Token t, RIL_Errno e, void *response, size_t
+         responselen);
+ #if defined(ANDROID_MULTI_SIM)
+-extern "C" void RIL_onUnsolicitedResponse(int unsolResponse, const void *data,
++extern "C" void RIL_onUnsolicitedResponse__(int unsolResponse, const void *data,
+         size_t datalen, RIL_SOCKET_ID socketId);
+ #else
+-extern "C" void RIL_onUnsolicitedResponse(int unsolResponse, const void *data,
++extern "C" void RIL_onUnsolicitedResponse__(int unsolResponse, const void *data,
+         size_t datalen);
+ #endif
+ 
+ void RfxRilAdapter::responseToRilj(RIL_Token t, RIL_Errno e, void *response, int responselen) {
+-    RIL_onRequestComplete(t,e,response,responselen);
++    RIL_onRequestComplete__(t,e,response,responselen);
+ }
+ 
+ #if defined(ANDROID_MULTI_SIM)
+@@ -565,9 +565,9 @@ void RfxRilAdapter::responseToRilj(int unsolResponse, void* data, int datalen) {
+ #endif
+ 
+ #if defined(ANDROID_MULTI_SIM)
+-    RIL_onUnsolicitedResponse(unsolResponse, data, datalen, socketId);
++    RIL_onUnsolicitedResponse__(unsolResponse, data, datalen, socketId);
+ #else
+-    RIL_onUnsolicitedResponse(unsolResponse, data, datalen);
++    RIL_onUnsolicitedResponse__(unsolResponse, data, datalen);
+ #endif
+ }
+ 
+diff --git a/rilproxy/mtk-rilproxy/ril_callbacks.c b/rilproxy/mtk-rilproxy/ril_callbacks.c
+index f94b680..348eea4 100644
+--- a/rilproxy/mtk-rilproxy/ril_callbacks.c
++++ b/rilproxy/mtk-rilproxy/ril_callbacks.c
+@@ -626,6 +626,27 @@ mainLoop(void *param __unused)
+ 
+ pthread_t s_tid_mainloop;
+ 
++void RIL_setRilEnvForGT(const struct RIL_Env *env) {
++    RLOGE("RIL_setRilEnvForGT");
++    s_rilenv = env;
++}
++
++void RIL_onRequestComplete__(RIL_Token t, RIL_Errno e, void *response, size_t
++        responselen) {
++     RIL_onRequestComplete(t, e, response, responselen);
++}
++#if defined(ANDROID_MULTI_SIM)
++void RIL_onUnsolicitedResponse__(int unsolResponse, const void *data,
++        size_t datalen, RIL_SOCKET_ID socketId) {
++    RIL_onUnsolicitedResponse(unsolResponse, data, datalen, socketId);
++}
++#else
++void RIL_onUnsolicitedResponse__(int unsolResponse, const void *data,
++        size_t datalen) {
++    RIL_onUnsolicitedResponse(unsolResponse, data, data);
++}
++#endif
++
+ const RIL_RadioFunctions *RIL_Init(const struct RIL_Env *env,
+         int argc __unused, char **argv __unused)
+ {
+diff --git a/rilproxy/rild/rilproxy.rc b/rilproxy/rild/rilproxy.rc
+index 2c9597c..21534d2 100644
+--- a/rilproxy/rild/rilproxy.rc
++++ b/rilproxy/rild/rilproxy.rc
+@@ -1,4 +1,4 @@
+-service vendor.ril-proxy /vendor/bin/hw/rilproxy -l mtk-rilproxy.so
++service vendor.ril-proxy /vendor/bin/hw/rilproxy -l libmtk-rilproxy.so
+     class core
+     socket rild stream 660 root radio
+     socket rild2 stream 660 root radio

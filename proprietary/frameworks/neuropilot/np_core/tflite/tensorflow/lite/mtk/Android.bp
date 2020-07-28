@@ -1,0 +1,88 @@
+/* MediaTek Inc. (C) 2019. All rights reserved.
+ *
+ * BY OPENING THIS FILE, RECEIVER HEREBY UNEQUIVOCALLY ACKNOWLEDGES AND AGREES
+ * THAT THE SOFTWARE/FIRMWARE AND ITS DOCUMENTATIONS ("MEDIATEK SOFTWARE")
+ * RECEIVED FROM MEDIATEK AND/OR ITS REPRESENTATIVES ARE PROVIDED TO RECEIVER ON
+ * AN "AS-IS" BASIS ONLY. MEDIATEK EXPRESSLY DISCLAIMS ANY AND ALL WARRANTIES,
+ * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE OR NONINFRINGEMENT.
+ * NEITHER DOES MEDIATEK PROVIDE ANY WARRANTY WHATSOEVER WITH RESPECT TO THE
+ * SOFTWARE OF ANY THIRD PARTY WHICH MAY BE USED BY, INCORPORATED IN, OR
+ * SUPPLIED WITH THE MEDIATEK SOFTWARE, AND RECEIVER AGREES TO LOOK ONLY TO SUCH
+ * THIRD PARTY FOR ANY WARRANTY CLAIM RELATING THERETO. RECEIVER EXPRESSLY ACKNOWLEDGES
+ * THAT IT IS RECEIVER'S SOLE RESPONSIBILITY TO OBTAIN FROM ANY THIRD PARTY ALL PROPER LICENSES
+ * CONTAINED IN MEDIATEK SOFTWARE. MEDIATEK SHALL ALSO NOT BE RESPONSIBLE FOR ANY MEDIATEK
+ * SOFTWARE RELEASES MADE TO RECEIVER'S SPECIFICATION OR TO CONFORM TO A PARTICULAR
+ * STANDARD OR OPEN FORUM. RECEIVER'S SOLE AND EXCLUSIVE REMEDY AND MEDIATEK'S ENTIRE AND
+ * CUMULATIVE LIABILITY WITH RESPECT TO THE MEDIATEK SOFTWARE RELEASED HEREUNDER WILL BE,
+ * AT MEDIATEK'S OPTION, TO REVISE OR REPLACE THE MEDIATEK SOFTWARE AT ISSUE,
+ * OR REFUND ANY SOFTWARE LICENSE FEES OR SERVICE CHARGE PAID BY RECEIVER TO
+ * MEDIATEK FOR SUCH MEDIATEK SOFTWARE AT ISSUE.
+ *
+ * The following software/firmware and/or related documentation ("MediaTek Software")
+ * have been modified by MediaTek Inc. All revisions are subject to any receiver's
+ * applicable license agreements with MediaTek Inc.
+ */
+
+cc_library_static {
+    name: "libtflite_mtk_np_ext",
+    defaults: ["tflite_mtk_defaults"],
+    srcs: [
+        "mtk_helper.cc",
+        "mtk_interpreter.cc",
+        "core/mtk_subgraph.cc",
+        "delegates/nnapi/mtk_nnapi_delegate.cc",
+        "delegates/nnapi/mtk_nnapi_delegate_p.cc",
+        "delegates/nnapi/mtk_nnapi_delegate_q.cc",
+        "kernels/mtk_abs.cc",
+        "kernels/mtk_axis_aligned_bbox_transform.cc",
+        "kernels/mtk_box_with_nms_limit.cc",
+        "kernels/mtk_channel_shuffle.cc",
+        "kernels/mtk_crop_and_resize.cc",
+        "kernels/mtk_depth_to_space.cc",
+        "kernels/mtk_elu.cc",
+        "kernels/mtk_generate_proposals.cc",
+        "kernels/mtk_layer_normalization.cc",
+        "kernels/mtk_opt.cc",
+        "kernels/mtk_quantize.cc",
+        "kernels/mtk_register.cc",
+        "kernels/mtk_requantize.cc",
+        "kernels/mtk_reverse.cc",
+        "kernels/mtk_roi_align.cc",
+        "kernels/mtk_transpose_conv.cc",
+    ],
+    shared_libs: [
+        "libnativewindow",
+    ],
+    whole_static_libs: [
+        "libarect",
+    ],
+    header_libs: [
+        "flatbuffer_headers",
+        "libeigen",
+        "gemmlowp_mtk_headers",
+    ],
+    cflags: [
+        "-Wno-array-bounds",
+        "-Wno-extern-c-compat",
+        "-Wno-missing-field-initializers",
+        "-Wno-invalid-partial-specialization",
+        "-Wno-unused-local-typedef",
+        "-Wno-unused-private-field",
+        "-Wno-unused-variable",
+        "-Wno-sign-compare",
+        "-Wno-varargs",
+    ],
+}
+
+cc_library_static {
+    name: "libtflite_mtk_np_ext_utils",
+    defaults: ["tflite_mtk_defaults"],
+    srcs: [
+        "mtk_utils.cc",
+    ],
+}
+
+build = [
+    "tflite_mtk_ext_test.bp",
+]

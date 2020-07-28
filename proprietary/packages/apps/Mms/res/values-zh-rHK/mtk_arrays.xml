@@ -1,0 +1,546 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+ * Copyright (C) 2008 Esmertec AG.
+ * Copyright (C) 2008 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ -->
+<resources>
+<string-array name="default_quick_texts">
+      <item>你在哪？</item>
+      <item>在做甚麼？</item>
+      <item>回電話給我！拜托！</item>
+      <item>不好意思，我正在開會。 </item>
+      <item>一會兒打電話給你。</item>
+      <item>不用擔心！我很好。</item>
+      <item>回家途中。</item>
+      <item>快要到了。</item>
+      <item>不見不散！</item>
+    </string-array>
+    <string-array name="pref_mms_creation_mode_choices">
+        <item>限制模式</item>
+        <item>警告模式</item>
+        <item>無限模式</item>
+    </string-array>
+    <string-array name="pref_key_mms_priority_choices">
+        <item>"高"</item>
+        <item>"正常"</item>
+        <item>"低"</item>
+    </string-array>
+    <string-array name="pref_sms_input_mode_choice">
+        <item>GSM 字元</item>
+        <item>Unicode</item>
+        <item>"自動"</item>
+    </string-array>
+    <string-array name="pref_sms_save_location_choices">
+        <item>"電話"</item>
+        <item>SIM 卡</item>
+    </string-array>
+    <string-array name="pref_tablet_sms_save_location_choices">
+        <item>"裝置"</item>
+        <item>SIM 卡</item>
+    </string-array>
+    <string-array name="pref_message_font_size_choices">
+        <item>依照系統字型大小</item>
+        <item>"小"</item>
+        <item>"中"</item>
+        <item>"大"</item>
+        <item>特大</item>
+    </string-array>
+    <string-array name="pref_message_font_size_values">
+        <item>18</item>
+        <item>20</item>
+        <item>24</item>
+        <item>28</item>
+        <item>32</item>
+    </string-array>
+    <integer-array name="share_column">
+        <item>4</item>
+        <item>6</item>
+    </integer-array>
+    <integer-array name="emoticon_column">
+        <item>5</item>
+        <item>10</item>
+    </integer-array>
+    <string-array name="large_emoticon_name">
+        <item>[讚賞]</item>
+        <item>[禮物]</item>
+        <item>[功夫]</item>
+        <item>[淋浴]</item>
+        <item>[驚嚇]</item>
+        <item>[生病]</item>
+        <item>[富有]</item>
+        <item>[飛翔]</item>
+        <item>[憤怒]</item>
+        <item>[同意]</item>
+        <item>[沉悶]</item>
+        <item>[哭泣]</item>
+        <item>[駕車]</item>
+        <item>[吃東西]</item>
+        <item>[高興]</item>
+        <item>[保持]</item>
+        <item>[假期]</item>
+        <item>[愛]</item>
+        <item>[祈禱]</item>
+        <item>[壓力]</item>
+        <item>[唱歌]</item>
+        <item>[睡覺]</item>
+        <item>[運動]</item>
+        <item>[游泳]</item>
+    </string-array>
+    <string-array name="large_emoticon_name_en">
+        <item>[讚賞]</item>
+        <item>[禮物]</item>
+        <item>[功夫]</item>
+        <item>[淋浴]</item>
+        <item>[驚嚇]</item>
+        <item>[生病]</item>
+        <item>[富有]</item>
+        <item>[飛翔]</item>
+        <item>[憤怒]</item>
+        <item>[同意]</item>
+        <item>[沉悶]</item>
+        <item>[哭泣]</item>
+        <item>[駕車]</item>
+        <item>[吃東西]</item>
+        <item>[高興]</item>
+        <item>[保持]</item>
+        <item>[假期]</item>
+        <item>[愛]</item>
+        <item>[祈禱]</item>
+        <item>[壓力]</item>
+        <item>[唱歌]</item>
+        <item>[睡覺]</item>
+        <item>[運動]</item>
+        <item>[游泳]</item>
+    </string-array>
+    <string-array name="dynamic_emoticon_name">
+        <item>{高興}</item>
+        <item>{拍掌}</item>
+        <item>{愛}</item>
+        <item>{驕傲}</item>
+        <item>{不屑}</item>
+        <item>{不耐煩}</item>
+        <item>{掌摑}</item>
+        <item>{憤怒}</item>
+        <item>{詛咒}</item>
+        <item>{無論如何}</item>
+        <item>{糾結}</item>
+        <item>{哭泣}</item>
+        <item>{沮喪}</item>
+        <item>{我也_很憤怒}</item>
+        <item>{大約}</item>
+        <item>{經過}</item>
+        <item>{崇拜}</item>
+        <item>{清純}</item>
+        <item>{再見}</item>
+        <item>{無辜}</item>
+        <item>{驚人}</item>
+        <item>{肚餓}</item>
+        <item>{睡覺}</item>
+        <item>{願望}</item>
+    </string-array>
+    <string-array name="large_emoticon_name_ch">
+        <item>[赞]</item>
+        <item>[礼物]</item>
+        <item>[降龙十八掌]</item>
+        <item>[洗澡]</item>
+        <item>[惊吓]</item>
+        <item>[生病]</item>
+        <item>[高富帅]</item>
+        <item>[飞行]</item>
+        <item>[生气]</item>
+        <item>[同意]</item>
+        <item>[无聊]</item>
+        <item>[哭]</item>
+        <item>[开车]</item>
+        <item>[吃饭]</item>
+        <item>[开心]</item>
+        <item>[Hold住]</item>
+        <item>[度假]</item>
+        <item>[喜爱]</item>
+        <item>[祈福]</item>
+        <item>[压力很大]</item>
+        <item>[唱歌]</item>
+        <item>[睡觉]</item>
+        <item>[足球]</item>
+        <item>[游泳]</item>
+    </string-array>
+    <string-array name="dynamic_emoticon_name_en">
+        <item>{高興}</item>
+        <item>{拍掌}</item>
+        <item>{愛}</item>
+        <item>{驕傲}</item>
+        <item>{不屑}</item>
+        <item>{不耐煩}</item>
+        <item>{掌摑}</item>
+        <item>{憤怒}</item>
+        <item>{詛咒}</item>
+        <item>{無論如何}</item>
+        <item>{糾結}</item>
+        <item>{哭泣}</item>
+        <item>{沮喪}</item>
+        <item>{我也_很憤怒}</item>
+        <item>{大約}</item>
+        <item>{經過}</item>
+        <item>{崇拜}</item>
+        <item>{清純}</item>
+        <item>{再見}</item>
+        <item>{無辜}</item>
+        <item>{驚人}</item>
+        <item>{肚餓}</item>
+        <item>{睡覺}</item>
+        <item>{願望}</item>
+    </string-array>
+    <string-array name="dynamic_emoticon_name_ch">
+        <item>{高兴}</item>
+        <item>{拍手}</item>
+        <item>{喜欢}</item>
+        <item>{得意}</item>
+        <item>{不屑}</item>
+        <item>{不耐烦}</item>
+        <item>{扇耳光}</item>
+        <item>{气愤}</item>
+        <item>{诅咒}</item>
+        <item>{无奈}</item>
+        <item>{纠结}</item>
+        <item>{哭泣}</item>
+        <item>{泄气}</item>
+        <item>{生气}</item>
+        <item>{围观}</item>
+        <item>{路过}</item>
+        <item>{膜拜}</item>
+        <item>{纯洁}</item>
+        <item>{再见}</item>
+        <item>{无辜}</item>
+        <item>{震惊}</item>
+        <item>{饿}</item>
+        <item>{睡觉}</item>
+        <item>{祝福}</item>
+    </string-array>
+    <string-array name="ad_emoticon_name">
+        <item>/擊打/</item>
+        <item>/餘興表演/</item>
+        <item>/哭泣/</item>
+        <item>/光環/</item>
+        <item>/心跳/</item>
+        <item>/打瞌睡/</item>
+        <item>/大笑/</item>
+        <item>/不耐煩/</item>
+        <item>/跑步/</item>
+        <item>/詛咒/</item>
+        <item>/流汗/</item>
+        <item>/自滿/</item>
+        <item>/打噴嚏/</item>
+        <item>/跳舞/</item>
+        <item>/憤怒/</item>
+        <item>/跳躍/</item>
+        <item>/偷看/</item>
+        <item>/摔倒/</item>
+        <item>/吃東西/</item>
+        <item>/入籃/</item>
+        <item>/經過/</item>
+        <item>/搖擺/</item>
+        <item>/再見/</item>
+        <item>/便秘/</item>
+    </string-array>
+    <string-array name="ad_emoticon_name_en">
+        <item>/擊打/</item>
+        <item>/餘興表演/</item>
+        <item>/哭泣/</item>
+        <item>/光環/</item>
+        <item>/心跳/</item>
+        <item>/打瞌睡/</item>
+        <item>/大笑/</item>
+        <item>/不耐煩/</item>
+        <item>/跑步/</item>
+        <item>/詛咒/</item>
+        <item>/流汗/</item>
+        <item>/自滿/</item>
+        <item>/打噴嚏/</item>
+        <item>/跳舞/</item>
+        <item>/憤怒/</item>
+        <item>/跳躍/</item>
+        <item>/偷看/</item>
+        <item>/摔倒/</item>
+        <item>/吃東西/</item>
+        <item>/入籃/</item>
+        <item>/經過/</item>
+        <item>/搖擺/</item>
+        <item>/再見/</item>
+        <item>/便秘/</item>
+    </string-array>
+    <string-array name="ad_emoticon_name_ch">
+        <item>/挨打/</item>
+        <item>/杂耍/</item>
+        <item>/哭泣/</item>
+        <item>/晕眩/</item>
+        <item>/心动/</item>
+        <item>/瞌睡/</item>
+        <item>/傻笑/</item>
+        <item>/不耐烦/</item>
+        <item>/跑步/</item>
+        <item>/诅咒/</item>
+        <item>/冒汗/</item>
+        <item>/得意/</item>
+        <item>/打喷嚏/</item>
+        <item>/跳舞/</item>
+        <item>/生气/</item>
+        <item>/跳绳/</item>
+        <item>/偷窥/</item>
+        <item>/出丑/</item>
+        <item>/吃/</item>
+        <item>/呼啦圈/</item>
+        <item>/路过/</item>
+        <item>/扭屁股/</item>
+        <item>/再见/</item>
+        <item>/便秘/</item>
+    </string-array>
+    <string-array name="xm_emoticon_name">
+        <item>#眨眼#</item>
+        <item>#問題#</item>
+        <item>#嘔吐#</item>
+        <item>#倒霉#</item>
+        <item>#喜歡#</item>
+        <item>#可愛#</item>
+        <item>#頭暈#</item>
+        <item>#疲倦#</item>
+        <item>#困惑#</item>
+        <item>#親吻#</item>
+        <item>#愛#</item>
+        <item>#詛咒#</item>
+        <item>#錢#</item>
+        <item>#微笑#</item>
+        <item>#哭泣#</item>
+        <item>#憤怒#</item>
+        <item>#滿足#</item>
+        <item>#頑皮#</item>
+        <item>#毛骨悚然#</item>
+        <item>#茫然#</item>
+        <item>#尷尬#</item>
+        <item>#睡覺#</item>
+        <item>#消失#</item>
+        <item>#不滿#</item>
+    </string-array>
+    <string-array name="xm_emoticon_name_en">
+        <item>#眨眼#</item>
+        <item>#問題#</item>
+        <item>#嘔吐#</item>
+        <item>#倒霉#</item>
+        <item>#喜歡#</item>
+        <item>#可愛#</item>
+        <item>#頭暈#</item>
+        <item>#疲倦#</item>
+        <item>#困惑#</item>
+        <item>#親吻#</item>
+        <item>#愛#</item>
+        <item>#詛咒#</item>
+        <item>#錢#</item>
+        <item>#微笑#</item>
+        <item>#哭泣#</item>
+        <item>#憤怒#</item>
+        <item>#滿足#</item>
+        <item>#頑皮#</item>
+        <item>#毛骨悚然#</item>
+        <item>#茫然#</item>
+        <item>#尷尬#</item>
+        <item>#睡覺#</item>
+        <item>#消失#</item>
+        <item>#不滿#</item>
+    </string-array>
+    <string-array name="xm_emoticon_name_ch">
+        <item>#眨眼#</item>
+        <item>#疑问#</item>
+        <item>#吐#</item>
+        <item>#衰#</item>
+        <item>#喜欢#</item>
+        <item>#萌#</item>
+        <item>#晕#</item>
+        <item>#困#</item>
+        <item>#不懂#</item>
+        <item>#亲#</item>
+        <item>#爱#</item>
+        <item>#大骂#</item>
+        <item>#钱#</item>
+        <item>#微笑#</item>
+        <item>#哭#</item>
+        <item>#生气#</item>
+        <item>#得意#</item>
+        <item>#淘气#</item>
+        <item>#恐怖#</item>
+        <item>#发呆#</item>
+        <item>#汗#</item>
+        <item>#睡觉#</item>
+        <item>#消失#</item>
+        <item>#委屈#</item>
+    </string-array>
+    <string-array name="emoticon_name">
+        <item>:-)</item>
+        <item>;-)</item>
+        <item>:-(</item>
+        <item>:\'(</item>
+        <item>B-)</item>
+        <item>:-*</item>
+        <item>:-P</item>
+        <item>:O</item>
+        <item>O:-)</item>
+        <item>#NAME?</item>
+        <item>:-[</item>
+        <item>:-$</item>
+        <item>:-!</item>
+        <item>:-\\</item>
+        <item>:-D</item>
+        <item>o_O</item>
+        <item>:-X</item>
+        <item>&lt;3</item>
+        <item>x-(</item>
+        <item>:-/</item>
+        <item>:-I</item>
+        <item>:-zZ</item>
+        <item>:-E</item>
+        <item>;-o</item>
+        <item>-□ -\"</item>
+        <item>ˋ▽ˊψ</item>
+        <item>┬＾┬</item>
+        <item>&lt;(_ _)&gt;</item>
+        <item>＊￣▽￣＊</item>
+        <item>|-O</item>
+        <item>゜ロ゜</item>
+        <item>:-@</item>
+        <item>°ο°</item>
+        <item>◎~◎</item>
+        <item>:-}</item>
+        <item>′▽｀</item>
+        <item>\\#/</item>
+        <item>●～*</item>
+        <item>#｀′</item>
+        <item>/◇\\</item>
+        <item>∠</item>
+        <item>〒</item>
+        <item>≯</item>
+        <item>∨</item>
+        <item>⊙╭╯</item>
+        <item>№</item>
+        <item>﹌ </item>
+        <item>\\▽/</item>
+        <item>☀</item>
+        <item>╭∩╮</item>
+        <item>(o)</item>
+        <item>( _ )</item>
+        <item>(*ｉ*)</item>
+        <item>≦≧</item>
+        <item>{()}</item>
+        <item>(*)</item>
+        <item>£›</item>
+        <item>◇</item>
+        <item>*-:-)</item>
+        <item>※</item>
+        <item>:-m</item>
+        <item>:-y</item>
+        <item>●</item>
+        <item>*&amp;*</item>
+        <item>□</item>
+        <item>:-~~</item>
+        <item>^``^</item>
+        <item>*^*</item>
+        <item>&lt;(\')</item>
+        <item>(=)</item>
+    </string-array>
+    <string-array name="default_emoticon_name">
+        <item>:-)</item>
+        <item>;-)</item>
+        <item>:-(</item>
+        <item>:\'(</item>
+        <item>B-)</item>
+        <item>:-*</item>
+        <item>:-P</item>
+        <item>:O</item>
+        <item>O:-)</item>
+        <item>#NAME?</item>
+        <item>:-[</item>
+        <item>:-$</item>
+        <item>:-!</item>
+        <item>:-\\</item>
+        <item>:-D</item>
+        <item>o_O</item>
+        <item>:-X</item>
+        <item>&lt;3</item>
+        <item>x-(</item>
+        <item>:-/</item>
+        <item>:-I</item>
+        <item>:-zZ</item>
+        <item>:-E</item>
+        <item>;-o</item>
+        <item>-□ -\"</item>
+        <item>ˋ▽ˊψ</item>
+        <item>┬＾┬</item>
+        <item>&lt;(_ _)&gt;</item>
+        <item>＊￣▽￣＊</item>
+        <item>|-O</item>
+        <item>゜ロ゜</item>
+        <item>:-@</item>
+        <item>°ο°</item>
+        <item>◎~◎</item>
+        <item>:-}</item>
+        <item>′▽｀</item>
+        <item>\\#/</item>
+        <item>●～*</item>
+        <item>#｀′</item>
+        <item>/◇\\</item>
+    </string-array>
+    <string-array name="gift_emoticon_name">
+        <item>∠</item>
+        <item>〒</item>
+        <item>≯</item>
+        <item>∨</item>
+        <item>⊙╭╯</item>
+        <item>№</item>
+        <item>﹌ </item>
+        <item>\\▽/</item>
+        <item>☀</item>
+        <item>╭∩╮</item>
+        <item>(o)</item>
+        <item>( _ )</item>
+        <item>(*ｉ*)</item>
+        <item>≦≧</item>
+        <item>{()}</item>
+        <item>(*)</item>
+        <item>£›</item>
+        <item>◇</item>
+        <item>*-:-)</item>
+        <item>※</item>
+        <item>:-m</item>
+        <item>:-y</item>
+        <item>●</item>
+        <item>*&amp;*</item>
+        <item>□</item>
+        <item>:-~~</item>
+        <item>^``^</item>
+        <item>*^*</item>
+        <item>&lt;(\')</item>
+        <item>(=)</item>
+    </string-array>
+    <string-array name="pref_key_sms_priority_values">
+        <item>"正常"</item>
+        <item>互動</item>
+        <item>緊急</item>
+        <item>緊急</item>
+    </string-array>
+
+    <!-- op09 Mms array begin -->
+    <string-array name="ct_sms_save_location_array">
+        <item>電話</item>
+        <item>UIM 卡</item>
+    </string-array>
+    <!-- Mms array end -->
+</resources>

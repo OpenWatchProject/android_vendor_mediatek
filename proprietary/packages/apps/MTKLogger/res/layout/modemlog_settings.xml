@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:key="modemlog_preference_screen"
+    android:title="@string/modem_log_name" >
+
+    <ListPreference
+        android:defaultValue="@string/default_mode_value"
+        android:dialogTitle="@string/log_mode_title"
+        android:entries="@array/mode_list_preference"
+        android:entryValues="@array/mode_value_list_preference"
+        android:key="log_mode_1"
+        android:summary="@string/log_mode_summary"
+        android:title="@string/log_mode_title" />
+    
+    <ListPreference
+        android:defaultValue="@string/default_mode_value"
+        android:dialogTitle="@string/log_mode_title"
+        android:entries="@array/mode_list_preference"
+        android:entryValues="@array/mode_value_list_preference"
+        android:key="log_mode_2"
+        android:summary="@string/log_mode_summary"
+        android:title="@string/log_mode_title" />
+
+    <CheckBoxPreference
+        android:defaultValue="true"
+        android:key="monitor_modme_abnormal_event"
+        android:summary="@string/monitor_modme_abnormal_event_summary"
+        android:title="@string/monitor_modme_abnormal_event_title" />
+
+    <CheckBoxPreference
+        android:defaultValue="false"
+        android:key="save_location_in_log"
+        android:summary="@string/save_location_in_log_summary"
+        android:title="@string/save_location_in_log_title" />
+
+    <ListPreference
+        android:dialogTitle="@string/ccb_gear_title"
+        android:key="ccb_gear"
+        android:summary="@string/ccb_gear_summary"
+        android:title="@string/ccb_gear_title" />
+
+    <CheckBoxPreference
+        android:defaultValue="false"
+        android:key="modem_autoreset"
+        android:summary="@string/reset_automatically_modem_summary"
+        android:title="@string/reset_automatically_modem_title" />
+
+    <EditTextPreference
+        android:defaultValue="2000"
+        android:key="modemlog_logsize"
+        android:summary="@string/limit_log_size_summary"
+        android:title="@string/limit_log_size_title" />
+
+</PreferenceScreen>

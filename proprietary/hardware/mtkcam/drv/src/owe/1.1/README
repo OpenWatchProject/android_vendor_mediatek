@@ -1,0 +1,29 @@
+Library of MTK DPE HW User Interface driver.
+
+This library is pre-built by MediaTek internal.
+
+
+WHAT IT DOES?
+=============
+libmtkcam_dpe.so provides a interface to access Mediatek DPE HW. The interface includes virtual and physical dpe interface to access the DPE HW.
+It will interact with user driver(dpe_drv.cpp) and kernel driver(camera_dpe.c) throught system call. It provides the bridage to access DPE HW when the user who is belong to user space want to access DPE HW.
+Besides, you can wait for hw frame done signal using this interface.
+Without this, MTK DPE HW will not work!!
+
+HOW IT WAS BUILT?
+==================
+It needs the following library from AOSP:
+1.  liblog.so
+2.  libcutils.so
+3.  libmtkcam_stdutils 
+
+All source/dependency modules of this module are already put in
+'vendor\mediatek\proprietary\hardware\mtkcam\drv\src\dpe\1.0' folder.
+
+HOW TO USE IT?
+==============
+
+Provide api for user who is belong to user space to control MTK DPE HW.
+all api interface are at (vendor\mediatek\proprietary\hardware\mtkcam\drv\src\dpe\1.0)
+
+All the source code of this library were written by MediaTek co..

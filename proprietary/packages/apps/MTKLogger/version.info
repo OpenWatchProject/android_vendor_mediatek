@@ -1,0 +1,18 @@
+# Version number format: aa.bb.cc
+#   aa: architecture or protocol change, when update, need to consider related module
+#   bb: new feature added
+#   cc: bug fix
+
+1.0.0 Initial version
+
+2.0.0 Integrate TagLog and ExceptionReporter
+
+3.0.0 Tiny improvement, change communication protocol with native daemon
+3.1.0 Add support for timeout EE
+3.2.0 Put Taglog operation into background, and add progress bar for compressing progress in status bar.
+      Modem log will not be tagged unless an EE happened.
+4.0.0 Integrated with Issue Submitter. Original Exception Reporter phase out.
+4.1.0 Support for Issue Submitter 2.0. Phase out Issue Submitter 1.0
+4.2.0 Add permission to avoid third-party application access DebugLoggerUI in user build.
+5.0.0 Support Multi-TagLog
+6.0.0 Rename MTKLogger to DebugLoggerUI

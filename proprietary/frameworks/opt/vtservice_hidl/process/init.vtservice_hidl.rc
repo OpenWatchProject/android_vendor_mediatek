@@ -1,0 +1,8 @@
+# VTService_hidl .rc configure
+
+service vtservice_hidl /vendor/bin/hw/vtservice_hidl
+    class hal
+    socket volte_vt stream 660 root system
+    user system
+    group system camera graphics inet net_admin net_raw media sdcard_rw radio sdcard_r media_rw
+    ioprio rt 4

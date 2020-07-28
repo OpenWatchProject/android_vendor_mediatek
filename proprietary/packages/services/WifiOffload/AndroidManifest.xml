@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:androidprv="http://schemas.android.com/apk/prv/res/android"
+        package="com.mediatek.wfo.impl"
+        coreApp="true"
+        android:sharedUserId="android.uid.phone">
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.PACKET_KEEPALIVE_OFFLOAD"/>
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="com.mediatek.permission.IMS_ERR_NOTIFICATION"/>
+
+    <protected-broadcast android:name="mediatek.intent.action.WFC_POWER_ON_MODEM" />
+    <protected-broadcast android:name="com.mediatek.intent.action.WFC_STATUS_CHANGED" />
+    <protected-broadcast android:name="com.mediatek.intent.action.WFC_REQUEST_PARTIAL_SCAN" />
+
+    <permission android:name="com.mediatek.permission.START_WFO_SERVICE"
+            android:label="Start wfo service"
+            android:protectionLevel="signatureOrSystem" />
+
+    <application android:name="WfoApp"
+                 android:process="com.mediatek.ims"
+                 android:directBootAware="true"
+                 android:allowBackup="false">
+                 <service android:name="com.mediatek.wfo.impl.WfoService"
+                        android:permission="com.mediatek.permission.START_WFO_SERVICE">
+                     <intent-filter>
+                        <action android:name="com.mediatek.START_WFO" />
+                        <category android:name="android.intent.category.DEFAULT" />
+                    </intent-filter>
+                 </service>
+
+                 <uses-library android:name="com.mediatek.wfo.legacy" android:required="false" />
+<!--        <uses-library android:name="wfo-common"
+                      android:required="true" /> -->
+    </application>
+</manifest>

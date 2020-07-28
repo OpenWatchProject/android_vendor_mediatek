@@ -1,0 +1,56 @@
+Hi partner, this is the README of how to integrate your calibration data for Google and/or MTK.
+
+There are some thing we would like you to know:
+1. There are two APIs need to be implemented by you:
+     bool CalibrationConvertor::convertToGoogleFormat(CalibrationResultInGoogleFormat &result);
+     bool CalibrationConvertor::convertToMTKFormat(CalibrationResultInMTKFormat &result);
+   We'll describe more details for the APIs below.
+
+2. If the project has more than one set of dual camera, we prepare some useful information as your input:
+   a. Logical device ID
+   b. The physical sensor IDs of the logical device
+   c. The sensor names of the physical sensors
+
+3. CalibrationConvertor has its own shared library: libmtkcam_calibration_convertor.so
+   You can push the library to device during itegration.
+
+4. Calibration data must be able to read during boot time since we'll save result to static metadata.
+
+5. Debug key logs are: "MtkCam/CalibrationConvertor" and "MtkCam/MetadataProvider.constructStatic: [updateData] Update Lens"
+   "MtkCam/CalibrationConvertor" is for your convertion and we'll print static metadata with another.
+
+More details:
+------------------------------------------------------------------------------------------------
+    bool CalibrationConvertor::convertToGoogleFormat(CalibrationResultInGoogleFormat &result);
+------------------------------------------------------------------------------------------------
+The type CalibrationResultInGoogleFormat is defined here:
+vendor/mediatek/proprietary/hardware/mtkcam/include/mtkcam/utils/calibration/CalibrationTypes.h
+struct CalibrationResultInGoogleFormat : public CalibrationResult
+{
+    int                 lensPoseReference = 0;      // PRIMARY_CAMERA: 0, GYROSCOPE: 1
+    std::vector<float>  lensPoseRotation;           // [x, y, z, w]
+    std::vector<float>  lensPoseTranslation;        // [x, y, z]
+    std::vector<float>  lensIntrinsicCalibration;   // [f_x, f_y, c_x, c_y, s]
+    std::vector<float>  lensDistortion;             // [kappa_1, kappa_2, kappa_3, kappa_4, kappa_5]
+
+    CalibrationResultInGoogleFormat() : CalibrationResult(E_CALIBRATION_GOOGLE_FORMAT) {}
+};
+
+You have to fill "lensPoseRotation", "lensPoseTranslation", "lensIntrinsicCalibration" and "lensDistortion".
+After convertion, remember to return true in the function.
+
+------------------------------------------------------------------------------------------------
+    bool CalibrationConvertor::convertToMTKFormat(CalibrationResultInMTKFormat &result);
+------------------------------------------------------------------------------------------------
+The type CalibrationResultInMTKFormat is defined here:
+vendor/mediatek/proprietary/hardware/mtkcam/include/mtkcam/utils/calibration/CalibrationTypes.h
+struct CalibrationResultInMTKFormat : public CalibrationResult
+{
+    float                       calibration[CAM_CAL_Stereo_Data_SIZE/sizeof(float)];
+    ENUM_MTK_CLIBRATION_SOURCE  source = E_MTK_CALIBRATION_SOURCE_3RDPARTY;
+
+    CalibrationResultInMTKFormat() : CalibrationResult(E_CALIBRATION_MTK_FORMAT) {}
+};
+
+You have to fill your converted calbration data to "calibration" array.
+After convertion, remember to return true in the function.

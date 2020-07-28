@@ -1,0 +1,54 @@
+# These are referenced by com.google.common.util.concurrent and
+# com.google.errorprone.annotations but don't exist on Android.
+-dontwarn java.lang.ClassValue
+-dontwarn javax.lang.model.element.Modifier
+# M: add for plugin
+-keep class com.mediatek.dialer.ext.**{
+*;
+}
+-keep class com.mediatek.incallui.ext.**{
+*;
+}
+
+# M: add for test apk
+-keep class com.android.dialer.app.calllog.CallLogListItemViewHolder{
+public static CallLogListItemViewHolder createForTest(...);
+}
+
+# M: add for test apk
+-keep class com.android.dialer.app.calllog.PhoneCallDetailsViews{
+public static PhoneCallDetailsViews createForTest(...);
+}
+
+# M: add for test apk
+-keep class com.android.dialer.calllogutils.PhoneCallDetails{
+public static CharSequence createAccountLabelDescription(...);
+}
+
+# M: add for test apk
+-keep class com.android.contacts.common.util.ContactDisplayUtils{
+public static CharSequence getTtsSpannedPhoneNumber(...);
+}
+
+# M: add for test apk
+-keep class com.android.dialer.util.ExpirableCache*{
+public static *** create(...);
+}
+
+# M: fix runtime ClassCastException issue ALPS04409704
+-keep public class * extends com.bumptech.glide.module.AppGlideModule
+-keep class com.bumptech.glide.GeneratedAppGlideModuleImpl
+-keep class com.bumptech.glide.GeneratedRequestManagerFactory
+
+# M: Fix could not find constructor issue ALPS04416154
+-keep class com.android.incallui.PostCharDialogFragment
+
+# M: keep class for One way video feature
+-keep public class com.android.incallui.answer.impl.SmsBottomSheetFragment {*;}
+
+# M: Keep class for tatf auto test
+-keep public class com.android.incallui.call.CallList {*;}
+-keep public class com.android.incallui.call.DialerCall {*;}
+-keep public class com.android.incallui.call.state.DialerCallState {*;}
+-keep public class com.android.incallui.InCallPresenter {*;}
+

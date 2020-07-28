@@ -1,0 +1,23 @@
+Library of MTK camera feature-related internal driver to controll hardware path.
+E.x.: 
+1. tuning data flow control (cq_tuning_mgr)
+ 
+This library is pre-built by MediaTek internal.
+
+
+WHAT IT DOES?
+=============
+libfeatureiodrv.so contains MediaTek camera feature-related internal driver.
+Without this, MTK Camera Feature will not work!¡L
+
+HOW IT WAS BUILT?
+==================
+It needs the following library from AOSP:
+liblog
+libcutils
+libutils
+libstdc++
+
+and the following libs from MediaTek:
+libcam.halsensor
+libimageio_plat_pipe

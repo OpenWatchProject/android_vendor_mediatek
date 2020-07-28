@@ -1,0 +1,66 @@
+package vendor.mediatek.hardware.camera.vpuclient@2.0;
+
+/* camera related */
+import android.hardware.camera.common@1.0::types;
+
+/**
+ * A descriptor for image/data buffer
+ */
+
+enum VpuBufferFormat : uint32_t {
+    eFormatData 		= 0,
+    eFormatImageY8,
+    eFormatImageYV12,
+    eFormatImageNV21,
+    eFormatImageYUY2,
+    eFormatReserved1,
+    eFormatReserved2,
+    eFormatReserved3,
+} ;
+
+enum VpuCoreIndex : uint32_t {
+	eIndex_A = (0x01 << 0),
+	eIndex_B = (0x01 << 1),
+	eIndex_C = (0x01 << 2),
+	eIndex_D = (0x01 << 3),
+	eIndex_NONE = 0xFFFF,
+};
+
+struct VpuPlane{
+    uint64_t fd; //
+    uint32_t offset;
+    uint32_t stride;
+    uint32_t length;
+} ;
+
+struct VpuBuffer_t{
+    uint32_t planeCount;
+    VpuPlane[3] planes;
+    VpuBufferFormat format;
+    uint32_t width;
+    uint32_t height;
+    uint32_t port_id;
+} ;
+
+struct VpuRequest_t{
+    uint32_t width;
+    uint32_t height;
+    uint32_t port_id;
+} ;
+
+struct VpuExtraParam_t{
+	uint32_t	opp_step;	/* opp level */
+	uint32_t    freq_step;	/* special freq by demand, no use, would be removed */
+	uint32_t	bw;			/* expected used bw */
+} ;
+
+
+struct VpuStatus_t{
+	VpuCoreIndex core_index;
+	bool 	 available;
+	uint32_t waiting_requests_num;
+} ;
+
+
+
+

@@ -1,0 +1,46 @@
+apply plugin: 'com.android.application'
+android {
+    compileSdkVersion 'android-24'
+    buildToolsVersion "24.0.1"
+
+
+    defaultConfig {
+        applicationId "com.mediatek.gallerygif"
+        minSdkVersion 16
+        targetSdkVersion 24
+        versionCode 40030
+        versionName "1.1.40030"
+        renderscriptTargetApi 18
+        jackOptions {
+            enabled true
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    lintOptions {
+        abortOnError false
+    }
+    buildTypes {
+        debug {
+            minifyEnabled false
+        }
+        release {
+            minifyEnabled true
+        }
+    }
+    sourceSets {
+        main {
+            res.srcDirs = ['res']
+            java.srcDirs = ['src']
+            manifest.srcFile 'AndroidManifest.xml'
+        }
+    }
+
+    dependencies {
+        compile project(':mediatek:basic')
+        compile files('lib/com.mediatek.glide-static.jar')
+        compile files('../../lib/com.mediatek.galleryportable.jar')
+    }
+}

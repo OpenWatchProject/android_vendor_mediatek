@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+ * Copyright (C) 2007-2008 Esmertec AG.
+ * Copyright (C) 2007-2008 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+-->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+        package="com.mediatek.omacp"
+        android:sharedUserId="android.uid.system"
+        android:sharedUserLabel="@string/app_label">
+        <original-package android:name="com.mediatek.omacp" />
+
+    <protected-broadcast android:name="com.mediatek.omacp.capability" />
+    <protected-broadcast android:name="com.mediatek.omacp.settings" />
+
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.RECEIVE_WAP_PUSH" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="com.mediatek.permission.omacp.install" />
+
+    <permission android:name="com.mediatek.permission.omacp.install"
+        android:label="omacp_install_permission"
+        android:protectionLevel="signatureOrSystem"/>
+    <permission android:name="com.mediatek.permission.omacp.launch"
+        android:label="omacp_launch_permission"
+        android:protectionLevel="signatureOrSystem">
+    </permission>
+
+    <application
+        android:label="@string/app_label">
+        <!-- com.mediatek.omacp.message part -->
+
+        <receiver android:name=".message.OmacpReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+            <intent-filter>
+              <action android:name="android.provider.Telephony.WAP_PUSH_RECEIVED" />
+              <data android:mimeType="application/vnd.wap.connectivity-wbxml"/>
+              <data android:mimeType="text/vnd.wap.connectivity-xml"/>
+            </intent-filter>
+        </receiver>
+
+        <service android:name=".message.OmacpReceiverService"
+                 android:exported="false">
+        </service>
+
+        <activity android:name=".message.OmacpMessageList"
+                        android:permission="com.mediatek.permission.omacp.launch"
+                        android:label="@string/configuration_message"
+                        android:configChanges="orientation|screenSize|keyboardHidden">
+          <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".message.OmacpMessageSettingsDetail"
+                        android:exported="false"
+                        android:label="@string/detail_activity_label"
+                        android:configChanges="orientation|screenSize|keyboardHidden|mcc|mnc">
+        </activity>
+
+        <!-- com.mediatek.omacp.provider part -->
+
+        <provider android:name=".provider.OmacpProvider"
+            android:exported="false"
+            android:authorities="omacp"
+            android:multiprocess="true"
+            android:directBootAware="true" />
+
+    </application>
+</manifest>

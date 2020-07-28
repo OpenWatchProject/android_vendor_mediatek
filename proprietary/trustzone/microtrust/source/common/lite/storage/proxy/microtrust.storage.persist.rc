@@ -1,0 +1,9 @@
+# If support persist sector, define this service, and start on fs,
+# if meta mode or factory mode need this service, also need to start this service in meta_init.rc, factory.rc
+service storage_persist /vendor/bin/istorageproxyd -d /dev/trusty-ipc-dev0 -p com.android.trusty.storage.persist -v /mnt/vendor/persist/rpmb
+    group system
+    disabled
+    oneshot
+
+on late-fs
+    start storage_persist

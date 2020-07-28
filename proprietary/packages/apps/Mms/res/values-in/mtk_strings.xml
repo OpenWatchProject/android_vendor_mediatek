@@ -1,0 +1,665 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+/*
+ * Copyright (C) 2007-2008 Esmertec AG.
+ * Copyright (C) 2007-2008 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+ --><resources xmlns:android="http://schemas.android.com/apk/res/android" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+<!--- MTK Resources -->
+<string name="Insert_sdcard">Masukkan kartu SD</string>
+    <string name="pref_title_mms_enable_to_send_delivery_reports">Kirim laporan pengiriman</string>
+    <string name="pref_summary_mms_enable_to_send_delivery_reports">Kirim laporan pengiriman untuk setiap pesan yang diterima</string>
+    <string name="sms_save_location">Lokasi Penyimpanan SMS</string>
+    <string name="sms_service_center">Pusat Layanan SMS</string>
+    <string name="service_center_label">"Pusat Layanan: "</string>
+    <string name="attach_ringtone">Nada dering</string>
+    <string name="pref_title_mms_size_limit">Batas Ukuran</string>
+    <string name="pref_summary_mms_size_limit">Batas ukuran MMS untuk membuat pesan</string>
+    <string name="pref_title_mms_creation_mode">Mode Pembuatan</string>
+    <string name="pref_summary_mms_creation_mode">Mode pembuatan MMS untuk membuat pesan</string>
+    <string name="confirm_restricted_audio">Jenis konten audio dibatasi, apakah Anda tetap ingin melampirkan?</string>
+    <string name="confirm_restricted_image">Jenis konten gambar dibatasi, apakah Anda tetap ingin melampirkan?</string>
+    <string name="confirm_restricted_video">Jenis konten video dibatasi, apakah Anda tetap ingin melampirkan?</string>
+    <string name="unsupport_media_type">Jenis media tidak didukung</string>
+    <string name="select_different_media_type">Pilih media lain</string>
+    <!-- to notify user that image resolution is too large -->    
+    <string name="image_resolution_too_large">Resolusi foto terlalu besar untuk disisipkan</string>
+    <!-- wap push string begin -->
+    <!-- The type of wap push message, used in message details -->
+    <string name="wp_msg_type">Pesan layanan</string>
+    <string name="wp_msg_created_label">Dibuat:\u0020</string>
+    <string name="wp_msg_created_unknown">Unknown</string>
+    <string name="wp_msg_priority_label">Prioritas:\u0020</string>
+    <!-- Wappush message priority -->
+    <string name="wp_msg_priority_low">Rendah</string>
+    <string name="wp_msg_priority_medium">Menengah</string>
+    <string name="wp_msg_priority_high">Tinggi</string>
+    <!-- Context menu item -->
+    <string name="menu_goto_browser">Buka browser</string>
+    <string name="menu_add_to_bookmark">Tambah ke penanda</string>
+    <!-- Wappush message content label -->
+    <string name="wp_msg_expiration_label">Berakhir: <xliff:g id="DATE">%s</xliff:g></string>
+    <string name="error_unsupported_scheme">Tindakan tersebut saat ini tidak didukung.</string>
+    <!-- wap push setting -->
+    <string name="pref_title_wappush_settings">Pengaturan Pesan Layanan</string>
+    <string name="pref_title_wappush_enable">Aktifkan WAP PUSH</string>
+    <string name="pref_summary_wappush_enable">Aktifkan untuk menerima WAP PUSH</string>
+        <string name="pref_title_wappush_sl_autoloading">Pengaktifan SL Otomatis</string>
+    <string name="pref_summary_wappush_sl_autoloading">Secara otomatis mengaktifkan pesan pemuatan layanan (SL) saat diterima</string>
+    <!-- wap push string end -->
+    <string name="create_new_message">Buat pesan baru</string>
+    <string name="menu_send_sms">Kirim pesan ke <xliff:g id="name">%s</xliff:g></string>
+    <string name="menu_undelivered_messages">Pesan tidak terkirim</string>
+    <string name="broadcast_from_to"><xliff:g id="SENDER">%1$s</xliff:g> ke <xliff:g id="RECIPIENT">%2$s</xliff:g></string>
+    <string name="anonymous_recipient">Anonim</string>
+    <string name="view_picture">Lihat gambar</string>
+    <string name="sent_on">"Terkirim: <xliff:g id="DATE">%s</xliff:g>"</string>
+    <string name="received_on">"Diterima: <xliff:g id="DATE">%s</xliff:g>"</string>
+    <string name="name_colon"><b><xliff:g id="name" example="Me">%s</xliff:g></b>": "</string>
+     <string name="compose_title">"Tulis"</string>
+    <string name="image_too_large">Gambar terlalu besar</string>
+    <string name="ask_for_automatically_resize">Ubah ukuran gambar secara otomatis sebelum mengirim?</string>
+    <string name="cannot_load_message">Tidak dapat memuat pesan.</string>
+    <string name="locked_message_cannot_be_deleted">Pesan yang terkunci tidak dapat dihapus.</string>
+    <string name="cannot_add_recipient">Batas penerima tercapai. Anda tidak dapat menambahkan penerima.</string>
+    <string name="multiple_recipients"><xliff:g id="RECIPIENTCOUNT">%1$s</xliff:g> penerima</string>
+    <string name="resize">Ubah ukuran</string>
+    <string name="to_label">Kepada</string>
+    <string name="confirm_delete_all_messages">"Seluruh untaian akan dihapus."</string>
+    <string name="mms_priority_label">"Prioritas"</string>
+    <string name="menu_retry_sending">Mengirim kembali</string>
+    <string name="menu_retry_sending_all">Mengirim kembali semua</string>
+    <string name="retrying_dialog_body">Pesan ini <xliff:g id="MESSAGE">%s</xliff:g> tidak terkirim karena masalah sambungan.\nKembali mengirim...</string>
+    <string name="notification_multiple_cb"><xliff:g id="count">%s</xliff:g> Pesan CB belum dibaca</string>
+    <string name="notification_multiple_cb_title">Pesan Siaran Selular Baru</string>
+      <string name="dl_expired_notification">Pesan ini telah kedaluwarsa dan akan dihapus.</string>
+    <string name="add_attachment_activity">Tambah lampiran:</string>
+    <string name="select_layout_activity">Pilih susunan</string>
+    <string name="edit_text_activity">Edit teks</string>
+    <string name="pick_numbers_activity">Jumlah Pengambilan</string>
+    <string name="send_using_mms_activity">Kirim sebagai pesan multimedia...</string>
+    <string name="select_contact_method_activity">Pilih Metode Kontak</string>
+    <string name="fdn_enabled">FDN diaktifkan</string>
+    <string name="cannot_send_message_reason_no_content">Tidak ada konten yang akan dikirim</string>
+    <string name="cb_read_message">Baca pesan CB</string>
+    <string name="cb_read_message2">Baca Pesan Siaran Selular</string>
+    <string name="cb_message">Pesan Siaran Selular</string>
+    <string name="cb_default_channel_name">Dari Saluran</string>
+    <string name="message_open_email_fail">Maaf, persiapkan account email Anda lebih dulu.</string>
+    <string name="add_contacts">Kontak</string>
+    <string name="me">"Saya"</string>
+    <string name="send_by_sim2">Kirim dari SIM2</string>
+    <string name="send_by_sim1">Kirim dari SIM1</string>
+    <string name="menu_item_send_by">Kirim dari</string>
+    <string name="data_connected_confirm_title">Konfirmasi kirim</string>
+    <string name="data_connected_confirm_message">Mengirim MMS dari SIM ini dapat menunda proses download data terbaru Anda untuk sementara. Lanjutkan?</string>
+    <string name="menu_item_sim1">SIM1</string>
+    <string name="menu_item_sim2">SIM2</string>
+    <string name="no_sim_1">SIM tidak dipasang</string>
+    <string name="no_sim_2">SIM tidak dipasang</string>
+    <string name="sim1_full_title">Kartu SIM 1 penuh</string>
+    <string name="sim2_full_title">Kartu SIM 2 penuh</string>
+    <string name="select_all">"Pilih semua"</string>
+    <string name="confirm_delete_selected_messages">Pesan yang dipilih akan dihapus.</string>
+    <string name="confirm_delete_selected_theads">Thread yang dipilih akan dihapus.</string>
+    <string name="restricted_forward_title">"Pesan multimedia"</string>
+    <string name="restricted_forward_message">Media ini mungkin tidak ditampilkan dengan benar kepada penerima. Lanjutkan?</string>
+    <string name="menu_insert_text_vcard">Masukkan kontak</string>
+    <string name="contact_name">Nama</string>
+    <string name="contact_tel">Telepon</string>
+    <string name="contact_email">Email</string>
+    <string name="contact_organization">Organisasi</string>
+    <string name="contact_address">Alamat</string>
+		<string name="strOk">Pesan terkirim</string>
+    <string name="strFail">Pengiriman pesan gagal</string>
+    <string name="max_recipients_title">Jumlah maks. tercapai</string>
+    <string name="max_recipients_message">MMS hanya membolehkan maks. <xliff:g id="maxLimit">%s</xliff:g> penerima. Beberapa penerima akan dihapus. Anda ingin melanjutkan?</string>
+    <string name="via_without_time_for_send">melalui</string>
+    <string name="via_without_time_for_recieve">melalui</string>
+    <string name="sim_selected_dialog_title">Pilih SIM</string>
+    <string name="suggested">Disarankan</string>
+    <string name="add_contact_dialog_message">"Tambahkan nomor %s ke kontak yang ada atau baru?"</string>
+    <string name="add_contact_dialog_existing">Yang ada</string>
+    <string name="add_contact_dialog_new">Baru</string>
+    <string name="deleting">Menghapus</string>
+    <!-- Context menu item on an SMS for saving message to sim card -->
+    <string name="save_message_to_sim">Simpan pesan ke kartu SIM</string>
+    <!-- Toast message for saving message to sim card successful-->
+    <string name="save_message_to_sim_successful">Berhasil disimpan</string>
+    <!-- Toast message for saving message to sim card unsuccessful-->
+    <string name="save_message_to_sim_unsuccessful">Gagal disimpan</string>
+    <!-- Toast message for transmission transiently failed-->
+    <string name="transmission_transiently_failed">Pengiriman gagal. Akan dicoba lagi nanti.</string>
+    <!-- Toast message for downloading failed due to full memory-->
+    <string name="download_failed_due_to_full_memory">Download pesan gagal karena memori penuh.</string>
+    <!-- Toast message for downloading failed due to message size exceed limitation-->
+    <string name="mms_too_big_to_download">Pesan tak dapat didownload</string>
+    <!-- Status in "Report" window -->
+    <string name="status_expired">Telah berakhir</string>
+    <string name="status_deferred">Ditunda</string>
+    <string name="status_unrecognized">Tidak dikenal</string>
+    <string name="status_indeterminate">Tidak tentu</string>
+    <string name="status_unreachable">Tidak dapat dijangkau</string>
+    <string name="pref_summary_mms_auto_reply_read_reports">Kirim laporan baca jika diminta oleh pengirim MMS</string>
+    <string name="pref_title_mms_auto_reply_read_reports">Kirim laporan baca</string>
+    <plurals name="read_report_toast_msg">
+        <item quantity="one">%d pengiriman laporan baca</item>
+        <item quantity="other">%d pengiriman laporan baca</item>
+    </plurals>
+    <string name="sms_input_mode_title">Mode input</string> 
+    <string name="sms_input_mode_dialog_title">Pilih mode input</string> 
+    <string name="sms_input_mode_summary">Mode input SMS untuk membuat pesan</string> 
+    <string name="unselect_all">Hapus semua pilihan</string>
+    <!-- add for vcard -->
+    <string name="forward_byself">"Saya"</string>
+   <string name="file_attachment_vcard_name">vCard(<xliff:g id="text">%s</xliff:g>)</string>
+    <string name="attach_vcalendar" msgid="5452708708398908131">"Kalender"</string>
+   <string name="file_attachment_import_vcard">Impor vCard</string>
+   <string name="attach_vcard">Kontak</string>
+   <string name="type_common_file">file</string>
+   <string name="failed_to_parse_vcard">Gagal mem-parsing file vCard!</string>
+   <string name="empty_vcard">Tidak ada kontak di vCard</string>
+   <string name="parse_vcard">Parsing vCard</string>
+   <string name="vcard_no_details">Tidak ada informasi tambahan untuk kontak ini"</string>
+   <string name="call_custom"><xliff:g id="kustom">%s</xliff:g></string>
+   <string name="call_home">rumah</string>
+   <string name="call_mobile">ponsel</string>
+   <string name="call_work">kantor</string>
+   <string name="call_fax_work">faks kantor</string>
+   <string name="call_fax_home">faks rumah</string>
+   <string name="call_pager">pager</string>
+   <string name="call_callback">panggilan balik</string>
+   <string name="call_car">mobil</string>
+   <string name="call_company_main">utama perusahaan</string>
+   <string name="call_isdn">ISDN</string>
+   <string name="call_radio">radio</string>
+   <string name="call_telex">teleks</string>
+   <string name="call_tty_tdd">TTY/TDD</string>
+   <string name="call_work_mobile">ponsel kantor</string>
+   <string name="call_work_pager">pager kantor</string>
+   <string name="call_assistant"><xliff:g id="asisten">%s</xliff:g></string>
+   <string name="call_mms">MMS</string>
+   <string name="email_home">Email ke rumah</string>
+   <string name="email_mobile">Email ke ponsel</string>
+   <string name="email_work">Email ke kantor</string>
+   <string name="email_custom">Email ke <xliff:g id="kustom">%s</xliff:g></string>
+   <string name="map_home">Tampilkan alamat rumah</string>
+   <string name="map_work">Tampilkan alamat kantor</string>
+   <string name="map_other">Tampilkan alamat</string>
+   <string name="map_custom">Tampilkan alamat <xliff:g id="kustom">%s</xliff:g></string>
+   <string name="chat_aim">Mengobrol melalui AIM</string>
+   <string name="chat_msn">Mengobrol melalui Windows Live</string>
+   <string name="chat_yahoo">Mengobrol melalui Yahoo</string>
+   <string name="chat_skype">Mengobrol melalui Skype</string>
+   <string name="chat_qq">Mengobrol melalui QQ</string>
+   <string name="chat_gtalk">Mengobrol melalui Google Talk</string>
+   <string name="chat_icq">Mengobrol melalui ICQ</string>
+   <string name="chat_jabber">Mengobrol melalui Jabber</string>
+   <string name="chat">Mengobrol</string>
+   <string name="please_wait">"Harap tunggu..."</string>
+   <string name="note">catatan</string>
+   <string name="organization">Organisasi</string>
+   <string name="website">Situs web:\u0020</string>
+   <string name="nickname">Nama panggilan</string>
+   <string name="call_other">lainnya</string>
+   <string name="call_main">Main</string>
+   <string name="call_other_fax">faks</string>
+   <string name="email_other">Email</string>
+   <string name="email">Email</string>
+   <!-- add for vcard -->
+    <string name="invalid_contact_message" msgid="8215051456181842274">"Data kenalan tidak ada."</string>
+
+   <string name="menu_sim_sms">SMS SIM</string>  
+    <!-- Cell broadcast SMS strings -->  
+    <!-- Import/Export mms/sms from/to sdcard-->  
+    <string name="pref_title_io_settings">Impor/Ekspor SMS</string>  
+    <string name="pref_summary_import_msg">Impor SMS dari kartu SD</string>  
+    <string name="pref_title_import_msg">Impor SMS</string>  
+    <string name="pref_summary_export_msg">Ekspor SMS ke kartu SD</string>  
+    <string name="pref_title_export_msg">Ekspor SMS</string>  
+    <string name="no_sd_card">Kartu SD belum siap</string>  
+    <string name="export_message_ongoing">Ekspor SMS ke kartu SD, tunggu…</string>  
+    <string name="import_message_ongoing">Impor SMS dari kartu SD, tunggu…</string>  
+    <string name="export_message_success">Ekspor SMS ke kartu SD berhasil</string>  
+    <string name="import_message_success">Impor SMS dari kartu SD berhasil</string>  
+    <string name="import_message_fail">Impor SMS dari kartu SD gagal</string>  
+    <string name="export_message_fail">Ekspor SMS ke kartu SD gagal</string>  
+    <string name="import_message_list">Daftar DB SMS di kartu SD</string>  
+    <string name="import_message_list_empty">Tidak ada file DB SMS di kartu SD</string>  
+    <string name="export_message_empty">Tidak ada SMS untuk diekspor!</string>  
+    <string name="whether_export_item">Anda ingin mengekspor SMS?</string>  
+    <string name="whether_import_item">Anda ingin mengimpor</string>  
+    <string name="export_disk_problem">Kartu SD penuh atau tidak dapat ditulis</string> 
+    <string name="call_video_call">Panggilan Video</string>
+    <string name="error_add_attachment">"Kesalahan tidak diketahui, tidak dapat menambahkan <xliff:g id="name">%1$s</xliff:g> ke pesan Anda."</string>
+    <plurals name="message_view_selected_message_count"> 
+        <item quantity="one"><xliff:g id="message_count" example="1">%d</xliff:g> dipilih</item>  
+        <item quantity="other"><xliff:g id="message_count" example="9">%d</xliff:g> dipilih</item> 
+    </plurals>  
+    <string name="by_card">Oleh:</string>  
+    <string name="page">Halaman %d</string>  
+    <string name="space_not_enough">Ruang yang tersisa tidak memadai untuk merekam video</string>  
+    <string name="no_messages">"Tidak ada pesan"</string>  
+    <string name="storage_dialog_mms_size">Ukuran MMS:\u0020</string>
+    <string name="space_not_enough_for_audio">Ruang yang tersisa tidak memadai untuk merekam audio</string> 
+    <string name="sync_mms_to_db">Memuat…</string>
+    <string name="finish">"Selesai"</string>
+    <string name="pref_title_long_press_operation_guide">TEKAN LAMA PANDUAN PENGOPERASIAN</string>  
+    <string name="pref_title_watch_animation">Tonton animasi</string>  
+    <string name="long_press_conversationlist_title">Hapus pesan</string>  
+    <string name="long_press_conversationlist_content">Untuk menghapus Pesan, tekan lama tombol tersebut.</string>  
+    <string name="long_press_composer_content">Untuk melihat pilihan lainnya, tekan lama tombol tersebut.</string> 
+    <string name="OK">OK</string> 
+     <string name="menu_show_icc_sms_capacity">Lihat kapasitas</string>  
+    <string name="show_icc_sms_capacity_title">Kapasitas</string>  
+    <string name="icc_sms_used">Digunakan:</string>
+    <string name="select_text">Pilih teks</string>  
+    <string name="icc_sms_total">Total:</string>  
+    <string name="get_icc_sms_capacity_failed">Perolehan kapasitas SIM gagal.</string>
+    <string name="menu_reply">"Balas"</string>
+    <string name="failed_to_add_image">Batas ukuran pesan tercapai, beberapa bagian tidak ditambahkan.</string>
+    <string name="ipmsg_conversation_list_all">Pesan</string>  
+    <string name="ipmsg_conversation_list_important">Penting</string>  
+    <string name="ipmsg_conversation_list_group_chats">Obrolan grup</string>  
+    <string name="ipmsg_conversation_list_spam">Spam</string>  
+    <string name="ipmsg_create_group_chat">Buat obrolan grup</string>  
+    <string name="ipmsg_send_invitation">Kirim undangan</string>  
+    <string name="str_ipmsg_download_history_dlg">Men-download...</string>  
+    <string name="to_hint_ipmsg">"Ketik nama atau nomor pengguna"</string>  
+    <string name="type_to_compose_text_enter_to_send_ipmsg">"Ketik pesan SMS/iSMS"</string>  
+    <string name="ipmsg_ipmsg_hint">"Ketik pesan iSMS"</string>  
+    <string name="ipmsg_sms_hint">"Ketik pesan teks"</string>  
+    <string name="ipmsg_caption_hint">"Ketik Keterangan"</string>  
+    <string name="ipmsg_cancel">"Batal"</string>  
+    <string name="ipmsg_invite_chat_frequently"><b>Sering mengobrol dengan %s ?</b>\nMengapa tidak mengundang %s agar menggunakan iSMS untuk menghemat uang?</string>  
+    <string name="ipmsg_enable_chat_frequently"><b>%s menggunakan iSMS!</b>\nMengapa tidak mengaktifkan layanan iSMS Anda dan menghemat uang?</string>  
+    <string name="ipmsg_invite">"Undang"</string>  
+    <string name="ipmsg_dismiss">"Selesai"</string>  
+    <string name="ipmsg_enable">"Aktifkan"</string>  
+    <string name="ipmsg_enable_notice">Anda yakin ingin mengaktifkan layanan iSMS?</string>  
+    <string name="ipmsg_activate">Aktifkan</string>  
+    <string name="ipmsg_activate_chat_frequently"><b>Sering mengobrol dengan teman?</b>\nMengapa tidak mengaktifkan layanan iSMS untuk mengobrol tanpa tarif SMS?</string>  
+    <string name="ipmsg_activate_note">Anda yakin ingin mengaktifkan iSMS?</string>  
+    <string name="ipmsg_dismiss_content">Anda yakin ingin mengabaikan catatan ini?</string>  
+    <string name="ipmsg_send_exception">Kirim Kesalahan</string>  
+    <string name="ipmsg_ipmsg">Pesan IP</string>  
+    <string name="ipmsg_dailog_multi_forward">Meneruskan Pesan</string>  
+    <string name="ipmsg_dialog_send_result">Kirim Hasil</string>  
+    <string name="ipmsg_dlg_send_all">Semua: %s</string>  
+    <string name="ipmsg_dlg_send_sucess">Terkirim: %s</string>  
+    <string name="ipmsg_dlg_send_failed">Gagal: %s</string>  
+    <string name="multi_forward_sim_info">Memperoleh Info SIM</string>  
+    <string name="ipmsg_multi_forward_no_sim">Tidak Ada Info SIM</string>  
+    <string name="ipmsg_divider_online">%s Sedang Online</string>  
+    <string name="ipmsg_divider_offline">Terakhir online pada pukul %s</string>  
+    <string name="ipmsg_divider_never_online">Tidak pernah online</string>  
+    <string name="ipmsg_vcard_file_name">%s kontak</string>  
+    <string name="ipmsg_getsim_failed">Gagal memperoleh info SIM</string>  
+    <string name="ipmsg_sim_status_error">Kesalahan pada status SIM</string>  
+    <string name="ipmsg_forward_failed">Penerusan Gagal</string>  
+    <string name="ipmsg_forward_norecipients">Tidak ada penerima untuk penerusan pesan</string>  
+    <string name="ipmsg_multiforward_no_message">Tidak ada pesan yang dapat diteruskan</string>  
+    <string name="ipmsg_need_input_recipients">Tentukan minimal satu penerima terlebih dulu</string>  
+    <string name="str_ipmsg_unread_format">%1$d pesan belum dibaca</string>  
+    <string name="str_ipmsg_not_delivered_title">Belum terkirim</string>  
+    <string name="str_ipmsg_failed_title">Gagal</string>  
+    <string name="str_ipmsg_cant_share">Kartu SD tidak tersedia, tidak dapat berbagi pesan media</string>  
+    <string name="str_ipmsg_file_limit">terlalu besar</string>  
+    <string name="str_ipmsg_no_app">"Tidak ada aplikasi dapat melakukan tindakan ini."</string>  
+    <string name="str_ipmsg_today">Hari ini</string>  
+    <string name="str_ipmsg_yesterday">"kemarin"</string>  
+    <string name="ip_message_typing_text">Mengetik</string>  
+    <string name="ipmsg_try_again">"Coba lagi"</string>  
+    <string name="ipmsg_try_all_again">Coba lagi semua</string>  
+    <string name="ipmsg_resend_via_sms">Kirim melalui SMS</string>  
+    <string name="ipmsg_resend_via_mms">Kirim melalui MMS</string>  
+    <string name="str_ipmsg_no_such_file">Tidak ada file seperti ini</string>  
+    <string name="str_ipmsg_over_file_limit">Ukuran file melampaui batas</string>  
+    <string name="str_ipmsg_invalid_file_type">Tidak mendukung jenis ini</string>  
+    <string name="invite_friends_to_ipmsg">Undang teman untuk menggunakan iSMS</string>  
+    <string name="invite_friends_to_chat">Undang teman untuk mengobrol</string>  
+    <string name="invite_friends_to_ipmsg_dialog_msg">Untuk mengirim undangan, pesan yang Anda buat akan diabaikan.</string>  
+    <string name="invite_friends_to_ipmsg_content">Hai, iSMS adalah aplikasi yang seru untuk mengobrol. Aplikasi ini gratis dan mudah digunakan. Untuk selengkapnya, kunjungi http://isms.hissage.com</string>  
+    <string name="export">"Ekspor"</string>  
+    <string name="mark_as_spam">Tandai sebagai spam</string>  
+    <string name="mark_as_spam_tips">Pesan yang ditandai sebagai Spam akan dipindahkan ke daftar Spam dan menonaktifkan pemberitahuan secara otomatis.</string>  
+    <string name="remove_frome_spam">Hapus dari spam</string>  
+    <string name="add_shortcut">Tambahkan cara pintas</string>  
+    <string name="view_all_media">Lihat semua media</string>  
+    <string name="view_all_location">Lihat semua lokasi</string>  
+    <string name="ipmsg_export_to_sdcard">Ekspor ke kartu SD</string>  
+    <string name="ipmsg_copy">"Salin"</string>  
+    <string name="ipmsg_send_via_text_msg">Kirim Melalui Pesan Teks</string>  
+    <string name="ipmsg_send_via_mms">Kirim Melalui Pesan Multimedia</string>  
+    <string name="ipmsg_retry">Coba lagi</string>  
+    <string name="ipmsg_delete">"Hapus"</string>  
+    <string name="ipmsg_share">"Bagikan"</string>  
+    <string name="ipmsg_mark_as_important">Tandai sebagai penting</string>  
+    <string name="ipmsg_remove_from_important">Hapus dari penting</string>  
+    <string name="str_ipmsg_save_file">File disimpan ke %1$s</string>  
+    <string name="continue_str">Lanjut</string>  
+    <string name="convert_to_mms">Konversikan ke MMS.</string>  
+    <string name="convert_to_sms">Konversikan ke SMS.</string>  
+    <string name="ipmsg_convert_to_ipmsg">Konversikan ke iSMS.</string>
+    <string name="ip_message_convert_to_mms_message_for_service">Layanan iSMS tidak tersedia pada kartu SIM yang dipilih. Pesan hanya dapat dikirim melalui MMS pada kartu SIM ini. Lanjutkan?</string>  
+    <string name="ip_message_convert_to_sms_message_for_service">Layanan iSMS tidak tersedia pada kartu SIM yang dipilih. Pesan hanya dapat dikirim melalui SMS pada kartu SIM ini. Lanjutkan?</string>  
+    <string name="ip_message_convert_to_mms_message_for_recipients">Penerima bukan pengguna iSMS. Pesan ini hanya dapat dikirim melalui MMS. Lanjutkan?</string>  
+    <string name="ip_message_convert_to_sms_message_for_recipients">Penerima bukan pengguna iSMS. Pesan ini hanya dapat dikirim melalui SMS. Lanjutkan?</string>  
+    <string name="ipmsg_sms_convert_to_ipmsg">Layanan iSMS tersedia pada kartu SIM yang dipilih. Untuk menghemat tarif SMS, sebaiknya alihkan pesan ke iSMS. Alihkan sekarang?</string>
+    <string name="ipmsg_mms_convert_to_ipmsg">Layanan iSMS tersedia pada kartu SIM yang dipilih. Untuk menghemat tarif MMS, sebaiknya alihkan pesan ke iSMS. Alihkan sekarang?</string>
+    <string name="keep_mms">Simpan MMS</string>  
+    <string name="keep_sms">Simpan SMS</string>  
+    <string name="switch_ipmsg">Alihkan</string>  
+    <string name="ip_message_load_all_message">Muat Semua Pesan</string>  
+    <string name="pref_title_display_preference_settings">TAMPILAN &amp; PREFERENSI</string>  
+    <string name="pref_chat_wallpaper">Wallpaper obrolan</string>  
+    <string name="pref_auto_rotation">Rotasi otomatis</string>  
+    <string name="pref_show_email_address">Tampilkan alamat e-mail</string>  
+    <string name="pref_summary_show_email_address">Sertakan alamat e-mail dalam hasil kontak</string>  
+    <string name="pref_title_backup_restore_settings">PENCADANGAN &amp; PENGEMBALIAN</string>  
+    <string name="pref_backage_message">Cadangkan pesan</string>  
+    <string name="pref_summary_backup_message">Terakhir dicadangkan:Tidak pernah</string>  
+    <string name="pref_restore_message">Kembalikan pesan</string>  
+    <string name="pref_summary_restore_message">Kembalikan pesan yang dicadangkan</string>  
+    <string name="pref_mute">"Bungkam"</string>  
+    <string name="pref_summary_mute">"mati"</string>  
+    <string name="pref_vibrate">Getar</string>  
+    <string name="pref_summary_vibrate">Bergetar saat pemberitahuan diterima</string>  
+    <string name="pref_popup_notification">Pemberitahuan pop-up</string>  
+    <string name="pref_summary_popup_notification">Tampilkan pop-up untuk pemberitahuan push</string>  
+    <string name="pref_title_display_settings">"Tampilan"</string>  
+    <string name="pref_title_actions_settings">Tindakan</string>  
+    <string name="pref_download_chat_history">Download riwayat obrolan</string>  
+    <string name="pref_summary_download_chat_history">Simpan di kartu SD dalam format zip</string>  
+    <string name="pref_email_chat_history">Kirim riwayat obrolan melalui e-mail</string>  
+    <string name="pref_summary_email_chat_history">Kirim riwayat obrolan melalui e-mail dalam format zip</string>  
+    <string name="pref_clear_chat_history">Hapus riwayat obrolan</string>  
+    <string name="pref_summary_notification_ringtone">Atur nada dering untuk pemberitahuan baru</string>  
+    <string name="pref_setting_title">Pengaturan Pesan</string>  
+    <string name="pref_setting_sms">Pesan Teks(SMS)</string>  
+    <string name="pref_setting_mms">Pesan Multimedia(MMS)</string>  
+    <string name="pref_setting_notification">"Pemberitahuan"</string>  
+    <string name="pref_setting_general">"Produk"</string>  
+    <string name="pref_setting_chat">Pengaturan obrolan</string>  
+    <string name="chat_setting_saving">Menyimpan...</string>  
+    <string name="chat_setting_updating">memperbarui...</string>  
+    <string name="chat_setting_sending">"Mengirim..."</string>  
+    <string name="dialog_save_title">Simpan ke kartu SD</string>  
+    <string name="dialog_save_description">Simpan rangkaian obrolan ini ke kartu SD sebagai file zip</string>  
+    <string name="dialog_email_title">Bagi Melalui E-mail</string>  
+    <string name="dialog_email_description">Bagi rangkaian obrolan ini sebagai lampiran melalui e-mail dalam format zip</string>  
+    <string name="dialog_clear_title">"Bersihkan"</string>  
+    <string name="dialog_clear_description">Semua riwayat obrolan akan dihapus dalam ruang obrolan ini</string>  
+    <string name="dialog_wallpaper_chooser_wallpapers">Wallpaper</string>  
+    <string name="dialog_wallpaper_chooser_gallery">"Galeri"</string>  
+    <string name="dialog_wallpaper_chooser_take">"Ambil foto"</string>  
+    <string name="dialog_wallpaper_chooser_default">"Default"</string>  
+    <string name="dialog_wallpaper_title">Pilih Wallpaper</string>  
+    <string name="mute_one_hour">1 jam</string>  
+    <string name="mute_four_hours">4 jam</string>  
+    <string name="mute_eight_hours">8 jam</string>  
+    <string name="save_chat_history_failed">Menyimpan gagal</string>  
+    <string name="send_chat_history_failed">E-mail gagal</string>  
+    <string name="actionbar_sms_setting">Pengaturan SMS</string>  
+    <string name="actionbar_mms_setting">Pengaturan MMS</string>  
+    <string name="actionbar_notification_setting">"Setelan pemberitahuan"</string>  
+    <string name="actionbar_general_setting">Pengaturan umum</string>  
+    <string name="save_history_file">simpan sebagai</string>  
+    <string name="no_sdcard_suggestion">Tidak ada kartu SD</string>  
+    <string name="save_wallpaper_success">Wallpaper diubah.</string>  
+    <string name="save_wallpaper_fail">Tidak dapat mengubah wallpaper.</string>  
+    <string name="ip_message_delete_important">"Sertakan pesan yang ditandai sebagai penting"</string>  
+    <string name="str_ipmsg_spam_empty">Anda tidak memiliki percakapan spam. \nSPAM akan mengumpulkan semua percakapan yang ditandai sebagai spam. Pemberitahuan akan dinonaktifkan secara default. Hal ini akan membuat Anda terhindar dari gangguan yang tidak perlu. \n\nAnda dapat menandai pengirim sebagai spam dengan menahan percakapan dan memilih ikon Tandai Sebagai Spam. Bila percakapan ditandai sebagai spam, ikon pemberitahuan tidak aktif akan ditampilkan secara otomatis dan percakapan tersebut akan ditempatkan di sini.</string>  
+    <string name="str_ipmsg_spam_example_from">+86123456789</string>  
+    <string name="str_ipmsg_spam_example_subject">Ini adalah contoh pesan spam.</string>  
+    <string name="str_ipmsg_groupchat_empty">Anda tidak memiliki pesan obrolan grup. \nOBROLAN GRUP akan mengumpulkan semua pesan obrolan grup yang Anda buat atau Anda ikuti. Hal ini memungkinkan Anda menemukan dan mengelola obrolan grup dengan mudah. \n\nUntuk membuat obrolan grup, Anda dapat menyentuh tombol Buat obrolan grup di bagian bawah layar ini dan mengundang teman untuk bergabung dengan grup.</string>  
+    <string name="str_ipmsg_group_example_from">"Nama grup"</string>  
+    <string name="str_ipmsg_group_example_subject">Teman Anda:\nSaya menyukai fitur obrolan grup!</string>  
+    <string name="str_ipmsg_important_empty">Anda tidak memiliki pesan penting. \nPENTING akan mengumpulkan semua pesan yang ditandai sebagai penting. Hal ini memungkinkan Anda menemukan pesan penting dengan cepat. \n\nAnda dapat menandai pesan sebagai penting dengan menahan pesan dan memilih Tandai sebagai penting dari menu Pilihan. Bila pesan ditandai sebagai penting, Anda akan melihat ikon bendera berwarna merah seperti di bawah ini.</string>  
+    <string name="str_ipmsg_important_example_title">Ini adalah contoh pesan yang ditandai sebagai penting. Bendera berwarna merah akan ditampilkan.</string>  
+    <string name="str_ipmsg_important_example_time">10:55 AM</string>  
+    <string name="str_ipmsg_allchat_empty">"Tidak ada percakapan"</string>  
+    <string name="str_ipmsg_empty_activate_content">Untuk menggunakan fitur ini, Anda harus mengaktifkan layanan iSMS terlebih dulu. Jangan khawatir, jika tidak menyukai layanan ini, Anda dapat menonaktifkannya di Pengaturan. Cobalah sekarang juga!</string>  
+    <string name="str_ipmsg_empty_activate_title">Aktifkan iSMS</string>  
+    <string name="str_ipmsg_service_title">Pusat layanan iSMS</string>  
+    <string name="str_ipmsg_introduction">Dengan iSMS, Anda dapat mengirim pesan gratis secara cepat dan menyimpan riwayat obrolan dalam satu tempat. Anda dapat menikmati pengalaman baru hanya dengan menekan satu tombol!</string>  
+    <string name="time_now">Nama artis tidak diketahui</string>  
+    <string name="str_ipmsg_active">Aktifkan iSMS</string>  
+    <string name="str_ipmsg_welcome_active">Selamat datang di iSMS</string>  
+    <string name="str_ipmsg_term_warn_welcome">Layanan iSMS memungkinkan Anda mengobrol dan berbagi file multimedia dengan teman, kapanpun dan di manapun melalui sambungan WIFI atau data.\n\nHanya diperlukan 3 langkah untuk menyelesaikan aktivasi!\n\n Persyaratan dan Ketentuan\n</string>  
+    <string name="str_ipmsg_term_warn_activate">Fitur ini hanya didukung oleh layanan iSMS.\n\nLayanan iSMS memungkinkan Anda mengobrol dan berbagi multimedia dengan teman, kapanpun dan di manapun melalui sambungan WIFI atau data.\n\n Persyaratan dan Ketentuan</string>  
+    <string name="str_ipmsg_term_key">Persyaratan dan Ketentuan</string>  
+    <string name="str_ipmsg_agree_and_continue">Setuju dan Lanjutkan</string>  
+    <string name="no_sim_card">Tidak ada kartu SIM!</string>  
+    <string name="ip_message_activate_title">Aktifkan iSMS</string>  
+    <string name="ip_message_current_sim_enabled">SIM saat ini diaktifkan.</string>  
+    <string name="sim_selected_dialog_title_for_activate">Pilih SIM untuk mengaktifkan iSMS</string>  
+    <string name="ip_message_activate_message">Fitur ini hanya didukung oleh layanan iSMS. Aktifkan account iSMS Anda sekarang?</string>  
+    <string name="typing">"Mengetik..."</string>  
+    <string name="ip_message_enable_title">Aktifkan iSMS</string>  
+    <string name="ip_message_enable_message">Fitur ini hanya didukung oleh layanan iSMS. Aktifkan account iSMS Anda sekarang?</string>  
+    <string name="sim_selected_dialog_title_for_enable">Pilih SIM untuk mengaktifkan iSMS</string>  
+    <string name="ip_message_switch_sim_title">Ganti SIM</string>  
+    <string name="ip_message_switch_sim_message">SIM saat ini tidak mendukung iSMS. Ganti ke SIM lain?</string>  
+    <string name="ip_message_switch_sim_button">Alihkan</string>  
+    <string name="ip_message_switch_sim_successfully">Penggantian SIM berhasil!</string>  
+    <string name="close">Tutup saluran</string>  
+    <string name="nointernet">"Sambungan Internet yang berfungsi tidak ditemukan! Coba lagi nanti."</string>  
+    <plurals name="deleted_conversations"> 
+        <item quantity="one">Satu percakapan telah dihapus</item>  
+        <item quantity="other"><xliff:g id="number" example="15">%1$s</xliff:g> percakapan telah dihapus</item> 
+    </plurals> 
+<string name="more_recipients">penerima</string>
+    <string name="set_service_center_OK">Pusat Layanan SMS yang ditetapkan OK</string>
+    <string name="set_service_center_fail">Pusat Layanan SMS yang ditetapkan Gagal</string>
+    <string name="Cancel">"Batal"</string>
+    <string name="sms_validity_period">Masa Validitas SMS</string>
+    <string name="sms_validity_period_nosetting">Tidak ditetapkan</string>
+    <string name="sms_validity_period_1hour">1 jam</string>
+    <string name="sms_validity_period_6hours">6 Jam</string>
+    <string name="sms_validity_period_12hours">12 Jam</string>
+    <string name="sms_validity_period_1day">1 hari</string>
+    <string name="sms_validity_period_max">Maksimum</string>
+    <string name="cu_subject">Subjek Lemei</string>
+    <string name="menu_omacp">Pesan konfigurasi</string>
+    <string name="pref_title_storage_status">Penggunaan penyimpanan saat ini</string>
+    <string name="storage_dialog_mms"> MMS:\u0020 <xliff:g id="number">%s</xliff:g> item </string>
+    <string name="storage_dialog_sms"> SMS:\u0020 <xliff:g id="number">%s</xliff:g> item </string>
+    <string name="storage_dialog_attachments">Lampiran MMS:\u0020</string>
+    <string name="storage_dialog_database">Database:\u0020</string>
+    <string name="storage_dialog_available_space">Ruang tersedia:\u0020</string>
+    <string name="exceed_subject_length_limitation">Panjang maksimum tercapai</string>
+    <string name="forward_from">Teruskan dari:</string>
+    <string name="sms_forward_setting">Pengaturan Penerusan SMS</string>
+    <string name="sms_forward_setting_summary">Teruskan SMS dengan nama dan nomor pengirim</string>
+    <string name="file_attachment_vcalendar_name"> vCalendar( <xliff:g id="text">%s</xliff:g> ) </string>
+    <string name="inbox">"Kotak Masuk"</string>
+    <string name="outbox">"Kotak Keluar"</string>
+    <string name="draftbox">Kotak konsep</string>
+    <string name="sentbox">Kotak terkirim</string>
+    <string name="simbox">Kotak SIM</string>
+    <string name="changeview">Ubah Mode</string>
+    <string name="viewer_title_sms">"SMS"</string>
+    <string name="viewer_title_wappush">Wappush</string>
+    <string name="slideshow_details">Rincian Pesan</string>
+    <string name="open">"Buka"</string>
+    <string name="delete_all_confirm">"Hapus semua pesan dalam kotak?"</string>
+    <string name="folder_recipient">Penerima :</string>
+    <string name="folder_recieve_date">Tanggal :</string>
+    <string name="folder_download">MMS sedang di-download</string>
+    <string name="confirm_download_message">"konfirmasikan download pesan"</string>
+    <string name="play_as_slideshow">Putar MMS sebagai Tampilan slide</string>
+    <string name="no_application_response">"Tidak ada aplikasi untuk menangani permintaan"</string>
+    <string name="cdma_not_support">CDMA tidak mendukung fitur ini</string>
+    <string name="allmessage">"Data server rusak, semua pesan akan disinkronisasi ulang"</string>
+    <string name="select_message">Pilih pesan</string>
+    <string name="confirm_delete_allmessage">"Semua pesan akan terhapus."</string>
+    <string name="mark_as_read_btn_str">Tandai telah dibaca</string>
+    <string name="delete_btn_str">Hapus</string>
+    <string name="reply_send">"Kirimkan"</string>
+    <string name="via_test">Panggilan melalui SIM1</string>
+    <string name="received_header">"Diterima:"</string>
+    <string name="no_item_selected">Tidak ada item yang dipilih.</string>
+    <string name="pref_title_font_size_setting">PENGATURAN UKURAN FONT</string>
+    <string name="pref_title_message_font_size">Ukuran font pesan</string>
+    <string name="pref_summary_message_font_size">Ukuran font pesan</string>
+    <string name="message_font_size_dialog_title">Ukuran font pesan</string>
+    <string name="message_font_size_dialog_cancel">Batal</string>
+    <string name="change">Ubah</string>
+    <string name="ipmsg_accept">"Terima"</string>
+    <string name="ipmsg_resend">Kirim ulang</string>
+    <string name="viewer_title_cb">Siaran Selular</string>
+    <string name="change_default_disk">Kapasitas penyimpanan telepon tidak cukup. Sediakan ruang atau ubah "write disk default" pada pengaturan.</string>
+    <string name="ipmsg_reject">"Batal"</string>
+    <string name="discard_mms_title">Hapus MMS</string>
+    <string name="discard_mms_content">SEMUA MMS dalam pesan beberapa penerusan akan dihapus</string>
+    <string name="toast_sms_forward">Tidak ada SMS yang diteruskan</string>
+    <string name="dialog_continue">Lanjut</string>
+    <string name="sms_size_limit">Batas ukuran telah dicapai</string>
+    <string name="dialog_sms_limit">Batas ukuran pesan telah dicapai. Kelebihan pesan akan dihapus</string>
+    <string name="sum_search_networks">"Telusuri semua jaringan yang tersedia"</string>
+    <string name="str_ipmsg_replace_attach">Timpa lampiran</string>
+    <string name="str_ipmsg_replace_attach_msg">Lampiran sudah ada, timpa?</string>
+    <string name="ipmsg_err_file">Gagal membuka file</string>
+    <string name="forward_tips_title">"Hapus Pemberitahuan MMS"</string>
+    <string name="forward_tips_body">"Pemberitahuan MMS tidak mendukung penerusan, pemberitahuan akan dihapus."</string>
+    <string name="ipmsg_resend_discard_message">Untuk mengirim ulang pesan, pesan yang saat ini sedang dibuat akan dibuang. </string>
+    <string name="type_to_quick_text">"Teks ketik cepat"</string>
+    <string name="menu_wappush">"Pesan Wappush"</string>
+    <string name="visit_website">"Kunjungi Situs Web"</string>
+    <string name="meet_emoticon_limit">Memenuhi batas emotikon</string>
+    <string name="view_mms_notification">Tidak dapat melihat pemberitahuan mms</string>
+    <string name="ipmsg_multi_forward_tips_content">Untuk melakukan multi-teruskan, beberapa iSMS harus diunduh terlebih dahulu.</string>
+    <string name="multi_forward_failed_all">Gagal mengunduh, multi-teruskan dibuang.</string>
+    <string name="ipmsg_multi_forward_failed_part">Beberapa terusan iSMS gagal.</string>
+    <string name="confirm_delete_allwappush">"Semua pesan wap push akan terhapus."</string>
+    <string name="confirm_delete_selected_wappush">"Pesan wap push yang dipilih akan terhapus."</string>
+    <string name="menu_delete_allwappush">Hapus semua</string>
+    <string name="duplicated_recipient">Penerima sama</string>
+
+<string name="ok">"Oke"</string>
+    <string name="cancel">"Batal"</string>
+    <string name="enable">"Aktifkan"</string>
+    <string name="disable">"Nonaktifkan"</string>
+    <string name="cell_broadcast_setting">Pengaturan siaran selular</string>
+    <string name="cb_menu_language">"Bahasa"</string>
+    <string name="cb_menu_add_channel">Tambah saluran</string>
+    <string name="cb_menu_channel_list">Daftar saluran</string>
+    <string name="cb_dialog_title_language_choice">Pilih bahasa</string>
+    <string name="cb_channel_dialog_channel_name">Nama saluran (1-10karakter)</string>
+    <string name="cb_channel_dialog_channel_number">Nomor saluran(0-65534)</string>
+    <string name="cb_channel_dialog_channel_state">Aktifkan saluran</string>
+    <string name="cb_channel_dialog_edit_channel">Edit saluran</string>
+    <string name="cb_menu_edit">"Edit"</string>
+    <string name="cb_menu_delete">"Hapus"</string>
+    <string name="cb_error_channel_num">Masukkan nomor saluran(0-65534)</string>
+    <string name="cb_error_channel_name">Panjang nama saluran salah(1-10karakter).</string>
+    <string name="cb_error_language_select">Pilih sekurangnya satu bahasa.</string>
+    <string name="cb_error_channel_id_exist">ID saluran ada.</string>
+    <string name="cb_all_languages">Semua Bahasa</string>
+    <string name="cb_default_new_channel_name">Saluran Baru</string>
+    <string name="sum_cell_broadcast_control_on">Aktifkan siaran selular</string>
+    <string name="sum_cell_broadcast_control_off">Nonaktifkan siaran selular</string>
+    <string name="sum_cell_broadcast_setting">Pengaturan bahasa dan saluran untuk siaran selular</string>
+    <string name="close_dialog">OK</string>
+    <string name="updating_title">"Setelan panggilan"</string>
+    <string name="error_updating_title">"Kesalahan setelan panggilan"</string>
+    <string name="reading_settings">"Membaca setelan…"</string>
+    <string name="updating_settings">"Memperbarui setelan…"</string>
+    <string name="reverting_settings">"Mengembalikan setelan..."</string>
+    <string name="exception_error">"Kesalahan jaringan atau kartu SIM."</string>
+    <string name="no_sim">SIM %d tidak terpasang.</string>
+    <string name="sms_not_ready">Menginisialisasi modul SMS, tunggu...</string>
+    <string name="label_full_name">Nama</string>
+    <string name="label_phone">Telepon</string>
+    <string name="label_email">"Email"</string>
+    <string name="label_postal">"Alamat"</string>
+    <string name="label_organization">"Organisasi"</string>
+    <string name="label_im">"IM"</string>
+    <string name="label_website">Situs web</string>
+    <string name="label_sip_address">"Panggilan internet"</string>
+    <string name="label_nick_name">"Nama julukan"</string>
+    <string name="label_notes">"Catatan"</string>
+    <string name="label_event">"Acara"</string>
+    <string name="search_time_period_label">Periode Waktu</string>
+    <string name="done_text">"Selesai"</string>
+    <string-array name="language_list_values" translatable="false">
+        <item>Semua Bahasa</item>
+        <item>Jerman</item>
+        <item>Inggris</item>
+        <item>Italia</item>
+        <item>Prancis</item>
+        <item>Spanyol</item>
+        <item>Belanda</item>
+        <item>Swedia</item>
+        <item>Denmark</item>
+        <item>Portugis</item>
+        <item>Finlandia</item>
+        <item>Norwegia</item>
+        <item>Yunani</item>
+        <item>Turki</item>
+        <item>Hungaria</item>
+        <item>Polandia</item>
+        <item>Lainnya</item>
+        <item>Ceko</item>
+        <item>Ibrani</item>
+        <item>Arab</item>
+        <item>Rusia</item>
+        <item>Islandia</item>
+    </string-array>
+    <string name="add_duplicate_recipients">Penerima sama</string>
+
+    <!-- begin of mwi -->
+    <string name="mwi_title">Pesan Suara</string>
+    <string name="type_voice_msg">Pesan suara</string>
+    <string name="type_video_msg">Pesan video</string>
+    <string name="type_fax_msg">Pesan faks</string>
+    <string name="type_text_msg">"Pesan teks"</string>
+    <string name="priority_urgent">Penting</string>
+    <string name="date_label">Tanggal:\u0020</string>
+    <string name="message_id_label">ID pesan:\u0020</string>
+    <string name="voice_message_count_notification"><xliff:g id="number" example="3">%1$s</xliff:g> pesan suara baru</string>
+    <string name="confirm_delete_allmwi">"Semua pesan suara akan dihapus."</string>
+    <string name="confirm_delete_selected_mwi">"Pesan suara yang dipilih akan dihapus."</string>
+    <!-- end of mwi -->
+
+    <string name="download_disabled_toast">Tidak dapat men-download. Bukan aplikasi SMS default.</string>
+    <string name="adding_wallpaper_title">Menyimpan wallpaper…</string>
+    <string name="sms_priority_setting">UIM Utama</string>
+    <string name="sms_priority_Interactive">Interaktif</string>
+    <string name="sms_priority_Urgent">Penting</string>
+    <string name="sms_priority_Emergency">Darurat</string>
+    <string name="disable_notifications_dialog_message">"Hentikan pemberitahuan pesan teks rangkap dari apl Perpesanan default?"</string>
+    <string name="empty_sim_name">Slot SIM <xliff:g id="subId" example="2">%1$d</xliff:g></string>
+
+    <string name="drm_not_support">Salinan konten yang dilindungi tidak didukung MMS.</string>
+    <string name="user_has_no_premission">Pengguna ini tidak diizinkan menggunakan SMS</string>
+    <string name="wfc_no_cellular_network">Tidak ada jaringan seluler</string>
+    <string name="wfc_connect_to_available_wifi">Sambungkan ke Wi-Fi yang tersedia untuk olah pesan.</string>
+    <string name="wfc_notification_title">Sambungkan ke Wi-Fi untuk olah pesan</string>
+    <string name="ct_om_switch_notification"><xliff:g id="op1">%s</xliff:g> sementara tidak akan berfungsi, dan bila ada Panggilan SMS, Data pada <xliff:g id="op2">%s</xliff:g> akan diubah ke <xliff:g id="op3">%s</xliff:g> yang disesuaikan.</string>
+    <string name="can_not_switch_account_during_call">TidakdapatberalihkeSIMpilihanuntukSMSselamapanggilanberlangsung.</string>
+    <string name="can_not_switch_account_temporarily">SementaratidakdapatmengalihkanSIMpilihanuntukSMS</string>
+    <string name="omh_exceed_message_size_limitation">BatasukuranpesanR-UIMtercapai</string>
+    <string name="omh_failed_to_add_image">Batas ukuran pesan R-UIM terlampaui, harap hapus beberapa bagian.</string>
+    <string name="missing_required_permission">Izin ditolak. Anda dapat mengubahnya dalam Pengaturan &gt; Aplikasi.</string>
+    <string name="manage_card_msg_title">Kelola pesan kartu UIM/SIM</string>
+    <string name="manage_card_msg_summary">Kelola pesan yang tersimpan di kartu UIM/SIM</string>
+    <string name="disable_delivery_report">Tidak dapat diaktifkan sewaktu roaming.</string>
+    <string name="fore_service_notify_title">Mentransfer pesan</string>
+    <string name="fore_service_notify_content">Terdapat pesan dalam transfer.</string>
+    <string name="smart_req_mms_indicator">MMS tidak dibolehkan, coba lagi dengan SMS.</string>
+</resources>

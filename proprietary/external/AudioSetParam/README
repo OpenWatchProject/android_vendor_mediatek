@@ -1,0 +1,29 @@
+The executable binary file 'AudioSetParam' implements the interface
+to set/get audio parameters via audio system for debugging and tuning.
+
+
+WHAT IT DOES?
+=============
+
+The executable binary file 'AudioSetParam' implements the interface
+to set/get audio parameters via audio system for debugging and tuning.
+
+The key-value pairs can be defined in audio HAL artificially.
+
+
+HOW IT WAS BUILT?
+==================
+
+It needs the following library from AOSP:
+1. libutils.so
+2. libmedia.so
+3. libaudioclient.so
+4. liblog.so
+
+
+HOW TO USE IT?
+==============
+
+Use adb shell to execute AudioSetParam and then set/get audio parameters.
+
+

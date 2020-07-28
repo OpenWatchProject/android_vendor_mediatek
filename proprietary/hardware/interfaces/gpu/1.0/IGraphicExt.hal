@@ -1,0 +1,170 @@
+/*
+ * Copyright (C) 2016 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package vendor.mediatek.hardware.gpu@1.0;
+import types;
+import IGraphicExtCallback;
+
+interface IGraphicExt {
+    /**
+     * Create ged handle
+     *
+     * @return retval the error code
+     * @return ged_handle the handle to control ged
+     */
+    ged_create() generates (GED_HIDL_ERROR_TAG retval, GED_HIDL_HANDLE ged_handle);
+
+    /**
+     * Destroy ged handle
+     *
+     * @param ged_handle the ged handle get from ged_create()
+     * @return retval the error code
+     */
+    ged_destroy(GED_HIDL_HANDLE ged_handle) generates (GED_HIDL_ERROR_TAG retval);
+
+    /**
+     * send vsync info
+     *
+     * @param ged_handle the ged handle get from ged_create()
+     * @param i32Delay delay time
+     * @param nsVsync_period period
+     * @return retval the error code
+     */
+    ged_vsync_calibration(GED_HIDL_HANDLE ged_handle, int32_t i32Delay, uint64_t nsVsync_period) generates (GED_HIDL_ERROR_TAG retval);
+
+    /**
+     * check if dvfs need vsync info
+     *
+     * @return retval the error code
+     * @return isNeed 1 denote need; 0 denote no need
+     */
+    ged_is_gpu_need_vsync_calibration() generates (GED_HIDL_ERROR_TAG retval, uint32_t isNeed);
+
+    /**
+     * Create ged kpi handle
+     *
+     * @BBQ_id the buffeueueProducer id
+     * @return retval the error code
+     */
+    ged_kpi_create(uint64_t BBQ_id) generates (GED_HIDL_ERROR_TAG retval);
+
+    /**
+     * Destroy ged kpi handle
+     *
+     * @BBQ_id the buffeueueProducer id
+     * @return retval the error code
+     */
+    ged_kpi_destroy(uint64_t BBQ_id) generates (GED_HIDL_ERROR_TAG retval);
+
+    /**
+     * Log time when dequeue buffer
+     *
+     * @BBQ_id the buffeueueProducer id
+     * @param fence the dequeue fence
+     * @param buffer_addr to specify the BufferQueue
+     * @return retval the error code
+     */
+    ged_kpi_dequeue_buffer_tag(uint64_t BBQ_id, int32_t fence, uint32_t buffer_addr) generates (GED_HIDL_ERROR_TAG retval);
+
+    /**
+     * Log time when queue buffer
+     *
+     * @BBQ_id the buffeueueProducer id
+     * @param fence the queue fence
+     * @param QedBuffer_length the buffer size
+     * @param buffer_addr to specify the BufferQueue
+     * @return retval the error code
+     */
+    ged_kpi_queue_buffer_tag(uint64_t BBQ_id, int32_t fence, int32_t QedBuffer_length, uint32_t buffer_addr) generates (GED_HIDL_ERROR_TAG retval);
+
+    /**
+     * Log time when acquire buffer
+     *
+     * @BBQ_id the buffeueueProducer id
+     * @param buffer_addr to specify the BufferQueue
+     * @return retval the error code
+     */
+    ged_kpi_acquire_buffer_tag(uint64_t BBQ_id, uint32_t buffer_addr) generates (GED_HIDL_ERROR_TAG retval);
+
+    /**
+     * update api type and pid when connected
+     *
+     * @BBQ_id the buffeueueProducer id
+     * @param BBQ_api_type the producer API that is currently connected to this BufferQueue
+     * @param pid the pid
+     * @return retval the error code
+     */
+    ged_kpi_buffer_connect(uint64_t BBQ_id, int32_t BBQ_api_type, int32_t pid) generates (GED_HIDL_ERROR_TAG retval);
+
+    /**
+     * disconnect
+     * just set pid to -1
+     *
+     * @BBQ_id the buffeueueProducer id
+     * @return retval the error code
+     */
+    ged_kpi_buffer_disconnect(uint64_t BBQ_id) generates (GED_HIDL_ERROR_TAG retval);
+
+    /**
+     * Get gralloc extra information
+     *
+     * @param bufferHandle the handle of the buffer
+     * @param attribute the attribute you want to get
+     * @param out return the information
+     * @return retval the error code
+     */
+    gralloc_extra_query(handle bufferHandle, GRALLOC_EXTRA_ATTRIBUTE_QUERY attribute) generates (int32_t retval, handle dataHandle);
+
+    /**
+     * Set gralloc extra information
+     *
+     * @param bufferHandle the handle of the buffer
+     * @param attribute the attribute you want to set
+     * @param in the input value
+     * @return retval the error code
+     */
+    gralloc_extra_perform(handle bufferHandle, GRALLOC_EXTRA_ATTRIBUTE_PERFORM attribute, handle dataHandle) generates (int32_t retval);
+
+    /**
+     * Set gralloc extra information
+     *
+     * @param bufferHandle the handle of the buffer
+     * @param attribute the attribute should be one of following enum:
+     *                  GRALLOC_EXTRA_ATTRIBUTE_PERFORM::GRALLOC_EXTRA_SET_TIMESTAMP
+     * @param in the input value
+     * @return retval the error code
+     */
+    gralloc_extra_perform_uint64(handle bufferHandle, GRALLOC_EXTRA_ATTRIBUTE_PERFORM attribute, uint64_t in) generates (int32_t retval);
+
+    /**
+     * Set gralloc extra information
+     *
+     * @param bufferHandle the handle of the buffer
+     * @param attribute the attribute should be one of following enum:
+     *                  GRALLOC_EXTRA_ATTRIBUTE_PERFORM::GRALLOC_EXTRA_SET_IOCTL_ION_DEBUG
+     * @param in the input value
+     * @return retval the error code
+     */
+    gralloc_extra_perform_ion_debug(handle bufferHandle, GRALLOC_EXTRA_ATTRIBUTE_PERFORM attribute, ge_ion_debug_t in) generates (int32_t retval);
+
+    /**
+     * Set the callback function to receive vsync offset
+     *
+     * @param callback the callback function
+     * @return retval 0 denote OK, others denote error
+     */
+    setupSendVsyncOffsetFuncCallback(IGraphicExtCallback callback) generates (int32_t retval);
+};

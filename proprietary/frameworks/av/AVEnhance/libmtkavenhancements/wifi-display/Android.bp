@@ -1,0 +1,65 @@
+cc_library_shared {
+    name: "libstagefright_wfd_mtk", 
+		owner: "mtk",
+		
+    srcs: [
+    	"DataPathTrace.cpp",
+    	"MtkMediaSender.cpp",
+    	"MtkParameters.cpp",
+    	"SurfaceMediaSource.cpp",
+    	"rtp/MtkRTPSender.cpp",
+    	"source/MtkConverter.cpp",
+    	"source/MtkMediaPuller.cpp",
+    	"source/MtkPlaybackSession.cpp",
+    	"source/MtkRepeaterSource.cpp",
+    	"source/MtkTSPacketizer.cpp",
+    	"source/MtkWifiDisplaySource.cpp",
+    	"MtkVideoFormats.cpp",
+    	"MtkANetworkSession.cpp",
+    	"ParsedMessage.cpp",
+    	"RemoteDisplay.cpp",
+    ], 
+    
+    shared_libs: [
+    		"libbinder",
+    		"libcutils",
+        "libgui",
+        "libmedia",
+        "libstagefright",
+        "liblog",
+        "libstagefright_foundation",
+        "libui",
+        "libutils",
+        "libdl",
+        "libaudioclient",
+        "libmedia_omx",
+        "libhidlbase",
+        "vendor.mediatek.hardware.gpu@1.0"
+    ],
+
+    include_dirs: [
+        "frameworks/av/media/libstagefright",
+        "frameworks/native/include/media/openmax",
+        "frameworks/av/media/libstagefright/mpeg2ts",
+        "frameworks/native/include/media/hardware",
+        "vendor/mediatek/proprietary/frameworks/av/AVEnhance/libmtkavenhancements/wifi-display",
+        "frameworks/native/include/media/hardware",
+        "frameworks/av/include",
+        "frameworks/av/include/media",
+        "frameworks/av/include/media/stagefright",
+        "external/flac/include",
+        "external/tremolo",
+        "frameworks/av/media/libstagefright/include",
+        "system/core/include/system",
+        "hardware/libhardware_legacy/include/hardware_legacy",
+        "frameworks/native/include/input",
+        "vendor/mediatek/proprietary/frameworks/av/AVEnhance/libmtkavenhancements"
+    ],
+
+    cflags: [
+        "-Wno-multichar",
+        "-Werror",
+        "-Wall",
+    ],
+
+}

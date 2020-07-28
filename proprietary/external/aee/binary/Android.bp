@@ -1,0 +1,132 @@
+//##############################################################################
+// for system image
+//##############################################################################
+cc_prebuilt_binary {
+    name: "aee",
+    owner: "mtk",
+    srcs: ["bin/aee"],
+    compile_multilib: "32",
+    strip: {
+        none: true,
+    },
+}
+
+
+cc_prebuilt_binary {
+    name: "aee_core_forwarder",
+    owner: "mtk",
+    srcs: ["bin/aee_core_forwarder"],
+    compile_multilib: "32",
+    strip: {
+        none: true,
+    },
+}
+
+cc_prebuilt_binary {
+    name: "aee_dumpstate",
+    owner: "mtk",
+    srcs: ["bin/aee_dumpstate"],
+    compile_multilib: "32",
+    strip: {
+        none: true,
+    },
+}
+
+cc_prebuilt_binary {
+    name: "rtt",
+    owner: "mtk",
+    srcs: ["bin/rtt"],
+    compile_multilib: "32",
+    strip: {
+        none: true,
+    },
+}
+
+cc_prebuilt_library_shared {
+    name: "libaed",
+    owner: "mtk",
+    arch: {
+        arm: {
+            srcs: ["lib/libaed.so"],
+        },
+        arm64: {
+            srcs: ["lib64/libaed.so"],
+        },
+    },
+    compile_multilib: "both",
+    shared_libs: [
+        "libz",
+    ],
+    export_include_dirs: ["inc"],
+    strip: {
+        none: true,
+    },
+}
+
+//##############################################################################
+// for vendor image
+//##############################################################################
+cc_prebuilt_binary {
+    name: "aeev",
+    owner: "mtk",
+    proprietary: true,
+    srcs: ["bin/aeev"],
+    compile_multilib: "32",
+    strip: {
+        none: true,
+    },
+}
+
+cc_prebuilt_binary {
+    name: "aee_dumpstatev",
+    owner: "mtk",
+    proprietary: true,
+    srcs: ["bin/aee_dumpstatev"],
+    compile_multilib: "32",
+    strip: {
+        none: true,
+    },
+}
+
+cc_prebuilt_binary {
+    name: "rttv",
+    owner: "mtk",
+    proprietary: true,
+    srcs: ["bin/rttv"],
+    compile_multilib: "32",
+    strip: {
+        none: true,
+    },
+}
+
+cc_prebuilt_library_shared {
+    name: "libaedv",
+    owner: "mtk",
+    proprietary: true,
+    arch: {
+        arm: {
+            srcs: ["lib/libaedv.so"],
+        },
+        arm64: {
+            srcs: ["lib64/libaedv.so"],
+        },
+    },
+    compile_multilib: "both",
+    shared_libs: [
+        "libz",
+    ],
+    export_include_dirs: ["inc"],
+    strip: {
+        none: true,
+    },
+}
+
+//##############################################################################
+// for include path
+//##############################################################################
+cc_library_headers {
+    name: "libaed_headers",
+    export_include_dirs: ["inc"],
+    vendor_available: true,
+    recovery_available: true,
+}

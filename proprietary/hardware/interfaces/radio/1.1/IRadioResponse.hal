@@ -1,0 +1,1046 @@
+/*
+ * Copyright (C) 2016 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package vendor.mediatek.hardware.radio@1.1;
+
+import android.hardware.radio@1.0::IRadioResponse;
+import android.hardware.radio@1.0::types;
+/*
+ * Interface declaring response functions to solicited radio requests.
+ * Response functions defined in this interface are as per following convention:
+ * <xyz>Response is response to IRadio.<xyz>
+ */
+interface IRadioResponse extends android.hardware.radio@1.0::IRadioResponse {
+
+    /**
+     * Response for setTrm request.
+     */
+    oneway setTrmResponse(RadioResponseInfo info);
+
+    // MTK-START: SIM
+    /**
+     * The response of getATRResponse
+     *
+     * @param info Response info struct containing response type, serial no. and error.
+     * @param response Response string of getATRResponse.
+     */
+    oneway getATRResponse(RadioResponseInfo info, string response);
+
+    /**
+     * The response of setSimPowerResponse
+     *
+     * @param info Response info struct containing response type, serial no. and error.
+     */
+    oneway setSimPowerResponse(RadioResponseInfo info);
+
+    /**
+     * The response of setModemPowerResponse
+     *
+     * @param info Response info struct containing response type, serial no. and error
+     *
+     * Valid errors returned:
+     *     RadioError:RIL_E_GENERIC_FAILURE
+     */
+    oneway setModemPowerResponse(RadioResponseInfo responseInfo);
+
+    // MTK-END
+
+    /// M: CC @{
+    /**
+     * Hang up all response
+     * Response of RIL request "RIL_REQUEST_HANGUP_ALL"
+     *
+     * @param responseInfo Response info struct containing response type, serial no. and error
+     */
+    oneway hangupAllResponse(RadioResponseInfo info);
+
+    /**
+     * Proprietary incoming call handling.
+     * Response of RIL request "RIL_REQUEST_SET_CALL_INDICATION"
+     *
+     * @param responseInfo Response info struct containing response type, serial no. and error
+     */
+    oneway setCallIndicationResponse(RadioResponseInfo info);
+
+    /**
+     * Proprietary ECC handling
+     * Response of RIL Request "RIL_REQUEST_EMERGENCY_DIAL"
+     *
+     * @param info Response info struct containing response type, serial no. and error
+     */
+    oneway emergencyDialResponse(RadioResponseInfo info);
+
+    /**
+     * Proprietary ECC handling
+     * Response of RIL Request "RIL_REQUEST_SET_ECC_SERVICE_CATEGORY"
+     *
+     * @param info Response info struct containing response type, serial no. and error
+     */
+    oneway setEccServiceCategoryResponse(RadioResponseInfo info);
+
+    /*
+     * Response for 'Set ECC List'
+     * @param info Response info struct containing response type, serial no. and error
+     *
+     * Valid errors returned:
+     *   RadioError:NONE
+     *   RadioError:INVALID_ARGUMENTS
+     *   RadioError:GENERIC_FAILURE
+     */
+    oneway setEccListResponse(RadioResponseInfo info);
+    /// @}
+
+    /// M: CC: Call control framework 3GVT @{
+    /**
+     * VT Dial response
+     * @param responseInfo Response info struct containing response type, serial no. and error
+     */
+    oneway vtDialResponse(RadioResponseInfo info);
+
+    /**
+     * Accept VT call voice only response
+     * @param responseInfo Response info struct containing response type, serial no. and error
+     */
+    oneway voiceAcceptResponse(RadioResponseInfo info);
+
+    /**
+     * Replace VT call response
+     * @param responseInfo Response info struct containing response type, serial no. and error
+     */
+    oneway replaceVtCallResponse(RadioResponseInfo info);
+    /// @}
+
+    /*
+     * @param info Response info struct containing response type, serial no. and error
+     * Returns RadioError:GENERIC_FAILURE for all other causes that might be fixed by retries.
+     */
+    oneway setNetworkSelectionModeManualWithActResponse(RadioResponseInfo info);
+
+    /*
+     * @param info Response info struct containing response type, serial no. and error
+     * @param networkInfos List of network operator information as OperatorInfoWithAct defined in
+     *         types.hal
+     * Returns RadioError:GENERIC_FAILURE for all other causes that might be fixed by retries.
+     */
+    oneway getAvailableNetworksWithActResponse(RadioResponseInfo info,
+            vec<OperatorInfoWithAct> networkInfosWithAct);
+
+    /*
+     * @param info Response info struct containing response type, serial no. and error
+     * Returns RadioError:GENERIC_FAILURE for all other causes that might be fixed by retries.
+     */
+    oneway cancelAvailableNetworksResponse(RadioResponseInfo info);
+
+    /**
+     * Replace E911 request current status
+     * @param responseInfo Response info struct containing response type, serial no. and error
+     */
+    oneway currentStatusResponse(RadioResponseInfo info);
+
+    /**
+     * E911 Set ECC preferred Rat
+     * @param responseInfo Response info struct containing response type, serial no. and error
+     */
+    oneway eccPreferredRatResponse(RadioResponseInfo info);
+
+    // SMS-START
+    /**
+     * The response of getSmsParameters
+     *
+     * @param info Response info struct containing response type, serial no. and error
+     * @param param Sms parameters(pid, vp, format, dcs). refer to the structure SmsParams
+     *              defined in type.hal
+     *
+     * Valid errors returned:
+     *     RadioError:RIL_E_GENERIC_FAILURE
+     */
+    oneway getSmsParametersResponse(RadioResponseInfo info, SmsParams param);
+
+    /**
+     * The response of setSmsParameters
+     */
+    oneway setSmsParametersResponse(RadioResponseInfo info);
+
+    /**
+     * The response of getSmsMemStatus
+     *
+     * @param info Response info struct containing response type, serial no. and error
+     * @param status The number of used and total. refer to the structure SmsMemStatus
+     *               defined in type.hal
+     *
+     * Valid errors returned:
+     *     RadioError:RIL_E_GENERIC_FAILURE
+     */
+    oneway getSmsMemStatusResponse(RadioResponseInfo info, SmsMemStatus status);
+
+    /**
+     * The response of setEtws
+     *
+     * @param info Response info struct containing response type, serial no. and error
+     *
+     * Valid errors returned:
+     *     RadioError:RIL_E_GENERIC_FAILURE
+     */
+    oneway setEtwsResponse(RadioResponseInfo info);
+
+    /**
+     * The response of removeCbMsg
+     *
+     * @param info Response info struct containing response type, serial no. and error
+     *
+     * Valid errors returned:
+     *     RadioError:RIL_E_GENERIC_FAILURE
+     */
+    oneway removeCbMsgResponse(RadioResponseInfo info);
+
+    /**
+     * The response of setGsmBroadcastLangs
+     *
+     * @param info Response info struct containing response type, serial no. and error
+     *
+     * Valid errors returned:
+     *     RadioError:RIL_E_GENERIC_FAILURE
+     */
+    oneway setGsmBroadcastLangsResponse(RadioResponseInfo info);
+
+    /**
+     * The response of getGsmBroadcastLangs
+     *
+     * @param info Response info struct containing response type, serial no. and error
+     * @param GSM cell broadcast language setting
+     *
+     * Valid errors returned:
+     *     RadioError:RIL_E_GENERIC_FAILURE
+     */
+    oneway getGsmBroadcastLangsResponse(RadioResponseInfo info, string langs);
+
+    /**
+     * The response of getGsmBroadcastActivation
+     *
+     * @param info Response info struct containing response type, serial no. and error
+     * @param gsm cell broadcase setting is on or off
+     *
+     * Valid errors returned:
+     *     RadioError:RIL_E_GENERIC_FAILURE
+     */
+    oneway getGsmBroadcastActivationRsp(RadioResponseInfo info, int32_t active);
+    // SMS-END
+
+    /// M: eMBMS feature
+    /**
+     * The response of sendEmbmsAtCommand
+     *
+     * @param info Response info struct containing response type, serial no. and error
+     * @param data response string
+     *
+     * Valid errors returned:
+     *   RadioError:NONE
+     *   RadioError:INVALID_ARGUMENTS
+     *   RadioError:RADIO_NOT_AVAILABLE
+     *   RadioError:GENERIC_FAILURE
+     */
+    oneway sendEmbmsAtCommandResponse(RadioResponseInfo responseInfo, string data);
+    /// M: eMBMS end
+
+    /*
+     * @param info Response info struct containing response type, serial no. and error
+     * @param dcResponse MtkSetupDataCallResult defined in types.hal
+     *
+     * Valid errors returned:
+     *   RadioError:NONE must be returned on both success and failure of setup with the
+     *              DataCallResponse.status containing the actual status
+     *              For all other errors the DataCallResponse is ignored.
+     *   RadioError:INVALID_ARGUMENTS
+     *   RadioError:RADIO_NOT_AVAILABLE
+     *   RadioError:OP_NOT_ALLOWED_BEFORE_REG_TO_NW
+     *   RadioError:OP_NOT_ALLOWED_DURING_VOICE_CALL
+     *   RadioError:REQUEST_NOT_SUPPORTED
+     *   RadioError:GENERIC_FAILURE
+     */
+    oneway setupDataCallResponseEx(RadioResponseInfo info, MtkSetupDataCallResult dcResponse);
+
+    /*
+     * @param info Response info struct containing response type, serial no. and error
+     * @param dcResponse List of DataCallResult as defined in types.hal
+     *
+     * Valid errors returned:
+     *   RadioError:NONE
+     *   RadioError:RADIO_NOT_AVAILABLE
+     *   RadioError:INVALID_ARGUMENTS
+     *   RadioError:GENERIC_FAILURE
+     */
+    oneway getDataCallListResponseEx(RadioResponseInfo info, vec<MtkSetupDataCallResult> dcResponse);
+
+    /**
+     * Response for setApcMode request.
+     */
+    oneway setApcModeResponse(RadioResponseInfo info);
+
+    /**
+     * Response for getApcInfo request.
+     */
+    oneway getApcInfoResponse(RadioResponseInfo info, vec<int32_t> cellInfo);
+
+    oneway triggerModeSwitchByEccResponse(RadioResponseInfo info);
+
+    /*
+     * @param info Response info struct containing response type, serial no. and error
+     * @param memStatus The memory status of SMS in RUIM, the status includes the total number
+     *                  and the used number
+     *
+     * Valid errors returned:
+     *   RadioError:NONE
+     *   RadioError:RADIO_NOT_AVAILABLE (radio resetting)
+     *   RadioError:GENERIC_FAILURE
+     */
+    oneway getSmsRuimMemoryStatusResponse(RadioResponseInfo info, SmsMemStatus memStatus);
+
+    /*
+     * Response for 'RIL_REQUEST_SET_FD_MODE'
+     * @param info Response info contains error if have.
+     */
+    oneway setFdModeResponse(RadioResponseInfo info);
+
+    /**
+     * Response for setResumeRegistration request.
+     */
+    oneway setResumeRegistrationResponse(RadioResponseInfo info);
+
+    /**
+     * Response for storeModemType request.
+     */
+    oneway storeModemTypeResponse(RadioResponseInfo info);
+
+    /**
+     * Response for reloadModemType request.
+     */
+    oneway reloadModemTypeResponse(RadioResponseInfo info);
+
+    /*
+     * @param info Response info struct containing response type, serial no. and error
+     *
+     * Valid errors returned:
+     *   RadioError:NONE
+     *   RadioError:RADIO_NOT_AVAILABLE
+     *   RadioError:INVALID_ARGUMENTS
+     *   RadioError:OPERATION_NOT_ALLOWED
+     *   RadioError:GENERIC_FAILURE
+     */
+    oneway handleStkCallSetupRequestFromSimWithResCodeResponse(RadioResponseInfo info);
+
+    /**
+     * The response of getFemtocellList
+     *
+     * @param info Response info struct containing response type, serial no. and error
+     * @param femto List from network
+     *
+     * Valid errors returned:
+     *     RadioError:RIL_E_GENERIC_FAILURE
+     */
+    oneway getFemtocellListResponse(RadioResponseInfo responseInfo, vec<string> femtoList);
+
+    /**
+     * The response of abortFemtocellList
+     *
+     * @param info Response info struct containing response type, serial no. and error
+     *
+     * Valid errors returned:
+     *     RadioError:RIL_E_GENERIC_FAILURE
+     */
+    oneway abortFemtocellListResponse(RadioResponseInfo responseInfo);
+
+    /**
+     * The response of selectFemtocell
+     *
+     * @param info Response info struct containing response type, serial no. and error
+     *
+     * Valid errors returned:
+     *     RadioError:RIL_E_GENERIC_FAILURE
+     */
+    oneway selectFemtocellResponse(RadioResponseInfo responseInfo);
+
+    /**
+     * The response of queryFemtoCellSystemSelectionMode
+     *
+     * @param info Response info struct containing response type, serial no. and error
+     * @param femtocell system selection mode
+     *
+     * Valid errors returned:
+     *     RadioError:RIL_E_GENERIC_FAILURE
+     */
+    oneway queryFemtoCellSystemSelectionModeResponse(RadioResponseInfo responseInfo, int32_t mode);
+
+    /**
+     * The response of setFemtoCellSystemSelectionMode
+     *
+     * @param info Response info struct containing response type, serial no. and error
+     *
+     * Valid errors returned:
+     *     RadioError:RIL_E_GENERIC_FAILURE
+     */
+    oneway setFemtoCellSystemSelectionModeResponse(RadioResponseInfo responseInfo);
+
+    /* MTK SS Feature : Start */
+    /**
+     * The response of Set CLIP (Calling Line Identification Presentation)
+     *
+     * @param info Response info struct containing response type, serial no. and error
+     *
+     * Valid errors returned:
+     *   RadioError:NONE
+     *   RadioError:INVALID_ARGUMENTS
+     *   RadioError:RADIO_NOT_AVAILABLE
+     *   RadioError:SS_MODIFIED_TO_DIAL
+     *   RadioError:SS_MODIFIED_TO_USSD
+     *   RadioError:SS_MODIFIED_TO_SS
+     *   RadioError:INVALID_ARGUMENTS
+     *   RadioError:SYSTEM_ERR
+     *   RadioError:GENERIC_FAILURE
+     */
+    oneway setClipResponse(RadioResponseInfo info);
+
+    /**
+     * The response of Query COLP (Connected Line Identification Presentation)
+     *
+     * @param info Response info struct containing response type, serial no. and error
+     * @param n Parameter sets/shows the result code presentation status to the TE.
+     *        "0" means disabled, "1" means enabled.
+     * @param m Parameter shows the subscriber COLP service status in the network
+     *        "0" means not provisioned, "1" means provisioned in permanent mode
+     *
+     * Valid errors returned:
+     *   RadioError:NONE
+     *   RadioError:INVALID_ARGUMENTS
+     *   RadioError:RADIO_NOT_AVAILABLE
+     *   RadioError:SS_MODIFIED_TO_DIAL
+     *   RadioError:SS_MODIFIED_TO_USSD
+     *   RadioError:SS_MODIFIED_TO_SS
+     *   RadioError:NO_MEMORY
+     *   RadioError:MODEM_ERR
+     *   RadioError:INTERNAL_ERR
+     *   RadioError:FDN_CHECK_FAILURE
+     *   RadioError:SYSTEM_ERR
+     *   RadioError:GENERIC_FAILURE
+     */
+    oneway getColpResponse(RadioResponseInfo info, int32_t n, int32_t m);
+
+    /**
+     * The response of Query COLR (Connected Line Identification Restriction)
+     *
+     * @param info Response info struct containing response type, serial no. and error
+     * @param n COLR status in network. "0" means not provisioned, "1" means provisioned,
+     *        "2" means unknown
+     *
+     * Valid errors returned:
+     *   RadioError:NONE
+     *   RadioError:INVALID_ARGUMENTS
+     *   RadioError:RADIO_NOT_AVAILABLE
+     *   RadioError:SS_MODIFIED_TO_DIAL
+     *   RadioError:SS_MODIFIED_TO_USSD
+     *   RadioError:SS_MODIFIED_TO_SS
+     *   RadioError:NO_MEMORY
+     *   RadioError:MODEM_ERR
+     *   RadioError:INTERNAL_ERR
+     *   RadioError:FDN_CHECK_FAILURE
+     *   RadioError:SYSTEM_ERR
+     *   RadioError:GENERIC_FAILURE
+     */
+    oneway getColrResponse(RadioResponseInfo info, int32_t n);
+
+    /**
+     * The response of Query CNAP (Calling Name Presentation)
+     *
+     * @param info Response info struct containing response type, serial no. and error
+     * @param n Integer type (parameter sets/shows the result code presentation status to the TE)
+     *        "0" means disabled, "1" means enabled.
+     * @param m Integer type (parameter shows the subscriber CNAP service status in the network)
+     *        "0" means not provisioned, "1" means provisioned, "2" means unknown
+     *
+     * Valid errors returned:
+     *   RadioError:NONE
+     *   RadioError:INVALID_ARGUMENTS
+     *   RadioError:RADIO_NOT_AVAILABLE
+     *   RadioError:SS_MODIFIED_TO_DIAL
+     *   RadioError:SS_MODIFIED_TO_USSD
+     *   RadioError:SS_MODIFIED_TO_SS
+     *   RadioError:NO_MEMORY
+     *   RadioError:MODEM_ERR
+     *   RadioError:INTERNAL_ERR
+     *   RadioError:FDN_CHECK_FAILURE
+     *   RadioError:SYSTEM_ERR
+     *   RadioError:GENERIC_FAILURE
+     */
+    oneway sendCnapResponse(RadioResponseInfo info, int32_t n, int32_t m);
+
+    /**
+     * The response of Set COLP
+     *
+     * @param info Response info struct containing response type, serial no. and error
+     *
+     * Valid errors returned:
+     *   RadioError:NONE
+     *   RadioError:INVALID_ARGUMENTS
+     *   RadioError:RADIO_NOT_AVAILABLE
+     *   RadioError:SS_MODIFIED_TO_DIAL
+     *   RadioError:SS_MODIFIED_TO_USSD
+     *   RadioError:SS_MODIFIED_TO_SS
+     *   RadioError:INVALID_ARGUMENTS
+     *   RadioError:SYSTEM_ERR
+     *   RadioError:GENERIC_FAILURE
+     */
+    oneway setColpResponse(RadioResponseInfo info);
+
+    /**
+     * The response of Set COLR
+     *
+     * @param info Response info struct containing response type, serial no. and error
+     *
+     * Valid errors returned:
+     *   RadioError:NONE
+     *   RadioError:INVALID_ARGUMENTS
+     *   RadioError:RADIO_NOT_AVAILABLE
+     *   RadioError:SS_MODIFIED_TO_DIAL
+     *   RadioError:SS_MODIFIED_TO_USSD
+     *   RadioError:SS_MODIFIED_TO_SS
+     *   RadioError:INVALID_ARGUMENTS
+     *   RadioError:SYSTEM_ERR
+     *   RadioError:GENERIC_FAILURE
+     */
+    oneway setColrResponse(RadioResponseInfo info);
+
+    /**
+     * @param info Response info struct containing response type, serial no. and error
+     * @param callForwardInfoExs points to a vector of CallForwardInfoEx, one for
+     *        each distinct registered phone number.
+     *
+     *
+     * Valid errors returned:
+     *   RadioError:NONE
+     *   RadioError:RADIO_NOT_AVAILABLE
+     *   RadioError:SS_MODIFIED_TO_DIAL
+     *   RadioError:SS_MODIFIED_TO_USSD
+     *   RadioError:SS_MODIFIED_TO_SS
+     *   RadioError:INVALID_ARGUMENTS
+     *   RadioError:NO_MEMORY
+     *   RadioError:SYSTEM_ERR
+     *   RadioError:MODEM_ERR
+     *   RadioError:INTERNAL_ERR
+     *   RadioError:FDN_CHECK_FAILURE
+     *   RadioError:REQUEST_NOT_SUPPORTED
+     *   RadioError:SYSTEM_ERR
+     */
+    oneway queryCallForwardInTimeSlotStatusResponse(RadioResponseInfo info,
+            vec<CallForwardInfoEx> callForwardInfoExs);
+
+    /**
+     * @param info Response info struct containing response type, serial no. and error
+     *
+     * Valid errors returned:
+     *   RadioError:NONE
+     *   RadioError:RADIO_NOT_AVAILABLE
+     *   RadioError:SS_MODIFIED_TO_DIAL
+     *   RadioError:SS_MODIFIED_TO_USSD
+     *   RadioError:SS_MODIFIED_TO_SS
+     *   RadioError:INVALID_ARGUMENTS
+     *   RadioError:NO_MEMORY
+     *   RadioError:SYSTEM_ERR
+     *   RadioError:MODEM_ERR
+     *   RadioError:INTERNAL_ERR
+     *   RadioError:INVALID_STATE
+     *   RadioError:FDN_CHECK_FAILURE
+     *   RadioError:REQUEST_NOT_SUPPORTED
+     *   RadioError:INVALID_MODEM_STATE
+     */
+    oneway setCallForwardInTimeSlotResponse(RadioResponseInfo info);
+
+    /*
+     * Response for 'runGbaAuthentication'
+     * @param resList A response string list
+     *
+     * Valid errors returned:
+     *   RadioError:NONE
+     *   RadioError:RADIO_NOT_AVAILABLE
+     *   RadioError:SS_MODIFIED_TO_DIAL
+     *   RadioError:SS_MODIFIED_TO_USSD
+     *   RadioError:SS_MODIFIED_TO_SS
+     *   RadioError:INVALID_ARGUMENTS
+     *   RadioError:NO_MEMORY
+     *   RadioError:SYSTEM_ERR
+     *   RadioError:MODEM_ERR
+     *   RadioError:INTERNAL_ERR
+     *   RadioError:FDN_CHECK_FAILURE
+     *   RadioError:REQUEST_NOT_SUPPORTED
+     *   RadioError:SYSTEM_ERR
+     */
+    oneway runGbaAuthenticationResponse(RadioResponseInfo info, vec<string> resList);
+    /* MTK SS Feature : End */
+
+    // PHB START
+    /*
+     * @param info Response info struct containing response type, serial no. and error
+     * @param storageInfo is an int[4]
+     *        storageInfo[0] is number of current used entries
+     *        storageInfo[1] is number of total entries in the storage
+     *        storageInfo[2] is maximum supported length of the number
+     *        storageInfo[3] is maximum supported length of the alphaId
+     *
+     * Valid errors returned:
+     *   RadioError:NONE
+     *   RadioError:INVALID_ARGUMENTS
+     *   RadioError:RADIO_NOT_AVAILABLE
+     *   RadioError:GENERIC_FAILURE
+     */
+    oneway queryPhbStorageInfoResponse(RadioResponseInfo info, vec<int32_t> storageInfo);
+
+
+    /*
+     * @param info Response info struct containing response type, serial no. and error
+     *
+     * Valid errors returned:
+     *   RadioError:RADIO_NOT_AVAILABLE
+     *   RadioError:GENERIC_FAILURE
+     *   RadioError:SIM_PIN2
+     *   RadioError:SIM_PUK2
+     *   RadioError:OEM_ERROR_1 (DIAL_STRING_TOO_LONG)
+     *   RadioError:OEM_ERROR_2 (TEXT_STRING_TOO_LONG)
+     *   RadioError:OEM_ERROR_3 (SIM_MEM_FULL)
+     */
+    oneway writePhbEntryResponse(RadioResponseInfo info);
+
+    /*
+     * @param info Response info struct containing response type, serial no. and error
+     * @param phbEntries PHB entries in an array of PhbEntryStructure.
+     *
+     * Valid errors returned:
+     *   RadioError:NONE
+     *   RadioError:INVALID_ARGUMENTS
+     *   RadioError:RADIO_NOT_AVAILABLE
+     *   RadioError:GENERIC_FAILURE
+     */
+    oneway readPhbEntryResponse(RadioResponseInfo info, vec<PhbEntryStructure> phbEntries);
+
+    /*
+     * @param info Response info struct containing response type, serial no. and error
+     * @param upbCapability <N_ANR>,<N_EMAIL>,<N_SNE>,<N_AAS>,<L_AAS>,<N_GAS>,<L_GAS>,<N_GRP>
+     *
+     * Valid errors returned:
+     *   RadioError:NONE
+     *   RadioError:INVALID_ARGUMENTS
+     *   RadioError:RADIO_NOT_AVAILABLE
+     *   RadioError:GENERIC_FAILURE
+     */
+    oneway queryUPBCapabilityResponse(RadioResponseInfo info, vec<int32_t> upbCapability);
+
+    /*
+     * @param info Response info struct containing response type, serial no. and error
+     *
+     * Valid errors returned:
+     *   RadioError:NONE
+     *   RadioError:INVALID_ARGUMENTS
+     *   RadioError:RADIO_NOT_AVAILABLE
+     *   RadioError:GENERIC_FAILURE
+     *   RadioError:OEM_ERROR_2 (TEXT_STRING_TOO_LONG)
+     *   RadioError:OEM_ERROR_3 (SIM_MEM_FULL)
+     */
+    oneway editUPBEntryResponse(RadioResponseInfo info);
+
+    /*
+     * @param info Response info struct containing response type, serial no. and error
+     *
+     * Valid errors returned:
+     *   RadioError:NONE
+     *   RadioError:INVALID_ARGUMENTS
+     *   RadioError:RADIO_NOT_AVAILABLE
+     *   RadioError:GENERIC_FAILURE
+     */
+    oneway deleteUPBEntryResponse(RadioResponseInfo info);
+
+    /*
+     * @param info Response info struct containing response type, serial no. and error
+     * @param gasList A GAS string list
+     *
+     * Valid errors returned:
+     *   RadioError:NONE
+     *   RadioError:INVALID_ARGUMENTS
+     *   RadioError:RADIO_NOT_AVAILABLE
+     *   RadioError:GENERIC_FAILURE
+     */
+    oneway readUPBGasListResponse(RadioResponseInfo info, vec<string> gasList);
+
+    /*
+     * @param info Response info struct containing response type, serial no. and error
+     * @param grpEntries A Group id list of the ADN
+     *
+     * Valid errors returned:
+     *   RadioError:NONE
+     *   RadioError:INVALID_ARGUMENTS
+     *   RadioError:RADIO_NOT_AVAILABLE
+     *   RadioError:GENERIC_FAILURE
+     */
+    oneway readUPBGrpEntryResponse(RadioResponseInfo info, vec<int32_t> grpEntries);
+
+    /*
+     * @param info Response info struct containing response type, serial no. and error
+     *
+     * Valid errors returned:
+     *   RadioError:NONE
+     *   RadioError:INVALID_ARGUMENTS
+     *   RadioError:RADIO_NOT_AVAILABLE
+     *   RadioError:GENERIC_FAILURE
+     */
+    oneway writeUPBGrpEntryResponse(RadioResponseInfo info);
+
+    /*
+     * @param info Response info struct containing response type, serial no. and error
+     * @param stringLengthInfo is an int[5]
+     *        stringLengthInfo[0] is maximum supported length of the number
+     *        stringLengthInfo[1] is maximum supported length of the alphaId
+     *        stringLengthInfo[2] is maximum supported length of the GAS
+     *        stringLengthInfo[3] is maximum supported length of the SNE
+     *        stringLengthInfo[4] is maximum supported length of the Email
+     *
+     * Valid errors returned:
+     *   RadioError:NONE
+     *   RadioError:INVALID_ARGUMENTS
+     *   RadioError:RADIO_NOT_AVAILABLE
+     *   RadioError:GENERIC_FAILURE
+     */
+    oneway getPhoneBookStringsLengthResponse(RadioResponseInfo info, vec<int32_t> stringLengthInfo);
+
+    /*
+     * @param info Response info struct containing response type, serial no. and error
+     * @param phbMemStorage Current phonebook storage info (<STORAGE>, <used>, <total>)
+     *
+     * Valid errors returned:
+     *   RadioError:NONE
+     *   RadioError:INVALID_ARGUMENTS
+     *   RadioError:RADIO_NOT_AVAILABLE
+     *   RadioError:GENERIC_FAILURE
+     */
+    oneway getPhoneBookMemStorageResponse(RadioResponseInfo info, PhbMemStorageResponse phbMemStorage);
+
+    /*
+     * @param info Response info struct containing response type, serial no. and error
+     *
+     * Valid errors returned:
+     *   RadioError:NONE
+     *   RadioError:INVALID_ARGUMENTS
+     *   RadioError:RADIO_NOT_AVAILABLE
+     *   RadioError:GENERIC_FAILURE
+     */
+    oneway setPhoneBookMemStorageResponse(RadioResponseInfo info);
+
+    /*
+     * @param info Response info struct containing response type, serial no. and error
+     * @param phbEntryExts PHB entries with some UPB fields value
+     *
+     * Valid errors returned:
+     *   RadioError:NONE
+     *   RadioError:INVALID_ARGUMENTS
+     *   RadioError:RADIO_NOT_AVAILABLE
+     *   RadioError:GENERIC_FAILURE
+     */
+    oneway readPhoneBookEntryExtResponse(RadioResponseInfo info, vec<PhbEntryExt> phbEntryExts);
+
+    /*
+     * @param info Response info struct containing response type, serial no. and error
+     *
+     * Valid errors returned:
+     *   RadioError:NONE
+     *   RadioError:INVALID_ARGUMENTS
+     *   RadioError:RADIO_NOT_AVAILABLE
+     *   RadioError:GENERIC_FAILURE
+     *   RadioError:SIM_PIN2
+     *   RadioError:SIM_PUK2
+     *   RadioError:OEM_ERROR_1 (DIAL_STRING_TOO_LONG)
+     *   RadioError:OEM_ERROR_2 (TEXT_STRING_TOO_LONG)
+     *   RadioError:OEM_ERROR_3 (SIM_MEM_FULL)
+     */
+    oneway writePhoneBookEntryExtResponse(RadioResponseInfo info);
+
+    /*
+     * @param info Response info struct containing response type, serial no. and error
+     * @param upbAvailable is an int[3]
+     *        upbAvailable[0] is <M_NUM>, Max number of entries
+     *        upbAvailable[1] is <A_NUM>, Available number of entries
+     *        upbAvailable[2] is <L_XXX>, Max support length
+     *
+     * Valid errors returned:
+     *   RadioError:NONE
+     *   RadioError:INVALID_ARGUMENTS
+     *   RadioError:RADIO_NOT_AVAILABLE
+     *   RadioError:GENERIC_FAILURE
+     */
+    oneway queryUPBAvailableResponse(RadioResponseInfo info, vec<int32_t> upbAvailable);
+
+    /*
+     * @param info Response info struct containing response type, serial no. and error
+     * @param email Email string
+     *
+     * Valid errors returned:
+     *   RadioError:NONE
+     *   RadioError:INVALID_ARGUMENTS
+     *   RadioError:RADIO_NOT_AVAILABLE
+     *   RadioError:GENERIC_FAILURE
+     */
+    oneway readUPBEmailEntryResponse(RadioResponseInfo info, string email);
+
+    /*
+     * @param info Response info struct containing response type, serial no. and error
+     * @param sne SNE string (need to be decoded)
+     *
+     * Valid errors returned:
+     *   RadioError:NONE
+     *   RadioError:INVALID_ARGUMENTS
+     *   RadioError:RADIO_NOT_AVAILABLE
+     *   RadioError:GENERIC_FAILURE
+     */
+    oneway readUPBSneEntryResponse(RadioResponseInfo info, string sne);
+
+    /*
+     * @param info Response info struct containing response type, serial no. and error
+     * @param anrs an ANR contained in PhbEntryStructure array
+     *
+     * Valid errors returned:
+     *   RadioError:NONE
+     *   RadioError:INVALID_ARGUMENTS
+     *   RadioError:RADIO_NOT_AVAILABLE
+     *   RadioError:GENERIC_FAILURE
+     */
+    oneway readUPBAnrEntryResponse(RadioResponseInfo info, vec<PhbEntryStructure> anrs);
+
+    /*
+     * @param info Response info struct containing response type, serial no. and error
+     * @param aasList A AAS string list
+     *
+     * Valid errors returned:
+     *   RadioError:NONE
+     *   RadioError:INVALID_ARGUMENTS
+     *   RadioError:RADIO_NOT_AVAILABLE
+     *   RadioError:GENERIC_FAILURE
+     */
+    oneway readUPBAasListResponse(RadioResponseInfo info, vec<string> aasList);
+    // PHB END
+
+    // MTK-START: SIM ME LOCK
+    /**
+     * The response of queryNetworkLock
+     *
+     * @param info Response info struct containing response type, serial no. and error.
+     */
+    oneway queryNetworkLockResponse(RadioResponseInfo info, int32_t catagory, int32_t state,
+            int32_t retry_cnt, int32_t autolock_cnt, int32_t num_set, int32_t total_set, int32_t key_state);
+
+    /**
+     * The response of setNetworkLock
+     *
+     * @param info Response info struct containing response type, serial no. and error.
+     */
+    oneway setNetworkLockResponse(RadioResponseInfo info);
+    // MTK-END
+
+    /**
+     * The response of resetRadio
+     *
+     * @param info Response info struct containing response type, serial no. and error
+     *
+     * Valid errors returned:
+     *     RadioError:RIL_E_GENERIC_FAILURE
+     */
+    oneway resetRadioResponse(RadioResponseInfo info);
+
+    /**
+     * M: Data Framework - common part enhancement
+     * The response of sync phone data settings to modem
+     *
+     * @param info Response info struct containing response type, serial no. and error
+     *
+     * Valid errors returned:
+     *     RadioError:RIL_E_GENERIC_FAILURE
+     */
+    oneway syncDataSettingsToMdResponse(RadioResponseInfo info);
+
+    /**
+     * M: Data Framework - Data Retry enhancement
+     * The response of reset modem data retry count
+     *
+     * @param info Response info struct containing response type, serial no. and error
+     *
+     * Valid errors returned:
+     *     RadioError:RIL_E_GENERIC_FAILURE
+     */
+    oneway resetMdDataRetryCountResponse(RadioResponseInfo info);
+
+    /**
+     * M: Data Framework - CC 33
+     * The response of setRemoveRestrictEutranMode
+     *
+     * @param info Response info struct containing response type, serial no. and error
+     *
+     * Valid errors returned:
+     *     RadioError:RIL_E_GENERIC_FAILURE
+     */
+    oneway setRemoveRestrictEutranModeResponse(RadioResponseInfo responseInfo);
+
+    /*
+     * Response for 'Set LTE access stratum report'
+     * @param info Response info struct containing response type, serial no. and error
+     *
+     * Valid errors returned:
+     *   RadioError:NONE
+     *   RadioError:INVALID_ARGUMENTS
+     *   RadioError:GENERIC_FAILURE
+     */
+    oneway setLteAccessStratumReportResponse(RadioResponseInfo responseInfo);
+
+    /*
+     * Response for 'Set LTE uplink data transfer'
+     * @param info Response info struct containing response type, serial no. and error
+     *
+     * Valid errors returned:
+     *   RadioError:NONE
+     *   RadioError:INVALID_ARGUMENTS
+     *   RadioError:GENERIC_FAILURE
+     */
+    oneway setLteUplinkDataTransferResponse(RadioResponseInfo responseInfo);
+
+    /**
+     * The response of setRxTestConfig
+     *
+     * @param info Response info struct containing response type, serial no. and error
+     * @param respAntConf the config of ant config
+     *
+     * Valid errors returned:
+     *     RadioError:RIL_E_GENERIC_FAILURE
+     */
+    oneway setRxTestConfigResponse(RadioResponseInfo responseInfo, vec<int32_t> respAntConf);
+
+    /**
+     * The response of getRxTestResult
+     *
+     * @param info Response info struct containing response type, serial no. and error
+     * @param respAntInfo the ant info of the test
+     *
+     * Valid errors returned:
+     *     RadioError:RIL_E_GENERIC_FAILURE
+     */
+    oneway getRxTestResultResponse(RadioResponseInfo responseInfo, vec<int32_t> respAntInfo);
+
+    /**
+     * The response of getPOLCapability
+     *
+     * @param info Response info struct containing response type, serial no. and error
+     * @param polCapability the order number of operator in the SIM/USIM preferred operator list
+     *
+     * Valid errors returned:
+     *     RadioError:RIL_E_GENERIC_FAILURE
+     */
+    oneway getPOLCapabilityResponse(RadioResponseInfo responseInfo,
+            vec<int32_t> polCapability);
+
+    /**
+     * The response of getCurrentPOLList
+     *
+     * @param info Response info struct containing response type, serial no. and error
+     * @param polList the SIM/USIM preferred operator list
+     *
+     * Valid errors returned:
+     *     RadioError:RIL_E_GENERIC_FAILURE
+     */
+    oneway getCurrentPOLListResponse(RadioResponseInfo responseInfo,
+            vec<string> polList);
+
+    /**
+     * The response of setPOLEntryResponse
+     *
+     * @param info Response info struct containing response type, serial no. and error
+     *
+     * Valid errors returned:
+     *     RadioError:RIL_E_GENERIC_FAILURE
+     */
+    oneway setPOLEntryResponse(RadioResponseInfo responseInfo);
+
+    /// M: [Network][C2K] Sprint roaming control @{
+    /**
+     * Response for setRoamingEnable request.
+     *
+     * @param info Response info struct containing response type, serial no. and error
+     *
+     * Valid errors returned:
+     *   RadioError:NONE
+     *   RadioError:RADIO_NOT_AVAILABLE
+     *   RadioError:GENERIC_FAILURE
+     */
+    oneway setRoamingEnableResponse(RadioResponseInfo responseInfo);
+
+    /**
+     * Response for getRoamingEnable request.
+     *
+     * @param info Response info struct containing response type, serial no. and error
+     * @param data the the configuration of roaming
+     *
+     * Valid errors returned:
+     *   RadioError:NONE
+     *   RadioError:RADIO_NOT_AVAILABLE
+     *   RadioError:GENERIC_FAILURE
+     */
+    oneway getRoamingEnableResponse(RadioResponseInfo responseInfo, vec<int32_t> data);
+    /// @}
+
+    // External SIM [Start]
+    /*
+     * @param info Response info struct containing response type, serial no. and error
+     * @param data data returned
+     *
+     * Valid errors returned:
+     *   RadioError:NONE
+     *   RadioError:RADIO_NOT_AVAILABLE
+     *   RadioError:INVALID_ARGUMENTS
+     *   RadioError:OEM_ERROR_X
+     */
+    oneway vsimNotificationResponse(RadioResponseInfo info, VsimEvent event);
+
+    /*
+     * @param info Response info struct containing response type, serial no. and error
+     * @param data data returned
+     *
+     * Valid errors returned:
+     *   RadioError:NONE
+     *   RadioError:RADIO_NOT_AVAILABLE
+     *   RadioError:INVALID_ARGUMENTS
+     *   RadioError:OEM_ERROR_X
+     */
+    oneway vsimOperationResponse(RadioResponseInfo info);
+    // External SIM [End]
+
+    oneway setWifiEnabledResponse(RadioResponseInfo responseInfo);
+    oneway setWifiAssociatedResponse(RadioResponseInfo responseInfo);
+    oneway setWifiSignalLevelResponse(RadioResponseInfo responseInfo);
+    oneway setWifiIpAddressResponse(RadioResponseInfo responseInfo);
+    oneway setLocationInfoResponse(RadioResponseInfo responseInfo);
+    oneway setEmergencyAddressIdResponse(RadioResponseInfo responseInfo);
+    oneway setNattKeepAliveStatusResponse(RadioResponseInfo responseInfo);
+
+    /**
+     * The response of setE911StateResponse
+     *
+     * @param info Response info struct containing response type, serial no. and error
+     *
+     * Valid errors returned:
+     *     RadioError:RIL_E_GENERIC_FAILURE
+     */
+    oneway setE911StateResponse(RadioResponseInfo responseInfo);
+};

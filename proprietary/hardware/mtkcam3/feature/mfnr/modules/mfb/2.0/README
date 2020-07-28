@@ -1,0 +1,99 @@
+MFNR core module: MFB v2.0
+
+
+WHAT IT DOES?
+=============
+
+MFB (Multi Frame Blending) is a module to control flow of pass 2 driver,
+including:
+
+  - RAW to YUV conversion using Pass 2 driver
+  - Blending
+  - Mixing
+
+
+HOW IT WAS BUILT?
+==================
+
+You cannot partial build this module only, but to build libmfllcore indeed.
+
+libmfllcore partial build path:
+
+    feature/common/mfnr/Android.mk
+
+Library dependency:
+  AOSP:
+  - libutils.so
+  - libcutils.so
+  - libstdc++.so
+
+  MTK:
+  - libcam.iopipe.so
+  - libcam_hwutils.so
+  - libmtkcam_modulehelper.so
+  - libcam.metadata.so
+  - libmfllimagebuf.a
+  - libmfllexifinfo.a
+
+
+HOW TO USE IT?
+==============
+
+Create an IMfllMfb instance by invoking
+
+    IMfllMfb::createInstance();
+
+After created, gives IMfllCore and set shot mode, post NR type to it.
+
+    setMfllCore
+    setShotMode
+    setPostNrType
+
+
+IMfllMfb needs sensor ID to init, invoking method:
+
+    init(int sensorId);
+
+to init.
+
+- v2.0
+  Since MFB hardware has a new revision: stand alone MFB, the module MFB must
+  also have a new revision. However, functionality is the same.
+
+
+- v1.0
+  Before invoke any pass 2 operation (e.g.: encodeRawToYuv), caller needs to
+  pass in the pointers of IMetadata objects to MfllMfb by invoking method:
+
+      setSyncPrivateData(void *data, size_t size);
+
+  as an interface to pass IMetadata to MfllMfb module.
+  The first argument, *data, is a struct contains two addresses of IMetadata:
+
+    struct __s
+    {
+        long long addr_app_metadata
+        long long addr_hal_metadata
+    }
+
+  And the second argument, size, is don't care.
+
+  E.g.:
+
+    long long metaset[2];
+    metaset[0] = (long long)(void*)pAppMetadata;
+    metaset[1] = (long long)(void*)pHalMetadata;
+
+    spMfb->setSyncPrivateData((void*)metaset, DONT_CAER_SIZE);
+
+
+* This module will be compiled as a static libary and be used by libmfllcore,
+  which means you can only use the interfaces defined in:
+
+      feature/include/common/mfnr/IMfllMfb.h
+
+  by linking shared libary
+
+      libmfllcore.so
+
+*** All the source code of this program were written by MediaTek co. ***

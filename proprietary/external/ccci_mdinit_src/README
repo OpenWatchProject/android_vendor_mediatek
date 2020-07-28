@@ -1,0 +1,26 @@
+
+MTK CCCI MD INIT Daemon is a service that used to control modem bootup and state change.
+WHAT IT DOES?
+=============
+ccci_mdinit comunicates with ccci drvier to control modem life-cycle and state, such as  when to start and stop modem, 
+how to handle flight mode, how to modem exception, and etc.
+
+HOW IT WAS BUILT?
+==================
+It needs the following library:    
+from AOSP
+1.  libc.so
+2.  libcutils.so
+3.  libdl.so
+4.  liblog.so
+5.  libhardware_legacy.so
+from MTK
+1.  libnvram.so
+2.  libccci_util.so
+
+All source/dependency modules of this module are already put in
+'vendor/mediatek/proprietary/external/ccci_mdinit_src/' folder.
+
+HOW TO USE IT?
+==============
+The bin file is a system service, and it's started at system booting up while parsing init.cccimdinit.rc.

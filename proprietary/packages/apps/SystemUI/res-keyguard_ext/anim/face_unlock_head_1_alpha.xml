@@ -1,0 +1,19 @@
+
+<set
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:ordering="sequentially">
+    <objectAnimator
+        android:duration="100"
+        android:propertyName="fillAlpha"
+        android:valueFrom="1"
+        android:valueTo="1"
+        android:valueType="floatType"
+        android:interpolator="@android:interpolator/fast_out_slow_in" />
+    <objectAnimator
+        android:duration="100"
+        android:propertyName="fillAlpha"
+        android:valueFrom="1"
+        android:valueTo="0"
+        android:valueType="floatType"
+        android:interpolator="@android:interpolator/fast_out_slow_in" />
+</set>

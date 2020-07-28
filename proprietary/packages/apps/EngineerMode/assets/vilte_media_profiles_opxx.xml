@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2010 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<!DOCTYPE MediaSettings [
+  <!ATTLIST Operator name (CMCC|TMO|VzW) #REQUIRED>
+  <!ATTLIST VideoProfile name (h264|h263|m4v|hevc) #REQUIRED>
+  <!ATTLIST VideoProfile profile CDATA #REQUIRED>
+  <!ATTLIST VideoProfile level CDATA #REQUIRED>
+  <!ATTLIST VideoProfile width CDATA #REQUIRED>
+  <!ATTLIST VideoProfile height CDATA #REQUIRED>
+  <!ATTLIST VideoProfile framerate CDATA #REQUIRED>
+  <!ATTLIST VideoProfile Iinterval CDATA #REQUIRED>
+  <!ATTLIST VideoProfile minBitRate CDATA #REQUIRED>
+  <!ATTLIST VideoProfile maxBitRate CDATA #REQUIRED>
+]>
+
+<!--
+     This file is used to declare the multimedia profiles and capabilities
+     on an android-powered device.
+-->
+<MediaSettings>
+  <!--
+         If a codec is not enabled, it is invisible to the applications
+         In other words, the applications won't be able to use the codec
+         or query the capabilities of the codec at all if it is disabled
+    -->
+  <Operator name="CMCC"/>
+
+  <VideoProfile name="h264" profile="1" level="5" width="320" height="240" framerate="10" Iinterval="1" minBitRate="145000" maxBitRate="270000" />
+  <VideoProfile name="h264" profile="1" level="6" width="320" height="240" framerate="15" Iinterval="1" minBitRate="218000" maxBitRate="384000" />
+  <VideoProfile name="h264" profile="1" level="7" width="320" height="240" framerate="30" Iinterval="1" minBitRate="327000" maxBitRate="462000" />
+  <VideoProfile name="h264" profile="1" level="8" width="352" height="288" framerate="30" Iinterval="1" minBitRate="360000" maxBitRate="526000" />
+  <VideoProfile name="h264" profile="1" level="10" width="480" height="320" framerate="30" Iinterval="1" minBitRate="450000" maxBitRate="594000" />
+  <VideoProfile name="h264" profile="1" level="12" width="640" height="480" framerate="15" Iinterval="1" minBitRate="495000" maxBitRate="640000" />
+  <VideoProfile name="h264" profile="1" level="13" width="640" height="480" framerate="30" Iinterval="1" minBitRate="742000" maxBitRate="960000" />
+  <VideoProfile name="h264" profile="1" level="15" width="1280" height="720" framerate="30" Iinterval="1" minBitRate="1314000" maxBitRate="1700000" />
+  <VideoProfile name="h264" profile="4" level="5" width="320" height="240" framerate="10" Iinterval="1" minBitRate="145000" maxBitRate="270000" />
+  <VideoProfile name="h264" profile="4" level="6" width="320" height="240" framerate="15" Iinterval="1" minBitRate="218000" maxBitRate="384000" />
+  <VideoProfile name="h264" profile="4" level="7" width="320" height="240" framerate="30" Iinterval="1" minBitRate="327000" maxBitRate="462000" />
+  <VideoProfile name="h264" profile="4" level="8" width="352" height="288" framerate="30" Iinterval="1" minBitRate="360000" maxBitRate="526000" />
+  <VideoProfile name="h264" profile="4" level="10" width="480" height="320" framerate="30" Iinterval="1" minBitRate="450000" maxBitRate="594000" />
+  <VideoProfile name="h264" profile="4" level="12" width="640" height="480" framerate="15" Iinterval="1" minBitRate="495000" maxBitRate="640000" />
+  <VideoProfile name="h264" profile="4" level="13" width="640" height="480" framerate="30" Iinterval="1" minBitRate="742000" maxBitRate="960000" />
+  <VideoProfile name="h264" profile="4" level="15" width="1280" height="720" framerate="30" Iinterval="1" minBitRate="1314000" maxBitRate="1700000" />
+  <VideoProfile name="h264" profile="16" level="5" width="320" height="240" framerate="10" Iinterval="1" minBitRate="145000" maxBitRate="270000" />
+  <VideoProfile name="h264" profile="16" level="6" width="320" height="240" framerate="15" Iinterval="1" minBitRate="218000" maxBitRate="384000" />
+  <VideoProfile name="h264" profile="16" level="7" width="320" height="240" framerate="30" Iinterval="1" minBitRate="327000" maxBitRate="462000" />
+  <VideoProfile name="h264" profile="16" level="8" width="352" height="288" framerate="30" Iinterval="1" minBitRate="360000" maxBitRate="526000" />
+  <VideoProfile name="h264" profile="16" level="10" width="480" height="320" framerate="30" Iinterval="1" minBitRate="450000" maxBitRate="594000" />
+  <VideoProfile name="h264" profile="16" level="12" width="640" height="480" framerate="15" Iinterval="1" minBitRate="495000" maxBitRate="640000" />
+  <VideoProfile name="h264" profile="16" level="13" width="640" height="480" framerate="30" Iinterval="1" minBitRate="742000" maxBitRate="960000" />
+  <VideoProfile name="h264" profile="16" level="15" width="1280" height="720" framerate="30" Iinterval="1" minBitRate="1314000" maxBitRate="1700000" />
+
+  <VideoQuality name="fine" format="h264" profile="1" level="15"/>
+  <VideoQuality name="high" format="h264" profile="1" level="13"/>
+  <VideoQuality name="medium" format="h264" profile="1" level="6"/>
+  <VideoQuality name="low" format="h264" profile="1" level="5"/>
+
+  <DefaultVideoQuality name="high" />
+</MediaSettings>

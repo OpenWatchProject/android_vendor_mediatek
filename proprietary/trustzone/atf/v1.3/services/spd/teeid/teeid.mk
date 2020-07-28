@@ -1,0 +1,6 @@
+
+MICROTRUST_TEE_VERSION ?= 300
+
+$(info "teeid.mk:MICROTRUST_TEE_VERSION=$(MICROTRUST_TEE_VERSION)")
+
+include services/spd/teeid/$(MICROTRUST_TEE_VERSION)/${SPD}.mk

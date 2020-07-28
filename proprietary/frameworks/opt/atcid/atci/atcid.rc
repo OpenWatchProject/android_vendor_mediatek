@@ -1,0 +1,18 @@
+service atcid-daemon-u /vendor/bin/atcid
+    interface vendor.mediatek.hardware.atci@1.0::IAtcid default
+    class hal
+    class main
+    socket adb_atci_socket stream 660 radio system
+    user system
+    group radio system media bluetooth wifi
+    disabled
+    oneshot
+
+on property:persist.vendor.service.atci.autostart=1
+start atcid-daemon-u
+
+on property:persist.vendor.service.atci.atm_mode=1
+start atcid-daemon-u
+
+on property:sys.boot_completed=1
+setprop vendor.mtk.atci.boot_completed 1

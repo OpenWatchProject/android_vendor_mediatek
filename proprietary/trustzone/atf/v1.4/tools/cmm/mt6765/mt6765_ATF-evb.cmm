@@ -1,0 +1,218 @@
+;*****************************************************************************
+;  Copyright Statement:
+;  --------------------
+;  This software is protected by Copyright and the information contained
+;  herein is confidential. The software may not be copied and the information
+;  contained herein may not be used or disclosed except with the written
+;  permission of MediaTek Inc. (C) 2011
+;
+;*****************************************************************************
+;;================================================
+;; PURPOSE:     FPGA Bring Up
+;; CREATE_DATE: 2017/09/12
+;; NOTE:
+;;================================================
+; Specify Core Number
+;=================================================
+menu.reprogram ../ATF_Menu.men
+ENTRY &IN_MENU
+;;-> <<< Menu Switch >>>
+IF "&IN_MENU"=="ATF_LOAD_BIN"
+(
+    GOSUB
+    (
+		print "loading ATF image"
+		D.LOAD.BINARY ../../../../../../../../out/target/product/evb6765_64_emmc/trustzone/bin/sram_atf.img 0x100800 /noclear
+		D.LOAD.BINARY ../../../../../../../../out/target/product/evb6765_64_emmc/trustzone/bin/dram_atf.img 0x54600000 /noclear
+    )
+    STOP
+)
+&NR_CPUS=1
+; cluster 0 corebase: 0x8007000, 0x8007200, 0x8007400, 0x8007600
+; cluster 1 corebase: 0x8009000, 0x8009200, 0x8009400, 0x8009600
+
+;=================================================
+; Initialize CPU
+;=================================================
+&WDT_TEST=0
+if &WDT_TEST==0
+(
+	RESET
+	SYSTEM.OPTION ENRESET ON
+)
+
+SYSTEM.RESET
+SYSTEM.OPTION ENRESET ON
+SYSTEM.OPTION RESBREAK OFF
+SYSTEM.OPTION WAITRESET OFF
+
+SYSTEM.JTAGCLOCK 10.MHz;
+
+;SYSTEM.CPU CortexA7MPCore
+SYStem.CPU CORTEXA53;
+
+;R-T Memory Access
+SYSTEM.MULTICORE MEMORYACCESSPORT 0
+SYSTEM.MULTICORE DEBUGACCESSPORT 1
+
+;SYSTEM.MULTICORE COREBASE APB:0x80070000
+;Setting Core debug register access
+if &NR_CPUS==1
+(
+    SYStem.CONFIG CORENUMBER 1;
+    SYStem.CONFIG COREBASE 0x8D410000;
+    SYStem.CONFIG CTIBASE 0x8D420000;
+)
+else
+(
+;    SYSTEM.CONFIG CORENUMBER 2;
+;    SYSTEM.CONFIG COREBASE 0x80810000 0x80910000;
+;    SYStem.CONFIG CTIBASE 0x80820000 0x80920000;
+
+    SYSTEM.CONFIG CORENUMBER 8;
+	SYStem.CONFIG COREBASE 0x8D410000 0x8D510000 0x8D610000 0x8D710000 0x8D810000 0x8D910000 0x8DA10000 0x8DB10000;
+	SYStem.CONFIG CTIBASE  0x8D420000 0x8D520000 0x8D620000 0x8D720000 0x8D820000 0x8D920000 0x8DA20000 0x8DB20000;
+	CORE.ASSIGN 1 2 3 4 5 6 7 8
+)
+
+;=================================================
+; Attach and Stop CPU
+;=================================================
+SYStem.Up
+wait 200.us
+
+SETUP.IMASKHLL ON
+SETUP.IMASKASM ON
+
+;=================================================
+; Initialize EMI
+;=================================================
+&init_emi=0 ; 0: not init
+            ; 1: init
+IF &init_emi==1
+(
+; Init DDR
+;do MTxxxx_FPGA_DDR.cmm
+  do Cervino_FPGA_DDR
+  wait 3000.ms
+)
+
+;enable L2C 256KB
+D.S SD:0x102007F0 %LE %LONG 0x00010100 ;Enable L2C share SRAM (256K)
+D.S SD:0x102007F0 %LE %LONG 0x00010101 ;Enable L2C share SRAM (256K)
+
+; set_hw_breakpoint_by_def
+; setting attribute of breakpoints
+Break.Select Program OnChip
+Break.Select Hll OnChip
+Break.Select Spot OnChip
+Break.Select Read OnChip
+Break.Select Write OnChip
+
+D.S C15:0x1 0				; Turn off MMU
+
+; disable wdt (debug purpose)
+D.S SD:0x10007000 %LE %LONG 0x22000000
+
+; board init
+
+Register.Set T 0 ; must
+
+;set break point for tiny bootloader deadloop position
+;b.s 0x205922
+
+;PRINT "Wait preloader Enter while(1);"
+;GO
+;WAIT 3.s
+
+;d.load.elf ../../bin/preloader.elf
+; ABTC change the output folder
+;
+PRINT "Load preloader BIN(Binary Only)..."
+;D.LOAD.ELF ../../../../../bootable/bootloader/preloader/bin/preloader.elf /noclear
+;D.LOAD.ELF ../../../../../../../../out/target/product/evb6765_64_emmc/obj/PRELOADER_OBJ/bin/preloader_evb6765_64_emmc.elf /noclear
+;D.LOAD.ELF ../../../../../../../../out/target/product/k65v1_64_bsp/obj/PRELOADER_OBJ/bin/preloader_k65v1_64_bsp.elf
+;D.LOAD.BINARY ./bin/preloader_evb6765_64_emmc_NO_GFH.bin 0x00201000 /noclear
+
+; normal virsion lk
+;D.LOAD.BINARY ../../../../../out/target/product/mtxxxx_fpga/obj/BOOTLOADER_OBJ/build-mtxxxx_fpga/lk-no-mtk-header.bin 0x41E00000 /noclear
+;D.LOAD.BINARY ./bin/evb6765_64_emmc_lk-no-mtk-header.bin 0x41E00000 /noclear
+;d.load.elf ../../../../../out/target/product/evb6765_64_emmc/obj/BOOTLOADER_OBJ/build-fpga_evb6765_64_emmc/lk /noclear
+
+; simple uart log in lk
+;D.LOAD.BINARY ../../tools/cmm/bin/simple_uart_log_lk-no-mtk-header.bin 0x56000000 /noclear
+;D.LOAD.BINARY ../../tools/cmm/bin/lk-no-mtk-header.bin 0x56000000 /noclear
+;D.LOAD.BINARY ../../../../../../../../out/target/product/evb6765_64_emmc/obj/BOOTLOADER_OBJ/build-evb6765_64_emmc_64/lk-no-mtk-header.bin 0x56000000 /noclear
+
+PRINT "Load ATF ELF..."
+;d.load.elf ../../../out/build/debug/bl31/bl31.elf
+;d.load.elf ../../../../../../../../out/target/product/evb6765_64_emmc/trustzone/ATF_OBJ/debug/bl31/bl31.elf /noclear
+;load sram & dram image after preloader executed
+;D.LOAD.BINARY ../../../../../../../../out/target/product/evb6765_64_emmc/trustzone/bin/sram_atf.img 0x100800 /noclear
+;D.LOAD.BINARY ../../../../../../../../out/target/product/evb6765_64_emmc/trustzone/bin/dram_atf.img 0x54600000 /noclear
+
+; /noclear means no clear symbol table
+;d.load.elf ../../../../out/target/product/mtxxxx_fpga/obj/PRELOADER_OBJ/bin/preloader.elf /nocode
+;D.LOAD.ELF ../../../../../../../../out/target/product/evb6765_64_emmc/obj/PRELOADER_OBJ/bin/preloader_evb6765_64_emmc.elf /nocode
+;r.s pc 0x00201000
+
+Register.Set T 0 ; must
+
+PRINT "Wait preloader Enter while(1);"
+;GO
+;WAIT 3.s
+
+
+&LOAD_SYMBOL_METHOD=1
+PRINT "Load ATF ELF Symbol..."
+if &LOAD_SYMBOL_METHOD==1
+(
+;# /StripPART 3 remove /, proj, empolyee ID
+;# add prefix /PATH N:\git\chun3_alps-dev-n0.tk-vinson.sb
+;# d.load.elf ../../../../../../../../out/target/product/evb99v1_64_ufs/trustzone/ATF_OBJ/debug/bl31/bl31.elf /StripPART 3 /PATH Z:\ /nocode
+
+;d.load.elf ../../../../../../../../out/target/product/evb6765_64_emmc/trustzone/ATF_OBJ/debug/bl31/bl31.elf /StripPART 3 /PATH L:\chun0_alps-mp-o1.mp6\ /nocode
+d.load.elf ../../../../../../../../../out/target/product/k65v1_64_bsp/trustzone/ATF_OBJ/debug/bl31/bl31.elf /StripPART 3 /PATH L:\chun1_alps-mp-p0.mp1\ /nocode
+)
+else
+(
+#hard code path
+Y.SPATH.RESET ; reset all source path
+Y.SPATH.SRD ../../bl31
+Y.SPATH.SRD ../../plat/mediatek/mt6765
+Y.SPATH.SRD ../../services/spd/tspd
+Y.SPATH.SRD ../../services/std_svc/psci
+Y.SPATH.SRD ../../lib/aarch64
+)
+
+Break.Select Program OnChip
+Break.Select Hll OnChip
+Break.Select Spot OnChip
+Break.Select Read OnChip
+Break.Select Write OnChip
+
+;set break point
+;b.s enable_mmu_el3
+;b.s bl31_main
+;b.s el3_exit
+;b.s 0x00101000
+;b.s 0x54601000
+;b.s 0x56000000
+;b.s errata_a53_826319_wa
+b.s mediatek_sip_handler
+;GO
+;WAIT 10.s
+
+
+PRINT "Load ATF ELF..."
+;load sram & dram image after preloader executed
+;D.LOAD.BINARY ../../../../../../../../out/target/product/evb6765_64_emmc/trustzone/bin/sram_atf.img 0x100800 /noclear
+;D.LOAD.BINARY ../../../../../../../../out/target/product/evb6765_64_emmc/trustzone/bin/dram_atf.img 0x54600000 /noclear
+;load symbol
+;d.load.elf ../../../../../../../../out/target/product/evb6765_64_emmc/trustzone/ATF_OBJ/debug/bl31/bl31.elf
+;d.load.elf ../../../../../../../../out/target/product/evb6765_64_emmc/trustzone/ATF_OBJ/debug/bl31/bl31.elf /nocode
+;d.load.elf ../../../../../../../../../out/target/product/k65v1_64_bsp/trustzone/ATF_OBJ/debug/bl31/bl31.elf /nocode
+
+;winclear
+d.l
+enddo

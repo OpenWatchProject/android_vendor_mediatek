@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--* Copyright Statement:
+ *
+ * This software/firmware and related documentation ("MediaTek Software") are
+ * protected under relevant copyright laws. The information contained herein
+ * is confidential and proprietary to MediaTek Inc. and/or its licensors.
+ * Without the prior written permission of MediaTek inc. and/or its licensors,
+ * any reproduction, modification, use or disclosure of MediaTek Software,
+ * and information contained herein, in whole or in part, shall be strictly prohibited.
+ *
+ * MediaTek Inc. (C) 2012. All rights reserved.
+ *
+ * BY OPENING THIS FILE, RECEIVER HEREBY UNEQUIVOCALLY ACKNOWLEDGES AND AGREES
+ * THAT THE SOFTWARE/FIRMWARE AND ITS DOCUMENTATIONS ("MEDIATEK SOFTWARE")
+ * RECEIVED FROM MEDIATEK AND/OR ITS REPRESENTATIVES ARE PROVIDED TO RECEIVER ON
+ * AN "AS-IS" BASIS ONLY. MEDIATEK EXPRESSLY DISCLAIMS ANY AND ALL WARRANTIES,
+ * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE OR NONINFRINGEMENT.
+ * NEITHER DOES MEDIATEK PROVIDE ANY WARRANTY WHATSOEVER WITH RESPECT TO THE
+ * SOFTWARE OF ANY THIRD PARTY WHICH MAY BE USED BY, INCORPORATED IN, OR
+ * SUPPLIED WITH THE MEDIATEK SOFTWARE, AND RECEIVER AGREES TO LOOK ONLY TO SUCH
+ * THIRD PARTY FOR ANY WARRANTY CLAIM RELATING THERETO. RECEIVER EXPRESSLY ACKNOWLEDGES
+ * THAT IT IS RECEIVER'S SOLE RESPONSIBILITY TO OBTAIN FROM ANY THIRD PARTY ALL PROPER LICENSES
+ * CONTAINED IN MEDIATEK SOFTWARE. MEDIATEK SHALL ALSO NOT BE RESPONSIBLE FOR ANY MEDIATEK
+ * SOFTWARE RELEASES MADE TO RECEIVER'S SPECIFICATION OR TO CONFORM TO A PARTICULAR
+ * STANDARD OR OPEN FORUM. RECEIVER'S SOLE AND EXCLUSIVE REMEDY AND MEDIATEK'S ENTIRE AND
+ * CUMULATIVE LIABILITY WITH RESPECT TO THE MEDIATEK SOFTWARE RELEASED HEREUNDER WILL BE,
+ * AT MEDIATEK'S OPTION, TO REVISE OR REPLACE THE MEDIATEK SOFTWARE AT ISSUE,
+ * OR REFUND ANY SOFTWARE LICENSE FEES OR SERVICE CHARGE PAID BY RECEIVER TO
+ * MEDIATEK FOR SUCH MEDIATEK SOFTWARE AT ISSUE.
+ *
+ * The following software/firmware and/or related documentation ("MediaTek Software")
+ * have been modified by MediaTek Inc. All revisions are subject to any receiver's
+ * applicable license agreements with MediaTek Inc.
+ */  -->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="app_label">Operator Plugin APK</string>
+
+    <string name="enabled">Enabled</string>
+    <string name="disabled">Disabled</string>
+
+    <!-- OP18 customization: Change data connection begin -->
+    <string name="change_data_conn_title">Select Data in SIM</string>
+    <string name="change_data_conn_alert">"You will lose Voice Calling functionality. We do not recommend turning off data. Do you still want to continue?"</string>
+    <!-- OP18 customization: Call forwarding settings screen, setting summary text when Forward when unreachable is disabled -->
+    <string name="sum_cfnrc_off">Off</string>
+    <!-- SIM Status-->
+    <string name="lte_string">LTE data and Voice Calling (IMS\u2044VoLTE) service enabled</string>
+    <string name="lte_wifi_string">LTE data and Voice Calling (IMS\u2044VoWiFi) service enabled</string>
+    <!-- MMS String Start-->
+    <string name="sms_validity_period">SMS Validity Period</string>
+    <string name="mms_validity_period">MMS Validity Period</string>
+    <string name="sms_validity_period_nosetting">No set</string>
+    <string name="sms_validity_period_1hour">1 Hour</string>
+    <string name="sms_validity_period_6hours">6 Hours</string>
+    <string name="sms_validity_period_12hours">12 Hours</string>
+    <string name="sms_validity_period_1day">1 Day</string>
+    <string name="sms_validity_period_max">Maximum</string>
+    <string name="attach_image">Pictures</string>
+    <string name="attach_take_photo">Capture picture</string>
+    <string name="attach_video">Videos</string>
+    <string name="attach_record_video">Capture video</string>
+    <string name="attach_sound">Audio</string>
+    <string name="attach_record_sound">Record audio</string>
+    <string name="attach_slideshow">Slideshow</string>
+    <string name="attach_vcalendar">Calendar</string>
+    <string name="attach_vcard">Contact</string>
+    <!-- Title of storage status in settings -->
+    <string name="sms_message_template">Message Templates</string>
+    <!-- New Menu Item in Compose Screen -->
+    <string name="menuItem_composeScreen_setting">Settings</string>
+    <string name="menuItem_composeScreen_importTemplate">Import Template</string>
+    <!-- Others -->
+    <string name="sent_sms">Sent: </string>
+    <string name="recieved_sms">Received: </string>
+	<!-- MMS String End-->
+
+   <!-- OP18 customization: Change data connection end -->
+    <!-- OP18 customization: Handover update from Wifi to LTE-->
+    <string name="switch_to_Volte_from_Wifi">Switching to VoLTE for better voice quality</string>
+    <string name="ongoing_call_good_quality">Ongoing Call(Good voice quality)</string>
+    <string name="ongoing_call_fair_quality">Ongoing Call(Fair voice quality)</string>
+    <string name="ongoing_call_poor_quality">Ongoing Call(Poor voice quality)</string>
+    <string name="notification_on_hold">On hold Wi-Fi call</string>
+    <!-- OP18 customization: For Low battery Warning Dialog-->
+    <string name="low_battery_warning">Low Battery Warning</string>
+    <string name="low_battery_detail">Your battery level is below 15%. Do you want to continue with the video call or convert to voice call ?</string>
+    <string name="convert">Convert</string>
+    <string name="yes">Yes</string>
+ <!-- M: WifiCalling QS Tile -->
+  <string name="quick_settings_wificalling_label">Wi-Fi calling</string>
+    <!-- M: WifiCalling QS Tile end -->
+ <!-- M: Quick Sim selection -->
+    <string name = "Default_Account_Selection_Content">Default Account Selection</string>
+    <!-- M: Quick Sim selection end-->
+    <!-- OP18 customization: current network start-->
+        <string name="current_network">Current network </string>
+    <!-- OP18 customization: current network end   -->
+
+    <!-- OP18: entry for mobile network settings network mode-->
+    <string name="gsm_wcdma_lte_mode">LTE/WCDMA/GSM (Auto)</string>
+    <string name="gsm_wcdma_mode">WCDMA/GSM</string>
+    <string name="wcdma_only_mode">WCDMA only</string>
+    <string name="gsm_only_mode">GSM only</string>
+    <string name="lte_only_mode">LTE only</string>
+    <string-array name="network_mode_options" translatable="false">
+        <item>@string/gsm_only_mode</item>
+        <item>@string/wcdma_only_mode</item>
+        <item>@string/gsm_wcdma_mode</item>
+        <item>@string/lte_only_mode</item>
+        <item>@string/gsm_wcdma_lte_mode</item>
+    </string-array>
+    <string-array name="network_mode_options_values" translatable="false">
+        <item>"1"</item>
+        <item>"2"</item>
+        <item>"0"</item>
+        <item>"11"</item>
+        <item>"9"</item>
+    </string-array>
+    <!-- Add Call Settings in Main Settings: start -->
+    <string name="call_settings_title">Call Settings</string>
+    <!-- Add Call Settings in Main Settings:  end -->
+    <!-- OP18: Primary SIM-->
+    <string name="primary_sim_settings_title">Default 4G/3G subscription</string>
+    <string name="select_primary_sim">Select Primary SIM</string>
+    <string name="no_sim_card">Selection required</string>
+    <!-- Reliance customization: Smart Call Forwarding begin -->
+    <string name="smart_call_activity_key">smart_call_activities</string>
+    <string name="smart_call_fwd_alert_dlg">Enable Smart dual SIM?\nWith some service providers , this function may not work properly or you may be charged.</string>
+    <string name="smart_call_fwd_alert_dlg_new">
+        When Smart forward is on, Call waiting on both SIM cards will be turned on.
+        if one SIM card is not turned on and call waiting is not available, all calls will be forward to the other SIM card.
+        \nContact your network if you have any questions about network-dependent services, including call waiting and call forwarding.
+        Additional charges may apply. Turn Smart forward on?
+    </string>
+    <string name="smart_call_fwd_enable_alert_dlg_title">Enable Smart dual SIM</string>
+    <string name="smart_call_fwd_settings_title">Smart Call Forwarding</string>
+    <string name="smart_call_fwd_settings_summary">Receive calls from both SIM cards even during calls.</string>
+    <string name="smart_call_fwd_pref_key">Receive calls from both SIM cards even during calls.</string>
+    <string-array name="smart_call_fwd_choices">
+        <item>DUAL SIM</item>
+        <item>SIM1 TO SIM2</item>
+        <item>SIM2 TO SIM1</item>
+    </string-array>
+    <string-array name="smart_call_fwd_mode_values">
+        <item>3</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+    <string name="positive_button_title">OK</string>
+    <string name="negative_button_title">CANCEL</string>
+    <!-- Reliance customization: Smart Call Forwarding end --> 
+
+    <!-- RJIL UI Guidelines 1.9: WFC enable confirmation dialog start-->
+    <string name = "confirmation_dialog_title">Enable Wi-Fi Calling?</string>
+    <string name = "confirmation_dialog_message">Make and receive call over Wi-Fi with your Jio account. Review your carrier\'s emergency calling information to understand the limits of emergency calling over Wi-Fi. When you join a network, information about the country where the network connection is made may be sent to your carrier for details like billing.</string>
+    <string name = "cancel">Cancel</string>
+    <string name = "enable">Enable</string>
+    <string name ="Switch_not_in_use_string">The switch is temporarily unavailable. Please try again later.</string>
+    <!-- M: WFC enable confirmation dialog end-->
+</resources>

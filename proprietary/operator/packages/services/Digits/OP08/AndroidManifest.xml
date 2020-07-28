@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.mediatek.digits"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:sharedUserId="android.uid.phone" >
+
+    <uses-sdk android:minSdkVersion="9" />
+
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+
+    <permission android:label="Digits permission label"
+                android:protectionLevel="signatureOrSystem"
+                android:name="android.permission.DIGITS">
+    </permission>
+
+    <protected-broadcast android:name="com.mediatek.digits.intent.PUSH_MESSAGE" />
+    <protected-broadcast android:name="com.mediatek.digits.UPDATE_DEVICE_CONFIG" />
+    <protected-broadcast android:name="com.mediatek.digits.REFRESH_PUSH_TOKEN" />
+    <protected-broadcast android:name="com.mediatek.digits.REFRESH_REGISTERED_DEVICE" />
+    <protected-broadcast android:name="com.mediatek.digits.refreshSIT" />
+
+    <application
+        android:name=".DigitsApp"
+        android:allowBackup="true"
+        android:persistent="true"
+        android:directBootAware="true">
+
+        <service
+            android:name=".DigitsService"
+            android:exported="true"
+            android:enabled="true" >
+            <intent-filter>
+                <action android:name="com.mediatek.digits.BIND_SERVICE" />
+            </intent-filter>
+        </service>
+
+        <!-- [gcm receiver] -->
+        <receiver
+            android:name="com.google.android.gms.gcm.GcmReceiver"
+            android:exported="true"
+            android:permission="com.google.android.c2dm.permission.SEND" >
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+                <category android:name="com.mediatek.digits" />
+            </intent-filter>
+        </receiver>
+
+        <!-- [GCM push notification listener] -->
+        <service
+            android:name="com.mediatek.digits.gcm.DigitsPushListener"
+            android:exported="false" >
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+            </intent-filter>
+        </service>
+        <!-- [GCM instanceId listener] -->
+        <service
+            android:name="com.mediatek.digits.gcm.DigitsGcmHandler"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.android.gms.iid.InstanceID"/>
+            </intent-filter>
+        </service>
+
+
+    </application>
+
+</manifest>

@@ -1,0 +1,50 @@
+package vendor.mediatek.hardware.dmc@1.0;
+
+typedef int32_t SID;
+typedef int8_t GID;
+
+enum dmcResult_e : uint32_t {
+    DMC_SUCCESS,
+    DMC_FAILED,
+    DMC_NOT_INITIALIZED,
+    DMC_INVALID_ARGUMENTS,
+    DMC_TIMEOUT
+};
+
+enum dmcCommand_e : uint32_t {
+    DMC_CMD_START_REPORT_EVENT,
+    DMC_CMD_STOP_REPORT_EVENT,
+    DMC_CMD_SET_MAX_PAYLOAD_SIZE,
+    DMC_CMD_SET_PACKET_TYPE
+};
+
+/**
+ * Statics for event subscription.
+ * totalEvents: Total number of events received.
+ * droppedEvents: Number of events that were discarded.
+ * eventBufferCapacity: The maximum buffer size allocated for events (in bytes)
+ * eventBufferInUse: The current buffer capacity in use (in bytes)
+ */
+struct dmcSessionStats_t {
+    int32_t totalEvents;
+    int32_t droppedEvents;
+    int32_t eventBufferCapacity;
+    int32_t eventBufferInUse;
+};
+
+struct dmcSessionConfig_t {
+    string identity;
+    string version;
+    bool decryptPacket;
+};
+
+struct dmcObjectId_t {
+    GID group;
+    uint32_t length;
+    vec<uint32_t> ids;
+};
+
+struct dmcValue_t {
+    uint32_t length;
+    vec<uint8_t> data;
+};

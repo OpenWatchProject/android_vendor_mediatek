@@ -1,0 +1,50 @@
+package vendor.mediatek.hardware.dfps@1.0;
+
+enum Error : int32_t {
+    NONE            = 0, /* no error */
+    BAD_PARAMETER   = 1, /* invalid width, height, etc. */
+    NO_RESOURCES    = 2, /* temporary failure due to resource contention */
+};
+
+struct FpsPolicyInfo {
+    uint64_t sequence;
+    int32_t fps;
+    int32_t pid;
+    int32_t api;
+    int32_t mode;
+    int32_t targetPid;
+    uint64_t glContextId;
+    uint32_t flag;
+};
+
+struct FpsRange {
+    int32_t index;
+    int32_t min;
+    int32_t max;
+};
+
+struct PanelInfo {
+    int32_t support120;
+    int32_t support90;
+    int32_t num;
+};
+
+struct FpsRequest {
+    int32_t fps;
+    int32_t mode;
+    int32_t validInfo;
+    int32_t transientState;
+    int32_t num_policy;
+    FpsPolicyInfo info;
+    int32_t forbidVsync;
+};
+
+struct HwcInfo {
+    int32_t singleLayer;
+    int32_t numDisplay;
+};
+
+struct SimpleInputWindowInfo {
+    int32_t ownerPid;
+    bool hasFocus;
+};

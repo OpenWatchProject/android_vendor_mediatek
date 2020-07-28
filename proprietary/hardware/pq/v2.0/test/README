@@ -1,0 +1,15 @@
+WHAT IT DOES?
+=============
+The bin of PQ test, supports user to do some local test.
+
+HOW IT WAS BUILT?
+==================
+It needs the following library from AOSP:
+1.  libutils.so
+2.  libcutils.so
+3.  liblog
+4.  libhidlbase
+
+HOW TO USE IT?
+==============
+Use adb cmd => adb shell /vendor/bin/pq_test

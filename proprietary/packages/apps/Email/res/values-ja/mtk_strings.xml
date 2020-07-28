@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    Copyright Statement:
+
+    This software/firmware and related documentation ("MediaTek Software") are
+    protected under relevant copyright laws. The information contained herein
+    is confidential and proprietary to MediaTek Inc. and/or its licensors.
+    Without the prior written permission of MediaTek inc. and/or its licensors,
+    any reproduction, modification, use or disclosure of MediaTek Software,
+    and information contained herein, in whole or in part, shall be strictly prohibited.
+
+    MediaTek Inc. (C) 2012. All rights reserved.
+
+    BY OPENING THIS FILE, RECEIVER HEREBY UNEQUIVOCALLY ACKNOWLEDGES AND AGREES
+    THAT THE SOFTWARE/FIRMWARE AND ITS DOCUMENTATIONS ("MEDIATEK SOFTWARE")
+    RECEIVED FROM MEDIATEK AND/OR ITS REPRESENTATIVES ARE PROVIDED TO RECEIVER ON
+    AN "AS-IS" BASIS ONLY. MEDIATEK EXPRESSLY DISCLAIMS ANY AND ALL WARRANTIES,
+    EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF
+    MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE OR NONINFRINGEMENT.
+    NEITHER DOES MEDIATEK PROVIDE ANY WARRANTY WHATSOEVER WITH RESPECT TO THE
+    SOFTWARE OF ANY THIRD PARTY WHICH MAY BE USED BY, INCORPORATED IN, OR
+    SUPPLIED WITH THE MEDIATEK SOFTWARE, AND RECEIVER AGREES TO LOOK ONLY TO SUCH
+    THIRD PARTY FOR ANY WARRANTY CLAIM RELATING THERETO. RECEIVER EXPRESSLY ACKNOWLEDGES
+    THAT IT IS RECEIVER'S SOLE RESPONSIBILITY TO OBTAIN FROM ANY THIRD PARTY ALL PROPER LICENSES
+    CONTAINED IN MEDIATEK SOFTWARE. MEDIATEK SHALL ALSO NOT BE RESPONSIBLE FOR ANY MEDIATEK
+    SOFTWARE RELEASES MADE TO RECEIVER'S SPECIFICATION OR TO CONFORM TO A PARTICULAR
+    STANDARD OR OPEN FORUM. RECEIVER'S SOLE AND EXCLUSIVE REMEDY AND MEDIATEK'S ENTIRE AND
+    CUMULATIVE LIABILITY WITH RESPECT TO THE MEDIATEK SOFTWARE RELEASED HEREUNDER WILL BE,
+    AT MEDIATEK'S OPTION, TO REVISE OR REPLACE THE MEDIATEK SOFTWARE AT ISSUE,
+    OR REFUND ANY SOFTWARE LICENSE FEES OR SERVICE CHARGE PAID BY RECEIVER TO
+    MEDIATEK FOR SUCH MEDIATEK SOFTWARE AT ISSUE.
+
+    The following software/firmware and/or related documentation ("MediaTek Software")
+    have been modified by MediaTek Inc. All revisions are subject to any receiver's
+    applicable license agreements with MediaTek Inc.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="not_add_more_text">"これ以上テキストを追加できません"</string>
+    <string name="attach_image">画像</string>
+    <string name="attach_video">"動画"</string>
+    <string name="attach_sound">"音楽"</string>
+    <string name="attach_contact">"連絡先"</string> 
+    <string name="attach_file">ファイル</string> 
+    <string name="attach_calender">"カレンダー"</string>    
+    <string name="attach_error_occurred">このタイプの添付ファイルをサポートするアプリはありません。</string>  
+    <string name="low_storage_service_stop">空き容量が足りないため、メールサービスを停止しました。</string>
+    <string name="low_storage_hint_delete_mail">未使用のメールやアプリを削除して、空き容量を増やせます。</string>
+    <string name="low_storage_service_start">空き容量が十分になったため、メールサービスを再開しました。</string>
+    <string name="low_storage_attachment_cannot_download">空き容量が足りないため、添付ファイルをダウンロードできません。</string>
+    <string name="low_storage_attachment_cannot_view">空き容量が足りないため、添付ファイルを閲覧できません。</string>
+    <string name="download_remaining">残りをダウンロードしています</string>
+    <string name="downloading_remaining">読み込み中…</string>
+    <string name="unable_to_connect">接続できません</string>
+    <string name="need_connection_prompt">"このアプリを使用する場合はネットワークに接続する必要があります。設定内でモバイルネットワークまたはWiFiをONにしてください。"</string>
+    <string name="need_wifi_connection_prompt">"このアプリを使用する場合はネットワークに接続する必要があります。設定内でWiFiをONにしてください。"</string>
+    <string name="connection_settings">A-GPS設定</string>
+    <string name="too_many_attachments">ファイルが多すぎて添付できません。最初の <xliff:g id="currentCount">%1$d</xliff:g> 添付ファイルのみが添付されます。</string>
+    <string name="not_add_more_attachments">これ以上のファイルを添付できません。添付可能なファイル数は最大 <xliff:g id="maxLimit">%1$d</xliff:g> です。</string>
+    <string name="attachment_overflow">添付ファイル過多</string>
+    <string name="cannot_add_this_attachment">このファイルは添付できません。</string>
+    <string name="loading_attachment">添付ファイルを読み込み中…</string>
+    <string name="send_attachment_fail">添付ファイルを送信できません。</string>
+    <string name="open_message_parsing">メッセージを解析中…</string>
+    <string name="open_message_update_db">データベースを更新中…</string>
+    <string name="open_message_update_ui">メールを読み込み中…</string>
+    <string name="please_wait">実行中です。" "お待ちください...</string>
+    <string name="delete_message_dialog_title">メッセージを削除する</string>
+    <string name="delete_message_confirm">"このメッセージを削除しますか？"</string>
+    <string name="attachment_info_deleted">"この添付ファイルは削除された恐れがあり、保存や開くことができません。"</string>
+    <string name="send_failed_ticker"><xliff:g id="account_name">%s</xliff:g> メールを送付できません。</string>
+    <string name="send_failed_title">メールを送信できません。</string>
+    <string name="always_bcc_myself">常に自分へBCCを送る</string>
+    <string name="always_bcc_myself_summary">メール作成、返信、転送を行うと常に自分自身へBCCを送ります。</string>
+    <string name="remote_search_failed">サーバーを検索できません。</string>
+    <string name="searching_on_server">サーバーを検索する</string>
+    <string name="searching_on_server_title">\"<xliff:g id="account_name">%s</xliff:g>\" をサーバーにて検索する</string>
+    <string name="searching_all_fields_on_sever">全ての欄をサーバーにて検索する</string>
+    <string name="search_field_subject">"件名"</string>
+    <string name="search_field_receiver">受信者</string>
+    <string name="search_field_sender">送信者</string>
+    <string name="search_field_body">本体</string>
+    <string name="search_field_all">"すべて"</string>
+    <string name="select_all">"すべて選択"</string>
+    <string name="deselect_all">"選択をすべて解除"</string>
+    <string name="vip_settings">VIP設定</string>
+    <string name="vip_members">VIPメンバー</string>
+    <string name="vip_notifications">VIP通知</string>
+    <string name="vip_settings_notify_summary">VIPメールが到着した場合は、システムバーにて通知する</string>
+    <string name="vip_members_count">VIPメンバー (<xliff:g example="2">%1$d</xliff:g>)</string>
+    <string name="vip_remove_title">VIPから削除します</string>
+    <string name="vip_choose_contact">VIPに追加する</string>
+    <string name="vip_remove_prompt"><xliff:g example="2">%1$s</xliff:g> はVIPメンバーから削除されます。</string>
+    <string name="not_add_duplicate_vip">連絡先が重複する場合は、VIP一覧に追加されません。</string>
+    <string name="can_not_add_vip_over_99">VIPメンバーの上限数は99です。\</string>
+    <string name="vip_count">0</string>
+    <string name="vip_settings_ringtone">"着信音を選択"</string>
+    <string name="vip_settings_vibrate_label">"バイブレーション"</string>
+    <string name="vip_settings_vibrate_summary">VIPメールが到着した場合もバイブレーションさせる</string>
+    <string name="vip_settings_member_count"><xliff:g id="count">%2d</xliff:g></string>
+    <string name="account_setup_options_mail_check_frequency_smartpush">スマートプッシュ</string>
+    <string name="smart_push_alert_dialog_title">省電力オプション</string>
+    <string name="smart_push_alert_dialog_message">電力消費を節約するため、メールチェックの頻度を減らします。" "このモードを使用すると、メールをより素早く受け取れます。\n\n設定はいつでも変更できます。</string>
+    <string name="global_search_label">"メール"</string>
+    <string name="global_search_hint">"メールを検索"</string>
+    <string name="global_search_description">送信者、題名、本文</string>
+    <string name="account_settings_oof_label">外出中</string>
+    <string name="account_settings_oof_unchecked_summary">現在勤務中です</string>
+    <string name="account_settings_oof_checked_summary">現在外出中です</string>
+    <string name="account_settings_oof_from_label">"開始"</string>
+    <string name="account_settings_oof_to_label">"To"</string>
+    <string name="account_settings_oof_auto_reply_label">外出中の自動応答</string>
+    <string name="account_settings_oof_auto_reply_summary">各送信者に自動的に応答する</string>
+    <string name="account_settings_oof_external_server_label">外部サーバーに自動応答を送信する</string>
+    <string name="account_settings_oof_get_status">サーバーからステータスを取得する</string>
+    <string name="account_settings_oof_save_sets">サーバーへ設定を保存する</string>
+    <string name="account_settings_oof_get_status_fail">ステータスを取得できません</string>
+    <string name="account_settings_oof_get_status_fail_summary">サーバーから即座にステータスを取得することができません。" "しばらくしてからもう一度お試しください。</string>
+    <string name="account_settings_oof_cancel">保存せずに続行しますか？</string>
+    <string name="account_settings_oof_cancel_summary">全ての変更内容は破棄されます。</string>
+    <string name="account_settings_oof_save_fail">保存できません</string>
+    <string name="account_settings_oof_save_fail_summary">設定をサーバーに保存できません。サーバーが利用不可能であるか、あるいは自動応答がサーバーの制限を超過したか、デバイスの日付設定が間違っている可能性があります。</string>
+    <string name="account_settings_oof_time_alert">現時点より後に設定する必要があります。</string>
+    <string name="no_application_response">"アプリが無効になりました。"</string>
+    <string name="extension_choose_provider_title">メールプロバイダーを選択</string>
+    <string name="not_add_more_recipients">一度に<xliff:g id="maxLimit">%1$d</xliff:g> を超える数の受信者を設定することはできません\。</string>
+    <string name="message_view_status_sdcard_not_enough">SDカードには添付ファイルを保存できる空間がありません。</string>
+    <string name="vip_emails_from_accounts_fmt">アカウント： <xliff:g id="vipAccountCount">%d</xliff:g> からのメール</string>
+    <string name="notification_multiple_new_vip_messages_fmt">新着VIPメール<xliff:g example="2">%1$d</xliff:g> </string>
+    <string name="message_body_too_large">メッセージが大きすぎるため、全てを読み込むことができません。</string>
+    <string name="cannot_move_multiple_mailbox_toast">移動中のメールがあります。しばらくしてからもう一度お試しください。</string>
+    <string name="certificate_request_ssl">クライアント認証にはセキュアな接続を利用してください。</string>
+    <string name="auto_clear_cache_title">キャッシュデータを自動消去する</string>
+    <string name="auto_clear_cache_description">ローカルにキャッシュされた添付ファイルを定期的に消去する</string>
+    <string name="edit_quoted_dialog_title">最大文字数</string>
+    <string name="edit_quoted_not_append_all">最大文字数に達しました。旧コンテンツの一部は消去されます。続行しますか？</string>
+   <string name="single_message_view_attachment_saved">添付は<xliff:g id="filename">%s</xliff:g>に保存</string>
+    <string name="choose_attachment_dialog_title">"添付ファイルの選択"</string>
+    <string name="message_compose_error_invalid_email">"無効なメールアドレスがあります。"</string>
+</resources>

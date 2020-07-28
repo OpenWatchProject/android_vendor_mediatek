@@ -1,0 +1,16 @@
+This module defines interfaces for Mms and Operator plugin.
+
+
+WHAT IT DOES?
+=============
+This module defines interfaces for Mms and Operator plugin.
+Mms can implements much more functions through these interfaces by Operator plugin.
+
+HOW IT WAS BUILT?
+==================
+This module is built to a static java library com.mediatek.mms.ext, which is linked to Mms and Operator plugin.
+
+HOW TO USE IT?
+==============
+1. Operator plugin implements these interfaces.
+2. Mms call these interfaces if needed.

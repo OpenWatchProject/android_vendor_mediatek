@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:layout_marginLeft="8dip"
+    android:layout_marginRight="8dip"
+    android:layout_marginBottom="14dip"
+    android:layout_marginTop="4dip"
+    android:gravity="center"
+    android:visibility="gone" >
+    <View
+        style="@style/separator_style"
+        android:background="@drawable/ipmsg_chat_split_line"
+        android:layout_width="0dip"
+        android:layout_weight="1" />
+    <TextView
+        android:id="@+id/time_divider_str"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginLeft="8dip"
+        android:layout_marginRight="8dip"
+        android:textColor="#33b5e5"
+        android:textSize="10sp" />
+    <View
+        style="@style/separator_style"
+        android:background="@drawable/ipmsg_chat_split_line"
+        android:layout_width="0dip"
+        android:layout_weight="1" />
+</LinearLayout>

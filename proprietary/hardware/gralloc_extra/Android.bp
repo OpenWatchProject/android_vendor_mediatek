@@ -1,0 +1,100 @@
+bootstrap_go_package {
+    name: "soong-libgralloc_extra_common-mediatek",
+    pkgPath: "android/soong/libgralloc_extra_common/mediatek",
+    deps: [
+        "soong-android",
+        "soong-cc",
+    ],
+    srcs: [
+        "libgralloc_extra_common.go",
+    ],
+    pluginFor: ["soong_build"],
+}
+
+mtk_libgralloc_extra_common_defaults {
+    name: "mtk_libgralloc_extra_common_defaults",
+
+    srcs: [
+        "platform/platform.c",
+    ],
+}
+
+//##############################################################################
+// Build Gralloc Extra System library
+// #
+//
+cc_library_shared {
+
+    name: "libgralloc_extra_sys",
+
+    srcs: [
+        "ge_operator.cpp",
+        "ge_misc.c",
+        "platform/ge_platform_default.c",
+    ],
+
+    export_include_dirs: ["include"],
+
+    shared_libs: [
+        "libhardware",
+        "libcutils",
+        "libutils",
+        "liblog",
+        "libion",
+        "libged_sys",
+    ],
+    header_libs: [
+        "device_kernel_headers_sys",
+    ],
+    owner: "mtk",
+    defaults: [
+        "mtk_libgralloc_extra_common_defaults",
+    ],
+}
+
+//##############################################################################
+// Build Gralloc Extra Vendor library
+// #
+//
+cc_library_shared {
+
+    name: "libgralloc_extra",
+
+    srcs: [
+        "ge_operator.cpp",
+        "ge_misc.c",
+        "platform/ge_platform_default.c",
+    ],
+
+    export_include_dirs: ["include"],
+
+    shared_libs: [
+        "libhardware",
+        "libcutils",
+        "libutils",
+        "liblog",
+        "libion",
+        "libged",
+    ],
+    header_libs: [
+        "device_kernel_headers",
+    ],
+
+    proprietary: true,
+
+    owner: "mtk",
+
+    defaults: [
+        "mtk_libgralloc_extra_common_defaults",
+    ],
+}
+
+//##############################################################################
+// Build Gralloc Extra header library
+// #
+//
+cc_library_headers {
+    name: "libgralloc_extra_headers",
+    vendor: true,
+    export_include_dirs: ["include"],
+}

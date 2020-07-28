@@ -1,0 +1,26 @@
+MTK CCCI Remote Procedure Call Daemon is a service that used for MD query AP side settings.
+
+WHAT IT DOES?
+=============
+This service will start automatic if modem is enabled.
+When this service ready, it will block wait modem requst, and it will call AP side API such as system_property_get to query AP settings.
+
+HOW IT WAS BUILT?
+==================
+It needs the following library from AOSP:
+1.  libc.so
+2.  libcutils.so
+3.  libdl.so
+4.  liblog.so
+5.  libhardware_legacy.so
+
+
+All source/dependency modules of this module are already put in
+'vendor/mediatek/proprietary/external/ccci_rpcd_com/' folder.
+
+HOW TO USE IT?
+==============
+
+ccci_rpcd is only used by MTK CCCI kernel driver
+
+All the source code of this daemon were written by MediaTek co..

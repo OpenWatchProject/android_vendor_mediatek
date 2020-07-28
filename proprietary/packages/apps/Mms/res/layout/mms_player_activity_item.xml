@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.android.mms.ui.MmsPlayerActivityItem xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/slide_page"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginRight="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="14dp"
+            android:layout_marginBottom="14dp"
+            android:gravity="center">
+
+            <ImageView
+                style="@style/separator_style"
+                android:id="@+id/page_divider1"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:src="@drawable/page_divider"/>
+
+            <TextView android:id="@+id/page_index"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="8dp"
+                android:layout_marginLeft="8dp"
+                android:gravity="center_horizontal"
+                android:textColor="#33B5E5"
+                android:textSize="10sp"/>
+
+            <ImageView
+                style="@style/separator_style"
+                android:id="@+id/page_divider2"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:src="@drawable/page_divider"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/audio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center">
+
+            <ImageView
+                android:id="@+id/audio_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_mms_music"
+                android:gravity="center"/>
+
+             <TextView android:id="@+id/audio_name"
+                 android:layout_width="wrap_content"
+                 android:layout_height="match_parent"
+                 android:textAppearance="?android:attr/textAppearanceSmallInverse"
+                 android:textColor="@android:color/black"
+                 android:gravity="center"/>
+        </LinearLayout>
+
+        <TextView android:id="@+id/top_text"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmallInverse"
+            android:autoLink="web|phone|email"
+            android:linksClickable="true"
+            android:textColor="@android:color/black"
+            android:gravity="left"
+            android:visibility="gone"
+            android:layout_marginRight="16dp"
+            android:layout_marginLeft="16dp"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center">
+            <TextView android:id="@+id/left_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmallInverse"
+                android:autoLink="web|phone|email"
+                android:linksClickable="true"
+                android:textColor="@android:color/black"
+                android:layout_marginTop="3dip"
+                android:layout_marginLeft="5dip"
+                android:layout_marginRight="5dip"
+                android:layout_centerHorizontal="true"
+                android:padding="3dip"
+                android:visibility="gone"/>
+            <ImageView
+                android:id="@+id/image"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:scaleType="centerInside"
+                android:layout_centerHorizontal="true"
+                android:layout_marginRight="16dp"
+                android:layout_marginLeft="16dp"/>
+            <RelativeLayout
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <ImageView
+                    android:id="@+id/video"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginLeft="16dp"/>
+                <ImageView
+                    android:id="@+id/video_play_overlay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:visibility="gone"
+                    android:src="@drawable/ic_gallery_video_overlay" />
+            </RelativeLayout>
+            <TextView android:id="@+id/right_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmallInverse"
+                android:autoLink="web|phone|email"
+                android:linksClickable="true"
+                android:textColor="@android:color/black"
+                android:layout_marginTop="3dip"
+                android:layout_marginLeft="5dip"
+                android:layout_marginRight="5dip"
+                android:layout_centerHorizontal="true"
+                android:padding="3dip"
+                android:visibility="gone"/>
+        </LinearLayout>
+
+        <TextView android:id="@+id/bottom_text"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmallInverse"
+            android:autoLink="web|phone|email"
+            android:linksClickable="true"
+            android:textColor="@android:color/black"
+            android:gravity="left"
+            android:visibility="gone"
+            android:layout_marginRight="16dp"
+            android:layout_marginLeft="16dp"/>
+    </LinearLayout>
+</com.android.mms.ui.MmsPlayerActivityItem>

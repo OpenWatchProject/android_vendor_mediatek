@@ -1,0 +1,17 @@
+cc_library_headers {
+    name: "libnvram_headers",
+    export_include_dirs: ["libnvram"],
+    vendor_available: true,
+}
+
+cc_library_headers {
+    name: "libfile_op_headers",
+    export_include_dirs: ["libfile_op"],
+    vendor_available: true,
+}
+
+cc_library_headers {
+    name: "nvramagentclient_headers",
+    export_include_dirs: ["nvramagentclient"],
+    vendor_available: true,
+}

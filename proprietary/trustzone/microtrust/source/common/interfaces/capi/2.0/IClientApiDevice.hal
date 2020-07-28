@@ -1,0 +1,19 @@
+/*
+ * Copyright (c) 2015-2016 MICROTRUST Incorporated
+ * All rights reserved
+ *
+ * This file and software is confidential and proprietary to MICROTRUST Inc.
+ * Unauthorized copying of this file and software is strictly prohibited.
+ * You MUST NOT disclose this file and software unless you get a license
+ * agreement from MICROTRUST Incorporated.
+ */
+
+package vendor.microtrust.hardware.capi@2.0;
+
+interface IClientApiDevice {
+    capi_transact(uint32_t msgid, memory data) generates(ErrorCode error);
+    createMmapBuffer(int32_t fd, uint64_t memory_size)
+    						generates (ErrorCode retval, int32_t shmid , MmapBufferInfo info);
+    registerSharedFileDescriptor(int32_t fd, int32_t reg_fd)
+    						generates (ErrorCode retval, MmapBufferInfo info);
+};

@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical">
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/Ant_switch_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/get_ant_index"/>
+
+        <TableLayout
+            style="@style/list_content_style"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                >
+
+                <RadioGroup
+                    android:id="@+id/force_type"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/force_rat"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:text="@string/force_rat"/>
+
+                    <RadioButton
+                        android:id="@+id/force_band"
+                        android:inputType="numberDecimal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/force_band"/>
+                </RadioGroup>
+            </TableRow>
+
+            <ImageView
+                style="@style/list_spiner_style"
+                android:contentDescription="@null"/>
+
+            <TableRow
+                android:id="@+id/TableRow01"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/force_ant_mode">
+                </TextView>
+
+                <Spinner
+                    android:id="@+id/force_ant_mode"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:entries="@array/force_ant_on_off">
+                </Spinner>
+            </TableRow>
+
+            <ImageView
+                style="@style/list_spiner_style"
+                android:contentDescription="@null"/>
+
+            <TableRow
+                android:id="@+id/TableRow02"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/tas_rat">
+                </TextView>
+
+                <Spinner
+                    android:id="@+id/tas_rat"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:entries="@array/force_ant_tas_rat">
+                </Spinner>
+            </TableRow>
+
+            <ImageView
+                style="@style/list_spiner_style"
+                android:contentDescription="@null"/>
+
+            <TableRow
+                android:id="@+id/TableRow03"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp">
+
+                <TextView
+                    android:id="@+id/tas_band_text"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/tas_band">
+                </TextView>
+
+                <EditText
+                    android:id="@+id/tas_band"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/selector_edit_frame"
+                    android:singleLine="true">
+                </EditText>
+            </TableRow>
+
+            <ImageView
+                style="@style/list_spiner_style"
+                android:contentDescription="@null"/>
+
+            <TableRow
+                android:id="@+id/TableRow04"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp">
+
+                <TextView
+                    android:id="@+id/tas_nvram_text"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/tas_nvram">
+                </TextView>
+
+                <EditText
+                    android:id="@+id/tas_nvram"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/selector_edit_frame"
+                    android:singleLine="true">
+                </EditText>
+            </TableRow>
+
+            <ImageView
+                style="@style/list_spiner_style_bold"
+                android:contentDescription="@null"/>
+
+            <TableRow
+                android:id="@+id/TableRow05"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp">
+
+                <TextView
+                    android:id="@+id/tas_ant_states_View"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:inputType="numberDecimal"
+                    android:text="@string/tas_ant_states">
+                </TextView>
+
+                <Spinner
+                    android:id="@+id/tas_ant_states"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:entries="@array/force_ant_states">
+                </Spinner>
+            </TableRow>
+
+            <ImageView
+                style="@style/list_spiner_style_bold"
+                android:contentDescription="@null"/>
+
+            <TableRow
+                android:id="@+id/TableRow06"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/tas_ant_selecting">
+                </TextView>
+
+            </TableRow>
+            <TableRow
+                android:id="@+id/TableRow07"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/tas_ant_tx_prx">
+                </TextView>
+
+                <Spinner
+                    android:id="@+id/tas_ant_tx_prx"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:entries="@array/tas_ant_tx_prx">
+                </Spinner>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/tas_ant_drx">
+                </TextView>
+
+                <Spinner
+                    android:id="@+id/tas_ant_drx"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:entries="@array/tas_ant_tx_prx">
+                </Spinner>
+            </TableRow>
+
+
+
+            <TableRow
+                android:id="@+id/TableRow08"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/tas_ant_drx1">
+                </TextView>
+
+
+                <Spinner
+                    android:id="@+id/tas_ant_drx1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:entries="@array/tas_ant_tx_prx">
+                </Spinner>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/tas_ant_drx2">
+                </TextView>
+
+                <Spinner
+                    android:id="@+id/tas_ant_drx2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:entries="@array/tas_ant_tx_prx">
+                </Spinner>
+            </TableRow>
+        </TableLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
+            <Button
+                android:id="@+id/get_ant_index_states"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/get_ant_index"/>
+
+            <Button
+                android:id="@+id/enable_ant_states"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/enable_ant_states"/>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tas_ant_test"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+        </TextView>
+    </LinearLayout>
+
+</ScrollView>

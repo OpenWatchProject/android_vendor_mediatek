@@ -1,0 +1,12 @@
+service atci_service /vendor/bin/atci_service
+    class core
+    socket atci-service stream 660 radio system
+    user root
+    disabled
+    group radio system
+
+on property:ro.build.type=eng
+start atci_service
+
+on property:persist.vendor.service.atci.autostart=1
+start atci_service

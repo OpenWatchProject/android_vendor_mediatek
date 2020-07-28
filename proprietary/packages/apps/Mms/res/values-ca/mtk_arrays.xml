@@ -1,0 +1,543 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+ * Copyright (C) 2008 Esmertec AG.
+ * Copyright (C) 2008 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ -->
+<resources>
+<string-array name="default_quick_texts">
+      <item>On ets?</item>
+      <item>Què fas?</item>
+      <item>"Truca'm, si us plau!"</item>
+      <item>Ho sento, tinc una reunió.</item>
+      <item>Et truco aviat.</item>
+      <item>No pateixis, estic bé.</item>
+      <item>Estic tornant a casa.</item>
+      <item>Arribo aviat.</item>
+      <item>Més et val arribar-hi a temps!</item>
+    </string-array>
+    <string-array name="pref_mms_creation_mode_choices">
+        <item>Mode restringit</item>
+        <item>Mode advertència</item>
+        <item>Mode lliure</item>
+    </string-array>
+    <string-array name="pref_key_mms_priority_choices">
+        <item>"Alta"</item>
+        <item>"Normal"</item>
+        <item>"Baixa"</item>
+    </string-array>
+    <string-array name="pref_sms_input_mode_choice">
+        <item>Alfabet GSM</item>
+        <item>Unicode</item>
+        <item>"Automàtic"</item>
+    </string-array>
+    <string-array name="pref_sms_save_location_choices">
+        <item>"Telèfon"</item>
+        <item>Targeta SIM</item>
+    </string-array>
+    <string-array name="pref_tablet_sms_save_location_choices">
+        <item>"DISPOSITIU"</item>
+        <item>Targeta SIM</item>
+    </string-array>
+    <string-array name="pref_message_font_size_choices">
+        <item>Aplica la mida de la font del sistema</item>
+        <item>"Petita"</item>
+        <item>"Mitjana"</item>
+        <item>"Gran"</item>
+        <item>"Molt gran"</item>
+    </string-array>
+    <string-array name="pref_message_font_size_values">
+        <item>18</item>
+        <item>20</item>
+        <item>24</item>
+        <item>28</item>
+        <item>32</item>
+    </string-array>
+    <integer-array name="share_column">
+        <item>4</item>
+        <item>6</item>
+    </integer-array>
+    <integer-array name="emoticon_column">
+        <item>5</item>
+        <item>10</item>
+    </integer-array>
+    <string-array name="large_emoticon_name">
+        <item>[lloança]</item>
+        <item>[Regal]</item>
+        <item>[KongFu]</item>
+        <item>[Dutxa]</item>
+        <item>[Esglai]</item>
+        <item>[Malalt]</item>
+        <item>[Ric]</item>
+        <item>[Vol]</item>
+        <item>[Enutjat]</item>
+        <item>[Aprovar]</item>
+        <item>[Avorrit]</item>
+        <item>[Plorar]</item>
+        <item>[Conduint]</item>
+        <item>[Menjant]</item>
+        <item>[Feliç]</item>
+        <item>[Mantenir]</item>
+        <item>[Vacances]</item>
+        <item>[Amor]</item>
+        <item>[Resar]</item>
+        <item>[Pressió]</item>
+        <item>[Cantar]</item>
+        <item>[Dormir]</item>
+        <item>[Esports]</item>
+        <item>[Nedar]</item>
+    </string-array>
+    <string-array name="large_emoticon_name_en">
+        <item>[lloança]</item>
+        <item>[Regal]</item>
+        <item>[KongFu]</item>
+        <item>[Dutxa]</item>
+        <item>[Esglai]</item>
+        <item>[Malalt]</item>
+        <item>[Ric]</item>
+        <item>[Vol]</item>
+        <item>[Enutjat]</item>
+        <item>[Aprovar]</item>
+        <item>[Avorrit]</item>
+        <item>[Plorar]</item>
+        <item>[Conduint]</item>
+        <item>[Menjant]</item>
+        <item>[Feliç]</item>
+        <item>[Mantenir]</item>
+        <item>[Vacances]</item>
+        <item>[Amor]</item>
+        <item>[Resar]</item>
+        <item>[Pressió]</item>
+        <item>[Cantar]</item>
+        <item>[Dormir]</item>
+        <item>[Esports]</item>
+        <item>[Nedar]</item>
+    </string-array>
+    <string-array name="dynamic_emoticon_name">
+        <item>{feliç}</item>
+        <item>{mamballetes}</item>
+        <item>{amor}</item>
+        <item>{orgull}</item>
+        <item>{menyspreu}</item>
+        <item>{impacient}</item>
+        <item>{bufetada}</item>
+        <item>{enutjat}</item>
+        <item>{maledicció}</item>
+        <item>{tanmateix}</item>
+        <item>{embolic}</item>
+        <item>{plorar}</item>
+        <item>{descoratjador}</item>
+        <item>{també_enutjat}</item>
+        <item>{al_voltant}</item>
+        <item>{passant}</item>
+        <item>{adoració}</item>
+        <item>{pur}</item>
+        <item>{adéu}</item>
+        <item>{innocent}</item>
+        <item>{divertit}</item>
+        <item>{famolenc}</item>
+        <item>{dormir}</item>
+        <item>{desitjos}</item>
+    </string-array>
+    <string-array name="large_emoticon_name_ch">
+        <item>[赞]</item>
+        <item>[礼物]</item>
+        <item>[降龙十八掌]</item>
+        <item>[洗澡]</item>
+        <item>[惊吓]</item>
+        <item>[生病]</item>
+        <item>[高富帅]</item>
+        <item>[飞行]</item>
+        <item>[生气]</item>
+        <item>[同意]</item>
+        <item>[无聊]</item>
+        <item>[哭]</item>
+        <item>[开车]</item>
+        <item>[吃饭]</item>
+        <item>[开心]</item>
+        <item>[Hold住]</item>
+        <item>[度假]</item>
+        <item>[喜爱]</item>
+        <item>[祈福]</item>
+        <item>[压力很大]</item>
+        <item>[唱歌]</item>
+        <item>[睡觉]</item>
+        <item>[足球]</item>
+        <item>[游泳]</item>
+    </string-array>
+    <string-array name="dynamic_emoticon_name_en">
+        <item>{feliç}</item>
+        <item>{mamballetes}</item>
+        <item>{amor}</item>
+        <item>{orgull}</item>
+        <item>{menyspreu}</item>
+        <item>{impacient}</item>
+        <item>{bufetada}</item>
+        <item>{enutjat}</item>
+        <item>{maledicció}</item>
+        <item>{tanmateix}</item>
+        <item>{embolic}</item>
+        <item>{plorar}</item>
+        <item>{descoratjador}</item>
+        <item>{també_enutjat}</item>
+        <item>{al_voltant}</item>
+        <item>{passant}</item>
+        <item>{adoració}</item>
+        <item>{pur}</item>
+        <item>{adéu}</item>
+        <item>{innocent}</item>
+        <item>{divertit}</item>
+        <item>{famolenc}</item>
+        <item>{dormir}</item>
+        <item>{desitjos}</item>
+    </string-array>
+    <string-array name="dynamic_emoticon_name_ch">
+        <item>{高兴}</item>
+        <item>{拍手}</item>
+        <item>{喜欢}</item>
+        <item>{得意}</item>
+        <item>{不屑}</item>
+        <item>{不耐烦}</item>
+        <item>{扇耳光}</item>
+        <item>{气愤}</item>
+        <item>{诅咒}</item>
+        <item>{无奈}</item>
+        <item>{纠结}</item>
+        <item>{哭泣}</item>
+        <item>{泄气}</item>
+        <item>{生气}</item>
+        <item>{围观}</item>
+        <item>{路过}</item>
+        <item>{膜拜}</item>
+        <item>{纯洁}</item>
+        <item>{再见}</item>
+        <item>{无辜}</item>
+        <item>{震惊}</item>
+        <item>{饿}</item>
+        <item>{睡觉}</item>
+        <item>{祝福}</item>
+    </string-array>
+    <string-array name="ad_emoticon_name">
+        <item>/colpejar/</item>
+        <item>/entreteniment/</item>
+        <item>/plorar/</item>
+        <item>/ambient/</item>
+        <item>/batec_de_cor/</item>
+        <item>/migdiada/</item>
+        <item>/rialla/</item>
+        <item>/impaciència/</item>
+        <item>/footing/</item>
+        <item>/maleir/</item>
+        <item>/suar/</item>
+        <item>/complaent/</item>
+        <item>/esternudar/</item>
+        <item>/ballar/</item>
+        <item>/enutjat/</item>
+        <item>/saltant/</item>
+        <item>/aguaitar/</item>
+        <item>/relliscar/</item>
+        <item>/menjant/</item>
+        <item>/aro/</item>
+        <item>/passant/</item>
+        <item>/agitar/</item>
+        <item>/adéu/</item>
+        <item>/obligació/</item>
+    </string-array>
+    <string-array name="ad_emoticon_name_en">
+        <item>/colpejar/</item>
+        <item>/entreteniment/</item>
+        <item>/plorar/</item>
+        <item>/ambient/</item>
+        <item>/batec_de_cor/</item>
+        <item>/migdiada/</item>
+        <item>/rialla/</item>
+        <item>/impaciència/</item>
+        <item>/footing/</item>
+        <item>/maleir/</item>
+        <item>/suar/</item>
+        <item>/complaent/</item>
+        <item>/esternudar/</item>
+        <item>/ballar/</item>
+        <item>/enutjat/</item>
+        <item>/saltant/</item>
+        <item>/aguaitar/</item>
+        <item>/relliscar/</item>
+        <item>/menjant/</item>
+        <item>/aro/</item>
+        <item>/passant/</item>
+        <item>/agitar/</item>
+        <item>/adéu/</item>
+        <item>/obligació/</item>
+    </string-array>
+    <string-array name="ad_emoticon_name_ch">
+        <item>/挨打/</item>
+        <item>/杂耍/</item>
+        <item>/哭泣/</item>
+        <item>/晕眩/</item>
+        <item>/心动/</item>
+        <item>/瞌睡/</item>
+        <item>/傻笑/</item>
+        <item>/不耐烦/</item>
+        <item>/跑步/</item>
+        <item>/诅咒/</item>
+        <item>/冒汗/</item>
+        <item>/得意/</item>
+        <item>/打喷嚏/</item>
+        <item>/跳舞/</item>
+        <item>/生气/</item>
+        <item>/跳绳/</item>
+        <item>/偷窥/</item>
+        <item>/出丑/</item>
+        <item>/吃/</item>
+        <item>/呼啦圈/</item>
+        <item>/路过/</item>
+        <item>/扭屁股/</item>
+        <item>/再见/</item>
+        <item>/便秘/</item>
+    </string-array>
+    <string-array name="xm_emoticon_name">
+        <item>#parpelleig#</item>
+        <item>#pregunta#</item>
+        <item>#vòmit#</item>
+        <item>#mala sort#</item>
+        <item>#gustar#</item>
+        <item>#maco#</item>
+        <item>#marejat#</item>
+        <item>#cansat#</item>
+        <item>#confós#</item>
+        <item>#petó#</item>
+        <item>#amor#</item>
+        <item>#maledicció#</item>
+        <item>#diners#</item>
+        <item>#somriure#</item>
+        <item>#plor#</item>
+        <item>#enutjat#</item>
+        <item>#satisfet#</item>
+        <item>#entremaliat#</item>
+        <item>#misteriós#</item>
+        <item>#atordit#</item>
+        <item>#avergonyit#</item>
+        <item>#dormir#</item>
+        <item>#desaparèixer#</item>
+        <item>#queixa#</item>
+    </string-array>
+    <string-array name="xm_emoticon_name_en">
+        <item>#parpelleig#</item>
+        <item>#pregunta#</item>
+        <item>#vòmit#</item>
+        <item>#mala sort#</item>
+        <item>#gustar#</item>
+        <item>#maco#</item>
+        <item>#marejat#</item>
+        <item>#cansat#</item>
+        <item>#confós#</item>
+        <item>#petó#</item>
+        <item>#amor#</item>
+        <item>#maledicció#</item>
+        <item>#diners#</item>
+        <item>#somriure#</item>
+        <item>#plor#</item>
+        <item>#enutjat#</item>
+        <item>#satisfet#</item>
+        <item>#entremaliat#</item>
+        <item>#misteriós#</item>
+        <item>#atordit#</item>
+        <item>#avergonyit#</item>
+        <item>#dormir#</item>
+        <item>#desaparèixer#</item>
+        <item>#queixa#</item>
+    </string-array>
+    <string-array name="xm_emoticon_name_ch">
+        <item>#眨眼#</item>
+        <item>#疑问#</item>
+        <item>#吐#</item>
+        <item>#衰#</item>
+        <item>#喜欢#</item>
+        <item>#萌#</item>
+        <item>#晕#</item>
+        <item>#困#</item>
+        <item>#不懂#</item>
+        <item>#亲#</item>
+        <item>#爱#</item>
+        <item>#大骂#</item>
+        <item>#钱#</item>
+        <item>#微笑#</item>
+        <item>#哭#</item>
+        <item>#生气#</item>
+        <item>#得意#</item>
+        <item>#淘气#</item>
+        <item>#恐怖#</item>
+        <item>#发呆#</item>
+        <item>#汗#</item>
+        <item>#睡觉#</item>
+        <item>#消失#</item>
+        <item>#委屈#</item>
+    </string-array>
+    <string-array name="emoticon_name">
+        <item>:-)</item>
+        <item>;-)</item>
+        <item>:-(</item>
+        <item>:\'(</item>
+        <item>B-)</item>
+        <item>:-*</item>
+        <item>:-P</item>
+        <item>:O</item>
+        <item>O:-)</item>
+        <item>#NAME?</item>
+        <item>:-[</item>
+        <item>:-$</item>
+        <item>:-!</item>
+        <item>:-\\</item>
+        <item>:-D</item>
+        <item>o_O</item>
+        <item>:-X</item>
+        <item>&lt;3</item>
+        <item>x-(</item>
+        <item>:-/</item>
+        <item>:-I</item>
+        <item>:-zZ</item>
+        <item>:-E</item>
+        <item>;-o</item>
+        <item>-□ -\"</item>
+        <item>ˋ▽ˊψ</item>
+        <item>┬＾┬</item>
+        <item>&lt;(_ _)&gt;</item>
+        <item>＊￣▽￣＊</item>
+        <item>|-O</item>
+        <item>゜ロ゜</item>
+        <item>:-@</item>
+        <item>°ο°</item>
+        <item>◎~◎</item>
+        <item>:-}</item>
+        <item>′▽｀</item>
+        <item>\\#/</item>
+        <item>●～*</item>
+        <item>#｀′</item>
+        <item>/◇\\</item>
+        <item>∠</item>
+        <item>〒</item>
+        <item>≯</item>
+        <item>∨</item>
+        <item>⊙╭╯</item>
+        <item>№</item>
+        <item>﹌ </item>
+        <item>\\▽/</item>
+        <item>☀</item>
+        <item>╭∩╮</item>
+        <item>(o)</item>
+        <item>( _ )</item>
+        <item>(*ｉ*)</item>
+        <item>≦≧</item>
+        <item>{()}</item>
+        <item>(*)</item>
+        <item>£›</item>
+        <item>◇</item>
+        <item>*-:-)</item>
+        <item>※</item>
+        <item>:-m</item>
+        <item>:-y</item>
+        <item>●</item>
+        <item>*&amp;*</item>
+        <item>□</item>
+        <item>:-~~</item>
+        <item>^``^</item>
+        <item>*^*</item>
+        <item>&lt;(\')</item>
+        <item>(=)</item>
+    </string-array>
+    <string-array name="default_emoticon_name">
+        <item>:-)</item>
+        <item>;-)</item>
+        <item>:-(</item>
+        <item>:\'(</item>
+        <item>B-)</item>
+        <item>:-*</item>
+        <item>:-P</item>
+        <item>:O</item>
+        <item>O:-)</item>
+        <item>#NAME?</item>
+        <item>:-[</item>
+        <item>:-$</item>
+        <item>:-!</item>
+        <item>:-\\</item>
+        <item>:-D</item>
+        <item>o_O</item>
+        <item>:-X</item>
+        <item>&lt;3</item>
+        <item>x-(</item>
+        <item>:-/</item>
+        <item>:-I</item>
+        <item>:-zZ</item>
+        <item>:-E</item>
+        <item>;-o</item>
+        <item>-□ -\"</item>
+        <item>ˋ▽ˊψ</item>
+        <item>┬＾┬</item>
+        <item>&lt;(_ _)&gt;</item>
+        <item>＊￣▽￣＊</item>
+        <item>|-O</item>
+        <item>゜ロ゜</item>
+        <item>:-@</item>
+        <item>°ο°</item>
+        <item>◎~◎</item>
+        <item>:-}</item>
+        <item>′▽｀</item>
+        <item>\\#/</item>
+        <item>●～*</item>
+        <item>#｀′</item>
+        <item>/◇\\</item>
+    </string-array>
+    <string-array name="gift_emoticon_name">
+        <item>∠</item>
+        <item>〒</item>
+        <item>≯</item>
+        <item>∨</item>
+        <item>⊙╭╯</item>
+        <item>№</item>
+        <item>﹌ </item>
+        <item>\\▽/</item>
+        <item>☀</item>
+        <item>╭∩╮</item>
+        <item>(o)</item>
+        <item>( _ )</item>
+        <item>(*ｉ*)</item>
+        <item>≦≧</item>
+        <item>{()}</item>
+        <item>(*)</item>
+        <item>£›</item>
+        <item>◇</item>
+        <item>*-:-)</item>
+        <item>※</item>
+        <item>:-m</item>
+        <item>:-y</item>
+        <item>●</item>
+        <item>*&amp;*</item>
+        <item>□</item>
+        <item>:-~~</item>
+        <item>^``^</item>
+        <item>*^*</item>
+        <item>&lt;(\')</item>
+        <item>(=)</item>
+    </string-array>
+    <string-array name="pref_key_sms_priority_values">
+        <item>"Normal"</item>
+        <item>Interactiu</item>
+        <item>Urgent</item>
+        <item>Emergència</item>
+    </string-array>
+    <string-array name="ct_sms_save_location_array">
+        <item>"Telèfon"</item>
+        <item> </item>
+    </string-array>
+</resources>

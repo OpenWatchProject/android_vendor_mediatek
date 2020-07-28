@@ -1,0 +1,172 @@
+# The following set of variables must can be passed to xbin.mk:
+#
+#     XBIN_NAME - an output file name (without extention)
+#     XBIN_BUILDDIR - build directory
+#     XBIN_TOP_MODULE - top module to compile
+#     XBIN_ARCH - architecture to compile for
+#     XBIN_LINKER_SCRIPT - linker script
+#     XBIN_TYPE - optional executable type
+#     XBIN_LDFLAGS - extra linker flags (optional)
+#
+
+# check if all required variables are set or provide default
+
+ifeq ($(XBIN_NAME), )
+$(error XBIN_NAME must be specified)
+endif
+
+ifeq ($(XBIN_BUILDDIR), )
+$(error XBIN_BUILDDIR must be specified)
+endif
+
+ifeq ($(XBIN_TOP_MODULE), )
+$(error XBIN_TOP_MODULE must be specified)
+endif
+
+ifeq ($(XBIN_LINKER_SCRIPT), )
+$(error XBIN_LINKER_SCRIPT must be specified)
+endif
+
+ifeq ($(XBIN_ARCH), )
+$(error XBIN_ARCH must be specified)
+endif
+
+ifeq ($(XBIN_TYPE), )
+XBIN_TYPE := XBIN
+endif
+
+# save global variables
+SAVED_ARCH := $(ARCH)
+SAVED_GLOBAL_OPTFLAGS := $(GLOBAL_OPTFLAGS)
+SAVED_GLOBAL_COMPILEFLAGS := $(GLOBAL_COMPILEFLAGS)
+SAVED_GLOBAL_CFLAGS := $(GLOBAL_CFLAGS)
+SAVED_GLOBAL_CPPFLAGS := $(GLOBAL_CPPFLAGS)
+SAVED_GLOBAL_ASMFLAGS := $(GLOBAL_ASMFLAGS)
+SAVED_GLOBAL_INCLUDES := $(GLOBAL_INCLUDES)
+SAVED_GLOBAL_DEFINES := $(GLOBAL_DEFINES)
+
+SAVED_BUILDDIR := $(BUILDDIR)
+SAVED_ALLMODULES := $(ALLMODULES)
+SAVED_ALLMODULE_OBJS := $(ALLMODULE_OBJS)
+
+# reset lk.bin variables
+ARCH := $(XBIN_ARCH)
+BUILDDIR := $(XBIN_BUILDDIR)
+ALLMODULES :=
+ALLMODULE_OBJS :=
+
+# Override tools
+include arch/$(ARCH)/toolchain.mk
+
+XBIN_TOOLCHAIN_PREFIX := $(ARCH_$(ARCH)_TOOLCHAIN_PREFIX)
+XBIN_TOOLCHAIN_LD_LIBRARY_PATH := $(ARCH_$(ARCH)_TOOLCHAIN_LD_LIBRARY_PATH)
+XBIN_CC := $(CCACHE) $(XBIN_TOOLCHAIN_LD_LIBRARY_PATH) $(XBIN_TOOLCHAIN_PREFIX)gcc
+XBIN_LD := $(XBIN_TOOLCHAIN_PREFIX)ld
+XBIN_OBJCOPY := $(XBIN_TOOLCHAIN_PREFIX)objcopy
+XBIN_OBJDUMP := $(XBIN_TOOLCHAIN_PREFIX)objdump
+XBIN_STRIP := $(XBIN_TOOLCHAIN_PREFIX)strip
+XBIN_AR := $(XBIN_TOOLCHAIN_PREFIX)ar
+XBIN_LIBGCC := $(shell $(XBIN_TOOLCHAIN_PREFIX)gcc $(GLOBAL_COMPILEFLAGS) $(THUMBCFLAGS) -print-libgcc-file-name)
+
+$(info XBIN_TOOLCHAIN_PREFIX = $(XBIN_TOOLCHAIN_PREFIX))
+$(info XBIN_LIBGCC = $(XBIN_LIBGCC))
+
+GLOBAL_CFLAGS := $(GLOBAL_CFLAGS)
+GLOBAL_INCLUDES :=
+GLOBAL_DEFINES := $(XBIN_TYPE)=1
+
+# Include XBIN top module and handle all it's dependencies
+include $(addsuffix /rules.mk,$(XBIN_TOP_MODULE))
+include make/recurse.mk
+
+# Add all XBIN specific defines
+GLOBAL_DEFINES += \
+	$(addsuffix =1,$(addprefix $(XBIN_TYPE)_WITH_,$(ALLMODULES)))
+
+# XBIN build rules
+ifeq ($(WITH_PREBUILT_ARCHIVES),1)
+  XBIN_LIB := $(BUILDDIR)/$(XBIN_NAME).a
+else
+  XBIN_LIB := $(BUILDDIR)/$(XBIN_NAME).mod.o
+endif
+
+XBIN_ALL_OBJS := $(ALLMODULE_OBJS)
+XBIN_CONFIGHEADER := $(BUILDDIR)/config.h
+
+# Set appropriate globals for all targets under $(BUILDDIR)
+$(BUILDDIR)/%: CC := $(XBIN_CC)
+$(BUILDDIR)/%: LD := $(XBIN_LD)
+$(BUILDDIR)/%.o: GLOBAL_OPTFLAGS := $(GLOBAL_OPTFLAGS)
+$(BUILDDIR)/%.o: GLOBAL_COMPILEFLAGS := $(GLOBAL_COMPILEFLAGS) -include $(XBIN_CONFIGHEADER)
+$(BUILDDIR)/%.o: GLOBAL_CFLAGS   := $(GLOBAL_CFLAGS)
+$(BUILDDIR)/%.o: GLOBAL_CPPFLAGS := $(GLOBAL_CPPFLAGS)
+$(BUILDDIR)/%.o: GLOBAL_ASMFLAGS := $(GLOBAL_ASMFLAGS)
+$(BUILDDIR)/%.o: GLOBAL_INCLUDES := $(addprefix -I,$(GLOBAL_INCLUDES)) $(SAVED_GLOBAL_INCLUDES)
+$(BUILDDIR)/%.o: ARCH_COMPILEFLAGS := $(ARCH_$(ARCH)_COMPILEFLAGS)
+$(BUILDDIR)/%.o: ARCH_CFLAGS := $(ARCH_$(ARCH)_CFLAGS)
+$(BUILDDIR)/%.o: ARCH_CPPFLAGS := $(ARCH_$(ARCH)_CPPFLAGS)
+$(BUILDDIR)/%.o: ARCH_ASMFLAGS := $(ARCH_$(ARCH)_ASMFLAGS)
+
+# generate XBIN specific config.h
+$(XBIN_CONFIGHEADER): GLOBAL_DEFINES := $(GLOBAL_DEFINES)
+$(XBIN_CONFIGHEADER):
+	@$(call MAKECONFIGHEADER,$@,GLOBAL_DEFINES)
+
+# add it to global dependency list
+GENERATED += $(XBIN_CONFIGHEADER)
+GLOBAL_SRCDEPS += $(XBIN_CONFIGHEADER)
+
+ifeq ($(WITH_PREBUILT_ARCHIVES),1)
+$(XBIN_LIB): XBIN_AR := $(XBIN_AR)
+$(XBIN_LIB): XBIN_ALL_OBJS := $(XBIN_ALL_OBJS)
+$(XBIN_LIB): $(XBIN_ALL_OBJS)
+	@$(MKDIR)
+	@echo archiving $@
+	$(NOECHO) $(XBIN_AR) rcs $@ $(XBIN_ALL_OBJS)
+else
+$(XBIN_LIB): XBIN_LD := $(XBIN_LD)
+$(XBIN_LIB): XBIN_ALL_OBJS := $(XBIN_ALL_OBJS)
+$(XBIN_LIB): $(XBIN_ALL_OBJS)
+	@echo linking $@
+	$(NOECHO)$(LD) $(GLOBAL_MODULE_LDFLAGS) -r $^ -o $@
+endif
+
+# Also generate listings
+all::  $(XBIN_LIB) 
+
+
+# restore LK variables
+GLOBAL_OPTFLAGS := $(SAVED_GLOBAL_OPTFLAGS)
+GLOBAL_COMPILEFLAGS := $(SAVED_GLOBAL_COMPILEFLAGS)
+GLOBAL_CFLAGS   := $(SAVED_GLOBAL_CFLAGS)
+GLOBAL_CPPFLAGS := $(SAVED_GLOBAL_CPPFLAGS)
+GLOBAL_ASMFLAGS := $(SAVED_GLOBAL_ASMFLAGS)
+GLOBAL_INCLUDES := $(SAVED_GLOBAL_INCLUDES)
+GLOBAL_DEFINES  := $(SAVED_GLOBAL_DEFINES)
+
+ARCH := $(SAVED_ARCH)
+BUILDDIR := $(SAVED_BUILDDIR)
+ALLMODULES := $(SAVED_ALLMODULES)
+ALLMODULE_OBJS := $(SAVED_ALLMODULE_OBJS)
+
+# Reset local variables
+XBIN_NAME :=
+XBIN_TYPE :=
+XBIN_ARCH :=
+XBIN_TOP_MODULE :=
+XBIN_BUILDDIR :=
+
+XBIN_BIN :=
+XBIN_ELF :=
+XBIN_SYMS_ELF :=
+XBIN_ALL_OBJS :=
+XBIN_CONFIGHEADER :=
+XBIN_LINKER_SCRIPT :=
+
+XBIN_TOOLCHAIN_PREFIX :=
+XBIN_CC :=
+XBIN_LD :=
+XBIN_OBJCOPY :=
+XBIN_STRIP :=
+
+XBIN_LDFLAGS :=

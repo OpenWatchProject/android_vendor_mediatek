@@ -1,0 +1,13 @@
+android_app {
+    name: "CellBroadcastReceiverGo",
+    overrides: [
+        "MtkCellBroadcastReceiver",
+        "CellBroadcastReceiver",
+    ],
+    platform_apis: true,
+    certificate: "platform",
+    privileged: true,
+    libs: ["telephony-common"],
+    defaults: ["SettingsLibDefaults"],
+}
+

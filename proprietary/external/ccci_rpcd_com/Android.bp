@@ -1,0 +1,31 @@
+cc_binary {
+    arch: {
+        arm: {
+            instruction_set: "arm",
+        },
+    },
+    srcs: [
+        "ccci_rpcd.c",
+        "platform/ccci_rpcd_platform.c",
+        "platform/power.c",
+    ],
+    name: "ccci_rpcd",
+    proprietary: true,
+    owner: "mtk",
+    compile_multilib: "32",
+    header_libs: [
+        "ccci_headers",
+    ],
+    local_include_dirs: ["platform"],
+    shared_libs: [
+        "libc",
+        "liblog",
+        "libdl",
+        "libcutils",
+        "libhardware_legacy",
+    ],
+    cflags: [
+        "-Wno-attributes",
+    ],
+    init_rc: ["init.cccirpcd.rc"],
+}

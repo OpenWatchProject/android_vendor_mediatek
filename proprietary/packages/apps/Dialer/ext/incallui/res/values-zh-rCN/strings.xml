@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2" xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- dm lock -->
+    <string name="dm_lock">设备已被运营商锁定</string>
+    <string name="dm_unlock">设备已被运营商解锁</string>
+    <!-- voice recorder -->
+    <string name="start_record">"开始录音"</string>
+    <string name="stop_record">"停止录音"</string>
+    <string name="str_db_playlist_name">我的录音</string>
+    <string name="alert_device_error">录音出错</string>
+    <string name="ext_media_badremoval_notification_title">"SD 卡非正常移除"</string>
+    <string name="error_sdcard_access">"无法访问 SD 卡"</string>
+    <string name="confirm_device_info_full">存储卡内容已满，录音已经保存</string>
+    <string name="confirm_save_info_saved">录音已经保存</string>
+    <string name="confirm_save_info_saved_to">录音已经保存到</string>
+    <string name="recording_saved_sd_full">存储卡内容已满，录制文件已经保存。</string>
+    <string name="sd_not_enough">SD 卡空间不足</string>
+    <string name="alert_dialog_dismiss">"关闭"</string>
+    <string name="change_my_pic">"变更设定"</string>
+    <!-- Add for VoLTE conference Call  -->
+    <string name="volte_add_conference_member_title">添加到会议</string>
+    <string name="add_member_msg">输入名字或号码</string>
+    <string name="card_title_incoming_conference">电话会议邀请</string>
+    <string name="addConferenceMemeberText">添加成员</string>
+    <string name="add_conference_member_limit">一次只能添加一个号码.</string>
+    <string name="conference_member_join"><xliff:g id="member_name">%s</xliff:g> 已经加入会议.</string>
+    <string name="conference_member_leave"><xliff:g id="member_name">%s</xliff:g> 离开了会议.</string>
+    <string name="conference_member_adding">添加 <xliff:g id="member_name">%s</xliff:g> ...</string>
+    <string name="multi_conference_member_adding">正在添加成员...</string>
+    <string name="conference_member_add_fail">添加 <xliff:g id="member_name">%s</xliff:g> 失败.</string>
+    <!-- Text for VoLTE conference "remove conference member" button -->
+    <string name="removeMember">"删除"</string>
+    <!-- Text for VoLTE conference "status" indication -->
+    <string name="memberStatus">"状态"</string>
+    <!-- Add for VoLTE SS Indication -->
+    <string name="volte_call_waiting_indication_text">对方正在通话中,请稍候...</string>
+    <!-- FTA menu items -->
+    <string name="onscreenHangupAll">挂断所有电话</string>
+    <string name="onscreenHangupHolding">挂断保持</string>
+    <string name="onscreenHangupActiveAndAnswerWaiting">挂断当前电话，接听来电</string>
+    <string name="menu_ect">转接</string>
+    <string name="respond_via_sms_confirmation_format">"讯息已发送至 <xliff:g id="PHONE_NUMBER">%s</xliff:g>。"</string>
+    <!-- CTA request, for notification -->
+    <string name="two_incoming_calls">2个来电</string>
+    <!-- CTA request, for onHold text, zh-rCN only -->
+    <string name="onHold_cta">"通话保持中"</string>
+
+    <!-- Conference participant call status show -->
+    <string name="call_status_online">"在线"</string>
+    <string name="call_status_onhold">"保持"</string>
+    <string name="call_status_dialing">"正在拨号"</string>
+    <string name="call_status_disconnecting">"正在挂断"</string>
+    <string name="call_status_disconnected">"通话结束"</string>
+
+    <string name="accept_incoming_and_disconnect_current">接听此来电将结束当前通话。</string>
+    <string name="add_voicemail_number">Add voice mail number.</string>
+
+    <!-- WFC items -->
+    <string name="wifi_title">Wi-Fi 通话及使用分钟数</string>
+    <string name="close">关闭</string>
+    <string name="ok">确定</string>
+    <string name="view_networks">查看网络</string>
+    <string name="no_thanks">不用了</string>
+    <string name="wfc_wifi_call_drop_summary">糟糕！通话中您移动超出 Wi-Fi 网络范围。\n\n是否要再连上 Wi-Fi 网络完成通話？</string>
+    <string name="call_drop">通话可能中断</string>
+    <string name="call_drop_message">您几乎超出 Wi-Fi覆盖范围</string>
+
+    <!-- M: Video Call-->
+    <string name="hideVideoPreview">隐藏本端视频窗口</string>
+    <string name="showVideoPreview">显示本端视频窗口</string>
+    <string name="restartVideoPreview">重新启动本地视频</string>
+    <string name="video_call_downgrade_to_voice_call">切换为语音电话</string>
+    <string name="video_call_downgrade_request">正在切换为语音电话</string>
+    <string name="video_call_upgrade_to_video_call">切换为视频电话</string>
+    <string name="video_call_upgrade_to_video_call_failed">升级为视频电话失败</string>
+    <string name="video_call_downgrade_to_voice_call_failed">切换语音通话失败</string>
+
+    <!-- M: Add for blind ECT(explicit call transfer. -->
+    <string name="add_transfer_call_number">当前通话转移到</string>
+    <string name="add_transfer_number_hint">电话号码</string>
+    <!-- M: cmcc cancel upgrade-->
+    <string name="onscreenCancelUpgrade">取消升级</string>
+    <string name="card_title_cancel_upgrade_requesting">正在取消升级</string>
+    <string name="peer_cancel_upgrade_request">对端取消升级视频</string>
+    <string name="cancel_upgrade_fail">取消失败</string>
+
+    <string name="onscreenChangeToVoiceText" msgid="6249580619992009182">"改为语音通话"</string>
+    <string name="contact_grid_incoming_video_via_template" >通过
+        <xliff:g id="PROVIDER_NAME">%s</xliff:g>的视频通话</string>
+    <string name="video_over_wifi_not_available">WiFi视频通话目前不可用。</string>
+
+    <string name="missing_required_permission">"您已停用某项必需权限。"</string>
+
+    <string name="notification_action_answer_voice">"语音"</string>
+</resources>

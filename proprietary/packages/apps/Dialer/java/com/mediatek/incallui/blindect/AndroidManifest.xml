@@ -1,0 +1,13 @@
+<manifest
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  package="com.mediatek.incallui.blindect">
+  <application>
+    <!-- M: [InCallUI]for blind ECT feature. Need a seperate Activity for
+      startActivityForResult(), because the InCallActivity is a SingleInstance. -->
+    <activity android:name="com.mediatek.incallui.blindect.AddTransferNumberScreen"
+              android:theme="@android:style/Theme.Material.Light.Dialog.Alert"
+              android:excludeFromRecents="true"
+              android:taskAffinity="com.android.incallui"
+              android:directBootAware="true"/>
+  </application>
+</manifest>

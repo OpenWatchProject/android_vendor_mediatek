@@ -1,0 +1,65 @@
+cc_library_shared {
+    include_dirs: [
+        "vendor/mediatek/proprietary/frameworks/av/AVEnhance/libavextensions/stagefright",
+        "vendor/mediatek/proprietary/frameworks/av/AVEnhance/libmtkavenhancements",
+    ],
+
+    shared_libs: [
+        "liblog",
+        "libutils",
+        "libmediandk",
+        "libstagefright_foundation",
+        "libstagefright_omx_utils",
+        "libstagefright",
+        "libmedia_omx",
+        "libbinder",
+    ],
+
+    static_libs: [
+        "libavextensions",
+        "libstagefright_metadatautils",
+        "libmtkavenhancements_metadatautils",
+    ],
+
+    name: "libmtkaviextractor",
+    owner: "mtk",
+    relative_install_path: "extractors",
+
+    compile_multilib: "first",
+
+    cflags: [
+        "-Werror",
+        "-Wall",
+        "-fvisibility=hidden",
+    ],
+    version_script: "exports.lds",
+
+    sanitize: {
+        cfi: true,
+        misc_undefined: [
+            "unsigned-integer-overflow",
+            "signed-integer-overflow",
+        ],
+    },
+
+    defaults: [
+        "mtk_aviextractor_defaults",
+    ],
+}
+
+bootstrap_go_package {
+    name:"soong-avi-mediatek",
+    pkgPath:"android/soong/avi/mediatek",
+    deps:[
+        "soong-android",
+        "soong-cc",
+    ],
+    srcs:[
+        "avi.go",
+    ],
+    pluginFor:["soong_build"],
+}
+
+mtk_aviextractor_defaults {
+    name: "mtk_aviextractor_defaults",
+}

@@ -1,0 +1,46 @@
+// interface lib
+java_library {
+    name: "wfo-common",
+    srcs: [
+        "lib/src/**/*.java",
+        "lib/src/com/mediatek/wfo/IWifiOffloadService.aidl",
+        "lib/src/com/mediatek/wfo/IWifiOffloadListener.aidl",
+        "lib/src/com/mediatek/wfo/IMwiService.aidl",
+    ],
+    aidl: {
+        local_include_dirs: ["lib/src"],
+    },
+    proprietary: false,
+}
+
+// android_app {
+java_library {
+    name: "WfoService",
+//    installable: true,
+
+    srcs: [
+        "src/**/*.java",
+        "ext/src/**/*.java"
+    ],
+    static_libs: [
+        "vendor.mediatek.hardware.mtkradioex-V1.0-java",
+        "wfo-common",
+        // "com.mediatek.wfo.op",
+    ],
+    libs: [
+        "telephony-common",
+        "ims-common",
+        "mediatek-common",
+        "mediatek-ims-base",
+//        "com.mediatek.wfo.op",
+    ],
+//    platform_apis: true,
+//    proprietary: false,
+//    owner: "mtk",
+    // certificate: "platform",
+    // privileged: true,
+//    optimize: {
+//         enabled: false,
+//    },
+}
+

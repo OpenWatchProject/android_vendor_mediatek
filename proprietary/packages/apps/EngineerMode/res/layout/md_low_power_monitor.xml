@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+              android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginLeft="10dip"
+        android:orientation="vertical">
+
+
+        <Button
+            android:id="@+id/md_low_power_monitor_disabled"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/md_low_power_monitor_disabled">
+        </Button>
+
+        <Button
+            android:id="@+id/md_low_power_monitor_enabled"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/md_low_power_monitor_enabled">
+        </Button>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dip"
+            android:gravity="center"
+            android:text="@string/md_low_power_monitor_config">
+        </TextView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dip">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="@string/md_low_power_monitor_sampling_rate"/>
+
+            <Spinner
+                android:id="@+id/sampling_rate_values_md_low_power"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:entries="@array/sampling_rate_values_md_low_power"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="@string/md_low_power_monitor_sampling_rate_sec"/>
+
+            <Button
+                android:id="@+id/md_low_power_monitor_set_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dip"
+                android:gravity="center"
+                android:text="@string/md_low_power_monitor_set_button">
+            </Button>
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</LinearLayout>

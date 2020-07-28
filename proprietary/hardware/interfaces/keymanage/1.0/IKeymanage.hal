@@ -1,0 +1,6 @@
+package vendor.mediatek.hardware.keymanage@1.0;
+
+interface IKeymanage {
+    meta_drmkey_install_op(HIDL_FT_DRMKEY_INSTALL_REQ fromClient_req, HIDL_FT_DRMKEY_INSTALL_CNF fromClient_cnf, vec<uint8_t> data, uint16_t len) generates(HIDL_FT_DRMKEY_INSTALL_CNF toClient_cnf);
+    get_encrypt_drmkey_hidl(uint32_t keyID) generates(vec<uint8_t> oneDrmkeyBlock, uint32_t blockLeng, int32_t ret);
+};

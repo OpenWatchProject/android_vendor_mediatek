@@ -1,0 +1,50 @@
+/*
+ * Copyright (C) 2016 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+package vendor.mediatek.hardware.mtkradioex@1.9;
+
+enum RsuRequest : int32_t {            // Request function ID
+     RSU_REQUEST_INIT_REQUEST = 0,     // VzW only now
+     RSU_REQUEST_GET_SHARED_KEY,       // VzW(HMAC), TMO/ATT(SHARED KEY)
+     RSU_REQUEST_UPDATE_LOCK_DATA,     // VzW, TMO, ATT, RJIO
+     RSU_REQUEST_GET_LOCK_VERSION,     // VzW, TMO, ATT, RJIO
+     RSU_REQUEST_RESET_LOCK_DATA,      // TMO, ATT
+     RSU_REQUEST_GET_LOCK_STATUS,      // VzW, TMO, ATT, RJIO
+     RSU_REQUEST_UNLOCK_TIMER = 50     // VzW only now for delay timer. Not defined request
+                                       // index by customer, extension start from index 50
+};
+
+struct RsuRequestInfo {     // Default -1 for int and null for string
+    int32_t opId;           // Operator ID
+    int32_t requestId;      // Request function ID
+    int32_t requestType;    // Request type
+    string data;            // In hex string format ([a-fA-F0-9]*)
+    int32_t reserveInt1;    // RFU
+    int32_t reserveInt2;    // RFU
+    string reserveString1;  // RFU
+};
+
+struct RsuResponseInfo {    // Default -1 for int and null for string
+    int32_t opId;           // Operator ID
+    int32_t requestId;      // Request function ID
+    int32_t errCode;        // Error code
+    string data;            // In hex string format ([a-fA-F0-9]*)
+    uint64_t time;          // Currently used to indicate temporary unlock time remaining (s)
+    int32_t version;        // 2 x MSB for major and 2 x LSB for minor
+    int32_t status;         // Lock status
+    int32_t reserveInt1;    // RFU
+    int32_t reserveInt2;    // RFU
+    string reserveString1;  // RFU
+};

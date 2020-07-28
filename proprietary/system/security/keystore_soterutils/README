@@ -1,0 +1,13 @@
+
+WHAT IT DOES?
+=============
+keystore_soterutils.cpp is used by keystore program, and provided SOTER ASK functions
+
+
+HOW IT WAS BUILT?
+==================
+This file will be built together with keystore daemon when MTK_SOTER_SUPPORT = yes
+
+HOW TO USE IT?
+==============
+keystore_soterutils.cpp provides acquireSoterParams/releaseSoterParams and will be called in generateKey()

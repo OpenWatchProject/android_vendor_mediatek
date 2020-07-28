@@ -1,0 +1,609 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+/*
+ * Copyright (C) 2007-2008 Esmertec AG.
+ * Copyright (C) 2007-2008 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+ --><resources xmlns:android="http://schemas.android.com/apk/res/android" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <!--MTK Resources-->
+    <string name="create_new_message" msgid="8735943333953093860">"Kirjoita uusi viesti"</string>
+    <string name="menu_undelivered_messages" msgid="3896857623211780616">"Toimittamattomat viestit"</string>
+    <string name="broadcast_from_to" msgid="2050376286109362539">"<xliff:g id="SENDER">%1$s</xliff:g> – <xliff:g id="RECIPIENT">%2$s</xliff:g>"</string>
+    <string name="anonymous_recipient" msgid="2501437626187039034">"Anonyymi"</string>
+    <string name="view_picture" msgid="4356315935277709195">"Näytä kuva"</string>
+    <string name="sent_on" msgid="5868288548564632354">"Lähetetty: <xliff:g id="DATE">%s</xliff:g>"</string>
+    <string name="name_colon" msgid="7069560650889479120"><b>"<xliff:g id="NAME">%s</xliff:g>"</b>": "</string>
+    <string name="compose_title" msgid="558578836596816068">"Kirjoita viesti"</string>
+    <string name="image_too_large" msgid="261880224164478061">"Liian suuri kuva"</string>
+    <string name="ask_for_automatically_resize" msgid="7657603662407738758">"Muutetaanko kuvan kokoa automaattisesti ennen lähettämistä?"</string>
+    <string name="cannot_load_message" msgid="2577010607550849892">"Viestiä ei voi ladata."</string>
+    <string name="locked_message_cannot_be_deleted" msgid="6369452071783350219">"Lukittuja viestejä ei voi poistaa."</string>
+    <string name="multiple_recipients" msgid="8747754491343248141">"<xliff:g id="RECIPIENTCOUNT">%1$s</xliff:g> vastaanottajaa"</string>
+    <string name="resize" msgid="4308912589984220360">"Muuta kokoa"</string>
+    <string name="to_label" msgid="2355268818058389047">"Vastaanottaja "</string>
+    <string name="confirm_delete_all_messages" msgid="5836389073199814660">"Koko viestiketju poistetaan."</string>
+    <string name="mms_priority_label" msgid="7397600367853359607">"Tärkeys"</string>
+    <string name="menu_retry_sending" msgid="3146582005568302643">"Yritä lähettämistä uudelleen"</string>
+    <string name="menu_retry_sending_all" msgid="1870529976966340616">"Yritä lähettämistä uudelleen"</string>
+    <string name="retrying_dialog_body" msgid="4738260459043003431">"Viestiä <xliff:g id="MESSAGE">%s</xliff:g> ei lähetetty yhteysongelman vuoksi. "\n"Yritetään lähettää uudelleen..."</string>
+    <string name="dl_expired_notification" msgid="950390029992535809">"Tämä viesti on vanhentunut ja se poistetaan."</string>
+    <string name="add_attachment_activity" msgid="5324811371129695320">"Lisää liitetiedosto:"</string>
+    <string name="select_layout_activity" msgid="5041916695464513848">"Valitse asettelu"</string>
+    <string name="edit_text_activity" msgid="5915226413346879213">"Muokkaa tekstiä"</string>
+    <string name="pick_numbers_activity" msgid="2083330191224178637">"Valitse numerot"</string>
+    <string name="send_using_mms_activity" msgid="3703434556280345726">"Lähetä multimediaviestinä…"</string>
+    <string name="select_contact_method_activity" msgid="1743384358979323991">"Valitse yhteydenottotapa"</string>
+    <string name="me" msgid="341726346007839961">"Minä"</string>
+    <string name="invalid_contact_message">"Yhteystietoa ei ole olemassa."</string>
+    <string name="finish">"Valmis"</string>
+<string name="more_recipients">vastaanottaja(t)</string>
+    <string name="Insert_sdcard">Aseta SD-kortti sisään!</string>
+    <string name="pref_title_mms_enable_to_send_delivery_reports">Lähetä toimitusraportti</string>
+    <string name="pref_summary_mms_enable_to_send_delivery_reports">Lähetä toimitusraportti kaikista vastaanottamistasi viesteistä</string>
+    <string name="set_service_center_OK">aseta SMS-palvelukeskus OK</string>
+    <string name="set_service_center_fail">aseta SMS-palvelukeskus epäonnistui</string>
+    <string name="OK">OK</string>
+    <string name="Cancel">"Peruuta"</string>
+    <string name="sms_save_location">SMS-tallennustilan sijainti</string>
+    <string name="sms_service_center">SMS-palvelukeskus</string>
+    <string name="sms_validity_period">SMS:n kelvollisuusaika</string>
+    <string name="sms_validity_period_nosetting">Ei asetettu</string>
+    <string name="sms_validity_period_1hour">"1 tunti"</string>
+    <string name="sms_validity_period_6hours">6 tuntia</string>
+    <string name="sms_validity_period_12hours">12 tuntia</string>
+    <string name="sms_validity_period_1day">"1 päivä"</string>
+    <string name="sms_validity_period_max">Maksimi</string>
+    <string name="service_center_label">Palvelukeskus:\u0020</string>
+    <string name="cu_subject">Lemei-aihe</string>
+    <string name="pref_title_mms_creation_mode">Luontitila</string>
+    <string name="pref_summary_mms_creation_mode">MMS-luontitila viestin laatimiseen</string>
+    <string name="pref_title_mms_size_limit">Kokorajoitus</string>
+    <string name="pref_summary_mms_size_limit">MMS-kokorajoitus laadittavalle viestille</string>
+    <string name="confirm_restricted_audio">Rajoitettu audiosisältötyyppi. Haluatko silti liittää?</string>
+    <string name="confirm_restricted_image">Rajoitettu kuvasisältötyyppi. Haluatko silti liittää?</string>
+    <string name="confirm_restricted_video">Rajoitettu videosisältötyyppi. Haluatko silti liittää?</string>
+    <string name="unsupport_media_type">Tukematon mediatyyppi</string>
+    <string name="select_different_media_type">Valitse eri media</string>
+    <string name="image_resolution_too_large">Kuvaresoluutio liian laaja liitettäväksi</string>
+    <string name="wp_msg_type">Huoltoviesti</string>
+    <string name="wp_msg_created_label">Luotu:\u0020</string>
+    <string name="wp_msg_created_unknown">"Tuntematon"</string>
+    <string name="wp_msg_priority_label">Ensisijaisuus:\u0020</string>
+    <string name="wp_msg_priority_low">Matala</string>
+    <string name="wp_msg_priority_medium">"Keskikokoinen"</string>
+    <string name="wp_msg_priority_high">Korkea</string>
+    <string name="menu_goto_browser">Avaa selain</string>
+    <string name="menu_add_to_bookmark">Lisää kirjanmerkkeihin</string>
+    <string name="wp_msg_expiration_label">Vanhentunut: <xliff:g id="DATE">%s</xliff:g></string>
+    <string name="error_unsupported_scheme">Kyseinen toiminta ei ole tällä hetkellä tuettu.</string>
+    <string name="pref_title_wappush_settings">Palveluviestiasetus</string>
+    <string name="pref_title_wappush_enable">Ota käyttöön WAP PUSH</string>
+    <string name="pref_summary_wappush_enable">Ota käyttöön WAP PUSH -vastaanotto</string>
+    <string name="pref_title_wappush_sl_autoloading">Käynnistä SL automaattisesti</string>
+    <string name="pref_summary_wappush_sl_autoloading">Käynnistä palvelun lataamisviesti (SL), kun vastaanotettu</string>
+    <string name="menu_send_sms">Lähetä viesti kohteeseen <xliff:g id="name">%s</xliff:g></string>
+    <string name="menu_omacp">Määritysviesti</string>
+    <string name="save_message_to_sim">Tallenna viesti SIM-kortille</string>
+    <string name="received_on">"Vastaanotettu: <xliff:g id="date">%s</xliff:g>"</string>
+    <string name="save_message_to_sim_successful">Tallennus onnistui</string>
+    <string name="save_message_to_sim_unsuccessful">Tallennus epäonnistui</string>
+    <string name="transmission_transiently_failed">Lähetysvirhe. Yritä myöhemmin uudelleen.</string>
+    <string name="download_failed_due_to_full_memory">Viestin lataaminen epäonnistui, koska muisti on täynnä.</string>
+    <string name="mms_too_big_to_download">Viesti on liian suuri ladattavaksi verkosta.</string>
+    <string name="menu_reply">"Vastaa"</string>
+    <string name="menu_sim_sms">"SIM SMS"</string>
+    <string name="cannot_add_recipient">Vastaanottajien raja saavutettu. Et voi enää lisätä vastaanottajia.</string>
+    <string name="status_expired">Vanhentunut</string>
+    <string name="status_deferred">Siirretty</string>
+    <string name="status_unrecognized">Tunnistamaton</string>
+    <string name="status_indeterminate">Määrittämätön</string>
+    <string name="status_unreachable">Tavoittamaton</string>
+    <string name="attach_ringtone">"Soittoääni"</string>
+    <string name="notification_multiple_cb"><xliff:g id="count">%s</xliff:g> lukematonta CB-viestiä</string>
+    <string name="notification_multiple_cb_title">Uusia solulähetysviestejä</string>
+    <string name="fdn_enabled">FDN otettu käyttöön</string>
+    <string name="cannot_send_message_reason_no_content">Ei lähetettävää sisältöä</string>
+    <string name="ok">"OK"</string>
+    <string name="cancel">"Peruuta"</string>
+    <string name="enable">"Ota käyttöön"</string>
+    <string name="disable">"Poista käytöstä"</string>
+    <string name="cb_read_message">Lue CB-viesti</string>
+    <string name="cb_read_message2">Lue solulähetysviesti</string>
+    <string name="cb_message">Solulähetysviesti</string>
+    <string name="cb_default_channel_name">Kanavalta</string>
+    <string name="cell_broadcast_setting">"Cell Broadcast -asetukset"</string>
+    <string name="cb_menu_language">"Kieli"</string>
+    <string name="cb_menu_add_channel">Lisää kanava</string>
+    <string name="cb_menu_channel_list">Kanavaluettelo</string>
+    <string name="cb_dialog_title_language_choice">Valitse kieli</string>
+    <string name="cb_channel_dialog_channel_name">Kanavan nimi (0–10 merkkiä)</string>
+    <string name="cb_channel_dialog_channel_number">Kanavan numero (0–65534)</string>
+    <string name="cb_channel_dialog_channel_state">Ota kanava käyttöön</string>
+    <string name="cb_channel_dialog_edit_channel">Muokkaa kanavaa</string>
+    <string name="cb_menu_edit">"Muokkaa"</string>
+    <string name="cb_menu_delete">"Poista"</string>
+    <string name="cb_error_channel_num">Syötä kanavanumero (0–65534).</string>
+    <string name="cb_error_channel_name">Kanavan nimen pituus ei ole oikea (1–10 merkkiä).</string>
+    <string name="cb_error_language_select">Valitse vähintään yksi kieli.</string>
+    <string name="cb_error_channel_id_exist">Kanavatunnus on olemassa.</string>
+    <string name="cb_all_languages">"Kaikki kielet"</string>
+    <string name="cb_default_new_channel_name">Uusi kanava</string>
+    <string name="sum_cell_broadcast_control_on">Ota solulähetys käyttöön</string>
+    <string name="sum_cell_broadcast_control_off">Ota solulähetys pois käytöstä</string>
+    <string name="sum_cell_broadcast_setting">Solulähetyksen kieli- ja kanava-asetus</string>
+    <string name="message_open_email_fail">Pahoittelut. Aseta ensin sähköpostitilisi.</string>
+    <string name="add_contacts">"Yhteystiedot"</string>
+    <string name="close_dialog">OK</string>
+    <string name="updating_title">"Puheluasetukset"</string>
+    <string name="error_updating_title">"Virhe puheluasetuksissa"</string>
+    <string name="reading_settings">"Luetaan asetuksia…"</string>
+    <string name="updating_settings">"Päivitetään asetuksia..."</string>
+    <string name="reverting_settings">"Palautetaan asetuksia…"</string>
+    <string name="exception_error">"Verkko- tai SIM-korttivirhe."</string>
+    <string name="send_by_sim2">SIM2:n lähettämä</string>
+    <string name="send_by_sim1">SIM1:n lähettämä</string>
+    <string name="menu_item_send_by">Lähettäjä</string>
+    <string name="data_connected_confirm_title">Vahvista lähetys</string>
+    <string name="data_connected_confirm_message">MMS:n lähettäminen tällä SIM-kortilla voi keskeyttää joksikin aikaa nykyisen tietojen lataamisen. Haluatko jatkaa?</string>
+    <string name="menu_item_sim1">SIM 1</string>
+    <string name="menu_item_sim2">SIM 2</string>
+    <string name="no_sim_1">SIM 1 -korttia ei ole liitetty.</string>
+    <string name="no_sim_2">SIM 2 -korttia ei ole liitetty.</string>
+    <string name="no_sim">SIM %d -korttia ei ole liitetty.</string>
+    <string name="sim1_full_title">SIM-kortti 1 täynnä</string>
+    <string name="sim2_full_title">SIM-kortti 2 täynnä</string>
+    <string name="select_all">"Valitse kaikki"</string>
+    <string name="confirm_delete_selected_messages">Valitut viestit poistetaan.</string>
+    <string name="confirm_delete_selected_theads">Valitut langat poistetaan.</string>
+    <string name="restricted_forward_title">"Multimediaviesti"</string>
+    <string name="restricted_forward_message">Tätä mediaa ei ehkä voi näyttää oikein vastaanottajille. Haluatko jatkaa?</string>
+    <string name="strOk">Viesti lähetetty</string>
+    <string name="strFail">Viestin lähettäminen epäonnistui</string>
+    <string name="menu_insert_text_vcard">Liitä yhteystieto</string>
+    <string name="contact_name">"Nimi"</string>
+    <string name="contact_tel">Puh</string>
+    <string name="contact_email">Sähköposti</string>
+    <string name="contact_organization">Organisaatio</string>
+    <string name="contact_address">Osoite</string>
+    <string name="max_recipients_title">Maksimimäärä saavutettu</string>
+    <string name="max_recipients_message">MMS sallii enintään <xliff:g id="maxLimit">%s</xliff:g> vastaanottajaa. Jotkut vastaanottajista poistetaan. Haluatko jatkaa?</string>
+    <string name="via_without_time_for_send">Kautta</string>
+    <string name="via_without_time_for_recieve">Kautta</string>
+    <string name="sim_selected_dialog_title">Valitse SIM</string>
+    <string name="suggested">Ehdotettu</string>
+    <string name="add_contact_dialog_message">"Lisätäänkö numero %s aiemmin luotuun vai uuteen yhteystietoon?"</string>
+    <string name="add_contact_dialog_new">"Uusi"</string>
+    <string name="add_contact_dialog_existing">Aiemmin luotu</string>
+    <string name="deleting">Poistetaan</string>
+    <string name="pref_title_storage_status">Nykyinen tallennustilan käyttö</string>
+    <string name="storage_dialog_mms">Mms:\u0020<xliff:g id="number">%s</xliff:g> kohde(tta)</string>
+    <string name="storage_dialog_sms">Sms:\u0020<xliff:g id="number">%s</xliff:g> kohde(tta)</string>
+    <string name="storage_dialog_attachments">Mms-liitteet:\u0020</string>
+    <string name="storage_dialog_database">Tietokanta:\u0020</string>
+    <string name="storage_dialog_available_space">Käytettävissä oleva tila:\u0020</string>
+    <string name="menu_show_icc_sms_capacity">Näytä kapasiteetti</string>
+    <string name="show_icc_sms_capacity_title">Kapasiteetti</string>
+    <string name="icc_sms_used">Käytössä:</string>
+    <string name="icc_sms_total">Yhteensä:</string>
+    <string name="get_icc_sms_capacity_failed">SIM-kortin kapasiteetin haku epäonnistui.</string>
+    <plurals name="read_report_toast_msg">
+     <item quantity="one">lähetetään %d lukuraportti</item>
+     <item quantity="other">lähetetään %d lukuraporttia</item>
+   </plurals>
+    <string name="pref_title_mms_auto_reply_read_reports">Lähetä lukuraportti</string>
+    <string name="pref_summary_mms_auto_reply_read_reports">Lähetä lukuraportti, jos MMS:n lähettäjä pyytää sitä</string>
+    <string name="exceed_subject_length_limitation">Maksimipituus saavutettu</string>
+    <plurals name="message_view_selected_message_count">
+     <item quantity="one"><xliff:g id="message_count" example="1">%d</xliff:g> valittu</item>
+     <item quantity="other"><xliff:g id="message_count" example="9">%d</xliff:g> valittu</item>
+   </plurals>
+    <string name="disable_notifications_dialog_message">"Pysäytä päällekkäiset tekstiviesti-ilmoitukset oletusviestisovelluksesta?"</string>
+    <string name="sms_input_mode_title">Syöttötila</string>
+    <string name="sms_input_mode_dialog_title">Valitse syöttötila</string>
+    <string name="sms_input_mode_summary">SMS-syöttötila viestin laadintaan</string>
+    <string name="pref_title_io_settings">Tuo/Vie SMS</string>
+    <string name="pref_summary_import_msg">Tuo SMS SD-kortilta</string>
+    <string name="pref_title_import_msg">Tuo SMS</string>
+    <string name="pref_summary_export_msg">Vie SMS SD-kortille</string>
+    <string name="pref_title_export_msg">Vie SMS</string>
+    <string name="no_sd_card">SD-kortti ei ole valmis</string>
+    <string name="export_message_ongoing">Vie SMS SD-kortille. Odota...</string>
+    <string name="import_message_ongoing">Tuo SMS SD-kortilta. Odota...</string>
+    <string name="export_message_success">SMS:n vieminen SD-kortille onnistui</string>
+    <string name="import_message_success">SMS:n tuominen SD-kortilta onnistui</string>
+    <string name="import_message_fail">SMS:n tuonti SD-kortilta epäonnistui</string>
+    <string name="export_message_fail">SMS:n vieminen SD-kortille epäonnistui</string>
+    <string name="import_message_list">SMS DB -luettelo SD-kortissa</string>
+    <string name="import_message_list_empty">SD-kortissa ei ole SMS DB -tiedostoja</string>
+    <string name="export_message_empty">Vietävää SMS:ää ei ole!</string>
+    <string name="whether_export_item">Haluatko viedä SMS:n?</string>
+    <string name="whether_import_item">Haluatko tuoda</string>
+    <string name="export_disk_problem">SD-kortti on täynnä tai siihen ei voi kirjoittaa</string>
+    <string name="select_text">Valitse teksti</string>
+    <string name="unselect_all">"Poista kaikki valinnat"</string>
+    <string name="forward_from">Lähetä edelleen kohteesta:</string>
+    <string name="sms_forward_setting">SMS:n edelleenlähetysasetus</string>
+    <string name="sms_forward_setting_summary">Lähetä SMS edelleen lähettäjän nimellä ja numerolla</string>
+    <string name="forward_byself">"Minä"</string>
+    <string name="file_attachment_vcalendar_name">vCalendar(<xliff:g id="text">%s</xliff:g>)</string>
+    <string name="file_attachment_vcard_name">vCard(<xliff:g id="text">%s</xliff:g>)</string>
+    <string name="attach_vcalendar">"Kalenteri"</string>
+    <string name="file_attachment_import_vcard">Tuo vCard</string>
+    <string name="attach_vcard">Yhteystieto</string>
+    <string name="type_common_file">tiedosto</string>
+    <string name="please_wait">"Odota..."</string>
+    <string name="failed_to_parse_vcard">vCard-tiedostoa ei voi jäsentää!</string>
+    <string name="empty_vcard">Ei yhteystietoja vCardissa</string>
+    <string name="parse_vcard">Jäsennä vCard</string>
+    <string name="vcard_no_details">Tällä yhteystiedolla ei ole lisätietoja"</string>
+    <string name="note">Huomautus</string>
+    <string name="organization">Organisaatio</string>
+    <string name="website">Web-sivusto:\u0020</string>
+    <string name="nickname">Lempinimi</string>
+    <string name="call_custom"><xliff:g id="custom">%s</xliff:g></string>
+    <string name="call_home">"Puhelinnumero (koti)"</string>
+    <string name="call_mobile">"Mobiili"</string>
+    <string name="call_work">"Työ"</string>
+    <string name="call_fax_work">"Faksi (työ)"</string>
+    <string name="call_fax_home">"Faksi (koti)"</string>
+    <string name="call_pager">"Hakulaite"</string>
+    <string name="call_other">muu</string>
+    <string name="call_callback">takaisinsoitto</string>
+    <string name="call_car">"Auto"</string>
+    <string name="call_company_main">"Yritys (ensisijainen)"</string>
+    <string name="call_isdn">"ISDN"</string>
+    <string name="call_main">"Ensisijainen"</string>
+    <string name="call_other_fax">"Faksi"</string>
+    <string name="call_radio">"Radio"</string>
+    <string name="call_telex">"Teleksi"</string>
+    <string name="call_tty_tdd">TTY/TDD</string>
+    <string name="call_work_mobile">"Matkapuhelin (työ)"</string>
+    <string name="call_work_pager">"Hakulaite (työ)"</string>
+    <string name="call_assistant"><xliff:g id="assistant">%s</xliff:g></string>
+    <string name="call_mms">MMS</string>
+    <string name="email_home">Kotisähköposti</string>
+    <string name="email_mobile">Kotimatkapuhelin</string>
+    <string name="email_work">Työsähköposti</string>
+    <string name="email_other">Sähköposti</string>
+    <string name="email_custom">Sähköposti <xliff:g id="custom">%s</xliff:g></string>
+    <string name="email">Sähköposti</string>
+    <string name="map_home">Näytä kotiosoite</string>
+    <string name="map_work">Näytä työosoite</string>
+    <string name="map_other">Näytä osoite</string>
+    <string name="map_custom">Näytä <xliff:g id="custom">%s</xliff:g> osoite</string>
+    <string name="chat_aim">Chattaile AIM-sovelluksella</string>
+    <string name="chat_msn">Chattaile Windows Live -sovelluksella</string>
+    <string name="chat_yahoo">Chattaile Yahoo-sovelluksella</string>
+    <string name="chat_skype">Chattaile Skype-sovelluksella</string>
+    <string name="chat_qq">Chattaile QQ-sovelluksella</string>
+    <string name="chat_gtalk">Chattaile Google Talk -sovelluksella</string>
+    <string name="chat_icq">Chattaile ICQ-sovelluksella</string>
+    <string name="chat_jabber">Chattaile Jabber-sovelluksella</string>
+    <string name="chat">Keskustelu</string>
+    <string name="inbox">"Postilaatikko"</string>
+    <string name="outbox">"Lähtevät"</string>
+    <string name="draftbox">Luonnoskansio</string>
+    <string name="sentbox">Lähetetyt-kansio</string>
+    <string name="simbox">SIM-kansio</string>
+    <string name="changeview">Muuta tila</string>
+    <string name="viewer_title_sms">"Tekstiviesti"</string>
+    <string name="viewer_title_wappush">Wappush</string>
+    <string name="viewer_title_cb">Solulähetys</string>
+    <string name="slideshow_details">Viestin tiedot</string>
+    <string name="open">"Avaa"</string>
+    <string name="delete_all_confirm">"Poistetaanko kaikkin kansion viestit?"</string>
+    <string name="folder_recipient">Vastaanottaja:</string>
+    <string name="folder_recieve_date">Päivämäärä:</string>
+    <string name="folder_download">MMS:ää ladataan</string>
+    <string name="confirm_download_message">"Vahvista lataaminen -viesti"</string>
+    <string name="play_as_slideshow">Toista MMS diaesityksenä</string>
+    <string name="by_card">Peruste:</string>
+    <string name="page">Sivu %d</string>
+    <string name="space_not_enough">Jäljellä oleva tila ei riitä videon kuvaamiseen</string>
+    <string name="space_not_enough_for_audio">Jäljellä oleva tila ei riitä audion tallentamiseen</string>
+    <string name="no_messages">"Ei viestejä"</string>
+    <string name="call_video_call">Videopuhelu</string>
+    <string name="storage_dialog_mms_size">MMS:n koko:\u0020</string>
+    <string name="error_add_attachment">"Tuntematon virhe. Ei voi lisätä kohdetta <xliff:g id="name">%1$s</xliff:g> viestiisi."</string>
+    <string name="no_application_response">"Ei sovellusta pyynnön käsittelyyn"</string>
+    <string name="cdma_not_support">CDMA ei tue tätä ominaisuutta</string>
+    <string name="allmessage">"Kaikki viestit"</string>
+    <string name="select_message">Valitse viesti</string>
+    <string name="confirm_delete_allmessage">"Kaikki multimediaviestit poistetaan."</string>
+    <string name="mark_as_read_btn_str">Merkitse luetuksi</string>
+    <string name="delete_btn_str">"Poista"</string>
+    <string name="reply_send">"Lähetä"</string>
+    <string name="via_test">"kautta"</string>
+    <string name="received_header">"Vastaanotettu:"</string>
+    <string name="no_item_selected">Kohteita ei ole valittu.</string>
+    <string name="sync_mms_to_db">Ladataan…</string>
+    <string name="pref_title_font_size_setting">FONTTIKOKOASETUS</string>
+    <string name="pref_title_message_font_size">Viestin fonttikoko</string>
+    <string name="pref_summary_message_font_size">Viestin fonttikoko</string>
+    <string name="message_font_size_dialog_title">Viestin fonttikoko</string>
+    <string name="message_font_size_dialog_cancel">"Peruuta"</string>
+    <string name="change">Muuta</string>
+    <string name="change_default_disk">Puhelimen tallennustilassa ei ole tarpeeksi tilaa. Vapauta tallennustilaa tai muuta "oletuskirjoituslevyä" Asetuksissa.</string>
+    <string name="failed_to_add_image">Viestin kokorajoitus saavutettu. Joitakin osia ei lisätä.</string>
+    <string name="ipmsg_conversation_list_all">"Viestit"</string>
+    <string name="ipmsg_conversation_list_important">Tärkeää</string>
+    <string name="ipmsg_conversation_list_group_chats">Ryhmäkeskustelut</string>
+    <string name="ipmsg_conversation_list_spam">Roskaposti</string>
+    <string name="ipmsg_create_group_chat">Luo ryhmäkeskustelu</string>
+    <string name="ipmsg_send_invitation">Lähetä kutsut</string>
+    <string name="str_ipmsg_download_history_dlg">Ladataan...</string>
+    <string name="to_hint_ipmsg">"Näppäile nimi tai numero"</string>
+    <string name="type_to_compose_text_enter_to_send_ipmsg">"Näppäile SMS/iSMS-viesti"</string>
+    <string name="ipmsg_ipmsg_hint">"Näppäile iSMS-viesti"</string>
+    <string name="ipmsg_sms_hint">"Näppäile tekstiviesti"</string>
+    <string name="ipmsg_caption_hint">"Näppäile kuvatekstit"</string>
+    <string name="ipmsg_cancel">"Peruuta"</string>
+    <string name="ipmsg_invite_chat_frequently"><b>Chattailetko usein kohteen %s kanssa ?</b>\nMiksi et kutsuisi kohdetta %s käyttämään iSMS:ää teidän kummankin rahojen säästämiseksi?</string>
+    <string name="ipmsg_enable_chat_frequently"><b>%s käyttää iSMS:ää!</b>\nMiksi et ottaisi käyttöön iSMS-palvelua ja säästäisi teidän kummankin rahoja?</string>
+    <string name="ipmsg_invite">Kutsu</string>
+    <string name="ipmsg_dismiss">"Hylkää"</string>
+    <string name="ipmsg_enable">"Ota käyttöön"</string>
+    <string name="ipmsg_enable_notice">Haluatko varmasti ottaa käyttöön iSMS-palvelun?</string>
+    <string name="ipmsg_activate">"Ota käyttöön"</string>
+    <string name="ipmsg_activate_chat_frequently"><b>Chattailetko usein kavereiden kanssa?</b>\nMiksi et aktivoisi iSMS-palvelua chattaillaksesi ilman SMS-kustannuksia?</string>
+    <string name="ipmsg_activate_note">Haluatko varmasti aktivoida iSMS-palvelun?</string>
+    <string name="ipmsg_dismiss_content">Haluatko varmasti hylätä tämän muistiinpanon?</string>
+    <string name="ipmsg_ipmsg">IP-viesti</string>
+    <string name="ipmsg_dailog_multi_forward">Viestien välittäminen</string>
+    <string name="ipmsg_dialog_send_result">Lähetä tulos</string>
+    <string name="ipmsg_dlg_send_all">Kaikki: %s</string>
+    <string name="ipmsg_dlg_send_sucess">Lähetetty: %s</string>
+    <string name="ipmsg_dlg_send_failed">Epäonnistui: %s</string>
+    <string name="multi_forward_sim_info">Haetaan SIM-tietoja</string>
+    <string name="ipmsg_multi_forward_no_sim">Ei SIM-tietoja</string>
+    <string name="ipmsg_divider_online">%s on Online-tilassa</string>
+    <string name="ipmsg_divider_offline">Viimeinen online-aika aikana %s</string>
+    <string name="ipmsg_divider_never_online">Ei koskaan online-tilassa</string>
+    <string name="ipmsg_vcard_file_name">%s yhteystietoa</string>
+    <string name="ipmsg_getsim_failed">SIM-kortin hakeminen epäonnistui</string>
+    <string name="ipmsg_sim_status_error">SIM-tilavirhe</string>
+    <string name="ipmsg_forward_failed">Edelleenlähetys epäonnistui</string>
+    <string name="ipmsg_forward_norecipients">Uudelleenlähetettävässä viestissä ei ole vastaanottajaa</string>
+    <string name="ipmsg_multiforward_no_message">Ei uudelleenlähetettäviä viestejä</string>
+    <string name="ipmsg_need_input_recipients">Määritä ensin vähintään yksi vastaanottaja</string>
+    <string name="str_ipmsg_unread_format">%1$d lukematonta viestiä</string>
+    <string name="str_ipmsg_not_delivered_title">Ei vielä toimitettu</string>
+    <string name="str_ipmsg_failed_title">Lähetys epäonnistui</string>
+    <string name="ipmsg_try_again">"Yritä uudelleen"</string>
+    <string name="ipmsg_try_all_again">Yritä kaikkia uudelleen</string>
+    <string name="ipmsg_resend_via_sms">Lähetä sen asemesta SMS</string>
+    <string name="ipmsg_resend_via_mms">Lähetä sen asemesta MMS</string>
+    <string name="str_ipmsg_cant_share">SDcard i käytettävissä, mediaviestiä ei voi jakaa</string>
+    <string name="str_ipmsg_file_limit">liian suuri</string>
+    <string name="str_ipmsg_no_app">Mikään sovellus ei voi suorittaa tätä toimintaa.</string>
+    <string name="str_ipmsg_today">"Tämä päivä"</string>
+    <string name="str_ipmsg_yesterday">"eilen"</string>
+    <string name="ip_message_typing_text">Näppäily</string>
+    <string name="str_ipmsg_no_such_file">Ei kyseistä tiedostoa</string>
+    <string name="str_ipmsg_over_file_limit">Tiedostoko ylittää rajan</string>
+    <string name="str_ipmsg_invalid_file_type">Tätä tyyppiä ei tueta</string>
+    <string name="invite_friends_to_ipmsg">Kutsu kaverisi käyttämään iSMS-palvelua</string>
+    <string name="invite_friends_to_chat">Kutsu kaverisi keskusteluun</string>
+    <string name="invite_friends_to_ipmsg_dialog_msg">Kutsun lähettämiseksi laatimisviestisi hylätään.</string>
+    <string name="invite_friends_to_ipmsg_content">Hei, iSMS on siisti chattaustyökalu. Se ilmainen ja helppo käyttää. Katso lisätietoja osoitteesta http://isms.hissage.com.</string>
+    <string name="export">"Vie"</string>
+    <string name="mark_as_spam">Siirrä roskapostiluetteloon</string>
+    <string name="mark_as_spam_tips">Roskapostiksi merkityt viestit siirretään ja niiden ilmoitukset poistetaan automaattisesti.</string>
+    <string name="remove_frome_spam">Poista Roskapostiluettelosta</string>
+    <string name="add_shortcut">Lisää pikavalinta</string>
+    <string name="view_all_media">Näytä kaikki media</string>
+    <string name="view_all_location">Näytä kaikki sijainnit</string>
+    <string name="ipmsg_export_to_sdcard">Vie SD-kortille</string>
+    <string name="ipmsg_copy">"Kopioi"</string>
+    <string name="ipmsg_send_via_text_msg">Lähetä tekstiviestinä</string>
+    <string name="ipmsg_send_via_mms">Lähetä multimediaviestinä</string>
+    <string name="ipmsg_retry">"Yritä uudelleen"</string>
+    <string name="ipmsg_delete">"Poista"</string>
+    <string name="ipmsg_share">"Jaa"</string>
+    <string name="ipmsg_mark_as_important">Merkitse tärkeäksi</string>
+    <string name="ipmsg_remove_from_important">Poista tärkeä-merkintä</string>
+    <string name="str_ipmsg_save_file">Tiedosto tallennettu kohteeseen %1$s</string>
+    <string name="continue_str">"Jatka"</string>
+    <string name="convert_to_mms">Muunna MSS:ksi.</string>
+    <string name="convert_to_sms">Muunna SMS:ksi.</string>
+    <string name="ipmsg_convert_to_ipmsg">Muunna iSMS:ksi.</string>
+    <string name="ip_message_convert_to_mms_message_for_service">iSMS-palvelu ei ole käytettävissä tässä valitussa SIM-kortissa. Tämän viestin voi lähettää tässä SIM-kortissa vain multimediaviestinä. Haluatko kuitenkin jatkaa?</string>
+    <string name="ip_message_convert_to_sms_message_for_service">iSMS-palvelu ei ole käytettävissä tässä valitussa SIM-kortissa. Tämän viestin voi lähettää tässä SIM-kortissa vain tekstiviestinä. Haluatko kuitenkin jatkaa?</string>
+    <string name="ip_message_convert_to_mms_message_for_recipients">Vastaanottajat eivät ole iSMS-käyttäjiä. Tämän viestin voi lähettää vain multimediaviestinä. Haluatko kuitenkin jatkaa?</string>
+    <string name="ip_message_convert_to_sms_message_for_recipients">Vastaanottajat eivät ole iSMS-käyttäjiä. Tämän viestin voi lähettää vain tekstiviestinä. Haluatko kuitenkin jatkaa?</string>
+    <string name="ipmsg_sms_convert_to_ipmsg">iSMS-palvelu on käytettävissä tässä valitussa SIM-kortissa. Säästääksesi SMS-kustannuksia, on suositeltavaa muuttaa viesti iSMS-viestiksi. Muutetaanko nyt?</string>
+    <string name="ipmsg_mms_convert_to_ipmsg">iSMS-palvelu on käytettävissä tässä valitussa SIM-kortissa. Säästääksesi MMS-kustannuksia, on suositeltavaa muuttaa viesti iSMS-viestiksi. Muutetaanko nyt?</string>
+    <string name="keep_mms">Pidä MMS-viestinä</string>
+    <string name="keep_sms">Pidä SMS-viestinä</string>
+    <string name="switch_ipmsg">Vaihda</string>
+    <string name="ip_message_load_all_message">Lataa kaikki viestit</string>
+    <string name="str_ipmsg_replace_attach">Korvaa liite</string>
+    <string name="str_ipmsg_replace_attach_msg">Viestissä on jo liite. Korvataanko?</string>
+    <string name="ipmsg_err_file">Tiedoston avaaminen epäonnistui</string>
+    <string name="pref_title_display_preference_settings">NÄYTTÖ JA ASETUKSET</string>
+    <string name="pref_chat_wallpaper">Keskustelun taustakuva</string>
+    <string name="pref_auto_rotation">Automaattinen kierto</string>
+    <string name="pref_show_email_address">Näytä sähköpostiosoite</string>
+    <string name="pref_summary_show_email_address">Sisällytä sähköpostiosoite yhteystietotuloksiin</string>
+    <string name="pref_title_backup_restore_settings">VARMUUSKOPIOI JA PALAUTA</string>
+    <string name="pref_backage_message">Varmuuskopioi viesti</string>
+    <string name="pref_summary_backup_message">Viimeinen varmuuskopioi: Ei koskaan</string>
+    <string name="pref_restore_message">Palauta viesti</string>
+    <string name="pref_summary_restore_message">Palauta varmuuskopioidut viestit</string>
+    <string name="pref_mute">"Äänetön"</string>
+    <string name="pref_summary_mute">"Pois"</string>
+    <string name="pref_vibrate">"Värinä"</string>
+    <string name="pref_summary_vibrate">Värisytä vastaanotettaessa ilmoituksia</string>
+    <string name="pref_popup_notification">Ponnahdusilmoitus</string>
+    <string name="pref_summary_popup_notification">Näytä ponnahdusilmoitus push-ilmoituksissa</string>
+    <string name="pref_title_display_settings">"Ruutu"</string>
+    <string name="pref_title_actions_settings">Toimenpiteet</string>
+    <string name="pref_download_chat_history">Lataa keskusteluhistoria</string>
+    <string name="pref_summary_download_chat_history">Tallenna SD-kortille zip-muodossa</string>
+    <string name="pref_email_chat_history">Lähetä keskusteluhistoria sähköpostitse</string>
+    <string name="pref_summary_email_chat_history">Lähetä keskusteluhistoria sähköpostitse zip-muodossa</string>
+    <string name="pref_clear_chat_history">Tyhjennä keskusteluhistoria</string>
+    <string name="pref_summary_notification_ringtone">Aseta soittoääni uusille ilmoituksille</string>
+    <string name="pref_setting_title">Viestiasetus</string>
+    <string name="pref_setting_sms">Tekstiviesti (SMS)</string>
+    <string name="pref_setting_mms">Multimediaviesti (MMS)</string>
+    <string name="pref_setting_notification">"Ilmoitukset"</string>
+    <string name="pref_setting_general">"Yleiset"</string>
+    <string name="pref_setting_chat">Keskusteluasetukset</string>
+    <string name="chat_setting_saving">tallennetaan...</string>
+    <string name="chat_setting_updating">päivitetään...</string>
+    <string name="chat_setting_sending">lähetetään…</string>
+    <string name="dialog_save_title">Tallenna SD-kortille</string>
+    <string name="dialog_save_description">Tallenna tämä keskustelun säie SD-kortille zip-tiedostona</string>
+    <string name="dialog_email_title">Jaa sähköpostitse</string>
+    <string name="dialog_email_description">Jaa tämä keskustelun säie sähköpostin liitteenä zip-muodossa</string>
+    <string name="dialog_clear_title">"Tyhjennä"</string>
+    <string name="dialog_clear_description">Koko keskusteluhistoria tyhjennetään tässä keskusteluhuoneessa</string>
+    <string name="dialog_wallpaper_chooser_wallpapers">Taustakuvat</string>
+    <string name="dialog_wallpaper_chooser_gallery">Galleria</string>
+    <string name="dialog_wallpaper_chooser_take">"Ota valokuva"</string>
+    <string name="dialog_wallpaper_chooser_default">"Oletus"</string>
+    <string name="dialog_wallpaper_title">Valitse taustakuva</string>
+    <string name="mute_one_hour">"1 tunti"</string>
+    <string name="mute_four_hours">4 tuntia</string>
+    <string name="mute_eight_hours">8 tuntia</string>
+    <string name="save_chat_history_failed">tallennus epäonnistui</string>
+    <string name="send_chat_history_failed">Sähköposti epäonnistui</string>
+    <string name="actionbar_sms_setting">Tekstiviestiasetukset</string>
+    <string name="actionbar_mms_setting">Multimedia-asetukset</string>
+    <string name="actionbar_notification_setting">"Ilmoitusasetukset"</string>
+    <string name="actionbar_general_setting">Yleiset asetukset</string>
+    <string name="save_history_file">tallenna nimellä</string>
+    <string name="no_sdcard_suggestion">"Ei SD-korttia"</string>
+    <string name="save_wallpaper_success">Taustakuva muutettiin.</string>
+    <string name="save_wallpaper_fail">Taustakuvaa ei voi muuttaa.</string>
+    <string name="ip_message_delete_important">"Sisällytä viestit, jotka on merkitty tärkeiksi"</string>
+    <string name="str_ipmsg_spam_empty">Sinulla ei ole roskapostikeskustelua. \nSPAM kokoaa kaikki keskustelut, jotka on merkitty roskapostiksi. Ilmoitus kytketään oletuksena pois päältä. Tämä säästää sinut tarpeettomalta häiriöltä. \n\nVoit merkitä lähettäjän roskapostiksi pitämällä keskustelua ja valitsemalla Merkitse roskapostiksi -kuvakkeen. Kun keskustelu on merkittynä roskapostiksi, Ilmoitus pois -kuvake näytetään automaattisesti, ja keskustelu sijoitetaan tähän.</string>
+    <string name="str_ipmsg_spam_example_subject">Tämä on esimerkki roskapostiviestistä.</string>
+    <string name="str_ipmsg_groupchat_empty">Sinulla ei ole ryhmäkeskusteluviestejä. \nRYHMÄKESKUSTELUT kokoaa kaikki ryhmäviestit, jotka olet luonut tai joihin olet liittynyt. Tämä mahdollistaa ryhmäkeskustelujen helpon hakemisen ja hallinnan. \n\nLuodaksesi ryhmäkeskustelun, voit napauttaa Luo ryhmäkeskustelu -painiketta näytön alaosassa ja kutsua kavereitasi liittymään ryhmään.</string>
+    <string name="str_ipmsg_group_example_from">Ryhmän nimi</string>
+    <string name="str_ipmsg_group_example_subject">Kaverisi:\nTykkään ryhmäkeskusteluominaisuudesta!</string>
+    <string name="str_ipmsg_important_empty">Sinulla ei ole tärkeitä viestejä. \nTÄRKEÄ kokoaa kaikki viestit, jotka on merkitty tärkeiksi. Tämä mahdollistaa tärkeiden viestien löytymisen helposti. \n\nVoit merkitä viestin tärkeäksi pitämällä viestiä ja valitsemalla Merkitse tärkeäksi Valinta-valikossa. Kun viesti on merkitty tärkeäksi, näkyvissä on punainen lippukuvake, kuten alla.</string>
+    <string name="str_ipmsg_important_example_title">Tämä on esimerkki tärkeäksi merkitystä viestistä. Punainen lippu tulee näkyviin.</string>
+    <string name="str_ipmsg_important_example_time">10:55 AM</string>
+    <string name="str_ipmsg_allchat_empty">"Ei keskusteluja"</string>
+    <string name="str_ipmsg_empty_activate_content">Voidaksesi käyttää tätä ominaisuutta, iSMS-palvelu on ensin aktivoitava. I huolta - jos et pidä palvelusta, voit aina kytkeä se pois päältä Asetuksissa. Kokeile sitä nyt!</string>
+    <string name="str_ipmsg_empty_activate_title">Aktivoi iSMS</string>
+    <string name="str_ipmsg_service_title">iSMS-palvelukeskus</string>
+    <string name="str_ipmsg_introduction">iSMS-palvelulla voit lähettää heti ilmaisia viestejä ja pitää keskusteluhistoriasi koottuna yhdessä paikassa. Uusi kokemus syntyy painamalla yhtä painiketta!</string>
+    <string name="time_now">"NYT"</string>
+    <string name="str_ipmsg_active">Aktivoi iSMS</string>
+    <string name="str_ipmsg_welcome_active">Tervetuloa iSMS-palveluun</string>
+    <string name="str_ipmsg_term_warn_welcome">iSMS-palvelu mahdollistaa keskustelun ja multimediatiedostojen jakamisen kavereittesi kanssa missä ja milloin tahansa Wi-Fi- tai data-yhteydellä.\n\nVain 3 vaihetta aktivoinnin suorittamiseksi loppuun!\n\n Käyttöehdot\n</string>
+    <string name="str_ipmsg_term_warn_activate">Tämä ominaisuus on tuettu vain iSMS-palvelussa.\n\niSMS-palvelu antaa sinun chattailla ja jakaa multimediaa kavereittesi kanssa missä ja milloin tahansa Wi-Fi- tai datayhteydellä.\n\n Käyttöehdot</string>
+    <string name="str_ipmsg_term_key">Käyttöehdot</string>
+    <string name="str_ipmsg_agree_and_continue">Hyväksy ja jatka</string>
+    <string name="no_sim_card">Ei SIM-korttia!</string>
+    <string name="ip_message_activate_title">Aktivoi iSMS</string>
+    <string name="ip_message_current_sim_enabled">Nykyinen SIM on otettu käyttöön.</string>
+    <string name="sim_selected_dialog_title_for_activate">Valitse SIM aktivoidaksesi iSMS-palvelun</string>
+    <string name="ip_message_activate_message">Tämä ominaisuus on tuettu vain iSMS-palvelussa. Haluatko aktivoida iSMS-tilisi nyt?</string>
+    <string name="typing">"Näppäillään..."</string>
+    <string name="ip_message_enable_title">Ota iSMS käyttöön</string>
+    <string name="ip_message_enable_message">Tämä ominaisuus on tuettu vain iSMS-palvelussa. Haluatko ottaa iSMS-tilisi käyttöön nyt?</string>
+    <string name="sim_selected_dialog_title_for_enable">Valitse SIM ottaaksesi iSMS-palvelun käyttöön</string>
+    <string name="ip_message_switch_sim_title">Vaihda SIM</string>
+    <string name="ip_message_switch_sim_message">Nykyinen SIM ei tue iSMS-palvelua. Vaihdetaanko toiseen SIM-korttiin?</string>
+    <string name="ip_message_switch_sim_button">Vaihda</string>
+    <string name="ip_message_switch_sim_successfully">SIM-kortin vaihto onnistui!</string>
+    <string name="close">"Sulje"</string>
+    <string name="nointernet">"Toimivaa internet-yhteyttä ei löydy! Yritä myöhemmin uudelleen."</string>
+    <string name="ipmsg_reject">Hylkää</string>
+    <string name="ipmsg_accept">"Hyväksy"</string>
+    <string name="ipmsg_resend">Lähetä uudelleen</string>
+    <string name="ipmsg_resend_discard_message">Lähettääksesi viestin uudelleen, parhaillaan laatimasi viesti hylätään.</string>
+    <plurals name="deleted_conversations">
+     <item quantity="one">Yksi keskustelu poistettiin</item>
+     <item quantity="other"><xliff:g id="number" example="15">%1$s</xliff:g> keskustelua poistettiin</item>
+   </plurals>
+    <string name="discard_mms_title">Hylkää MMS</string>
+    <string name="discard_mms_content">Kaikki multimediaviestit moni-edelleenlähetysviestissä hylätään</string>
+    <string name="toast_sms_forward">Yhtään tekstiviestiä ei lähetetty uudelleen</string>
+    <string name="dialog_continue">"Jatka"</string>
+    <string name="sms_size_limit">Kokoraja saavutettu</string>
+    <string name="dialog_sms_limit">Viestin kokoraja saavutettu. Liian suuri viesti hylätään.</string>
+    <string name="forward_tips_title">"Hylkää MMS-ilmoitus"</string>
+    <string name="forward_tips_body">"MMS-ilmoitus ei tue edelleenlähetystä. Se hylätään."</string>
+    <string name="type_to_quick_text">"Näppäile pikateksti"</string>
+    <string name="menu_wappush">"Wappush-viestit"</string>
+    <string name="visit_website">"Vieraile web-sivustolla"</string>
+    <string name="meet_emoticon_limit">Hymiörajoitus saavutettu</string>
+    <string name="view_mms_notification">mms-ilmoitusta ei voi näyttää</string>
+    <string name="ipmsg_multi_forward_tips_content">Uudelleenlähettämiseksi, jotkut iSMS-viestit on ensin ladattava.</string>
+    <string name="multi_forward_failed_all">Lataaminen epäonnistui, moni-edelleenlähetys hylättiin.</string>
+    <string name="ipmsg_multi_forward_failed_part">Joidenkin iSMS-viestien uudelleenlähettäminen epäonnistui.</string>
+    <string name="sum_search_networks">"Etsi kaikki käytettävissä olevat verkot"</string>
+    <string name="confirm_delete_allwappush">"Kaikki wappush-viestit poistetaan."</string>
+    <string name="confirm_delete_selected_wappush">"Valitut wappush-viestit poistetaan."</string>
+    <string name="menu_delete_allwappush">Poista kaikki</string>
+    <string name="duplicated_recipient">Kaksinkertainen vastaanottaja</string>
+    <string name="sms_not_ready">SMS-moduulia alustetaan. Odota...</string>
+    <string name="label_full_name">"Nimi"</string>
+    <string name="label_phone">"Puhelin"</string>
+    <string name="label_email">"Sähköposti"</string>
+    <string name="label_postal">Osoite</string>
+    <string name="label_organization">Organisaatio</string>
+    <string name="label_im">IM</string>
+    <string name="label_website">Sivusto</string>
+    <string name="label_sip_address">"Internetpuhelu"</string>
+    <string name="label_nick_name">"Lempinimi"</string>
+    <string name="label_notes">Muistiinpanot</string>
+    <string name="label_event">Tapahtumat</string>
+    <string name="search_time_period_label">Aikajakso</string>
+    <string name="done_text">"Valmis"</string>
+    <string name="add_duplicate_recipients">Kaksinkertainen vastaanottaja</string>
+    <string name="download_disabled_toast">Ei voi ladata Ei oletus-SMS-sovellus.</string>
+    <string name="adding_wallpaper_title">Tallennetaan taustakuvaa...</string>
+    <string name="mwi_title">Ääniviestit</string>
+    <string name="type_voice_msg">Ääniviesti</string>
+    <string name="type_video_msg">Videoviesti</string>
+    <string name="type_fax_msg">Faksiviesti</string>
+    <string name="priority_urgent">Kiireinen</string>
+    <string name="date_label">"Päiväys: "</string>
+    <string name="message_id_label">Viestitunnus:\u0020</string>
+    <string name="voice_message_count_notification"><xliff:g id="number" example="3">%1$s</xliff:g> uutta ääniviestiä</string>
+    <string name="confirm_delete_allmwi">"Kaikki ääniviestit poistetaan."</string>
+    <string name="confirm_delete_selected_mwi">"Valitut ääniviestit poistetaan."</string>
+    <string name="sms_priority_setting">UIM-ensisijaisuus</string>
+    <string name="sms_priority_Interactive">Interaktiivinen</string>
+    <string name="sms_priority_Urgent">Kiireinen</string>
+    <string name="sms_priority_Emergency">Hätä</string>
+    <string name="type_text_msg">"Tekstiviesti"</string>
+    <string name="empty_sim_name">Sim-korttipaikka <xliff:g id="subId" example="2">%1$d</xliff:g></string>
+
+    <string name="drm_not_support">MMS ei tue kopiosuojattua sisältöä.</string>
+    <string name="user_has_no_premission">SMS:n käyttö ei ole sallittu tälle käyttäjälle</string>
+    <string name="wfc_no_cellular_network">Ei matkapuhelinverkko</string>
+    <string name="wfc_connect_to_available_wifi">Yhdistä käytettävissä olevaan Wi-Fi-verkkoon viestintää varten.</string>
+    <string name="wfc_notification_title">Yhdistä Wi-Fi-verkkoon viestintää varten</string>
+    <string name="ct_om_switch_notification"><xliff:g id="op1">%s</xliff:g> ei tilapäisesti toimi ja jos tulee jokin oletuspuhelu, SMS, tiedot kohteessa <xliff:g id="op2">%s</xliff:g> vaihdetaan kohteeseen <xliff:g id="op3">%s</xliff:g> niiden mukaisesti.</string>
+    <string name="can_not_switch_account_during_call">EnsisijaistaSIM:iäSMS:äävarteneivoivaihtaapuhelunaikana.</string>
+    <string name="can_not_switch_account_temporarily">EivoitilapäisestivaihtaaensisijaistaSIM-korttiaSMS:äävarten.</string>
+    <string name="omh_exceed_message_size_limitation">R-UIM-viestinkokorajasaavutettu</string>
+    <string name="omh_failed_to_add_image">R-UIM-viestikoon rajaon saavutettu, poista joitakin osia.</string>
+    <string name="missing_required_permission">Käyttöoikeudet kielletty. Voit muuttaa ne kohdassa Asetukset &gt; Sovellukset.</string>
+    <string name="manage_card_msg_title">Hallitse UIM/SIM-korttiviestejä</string>
+    <string name="manage_card_msg_summary">Hallitse UIM/SIM-kortillesi tallennettuja viestejä</string>
+    <string name="disable_delivery_report">Sitä ei voi ottaa käyttöön verkkovierailtaessa.</string>
+    <string name="fore_service_notify_title">Siirretään viestejä</string>
+    <string name="fore_service_notify_content">Vietejä on siirrettävänä.</string>
+    <string name="smart_req_mms_indicator">MMS ei ole sallittu, yritä uudelleen SMS:ssä.</string>
+</resources>

@@ -1,0 +1,7 @@
+service neuralnetworks_hal_service_gpunn /vendor/bin/hw/android.hardware.neuralnetworks@1.1-service-gpunn
+    class hal
+    user system
+    group system
+
+on post-fs-data
+    mkdir /data/vendor/halgpunn 0770 system system

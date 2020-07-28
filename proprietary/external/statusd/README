@@ -1,0 +1,27 @@
+This bin is pre-built by MediaTek internal.
+
+
+WHAT IT DOES?
+=============
+
+statusd contols C2K modem and other related services.
+
+HOW IT WAS BUILT?
+==================
+
+It needs the following library from AOSP:
+1. libbinder.so
+2. libcutils.so
+3. libutils.so
+
+and the following libs from MediaTek:
+1. libviatelutils.so
+
+All source/dependency modules of this module are already put in
+'vendor/mediatek/libs' folder.
+
+
+HOW TO USE IT?
+==============
+
+The bin file is a system service, and it's started at system booting up while parsing init.via.rc.

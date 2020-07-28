@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.mediatek.apmonitor"
+    android:sharedUserId="android.uid.system"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <protected-broadcast android:name="mediatek.intent.action.APM_KPI_EVENT" />
+
+    <permission android:name="com.mediatek.apmonitor.CONTROL_APM_SERVICE_PERMISSION"
+        android:label="@string/control_apm_service_permission"
+        android:protectionLevel="signatureOrSystem">
+    </permission>
+    <permission android:name="com.mediatek.apmonitor.RECEIVE_APM_KPI_PERMISSION"
+        android:label="@string/receive_apm_kpi_permission"
+        android:protectionLevel="signatureOrSystem">
+    </permission>
+    <permission
+        android:name="com.gsma.mdmi.provider.READ"
+        android:description="@string/mdmi_db_desc"
+        android:label="@string/mdmi_db_label"
+        android:protectionLevel="signatureOrSystem" />
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="com.mediatek.apmonitor.RECEIVE_APM_KPI_PERMISSION" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <application
+        android:name="ApmApplication">
+        <service
+            android:name="com.mediatek.apmonitor.ApmService"
+            android:label="@string/apm_service_name"
+            android:permission="com.mediatek.apmonitor.CONTROL_APM_SERVICE_PERMISSION"
+            android:enabled="true"
+            android:exported="true"/>
+        <provider android:name="com.mediatek.apmonitor.mdmi.MdmiProvider"
+            android:authorities="com.gsma.mdmi.db"
+            android:exported="true"
+            android:readPermission="com.gsma.mdmi.provider.READ" />
+    </application>
+</manifest>

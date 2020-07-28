@@ -1,0 +1,38 @@
+error list and descriptions:
+
+E001: no scripts folder found
+sigma tool depends on some scripts, please ensure these scripts are there. otherwise, you see this message
+
+E002: sigma tool is running now
+only one instance can be run at a time. if you run sigma tool twice, you can see this error message
+
+E003: no dut connected
+please ensure adb connection is ok
+
+E004: sigma test can only run on eng or userdebug load
+sigma tool is not able to run on user load, due to permission issue.
+
+E005: xxx is not exist or can't be executed
+some scripts are missed in your device, please check if you install sigma correctly
+
+E006: adb connection lost
+adb connection is lost when sigma tool is running. please check your usb cable
+
+E007: error happens on wfa_ca
+wfa_ca exits abnormally. maybe it is a bug in wfa_ca.exe
+
+E008: error happens on wfa_dut
+wfa_dut exits abnormally. maybe it is a bug in wfa_dut
+
+E009: enable wlan in sigma mode fail
+can't enable wlan, please do as following steps and collect command results:
+1. adb shell ls -l /dev/wmtWifi
+2. adb shell ls -Z /dev/wmtWifi
+3. enable mtklogger to capture log
+4. adb shell echo "1 > /dev/wmtWifi"
+5. adb shell echo "S > /dev/wmtWifi"
+6. adb shell setprop ctl.start p2p_supplicant
+7. stop mtklogger, and provide mtklog to RD.
+
+E010: port forwarding fail
+make sure PFService exist (scripts\PFService)

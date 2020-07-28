@@ -1,0 +1,66 @@
+MFNR core module: Strategy v1.0
+
+
+WHAT IT DOES?
+=============
+
+MFNR core module Strategy has responsibility to decide if it's necessary to
+do Multi Frame Noise Reduction and other information, such as capture frame
+number, blending frame number, using full size MC or not.
+
+
+HOW IT WAS BUILT?
+==================
+
+You cannot partial build this module only, but to build libmfllcore indeed.
+
+libmfllcore partial build path:
+
+    feature/common/mfnr/Android.mk
+
+Library dependency:
+  AOSP:
+  - libutils.so
+  - libcutils.so
+  - libstdc++.so
+
+  MTK:
+  - libcamalgo.so
+  - libmtkcam_modulehelper.so
+  - libmfllnvram.a
+
+
+HOW TO USE IT?
+==============
+
+Create an IMfllStrategy instance by invoking
+
+    IMfllStrategy::createInstance();
+
+and init it with a NVRAM provider
+
+    IMfllStrategy::init(const sp<IMfllNvram> &nvramProvider)
+
+and caller can query strategy by the condition with the current ISO and exposure,
+e.g.:
+
+    // IMfllStrategy::queryStrategy(
+    //     const MfllStrategyConfig_t &cfg,
+    //     MfllStrategyConfig_t *out);
+    spStrategy->queryStrategy(config, &config);
+
+
+- v1.0
+  The first version
+
+
+* This module will be compiled as a static libary and be used by libmfllcore,
+  which means you can only use the interfaces defined in:
+
+      feature/include/common/mfnr/IMfllStrategy.h
+
+  by linking shared libary
+
+      libmfllcore.so
+
+*** All the source code of this program were written by MediaTek co. ***

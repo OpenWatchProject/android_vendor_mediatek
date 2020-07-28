@@ -1,0 +1,9 @@
+package vendor.mediatek.hardware.apmonitor@1.0;
+
+import IAPMonitorClientCallback;
+
+interface IAPMonitorService {
+    getKpiData() generates (vec<uint8_t> data);
+    sendData(uint32_t kpiType, vec<uint8_t> data) generates (bool success);
+    registerCallback(IAPMonitorClientCallback callback);
+};

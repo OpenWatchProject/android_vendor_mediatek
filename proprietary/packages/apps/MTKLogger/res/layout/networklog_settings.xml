@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:key="networklog_preference_screen"
+    android:title="@string/network_log_name" >
+
+    <CheckBoxPreference
+        android:defaultValue="false"
+        android:key="networklog_ping_flag"
+        android:summary="@string/networklog_ping_summary"
+        android:title="@string/networklog_ping_title" />
+        
+    <!-- Set each package's limit size -->
+    <CheckBoxPreference
+        android:defaultValue="false"
+        android:key="networklog_limit_package_enabler"
+        android:summary="@string/networklog_limit_package_enabler_summary"
+        android:title="@string/networklog_limit_package_enabler" />
+    <EditTextPreference
+        android:defaultValue="90"
+        android:dependency="networklog_limit_package_enabler"
+        android:key="networklog_limited_package_size"
+        android:summary="@string/networklog_limit_package_size_summary"
+        android:title="@string/networklog_limit_package_size" 
+        android:layout="?android:attr/preferenceLayoutChild"/>
+    
+    <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="enable_rohc_compression"
+            android:title="@string/networklog_enable_rohc_compression_title"
+            android:summary="@string/networklog_enable_rohc_compression_summary" />
+    <EditTextPreference
+        android:defaultValue="10"
+        android:dependency="enable_rohc_compression"
+        android:key="set_rohc_total_file_number"
+        android:title="@string/networklog_set_rohc_total_file_number_title" 
+        android:summary="@string/networklog_set_rohc_total_file_number_summary"
+        android:layout="?android:attr/preferenceLayoutChild"/>
+    
+    <EditTextPreference
+        android:defaultValue="600"
+        android:key="networklog_logsize"
+        android:summary="@string/limit_log_size_summary"
+        android:title="@string/limit_log_size_title" />
+
+</PreferenceScreen>

@@ -1,0 +1,32 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/custom_select_default_account_notification_container"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="20dp"
+    android:orientation="vertical" >
+
+    <!-- 64dp -->
+
+    <include layout="@layout/normal_default_account_select_title" />
+
+    <LinearLayout
+        android:id="@+id/account_select_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginEnd="30dp"
+        android:orientation="vertical"
+        >
+
+        <!-- 75dp -->
+
+        <include layout="@layout/select_account_row_one" />
+
+        <!-- 75dp -->
+
+        <include layout="@layout/select_account_row_two" />
+    </LinearLayout>
+
+</LinearLayout>

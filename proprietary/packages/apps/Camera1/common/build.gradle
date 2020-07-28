@@ -1,0 +1,43 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    compileSdkVersion 24
+    buildToolsVersion "24.0.1"
+    defaultConfig {
+        minSdkVersion 21
+        targetSdkVersion 24
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        debug {
+            testCoverageEnabled true
+        }
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    sourceSets {
+        main {
+            manifest.srcFile "AndroidManifest.xml"
+            java.srcDirs = ["src"]
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    //compile fileTree(include: ['*.jar'], dir: '/proj/srv_gghpap10/libs_camera/findbugs')
+    //compile fileTree(include: ['*.jar'], dir: '/proj/srv_gghpap10/libs_camera/guava')
+    //compile fileTree(include: ['*.jar'], dir: '/proj/srv_gghpap10/libs_camera/portability')
+    //following can be un-commented in network on-line mode, don't remove this.
+    compile 'com.google.code.findbugs:jsr305:3.0.0'
+    compile 'com.google.guava:guava:19.0'
+    compile 'com.android.support:appcompat-v7:24.2.0'
+    compile files('libs/stereoinfoaccessor.jar')
+}

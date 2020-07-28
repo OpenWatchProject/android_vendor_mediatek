@@ -1,0 +1,45 @@
+===============================
+ WHAT IT DOES?
+===============================
+In Diagnostic Monitoring Collector(DMC) framework, submission layer modules
+submit KPIs through AP monitor (APM) HIDL based interface, built from this make file.
+
+===============================
+ HOW IT WAS BUILT?
+===============================
+Currently, this make file will generate a native shared library
+"libapmonitor_vendor.so", built in vendor partition with folder
+- /vendor/lib/libapmonitor_vendor.so
+- /vendor/lib64/libapmonitor_vendor.so (64 bits project)
+
+Library from AOSP:
+- libcutils.so: To get/set system property.
+- libhidlbase: HIDL utility.
+- libhidltransport: HIDL utility.
+- libhwbinder: HIDL utility.
+
+Library from MediaTek:
+- vendor.mediatek.hardware.apmonitor@2.0: APM HIDL interface
+
+===============================
+ HOW TO USE IT?
+===============================
+1. Load APM library dynamically
+In implementation, we recommand to use dlopen("libapmonitor_vendor.so")
+to loss decoupling between submission layer and APM interface.
+Some customer may NOT want this APM interface so the library may not exist.
+
+2. Header file
+To reference our APM interface,
+submission layer modules need to include APM header in their make file:
++ LOCAL_C_INCLUDES += $(MTK_PATH_SOURCE)/external/apm_client/include/public
+and declare APM interface file in the source code:
++ #include <ap_monitor.h>
+
+3. SELinux policy setup
+Add the following policies to *.te file to access APM interface.
+DMC defined a vendor property "vendor.dmc.apm.active" to avoid useless access to APM service.
+- hal_client_domain(XXX, mtk_hal_apm)
+- get_prop(XXX, mtk_dmc_prop)
+
+Please check the interface file (include/public/ap_monitor.h) to get more detail.

@@ -1,0 +1,24 @@
+
+<animated-vector
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:drawable="@drawable/mtk_ic_lock_to_unlock" >
+    <target
+        android:name="trans_unlock_head_1"
+        android:animation="@anim/face_unlock_head_1_trans"/>
+    <target
+        android:name="head_1_path"
+        android:animation="@anim/face_unlock_head_1_alpha"/>
+    <target
+        android:name="trans_unlock_head_2"
+        android:animation="@anim/face_unlock_head_2_trans"/>
+    <target
+        android:name="head_2_path"
+        android:animation="@anim/face_unlock_head_2_alpha"/>
+    <target
+        android:name="unlock_bottom"
+        android:animation="@anim/face_lock_state_alpha"/>
+    <target
+        android:name="unlock_state"
+        android:animation="@anim/face_unlock_state_alpha"/>
+
+</animated-vector>

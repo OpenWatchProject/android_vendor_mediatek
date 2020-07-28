@@ -1,0 +1,609 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+/*
+ * Copyright (C) 2007-2008 Esmertec AG.
+ * Copyright (C) 2007-2008 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+ --><resources xmlns:android="http://schemas.android.com/apk/res/android" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <!-- MTK resource -->
+    <string name="create_new_message" msgid="8735943333953093860">"Съставяне на ново съобщение"</string>
+    <string name="menu_undelivered_messages" msgid="3896857623211780616">"Недоставени съобщения"</string>
+    <string name="broadcast_from_to" msgid="2050376286109362539">"<xliff:g id="SENDER">%1$s</xliff:g> от <xliff:g id="RECIPIENT">%2$s</xliff:g>"</string>
+    <string name="anonymous_recipient" msgid="2501437626187039034">"Анонимно"</string>
+    <string name="view_picture" msgid="4356315935277709195">"Преглед на снимка"</string>
+    <string name="sent_on" msgid="5868288548564632354">"Изпратено на: <xliff:g id="DATE">%s</xliff:g>"</string>
+    <string name="name_colon" msgid="7069560650889479120"><b>"<xliff:g id="NAME">%s</xliff:g>"</b>": "</string>
+    <string name="compose_title" msgid="558578836596816068">"Ново съобщение"</string>
+    <string name="image_too_large" msgid="261880224164478061">"Снимката е твърде голяма"</string>
+    <string name="ask_for_automatically_resize" msgid="7657603662407738758">"Да се преоразмери ли автоматично снимката преди изпращане?"</string>
+    <string name="cannot_load_message" msgid="2577010607550849892">"Съобщението не може да бъде заредено."</string>
+    <string name="locked_message_cannot_be_deleted" msgid="6369452071783350219">"Заключените съобщения не могат да бъдат изтрити."</string>
+    <string name="multiple_recipients" msgid="8747754491343248141">"<xliff:g id="RECIPIENTCOUNT">%1$s</xliff:g> получатели"</string>
+    <string name="resize" msgid="4308912589984220360">"Преоразмеряване"</string>
+    <string name="to_label" msgid="2355268818058389047">"До "</string>
+    <string name="confirm_delete_all_messages" msgid="5836389073199814660">"Цялата нишка ще бъде изтрита."</string>
+    <string name="mms_priority_label">"Приоритет "</string>
+    <string name="menu_retry_sending" msgid="3146582005568302643">"Повторен опит за изпращане"</string>
+    <string name="menu_retry_sending_all" msgid="1870529976966340616">"Повторен опит за изпращане на всички"</string>
+    <string name="retrying_dialog_body" msgid="4738260459043003431">"Това съобщение <xliff:g id="MESSAGE">%s</xliff:g> не е изпратено поради проблем с връзката."\n"Повторен опит за изпращане…"</string>
+    <string name="dl_expired_notification" msgid="950390029992535809">"Срокът за съхранение на съобщението е изтекъл и то ще бъде изтрито."</string>
+    <string name="add_attachment_activity" msgid="5324811371129695320">"Добавяне на прикачен файл:"</string>
+    <string name="select_layout_activity" msgid="5041916695464513848">"Избор на оформление"</string>
+    <string name="edit_text_activity" msgid="5915226413346879213">"Редактиране на текст"</string>
+    <string name="pick_numbers_activity" msgid="2083330191224178637">"Номера за избор"</string>
+    <string name="send_using_mms_activity" msgid="3703434556280345726">"Изпращане като мултимедийно съобщение..."</string>
+    <string name="select_contact_method_activity" msgid="1743384358979323991">"Избор на метод за контакт"</string>
+    <string name="me" msgid="341726346007839961">"Аз"</string>
+    <string name="invalid_contact_message">"Контактът не съществува."</string>
+    <string name="finish">"Готово"</string>
+<string name="more_recipients">получател(и)</string>
+    <string name="Insert_sdcard">Вкарайте SD картата!</string>
+    <string name="pref_title_mms_enable_to_send_delivery_reports">Изпращане отчет за доставяне</string>
+    <string name="pref_summary_mms_enable_to_send_delivery_reports">Изпращане отчет за доставяне за всяко получени съобщение</string>
+    <string name="set_service_center_OK">задаване ОК за сервизен център за SMS</string>
+    <string name="set_service_center_fail">Неуспешно задаване сервизен център за SMS</string>
+    <string name="OK">ОК</string>
+    <string name="Cancel">"Отказ"</string>
+    <string name="sms_save_location">Място за съхранение на SMS</string>
+    <string name="sms_service_center">Сервизен център за SMS</string>
+    <string name="sms_validity_period">Период на валидност на SMS</string>
+    <string name="sms_validity_period_nosetting">Не е зададен</string>
+    <string name="sms_validity_period_1hour">"1 час"</string>
+    <string name="sms_validity_period_6hours">6 часа</string>
+    <string name="sms_validity_period_12hours">12 часа</string>
+    <string name="sms_validity_period_1day">"1 ден"</string>
+    <string name="sms_validity_period_max">Максимум</string>
+    <string name="service_center_label">Сервизен център:\u0020</string>
+    <string name="cu_subject">Субект Lemei</string>
+    <string name="pref_title_mms_creation_mode">Режим създаване</string>
+    <string name="pref_summary_mms_creation_mode">Режим създаване MMS за писане на съобщение</string>
+    <string name="pref_title_mms_size_limit">Лимит на размера</string>
+    <string name="pref_summary_mms_size_limit">Лимит на размера на MMS за писане на съобщение</string>
+    <string name="confirm_restricted_audio">Ограничен тип аудио съдържание, искате ли да прикачите все пак?</string>
+    <string name="confirm_restricted_image">Ограничен тип образно съдържание, искате ли да прикачите все пак?</string>
+    <string name="confirm_restricted_video">Ограничен тип видео съдържание, искате ли да прикачите все пак?</string>
+    <string name="unsupport_media_type">Неподдържан тип носител</string>
+    <string name="select_different_media_type">Изберете друг носител</string>
+    <string name="image_resolution_too_large">Разрешителната способност на картината е твърде голяма за вмъкване</string>
+    <string name="wp_msg_type">Служебно съобщение</string>
+    <string name="wp_msg_created_label">Създадено:\u0020</string>
+    <string name="wp_msg_created_unknown">"Неизвестен номер"</string>
+    <string name="wp_msg_priority_label">Приоритет:\u0020</string>
+    <string name="wp_msg_priority_low">Нисък</string>
+    <string name="wp_msg_priority_medium">"Среден"</string>
+    <string name="wp_msg_priority_high">Висок</string>
+    <string name="menu_goto_browser">Отваряне на браузър</string>
+    <string name="menu_add_to_bookmark">Добавяне към маркер</string>
+    <string name="wp_msg_expiration_label">Изтекло:<xliff:g id="DATE">%s</xliff:g></string>
+    <string name="error_unsupported_scheme">Това действие не се поддържа сега</string>
+    <string name="pref_title_wappush_settings">Настройки служебни съобщения</string>
+    <string name="pref_title_wappush_enable">Разрешен WAP PUSH</string>
+    <string name="pref_summary_wappush_enable">Разрешено получава на WAP PUSH</string>
+    <string name="pref_title_wappush_sl_autoloading">Автом. Старт на SL</string>
+    <string name="pref_summary_wappush_sl_autoloading">Автоматично стартира съобщение за SL (сервизно зареждане) при получаване</string>
+    <string name="menu_send_sms">Изпращане съобщение на <xliff:g id="name">%s</xliff:g></string>
+    <string name="menu_omacp">Конфигурационно съобщение</string>
+    <string name="save_message_to_sim">Запазване на съобщението в SIM картата</string>
+    <string name="received_on">"Получено: <xliff:g id="date">%s</xliff:g></string>
+    <string name="save_message_to_sim_successful">Успешно запазено</string>
+    <string name="save_message_to_sim_unsuccessful">Неуспешно запазване</string>
+    <string name="transmission_transiently_failed">Неуспешно предаване. Ще опитаме по-късно.</string>
+    <string name="download_failed_due_to_full_memory">Неуспешно сваляне на съобщението - паметта е пълна.</string>
+    <string name="mms_too_big_to_download">Съобщението е твърде голямо за сваляне от мрежата.</string>
+    <string name="menu_reply">"Отговор"</string>
+    <string name="menu_sim_sms">"SIM SMS"</string>
+    <string name="cannot_add_recipient">Достигнат лимит получатели. Не можете да добавяте получатели.</string>
+    <string name="status_expired">Изтекло</string>
+    <string name="status_deferred">Отложено</string>
+    <string name="status_unrecognized">Неразпознато</string>
+    <string name="status_indeterminate">Неопределено</string>
+    <string name="status_unreachable">Недостъпно</string>
+    <string name="attach_ringtone">"Мелодия"</string>
+    <string name="notification_multiple_cb"><xliff:g id="count">%s</xliff:g> непрочетени циркулярни (СВ) съобщения</string>
+    <string name="notification_multiple_cb_title">Нови циркулярни съобщения</string>
+    <string name="fdn_enabled">Разрешено FDN (свободно набиране)</string>
+    <string name="cannot_send_message_reason_no_content">Няма контакти за изпращане</string>
+    <string name="ok">"OK"</string>
+    <string name="cancel">"Отказ"</string>
+    <string name="enable">"Активиране"</string>
+    <string name="disable">"Деактивиране"</string>
+    <string name="cb_read_message">Четене на циркул. (СВ) съобщение</string>
+    <string name="cb_read_message2">Четене на циркулярно съобщение</string>
+    <string name="cb_message">Циркулярно (СВ) съобщение</string>
+    <string name="cb_default_channel_name">От канал</string>
+    <string name="cell_broadcast_setting">"Настройки на клетъчното излъчване"</string>
+    <string name="cb_menu_language">"Език"</string>
+    <string name="cb_menu_add_channel">Добавяне на канал</string>
+    <string name="cb_menu_channel_list">Списък канали</string>
+    <string name="cb_dialog_title_language_choice">Избор на език</string>
+    <string name="cb_channel_dialog_channel_name">Име на канал (0-10 символа)</string>
+    <string name="cb_channel_dialog_channel_number">Номер на канала (0-65534)</string>
+    <string name="cb_channel_dialog_channel_state">Разрешаване на канал</string>
+    <string name="cb_channel_dialog_edit_channel">Редактиране на канал</string>
+    <string name="cb_menu_edit">"Редактиране"</string>
+    <string name="cb_menu_delete">"Изтриване"</string>
+    <string name="cb_error_channel_num">Въведете номера на канала (0-65534).</string>
+    <string name="cb_error_channel_name">Неточна дължина на името на канала (1-10 символа).</string>
+    <string name="cb_error_language_select">Изберете поне един език.</string>
+    <string name="cb_error_channel_id_exist">ИД на канала съществува.</string>
+    <string name="cb_all_languages">"Всички езици"</string>
+    <string name="cb_default_new_channel_name">Нов канал</string>
+    <string name="sum_cell_broadcast_control_on">Разрешени циркулярни съобщения</string>
+    <string name="sum_cell_broadcast_control_off">Забранени циркулярни съобщения</string>
+    <string name="sum_cell_broadcast_setting">Настройки на език и канал за циркулярни съобщения</string>
+    <string name="message_open_email_fail">Първо трябва да зададете вашия е-мейл акаунт.</string>
+    <string name="add_contacts">"Контакти"</string>
+    <string name="close_dialog">ОК</string>
+    <string name="updating_title">"Настройки за обаждане"</string>
+    <string name="error_updating_title">"Грешка в настройките за обаждане"</string>
+    <string name="reading_settings">"Извършва се четене на настройки…"</string>
+    <string name="updating_settings">"Настройките се актуализират…"</string>
+    <string name="reverting_settings">"Настройките се променят в първоначалното състояние…"</string>
+    <string name="exception_error">"Грешка в мрежата или SIM картата."</string>
+    <string name="send_by_sim2">Изпратено от SIM2</string>
+    <string name="send_by_sim1">Изпратено от SIM1</string>
+    <string name="menu_item_send_by">Изпратено от</string>
+    <string name="data_connected_confirm_title">Потвърждение на изпращане</string>
+    <string name="data_connected_confirm_message">Изпращането на MMS от тази SIM може да прекъсне временно текущото сваляне на данни. Продължаваме ли?</string>
+    <string name="menu_item_sim1">SIM1</string>
+    <string name="menu_item_sim2">SIM2</string>
+    <string name="no_sim_1">SIM1 не е поставена.</string>
+    <string name="no_sim_2">SIM2 не е поставена.</string>
+    <string name="no_sim">SIM %d не е поставена.</string>
+    <string name="sim1_full_title">SIM1 е пълна.</string>
+    <string name="sim2_full_title">SIM2 е пълна.</string>
+    <string name="select_all">"Избиране на всичко"</string>
+    <string name="confirm_delete_selected_messages">Избраните съобщения ще бъдат изтрити.</string>
+    <string name="confirm_delete_selected_theads">Избраните поточни връзки ще бъдат изтрити.</string>
+    <string name="restricted_forward_title">"Мултимедийно съобщение"</string>
+    <string name="restricted_forward_message">Възможно е носителят да не бъде показан нормално на получателите. Продължаваме ли?</string>
+    <string name="strOk">Съобщението изпратено</string>
+    <string name="strFail">Неуспешно изпращане на съобщението</string>
+    <string name="menu_insert_text_vcard">Вмъкване на контакт</string>
+    <string name="contact_name">"Име"</string>
+    <string name="contact_tel">Тел</string>
+    <string name="contact_email">Е-мейл</string>
+    <string name="contact_organization">Организация</string>
+    <string name="contact_address">Адрес</string>
+    <string name="max_recipients_title">Достигнат е макс. брой</string>
+    <string name="max_recipients_message">MMS разрешава макс. <xliff:g id="maxLimit">%s</xliff:g> получатели. Някои получатели ще бъдат изтрити. Настоявате ли да продължим?</string>
+    <string name="via_without_time_for_send">През</string>
+    <string name="via_without_time_for_recieve">През</string>
+    <string name="sim_selected_dialog_title">Избор на SIM</string>
+    <string name="suggested">Препоръчва се</string>
+    <string name="add_contact_dialog_message">"Добавяне на номер %s към съществуващ или нов контакт?"</string>
+    <string name="add_contact_dialog_new">"Ново"</string>
+    <string name="add_contact_dialog_existing">Съществуващ</string>
+    <string name="deleting">Изтриване</string>
+    <string name="pref_title_storage_status">Актуално използване на паметта</string>
+    <string name="storage_dialog_mms">Mms:\u0020<xliff:g id="number">%s</xliff:g> елемента</string>
+    <string name="storage_dialog_sms">Sms:\u0020<xliff:g id="number">%s</xliff:g> елемента</string>
+    <string name="storage_dialog_attachments">Mms прикачени:\u0020</string>
+    <string name="storage_dialog_database">База данни:\u0020</string>
+    <string name="storage_dialog_available_space">Свободно място:\u0020</string>
+    <string name="menu_show_icc_sms_capacity">Показване капацитет</string>
+    <string name="show_icc_sms_capacity_title">Капацитет</string>
+    <string name="icc_sms_used">Заети:</string>
+    <string name="icc_sms_total">Общо:</string>
+    <string name="get_icc_sms_capacity_failed">Неуспешно изчитане капацитет на SIM.</string>
+    <plurals name="read_report_toast_msg">
+     <item quantity="one">изпращане %d отчет прочитане</item>
+     <item quantity="other">изпращане %d отчети прочитане</item>
+   </plurals>
+    <string name="pref_title_mms_auto_reply_read_reports">Изпращане отчет прочитане</string>
+    <string name="pref_summary_mms_auto_reply_read_reports">Изпращане отчет прочитане, ако е поискан от изпращача на MMS</string>
+    <string name="exceed_subject_length_limitation">Достигната макс. дължина</string>
+    <plurals name="message_view_selected_message_count">
+     <item quantity="one"><xliff:g id="message_count" example="1">%d</xliff:g> избрано</item>
+     <item quantity="other"><xliff:g id="message_count" example="9">%d</xliff:g> избрани</item>
+   </plurals>
+    <string name="disable_notifications_dialog_message">Спиране на дублиран текст известия за съобщения от приложението за съобщения по подразбиране?</string>
+    <string name="sms_input_mode_title">Режим въвеждане</string>
+    <string name="sms_input_mode_dialog_title">Избор на режим въвеждане</string>
+    <string name="sms_input_mode_summary">Режим въвеждане SMS за съставяне съобщения</string>
+    <string name="pref_title_io_settings">Импорт/Експорт на SMS</string>
+    <string name="pref_summary_import_msg">Импорт на SMS от SD карта</string>
+    <string name="pref_title_import_msg">Импорт на SMS</string>
+    <string name="pref_summary_export_msg">Експорт на SMS към SD карта</string>
+    <string name="pref_title_export_msg">Експорт на SMS</string>
+    <string name="no_sd_card">SD картата не е готова</string>
+    <string name="export_message_ongoing">Експортирам SMS към SD карта, изчакайте…</string>
+    <string name="import_message_ongoing">Импортирам SMS от SD карта, изчакайте…</string>
+    <string name="export_message_success">Успешно експортиране на SMS към SD карта</string>
+    <string name="import_message_success">Успешно импортиране на SMS от SD карта</string>
+    <string name="import_message_fail">Неуспешно импортиране на SMS от SD карта</string>
+    <string name="export_message_fail">Неуспешно експортиране на SMS към SD карта</string>
+    <string name="import_message_list">Списък БД на SMS на SD карта</string>
+    <string name="import_message_list_empty">Няма БД на SMS файлове на SD картата</string>
+    <string name="export_message_empty">Няма SMS за експорт!</string>
+    <string name="whether_export_item">Искате ли да експортирате SMS?</string>
+    <string name="whether_import_item">Искате ли да импортирате?</string>
+    <string name="export_disk_problem">SD картата е пълна или защитена от запис</string>
+    <string name="select_text">Изберете текст</string>
+    <string name="unselect_all">"Без избрани"</string>
+    <string name="forward_from">Препратено от:</string>
+    <string name="sms_forward_setting">Настройки препращане SMS</string>
+    <string name="sms_forward_setting_summary">Препращане SMS с име и номер на изпращача</string>
+    <string name="forward_byself">"Аз"</string>
+    <string name="file_attachment_vcalendar_name">vCalendar(<xliff:g id="text">%s</xliff:g>)</string>
+    <string name="file_attachment_vcard_name">vCard(<xliff:g id="text">%s</xliff:g>)</string>
+    <string name="attach_vcalendar">"Календар"</string>
+    <string name="file_attachment_import_vcard">Импорт на vCard</string>
+    <string name="attach_vcard">Контакт</string>
+    <string name="type_common_file">файл</string>
+    <string name="please_wait">"Изчакайте…"</string>
+    <string name="failed_to_parse_vcard">Неуспешен анализ на файл vCard!</string>
+    <string name="empty_vcard">Няма контакти във vCard</string>
+    <string name="parse_vcard">Анализ на vCard</string>
+    <string name="vcard_no_details">Няма допълнителна информация за този контакт"</string>
+    <string name="note">Забележка</string>
+    <string name="organization">Организация</string>
+    <string name="website">Уеб сайт:\u0020</string>
+    <string name="nickname">Прякор</string>
+    <string name="call_custom"><xliff:g id="custom">%s</xliff:g></string>
+    <string name="call_home">"Домашен"</string>
+    <string name="call_mobile">"Мобилен"</string>
+    <string name="call_work">"Служебен"</string>
+    <string name="call_fax_work">"Служебен факс"</string>
+    <string name="call_fax_home">"Домашен факс"</string>
+    <string name="call_pager">"Пейджър"</string>
+    <string name="call_other">други</string>
+    <string name="call_callback">върнато обаждане</string>
+    <string name="call_car">"В колата"</string>
+    <string name="call_company_main">"Основен фирмен"</string>
+    <string name="call_isdn">"ISDN"</string>
+    <string name="call_main">"Основен"</string>
+    <string name="call_other_fax">"Факс"</string>
+    <string name="call_radio">"Радиотелефон"</string>
+    <string name="call_telex">"Телекс"</string>
+    <string name="call_tty_tdd">TTY/TDD</string>
+    <string name="call_work_mobile">"Служебен мобилен"</string>
+    <string name="call_work_pager">"Служебен пейджър"</string>
+    <string name="call_assistant"><xliff:g id="assistant">%s</xliff:g></string>
+    <string name="call_mms">MMS</string>
+    <string name="email_home">Е-мейл домашен</string>
+    <string name="email_mobile">Е-мейл мобилен</string>
+    <string name="email_work">Е-мейл служебен</string>
+    <string name="email_other">Е-мейл</string>
+    <string name="email_custom">Е-мейл <xliff:g id="custom">%s</xliff:g></string>
+    <string name="email">Е-мейл</string>
+    <string name="map_home">Виж домашен адрес</string>
+    <string name="map_work">Виж служебен адрес</string>
+    <string name="map_other">Виж адрес</string>
+    <string name="map_custom">Виж <xliff:g id="custom">%s</xliff:g> адрес</string>
+    <string name="chat_aim">Чат с АІМ</string>
+    <string name="chat_msn">Чат с Windows Live</string>
+    <string name="chat_yahoo">Чат по Yahoo</string>
+    <string name="chat_skype">Чат по Skype</string>
+    <string name="chat_qq">Чат с QQ</string>
+    <string name="chat_gtalk">Чат с Google Talk</string>
+    <string name="chat_icq">Чат с ICQ</string>
+    <string name="chat_jabber">Чат с Jabber</string>
+    <string name="chat">Чат</string>
+    <string name="inbox">"Вх. поща"</string>
+    <string name="outbox">"Изх. поща"</string>
+    <string name="draftbox">Кутия чернови</string>
+    <string name="sentbox">Кутия изпратени</string>
+    <string name="simbox">Кутия SIM</string>
+    <string name="changeview">Промяна режим</string>
+    <string name="viewer_title_sms">"SMS"</string>
+    <string name="viewer_title_wappush">Wappush</string>
+    <string name="viewer_title_cb">Циркулярни</string>
+    <string name="slideshow_details">Подробности съобщение</string>
+    <string name="open">"Отваряне"</string>
+    <string name="delete_all_confirm">"Да изтрием ли всички съобщения в кутията?"</string>
+    <string name="folder_recipient">Получател :</string>
+    <string name="folder_recieve_date">Дата :</string>
+    <string name="folder_download">Сваляне на MMS</string>
+    <string name="confirm_download_message">"Потвърждение на сваляне съобщение"</string>
+    <string name="play_as_slideshow">Показване MMS като слайдшоу</string>
+    <string name="by_card">От:</string>
+    <string name="page">Страница %d</string>
+    <string name="space_not_enough">Свободното място е недостатъчно за задържане на видео</string>
+    <string name="space_not_enough_for_audio">Свободното място е недостатъчно за аудио записа</string>
+    <string name="no_messages">"Няма съобщения"</string>
+    <string name="call_video_call">Видео повикване</string>
+    <string name="storage_dialog_mms_size">Размер MMS:\u0020</string>
+    <string name="error_add_attachment">"Неизвестна грешка. <xliff:g id="name">%1$s</xliff:g> не може да се добави към съобщението."</string>
+    <string name="no_application_response">"Няма приложение за обработка на заявката"</string>
+    <string name="cdma_not_support">CDMA не поддържа тази функция</string>
+    <string name="allmessage">"Всички съобщения"</string>
+    <string name="select_message">Избор на съобщение</string>
+    <string name="confirm_delete_allmessage">"Всички съобщения ще бъдат изтрити."</string>
+    <string name="mark_as_read_btn_str">Маркирай като прочетено</string>
+    <string name="delete_btn_str">"Изтриване"</string>
+    <string name="reply_send">"Изпращане"</string>
+    <string name="via_test">"през "</string>
+    <string name="received_header">"Получено:"</string>
+    <string name="no_item_selected">Няма избран елемент</string>
+    <string name="sync_mms_to_db">Зареждане…</string>
+    <string name="pref_title_font_size_setting">ЗАДАВАНЕ РАЗМЕР НА ШРИФТА</string>
+    <string name="pref_title_message_font_size">Размер на шрифта на съобщението</string>
+    <string name="pref_summary_message_font_size">Размер на шрифта на съобщението</string>
+    <string name="message_font_size_dialog_title">Размер на шрифта на съобщението</string>
+    <string name="message_font_size_dialog_cancel">"Отказ"</string>
+    <string name="change">Промяна</string>
+    <string name="change_default_disk">Няма достатъчно място в паметта. Освободете памет или сменете "диск за запис по подразбиране" в настройките.</string>
+    <string name="failed_to_add_image">Достигнат лимит размер на съобщение, някои части не са добавени.</string>
+    <string name="ipmsg_conversation_list_all">"Съобщения"</string>
+    <string name="ipmsg_conversation_list_important">Важно</string>
+    <string name="ipmsg_conversation_list_group_chats">Групови чатове</string>
+    <string name="ipmsg_conversation_list_spam">Спам</string>
+    <string name="ipmsg_create_group_chat">Създаване на групов чат</string>
+    <string name="ipmsg_send_invitation">Изпращане покани</string>
+    <string name="str_ipmsg_download_history_dlg">Сваляне…</string>
+    <string name="to_hint_ipmsg">"Въведете име или номер"</string>
+    <string name="type_to_compose_text_enter_to_send_ipmsg">"Въведете SMS/iSMS съобщение"</string>
+    <string name="ipmsg_ipmsg_hint">"Въведете iSMS съобщение"</string>
+    <string name="ipmsg_sms_hint">"Въведете текстово съобщение"</string>
+    <string name="ipmsg_caption_hint">"Въведете надписи"</string>
+    <string name="ipmsg_cancel">"Отказ"</string>
+    <string name="ipmsg_invite_chat_frequently"><b>Чатите често с %s ?</b>\nЗащо не подканим %s да използва iSMS и да спестим пари на двамата?</string>
+    <string name="ipmsg_enable_chat_frequently"><b>%s използва iSMS!</b>\nЗащо да не разрешим iSMS услугата и да спестим пари на двамата?</string>
+    <string name="ipmsg_invite">Покана</string>
+    <string name="ipmsg_dismiss">"Отхвърляне"</string>
+    <string name="ipmsg_enable">"Активиране"</string>
+    <string name="ipmsg_enable_notice">Настоявате ли да разрешите iSMS услуга?</string>
+    <string name="ipmsg_activate">"Активиране"</string>
+    <string name="ipmsg_activate_chat_frequently"><b>Чатите често с приятели?</b>\nЗащо да не активираме iSMS услугата и да чатите без SMS такса?</string>
+    <string name="ipmsg_activate_note">Настоявате ли да активирате iSMS?</string>
+    <string name="ipmsg_dismiss_content">Настоявате ли да откажете бележката?</string>
+    <string name="ipmsg_ipmsg">ІР съобщение</string>
+    <string name="ipmsg_dailog_multi_forward">Препращане на съобщения</string>
+    <string name="ipmsg_dialog_send_result">Изпращане резултат</string>
+    <string name="ipmsg_dlg_send_all">Всички: %s</string>
+    <string name="ipmsg_dlg_send_sucess">Изпратени: %s</string>
+    <string name="ipmsg_dlg_send_failed">Неуспешни: %s</string>
+    <string name="multi_forward_sim_info">Търсене информация за SIM</string>
+    <string name="ipmsg_multi_forward_no_sim">Няма информация за SIM</string>
+    <string name="ipmsg_divider_online">%s е онлайн</string>
+    <string name="ipmsg_divider_offline">Последно онлайн време в %s</string>
+    <string name="ipmsg_divider_never_online">Никога онлайн</string>
+    <string name="ipmsg_vcard_file_name">%s контакти</string>
+    <string name="ipmsg_getsim_failed">Неуспешно четене информация за SIM</string>
+    <string name="ipmsg_sim_status_error">Грешка статус на SIM</string>
+    <string name="ipmsg_forward_failed">Неуспешно препращане</string>
+    <string name="ipmsg_forward_norecipients">Няма получатели за препращане на съобщение</string>
+    <string name="ipmsg_multiforward_no_message">Няма съобщения за препращане</string>
+    <string name="ipmsg_need_input_recipients">Първо посочете поне един получател</string>
+    <string name="str_ipmsg_unread_format">%1$d непрочетени съобщения</string>
+    <string name="str_ipmsg_not_delivered_title">Още не е получено</string>
+    <string name="str_ipmsg_failed_title">Неуспешно изпращане</string>
+    <string name="ipmsg_try_again">"Опитайте отново"</string>
+    <string name="ipmsg_try_all_again">Опитайте отново</string>
+    <string name="ipmsg_resend_via_sms">Изпратете SMS вместо</string>
+    <string name="ipmsg_resend_via_mms">Изпратете SMS вместо</string>
+    <string name="str_ipmsg_cant_share">SD картата недостъпна, медийното съобщение не може да се споделя</string>
+    <string name="str_ipmsg_file_limit">много голямо</string>
+    <string name="str_ipmsg_no_app">Няма приложение за тази дейност.</string>
+    <string name="str_ipmsg_today">"Днес"</string>
+    <string name="str_ipmsg_yesterday">"вчера"</string>
+    <string name="ip_message_typing_text">Въвеждане</string>
+    <string name="str_ipmsg_no_such_file">Няма такъв файл</string>
+    <string name="str_ipmsg_over_file_limit">Размерът на файла извън лимита</string>
+    <string name="str_ipmsg_invalid_file_type">Този тип не се поддържа</string>
+    <string name="invite_friends_to_ipmsg">Поканете приятели да ползват iSMS</string>
+    <string name="invite_friends_to_chat">Поканете приятели за чат</string>
+    <string name="invite_friends_to_ipmsg_dialog_msg">За изпращане на покана съставяните съобщения ще бъдат отхвърлени.</string>
+    <string name="invite_friends_to_ipmsg_content">Ей, iSMS е страхотен начин за чатене - безплатен и удобен. Научете повече на http://isms.hissage.com.</string>
+    <string name="export">"Експортиране"</string>
+    <string name="mark_as_spam">Към списък за спам</string>
+    <string name="mark_as_spam_tips">Съобщенията, маркирани като спам, ще отидат в списъка за спам, а известията - изключени автоматично.</string>
+    <string name="remove_frome_spam">Изваждане от сисъка за спам</string>
+    <string name="add_shortcut">Добавяне пряк път</string>
+    <string name="view_all_media">Преглед вички медии</string>
+    <string name="view_all_location">Преглед всички места</string>
+    <string name="ipmsg_export_to_sdcard">Експорт към SD карта</string>
+    <string name="ipmsg_copy">"Копиране"</string>
+    <string name="ipmsg_send_via_text_msg">Изпращане чрез текстово съобщение</string>
+    <string name="ipmsg_send_via_mms">Изпращане чрез мултимедийно съобщение</string>
+    <string name="ipmsg_retry">"Опитайте отново"</string>
+    <string name="ipmsg_delete">"Изтриване"</string>
+    <string name="ipmsg_share">"Споделяне"</string>
+    <string name="ipmsg_mark_as_important">Поставяне флаг за важно</string>
+    <string name="ipmsg_remove_from_important">Изтриване флага за важно</string>
+    <string name="str_ipmsg_save_file">Файлът е запазен в %1$s</string>
+    <string name="continue_str">"Напред"</string>
+    <string name="convert_to_mms">Конвертиране в MMS.</string>
+    <string name="convert_to_sms">Конвертиране в SMS.</string>
+    <string name="ipmsg_convert_to_ipmsg">Конвертиране в iSMS.</string>
+    <string name="ip_message_convert_to_mms_message_for_service">Услугата iSMS не е достъпна за избраната SIM карта. Съобщението може да се изпрати чрез MMS от тази карта. Продължаваме ли?</string>
+    <string name="ip_message_convert_to_sms_message_for_service">Услугата iSMS не е достъпна за избраната SIM карта. Съобщението може да се изпрати чрез SMS от тази карта. Продължаваме ли?</string>
+    <string name="ip_message_convert_to_mms_message_for_recipients">Получателят(ите) не ползва(т) iSMS. Съобщението може да се изпрати чрез MMS. Продължаваме ли? </string>
+    <string name="ip_message_convert_to_sms_message_for_recipients">Получателят(ите) не ползва(т) iSMS. Съобщението може да се изпрати чрез SMS. Продължаваме ли? </string>
+    <string name="ipmsg_sms_convert_to_ipmsg">Услугата iSMS е достъпна за избраната SIM карта. За спестяване такса за SMS препоръчваме съобщението да се прехвърли на iSMS. Прехвърляне сега?</string>
+    <string name="ipmsg_mms_convert_to_ipmsg">Услугата iSMS е достъпна за избраната SIM карта. За спестяване такса за MMS препоръчваме съобщението да се прехвърли на iSMS. Прехвърляне сега?</string>
+    <string name="keep_mms">Запази MMS</string>
+    <string name="keep_sms">Запази SMS</string>
+    <string name="switch_ipmsg">Прехвърли</string>
+    <string name="ip_message_load_all_message">Зареди всички съобщения</string>
+    <string name="str_ipmsg_replace_attach">Подмяна на прикаченото</string>
+    <string name="str_ipmsg_replace_attach_msg">Има вече прикачен файл, да го подменим ли?</string>
+    <string name="ipmsg_err_file">Неуспешно отваряне на файла</string>
+    <string name="pref_title_display_preference_settings">ДИСПЛЕЙ И ПРЕДПОЧИТАНИЯ</string>
+    <string name="pref_chat_wallpaper">Тапет за чат</string>
+    <string name="pref_auto_rotation">Автом. завъртане</string>
+    <string name="pref_show_email_address">Показване е-мейл адрес</string>
+    <string name="pref_summary_show_email_address">Включване е-мейл адрес в резултати от контакти</string>
+    <string name="pref_title_backup_restore_settings">АРХИВИРАНЕ И ВЪЗСТАНОВЯВАНЕ</string>
+    <string name="pref_backage_message">Архивиране съобщение</string>
+    <string name="pref_summary_backup_message">Последно архивиране:никога</string>
+    <string name="pref_restore_message">Възстановяване съобщение</string>
+    <string name="pref_summary_restore_message">Възстановяване архивирано съобщение</string>
+    <string name="pref_mute">"Без звук"</string>
+    <string name="pref_summary_mute">"Изключено"</string>
+    <string name="pref_vibrate">"Вибриране"</string>
+    <string name="pref_summary_vibrate">Вибриране при получено известие</string>
+    <string name="pref_popup_notification">Падащо известие</string>
+    <string name="pref_summary_popup_notification">Покажи падащо за прокарани известия</string>
+    <string name="pref_title_display_settings">"Дисплей"</string>
+    <string name="pref_title_actions_settings">Действия</string>
+    <string name="pref_download_chat_history">Сваляне историята на чата</string>
+    <string name="pref_summary_download_chat_history">Запази на SD картата във формат zip</string>
+    <string name="pref_email_chat_history">История на е-мейл чат</string>
+    <string name="pref_summary_email_chat_history">История на е-мейл чат във формат zip</string>
+    <string name="pref_clear_chat_history">Изчистване историята на чата</string>
+    <string name="pref_summary_notification_ringtone">Задаване мелодия за нови известия</string>
+    <string name="pref_setting_title">Настройки съобщения</string>
+    <string name="pref_setting_sms">Текстови съобщения (SMS)</string>
+    <string name="pref_setting_mms">Мултимедийни съобщения (MMS)</string>
+    <string name="pref_setting_notification">"Известия"</string>
+    <string name="pref_setting_general">"Общи"</string>
+    <string name="pref_setting_chat">Настройки за чат</string>
+    <string name="chat_setting_saving">запазване…</string>
+    <string name="chat_setting_updating">актуализиране…</string>
+    <string name="chat_setting_sending">изпращане…</string>
+    <string name="dialog_save_title">Запази в SD карта</string>
+    <string name="dialog_save_description">Запази този чат поток на SD карта като zip файл</string>
+    <string name="dialog_email_title">Споделяне през е-мейл</string>
+    <string name="dialog_email_description">Сподели този чат поток като прикачен файл през е-мейл във формат zip</string>
+    <string name="dialog_clear_title">"Изчистване"</string>
+    <string name="dialog_clear_description">Цялата история на чата ще бъде изтрита в тази чат зона</string>
+    <string name="dialog_wallpaper_chooser_wallpapers">Тапети</string>
+    <string name="dialog_wallpaper_chooser_gallery">Галерия</string>
+    <string name="dialog_wallpaper_chooser_take">"Правене на снимка"</string>
+    <string name="dialog_wallpaper_chooser_default">"По подразбиране"</string>
+    <string name="dialog_wallpaper_title">Избор на тапет</string>
+    <string name="mute_one_hour">"1 час"</string>
+    <string name="mute_four_hours">4 часа</string>
+    <string name="mute_eight_hours">8 часа</string>
+    <string name="save_chat_history_failed">неуспешно запазване</string>
+    <string name="send_chat_history_failed">неуспешен е-мейл</string>
+    <string name="actionbar_sms_setting">Настройки SMS</string>
+    <string name="actionbar_mms_setting">Настройки MMS</string>
+    <string name="actionbar_notification_setting">"Настройки за известия"</string>
+    <string name="actionbar_general_setting">Общи настройки</string>
+    <string name="save_history_file">запази като</string>
+    <string name="no_sdcard_suggestion">"Няма SD карта"</string>
+    <string name="save_wallpaper_success">Сменен тапет</string>
+    <string name="save_wallpaper_fail">Невъзможна смяна на тапета</string>
+    <string name="ip_message_delete_important">"Включи съобщения с флаг за важни"</string>
+    <string name="str_ipmsg_spam_empty">Нямате никакви спам разговори. \nSPAM събира всички разговори, маркирани като спам. Известието се изключва по подразбиране. Така се избягват излишни смущения. \n\nМожете да маркирате изпращача като спам със задържане на разговора и избор на икона Маркирай като спам. Когато разговорът е маркиран като спам, се показва автоматично икона известие-изкл и разговорът ще бъде преместен там.</string>
+    <string name="str_ipmsg_spam_example_subject">Това е пример за спам съобщение.</string>
+    <string name="str_ipmsg_groupchat_empty">Нямате групови чат съобщения. \nGROUP CHATS събира всички групови чат съобщения, създадени от вас или свързани с вас. Така ще можете лесно да намирате и обработвате груповите си чатове. \n\nЗа създаване на групов чат чукнете на бутон Създай групов чат в долната част на екрана и поканете приятелите си да се присъединят към групата. </string>
+    <string name="str_ipmsg_group_example_from">Име на група</string>
+    <string name="str_ipmsg_group_example_subject">Ваш приятел:\nХаресва ми функцията групов чат!</string>
+    <string name="str_ipmsg_important_empty">Нямате важни съобщения. \nВАЖНО събира всички съобщения с флаг важни. Така ще можете лесно да намирате важните съобщения. \n\nМожете да поставите флаг за важно съобщение със задържане на съобщението и избор на Флаг като важно от меню Опции. Когато е поставен флаг за важно съобщение, се извежда икона с червен флаг както по-долу.</string>
+    <string name="str_ipmsg_important_example_title">Това е пример за съобщение с флаг важно. Извежда се червен флаг.</string>
+    <string name="str_ipmsg_important_example_time">10:55 AM</string>
+    <string name="str_ipmsg_allchat_empty">"Няма кореспонденции"</string>
+    <string name="str_ipmsg_empty_activate_content">За използване на тази функция първо трябва да включите услуга iSMS. Не се безпокойте - ако услугате не ви хареса, винаги можете да я изключите от Настройки. Опитайте сега!</string>
+    <string name="str_ipmsg_empty_activate_title">Активиране на iSMS</string>
+    <string name="str_ipmsg_service_title">Сервизен център на iSMS</string>
+    <string name="str_ipmsg_introduction">С iSMS можете веднага да доставяте безплатни съобщения и да запазите историята на чатовете на едно място. Натиснете един бутон, започва ново преживяване!</string>
+    <string name="time_now">"СЕГА"</string>
+    <string name="str_ipmsg_active">Активиране на iSMS</string>
+    <string name="str_ipmsg_welcome_active">Добре дошли в iSMS</string>
+    <string name="str_ipmsg_term_warn_welcome">Услугата iSMS позволява да чатите и да споделяте мултимедийни файлове с приятели по всяко време и на всяко място през WiFi или връзка за данни.\n\nСамо 3 стъпки за пълното активиране!\n\n Условия</string>
+    <string name="str_ipmsg_term_warn_activate">Тази функция се поддържа само от iSMS.\n\niSMS позволява да чатите и споделяте мултимедийни файлове с приятели по всяко време и на всяко място през WiFi или връзка за данни.\n\n Условия</string>
+    <string name="str_ipmsg_term_key">Условия</string>
+    <string name="str_ipmsg_agree_and_continue">Приемам и продължавам</string>
+    <string name="no_sim_card">Няма SIM карта!</string>
+    <string name="ip_message_activate_title">Активиране на iSMS</string>
+    <string name="ip_message_current_sim_enabled">Текущата SIM е разрешена.</string>
+    <string name="sim_selected_dialog_title_for_activate">Изберете SIM за активиране на iSMS</string>
+    <string name="ip_message_activate_message">Тази функция се поддържа само от услуга iSMS. Да активираме ли iSMS акаунта?</string>
+    <string name="typing">"Въвеждане…"</string>
+    <string name="ip_message_enable_title">Разрешаване iSMS</string>
+    <string name="ip_message_enable_message">Тази функция се поддържа само от услуга iSMS. Да активираме ли iSMS акаунта?</string>
+    <string name="sim_selected_dialog_title_for_enable">Изберете SIM за разрешаване на iSMS</string>
+    <string name="ip_message_switch_sim_title">Превключване на SIM</string>
+    <string name="ip_message_switch_sim_message">Текущата SIM не поддържа iSMS. Да превключим ли на друга SIM?</string>
+    <string name="ip_message_switch_sim_button">Превключване</string>
+    <string name="ip_message_switch_sim_successfully">Успешно превключване на SIM!</string>
+    <string name="close">"Затвори"</string>
+    <string name="nointernet">"Не е открита работеща интернет връзка! Опитайте по-късно."</string>
+    <string name="ipmsg_reject">Отхвърляне</string>
+    <string name="ipmsg_accept">"Приемам"</string>
+    <string name="ipmsg_resend">Повторно пращане</string>
+    <string name="ipmsg_resend_discard_message">За повторно изпращане на съобщението това набирано съобщение ще бъде отхвърлено.</string>
+    <plurals name="deleted_conversations">
+     <item quantity="one">Един разговор е изтрит</item>
+     <item quantity="other"><xliff:g id="number" example="15">%1$s</xliff:g> разговора са изтрити</item>
+   </plurals>
+    <string name="discard_mms_title">Отхвърляне MMS</string>
+    <string name="discard_mms_content">Всички MMS във вашето съобщение с много препратки ще бъдат отхвърлени</string>
+    <string name="toast_sms_forward">Няма препратено SMS</string>
+    <string name="dialog_continue">"Напред"</string>
+    <string name="sms_size_limit">Достигнат лимит за размер</string>
+    <string name="dialog_sms_limit">Достигнат е лимит за размер на съобщение. Оставащото съобщение ще бъде отхвърлено</string>
+    <string name="forward_tips_title">"Отхвърляне известие за MMS"</string>
+    <string name="forward_tips_body">"Известието за MMS не поддържа препращане. То ще бъде отхвърлено."</string>
+    <string name="type_to_quick_text">"Въведете бърз текст"</string>
+    <string name="menu_wappush">"Съобщения Wappush"</string>
+    <string name="visit_website">"Посетете уебсайта"</string>
+    <string name="meet_emoticon_limit">Спазвайте лимитите за емотикони</string>
+    <string name="view_mms_notification">Не мога да видя известие за mms</string>
+    <string name="ipmsg_multi_forward_tips_content">За множество препратки първо трябва да се свалят някои iSMS.</string>
+    <string name="multi_forward_failed_all">Неуспешно сваляне, масовото препращане отхвърлено.</string>
+    <string name="ipmsg_multi_forward_failed_part">Някои препратки на iSMS се неуспешни.</string>
+    <string name="sum_search_networks">"Търсене на всички налични мрежи"</string>
+    <string name="confirm_delete_allwappush">"Всички wappush съобщения ще бъдат изтрити."</string>
+    <string name="confirm_delete_selected_wappush">"Избраното wappush съобщение ще бъде изтрито."</string>
+    <string name="menu_delete_allwappush">Изтриване всички</string>
+    <string name="duplicated_recipient">Дублиран получател</string>
+    <string name="sms_not_ready">Инициализиране на SMS модула, изчакайте…</string>
+    <string name="label_full_name">"Име"</string>
+    <string name="label_phone">"Телефон"</string>
+    <string name="label_email">"Имейл"</string>
+    <string name="label_postal">Адрес</string>
+    <string name="label_organization">Организация</string>
+    <string name="label_im">ІМ</string>
+    <string name="label_website">Уеб сайт</string>
+    <string name="label_sip_address">"Интернет обаждане"</string>
+    <string name="label_nick_name">"Псевдоним"</string>
+    <string name="label_notes">Бележки</string>
+    <string name="label_event">Събития</string>
+    <string name="search_time_period_label">Интервал време</string>
+    <string name="done_text">"Готово"</string>
+    <string name="add_duplicate_recipients">Дублиран получател</string>
+    <string name="download_disabled_toast">Не може да се свали. Не е SMS приложение по подразбиране.</string>
+    <string name="adding_wallpaper_title">Запомняне на тапет</string>
+    <string name="mwi_title">Гласови съобщения</string>
+    <string name="type_voice_msg">Гласово съобщение</string>
+    <string name="type_video_msg">Видео съобщение</string>
+    <string name="type_fax_msg">Факс съобщение</string>
+    <string name="priority_urgent">Спешно</string>
+    <string name="date_label">"Дата: "</string>
+    <string name="message_id_label">ID:\u0020 на съобщение</string>
+    <string name="voice_message_count_notification"><xliff:g id="number" example="3">%1$s</xliff:g> нови гласови съобщения</string>
+    <string name="confirm_delete_allmwi">"Всички гласови съобщения ще бъдат изтрити."</string>
+    <string name="confirm_delete_selected_mwi">"Всички избрани гласови съобщения ще бъдат изтрити."</string>
+    <string name="sms_priority_setting">Приоритет на UIM</string>
+    <string name="sms_priority_Interactive">Интерактивно</string>
+    <string name="sms_priority_Urgent">Спешно</string>
+    <string name="sms_priority_Emergency">Спешно</string>
+    <string name="type_text_msg">Текстово съобщение</string>
+    <string name="empty_sim_name">Гнездо <xliff:g id="subId" example="2">%1$d</xliff:g> за SIM</string>
+
+    <string name="drm_not_support">Съдържание, защитено от копиране, не се поддържа от MMS.</string>
+    <string name="user_has_no_premission">На този абонат не е разрешено да ползва SMS</string>
+    <string name="wfc_no_cellular_network">Няма клетъчна мрежа</string>
+    <string name="wfc_connect_to_available_wifi">Свържете се с Wi-Fi мрежа за изпращане на съобщения.</string>
+    <string name="wfc_notification_title">Свържете се с достъпната Wi-Fi мрежа за изпращане на съобщения.</string>
+    <string name="ct_om_switch_notification"><xliff:g id="op1">%s</xliff:g> няма да работи временно и евентуални Повиквания, SMS, Данни на <xliff:g id="op2">%s</xliff:g> ще бъдат променени съответно на <xliff:g id="op3">%s</xliff:g>.</string>
+    <string name="can_not_switch_account_during_call">НеможедапревключиSIMзаSMSповременаповикване.</string>
+    <string name="can_not_switch_account_temporarily">ВременнонеможедасепревключваSIMзаSMS.</string>
+    <string name="omh_exceed_message_size_limitation">ДостигнатоеограничениетозаразмеранаR-UIMсъобщение</string>
+    <string name="omh_failed_to_add_image">Достигнат е лимитът за големина на R-UIM съобщения. Моля изтрийте някои части.</string>
+    <string name="missing_required_permission">Разрешение отказано. Можете да ги промените в Настройки &gt; Приложения.</string>
+    <string name="manage_card_msg_title">Управление на съобщения на  UIM/SIM карта</string>
+    <string name="manage_card_msg_summary">Управление на съобщения, записани на Вашата UIM/SIM карта</string>
+    <string name="disable_delivery_report">Не може да се разреши по време на роуминг.</string>
+    <string name="fore_service_notify_title">Прехвърляне на съобщения</string>
+    <string name="fore_service_notify_content">Има съобщения, които се прехвърлят.</string>
+    <string name="smart_req_mms_indicator">MMS не е разрешен, опитайте отново в SMS.</string>
+</resources>

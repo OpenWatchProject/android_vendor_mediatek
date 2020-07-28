@@ -1,0 +1,45 @@
+// Copyright (C) 2017 The Android Open Source Project
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//      http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+cc_library_static {
+    name: "libtflite_mtk_ruy",
+    proprietary: true,
+    owner: "mtk",
+    defaults: ["tflite_mtk_defaults"],
+    srcs: [
+        "allocator.cc",
+        "block_map.cc",
+        "blocking_counter.cc",
+        "context.cc",
+        "detect_dotprod.cc",
+        "kernel_arm32.cc",
+        "kernel_arm64.cc",
+        "pack_arm.cc",
+        "thread_pool.cc",
+        "trace.cc",
+        "trmul.cc",
+        "tune.cc",
+        "wait.cc",
+    ],
+    header_libs: [
+        "gemmlowp_mtk_headers",
+        "libeigen",
+    ],
+    cflags: [
+        "-DTF_LITE_DISABLE_X86_NEON",
+        "-DTFLITE_WITH_RUY",
+        "-Wno-sign-compare",
+        "-Wno-unused-local-typedef",
+    ],
+}

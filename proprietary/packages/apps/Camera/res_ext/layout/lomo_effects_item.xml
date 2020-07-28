@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/unselected_border"
+    android:padding="2dp">
+
+    <TextureView
+        android:id="@+id/textureview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <com.mediatek.camera.ui.UIRotateLayout
+        android:id="@+id/rotate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/effects_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="4dp"
+            android:paddingRight="4dp"
+            android:background="@color/text_view_background"
+            android:textColor="@color/text_view_font" />
+    </com.mediatek.camera.ui.UIRotateLayout>
+
+</RelativeLayout>

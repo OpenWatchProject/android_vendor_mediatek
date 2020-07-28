@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Copyright Statement:
+
+    This software/firmware and related documentation ("MediaTek Software") are
+    protected under relevant copyright laws. The information contained herein
+    is confidential and proprietary to MediaTek Inc. and/or its licensors.
+    Without the prior written permission of MediaTek inc. and/or its licensors,
+    any reproduction, modification, use or disclosure of MediaTek Software,
+    and information contained herein, in whole or in part, shall be strictly prohibited.
+
+    MediaTek Inc. (C) 2012. All rights reserved.
+
+    BY OPENING THIS FILE, RECEIVER HEREBY UNEQUIVOCALLY ACKNOWLEDGES AND AGREES
+    THAT THE SOFTWARE/FIRMWARE AND ITS DOCUMENTATIONS ("MEDIATEK SOFTWARE")
+    RECEIVED FROM MEDIATEK AND/OR ITS REPRESENTATIVES ARE PROVIDED TO RECEIVER ON
+    AN "AS-IS" BASIS ONLY. MEDIATEK EXPRESSLY DISCLAIMS ANY AND ALL WARRANTIES,
+    EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF
+    MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE OR NONINFRINGEMENT.
+    NEITHER DOES MEDIATEK PROVIDE ANY WARRANTY WHATSOEVER WITH RESPECT TO THE
+    SOFTWARE OF ANY THIRD PARTY WHICH MAY BE USED BY, INCORPORATED IN, OR
+    SUPPLIED WITH THE MEDIATEK SOFTWARE, AND RECEIVER AGREES TO LOOK ONLY TO SUCH
+    THIRD PARTY FOR ANY WARRANTY CLAIM RELATING THERETO. RECEIVER EXPRESSLY ACKNOWLEDGES
+    THAT IT IS RECEIVER'S SOLE RESPONSIBILITY TO OBTAIN FROM ANY THIRD PARTY ALL PROPER LICENSES
+    CONTAINED IN MEDIATEK SOFTWARE. MEDIATEK SHALL ALSO NOT BE RESPONSIBLE FOR ANY MEDIATEK
+    SOFTWARE RELEASES MADE TO RECEIVER'S SPECIFICATION OR TO CONFORM TO A PARTICULAR
+    STANDARD OR OPEN FORUM. RECEIVER'S SOLE AND EXCLUSIVE REMEDY AND MEDIATEK'S ENTIRE AND
+    CUMULATIVE LIABILITY WITH RESPECT TO THE MEDIATEK SOFTWARE RELEASED HEREUNDER WILL BE,
+    AT MEDIATEK'S OPTION, TO REVISE OR REPLACE THE MEDIATEK SOFTWARE AT ISSUE,
+    OR REFUND ANY SOFTWARE LICENSE FEES OR SERVICE CHARGE PAID BY RECEIVER TO
+    MEDIATEK FOR SUCH MEDIATEK SOFTWARE AT ISSUE.
+
+    The following software/firmware and/or related documentation ("MediaTek Software")
+    have been modified by MediaTek Inc. All revisions are subject to any receiver's
+    applicable license agreements with MediaTek Inc.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">  
+    <string name="not_add_more_text">"Δεν είναι δυνατή η προσθήκη περισσότερου κειμένου"</string>  
+    <!-- message compose add attachment -->  
+    <string name="attach_image">Φωτογραφία</string>  
+    <string name="attach_video">Βίντεο</string>  
+    <string name="attach_sound">Μουσική</string>  
+    <string name="attach_contact">Επαφές</string>  
+    <string name="attach_file">Αρχείο</string>  
+    <string name="attach_calender">Ημερολόγιο</string>  
+    <string name="attach_error_occurred">Καμία εφαρμογή δεν υποστηρίζει αυτό το είδος συνημμένου.</string>  
+    <!-- Toast for telling user the email service stopped when low storage -->  
+    <string name="low_storage_service_stop">Η υπηρεσία E-mail διακόπηκε λόγω χαμηλού χώρου αποθήκευσης.</string>  
+    <!-- Toast for hint user to delete unused emails to reclaim storage -->  
+    <string name="low_storage_hint_delete_mail">Μπορείτε να διαγράψετε Ε-mail ή εφαρμογές που δεν χρησιμοποιείτε για επανάκτηση του χώρου αποθήκευσης.</string>  
+    <!-- Toast for telling user the email service started when storage ok-->  
+    <string name="low_storage_service_start">Έγινε επανεκκίνηση της υπηρεσίας Ε-mail επειδή τώρα ο χώρος αποθήκευσης επαρκεί.</string>  
+    <!-- Toast for telling user can not download attachment due to low storage -->  
+    <string name="low_storage_attachment_cannot_download">Δεν είναι δυνατή η λήψη συνημμένου λόγω περιορισμένου χώρου αποθήκευσης.</string>  
+    <!-- Toast for telling user can not view attachment due to low storage -->  
+    <string name="low_storage_attachment_cannot_view">Δεν είναι δυνατή η προβολή συνημμένου λόγω περιορισμένου χώρου αποθήκευσης.</string>  
+    <!-- Download remaining of the message when view a partial downloaded message -->  
+    <string name="download_remaining">Υπόλοιπο λήψης</string>  
+    <string name="downloading_remaining">Γίνεται φόρτωση …</string>  
+    <!-- Dialog title when user syncing manually without active network -->  
+    <string name="unable_to_connect">Δεν είναι δυνατή η σύνδεση</string>  
+    <!-- Dialog text when user syncing manually without active network  -->  
+    <string name="need_connection_prompt">"Απαιτείται σύνδεση σε δίκτυο για τη χρήση αυτής της εφαρμογής. Ενεργοποιήστε το δίκτυο κινητής τηλεφωνίας ή το WiFi από τις "Ρυθμίσεις"."</string>  
+    <!-- Dialog text when user syncing manually without active wifi network  -->
+    <string name="need_wifi_connection_prompt">"Απαιτείται σύνδεση σε δίκτυο για τη χρήση αυτής της εφαρμογής. Ενεργοποιήστε το WiFi από τις Ρυθμίσεις."</string>
+    <!-- Button text in the connection alert dialog -->  
+    <string name="connection_settings">"Ρυθμίσεις"</string>  
+    <!-- limit of attachment number, when share more than 100+ attachments -->  
+    <string name="too_many_attachments">Δεν είναι δυνατή η επισύναψη πολλών συνημμένων. Μόνο τα πρώτα 
+        <xliff:g id="currentCount">%1$d</xliff:g> συνημμένα θα προστεθούν.
+    </string>  
+    <!-- limit of attachment number, when the current number >100 -->  
+    <string name="not_add_more_attachments">Δεν είναι δυνατή η προσθήκη περισσότερων συνημμένων. Υπάρχει όριο 
+        <xliff:g id="maxLimit">%1$d</xliff:g> συνημμένων.
+    </string>  
+    <string name="attachment_overflow">Υπερχείλιση συνημμένων</string>  
+    <!-- String which used to show toast when some attachment cannot be attached -->  
+    <string name="cannot_add_this_attachment">Δεν είναι δυνατή η προσθήκη αυτού του συνημμένου.</string>  
+    <string name="loading_attachment">Φόρτωση συνημμένων...</string> 
+    <!-- Open eml message -->  
+    <string name="open_message_parsing">Ανάλυση του μηνύματος...</string>  
+    <string name="open_message_update_db">Ενημέρωση βάσης δεδομένων...</string>  
+    <string name="open_message_update_ui">Φόρτωση του μηνύματος...</string>  
+    <string name="please_wait">Η ενέργεια εκτελείται. Περιμένετε...</string> 
+    <string name="delete_message_dialog_title">Διαγραφή μηνύματος</string>
+    <string name="delete_message_confirm">Να διαγραφεί αυτό το μήνυμα;</string> 
+    <string name="attachment_info_deleted">"Δεν είναι δυνατή η αποθήκευση ή το άνοιγμα αυτού του συνημμένου, επειδή αυτό το συνημμένο ενδέχεται να έχει διαγραφεί."</string>  
+    <string name="send_failed_ticker">Ο λογαριασμός 
+        <xliff:g id="account_name">%s</xliff:g> απέτυχε στην αποστολή E-mail.
+    </string>  
+    <!-- Notification title when email sent fails [CHAR LIMIT=30]-->  
+    <string name="send_failed_title">Αποτυχία αποστολής E-mail</string>  
+    <string name="always_bcc_myself">Πάντα ιδιαίτ. κοιν. σε εμένα</string>  
+    <string name="always_bcc_myself_summary">Πάντα ιδιαίτ. κοιν. σε εμένα κατά τη σύνταξη, απάντηση και προώθηση</string> 
+    <string name="remote_search_failed">Η αναζήτηση του διακομιστή απέτυχε!</string>
+    <string name="searching_on_server">Αναζήτηση στο διακομιστή</string>  
+    <string name="searching_on_server_title">Αναζήτηση \" 
+        <xliff:g id="account_name">%s</xliff:g>\" στο διακομιστή
+    </string>  
+    <string name="search_field_subject">Θέμα</string>  
+    <string name="search_field_receiver">Δέκτης</string>  
+    <string name="search_field_sender">Αποστολέας</string>  
+    <string name="search_field_body">Σώμα</string>  
+    <string name="search_field_all">"Όλα"</string>
+    <string name="searching_all_fields_on_sever">Αναζήτηση όλων των πεδίων στο διακομιστή</string>
+    <string name="select_all">"Επιλογή όλων"</string>
+    <string name="deselect_all">"Αποεπιλογή όλων"</string>
+
+    <string name="vip_settings">ΡΥΘΜΙΣΕΙΣ VIP</string>  
+    <string name="vip_members">Μέλη VIP</string>  
+    <string name="vip_notifications">Ειδοποιήσεις VIP</string>  
+    <string name="vip_settings_notify_summary">Ειδοποίηση σε γραμμή συστήματος κατά τη λήψη μηνύματος VIP</string>  
+    <string name="vip_members_count">Μέλη VIP (<xliff:g example="2">%1$d</xliff:g>)</string>  
+    <string name="vip_remove_title">Κατάργηση από VIP</string>
+    <string name="vip_remove_prompt">Ο χρήστης <xliff:g example="2">%1$s</xliff:g> θα καταργηθεί από τα μέλη VIP.</string>  
+    <string name="not_add_duplicate_vip">Η διπλότυπη επαφή δεν θα προστεθεί στη λίστα VIP.</string>  
+    <string name="vip_settings_ringtone">"Επιλέξτε ήχο κλήσης"</string>  
+    <string name="vip_settings_vibrate_label">Δόνηση</string>  
+    <string name="vip_settings_vibrate_summary">Δόνηση και κατά τη λήψη E-mail VIP</string>  
+    <string name="global_search_label">"Ηλ. ταχυδρομείο"</string>  
+    <string name="global_search_hint">"Αναζήτηση ηλεκτρονικού ταχυδρομείου"</string>  
+    <string name="global_search_description">Αποστολείς, θέματα και κυρίως κείμενα</string>  
+    <string name="account_settings_oof_time_alert">Θα πρέπει να είναι αργότερα από την τρέχουσα ώρα.</string>
+    <string name="account_settings_oof_label">Εκτός γραφείου</string>  
+    <string name="account_settings_oof_unchecked_summary">Βρίσκομαι στο γραφείο τώρα</string>  
+    <string name="account_settings_oof_checked_summary">Βρίσκομαι εκτός γραφείου τώρα</string>  
+    <string name="account_settings_oof_from_label">"Από"</string>  
+    <string name="account_settings_oof_to_label">"Προς"</string>  
+    <string name="account_settings_oof_auto_reply_label">Αυτόματες απαντήσεις εκτός γραφείου</string>  
+    <string name="account_settings_oof_auto_reply_summary">Αυτόματη απάντηση μηνύματος σε κάθε αποστολέα</string>  
+    <string name="account_settings_oof_external_server_label">Αποστολή αυτόματων απαντήσεων σε εξωτερικό διακομιστή</string>  
+    <string name="account_settings_oof_get_status">Λήψη κατάστασης από διακομιστή</string>  
+    <string name="account_settings_oof_save_sets">Αποθήκευση ρυθμίσεων σε διακομιστή</string>  
+    <string name="account_settings_oof_get_status_fail">Δεν είναι δυνατή η λήψη κατάστασης</string>
+    <string name="account_settings_oof_get_status_fail_summary">Δεν είναι δυνατή η λήψη κατάστασης από το διακομιστή αυτή τη στιγμή. Προσπαθήστε ξανά αργότερα.</string>
+    <string name="account_settings_oof_cancel">Χωρίς αποθήκευση;</string>  
+    <string name="account_settings_oof_cancel_summary">Όλες οι αλλαγές θα απορριφθούν.</string>  
+    <string name="account_settings_oof_save_fail">Δεν είναι δυνατή η αποθήκευση</string>  
+    <string name="account_settings_oof_save_fail_summary">Δεν είναι δυνατή η αποθήκευση των ρυθμίσεων στο διακομιστή. Ο διακομιστής δεν είναι διαθέσιμος ή οι αυτόματες απαντήσεις σας έχουν υπερβεί το όριο του διακομιστή ή η συσκευή σας διαθέτει λανθασμένη ημερομηνία ή ώρα.</string>  
+    <string name="account_setup_options_mail_check_frequency_smartpush">Έξυπνη προώθηση</string>
+    <string name="smart_push_alert_dialog_title">Επιλογή εξοικονόμησης ενέργειας</string>
+    <string name="smart_push_alert_dialog_message">" πραγματοποιεί έλεγχο για νέα email λιγότερο συχνά προκειμένου να εξοικονομήσει ενέργεια. Συνεχίστε να χρησιμοποιείτε αυτόν τον τρόπο λειτουργίας. Τα email θα λαμβάνονται πιο έγκαιρα.\n\nΜπορείτε να αλλάξετε αυτήν τη ρύθμιση οποιαδήποτε στιγμή από τις Ρυθμίσεις."</string>
+    <string name="not_add_more_recipients">Δεν είναι δυνατή η προσθήκη παραληπτών πάνω από τους <xliff:g id="maxLimit">%1$d</xliff:g> ταυτόχρονα.</string>
+    <string name="vip_choose_contact">Προσθήκη σε VIP</string>
+    <string name="can_not_add_vip_over_99">Δεν είναι δυνατή η προσθήκη μέλους VIP πάνω από τα 99</string>
+    <string name="no_application_response">Η εφαρμογή έχει απενεργοποιηθεί</string>
+    <string name="vip_emails_from_accounts_fmt">Email από <xliff:g id="vipAccountCount">%d</xliff:g> λογαριασμούς</string>
+    <string name="notification_multiple_new_vip_messages_fmt"><xliff:g example="2">%1$d</xliff:g> νέα VIP Ε-mail</string>
+    <string name="send_attachment_fail">Αποτυχία αποστολής συνημμένου.</string>
+    <string name="cannot_move_multiple_mailbox_toast">Ορισμένα Ε-mail βρίσκονται σε διεργασία μετακίνησης. Προσπαθήστε ξανά αργότερα.</string>
+    <string name="certificate_request_ssl">Το πιστοποιητικό του υπολογιστή-πελάτη να χρησιμοποιεί σύνδεση ασφαλείας.</string>
+    <string name="auto_clear_cache_title">Εκκαθάριση cache αυτόματα</string>
+    <string name="auto_clear_cache_description">Διαγραφή τοπικά αποθηκευμένο συνημμένα τακτικά</string>
+    <string name="edit_quoted_dialog_title">Μέγιστοι χαρακτήρες</string>
+    <string name="edit_quoted_not_append_all">Ο μέγιστος αριθμός χαρακτήρων έχει συμπληρωθεί. Κάποιο από το παλιό περιεχόμενο θα χαθεί. Συνέχεια;</string>
+    <string name="single_message_view_attachment_saved">Τα συνημμένα έχουν αποθηκευτεί σε <xliff:g id="filename">%s</xliff:g></string>
+    <string name="choose_attachment_dialog_title">"Επιλογή επισύναψης"</string>
+    <string name="message_compose_error_invalid_email">"Ορισμένες διευθύνσεις ηλεκτρονικού ταχυδρομείου δεν είναι έγκυρες."</string>
+    <string name="extension_choose_provider_title">Επιλογή υπηρεσίας παροχής mail</string>
+    <string name="message_view_status_sdcard_not_enough">Δεν υπάρχει αρκετός χώρος για την αποθήκευση των συνημμένων στην κάρτα SD.</string>
+    <string name="message_body_too_large">Δεν είναι δυνατή η φόρτωση όλου του περιεχομένου γιατί το μήνυμα είναι υπερβολικά μεγάλο.</string>
+</resources>

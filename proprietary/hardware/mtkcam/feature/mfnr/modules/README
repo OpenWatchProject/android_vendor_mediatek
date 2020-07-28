@@ -1,0 +1,27 @@
+MFNR Core Modules
+
+
+WHAT IT DOES?
+=============
+
+A platform dependent MFNR module static link library, which provides MFNR core
+to control the hardware dependent modules
+
+
+HOW IT WAS BUILT?
+==================
+
+To determine the module version, you have to set MFLL_MODULE_VERSION_${MODULE}
+from here:
+
+    feature/common/mfnr/Android.mk
+
+See: feature/common/mfnr/README
+
+HOW TO USE IT?
+==============
+
+User don't use this library directly but MFNR core does.
+
+
+All the source code of this program were written by MediaTek co..

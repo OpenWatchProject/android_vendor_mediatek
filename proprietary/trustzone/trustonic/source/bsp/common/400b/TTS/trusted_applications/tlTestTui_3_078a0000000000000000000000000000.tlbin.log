@@ -1,0 +1,57 @@
+MODE = Creating Trusted Application/Driver from ELF
+KEY  = keySpTl.xml
+
+###### ELF Header ######
+Maschine Class                   = ELFCLASS32 (32-bit)
+Maschine Data                    = ELFDATA2LSB (Little endian)
+Header version                   = EV_CURRENT (Current version)
+File Type                        = ET_EXEC (2: Executable)
+Entry Addr.                      = 0x1afd
+Program header offset            = 0x107c
+Program header entry size        = 32
+Program header number            = 1
+Section header offset            = 0x109c
+Section header entry size        = 40
+Section header number            = 7
+Section header string index      = 6
+
+###### Program Header ######
+Type		Offset		VirtAddr	FileSize	MemSize		Flags		Allign
+LOAD		0x34		0x1000		4096		692104		RWE		4096
+
+###### Section Header ######
+Name			Type	Flags	Addr		Offset		Size		Link	Info	Align	Entry Size
+                	0	0	0x0		0x0		0		0	0	0	0
+.text           	1	6	0x1000		0x34		4060		0	0	4096	0
+.init           	1	6	0x1fdc		0x1010		4		0	0	4	0
+.data           	1	3	0x3000		0x1034		0		0	0	4096	0
+.bss            	8	3	0x3000		0x1034		688008		0	0	8	0
+.note           	7	0	0x0		0x1034		32		0	0	4	0
+.shstrtab       	3	0	0x0		0x1054		40		0	0	1	0
+
+###### Trustlet header: ######
+Magic                            = MCLF
+Version                          = 2.3
+Flags                            = Debuggable
+MemType                          = external
+Service type                     = Service Provider Trustlet
+Service Type                     = Service Provider Trustlet
+NumberOfInstances                = 2
+UUID                             = 078a0000000000000000000000000000
+DriverID                         = 0
+NumberOfThreads                  = 1
+CodeAddr                         = 0x1000
+CodeLength                       = 4064
+DataAddr                         = 0x3000
+DataLength                       = 0
+BssLength                        = 688008
+Entry Addr.                      = 0x1AFD
+Interface Version                = 0.0
+permittedHwCfg                   = 0
+permittedSuid                    = ffffffffffffffff0000000000000000
+GPLevel                          = 0
+attestationOffset                = 0
+textHeaderVersion                = 0.0
+textHeaderLen                    = 60
+InitHeapSize                     = 0
+MaxHeapSize                      = 0

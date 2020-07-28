@@ -1,0 +1,32 @@
+JNI Library of engineermode audio, which contain the api
+to communicate with audio param library
+
+This library is pre-built by MediaTek internal.
+
+WHAT IT DOES?
+=============
+libem_audio_jni.so provide jni interface to EngineerMode to 
+access native interface of audio
+
+HOW IT WAS BUILT?
+==================
+It needs the following library from AOSP:
+1. libnativehelper
+2. libandroid_runtime
+3. libutils
+4. libui
+5. libcutils
+
+and the following libs from MediaTek:
+1. libaudio_param_parser
+
+All source/dependency modules of this module are already put in
+'vendor/mediatek/libs' folder.
+
+HOW TO USE IT?
+==============
+
+provide jni interface to EngineerMode to access native interface of audio
+all api interface are at (vendor/mediatek/proprietary/packages/apps/EngineerMode/jni/com_mediatek_engineermode_audio)
+
+All the source code of this library were written by MediaTek co..

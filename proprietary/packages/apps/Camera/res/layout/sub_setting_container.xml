@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.android.camera.ui.RotateLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:camera="http://schemas.android.com/apk/res/com.mediatek.camera0"
+	style="@style/SettingNewContainerParent"
+    android:splitMotionEvents="false" >
+    <com.android.camera.ui.MaxLinearLayout
+        android:id="@+id/sub_container"
+        style="@style/SubSettingContainer"
+        camera:maxHeight="@dimen/setting_sub_container_height_max" >
+
+	<com.android.camera.ui.SubSettingLayout android:id="@+id/sub_pager"
+		android:layout_width="wrap_content" android:layout_height="wrap_content">
+		<GridView android:id="@+id/settingSubList" 
+		style="@style/SettingGridContainerParent"/>
+	</com.android.camera.ui.SubSettingLayout>
+	
+    </com.android.camera.ui.MaxLinearLayout>
+</com.android.camera.ui.RotateLayout>

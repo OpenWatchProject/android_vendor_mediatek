@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+                  android:key="advanced_calling_settings"
+                  android:title="@string/wifi_calling_title">
+
+  <ListPreference
+            android:key="roaming_mode"
+            android:title="@string/when_roaming_title"
+            android:summary="@string/when_roaming_summary"
+            android:entries="@array/roaming_mode_choices"
+            android:entryValues="@array/roaming_mode_values"
+            android:dialogTitle="@string/when_roaming_title"/>
+
+</PreferenceScreen>

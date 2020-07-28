@@ -1,0 +1,35 @@
+######### DUT (Device Under Test) Information #########################
+
+#### Wi-Fi Test Suite Control Agent Support ########
+# 1-If DUT has Wi-Fi Test Suite Control Agent support. 0-If not supported.
+
+WTS_ControlAgent_Support!1!
+
+
+
+
+# DUTType : WPA2-Personal or WPA2-Enterprise
+DUTType!WPA2-Enterprise!
+
+# DUT Band : ABG or BG or B (B only)
+DUTBand!ABGN!
+
+#DUT Category : c1 or c2 or c3 if device is WPA2-Enterprise
+DUTCategory!c1!
+
+#Supported EAP Methods 0-No 1-Yes
+TLS!1!
+TTLS!0!
+PEAP0!1!
+PEAP1!0!
+SIM!0!
+AKA!1!
+
+
+############ OPTIONAL FEATURES ############
+
+#BSS Transition Management Query Support
+BSS_Trans_Query_Support!1!
+
+#Traffic Stream Measurement Support
+TSM_Support!1!

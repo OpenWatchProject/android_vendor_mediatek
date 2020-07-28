@@ -1,0 +1,35 @@
+cc_defaults {
+    name: "libmtkaudio_utils_defaults",
+    owner: "mtk",
+    compile_multilib: "both",
+    srcs: [
+        "pulse.cpp",
+        "AudioDetectPulse.cpp",
+    ],
+    shared_libs: [
+        "libcutils",
+        "liblog",
+        "libutils",
+        "libaudioutils",
+    ],
+    product_variables: {
+        debuggable: {
+            cflags: ["-DMTK_LATENCY_DETECT_PULSE"],
+        },
+    },
+}
+
+cc_library_shared {
+    name: "libmtkaudio_utils_vendor",
+    proprietary: true,
+    defaults: [
+        "libmtkaudio_utils_defaults",
+    ],
+}
+
+cc_library_shared {
+    name: "libmtkaudio_utils",
+    defaults: [
+        "libmtkaudio_utils_defaults",
+    ],
+}

@@ -1,0 +1,205 @@
+#define FSTYPE_RAW emmc
+
+#define DEVPATH(_part) /dev/block/platform/bootdevice/by-name/_part
+#ifdef __DYNAMIC_PARTITION_SUPPORT
+#define LP_DEVPATH(_part) _part
+#else
+#define LP_DEVPATH(_part) DEVPATH(_part)
+#endif
+#define FSTAB_RAW(_part)        DEVPATH(_part) /_part FSTYPE_RAW defaults defaults
+#define FSTAB_RAW2(_part,_mnt)  DEVPATH(_part) /_mnt FSTYPE_RAW defaults defaults
+
+#ifndef __MTK_SYSIMG_FSTYPE
+#define __MTK_SYSIMG_FSTYPE ext4
+#endif
+
+#ifndef __MTK_VNDIMG_FSTYPE
+#define __MTK_VNDIMG_FSTYPE ext4
+#endif
+
+#ifndef __MTK_ODMIMG_FSTYPE
+#define __MTK_ODMIMG_FSTYPE ext4
+#endif
+
+#ifndef __MTK_METADATA_FSTYPE
+#define __MTK_METADATA_FSTYPE ext4
+#endif
+
+/* Can overwrite FDE setting by defining __MTK_FDE_NO_FORCE and __MTK_FDE_TYPE_FILE in this file */
+/* For example, you can un-comment the following line to disable FDE for all projects in this platform. */
+//#define __MTK_FDE_NO_FORCE
+#ifdef __MTK_FDE_NO_FORCE
+  #define FLAG_FDE_AUTO encryptable
+#else
+  #define FLAG_FDE_AUTO forceencrypt
+#endif
+#ifdef __MTK_FDE_TO_FBE
+  #define FLAG_FDE_TYPE forcefdeorfbe
+#else
+#ifdef __MTK_FDE_TYPE_FILE
+  #define FLAG_FDE_TYPE fileencryption
+#else
+  #define FLAG_FDE_TYPE
+#endif
+#endif
+
+#ifdef __TARGET_ENABLE_QUOTA
+  #define FLAG_QUOTA quota
+#else
+  #define FLAG_QUOTA
+#endif
+
+#ifdef __BOARD_USES_METADATA_PARTITION
+#ifndef __USERDATA_USE_F2FS
+  #define CHECKPOINT checkpoint=block
+#else
+  #define CHECKPOINT checkpoint=fs
+#endif
+#else /* match with __BOARD_USES_METADATA_PARTITION */
+  #define CHECKPOINT
+#endif
+#define FS_FLAG_CP noatime,nosuid,nodev,discard
+#define FSMGR_FLAG_CP  wait,formattable,first_stage_mount
+
+#define FSTAB_RAW_FIRST_STAGE(_part)        DEVPATH(_part) /_part FSTYPE_RAW defaults first_stage_mount,nofail,FLAG_SLOT_SELECT
+
+#ifdef __MAIN_VBMETA_IN_BOOT
+  #define VBMETA_DEV    boot
+#else
+#ifdef __DYNAMIC_PARTITION_SUPPORT
+  #define VBMETA_DEV    vbmeta_system
+#else
+  #define VBMETA_DEV    vbmeta
+#endif
+#endif
+
+#ifdef __MTK_AB_OTA_UPDATER
+  #define FLAG_SLOT_SELECT slotselect
+#else
+  #define FLAG_SLOT_SELECT
+#endif
+
+#ifdef __DYNAMIC_PARTITION_SUPPORT
+  #define FLAG_LOGICAL  logical
+#else
+  #define FLAG_LOGICAL
+#endif
+
+#ifdef __BOARD_AVB_ENABLE
+  #define FSMGR_FLAG_SYSTEM wait,FLAG_SLOT_SELECT,avb=VBMETA_DEV,FLAG_LOGICAL,first_stage_mount,avb_keys=/avb/q-gsi.avbpubkey:/avb/r-gsi.avbpubkey:/avb/s-gsi.avbpubkey
+  #define FSMGR_FLAG_VENDOR wait,FLAG_SLOT_SELECT,avb,FLAG_LOGICAL,first_stage_mount
+#else
+  #define FSMGR_FLAG_SYSTEM wait,FLAG_SLOT_SELECT,first_stage_mount
+  #define FSMGR_FLAG_VENDOR FSMGR_FLAG_SYSTEM
+#endif
+
+#ifdef __BOARD_USES_METADATA_PARTITION
+#ifndef __USERDATA_USE_F2FS
+  #define CHECKPOINT checkpoint=block
+#else
+  #define CHECKPOINT checkpoint=fs
+#endif
+#else /* match with __BOARD_USES_METADATA_PARTITION */
+  #define CHECKPOINT
+#endif
+#define FSMGR_FLAG_CP  wait,formattable,first_stage_mount
+
+#define FLAG_RESERVEDSIZE reservedsize=128m
+
+LP_DEVPATH(system)     /system              __MTK_SYSIMG_FSTYPE ro  FSMGR_FLAG_SYSTEM
+#ifdef __VENDOR_PARTITION_SUPPORT
+LP_DEVPATH(vendor)     /vendor              __MTK_VNDIMG_FSTYPE ro  FSMGR_FLAG_VENDOR
+#endif
+#ifdef __PRODUCT_PARTITION_SUPPORT
+LP_DEVPATH(product)    /product             __MTK_VNDIMG_FSTYPE ro  FSMGR_FLAG_VENDOR
+#endif
+#ifdef __ODM_PARTITION_SUPPORT
+LP_DEVPATH(odm)        /odm                 __MTK_ODMIMG_FSTYPE ro  FSMGR_FLAG_VENDOR
+#endif
+
+#ifdef __BOARD_USES_METADATA_PARTITION
+DEVPATH(md_udc)      /metadata       __MTK_METADATA_FSTYPE  FS_FLAG_CP  FSMGR_FLAG_CP
+#endif
+
+#ifdef __USERDATA_USE_F2FS
+
+#ifdef __MTK_FDE_TYPE_FILE
+#ifdef __MTK_FDE_TO_FBE
+DEVPATH(userdata)   /data        f2fs   noatime,nosuid,nodev,discard,noflush_merge,reserve_root=134217,resgid=1065               wait,check,formattable,FLAG_QUOTA,resize,FLAG_RESERVEDSIZE,FLAG_FDE_TYPE=DEVPATH(metadata)
+#else
+DEVPATH(userdata)   /data        f2fs   noatime,nosuid,nodev,discard,noflush_merge,reserve_root=134217,resgid=1065               wait,check,formattable,FLAG_QUOTA,resize,FLAG_RESERVEDSIZE,FLAG_FDE_TYPE=adiantum:adiantum
+#endif
+#else
+DEVPATH(userdata)   /data        f2fs   noatime,nosuid,nodev,discard,noflush_merge,reserve_root=134217,resgid=1065               wait,check,formattable,FLAG_QUOTA,resize,FLAG_RESERVEDSIZE,FLAG_FDE_AUTO=DEVPATH(metadata),FLAG_FDE_TYPE
+#endif
+
+#else //__USERDATA_USE_F2FS
+
+#ifdef __MTK_FDE_TYPE_FILE
+#ifdef __MTK_FDE_TO_FBE
+DEVPATH(userdata)   /data        ext4   noatime,nosuid,nodev,noauto_da_alloc               wait,check,formattable,FLAG_QUOTA,resize,FLAG_RESERVEDSIZE,FLAG_FDE_TYPE=DEVPATH(metadata)
+#else
+DEVPATH(userdata)   /data        ext4   noatime,nosuid,nodev,noauto_da_alloc               wait,check,formattable,FLAG_QUOTA,resize,FLAG_RESERVEDSIZE,FLAG_FDE_TYPE=adiantum:adiantum
+#endif
+#else  //__MTK_FDE_TYPE_FILE
+DEVPATH(userdata)   /data        ext4   noatime,nosuid,nodev,noauto_da_alloc               wait,check,formattable,FLAG_QUOTA,resize,FLAG_RESERVEDSIZE,FLAG_FDE_AUTO=DEVPATH(metadata),FLAG_FDE_TYPE
+#endif //__MTK_FDE_TYPE_FILE
+
+#endif //__USERDATA_USE_F2FS
+
+#ifndef __MTK_AB_OTA_UPDATER
+DEVPATH(cache)      /cache       ext4   noatime,nosuid,nodev,noauto_da_alloc,discard               wait,check,formattable
+#endif
+DEVPATH(protect1)   /mnt/vendor/protect_f   ext4   noatime,nosuid,nodev,noauto_da_alloc,commit=1,nodelalloc   wait,check,formattable
+DEVPATH(protect2)   /mnt/vendor/protect_s   ext4   noatime,nosuid,nodev,noauto_da_alloc,commit=1,nodelalloc   wait,check,formattable
+DEVPATH(nvdata)     /mnt/vendor/nvdata      ext4   noatime,nosuid,nodev,noauto_da_alloc,discard               wait,check,formattable
+	#ifdef __PERSIST_PARTITION_SUPPORT
+DEVPATH(persist)    /mnt/vendor/persist     ext4   noatime,nosuid,nodev,noauto_da_alloc,commit=1,nodelalloc   wait,check,formattable
+	#endif
+
+	#ifdef __MTK_FACTORY_RESET_PROTECTION_SUPPORT
+DEVPATH(frp)    /persistent     emmc  defaults                                                          defaults
+	#endif
+
+/devices/platform/externdevice*       auto      auto      defaults        voldmanaged=sdcard1:auto,encryptable=userdata
+
+DEVPATH(nvram)         /nvram          emmc  defaults defaults
+DEVPATH(proinfo)       /proinfo        emmc  defaults defaults
+DEVPATH(lk)            /bootloader     emmc  defaults defaults
+#ifdef __MTK_LOADER_BACKUP
+DEVPATH(lk2)           /bootloader2    emmc  defaults defaults
+#endif
+DEVPATH(para)          /misc           emmc  defaults defaults
+#ifndef __SYSTEM_AS_ROOT
+#ifndef __BOARD_USES_RECOVERY_AS_BOOT
+FSTAB_RAW_FIRST_STAGE(recovery)
+#endif
+FSTAB_RAW_FIRST_STAGE(boot)
+#else
+FSTAB_RAW(recovery)
+FSTAB_RAW(boot)
+#endif
+#ifdef __DYNAMIC_PARTITION_SUPPORT
+FSTAB_RAW_FIRST_STAGE(vbmeta_vendor)
+DEVPATH(vbmeta_system)  /vbmeta_system emmc  defaults first_stage_mount,nofail,FLAG_SLOT_SELECT,avb=vbmeta
+#endif
+DEVPATH(logo)          /logo           emmc  defaults defaults
+DEVPATH(expdb)         /expdb          emmc  defaults defaults
+DEVPATH(secro)         /secro          emmc  defaults defaults
+DEVPATH(seccfg)        /seccfg         emmc  defaults defaults
+	#if (defined(__MTK_TEE_SUPPORT) || defined(__MTK_ATF_SUPPORT) || defined(__MTK_GOOGLE_TRUSTY_SUPPORT))
+DEVPATH(tee1)          /tee1           emmc  defaults defaults
+DEVPATH(tee2)          /tee2           emmc  defaults defaults
+	#endif
+#ifdef __MTK_DTBO_FEATURE
+DEVPATH(odmdtbo)       /odmdtbo        emmc  defaults defaults
+DEVPATH(dtbo)          /dtbo           emmc  defaults defaults
+#endif
+DEVPATH(vbmeta)        /vbmeta         emmc  defaults defaults
+
+/devices/platform/bus/mt_usb*             auto      auto      defaults        voldmanaged=usbotg:auto
+
+#ifdef __ICUSB_SUPPORT
+/devices/platform/musbfsh/usb1/1-1/1-1:1.0/host   /mnt/udisk/folder1      vfat      defaults        voldmanaged=icusb1:auto
+/devices/platform/musbfsh/usb1/1-1/1-1:1.0/host   /mnt/udisk/folder2      vfat      defaults        voldmanaged=icusb2:auto
+#endif

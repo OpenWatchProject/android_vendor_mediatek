@@ -1,0 +1,38 @@
+/*
+ * Copyright (C) 2016 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package vendor.mediatek.hardware.fm@1.0;
+
+
+interface IFmRadioCallback {
+
+    /**
+     * Method called by the HAL when an event happens.
+     * @param result OK if the configuration has been applied,
+     *               INVALID_ARGUMENTS if not or TIMEOUT in case of time out.
+     * @param event Event to be notified.
+     */
+    oneway eventNotifyCb(Result result, Event event);
+
+    /**
+     * Method called by the HAL when a get operation completes.
+     * following a getControl() command.
+     * @param result OK if tune succeeded or TIMEOUT in case of time out.
+     * @param control A control id to identify which configuration to get.
+     * @param value The configuration value of the control id.
+     */
+    oneway getControlCb(Result result, Control control, uint32_t value);
+};

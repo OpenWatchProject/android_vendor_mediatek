@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<carrier_config_list>
+<carrier_config>
+<!-- Supplementary Service WWOP Config -->
+<boolean name="mtk_carrier_ss_gsm_ut_support" value="true" />
+<boolean name="mtk_carrier_ss_tb_clir" value="true" />
+<boolean name="mtk_carrier_ss_ims_nw_cw" value="true" />
+<boolean name="mtk_carrier_ss_support_save_cf_number" value="true" />
+<int name="maxImageHeight" value="1944" />
+<int name="maxMessageSize" value="614400" />
+<int name="maxImageWidth" value="2592" />
+<boolean name="csp_enabled_bool" value="true" />
+<boolean name="mtk_wfc_remove_preference_mode_bool" value="true" />
+<boolean name="support_video_conference_call_bool" value="true" />
+<boolean name="mtk_domestic_roaming_enabled_only_by_mobile_data_setting" value="true" />
+<boolean name="mtk_intl_roaming_enabled_only_by_roaming_data_setting" value="true" />
+<boolean name="mtk_vt_over_wifi_check_data_enable_bool" value="true" />
+<boolean name="mtk_vt_over_wifi_check_wfc_enable_bool" value="false" />
+<!-- Dont's show roaming icon -->
+<boolean name="mtk_key_carrier_need_show_roaming_icon" value="false" />
+<string-array name="carrier_metered_apn_types_strings" num="3">
+    <item value="default" />
+    <item value="dun" />
+    <item value="supl" />
+</string-array>
+<string-array name="carrier_metered_roaming_apn_types_strings" num="3">
+    <item value="default" />
+    <item value="dun" />
+    <item value="supl" />
+</string-array>
+</carrier_config>
+</carrier_config_list>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<carrier_config>
+    <boolean name="carrier_default_wfc_ims_roaming_enabled_bool" value="true"/>
+    <boolean name="carrier_name_override_bool" value="true"/>
+    <string name="carrier_name_string">airtel</string>
+    <int name="httpSocketTimeout" value="300000"/>
+    <string-array name="roaming_operator_string_array" num="2">
+        <item value="404"/>
+        <item value="405"/>
+    </string-array>
+    <!-- Supplementary Service WWOP Config -->
+    <boolean name="mtk_carrier_ss_not_support_xcap" value="true" />
+    <boolean name="carrier_default_wfc_ims_enabled_bool" value="true"/>
+    <boolean name="carrier_default_wfc_ims_roaming_enabled_bool" value="true"/>
+    <boolean name="mtk_show_call_barring_password_bool" value="true"/>
+    <boolean name="no_sip_message_on_pause_video_bool" value="true" />
+    <boolean name="support_video_conference_call_bool" value="true" />
+    <!-- Disable WFC registration when airplane mode  -->
+    <boolean name="wos_flight_mode_support_bool" value="false" />
+</carrier_config>

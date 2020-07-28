@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <RelativeLayout
+        android:id="@+id/action_bar_edit"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:divider="?android:attr/dividerVertical"
+        android:dividerPadding="12dip"
+        android:orientation="horizontal"
+        android:showDividers="middle" >
+
+        <ImageView
+            android:id="@+id/selected_icon"
+            style="?android:attr/actionButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:clickable="false"
+            android:src="@drawable/ic_menu_done_holo_dark" />
+
+        <TextView
+            android:id="@+id/selected"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="20dip"
+            android:layout_marginEnd="20dip"
+            android:layout_toEndOf="@id/selected_icon"
+            android:text="@string/menu_done"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:singleLine="true"
+            android:textColor="@color/action_bar_button_text_color" />
+    </RelativeLayout>
+</FrameLayout>

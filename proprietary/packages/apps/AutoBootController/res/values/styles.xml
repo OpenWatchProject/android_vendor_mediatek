@@ -1,0 +1,29 @@
+<resources>
+    <style name="TextAppearance.Switch" parent="@android:style/TextAppearance.Material.Title" />
+    <style name="ThemeOverlay.SwitchBar" parent="@android:style/ThemeOverlay">
+        <!-- Used by controls, e.g. CheckBox, ProgressBar, etc. -->
+        <item name="android:colorAccent">@color/switch_accent_color</item>
+    </style>
+    <style name="ThemeOverlay.SwitchBar.Settings" parent="@android:style/ThemeOverlay.Material.ActionBar">
+        <item name="switchBarMarginStart">@dimen/switchbar_margin_start</item>
+        <item name="switchBarMarginEnd">@dimen/switchbar_margin_end</item>
+    </style>
+    <attr name="switchBarMarginStart" format="dimension" />
+    <attr name="switchBarMarginEnd" format="dimension" />
+
+    <style name="PermissionDialog"
+           parent="@android:style/Theme.DeviceDefault.Light.Dialog.NoActionBar">
+        <item name="*android:windowFixedHeightMajor">100%</item>
+        <item name="*android:windowFixedHeightMinor">100%</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+    </style>
+
+    <style name="Toolbar_TitleText" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="NoActionBar">
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+</resources>

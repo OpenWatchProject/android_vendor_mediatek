@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    style="@style/ScreenOnStereoPadding">
+    <com.android.camera.ui.RotateLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:shadowColor="#BB000000"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/dof_view"
+                android:layout_width="48dp"
+                android:layout_height="30dp"
+                android:layout_above="@+id/refocusImage_bottom_controls"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="4dp"
+                android:background="#bf333333"
+                android:gravity="center"
+                android:textSize = "20sp"
+                android:visibility="gone" >
+            </TextView>
+            <RelativeLayout
+                android:id="@+id/refocusImage_bottom_controls"
+                android:layout_height="38dp"
+                android:layout_width="match_parent"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:orientation="horizontal" 
+                android:background="#bf333333">
+            <ImageView
+               android:id = "@+id/small_aperture"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_marginLeft="10dp"
+               android:layout_alignParentLeft="true"
+               android:layout_centerHorizontal="true"
+               android:layout_centerVertical="true"
+               android:gravity="center"
+               android:src="@drawable/m_refocus_small_aperture">
+            </ImageView>
+            <SeekBar android:id="@+id/refocusSeekBar"
+                android:layout_width="260dp"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:max="300"
+                android:progress="1"
+                android:visibility="gone"/>
+            <ImageView
+                android:id="@+id/big_aperture"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/m_refocus_big_aperture">
+            </ImageView>
+            </RelativeLayout>
+        </RelativeLayout>
+    </com.android.camera.ui.RotateLayout>
+</RelativeLayout>

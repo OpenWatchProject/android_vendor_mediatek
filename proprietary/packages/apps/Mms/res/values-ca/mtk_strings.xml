@@ -1,0 +1,613 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+/*
+ * Copyright (C) 2007-2008 Esmertec AG.
+ * Copyright (C) 2007-2008 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+ -->
+
+<resources xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <!-- MTK resource -->
+    <string name="more_recipients">receptor(s)</string>
+	<string name="Insert_sdcard">Si us plau, inseriu la targeta SD</string>
+    <string name="pref_title_mms_enable_to_send_delivery_reports">"Envia l'informe d'entrega"</string>
+    <string name="pref_summary_mms_enable_to_send_delivery_reports">"Envia un informe d'entrega per cada missatge que rebeu"</string>
+    <string name="set_service_center_OK">Centre de Servei SMS establert</string>
+    <string name="set_service_center_fail">Centre de Servei SMS no establert</string>
+    <string name="OK">"D\'acord"</string>
+    <string name="Cancel">"Cancel·la"</string>
+    <string name="sms_save_location">"Ubicació d'emmagatzematge SMS"</string>
+    <string name="sms_service_center">Centre de Servei SMS</string>
+    <string name="sms_validity_period">Període de validesa SMS</string>
+    <string name="sms_validity_period_nosetting">No establert</string>
+    <string name="sms_validity_period_1hour">"1 hora"</string>
+    <string name="sms_validity_period_6hours">6 hores</string>
+    <string name="sms_validity_period_12hours">12 hores</string>
+    <string name="sms_validity_period_1day">"1 dia"</string>
+    <string name="sms_validity_period_max">Màxim</string>
+    <string name="service_center_label">Centre de servei:\u0020</string> 
+    <string name="cu_subject">Assumpte Lemei</string> 
+    <string name="pref_title_mms_creation_mode">Mode creació</string>
+    <string name="pref_summary_mms_creation_mode">Mode de creació MMS per redactar missatges</string>
+    <string name="pref_title_mms_size_limit">Límit de mida</string>
+    <string name="pref_summary_mms_size_limit">Límit de mida per a la redacció de missatges MMS</string>
+    <string name="confirm_restricted_audio">"Contingut d'àudio restringit, voleu adjuntar-lo de tota manera?"</string>
+    <string name="confirm_restricted_image">Contingut de imatge restringit, voleu adjuntar-lo de tota manera?</string>
+    <string name="confirm_restricted_video">Contingut de vídeo restringit, voleu adjuntar-lo de tota manera?</string>
+    <string name="unsupport_media_type">Mitjà no compatible</string>
+    <string name="select_different_media_type">Seleccioneu un mitjà diferent</string>
+    <string name="image_resolution_too_large">"La resolució d'imatge és massa gran per afegir-la"</string>
+    <string name="wp_msg_type">Missatge de servei</string>
+    <string name="wp_msg_created_label">Creat:\u0020</string>
+    <string name="wp_msg_created_unknown">"Desconegut"</string>
+    <string name="wp_msg_priority_label">"Prioritat: "</string>
+    <string name="wp_msg_priority_low">"Baixa"</string>
+    <string name="wp_msg_priority_medium">"Mitjana"</string>
+    <string name="wp_msg_priority_high">"Alta"</string>
+    <string name="menu_goto_browser">Obre el navegador</string>
+    <string name="menu_add_to_bookmark">Afegeix a favorits</string>
+    <string name="wp_msg_expiration_label">Expirat: <xliff:g id="DATE">%s</xliff:g></string>
+    <string name="error_unsupported_scheme">Aquesta acció ja no és compatible</string>
+    <string name="pref_title_wappush_settings">Configuració de missatge de servei</string>
+    <string name="pref_title_wappush_enable">Permet WAP PUSH</string>
+    <string name="pref_summary_wappush_enable">Permet rebre WAP PUSH</string>
+    <string name="pref_title_wappush_sl_autoloading">Inicia auto. SL</string>
+    <string name="pref_summary_wappush_sl_autoloading">"Inicia automàticament la carrega de missatges de càrrega de servei (SL) en rebre'ls"</string>
+    <string name="create_new_message" msgid="8735943333953093860">"Redacta un missatge nou"</string>
+    <string name="menu_send_sms">Envia missatge a <xliff:g id="name">%s</xliff:g></string>
+    <string name="menu_omacp">Missatge de configuració</string>
+    <string name="menu_undelivered_messages" msgid="3896857623211780616">"Missatges no lliurats"</string>
+    <string name="broadcast_from_to" msgid="2050376286109362539">"<xliff:g id="SENDER">%1$s</xliff:g> per a <xliff:g id="RECIPIENT">%2$s</xliff:g>"</string>
+    <string name="anonymous_recipient" msgid="2501437626187039034">"Anònim"</string>
+    <string name="view_picture" msgid="4356315935277709195">"Visualitza la imatge"</string>
+    <string name="save_message_to_sim">Desa el missatge en targeta SIM</string>
+    <string name="sent_on" msgid="5868288548564632354">"Enviat: <xliff:g id="DATE">%s</xliff:g>"</string>
+    <string name="received_on">"Rebut: <xliff:g id="date">%s</xliff:g>"</string>
+    <string name="save_message_to_sim_successful">Desat</string>
+    <string name="save_message_to_sim_unsuccessful">No desat</string>
+    <string name="transmission_transiently_failed">Errada de transmissió. Es reintentarà més tard.</string>
+    <string name="download_failed_due_to_full_memory">La descàrrega del missatge ha fallat perquè no hi ha memòria lliure.</string>
+    <string name="mms_too_big_to_download">El missatge és massa gran per descarregar-lo des de la xarxa.</string>
+    <string name="menu_reply">"Respon"</string>
+    <string name="menu_sim_sms">"SMS SIM"</string>
+    <string name="name_colon" msgid="7069560650889479120"><b>"<xliff:g id="NAME">%s</xliff:g>"</b>": "</string>
+    <string name="compose_title" msgid="558578836596816068">"Redacta"</string>
+    <string name="image_too_large" msgid="261880224164478061">"La imatge és massa gran"</string>
+    <string name="ask_for_automatically_resize" msgid="7657603662407738758">"Voleu canviar automàticament la mida de la imatge abans d\'enviar-la?"</string>
+    <string name="cannot_load_message" msgid="2577010607550849892">"No es pot carregar el missatge."</string>
+    <string name="locked_message_cannot_be_deleted" msgid="6369452071783350219">"Un missatge bloquejat no es pot suprimir."</string>
+    <string name="cannot_add_recipient">"Receptors màxims assolits, no se'n poden afegir més."</string>
+    <string name="multiple_recipients" msgid="8747754491343248141">"<xliff:g id="RECIPIENTCOUNT">%1$s</xliff:g> destinataris"</string>
+    <string name="resize" msgid="4308912589984220360">"Canvia la mida"</string>
+    <string name="to_label" msgid="2355268818058389047">"Per a "</string>
+    <string name="confirm_delete_all_messages" msgid="5836389073199814660">"Se suprimirà tot el fil."</string>
+    <string name="mms_priority_label">"Prioritat "</string>
+    <string name="menu_retry_sending" msgid="3146582005568302643">"Torna a provar l\'enviament"</string>
+    <string name="menu_retry_sending_all" msgid="1870529976966340616">"Torna a provar l\'enviament de tot"</string>
+    <string name="retrying_dialog_body" msgid="4738260459043003431">"Aquest missatge (<xliff:g id="MESSAGE">%s</xliff:g>) no s\'ha enviat a causa d\'un problema de connexió."\n"S\'està tornant a provar d\'enviar…"</string>
+    <string name="status_expired">Expirat</string>
+    <string name="status_deferred">Diferit</string>
+    <string name="status_unrecognized">No reconegut</string>
+    <string name="status_indeterminate">Indeterminat</string>
+    <string name="status_unreachable">No trobat</string>
+    <string name="attach_ringtone">"So de trucada"</string>
+    <string name="notification_multiple_cb"><xliff:g id="count">%s</xliff:g> Unread CB messages</string>
+    <string name="notification_multiple_cb_title">Missatges de transmissió cel·lular nous</string>
+    <string name="dl_expired_notification" msgid="950390029992535809">"Aquest missatge ha caducat i se suprimirà."</string>
+    <string name="add_attachment_activity" msgid="5324811371129695320">"Afegeix un fitxer adjunt:"</string>
+    <string name="select_layout_activity" msgid="5041916695464513848">"Selecciona una disposició"</string>
+    <string name="edit_text_activity" msgid="5915226413346879213">"Edita el text"</string>
+    <string name="pick_numbers_activity" msgid="2083330191224178637">"Selecció de números"</string>
+    <string name="send_using_mms_activity" msgid="3703434556280345726">"Envia com a missatge multimèdia..."</string>
+    <string name="select_contact_method_activity" msgid="1743384358979323991">"Seleccioneu el mètode de contacte"</string>
+    <string name="fdn_enabled">NMF activat</string>
+    <string name="cannot_send_message_reason_no_content">No hi ha contingut per enviar</string>
+    <string name="ok">"D\'acord"</string>
+    <string name="cancel">"Cancel·la"</string>
+    <string name="enable">"Activa"</string>
+    <string name="disable">"Desactiva"</string>
+    <string name="cb_read_message">Llegeix missatge CB</string>
+    <string name="cb_read_message2">Llegeix missatge de transmissió cel·lular</string>
+    <string name="cb_message">Missatge de transmissió cel·lular</string>
+    <string name="cb_default_channel_name">Des de canal</string>
+    <string name="cell_broadcast_setting">Configuració de difusió cel·lular</string>
+    <string name="cb_menu_language">"Idioma"</string>
+    <string name="cb_menu_add_channel">Afegeix canal</string>
+    <string name="cb_menu_channel_list">Llista de canals</string>
+    <string name="cb_dialog_title_language_choice">Selecciona l’idioma</string>
+    <string name="cb_channel_dialog_channel_name">Nom del canal (0-10 caràcters)</string>
+    <string name="cb_channel_dialog_channel_number">Número del canal (0-65534)</string>
+    <string name="cb_channel_dialog_channel_state">Activa el canal</string>
+    <string name="cb_channel_dialog_edit_channel">Edita el canal</string>
+    <string name="cb_menu_edit">"Edita"</string>
+    <string name="cb_menu_delete">"Suprimeix"</string>
+    <string name="cb_error_channel_num">Introdueix el número del canal (0-65534).</string>
+    <string name="cb_error_channel_name">La longitud del nom del canal no és correcta (1-10 caràcters).</string>
+    <string name="cb_error_language_select">Selecciona com a mínim un idioma.</string>
+    <string name="cb_error_channel_id_exist">La identificació del canal ja existeix.</string>
+    <string name="cb_all_languages">"Tots els idiomes"</string>
+    <string name="cb_default_new_channel_name">Canal nou</string>
+    <string name="sum_cell_broadcast_control_on">Habilitar difusió cel·lular</string>
+    <string name="sum_cell_broadcast_control_off">Deshabilitar difusió cel·lular</string>
+    <string name="sum_cell_broadcast_setting">Config. de llengua i canal per difusió cel·lular</string>
+    <string name="message_open_email_fail">Heu de configurar el vostre compte de correu electrònic abans</string>
+    <string name="add_contacts">"Contactes"</string>
+    <string name="close_dialog">"D\'acord"</string>
+    <string name="updating_title">"Configuració de trucades"</string>
+    <string name="error_updating_title">"Error de configuració de trucada"</string>
+    <string name="reading_settings">"S\'està llegint la configuració…"</string>
+    <string name="updating_settings">"S\'està actualitzant la configuració..."</string>
+    <string name="reverting_settings">"S\'està tornant la configuració als valors originals…"</string>
+    <string name="exception_error">"Error de xarxa o de targeta SIM."</string>
+    <string name="me" msgid="341726346007839961">"Mi"</string>
+   <string name="send_by_sim2">Envia amb SIM2</string>
+    <string name="send_by_sim1">Envia amb SIM1</string>
+    <string name="menu_item_send_by">Envia amb</string>
+    <string name="data_connected_confirm_title">"Confirma'n l'enviament"</string>
+    <string name="data_connected_confirm_message">"Enviar l'MMS amb aquesta SIM pot fer que la descàrrega de dades actual s'aturi temporalment. Voleu continuar?"</string>
+    <string name="menu_item_sim1">SIM 1</string>
+    <string name="menu_item_sim2">SIM 2</string>
+    <string name="no_sim_1">La SIM 1 no està endollada.</string>
+    <string name="no_sim_2">La SIM 2 no està endollada.</string>
+    <string name="no_sim">La SIM %d no està endollada.</string>
+    <string name="sim1_full_title">La SIM 1 no té espai</string>
+    <string name="sim2_full_title">La SIM 2 no té espai</string>
+	<string name="select_all">"Selecciona-ho tot"</string>
+    <string name="confirm_delete_selected_messages">"Els missatges triats s'esborraran"</string>
+    <string name="confirm_delete_selected_theads">"Les converses triades s'esborraran"</string>
+    <string name="restricted_forward_title">"Missatge multimèdia"</string>
+    <string name="restricted_forward_message">Aquest fitxer potser no es mostrarà correctament als receptors. Voleu continuar?</string>
+	<string name="strOk">Missatge enviat</string>
+    <string name="strFail">Missatge no enviat</string>
+    <string name="menu_insert_text_vcard">Inseriu un contacte</string>
+    <string name="contact_name">"Nom"</string>
+    <string name="contact_tel">Tel</string>
+    <string name="contact_email">"Correu electrònic"</string>
+    <string name="contact_organization">Organització</string>
+    <string name="contact_address">Adreça</string> 
+    <string name="max_recipients_title">Nombre màx. Assolit</string>
+    <string name="max_recipients_message">"Els MMS permeten un màx. de. <xliff:g id="maxLimit">%s</xliff:g> receptors. Se n'esborraran alguns. Voleu continuar?"</string>
+    <string name="via_without_time_for_send">via</string>
+    <string name="via_without_time_for_recieve">via</string>
+    <string name="sim_selected_dialog_title">Selecciona SIM</string>
+    <string name="suggested">Proposada</string>
+    <string name="add_contact_dialog_message">"Afegir número %s a un contacte existent o nou?"</string>
+    <string name="add_contact_dialog_new">"nova"</string>
+    <string name="add_contact_dialog_existing">Existent</string>
+    <string name="deleting">S’està eliminant</string>
+    <string name="pref_title_storage_status">Ús de memòria actual</string>
+    <string name="storage_dialog_mms">Mms:\u0020<xliff:g id="number">%s</xliff:g> item(s)</string>
+    <string name="storage_dialog_sms">Sms:\u0020<xliff:g id="number">%s</xliff:g> item(s)</string>
+    <string name="storage_dialog_attachments">Adjunts MMS:\u0020</string>
+    <string name="storage_dialog_database">Base de dades:\u0020</string>
+    <string name="storage_dialog_available_space">Espai disponible:\u0020</string>
+    <string name="menu_show_icc_sms_capacity">Vegeu capacitat</string>
+    <string name="show_icc_sms_capacity_title">Capacitat</string>
+    <string name="icc_sms_used">Utilitzat:</string>
+    <string name="icc_sms_total">Total:</string>
+    <string name="get_icc_sms_capacity_failed">Impossible saber capacitat de la SIM</string>
+    <plurals name="read_report_toast_msg">
+        <item quantity="one">enviant %d informe de lectura</item>
+        <item quantity="other">enviant %d informes de lectura</item>
+    </plurals>
+    <string name="pref_title_mms_auto_reply_read_reports">Envia informe de lectura</string>
+    <string name="pref_summary_mms_auto_reply_read_reports">Envia un informe de lectura si el remitent del MMS ho ha demanat</string>
+	<string name="exceed_subject_length_limitation">Llargària màx. Assolida</string>
+	<plurals name="message_view_selected_message_count">
+		<item quantity="one">"<xliff:g id="MESSAGE_COUNT">%d</xliff:g> seleccionat"</item>
+		<item quantity="other"><xliff:g id="message_count" example="9">%d</xliff:g> seleccionats</item>
+	</plurals>
+    <string name="sms_input_mode_title">"Mode d'entrada"</string>
+    <string name="sms_input_mode_dialog_title">"Tria el mode d'entrada"</string>
+    <string name="sms_input_mode_summary">"Mode d'entrada SMS per escriure missatges"</string>
+    <string name="pref_title_io_settings">Importa/Exporta SMS</string>
+    <string name="pref_summary_import_msg">Importa SMS des de targeta SD</string>
+    <string name="pref_title_import_msg">Importa SMS</string>
+    <string name="pref_summary_export_msg">Exporta SMS a targeta SD</string>
+    <string name="pref_title_export_msg">Exporta SMS</string>
+    <string name="no_sd_card">La targeta SD no està preparada</string>
+    <string name="export_message_ongoing">Exportant SMS a targeta SD, espereu...</string>
+    <string name="import_message_ongoing">Important SMS des de targeta SD, espereu...</string>
+    <string name="export_message_success">SMS exportats a targeta SD amb èxit</string>
+    <string name="import_message_success">SMS importats des de targeta SD amb èxit</string>
+    <string name="import_message_fail">SMS no importats des de targeta SD</string>
+    <string name="export_message_fail">SMS no exportats des de targeta SD</string>
+    <string name="import_message_list">Llista DB SMS en targeta SD</string>
+    <string name="import_message_list_empty">No hi ha fitxers DB SMS en la targeta SD</string>
+    <string name="export_message_empty">No hi ha SMS per exportar</string>
+    <string name="whether_export_item">Voleu exportar SMS?</string>
+    <string name="whether_import_item">Voleu importar?</string>
+    <string name="export_disk_problem">"La targeta SD no té espai o no s'hi pot escriure"</string>
+    <string name="select_text">"Selecciona text"</string>
+    <string name="unselect_all">"Anul·la la selecció de tot"</string>
+    <string name="forward_from">Reenvia des de:</string>
+    <string name="sms_forward_setting">Configuració de reenviament SMS</string>
+    <string name="sms_forward_setting_summary">Reenvia SMS amb nom i número del remitent</string>
+    <string name="forward_byself">"Mi"</string>
+    <string name="file_attachment_vcalendar_name">vCalendar(<xliff:g id="text">%s</xliff:g>)</string>
+    <string name="file_attachment_vcard_name">vCard(<xliff:g id="text">%s</xliff:g>)</string>
+    <string name="attach_vcalendar">"Calendari"</string>
+    <string name="file_attachment_import_vcard">Importa vCard</string>
+    <string name="attach_vcard">"Contacte"</string>
+    <string name="type_common_file">fitxer</string>
+    <string name="please_wait">"Si us plau, espereu..."</string>
+    <string name="failed_to_parse_vcard">"No s'ha pogut analitzar el fitxer vCard!"</string>
+    <string name="empty_vcard">Sense contactes en vCard</string>
+    <string name="parse_vcard">Analitza vCard</string>
+    <string name="vcard_no_details">NO hi ha informació addicional per aquest contacte"</string>
+    <string name="note">"Nota"</string>
+    <string name="organization">Organització</string>
+    <string name="website">Pàgina web:\u0020</string>
+    <string name="nickname">Malnom</string>
+    <string name="call_custom"><xliff:g id="custom">%s</xliff:g></string>
+    <string name="call_home">"Pàgina d\'inici"</string>
+    <string name="call_mobile">"Mòbil"</string>
+    <string name="call_work">"Feina"</string>
+    <string name="call_fax_work">"Fax de la feina"</string>
+    <string name="call_fax_home">"Fax particular"</string>
+    <string name="call_pager">"Cercapersones"</string>
+    <string name="call_other">"Altres"</string>
+    <string name="call_callback">"Torna la trucada"</string>
+    <string name="call_car">"Cotxe"</string>
+    <string name="call_company_main">"Principal de l\'empresa"</string>
+    <string name="call_isdn">"XDSI"</string>
+    <string name="call_main">"Principal"</string>
+    <string name="call_other_fax">"FAX"</string>
+    <string name="call_radio">"Senyal mòbil"</string>
+    <string name="call_telex">"Tèlex"</string>
+    <string name="call_tty_tdd">TTY/TDD</string>
+    <string name="call_work_mobile">"Mòbil de la feina"</string>
+    <string name="call_work_pager">"Cercapersones de la feina"</string>
+    <string name="call_assistant"><xliff:g id="assistant">%s</xliff:g></string>
+    <string name="call_mms">"MMS"</string>
+    <string name="email_home">"Envia un correu electrònic a l'adreça particular"</string>
+    <string name="email_mobile">"Envia un correu electrònic al mòbil"</string>
+    <string name="email_work">"Envia un correu electrònic a la feina"</string>
+    <string name="email_other">"Correu electrònic"</string>
+    <string name="email_custom">"Envia un correu electrònic a <xliff:g id="CUSTOM">%s</xliff:g>"</string>
+    <string name="email">"Correu electrònic"</string>
+    <string name="map_home">"Visualitza l'adreça particular"</string>
+    <string name="map_work">"Visualitza l'adreça de la feina"</string>
+    <string name="map_other">"Visualitza l'adreça"</string>
+    <string name="map_custom">"Visualitza l'adreça <xliff:g id="CUSTOM">%s</xliff:g>"</string>
+    <string name="chat_aim">"Xateja amb AIM"</string>
+    <string name="chat_msn">"Xateja amb Windows Live"</string>
+    <string name="chat_yahoo">"Xateja amb Yahoo"</string>
+    <string name="chat_skype">"Xateja amb Skype"</string>
+    <string name="chat_qq">"Xateja amb QQ"</string>
+    <string name="chat_gtalk">"Xateja amb Google Talk"</string>
+    <string name="chat_icq">"Xateja amb ICQ"</string>
+    <string name="chat_jabber">"Xateja amb Jabber"</string>
+    <string name="chat">"Fes un xat"</string>
+    <string name="inbox">"Safata d\'entrada"</string>
+    <string name="outbox">"Bústia de sortida"</string>
+    <string name="draftbox">Esborranys</string>
+    <string name="sentbox">Enviats</string>
+    <string name="simbox">Bústia de SIM</string>
+    <string name="changeview">Canvia el mode</string>
+    <string name="viewer_title_sms">"SMS"</string>
+    <string name="viewer_title_wappush">Wappush</string>
+    <string name="viewer_title_cb">Difusió cel·lular</string>
+    <string name="slideshow_details">Detalls de missatge</string>
+    <string name="open">"Obre"</string>
+    <string name="delete_all_confirm">"Esborrar tots els missatges de la bústia?"</string>
+    <string name="folder_recipient">Recipient:</string>
+    <string name="folder_recieve_date">Data:</string>
+    <string name="folder_download">Descarregant MMS</string>
+    <string name="confirm_download_message">"Confirma la descàrrega del missatge"</string>
+    <string name="download_disabled_toast">No es pot descarregar. No aplic. d’SMS per defecte.</string>
+    <string name="play_as_slideshow">Reprodueix MMS com a diapositives</string>
+    <string name="invalid_contact_message">"El contacte no existeix."</string>
+    <string name="by_card">De:</string>
+    <string name="page">Pàgina %d</string>
+    <string name="space_not_enough">"L'espai lliure no és prou per capturar vídeo"</string>
+    <string name="space_not_enough_for_audio">"L'espai lliure no és prou per enregistrar àudio"</string>
+    <string name="no_messages">"No hi ha cap missatge a la targeta SIM."</string>
+    <string name="call_video_call">"Videotrucada"</string>
+    <string name="storage_dialog_mms_size">"Mida de l'MMS:\u0020"</string>
+    <string name="error_add_attachment">"Errada desconeguda, no es pot afegir <xliff:g id="name">%1$s</xliff:g> al missatge."</string>
+    <string name="no_application_response">"No hi ha cap aplicació per satisfer la petició."</string>
+    <string name="cdma_not_support">CDMA no compatible amb aquesta característica</string>
+    <string name="allmessage">"Les dades del servidor estan malmeses, tots els missatges es tornaran a sincronitzar"</string>
+    <string name="select_message">Selecciona el missatge</string>
+    <string name="confirm_delete_allmessage">"Tots els missatges s'esborraran"</string>
+    <string name="mark_as_read_btn_str">Marca com a llegit</string>
+    <string name="delete_btn_str">"Suprimeix"</string>
+    <string name="reply_send">"Envia"</string>
+    <string name="via_test">La SIM que voleu fer servir té roaming activat. Voleu continuar amb la SIM nacional?</string>
+    <string name="received_header">"Rebut:"</string>
+    <string name="no_item_selected">Cap objecte seleccionat</string>
+    <string name="sync_mms_to_db">Carregant...</string> 
+    <string name="pref_title_font_size_setting">CONFIGURACIÓ DE MIDA DE FONT</string>
+    <string name="pref_title_message_font_size">Mida de font de missatge</string>
+    <string name="pref_summary_message_font_size">Mida de font de missatge</string>
+    <string name="message_font_size_dialog_title">Mida de font de missatge</string>
+    <string name="message_font_size_dialog_cancel">"Cancel·la"</string>
+    <string name="finish">"Fet"</string>
+    <string name="change">Canvia</string>
+    <string name="change_default_disk">La memòria del telèfon no té prou espai, allibereu-ne una mica o canvieu el "disc d'escriptura per defecte" en la configuració.</string>
+    <string name="failed_to_add_image">"Límit de mida del missatge assolit, algunes parts no s'afegeixen."</string>
+    <string name="ipmsg_conversation_list_all">"Missatges"</string>
+    <string name="ipmsg_conversation_list_important">Important</string>
+    <string name="ipmsg_conversation_list_group_chats">Xats de grup</string>
+    <string name="ipmsg_conversation_list_spam">Correu brossa</string>
+    <string name="ipmsg_create_group_chat">Crea xat de grup</string>
+    <string name="ipmsg_send_invitation">"Envia'n invitacions"</string>
+    <string name="str_ipmsg_download_history_dlg">Descarregant...</string>
+    <string name="to_hint_ipmsg">"Afegiu nom o número"</string>
+    <string name="type_to_compose_text_enter_to_send_ipmsg">"Escriviu missatge SMS/iSMS"</string>
+    <string name="ipmsg_ipmsg_hint">"Escriviu missatge iSMS"</string>
+    <string name="ipmsg_sms_hint">"Escriviu missatge de text"</string>
+    <string name="ipmsg_caption_hint">"Escriviu assumpte"</string>
+    <string name="ipmsg_cancel">"Cancel·la"</string>
+    <string name="ipmsg_invite_chat_frequently"><b>Parleu freqüentment amb %s ?</b>\nPer què no invitar %s a fer servir iSMS perquè tots dos estalvieu?</string>
+    <string name="ipmsg_enable_chat_frequently"><b>%s fa servir iSMS!</b>\nPer què no activar el vostre servei iSMS i tots dos estalvieu?</string>
+    <string name="ipmsg_invite">Invita</string>
+    <string name="ipmsg_dismiss">Ignora</string>
+    <string name="ipmsg_enable">"Activa"</string>
+    <string name="ipmsg_enable_notice">Segur que voleu permetre el servei iSMS?</string>
+    <string name="ipmsg_activate">"Activa"</string>
+    <string name="ipmsg_activate_chat_frequently"><b>Parleu sovint amb amics?</b>\nPer què no activar el servei iSMS per parlar sense tarifes d\'SMS?</string>
+    <string name="ipmsg_activate_note">Segur que voleu activar iSMS?</string>
+    <string name="ipmsg_dismiss_content">Segur que voleu ignorar el missatge?</string>
+    <string name="ipmsg_ipmsg">Missatge IP</string>
+    <string name="ipmsg_dailog_multi_forward">Reenviament de missatges</string>
+    <string name="ipmsg_dialog_send_result">"Envia'n el resultat"</string>
+    <string name="ipmsg_dlg_send_all">Tots: %s</string>
+    <string name="ipmsg_dlg_send_sucess">Enviat: %s</string>
+    <string name="ipmsg_dlg_send_failed">Fallat: %s</string>
+    <string name="multi_forward_sim_info">Cercant info. de SIM</string>
+    <string name="ipmsg_multi_forward_no_sim">Sense informació de SIM</string>
+    <string name="ipmsg_divider_online">%s està connectat</string>
+    <string name="ipmsg_divider_offline">Última connexió: %s</string>
+    <string name="ipmsg_divider_never_online">Mai connectat</string>
+    <string name="ipmsg_vcard_file_name">%s contacta</string>
+    <string name="ipmsg_getsim_failed">"No s'ha obtingut la info. De SIM"</string>
+    <string name="ipmsg_sim_status_error">"Errada de l'estat de la SIM"</string>
+    <string name="ipmsg_forward_failed">Reenviament fallat</string>
+    <string name="ipmsg_forward_norecipients">No hi ha destinataris per al missatge reenviat</string>
+    <string name="ipmsg_multiforward_no_message">No hi ha missatges que es puguin reenviar</string>
+    <string name="ipmsg_need_input_recipients">Seleccioneu al menys un destinatari primer</string>
+    <string name="str_ipmsg_unread_format">%1$d missatges no llegits</string>
+    <string name="str_ipmsg_not_delivered_title">No lliurat encara</string>
+    <string name="str_ipmsg_failed_title">Enviament fallat</string>
+    <string name="ipmsg_try_again">"Torna-ho a provar"</string>
+    <string name="ipmsg_try_all_again">"Reintenta'ls tots"</string>
+    <string name="ipmsg_resend_via_sms">Envia-ho per SMS</string>
+    <string name="ipmsg_resend_via_mms">Envia-ho per MMS</string>
+    <string name="str_ipmsg_cant_share">Targeta SD no disponible, no es pot compartir el missatge multimèdia</string>
+    <string name="str_ipmsg_file_limit">massa gran</string>
+    <string name="str_ipmsg_no_app">Cap aplicació no pot realitzar aquesta acció</string>
+    <string name="str_ipmsg_today">"Avui"</string>
+    <string name="str_ipmsg_yesterday">"ahir"</string>
+    <string name="ip_message_typing_text">Escrivint</string>
+    <string name="str_ipmsg_no_such_file">No existeix el fitxer</string>
+    <string name="str_ipmsg_over_file_limit">La mida del fitxer supera el límit</string>
+    <string name="str_ipmsg_invalid_file_type">Format no compatible</string>
+    <string name="invite_friends_to_ipmsg">Invita els amics a fer servir iSMS</string>
+    <string name="invite_friends_to_chat">Invita els amics al xat</string>
+    <string name="invite_friends_to_ipmsg_dialog_msg">Per enviar una invitació, els vostres missatges escrits es descartaran</string>
+    <string name="invite_friends_to_ipmsg_content">Hola, iSMS és una bona eina de xat, debades i convenient. Si us plau, visiteu http://isms.hissage.com per saber-ne més.</string>
+    <string name="export">"Exporta"</string>
+    <string name="mark_as_spam">Mou a la llista de correu brossa</string>
+    <string name="mark_as_spam_tips">"Els missatges marcats com a brossa aniran a la llista de correu brossa i no se'n rebran notificacions automàtiques."</string>
+    <string name="remove_frome_spam">Lleva de la llista de correu brossa</string>
+    <string name="add_shortcut">Afegeix drecera</string>
+    <string name="view_all_media">Veure tots els fitxers</string>
+    <string name="view_all_location">Veure totes les ubicacions</string>
+    <string name="ipmsg_export_to_sdcard">Exporta a targeta SD</string>
+    <string name="ipmsg_copy">"Copia"</string>
+    <string name="ipmsg_send_via_text_msg">Envia amb missatge de text</string>
+    <string name="ipmsg_send_via_mms">Envia amb missatge multimèdia</string>
+    <string name="ipmsg_retry">"Torna-ho a provar"</string>
+    <string name="ipmsg_delete">"Suprimeix"</string>
+    <string name="ipmsg_share">"Comparteix"</string>
+    <string name="ipmsg_mark_as_important">Marca com a important</string>
+    <string name="ipmsg_remove_from_important">"Esborra marca d'important"</string>
+    <string name="str_ipmsg_save_file">Fitxer desat a %1$s</string>
+    <string name="continue_str">"Continua"</string>
+    <string name="convert_to_mms">Converteix a MMS.</string>
+    <string name="convert_to_sms">Converteix a SMS.</string>
+    <string name="ipmsg_convert_to_ipmsg">Converteix a iSMS.</string>
+    <string name="ip_message_convert_to_mms_message_for_service">El servei iSMS no està disponible en la SIM seleccionada. Aquest missatge només es pot enviar per MMS amb aquesta SIM. Voleu continuar?</string>
+    <string name="ip_message_convert_to_sms_message_for_service">El servei iSMS no està disponible en la SIM seleccionada. Aquest missatge només es pot enviar per SMS amb aquesta SIM. Voleu continuar?</string>
+    <string name="ip_message_convert_to_mms_message_for_recipients">El(s) destinatari(s) no fa(n) servir iSMS. Aquest missatge només es pot enviar amb MMS. Voleu continuar?</string>
+    <string name="ip_message_convert_to_sms_message_for_recipients">El(s) destinatari(s) no fa(n) servir iSMS. Aquest missatge només es pot enviar amb SMS. Voleu continuar?</string>
+    <string name="ipmsg_sms_convert_to_ipmsg">"El servei iSMS està disponible en la SIM seleccionada. Per estalviar la tarifa d'SMS, es recomana passar el missatge a iSMS. Voleu fer-ho ara?"</string>
+    <string name="ipmsg_mms_convert_to_ipmsg">"El servei iSMS està disponible en la SIM seleccionada. Per estalviar la tarifa d'MMS, es recomana passar el missatge a iSMS. Voleu fer-ho ara?"</string>
+    <string name="keep_mms">Continua amb MMS</string>
+    <string name="keep_sms">Continua amb SMS</string>
+    <string name="switch_ipmsg">Canvia de SIM</string>
+    <string name="ip_message_load_all_message">Carrega tots els missatges</string>
+    <string name="str_ipmsg_replace_attach">"Reemplaça l'adjunt"</string>
+    <string name="str_ipmsg_replace_attach_msg">Ja hi ha un adjunt, voleu reemplaçar-lo?</string>
+    <string name="ipmsg_err_file">"No s'ha pogut obrir el fitxer"</string>
+    <string name="pref_title_display_preference_settings">PANTALLA I PREFERÈNCIES</string>
+    <string name="pref_chat_wallpaper">Fons del xat</string>
+    <string name="pref_auto_rotation">Rotació automàtica</string>
+    <string name="pref_show_email_address">Mostra adreça de correu electrònic</string>
+    <string name="pref_summary_show_email_address">Inclou adreça de correu electrònic en els resultats de contactes</string>
+    <string name="pref_title_backup_restore_settings">CÒPIA DE SEGURETAT I RESTAURACIÓ</string>
+    <string name="pref_backage_message">Fes una còpia de seguretat del missatge</string>
+    <string name="pref_summary_backup_message">Última restauració: Mai</string>
+    <string name="pref_restore_message">Restaura el missatge</string>
+    <string name="pref_summary_restore_message">Restaura els missatges en còpia de seguretat</string>
+    <string name="pref_mute">"Silencia"</string>
+    <string name="pref_summary_mute">"desactivada"</string>
+    <string name="pref_vibrate">"Vibra"</string>
+    <string name="pref_summary_vibrate">Vibració en rebre notificacions</string>
+    <string name="pref_popup_notification">Missatge de notificació</string>
+    <string name="pref_summary_popup_notification">Mostra el missatge per les notificacions push</string>
+    <string name="pref_title_display_settings">"Pantalla"</string>
+    <string name="pref_title_actions_settings">Accions</string>
+    <string name="pref_download_chat_history">Descarrega historial del xat</string>
+    <string name="pref_summary_download_chat_history">Desa en format zip a la targeta SD</string>
+    <string name="pref_email_chat_history">Historial del xat de correu electrònic</string>
+    <string name="pref_summary_email_chat_history">Historial del xat de correu electrònic en format zip</string>
+    <string name="pref_clear_chat_history">"Esborra l'historial del xat"</string>
+    <string name="pref_summary_notification_ringtone">Estableix un to per les notificacions noves</string>
+    <string name="pref_setting_title">Configuració de missatges</string>
+    <string name="pref_setting_sms">Missatges de text (SMS)</string>
+    <string name="pref_setting_mms">Missatges multimèdia (MMS)</string>
+    <string name="pref_setting_notification">"Notificacions"</string>
+    <string name="pref_setting_general">"General"</string>
+    <string name="pref_setting_chat">Configuració de xat</string>
+    <string name="chat_setting_saving">desant...</string>
+    <string name="chat_setting_updating">actualitzant...</string>
+    <string name="chat_setting_sending">enviant...</string>
+    <string name="dialog_save_title">Desa en targeta SD</string>
+    <string name="dialog_save_description">Desa aquest fil de xat a la targeta SD com a fitxer zip</string>
+    <string name="dialog_email_title">Comparteix per correu electrònic</string>
+    <string name="dialog_email_description">Comparteix aquest fil de xat com a adjunt per correu electrònic en format zip</string>
+    <string name="dialog_clear_title">"Esborra"</string>
+    <string name="dialog_clear_description">"S'esborrarà tot l'historial de xat d'aquesta sala"</string>
+    <string name="dialog_wallpaper_chooser_wallpapers">"Fons de pantalla"</string>
+    <string name="dialog_wallpaper_chooser_gallery">"Galeria"</string>
+    <string name="dialog_wallpaper_chooser_take">"Fes una foto"</string>
+    <string name="dialog_wallpaper_chooser_default">"Predeterminat"</string>
+    <string name="dialog_wallpaper_title">Tria un fons</string>
+    <string name="mute_one_hour">"1 hora"</string>
+    <string name="mute_four_hours">"4 hores"</string>
+    <string name="mute_eight_hours">8 hores</string>
+    <string name="save_chat_history_failed">desa els erronis</string>
+    <string name="send_chat_history_failed">correu electrònic erroni</string>
+    <string name="actionbar_sms_setting">Configuració de SMS</string>
+    <string name="actionbar_mms_setting">Configuració de MMS</string>
+    <string name="actionbar_notification_setting">"Configuració de notificacions"</string>
+    <string name="actionbar_general_setting">"Configuració general"</string>
+    <string name="save_history_file">desa amb format</string>
+    <string name="no_sdcard_suggestion">"No hi ha cap targeta SD"</string>
+    <string name="save_wallpaper_success">Fons canviat.</string>
+    <string name="save_wallpaper_fail">"No s'ha pogut canviar el fons."</string>
+    <string name="ip_message_delete_important">"Inclou missatges marcats com importants"</string>
+    <string name="str_ipmsg_spam_empty">"No teniu cap conversa brossa.\nLa carpeta de brossa recull totes les conversacions marcades com a brossa. Les notificacions se'n desactiven per defecte per evitar-vos molèsties.\n\n Podeu marcar un remitent com a brossa mantenint premuda la conversa i seleccionant la icona Marca com a brossa. En fer-ho, hi apareixerà una notificació i la conversa anirà a la carpeta de brossa."</string>
+    <string name="str_ipmsg_spam_example_from">+86123456789</string>
+    <string name="str_ipmsg_spam_example_subject">Això és un exemple de missatge brossa.</string>
+    <string name="str_ipmsg_groupchat_empty">"No teniu cap missatge en el xat de grup.\nELS XATS DE GRUP recullen tots els missatges de xat de grup creat per vosté o als quals pertanyeu. Això us permet trobar i administrar fàcilment els xats de grup.\n\nPer crear-ne ú, podeu tocar Crea un xat de grup a l apart inferior d'aquesta pantalla i invitar-hi els vostres amics."</string>
+    <string name="str_ipmsg_group_example_from">"Nom del grup"</string>
+    <string name="str_ipmsg_group_example_subject">"El vostre amic:\n M'agrada el xat de grup!"</string>
+    <string name="str_ipmsg_important_empty">No teniu cap missatge important.\nIMPORTANT recull tots els missatges marcats com importants, el que us permet trobar-los fàcilment.\n\nPodeu marcar un missatge com important mantenint-lo premut i seleccionant Marca com important des del menú Opcions. Quan ho feu, veureu una marca vermella com la icona següent.</string>
+    <string name="str_ipmsg_important_example_title">Això és un exemple de missatge marcat com important. Hi apareix una marca vermella.</string>
+    <string name="str_ipmsg_important_example_time">0.454861111</string>
+    <string name="str_ipmsg_allchat_empty">"Cap conversa"</string>
+    <string name="str_ipmsg_empty_activate_content">"Per fer servir aquesta característica, heu d'activar iSMS abans. No patiu, si no us agrada aquest servei, podeu desconnectar-lo en Configuració. Proveu-lo ara!"</string>
+    <string name="str_ipmsg_empty_activate_title">Activa iSMS</string>
+    <string name="str_ipmsg_service_title">centre del servei iSMS</string>
+    <string name="str_ipmsg_introduction">"Amb iSMS, podeu enviar instantàniament missatges debades i tenir-ne l'historial desat a un lloc. Premeu un botó i sentiu la nova experiència!"</string>
+    <string name="time_now">Nom d’intèrpret desconegut</string>
+    <string name="str_ipmsg_active">Activa iSMS</string>
+    <string name="str_ipmsg_welcome_active">Benvingut a iSMS</string>
+    <string name="str_ipmsg_term_warn_welcome">El servei iSMS us permet xatejar i compartir fitxers multimèdia amb amics en qualsevol lloc i moment amb WIFI o connexió de dades.\n\nActiveu-lo amb només 3 passos.\n\n Termes i condicions \n</string>
+    <string name="str_ipmsg_term_warn_activate">Aquesta característica només és compatible amb iSMS.\n\n iSMS us permet xatejar i compartir fitxers multimèdia amb amics en qualsevol lloc i moment amb WIFI o connexió de dades.\n\n Termes i condicions</string>
+    <string name="str_ipmsg_term_key">Termes i condicions</string>
+    <string name="str_ipmsg_agree_and_continue">Accepta i continua</string>
+    <string name="no_sim_card">No hi ha targeta SIM!</string>
+    <string name="ip_message_activate_title">Activa iSMS</string>
+    <string name="ip_message_current_sim_enabled">SIM actual activada.</string>
+    <string name="sim_selected_dialog_title_for_activate">Selecciona una SIM per activar iSMS</string>
+    <string name="ip_message_activate_message">Aquesta característica només és compatible amb iSMS. Voleu activar-ne ara el vostre compte?</string>
+    <string name="typing">"Escrivint..."</string>
+    <string name="ip_message_enable_title">Activa iSMS</string>
+    <string name="ip_message_enable_message">Aquesta característica només és compatible amb iSMS. Voleu activar-ne ara el vostre compte?</string>
+    <string name="sim_selected_dialog_title_for_enable">Selecciona una SIM per activar iSMS</string>
+    <string name="ip_message_switch_sim_title">Canvia de SIM</string>
+    <string name="ip_message_switch_sim_message">"La SIM actual no és compatible amb iSMS. Voleu canviar a l'altra SIM?"</string>
+    <string name="ip_message_switch_sim_button">Canvia de SIM</string>
+    <string name="ip_message_switch_sim_successfully">Canvi de SIM fet</string>
+    <string name="close">Tanca canal</string>
+    <string name="nointernet">"No hi ha cap connexió a Internet, intenteu-ho més tard"</string>
+    <string name="ipmsg_reject">Rebutja</string>
+    <string name="ipmsg_accept">"Accepta"</string>
+    <string name="ipmsg_resend">Reenvia</string>
+    <string name="ipmsg_resend_discard_message">"Per reenviar el missatge, s'esborrarà el missatge que esteu escrivint ara."</string>
+    <plurals name="deleted_conversations">
+        <item quantity="one">"S'ha esborrat una conversa"</item>
+        <item quantity="other">"<xliff:g id="number" example="15">%1$s</xliff:g> converses s'han esborrat"</item>
+    </plurals>
+    <string name="discard_mms_title">Descarta MMS</string>
+    <string name="discard_mms_content">"Tots els MSS del vostre missatge multireenviament s'esborraran"</string>
+    <string name="toast_sms_forward">"No s'ha reenviat cap SMS"</string>
+    <string name="dialog_continue">"Continua"</string>
+    <string name="sms_size_limit">Límit de mida assolit.</string>
+    <string name="dialog_sms_limit">Límit de mida del missatge assolit. La resta del missatge es perdrà.</string>
+    <string name="forward_tips_title">"Notificació de MMS descartat"</string>
+    <string name="forward_tips_body">"La notificació de MMS no és compatible amb el reenviament i es descartarà"</string>
+    <string name="type_to_quick_text">"Escriu text ràpid"</string>
+    <string name="menu_wappush">"Missatges wappush"</string>
+    <string name="visit_website">"Visita el lloc web"</string>
+    <string name="meet_emoticon_limit">"Coneixeu els límits d'emoticones"</string>
+    <string name="view_mms_notification">No es pot veure la notificació MMS</string>
+    <string name="ipmsg_multi_forward_tips_content">"Per fer el multireenviament, s'han de descarregar alguns iSMS"</string>
+    <string name="multi_forward_failed_all">La descàrrega ha fallat, multireenviament descartat</string>
+    <string name="ipmsg_multi_forward_failed_part">"El reenviament d'alguns iSMS ha fallat"</string>
+    <string name="sum_search_networks">"Cerca totes les xarxes disponibles"</string>
+    <string name="confirm_delete_allwappush">"S'esborraran tots els missatges wappush."</string>
+    <string name="confirm_delete_selected_wappush">"S'esborraran els missatges wappush seleccionats."</string>
+    <string name="menu_delete_allwappush">"Esborra'ls tots"</string>
+    <string name="duplicated_recipient">Destinatari duplicat</string>
+    <string name="sms_not_ready">Mòdul SMS inicialitzant-se, espereu...</string>
+    <string name="label_full_name">"Nom"</string>
+    <string name="label_phone">"Telèfon"</string>
+    <string name="label_email">"Correu electrònic"</string>
+    <string name="label_postal">"Adreça"</string>
+    <string name="label_organization">Organització</string>
+    <string name="label_im">"MI"</string>
+    <string name="label_website">"Lloc web"</string>
+    <string name="label_sip_address">"Trucada per Internet"</string>
+    <string name="label_nick_name">Malnom</string>
+    <string name="label_notes">"Notes"</string>
+    <string name="label_event">"Esdeveniments"</string>
+    <string name="search_time_period_label">Període de temps</string>
+    <string name="done_text">"Fet"</string>
+    <string name="add_duplicate_recipients">Destinatari duplicat</string>
+    <string name="adding_wallpaper_title">Desant empaperat...</string>
+    <string name="mwi_title">Missatges de veu</string>
+    <string name="type_voice_msg">Missatge de veu</string>
+    <string name="type_video_msg">Missatge de vídeo</string>
+    <string name="type_fax_msg">Missatge de fax</string>
+    <string name="priority_urgent">Urgent</string>
+    <string name="date_label">"Data: "</string>
+    <string name="message_id_label">ID de missatge:\u0020</string>
+    <string name="voice_message_count_notification"><xliff:g id="number" example="3">%1$s</xliff:g> missatges de veu nous</string>
+    <string name="confirm_delete_allmwi">"Tots els missatges de veu s'esborraran."</string>
+    <string name="confirm_delete_selected_mwi">"Els missatges de veu seleccionats s'esborraran."</string>
+    <string name="sms_priority_setting">Prioritat UIM</string>
+    <string name="sms_priority_Interactive">Interactiu</string>
+    <string name="sms_priority_Urgent">Urgent</string>
+    <string name="sms_priority_Emergency">Emergència</string>
+    <string name="type_text_msg">"Missatge de text"</string>
+    <string name="disable_notifications_dialog_message">"Vols deixar de duplicar les notificacions de missatges de text de l\'aplicació Missatgeria predeterminada?"</string>
+    <string name="empty_sim_name">Ranura SIM <xliff:g id="subId" example="2">%1$d</xliff:g></string>
+
+    <string name="drm_not_support">MMS no admet contingut protegit contra còpies</string>
+    <string name="user_has_no_premission">Aquest usuari no pot utilitzar els SMS</string>
+    <string name="wfc_no_cellular_network">No hi ha cap xarxa de mòbil</string>
+    <string name="wfc_connect_to_available_wifi">"Connecta't a la Wi-Fi disponible per a enviar missatges de text."</string>
+    <string name="wfc_notification_title">"Connecta't a la Wi-Fi per a enviar missatges de text."</string>
+    <string name="ct_om_switch_notification"><xliff:g id="op1">%s</xliff:g> no funcionarà temporalment i si es rep cap trucada, SMS o dades a <xliff:g id="op2">%s</xliff:g> es passaran a <xliff:g id="op3">%s</xliff:g>.</string>
+    <string name="can_not_switch_account_during_call">NoespotcanviardeSIMpreferitperaSMSdurantlatrucada.</string>
+    <string name="can_not_switch_account_temporarily">Temporalment,noespotcanviardeSIMpreferitperalestrucades.</string>
+    <string name="omh_exceed_message_size_limitation">"S'haassolitellímitdemidadelmissatgeR-UIM"</string>
+    <string name="omh_failed_to_add_image">"S'ha assolit el límit màxim de mida per a missatges R-UIM, redueix-lo."</string>
+    <string name="missing_required_permission">Permisos denegats. Podeu canviar-los a Configuració &gt; Aplicacions.</string>
+    <string name="manage_card_msg_title">Administra els missatges de la targeta UIM/SIM</string>
+    <string name="manage_card_msg_summary">Administra els missatges que hi ha a la targeta UIM/SIM</string>
+    <string name="disable_delivery_report">No es pot activar en itinerància.</string>
+    <string name="fore_service_notify_title">Transferint missatges</string>
+    <string name="fore_service_notify_content">"S'estan transferint missatges."</string>
+    <string name="smart_req_mms_indicator">No es permet MMS, intenteu-ho amb SMS.</string>
+</resources>

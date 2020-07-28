@@ -1,0 +1,31 @@
+# STA2 Configuration for No-Security
+info!Inside STA2-4.2.50.txt file!
+info![ Configuring STA2 ]!
+
+$STA2_control_agent!ca_get_version!DEFAULT
+$STA2_control_agent!device_get_info!DEFAULT
+$STA2_control_agent!device_list_interfaces,interfaceType,802.11!INTERFACEID,$STA2_IF
+$STA2_control_agent!sta_reset_default,interface,$STA2_IF,prog,VHT,type,Testbed!DEFAULT
+$STA2_control_agent!sta_preset_testparameters,interface,$STA2_IF,supplicant,$STASupplicantName,mode,$Band,FRGMNT,$STA_Frag!DEFAULT
+$STA2_control_agent!sta_get_info,interface,$STA2_IF!DEFAULT
+$STA2_control_agent!sta_get_mac_address,interface,$STA2_IF!ID,$STA2_MACAddress
+
+#Set NSS=1 for STA
+$STA2_control_agent!sta_set_wireless,interface,$STA2_IF,program,VHT,width,$ChannelWidth!DEFAULT
+$STA2_control_agent!sta_set_wireless,interface,$STA2_IF,program,VHT,txsp_stream,$TX-SS!DEFAULT
+$STA2_control_agent!sta_set_wireless,interface,$STA2_IF,program,VHT,rxsp_stream,$RX-SS!DEFAULT
+if!$DUTOOBSecurity!=!OPEN!
+$STA2_control_agent!sta_set_encryption,interface,$STA2_IF,ssid,$SSID1,encpType,none!DEFAULT
+else!
+$STA2_control_agent!sta_set_psk,interface,$STA2_IF,ssid,$SSID1,passphrase,$DUTOOBPassPhrase,encpType,aes-ccmp,keymgmttype,wpa2!DEFAULT
+endif!
+$STA2_control_agent!sta_set_ip_config,interface,$STA2_IF,dhcp,0,ip,$STA2_wireless_ip,mask,$netmask!DEFAULT
+$STA2_control_agent!sta_associate,interface,$STA2_IF,ssid,$SSID1!DEFAULT
+$STA2_control_agent!sta_is_connected,interface,$STA2_IF!DEFAULT
+$STA2_control_agent!sta_get_bssid,interface,$STA2_IF!DEFAULT
+$STA2_control_agent!sta_get_ip_config,interface,$STA2_IF!DEFAULT
+
+$STA2_control_agent!traffic_agent_reset!DEFAULT
+$STA2_control_agent!traffic_send_ping,destination,env_pce_wireless_ip,framesize,1000,frameRate,1,duration,5!STREAMID,$STA2_PING
+sleep!5!
+$STA2_control_agent!traffic_stop_ping,streamID,$STA2_PING!DEFAULT

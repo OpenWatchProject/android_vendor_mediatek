@@ -1,0 +1,656 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+/*
+ * Copyright (C) 2007-2008 Esmertec AG.
+ * Copyright (C) 2007-2008 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+ --><resources xmlns:android="http://schemas.android.com/apk/res/android" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+<!-- MTK Resources -->
+    <string name="create_new_message" msgid="8735943333953093860">"Bumuo ng bagong mensahe"</string>
+    <string name="menu_undelivered_messages" msgid="3896857623211780616">"Hindi nahatid na mga mensahe"</string>
+    <string name="broadcast_from_to" msgid="2050376286109362539">"<xliff:g id="SENDER">%1$s</xliff:g>kay <xliff:g id="RECIPIENT">%2$s</xliff:g>"</string>
+    <string name="anonymous_recipient" msgid="2501437626187039034">"Anonymous"</string>
+    <string name="view_picture" msgid="4356315935277709195">"Tingnan ang larawan"</string>
+    <string name="sent_on" msgid="5868288548564632354">"Ipinadala: <xliff:g id="DATE">%s</xliff:g>"</string>
+    <string name="name_colon" msgid="7069560650889479120"><b>"<xliff:g id="NAME">%s</xliff:g>"</b>": "</string>
+    <string name="compose_title" msgid="558578836596816068">"Lumikha"</string>
+    <string name="image_too_large" msgid="261880224164478061">"Masyadong malaki ang larawan"</string>
+    <string name="ask_for_automatically_resize" msgid="7657603662407738758">"Awtomatikong palitan ang laki ng larawan bago ipadala?"</string>
+    <string name="cannot_load_message" msgid="2577010607550849892">"Hindi malo-load ang mensahe."</string>
+    <string name="locked_message_cannot_be_deleted" msgid="6369452071783350219">"Hindi matatanggal ang mga naka-lock na mensahe."</string>
+    <string name="multiple_recipients" msgid="8747754491343248141">"<xliff:g id="RECIPIENTCOUNT">%1$s</xliff:g> (na) recipient"</string>
+    <string name="resize" msgid="4308912589984220360">"Palitan ang laki"</string>
+    <string name="to_label" msgid="2355268818058389047">"Para kay "</string>
+    <string name="confirm_delete_all_messages" msgid="5836389073199814660">"Tatanggalin ang buong thread."</string>
+    <string name="mms_priority_label">"Priyoridad"</string>
+    <string name="menu_retry_sending" msgid="3146582005568302643">"Subukang muli ang pagpapadala"</string>
+    <string name="menu_retry_sending_all" msgid="1870529976966340616">"Subukang muli ang pagpapadala ng lahat"</string>
+    <string name="retrying_dialog_body" msgid="4738260459043003431">"Ang mensaheng <xliff:g id="MESSAGE">%s</xliff:g> na ito ay hindi naipadala dahil sa problema sa koneksyon."\n"Sinusubukan muling ipadala..."</string>
+    <string name="dl_expired_notification" msgid="950390029992535809">"Nag-expire at tatanggalin ang mensaheng ito."</string>
+    <string name="add_attachment_activity" msgid="5324811371129695320">"Magdagdag ng attachment:"</string>
+    <string name="select_layout_activity" msgid="5041916695464513848">"Pumili ng layout"</string>
+    <string name="edit_text_activity" msgid="5915226413346879213">"I-edit ang teksto"</string>
+    <string name="pick_numbers_activity" msgid="2083330191224178637">"Pumili ng Mga Numero"</string>
+    <string name="send_using_mms_activity" msgid="3703434556280345726">"Ipadala bilang multimedia na mensahe..."</string>
+    <string name="select_contact_method_activity" msgid="1743384358979323991">"Pumili ng Paraan sa Pakikipag-ugnay"</string>
+    <string name="me" msgid="341726346007839961">"Me"</string>
+    <string name="more_recipients">(mga) tatanggap</string>
+    <string name="Insert_sdcard">Pakipasok ang SD card!</string>
+    <string name="set_service_center_OK">itakda ang SMS Service Center OK</string>
+    <string name="set_service_center_fail">itakda ang SMS Service Center Nabigo</string>
+    <string name="OK">OK</string>
+    <string name="Cancel">"Kanselahin"</string>
+    <string name="sms_save_location">Lokasyon ng imbakan ng SMS </string>
+    <string name="gemini_3g_indic">3G</string>
+    <string name="sms_service_center">Sentro ng Serbisyo ng SMS </string>
+    <string name="service_center_label">Sentro ng Serbisyo:\u0020</string>
+    <string name="test_operator">default</string>
+    <string name="test_number">1234</string>
+    <string name="test_status">default</string>
+    <string name="cu_subject">Lemei Subject</string>
+    <string name="pref_key_mms_priority">Mms Priyoridad</string>
+    <string name="pref_title_mms_creation_mode">Mode ng Paglikha</string>
+    <string name="pref_summary_mms_creation_mode">Mode ng paglikha ng MMS para sa paggawa ng mensahe</string>
+    <string name="pref_title_mms_size_limit">Limitasyon sa Laki</string>
+    <string name="pref_summary_mms_size_limit">Limitasyon sa laki ng MMS sa paggawa ng mensahe</string>
+    <string name="confirm_restricted_audio">Limitadong uri ng nilalamang audio, nais mo pa rin bang ilakip?</string>
+    <string name="confirm_restricted_image">Limitadong uri ng nilalamang larawan, nais mo pa rin bang ilakip?</string>
+    <string name="confirm_restricted_video">Limitadong uri ng nilalamang video, nais mo pa rin bang ilakip?</string>
+    <string name="unsupport_media_type">Hindi suportadong uri ng media</string>
+    <string name="select_different_media_type">Pumili ng ibang media</string>
+    <string name="image_resolution_too_large">Masyadong malaki ang resolusyon ng larawan upang ipasok</string>
+    <string name="wp_msg_type">Mensahe ng serbisyo</string>
+    <string name="wp_msg_created_label">Nilikha:\u0020</string>
+    <string name="wp_msg_created_unknown">Hindi kilala</string>
+    <string name="wp_msg_priority_label">Priyoridad:\u0020</string>
+    <string name="wp_msg_priority_low">Mababa</string>
+    <string name="wp_msg_priority_medium">Katamtaman</string>
+    <string name="wp_msg_priority_high">Mataas</string>
+    <string name="menu_goto_browser">Buksan ang browser</string>
+    <string name="menu_add_to_bookmark">Idagdag sa bookmark</string>
+    <string name="wp_msg_expiration_label">Nawalan ng bisa: <xliff:g id="name">%s</xliff:g></string>
+    <string name="error_unsupported_scheme">Hindi kasalukuyang suportado ang pagkilos na iyon.</string>
+    <string name="pref_title_wappush_settings">Setting ng Mensahe ng Serbisyo</string>
+    <string name="pref_title_wappush_enable">Paganahin ang Mensahe ng Serbisyo</string>
+    <string name="pref_summary_wappush_enable">Paganahin upang makatanggap ng mensahe ng serbisyo</string>
+    <string name="pref_title_wappush_sl_autoloading">Auto-Launch ang SL</string>
+    <string name="pref_summary_wappush_sl_autoloading">Awtomatikong ilunsad ang mensaheng service loading(SL) kapag natanggap</string>
+    <string name="menu_send_sms">Ipadala ang mensahe sa <xliff:g id="name">%s</xliff:g></string>
+    <string name="menu_omacp">Mensahe ng kumpigurasyon</string>
+    <string name="save_message_to_sim">I-save ang mensahe sa SIM card</string>
+    <string name="received_on">"Natanggap: <xliff:g id="name">%s</xliff:g></string>
+    <string name="save_message_to_sim_successful">Tagumpay ang pag-save</string>
+    <string name="save_message_to_sim_unsuccessful">Hindi tagumpay ang pag-save</string>
+    <string name="transmission_transiently_failed">Nabigo ang pagpapadala. Susubukan mamaya.</string>
+    <string name="download_failed_due_to_full_memory">Nabigo ang pag-download ng mensahe dahil sa punong memorya.</string>
+    <string name="mms_too_big_to_download">Masyadong malaki ang mensahe para i-download mula sa network.</string>
+    <string name="cannot_add_recipient">Naabot ang limitasyon ng mga tatanggap. Hindi ka makakapagdagdag ng tatanggap.</string>
+    <string name="attach_ringtone">Ringtone</string>
+    <string name="notification_multiple_cb"><xliff:g id="count">%s</xliff:g> Hindi nabasang mga CB na mensahe</string>
+    <string name="notification_multiple_cb_title">Mga Bagong Cell Broadcast na Mensahe</string>
+    <string name="fdn_enabled">Gumagana ang FDN</string>
+    <string name="cannot_send_message_reason_no_content">Walang nilalamang ipadadala</string>
+    <string name="cb_read_message">Basahin ang CB na Mensahe</string>
+    <string name="cb_read_message2">Basahin ang Cell Broadcast na Mensahe</string>
+    <string name="cb_message">Cell Broadcast na Mensahe</string>
+    <string name="cb_default_channel_name">Mula sa Channel</string>
+    <string name="message_open_email_fail">Paumanhin, paki-setup muna ang iyong e-mail account.</string>
+    <string name="add_contacts">Mga Kontak</string>
+    <string name="send_by_sim2">Ipinadala gamit ang SIM2</string>
+    <string name="send_by_sim1">Ipinadala gamit ang SIM1</string>
+    <string name="menu_item_send_by">Ipinadala gamit ang</string>
+    <string name="data_connected_confirm_title">Kumpirmahin ang pagpapadala</string>
+    <string name="data_connected_confirm_message">Ang pagpapadala ng  MMS gamit ang SIM na ito ay maaaring magsuspindi sa pag-download ng kasalukuyan mong datos nang panandalian. Magpatuloy?</string>
+    <string name="menu_item_sim1">SIM 1</string>
+    <string name="menu_item_sim2">SIM 2</string>
+    <string name="no_sim_1">Hindi nakasaksak ang SIM.</string>
+    <string name="no_sim_2">Hindi nakasaksak ang SIM.</string>
+    <string name="sim1_full_title">Puno na ang SIM card 1</string>
+    <string name="sim2_full_title">Puno na ang SIM card 2</string>
+    <string name="select_all">"Piliin lahat"</string>
+    <string name="confirm_delete_selected_messages">Tatanggalin ang  mga napiling mensahe.</string>
+    <string name="confirm_delete_selected_theads">Tatanggalin ang  mga napiling thread.</string>
+    <string name="restricted_forward_title">"Multimedia na mensahe"</string>
+    <string name="restricted_forward_message">Maaaring hindi tamang maipakita ang media na ito sa mga tatanggap. Magpatuloy?</string>
+    <string name="strOk">Pinadala ang mensahe</string>
+    <string name="strFail">Nabigo ang pagpapadala ng mensahe</string>
+    <string name="menu_insert_text_vcard">Ipasok ang kontak</string>
+    <string name="contact_name">Pangalan</string>
+    <string name="contact_tel">Tel</string>
+    <string name="contact_email">E-mail</string>
+    <string name="contact_organization">Organisasyon</string>
+    <string name="contact_address">Addr</string>
+    <string name="string_via">" sa pamamagitan"</string>
+    <string name="max_recipients_title">Naabot ang max na bilang</string>
+    <string name="max_recipients_message">Pinahihintulutan ng MMS ang max.na <xliff:g id="maxLimit">%s</xliff:g> mga tatanggap. Aalisin ang ilang mga tatanggap. Nais mo bang magpatuloy?</string>
+    <string name="via_without_time_for_send">sa pamamagitan</string>
+    <string name="via_without_time_for_recieve">sa pamamagitan</string>
+    <string name="sim_selected_dialog_title">Piliin ang SIM</string>
+    <string name="suggested">Minungkahi</string>
+    <string name="add_contact_dialog_message">"Idagdag ang numerong %s sa umiiral o bagong kontak?"</string>
+    <string name="add_contact_dialog_new">Bago</string>
+    <string name="add_contact_dialog_existing">Umiiral</string>
+    <string name="deleting">Tinatanggal</string>
+    <string name="pref_title_storage_status">Kasalukuyang paggamit ng imbakan</string>
+    <string name="storage_dialog_mms">Mms:\u0020<xliff:g id="number">%s</xliff:g> (mga) item</string>
+    <string name="storage_dialog_sms">Sms:\u0020<xliff:g id="number">%s</xliff:g> (mga) item</string>
+    <string name="storage_dialog_attachments">Mms mga kalakip:\u0020</string>
+    <string name="storage_dialog_database">Database:\u0020</string>
+    <string name="storage_dialog_available_space">Magagamit na espasyo:\u0020</string>
+    <string name="pref_title_mms_enable_to_send_delivery_reports">Ipadala ang ulat sa paghatid</string>
+    <string name="pref_summary_mms_enable_to_send_delivery_reports">Ipadala ang ulat sa paghatid para sa bawat mensahe na natanggap mo</string>
+    <string name="pref_summary_mms_auto_reply_read_reports">Ipadala ang ulat sa pagbasa kung hiniling ng nagpadala ng MMS</string>
+    <string name="pref_title_mms_auto_reply_read_reports">Ipadala ang ulat sa pagbasa</string>
+    <plurals name="read_report_toast_msg">
+        <item quantity="one">%d ulat sa pagbasa pinadadala</item>
+        <item quantity="other">%d mga ulat sa pagbasa ang pinadadala</item>
+    </plurals>
+    <string name="unselect_all">I-unselect lahat</string>
+    <!-- add for vcard -->
+    <string name="forward_byself">"Ako"</string>
+   <string name="file_attachment_vcard_name">vCard(<xliff:g id="text">%s</xliff:g>)</string>
+    <string name="attach_vcalendar" msgid="5452708708398908131">"Kalendaryo"</string>
+   <string name="file_attachment_import_vcard">I-import ang vCard</string>
+   <string name="attach_vcard">Kontakin</string>
+   <string name="type_common_file">file</string>
+   <string name="failed_to_parse_vcard">Nabigong i-parse ang vCard file!</string>
+   <string name="empty_vcard">Walang mga kontak sa vCard</string>
+   <string name="parse_vcard">I-parse ang vCard</string>
+   <string name="vcard_no_details">Walang karagdagang impormasyon para sa kontak na ito"</string>
+   <string name="call_custom"><xliff:g id="custom">%s</xliff:g></string>
+   <string name="call_home">bahay</string>
+   <string name="call_mobile">mobile</string>
+   <string name="call_work">trabaho</string>
+   <string name="call_fax_work">fax sa trabaho</string>
+   <string name="call_fax_home">fax sa bahay</string>
+   <string name="call_pager">pager</string>
+   <string name="call_callback">callback</string>
+   <string name="call_car">kotse</string>
+   <string name="call_company_main">pangunahing kompanya</string>
+   <string name="call_isdn">ISDN</string>
+   <string name="call_radio">radyo</string>
+   <string name="call_telex">telex</string>
+   <string name="call_tty_tdd">TTY/TDD</string>
+   <string name="call_work_mobile">mobile sa trabaho</string>
+   <string name="call_work_pager">pager sa trabaho</string>
+   <string name="call_assistant"><xliff:g id="assistant">%s</xliff:g></string>
+   <string name="call_mms">MMS</string>
+   <string name="email_home">Email sa bahay</string>
+   <string name="email_mobile">Email ng mobile</string>
+   <string name="email_work">Email sa trabaho</string>
+   <string name="email_custom">Email <xliff:g id="custom">%s</xliff:g></string>
+   <string name="map_home">Tingnan ang address sa bahay</string>
+   <string name="map_work">Tingnan ang address sa trabaho</string>
+   <string name="map_other">Tingnan ang address</string>
+   <string name="map_custom">Tingnan <xliff:g id="custom">%s</xliff:g> ang address</string>
+   <string name="chat_aim">Mag-chat gamit ang AIM</string>
+   <string name="chat_msn">Mag-chat gamit ang Windows Live</string>
+   <string name="chat_yahoo">Mag-chat gamit ang Yahoo</string>
+   <string name="chat_skype">Mag-chat gamit ang Skype</string>
+   <string name="chat_qq">Mag-chat gamit ang QQ</string>
+   <string name="chat_gtalk">Mag-chat gamit ang Google Talk</string>
+   <string name="chat_icq">Mag-chat gamit ang ICQ</string>
+   <string name="chat_jabber">Mag-chat gamit ang Jabber</string>
+   <string name="chat">Mag-chat</string>
+   <string name="please_wait">"Pakihintay..."</string>
+   <string name="note">Tala</string>
+   <string name="organization">Organisasyon</string>
+   <string name="website">Website:\u0020</string>
+   <string name="nickname">Palayaw</string>
+   <string name="call_other">iba pa</string>
+   <string name="call_main">pangunahin</string>
+   <string name="call_other_fax">fax</string>
+   <string name="email_other">Email</string>
+   <string name="email">Email</string>
+   <!-- add for vcard -->
+    <string name="invalid_contact_message" msgid="8215051456181842274">"Hindi umiiral ang contact."</string>
+
+    <string name="menu_sim_sms">SIM SMS</string>  
+    <!-- Cell broadcast SMS strings -->  
+    <!-- Import/Export mms/sms from/to sdcard-->  
+    <string name="pref_title_io_settings">Mag-import/Mag-export ng SMS</string>  
+    <string name="pref_summary_import_msg">Mag-import ng SMS mula sa SD card</string>  
+    <string name="pref_title_import_msg">Mag-import ng SMS</string>  
+    <string name="pref_summary_export_msg">Mag-export ng SMS sa SD card</string>  
+    <string name="pref_title_export_msg">Mag-export ng SMS</string>  
+    <string name="no_sd_card">Hindi handa ang SD card</string>  
+    <string name="export_message_ongoing">I-export ang SMS sa SD card, pakihintay...</string>  
+    <string name="import_message_ongoing">I-import ang SMS sa SD card, pakihintay...</string>  
+    <string name="export_message_success">Tagumpay ang pag-export ng SMS sa SD card</string>  
+    <string name="import_message_success">Tagumpay ang pag-import ng SMS sa SD card</string>  
+    <string name="import_message_fail">Nabigo ang pag-import ng SMS sa SD card</string>  
+    <string name="export_message_fail">Nabigo ang pag-export ng SMS sa SD card</string>  
+    <string name="import_message_list">SMS DB na listahan sa SD card</string>  
+    <string name="import_message_list_empty">Walang SMS DB na mga file sa SD card</string>  
+    <string name="export_message_empty">Walang SMS na ie-export!</string>  
+    <string name="whether_export_item">Gusto mo bang i-export ang SMS?</string>  
+    <string name="whether_import_item">Nais mo bang mag-import</string>  
+    <string name="export_disk_problem">Ang SD card ay puno o hindi maisulat</string> 
+    <string name="error_add_attachment">"Di kilalang error, hindi maidagdag ang <xliff:g id="name">%1$s</xliff:g> sa iyong mensahe."</string>
+    <string name="status_expired">Napaso</string>  
+    <string name="status_deferred">Inantala</string>  
+    <string name="status_unrecognized">Hindi nakilala</string>  
+    <string name="status_indeterminate">Hindi matukoy</string>  
+    <string name="status_unreachable">Hindi maabot</string>  
+    <plurals name="message_view_selected_message_count"> 
+        <item quantity="one"><xliff:g id="message_count" example="1">%d</xliff:g> ang napili</item>  
+        <item quantity="other"><xliff:g id="message_count" example="9">%d</xliff:g> ang mga napili</item> 
+    </plurals>  
+    <string name="sms_input_mode_title">Mode ng pagpasok</string>  
+    <string name="sms_input_mode_dialog_title">Piliin ang mode ng pagpasok</string>  
+    <string name="sms_input_mode_summary">SMS na mode ng pagpasok para sa pagbuo ng mensahe</string>  
+    <string name="by_card">Ni:</string>  
+    <string name="page">Pahina %d</string>  
+    <string name="space_not_enough">Hindi sapat ang natitirang espasyo upang kumuha ng video</string>  
+    <string name="no_messages">"Walang mga mensahe"</string>  
+    <string name="call_video_call">Video na Tawag</string>  
+    <string name="storage_dialog_mms_size">Laki ng MMS:\u0020</string>
+    <string name="space_not_enough_for_audio">Hindi sapat ang natitirang espasyo upang mag-record ng audio</string> 
+    <string name="play_as_slideshow">Patutugin ang MMS bilang Slideshow</string>  
+    <string name="menu_reply">"Tumugon"</string> 
+    <string name="sync_mms_to_db">Nilo-load…</string>
+    <string name="finish">"Tapos na"</string>
+    <string name="pref_title_long_press_operation_guide">GABAY SA OPERASYON NG MATAGALANG PAGPINDOT</string>  
+    <string name="pref_title_watch_animation">Manood ng animasyon</string>  
+    <string name="long_press_conversationlist_title">Tanggalin ang mga mensahe</string>  
+    <string name="long_press_conversationlist_content">Upang magtanggal ng Mga Mensahe, pindutin ito nang matagal.</string>  
+    <string name="long_press_composer_content">Upang makakita ng higit pang mga opsyon, pindutin ito nang matagal.</string>
+    <string name="menu_show_icc_sms_capacity">Tingnan ang kakayahan</string>  
+    <string name="show_icc_sms_capacity_title">Kakayahan</string>  
+    <string name="icc_sms_used">Nagamit:</string> 
+    <string name="select_text">Piliin ang teksto</string>
+     <string name="icc_sms_total">Kabuuan:</string>  
+    <string name="get_icc_sms_capacity_failed">Nabigo ang pagkuha ng kakayahan ng SIM.</string>
+    <string name="failed_to_add_image">Naabot ang limitasyon sa laki ng mensahe, ang ilang bahagi ay di naidagdag.</string>
+    <string name="ipmsg_conversation_list_all">Mga mensahe</string>  
+    <string name="ipmsg_conversation_list_important">Mahalaga</string>  
+    <string name="ipmsg_conversation_list_group_chats">Mga chat ng pangkat</string>  
+    <string name="ipmsg_conversation_list_spam">Spam</string>  
+    <string name="ipmsg_create_group_chat">Lumikha ng chat ng pangkat</string>  
+    <string name="ipmsg_send_invitation">Magpadala ng mga imbitasyon</string>  
+    <string name="str_ipmsg_download_history_dlg">Nagdo-download…</string>  
+    <string name="to_hint_ipmsg">"I-type ang pangalan o numero ng tao"</string>  
+    <string name="type_to_compose_text_enter_to_send_ipmsg">"I-type ang SMS/iSMS na mensahe"</string>  
+    <string name="ipmsg_ipmsg_hint">"I-type ang iSMS na mensahe"</string>  
+    <string name="ipmsg_sms_hint">"I-type ang text na mensahe"</string>  
+    <string name="ipmsg_caption_hint">"I-type ang Mga Caption"</string>  
+    <string name="ipmsg_cancel">"Kanselahin"</string>  
+    <string name="ipmsg_invite_chat_frequently"><b>Madalasa makipag-chat kay %s ?</b>\nBakit hindi imbitahin si %s na gamitin ang iSMS upang makatipid ng pera niyong dalawa?</string>  
+    <string name="ipmsg_enable_chat_frequently"><b>Si %s ay gumagamit ng iSMS!</b>\nBakit hindi paganahin ang iyong serbisyong iSMS upang makatipid ng pera niyong dalawa?</string>  
+    <string name="ipmsg_invite">"Imbitahan"</string>  
+    <string name="ipmsg_dismiss">"Balewalain"</string>  
+    <string name="ipmsg_enable">"Paganahin"</string>  
+    <string name="ipmsg_enable_notice">Sigurado ka bang pagaganahin ang serbisyong iSMS?</string>  
+    <string name="ipmsg_activate">Paganahin</string>  
+    <string name="ipmsg_activate_chat_frequently"><b>Madalas nakikipag-chat sa mga kaibigan?</b>\nBakit hindi paganahin ang serbisyong iSMS upang makipag-chat nang walang SMS rate?</string>  
+    <string name="ipmsg_activate_note">Sigurado kang pagaganahin ang iSMS?</string>  
+    <string name="ipmsg_dismiss_content">Sigurado kang pagaganahin ang note?</string>  
+    <string name="ipmsg_send_exception">Error sa pagpapadala</string>  
+    <string name="ipmsg_ipmsg">Mensaheng IP</string>  
+    <string name="ipmsg_dailog_multi_forward">Mga Mensaheng Pagpasa</string>  
+    <string name="ipmsg_dialog_send_result">Ipadala ang Resulta</string>  
+    <string name="ipmsg_dlg_send_all">Lahat: %s</string>  
+    <string name="ipmsg_dlg_send_sucess">Pinadala: %s</string>  
+    <string name="ipmsg_dlg_send_failed">Nabigo: %s</string>  
+    <string name="multi_forward_sim_info">Kumukuha ng SIM Impo</string>  
+    <string name="ipmsg_multi_forward_no_sim">Walang SIM Impo</string>  
+    <string name="ipmsg_divider_online">%s ay Online</string>  
+    <string name="ipmsg_divider_offline">Huling oras na online sa %s</string>  
+    <string name="ipmsg_divider_never_online">Hindi kailanman online</string>  
+    <string name="ipmsg_vcard_file_name">%s (na) kontak</string>  
+    <string name="ipmsg_getsim_failed">Nabigo ang pagkuha ng impo ng SIM</string>  
+    <string name="ipmsg_sim_status_error">Error sa katayuan ng SIM</string>  
+    <string name="ipmsg_forward_failed">Nabigo ang Pagpasa</string>  
+    <string name="ipmsg_forward_norecipients">Walang (mga) tatanggap ng ipapasang mensahe</string>  
+    <string name="ipmsg_multiforward_no_message">Walang (mga) mensahe ang maipapasa</string>  
+    <string name="ipmsg_need_input_recipients">Pakitukoy ang hindi bababa sa isang tatanggap muna</string>  
+    <string name="str_ipmsg_unread_format">%1$d mga hindi nabasang mensahe</string>  
+    <string name="str_ipmsg_not_delivered_title">Hindi pa naipadala</string>  
+    <string name="str_ipmsg_failed_title">Nabigo</string>  
+    <string name="str_ipmsg_cant_share">Wala ang SDcard, hindi makapagbahagi ng mensaheng media</string>  
+    <string name="str_ipmsg_file_limit">masyadong malaki</string>  
+    <string name="str_ipmsg_no_app">"Walang mga application ang makakapagsagawa ng pagkilos na ito."</string>  
+    <string name="str_ipmsg_today">Ngayon</string>  
+    <string name="str_ipmsg_yesterday">"kahapon"</string>  
+    <string name="ip_message_typing_text">Nagta-type</string>  
+    <string name="ipmsg_try_again">"Subukan muli"</string>  
+    <string name="ipmsg_try_all_again">Subukan lahat muli</string>  
+    <string name="ipmsg_resend_via_sms">Ipadala sa pamamagitan ng SMS</string>  
+    <string name="ipmsg_resend_via_mms">Ipadala sa pamamagitan ng MMS</string>  
+    <string name="str_ipmsg_no_such_file">Walang ganyang file</string>  
+    <string name="str_ipmsg_over_file_limit">Sobra sa limitasyon ang laki ng file</string>  
+    <string name="str_ipmsg_invalid_file_type">Hindi sinusuportahan ang ganitong uri</string>  
+    <string name="invite_friends_to_ipmsg">Imbitahan ang mga kaibigan na gamitin ang iSMS</string>  
+    <string name="invite_friends_to_chat">Imbitahan ang mga kaibigan na mag-chat</string>  
+    <string name="invite_friends_to_ipmsg_dialog_msg">Upang magpadala ng imbitasyon, ang mga pagbuo mo ng mensahe ay itatapon.</string>  
+    <string name="invite_friends_to_ipmsg_content">Hi, ang iSMS ay isang cool na gamit pang-chat. Ito ay libre at madalaing gamitin. Pakitingnan ang http://isms.hissage.com upang malaman ang higit pa.</string>  
+    <string name="export">"I-export"</string>  
+    <string name="mark_as_spam">Markahan bilang spam</string>  
+    <string name="mark_as_spam_tips">Ang mga mensaheng minarkahan bilang Spam ay ililipat sa listahan ng Spam at io-off agad ang abiso.</string>  
+    <string name="remove_frome_spam">Alisin mula sa spam</string>  
+    <string name="add_shortcut">Magdagdag ng shortcut</string>  
+    <string name="view_all_media">Tingnan lahat ng media</string>  
+    <string name="view_all_location">Tingnan lahat ng mga lokasyon</string>  
+    <string name="ipmsg_export_to_sdcard">I-export sa SD card</string>  
+    <string name="ipmsg_copy">"Kopyahin"</string>  
+    <string name="ipmsg_send_via_text_msg">Ipadala sa pamamagitan ng mensaheng text</string>  
+    <string name="ipmsg_send_via_mms">Ipadala sa pamamagitan ng Multimedia na Mensahe</string>  
+    <string name="ipmsg_retry">Subukan muli</string>  
+    <string name="ipmsg_delete">TANGGALIN</string>  
+    <string name="ipmsg_share">"Ibahagi"</string>  
+    <string name="ipmsg_mark_as_important">Markahan bilang mahalaga</string>  
+    <string name="ipmsg_remove_from_important">Alisin mula sa mahalaga</string>  
+    <string name="str_ipmsg_save_file">Na-save ang file sa %1$s</string>  
+    <string name="continue_str">Magpatuloy</string>  
+    <string name="convert_to_mms">Gawing MMS.</string>  
+    <string name="convert_to_sms">Gawing SMS.</string>  
+    <string name="ipmsg_convert_to_ipmsg">Gawing iSMS.</string>
+    <string name="ip_message_convert_to_mms_message_for_service">Hindi magagamit ang serbisyong iSMS sa napiling SIM card. Ang mensaheng ito ay maipapadala lang sa pamamagitan ng MMS sa SIM card. Magpatuloy pa rin?</string>  
+    <string name="ip_message_convert_to_sms_message_for_service">Hindi magagamit ang serbisyong iSMS sa napiling SIM card. Ang mensaheng ito ay maipapadala lang sa pamamagitan ng SMS sa SIM card. Magpatuloy pa rin?</string>  
+    <string name="ip_message_convert_to_mms_message_for_recipients">Ang (mga) tatanggap ay hindi gumagamit ng iSMS. Ang mensaheng ito ay mapapadala lang gamit ang MMS. Magpatuloy pa rin?</string>  
+    <string name="ip_message_convert_to_sms_message_for_recipients">Ang (mga) tatanggap ay hindi gumagamit ng iSMS. Ang mensaheng ito ay mapapadala lang gamit ang SMS. Magpatuloy pa rin?</string>  
+    <string name="ipmsg_sms_convert_to_ipmsg">Magagamit ang serbisyong iSMS sa napiling SIM crad na ito. Upang ma-save ang rate ng SMS, minumungkahi na ilipat ang mensahe sa iSMS. Lumipat ngayon?</string>
+    <string name="ipmsg_mms_convert_to_ipmsg">Magagamit ang serbisyong iSMS sa napiling SIM crad na ito. Upang ma-save ang rate ng MMS, minumungkahi na ilipat ang mensahe sa iSMS. Lumipat ngayon?</string>
+    <string name="keep_mms">Itago ang MMS</string>  
+    <string name="keep_sms">Itago ang SMS</string>  
+    <string name="switch_ipmsg">Lumipat</string>  
+    <string name="ip_message_load_all_message">I-load Lahat ng Mensahe</string>  
+    <string name="pref_title_display_preference_settings">PAGPAPAKITA AT KAGUSTUHAN</string>  
+    <string name="pref_chat_wallpaper">Wallpaper ng chat</string>  
+    <string name="pref_auto_rotation">Awto na pagpihit</string>  
+    <string name="pref_show_email_address">Ipakita ang email address</string>  
+    <string name="pref_summary_show_email_address">Isama ang email address sa mga resulta ng kontak</string>  
+    <string name="pref_title_backup_restore_settings">I-BACK-UP AT IBALIK</string>  
+    <string name="pref_backage_message">I-backup ang mensahe</string>  
+    <string name="pref_summary_backup_message">Huling backup:Hindi kailanman</string>  
+    <string name="pref_restore_message">Ibalik ang mensahe</string>  
+    <string name="pref_summary_restore_message">Ibalik ang mga na-backup mong mensahe</string>  
+    <string name="pref_mute">"I-mute"</string>  
+    <string name="pref_summary_mute">"naka-off"</string>  
+    <string name="pref_vibrate">Vibrate</string>  
+    <string name="pref_summary_vibrate">I-vibrate kapag nakatanggap ng mga abiso</string>  
+    <string name="pref_popup_notification">Popup na abiso</string>  
+    <string name="pref_summary_popup_notification">Ipakita ang popup para sa mga push na abiso</string>  
+    <string name="pref_title_display_settings">"Pagpapakita"</string>  
+    <string name="pref_title_actions_settings">Mga pagkilos</string>  
+    <string name="pref_download_chat_history">I-download ang kasaysayan ng chat</string>  
+    <string name="pref_summary_download_chat_history">I-save sa SD card sa zip na format</string>  
+    <string name="pref_email_chat_history">Kasaysayan ng email na chat</string>  
+    <string name="pref_summary_email_chat_history">Kasaysayan ng email na chat sa zip na format</string>  
+    <string name="pref_clear_chat_history">Burahin ang kasaysayan ng chat</string>  
+    <string name="pref_summary_notification_ringtone">Magtakda ng ringtone para sa mga bagong abiso</string>  
+    <string name="pref_setting_title">Setting ng Mensahe</string>  
+    <string name="pref_setting_sms">Mensaheng Text(SMS)</string>  
+    <string name="pref_setting_mms">Multimedia na Mensahe(MMS)</string>  
+    <string name="pref_setting_notification">"Mga Notification"</string>  
+    <string name="pref_setting_general">"Pangkalahatan"</string>  
+    <string name="pref_setting_chat">Mga setting ng chat</string>  
+    <string name="chat_setting_saving">Sine-save…</string>  
+    <string name="chat_setting_updating">ina-update…</string>  
+    <string name="chat_setting_sending">"Ipinapadala..."</string>  
+    <string name="dialog_save_title">I-save sa SD card</string>  
+    <string name="dialog_save_description">I-save ang chat thread na ito SD card bilang zip file</string>  
+    <string name="dialog_email_title">Ibahagi sa pamamagitan ng E-Mail</string>  
+    <string name="dialog_email_description">Ibahagi ang chat thread na ito bilang attachment sa pamamagitan ng  E-Mail s zip format</string>  
+    <string name="dialog_clear_title">"I-clear"</string>  
+    <string name="dialog_clear_description">Kahat ng kasaysayan ng chat ay buburahin sa char room na ito</string>  
+    <string name="dialog_wallpaper_chooser_wallpapers">Mga Wallpaper</string>  
+    <string name="dialog_wallpaper_chooser_gallery">"Gallery"</string>  
+    <string name="dialog_wallpaper_chooser_take">"Kumuha ng larawan"</string>  
+    <string name="dialog_wallpaper_chooser_default">"Default"</string>  
+    <string name="dialog_wallpaper_title">Pumili ng Wallpaper</string>  
+    <string name="mute_one_hour">1 oras</string>  
+    <string name="mute_four_hours">4 oras</string>  
+    <string name="mute_eight_hours">8 oras</string>  
+    <string name="save_chat_history_failed">Nabigo ang pag-save</string>  
+    <string name="send_chat_history_failed">Nabigo ang E-mail</string>  
+    <string name="actionbar_sms_setting">Mga Setting ng SMS</string>  
+    <string name="actionbar_mms_setting">Mga Setting ng MMS</string>  
+    <string name="actionbar_notification_setting">"Mga setting ng notification"</string>  
+    <string name="actionbar_general_setting">Mga pangkalahatang setting</string>  
+    <string name="save_history_file">i-save bilang</string>  
+    <string name="no_sdcard_suggestion">"Walang SD card"</string>  
+    <string name="save_wallpaper_success">Nabago ang wallpaper.</string>  
+    <string name="save_wallpaper_fail">Hindi mabago ang wallpaper.</string>  
+    <string name="ip_message_delete_important">"Isama ang mga naka-flag na mensahe bilang mahalaga"</string>  
+    <string name="str_ipmsg_spam_empty">Wala kang anumang usapang spam. \nKumukolekta ang SPAM ng lahat ng mga usapan na markado bilang spam. Io-off ang abiso bilang default. Iiwasan nito na hindi ka maabala kung di kailangan. \n\nMaaari mong markahan ang nagpadala bilang spam sa paghawak ng usapan at icon ng Markahan bilang Spam. Kapag ang usapan ay minarkahan bilang spam, ang notification-off na icon ay awtomatikong ipapakita at ang usapan ay ilalagay dito.</string>  
+    <string name="str_ipmsg_spam_example_from">+86123456789</string>  
+    <string name="str_ipmsg_spam_example_subject">Halimbawa ito ang mensaheng spam.</string>  
+    <string name="str_ipmsg_groupchat_empty">Wala kang anumang pampangkat na mensaheng chat. \nANG MGA PANGKAT NA CHAT ay kumukulekta sa lahat ng mga mensaheng chat na nilikha o sinalihan mo. Pinahihintulutan nito na mahanap mo at mapamahalaan nang madali ang mga chat ng pangkat. \n\nUpang lumikha ng chat ng pangkat, maaari mong tapikin ang Lumikha ng chat ng pangkat na button sa ilalim ng screen na ito at imbitahan ang mga kaibigan mong sumali sa pangkat.</string>  
+    <string name="str_ipmsg_group_example_from">"Pangalan ng pangkat"</string>  
+    <string name="str_ipmsg_group_example_subject">Ang kaibigan mo:\nGusto mo ang tampok na chat ng pangkat!</string>  
+    <string name="str_ipmsg_important_empty">Wala kang anumang mahalagang mensahe. \nMAHALAGA kinokolekta lahat ng mga mensahe na na-flag bilang mahalaga. Pinahihintulutan nito na madali mong mahanap ang mga mahalagang mensahe. \n\nMaaari mong i-flag ang mensahe bilang mahalaga sa paghawak ng mensahe at pagpili ng Flag bilang mahalaga mula sa Opsyon na menu. Kapag ang mensahe ay na-flag bilang mahalaga, makakakita ka ng pulang flag na icon katulad ng sa ibaba.</string>  
+    <string name="str_ipmsg_important_example_title">Halimbawa ito ng mensaheng na-flag bilang mahalaga. Ang pulang flag ay lalabas.</string>  
+    <string name="str_ipmsg_important_example_time">10:55 AM</string>  
+    <string name="str_ipmsg_allchat_empty">"Walang mga pag-uusap."</string>  
+    <string name="str_ipmsg_empty_activate_content">Upang gamitin ang tampok na ito. Kailangan mong paganahin muna ang serbisyong iSMS. Huwag mag-alala - kung di mo gusto ang serbisyo, maaari mo itong hindi paganahin sa Mga Setting. Subukan ito ngayon!</string>  
+    <string name="str_ipmsg_empty_activate_title">Paganahin ang iSMS</string>  
+    <string name="str_ipmsg_service_title">Service center ng iSMS</string>  
+    <string name="str_ipmsg_introduction">Sa iSMS, agad mong mapapahatid ang mga libreng mensahe at itago ang iyong kasaysayan ng chat sa isang lugar. Pindutin ang isang button at lalabas ang bagong karanasan!</string>  
+    <string name="time_now">Hindi kilalang pangalan ng artist</string>  
+    <string name="str_ipmsg_active">Paganahin ang iSMS</string>  
+    <string name="str_ipmsg_welcome_active">Malugod na pagdating sa iSMS</string>  
+    <string name="str_ipmsg_term_warn_welcome">Pahihintulutan ka ng serbisyong iSMS na mag-chat at magbahagi ng mga multimedia na file sa mga kaibigan mo anumang oras sa anumang lugar gamit ang WIFI o koneksyon sa datos.\n\n3 hakbang lang upang kumpletuhin ang pagpapagana!\n\n Mga Tuntunin at Kundisyon\n</string>  
+    <string name="str_ipmsg_term_warn_activate">Ang tampok na ito ay suportado lang ng iSMS na serbisyo.\n\nPahihintulutan ka ng serbisyong iSMS na mag-chat at magbahagi ng mga multimedia na file sa mga kaibigan mo anumang oras sa anumang lugar gamit ang WIFI o koneksyon sa datos.\n\n Mga Tuntunin at Kundisyon</string>  
+    <string name="str_ipmsg_term_key">Mga Tuntunin at Kundisyon</string>  
+    <string name="str_ipmsg_agree_and_continue">Sumang-ayon at Magpatuloy</string>  
+    <string name="no_sim_card">Walang SIM card!</string>  
+    <string name="ip_message_activate_title">Paganahin ang iSMS</string>  
+    <string name="ip_message_current_sim_enabled">Pinapagana ang kasalukuyang SIM.</string>  
+    <string name="sim_selected_dialog_title_for_activate">Piliin ang SIM para paganahin ang iSMS.</string>  
+    <string name="ip_message_activate_message">Ang tampok na ito ay suportado lang ng iSMS na serbisyo. Paganahin an iyong iSMS na account ngayon?</string>  
+    <string name="typing">"Tina-type..."</string>  
+    <string name="ip_message_enable_title">Paganahin ang iSMS</string>  
+    <string name="ip_message_enable_message">Ang tampok na ito ay suportado lang ng iSMS na serbisyo. Paganahin an iyong iSMS na account ngayon?</string>  
+    <string name="sim_selected_dialog_title_for_enable">Piliin ang SIM para paganahin ang iSMS</string>  
+    <string name="ip_message_switch_sim_title">Lumipat ng SIM</string>  
+    <string name="ip_message_switch_sim_message">Hindi suportado ng kasalukuyang SIM ang iSMS. Lumipat sa ibang SIM?</string>  
+    <string name="ip_message_switch_sim_button">Lumipat</string>  
+    <string name="ip_message_switch_sim_successfully">Tagumpay na lumipat ng SIM!</string>  
+    <string name="close">Sarhan ang channel</string>  
+    <string name="nointernet">"Walang nahanap na gumaganang koneksyon sa internet! Pakisubukan mamaya."</string>  
+    <plurals name="deleted_conversations"> 
+        <item quantity="one">Natanggap ang isang usapan</item>  
+        <item quantity="other"><xliff:g id="number" example="15">%1$s</xliff:g> mga usapan ang tinanggal</item> 
+    </plurals> 
+<string name="sms_validity_period">Panahon ng Pagkabalido ng SMS</string>
+    <string name="sms_validity_period_nosetting">Walang nakatakda</string>
+    <string name="sms_validity_period_1hour">1 oras</string>
+    <string name="sms_validity_period_6hours">6 na Oras</string>
+    <string name="sms_validity_period_12hours">12 Oras</string>
+    <string name="sms_validity_period_1day">1 araw</string>
+    <string name="sms_validity_period_max">Pinakamalaki</string>
+    <string name="exceed_subject_length_limitation">Umabot ng max na haba</string>
+    <string name="disable_notifications_dialog_message" msgid="7644011234972074096">"Pigilan ang mga duplicate na notification sa text message mula sa default na app sa Pagpapadala ng Mensahe?"</string>
+    <string name="forward_from">Ipasa mula sa:</string>
+    <string name="sms_forward_setting">Setting ng Pagpasa ng SMS</string>
+    <string name="sms_forward_setting_summary">Ipasa ang SMS kasama ang pangalan at numero ng nagpadala</string>
+    <string name="file_attachment_vcalendar_name"> vCalendar( <xliff:g id="text">%s</xliff:g> ) </string>
+    <string name="inbox">"Inbox"</string>
+    <string name="outbox">"Outbox"</string>
+    <string name="draftbox">Kahon ng draft</string>
+    <string name="sentbox">Kahin ng naipadala</string>
+    <string name="simbox">SIMbox</string>
+    <string name="changeview">Palitan ang Mode</string>
+    <string name="viewer_title_sms">"SMS"</string>
+    <string name="viewer_title_wappush">Wappush</string>
+    <string name="slideshow_details">Detalye ng Mensahe</string>
+    <string name="open">Buksan</string>
+    <string name="delete_all_confirm">"Tanggalin lahat ng mga mensahe sa kahon?"</string>
+    <string name="folder_recipient">Tatanggap :</string>
+    <string name="folder_recieve_date">Petsa :</string>
+    <string name="folder_download">nagda-download ang mms</string>
+    <string name="confirm_download_message">"kumpirmahin ang mensahe sa pag-download"</string>
+    <string name="no_application_response">"Walang aplikasyon upang pamahalaan ang hiling"</string>
+    <string name="cdma_not_support">Hindi suportado ng CDMA ang tampok na ito</string>
+    <string name="allmessage">"Sira ang datos ng server, lahat ng mga mensahe ay muling isi-synchronize"</string>
+    <string name="select_message">Piliin ang mensahe</string>
+    <string name="confirm_delete_allmessage">"Tatanggalin lahat ng mensahe."</string>
+    <string name="mark_as_read_btn_str">"Markahan bilang nabasa na"</string>
+    <string name="delete_btn_str">Tanggalin</string>
+    <string name="reply_send">"Ipadala"</string>
+    <string name="via_test">Tumawag sa pamamagitan ng SIM1</string>
+    <string name="received_header">"Natanggap:"</string>
+    <string name="no_item_selected">Walang napiling item.</string>
+    <string name="pref_title_font_size_setting">SETTING NG LAKI NG FONT</string>
+    <string name="pref_title_message_font_size">Laki ng font ng mensahe</string>
+    <string name="pref_summary_message_font_size">Laki ng font ng mensahe</string>
+    <string name="message_font_size_dialog_title">Laki ng font ng mensahe</string>
+    <string name="message_font_size_dialog_cancel">Kanselahin</string>
+    <string name="change">Baguhin</string>
+    <string name="ipmsg_accept">"Tanggapin"</string>
+    <string name="ipmsg_resend">Ipadala muli</string>
+    <string name="viewer_title_cb">Pagsasahimpapawid ng Cell</string>
+    <string name="change_default_disk">Hindi sapat ang espasyo ng imbakan ng telepono. Pakipakawalan ng ilang imbakan o palitan ang "default na sulatang disk" sa mga setting.</string>
+    <string name="ipmsg_reject">Tanggihan</string>
+    <string name="discard_mms_title">Itapon ang MMS</string>
+    <string name="discard_mms_content">Lahat ng mga MMS sa iyong mensaheng maramihang ipinasa ay itatapon</string>
+    <string name="toast_sms_forward">Walang ipinasang SMS</string>
+    <string name="dialog_continue">Magpatuloy</string>
+    <string name="sms_size_limit">Naabot ang limitasyon sa laki</string>
+    <string name="dialog_sms_limit">Naabot ang limitasyon ng mensahe. Ang nalagpasang mensahe ay itatapon</string>
+    <string name="sum_search_networks">"Hanapin ang lahat ng mga available na network"</string>
+    <string name="str_ipmsg_replace_attach">Palitan ang kalakip</string>
+    <string name="str_ipmsg_replace_attach_msg">May umiiral na kalakip, palitan?</string>
+    <string name="ipmsg_err_file">Nabigong buksan ang file</string>
+    <string name="forward_tips_title">"Itapon ang MMS na Abiso"</string>
+    <string name="forward_tips_body">"Hindi sinusuportahan ng MMS na Abiso ang pagpasa, itatapon ito."</string>
+    <string name="ipmsg_resend_discard_message">Upang muling ipadala ang mensahe, ang kasalukuyan mong nililikhang mensahe ay itatapon.</string>
+    <string name="type_to_quick_text">"Mag-type ng mabilis na teksto"</string>
+    <string name="menu_wappush">"I-wappush ang mga mensahe"</string>
+    <string name="visit_website">"Bumisita sa Website"</string>
+    <string name="meet_emoticon_limit">Naabot sa mga limitasyon ng emoticon</string>
+    <string name="view_mms_notification">Hindi makita ang mms na abiso</string>
+    <string name="ipmsg_multi_forward_tips_content">Upang gawin ang maramihang pagpasa, ang ilang mga iSMS ay kailangang unang ma-download.</string>
+    <string name="multi_forward_failed_all">Nabigo ang pag-download, itinapon ang maramihang pagpasa.</string>
+    <string name="ipmsg_multi_forward_failed_part">Nabigo ang ilang iSMS na pagpasa.</string>
+    <string name="confirm_delete_allwappush">"Tatanggalin lahat ng mga wappush na mensahe."</string>
+    <string name="confirm_delete_selected_wappush">"Ang mga napiling wappush na mensahe ay tatanggalin."</string>
+    <string name="menu_delete_allwappush">Tanggalin lahat</string>
+    <string name="duplicated_recipient">Dinobleng tatanggap</string>
+
+<string name="ok">"OK"</string>
+    <string name="cancel">"Kanselahin"</string>
+    <string name="enable">"Paganahin"</string>
+    <string name="disable">"Huwag Paganahin"</string>
+    <string name="cell_broadcast_setting">Mga cell broadcast setting</string>
+    <string name="cb_menu_language">"Wika"</string>
+    <string name="cb_menu_add_channel">Magdagdag ng Channel</string>
+    <string name="cb_menu_channel_list">Listahan ng channel</string>
+    <string name="cb_dialog_title_language_choice">Piliin ang wika</string>
+    <string name="cb_channel_dialog_channel_name">Pangalan ng channel (1-10 character)</string>
+    <string name="cb_channel_dialog_channel_number">Numero ng channel (0-65534)</string>
+    <string name="cb_channel_dialog_channel_state">Paganahin ang channel</string>
+    <string name="cb_channel_dialog_edit_channel">I-edit ang Channel</string>
+    <string name="cb_menu_edit">"I-edit"</string>
+    <string name="cb_menu_delete">TANGGALIN</string>
+    <string name="cb_error_channel_num">Pakipasok ang numero ng channel(0-65534).</string>
+    <string name="cb_error_channel_name">Ang haba ng pangalan ng Channel ay mali(1-10character).</string>
+    <string name="cb_error_language_select">Pakipili ng isa man lang na wika.</string>
+    <string name="cb_error_channel_id_exist">Umiiral ang channel id.</string>
+    <string name="cb_all_languages">Lahat ng mga wika</string>
+    <string name="cb_default_new_channel_name">Bagong Channel</string>
+    <string name="sum_cell_broadcast_control_on">Paganahin ang cell broadcast</string>
+    <string name="sum_cell_broadcast_control_off">Huwag paganahin ang cell broadcast</string>
+    <string name="sum_cell_broadcast_setting">Setting ng wika at channel para sa cell broadcast</string>
+    <string name="close_dialog">OK</string>
+    <string name="updating_title">"Mga setting ng tawag"</string>
+    <string name="error_updating_title">"Error sa mga setting ng tawag"</string>
+    <string name="reading_settings">"Binabasa ang mga setting…"</string>
+    <string name="updating_settings">"Ina-update ang mga setting…"</string>
+    <string name="reverting_settings">"Ibinabalik ang mga setting…"</string>
+    <string name="exception_error">"Error sa Network o SIM card."</string>
+    <string name="no_sim">Hindi nakasaksak ang SIM %d.</string>
+    <string name="sms_not_ready">Ini-initialize ang SMS module, pakihintay...</string>
+    <string name="label_full_name">Pangalan</string>
+    <string name="label_phone">Telepono</string>
+    <string name="label_email">"Email"</string>
+    <string name="label_postal">"Address"</string>
+    <string name="label_organization">"Samahan"</string>
+    <string name="label_im">"IM"</string>
+    <string name="label_website">Website</string>
+    <string name="label_sip_address">"Tawag sa internet"</string>
+    <string name="label_nick_name">"Palayaw"</string>
+    <string name="label_notes">"Mga Tala"</string>
+    <string name="label_event">"Mga Kaganapan"</string>
+    <string name="search_time_period_label">Panahon ng Oras</string>
+    <string name="done_text">"Tapos na"</string>
+    <string-array name="language_list_values" translatable="false">
+        <item>Lahat ng mga wika</item>
+        <item>Aleman</item>
+        <item>Ingles</item>
+        <item>Italyano</item>
+        <item>French</item>
+        <item>Espanyol</item>
+        <item>Dutch</item>
+        <item>Swedish</item>
+        <item>Danish</item>
+        <item>Portuges</item>
+        <item>Finnish</item>
+        <item>Norwegian</item>
+        <item>Griyego</item>
+        <item>Turko</item>
+        <item>Hungarian</item>
+        <item>Polish</item>
+        <item>Iba pa</item>
+        <item>Czech</item>
+        <item>Hebrew</item>
+        <item>Arabo</item>
+        <item>Ruso</item>
+        <item>IceLandic</item>
+    </string-array>
+    <string name="add_duplicate_recipients">Dinobleng tatanggap</string>
+
+    <!-- begin of mwi -->
+    <string name="mwi_title">Mga Mensaheng Boses</string>
+    <string name="type_voice_msg">Mensaheng Boses</string>
+    <string name="type_video_msg">Video na mensahe</string>
+    <string name="type_fax_msg">Fax na mensahe</string>
+    <string name="type_text_msg">"Text message"</string>
+    <string name="priority_urgent">Agaran</string>
+    <string name="date_label">Petsa:\u0020</string>
+    <string name="message_id_label">Message-ID:\u0020</string>
+    <string name="voice_message_count_notification"><xliff:g id="number" example="3">%1$s</xliff:g> mga bagong mensaheng boses</string>
+    <string name="confirm_delete_allmwi">"Lahat ng mga mensaheng boses ay tatanggalin."</string>
+    <string name="confirm_delete_selected_mwi">"Ang mga napiling mensaheng boses ay tatanggalin."</string>
+    <!-- end of mwi -->
+
+    <string name="download_disabled_toast">Hindi ma-download. Hindi default na SMS app.</string>
+    <string name="adding_wallpaper_title">Sine-save ang wallpaper...</string>
+    <string name="sms_priority_setting">UIM Prioridad</string>
+    <string name="sms_priority_Interactive">Interactive</string>
+    <string name="sms_priority_Urgent">Agaran</string>
+    <string name="sms_priority_Emergency">Emerhensiya</string>
+    <string name="empty_sim_name">SIM Slot <xliff:g id="subId" example="2">%1$d</xliff:g></string>
+
+    <string name="drm_not_support">Ang nilalamang copy protected ay hindi suportado ng MMS.</string>
+    <string name="user_has_no_premission">Hindi pinapayagang gumamit ng SMS ang user na ito</string>
+    <string name="wfc_no_cellular_network">Walang cellular network</string>
+    <string name="wfc_connect_to_available_wifi">Kumonekta sa available na Wi-Fi para sa pagpapadala ng mensahe</string>
+    <string name="wfc_notification_title">Kumonekta sa Wi-Fi para sa pagpapadala ng mensahe</string>
+    <string name="ct_om_switch_notification"><xliff:g id="op1">%s</xliff:g> ay pansamantalang hindi gagana, at kung ang anumang Tawag, SMS, Datos sa <xliff:g id="op2">%s</xliff:g> ay mababago bilang <xliff:g id="op3">%s</xliff:g> nang naaayon.</string>
+    <string name="can_not_switch_account_during_call">HindimaililipatangnaisnaSIMparasaSMSparasamgatawaghabangtumatawag.</string>
+    <string name="can_not_switch_account_temporarily">Pansamantalanghindimai-switchangpinilingSIMparasaSMS.</string>
+    <string name="omh_exceed_message_size_limitation">NaabotanglimitasyonnglakingmensahengR-UIM</string>
+    <string name="omh_failed_to_add_image">Naabot na ang limitasyon ng laki ng mensaheng R-UIM, pakitanggal ang ilang bahagi.</string>
+    <string name="missing_required_permission">Tinanggihan ang mga pahintulot. Mapapalitan mo sila sa Mga Setting &gt; Apps.</string>
+    <string name="manage_card_msg_title">I-manage ang mga mensahe sa UIM/SIM card</string>
+    <string name="manage_card_msg_summary">I-manage ang mga mensaheng nakatago sa iyong UIM/SIM card</string>
+    <string name="disable_delivery_report">Hindi ma-enable habang naka-roaming.</string>
+    <string name="fore_service_notify_title">Naglilipat ng mga mensahe</string>
+    <string name="fore_service_notify_content">May mga mensaheng nililipat.</string>
+    <string name="smart_req_mms_indicator">Di maaari ang MMS, pakisubukan ulit sa SMS.</string>
+</resources>

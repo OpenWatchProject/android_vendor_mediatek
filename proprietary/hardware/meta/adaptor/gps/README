@@ -1,0 +1,37 @@
+This directory contains GPS Meta mode test library
+
+
+WHAT IT DOES?
+=============
+It provide GPS test feature on meta mode,which allow open gps when mnld daemon is launched.
+
+HOW IT WAS BUILT?
+==================
+
+It needs the following libs from AOSP:
+1.  libc.so
+2.  libcutils
+3.  libnetutils
+
+and the following libs from MediaTek:
+1. libnvram.so
+2. libft.so
+
+All source/dependency modules of this module are already put in
+'vendor/mediatek/libs' folder.
+
+
+HOW TO USE IT?
+==============
+
+Files in this directory is used to
+generate a library which's name is 'libmeta_gps'
+
+
+libmeta_gps
+The lib  'libmeta_gps' is loaded when target enter meta mode,
+Meta main thread will call META_GPS_OP API, if meta gps tool is launched.
+
+
+All the source code of this library were written by MediaTek co..
+

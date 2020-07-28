@@ -1,0 +1,49 @@
+cc_library_shared {
+    srcs: [
+        "APEExtractor.cpp",
+        "apetag.cpp"
+    ],
+
+    include_dirs: [
+        "frameworks/av/media/libstagefright/include",
+        "vendor/mediatek/proprietary/frameworks/av/AVEnhance/libavextensions",
+    ],
+
+    shared_libs: [
+        "libmtkavenhancements",
+        "liblog",
+        "libmediandk",
+        "libcutils",
+        "libstagefright_foundation",
+        "libmedia",
+        "libbinder_ndk"
+    ],
+
+    static_libs: [
+        "libfifo",
+        "libutils",
+        "libavextensions",
+        "libstagefright_id3",
+    ],
+
+    name: "libmtkapeextractor",
+    owner: "mtk",
+    relative_install_path: "extractors",
+
+    compile_multilib: "first",
+
+    cflags: [
+        "-Werror",
+        "-Wall",
+        "-fvisibility=hidden",
+    ],
+    version_script: "exports.lds",
+
+    sanitize: {
+        cfi: true,
+        misc_undefined: [
+            "unsigned-integer-overflow",
+            "signed-integer-overflow",
+        ],
+    },
+}

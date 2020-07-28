@@ -1,0 +1,45 @@
+===============================
+ WHAT IT DOES?
+===============================
+In Diagnostic Monitoring Collector(DMC) framework, we provide a
+Android APM Service (persist process) to collect KPIs from
+submission layer in system partition.
+Finally, APM Service send the KPI through APM interface.
+
+===============================
+ HOW IT WAS BUILT?
+===============================
+Library from MediaTek:
+- mediatek-framework-net: common library for telephony.
+- mediatek-common: common library for telephony.
+- vendor.mediatek.hardware.apmonitor-V2.0-java: APM HIDL interface.
+
+===============================
+ HOW TO USE IT?
+===============================
+1. Basic concept
+To avoid to modify AOSP framework, we recommnad to collect KPIs inside
+our APM service.
+You can extends base class "KpiMonitor" and customized your function,
+plase check the comments in KpiMonitor.java for more detail.
+However, if your KPI can't be collected by Android SDK directly,
+we provide Android broadcast interface, and submission layer module can
+send the boradcast and handle message MSG_ID_APM_KPI_BROADCAST
+by overriding KpiMonitor.handleMessage() in your monitor.
+
+2. KPI submission
+We provide a series of APIs to submit your KPI with KpiMonitor.java.
+- apmSubmitKpiXXX()
+- apmShouldSubmitKpi()
+Please check the comment for more detail.
+
+3. KPI subscription notification
+We provide an message MSG_ID_APM_KPI_STATE_CHANGED to notify monitors
+when a KPI was subscribed(EVENT_KPI_ADDED) or un-subscribed(EVENT_KPI_REMOVED).
+Monitor can customize their behavior according to this utility.
+For example: LocationMonitor wants to reqeust network after the location KPI being subscribed.
+
+4. MDMI Provider
+We follow GSMA TS.31 spec, have an Android Provider component to provide
+Modem Diagnostic Monitoring Interface(MDMI) libraries name, so that MDMI application
+can load the library dynamically.

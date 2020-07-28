@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2007 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+  
+          http://www.apache.org/licenses/LICENSE-2.0
+  
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <!-- M: site navigation start @{ -->   
+    <string name="delete_folder_warning">Обрисати фасциклу  \"<xliff:g id="bookmark">%s</xliff:g>\"?</string>
+    <string name="contextmenu_savelinkbookmark">Сачувај везу као означивача</string>
+    <string name="download_path_unavailable_dlg_title">Фасцикла за преузимање није доступна</string>
+	<string name="download_path_unavailable_dlg_msg">Молимо, модификујте фасциклу за преузимања прегледача</string>
+    <string name="home">"Почетна"</string>
+    <string name="close">"Затвори"</string>
+    <string name="option">Опција</string>
+    <string name="minimize">Минимизуј</string>
+    <string name="quit">Затвори</string>
+    <string name="pref_download_title">Подешавања за преузимање</string>
+    <string name="pref_extras_set_download_directory_title">Одреди фасциклу за преузимање</string>
+    <string name="sitenavigation_add">Add website</string>
+    <string name="tab_site_navigation">Навигација локације</string>
+    <string-array name="pref_homepage_choices_site_navigation">
+		<item msgid="844041670142910837">"Тренутна страница"</item>
+    	<item msgid="4430498748295169195">"Празна страница"</item>
+    	<item msgid="5747608191946904074">"Подразумевана страница"</item>
+    	<item msgid="6092441301001006473">"Најпосећенији сајтови"</item>       
+        <item>Навигација локације</item>
+    	<item msgid="6569304572171444894">"Друго"</item>
+    </string-array>
+    <!-- @} -->   
+
+
+    <!-- M: Option menu change string: Bookmarks -> Bookmarks/History -->
+    <string name="permlab_readHomepage">Прочитајте почетну страницу у прегледачу</string>
+    <string name="permdesc_readHomepage">Дозвољава апликацији да прочита информације почетне странице у прегледачу без ваше интервенције.</string>
+    <string name="permlab_writeHomepage">Модификуј почетну страницу у прегледачу</string>
+    <string name="permdesc_writeHomepage">Дозвољава апликацији да модификује информације почетне странице у прегледачу без ваше интервенције.</string>
+    <string name="duplicated_bookmark">Дуплиран обележивач</string>
+    <string name="duplicated_bookmark_warning">Обележивач има исто име или локација већ постоји, заменити?</string>
+    <string name="duplicated_folder_warning">Фасцикла са истим именом већ постоји.</string>
+    <string name="pref_content_search_engine_consistency">Доследност претраживача</string>
+    <string name="pref_search_engine_unify">Уједначи претраживач</string>
+    <string name="pref_search_engine_unify_summary">Примени промену претраживача на QuickSearchBox</string>
+    <string name="download_or_open_content">Коју радњу желите да одаберете?</string>
+    <string name="save_content">"Сачувај"</string>
+    <string name="open_content">"Отвори"</string>
+    <string name="no_voice_search_alert_dialog_title">"Гласовна претрага"</string>
+    <string name="no_voice_search_alert_dialog_msg">Гласовно претраживање није доступно јер не постоји апликација за гласовно претраживање. Прво је инсталирајте.</string>
+    <string name="delete">"Избриши"</string>
+    <string name="edit">"Измени"</string>
+    <string name="add">"Додај"</string>
+    <string name="delete_site_navigation_msg">Обрисати ову ставку?</string>
+    <string name="site_navigation_name">"Назив"</string>
+    <string name="site_navigation_address">"Адреса"</string>
+    <string name="website_needs_title">"Интернет презентација мора да има име."</string>
+    <string name="website_needs_url">"Интернет презентација мора да има локацију."</string>
+    <string name="site_navigation_cannot_save_url">Овај URL не може да буде интернет презентација.</string>
+    <string name="add_site_navigation">Add website</string>
+    <string name="edit_site_navigation">Уреди навигацију странице</string>
+    <string name="site_navigation_edit_button">"Измени"</string>
+    <string name="save_webpage">"Сачувај"</string>
+    <string name="duplicate_site_navigation_url">Овај URL већ постоји.</string>
+    <string name="duplicate_site_navigation_title">This lable has already existed.</string>
+    <string name="max_input_browser_search">Достигнуто је максимално ограничење за унос.</string>
+    <string name="max_input_browser_search_title">Ограничење уноса</string>
+    <string name="max_input_browser_search_button">"Потврди"</string>
+    <string name="bookmarks_history">Обележивачи/Историја</string>
+    <string name="save_bookmark">"Чување обележивача"</string>
+    <string name="tabs">"Tab"</string>
+    <string name="open_saved_page_failed">Сачувану страницу није могуће отворити.</string>
+    <!-- M: add for save page -->
+    <string name="saved_page_failed">Снимање веб странице није успело.</string>
+    <string name="saved_page_complete">Преузимање завршено.</string>
+    <string name="saved_page_fail">"Снимање није успешно обављено "</string>
+    <string name="create_folder_fail">Није могуће креирати директоријум за снимање странице</string>
+    <string name="saving_page">Снимање веб странице</string>
+    <string name="need_login_email">Прво региструјте свој налог е-поште.</string>
+    <string name="folder_needs_title">"Директоријум мора имати име."</string>
+    <string name="denied_required_permission">Дозволе су одбијене. Можете их променити у оквиру Подешавања &gt; Апликације.</string>
+</resources>

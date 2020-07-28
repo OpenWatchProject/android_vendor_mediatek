@@ -1,0 +1,142 @@
+/*
+ * Copyright (C) 2016 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package vendor.mediatek.hardware.camera.lomoeffect@1.0;
+
+import android.hardware.camera.common@1.0::types;
+import android.hardware.camera.device@3.2::types;
+
+import android.hidl.memory@1.0::IMemory;
+
+/*
+ * This is used to advcanced camera setting control.
+ */
+
+interface ILomoEffect{
+    /* the following functions are wrapper functions for lomo effect module */
+
+    /**
+       *@brief Initialize function
+       *@note Must call this function after createInstance and before other functions
+       *
+       *@return
+       *-MTURE indicates success, otherwise indicates fail
+    */
+    init() generates (Status status);
+
+    /**
+       *@brief Uninitialize function
+       *@return
+       *-MTRUE indicates success, otherwise indicates fail
+    */
+    uninit() generates (Status status);
+
+    /**
+       *@brief Prepare Pass2 source image from YV12 to YUY2
+       *
+       *@param[in] pvCBWidth : preview call back image Width
+       *@param[in] pvCBHeight : preview call back image Width
+       *@param[in] pvCBformat : post process src image format
+       *@param[in] ppSrcImgWidth : post process src image Width
+       *@param[in] ppSrcImgHeight : post process src image Width
+       *
+       *@return
+       *-MTRUE indicates success, otherwise indicates fail
+    */
+    allocLomoSrcImage(
+        uint32_t pvCBWidth,
+        uint32_t pvCBHeight,
+        uint32_t pvCBformat,
+        uint32_t ppSrcImgWidth,
+        uint32_t ppSrcImgHeight)
+    generates (Status status);
+
+    /**
+       *@brief Prepare Pass2 dst image from YUY2 to YV12
+       *
+       *@param[in] Number : buffer number
+       *@param[in] size : size of each buffer
+       *@param[in] arrayPlaneOffset : the plane of offset for at most 3 planes
+       *@param[in] hidlShareFd : hidl_handle with ion_share_fd for destination buffer
+       *
+       *@return
+       *-MTRUE indicates success, otherwise indicates fail
+    */
+
+    allocLomoDstImage(
+        uint32_t Number,
+        int32_t size,
+        uint32_t[3] arrayPlaneOffset,
+        handle hidlShareFd)
+    generates (Status status);
+
+   /**
+       *@brief Upload Pass2 source image from YV12 to YUY2
+       *
+       *@param[in] srcHidlHandleShareFD : hidl_handle with ion_share_fd for source buffer
+       *@param[in] arrayPlaneOffset : the starting offset of each plane, ps: max 3 planes
+       *
+       *@return
+       *-MTRUE indicates success, otherwise indicates fail
+    */
+    uploadLomoSrcImage(
+        handle srcHidlHandleShareFD,
+        uint32_t[3] arrayPlaneOffset)
+    generates (Status status);
+
+   /**
+       *@brief free Pass2 source image from YV12 to YUY2
+       *@return
+       *-MTRUE indicates success, otherwise indicates fail
+    */
+    freeLomoSrcImage() generates (Status status);
+
+    /**
+       *@brief post process effect with effectIdx and dst image VA  Ahead(YUY2 to YV12)
+       *
+       *@param[in] Number : buffer number
+       *@param[in] arrayPlaneOffset : the starting offset of each plane, ps: max 3 planes
+       *@param[in] ppEffectIdx : post process effectIdx
+       *
+       *@return
+       *-MTRUE indicates success, otherwise indicates fail
+    */
+    lomoImageEnque(
+        uint32_t Number,
+        uint32_t[3] arrayPlaneOffset,
+        int32_t ppEffectIdx)
+    generates (Status status);
+
+    /**
+       *@brief post process effect with effectIdx and dst image VA (YUY2 to YV12)
+       *
+       *@param[in] Number : buffer number
+       *@param[in] arrayPlaneOffset : the starting offset of each plane, ps: max 3 planes
+       *@param[in] ppEffectIdx : post process effectIdx
+       *
+       *@return
+       *-MTRUE indicates success, otherwise indicates fail
+     */
+    lomoImageDeque(
+        uint32_t Number,
+        uint32_t[3] arrayPlaneOffset,
+        int32_t ppEffectIdx)
+    generates (Status status);
+
+    freeLomoDstImage() generates (Status status);
+};
+
+

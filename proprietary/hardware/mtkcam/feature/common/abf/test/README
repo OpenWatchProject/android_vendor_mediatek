@@ -1,0 +1,32 @@
+UT module of AbfAdapter
+
+WHAT IT DOES?
+=============
+Unit test of AbfAdapter
+
+HOW IT WAS BUILT?
+==================
+It needs the following library from AOSP:
+- libcutils.so
+- liblog.so
+- libutils.so
+
+and the following libs from MediaTek:
+- libcamalgo
+- libmtkcam_modulehelper
+- libmtkcam_stdutils
+- libmtkcam_imgbuf
+- libmtkcam_sysutils
+- libcameracustom
+- libmedia
+- libdpframework
+- libabfadp
+
+All source/dependency modules of this module are already put in
+'vendor/mediatek/libs' folder.
+
+HOW TO USE IT?
+==============
+Push the executable abftest to the phone and run.
+
+All the source code of this library were written by MediaTek co..

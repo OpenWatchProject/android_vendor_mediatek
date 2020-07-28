@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/view_layer_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:splitMotionEvents="false">
+    <!-- review views here -->
+    <FrameLayout android:id="@+id/view_layer_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:splitMotionEvents="false">
+    </FrameLayout>
+    <!-- normal views here -->
+    <RelativeLayout android:id="@+id/view_layer_normal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:splitMotionEvents="false"
+        >
+    </RelativeLayout>
+    <FrameLayout android:id="@+id/view_layer_top"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:splitMotionEvents="false">
+    </FrameLayout>
+    <FrameLayout android:id="@+id/view_layer_shutter"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:splitMotionEvents="false"
+        >
+    </FrameLayout>
+    <FrameLayout android:id="@+id/view_layer_setting"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:splitMotionEvents="false"
+        >
+    </FrameLayout>
+    <!-- overlay views here -->
+    <FrameLayout android:id="@+id/view_layer_overlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:splitMotionEvents="false">
+    </FrameLayout>
+    <!-- loading animation
+    <FrameLayout android:id="@+id/camera_app_loading_animation"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/black"
+        android:clickable="true">
+        <com.android.camera.ui.SelfRotateImageView
+            android:id="@+id/loading_frame"
+            android:src="@drawable/ic_loading_camera"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center" />
+    </FrameLayout> -->
+</FrameLayout>

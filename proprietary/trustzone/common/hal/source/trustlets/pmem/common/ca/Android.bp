@@ -1,0 +1,143 @@
+cc_test {
+    name: "pmem_share_ns",
+    proprietary: true,
+    owner: "mtk",
+    defaults: ["mtk_pmem_defaults"],
+    cflags: [
+        "-Wall",
+        "-Werror",
+        "-Wno-unused-parameter",
+        "-Wno-unused-function",
+        "-DTEE_MEMORY_MAP_NS_FLAGS",
+        /* "-DPMEM_DEBUG_BUILD", */
+        /* "-DTEE_MEMORY_MAP_TEST_ENABLE", */
+    ],
+    compile_multilib: "both",
+    srcs: [
+        "src/pmem_gz.cpp",
+        "src/pmem_share.cpp",
+        "src/pmem_tee.cpp",
+        "src/pmem_lib.cpp",
+    ],
+    include_dirs: [
+        "device/mediatek/common/kernel-headers",
+        "vendor/mediatek/proprietary/trustzone/common/hal/source/trustlets/pmem/common/include",
+    ],
+    local_include_dirs: ["include"],
+}
+
+cc_test {
+    name: "pmem_share_s",
+    proprietary: true,
+    owner: "mtk",
+    defaults: ["mtk_pmem_defaults"],
+    cflags: [
+        "-Wall",
+        "-Werror",
+        "-Wno-unused-parameter",
+        "-Wno-unused-function",
+        /* "-DPMEM_DEBUG_BUILD", */
+        /* "-DTEE_MEMORY_MAP_TEST_ENABLE", */
+    ],
+    compile_multilib: "both",
+    srcs: [
+        "src/pmem_gz.cpp",
+        "src/pmem_share.cpp",
+        "src/pmem_tee.cpp",
+        "src/pmem_lib.cpp",
+    ],
+    include_dirs: [
+        "device/mediatek/common/kernel-headers",
+        "vendor/mediatek/proprietary/trustzone/common/hal/source/trustlets/pmem/common/include",
+    ],
+    local_include_dirs: ["include"],
+}
+
+cc_test {
+    name: "pmem_ion_fast",
+    proprietary: true,
+    owner: "mtk",
+    defaults: ["mtk_pmem_defaults"],
+    cflags: [
+        "-Wall",
+        "-Werror",
+        "-Wno-unused-parameter",
+        "-Wno-unused-function",
+        "-DTEST_LARGE_CHUNK_SIZE_ONLY",
+        "-DTEST_REGION_SIZE_AUTO_DETECTION",
+        /* "-DPMEM_DEBUG_BUILD", */
+    ],
+    compile_multilib: "both",
+    srcs: [
+        "src/pmem_ion.cpp",
+    ],
+    include_dirs: [
+        "device/mediatek/common/kernel-headers",
+        "vendor/mediatek/proprietary/trustzone/common/hal/source/trustlets/pmem/common/include",
+    ],
+    local_include_dirs: ["include"],
+}
+
+cc_test {
+    name: "pmem_ion",
+    proprietary: true,
+    owner: "mtk",
+    defaults: ["mtk_pmem_defaults"],
+    cflags: [
+        "-Wall",
+        "-Werror",
+        "-Wno-unused-parameter",
+        "-Wno-unused-function",
+        "-DTEST_REGION_SIZE_AUTO_DETECTION",
+        /* "-DPMEM_DEBUG_BUILD", */
+    ],
+    compile_multilib: "both",
+    srcs: [
+        "src/pmem_ion.cpp",
+    ],
+    include_dirs: [
+        "device/mediatek/common/kernel-headers",
+        "vendor/mediatek/proprietary/trustzone/common/hal/source/trustlets/pmem/common/include",
+    ],
+    local_include_dirs: ["include"],
+}
+
+cc_test {
+    name: "pmem_perf",
+    proprietary: true,
+    owner: "mtk",
+    defaults: ["mtk_pmem_defaults"],
+    cflags: [
+        "-Wall",
+        "-Werror",
+        "-Wno-unused-parameter",
+        "-Wno-unused-function",
+        "-DPMEM_DEBUG_BUILD",
+    ],
+    compile_multilib: "both",
+    srcs: [
+        "src/pmem_perf.cpp",
+    ],
+    include_dirs: [
+        "device/mediatek/common/kernel-headers",
+        "vendor/mediatek/proprietary/trustzone/common/hal/source/trustlets/pmem/common/include",
+    ],
+    local_include_dirs: ["include"],
+}
+
+mtk_pmem_defaults {
+    name: "mtk_pmem_defaults",
+}
+
+bootstrap_go_package {
+    name: "soong-pmem-mediatek",
+    pkgPath: "android/soong/pmem/mediatek",
+    deps: [
+        "soong-android",
+        "soong-cc",
+    ],
+    srcs: [
+        "pmem.go",
+    ],
+    pluginFor: ["soong_build"],
+}

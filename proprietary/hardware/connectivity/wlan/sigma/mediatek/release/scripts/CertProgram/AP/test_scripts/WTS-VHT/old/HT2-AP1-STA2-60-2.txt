@@ -1,0 +1,32 @@
+#HT2 - VHT
+info!Inside HT2-AP1-STA2-60-2.txt file!
+
+
+Phase!1!
+define!$HT1!0!
+info!default values!
+echo!$HT1!
+
+
+info![ Starting Traffic ]!
+wfa_console_ctrl!traffic_agent_reset!DEFAULT
+$STA2_control_agent!traffic_agent_reset!DEFAULT
+
+
+wfa_console_ctrl!traffic_agent_config,profile,IPTV,direction,send,destination,$STA2_wireless_ip,destinationPort,5600,sourcePort,5600,duration,$HT_Duration,payloadSize,payloadValue,trafficClass,BestEffort,frameRate,0!STREAMID,$RTP1-P1-TX
+$STA2_control_agent!traffic_agent_config,profile,IPTV,direction,receive,source,wfa_console_tg,sourcePort,5600,destinationPort,5600!STREAMID,$RTP1-P1-RX
+
+
+$STA2_control_agent!traffic_agent_receive_start,streamID,$RTP1-P1-RX!DEFAULT
+
+wfa_console_ctrl!traffic_agent_send,streamID,$RTP1-P1-TX!RECV_ID,$RTP1-P1-RX 
+$STA2_control_agent!traffic_agent_receive_stop,streamID,$RTP1-P1-RX!DEFAULT
+
+
+sleep!2!
+define!$HT_Duration!60!
+StoreThroughput!$HT1!$RTP1-P1-RX,1,$HT_Duration,100!
+#echo!$HT1!
+info!Total throughput from AP1 to STA2--> 20MHz!
+define!$Z!$HT1!
+echo!$Z!

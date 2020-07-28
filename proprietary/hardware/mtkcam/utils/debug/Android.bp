@@ -1,0 +1,24 @@
+cc_library_shared {
+    name: "libmtkcam_debugutils",
+    proprietary: true,
+    owner: "mtk",
+    include_dirs: [
+        "vendor/mediatek/proprietary/hardware/mtkcam/include",
+        "vendor/mediatek/proprietary/external/libudf/libladder",
+    ],
+    cppflags: [
+        "-fexceptions",
+    ],
+    srcs: [
+        "debug.cpp",
+        "DefaultDebuggee.cpp",
+    ],
+    shared_libs: [
+        "liblog",
+        "libutils",
+        "libcutils",
+        "libladder",
+    ],
+}
+
+optional_subdirs = ["*"]

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+     xmlns:phone="http://schemas.android.com/apk/res/com.android.phone"
+     android:title="@string/labelGSMMore">
+
+    <PreferenceScreen
+        android:key="voice_key"
+        android:title="@string/labelCFVoice"
+        android:persistent="false" />
+
+    <PreferenceScreen
+        android:key="video_key"
+        android:title="@string/labelCFVideo"
+        android:persistent="false"/>
+
+</PreferenceScreen>

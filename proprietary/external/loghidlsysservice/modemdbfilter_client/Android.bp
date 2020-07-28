@@ -1,0 +1,25 @@
+cc_binary {
+    name: "modemdbfilter_client",
+    init_rc: ["modemdbfilter_client.rc"],
+    srcs: [
+        "CopyDBFilter.cpp",
+        "service.cpp",
+    ],
+    cflags: [
+        "-Wall",
+        "-Wunused-parameter",
+    ],
+
+    shared_libs: [
+        "vendor.mediatek.hardware.modemdbfilter@1.0",
+        "libbase",
+        "libcutils",
+        "libhidlbase",
+        "libhidltransport",
+        "libhardware",
+        "liblog",
+        "libselinux",
+        "libutils",
+    ],
+
+}

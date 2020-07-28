@@ -1,0 +1,77 @@
+# Disable the warnings of using dynamic method call in common library.
+-dontnote com.android.gallery3d.common.*
+-dontwarn android.util.Pools$Pool
+-dontwarn android.util.Pools$SynchronizedPool
+
+# Keep all classes extended from com.android.gallery3d.common.Entry
+# Since we annotate on the fields and use reflection to create SQL
+# according to those field.
+
+
+# ctors of subclasses of CameraPreference are called with Java reflection.
+-keep class * extends com.android.camera.CameraPreference {
+  <init>(...);
+}
+# added for refocus start.
+-keep class com.mediatek.ja3m.*{*;}
+
+-keep class com.mediatek.ngin3d.*{*;}
+# added for refocus end.
+-keep class com.android.camera.CameraActivity {
+  public boolean isRecording();
+  public long getAutoFocusTime();
+  public long getShutterLag();
+  public long getShutterToPictureDisplayedTime();
+  public long getPictureDisplayedToJpegCallbackTime();
+  public long getJpegCallbackFinishTime();
+  public long getCaptureStartTime();
+}
+
+-keep class com.android.camera.v2.CameraActivityBridge {
+*;
+}
+
+#add for test case
+-keep class com.android.camera.permission.PermissionManager {
+*;
+}
+
+# Add for camera ImageCaptureIntentTest test case.
+-keep class * extends com.android.camera.ActivityBase {
+    public int getResultCode();
+    public android.content.Intent getResultData();
+}
+
+-keep class com.android.camera.VideoModule {
+  public void onCancelBgTraining(...);
+  public void onProtectiveCurtainClick(...);
+}
+
+-keep class * extends android.app.Activity {
+  @com.android.camera.OnClickAttr <methods>;
+}
+
+-keep class com.android.camera.CameraHolder {
+  public static void injectMockCamera(...);
+}
+
+# Disable the warnings of using dynamic method calls in EffectsRecorder
+-dontnote com.android.camera.EffectsRecorder
+
+-keep class android.support.v8.renderscript.** { *; }
+
+# Required for ActionBarSherlock
+-keep class android.support.v4.app.** { *; }
+-keep interface android.support.v4.app.** { *; }
+-keep class com.actionbarsherlock.** { *; }
+-keep interface com.actionbarsherlock.** { *; }
+-keepattributes *Annotation*
+
+# Required for mp4parser
+-keep public class * implements com.coremedia.iso.boxes.Box
+
+-keep class com.mediatek.camera.util.jpegcodec.HwJpegDecodeImpl { *; }
+-keep class com.mediatek.camera.common.jpeg.encoder.ImageReader { *; }
+-keep class com.mediatek.camera.common.jpeg.encoder.ImageReader$SurfaceImage { *; }
+-keep class com.mediatek.camera.common.jpeg.encoder.ImageReader$SurfaceImage$SurfacePlane { *; }
+-keep class com.mediatek.accessor.* {*;}

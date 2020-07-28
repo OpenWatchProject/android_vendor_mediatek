@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/* //device/apps/common/assets/res/any/strings.xml
+**
+** Copyright 2006, The Android Open Source Project
+**
+** Licensed under the Apache License, Version 2.0 (the "License");
+** you may not use this file except in compliance with the License.
+** You may obtain a copy of the License at
+**
+**     http://www.apache.org/licenses/LICENSE-2.0
+**
+** Unless required by applicable law or agreed to in writing, software
+** distributed under the License is distributed on an "AS IS" BASIS,
+** WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+** See the License for the specific language governing permissions and
+** limitations under the License.
+*/
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- Telephony -->
+    <string name="invalidPuk">Input 8 digits.</string>
+    <string name="keyguard_password_enter_new_pin_code">Enter new PIN</string>
+    <string name="keyguard_password_Confirm_pin_code">"Confirm new PIN"</string>
+    <string name="sim_permanently_locked">Incorrect PUK code entered more than 10 times, SIM card has been permanently locked.</string>
+    <string name="retries_left">Remains:<xliff:g id="number">%d</xliff:g></string>
+    <string name="simlock_slot_locked_message">The slot has been permanently locked</string>
+    <string name="simlock_entersimmelock">Enter SIM ME lock</string>
+    <string name="slot_id">Slot <xliff:g id="number">%d</xliff:g>:</string>
+    <string name="new_simcard">New SIM card</string>
+    <string name="lockscreen_missing_sim_dialog_message">"SIM card is not connected. Please make sure your SIM card is inserted correctly."</string>
+    <string name="sim_card_changed_dialog_title">SIM card changed</string>
+    <string name="change_setting_for_onenewsim">New SIM card detected. It is labelled as</string>
+    <string name="change_setting_for_twonewsim">New SIM cards detected. They are labelled as</string>
+    <string name="sim_card_removed">SIM card removed.</string>
+    <string name="sim_card_swapped">SIM card swapped.</string>
+    <string name="change_settings">Change</string>
+    <string name="keyguard_sms">Messaging:</string>
+    <string name="keyguard_data">Data connection:</string>
+    <string name="dismiss">Dismiss</string>
+    <string name="keyguard_wrong_code_input">Wrong Code.</string>
+    <string name="keyguard_code_length_prompt">Input 4-8 digits.</string>
+    <string name="keyguard_code_donnot_mismatch">Do not match.</string>
+    <string name="network_searching">Searching for network</string>
+    <string name="searching_simcard">Detecting...</string>
+    <string name="keyguard_close">Close</string>
+    <string name="default_sim_setting_prompt">Now default settings are:</string>
+    <string name="invalid_sim_title">Invalid SIM card</string>
+    <string name="invalid_sim_message">The UIM/SIM card is not recognized.</string>
+    <!-- Tablet -->
+    <string name="sd_accessing_swtich_user_title">Switch user?</string>
+    <string name="sd_accessing_swtich_user_message">All unsaved data in the owner account will be lost or damaged.</string>
+    <!-- Misc -->
+    <string name="ppl_prompt">Please enter the Privacy Protection password to unlock.</string>
+    <string name="kg_emergency_call_label">Emergency</string>
+    <string name="kg_detecting_simcard">Detecting...</string>
+    <string name="kg_new_simcard">New SIM card</string>
+    <string name="kg_slot_id">Slot <xliff:g id="number">%d</xliff:g>:\u0020</string>
+</resources>

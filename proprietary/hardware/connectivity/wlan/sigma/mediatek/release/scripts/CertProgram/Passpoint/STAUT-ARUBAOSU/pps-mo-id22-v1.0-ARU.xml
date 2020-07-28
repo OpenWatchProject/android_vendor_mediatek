@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+	Hotspot 2.0 PerProviderSubscription, version 1.0 
+	
+	Hotspot 2.0 Release 2 Testplan, ID#22 XML
+	
+	urn:wfa:mo:hotspot2dot0-PerProviderSubscription:1.0
+	
+	This DDF contains a description of the Per Provider Subscription management object (PerProviderSubscription), 
+	according to the OMA DM Description Framework.  This document is part of the Wi-Fi Alliance Wi-Fi CERTIFIED Passpoint(tm) (Release 2) program, 
+	a solution for next generation Wi-Fi(R) hotspots. 
+	
+	WI-FI ALLIANCE PROPRIETARY - SUBJECT TO CHANGE WITHOUT NOTICE
+	
+	This document may be used with the permission of Wi-Fi Alliance under the terms set forth herein.  
+	
+	By your use of the document, you are agreeing to these terms. 
+	
+	Unless this document is clearly designated as an approved specification, this document is a work in process and 
+	is not an approved Wi-Fi Alliance specification. 
+	
+	This document is subject to revision or removal at any time without notice.  Information contained in this document may be used at your sole risk.  
+	Wi-Fi Alliance assumes no responsibility for errors or omissions in this document.
+	
+	This copyright permission does not constitute an endorsement of the products or services.  
+	Wi-Fi Alliance trademarks and certification marks may not be used unless specifically allowed by Wi-Fi Alliance.
+	
+	Wi-Fi Alliance has not conducted an independent intellectual property rights ("IPR") review of this document and the information contained herein, and makes no representations or warranties regarding IPR, 
+	including without limitation patents, copyrights or trade secret rights. This document may contain inventions for which you must obtain licenses from third parties before making, using or selling the inventions. 
+	
+	Wi-Fi Alliance owns the copyright in this document and reserves all rights therein.  
+	A user of this document may duplicate and distribute copies of the document in connection with the authorized uses described herein, 
+	provided any duplication in whole or in part includes the copyright notice and the disclaimer text set forth herein.  
+	Wi-Fi Alliance hereby grants a user of the XML schema file(s) of this document a royalty-free, perpetual, 
+	irrevocable copyright license to use and distribute solely the XML schema file(s) found within this document. 
+	
+	Unless prior written permission has been received from Wi-Fi Alliance, any other use of this document and all other duplication and distribution of this document are prohibited.  
+	Unauthorized use, duplication, or distribution is an infringement of Wi-Fi Alliance's copyright.
+	
+	NO REPRESENTATIONS OR WARRANTIES (WHETHER EXPRESS OR IMPLIED) ARE MADE BY WI-FI ALLIANCE AND WI-FI ALLIANCE IS NOT LIABLE FOR AND HEREBY DISCLAIMS 
+	ANY DIRECT, INDIRECT, PUNITIVE, SPECIAL, INCIDENTAL, CONSEQUENTIAL, OR EXEMPLARY DAMAGES ARISING OUT OF OR IN CONNECTION WITH THE USE OF THIS DOCUMENT AND ANY INFORMATION CONTAINED IN THIS DOCUMENT.
+	
+	(C) 2014 Wi-Fi Alliance.  All Rights Reserved.
+	
+		Revision History
+		Revision	Date				Comments
+		1.0			April 07, 2014		Release version 1.0 based on Hotspot 2.0 Release 2 Specification, v1.0 and Test Plan, v1.0
+											
+-->
+
+<!DOCTYPE MgmtTree PUBLIC "-//OMA//DTD-DM-DDF 1.2//EN" "http://www.openmobilealliance.org/tech/DTD/DM_DDF-V1_2.dtd"
+             [<?oma-dm-ddf-ver supported-versions="1.2"?>]>
+             
+<!-- Note: the lines of XML above (including these comments) are not part of this MO instance when it's transmitted by a Subscription server 
+           to the mobile device.  They are included so that the document in this file is valid XML. -->
+
+<MgmtTree>
+    <VerDTD>1.2</VerDTD>
+    <Node><NodeName>PerProviderSubscription</NodeName>
+        <RTProperties>
+            <ACL>Add=example.com&amp;Delete=example.com&amp;Replace=example.com&amp;Get=example.com</ACL>
+            <Type><DDFName>urn:wfa:mo:hotspot2dot0-perprovidersubscription:1.0</DDFName></Type>
+        </RTProperties>
+        <Node><NodeName>UpdateIdentifier</NodeName><Value>22</Value></Node>
+        <Node><NodeName>Cred01</NodeName>
+            <Node><NodeName>Policy</NodeName>
+                <Node><NodeName>PolicyUpdate</NodeName>
+                    <Node><NodeName>UpdateInterval</NodeName><Value>10</Value></Node>
+                    <Node><NodeName>UpdateMethod</NodeName><Value>OMA-DM-ClientInitiated</Value></Node>
+                    <Node><NodeName>Restriction</NodeName><Value>Unrestricted</Value></Node>
+                    <Node><NodeName>URI</NodeName><Value>https://policy-server.r2-testbed-aru.wi-fi.org/guest/HotSpot2PolicyServer.php</Value></Node>
+                    <Node><NodeName>UsernamePassword</NodeName>
+                        <Node><NodeName>Username</NodeName><Value>testdmacc@22.org</Value></Node>
+                        <!-- The following is base64 encoded value of "P@ssw0rd" -->
+                        <Node><NodeName>Password</NodeName><Value>UEBzc3cwcmQ=</Value></Node>
+                    </Node>                    
+                    <Node><NodeName>TrustRoot</NodeName>
+                        <!-- The certificate filename below needs to be updated -->
+                        <Node><NodeName>CertURL</NodeName>
+                            <Value>http://192.168.250.206/certificates/policy-rootcert-networkfx.der</Value>
+                        </Node>                        
+                        <!-- The certificate SHA-256 Fingerprint below needs to be updated with the real value -->
+                        <Node><NodeName>CertSHA256Fingerprint</NodeName>
+                            <Value>d9fb79e3247bb096e1efd549fc88cc0b8b520cedba7a9604686f5298b55adbfc</Value>
+                        </Node>
+                    </Node><!-- End of TrustRoot node -->
+                </Node><!-- End of PolicyUpdate node -->
+            </Node><!-- End of Policy node -->
+            
+            <Node><NodeName>CredentialPriority</NodeName><Value>1</Value></Node>
+            
+            <Node><NodeName>AAAServerTrustRoot</NodeName>
+                <Node><NodeName>Root1</NodeName>
+                    <Node><NodeName>CertURL</NodeName>
+                        <Value>http://192.168.250.206/certificates/cacert.der</Value>
+                    </Node>
+                    <Node><NodeName>CertSHA256Fingerprint</NodeName>
+                        <Value>5b393a9246865569485c2605c3304e48212b449367858299beba9384c4cf4647</Value>
+                    </Node>
+                </Node><!-- End of dynamic node -->
+            </Node><!-- End of AAAServerTrustRoot node -->
+            
+            <Node><NodeName>SubscriptionUpdate</NodeName>
+                <Node><NodeName>UpdateInterval</NodeName><Value>4294967295</Value></Node>
+                <Node><NodeName>UpdateMethod</NodeName><Value>OMA-DM-ClientInitiated</Value></Node>
+                <Node><NodeName>Restriction</NodeName><Value>HomeSP</Value></Node>
+                <Node><NodeName>URI</NodeName><Value>https://subscription-server.r2-testbed-aru.wi-fi.org/guest/HotSpot2PolicyServer.php</Value></Node>
+                <Node><NodeName>TrustRoot</NodeName>
+                    <!-- The certificate filename below needs to be updated -->
+                    <Node><NodeName>CertURL</NodeName>
+                        <Value>http://192.168.250.206/certificates/subscription-rootcert-networkfx.der</Value>
+                    </Node>
+                    
+                    <!-- The certificate SHA-256 Fingerprint below needs to be updated with the real value -->
+                    <Node><NodeName>CertSHA256Fingerprint</NodeName>
+                        <Value>d9fb79e3247bb096e1efd549fc88cc0b8b520cedba7a9604686f5298b55adbfc</Value>
+                    </Node>
+                </Node><!-- End of TrustRoot node -->
+            </Node><!-- End of SubscriptionUpdate node -->
+            
+            <Node><NodeName>HomeSP</NodeName>
+                <Node><NodeName>FriendlyName</NodeName><Value>Example dot com</Value></Node>
+                <Node><NodeName>FQDN</NodeName><Value>example.com</Value></Node>
+            </Node><!-- End of HomeSP node -->
+            
+            <Node><NodeName>Credential</NodeName>
+                <Node><NodeName>CreationDate</NodeName><Value>2012-12-01T12:00:00Z</Value></Node>
+                <Node><NodeName>UsernamePassword</NodeName>
+                    <Node><NodeName>Username</NodeName><Value>test22</Value></Node>
+                    <Node><NodeName>Password</NodeName><Value>Q2hhbmdlTWU=</Value></Node>
+                    <Node><NodeName>MachineManaged</NodeName><Value>TRUE</Value></Node>
+                    <Node><NodeName>EAPMethod</NodeName>
+                        <Node><NodeName>EAPType</NodeName><Value>21</Value></Node>
+                        <Node><NodeName>InnerMethod</NodeName><Value>MS-CHAP-V2</Value></Node>
+                    </Node><!-- End of EAPMethod node -->
+                </Node>
+                <Node><NodeName>Realm</NodeName><Value>example.com</Value></Node>
+            </Node><!-- End of Credential node -->
+            
+        </Node><!-- End of Cred01 dynamic node -->
+    </Node><!-- End of PerProviderSubscription MO -->
+</MgmtTree>

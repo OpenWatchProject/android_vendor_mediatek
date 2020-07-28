@@ -1,0 +1,10 @@
+service ipsec_mon /vendor/bin/ipsec_mon
+    class main
+    user system
+    group net_admin net_raw system misc
+    capabilities NET_ADMIN NET_RAW
+
+#
+# ePDG related services (End)
+#
+

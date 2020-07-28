@@ -1,0 +1,4 @@
+service cmddumper /system/bin/cmddumper
+    class main
+    user shell
+    group shell system radio sdcard_rw inet sdcard_r media_rw

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.mediatek.camera.feature.setting.focus.FocusView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/focus_view"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="152.25dp"
+        android:layout_height="152.25dp">
+
+        <android.support.v7.widget.AppCompatImageView
+            android:id="@+id/focus_ring"
+            android:layout_width="62.75dp"
+            android:layout_height="62.75dp"
+            android:layout_centerInParent="true"
+            android:visibility="invisible"
+            app:srcCompat="@drawable/ic_continue_focus"/>
+
+        <RelativeLayout
+            android:id="@+id/expand_view"
+            android:layout_width="wrap_content"
+            android:layout_height="132dp"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/focus_ring"
+            android:visibility="invisible">
+        </RelativeLayout>
+    </RelativeLayout>
+
+</com.mediatek.camera.feature.setting.focus.FocusView>

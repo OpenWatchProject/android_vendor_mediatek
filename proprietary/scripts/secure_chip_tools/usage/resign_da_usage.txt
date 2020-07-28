@@ -1,0 +1,14 @@
+=========
+resign da
+=========
+#legacy
+#sign all load regions of the specified chip
+python resign_da.py prebuilt/resignda/MTK_AllInOne_DA.bin MT6755 settings/resignda/bbchips_legacy.ini all out/resignda/MTK_AllInOne_DA_resign.bin
+#sign only the specified load region of the specified chip, e.g. 0
+python resign_da.py prebuilt/resignda/MTK_AllInOne_DA.bin MT6755 settings/resignda/bbchips_legacy.ini 0 out/resignda/MTK_AllInOne_DA_resign.bin
+
+#pss
+#sign all load regions of the specified chip
+python resign_da.py prebuilt/resignda/MTK_AllInOne_DA.bin MT6755 settings/resignda/bbchips_pss.ini all out/resignda/MTK_AllInOne_DA_resign.bin
+#sign only the specified load region of the specified chip, e.g. 0
+python resign_da.py prebuilt/resignda/MTK_AllInOne_DA.bin MT6755 settings/resignda/bbchips_pss.ini 0 out/resignda/MTK_AllInOne_DA_resign.bin

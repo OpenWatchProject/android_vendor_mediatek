@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/CameraSettingRow"
+    android:splitMotionEvents="false">
+    <TextView android:id="@+id/title"
+        style="@style/SettingItemSubTitle"
+        android:layout_alignWithParentIfMissing="true"
+        android:layout_toEndOf="@+id/image"
+        android:layout_toStartOf="@+id/radio"
+        android:layout_centerVertical="true"
+        android:clickable="false"
+        android:focusable="false" />
+    <CheckBox android:id="@+id/checkbox"
+        style="@style/SettingVirtualRadio"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:clickable="false"
+        android:focusable="false" />
+</RelativeLayout>

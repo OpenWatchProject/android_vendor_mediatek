@@ -1,0 +1,23 @@
+
+
+cc_library_shared {
+    name: "libforkexecwrap",
+    srcs: ["fork_exec_wrap.c"],
+    proprietary: true,
+    owner: "mtk",
+
+    compile_multilib: "both",
+
+    header_libs: ["netdagent_headers"],
+
+    shared_libs: [
+        "libcutils",
+        "liblog",
+    ],
+
+    cppflags: [
+        "-Werror",
+        "-DMTK_LOGD_ENHANCE",
+    ],
+
+}

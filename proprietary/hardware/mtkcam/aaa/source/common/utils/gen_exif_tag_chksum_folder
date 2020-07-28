@@ -1,0 +1,32 @@
+#!/bin/bash
+
+FILES=$(ls $1/*.h)
+CHKSUMEXE=$2
+
+for file in $FILES; do
+    file_upper_case=$(basename $file .h | tr '[:lower:]' '[:upper:]')
+    
+    if [ ! -f $file ]; then
+        echo >&2 "error: $file is not a file"
+        exit -1
+    fi
+
+    STR=$(cat $file | sed -n '/BEGIN_OF_EXIF_TAG/,/END_OF_EXIF_TAG/p')
+    if [ "$STR" == "" ]; then
+        #echo >&2 "error: $file file format error!!!"
+        continue
+    fi
+
+    NORM=$( echo "$STR" | sed -n -r 's/^\s*(\w[a-zA-Z_0-9]+).*$/\1/p' | tr -d '\r\n')
+    if [ "$NORM" == "" ]; then
+        #echo >&2 "error: $file no entry found!!!"
+        continue
+    fi
+
+
+    if [ $# -ge 2 ] && [ -f $CHKSUMEXE ]; then
+        echo \#define CHKSUM_$file_upper_case 0x$(echo -n "$NORM" | "$CHKSUMEXE")
+    else
+        echo \#define CHKSUM_$file_upper_case 0x$(echo -n "$NORM" | git hash-object --stdin | sed -nr 's/^(........).*$/\1/p')
+    fi
+done

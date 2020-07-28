@@ -1,0 +1,34 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Domestic roaming settings. -->
+    <PreferenceCategory android:title="@string/domestic_roaming_title"
+                        android:key="domestic_roaming_settings">
+
+        <SwitchPreference
+                            android:key="domestic_voice_text_roaming_settings"
+                            android:summary="@string/domestic_voice_text_roam_summary"
+                            android:title="@string/domestic_voice_and_text_roaming"/>
+
+
+        <SwitchPreference
+                            android:key="domestic_data_roaming_settings"
+                            android:summary="@string/domestic_data_roaming_summary"
+                            android:title="@string/domestic_data_roaming"/>
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/international_roaming"
+                        android:key="interantional_roaming_settings">
+
+        <SwitchPreference
+            			  android:key="international_voice_text_roaming_settings"
+                          android:summary="@string/international_voice_text_roam_summary"
+                          android:title="@string/international_voice_and_text_roaming"/>
+
+
+        <SwitchPreference
+                            android:key="international_data_roaming_settings"
+                            android:summary="@string/international_data_roaming_summary"
+                            android:title="@string/international_data_roaming"/>
+    </PreferenceCategory>
+ 
+</PreferenceScreen>

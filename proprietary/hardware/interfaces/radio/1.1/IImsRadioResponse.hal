@@ -1,0 +1,634 @@
+/*
+ * Copyright (C) 2016 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package vendor.mediatek.hardware.radio@1.1;
+
+import android.hardware.radio@1.0::IRadioResponse;
+import android.hardware.radio@1.0::types;
+
+/*
+ * Interface declaring response functions to solicited radio requests.
+ * Response functions defined in this interface are as per following convention:
+ * <xyz>Response is response to IRadio.<xyz>
+ */
+interface IImsRadioResponse extends android.hardware.radio@1.0::IRadioResponse {
+
+    /**
+     * Hang up all response
+     * Response of RIL request "RIL_REQUEST_HANGUP_ALL"
+     *
+     * @param responseInfo Response info struct containing response type, serial no. and error
+     */
+    oneway hangupAllResponse(RadioResponseInfo info);
+
+    /**
+     * Proprietary incoming call handling.
+     * Response of RIL request "RIL_REQUEST_SET_CALL_INDICATION"
+     *
+     * @param responseInfo Response info struct containing response type, serial no. and error
+     */
+    oneway setCallIndicationResponse(RadioResponseInfo info);
+
+    /**
+     * Proprietary ECC handling
+     * Response of RIL Request "RIL_REQUEST_EMERGENCY_DIAL"
+     *
+     * @param info Response info struct containing response type, serial no. and error
+     */
+    oneway emergencyDialResponse(RadioResponseInfo info);
+
+    /**
+     * Proprietary ECC handling
+     * Response of RIL Request "RIL_REQUEST_SET_ECC_SERVICE_CATEGORY"
+     *
+     * @param info Response info struct containing response type, serial no. and error
+     *
+     * Valid errors returned:
+     *   RadioError:NONE
+     *   RadioError:INVALID_ARGUMENTS
+     *   RadioError:GENERIC_FAILURE
+     */
+    oneway setEccServiceCategoryResponse(RadioResponseInfo info);
+
+    /*
+     * Response for 'Accept a video call'
+     * @param info Response info struct containing response type, serial no. and error
+     *
+     * Valid errors returned:
+     *   RadioError:NONE
+     *   RadioError:INVALID_ARGUMENTS
+     *   RadioError:GENERIC_FAILURE
+     */
+    oneway videoCallAcceptResponse(RadioResponseInfo info);
+
+    /*
+     * Response for 'IMS ECT Command'
+     * @param info Response info struct containing response type, serial no. and error
+     *
+     * Valid errors returned:
+     *   RadioError:NONE
+     *   RadioError:INVALID_ARGUMENTS
+     *   RadioError:GENERIC_FAILURE
+     */
+    oneway imsEctCommandResponse(RadioResponseInfo info);
+
+    /*
+     * Response for 'Hold a call'
+     * @param info Response info struct containing response type, serial no. and error
+     *
+     * Valid errors returned:
+     *   RadioError:NONE
+     *   RadioError:INVALID_ARGUMENTS
+     *   RadioError:GENERIC_FAILURE
+     */
+    oneway holdCallResponse(RadioResponseInfo info);
+
+    /*
+     * Response for 'Resume a call'
+     * @param info Response info struct containing response type, serial no. and error
+     *
+     * Valid errors returned:
+     *   RadioError:NONE
+     *   RadioError:INVALID_ARGUMENTS
+     *   RadioError:GENERIC_FAILURE
+     */
+    oneway resumeCallResponse(RadioResponseInfo info);
+
+    /*
+     * Response for 'imsDeregNotification'
+     * @param info Response info struct containing response type, serial no. and error
+     *
+     * Valid errors returned:
+     *   RadioError:NONE
+     *   RadioError:INVALID_ARGUMENTS
+     *   RadioError:GENERIC_FAILURE
+     */
+    oneway imsDeregNotificationResponse(RadioResponseInfo info);
+
+    /*
+     * Response for 'Turn On IMS'
+     * @param info Response info struct containing response type, serial no. and error
+     *
+     * Valid errors returned:
+     *   RadioError:NONE
+     *   RadioError:INVALID_ARGUMENTS
+     *   RadioError:GENERIC_FAILURE
+     */
+    oneway setImsEnableResponse(RadioResponseInfo info);
+
+    /*
+     * Response for 'Turn On VoLTE (Voice on LTE)'
+     * @param info Response info struct containing response type, serial no. and error
+     *
+     * Valid errors returned:
+     *   RadioError:NONE
+     *   RadioError:INVALID_ARGUMENTS
+     *   RadioError:GENERIC_FAILURE
+     */
+    oneway setVolteEnableResponse(RadioResponseInfo info);
+
+
+    /*
+     * Response for 'Turn On WFC (Voice on Wi-Fi)'
+     * @param info Response info struct containing response type, serial no. and error
+     *
+     * Valid errors returned:
+     *   RadioError:NONE
+     *   RadioError:INVALID_ARGUMENTS
+     *   RadioError:GENERIC_FAILURE
+     */
+    oneway setWfcEnableResponse(RadioResponseInfo info);
+
+    /*
+     * Response for 'Turn On Video on LTE'
+     * @param info Response info struct containing response type, serial no. and error
+     *
+     * Valid errors returned:
+     *   RadioError:NONE
+     *   RadioError:INVALID_ARGUMENTS
+     *   RadioError:GENERIC_FAILURE
+     */
+    oneway setVilteEnableResponse(RadioResponseInfo info);
+
+    /*
+     * Response for 'Turn On Video on Wi-Fi'
+     * @param info Response info struct containing response type, serial no. and error
+     *
+     * Valid errors returned:
+     *   RadioError:NONE
+     *   RadioError:INVALID_ARGUMENTS
+     *   RadioError:GENERIC_FAILURE
+     */
+    oneway setViWifiEnableResponse(RadioResponseInfo info);
+
+    /*
+     * Response for 'Turn On IMS Voice'
+     * @param info Response info struct containing response type, serial no. and error
+     *
+     * Valid errors returned:
+     *   RadioError:NONE
+     *   RadioError:INVALID_ARGUMENTS
+     *   RadioError:GENERIC_FAILURE
+     */
+    oneway setImsVoiceEnableResponse(RadioResponseInfo info);
+
+    /*
+     * Response for 'Turn On IMS Video'
+     * @param info Response info struct containing response type, serial no. and error
+     *
+     * Valid errors returned:
+     *   RadioError:NONE
+     *   RadioError:INVALID_ARGUMENTS
+     *   RadioError:GENERIC_FAILURE
+     */
+    oneway setImsVideoEnableResponse(RadioResponseInfo info);
+
+    /*
+     * Response for 'Turn On IMS Video'
+     * @param info Response info struct containing response type, serial no. and error
+     *
+     * Valid errors returned:
+     *   RadioError:NONE
+     *   RadioError:INVALID_ARGUMENTS
+     *   RadioError:GENERIC_FAILURE
+     */
+    oneway setImscfgResponse(RadioResponseInfo info);
+
+    /*
+     * Response for 'Get provision value'
+     * @param info Response info struct containing response type, serial no. and error
+     *
+     * Valid errors returned:
+     *   RadioError:NONE
+     *   RadioError:INVALID_ARGUMENTS
+     *   RadioError:GENERIC_FAILURE
+     */
+    oneway getProvisionValueResponse(RadioResponseInfo info);
+
+    /*
+     * Response for 'Set provision value'
+     * @param info Response info struct containing response type, serial no. and error
+     *
+     * Valid errors returned:
+     *   RadioError:NONE
+     *   RadioError:INVALID_ARGUMENTS
+     *   RadioError:GENERIC_FAILURE
+     */
+    oneway setProvisionValueResponse(RadioResponseInfo info);
+
+    /*
+     * Response for 'Add Conference Member'
+     * @param info Response info struct containing response type, serial no. and error
+     * @param participant Participant
+     *
+     * Valid errors returned:
+     *   RadioError:NONE
+     *   RadioError:INVALID_ARGUMENTS
+     *   RadioError:GENERIC_FAILURE
+     */
+    oneway addImsConferenceCallMemberResponse(RadioResponseInfo info);
+
+    /*
+     * Response for 'Remove Conference Member'
+     * @param info Response info struct containing response type, serial no. and error
+     * @param participant Participant
+     *
+     * Valid errors returned:
+     *   RadioError:NONE
+     *   RadioError:INVALID_ARGUMENTS
+     *   RadioError:GENERIC_FAILURE
+     */
+    oneway removeImsConferenceCallMemberResponse(RadioResponseInfo info);
+
+    /*
+     * Response for 'Set WFC Profile Information'
+     * @param info Response info struct containing response type, serial no. and error
+     *
+     * Valid errors returned:
+     *   RadioError:NONE
+     *   RadioError:INVALID_ARGUMENTS
+     *   RadioError:GENERIC_FAILURE
+     */
+    oneway setWfcProfileResponse(RadioResponseInfo info);
+
+
+
+    /*
+     * Response for 'Conference Dial'
+     * @param info Response info struct containing response type, serial no. and error
+     *
+     * Valid errors returned:
+     *   RadioError:NONE
+     *   RadioError:INVALID_ARGUMENTS
+     *   RadioError:GENERIC_FAILURE
+     */
+    oneway conferenceDialResponse(RadioResponseInfo info);
+
+    /*
+     * Response for 'VT Dial'
+     * @param info Response info struct containing response type, serial no. and error
+     *
+     * Valid errors returned:
+     *   RadioError:NONE
+     *   RadioError:INVALID_ARGUMENTS
+     *   RadioError:GENERIC_FAILURE
+     */
+    oneway vtDialResponse(RadioResponseInfo info);
+
+    /*
+     * Response for 'VT Dial with SIP URI'
+     * @param info Response info struct containing response type, serial no. and error
+     *
+     * Valid errors returned:
+     *   RadioError:NONE
+     *   RadioError:INVALID_ARGUMENTS
+     *   RadioError:GENERIC_FAILURE
+     */
+    oneway vtDialWithSipUriResponse(RadioResponseInfo info);
+
+    /*
+     * Response for 'Dial with SIP URI'
+     * @param info Response info struct containing response type, serial no. and error
+     *
+     * Valid errors returned:
+     *   RadioError:NONE
+     *   RadioError:INVALID_ARGUMENTS
+     *   RadioError:GENERIC_FAILURE
+     */
+    oneway dialWithSipUriResponse(RadioResponseInfo info);
+
+    /*
+     * Response for 'Accept VT Call with voice only'
+     * @param info Response info struct containing response type, serial no. and error
+     *
+     * Valid errors returned:
+     *   RadioError:NONE
+     *   RadioError:INVALID_ARGUMENTS
+     *   RadioError:GENERIC_FAILURE
+     */
+    oneway voiceAcceptResponse(RadioResponseInfo info);
+
+    /*
+     * Response for 'Replace VT Call'
+     * @param info Response info struct containing response type, serial no. and error
+     *
+     * Valid errors returned:
+     *   RadioError:NONE
+     *   RadioError:INVALID_ARGUMENTS
+     *   RadioError:GENERIC_FAILURE
+     */
+    oneway replaceVtCallResponse(RadioResponseInfo info);
+
+    /*
+     * Response for 'Send USSI'
+     * @param info Response info struct containing response type, serial no. and error
+     *
+     * Valid errors returned:
+     *   RadioError:NONE
+     *   RadioError:INVALID_ARGUMENTS
+     *   RadioError:GENERIC_FAILURE
+     */
+    oneway sendUssiResponse(RadioResponseInfo info);
+
+    /*
+     * Response for 'Cancel Pending USSI'
+     * @param info Response info struct containing response type, serial no. and error
+     *
+     * Valid errors returned:
+     *   RadioError:NONE
+     *   RadioError:INVALID_ARGUMENTS
+     *   RadioError:GENERIC_FAILURE
+     */
+    oneway cancelUssiResponse(RadioResponseInfo info);
+
+    /*
+     * Response for 'Force Hangup'
+     * @param info Response info struct containing response type, serial no. and error
+     *
+     * Valid errors returned:
+     *   RadioError:NONE
+     *   RadioError:INVALID_ARGUMENTS
+     *   RadioError:GENERIC_FAILURE
+     */
+    oneway forceReleaseCallResponse(RadioResponseInfo info);
+
+    /*
+     * Response for 'Response message of 'Bearer Activiation Done''
+     * @param info Response info struct containing response type, serial no. and error
+     *
+     * Valid errors returned:
+     *   RadioError:NONE
+     *   RadioError:INVALID_ARGUMENTS
+     *   RadioError:GENERIC_FAILURE
+     */
+    oneway imsBearerActivationDoneResponse(RadioResponseInfo info);
+
+    /*
+     * Response for 'Response message of 'Bearer Activiation Done''
+     * @param info Response info struct containing response type, serial no. and error
+     *
+     * Valid errors returned:
+     *   RadioError:NONE
+     *   RadioError:INVALID_ARGUMENTS
+     *   RadioError:GENERIC_FAILURE
+     */
+    oneway imsBearerDeactivationDoneResponse(RadioResponseInfo info);
+
+    /*
+     * Response for 'Set IMS Call Status'
+     * @param info Response info struct containing response type, serial no. and error
+     *
+     * Valid errors returned:
+     *   RadioError:NONE
+     *   RadioError:INVALID_ARGUMENTS
+     *   RadioError:GENERIC_FAILURE
+     */
+    oneway setImsCallStatusResponse(RadioResponseInfo info);
+
+    /*
+     * Response for 'Update Ims Registration Status'
+     * @param info Response info struct containing response type, serial no. and error
+     *
+     * Valid errors returned:
+     *   RadioError:NONE
+     *   RadioError:INVALID_ARGUMENTS
+     *   RadioError:GENERIC_FAILURE
+     */
+    oneway updateImsRegistrationStatusResponse(RadioResponseInfo info);
+
+    /*
+     * Response for 'Set IMS Report'
+     * @param info Response info struct containing response type, serial no. and error
+     *
+     * Valid errors returned:
+     *   RadioError:NONE
+     *   RadioError:INVALID_ARGUMENTS
+     *   RadioError:GENERIC_FAILURE
+     */
+    oneway setImsRtpReportResponse(RadioResponseInfo info);
+
+    /*
+     * Response for 'Pull Call'
+     * @param info Response info struct containing response type, serial no. and error
+     *
+     * Valid errors returned:
+     *   RadioError:NONE
+     *   RadioError:INVALID_ARGUMENTS
+     *   RadioError:GENERIC_FAILURE
+     */
+    oneway pullCallResponse(RadioResponseInfo info);
+
+    /*
+     * Response for 'setImsRegistrationReport'
+     * @param info Response info struct containing response type, serial no. and error
+     *
+     * Valid errors returned:
+     *   RadioError:NONE
+     *   RadioError:INVALID_ARGUMENTS
+     *   RadioError:GENERIC_FAILURE
+     */
+    oneway setImsRegistrationReportResponse(RadioResponseInfo info);
+
+    /*
+     * Response for 'Set IMS Voice domain preference'
+     * @param info Response info struct containing response type, serial no. and error
+     *
+     * Valid errors returned:
+     *   RadioError:NONE
+     *   RadioError:INVALID_ARGUMENTS
+     *   RadioError:GENERIC_FAILURE
+     */
+    oneway setVoiceDomainPreferenceResponse(RadioResponseInfo info);
+
+    /* MTK SS Feature : Start */
+    /**
+     * The response of Set CLIP (Calling Line Identification Presentation)
+     *
+     * @param info Response info struct containing response type, serial no. and error
+     *
+     * Valid errors returned:
+     *   RadioError:NONE
+     *   RadioError:INVALID_ARGUMENTS
+     *   RadioError:RADIO_NOT_AVAILABLE
+     *   RadioError:SS_MODIFIED_TO_DIAL
+     *   RadioError:SS_MODIFIED_TO_USSD
+     *   RadioError:SS_MODIFIED_TO_SS
+     *   RadioError:INVALID_ARGUMENTS
+     *   RadioError:SYSTEM_ERR
+     *   RadioError:GENERIC_FAILURE
+     */
+    oneway setClipResponse(RadioResponseInfo info);
+
+    /**
+     * The response of Query COLP (Connected Line Identification Presentation)
+     *
+     * @param info Response info struct containing response type, serial no. and error
+     * @param n Parameter sets/shows the result code presentation status to the TE.
+     *        "0" means disabled, "1" means enabled.
+     * @param m Parameter shows the subscriber COLP service status in the network
+     *        "0" means not provisioned, "1" means provisioned in permanent mode
+     *
+     * Valid errors returned:
+     *   RadioError:NONE
+     *   RadioError:INVALID_ARGUMENTS
+     *   RadioError:RADIO_NOT_AVAILABLE
+     *   RadioError:SS_MODIFIED_TO_DIAL
+     *   RadioError:SS_MODIFIED_TO_USSD
+     *   RadioError:SS_MODIFIED_TO_SS
+     *   RadioError:NO_MEMORY
+     *   RadioError:MODEM_ERR
+     *   RadioError:INTERNAL_ERR
+     *   RadioError:FDN_CHECK_FAILURE
+     *   RadioError:SYSTEM_ERR
+     *   RadioError:GENERIC_FAILURE
+     */
+    oneway getColpResponse(RadioResponseInfo info, int32_t n, int32_t m);
+
+    /**
+     * The response of Query COLR (Connected Line Identification Restriction)
+     *
+     * @param info Response info struct containing response type, serial no. and error
+     * @param n COLR status in network. "0" means not provisioned, "1" means provisioned,
+     *        "2" means unknown
+     *
+     * Valid errors returned:
+     *   RadioError:NONE
+     *   RadioError:INVALID_ARGUMENTS
+     *   RadioError:RADIO_NOT_AVAILABLE
+     *   RadioError:SS_MODIFIED_TO_DIAL
+     *   RadioError:SS_MODIFIED_TO_USSD
+     *   RadioError:SS_MODIFIED_TO_SS
+     *   RadioError:NO_MEMORY
+     *   RadioError:MODEM_ERR
+     *   RadioError:INTERNAL_ERR
+     *   RadioError:FDN_CHECK_FAILURE
+     *   RadioError:SYSTEM_ERR
+     *   RadioError:GENERIC_FAILURE
+     */
+    oneway getColrResponse(RadioResponseInfo info, int32_t n);
+
+    /**
+     * The response of Set COLP
+     *
+     * @param info Response info struct containing response type, serial no. and error
+     *
+     * Valid errors returned:
+     *   RadioError:NONE
+     *   RadioError:INVALID_ARGUMENTS
+     *   RadioError:RADIO_NOT_AVAILABLE
+     *   RadioError:SS_MODIFIED_TO_DIAL
+     *   RadioError:SS_MODIFIED_TO_USSD
+     *   RadioError:SS_MODIFIED_TO_SS
+     *   RadioError:INVALID_ARGUMENTS
+     *   RadioError:SYSTEM_ERR
+     *   RadioError:GENERIC_FAILURE
+     */
+    oneway setColpResponse(RadioResponseInfo info);
+
+    /**
+     * The response of Set COLR
+     *
+     * @param info Response info struct containing response type, serial no. and error
+     *
+     * Valid errors returned:
+     *   RadioError:NONE
+     *   RadioError:INVALID_ARGUMENTS
+     *   RadioError:RADIO_NOT_AVAILABLE
+     *   RadioError:SS_MODIFIED_TO_DIAL
+     *   RadioError:SS_MODIFIED_TO_USSD
+     *   RadioError:SS_MODIFIED_TO_SS
+     *   RadioError:INVALID_ARGUMENTS
+     *   RadioError:SYSTEM_ERR
+     *   RadioError:GENERIC_FAILURE
+     */
+    oneway setColrResponse(RadioResponseInfo info);
+
+    /**
+     * @param info Response info struct containing response type, serial no. and error
+     * @param callForwardInfoExs points to a vector of CallForwardInfoEx, one for
+     *        each distinct registered phone number.
+     *
+     *
+     * Valid errors returned:
+     *   RadioError:NONE
+     *   RadioError:RADIO_NOT_AVAILABLE
+     *   RadioError:SS_MODIFIED_TO_DIAL
+     *   RadioError:SS_MODIFIED_TO_USSD
+     *   RadioError:SS_MODIFIED_TO_SS
+     *   RadioError:INVALID_ARGUMENTS
+     *   RadioError:NO_MEMORY
+     *   RadioError:SYSTEM_ERR
+     *   RadioError:MODEM_ERR
+     *   RadioError:INTERNAL_ERR
+     *   RadioError:FDN_CHECK_FAILURE
+     *   RadioError:REQUEST_NOT_SUPPORTED
+     *   RadioError:SYSTEM_ERR
+     */
+    oneway queryCallForwardInTimeSlotStatusResponse(RadioResponseInfo info,
+            vec<CallForwardInfoEx> callForwardInfoExs);
+
+    /**
+     * @param info Response info struct containing response type, serial no. and error
+     *
+     * Valid errors returned:
+     *   RadioError:NONE
+     *   RadioError:RADIO_NOT_AVAILABLE
+     *   RadioError:SS_MODIFIED_TO_DIAL
+     *   RadioError:SS_MODIFIED_TO_USSD
+     *   RadioError:SS_MODIFIED_TO_SS
+     *   RadioError:INVALID_ARGUMENTS
+     *   RadioError:NO_MEMORY
+     *   RadioError:SYSTEM_ERR
+     *   RadioError:MODEM_ERR
+     *   RadioError:INTERNAL_ERR
+     *   RadioError:INVALID_STATE
+     *   RadioError:FDN_CHECK_FAILURE
+     *   RadioError:REQUEST_NOT_SUPPORTED
+     *   RadioError:INVALID_MODEM_STATE
+     */
+    oneway setCallForwardInTimeSlotResponse(RadioResponseInfo info);
+
+    /*
+     * Response for 'runGbaAuthentication'
+     * @param resList A response string list
+     *
+     * Valid errors returned:
+     *   RadioError:NONE
+     *   RadioError:RADIO_NOT_AVAILABLE
+     *   RadioError:SS_MODIFIED_TO_DIAL
+     *   RadioError:SS_MODIFIED_TO_USSD
+     *   RadioError:SS_MODIFIED_TO_SS
+     *   RadioError:INVALID_ARGUMENTS
+     *   RadioError:NO_MEMORY
+     *   RadioError:SYSTEM_ERR
+     *   RadioError:MODEM_ERR
+     *   RadioError:INTERNAL_ERR
+     *   RadioError:FDN_CHECK_FAILURE
+     *   RadioError:REQUEST_NOT_SUPPORTED
+     *   RadioError:SYSTEM_ERR
+     */
+    oneway runGbaAuthenticationResponse(RadioResponseInfo info, vec<string> resList);
+    /* MTK SS Feature : End */
+
+    /**
+     * Response of IRadio.setModemImsCfg()
+     *
+     * @param info Response info struct containing response type, serial no. and error
+     * @param results The result (integers) for each configurations (0: success, -1: fail)
+     *
+     */
+    oneway setModemImsCfgResponse(RadioResponseInfo info, string results);
+};

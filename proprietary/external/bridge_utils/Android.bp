@@ -1,0 +1,41 @@
+cc_library_static {
+    srcs: [
+        "libbridge/libbridge_devif.c",
+        "libbridge/libbridge_if.c",
+        "libbridge/libbridge_init.c",
+        "libbridge/libbridge_misc.c",
+    ],
+    shared_libs: [
+        "libcutils",
+        "libc",
+        "liblog",
+    ],
+    local_include_dirs: [
+        "libbridge",
+        "src",
+    ],
+    proprietary: true,
+    owner: "mtk",
+    name: "libbrctl",
+}
+
+cc_binary {
+    srcs: [
+        "src/brctl.c",
+        "src/brctl_cmd.c",
+        "src/brctl_disp.c",
+    ],
+    shared_libs: [
+        "libcutils",
+        "libc",
+        "liblog",
+    ],
+    static_libs: ["libbrctl"],
+    local_include_dirs: [
+        "libbridge",
+        "src",
+    ],
+    proprietary: true,
+    owner: "mtk",
+    name: "brctl",
+}

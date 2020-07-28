@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:androidprv="http://schemas.android.com/apk/prv/res/android"
+        package="com.mediatek.carrierexpress"
+        coreApp="true"
+        android:sharedUserId="android.uid.system">
+    <permission
+        android:label="CarrierExpress usage"
+        android:name="com.mediatek.carrierexpress.permission.USAGE"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="android.permission.READ_PRECISE_PHONE_STATE"/>
+    <uses-permission android:name="android.Manifest.permission.READ_PRIVILEGED_PHONE_STATE"/>
+    <uses-permission android:name="android.Manifest.permission.INTERACT_ACROSS_USERS_FULL"/>
+    <uses-permission android:name="android.Manifest.permission.REAL_GET_TASKS"/>
+    <uses-permission android:name="android.Manifest.permission.KILL_BACKGROUND_PROCESSES"/>
+    <uses-permission android:name="android.Manifest.permission.KILL_UID"/>
+    <uses-permission android:name="android.Manifest.permission.FORCE_STOP_PACKAGES"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
+    <application>
+        <receiver android:name="CarrierExpressReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.SIM_STATE_CHANGED"/>
+                <action android:name="android.telephony.action.SIM_APPLICATION_STATE_CHANGED"/>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+        <service android:name="com.mediatek.carrierexpress.CarrierExpressApp"
+            android:permission="com.mediatek.carrierexpress.permission.USAGE"
+            android:exported="true">
+        </service>
+    </application>
+</manifest>

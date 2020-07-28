@@ -1,0 +1,29 @@
+Bin of Drm test features, including print detail.
+
+
+WHAT IT DOES?
+=============
+dumpOmaDrmRights will be used by drm, it test drm rights is valid or invalid.
+
+HOW IT WAS BUILT?
+==================
+It needs the following library from AOSP:
+1. libicui18n.so
+2. libicuuc.so
+3. libutils.so
+4. libcutils.so
+5. libdl.so
+6. libcrypto.so
+7. libssl.so
+8. libdrmframework.so
+
+and the following libs from MediaTek:
+1. libdrmmtkwhitelist.so
+2. libdrmmtkutil.so
+
+All source/dependency modules of this module are already put in
+'system/lib' folder.
+
+HOW TO USE IT?
+==============
+dumpOmaDrmRights provides drm rights test.

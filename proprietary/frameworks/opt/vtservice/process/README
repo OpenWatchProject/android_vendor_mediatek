@@ -1,0 +1,42 @@
+This module creates the VT (Video Telephony) libraries.
+
+This library is pre-built by MediaTek internally.
+
+WHAT IT DOES?
+=============
+VT is a native service which serves the video telephony functionality.
+The service work on both 3G/4G network.
+For 3G network, the serivce implement 3g324m stack and pass the media package to Modem.
+For 4G network, the service communicate between Phone APK, Multimedia, IMS module.
+
+libmtk_vt_swip.so contain the 3g324m stack.
+libmtk_vt_utils.so contain the utility API for VT module usage.
+libmtk_vt_service.so contain the main interface for Phone APK & the module to handle the communication interface between IMS & Multimedia.
+libvt_avsync.so contain interface for AV sync functionality when receiving data.
+vtservice bin file is the entry of the video telephony service.
+
+HOW IT WAS BUILT?
+==================
+It needs the following library from AOSP:
+
+libutils, libcutils, libstagefright, libandroid_runtime, libbinder,
+libnativehelper, libui, libgui, libmedia, libstagefright_foundation,
+libcamera_client, libskia and libblisrc
+        											    											    
+libEGL, libGLESv2, libandroid, libcutils, liblog, libstlport and libutils
+
+and the following libs from MediaTek:
+
+libimsma.so 
+libsource.so
+libimsma_rtp.so
+
+HOW TO USE IT?
+==============
+
+The VT libraries should not be used directly by an application developer.  
+The AOSP video call provider framework provides a more suitable API.
+(frameworks\base\telecomm\java\android\telecom).
+
+The majority of source code for this library were written by MediaTek.  
+Various open source libraries are also used and contained in this folder.

@@ -1,0 +1,30 @@
+MFNR middleware
+
+
+WHAT IT DOES?
+=============
+
+A platform-dependent MFNR middleware that
+interacts with Camera HAL and MFNR HAL.
+
+
+HOW IT WAS BUILT?
+==================
+
+It needs the following libs from AOSP:
+1. libutils.so
+2. libcutils.so
+
+and the following libs from MediaTek:
+1. libmfllcore
+
+All source/dependency modules of this module are already put in
+'vendor/mediatek/libs' folder.
+
+
+HOW TO USE IT?
+==============
+
+Provide MFNR-related APIs for Camera HAL v1.0
+
+All the source code of this program were written by MediaTek co..

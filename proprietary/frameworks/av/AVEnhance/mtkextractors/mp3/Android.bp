@@ -1,0 +1,48 @@
+cc_library_shared {
+
+    srcs: [
+            "MtkMP3Extractor.cpp",
+            "VBRISeeker.cpp",
+            "XINGSeeker.cpp",
+            "mtkext/MtkMP3ExtractorExt.cpp",
+    ],
+
+    include_dirs: [
+        "frameworks/av/media/libstagefright/include",
+        "vendor/mediatek/proprietary/frameworks/av/AVEnhance/libmtkavenhancements",
+    ],
+
+    shared_libs: [
+        "libmtkavenhancements",
+        "liblog",
+        "libmediandk",
+    ],
+
+    static_libs: [
+        "libutils",
+        "libstagefright_id3",
+        "libstagefright_foundation",
+    ],
+
+    name: "libmtkmp3extractor",
+    owner: "mtk",
+    relative_install_path: "extractors",
+
+    compile_multilib: "first",
+
+    cflags: [
+        "-Werror",
+        "-Wall",
+        "-fvisibility=hidden",
+    ],
+    version_script: "exports.lds",
+
+    sanitize: {
+        cfi: true,
+        misc_undefined: [
+            "unsigned-integer-overflow",
+            "signed-integer-overflow",
+        ],
+    },
+
+}

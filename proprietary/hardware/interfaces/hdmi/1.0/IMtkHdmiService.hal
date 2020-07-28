@@ -1,0 +1,62 @@
+package vendor.mediatek.hardware.hdmi@1.0;
+
+import types;
+
+interface IMtkHdmiService {
+
+    /**
+     * Get TV Edid
+     *
+     * @return a struct contains information of edid.
+     */
+    get_resolution_mask() generates (Result retval, EDID_t edid);
+
+    /**
+     * enable HDCP check
+     *
+     * @param enable true:enable false:disable
+     */
+    enable_hdcp(bool enable) generates (Result retval);
+
+    /**
+     * enable hdmi function
+     *
+     * @param enable true:power on false:power off
+     */
+    enable_hdmi(bool enable) generates (Result retval);
+
+    /**
+     * set hdmi video resolution
+     *
+     * @param resolution the resolution selected by user or auto selected
+     */
+    set_video_resolution(int32_t resolution) generates (Result retval);
+
+    /**
+     * set hdmi force hdr enable
+     *
+     * @param enable false:set hdmi hdr ioctl as HDMI_FORCE_DEFAULT true:set hdmi hdr ioctl as HDMI_FORCE_HDR
+     */
+    enable_hdmi_hdr(bool enable) generates (Result retval);
+
+    /**
+     * set auto mode
+     *
+     * @param enable false:set hdmi auto mode 0; true:set hdmi auto mode 1
+     */
+    set_auto_mode(bool enable) generates (Result retval);
+
+    /**
+     * set color format
+     *
+     * @param color_format 0:rgb  ;1:ycbcr
+     */
+    set_color_format(int32_t color_format) generates (Result retval);
+
+    /**
+     * set color depth
+     *
+     * @param color_depth£º0:8bit; 1:10bit; 2:12bit
+     */
+    set_color_depth(int32_t color_depth) generates (Result retval);
+};

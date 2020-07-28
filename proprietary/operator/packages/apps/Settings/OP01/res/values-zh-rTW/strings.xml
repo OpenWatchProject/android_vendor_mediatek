@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--* Copyright Statement:
+ *
+ * This software/firmware and related documentation ("MediaTek Software") are
+ * protected under relevant copyright laws. The information contained herein
+ * is confidential and proprietary to MediaTek Inc. and/or its licensors.
+ * Without the prior written permission of MediaTek inc. and/or its licensors,
+ * any reproduction, modification, use or disclosure of MediaTek Software,
+ * and information contained herein, in whole or in part, shall be strictly prohibited.
+ *
+ * MediaTek Inc. (C) 2017 All rights reserved.
+ *
+ * BY OPENING THIS FILE, RECEIVER HEREBY UNEQUIVOCALLY ACKNOWLEDGES AND AGREES
+ * THAT THE SOFTWARE/FIRMWARE AND ITS DOCUMENTATIONS ("MEDIATEK SOFTWARE")
+ * RECEIVED FROM MEDIATEK AND/OR ITS REPRESENTATIVES ARE PROVIDED TO RECEIVER ON
+ * AN "AS-IS" BASIS ONLY. MEDIATEK EXPRESSLY DISCLAIMS ANY AND ALL WARRANTIES,
+ * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE OR NONINFRINGEMENT.
+ * NEITHER DOES MEDIATEK PROVIDE ANY WARRANTY WHATSOEVER WITH RESPECT TO THE
+ * SOFTWARE OF ANY THIRD PARTY WHICH MAY BE USED BY, INCORPORATED IN, OR
+ * SUPPLIED WITH THE MEDIATEK SOFTWARE, AND RECEIVER AGREES TO LOOK ONLY TO SUCH
+ * THIRD PARTY FOR ANY WARRANTY CLAIM RELATING THERETO. RECEIVER EXPRESSLY ACKNOWLEDGES
+ * THAT IT IS RECEIVER'S SOLE RESPONSIBILITY TO OBTAIN FROM ANY THIRD PARTY ALL PROPER LICENSES
+ * CONTAINED IN MEDIATEK SOFTWARE. MEDIATEK SHALL ALSO NOT BE RESPONSIBLE FOR ANY MEDIATEK
+ * SOFTWARE RELEASES MADE TO RECEIVER'S SPECIFICATION OR TO CONFORM TO A PARTICULAR
+ * STANDARD OR OPEN FORUM. RECEIVER'S SOLE AND EXCLUSIVE REMEDY AND MEDIATEK'S ENTIRE AND
+ * CUMULATIVE LIABILITY WITH RESPECT TO THE MEDIATEK SOFTWARE RELEASED HEREUNDER WILL BE,
+ * AT MEDIATEK'S OPTION, TO REVISE OR REPLACE THE MEDIATEK SOFTWARE AT ISSUE,
+ * OR REFUND ANY SOFTWARE LICENSE FEES OR SERVICE CHARGE PAID BY RECEIVER TO
+ * MEDIATEK FOR SUCH MEDIATEK SOFTWARE AT ISSUE.
+ *
+ * The following software/firmware and/or related documentation ("MediaTek Software")
+ * have been modified by MediaTek Inc. All revisions are subject to any receiver's
+ * applicable license agreements with MediaTek Inc.
+ */  -->
+
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <!--Wifi Settings String start-->
+    <string name="wifi_security_cmcc">加密方式</string>
+    <string name="proxy_exclusionlist_label_cmcc">繞行代理</string>
+    <string name="wifi_priority_label">優先順序</string>
+    <string name="status_unavailable">無法使用</string>
+    <string name="wifi_gateway">閘道</string>
+    <string name="wifi_network_netmask">"網路遮罩"</string>
+    <string name="wifi_connect_type_title">設置網絡連接方法</string>
+    <string name="wifi_signal_found_msg">當前 Wi-Fi 連線信號較弱，是否切換到其他 Wi-Fi 網絡?</string>
+    <string name="wifi_priority_type_title">手動設定 AP 優先順序</string>
+    <string name="wifi_priority_type_summary">可手動設定各 AP 的優先順序</string>
+    <string name="wifi_priority_settings_title">AP 優先順序設定</string>
+    <string name="wifi_priority_settings_summary">按一下即可設定各 AP 的優先順序</string>
+    <string name="wifi_priority_changed">原優先级=<xliff:g id="old_value">%s</xliff:g>，新設定=<xliff:g id="new_value">%s</xliff:g></string>
+    <string name="wifi_priority_settings_label">優先順序設定</string>
+    <string name="wifi_priority_missing_app">"找不到可以處理這個動作的應用程式。"</string>
+    <string name="wifi_configured_ap_list">已記憶的 AP 清單</string>
+    <string name="confirm_title">確認</string>
+    <string name="msg_wlan_signal_found">發现 WLAN 信号 %s, 您是否要使用该 WLAN 網路？ 使用该网络将部分中断目前的数据連線。</string> 
+    <string name="msg_wlan_signal_found_manul">發现 WLAN 信号, 是否要使用 WLAN 網路？</string>
+    <string name="gemini_default_sim_auto">自動</string>
+    <string name="wifi_settings" msgid="29722149822540994">"Wi‑Fi"</string>
+    <string name="wifi_menu_disconnect">中斷網路連線</string>
+    <string name="flight_mode_title">啟用飛航模式</string>
+    <string name="msg_flight_mode_notify">若要在飛航模式下使用WLAN等連接性功能，請在設置或通知面板中將其開啟。</string>
+    <string name="mark_no_remind">下次不再提醒</string>
+    <string name="setting_remind_title">提示</string>
+    <string name="msg_wifi_hotspot_notify">資料連結暫未開啟。開啟后可讓便攜式WLAN熱點有效的工作。</string>
+    <string name="wifi_disconnect">中斷連線</string>
+    <string name="wifi_reminder_frequency_title">提示對話框彈出頻次</string>
+    <string name="wifi_cmcc_costs_title">WLAN費用</string>
+    <string name="wifi_cmcc_costs_msg">已連接中國移動WLAN，繼續使用有可能產生WLAN流量費用。</string>
+    <string name="wifi_count_down_sec">(<xliff:g id="time_sec">%1$s</xliff:g>秒后對話框自動消失。)</string>
+    <!--Wifi Settings String End-->
+
+    <!-- Change data connection -->
+    <string name="change_data_conn_title">切換行動網路</string>
+    <string name="change_data_conn_message">行動網路無法使用，是否切換到</string>
+    <string name="change_data_conn_progress_message">"請稍候…"</string>
+    <string name="change_data_conn_alert_volte">"包括VoLTE在內的4G業務將不可用。是否繼續？"</string>
+    <string name="change_data_conn_alert_rcs">"包括RCS在內的4G業務將不可用。是否繼續？"</string>
+    <string name="change_data_conn_alert">"包括VoLTE和RCS在內的4G業務將不可用。是否繼續？"</string>
+    <string name="data_switch_started">"正在切換行動數據連線 SIM 卡，這可能需要一點時間..."</string>
+
+    <string name="privacy_settings">重設</string>
+    <string name="configed_access_points">信任接入點</string>
+    <string name="new_access_points">未知接入點</string>
+
+    <!--CMCC DM setting String begin-->
+    <string name="cmcc_dm_settings_title">"增強售後服務權限"</string>
+    <string name="cmcc_dm_settings_enable_summary">"允許開機自啓動"</string>
+    <string name="cmcc_dm_settings_disable_summary">"禁止開機自啓動"</string>
+    <!--CMCC DM setting String End-->
+    <!--Agps String begin-->
+    <string name="agps_settings_title">A-GPS 設定</string>
+    <string name="gps_settings_title">GPS 設定</string>
+    <string name="location_settings_title">"位置資訊存取"</string>
+
+    <string name="agps_OK">確定</string>
+    <string name="agps_enable_confirm_title">A-GPS 開啟確認</string>
+    <string name="agps_enable_confirm">使用 A-GPS 將產生數據流量, 您確定要打開 A-GPS 功能嗎?</string>
+    <string name="agps_enable_confirm_allow">繼續</string>
+    <string name="agps_enable_confirm_deny">取消</string>
+    <string name="agps_settings_enable_on">GPS可以透過無線網路取得輔助資料以加速定位時間</string>
+    <string name="agps_settings_enable_off">使用輔助資料來加速GPS定位時間</string>
+    <string name="agps_settings_eng_enable">A-GPS 設定</string>
+    <string name="agps_settings_eng_summary">修改A-GPS設定</string>
+    <string name="Network_Initiate">網路定位請求</string>
+    <string name="Network_Initiate_Summary_on">允許網路請求所在位置</string>
+    <string name="Network_Initiate_Summary_off">拒絕網路請求所在位置</string>
+    <string name="Network_Used">使用網路</string>
+    <string name="AgpsHelp_Category">小幫手</string>
+    <string name="about_agps_title">關於 A-GPS</string>
+    <string name="about_agps_message">\t A-GPS (輔助 GPS) 乃是改善啟動效能和 GPS 衛星首次定位時間 (TTFF) 的系統。\n\t 具備 A-GPS 功能的裝置可透過行動網路資料連線來連接位置伺服器，並取得輔助資料。 \n\t 請注意，網路漫遊時，資料流量的費用較為昂貴。請聯絡您的通訊業者瞭解詳情。</string>
+    <string name="Network_Local_and_Roaming_Summary">在主網路及漫遊網路中都使用 A-GPS</string>
+    <string name="Network_Only_Local_Summary">僅在主網路中使用 A-GPS</string>
+    <string name="Network_Roaming_dialog_title">注意</string>
+    <string name="Network_Roaming_dialog_content">在漫遊網路下使用 A-GPS 可能會產生額外的通信費用。</string>
+    <!--Agps String end-->
+
+    <!--add default_data_switch_err_msg1 Start-->
+    <string name="default_data_switch_err_msg1">通話中無法切換到喜好的 SIM 卡進行數據通訊。</string>
+    <!--add default_data_switch_err_msg1 End-->
+
+    <!--Application Settings String Start-->
+    <string name="launch_main_label">啟動應用程式</string>
+    <string name="launch_main">用主活動啟動應用程式</string>
+    <!--Application Settings String End-->
+
+    <string name="lock_screen_type">快速鎖屏</string>
+
+    <string name="menu_stats_refresh">"重新整理"</string>
+
+    <string name="model_summary" msgid="8306235877567782987">"型號：%1$s"</string>
+
+    <string name="data_service_summary">非數據SIM卡進行VoLTE通話時，將用於數據服務。</string>
+    <string name="data_service_prompt">非數據SIM卡進行VoLTE通話時，將用於數據服務，導致SIM卡額外的數據用途。</string>
+</resources>

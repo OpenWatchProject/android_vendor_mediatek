@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <LinearLayout
+        style="@style/PipSettingLayout"
+        android:orientation="vertical">
+
+        <SlidingDrawer
+            android:id="@+id/drawer1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:content="@+id/pip_setting_scroller"
+            android:handle="@+id/pip_indicator"
+            android:orientation="vertical" >
+
+            <ImageView
+                android:id="@id/pip_indicator"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/pip_setting_content"
+                android:scaleType="center"
+                android:clickable="true"
+                android:focusable="true"
+                android:padding="10dip"
+                android:background="@drawable/bg_pressed"
+                android:src="@drawable/land_open_row"/>
+
+            <HorizontalScrollView
+                android:id="@id/pip_setting_scroller"
+                style="@style/PipSettingScroll" >
+
+                <LinearLayout
+                    android:id="@+id/pip_setting_content"
+                    style="@style/PipSettingGroup"
+                    android:splitMotionEvents="false" >
+
+                    <LinearLayout
+                        android:id="@+id/item_layout1"
+                        style="@style/PipItemLayout" >
+
+                        <com.mediatek.camera.ui.RotateImageView
+                            android:id="@+id/pip_cubism"
+                            style="@style/PipSettingIcon"
+                            android:contentDescription="@string/accessibility_switch_to_camera" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/item_layout2"
+                        style="@style/PipItemLayout" >
+
+                        <com.mediatek.camera.ui.RotateImageView
+                            android:id="@+id/pip_fisheye"
+                            style="@style/PipSettingIcon"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/item_layout3"
+                        style="@style/PipItemLayout" >
+
+                        <com.mediatek.camera.ui.RotateImageView
+                            android:id="@+id/pip_heart"
+                            style="@style/PipSettingIcon" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/item_layout4"
+                        style="@style/PipItemLayout" >
+
+                        <com.mediatek.camera.ui.RotateImageView
+                            android:id="@+id/pip_instantphoto"
+                            style="@style/PipSettingIcon"
+                            android:contentDescription="@string/accessibility_switch_to_face_beauty" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/item_layout5"
+                        style="@style/PipItemLayout" >
+
+                        <com.mediatek.camera.ui.RotateImageView
+                            android:id="@+id/pip_ovalblur"
+                            style="@style/PipSettingIcon"
+                            android:contentDescription="@string/accessibility_switch_to_panorama" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/item_layout6"
+                        style="@style/PipItemLayout" >
+
+                        <com.mediatek.camera.ui.RotateImageView
+                            android:id="@+id/pip_postcard"
+                            style="@style/PipSettingIcon" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/item_layout7"
+                        style="@style/PipItemLayout" >
+
+                        <com.mediatek.camera.ui.RotateImageView
+                            android:id="@+id/pip_split"
+                            style="@style/PipSettingIcon" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/item_layout8"
+                        style="@style/PipItemLayout" >
+
+                        <com.mediatek.camera.ui.RotateImageView
+                            android:id="@+id/pip_window"
+                            style="@style/PipSettingIcon" />
+                    </LinearLayout>
+                </LinearLayout>
+            </HorizontalScrollView>
+        </SlidingDrawer>
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,30 @@
+The bin file modemdbfilter_service is a daemon service.
+This bin is pre-built by MediaTek internal.
+
+
+WHAT IT DOES?
+=============
+
+modemdbfilter_service is HIDL service to copy modem db and filter from vendor image to data.
+
+HOW IT WAS BUILT?
+==================
+It needs the following library from AOSP:
+1.  libutils.so
+2.  libcutils.so
+3.  libbase.so
+5.  libhidltransport.so
+6.  libhardware.so
+7.  liblog
+8.  libhidlbase
+
+All source/dependency modules of this module are already put in
+'vendor/mediatek/libs' folder.
+1.  vendor.mediatek.hardware.modemdbfilter@1.0.so
+
+HOW TO USE IT?
+==============
+
+This bin file is lazy hidl service. and it's started when system HIDL client getservive
+
+All the source code of this module were written by MediaTek co..

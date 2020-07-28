@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:minHeight="?android:attr/listPreferredItemHeight"
+    android:paddingRight="?android:attr/scrollbarSize"
+    android:gravity="center_vertical">
+
+    <TextView android:id="@+android:id/title" 
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="20dip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="?android:attr/textColorPrimary"
+        />
+    <TextView android:id="@+android:id/summary" 
+        android:layout_alignLeft="@android:id/title"
+        android:layout_below="@android:id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="?android:attr/textColorPrimary"
+        />
+    <Switch android:id="@+id/log_selected"
+        style="@style/ImageSwitch"
+        android:clickable="true"
+        android:focusable="false"
+        android:layout_alignParentRight="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textOff=""
+        android:textOn=""
+        />
+</RelativeLayout>

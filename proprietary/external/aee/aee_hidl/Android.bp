@@ -1,0 +1,25 @@
+cc_binary {
+    name: "vendor.mediatek.hardware.log@1.0-service",
+    init_rc: ["vendor.mediatek.hardware.log@1.0-service.rc"],
+    relative_install_path: "hw",
+    vendor: true,
+    srcs: [
+        "aee_hidl_service.cpp",
+        "service.cpp",
+    ],
+    cflags: [
+        "-Wall",
+        "-Werror",
+    ],
+
+    shared_libs: [
+        "vendor.mediatek.hardware.log@1.0",
+        "libbase",
+        "libcutils",
+        "libdumpstateutil",
+        "libhidlbase",
+        "liblog",
+        "libutils",
+    ],
+
+}

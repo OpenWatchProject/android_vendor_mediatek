@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2007 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+--><resources>
+
+    <string-array name="reminder_methods_labels">
+        <item>Benachrichtigung</item>
+        <item>E-Mail</item>
+        <item>SMS</item>
+        <item>Alarm</item>
+    </string-array>
+
+    <integer-array name="reminder_methods_values" translatable="false">
+        <item>1</item>  <!-- METHOD_ALERT -->
+        <item>2</item>  <!-- METHOD_EMAIL -->
+        <item>3</item>  <!-- METHOD_SMS -->
+        <item>4</item>  <!-- METHOD_ALARM -->
+    </integer-array>
+
+    <string-array name="reminder_minutes_labels">
+        <item>0 Minuten</item>
+        <item>1 Minute</item>
+        <item>5 Minuten</item>
+        <item>10 Minuten</item>
+        <item>15 Minuten</item>
+        <item>20 Minuten</item>
+        <item>25 Minuten</item>
+        <item>30 Minuten</item>
+        <item>45 Minuten</item>
+        <item>1 Stunde</item>
+        <item>2 Stunden</item>
+        <item>3 Stunden</item>
+        <item>12 Stunden</item>
+        <item>24 Stunden</item>
+        <item>2 Tage</item>
+        <item>1 Woche</item>
+    </string-array>
+
+    <integer-array name="reminder_minutes_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>5</item>
+        <item>10</item>
+        <item>15</item>
+        <item>20</item>
+        <item>25</item>
+        <item>30</item>
+        <item>45</item>
+        <item>60</item>
+        <item>120</item>
+        <item>180</item>
+        <item>720</item>
+        <item>1440</item>
+        <item>2880</item>
+        <item>10080</item>
+    </integer-array>
+
+       <string-array name="preferences_default_reminder_labels">
+        <item>Keine</item>
+        <item>0 Minuten</item>
+        <item>1 Minute</item>
+        <item>5 Minuten</item>
+        <item>10 Minuten</item>
+        <item>15 Minuten</item>
+        <item>20 Minuten</item>
+        <item>25 Minuten</item>
+        <item>30 Minuten</item>
+        <item>45 Minuten</item>
+        <item>1 Stunde</item>
+        <item>2 Stunden</item>
+        <item>3 Stunden</item>
+        <item>12 Stunden</item>
+        <item>24 Stunden</item>
+        <item>2 Tage</item>
+        <item>1 Woche</item>
+    </string-array>
+
+    <string-array name="preferences_week_start_day_labels">
+        <item>Lokale Vorgabe</item>
+        <item>Samstag</item>
+        <item>Sonntag</item>
+        <item>Montag</item>
+    </string-array>
+
+    <string-array name="availability">
+        <item>Beschäftigt</item>
+        <item>Verfügbar</item>
+        <item>Vorläufig</item>
+    </string-array>
+
+    <integer-array name="availability_values" translatable="false">
+        <item>0</item>  <!-- Busy -->
+        <item>1</item>  <!-- Available -->
+        <item>2</item>  <!-- Tentative -->
+    </integer-array>
+
+    <string-array name="visibility">
+        <item>Vorgabe</item>
+        <item>Privat</item>
+        <item>Öffentlich</item>
+    </string-array>
+
+    <string-array name="ordinal_labels">
+        <item>erste</item>
+        <item>zweite</item>
+        <item>dritte</item>
+        <item>vierte</item>
+        <item>letzte</item>
+    </string-array>
+
+    <string-array name="response_labels1">
+        <item>Keine Antwort</item>
+        <item>Ja</item>
+        <item>Vielleicht</item>
+        <item>Nein</item>
+    </string-array>
+
+    <skip/>
+    <string-array name="delete_repeating_labels">
+        <item>Nur dieses Ereignis</item>
+        <item>Dieses und zukünftige Ereignisse</item>
+        <item>Alle Ereignisse</item>
+    </string-array>
+
+    <integer-array name="delete_repeating_values">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </integer-array>
+
+    <skip/>
+    <string-array name="delete_repeating_labels_no_selected">
+        <item>Dieses &amp; zukünftige Ereignisse</item>
+        <item>Alle Ereignisse</item>
+    </string-array>
+    <skip/>
+
+    <string-array name="change_response_labels">
+        <item>Nur dieses Ereignis</item>
+        <item>Alle Ereignisse in der Serie</item>
+    </string-array>
+
+    <string-array name="buttons_list">
+        <item>Tag</item>
+        <item>Woche</item>
+        <item>Monat</item>
+        <item>Agenda</item>
+    </string-array>
+
+    <string-array name="preferences_skip_reminders_labels">
+        <item>Nur, wenn abnehmend</item>
+        <item>Wenn abnehmend oder nicht antwortet</item>
+    </string-array>
+
+    <string-array name="recurrence_freq">
+        <item>TÄGLICH WIEDERHOLEN</item>
+        <item>WÖCHENTLICH WIEDERHOLEN</item>
+        <item>MONATLICH WIEDERHOLEN</item>
+        <item>JÄHRLICH WIEDERHOLEN</item>
+    </string-array>
+
+    <string-array name="repeat_by_nth_sun">
+        <item>An jedem ersten Sonntag</item>
+        <item>An jedem zweiten Sonntag</item>
+        <item>An jedem dritten Sonntag</item>
+        <item>An jedem vierten Sonntag</item>
+        <item>An jedem letzten Sonntag</item>
+    </string-array>
+
+    <string-array name="repeat_by_nth_mon">
+        <item>An jedem ersten Montag</item>
+        <item>An jedem zweiten Montag</item>
+        <item>An jedem dritten Montag</item>
+        <item>An jedem vierten Montag</item>
+        <item>An jedem letzten Montag</item>
+    </string-array>
+
+    <string-array name="repeat_by_nth_tues">
+        <item>An jedem ersten Dienstag</item>
+        <item>An jedem zweiten Dienstag</item>
+        <item>An jedem dritten Dienstag</item>
+        <item>An jedem vierten Dienstag</item>
+        <item>An jedem letzten Dienstag</item>
+    </string-array>
+
+    <string-array name="repeat_by_nth_wed">
+        <item>An jedem ersten Mittwoch</item>
+        <item>An jedem zweiten Mittwoch</item>
+        <item>An jedem dritten Mittwoch</item>
+        <item>An jedem vierten Mittwoch</item>
+        <item>An jedem letzten Mittwoch</item>
+    </string-array>
+
+    <string-array name="repeat_by_nth_thurs">
+        <item>An jedem ersten Donnerstag</item>
+        <item>An jedem zweiten Donnerstag</item>
+        <item>An jedem dritten Donnerstag</item>
+        <item>An jedem vierten Donnerstag</item>
+        <item>An jedem letzten Donnerstag</item>
+    </string-array>
+
+    <string-array name="repeat_by_nth_fri">
+        <item>An jedem ersten Freitag</item>
+        <item>An jedem zweiten Freitag</item>
+        <item>An jedem dritten Freitag</item>
+        <item>An jedem vierten Freitag</item>
+        <item>An jedem letzten Freitag</item>
+    </string-array>
+
+    <string-array name="repeat_by_nth_sat">
+        <item>An jedem ersten Samstag</item>
+        <item>An jedem zweiten Samstag</item>
+        <item>An jedem dritten Samstag</item>
+        <item>An jedem vierten Samstag</item>
+        <item>An jedem letzten Samstag</item>
+    </string-array>
+</resources>

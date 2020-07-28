@@ -1,0 +1,18 @@
+WHAT IT DOES?
+==================
+This is a Mediatek feature mainly required for VoiceEnrollment. This contains the helper files for interaction with SoundModel required for VoiceInteractionService enrollment.
+
+HOW IT WAS BUILD?
+===================
+1. MTK_VOW_SUPPORT should be true.
+
+[Build Method]
+make MtkVoiceCommandEnrollmentHandler
+or
+mmm vend/mediatek/proprietary/packages/apps/VoiceCommand/enrollment
+
+HOW TO USE IT?
+====================
+It uses the interaction file IVoiceTrainingEnrollmentService.aidl for interfaces.
+
+All the source code of this library were written by MediaTek co..

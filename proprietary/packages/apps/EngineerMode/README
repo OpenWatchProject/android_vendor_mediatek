@@ -1,0 +1,28 @@
+EngineerMode apk. the pre-built system application, contain some debug tool for engineer
+to test or debug.
+
+This apk is pre-built by MediaTek internal.
+
+WHAT IT DOES?
+=============
+EngineerMode.apk provide some test or debug tool for engineer.
+
+HOW IT WAS BUILT?
+==================
+It needs the following library from AOSP:
+1. android-support-v4
+2. telephony-common
+
+and the following libs from MediaTek:
+1. mediatek-framework
+
+All source/dependency modules of this module are already put in
+'vendor/mediatek/libs' folder.
+
+HOW TO USE IT?
+==============
+
+Enter dialer, and key in *#*#3646633#*#* to launch the EngineerMode.
+all source code are at (vendor/mediatek/proprietary/packages/apps/EngineerMode/)
+
+All the source code of this library were written by MediaTek co..

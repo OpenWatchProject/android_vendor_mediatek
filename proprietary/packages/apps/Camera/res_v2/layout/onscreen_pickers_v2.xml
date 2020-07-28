@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/on_screen_pickers"
+    style="@style/OnScreenPickerGroup"
+    android:splitMotionEvents="false">
+    <com.android.camera.v2.ui.PickerButton
+        android:id="@+id/onscreen_slow_motion_picker"
+        style="@style/OnScreenPickerFixed"/>
+    <com.android.camera.v2.ui.PickerButton
+        android:id="@+id/onscreen_hdr_picker"
+        style="@style/OnScreenPickerFixed"/>
+    <com.android.camera.v2.ui.PickerButton
+        android:id="@+id/onscreen_stereo3d_picker"
+        style="@style/OnScreenPickerFixed"/>
+    <com.android.camera.v2.ui.PickerButton
+        android:id="@+id/onscreen_flash_picker"
+        style="@style/OnScreenPickerFixed"/>
+    <com.android.camera.v2.ui.PickerButton
+        android:id="@+id/onscreen_camera_picker"
+        style="@style/OnScreenPickerFixed"/>
+</LinearLayout>
+

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.mediatek.camera.feature.setting.exposure.ExposureView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/exposure_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.mediatek.camera.feature.setting.exposure.VerticalSeekBar
+        android:id="@+id/ev_seekbar"
+        android:layout_width="27dp"
+        android:layout_height="132dp"
+        android:maxHeight="2dp"
+        android:minHeight="2dp"
+        android:progressBackgroundTint="@android:color/transparent"
+        android:progressTint="@android:color/white"
+        android:thumbOffset="0dp"
+        android:visibility="visible"/>
+
+</com.mediatek.camera.feature.setting.exposure.ExposureView>

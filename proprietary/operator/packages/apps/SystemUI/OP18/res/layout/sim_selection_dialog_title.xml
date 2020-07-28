@@ -1,0 +1,38 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/sim_selection_dialog_title_container" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="32dp"
+        android:paddingRight="32dp"
+        android:orientation="horizontal" >
+
+        <FrameLayout
+            android:layout_width="32dp"
+            android:layout_height="32dp" >
+
+            <ImageView
+                android:id="@+id/sim_select_title_img"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="9dp"
+                android:layout_gravity="center"
+                android:src="@drawable/stat_sim_select_title_img" 
+                android:background="@drawable/stat_sim_select_title_bg"/>
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/sim_select_title_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:paddingStart="10dp"
+            android:text="@string/Default_Account_Selection_Content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@android:color/black" />
+    </LinearLayout>
+
+</FrameLayout>

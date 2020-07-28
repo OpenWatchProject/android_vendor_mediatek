@@ -1,0 +1,131 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/coordinator_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:focusable="true">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:padding="10dp"
+        android:background="@drawable/roundednotification"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="8dp">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/notificationbackground"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/setup_title_id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:gravity="center"
+            android:lineSpacingExtra="8sp"
+            android:padding="10dp"
+            android:text="@string/setup_title"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+        <TextView
+            android:id="@+id/setup_subtitle_id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_margin="10dp"
+            android:gravity="top"
+            android:padding="10dp"
+            android:text="@string/setup_sub_title"
+            android:background="@drawable/notificationbackground"
+            android:textSize="14sp"
+            tools:text="@string/setup_sub_title" />
+    <TextView
+            android:id="@+id/setup_nw_err_info_id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_margin="10dp"
+            android:gravity="top"
+            android:padding="10dp"
+            android:background="@drawable/notificationbackground"
+            android:textSize="14sp"
+            tools:text="@string/setup_sub_title" />    
+        <View
+            android:id="@+id/divider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_margin="10dp"
+            android:padding="20dp"
+            android:background="?android:attr/listDividerAlertDialog" />
+        <TextView
+            android:id="@+id/setup_status_id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:padding="5dp"
+            android:background="@drawable/notificationbackground"
+            android:text="@string/setup_nw_status_not_reg"
+             />
+    </LinearLayout>
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_margin="5dp"
+        android:padding="5dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/roundednotification">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/notificationbackground"
+            android:layout_weight="1"
+            android:orientation="vertical">
+        <TextView
+            android:id="@+id/user_notification_info_id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="2dp"
+            android:padding="1dp"
+            android:text="@string/setup_on_any_nw"
+            />
+        <View
+            android:id="@id/divider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="?android:attr/listDivider" />
+        <LinearLayout
+            android:id="@+id/btn_area"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center_vertical|center"
+            android:layout_margin="2dp"
+            android:orientation="horizontal"
+            android:visibility="visible">
+            <Button
+                android:id="@+id/cancel_btn"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/bottom_bar_height"
+                android:layout_margin="1dp"
+                android:layout_weight="1"
+                android:padding="1dp"
+                android:text="@string/later_not_now" />
+            <Button
+                android:id="@+id/ok_btn"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/bottom_bar_height"
+                android:layout_margin="1dp"
+                android:layout_weight="1"
+                android:padding="1dp"
+                android:text="@string/continue_now" />
+        </LinearLayout>
+        </LinearLayout>
+    </FrameLayout>
+
+</LinearLayout>

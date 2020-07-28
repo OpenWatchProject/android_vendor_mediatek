@@ -1,0 +1,38 @@
+
+WHAT IT DOES?
+=============
+These are test programs for protect-shared memory tests including:
+
+(1) pmem_share_s
+    Basic tests of protect-shared memory read/write between GZ and TEE.
+    It will go through libion, kernel ION/TMEM/SSMR, GZ and TEE.
+    And TEE will map memory with NS=0.
+
+(2) pmem_share_ns
+    Basic tests of protect-shared memory read/write between GZ and TEE.
+    It will go through libion, kernel ION/TMEM/SSMR, GZ and TEE.
+    And TEE will map memory with NS=1 and remaped PA.
+
+(3) pmem_ion_fast
+    Basic tests of protect-shared memory module using ION for IT purpose.
+    It will go through libion, kernel ION/TMEM/SSMR, GZ and TEE.
+    And for saturation test, it will test for chunk size more that 1MB.
+
+(4) pmem_ion
+    Basic tests of protect-shared memory module using ION for IT purpose.
+    It will go through libion, kernel ION/TMEM/SSMR, GZ and TEE.
+
+(5) pmem_perf
+    Do tests for ion allocation for profiling purpuse.
+    It will go through libion, kernel ION/TMEM/SSMR, GZ and TEE.
+
+
+HOW IT WAS BUILT?
+=================
+It could be built with mmm or mm build command.
+
+
+HOW TO USE IT?
+==============
+Use adb push command to install test programs to device directly,
+and then execute them using adb commands.

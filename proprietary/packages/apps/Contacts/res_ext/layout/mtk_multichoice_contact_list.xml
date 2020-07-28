@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2008 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<!--
+     android:paddingTop is used instead of android:layout_marginTop. It looks
+     android:layout_marginTop is ignored when used with <fragment></fragment>, which
+     only happens in Tablet UI since we rely on ViewPager in Phone UI.
+     Instead, android:layout_marginTop inside <fragment /> is effective.
+-->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/multichoice_contact_list_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/contact_browser_background"
+    android:orientation="vertical" >
+
+    <!--
+         Shown only when an Account filter is set.
+         - paddingTop should be here to show "shade" effect correctly.
+    -->
+
+    <include
+        android:id="@+id/account_filter_header_container"
+        layout="@layout/account_filter_header" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <include layout="@layout/contact_list_card"/>
+            
+        <LinearLayout
+            android:id="@+id/contact_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <view
+                android:id="@android:id/list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="?attr/contact_browser_list_padding_left"
+                android:layout_marginEnd="?attr/contact_browser_list_padding_right"
+                android:layout_weight="1"
+                class="com.android.contacts.list.PinnedHeaderListView"
+                android:fadingEdge="none"
+                android:fastScrollEnabled="true" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/contact_list_empty"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/empty_message_top_margin"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="?android:attr/textColorSecondary"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+</LinearLayout>

@@ -1,0 +1,24 @@
+APK of Drm features, including update drm secure timer and receive wap push rights.
+
+This library is pre-built by MediaTek internal.
+
+WHAT IT DOES?
+=============
+DrmProvider.apk updates drm secure timer if settings time change, to ensure drm timer is
+synchronized with network timer. It saves drm right when receive wap push.
+
+HOW IT WAS BUILT?
+==================
+It needs the following library from AOSP:
+1. telephony-common.jar
+2. framework.jar
+
+and the following libs from MediaTek:
+1. mediatek-framework.jar
+
+All source/dependency modules of this module are already put in
+'system/framework' folder.
+
+HOW TO USE IT?
+==============
+Ensure drm secure timer is always synchronized with network timer.

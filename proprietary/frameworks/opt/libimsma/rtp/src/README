@@ -1,0 +1,26 @@
+This module creates the libimsma_rtp.so libary file.
+
+WHAT IT DOES?
+=============
+libimsma_rtp mainly used for parse and pack rtp packet for ViLTE
+
+ 
+HOW IT WAS BUILT?
+==================
+It needs the following library from AOSP:
+
+    libcutils, libutils, libgui, libinder
+
+and the following libs from MediaTek:
+
+    libstagefright, libmedia, libstagefright_foundation, libtimestretch, libaudioflinger, libdpframework, libvcodecdrv
+    
+    
+HOW TO USE IT?
+==============
+
+The libimsma_rtp libraries should not be used directly by an application developer.  
+Used by JNI layer
+
+The majority of source code for this library were written by MediaTek.  Various
+open source libraries are also used and contained in this folder.

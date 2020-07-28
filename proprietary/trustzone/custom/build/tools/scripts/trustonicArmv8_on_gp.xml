@@ -1,0 +1,29 @@
+<TeeConfig>
+  <ProjectConfig>
+    <config feature="MTK_ATF_SUPPORT" value="yes" />
+    <config feature="MTK_PERSIST_PARTITION_SUPPORT" value="yes" />
+    <config feature="MTK_TEE_SUPPORT" value="yes" />
+    <config feature="MTK_TEE_GP_SUPPORT" value="yes" />
+    <config feature="TRUSTONIC_TEE_SUPPORT" value="yes" />
+  </ProjectConfig>
+  <TrustzoneConfig>
+    <config feature="MTK_ATF_SUPPORT" value="yes" />
+    <config feature="MTK_TEE_SUPPORT" value="yes" />
+    <config feature="TRUSTONIC_TEE_SUPPORT" value="yes" />
+  </TrustzoneConfig>
+  <LKConfig>
+    <config feature="TRUSTONIC_TEE_SUPPORT" value="yes" />
+  </LKConfig>
+  <PreloadConfig>
+    <config feature="MTK_TEE_SUPPORT" value="yes" />
+    <config feature="TRUSTONIC_TEE_SUPPORT" value="yes" />
+  </PreloadConfig>
+  <KernelConfig>
+    <config feature="CONFIG_MTK_TEE_GP_SUPPORT" value="y" />
+    <config feature="CONFIG_TRUSTONIC_TEE_SUPPORT" value="y" />
+  </KernelConfig>
+  <KernelDebugConfig>
+    <config feature="CONFIG_MTK_TEE_GP_SUPPORT" value="y" />
+    <config feature="CONFIG_TRUSTONIC_TEE_SUPPORT" value="y" />
+  </KernelDebugConfig>
+</TeeConfig>

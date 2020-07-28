@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--* Copyright Statement:
+ *
+ * This software/firmware and related documentation ("MediaTek Software") are
+ * protected under relevant copyright laws. The information contained herein
+ * is confidential and proprietary to MediaTek Inc. and/or its licensors.
+ * Without the prior written permission of MediaTek inc. and/or its licensors,
+ * any reproduction, modification, use or disclosure of MediaTek Software,
+ * and information contained herein, in whole or in part, shall be strictly prohibited.
+ *
+ * MediaTek Inc. (C) 2012. All rights reserved.
+ *
+ * BY OPENING THIS FILE, RECEIVER HEREBY UNEQUIVOCALLY ACKNOWLEDGES AND AGREES
+ * THAT THE SOFTWARE/FIRMWARE AND ITS DOCUMENTATIONS ("MEDIATEK SOFTWARE")
+ * RECEIVED FROM MEDIATEK AND/OR ITS REPRESENTATIVES ARE PROVIDED TO RECEIVER ON
+ * AN "AS-IS" BASIS ONLY. MEDIATEK EXPRESSLY DISCLAIMS ANY AND ALL WARRANTIES,
+ * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE OR NONINFRINGEMENT.
+ * NEITHER DOES MEDIATEK PROVIDE ANY WARRANTY WHATSOEVER WITH RESPECT TO THE
+ * SOFTWARE OF ANY THIRD PARTY WHICH MAY BE USED BY, INCORPORATED IN, OR
+ * SUPPLIED WITH THE MEDIATEK SOFTWARE, AND RECEIVER AGREES TO LOOK ONLY TO SUCH
+ * THIRD PARTY FOR ANY WARRANTY CLAIM RELATING THERETO. RECEIVER EXPRESSLY ACKNOWLEDGES
+ * THAT IT IS RECEIVER'S SOLE RESPONSIBILITY TO OBTAIN FROM ANY THIRD PARTY ALL PROPER LICENSES
+ * CONTAINED IN MEDIATEK SOFTWARE. MEDIATEK SHALL ALSO NOT BE RESPONSIBLE FOR ANY MEDIATEK
+ * SOFTWARE RELEASES MADE TO RECEIVER'S SPECIFICATION OR TO CONFORM TO A PARTICULAR
+ * STANDARD OR OPEN FORUM. RECEIVER'S SOLE AND EXCLUSIVE REMEDY AND MEDIATEK'S ENTIRE AND
+ * CUMULATIVE LIABILITY WITH RESPECT TO THE MEDIATEK SOFTWARE RELEASED HEREUNDER WILL BE,
+ * AT MEDIATEK'S OPTION, TO REVISE OR REPLACE THE MEDIATEK SOFTWARE AT ISSUE,
+ * OR REFUND ANY SOFTWARE LICENSE FEES OR SERVICE CHARGE PAID BY RECEIVER TO
+ * MEDIATEK FOR SUCH MEDIATEK SOFTWARE AT ISSUE.
+ *
+ * The following software/firmware and/or related documentation ("MediaTek Software")
+ * have been modified by MediaTek Inc. All revisions are subject to any receiver's
+ * applicable license agreements with MediaTek Inc.
+ */  -->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <string name="time_from">從 </string>
+    <string name="time_to">至</string>
+    <string name="time_slot">時間轉接</string>
+    <string name="time_slot_hint">時間不能相同</string>
+
+    <!-- Add for VoLTE_SS Roaming-->
+    <string name="volte_ss_not_available_tips_data">請先開啟數據連接 <xliff:g id="sub_name">%s</xliff:g> 才能完成作業。</string>
+    <string name="volte_ss_not_available_tips_roaming">請先開啟數據漫遊 <xliff:g id="sub_name">%s</xliff:g> 才能完成作業。</string>
+    <string name="volte_ss_not_available_tips_data_roaming">請先開啟數據連接和數據漫遊 <xliff:g id="sub_name">%s</xliff:g> 才能完成作業。</string>
+
+    <!--add preferred_network_mode Start-->
+    <string name="preferred_network_mode_title">偏好的網路類型</string>
+    <string name="preferred_network_mode_summary">4G/3G/2G(自動)</string>
+    <!--add preferred_network_mode End-->
+    <string-array name="lte_network_mode_choices">
+        <item>4G/3G/2G(自動)</item>
+        <item>3G/2G(自動)</item>
+    </string-array>
+
+    <string name="network_name_forbidden">(停用)</string>
+    <string name="default_data_switch_err_msg1">﻿通話中無法切換到喜好的 SIM 卡進行數據通訊。</string>
+    <string name="data_switch_started">"正在切換行動數據連線 SIM 卡，這可能需要一點時間..."</string>
+    <string name="select_sim_for_data">"選擇數據連線 SIM 卡"</string>
+</resources>

@@ -1,0 +1,46 @@
+cc_prebuilt_binary {
+    arch: {
+        arm64: {
+            shared_libs: [
+                "libcutils",
+                "libfmq",
+                "libhardware",
+                "libhidlbase",
+                "libhidlmemory",
+                "libnativewindow",
+                "libneuralnetworks",
+                "libtextclassifier_hash",
+                "liblog",
+                "libneuropilot_hal_utils",
+                "android.hardware.neuralnetworks@1.0",
+                "android.hardware.neuralnetworks@1.1",
+                "vendor.mediatek.hardware.neuropilot@1.0",
+                "android.hidl.allocator@1.0",
+                "android.hidl.memory@1.0",
+                "android.hardware.neuralnetworks@1.2",
+                "vendor.mediatek.hardware.neuropilot@1.1",
+                "libbase",
+                "libdl",
+                "libutils",
+                "liblog",
+                "libion",
+                "libion_mtk",
+                "libcutils",
+                "libneuron_platform",
+            ],
+            srcs: [
+                "arm64/android.hardware.neuralnetworks@1.1-service-neuron-ann",
+            ],
+        },
+    },
+    init_rc: [
+        "android.hardware.neuralnetworks@1.1-service-neuron-ann.rc",
+    ],
+    name: "android.hardware.neuralnetworks@1.1-service-neuron-ann@MTK,mt6779",
+    proprietary: true,
+    relative_install_path: "hw",
+    strip: {
+        none: true,
+    },
+}
+

@@ -1,0 +1,13 @@
+on post-fs-data
+    mkdir /data/vendor/verizon 0777 system system
+    mkdir /data/vendor/verizon/dmclient 0777 system system
+    mkdir /data/vendor/verizon/dmclient/data 0777 system system
+    mkdir /data/vendor/verizon/dmclient/data/misc 0777 system system
+    mkdir /mnt/vendor/protect_f/omadm 0777 system system
+	mkdir /data/vendor/verizon/dmclient/init 0777 system system
+
+service mtk_hal_omadm /vendor/bin/hw/vendor.mediatek.hardware.omadm@1.0-service
+    class hal
+    user system
+    group system inet net_admin net_raw radio
+    

@@ -1,0 +1,28 @@
+Executable binary for MediaTek camera DPE driver test.
+
+This binary is pre-built by MediaTek internal.
+
+
+WHAT IT DOES?
+=============
+Dpe_Test is used to test MediaTek camera DPE driver basic function
+
+HOW IT WAS BUILT?
+==================
+It needs the following library from AOSP:
+1.  libutils.so
+2.  libcutils.so
+
+and the following libs from MediaTek:
+1.  libmtkcam_dpe.so
+2.  libcamdrv_imem.so
+3.  libstdc++.so
+
+All source/dependency modules of this module are already put in
+'vendor\mediatek\proprietary\hardware\mtkcam\drv\src\dpe\1.0\test' folder.
+
+HOW TO USE IT?
+==============
+Provide test cases to verify camera DPE driver.
+
+All the source code of this library were written by MediaTek co..

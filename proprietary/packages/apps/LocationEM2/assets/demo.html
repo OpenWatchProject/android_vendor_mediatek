@@ -1,0 +1,578 @@
+<html> 
+<head> 
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no" /> 
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"/> 
+<title>Simple V3 Map for Android</title> 
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script> 
+<script type="text/javascript"> 
+	
+  var map;							//google.maps.Map
+	var geocoder;         //google.maps.Geocoder
+	
+  var zoomButton;				//document.createElement('DIV')
+  var accButton;				//document.createElement('DIV')
+  
+  var tagEnabled = true;
+  var trackingEnabled = true;
+  
+  function initialize() {
+  	geocoder = new google.maps.Geocoder();
+  	latlng = new google.maps.LatLng(25.084, 121.56);
+    var myOptions = {
+      zoom: 4,
+      center: latlng,
+      mapTypeId: google.maps.MapTypeId.ROADMAP,
+      mapTypeControl: true,
+      mapTypeControlOptions: {
+      	style: google.maps.MapTypeControlStyle.DEFAULT,
+      	position: google.maps.ControlPosition.TOP_RIGHT
+      },
+      navigationControl: true,
+      navigationControlOptions: {
+      	style: google.maps.NavigationControlStyle.SMALL,
+      	position: google.maps.ControlPosition.RIGHT_BOTTOM
+      },
+      scaleControl: true,
+      scaleControlOptions: {
+      	position: google.maps.ControlPosition.LEFT_BOTTOM
+      },
+      streetViewControl: false,
+      draggable: true
+    }
+    
+    map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+    
+		zoomButton = addButton("ZOOM [" + map.getZoom() + "]", 16, google.maps.ControlPosition.TOP_LEFT);
+		accButton = addButton("ACC [-1]", 16, google.maps.ControlPosition.TOP_LEFT);
+		
+		initMarkerInfo();
+		
+    google.maps.event.addListener(map, "click", function(event) {
+    	if(tagEnabled)
+    		showMarkerInfoByLatlng(event.latLng.lat(), event.latLng.lng());
+    });
+    google.maps.event.addListener(map, 'zoom_changed', function() {
+    	zoomButton.innerHTML = "ZOOM [" + map.getZoom() + "]";
+    });
+    google.maps.event.addListener(map, 'dblclick', function() {
+    });
+    google.maps.event.addListener(map, 'dragstart', function() {
+    	trackingEnabled = false;
+    });
+    google.maps.event.addListener(map, 'drag', function() {
+    });
+    google.maps.event.addListener(map, 'dragend', function() {
+    });
+    google.maps.event.addListener(map, 'center_changed', function() {
+    });
+  }
+  
+/*======= internal utilities ==========
+ * initMarkerInfo()
+ * showMarkerInfoByLatlng(lat, lng) //double lat, double lng
+ * showMarkerInfoByAddr(addr) //String addr
+ * showMarkerOnly(lat, lng, acc) //double lat, double lng, int acc
+ * hideMarkerInfo()
+ * */
+
+var myInfo;						//google.maps.InfoWindow
+var myMarker;					//google.maps.Marker
+var myCircle;					//google.maps.Circle
+
+	function initMarkerInfo() {
+		myMarker = addMarker(0, 0);
+		myInfo = addInfo(0, 0, "", myMarker);
+		myCircle = drawCircle(0, 0, 0);
+		
+		myMarker.setMap(null);
+		myInfo.close();
+		myCircle.setRadius(0);
+	}
+	
+	function showMarkerInfoByLatlng(lat, lng) {
+		myCircle.setRadius(0);
+		
+		myMarker.setMap(map);
+		myInfo.open(map, myMarker);
+		
+		var latlng = new google.maps.LatLng(lat, lng);
+		map.panTo(latlng);
+		myMarker.setPosition(latlng);
+		myInfo.setContent(getStringLatlng(latlng.lat(), latlng.lng()));
+		queryAddr(latlng.lat(), latlng.lng(), myInfo);
+	}
+	
+	function showMarkerInfoByAddr(addr) {
+		myCircle.setRadius(0);
+		
+		myMarker.setMap(map);
+		myInfo.open(map, myMarker);
+		
+		queryLatLng(addr, myMarker, myInfo);
+	}
+	
+	function showMarkerOnly(lat, lng, acc) {
+		myMarker.setMap(map);
+		myInfo.setContent();
+		myInfo.close();
+				
+		var latlng = new google.maps.LatLng(lat, lng);
+		
+		accButton.innerHTML = "ACC [" + acc + "]";
+		myCircle.setCenter(latlng);
+		myCircle.setRadius(acc);
+		
+		myMarker.setPosition(latlng);
+		
+		if(trackingEnabled) {
+			setProperZoom(acc);
+			moveTo(lat, lng);
+		}
+		
+		if(enableTrackingPoint) {
+			addGpsTrackingPoint(lat, lng);
+		}
+	}
+	
+	function hideMarkerInfo() {
+		myMarker.setMap(null);
+		myInfo.setContent();
+		myInfo.close();
+		myCircle.setRadius(0);
+	}
+
+/*======= internal utilities ==========
+ * setZoom(size) //int size
+ * moveTo(lat, lng) //double lat, double lng
+ * addMarker(lat, lng) //double lat, double lng
+ * drawLine(lat1, lng1, lat2, lng2) //double
+ * drawTriangle(lat1, lng1, lat2, lng2, lat3, lng3) //double
+ * drawCircle(lat, lng, r) //double lat, double lng, int r
+ * enableTag(flag) //boolean flag
+ * enableTracking(flag) //boolean flag
+ * print(msg) //String msg
+ * setProperZoom(acc) //int acc
+ * */
+
+	function enableTracking(flag) {
+		trackingEnabled = flag;
+	}
+
+	function enableTag(flag) {
+		tagEnabled = flag;
+	}
+
+  //zoom 0 -> high view, 21 -> street view
+  //int size
+  function setZoom(size) {
+  	map.setZoom(size);
+  }
+
+	//double  
+  function moveTo(lat, lng) {
+  	map.panTo(new google.maps.LatLng(lat,lng));
+  }
+
+	//double lat, double lng
+  function addMarker(lat, lng) {
+  	var latlng = new google.maps.LatLng(lat, lng);
+  	var marker = new google.maps.Marker({
+  		position: latlng,
+  		map: map,
+  		clickable: true,
+  		draggable: false,
+  		optimized: true,
+  		visible: true
+  	});
+  	return marker;
+  }
+  
+  
+  //double
+  function drawLine(lat1, lng1, lat2, lng2) {
+  	var latlng1 = new google.maps.LatLng(lat1, lng1);
+  	var latlng2 = new google.maps.LatLng(lat2, lng2);
+  	var line = [latlng1, latlng2];
+  	polygon = new google.maps.Polygon({
+  		paths: line,
+      strokeColor: "#0000FF",
+      strokeOpacity: 0.5,
+      map: map
+  	});
+  	return polygon;
+  }
+  
+  //double
+  function drawTriangle(lat1, lng1, lat2, lng2, lat3, lng3) {
+  	var latlng1 = new google.maps.LatLng(lat1, lng1);
+  	var latlng2 = new google.maps.LatLng(lat2, lng2);
+  	var latlng3 = new google.maps.LatLng(lat3, lng3);
+		var triangleCoords = [latlng1, latlng2, latlng3];
+		polygon = new google.maps.Polygon({
+      paths: triangleCoords,
+      strokeColor: "#FFFFFF",
+      strokeOpacity: 0.8,
+      strokeWeight: 2,
+      fillColor: "#FF0000",
+      fillOpacity: 0.5,
+      map: map
+    });
+		return polygon;
+  }
+  
+  //double lat, double lng, int r
+  function drawCircle(lat, lng, r) {
+  	var circle = new google.maps.Circle({
+  		center: new google.maps.LatLng(lat, lng),
+  		radius: r, //meter
+  		fillColor: "#00FF00",
+  		fillOpacity: 0.5,
+  		strokeColor: "#FFFFFF",
+  		strokeOpacity: 0.8,
+  		strokeWeight: 2,
+  		map: map
+  	});
+  	return circle;
+  }
+  
+  //int acc
+  function setProperZoom(acc) {
+  	if(acc >= 10000000)
+  		setZoom(1);
+  	else if(acc > 5000000)
+  		setZoom(2);
+  	else if(acc > 2000000)
+  		setZoom(3);
+  	else if(acc > 1000000)
+  		setZoom(4);
+  	else if(acc > 500000)
+  		setZoom(5);
+  	else if(acc > 200000)
+  		setZoom(6);
+  	else if(acc > 100000)
+  		setZoom(7);
+  	else if(acc > 50000)
+  		setZoom(8);
+  	else if(acc > 20000)
+  		setZoom(9);
+  	else if(acc > 10000)
+  		setZoom(10);
+  	else if(acc > 5000)
+  		setZoom(11);
+  	else if(acc > 2000)
+  		setZoom(12);
+  	else if(acc > 1000)
+  		setZoom(13);
+  	else if(acc > 500)
+  		setZoom(14);
+  	else if(acc > 200)
+  		setZoom(15);
+  	else if(acc > 100)
+  		setZoom(16);
+  	else if(acc > 0)
+  		setZoom(17);
+    else
+    	setZoom(13);
+  }
+  
+  //String msg
+  function print(msg) {
+  	var div = document.createElement('DIV');
+  	div.style.borderStyle = 'solid';  
+  	div.style.backgroundColor = 'white';
+  	div.style.cursor = 'pointer';
+  	div.style.fontSize = '16px';  
+  	div.innerHTML = msg;
+  	map.controls[google.maps.ControlPosition.LEFT].push(div);
+  }
+
+/*======= internal utilities ==========
+ * getStringLatlng(lat, lng) //double lat, double lng
+ * queryAddr(lat, lng, info) //double lat, double lng, google.maps.InfoWindow info
+ * addInfo(lat, lng, msg, target) //double lat, double lng, String msg, google.maps.Marker target
+ * addButton(msg, size, pos) //String msg, int size, google.maps.ControlPosition pos
+ * */
+
+	//double lat, lng
+	function getStringLatlng(lat, lng) {
+		return "lat=" + lat.toString().substring(0,9) + "<br>lng=" + lng.toString().substring(0,9);
+	}
+
+	//double lat, double lng, google.maps.InfoWindow info
+	function queryAddr(lat, lng, info) {
+		var latlng = new google.maps.LatLng(lat, lng);
+    geocoder.geocode({'location': latlng}, function(results, status) {
+      if (status == google.maps.GeocoderStatus.OK) {
+      	var index = 6;
+      	for(; index >= 0; index--) {
+      		if(results[index]) {
+      			var country = results[index].formatted_address;
+      			info.setContent(country + "<br>" + info.getContent());
+      			break;
+      		}
+      	}
+      	if(index >= 0) {
+      		if(results[0]) {
+      			var address = results[0].formatted_address;
+      			info.setContent(info.getContent() + "<h6>" + address + "</h6>");
+      		}
+      	}
+      } else {
+        info.setContent(info.getContent() + "<h6>Geocoder failed due to: " + status + "</h6>");
+      }
+    });
+	}
+	
+	//String addr
+	function queryLatLng(addr, marker, info) {
+    geocoder.geocode({'address': addr}, function(results, status) {
+      if (status == google.maps.GeocoderStatus.OK) {
+      	var latlng = results[0].geometry.location;
+        map.panTo(latlng);
+        marker.setPosition(latlng);
+        info.setContent(getStringLatlng(latlng.lat(), latlng.lng()));
+        queryAddr(latlng.lat(), latlng.lng(), info);
+      } else {
+        print("Geocode was not successful for the following reason: " + status);
+      }
+    });
+	}
+	
+  //double lat, double lng, String msg, google.maps.Marker target
+  function addInfo(lat, lng, msg, target) {
+  	var latlng = new google.maps.LatLng(lat, lng);
+  	var info = new google.maps.InfoWindow({
+  		content: msg,
+  		position: latlng
+    });
+    if(target != null) {
+    	info.open(map, target);
+	    google.maps.event.addListener(target, 'click', function() {
+	    	info.open(map, target);
+	    });
+    } else {
+    	info.open(map);
+    }
+    return info;
+  }
+	
+  //String msg, int size, google.maps.ControlPosition pos
+  function addButton(msg, size, pos) {
+  	var div = document.createElement('DIV');
+  	//div.style.padding = '10px';
+  	div.style.borderStyle = 'solid';  
+  	div.style.backgroundColor = 'white';
+  	div.style.cursor = 'pointer';
+  	div.style.fontSize = size + "px";  
+  	div.innerHTML = msg;
+  	map.controls[pos].push(div);
+  	return div;
+  }
+  
+  
+/*======= Gps Tracking for NMEA data==========
+ * addNmeaPoint(lat, lng) //double lat, double lng
+ * removeNmeaPoint()
+ * showNmeaMarker()
+ * hideNmeaMarker()
+ * showNmeaPath()
+ * hideNmeaPath()
+ * addNmeaInfo(lat, lng, msg)
+ * */
+
+var nmeaPosArray			= new Array();	//google.maps.LatLng
+var nmeaMarkerArray		= new Array();	//google.maps.Marker
+var nmeaLineArray			= new Array();	//google.maps.Polygon
+var nmeaInfoArray			= new Array();	//google.maps.InfoWindow
+
+	function addNmeaPoint(lat, lng) {
+		var latlng = new google.maps.LatLng(lat, lng);
+		nmeaPosArray.push(latlng);
+		
+  	//record marker
+  	var mark = new google.maps.Marker({
+    	position: latlng,
+    	map: map
+    });
+  	nmeaMarkerArray.push(mark);
+  	
+  	//record line
+    if(nmeaPosArray.length > 1) {
+    	var line = drawLine(
+    			nmeaPosArray[nmeaPosArray.length-2].lat(),
+    			nmeaPosArray[nmeaPosArray.length-2].lng(),
+    			nmeaPosArray[nmeaPosArray.length-1].lat(),
+    			nmeaPosArray[nmeaPosArray.length-1].lng());
+    	nmeaLineArray.push(line);
+    }
+	}
+
+	function removeNmeaPoint() {
+  	while(nmeaPosArray.length > 0) {
+  		nmeaPosArray.shift();
+  	}
+  	while(nmeaMarkerArray.length > 0) {
+  		var mark = nmeaMarkerArray.shift();
+  		mark.setMap();
+  	}
+  	while(nmeaLineArray.length > 0) {
+  		var line = nmeaLineArray.shift();
+  		line.setMap();
+  	}
+  	while(nmeaInfoArray.length > 0) {
+  		var info = nmeaInfoArray.shift();
+  		info.close();
+  	}
+	}
+
+	function showNmeaMarker() {
+  	for(var i = 0; i < nmeaMarkerArray.length; i++) {
+  		nmeaMarkerArray[i].setVisible(true);
+  	}
+	}
+
+	function hideNmeaMarker() {
+  	for(var i = 0; i < nmeaMarkerArray.length; i++) {
+  		nmeaMarkerArray[i].setVisible(false);
+  	}
+	}
+
+	function showNmeaPath() {
+  	for(var i = 0; i < nmeaLineArray.length; i++) {
+  		nmeaLineArray[i].setVisible(true);
+  	}
+	}
+
+	function hideNmeaPath() {
+  	for(var i = 0; i < nmeaLineArray.length; i++) {
+  		nmeaLineArray[i].setVisible(false);
+  	}
+	}
+
+	function addNmeaInfo(lat, lng, msg) {
+		var latlng = new google.maps.LatLng(lat, lng);
+		var info = addInfo(lat, lng, msg, null);
+		nmeaInfoArray.push(info);
+	}
+	
+/*======= Gps Tracking for last 30 points ==========
+ * addGpsTrackingPoint(lat, lng) //double lat, double lng
+ * removeGpsTrackingPoint()
+ * showGpsTrackingPoint()
+ * hideGpsTrackingPoint()
+ * enableGpsTrackingPoint(flag) //boolean flag
+ * */
+
+var trackingPosArray		= new Array();	//google.maps.LatLng
+var trackingMarkerArray = new Array();	//google.maps.Marker
+var trackingLineArray		= new Array();	//google.maps.Polygon
+var enableTrackingPoint = false;
+
+  function addGpsTrackingPoint(lat, lng) {
+  	var latlng = new google.maps.LatLng(lat, lng);
+  	trackingPosArray.push(latlng);
+  	
+  	//record marker
+  	var mark = new google.maps.Marker({
+    	position: latlng,
+    	map: map
+    });
+  	trackingMarkerArray.push(mark);
+  	if(trackingMarkerArray.length > 30) {
+  		var mark = trackingMarkerArray.shift();
+  		mark.setMap();
+  	}
+    
+    //record line
+    if(trackingPosArray.length > 1) {
+    	var line = drawLine(
+    			trackingPosArray[trackingPosArray.length-2].lat(),
+    			trackingPosArray[trackingPosArray.length-2].lng(),
+    			trackingPosArray[trackingPosArray.length-1].lat(),
+    			trackingPosArray[trackingPosArray.length-1].lng());
+    	trackingLineArray.push(line);
+    	if(trackingLineArray.length > 29) {
+			var line2 = trackingLineArray.shift();
+			line2.setMap();
+    	}
+    }
+  }
+  
+  function removeGpsTrackingPoint() {
+  	while(trackingPosArray.length > 0) {
+  		trackingPosArray.shift();
+  	}
+  	while(trackingMarkerArray.length > 0) {
+  		var mark = trackingMarkerArray.shift();
+  		mark.setMap();
+  	}
+  	while(trackingLineArray.length > 0) {
+  		var line = trackingLineArray.shift();
+  		line.setMap();
+  	}
+  }
+  
+  function showGpsTrackingPoint() {
+  	for(var i = 0; i < trackingMarkerArray.length; i++) {
+  		trackingMarkerArray[i].setVisible(true);
+  	}
+  	for(var i = 0; i < trackingLineArray.length; i++) {
+  		trackingLineArray[i].setVisible(true);
+  	}
+  }
+  
+  function hideGpsTrackingPoint() {
+  	for(var i = 0; i < trackingMarkerArray.length; i++) {
+  		trackingMarkerArray[i].setVisible(false);
+  	}
+  	for(var i = 0; i < trackingLineArray.length; i++) {
+  		trackingLineArray[i].setVisible(false);
+  	}
+  }
+  
+  function enableGpsTrackingPoint(flag) {
+  	enableTrackingPoint = flag;
+  	if(flag == false) {
+  		removeGpsTrackingPoint();
+  	}
+  }
+      
+  //======= Javascript -> Apk ==========  
+  function getLocation() {
+  	var myPos2;
+    var latitude = 24;
+    var longitude = 121;
+  	if(window.android) {
+      latitude = window.android.getLatitude();
+      longitude = window.android.getLongitude();
+  	}
+		return myPos2 = new google.maps.LatLng(latitude,longitude);
+  }
+  function log(msg) {
+  	if(window.android) {
+  		window.android.log("[JavaScript] " + msg);
+  	}
+  }
+
+//array examples
+//var myArray = new Array("00", "11", "22");
+//myArray[2] = "44";
+//myArray.shift(), get and remove the first element in the array
+//myArray.pop(), get and remove the last element in the array
+//myArray.push("element"), push the "element" to the last in the array
+//myArray.reverse(),
+//myArray.sort()
+//myArray.slice(0,1), select element, output="00"
+//myArray.slice(1), select element, output="11","22"
+//myArray.slice(-1), select element, output="22"
+//myArray.toString, output all of elements to a string
+//myArray.length, the length of the array
+
+</script> 
+</head> 
+  
+<body style="margin:0px; padding:0px;" onload="initialize()"> 
+  <div id="map_canvas" style="width:104%; height:100%"></div>
+</body> 
+</html> 
+

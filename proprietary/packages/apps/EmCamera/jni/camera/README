@@ -1,0 +1,27 @@
+JNI Library of emcamera, get Project config
+
+This library is pre-built by MediaTek internal.
+
+WHAT IT DOES?
+=============
+libem_camera_jni.so provide jni interface to EmCamera to get Project config
+
+HOW IT WAS BUILT?
+==================
+It needs the following library from AOSP:
+1. libnativehelper
+2. libandroid_runtime
+3. libutils
+4. libui
+5. libcutils
+
+All source/dependency modules of this module are already put in
+'vendor/mediatek/libs' folder.
+
+HOW TO USE IT?
+==============
+
+1. provide jni interface to EmCamera to access feature config in mediatek/device/xxxx/ProjectConfig.mk
+the api interface are at (vendor/mediatek/proprietary/packages/apps/EmCamera/jni/CameraJni.java)
+
+All the source code of this library were written by MediaTek co..

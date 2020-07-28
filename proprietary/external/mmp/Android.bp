@@ -1,0 +1,19 @@
+cc_binary {
+    srcs: ["mmp.c"],
+    name: "mmp",
+    owner: "mtk",
+    compile_multilib: "32",
+    product_variables: {
+        eng: {
+            cflags: ["-DDEFAULT_ENABLE_MMPROFILE"],
+        },
+    },
+    shared_libs: [
+        "libcutils",
+        "liblog",
+    ],
+    // FIXME
+    include_dirs: [
+        "device/mediatek/common/kernel-headers",
+    ],
+}

@@ -1,0 +1,22 @@
+//##
+//## test binary.
+//##
+cc_binary {
+    cflags: [
+        "-std=c++11",
+        "-Wall",
+    ],
+    clang: true,
+    name: "netdc",
+    shared_libs: [
+        "libcutils",
+        "liblog",
+        "libutils",
+        "libhidlbase",
+        "vendor.mediatek.hardware.netdagent@1.0",
+    ],
+    srcs: ["netdc.cpp"],
+    proprietary: true,
+    owner: "mtk",
+}
+

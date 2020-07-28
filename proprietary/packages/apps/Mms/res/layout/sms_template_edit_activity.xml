@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+  <!--
+    ! Excerpted from "Hello, Android!", ! published by The Pragmatic Bookshelf. ! Copyrights apply to this code. It may
+    not be used to create training material, ! courses, books, articles, and the like. Contact us if you are in doubt. !
+    We make no guarantees that this code is fit for any purpose. ! Visit http://www.pragmaticprogrammer.com/titles/eband
+    for more book information.
+  -->
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="fill_parent"
+  android:layout_height="fill_parent"
+  android:orientation="vertical">
+  <!-- Note built-in ids for 'list' and 'empty' -->
+  <LinearLayout
+    android:id="@+id/LinearLayout01"
+    android:layout_width="match_parent"
+    android:layout_weight="1" android:layout_height="match_parent">
+    <ListView
+        android:id="@+id/quick_text_list"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:divider="@drawable/divider_horizontal" />
+  </LinearLayout>
+
+  <View android:background="?android:attr/dividerHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height=".9dp" />
+
+  <LinearLayout
+      android:id="@+id/LinearLayout02"
+      android:layout_width="match_parent"
+      android:background="#fff"
+      android:layout_gravity="bottom"
+      android:layout_height="wrap_content">
+      <EditText
+          android:id="@+id/new_quick_text"
+          android:layout_gravity="left"
+          android:layout_width="match_parent"
+          android:layout_weight="1"
+          android:layout_marginLeft="8dip"
+          android:typeface="normal"
+          android:textColor="#ff000000"
+          android:hint="@string/type_to_compose_text_or_leave_blank"
+          android:layout_height="match_parent"
+          android:gravity="center_vertical"
+          android:maxLength="128"/>
+      <Button
+          android:id="@+id/quickText_add_button"
+          android:text="@string/add"
+          android:layout_gravity="right|bottom"
+          android:layout_width="match_parent"
+          android:layout_weight="5"
+          android:layout_height="wrap_content"/>
+  </LinearLayout>
+</LinearLayout>

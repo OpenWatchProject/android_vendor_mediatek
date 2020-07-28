@@ -1,0 +1,21 @@
+on post-fs-data
+
+#mkdir in code is permission denied(not SElinux)
+    mkdir /data/vendor/md_mon 0770 system radio
+    restorecon /data/vendor/md_mon
+
+# MTK platform .rc configure
+service md_monitor /vendor/bin/md_monitor
+    interface vendor.mediatek.hardware.mdmonitor@1.0::IMDMonitorService default
+    class hal
+    class main
+    user system
+    group system radio sdcard_rw inet sdcard_r media_rw
+    disabled
+    oneshot
+
+on property:persist.vendor.mdmmonitor=0
+    stop md_monitor
+
+on property:persist.vendor.mdmmonitor=1
+    start md_monitor

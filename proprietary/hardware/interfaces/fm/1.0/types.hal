@@ -1,0 +1,85 @@
+/*
+ * Copyright 2016 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package vendor.mediatek.hardware.fm@1.0;
+
+enum Result : int32_t {
+    OK,
+    FAILED,
+    NOT_INITIALIZED,
+    INVALID_ARGUMENTS,
+    INVALID_STATE,
+    TIMEOUT,
+};
+
+enum Control : uint32_t {
+    SEARCH_MODE = 0,
+    SCAN_DEWELL,
+    REGION,
+    SEARCH_PTY,
+    SEARCH_PI,
+    EMPHASIS,
+    RDS_STD,
+    SPACING,
+    LP_MODE,
+};
+
+enum SearchMode : uint32_t {
+    SEEK = 0,
+    SCAN,
+};
+
+enum Region : uint32_t {
+    UE = 0,
+    JAPAN,
+    JAPANW,
+    SPECIAL,
+};
+
+enum Event : uint32_t {
+    FM_READY = 0,
+    TUNE,
+    SEARCH_IN_PROGRESS,
+    SEARCH_COMPLETE,
+    SEARCH_CANCELLED,
+    RDS_AVAL,
+};
+
+/** RDS variant implemented. A struct FmBandConfig can list none or several. */
+enum Rds : uint32_t {
+    NONE   = 0,
+    WORLD  = (1<<0),
+    US = (1<<1),
+};
+
+/* FM deemphasis variant implemented.
+ * A struct FmBandConfig can list one or more. */
+enum Deemphasis : uint32_t {
+    D50   = (1<<0),
+    D75   = (1<<1),
+};
+
+/** Scanning direction for scan() and step() tuner APIs */
+enum Direction : uint32_t {
+    UP = 0,
+    DOWN
+};
+
+enum Spacing : uint32_t {
+    SPACE50 = 0,
+    SPACE100,
+    SPACE200,
+};

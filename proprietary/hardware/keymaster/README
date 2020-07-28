@@ -1,0 +1,20 @@
+
+WHAT IT DOES?
+=============
+keymaster lib is used by keystore program, and provided hardware-backed RSA algorithm.
+
+
+HOW IT WAS BUILT?
+==================
+keystore.$(TARGET_BOARD_PLATFORM).so will be built and put under those folders.
+For 32 bits,
+  /system/lib/hw/keystore.{TARGET_BOARD_PLATFORM}.so
+
+For 64 bits,
+  /system/lib/hw/keystore.{TARGET_BOARD_PLATFORM}.so
+  /system/lib64/hw/keystore.{TARGET_BOARD_PLATFORM}.so
+
+
+HOW TO USE IT?
+==============
+keymaster is a lib and will be called by keystore program.

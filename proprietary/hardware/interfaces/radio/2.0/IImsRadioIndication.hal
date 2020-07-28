@@ -1,0 +1,253 @@
+/*
+ * Copyright (C) 2016 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package vendor.mediatek.hardware.radio@2.0;
+
+import android.hardware.radio@1.1::IRadioIndication;
+import android.hardware.radio@1.1::types;
+import android.hardware.radio@1.0::RadioIndicationType;
+
+/*
+ * Interface declaring unsolicited radio indications.
+ */
+interface IImsRadioIndication extends android.hardware.radio@1.1::IRadioIndication {
+
+
+    /*
+     * [IMS] Reports incoming call indication from the network.
+     * URC: RIL_UNSOL_INCOMING_CALL_INDICATION
+     *
+     * @param type Type of radio indication
+     * @param inCallNotify IncomingCallNotification as defined in types.hal
+     */
+    oneway incomingCallIndication(RadioIndicationType type, IncomingCallNotification inCallNotify);
+
+    /*
+     * [IMS] Call info Indiciation
+     * @param type Indication Type
+     * @param Indication data
+     */
+    oneway callInfoIndication(RadioIndicationType type, vec<string> data);
+
+     /*
+     * [IMS] ECONF Result Indiciation
+     * @param type Indication Type
+     * @param confCallId Conference call id
+     * @param op Operator
+     * @param num Number
+     * @param result Result
+     * @param cause Cause
+     * @param joinedCallId
+     */
+     oneway econfResultIndication(RadioIndicationType type, string confCallId,
+                                  string op, string num, string result,
+                                  string cause, string joinedCallId);
+
+     /*
+     * [IMS] SIP Call Progress Indiciation
+     * @param type Indication type
+     * @param callid Call Id
+     * @param dir Dir
+     * @param sipMsgType SIP message type
+     * @param method Method
+     * @param responseCode Response code
+     * @param reasonText Reason text
+     */
+     oneway sipCallProgressIndicator(RadioIndicationType type, string callId,
+                                     string dir, string sipMsgType,
+                                     string method, string responseCode,
+                                     string reasonText);
+
+     /*
+     * [IMS] Call Mod Change Indiciation
+     * @param type Indication type
+     * @param callId Call id
+     * @param callMode Call mode
+     * @param videoState Video State
+     * @param audioDirection Audio direction
+     * @param pau PAU
+     */
+     oneway callmodChangeIndicator(RadioIndicationType type, string callId,
+                                   string callMode, string videoState,
+                                   string audioDirection, string pau);
+
+     /*
+     * [IMS] Video Capability Indiciation
+     * @param type Indication type
+     * @param callId Call id
+     * @param localVideoCap Local video capabilities
+     * @param remoteVideoCap Remote video capabilities
+     */
+     oneway videoCapabilityIndicator(RadioIndicationType type, string callId,
+                                     string localVideoCap, string remoteVideoCap);
+
+     /*
+     * [IMS] On USSI Indiciation
+     * @param type Indication type
+     * @param clazz Class
+     * @param status Status
+     * @param str String
+     * @param lang Language
+     * @param errorCode Error code
+     * @param alertingPattern Alerting pattern
+     * @param sipCause SIP cause
+     */
+     oneway onUssi(RadioIndicationType type, string clazz, string status,
+                   string str, string lang, string errorcode,
+                   string alertingPattern, string sipCause);
+
+     /*
+     * [IMS] Provision Done Indiciation
+     * @param type Indication type
+     * @param result1 Indication Data 1
+     * @param result2 Indication Data 2
+     */
+     oneway getProvisionDone(RadioIndicationType type, string result1, string result2);
+
+     /*
+     * [IMS] IMS RTP Indiciation
+     * @param type Indication type
+     * @param pdnId PDN Id
+     * @param networkId Network Id
+     * @param timer Timer
+     * @param sendPktLost Send packet lost
+     * @param recvPktLost Receive packet lost
+     */
+     oneway imsRtpInfo(RadioIndicationType type, string pdnId, string networkId,
+                       string timer, string sendPktLost, string recvPktLost);
+
+     /*
+     * [IMS] On Xui Indiciation
+     * @param type Indication type
+     * @param accountId Account Id
+     * @param broadcastFlag Broadcast Flag
+     * @param xuiInfo XUI Infomation
+     */
+     oneway onXui(RadioIndicationType type, string accountId, string broadcastFlag,
+                  string xuiInfo);
+
+     /*
+     * [IMS] IMS Event Package Indiciation
+     * @param type Indication type
+     * @param callId Call Id
+     * @param ptype Package Type
+     * @param urcIdx URC Index
+     * @param totalUrCount Total URC count
+     * @param rawData
+     */
+     oneway imsEventPackageIndication(RadioIndicationType type,
+                                      string callId, string ptype, string urcIdx,
+                                      string totalUrcCount, string rawData);
+
+     /*
+     * [IMS] IMS Registration Info Indiciation
+     * @param type Indication type
+     * @param registerState If IMS is registered or not
+     * @param capability IMS capabilities
+     */
+     oneway imsRegistrationInfo(RadioIndicationType type,
+                                int32_t registerState, int32_t capability);
+
+     /*
+     * [IMS] IMS Enable Done Indiciation
+     * @param type Indication type
+     *
+     * Valid errors returned:
+     *   RadioError:NONE
+     *   RadioError:INVALID_ARGUMENTS
+     *   RadioError:GENERIC_FAILURE
+     */
+     oneway imsEnableDone(RadioIndicationType type);
+
+     /*
+     * [IMS] IMS Disable Done Indiciation
+     * @param type Indication type
+     */
+     oneway imsDisableDone(RadioIndicationType type);
+
+     /*
+     * [IMS] IMS Enable Start Indiciation
+     * @param type Indication type
+     *
+     */
+     oneway imsEnableStart(RadioIndicationType type);
+
+     /*
+     * [IMS] IMS Diable Start Indiciation
+     * @param type Indication type
+     *
+     */
+     oneway imsDisableStart(RadioIndicationType type);
+
+     /*
+     * [IMS] ECT Indiciation
+     * @param type Indication type
+     * @param call_id Call Id
+     * @param ectResult ECT result
+     * @param cause Cause
+     */
+     oneway ectIndication(RadioIndicationType type, int32_t call_id,
+                          int32_t ectResult, int32_t cause);
+
+     /*
+     * [IMS] VoLTE Setting Indiciation
+     * @param Type Indication type
+     * @param isEnable Is enable
+     */
+     oneway volteSetting(RadioIndicationType type, bool isEnable);
+
+     /*
+     * [IMS] IMS Bearer Activation Indication
+     * @param type Indication type
+     * @param aid AID
+     * @param capabilities Capability
+     */
+     oneway imsBearerActivation(RadioIndicationType type, int32_t aid, string capability);
+
+     /*
+     * [IMS] IMS Bearer Deactivation Indication
+     * @param type Indication type
+     * @param aid AID
+     * @param capabilities Capabilities
+     */
+     oneway imsBearerDeactivation(RadioIndicationType type, int32_t aid, string capability);
+
+     /*
+     * [IMS] IMS Bearer Initialization
+     * @param type Indication type
+     */
+     oneway imsBearerInit(RadioIndicationType type);
+
+     /*
+     * [IMS] IMS Deregister Done Indication
+     * @param type Indication type
+     */
+     oneway imsDeregDone(RadioIndicationType type);
+
+     /*
+     * [IMS] MD support multiple IMS Indication
+     * @param type Indication type
+     * @param count MD support IMS count
+     */
+     oneway multiImsCount(RadioIndicationType type, int32_t count);
+
+     /*
+     * [IMS] network support LTE emergency call or not
+     * @param type Indication type
+     * @param 1 for support ecc, 0 not
+     */
+     oneway imsSupportEcc(RadioIndicationType type, int32_t supportLteEcc);
+};

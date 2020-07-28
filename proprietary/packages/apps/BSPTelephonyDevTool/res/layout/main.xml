@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+>
+<LinearLayout
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="5dip"
+>
+    <LinearLayout android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+    >
+        <TextView android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/sim_hot_plug_out"
+            android:textSize="8pt"
+        />
+        <LinearLayout android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+        >
+            <Button android:id="@+id/btn_plug_out_sim1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/sim1"
+                android:tag="btn_plug_out_sim1"
+            />
+            <Button android:id="@+id/btn_plug_out_sim2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/sim2"
+                android:tag="btn_plug_out_sim2"
+            />
+            <Button android:id="@+id/btn_plug_out_sim3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/sim3"
+                android:tag="btn_plug_out_sim3"
+            />
+            <Button android:id="@+id/btn_plug_out_sim4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/sim4"
+                android:tag="btn_plug_out_sim4"
+            />
+        </LinearLayout>
+        <LinearLayout android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+        >
+            <Button android:id="@+id/btn_plug_out_all_sims"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/plug_out_all_sims"
+            />
+        </LinearLayout>
+        <TextView android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/sim_hot_plug_in"
+            android:textSize="8pt"
+        />
+        <LinearLayout android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+        >
+            <Button android:id="@+id/btn_plug_in_sim1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/sim1"
+                android:tag="btn_plug_in_sim1"
+            />
+            <Button android:id="@+id/btn_plug_in_sim2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/sim2"
+                android:tag="btn_plug_in_sim2"
+            />
+            <Button android:id="@+id/btn_plug_in_sim3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/sim3"
+                android:tag="btn_plug_in_sim3"
+            />
+            <Button android:id="@+id/btn_plug_in_sim4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/sim4"
+                android:tag="btn_plug_in_sim4"
+            />
+        </LinearLayout>
+    <LinearLayout android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+            android:orientation="horizontal"
+        >
+            <Button android:id="@+id/btn_plug_in_all_sims"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/plug_in_all_sims"
+            />
+        </LinearLayout>
+        <TextView android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/sim_missing"
+            android:textSize="8pt"
+        />
+        <LinearLayout android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+        >
+            <Button android:id="@+id/btn_missing_sim1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/sim1"
+                android:tag="btn_missing_sim1"
+            />
+            <Button android:id="@+id/btn_missing_sim2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/sim2"
+                android:tag="btn_missing_sim2"
+            />
+            <Button android:id="@+id/btn_missing_sim3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/sim3"
+                android:tag="btn_missing_sim3"
+            />
+            <Button android:id="@+id/btn_missing_sim4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/sim4"
+                android:tag="btn_missing_sim4"
+            />
+        </LinearLayout>
+        <TextView android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/sim_recovery"
+            android:textSize="8pt"
+        />
+        <LinearLayout android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+        >
+            <Button android:id="@+id/btn_recovery_sim1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/sim1"
+                android:tag="btn_recovery_sim1"
+            />
+            <Button android:id="@+id/btn_recovery_sim2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/sim2"
+                android:tag="btn_recovery_sim2"
+            />
+            <Button android:id="@+id/btn_recovery_sim3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/sim3"
+                android:tag="btn_recovery_sim3"
+            />
+            <Button android:id="@+id/btn_recovery_sim4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/sim4"
+                android:tag="btn_recovery_sim4"
+            />
+        </LinearLayout>
+        <View android:layout_width="fill_parent"
+            android:layout_height="1dip"
+            android:background="#AAA"
+            android:layout_margin="10dip"
+        />
+    </LinearLayout>
+    <LinearLayout android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+    >
+        <Button android:id="@+id/btn_test_button"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+        />
+        <View android:layout_width="fill_parent"
+            android:layout_height="1dip"
+            android:background="#AAA"
+            android:layout_margin="10dip"
+        />
+    </LinearLayout>
+</LinearLayout>
+</ScrollView>

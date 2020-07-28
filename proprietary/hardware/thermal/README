@@ -1,0 +1,22 @@
+This module implements the MediaTek Thermal HAL.
+
+WHAT IT DOES?
+=============
+Mediatek Thermal HAL return cpu/gpu/battery/Tskin and cpu usage to framework.
+
+
+thermal.[platform].so contains the Mediatek thermal HAL.
+
+HOW IT WAS BUILT?
+==================
+It needs the following library from AOSP:
+
+libandroid, libcutils, liblog and libutils
+
+HOW TO USE IT?
+==============
+Mediatek thermal HAL should not be used directly by an application.  Most of
+thermal hints will be triggered by Android framework service.
+
+The majority of source code for this library were written by MediaTek.  Various
+open source libraries are also used and contained in this folder.

@@ -1,0 +1,33 @@
+This directory contains WIFI Tool library
+
+
+WHAT IT DOES?
+=============
+It provide WIFI editing feature on PC side, which allow read and modify WIFI items as GUI.
+
+
+HOW IT WAS BUILT?
+==================
+It needs the following libs from AOSP:
+1.  libc.so
+
+and the following libs from MediaTek:
+1. libmeta_wifi.a
+2. libft.so
+
+All source/dependency modules of this module are already put in
+'vendor/mediatek/proprietary/platform/${CHIP_NAME}/external/meta/wifi' folder.
+
+
+HOW TO USE IT?
+==============
+Files in this directory is used to generate a library which's name is 'libmeta_wifi'
+
+
+WIFI Tool
+The lib  'libmeta_wifi' is loaded when SP WIFI tool and related libs,
+all WIFI GUI opertations will call META_WIFI_xxx API, then it calls WIFI native API to access WIFI driver data.
+
+
+All the source code of this library were written by MediaTek co..
+

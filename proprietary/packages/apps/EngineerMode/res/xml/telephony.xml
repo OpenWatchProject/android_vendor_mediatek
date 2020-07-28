@@ -1,0 +1,436 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- 2G/3G/4G Security Status -->
+    <Preference
+        android:key="security_status"
+        android:persistent="false"
+        android:title="@string/security_status">
+        <intent
+            android:action="android.intent.action.MAIN"
+            android:targetClass="com.mediatek.engineermode.networkinfotc1.SecurityStatus"
+            android:targetPackage="com.mediatek.engineermode"/>
+    </Preference>
+    <!-- 3G/4G Antenna Diversity -->
+    <Preference
+        android:key="antenna_diversity"
+        android:persistent="false"
+        android:title="@string/antenna_diversity">
+        <intent
+            android:action="android.intent.action.MAIN"
+            android:targetClass="com.mediatek.engineermode.networkinfotc1.AntennaDiversity"
+            android:targetPackage="com.mediatek.engineermode"/>
+    </Preference>
+    <!-- AMR-WB on/off -->
+    <Preference android:key="amr_wb" android:title="@string/amr_wb"
+        android:persistent="false">
+        <intent android:action="android.intent.action.MAIN"
+            android:targetPackage="com.mediatek.engineermode"
+            android:targetClass="com.mediatek.engineermode.amrwb.AmrWbActivity" />
+    </Preference>
+    <!-- Ant Force  -->
+    <Preference android:key="force_tx" android:title="@string/force_ant"
+                android:persistent="false">
+        <intent android:action="android.intent.action.MAIN"
+                android:targetPackage="com.mediatek.engineermode"
+                android:targetClass="com.mediatek.engineermode.forceant.ForceTxSelect" />
+    </Preference>
+    <!-- Ant Tuner Debug -->
+    <Preference android:key="anttunerdebug" android:title="@string/title_activity_ant_tuner_debug"
+        android:persistent="false">
+        <intent android:action="android.intent.action.MAIN"
+            android:targetPackage="com.mediatek.engineermode"
+            android:targetClass="com.mediatek.engineermode.anttunerdebug.AntTunerDebugInterfaceSelect" />
+    </Preference>
+    <!-- Antenna Test -->
+    <Preference android:key="antenna" android:title="@string/antenna_title"
+        android:persistent="false">
+        <intent android:action="android.intent.action.MAIN"
+            android:targetPackage="com.mediatek.engineermode"
+            android:targetClass="com.mediatek.engineermode.antenna.AntennaActivity" />
+    </Preference>
+    <!-- APC Feature -->
+    <Preference android:key="apc" android:title="@string/apc_feature"
+        android:persistent="false">
+        <intent android:action="android.intent.action.MAIN"
+            android:targetPackage="com.mediatek.engineermode"
+            android:targetClass="com.mediatek.engineermode.apc.ApcFeatureSimType" />
+    </Preference>
+    <!-- AT Command Tool -->
+    <Preference android:key="lte_tool" android:title="@string/lte_tool"
+        android:persistent="false">
+        <intent android:action="android.intent.action.MAIN"
+            android:targetPackage="com.mediatek.engineermode"
+            android:targetClass="com.mediatek.engineermode.lte.CommandTool" />
+    </Preference>
+    <!-- Auto Answer -->
+    <Preference android:key="auto_answer" android:title="@string/auto_answer"
+        android:persistent="false">
+        <intent android:action="android.intent.action.MAIN"
+            android:targetPackage="com.mediatek.engineermode"
+            android:targetClass="com.mediatek.engineermode.AutoAnswer" />
+    </Preference>
+    <!-- Background Data Select -->
+    <Preference android:key="ehrpd_bg_data" android:title="@string/ehrpd_bg_data"
+        android:persistent="false">
+        <intent android:action="android.intent.action.MAIN"
+            android:targetPackage="com.mediatek.engineermode"
+            android:targetClass="com.mediatek.engineermode.ehrpdbgdata.EhrpdBgData" />
+    </Preference>
+    <!-- BandMode -->
+    <Preference android:key="bandmode" android:title="@string/bandmode"
+        android:persistent="false">
+        <intent android:action="android.intent.action.MAIN"
+            android:targetPackage="com.mediatek.engineermode"
+            android:targetClass="com.mediatek.engineermode.bandselect.BandModeSimSelect" />
+    </Preference>
+    <!-- BIP -->
+    <Preference android:key="bip" android:title="@string/bip"
+        android:persistent="false">
+        <intent android:action="android.intent.action.MAIN"
+            android:targetPackage="com.mediatek.engineermode"
+            android:targetClass="com.mediatek.engineermode.bip.BipAddApnActivity" />
+    </Preference>
+    <!-- C2K AP IR -->
+    <Preference android:key="c2k_ap_ir" android:title="@string/ap_ir"
+          android:persistent="false">
+          <intent android:action="android.intent.action.MAIN"
+                android:targetPackage="com.mediatek.engineermode"
+                android:targetClass="com.mediatek.engineermode.c2kapir.C2KAPIR" />
+    </Preference>
+    <!-- C2K IR Settings -->
+    <Preference android:key="c2k_ir_settings" android:title="@string/c2k_ir_setting"
+        android:persistent="false">
+        <intent android:action="android.intent.action.MAIN"
+            android:targetPackage="com.mediatek.engineermode"
+            android:targetClass="com.mediatek.engineermode.irsettings.IRSettings" />
+    </Preference>
+    <!-- C2K modem setting -->
+    <Preference android:key="bypass" android:title="@string/bypass_settings_title"
+        android:persistent="false">
+        <intent android:action="android.intent.action.MAIN"
+            android:targetPackage="com.mediatek.engineermode"
+            android:targetClass="com.mediatek.engineermode.bypass.BypassSettings" />
+    </Preference>
+    <!-- CDMA Network Select -->
+    <Preference android:key="cdma_network_select" android:title="@string/cdma_network_select"
+        android:persistent="false">
+        <intent android:action="android.intent.action.MAIN"
+            android:targetPackage="com.mediatek.engineermode"
+            android:targetClass="com.mediatek.engineermode.cdmanetworkselect.NetworkSelectSimType" />
+    </Preference>
+    <!-- CDMA NetworkInfo -->
+    <Preference android:key="cdma_network_info" android:title="@string/cdma_network_info"
+        android:persistent="false">
+        <intent android:action="android.intent.action.MAIN"
+            android:targetPackage="com.mediatek.engineermode"
+            android:targetClass="com.mediatek.engineermode.networkinfo.NetworkInfoSimType" />
+    </Preference>
+    <!-- CFU -->
+    <Preference android:key="cfu" android:title="@string/cfu"
+        android:persistent="false">
+        <intent android:action="android.intent.action.MAIN"
+            android:targetPackage="com.mediatek.engineermode"
+            android:targetClass="com.mediatek.engineermode.cfu.CfuActivity" />
+    </Preference>
+    <!-- Channel Lock -->
+    <Preference android:key="channel_lock" android:title="@string/channel_lock"
+        android:persistent="false">
+        <intent android:action="android.intent.action.MAIN"
+            android:targetPackage="com.mediatek.engineermode"
+            android:targetClass="com.mediatek.engineermode.channellock.channelSimSelectActivity" />
+    </Preference>
+    <!-- CMAS -->
+    <Preference android:key="cmas" android:title="@string/cmas"
+        android:persistent="false">
+        <intent android:action="android.intent.action.MAIN"
+            android:targetPackage="com.mediatek.engineermodecmas"
+            android:targetClass="com.mediatek.engineermodecmas.CmasSettings" />
+    </Preference>
+    <!-- Diagnostic Metric -->
+    <Preference android:key="diagnostic" android:title="@string/mdm_diagnostic_title"
+        android:persistent="false">
+        <intent android:action="android.intent.action.MAIN"
+            android:targetPackage="com.mediatek.engineermode"
+            android:targetClass="com.mediatek.engineermode.mdmdiagnosticinfo.MDMSimSelectActivity" />
+    </Preference>
+    <!-- Emergency Numbers -->
+    <Preference
+        android:title="@string/pref_ecc_num"
+        android:key="@string/pref_ecc_num_key"
+        android:persistent="false">
+        <intent android:action="android.intent.action.MAIN"
+            android:targetPackage="com.mediatek.engineermode"
+            android:targetClass="com.mediatek.engineermode.ecc.EmergencyNumbersActivity" />
+    </Preference>
+    <!-- Fast Dormancy -->
+    <Preference android:key="fast_dormancy" android:title="@string/fast_dormancy"
+        android:persistent="false">
+        <intent android:action="android.intent.action.MAIN"
+            android:targetPackage="com.mediatek.engineermode"
+            android:targetClass="com.mediatek.engineermode.fastdormancy.FastDormancy" />
+    </Preference>
+
+    <!-- GPRS -->
+    <Preference android:key="gprs" android:title="@string/GPRS"
+        android:persistent="false">
+        <intent android:action="android.intent.action.MAIN"
+            android:targetPackage="com.mediatek.engineermode"
+            android:targetClass="com.mediatek.engineermode.GPRS" />
+    </Preference>
+
+    <!-- GWSD Start -->
+    <Preference android:key="gwsd_setting" android:title="@string/gwsd_setting"
+        android:persistent="false">
+        <intent android:action="android.intent.action.MAIN"
+            android:targetPackage="com.mediatek.engineermode"
+            android:targetClass="com.mediatek.engineermode.gwsdconfigure.GwsdConfigure" />
+    </Preference>
+
+    <!-- HSPA Info -->
+    <Preference android:key="hspa_info" android:title="@string/hspa_info_title"
+        android:persistent="false">
+        <intent android:action="android.intent.action.MAIN"
+            android:targetPackage="com.mediatek.engineermode"
+            android:targetClass="com.mediatek.engineermode.hspainfo.HspaInfo" />
+    </Preference>
+    <!-- IA -->
+    <Preference android:key="iatype" android:title="@string/iatype"
+        android:persistent="false">
+        <intent android:action="android.intent.action.MAIN"
+            android:targetPackage="com.mediatek.engineermode"
+            android:targetClass="com.mediatek.engineermode.iatype.IATypeActivity" />
+    </Preference>
+    <!-- IMS -->
+    <Preference android:key="ims" android:title="@string/ims_title"
+        android:persistent="false">
+        <intent android:action="android.intent.action.MAIN"
+            android:targetPackage="com.mediatek.engineermode"
+            android:targetClass="com.mediatek.engineermode.ims.SimSelectActivity" />
+    </Preference>
+    <!-- IOT Easy Configuration -->
+    <Preference android:key="iot_config" android:title="@string/iot_config"
+        android:persistent="false">
+        <intent android:action="android.intent.action.MAIN"
+            android:targetPackage="com.mediatek.engineermode"
+            android:targetClass="com.mediatek.engineermode.iotconfig.IotConfigurationActivity" />
+    </Preference>
+    <!-- LTE CA Configure -->
+    <Preference android:key="ltecaconfig" android:title="@string/lte_ca_config"
+        android:persistent="false">
+        <intent android:action="android.intent.action.MAIN"
+            android:targetPackage="com.mediatek.engineermode"
+            android:targetClass="com.mediatek.engineermode.ltecaconfigure.LteCAConfigActivity" />
+    </Preference>
+
+    <!-- LTE HPUE Configure -->
+    <Preference android:key="lte_hpue_configue" android:title="@string/lte_hpue_configure"
+                android:persistent="false">
+        <intent android:action="android.intent.action.MAIN"
+                android:targetPackage="com.mediatek.engineermode"
+                android:targetClass="com.mediatek.engineermode.ltehpueconfigure.LteHPUEConfigureActivity" />
+    </Preference>
+
+    <!-- LTE RX/MIMO Configure -->
+    <Preference android:key="lte_rx_mimo_configure" android:title="@string/lte_rx_mimo_configure"
+                android:persistent="false">
+        <intent android:action="android.intent.action.MAIN"
+                android:targetPackage="com.mediatek.engineermode"
+                android:targetClass="com.mediatek.engineermode.lterxmimoconfigure.LteRxMimoConfigure" />
+    </Preference>
+
+    <!-- MCF Config -->
+    <Preference android:key="mcf_config" android:title="@string/mcf_config"
+        android:persistent="false">
+        <intent android:action="android.intent.action.MAIN"
+            android:targetPackage="com.mediatek.engineermode"
+            android:targetClass="com.mediatek.engineermode.mcfconfig.McfSimSelectActivity" />
+    </Preference>
+
+    <!-- MD EM Filter -->
+    <Preference android:key="md_em_filter" android:title="@string/md_em_filter"
+        android:persistent="false">
+        <intent android:action="android.intent.action.MAIN"
+            android:targetPackage="com.mediatek.engineermode"
+            android:targetClass="com.mediatek.engineermode.modemfilter.ModemFilterSimType" />
+    </Preference>
+
+    <!-- MD Low Power Monitor-->
+    <Preference android:key="md_low_power_monitor" android:title="@string/md_low_power_monitor_title"
+                android:persistent="false">
+        <intent android:action="android.intent.action.MAIN"
+                android:targetPackage="com.mediatek.engineermode"
+                android:targetClass="com.mediatek.engineermode.mdlowpowermonitor.MDLowPowerMonitor" />
+    </Preference>
+
+    <!-- MDML EM Components -->
+    <Preference android:key="mdm_em_info" android:title="@string/MDM_name"
+        android:persistent="false">
+        <intent android:action="android.intent.action.MAIN"
+            android:targetPackage="com.mediatek.engineermode"
+            android:targetClass="com.mediatek.engineermode.mdmcomponent.MDMSimSelectActivity" />
+    </Preference>
+    <!-- Misc Feature Config -->
+    <Preference android:key="misc_config" android:title="@string/misc_config"
+        android:persistent="false">
+        <intent android:action="android.intent.action.MAIN"
+            android:targetPackage="com.mediatek.engineermode"
+            android:targetClass="com.mediatek.engineermode.misc.MiscConfig" />
+    </Preference>
+    <!-- Mobile data service preferred -->
+    <Preference android:key="mobile_data_prefer" android:title="@string/pch_data_prefer_title"
+        android:persistent="false">
+        <intent android:action="android.intent.action.MAIN"
+            android:targetPackage="com.mediatek.engineermode"
+            android:targetClass="com.mediatek.engineermode.MobileDataPreferred" />
+    </Preference>
+    <!-- Modem Test -->
+    <Preference android:key="modem_test" android:title="@string/modem_test"
+        android:persistent="false">
+        <intent android:action="android.intent.action.MAIN"
+            android:targetPackage="com.mediatek.engineermode"
+            android:targetClass="com.mediatek.engineermode.modemtest.ModemTestActivity" />
+    </Preference>
+    <!-- Network Selecting -->
+    <Preference android:key="network_select" android:title="@string/network_select"
+        android:persistent="false">
+        <intent android:action="android.intent.action.MAIN"
+            android:targetPackage="com.mediatek.engineermode"
+            android:targetClass="com.mediatek.engineermode.networkselect.NetworkSelectSimType" />
+    </Preference>
+    <!-- NetworkInfo -->
+    <Preference android:key="network_info" android:title="@string/network_info"
+        android:persistent="false">
+        <intent android:action="android.intent.action.MAIN"
+            android:targetPackage="com.mediatek.engineermode"
+            android:targetClass="com.mediatek.engineermode.networkinfo.NetworkInfoSimType" />
+    </Preference>
+
+    <!-- NoiseProfilingTool -->
+    <Preference android:key="noise_profiling_tool" android:title="@string/npt"
+                android:persistent="false">
+        <intent android:action="android.intent.action.MAIN"
+                android:targetPackage="com.mediatek.engineermode"
+                android:targetClass="com.mediatek.engineermode.npt.NoiseProfilingActivity" />
+    </Preference>
+
+    <!-- Ota Airplane Mode  -->
+    <Preference android:key="ota_airplane_mode" android:title="@string/ota_airplane_title"
+                android:persistent="false">
+        <intent android:action="android.intent.action.MAIN"
+                android:targetPackage="com.mediatek.engineermode"
+                android:targetClass="com.mediatek.engineermode.otaairplanemode.OtaAirplaneModeActivity" />
+    </Preference>
+    <!-- RF De-sense Test -->
+    <Preference android:key="rf_desense_test" android:title="@string/rf_desense_test"
+        android:persistent="false">
+        <intent android:action="android.intent.action.MAIN"
+            android:targetPackage="com.mediatek.engineermode"
+            android:targetClass="com.mediatek.engineermode.rfdesense.RfDesenseTest" />
+    </Preference>
+    <!-- Rtn/Scrtn -->
+    <Preference android:key="rtn" android:title="@string/rtn"
+        android:persistent="false">
+        <intent android:action="android.intent.action.MAIN"
+            android:targetPackage="com.mediatek.engineermode"
+            android:targetClass="com.mediatek.engineermode.rttn.Rtnmain" />
+    </Preference>
+    <!-- SBP -->
+    <Preference android:key="sbp" android:title="@string/sbp_title"
+        android:persistent="false">
+        <intent android:action="android.intent.action.MAIN"
+            android:targetPackage="com.mediatek.engineermode"
+            android:targetClass="com.mediatek.engineermode.sbp.SbpActivity" />
+    </Preference>
+    <!-- Send Spc -->
+    <Preference android:key="spc" android:title="@string/Send_spc"
+        android:persistent="false">
+        <intent android:action="android.intent.action.MAIN"
+            android:targetPackage="com.mediatek.engineermode"
+            android:targetClass="com.mediatek.engineermode.spc.SendSpc" />
+    </Preference>
+
+    <!-- sim_info -->
+    <Preference android:key="sim_info" android:title="@string/sim_info"
+                android:persistent="false">
+        <intent android:action="android.intent.action.MAIN"
+                android:targetPackage="com.mediatek.engineermode"
+                android:targetClass="com.mediatek.engineermode.siminfo.SimSelectActivity" />
+    </Preference>
+
+    <!-- SIM switch -->
+    <Preference android:key="sim_switch" android:title="@string/sim_switch"
+        android:persistent="false">
+        <intent android:action="android.intent.action.MAIN"
+            android:targetPackage="com.mediatek.engineermode"
+            android:targetClass="com.mediatek.engineermode.simswitch.SimSwitch" />
+    </Preference>
+    <!-- Simme Lock -->
+    <Preference android:key="simme_lock1" android:title="@string/simme_lock"
+        android:persistent="false">
+        <intent android:action="android.intent.action.MAIN"
+            android:targetPackage="com.android.simmelock"
+            android:targetClass="com.android.simmelock.LockList" />
+    </Preference>
+    <!-- Simme Lock -->
+    <Preference android:key="simme_lock2" android:title="@string/simme_lock"
+        android:persistent="false">
+        <intent android:action="android.intent.action.MAIN"
+            android:targetPackage="com.android.simmelock"
+            android:targetClass="com.android.simmelock.TabLockList" />
+    </Preference>
+    <!-- SimRecoveryTestTool -->
+    <Preference android:key="sim_recoverytest_tool" android:title="@string/sim_recoverytest_tool_title"
+        android:persistent="false">
+        <intent android:action="android.intent.action.MAIN"
+            android:targetPackage="com.mediatek.simrecovery"
+            android:targetClass="com.mediatek.simrecovery.SimRecoveryTestToolActivity" />
+    </Preference>
+    <!-- Switch test sim card type -->
+    <Preference android:key="test_sim_switch" android:title="@string/testsimcard"
+          android:persistent="false">
+          <intent android:action="android.intent.action.MAIN"
+                android:targetPackage="com.mediatek.engineermode"
+                android:targetClass="com.mediatek.engineermode.testsimswitch.TestSimSwitchActivity" />
+    </Preference>
+    <!-- U3 PHY Switch -->
+    <Preference android:key="u3_phy" android:title="@string/u3_phy_switch_title"
+        android:persistent="false">
+        <intent android:action="android.intent.action.MAIN"
+            android:targetPackage="com.mediatek.engineermode"
+            android:targetClass="com.mediatek.engineermode.u3phy.U3PhySwitch" />
+    </Preference>
+    <!-- Usb Tethering -->
+    <Preference android:key="usb_tethering" android:title="@string/usb_tethering"
+        android:persistent="false">
+        <intent android:action="android.intent.action.MAIN"
+            android:targetPackage="com.mediatek.engineermode"
+            android:targetClass="com.mediatek.engineermode.usbtethering.UsbTethering" />
+    </Preference>
+    <!-- ViLTE -->
+    <Preference android:key="vilte" android:title="@string/vilte_title"
+        android:persistent="false">
+        <intent android:action="android.intent.action.MAIN"
+            android:targetPackage="com.mediatek.engineermode"
+            android:targetClass="com.mediatek.engineermode.vilte.VilteMenuSelect" />
+    </Preference>
+    <!-- Wifi Calling -->
+    <Preference android:key="wifi_calling" android:title="@string/wifi_calling_title"
+        android:persistent="false">
+        <intent android:action="android.intent.action.MAIN"
+            android:targetPackage="com.mediatek.engineermode"
+            android:targetClass="com.mediatek.engineermode.wificalling.WifiCallingConfigActivity" />
+    </Preference>
+    <!-- World Mode -->
+    <Preference android:key="world_mode" android:title="@string/world_mode"
+        android:persistent="false">
+        <intent android:action="android.intent.action.MAIN"
+            android:targetPackage="com.mediatek.engineermode"
+            android:targetClass="com.mediatek.engineermode.worldmode.WorldModeActivity" />
+    </Preference>
+    <!-- World Phone -->
+    <Preference android:key="modem_switch" android:title="@string/world_phone"
+        android:persistent="false">
+        <intent android:action="android.intent.action.MAIN"
+            android:targetPackage="com.mediatek.engineermode"
+            android:targetClass="com.mediatek.engineermode.worldphone.ModemSwitch" />
+    </Preference>
+</PreferenceScreen>

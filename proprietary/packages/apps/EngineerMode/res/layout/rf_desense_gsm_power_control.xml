@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_margin="10dp"
+    android:orientation="vertical" >
+
+    <TableLayout
+        android:id="@+id/TableLayout01"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="3" >
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp" >
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_weight="1"
+                android:text="@string/rf_desense_gsm_band" />
+
+            <Spinner
+                android:id="@+id/rf_desense_power_band"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="20dp"
+                android:layout_weight="1" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp" >
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_weight="1"
+                android:text="@string/rf_desense_power" />
+
+            <Spinner
+                android:id="@+id/rf_desense_gsm_power_level"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="20dp"
+                android:layout_weight="1" />
+        </TableRow>
+    </TableLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_weight="2"
+        android:orientation="vertical" >
+
+        <Button
+            android:id="@+id/rf_desense_gsm_set"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/rf_desense_gsm_set" />
+
+        <Button
+            android:id="@+id/rf_desense_gsm_set_max_power"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/rf_desense_gsm_set_max_power" />
+
+        <Button
+            android:id="@+id/rf_desense_gsm_query"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/rf_desense_gsm_query" />
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,31 @@
+Core Library of MTK Camera Hal3 Feature.
+
+This library is pre-built by MediaTek internal.
+
+
+WHAT IT DOES?
+=============
+This contains MediaTek developed camera related pre- and post-processing modules.
+Without them, some Hal3 Feature is not workable.
+
+HOW IT WAS BUILT?
+==================
+It needs the following library from AOSP:
+1.  libstdc++.so
+2.  libcutils.so
+3.  libutils.so
+
+and the following libs from MediaTek:
+1. libcam_utils
+2. libcam.metadata
+
+All source/dependency modules of this module are already put in
+'vendor/mediatek/libs' folder.
+
+HOW TO USE IT?
+==============
+
+Provide api for Hal3 PipelineModel use to control feature.
+all api interface are at (vendor/mediatek/proprietary/hardware/mtkcam)
+
+All the source code of this library were written by MediaTek co..

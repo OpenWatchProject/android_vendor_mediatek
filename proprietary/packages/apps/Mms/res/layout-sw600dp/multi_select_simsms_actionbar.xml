@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2010 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/navigation_bar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:splitMotionEvents = "false">
+
+   <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+           android:orientation="horizontal"
+           android:layout_width="wrap_content"
+           android:layout_height="match_parent">
+
+   <FrameLayout
+           android:layout_width="match_parent"
+           android:layout_height="match_parent">
+        <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="right"
+                android:src="@drawable/dropdown_ic_arrow_normal_holo_dark" />
+
+        <Button android:id="@+id/selection_menu"
+           android:divider="?android:attr/listDividerAlertDialog"
+           style="?android:attr/borderlessButtonStyle"
+           android:singleLine="true"
+           android:textColor="@android:color/white"
+           android:gravity="left|center_vertical"
+           android:paddingRight="25dip"
+           android:layout_width="wrap_content"
+           android:layout_height="match_parent" />
+   </FrameLayout>
+
+    </LinearLayout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+           android:layout_width="match_parent"
+           android:layout_height="match_parent"
+           android:gravity="right">
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+           android:layout_width="wrap_content"
+           android:layout_height="match_parent"
+           android:orientation="horizontal">
+
+                <ImageView android:paddingLeft="10dip"
+                   android:paddingRight="10dip"
+                   android:layout_width="wrap_content"
+                   android:layout_height="match_parent"
+                   android:gravity="bottom"
+                   android:src="@drawable/cab_divider_vertical_dark" />
+
+                <Button android:id="@+id/selection_cancel"
+                   android:divider="?android:attr/listDividerAlertDialog"
+                   style="?android:attr/borderlessButtonStyle"
+                   android:singleLine="true"
+                   android:padding="0dip"
+                   android:layout_weight="1"
+                   android:textColor="@android:color/white"
+                   android:gravity="center"
+                   android:layout_gravity="center"
+                   android:text="@string/Cancel"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content" />
+
+                <ImageView android:paddingLeft="10dip"
+                   android:paddingRight="10dip"
+                   android:layout_width="wrap_content"
+                   android:layout_height="match_parent"
+                   android:gravity="bottom"
+                   android:src="@drawable/cab_divider_vertical_dark" />
+
+                <Button android:id="@+id/selection_done"
+                       android:divider="?android:attr/listDividerAlertDialog"
+                       style="?android:attr/borderlessButtonStyle"
+                       android:singleLine="true"
+                       android:padding="0dip"
+                       android:layout_weight="1"
+                       android:textColor="@android:color/white"
+                       android:gravity="center"
+                       android:layout_gravity="center"
+                       android:text="@string/yes"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content" />
+            </LinearLayout>
+        </LinearLayout>
+</LinearLayout>

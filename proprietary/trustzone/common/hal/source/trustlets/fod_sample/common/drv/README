@@ -1,0 +1,16 @@
+
+WHAT IT DOES?
+=============
+This is a protected memory t-driver for share memory testing.
+- test protect memory read/write between GZ and TEE.
+
+
+HOW IT WAS BUILT?
+=================
+It could be built with mmm or mm build command.
+
+
+HOW TO USE IT?
+==============
+This driver will be loaded automatically by pmem_share native
+program using Trustonic legacy client API.

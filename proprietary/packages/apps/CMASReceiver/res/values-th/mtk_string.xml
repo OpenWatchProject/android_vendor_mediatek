@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+ * Copyright (C) 2007-2008 Esmertec AG.
+ * Copyright (C) 2007-2008 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+--><resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+   <string name="alerts">แจ้งเตือน</string>
+    <string name="select_all">"เลือกทั้งหมด"</string>
+    <string name="unselect_all">"ยกเลิกการเลือกทั้งหมด"</string>
+    <string name="delete">"ลบ"</string>
+    <string name="select_cellbroadcasts">เลือกการแจ้งเตือนฉุกเฉิน</string>
+    <plurals name="message_view_selected_message_count">
+        <item quantity="one"><xliff:g id="message_count" example="1">%d</xliff:g> ข้อความถูกเลือก</item>
+        <item quantity="other"><xliff:g id="message_count" example="9">%d</xliff:g> ข้อความถูกเลือก</item>
+    </plurals>
+    <plurals name="confirm_delete_broadcast">
+        <item quantity="one">ข้อความแจ้งเตือนที่เลือก 1 ข้อความจะถูกลบ</item>
+        <item quantity="other">ข้อความแจ้งเตือนที่เลือก <xliff:g id="number" example="15">%1$s</xliff:g> ข้อความจะถูกลบ</item>
+    </plurals>
+    <string name="enable_cmas_presidential_threat_alerts_title">แสดงการแจ้งเตือนภัยพิบัติ</string>
+    <string name="enable_cmas_presidential_threat_alerts_summary">แสดงการแจ้งเตือนระดับภัยพิบัติ</string>
+    <string name="enable_cmas_imminent_threat_alerts_title">การแจ้งเตือนภัยที่ใกล้เข้ามา</string>
+    <string name="enable_cmas_imminent_threat_alerts_summary">แสดงการแจ้งเตือนสำหรับภัยคุกคามต่อชีวิตและทรัพยสินที่ใกล้เข้ามา</string>
+    <string name="cmas_preview_alert_tone_title">พรีวิวเสียงแจ้งเตือน</string>
+    <string name="cmas_preview_alert_tone_summary">พรีวิวเสียงแจ้งเตือน</string>
+    <string name="cmas_change_settings">แน่ใจว่าต้องการเปลี่ยนแปลงการตั้งค่าหรือไม่?</string>
+    <string name="cmas_disable_cmas">จะไม่ได้รับการแจ้งเตือน ถ้าคุณปิดทำงานการเผยแพร่ผ่านเซลล์</string>
+    <string name="cmas_enable_cmas_failed">ไม่สามารถเปิด</string>
+    <string name="enable_repeat_alert_title">ปลุกซ้ำ</string>
+    <string name="enable_repeat_alert_summary">เพื่อเตือนการแจ้งเตือนที่ผู้ใช้ยังไม่อ่านเป็นระยะ</string>
+    <string name="enable_all_alert_title">การแจ้งเตือนทั้งหมด เปิด</string>
+    <string name="enable_all_imminent_alerts_title">ข้อความภัยคุกคามที่ใกล้เข้ามาทั้งหมด</string>
+    <string name="enable_cell_broadcast_title">การแจ้งเตือนฉุกเฉิน</string>
+    <string name="alert_sound_volume">ระดับเสียงแจ้งเตือน</string>
+    <string name="alert_volume_summary">ปรับระดับเสียงแจ้งเตือน</string>
+</resources>

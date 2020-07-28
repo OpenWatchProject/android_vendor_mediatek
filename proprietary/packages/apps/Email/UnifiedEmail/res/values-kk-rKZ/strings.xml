@@ -1,0 +1,495 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+     Copyright (C) 2011 Google Inc.
+     Licensed to The Android Open Source Project.
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+ -->
+
+<resources xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="from">Кімнен</string>
+    <string name="to">Кімге</string>
+    <string name="cc">"Көшірме"</string>
+    <string name="bcc">"Жасырын көшірме"</string>
+    <string name="subject_hint">Тақырып</string>
+    <string name="body_hint">"Электрондық пошта хабарын жазу"</string>
+    <string name="add_file_attachment">"Файл тіркеу"</string>
+    <string name="add_photo_attachment">"Сурет тіркеу"</string>
+    <string name="save_draft">"Жоба жазбаны сақтау"</string>
+    <string name="discard">"Өшіру"</string>
+    <string name="compose">"Хат жазу"</string>
+    <string name="compose_title">"Хат жазу"</string>
+    <string-array name="compose_modes">
+        <item>"Жауап беру"</item>
+        <item>"Барлығына жауап беру"</item>
+        <item>"Бағыттау"</item>
+    </string-array>
+    <string name="reply_attribution">"<xliff:g id="DATE">%s</xliff:g> күні <xliff:g id="PERSON">%s</xliff:g> жазды:"</string>
+    <string name="forward_attribution">----------  Бағыты өзгертілген хабарлама ---------- <br/>Кімнен: <xliff:g id="from">%1$s</xliff:g><br/>Күні: <xliff:g id="date">%2$s</xliff:g><br/>Тақырып: <xliff:g id="subject">%3$s</xliff:g><br/>Кімге: <xliff:g id="to">%4$s</xliff:g>&lt;br&gt;</string>
+    <string name="forward_attribution_no_headers">"---------- Қайта жіберілген хабар ----------"</string>
+    <string name="cc_attribution">"Көшірме: <xliff:g id="CC">%1$s</xliff:g>&lt;br&gt;"</string>
+    <string name="select_attachment_type">"Тіркеме түрін таңдау"</string>
+    <string name="too_large_to_attach_single"><xliff:g id="maxSize">%1$s</xliff:g> мәнінен үлкен файлды тіркеу мүмкін емес</string>
+    <string name="too_large_to_attach_multiple">Бір немесе бірнеше файл тіркелмеді. Шегі - <xliff:g id="maxSize">%1$s</xliff:g>.</string>
+    <string name="too_large_to_attach_additional">Файл тіркелмеді. <xliff:g id="maxSize">%1$s</xliff:g> шегіне жетті.</string>
+    <string name="generic_attachment_problem">Файлды тіркеу мүмкін болмады.</string>
+    <string name="attachment_permission_denied">Тіркеме үшін рұқсат қабылданбады.</string>
+    <string name="recipient_needed">"Кемінде бір алушыны қосыңыз."</string>
+    <string name="confirm_send_message_with_no_subject">"Хабар тақырыбында мәтін жоқ."</string>
+    <string name="confirm_send_message_with_no_body">Хабарлама ішінде мәтін жоқ.</string>
+    <string name="confirm_send_message">"Бұл хабарды жіберу қажет пе?"</string>
+    <string name="message_discarded">"Хабар жойылды."</string>
+    <string name="signature">\n\n"<xliff:g id="SIGNATURE">%s</xliff:g>"</string>
+    <string name="custom_from_account_label">"Басқаша жіберу:"</string>
+    <string name="send">"Жіберу"</string>
+    <string name="mark_read">"Оқылған деп белгілеу"</string>
+    <string name="mark_unread">"Оқылмаған деп белгілеу"</string>
+    <string name="toggle_read_unread">Оқылу/оқылмауын ауыстырып қосу</string>
+    <string name="mute">"ҮНСІЗ"</string>
+    <string name="add_star">"Жұлдызша қосу"</string>
+    <string name="remove_star">"Жұлдызшаны жою"</string>
+    <string name="remove_folder">"<xliff:g id="FOLDERNAME">%1$s</xliff:g> ішінен жою"</string>
+    <string name="archive">"Мұрағаттау"</string>
+    <string name="report_spam">"Спам деп есеп беру"</string>
+    <string name="mark_not_spam">"Спам емес деп есеп беру"</string>
+    <string name="report_phishing">"Фишинг деп есеп беру"</string>
+    <string name="delete">"Жою"</string>
+    <string name="discard_drafts">"Жоба жазбаларды жою"</string>
+    <string name="discard_failed">Жою сәтсіз аяқталды</string>
+    <string name="refresh">"Жаңарту"</string>
+    <string name="reply">"Жауап беру"</string>
+    <string name="reply_all">"Барлығына жауап беру"</string>
+    <string name="resume_draft">"Жөндеу"</string>
+    <string name="forward">"Бағыттау"</string>
+    <string name="menu_compose">"Хат жазу"</string>
+    <string name="menu_change_folders">"Қалталарды өзгерту"</string>
+    <string name="menu_move_to">"Мынаған жылжыту:"</string>
+    <string name="menu_move_to_inbox">"«Кіріс» қалтасына жылжыту"</string>
+    <string name="menu_manage_folders">"Қалта параметрлері"</string>
+    <string name="menu_show_original">"Өлшемді автоматты түрде орнатуды болдырмау"</string>
+    <string name="menu_settings">"Параметрлер"</string>
+    <string name="menu_search">"Іздеу"</string>
+    <string name="menu_toggle_drawer">Бөлікті ауыстырып қосу</string>
+    <string name="drawer_title">"Шарлау"</string>
+    <string name="mark_important">"Маңызды деп белгілеу"</string>
+    <string name="mark_not_important">"Маңызды емес етіп белгілеу"</string>
+    <string name="add_cc_label">"Көшірме/жасырын көшірме қосу"</string>
+    <string name="add_bcc_label">"Жасырын көшірмені қосу"</string>
+    <string name="quoted_text">"Тырнақшаға алынған мәтін қосу"</string>
+    <string name="quoted_text_label">"Дәйексөз мәтіні"</string>
+    <string name="respond_inline">"Кірістірілген жауап"</string>
+    <string name="bytes">"<xliff:g id="COUNT">%s</xliff:g> Б"</string>
+    <string name="kilobytes">"<xliff:g id="COUNT">%s</xliff:g> КБ"</string>
+    <string name="megabytes">"<xliff:g id="COUNT">%s</xliff:g> МБ"</string>
+    <string name="attachment_image">"Кескін"</string>
+    <string name="attachment_video">"Видео"</string>
+    <string name="attachment_audio">"Aудио"</string>
+    <string name="attachment_text">"мәтін"</string>
+    <string name="attachment_application_msword">"Құжат"</string>
+    <string name="attachment_application_vnd_ms_powerpoint">"Көрсетілім"</string>
+    <string name="attachment_application_vnd_ms_excel">"Электрондық кесте"</string>
+    <string name="attachment_application_pdf">"PDF"</string>
+    <string name="attachment_unknown">"<xliff:g id="ATTACHMENTEXTENSION">%s</xliff:g> файлы"</string>
+    <string name="preview_attachment">"Алдын ала көру"</string>
+    <string name="save_attachment">"Сақтау"</string>
+    <string name="download_again">"Қайта жүктеу"</string>
+    <string name="remove_attachment_desc"><xliff:g id="attachmentName">%s</xliff:g> тіркемесін жою</string>
+    <string name="more_info_attachment">"Ақпарат"</string>
+    <string name="no_application_found">"Ешбір қолданба бұл тіркемені көру үшін аша алмайды."</string>
+    <string name="fetching_attachment">"Тіркемені алу"</string>
+    <string name="please_wait">Күте тұрыңыз\u2026</string>
+    <string name="saved">"Сақталды, <xliff:g id="SIZE">%s</xliff:g>"</string>
+    <string name="download_failed">Жүктеп алу мүмкін болмады. Қайталау үшін түртіңіз.</string>
+    <string name="menu_photo_save_all">"Барлығын сақтау"</string>
+    <string name="menu_photo_share">Бөлісу</string>
+    <string name="menu_photo_share_all">"Барлығымен бөлісу"</string>
+    <string name="menu_photo_print">"Басып шығару"</string>
+    <string name="saving"/>
+    <string name="choosertitle_sharevia">"Бөлісу қолданбасы"</string>
+    <string name="contextmenu_openlink">"Браузерде ашу"</string>
+    <string name="contextmenu_copy">"Көшіру"</string>
+    <string name="contextmenu_copylink">"Сілтеменің URL мекенжайын көшіру"</string>
+    <string name="contextmenu_view_image">"Кескінді көру"</string>
+    <string name="contextmenu_dial_dot">"Теру…"</string>
+    <string name="contextmenu_sms_dot">"SMS…"</string>
+    <string name="contextmenu_add_contact">"Контакт қосу"</string>
+    <string name="contextmenu_send_mail">"Электрондық хабар жіберу"</string>
+    <string name="contextmenu_map">"Карта"</string>
+    <string name="contextmenu_sharelink">"Сілтемені бөлісу"</string>
+    <string name="content_description">"<xliff:g id="TOHEADER">%1$s</xliff:g><xliff:g id="PARTICIPANT">%2$s</xliff:g>, <xliff:g id="SUBJECT">%3$s</xliff:g> туралы, <xliff:g id="SNIPPET">%4$s</xliff:g>, <xliff:g id="DATE">%5$s</xliff:g> күні, <xliff:g id="READSTATE">%6$s</xliff:g>"</string>
+    <string name="content_description_today">"<xliff:g id="TOHEADER">%1$s</xliff:g><xliff:g id="PARTICIPANT">%2$s</xliff:g>, <xliff:g id="SUBJECT">%3$s</xliff:g> туралы, <xliff:g id="SNIPPET">%4$s</xliff:g>, <xliff:g id="TIME">%5$s</xliff:g> уақытында, <xliff:g id="READSTATE">%6$s</xliff:g>"</string>
+    <string name="content_description_with_folders"><xliff:g id="toHeader">%1$s</xliff:g><xliff:g id="participant">%2$s</xliff:g> пайдаланушысы <xliff:g id="date">%5$s</xliff:g>, <xliff:g id="readstate">%6$s</xliff:g> күні <xliff:g id="subject">%3$s</xliff:g>, <xliff:g id="snippet">%4$s</xliff:g>, белгілер: <xliff:g id="folders">%7$s</xliff:g></string>
+    <string name="content_description_today_with_folders"><xliff:g id="toHeader">%1$s</xliff:g><xliff:g id="participant">%2$s</xliff:g> пайдаланушысы <xliff:g id="time">%5$s</xliff:g>, <xliff:g id="readstate">%6$s</xliff:g> уақытында <xliff:g id="subject">%3$s</xliff:g>, <xliff:g id="snippet">%4$s</xliff:g>, labels: <xliff:g id="folders">%7$s</xliff:g></string>
+    <string name="read_string">"сөйлесім оқылды"</string>
+    <string name="unread_string">"сөйлесім оқылмаған"</string>
+    <string name="filtered_tag">"[<xliff:g id="TAG">%1$s</xliff:g>]<xliff:g id="SUBJECT">%2$s</xliff:g>"</string>
+    <string name="badge_and_subject"><xliff:g id="contact_name">%1$s</xliff:g> (<xliff:g id="phone_label">%2$s</xliff:g>) жылдам теру <xliff:g id="key">%3$s</xliff:g> тізіміне қосылды</string>
+    <plurals name="draft">
+        <item quantity="one">"Жоба"</item>
+        <item quantity="other">Нобайлар</item>
+    </plurals>
+    <string name="sending">Жіберілуде\u2026</string>
+    <string name="message_retrying">"Қайталау…"</string>
+    <string name="message_failed">"Сәтсіз аяқталды"</string>
+    <string name="send_failed"><xliff:g>%s</xliff:g> \u2014 <xliff:g>%s</xliff:g></string>
+    <string name="me_object_pronoun">Мен</string>
+    <string name="me_subject_pronoun">Мен</string>
+    <plurals name="confirm_delete_conversation">
+        <item quantity="one">"Осы сөйлесімді жою қажет пе?"</item>
+        <item quantity="other">"Осы <xliff:g id="COUNT">%1$d</xliff:g> сөйлесімді жою қажет пе?"</item>
+    </plurals>
+    <plurals name="confirm_archive_conversation">
+        <item quantity="one">"Бұл сөйлесімді мұрағаттау қажет пе?"</item>
+        <item quantity="other">"Осы <xliff:g id="COUNT">%1$d</xliff:g> сөйлесімді мұрағаттау қажет пе?"</item>
+    </plurals>
+    <plurals name="confirm_discard_drafts_conversation">
+        <item quantity="one">"Бұл хабарды жабу қажет пе?"</item>
+        <item quantity="other">"Осы <xliff:g id="COUNT">%1$d</xliff:g> хабарды жою қажет пе?"</item>
+    </plurals>
+    <string name="confirm_discard_text">"Бұл хабарды жабу қажет пе?"</string>
+    <string name="loading_conversations">Жүктеу\u2026</string>
+    <string name="empty_inbox">"Барлығы бітті! Күніңізді рахаттанып өткізіңіз."</string>
+    <string name="empty_search">"Ой! «<xliff:g id="SEARCH_QUERY">%1$s</xliff:g>» үшін ешнәрсе таба алмадық."</string>
+    <string name="empty_spam_folder">"Бәрекелді, еш спам жоқ!"</string>
+    <string name="empty_trash_folder">"Қоқыс жоқ. Себетке жібергеніңіз үшін рақмет!"</string>
+    <string name="empty_folder">"Бұл жерде пошта жоқ."</string>
+    <string name="getting_messages">"Хабарларды алу"</string>
+    <string name="undo">Болдырмау</string>
+    <plurals name="conversation_unstarred">
+        <item quantity="one"><xliff:g id="count">%1$d</xliff:g> сөйлесуінен жұлдызшаны алу</item>
+        <item quantity="other"><xliff:g id="count">%1$d</xliff:g> сөйлесулерінен жұлдызшаны алу</item>
+    </plurals>
+    <skip/>
+    <plurals name="conversation_muted">
+        <item quantity="one"><b><xliff:g id="count">%1$d</xliff:g></b> дауысы басылды</item>
+        <item quantity="other"><b><xliff:g id="count">%1$d</xliff:g></b> дауысы басылды</item>
+    </plurals>
+    <plurals name="conversation_spammed">
+        <item quantity="one"><b><xliff:g id="count">%1$d</xliff:g></b> қалаусыз пошта ретінде белгіленді</item>
+        <item quantity="other"><b><xliff:g id="count">%1$d</xliff:g></b> қалаусыз пошта ретінде белгіленді</item>
+    </plurals>
+    <plurals name="conversation_not_spam">
+        <item quantity="one"><b><xliff:g id="count">%1$d</xliff:g></b> қалаусыз пошта емес ретінде белгіленді</item>
+        <item quantity="other"><b><xliff:g id="count">%1$d</xliff:g></b> қалаусыз пошта емес ретінде белгіленді</item>
+    </plurals>
+    <plurals name="conversation_not_important">
+        <item quantity="one"><b><xliff:g id="count">%1$d</xliff:g></b> маңызы жоқ ретінде белгіленді</item>
+        <item quantity="other"><b><xliff:g id="count">%1$d</xliff:g></b> маңызы жоқ ретінде белгіленді</item>
+    </plurals>
+    <plurals name="conversation_phished">
+        <item quantity="one"><b><xliff:g id="count">%1$d</xliff:g></b> фишинг ретінде белгіленді</item>
+        <item quantity="other"><b><xliff:g id="count">%1$d</xliff:g></b> фишинг ретінде белгіленді</item>
+    </plurals>
+    <plurals name="conversation_archived">
+        <item quantity="one"><b><xliff:g id="count">%1$d</xliff:g></b> мұрағатталды</item>
+        <item quantity="other"><b><xliff:g id="count">%1$d</xliff:g></b> мұрағатталды</item>
+    </plurals>
+    <plurals name="conversation_deleted">
+        <item quantity="one"><b><xliff:g id="count">%1$d</xliff:g></b> жойылды</item>
+        <item quantity="other"><b><xliff:g id="count">%1$d</xliff:g></b> жойылды</item>
+    </plurals>
+    <string name="deleted">Жойылды</string>
+    <string name="archived">"Мұрағатталған"</string>
+    <string name="folder_removed">"<xliff:g id="FOLDERNAME">%1$s</xliff:g> ішінен жойылды"</string>
+    <plurals name="conversation_folder_changed">
+        <item quantity="one">Өзгертілген қалта</item>
+        <item quantity="other">Өзгертілген қалталар</item>
+    </plurals>
+    <string name="conversation_folder_moved">"<xliff:g id="FOLDERNAME">%1$s</xliff:g> ішіне жылжытылды"</string>
+    <string name="search_results_header">"Нәтижелер"</string>
+    <string name="search_unsupported">"Бұл есептік жазбада іздеуге қолдау көрсетілмейді."</string>
+    <string name="search_suggestion_desc">Ұсыныс: <xliff:g id="suggestion">%s</xliff:g></string>
+    <string name="add_label">"Қалта қосу"</string>
+    <plurals name="new_incoming_messages">
+        <item quantity="one">"<xliff:g id="COUNT">%1$d</xliff:g> жаңа хабар"</item>
+        <item quantity="other">"<xliff:g id="COUNT">%1$d</xliff:g> жаңа хабар"</item>
+    </plurals>
+    <string name="date_and_view_details">"<xliff:g id="DATE">%1$s</xliff:g> <a href="'http://www.example.com'">Мәліметтерді көру</a>"</string>
+    <string name="hide_details">"Мәліметтерді жасыру"</string>
+    <string name="to_message_header">"Алушы: <xliff:g id="RECIPIENTS">%1$s</xliff:g>"</string>
+    <string name="bcc_header_for_recipient_summary">"Bcc "</string>
+    <string name="contact_info_string">"<xliff:g id="NAME">%1$s</xliff:g> үшін контакт туралы ақпаратты көрсету"</string>
+    <string name="contact_info_string_default">"Контакт туралы ақпаратты көрсету"</string>
+    <plurals name="show_messages_read">
+        <item quantity="other"><xliff:g id="count" example="4">%1$d</xliff:g> ескі хабарларды жаю</item>
+    </plurals>
+    <plurals name="super_collapsed_block_accessibility_announcement">
+        <item quantity="other"> <xliff:g id="count" example="4">%1$d</xliff:g> ескі хабарлар жайылды</item>
+    </plurals>
+    <string name="from_heading">"Кімнен:"</string>
+    <string name="replyto_heading">"Жауап беру:"</string>
+    <string name="to_heading">"Кімге: "</string>
+    <string name="to_heading_no_space">"Кімге:"</string>
+    <string name="cc_heading">"Көшірме:"</string>
+    <string name="bcc_heading">"Жасырын көшірме"</string>
+    <string name="date_heading">"Күні:"</string>
+    <string name="show_images">"Суреттерді көрсету"</string>
+    <string name="always_show_images">"Осы жіберушінің суретт. әрқашан көрсету"</string>
+    <string name="always_show_images_toast">"Осы жіберушінің суреттері автоматты түрде көрсетіледі."</string>
+    <string name="address_display_format">"<xliff:g id="NAME">%1$s</xliff:g> <xliff:g id="EMAIL">%2$s</xliff:g>"</string>
+    <string name="address_display_format_with_via_domain">"<xliff:g id="NAME">%1$s</xliff:g> <xliff:g id="EMAIL">%2$s</xliff:g> <xliff:g id="VIA_DOMAIN">%3$s</xliff:g> арқылы"</string>
+    <string name="message_saved">"Хабар жоба ретінде сақталды."</string>
+    <string name="sending_message">"Хабар жіберілуде…"</string>
+    <string name="invalid_recipient">"<xliff:g id="WRONGEMAIL">%s</xliff:g> мекенжайы жарамсыз."</string>
+    <string name="show_elided">"Тырнақшаға алынған мәтінді көрсету"</string>
+    <string name="hide_elided">"▼ Тырнақшаға алынған мәтінді жасыру"</string>
+    <string name="message_invite_title">"Күнтізбе шақыруы"</string>
+    <string name="message_invite_calendar_view">"Күнтізбеде көрсету"</string>
+    <string name="message_invite_label_attending">Барасыз ба?</string>
+    <string name="message_invite_accept">"ИӘ"</string>
+    <string name="message_invite_tentative">"Мүмкін"</string>
+    <string name="message_invite_decline">"ЖОҚ"</string>
+    <string name="enumeration_comma">", "</string>
+    <string name="send_anyway">"Бәрібір жіберу"</string>
+    <string name="ok">"Жарайды"</string>
+    <string name="done">"Орындалды"</string>
+    <string name="cancel">"Өшіру"</string>
+    <string name="clear">"Өшіру"</string>
+    <string name="next">"Келесі"</string>
+    <string name="previous">Алдыңғы</string>
+    <string-array name="sync_status">
+        <item>"Сәтті"</item>
+        <item>"Байланыс жоқ"</item>
+        <item>Кіру мүмкін болмады</item>
+        <item>Қауіпсіздік қатесі</item>
+        <item>Синхрондау мүмкін емес</item>
+        <item>"Ішкі қате"</item>
+        <item>"Сервер қатесі"</item>
+    </string-array>
+    <string name="tap_to_configure">"Реттеу үшін түртіңіз."</string>
+    <string name="non_synced_folder_description">"Сөйлесімдерді көру үшін осы қалтаны синхрондаңыз."</string>
+    <string name="tap_to_configure_folder_sync">"Қалтаны синхрондау"</string>
+    <string name="widget_large_unread_count">"%d+"</string>
+    <string name="large_unseen_count">"<xliff:g id="COUNT">%d</xliff:g>+ жаңа"</string>
+    <string name="unseen_count">"<xliff:g id="COUNT">%d</xliff:g> жаңа"</string>
+    <plurals name="actionbar_unread_messages">
+        <item quantity="other">"<xliff:g id="COUNT">%1$d</xliff:g> оқылмаған"</item>
+    </plurals>
+    <string name="view_more_conversations">"Басқа әңгімелерді көру"</string>
+    <string name="loading_conversation">Жүктеу\u2026</string>
+    <string name="activity_mailbox_selection">"Есептік жазбаны таңдау"</string>
+    <string name="activity_folder_selection">"Қалтаны таңдау"</string>
+    <string name="folder_shortcut_widget_label">"Электрондық пошта қалтасы"</string>
+    <string name="change_folders_selection_dialog_title">"Қалталарды өзгерту"</string>
+    <string name="move_to_selection_dialog_title">"Мынаған жылжыту:"</string>
+    <string name="search_hint">"Іздеу"</string>
+    <string name="search_results_loaded"><xliff:g id="searchCount">%1$d</xliff:g></string>
+    <string name="voice_search_not_supported">Дауыстық іздеу бұл құрылғыда қолданылмайды.</string>
+    <string name="search_back_desc">Іздеуді жабу</string>
+    <string name="search_voice_desc">Дауыстық іздеу әрекетін бастау</string>
+    <string name="search_clear_desc">Мәтін іздеуді тазалау</string>
+    <string name="network_error">"Байланыс жоқ"</string>
+    <string name="retry">"Қайталау"</string>
+    <string name="load_more">"Тағы жүктеу"</string>
+    <string name="shortcut_name_title">"Қалтаның таңбашасына атау беру"</string>
+    <string name="wait_for_sync_title">"Синхрондау күтілуде"</string>
+    <string name="not_synced_title">"Есептік жазба синхрондалмаған"</string>
+    <string name="wait_for_manual_sync_body">Бұл тіркелгі автоматты түрде синхрондау үшін орнатылмады. \nЭлектрондық поштаны бір рет синхрондау үшін <b>қазір синхрондау</b> функциясын түртіңіз немесе электрондық поштаны автоматты түрде синхрондау үшін бұл тіркелгіні орнату мақсатында <b>Синхрондау параметрлерін өзгерту</b> функциясын түртіңіз.</string>
+    <string name="manual_sync">"Қазір синхрондау"</string>
+    <string name="change_sync_settings">"Синх-у параметрлерін өзгерту"</string>
+    <string name="photo_load_failed">Кескіндіжүктеу мүмкін болмады</string>
+    <string name="cant_move_or_change_labels">Бірнеше тіркелгі таңдалғандықтан орнын ауыстыру мүмкін емес.</string>
+    <string name="multiple_new_message_notification_item"><b><xliff:g id="sender">%1$s</xliff:g></b>\u0020\u0020\u0020<xliff:g id="subject">%2$s</xliff:g></string>
+    <string name="single_new_message_notification_big_text">"<xliff:g id="SUBJECT">%1$s</xliff:g>\n<xliff:g id="SNIPPET">%2$s</xliff:g>"</string>
+    <string name="ignore_spam_warning">"Елемеу, бұл хабар сенімді"</string>
+    <string name="via_domain">"<xliff:g id="VIADOMAIN">%1$s</xliff:g> арқылы"</string>
+    <string name="signin">"Кіру"</string>
+    <string name="info">"Ақпарат"</string>
+    <string name="report">"Баяндау"</string>
+    <string name="show">Көрсету</string>
+    <string name="sync_error">Синхрондау мүмкін болмады.</string>
+    <string name="sync_error_message">Құрылғыңызда синхрондауға қажетті бос орын жоқ.</string>
+    <string name="storage">"Жад"</string>
+    <string name="senders_split_token">", "</string>
+    <string name="draft_count_format">" (<xliff:g id="COUNT">%1$s</xliff:g>)"</string>
+    <string name="all_folders_heading">"Барлық қалталар"</string>
+    <string name="recent_folders_heading">"Соңғы қалталар"</string>
+    <string name="message_details_title">"Хабар деректері"</string>
+    <string name="preference_advance_to_title">"Автоматты ілгерілету"</string>
+    <string-array name="prefEntries_autoAdvance">
+        <item>"Жаңалауы"</item>
+        <item>"Ескілеу"</item>
+        <item>"Сөйлесімдер тізімі"</item>
+    </string-array>
+    <string-array name="prefSummaries_autoAdvance">
+        <item>"Жойғаннан кейін жаңарақ сөйлесімді көрсету"</item>
+        <item>"Жойғаннан кейін ескірек сөйлесімді көрсету"</item>
+        <item>"Жойғаннан кейін сөйлесімдер тізімін көрсету"</item>
+    </string-array>
+    <string name="prefDialogTitle_autoAdvance">"Ілгері жылжыту"</string>
+    <string name="clear_display_images_whitelist_title">"Сурет бекітулерін тазалау"</string>
+    <string name="clear_display_images_whitelist_dialog_title">"Кескін бекітулерін тазарту қажет пе?"</string>
+    <string name="clear_display_images_whitelist_dialog_message">"Сіз бұған дейін рұқсат берген жіберушілерден кірістірілген кескіндерді көрсетпеу."</string>
+    <string name="sender_whitelist_cleared">Суреттер автоматты түрде көрсетілмейді.</string>
+    <string name="preferences_signature_title">"Қолтаңба"</string>
+    <string name="preferences_signature_dialog_title">"Қолтаңба"</string>
+    <string name="preferences_signature_summary_not_set">"Реттелмеген"</string>
+    <string name="notification_action_reply">"Жауап беру"</string>
+    <string name="notification_action_reply_all">"Барлығына жауап беру"</string>
+    <string name="notification_action_archive">"Мұрағаттау"</string>
+    <string name="notification_action_remove_label">"Белгіні жою"</string>
+    <string name="notification_action_delete">"Жою"</string>
+    <string name="notification_action_undo_archive">"Мұрағатталған"</string>
+    <string name="notification_action_undo_remove_label">"Белгі жойылды"</string>
+    <string name="notification_action_undo_delete">Жойылды</string>
+    <string name="veiled_address"/>
+    <string name="veiled_alternate_text"/>
+    <string name="veiled_alternate_text_unknown_person"/>
+    <string name="veiled_summary_unknown_person"/>
+    <string name="label_notification_ticker">"<xliff:g id="LABEL">%s</xliff:g>: <xliff:g id="NOTIFICATION">%s</xliff:g>"</string>
+    <plurals name="new_messages">
+        <item quantity="one">"<xliff:g id="COUNT">%1$d</xliff:g> жаңа хабар"</item>
+        <item quantity="other">"<xliff:g id="COUNT">%1$d</xliff:g> жаңа хабар"</item>
+    </plurals>
+    <string name="single_new_message_notification_title">"<xliff:g id="SENDER">%1$s</xliff:g>: <xliff:g id="SUBJECT">%2$s</xliff:g>"</string>
+    <string name="silent_ringtone">"Үнсіз"</string>
+    <string name="preference_removal_action_title">Әдепкі әрекет</string>
+    <string-array name="prefEntries_removal_action">
+        <item>"Мұрағаттау"</item>
+        <item>"Жою"</item>
+    </string-array>
+    <string-array name="prefSummaries_removal_action_summary">
+        <item>"Мұрағаттау"</item>
+        <item>"Жою"</item>
+    </string-array>
+    <string name="prefDialogTitle_removal_action">Әдепкі әрекет</string>
+    <string name="preferences_default_reply_all_title">"Барлығына жауап беру"</string>
+    <string name="preferences_default_reply_all_summary_impl">"Хабар жауаптары үшін әдепкі ретінде пайдалану"</string>
+    <string name="preference_swipe_title">Сырғыту әрекеттері</string>
+    <string name="preference_swipe_description">"Сөйлесімдер тізімінде"</string>
+    <string name="preference_sender_image_title">Жіберуші кескіні</string>
+    <string name="preference_sender_image_description">"Сөйлесімдер тізімінде аттың жанында көрсету"</string>
+    <string name="empty_trash">"Қоқысты босату"</string>
+    <string name="empty_spam">"Спамды босату"</string>
+    <string name="empty_trash_dialog_title">"Себетті босату қажет пе?"</string>
+    <string name="empty_spam_dialog_title">"Спамды босату қажет пе?"</string>
+    <plurals name="empty_folder_dialog_message">
+        <item quantity="one">"<xliff:g id="COUNT">%1$d</xliff:g> хабар біржола жойылады."</item>
+        <item quantity="other">"<xliff:g id="COUNT">%1$d</xliff:g> хабар біржола жойылады."</item>
+    </plurals>
+    <string name="drawer_open">"Шарлау тартпасын ашу"</string>
+    <string name="drawer_close">"Шарлау тартпасын жабу"</string>
+    <string name="conversation_photo_welcome_text">"Сөйлесімді таңдау үшін жіберушінің кескінін түртіңіз."</string>
+    <string name="long_press_to_select_tip">"Бір сөйлесімді таңдау үшін түртіп, ұстап тұрыңыз, содан кейін тағы таңдау үшін түртіңіз."</string>
+    <string name="folder_icon_desc">"Қалта белгішесі"</string>
+    <string name="add_account">"Есептік жазба қосу"</string>
+    <string name="dismiss_tip_hover_text">"Кеңесті жабу"</string>
+    <string name="auto_sync_off">Автоматты синхрондау өшірулі. Қосу үшін түртіңіз.</string>
+    <string name="account_sync_off">"Тіркелгіні синхрондау өшірулі. <a href="'http://www.example.com'">Тіркелгі\u00A0параметрлері.</a> ішінде іске қосыңыз"</string>
+    <string name="unsent_messages_in_outbox">"<xliff:g id="OUTBOX">%2$s</xliff:g> қалтасында <xliff:g id="NUMBER">%1$s</xliff:g> жіберілмеген"</string>
+    <string name="turn_auto_sync_on_dialog_title">"Автоматты синхрондауды қосу қажет пе?"</string>
+    <string name="turn_auto_sync_on_dialog_body">"Сіз Gmail ғана емес, барлық қолданбалар мен есептік жазбаларға енгізетін өзгерістер веб, сіздің басқа құрылғыларыңыз және сіздің <xliff:g id="PHONE_OR_TABLET">%1$s</xliff:g> арасында синхрондалады."</string>
+    <string name="phone">"телефон"</string>
+    <string name="tablet">"Планшет"</string>
+    <string name="turn_auto_sync_on_dialog_confirm_btn">"Қосу"</string>
+    <string name="show_n_more_folders">"Қосымша <xliff:g id="NUMBER">%1$s</xliff:g> қалта көрсету"</string>
+    <string name="hide_folders">"Қалталарды жасыру"</string>
+    <string name="print">"Басып шығару"</string>
+    <string name="print_all">"Барлығын басып шығару"</string>
+    <plurals name="num_messages">
+        <item quantity="one">"<xliff:g id="COUNT">%1$d</xliff:g> хабар"</item>
+        <item quantity="other">"<xliff:g id="COUNT">%1$d</xliff:g> ескі хабар"</item>
+    </plurals>
+    <string name="date_message_received_print">"Күні: <xliff:g id="DAY_AND_DATE">%1$s</xliff:g>; уақыты <xliff:g id="TIME">%2$s</xliff:g>"</string>
+    <string name="draft_to_heading">"Жоба нұсқасы, кімге:"</string>
+    <string name="draft_heading">"Жоба"</string>
+    <string name="quoted_text_hidden_print">"Тырнақшаға алынған мәтін жасырылған"</string>
+    <plurals name="num_attachments">
+        <item quantity="one">"<xliff:g id="COUNT">%1$d</xliff:g> тіркеме"</item>
+        <item quantity="other">"<xliff:g id="COUNT">%1$d</xliff:g> тіркеме"</item>
+    </plurals>
+    <string name="no_subject">"(Тақырыпсыз)"</string>
+    <string name="vacation_responder">"Авто жауап қайтарушы"</string>
+    <string name="preferences_vacation_responder_title">"Авто жауап қайтарушы"</string>
+    <string name="vacation_responder_body_hint_text">Хабар</string>
+    <string name="send_to_contacts_text">"Тек контактілеріме жіберу"</string>
+    <string name="send_to_domain_text">"Тек <xliff:g id="DOMAIN">%1$s</xliff:g> алушысына ғана жіберу"</string>
+    <string name="pick_start_date_title">"Басталуы"</string>
+    <string name="pick_end_date_title">"Аяқталуы (міндетті емес)"</string>
+    <string name="date_not_set">"Реттелмеген"</string>
+    <string name="set_end_date_dialog_title">"Аяқталу күні (міндетті емес)"</string>
+    <string name="custom_date">"Теңшелетін"</string>
+    <string name="date_none">"Ешқандай"</string>
+    <string name="discard_changes">"Өзгерістерді жою қажет пе?"</string>
+    <string name="vacation_responder_changes_saved">"Авто жауап қайтарушы өзгерістері сақталды"</string>
+    <string name="vacation_responder_changes_discarded">"Авто жауап қайтарушы өзгерістері жойылды"</string>
+    <string name="vacation_responder_off">Өшіру</string>
+    <string name="vacation_responder_on">"Қосулы, басы: <xliff:g id="DATE">%1$s</xliff:g>"</string>
+    <string name="vacation_responder_on_with_end_date">"<xliff:g id="START_DATE">%1$s</xliff:g> бастап <xliff:g id="END_DATE">%2$s</xliff:g> дейін қосулы"</string>
+    <string name="vacation_responder_empty_subject_and_body_warning">"Тақырып немесе хабар қосыңыз"</string>
+    <string name="view_entire_message">"Бүкіл хабарды көру"</string>
+    <string name="eml_loader_error_toast">"Бұл файлды ашу мүмкін емес"</string>
+    <string name="help_and_info">Анықтама</string>
+    <string name="help_and_feedback">"Анық. және кері бай."</string>
+    <string name="feedback">"Пікір жіберу"</string>
+    <string name="copyright">©<xliff:g id="year" example="2010">%1$d</xliff:g> Google Inc.</string>
+    <string name="version">"<xliff:g id="APP_NAME">%1$s</xliff:g> нұсқасы: <xliff:g id="VERSION">%2$s</xliff:g>"</string>
+    <string name="view_app_page"/>
+    <string name="print_dialog">"Басып шығару…"</string>
+    <string name="copyright_information">"Авторлық құқық туралы ақпарат"</string>
+    <string name="privacy_policy">"Құпиялық саясаты"</string>
+    <string name="open_source_licenses">"Ашық бастапқы код лицензиялары"</string>
+    <string name="reply_choice_yes">"ИӘ"</string>
+    <string name="reply_choice_no">"ЖОҚ"</string>
+    <string name="reply_choice_ok">"Жарайды"</string>
+    <string name="reply_choice_hehe">"Хехе"</string>
+    <string name="reply_choice_thanks">"Рақмет"</string>
+    <string name="reply_choice_i_agree">"Келісемін"</string>
+    <string name="reply_choice_nice">"Жақсы"</string>
+    <string name="reply_on_my_way">"Жолдамын"</string>
+    <string name="reply_choice_later">"Жарайды, сізге хабарласамын"</string>
+    <string name="reply_choice_smiling_face"/>
+    <string name="reply_choice_frowning_face"/>
+    <array name="reply_choices">
+        <item>@string/reply_choice_yes</item>
+        <item>@string/reply_choice_no</item>
+        <item>@string/reply_choice_ok</item>
+        <item>@string/reply_choice_hehe</item>
+        <item>@string/reply_choice_thanks</item>
+        <item>@string/reply_choice_i_agree</item>
+        <item>@string/reply_choice_nice</item>
+        <item>@string/reply_on_my_way</item>
+        <item>@string/reply_choice_later</item>
+        <item>@string/reply_choice_smiling_face</item>
+        <item>@string/reply_choice_frowning_face</item>
+    </array>
+    <string name="preference_header_action_confirmations">"Әрекет растаулары"</string>
+    <string name="preference_confirm_before_delete_title">Жоймас бұрын растау</string>
+    <string name="preference_confirm_before_archive_title">"Мұрағаттау алдында растау"</string>
+    <string name="preference_confirm_before_send_title">Жібермес бұрын растау</string>
+    <string name="preferences_conversation_mode_title">"Хабарларды авто қиыстыру"</string>
+    <string name="preferences_conversation_mode_summary">"Хабарларды экранға қиыстыру үшін қысу"</string>
+    <string name="preferences_disable_snap_headers_title">"Хабар әрекеттері"</string>
+    <string-array name="prefSummaries_snapHeader">
+        <item>"Әрқашан хабар әрекеттерін экранның жоғарғы жағында көрсету"</item>
+        <item>"Портреттік бағдарға бұрылғанда ғана хабар әрекеттерін экранның жоғарғы жағында көрсету"</item>
+        <item>"Хабар әрекеттерін хабар тақырыбынан тыс көрсетпеу"</item>
+    </string-array>
+    <string-array name="prefEntries_snapHeader">
+        <item>Әрдайым көрсету</item>
+        <item>"Тек портретте көрсету"</item>
+        <item>"Көрсетпеу"</item>
+    </string-array>
+    <string name="clear_history_title">"Іздеу тарихын өшіру"</string>
+    <string name="search_history_cleared">"Іздеу тарихы тазаланды."</string>
+    <string name="clear_history_dialog_title">"Іздеу тарихын тазалау керек пе?"</string>
+    <string name="clear_history_dialog_message">"Сіз бұрын орындаған барлық іздеулер жойылады."</string>
+    <string name="manage_accounts_menu_item">"Есептік жазбаларды басқару"</string>
+    <string name="general_preferences_title">Жалпы параметрлер</string>
+    <string name="activity_preferences">"Параметрлер"</string>
+    <string name="overflow_description">"Басқа опциялар"</string>
+    <string name="security_hold_required_text"><xliff:g id="email_address">%1$s</xliff:g> үшін қауіпсіздік жаңартуы қажет</string>
+    <string name="update_security_text">Қазір жаңарту</string>
+    <string name="forms_are_disabled">Gmail қызметінде пішімдер өшірілді</string>
+</resources>

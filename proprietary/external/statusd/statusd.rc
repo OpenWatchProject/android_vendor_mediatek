@@ -1,0 +1,20 @@
+on post-fs-data
+
+#Selinux
+    mkdir /data/vendor/flashless 0770 radio system
+    restorecon /data/vendor/flashless
+
+#statusd service viamuxd (-m [/system/bin/viagsm0710muxd  -s /dev/ttyUSB3 -n 4 -m basic -o -v 6])
+service statusd /vendor/bin/statusd -f [/vendor/bin/flashlessd -m 1] -r [/vendor/bin/viarild -l  /vendor/lib/libviatelecom-withuim-ril.so -- -d /dev/ttySDIO4]
+    class core
+    socket rild-via stream 660 radio radio
+    socket msap_c2k_socket1 stream 660 radio radio
+    socket msap_c2k_socket2 stream 660 radio radio
+    socket msap_c2k_socket3 stream 660 radio radio
+    socket msap_c2k_socket4 stream 660 radio radio
+    socket rpc stream 660 radio radio
+    socket rildc-debug stream 660 radio system
+    socket rild-atci-c2k stream 660 radio system
+    socket statusd stream 660 radio radio
+    user radio
+    group system radio cache inet misc sdcard_rw media_rw net_admin net_raw

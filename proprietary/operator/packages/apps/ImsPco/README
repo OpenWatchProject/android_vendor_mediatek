@@ -1,0 +1,18 @@
+ImsPco.apk is a service for handling IMS PCO Error handling and NW rejection Error handling.
+
+WHAT IT DOES?
+=============
+ImsPco.apk contains
+ - PCO service: contains the main entitlement service class. It performs device activation, check IMS Pco status and 
+   handles error according to specs, and calls Ux
+ - PCOBootCompletedReceiver: handles BOOT_COMPLETED intent and check if it's activated before the power down.
+
+
+HOW IT WAS BUILT?
+==================
+ImsPco.apk is built in custom images for OP12's branded phone of OP12 operator .
+
+HOW TO USE IT?
+==============
+This service can be woke up by BOOT_COMPLETED intent and checks if phone is branded phone or not 
+to perform device activation, check IMS Pco status and handles error according to specs.

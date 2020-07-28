@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginLeft="10dip"
+        android:orientation="vertical" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dip"
+            android:gravity="center"
+            android:text="@string/bip_textView"
+            android:textAppearance="?android:attr/textAppearanceLarge" >
+        </TextView>
+
+        <RadioGroup
+            android:id="@+id/bip_radio_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:orientation="vertical" >
+
+            <RadioButton
+                android:id="@+id/bip_add_default_bip_radio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/bip_add_default_bip_apn" >
+            </RadioButton>
+
+            <RadioButton
+                android:id="@+id/bip_add_bip_radio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/bip_add_bip_apn" >
+            </RadioButton>
+
+            <RadioButton
+                android:id="@+id/bip_remove_all_added_radio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/bip_remove_all_added" >
+            </RadioButton>
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/bip_set_button"
+            android:layout_width="60dip"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="200dip"
+            android:gravity="center"
+            android:text="@string/bip_ok" >
+
+            <!-- android:gravity="right" -->
+        </Button>
+    </LinearLayout>
+
+</LinearLayout>

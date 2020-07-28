@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <TableLayout
+            android:id="@+id/TableLayout01"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp"
+            android:stretchColumns="1">
+
+            <!-- Duplex -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="1"
+                    android:text="@string/rf_desense_duplex"/>
+
+                <RadioGroup
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/fdd_radio_button"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/rf_desense_fdd"/>
+
+                    <RadioButton
+                        android:id="@+id/tdd_radio_button"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/rf_desense_tdd"/>
+                </RadioGroup>
+            </LinearLayout>
+            <!-- modulation mode -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:id="@+id/rf_desense_modulation_mode"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="1"
+                    android:text="@string/rf_desense_modulation_mode"/>
+
+                <RadioGroup
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/single_radio_button"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/rf_desense_single"/>
+
+                    <RadioButton
+                        android:id="@+id/modulatio_radio_button"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/rf_desense_modulation_signal"/>
+                </RadioGroup>
+            </LinearLayout>
+
+            <!-- Band -->
+            <TableRow
+                android:id="@+id/TableRow01"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:id="@+id/band"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:text="@string/rf_desense_band"/>
+
+                <Spinner
+                    android:id="@+id/band_spinner"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:drawSelectorOnTop="true"
+                    android:text="@string/rf_desense_band"/>
+            </TableRow>
+
+            <!-- Band Width -->
+            <TableRow
+                android:id="@+id/TableRow02"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:id="@+id/bandwidth"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:text="@string/rf_desense_bandwidth"/>
+
+                <Spinner
+                    android:id="@+id/bandwidth_spinner"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:drawSelectorOnTop="true"/>
+            </TableRow>
+
+            <!-- Freq -->
+            <TableRow
+                android:id="@+id/TableRow03"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:id="@+id/freq"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:text="@string/rf_desense_freq"/>
+
+                <EditText
+                    android:id="@+id/freq_editor"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:maxLength="5"
+                    android:singleLine="true">
+                </EditText>
+            </TableRow>
+
+            <!-- TDD Config Index -->
+            <TableRow
+                android:id="@+id/TableRow04"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:id="@+id/tdd_config"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:text="@string/rf_desense_tdd_config"/>
+
+                <Spinner
+                    android:id="@+id/tdd_config_spinner"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:drawSelectorOnTop="true"/>
+            </TableRow>
+
+            <!-- TDD Special Config Index -->
+            <TableRow
+                android:id="@+id/TableRow05"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:id="@+id/tdd_special"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:text="@string/rf_desense_tdd_special"/>
+
+                <Spinner
+                    android:id="@+id/tdd_special_spinner"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:drawSelectorOnTop="true"/>
+            </TableRow>
+
+            <!-- VRB Start -->
+            <TableRow
+                android:id="@+id/TableRow06"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:id="@+id/vrb_start"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:text="@string/rf_desense_vrb_start"/>
+
+                <EditText
+                    android:id="@+id/vrb_start_editor"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:maxLength="2"
+                    android:singleLine="true">
+                </EditText>
+            </TableRow>
+
+            <!-- VRB Length -->
+            <TableRow
+                android:id="@+id/TableRow07"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:id="@+id/vrb_length"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:text="@string/rf_desense_vrb_length"/>
+
+                <EditText
+                    android:id="@+id/vrb_length_editor"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:maxLength="3"
+                    android:singleLine="true">
+                </EditText>
+            </TableRow>
+
+            <!-- MCS -->
+            <TableRow
+                android:id="@+id/TableRow08"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:id="@+id/mcs"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:text="@string/rf_desense_mcs"/>
+
+                <Spinner
+                    android:id="@+id/mcs_spinner"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:drawSelectorOnTop="true"/>
+            </TableRow>
+
+            <!-- Power -->
+            <TableRow
+                android:id="@+id/TableRow09"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:id="@+id/power"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:text="@string/rf_desense_lte_power"/>
+
+                <EditText
+                    android:id="@+id/power_editor"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberSigned"
+                    android:maxLength="3"
+                    android:singleLine="true">
+                </EditText>
+            </TableRow>
+
+            <!-- Ant status:  -->
+            <TableRow
+                android:id="@+id/tr_ant_mode"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center_vertical">
+
+                <CheckBox
+                    android:id="@+id/rf_ant_mode"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/rf_desense_ant_status"
+                    android:textSize="16sp"/>
+
+                <EditText
+                    android:id="@+id/rf_ant_status"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:textSize="16sp"/>
+            </TableRow>
+
+        </TableLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/button_set"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/rf_desense_button_set"/>
+    </LinearLayout>
+</LinearLayout>

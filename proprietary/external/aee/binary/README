@@ -1,0 +1,33 @@
+These binarys are pre-built by MediaTek internal.
+
+
+WHAT IT DOES?
+=============
+the aee_aed and aee_aed64 is two daemon services. they will capture exception info,then sava db to sdcard or data.
+the aee_core_forwarder is for native crash, kernel will start aee_core_forwarder to do process coredump.
+the aee_dumpstate is used to dump system info.
+the aee_archive is used to compress files to db.
+the aee is aee command line tool.
+the rtt is rtt command line tool.
+
+
+HOW IT WAS BUILT?
+==================
+It needs the following library from AOSP:
+1.  liblog.so
+2.  libcutils.so
+3.  libutils.so
+4.  libselinux.so
+5.  libz.so
+
+and the following libs from MediaTek:
+1.  libmtk_drvb.so
+2.  libaed.so
+
+AEE module is released in binary format in 'vendor/mediatek/proprietary/external/aee' folder.
+
+
+HOW TO USE IT?
+==============
+
+The debuggerd is a system service, and it's started by init.rc.

@@ -1,0 +1,22 @@
+cc_library_shared {
+
+    srcs: ["DrmMtkDef.cpp"],
+
+    name: "libdrmmtkwhitelist",
+    owner: "mtk",
+
+    cflags: ["-DDEBUG_GRANT_ALL"],
+
+    header_libs: [
+        "mtk_drm_headers",
+    ],
+    export_header_lib_headers: [
+        "mtk_drm_headers",
+    ],
+    shared_libs: [
+        "libutils",
+        "liblog",
+        "libcutils",
+    ],
+
+}

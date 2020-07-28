@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/pano_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:visibility="gone" >
+
+        <ImageView
+            android:id="@+id/center_window"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:paddingBottom="120dip"
+            android:paddingLeft="60dip"
+            android:paddingRight="60dip"
+            android:paddingTop="120dip"
+            android:src="@drawable/ic_pano_normal_window" />
+
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/navi_window"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_pano_navi_window"
+        android:visibility="gone" />
+
+</RelativeLayout>

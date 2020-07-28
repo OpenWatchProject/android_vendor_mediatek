@@ -1,0 +1,12 @@
+# Most of the classes in this package are fragments only referenced from XML
+-keep class com.android.browser.preferences.*
+-keep class com.android.browser.Controller$BrowserSavePageClient {
+public *;
+}
+-keep class com.android.browser.Browser {
+public *;
+}
+-keep class com.android.browser.WebAppInterface {
+public *;
+}
+-ignorewarnings

@@ -1,0 +1,22 @@
+This executable file is used to deal with sysenv kernel module.
+
+WHAT IT DOES?
+=============
+Read or write data to storage which can share with little kernel.
+
+HOW IT WAS BUILT?
+==================
+It needs the following library from AOSP:
+1. liblog.so
+
+and the following libs from MediaTek:
+1. libsysenv.so
+
+[Build Method]
+mmm vendor/mediatek/proprietary/external/libsysenv
+
+HOW TO USE IT?
+==============
+Defined at init.rc and activated by init process.
+Use sysenv_get to get sysenv setting of specific name,
+and use sysenv_set to set name, value pair to storage.

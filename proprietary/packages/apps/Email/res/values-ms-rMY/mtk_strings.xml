@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Copyright Statement:
+
+    This software/firmware and related documentation ("MediaTek Software") are
+    protected under relevant copyright laws. The information contained herein
+    is confidential and proprietary to MediaTek Inc. and/or its licensors.
+    Without the prior written permission of MediaTek inc. and/or its licensors,
+    any reproduction, modification, use or disclosure of MediaTek Software,
+    and information contained herein, in whole or in part, shall be strictly prohibited.
+
+    MediaTek Inc. (C) 2012. All rights reserved.
+
+    BY OPENING THIS FILE, RECEIVER HEREBY UNEQUIVOCALLY ACKNOWLEDGES AND AGREES
+    THAT THE SOFTWARE/FIRMWARE AND ITS DOCUMENTATIONS ("MEDIATEK SOFTWARE")
+    RECEIVED FROM MEDIATEK AND/OR ITS REPRESENTATIVES ARE PROVIDED TO RECEIVER ON
+    AN "AS-IS" BASIS ONLY. MEDIATEK EXPRESSLY DISCLAIMS ANY AND ALL WARRANTIES,
+    EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF
+    MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE OR NONINFRINGEMENT.
+    NEITHER DOES MEDIATEK PROVIDE ANY WARRANTY WHATSOEVER WITH RESPECT TO THE
+    SOFTWARE OF ANY THIRD PARTY WHICH MAY BE USED BY, INCORPORATED IN, OR
+    SUPPLIED WITH THE MEDIATEK SOFTWARE, AND RECEIVER AGREES TO LOOK ONLY TO SUCH
+    THIRD PARTY FOR ANY WARRANTY CLAIM RELATING THERETO. RECEIVER EXPRESSLY ACKNOWLEDGES
+    THAT IT IS RECEIVER'S SOLE RESPONSIBILITY TO OBTAIN FROM ANY THIRD PARTY ALL PROPER LICENSES
+    CONTAINED IN MEDIATEK SOFTWARE. MEDIATEK SHALL ALSO NOT BE RESPONSIBLE FOR ANY MEDIATEK
+    SOFTWARE RELEASES MADE TO RECEIVER'S SPECIFICATION OR TO CONFORM TO A PARTICULAR
+    STANDARD OR OPEN FORUM. RECEIVER'S SOLE AND EXCLUSIVE REMEDY AND MEDIATEK'S ENTIRE AND
+    CUMULATIVE LIABILITY WITH RESPECT TO THE MEDIATEK SOFTWARE RELEASED HEREUNDER WILL BE,
+    AT MEDIATEK'S OPTION, TO REVISE OR REPLACE THE MEDIATEK SOFTWARE AT ISSUE,
+    OR REFUND ANY SOFTWARE LICENSE FEES OR SERVICE CHARGE PAID BY RECEIVER TO
+    MEDIATEK FOR SUCH MEDIATEK SOFTWARE AT ISSUE.
+
+    The following software/firmware and/or related documentation ("MediaTek Software")
+    have been modified by MediaTek Inc. All revisions are subject to any receiver's
+    applicable license agreements with MediaTek Inc.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">  
+    <string name="not_add_more_text">"Tidak boleh tidak menambah lagi teks"</string>  
+    <!-- message compose add attachment -->  
+    <string name="attach_image">Foto</string>  
+    <string name="attach_video">Video</string>  
+    <string name="attach_sound">Muzik</string>  
+    <string name="attach_contact">Kenalan</string>  
+    <string name="attach_file">Fail</string>  
+    <string name="attach_calender">Kalendar</string>  
+    <string name="attach_error_occurred">Tiada aplikasi yang menyokong jenis lampiran ini.</string>  
+    <!-- Toast for telling user the email service stopped when low storage -->  
+    <string name="low_storage_service_stop">Perkhidmatan e-mel dihentikan disebabkan storan rendah.</string>  
+    <!-- Toast for hint user to delete unused emails to reclaim storage -->  
+    <string name="low_storage_hint_delete_mail">Anda boleh memadam e-mel atau aplikasi yang tidak digunakan untuk mendapatkan semula storan.</string>  
+    <!-- Toast for telling user the email service started when storage ok-->  
+    <string name="low_storage_service_start">Perkhidmatan e-mel dimulakan semula kerana storan kini mencukupi.</string>  
+    <!-- Toast for telling user can not download attachment due to low storage -->  
+    <string name="low_storage_attachment_cannot_download">Tidak boleh memuat turun lampiran disebabkan storan rendah.</string>  
+    <!-- Toast for telling user can not view attachment due to low storage -->  
+    <string name="low_storage_attachment_cannot_view">Tidak boleh melihat lampiran disebabkan storan rendah.</string>  
+    <!-- Download remaining of the message when view a partial downloaded message -->  
+    <string name="download_remaining">Baki Muat Turun</string>  
+    <string name="downloading_remaining">Memuatkan ...</string>  
+    <!-- Dialog title when user syncing manually without active network -->  
+    <string name="unable_to_connect">Tidak dapat menyambung</string>  
+    <!-- Dialog text when user syncing manually without active network  -->  
+    <string name="need_connection_prompt">"Anda memerlukan sambungan rangkaian untuk menggunakan aplikasi ini. Sila hidupkan rangkaian mudah alih atau WiFi dalam Tetapan."</string>  
+    <!-- Dialog text when user syncing manually without active wifi network  -->
+    <string name="need_wifi_connection_prompt">"Anda memerlukan sambungan rangkaian untuk menggunakan aplikasi ini. Sila hidupkan WiFi dalam Tetapan."</string>
+    <!-- Button text in the connection alert dialog -->  
+    <string name="connection_settings">"Tetapan"</string>  
+    <!-- limit of attachment number, when share more than 100+ attachments -->  
+    <string name="too_many_attachments">Tidak boleh menambah terlalu banyak lampiran. Hanya 
+        <xliff:g id="currentCount">%1$d</xliff:g> lampiran pertama akan ditambahkan.
+    </string>  
+    <!-- limit of attachment number, when the current number >100 -->  
+    <string name="not_add_more_attachments">Tidak boleh menambah lagi lampiran. Terdapat had 
+        <xliff:g id="maxLimit">%1$d</xliff:g> lampiran.
+    </string>  
+    <string name="attachment_overflow">Limpahan lampiran</string>  
+    <!-- String which used to show toast when some attachment cannot be attached -->  
+    <string name="cannot_add_this_attachment">Tidak dapat menambahkan lampiran ini.</string>  
+    <string name="loading_attachment">Memuatkan lampiran...</string> 
+    <!-- Open eml message -->  
+    <string name="open_message_parsing">Menghuraikan mesej...</string>  
+    <string name="open_message_update_db">Mengemas kini pangkalan data...</string>  
+    <string name="open_message_update_ui">Memuatkan mesej...</string>  
+    <string name="please_wait">Tindakan sedang dilakukan. Sila tunggu...</string> 
+    <string name="delete_message_dialog_title">Padam Mesej</string>
+    <string name="delete_message_confirm">Padam mesej ini?</string> 
+    <string name="attachment_info_deleted">"Lampiran ini tidak dapat disimpan atau dibuka kerana lampiran ini mungkin telah dipadam."</string>  
+    <string name="send_failed_ticker"> 
+        <xliff:g id="account_name">%s</xliff:g> gagal menghantar e-mel.
+    </string>  
+    <!-- Notification title when email sent fails [CHAR LIMIT=30]-->  
+    <string name="send_failed_title">Gagal menghantar e-mel</string>  
+    <string name="always_bcc_myself">Sentiasa skt diri saya sendiri</string>  
+    <string name="always_bcc_myself_summary">Sentiasa skt diri saya sendiri semasa mengarang, membalas dan memajukan</string> 
+    <string name="remote_search_failed">Carian pelayan gagal!</string>
+    <string name="searching_on_server">Cari pada Pelayan</string>  
+    <string name="searching_on_server_title">Cari \" 
+        <xliff:g id="account_name">%s</xliff:g>\" pada pelayan
+    </string>  
+    <string name="search_field_subject">Subjek</string>  
+    <string name="search_field_receiver">Penerima</string>  
+    <string name="search_field_sender">Penghantar</string>  
+    <string name="search_field_body">Isi kandungan</string>  
+    <string name="search_field_all">Semua</string>
+    <string name="searching_all_fields_on_sever">Cari semua medan pada Pelayan</string>
+    <string name="select_all">"Pilih semua"</string>
+    <string name="deselect_all">"Nyahpilih semua"</string>
+
+    <string name="vip_settings">TETAPAN VIP</string>  
+    <string name="vip_members">Ahli VIP</string>  
+    <string name="vip_notifications">Pemberitahuan VIP</string>  
+    <string name="vip_settings_notify_summary">Beritahu dalam bar Sistem apabila e-mel VIP masuk</string>  
+    <string name="vip_members_count">Ahli VIP (<xliff:g example="2">%1$d</xliff:g>)</string>  
+    <string name="vip_remove_title">Alih keluar dari VIP</string>
+    <string name="vip_remove_prompt"><xliff:g example="2">%1$s</xliff:g> akan dialih keluar dari ahli VIP.</string>  
+    <string name="not_add_duplicate_vip">Kenalan pendua tidak akan ditambahkan ke dalam senarai VIP.</string>  
+    <string name="vip_settings_ringtone">"Pilih nada dering"</string>  
+    <string name="vip_settings_vibrate_label">Getar</string>  
+    <string name="vip_settings_vibrate_summary">Getar juga apabila e-mel VIP masuk</string>  
+    <string name="global_search_label">"E-mel"</string>  
+    <string name="global_search_hint">"Cari e-mel"</string>  
+    <string name="global_search_description">Penghantar, subjek dan isi</string>  
+    <string name="account_settings_oof_time_alert">Ia seharusnya lewat daripada masa semasa.</string>
+    <string name="account_settings_oof_label">Luar pejabat</string>  
+    <string name="account_settings_oof_unchecked_summary">Saya kini berada di dalam pejabat</string>  
+    <string name="account_settings_oof_checked_summary">Saya kini berada di luar pejabat</string>  
+    <string name="account_settings_oof_from_label">"Dari"</string>  
+    <string name="account_settings_oof_to_label">"Kepada"</string>  
+    <string name="account_settings_oof_auto_reply_label">Balasan automatik luar pejabat</string>  
+    <string name="account_settings_oof_auto_reply_summary">Balas mesej secara automatik kepada setiap penghantar</string>  
+    <string name="account_settings_oof_external_server_label">Hantar balasan automatik kepada pelayan luaran</string>  
+    <string name="account_settings_oof_get_status">Mendapatkan status daripada pelayan</string>  
+    <string name="account_settings_oof_save_sets">Menyimpan tetapan pada pelayan</string>  
+    <string name="account_settings_oof_get_status_fail">Tidak boleh mendapatkan status</string>
+    <string name="account_settings_oof_get_status_fail_summary">Tidak boleh mendapatkan status daripada pelayan sekarang. Sila cuba sebentar lagi.</string>
+    <string name="account_settings_oof_cancel">Tanpa menyimpan?</string>  
+    <string name="account_settings_oof_cancel_summary">Semua perubahan akan dibuang.</string>  
+    <string name="account_settings_oof_save_fail">Tidak dapat menyimpan</string>  
+    <string name="account_settings_oof_save_fail_summary">Tidak dapat menyimpan tetapan pada pelayan. Pelayan mungkin tidak tersedia atau balasan automatik anda mungkin telah melebihi had pada pelayan atau peranti anda berada dalam tarikh atau masa yang salah.</string>  
+    <string name="account_setup_options_mail_check_frequency_smartpush">Tolak pintar</string>
+    <string name="smart_push_alert_dialog_title">Pilihan menjimatkan kuasa</string>
+    <string name="smart_push_alert_dialog_message">" menyemak e-mel baru dengan kurang kerap untuk menjimatkan kuasa. Teruskan menggunakan mod ini, e-mel akan diterima dengan lebih bertepatan masa.\n\nAnda boleh menukarnya dalam tetapan pada bila-bila masa."</string>
+    <string name="not_add_more_recipients">Tidak boleh menambah penerima melebihi <xliff:g id="maxLimit">%1$d</xliff:g> pada satu masa.</string>
+    <string name="vip_choose_contact">Tambah ke VIP</string>
+    <string name="can_not_add_vip_over_99">Tidak boleh menambah ahli VIP melebihi 99</string>
+    <string name="no_application_response">Permohonan telah dilumpuhkan</string>
+    <string name="vip_emails_from_accounts_fmt">E-mel daripada akaun <xliff:g id="vipAccountCount">%d</xliff:g></string>
+    <string name="notification_multiple_new_vip_messages_fmt"><xliff:g example="2">%1$d</xliff:g> e-mel VIP baru</string>
+    <string name="send_attachment_fail">Gagal menghantar lampiran.</string>
+    <string name="cannot_move_multiple_mailbox_toast">Beberapa e-mel sedang dalam proses dialihkan, sila cuba sebentar lagi.</string>
+    <string name="certificate_request_ssl">Sijil klien mesti menggunakan sambungan keselamatan.</string>
+    <string name="auto_clear_cache_title">Kosongkan cache secara automatik</string>
+    <string name="auto_clear_cache_description">Kosongkan dengan kerap lampiran yang dicache setempat</string>
+    <string name="edit_quoted_dialog_title">Aksara maksimum</string>
+    <string name="edit_quoted_not_append_all">Bilangan aksara maksimum dicapai. Beberapa kandungan lama akan hilang, teruskan?</string>
+    <string name="single_message_view_attachment_saved">Lampiran disimpan pada <xliff:g id="filename">%s</xliff:g></string>
+    <string name="choose_attachment_dialog_title">"Pilih lampiran"</string>
+    <string name="message_compose_error_invalid_email">"Sesetengah alamat e-mel tidak sah."</string>
+    <string name="extension_choose_provider_title">Pilih pembekal mel</string>
+    <string name="message_view_status_sdcard_not_enough">Tiada ruang mencukupi untuk menyimpan lampiran ke kad SD.</string>
+    <string name="message_body_too_large">Tidak dapat memuatkan keseluruhan kandungan disebabkan mesej terlalu besar.</string>
+</resources>

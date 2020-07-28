@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<carrier_config>
+    <!-- Supplementary Service WWOP Config -->
+    <boolean name="mtk_carrier_ss_gsm_ut_support" value="true" />
+    <boolean name="mtk_carrier_ss_not_support_call_identity" value="true" />
+    <boolean name="mtk_carrier_ss_not_support_ocb" value="true" />
+
+    <boolean name="allow_emergency_numbers_in_call_log_bool" value="true"/>
+    <boolean name="support_tdscdma_bool" value="true"/>
+    <boolean name="mtk_volte_conference_enhanced_enable_bool" value="true" />
+    <boolean name="call_forwarding_over_ut_warning_bool" value="true"/>
+    <boolean name="call_barring_over_ut_warning_bool" value="true"/>
+    <boolean name="call_waiting_over_ut_warning_bool" value="true"/>
+    <boolean name="caller_id_over_ut_warning_bool" value="true"/>
+    <boolean name="vilte_data_is_metered_bool" value="false" />
+    <boolean name="ignore_data_enabled_changed_for_video_calls" value="true" />
+    <!-- M: InCallUI new features begin. @{ -->
+    <boolean name="mtk_allow_one_video_call_only_bool" value="true" />
+    <boolean name="mtk_allow_cancel_video_upgrade_bool" value="true" />
+    <boolean name="mtk_allow_one_way_video_bool" value="false" />
+    <int name="mtk_timer_for_decline_upgrade_int" value="15" />
+    <boolean name="mtk_vt_dialpad_support_bool" value="true" />
+    <!-- M: InCallUI new features end. @} -->
+</carrier_config>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dip"
+        android:layout_marginTop="20dip"
+        android:gravity="center_vertical" >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/bt_tm_power_sel" />
+        <RadioGroup
+            android:id="@+id/bt_tm_power_rg"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:layout_marginStart="20dip" >
+            <RadioButton
+                android:id="@+id/bt_tm_power_default_rb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/bt_tm_power_default"
+                android:checked="true" />
+            <RadioButton
+                android:id="@+id/bt_tm_power_cus_rb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/bt_tm_power_cus" />
+        </RadioGroup>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/bt_tm_power_ll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginStart="20dip"
+        android:visibility="gone" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/bt_tm_power_power_input" >
+        </TextView>
+
+        <EditText
+            android:id="@+id/bt_tm_power_et"
+            android:layout_width="100dip"
+            android:layout_height="wrap_content"
+            android:maxLength="1"
+            android:inputType="number" >
+        </EditText>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dip"
+        android:layout_marginTop="20dip" >
+        <Button
+            android:id="@+id/bt_tm_enable"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/bt_tm_enable" />
+        <Button
+            android:id="@+id/bt_tm_disable"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/bt_tm_disable"
+            android:layout_marginEnd="20dip" />
+    </LinearLayout>
+</LinearLayout>

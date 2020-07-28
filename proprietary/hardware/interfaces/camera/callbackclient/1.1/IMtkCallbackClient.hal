@@ -1,0 +1,39 @@
+/*
+ * Copyright (C) 2018 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package vendor.mediatek.hardware.camera.callbackclient@1.1;
+import vendor.mediatek.hardware.camera.callbackclient@1.0::IMtkCallbackClient;
+import android.hardware.camera.common@1.0::types;
+/*
+ * This is used to CallbackClient.
+ */
+
+interface IMtkCallbackClient extends @1.0::IMtkCallbackClient{
+    /**
+     * Send command to camera hal.
+     * The meaning of the arguments is defined by the value of cmd, documented
+     * in the MtkCBClientCmdType definition.
+     *
+     * @param timestamp The callback client to be set.
+     * @param cmd The command to invoke.
+     * @param arg1 The first argument for the command, if needed.
+     * @param arg2 The second argument for the command, if needed.
+     *
+     * @return status The status code for this operation.
+     */
+    sendCommand(int64_t timestamp, MtkCBClientCmdType cmd, int32_t arg1, int32_t arg2)
+            generates (Status status);
+};

@@ -1,0 +1,72 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_weight="1" >
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="center" >
+
+        <FrameLayout
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_gravity="center" >
+
+            <ImageView
+                android:id="@+id/account_five_img"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center" />
+        </FrameLayout>
+
+        <!-- Act as divider -->
+
+        <include
+            android:id="@+id/account_five_normal_divider"
+            layout="@layout/divider" />
+
+        <!-- Act as highlight divider -->
+
+        <include
+            android:id="@+id/account_five_highlight_divider"
+            layout="@layout/highlight_divider"
+            android:visibility="gone" />
+
+        <FrameLayout
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center" >
+
+            <TextView
+                android:id="@+id/account_five_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:ellipsize="middle"
+                android:singleLine="true"
+                android:textColor="#000000"
+                android:textSize="14sp" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center" >
+
+            <TextView
+                android:id="@+id/account_five_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:ellipsize="middle"
+                android:singleLine="true"
+                android:textColor="#737373"
+                android:textSize="12sp" />
+        </FrameLayout>
+    </LinearLayout>
+
+</FrameLayout>

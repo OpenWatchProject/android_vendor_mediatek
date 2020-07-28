@@ -1,0 +1,85 @@
+<?xml version="1.0" ?>
+<config>
+	<conf check_path="/sys/class/rt5509_cal/rt5509.0/calibrated"
+	      param_path="/sys/bus/platform/devices/rt5509_param.0/prop_param"
+	      param_file="/system/vendor/etc/smartpa_param/rt5509_param">
+			<ctl name="Ch1 Speaker Protection" val="0"></ctl>
+	</conf>
+	<conf check_path="/sys/class/rt5509_cal/rt5509.1/calibrated"
+	      param_path="/sys/bus/platform/devices/rt5509_param.1/prop_param"
+	      param_file="/system/vendor/etc/smartpa_param/rt5509_param">
+			<ctl name="Ch2 Speaker Protection" val="0"></ctl>
+	</conf>
+
+	<scenario name = "init" >
+		<ctl name="Ch1 I2S_Channel" val="0"></ctl>
+		<ctl name="Ch1 I2SDOR Mux" val="4"></ctl>
+		<ctl name="Ch1 I2S Mux" val="1"></ctl>
+		<ctl name="Ch2 I2S_Channel" val="2"></ctl>
+		<ctl name="Ch2 I2SDOR Mux" val="4"></ctl>
+		<ctl name="Ch2 I2S Mux" val="1"></ctl>
+	</scenario>
+	<scenario name = "deinit" />
+	<scenario name="speaker_on_normal">
+		<ctl name="Ch1 I2S Mux" val="0"></ctl>
+		<ctl name="Ch2 I2S Mux" val="0"></ctl>
+		<ctl name="Ch1 Ext_DO_Enable" val="1"></ctl>
+		<ctl name="Ch2 Ext_DO_Enable" val="1"></ctl>
+	</scenario>
+	<scenario name="speaker_on_ringtone">
+		<ctl name="Ch1 I2S Mux" val="0"></ctl>
+		<ctl name="Ch2 I2S Mux" val="0"></ctl>
+		<ctl name="Ch1 Ext_DO_Enable" val="1"></ctl>
+		<ctl name="Ch2 Ext_DO_Enable" val="1"></ctl>
+	</scenario>
+	<scenario name="speaker_on_phonecall">
+		<ctl name="Ch2 I2S Mux" val="0"></ctl>
+		<!-- reserved <ctl name="Ch2 RLR Func" val="1"></ctl> -->
+		<!-- gain per step 3db, starting from 0dB, maximum is 21dB -->
+		<!-- reserved <ctl name="Ch2 ALC Fixed Gain" val="0"></ctl>  -->
+		<ctl name="Ch2 I2S_Channel" val="1"></ctl>
+		<ctl name="Ch1 Ext_DO_Enable" val="1"></ctl>
+		<ctl name="Ch2 Ext_DO_Enable" val="1"></ctl>
+	</scenario>
+	<scenario name="speaker_on_voip">
+		<ctl name="Ch2 I2S Mux" val="0"></ctl>
+		<!-- reserved <ctl name="Ch2 RLR Func" val="1"></ctl> -->
+		<!-- gain per step 3db, starting from 0dB, maximum is 21dB -->
+		<!-- reserved <ctl name="Ch2 ALC Fixed Gain" val="0"></ctl>  -->
+		<ctl name="Ch2 I2S_Channel" val="1"></ctl>
+		<ctl name="Ch1 Ext_DO_Enable" val="1"></ctl>
+		<ctl name="Ch2 Ext_DO_Enable" val="1"></ctl>
+	</scenario>
+	<scenario name="receiver_on_phonecall">
+		<ctl name="Ch1 I2S Mux" val="0"></ctl>
+		<ctl name="Ch1 Recv_Special_Set" val="1"></ctl>
+		<!-- reserved <ctl name="Ch1 RLR Func" val="1"></ctl> -->
+		<ctl name="Ch1 CLIP Func" val="0"></ctl>
+		<ctl name="Ch1 Recv_Model_Set" val="0"></ctl>
+		<!-- gain per step 3db, starting from 0dB, maximum is 21dB -->
+		<!-- <ctl name="Ch1 ALC Fixed Gain" val="0"></ctl> -->
+		<ctl name="Ch1 I2S_Channel" val="1"></ctl>
+	</scenario>
+	<scenario name="receiver_on_voip">
+		<ctl name="Ch1 I2S Mux" val="0"></ctl>
+		<ctl name="Ch1 Recv_Special_Set" val="1"></ctl>
+		<!-- reserved <ctl name="Ch1 RLR Func" val="1"></ctl> -->
+		<ctl name="Ch1 CLIP Func" val="0"></ctl>
+		<ctl name="Ch1 Recv_Model_Set" val="0"></ctl>
+		<!-- gain per step 3db, starting from 0dB, maximum is 21dB -->
+		<!-- reserved <ctl name="Ch1 ALC Fixed Gain" val="0"></ctl> -->
+		<ctl name="Ch1 I2S_Channel" val="1"></ctl>
+	</scenario>
+	<scenario name="amp_off">
+		<ctl name="Ch1 Ext_DO_Enable" val="0"></ctl>
+		<ctl name="Ch2 Ext_DO_Enable" val="0"></ctl>
+		<ctl name="Ch1 Recv_Special_Set" val="0"></ctl>
+		<!-- reserved <ctl name="Ch1 RLR Func" val="0"></ctl> -->
+		<ctl name="Ch1 CLIP Func" val="1"></ctl>
+		<ctl name="Ch1 I2S_Channel" val="0"></ctl>
+		<!-- reserved <ctl name="Ch2 RLR Func" val="0"></ctl> -->
+		<ctl name="Ch2 I2S_Channel" val="2"></ctl>
+		<ctl name="Ch1 I2S Mux" val="1"></ctl>
+		<ctl name="Ch2 I2S Mux" val="1"></ctl>
+	</scenario>
+</config>

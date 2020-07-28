@@ -1,0 +1,12 @@
+package vendor.mediatek.hardware.rcs@1.0;
+
+interface IRcsIndication {
+    /*
+     * Indicates data from UA socket
+     *
+     * @param data, the data buffer
+     * @param offset, the offset of data buffer
+     * @param length, the length of data
+     */
+    oneway readEvent(vec<int8_t> data, int32_t offset, int32_t length);
+};

@@ -1,0 +1,92 @@
+java_library {
+    name: "mediatek-common",
+    installable: true,
+    srcs: [
+        "src/**/*.java",
+        "src/com/mediatek/common/ppl/IPplManager.aidl",
+        "src/com/mediatek/common/voicecommand/IVoiceCommandListener.aidl",
+        "src/com/mediatek/common/voicecommand/IVoiceCommandManagerService.aidl",
+        "src/com/mediatek/common/voicecommand/IVoiceTrainingEnrollmentService.aidl",
+        "src/com/mediatek/common/voicecommand/IVoiceWakeupInteractionCallback.aidl",
+        "src/com/mediatek/common/voicecommand/IVoiceWakeupInteractionService.aidl",
+        "src/com/mediatek/common/operamax/ILoaderStateListener.aidl",
+        "src/com/mediatek/common/operamax/ILoaderService.aidl",
+        "src/com/mediatek/common/voiceextension/IVoiceExtCommandListener.aidl",
+        "src/com/mediatek/common/voiceextension/IVoiceExtCommandManager.aidl",
+        "src/com/mediatek/common/multiwindow/IMultiWindowManager.aidl",
+        "src/com/mediatek/common/multiwindow/IMWAmsCallback.aidl",
+        "src/com/mediatek/common/multiwindow/IMWPhoneWindowCallback.aidl",
+        "src/com/mediatek/common/multiwindow/IMWWmsCallback.aidl",
+        "src/com/mediatek/common/multiwindow/IMWSystemUiCallback.aidl",
+        "src/com/mediatek/common/carrierexpress/ICarrierExpressService.aidl",
+        "src/com/mediatek/common/omadm/IOmadmManager.aidl"
+    ],
+    aidl: {
+        export_include_dirs: [
+            "src",
+        ],
+        include_dirs: [
+            // FRAMEWORKS_BASE_JAVA_SRC_DIRS
+            "frameworks/base/core/java",
+            "frameworks/base/graphics/java",
+            "frameworks/base/location/java",
+            "frameworks/base/lowpan/java",
+            "frameworks/base/media/java",
+            "frameworks/base/media/mca/effect/java",
+            "frameworks/base/media/mca/filterfw/java",
+            "frameworks/base/media/mca/filterpacks/java",
+            "frameworks/base/drm/java",
+            "frameworks/base/opengl/java",
+            "frameworks/base/sax/java",
+            "frameworks/base/telecomm/java",
+            "frameworks/base/telephony/java",
+            "frameworks/base/wifi/java",
+            "frameworks/base/keystore/java",
+            "frameworks/base/rs/java",
+        ],
+    },
+    //libs: [
+    //    "framework",
+    //],
+    // Always use the latest prebuilt Android library.
+    sdk_version: "current",
+}
+
+java_library {
+    name: "mediatek-ims-fundament-common",
+    installable: false,
+    srcs: [
+        "src/com/mediatek/common/util/OperatorCustomizationFactoryLoader.java",
+    ],
+    libs: [
+        "framework",
+    ],
+}
+
+filegroup {
+    name: "mediatek-common-srcs",
+    srcs: [
+//        "src/**/*.java",
+        "src/com/mediatek/common/jpe/a.java",
+        "src/com/mediatek/common/util/OperatorCustomizationFactoryLoader.java",
+        "src/com/mediatek/common/search/SearchEngine.java",
+        "src/com/mediatek/common/util/OperatorCustomizationFactoryLoader.java",
+        "src/com/mediatek/common/ppl/IPplManager.aidl",
+        "src/com/mediatek/common/voicecommand/IVoiceCommandListener.aidl",
+        "src/com/mediatek/common/voicecommand/IVoiceCommandManagerService.aidl",
+        "src/com/mediatek/common/voicecommand/IVoiceTrainingEnrollmentService.aidl",
+        "src/com/mediatek/common/voicecommand/IVoiceWakeupInteractionCallback.aidl",
+        "src/com/mediatek/common/voicecommand/IVoiceWakeupInteractionService.aidl",
+        "src/com/mediatek/common/operamax/ILoaderStateListener.aidl",
+        "src/com/mediatek/common/operamax/ILoaderService.aidl",
+        "src/com/mediatek/common/voiceextension/IVoiceExtCommandListener.aidl",
+        "src/com/mediatek/common/voiceextension/IVoiceExtCommandManager.aidl",
+        "src/com/mediatek/common/multiwindow/IMultiWindowManager.aidl",
+        "src/com/mediatek/common/multiwindow/IMWAmsCallback.aidl",
+        "src/com/mediatek/common/multiwindow/IMWPhoneWindowCallback.aidl",
+        "src/com/mediatek/common/multiwindow/IMWWmsCallback.aidl",
+        "src/com/mediatek/common/multiwindow/IMWSystemUiCallback.aidl",
+        "src/com/mediatek/common/carrierexpress/ICarrierExpressService.aidl",
+        "src/com/mediatek/common/omadm/IOmadmManager.aidl",
+    ],
+}

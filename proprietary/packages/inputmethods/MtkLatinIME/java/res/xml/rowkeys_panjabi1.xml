@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+**
+** Copyright 2014, The Android Open Source Project
+**
+** Licensed under the Apache License, Version 2.0 (the "License");
+** you may not use this file except in compliance with the License.
+** You may obtain a copy of the License at
+**
+**     http://www.apache.org/licenses/LICENSE-2.0
+**
+** Unless required by applicable law or agreed to in writing, software
+** distributed under the License is distributed on an "AS IS" BASIS,
+** WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+** See the License for the specific language governing permissions and
+** limitations under the License.
+*/
+-->
+
+<merge xmlns:latin="http://schemas.android.com/apk/res/com.android.inputmethod.latin">
+    <switch>
+        <case latin:keyboardLayoutSetElement="alphabetManualShifted|alphabetShiftLocked|alphabetShiftLockShifted">
+            <!-- U+0994: "ঔ" BENGALI LETTER AU
+                 U+0993/U+0982: "ऒं" BENGALI LETTER SHORT O//BENGALI SIGN ANUSVARA -->
+            <Key
+                latin:keySpec="&#x0A14;"
+                latin:moreKeys="&#x0A13;&#x0A02;" />
+            <!-- U+0990: "ऐ" BENGALI LETTER AI
+                 U+0990/U+0982: "ऐं" BENGALI LETTER AI/BENGALI SIGN ANUSVARA -->
+            <Key
+                latin:keySpec="&#x0A10;"
+                latin:moreKeys="&#x0A10;&#x0A02;" />
+            <!-- U+0986: "आ" BENGALI LETTER AA
+                 U+0986/U+0982: "आं" BENGALI LETTER AA/BENGALI SIGN ANUSVARA
+                 U+0986/U+0981: "आँ" BENGALI LETTER AA/BENGALI SIGN CANDRABINDU -->
+            <Key
+                latin:keySpec="&#x0A06;"
+                latin:moreKeys="&#x0A06;&#x0A02;,&#x0A06;&#x0A01;" />
+            <!-- U+0908: "ई" BENGALI LETTER II
+                 U+0908/U+0902: "ईं" BENGALI LETTER II/BENGALI SIGN ANUSVARA -->
+            <Key
+                latin:keySpec="&#x0A08;"
+                latin:moreKeys="&#x0A08;&#x0A02;" />
+            <!-- U+090A: "ऊ" BENGALI LETTER UU
+                 U+090A/U+0902: "ऊं" BENGALI LETTER UU/BENGALI SIGN ANUSVARA
+                 U+090A/U+0901: "ऊँ" BENGALI LETTER UU/BENGALI SIGN CANDRABINDU -->
+            <Key
+                latin:keySpec="&#x0A0A;"
+                latin:moreKeys="&#x0A0A;&#x0A02;,&#x0A0A;&#x0A01;" />
+            <!-- U+092D: "भ" BENGALI LETTER BHA -->
+            <Key latin:keySpec="&#x0A2D;" />
+            <!-- Because the font rendering system prior to API version 16 can't automatically
+                 render dotted circle for incomplete combining letter of some scripts, different
+                 set of Key definitions are needed based on the API version. -->
+            <include latin:keyboardLayout="@xml/keystyle_panjabi_sign_visarga" />
+            <Key latin:keyStyle="baseKeyPanjabiSignVisarga" />
+            <!-- U+0918: "घ" BENGALI LETTER GHA -->
+            <Key latin:keySpec="&#x0A18;" />
+            <!-- U+0927: "ध" BENGALI LETTER DHA
+                 U+0915/U+094D/U+0937: "क्ष" BENGALI LETTER KA/BENGALI SIGN VIRAMA/BENGALI LETTER SSA
+                 U+0936/U+094D/U+0930: "श्र" BENGALI LETTER SHA/BENGALI SIGN VIRAMA/BENGALI LETTER RA -->
+            <Key
+                latin:keySpec="&#x0A27;" />
+            <!-- U+091D: "झ" BENGALI LETTER JHA -->
+            <Key latin:keySpec="&#x0A1D;" />
+            <!-- U+0922: "ढ" BENGALI LETTER DDHA -->
+            <Key latin:keySpec="&#x0A22;"
+            	   latin:moreKeys="&#x0A03;" />
+        </case>
+        <default>
+            <!-- Because the font rendering system prior to API version 16 can't automatically
+                 render dotted circle for incomplete combining letter of some scripts, different
+                 set of Key definitions are needed based on the API version. -->
+            <include latin:keyboardLayout="@xml/keystyle_panjabi_vowel_sign_au" />
+            <!-- U+0967: "१" BENGALI DIGIT ONE -->
+            <Key
+                latin:keyStyle="baseKeyPanjabiVowelSignAu"
+                latin:keyHintLabel="1"
+                latin:additionalMoreKeys="&#x0A67;,1" />
+            <!-- Because the font rendering system prior to API version 16 can't automatically
+                 render dotted circle for incomplete combining letter of some scripts, different
+                 set of Key definitions are needed based on the API version. -->
+            <include latin:keyboardLayout="@xml/keystyle_panjabi_vowel_sign_ai" />
+            <!-- U+0968: "२" BENGALI DIGIT TWO -->
+            <Key
+                latin:keyStyle="baseKeyPanjabiVowelSignAi"
+                latin:keyHintLabel="2"
+                latin:additionalMoreKeys="&#x0A68;,2" />
+            <!-- Because the font rendering system prior to API version 16 can't automatically
+                 render dotted circle for incomplete combining letter of some scripts, different
+                 set of Key definitions are needed based on the API version. -->
+            <include latin:keyboardLayout="@xml/keystyle_panjabi_vowel_sign_aa" />
+            <!-- U+0969: "३" BENGALI DIGIT THREE -->
+            <Key
+                latin:keyStyle="baseKeyPanjabiVowelSignAa"
+                latin:keyHintLabel="3"
+                latin:additionalMoreKeys="&#x0A69;,3" />
+            <!-- Because the font rendering system prior to API version 16 can't automatically
+                 render dotted circle for incomplete combining letter of some scripts, different
+                 set of Key definitions are needed based on the API version. -->
+            <include latin:keyboardLayout="@xml/keystyle_panjabi_vowel_sign_ii" />
+            <!-- U+096A: "४" BENGALI DIGIT FOUR -->
+            <Key
+                latin:keyStyle="baseKeyPanjabiVowelSignIi"
+                latin:keyHintLabel="4"
+                latin:additionalMoreKeys="&#x0A6A;,4" />
+            <!-- Because the font rendering system prior to API version 16 can't automatically
+                 render dotted circle for incomplete combining letter of some scripts, different
+                 set of Key definitions are needed based on the API version. -->
+            <include latin:keyboardLayout="@xml/keystyle_panjabi_vowel_sign_uu" />
+            <!-- U+096B: "५" BENGALI DIGIT FIVE -->
+            <Key
+                latin:keyStyle="baseKeyPanjabiVowelSignUu"
+                latin:keyHintLabel="5"
+                latin:additionalMoreKeys="&#x0A6B;,5" />
+            <!-- U+092C: "ब" BENGALI LETTER BA
+                 U+092C/U+0952: "ब॒" BENGALI LETTER BA/BENGALI STRESS SIGN ANUDATTA
+                 U+096C: "६" BENGALI DIGIT SIX -->
+            <Key
+                latin:keySpec="&#x0A2C;"
+                latin:moreKeys="&#x0A2C;,%"
+                latin:keyHintLabel="6"
+                latin:additionalMoreKeys="&#x0A6C;,6" />
+            <!-- U+0939: "ह" BENGALI LETTER HA
+                 U+096D: "७" BENGALI DIGIT SEVEN -->
+            <Key
+                latin:keySpec="&#x0A39;"
+                latin:keyHintLabel="7"
+                latin:additionalMoreKeys="&#x0A6D;,7" />
+            <!-- U+0917: "ग" BENGALI LETTER GA
+                 U+091C/U+094D/U+091E: "ज्ञ" BENGALI LETTER JA/BENGALI SIGN VIRAMA/BENGALI LETTER NYA
+                 U+0917/U+093C: "ग़" BENGALI LETTER GA/BENGALI SIGN NUKTA
+                 U+0917/U+0952: "ग॒" BENGALI LETTER GA/BENGALI STRESS SIGN ANUDATTA
+                 U+096E: "८" BENGALI DIGIT EIGHT -->
+            <Key
+                latin:keySpec="&#x0A17;"
+                latin:moreKeys="&#x0A17;&#x0A3C;,&#x0A5A;,%"
+                latin:keyHintLabel="8"
+                latin:additionalMoreKeys="&#x0A6E;,8" />
+            <!-- U+0926: "द" BENGALI LETTER DA
+                 U+096F: "९" BENGALI DIGIT NINE -->
+            <Key
+                latin:keySpec="&#x0A26;"
+                latin:keyHintLabel="9"
+                latin:additionalMoreKeys="&#x0A6F;,9" />
+            <!-- U+091C: "ज" BENGALI LETTER JA
+                 U+091C/U+0952: "ज॒" BENGALI LETTER JA/BENGALI STRESS SIGN ANUDATTA
+                 U+091C/U+094D/U+091E: "ज्ञ" BENGALI LETTER JA/BENGALI SIGN VIRAMA/BENGALI LETTER NYA
+                 U+091C/U+093C: "ज़" BENGALI LETTER JA/BENGALI SIGN NUKTA
+                 U+0966: "०" BENGALI DIGIT ZERO -->
+            <Key
+                latin:keySpec="&#x0A1C;"
+                latin:moreKeys="&#x0A1C;&#x0A3C;,&#x0A5B;,%"
+                latin:keyHintLabel="0"
+                latin:additionalMoreKeys="&#x0A66;,0" />
+            <!-- U+0921: "ड" BENGALI LETTER DDA
+                 U+0921/U+0952: "ड॒" BENGALI LETTER DDA/BENGALI STRESS SIGN ANUDATTA
+                 U+0921/U+093C: "ड़" BENGALI LETTER DDA/BENGALI SIGN NUKTA -->
+            <Key
+                latin:keySpec="&#x0A21;"
+                latin:moreKeys="&#x0A21;&#x0A3C;,&#x0A5C;" />
+        </default>
+    </switch>
+</merge>
+

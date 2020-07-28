@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<flashtool-config version="2.0">
+  <general>
+    <chip-name>MT6785</chip-name>
+    <storage-type>EMMC</storage-type>
+    <download-agent>
+      MT6785.bin
+    </download-agent>
+    <scatter>
+      MT6785_Android_scatter.txt
+    </scatter>
+    <rom-list>
+      <rom index="0" enable="true">
+        preloader_k85v1_64.bin
+      </rom>
+    </rom-list>
+    <connection
+      type="BromUSB"
+      high-speed="false"
+      without-battery="false" />
+  </general>
+  <commands>
+    <efuse>
+      <magic-key
+        key1="87654321"
+        key2="ABCDEF90" />
+
+      <common-ctrl
+        Disable_NAND_boot_speedup="false"
+        USB_download_type="0"
+        Disable_NAND_boot="false"
+        Disable_EMMC_boot="false" />
+      <secure-ctrl
+        Disable_DBGPORT_LOCK="false"
+        Enable_Root_Cert="false"
+        Enable_SW_JTAG_CON="false"
+        Enable_ACC="false"
+        Enable_ACK="false"
+        Enable_SLA="false"
+        Enable_DAA="false"
+        Enable_SBC="false"
+        Disable_JTAG="false" />
+      <sbc-pub-key>
+        <pub-key-e></pub-key-e>
+        <pub-key-n></pub-key-n>
+      </sbc-pub-key>
+
+      <common-lock
+        com_ctrl_lock="false"
+        usb_id_lock="false" />
+      <secure-lock
+        sec_msc_lock="false"
+        sec_attr_lock="false"
+        ackey_lock="false"
+        sbc_pubk_hash_lock="false" />
+
+      <usb-id
+        vid="0000"
+        pid="0000" />
+      <sec_msc
+        efuse_jtag_dis_c2k="false"
+        md1_sbc_en="false"
+        c2k_sbc_en="false" />
+      <c_lock
+        c_ctrlm_lock="false" />
+
+      <c_ctrlm
+        disable_self_blow="false" />
+
+      <ac-key>00000000000000000000000000000000</ac-key>
+      <read-back
+        dir="."
+        name="efuse_dump.txt"
+        time-prefix="false" />
+    </efuse>
+  </commands>
+</flashtool-config>

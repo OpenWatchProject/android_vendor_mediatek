@@ -1,0 +1,24 @@
+/*! \mainpage  CCU & APMCU Mailbox Communication
+  Communication between APMCU and CCU is done via Mailbox. \n\n
+
+  Mailbox is an array of #struct ccu_msg located in shared memory. \n\n
+
+  #struct ccu_msg is composed of (#ccu_msg_id msg_id, #MUINT32 in_data_ptr, #MUINT32 out_data_ptr, #ccu_tg_info tg_info) \n\n
+
+  Each #ccu_msg_id indicates a specific task, and has it's corresponding input/output datatype
+
+  \include ccu_control_extif.h
+*/
+
+/*! \page page1 CCU Control interface for CameraHAL & 3A Mgr
+ *
+ *
+ * \section CCU Interface Classes
+ * \link NSCcuIf::ICcuCtrlAe ICcuCtrlAe\endlink
+ *
+ * \link NSCcuIf::ICcuCtrlAf ICcuCtrlAf\endlink
+ *
+ * For Sync3A module communicate with CCU\n
+ * \link NSCcuIf::ICcuCtrl3ASync ICcuCtrl3ASync\endlink
+ *
+ */

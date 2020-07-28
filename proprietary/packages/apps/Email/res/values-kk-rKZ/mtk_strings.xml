@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Copyright Statement:
+    This software/firmware and related documentation ("MediaTek Software") are
+    protected under relevant copyright laws. The information contained herein
+    is confidential and proprietary to MediaTek Inc. and/or its licensors.
+    Without the prior written permission of MediaTek inc. and/or its licensors,
+    any reproduction, modification, use or disclosure of MediaTek Software,
+    and information contained herein, in whole or in part, shall be strictly prohibited.
+    MediaTek Inc. (C) 2012. All rights reserved.
+    BY OPENING THIS FILE, RECEIVER HEREBY UNEQUIVOCALLY ACKNOWLEDGES AND AGREES
+    THAT THE SOFTWARE/FIRMWARE AND ITS DOCUMENTATIONS ("MEDIATEK SOFTWARE")
+    RECEIVED FROM MEDIATEK AND/OR ITS REPRESENTATIVES ARE PROVIDED TO RECEIVER ON
+    AN "AS-IS" BASIS ONLY. MEDIATEK EXPRESSLY DISCLAIMS ANY AND ALL WARRANTIES,
+    EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF
+    MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE OR NONINFRINGEMENT.
+    NEITHER DOES MEDIATEK PROVIDE ANY WARRANTY WHATSOEVER WITH RESPECT TO THE
+    SOFTWARE OF ANY THIRD PARTY WHICH MAY BE USED BY, INCORPORATED IN, OR
+    SUPPLIED WITH THE MEDIATEK SOFTWARE, AND RECEIVER AGREES TO LOOK ONLY TO SUCH
+    THIRD PARTY FOR ANY WARRANTY CLAIM RELATING THERETO. RECEIVER EXPRESSLY ACKNOWLEDGES
+    THAT IT IS RECEIVER'S SOLE RESPONSIBILITY TO OBTAIN FROM ANY THIRD PARTY ALL PROPER LICENSES
+    CONTAINED IN MEDIATEK SOFTWARE. MEDIATEK SHALL ALSO NOT BE RESPONSIBLE FOR ANY MEDIATEK
+    SOFTWARE RELEASES MADE TO RECEIVER'S SPECIFICATION OR TO CONFORM TO A PARTICULAR
+    STANDARD OR OPEN FORUM. RECEIVER'S SOLE AND EXCLUSIVE REMEDY AND MEDIATEK'S ENTIRE AND
+    CUMULATIVE LIABILITY WITH RESPECT TO THE MEDIATEK SOFTWARE RELEASED HEREUNDER WILL BE,
+    AT MEDIATEK'S OPTION, TO REVISE OR REPLACE THE MEDIATEK SOFTWARE AT ISSUE,
+    OR REFUND ANY SOFTWARE LICENSE FEES OR SERVICE CHARGE PAID BY RECEIVER TO
+    MEDIATEK FOR SUCH MEDIATEK SOFTWARE AT ISSUE.
+    The following software/firmware and/or related documentation ("MediaTek Software")
+    have been modified by MediaTek Inc. All revisions are subject to any receiver's
+    applicable license agreements with MediaTek Inc.
+    Copyright (C) 2008 The Android Open Source Project
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+         http://www.apache.org/licenses/LICENSE-2.0
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="not_add_more_text">"Бұдан артық мәтін қосу мүмкін емес"</string>
+    <string name="attach_image">Фотосурет</string>
+    <string name="attach_video">Видео</string>
+    <string name="attach_sound">Музыка</string>
+    <string name="attach_contact">Контактілер</string> 
+    <string name="attach_file">файл</string> 
+    <string name="attach_calender">Күнтізбе</string>    
+    <string name="attach_error_occurred">Мұндай тіркемеге қолдау көрсететін қолданба жоқ.</string>  
+    <string name="low_storage_service_stop">Жадта бос орын болмағандықтан электрондық пошта қызметі тоқтатылды.</string>
+    <string name="low_storage_hint_delete_mail">Жадты босату үшін қажетсіз электрондық хаттар мен қолданбаларды жоя аласыз.</string>
+    <string name="low_storage_service_start">Жадтағы бос орын жеткілікті болғандықтан электрондық пошта қызметі қайта істеп тұр.</string>
+    <string name="low_storage_attachment_cannot_download">Бос орын болмағандықтан тіркемені жүктеу мүмкін емес.</string>
+    <string name="low_storage_attachment_cannot_view">Бос орынның аз болуына байланысты тіркемені көрсету мүмкін емес.</string>
+    <string name="download_remaining">Қалған жүктеулер</string>
+    <string name="downloading_remaining">Жүктелуде...</string>
+    <string name="unable_to_connect">Қосылу мүмкін емес</string>
+    <string name="need_connection_prompt">"Бұл қолданбаны пайдалану үшін желілік байланыс қажет. Мобильдік желіні немесе параметрлердегі WiFi желісін қосыңыз."</string>
+    <string name="need_wifi_connection_prompt">"Бұл қолданбаны пайдалану үшін желілік байланыс қажет. Параметрлердегі WiFi желісін қосыңыз."</string>
+    <string name="connection_settings">A-GPS параметрлері</string>
+    <string name="too_many_attachments">Тіркемелерді көп мөлшерде қосу мүмкін емес. Тек бастапқы <xliff:g id="currentCount">%1$d</xliff:g> тіркемелер ғана қосылады.</string>
+    <string name="not_add_more_attachments">Басқа тіркеме қосу мүмкін емес. Тіркемелерді қосу шегі - <xliff:g id="maxLimit">%1$d</xliff:g>.</string>
+    <string name="attachment_overflow">Тіркемелердің толып кетуі</string>
+    <string name="cannot_add_this_attachment">Бұл тіркемені қосу мүмкін емес</string>
+    <string name="loading_attachment">Тіркемелер жүктелуде...</string>
+    <string name="send_attachment_fail">Тіркемені жіберу сәтсіз аяқталды.</string>
+    <string name="open_message_parsing">Хабарды талдау...</string>
+    <string name="open_message_update_db">Дерекқор жаңартылуда...</string>
+    <string name="open_message_update_ui">Хабар жүктелуде....</string>
+    <string name="please_wait">Операция орындалуда. Күтіңіз...</string>
+    <string name="delete_message_dialog_title">Хабарды жою</string>
+    <string name="delete_message_confirm">Бұл хабарды жою қажет пе?</string>
+    <string name="attachment_info_deleted">"Тіркеме жойылғандар қатарында болуы мүмкін, сондықтан оны сақтау немесе ашу мүмкін емес."</string>
+    <string name="send_failed_ticker"><xliff:g id="account_name">%s</xliff:g> электрондық хабар жібере алмады.</string>
+    <string name="send_failed_title">Электрондық хабар жіберу сәтсіз аяқталды</string>
+    <string name="always_bcc_myself">Әрдайым жасырын көшірмені пайдалану</string>
+    <string name="always_bcc_myself_summary">Жасау, жауап беру және бағытын өзгерту кезінде әрдайым жасырын көшірмені пайдалану</string>
+    <string name="remote_search_failed">Серверден іздеу сәтсіз аяқталды!</string>
+    <string name="searching_on_server">Серверден іздеу</string>
+    <string name="searching_on_server_title">Серверден \"<xliff:g id="account_name">%s</xliff:g>\" іздеу</string>
+    <string name="searching_all_fields_on_sever">Сервердегі барлық өрісті іздеу</string>
+    <string name="search_field_subject">Тақырып</string>
+    <string name="search_field_receiver">Қабылдаушы</string>
+    <string name="search_field_sender">Жіберуші</string>
+    <string name="search_field_body">Негізгі бөлім</string>
+    <string name="search_field_all">Барлығы</string>
+    <string name="select_all">Барлығын белгілеу</string>
+    <string name="deselect_all">"Барлық белгілерді алу"</string>
+    <string name="vip_settings">VIP ПАРАМЕТРЛЕР</string>
+    <string name="vip_members">VIP мүшелері</string>
+    <string name="vip_notifications">VIP хабарландырулары</string>
+    <string name="vip_settings_notify_summary">VIP электрондық хат келген кезде жүйе жолағында хабарлау</string>
+    <string name="vip_members_count">VIP мүшелері (<xliff:g example="2">%1$d</xliff:g>)</string>
+    <string name="vip_remove_title">VIP тізімінен жою</string>
+    <string name="vip_choose_contact">VIP тізіміне қосу</string>
+    <string name="vip_remove_prompt">VIP мүшелерінен <xliff:g example="2">%1$s</xliff:g> жойылады.</string>
+    <string name="not_add_duplicate_vip">VIP тізімге телнұсқа контакт қосылмайды.</string>
+    <string name="can_not_add_vip_over_99">VIP мүшелерін 99-дан артық қосуға болмайды.</string>
+    <string name="vip_count">0</string>
+    <string name="vip_settings_ringtone">Рингтон таңдау</string>
+    <string name="vip_settings_vibrate_label">Діріл</string>
+    <string name="vip_settings_vibrate_summary">VIP электрондық хат келген кезде де дірілдеу</string>
+    <string name="vip_settings_member_count"><xliff:g id="count">%2d</xliff:g></string>
+    <string name="account_setup_options_mail_check_frequency_smartpush">Смарт функция</string>
+    <string name="smart_push_alert_dialog_title">Қуатты үнемдеу опциясы</string>
+    <string name="smart_push_alert_dialog_message">Қуатты үнемдеу үшін жаңа электрондық хаттардың келгенін арагідік тексереді. Осы режимді ары қарай пайдалана берсеңіз, электрондық хаттар өз уақытында келіп отырады.\n\n Режимді кез келген уақытта параметрлерден өзгерте аласыз. </string>
+    <string name="global_search_label">Электрондық пошта</string>
+    <string name="global_search_hint">Электрондық поштадан іздеу</string>
+    <string name="global_search_description">Жіберушілер, тақырыптар, негізгі бөлім</string>
+    <string name="account_settings_oof_label">Кеңседен тыс</string>
+    <string name="account_settings_oof_unchecked_summary">Мен кеңседемін</string>
+    <string name="account_settings_oof_checked_summary">Мен қазір кеңседе емеспін</string>
+    <string name="account_settings_oof_from_label">Кімнен</string>
+    <string name="account_settings_oof_to_label">Кімге</string>
+    <string name="account_settings_oof_auto_reply_label">Кеңседен тыс уақыттағы автоматты жауап</string>
+    <string name="account_settings_oof_auto_reply_summary">Әрбір жіберушіге автоматты түрде жауап беру</string>
+    <string name="account_settings_oof_external_server_label">Сыртқы серверге автоматты түрде жауап беру</string>
+    <string name="account_settings_oof_get_status">Серверден күй алу</string>
+    <string name="account_settings_oof_save_sets">Параметрлерді серверге сақтау</string>
+    <string name="account_settings_oof_get_status_fail">Күйді алу мүмкін емес</string>
+    <string name="account_settings_oof_get_status_fail_summary">Қазір серверден күй алу мүмкін емес. Кейінірек қайталаңыз.</string>
+    <string name="account_settings_oof_cancel">Сақтау қажет емес пе?</string>
+    <string name="account_settings_oof_cancel_summary">Өзгерістердің ешқайсысы сақталмайды.</string>
+    <string name="account_settings_oof_save_fail">Сақтау мүмкін емес</string>
+    <string name="account_settings_oof_save_fail_summary">Параметрлерді серверге сақтау мүмкін емес. Сервер қолжетімсіз болуы мүмкін немесе сіздің автоматты жауаптарыңыздың саны серверде шамадан асып кетуі мүмкін немесе құрылғыларыңыздағы күн немесе уақыт дұрыс емес.</string>
+    <string name="account_settings_oof_time_alert">Қазіргі уақыттан кеш болуы қажет.</string>
+    <string name="no_application_response">Қолданба істен шығарылды.</string>
+    <string name="extension_choose_provider_title">Электрондық пошта провайдерін таңдау</string>
+    <string name="not_add_more_recipients">Бір уақытта <xliff:g id="maxLimit">%1$d</xliff:g> артық қабылдаушы қосуға болмайды.</string>
+    <string name="message_view_status_sdcard_not_enough">SD картаға сақтау үшін бос орын жеткіліксіз.</string>
+    <string name="vip_emails_from_accounts_fmt"><xliff:g id="vipAccountCount">%d</xliff:g> тіркелгілерінен келген электрондық хаттар</string>
+    <string name="notification_multiple_new_vip_messages_fmt"><xliff:g example="2">%1$d</xliff:g> жаңа VIP электрондық хаттар</string>
+    <string name="message_body_too_large">Хабар өте үлкен болғандықтан түгелдей жүктеу мүмкін болмады.</string>
+    <string name="cannot_move_multiple_mailbox_toast">Кейбір хабарлар қазіргі уақытта жіберілуде, әрекетті кейінірек қайталаңыз.</string>
+    <string name="certificate_request_ssl">Клиент сертификаты қауіпсіз байланысты пайдалану қажет.</string>
+    <string name="auto_clear_cache_title">Кэш жадын автоматты түрде тазалау</string>
+    <string name="auto_clear_cache_description">Жергілікті түрде кэш жадқа сақталған қолданбаларды жүйелі түрде тазалап тұру</string>
+    <string name="edit_quoted_dialog_title">Максималды таңба</string>
+    <string name="edit_quoted_not_append_all">Таңбалар максималды ұзындықтан асып кетті. Кейбір ескі деректер жойылуы мүмкін, жалғастыру қажет пе?</string>
+   <string name="single_message_view_attachment_saved">Тіркемелер <xliff:g id="filename">%s</xliff:g> ішіне сақталды</string>
+    <string name="choose_attachment_dialog_title">Тіркемені таңдау</string>
+    <string name="message_compose_error_invalid_email">Кейбір электрондық мекенжайлар жарамсыз.</string>
+</resources>

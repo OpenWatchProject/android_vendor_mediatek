@@ -1,0 +1,25 @@
+#!/bin/bash
+if [ ! -f $1 ]; then
+    echo >&2 "error: $1 is not a file"
+    exit -1
+fi
+
+STR=$(cat $1 | sed -n '/BEGIN_OF_EXIF_TAG/,/END_OF_EXIF_TAG/p')
+if [ "$STR" == "" ]; then
+    echo >&2 "error: $1 file format error!!!"
+    exit -1
+fi
+
+NORM=$( echo "$STR" | sed -n -r 's/^\s*(\w[a-zA-Z_0-9]+).*$/\1/p' | tr -d '\r\n')
+if [ "$NORM" == "" ]; then
+    echo >&2 "error: $1 no entry found!!!"
+    exit -1
+fi
+
+
+if [ $# -ge 2 ] && [ -f $2 ]; then
+    echo 0x$(echo -n "$NORM" | "$2")
+else
+    echo 0x$(echo -n "$NORM" | git hash-object --stdin | sed -nr 's/^(........).*$/\1/p')
+fi
+

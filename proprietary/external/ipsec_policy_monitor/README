@@ -1,0 +1,24 @@
+This module creates a daemon---ipsec_mon.
+
+
+WHAT IT DOES?
+=============
+It is used to monitor all ipsec policy rules, record them, and change one-layer tunnel ipsec policy to two-layer tunnel+transport ipsec policy.
+
+
+HOW IT WAS BUILT?
+==================
+It needs the following library from AOSP:
+
+libcutils libcrypto liblog libforkexecwrap libifcutils_mtk
+
+
+All source/dependency modules of this module are already put in
+'vendor/mediatek/proprietary/external/ipsec_policy_monitor' folder.
+
+HOW TO USE IT?
+==============
+
+it will start to monitor ipsec policy once it is initialed 
+
+

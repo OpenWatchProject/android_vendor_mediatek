@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+ * Copyright (C) 2007-2008 Esmertec AG.
+ * Copyright (C) 2007-2008 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+--><resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+   <string name="alerts">Warnungen</string>
+    <string name="select_all">Alles auswählen</string>
+    <string name="unselect_all">Alle abwählen</string>
+    <string name="delete">Löschen</string>
+    <string name="select_cellbroadcasts">Notfallwarnung wählen</string>
+    <plurals name="message_view_selected_message_count">
+        <item quantity="one"><xliff:g id="message_count" example="1">%d</xliff:g> gewählt</item>
+        <item quantity="other"><xliff:g id="message_count" example="9">%d</xliff:g> gewählt</item>
+    </plurals>
+    <plurals name="confirm_delete_broadcast">
+        <item quantity="one">1 ausgewählte Warnmeldung wird gelöscht</item>
+        <item quantity="other"><xliff:g id="number" example="15">%1$s</xliff:g> ausgewählte Warnmeldungen werden gelöscht</item>
+    </plurals>
+    <string name="enable_cmas_presidential_threat_alerts_title">Regierungswarnung anzeigen</string>
+    <string name="enable_cmas_presidential_threat_alerts_summary">Warnungen auf Regierungsebene anzeigen</string>
+    <string name="enable_cmas_imminent_threat_alerts_title">Akute Warnung</string>
+    <string name="enable_cmas_imminent_threat_alerts_summary">Warnungen vor akuten Lebens- und Eigentumsgefährdungen anzeigen</string>
+    <string name="cmas_preview_alert_tone_title">Warnton-Vorschau</string>
+    <string name="cmas_preview_alert_tone_summary">Warnton probehören</string>
+    <string name="cmas_change_settings">Möchten Sie die Einstellungen wirklich ändern?</string>
+    <string name="cmas_disable_cmas">Bei deaktiviertem Zell-Broadcast werden keine Warnungen empfangen.</string>
+    <string name="cmas_enable_cmas_failed">Öffnen nicht möglich.</string>
+    <string name="enable_repeat_alert_title">Alarm wiederholen</string>
+    <string name="enable_repeat_alert_summary">Erinnert den Anwender immer wieder an ungelesene Alarme.</string>
+    <string name="enable_all_alert_title">Alle Warnungen ein</string>
+    <string name="enable_all_imminent_alerts_title">Alle Warnungen zu akuten Bedrohungen</string>
+    <string name="enable_cell_broadcast_title">Notfallwarnungen</string>
+    <string name="alert_sound_volume">Warntonlautstärke</string>
+    <string name="alert_volume_summary">Warnungslautstärke ändern</string>
+</resources>

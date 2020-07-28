@@ -1,0 +1,24 @@
+<TeeConfig>
+  <ProjectConfig>
+    <config feature="MTK_TEE_SUPPORT" value="no" />
+    <config feature="WATCHDATA_TEE_SUPPORT" value="no" />
+    <config feature="MTK_ATF_SUPPORT" value="yes" />
+  </ProjectConfig>
+  <TrustzoneConfig>
+    <config feature="MTK_TEE_SUPPORT" value="no" />
+    <config feature="WATCHDATA_TEE_SUPPORT" value="no" />
+    <config feature="MTK_ATF_SUPPORT" value="yes" />
+  </TrustzoneConfig>
+  <LKConfig>
+  </LKConfig>
+  <PreloadConfig>
+    <config feature="MTK_TEE_SUPPORT" value="no" />
+    <config feature="WATCHDATA_TEE_SUPPORT" value="no" />
+  </PreloadConfig>
+  <KernelConfig>
+    <config feature="CONFIG_WATCHDATA_TEE_SUPPORT" value="is not set" />
+  </KernelConfig>
+  <KernelDebugConfig>
+    <config feature="CONFIG_WATCHDATA_TEE_SUPPORT" value="is not set" />
+  </KernelDebugConfig>
+</TeeConfig>

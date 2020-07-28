@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!-- # Copyright Statement:
+#
+# This software/firmware and related documentation ("MediaTek Software") are
+# protected under relevant copyright laws. The information contained herein
+# is confidential and proprietary to MediaTek Inc. and/or its licensors.
+# Without the prior written permission of MediaTek inc. and/or its licensors,
+# any reproduction, modification, use or disclosure of MediaTek Software,
+# and information contained herein, in whole or in part, shall be strictly prohibited.
+
+# MediaTek Inc. (C) 2010. All rights reserved.
+#
+# BY OPENING THIS FILE, RECEIVER HEREBY UNEQUIVOCALLY ACKNOWLEDGES AND AGREES
+# THAT THE SOFTWARE/FIRMWARE AND ITS DOCUMENTATIONS ("MEDIATEK SOFTWARE")
+# RECEIVED FROM MEDIATEK AND/OR ITS REPRESENTATIVES ARE PROVIDED TO RECEIVER ON
+# AN "AS-IS" BASIS ONLY. MEDIATEK EXPRESSLY DISCLAIMS ANY AND ALL WARRANTIES,
+# EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF
+# MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE OR NONINFRINGEMENT.
+# NEITHER DOES MEDIATEK PROVIDE ANY WARRANTY WHATSOEVER WITH RESPECT TO THE
+# SOFTWARE OF ANY THIRD PARTY WHICH MAY BE USED BY, INCORPORATED IN, OR
+# SUPPLIED WITH THE MEDIATEK SOFTWARE, AND RECEIVER AGREES TO LOOK ONLY TO SUCH
+# THIRD PARTY FOR ANY WARRANTY CLAIM RELATING THERETO. RECEIVER EXPRESSLY ACKNOWLEDGES
+# THAT IT IS RECEIVER'S SOLE RESPONSIBILITY TO OBTAIN FROM ANY THIRD PARTY ALL PROPER LICENSES
+# CONTAINED IN MEDIATEK SOFTWARE. MEDIATEK SHALL ALSO NOT BE RESPONSIBLE FOR ANY MEDIATEK
+# SOFTWARE RELEASES MADE TO RECEIVER'S SPECIFICATION OR TO CONFORM TO A PARTICULAR
+# STANDARD OR OPEN FORUM. RECEIVER'S SOLE AND EXCLUSIVE REMEDY AND MEDIATEK'S ENTIRE AND
+# CUMULATIVE LIABILITY WITH RESPECT TO THE MEDIATEK SOFTWARE RELEASED HEREUNDER WILL BE,
+# AT MEDIATEK'S OPTION, TO REVISE OR REPLACE THE MEDIATEK SOFTWARE AT ISSUE,
+# OR REFUND ANY SOFTWARE LICENSE FEES OR SERVICE CHARGE PAID BY RECEIVER TO
+# MEDIATEK FOR SUCH MEDIATEK SOFTWARE AT ISSUE.
+#
+# The following software/firmware and/or related documentation ("MediaTek Software")
+# have been modified by MediaTek Inc. All revisions are subject to any receiver's
+# applicable license agreements with MediaTek Inc. -->
+
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+        android:versionCode="1"
+        android:versionName="3.2.3"
+        package="com.orangelabs.rcs"
+        coreApp="true">
+
+    <uses-sdk android:minSdkVersion="9"
+        android:targetSdkVersion="29"/>
+
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
+    <uses-permission android:name="android.permission.READ_SMS"/>
+    <uses-permission android:name="android.permission.READ_PRIVILEGED_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_SMS"/>
+    <uses-permission android:name="android.permission.WRITE_CONTACTS"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.MODIFY_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_MEDIA_STORAGE"/>
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.MANAGE_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.AUTHENTICATE_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.WRITE_SYNC_SETTINGS"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS"/>
+    <uses-permission android:name="android.permission.SET_ORIENTATION" />
+    <uses-permission android:name="android.permission.BROADCAST_STICKY"/>
+    <uses-permission android:name="com.gsma.services.permission.RCS"/>
+    <uses-permission android:name="com.gsma.services.permission.RCS_INTERNAL_ACCESS_ONLY"/>
+    <uses-permission android:name="com.mediatek.ims.rcsua.permission.USE_SERVICE"/>
+    <uses-permission android:name="com.orangelabs.rcs.PeriodicRefresher" />
+    <uses-permission android:name="com.mediatek.presence.permission.PRESENCE"/>
+
+    <protected-broadcast android:name="com.orangelabs.rcs.SHOW_403_NOTIFICATION" />
+    <protected-broadcast android:name="com.orangelabs.rcs.TERMS_SIP_REQUEST" />
+    <protected-broadcast android:name="com.orangelabs.rcs.TERMS_SIP_ACK" />
+    <protected-broadcast android:name="com.orangelabs.rcs.TERMS_SIP_USER_NOTIFICATION" />
+    <protected-broadcast android:name="com.orangelabs.rcs.CONFIGURATION_STATUS" />
+    <protected-broadcast android:name="COM.MEDIATEK.RCS.IMS.VOLTE_SERVICE_NOTIFICATION" />
+    <protected-broadcast android:name="orangelabs.rcs.provisioning.status" />
+    <protected-broadcast android:name="com.gsma.services.rcs.chat.action.NEW_ONE_TO_ONE_CHAT_MESSAGE" />
+    <protected-broadcast android:name="com.gsma.services.rcs.chat.action.NEW_ONE_TO_ONE_STANDALONE_CHAT_MESSAGE" />
+    <protected-broadcast android:name="com.gsma.services.rcs.chat.action.MESSAGE_DELIVERY_EXPIRED" />
+    <protected-broadcast android:name="com.gsma.services.rcs.chat.action.DELIEVRY_STATUS" />
+    <protected-broadcast android:name="com.gsma.services.rcs.chat.action.NEW_GROUP_CHAT" />
+    <protected-broadcast android:name="com.gsma.services.rcs.chat.action.NEW_GROUP_CHAT_MESSAGE" />
+    <protected-broadcast android:name="com.gsma.services.rcs.chat.action.REPLACED_GROUP_CHAT" />
+    <protected-broadcast android:name="com.gsma.services.rcs.chat.action.NEW_REINVITATION" />
+    <protected-broadcast android:name="com.gsma.services.rcs.filetransfer.action.NEW_FILE_TRANSFER" />
+    <protected-broadcast android:name="com.gsma.services.rcs.filetransfer.action.RESUME_FILE_TRANSFER" />
+    <protected-broadcast android:name="com.gsma.services.rcs.filetransfer.action.DELIVERY_REPORT_FILE_TRANSFER" />
+    <protected-broadcast android:name="com.gsma.services.rcs.filetransfer.action.TRANSFER_DONE" />
+    <protected-broadcast android:name="com.gsma.services.rcs.ish.action.NEW_IMAGE_SHARING" />
+    <protected-broadcast android:name="com.gsma.services.rcs.vsh.action.NEW_VIDEO_SHARING" />
+    <protected-broadcast android:name="com.gsma.services.rcs.action.VIEW_SETTINGS" />
+    <protected-broadcast android:name="com.orangelabs.rcs.180_RINGING" />
+    <protected-broadcast android:name="com.orangelabs.rcs.100_TRYING" />
+    <protected-broadcast android:name="com.gsma.services.rcs.action.RCS_SERVICE_UP" />
+    <protected-broadcast android:name="com.gsma.services.rcs.filetransfer.action.FILE_TRANSFER_DELIVERY_EXPIRED" />
+    <protected-broadcast android:name="com.gsma.services.rcs.chat.action.REINITIALIZE_LISTENER" />
+    <protected-broadcast android:name="com.orangelabs.rcs.CONFIGURATION_STATUS_TO_APP" />
+    <protected-broadcast android:name="com.gsma.services.rcs.action.SERVICE_UP" />
+    <protected-broadcast android:name="com.orangelabs.rcs.provisioning.https.HttpsProvisioningService.ACTION_RETRY" />
+    <protected-broadcast android:name="com.mediatek.rcse.action.STARTED" />
+
+    <permission
+            android:name="com.orangelabs.rcs.PeriodicRefresher"
+            android:protectionLevel="signature"/>
+
+    <permission
+            android:name="com.gsma.services.permission.RCS"
+            android:description="@string/rcs_core_permission_desc"
+            android:label="@string/rcs_core_permission"
+            android:protectionLevel="signature"/>
+
+    <permission
+            android:name="com.gsma.services.permission.RCS_INTERNAL_ACCESS_ONLY"
+            android:protectionLevel="signature"/>
+
+    <application
+        android:icon="@drawable/rcs_icon"
+        android:label="@string/rcs_core_application_title"
+        android:persistent="true"
+        android:name="com.orangelabs.rcs.service.CoreApplication"
+        android:theme="@style/RcsTheme" >
+
+        <!-- the following meta-data is used to separate the various joyn client implementations -->
+        <meta-data android:name="gsma.joyn.preferences"
+        android:value="com.orangelabs.rcs.gsma.joyn.preferences" />
+
+        <uses-library android:name="com.mediatek.ims.rcsua"/>
+        <!-- RCS service -->
+
+        <service android:name="com.orangelabs.rcs.service.RcsCoreService"
+            android:permission="com.gsma.services.permission.RCS"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.orangelabs.rcs.SERVICE"/>
+                <action android:name="com.orangelabs.rcs.service.api.client.IImsApi"/>
+                <action android:name="com.orangelabs.rcs.service.api.client.presence.IPresenceApi"/>
+                <action android:name="com.orangelabs.rcs.service.api.client.sip.ISipApi"/>
+                <action android:name="com.gsma.services.rcs.contact.IContactsService"/>
+                <action android:name="com.gsma.services.rcs.capability.ICapabilityService"/>
+                <action android:name="com.gsma.services.rcs.chat.IChatService"/>
+                <action android:name="com.gsma.services.rcs.ft.IFileTransferService"/>
+                <action android:name="com.gsma.services.rcs.vsh.IVideoSharingService"/>
+                <action android:name="com.gsma.services.rcs.ish.IImageSharingService"/>
+                <action android:name="com.gsma.services.rcs.history.IHistoryService"/>
+                <action android:name="com.gsma.services.rcs.gsh.IGeolocSharingService"/>
+                <action android:name="com.gsma.services.rcs.session.IMultimediaSessionService"/>
+            </intent-filter>
+        </service>
+
+        <!-- RCS account: authenticator service for user's account information -->
+        <!-- remove RCS account support
+        <service android:exported="true" android:name="com.orangelabs.rcs.addressbook.AuthenticationService">
+            <intent-filter>
+                <action android:name="android.accounts.AccountAuthenticator"/>
+            </intent-filter>
+            <meta-data android:name="android.accounts.AccountAuthenticator" android:resource="@xml/rcs_core_authenticator"/>
+        </service>
+
+        <service android:exported="true" android:name="com.orangelabs.rcs.addressbook.SyncAdapterService">
+            <intent-filter>
+                <action android:name="android.content.SyncAdapter"/>
+            </intent-filter>
+            <meta-data android:name="android.content.SyncAdapter" android:resource="@xml/rcs_core_syncadapter"/>
+            <meta-data android:name="android.provider.CONTACTS_STRUCTURE" android:resource="@xml/rcs_core_contacts"/>
+        </service>
+
+        <activity android:name="com.orangelabs.rcs.addressbook.SetupRcsAccount"/>
+        -->
+
+        <!-- Mediatek data providers -->
+        <!-- RCS data providers -->
+        <provider android:authorities="com.orangelabs.rcs.cb"
+                  android:exported="false"
+                  android:name="com.orangelabs.rcs.provider.eab.ContactsBackup"/>
+
+        <provider android:name="com.orangelabs.rcs.provider.messaging.GroupDeliveryInfoProvider"
+                  android:authorities="com.gsma.rcs.groupdeliveryinfo;com.gsma.services.rcs.provider.groupdeliveryinfo"
+                  android:exported="true"
+                  android:readPermission="com.gsma.services.permission.RCS"
+                  android:writePermission="com.gsma.services.permission.RCS_INTERNAL_ACCESS_ONLY"/>
+
+        <provider android:name="com.orangelabs.rcs.provider.history.HistoryProvider"
+                  android:authorities="com.gsma.rcs.history;com.gsma.services.rcs.provider.history"
+                  android:exported="true"
+                  android:readPermission="com.gsma.services.permission.RCS"
+                  android:writePermission="com.gsma.services.permission.RCS_INTERNAL_ACCESS_ONLY"/>
+
+        <provider android:name="com.orangelabs.rcs.provider.settings.RcsSettingsProvider"
+                  android:authorities="com.orangelabs.rcs.settings"
+                  android:exported="true"
+                  android:readPermission="com.gsma.services.permission.RCS"
+                  android:writePermission="com.gsma.services.permission.RCS_INTERNAL_ACCESS_ONLY"/>
+
+        <provider android:name="com.orangelabs.rcs.provider.eab.RichAddressBookProvider"
+                  android:authorities="com.orangelabs.rcs.eab"
+                  android:exported="true"
+                  android:readPermission="com.gsma.services.permission.RCS"
+                  android:writePermission="com.gsma.services.permission.RCS_INTERNAL_ACCESS_ONLY"/>
+
+        <provider android:name="com.orangelabs.rcs.provider.messaging.FileTransferProvider"
+                  android:authorities="com.orangelabs.rcs.ft;com.gsma.services.rcs.provider.filetransfer"
+                  android:exported="true"
+                  android:readPermission="com.gsma.services.permission.RCS"
+                  android:writePermission="com.gsma.services.permission.RCS_INTERNAL_ACCESS_ONLY"/>
+
+        <provider android:name="com.orangelabs.rcs.provider.messaging.MultiFileTransferProvider"
+                  android:authorities="com.orangelabs.rcs.multift;com.gsma.services.rcs.provider.multift"
+                  android:exported="true"
+                  android:readPermission="com.gsma.services.permission.RCS"
+                  android:writePermission="com.gsma.services.permission.RCS_INTERNAL_ACCESS_ONLY"/>
+
+        <provider android:name="com.orangelabs.rcs.provider.sharing.ImageSharingProvider"
+                  android:authorities="com.orangelabs.rcs.ish;com.gsma.services.rcs.provider.ish"
+                  android:exported="true"
+                  android:readPermission="com.gsma.services.permission.RCS"
+                  android:writePermission="com.gsma.services.permission.RCS_INTERNAL_ACCESS_ONLY"/>
+
+        <provider android:name="com.orangelabs.rcs.provider.sharing.VideoSharingProvider"
+                  android:authorities="com.orangelabs.rcs.vsh;com.gsma.services.rcs.provider.vsh"
+                  android:exported="true"
+                  android:readPermission="com.gsma.services.permission.RCS"
+                  android:writePermission="com.gsma.services.permission.RCS_INTERNAL_ACCESS_ONLY"/>
+
+        <provider android:name="com.orangelabs.rcs.provider.messaging.ChatProvider"
+                  android:authorities="com.orangelabs.rcs.chat;com.gsma.services.rcs.provider.chat"
+                  android:exported="true"
+                  android:readPermission="com.gsma.services.permission.RCS"
+                  android:writePermission="com.gsma.services.permission.RCS_INTERNAL_ACCESS_ONLY"/>
+
+
+        <!-- Device events receiver -->
+        <receiver android:name="com.orangelabs.rcs.service.DataSimChanged">
+            <intent-filter>
+                <action android:name="android.intent.action.ACTION_DEFAULT_DATA_SUBSCRIPTION_CHANGED"/>
+            </intent-filter>
+        </receiver>
+
+        <receiver android:name="com.orangelabs.rcs.service.DeviceBoot">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+        </receiver>
+
+        <receiver android:name="com.orangelabs.rcs.service.DeviceShutdown">
+            <intent-filter>
+                <action android:name="android.intent.action.ACTION_SHUTDOWN"/>
+            </intent-filter>
+        </receiver>
+
+        <receiver android:name="com.orangelabs.rcs.service.LaunchServiceUser"
+                  android:permission="com.gsma.services.permission.RCS">
+            <intent-filter>
+                <action android:name="com.mediatek.intent.rcs.stack.LaunchService"/>
+            </intent-filter>
+        </receiver>
+
+        <receiver android:name="com.orangelabs.rcs.service.StopServiceUser"
+                  android:permission="com.gsma.services.permission.RCS">
+            <intent-filter>
+                <action android:name="com.mediatek.intent.rcs.stack.StopService"/>
+            </intent-filter>
+        </receiver>
+
+        <!-- Changing locale -->
+        <receiver android:name="com.orangelabs.rcs.addressbook.LocaleChangedReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.LOCALE_CHANGED"/>
+            </intent-filter>
+        </receiver>
+
+        <service android:name="com.orangelabs.rcs.addressbook.LocaleChangedReceiver$LocaleChangedService"/>
+
+        <!-- SMS for Provisioning -->
+        <!-- M :edited for removing the SMS receiver -->
+        <receiver android:name="com.orangelabs.rcs.provisioning.https.HttpsProvisioningSMS">
+        </receiver>
+
+
+        <!-- HTTPS provisioning config -->
+        <service android:name="com.orangelabs.rcs.provisioning.https.HttpsProvisioningService"
+                android:exported="false"/>
+
+        <!-- Provisioning - Terms and conditions activity -->
+        <activity android:name="com.orangelabs.rcs.provisioning.TermsAndConditionsRequest"/>
+
+        <!-- RCS Start service -->
+        <service android:name="com.orangelabs.rcs.service.StartService"
+                android:exported="false"/>
+
+        <activity
+            android:icon="@drawable/rcs_icon"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:name="com.orangelabs.rcs.settings.ProvisionProfileSettings"
+            android:permission="com.gsma.services.permission.RCS"
+            android:theme="@android:style/Theme.Dialog" >
+
+            <intent-filter >
+                <action android:name="com.mediatek.rcse.action.PROVISION_PROFILE_SETTING" />
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:icon="@drawable/rcs_icon"
+            android:name="com.orangelabs.rcs.settings.PhoneNumberToAccountSettings"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:permission="com.gsma.services.permission.RCS"
+            android:exported="true"/>
+
+        <activity android:name="com.orangelabs.rcs.provisioning.https.HttpsProvisioningAlertDialog"
+            android:theme="@style/Theme.Transparent"/>
+
+
+        <!-- Local provisioning (only for debug) -->
+        <activity
+                android:name="com.orangelabs.rcs.provisioning.local.Provisioning"
+                android:icon="@drawable/rcs_icon"
+                android:label="@string/provisioning_app_name"
+                android:permission="com.gsma.services.permission.RCS"
+                android:exported="true"/>
+
+        <activity android:name=".provisioning.local.ProfileProvisioning"/>
+        <activity android:name=".provisioning.local.StackProvisioning"/>
+        <activity android:name=".provisioning.local.ServiceProvisioning"/>
+        <activity android:name=".provisioning.local.LoggerProvisioning"/>
+
+        <receiver android:name="com.orangelabs.rcs.service.RcsServiceControlReceiver"
+                  android:permission="com.gsma.services.permission.RCS">
+            <intent-filter>
+                <action android:name="com.gsma.services.rcs.action.GET_ACTIVATION_MODE_CHANGEABLE"/>
+                <action android:name="com.gsma.services.rcs.action.GET_ACTIVATION_MODE"/>
+                <action android:name="com.gsma.services.rcs.action.SET_ACTIVATION_MODE"/>
+                <action android:name="com.gsma.services.rcs.action.GET_COMPATIBILITY"/>
+                <action android:name="com.gsma.services.rcs.action.GET_SERVICE_STARTING_STATE"/>
+            </intent-filter>
+        </receiver>
+</application>
+
+</manifest>

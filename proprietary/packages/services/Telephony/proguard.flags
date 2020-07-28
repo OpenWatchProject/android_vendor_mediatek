@@ -1,0 +1,13 @@
+# Keep classes and methods that have the guava @VisibleForTesting annotation
+-keep @**.VisibleForTesting class *
+-keepclassmembers class * {
+@**.VisibleForTesting *;
+}
+-keep @**.NeededForTesting class *
+-keepclassmembers class * {
+@**.NeededForTesting *;
+}
+-verbose
+-keep class com.mediatek.phone.ext.* {
+ *;
+}

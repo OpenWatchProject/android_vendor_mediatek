@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+ * Copyright (C) 2007-2008 Esmertec AG.
+ * Copyright (C) 2007-2008 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+--><resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+   <string name="alerts">التنبيهات</string>
+    <string name="select_all">"تحديد الكل"</string>
+    <string name="unselect_all">"إلغاء تحديد الكل"</string>
+    <string name="delete">"حذف"</string>
+    <string name="select_cellbroadcasts">حدد تنبيه الطوارئ</string>
+    <plurals name="message_view_selected_message_count">
+        <item quantity="one"><xliff:g id="message_count" example="1">%d</xliff:g> محدد</item>
+        <item quantity="other"><xliff:g id="message_count" example="9">%d</xliff:g> محدد</item>
+    </plurals>
+    <plurals name="confirm_delete_broadcast">
+        <item quantity="one">سيتم حذف 1 رسالة تنبيه</item>
+        <item quantity="other">سيتم حذف <xliff:g id="number" example="15">%1$s</xliff:g> رسالة تنبيه محددة</item>
+    </plurals>
+    <string name="enable_cmas_presidential_threat_alerts_title">إظهار التنبيه الرئاسي</string>
+    <string name="enable_cmas_presidential_threat_alerts_summary">عرض تنبيهات المستوى الرئاسي</string>
+    <string name="enable_cmas_imminent_threat_alerts_title">تنبيه وشيك</string>
+    <string name="enable_cmas_imminent_threat_alerts_summary">عرض تنبيهات للتهديدات الوشيكة على الحياة أو الملكية</string>
+    <string name="cmas_preview_alert_tone_title">معاينة نغمة التنبيه</string>
+    <string name="cmas_preview_alert_tone_summary">معاينة نغمة التنبيه</string>
+    <string name="cmas_change_settings">هل ترغب في تعديل الإعدادات؟</string>
+    <string name="cmas_disable_cmas">لن تصلك أية تنبيهات إذا قمت بتعطيل البث الخلوي.</string>
+    <string name="cmas_enable_cmas_failed">تعذر الفتح.</string>
+    <string name="enable_repeat_alert_title">تكرار التنبيه</string>
+    <string name="enable_repeat_alert_summary">تذكير المستخدم بالتنبيه غير المقروء بشكل متواصل</string>
+    <string name="enable_all_alert_title">تشغيل كل التنبيهات</string>
+    <string name="enable_all_imminent_alerts_title">كل رسائل التنبيهات الوشيكة</string>
+    <string name="enable_cell_broadcast_title">تنبيهات طوارئ</string>
+    <string name="alert_sound_volume">مستوى صوت التنبيه</string>
+    <string name="alert_volume_summary">ضبط مستوى صوت التنبيه</string>
+</resources>

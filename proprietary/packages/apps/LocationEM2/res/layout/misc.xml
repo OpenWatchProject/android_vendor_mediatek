@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    >
+<LinearLayout
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:gravity="left"
+    >
+
+<View          android:layout_height="1dip" android:layout_width="fill_parent" android:background="#FF909090"/>
+
+<TextView        android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/msic_goto" android:textColor="#ff00ff" android:textSize="20dp" android:textStyle="bold"/>
+
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <Button
+            android:id="@+id/Button_GPS"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/gps"
+            android:textSize="15dp"
+            android:width="100dp" />
+
+        <Button
+            android:id="@+id/Button_WIFI"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/wifi"
+            android:textSize="15dp"
+            android:width="100dp" />
+
+        <Button
+            android:id="@+id/Button_TIME"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/time"
+            android:textSize="15dp"
+            android:width="100dp" />
+
+    </LinearLayout>
+
+<View          android:layout_height="1dip" android:layout_width="fill_parent" android:background="#FF909090"/>
+<TextView        android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/cell_info" android:textColor="#ff00ff" android:textSize="20dp" android:textStyle="bold"/>
+<TextView        android:id="@+id/TextView_CellInfo" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="15dp"/>
+
+<View          android:layout_height="1dip" android:layout_width="fill_parent" android:background="#FF909090"/>
+<TextView        android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/connectionTest" android:textColor="#ff00ff" android:textSize="20dp" android:textStyle="bold"/>
+<Spinner        android:id="@+id/Spinner_ServerPrfoile" android:layout_width="fill_parent" android:layout_height="wrap_content"/>
+
+<LinearLayout    android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent" android:gravity="left">
+<TextView        android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/server_addr" android:width="150dp" android:textSize="15dp"/>
+<EditText        android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/EditText_serverIp" android:width="200dp" android:textSize="18dp"/>
+</LinearLayout>
+
+<LinearLayout    android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent" android:gravity="left">
+<TextView        android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/server_port" android:width="150dp" android:textSize="15dp"/>
+<EditText        android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/EditText_serverPort" android:width="100dp" android:maxLength="5" android:inputType="number" android:textSize="18dp"/>
+</LinearLayout>
+
+<ToggleButton   android:id="@+id/Button_serverConnect" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textOff="@string/connection_off" android:textOn="@string/connection_on" android:textSize="15dp"/>
+
+<TextView        android:id="@+id/TextView_ServerResult" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="11dp"/>
+
+<View          android:layout_height="1dip" android:layout_width="fill_parent" android:background="#FF909090"/>
+<TextView        android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/other_settings" android:textColor="#ff00ff" android:textSize="20dp" android:textStyle="bold"/>
+ <LinearLayout style="@style/entry_layout">
+     <TextView android:text="@string/country_detector" style="@style/info_label" />
+     <TextView android:id="@+id/TextView_CountryDetectorValue" style="@style/info_state_value" />
+ </LinearLayout>
+<CheckBox         android:id="@+id/CheckBox_E911OpenGpsEnable" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/open_gps_in_advance" android:textSize="15sp"/>
+<CheckBox         android:id="@+id/CheckBox_EnableLocationEMService" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/enable_locationem_service" android:textSize="15sp"/>
+<CheckBox         android:id="@+id/CheckBox_EnableLocationSettings" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/enable_location_settings" android:textSize="15sp"/>
+<CheckBox         android:id="@+id/CheckBox_AddSettingsExemptWhitelist" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/add_settings_exempt_whitelist" android:textSize="15sp"/>
+
+</LinearLayout>
+</ScrollView>

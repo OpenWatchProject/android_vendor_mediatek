@@ -1,0 +1,36 @@
+Library of MTK MtkOmxMp3Dec, including mp3 omx component related file.
+
+This library is pre-built by MediaTek internal.
+
+
+WHAT IT DOES?
+=============
+libMtkOmxMp3Dec.so contains MediaTek developed mp3 omx component.  
+Without it, mp3 will not encode.
+
+HOW IT WAS BUILT?
+==================
+It needs the following library from AOSP:
+1.libbinder               
+2.libutils                
+3.libcutils               
+4.libdl                   
+5.libui                   
+             
+
+and the following libs from MediaTek:
+1.libMtkOmxAudioDecBase.a
+2.libMtkOmxOsalUtils.a
+3.libmp3dec_mtk.a
+4.libdrvb.a
+
+All source/dependency modules of this module are already put in
+'vendor/mediatek/proprietary/hardware/libomx/audio/MtkOmxMp3Dec' folder.
+
+HOW TO USE IT?
+==============
+
+Provide mp3 omx componenet for mp3 swip 
+
+
+All the source code of this library were written by MediaTek co..

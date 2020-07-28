@@ -1,0 +1,26 @@
+This module creates the libimsma_adapt.so libary file.
+
+WHAT IT DOES?
+=============
+libimsma_adapt mainly used for bitrate adaptation for ViLTE
+
+ 
+HOW IT WAS BUILT?
+==================
+It needs the following library from AOSP:
+
+    libcutils, libutils, libgui, libinder
+
+and the following libs from MediaTek:
+
+    libimsma_rtp, libstagefright, libmedia, libstagefright_foundation, libtimestretch, libaudioflinger, libdpframework, libvcodecdrv
+    
+    
+HOW TO USE IT?
+==============
+
+The libimsma_adapt libraries should not be used directly by an application developer.  
+Used by JNI layer
+
+The majority of source code for this library were written by MediaTek.  Various
+open source libraries are also used and contained in this folder.

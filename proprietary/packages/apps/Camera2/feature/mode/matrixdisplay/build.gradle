@@ -1,0 +1,41 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    compileSdkVersion 24
+    buildToolsVersion "24.0.1"
+    defaultConfig {
+        jackOptions {
+            enabled true
+        }
+        applicationId "com.mediatek.camera.feature.mode.matrixdisplay"
+        minSdkVersion 24
+        targetSdkVersion 24
+        versionCode 60030
+        versionName "1.1.60030"
+    }
+    buildTypes {
+        debug {
+            testCoverageEnabled true
+        }
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    sourceSets {
+        main {
+            manifest.srcFile "AndroidManifest.xml"
+            res.srcDirs = ["res"]
+            java.srcDirs = ["src"]
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile project(':common')
+}

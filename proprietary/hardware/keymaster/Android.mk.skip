@@ -1,0 +1,36 @@
+
+ifeq ($(TRUSTONIC_KEYMASTER_LEGACY_SUPPORT), yes)
+
+LOCAL_PATH    := $(call my-dir)
+
+# TRUSTONIC Tee Keymaster
+ifeq ($(TRUSTONIC_TEE_SUPPORT), yes)
+
+ifeq (,$(filter MT6582, $(MTK_PLATFORM)))
+
+include $(CLEAR_VARS)
+
+LOCAL_MODULE := keystore.$(TARGET_BOARD_PLATFORM)
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_OWNER := mtk
+LOCAL_MODULE_TAGS := debug eng optional
+LOCAL_MODULE_RELATIVE_PATH := hw
+
+# Add new source files here
+LOCAL_SRC_FILES +=\
+    keymaster_mt_tbase.cpp
+
+LOCAL_C_INCLUDES +=\
+    $(LOCAL_PATH)/inc \
+    external/boringssl/include \
+    system/core/include \
+
+LOCAL_SHARED_LIBRARIES := libMcClient liblog libMcTeeKeymaster libcrypto
+
+include $(MTK_SHARED_LIBRARY)
+
+endif
+
+endif
+
+endif # TRUSTONIC_KEYMASTER_LEGACY_SUPPORT

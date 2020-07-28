@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+	<RelativeLayout
+		xmlns:android="http://schemas.android.com/apk/res/android"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content">
+	    <!-- Ip message for image or video -->
+	    <RelativeLayout
+	        android:id="@+id/dlg_ip_image"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:gravity="center_horizontal"
+	        android:layout_marginRight="5dip"
+	        android:layout_marginTop="5dip"
+	        android:layout_marginBottom="7dip"
+	        android:visibility="gone" >
+	        <FrameLayout
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_centerHorizontal="true" >
+	            <ImageView
+	                android:id="@+id/dlg_image_content"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:layout_centerHorizontal="true"
+	                android:minHeight="@dimen/img_minwidth"
+	                android:minWidth="@dimen/img_minwidth" />
+	            <ImageView
+	                android:id="@+id/dlg_video_media_play"
+	                android:layout_width="32dp"
+	                android:layout_height="32dp"
+	                android:layout_gravity="center"
+	                android:visibility="gone"
+	                android:src="@drawable/media_play" />
+	        </FrameLayout>
+	        <LinearLayout
+	            android:id="@+id/dlg_image_size_bg"
+	            android:layout_width="wrap_content"
+	            android:layout_height="16dip"
+	            android:layout_alignParentBottom="true"
+	            android:background="#88000000"
+	            android:gravity="center_vertical"
+	            android:minWidth="@dimen/img_minwidth"
+	            android:orientation="horizontal" >
+	            <ImageView
+	                android:id="@+id/dlg_action_btn"
+	                android:layout_width="16dip"
+	                android:layout_height="wrap_content"
+	                android:layout_marginBottom="4dip"
+	                android:layout_marginLeft="4dip"
+	                android:layout_marginTop="4dip"
+	                android:src="@drawable/stop" />
+	            <TextView
+	                android:id="@+id/dlg_content_size"
+	                android:layout_width="0dip"
+	                android:layout_height="wrap_content"
+	                android:layout_marginLeft="4dip"
+	                android:layout_weight="1.0"
+	                android:textColor="#FFFFFF"
+	                android:textSize="10sp"
+	                android:singleLine="true"
+	                android:visibility="gone" />
+	            <ProgressBar
+	                android:id="@+id/dlg_image_downLoad_progress"
+	                style="?android:attr/progressBarStyleHorizontal"
+	                android:layout_width="0dip"
+	                android:layout_height="wrap_content"
+	                android:layout_marginLeft="4dip"
+	                android:layout_weight="1.0"
+	                android:progress="100"
+	                android:visibility="gone" />
+	        </LinearLayout>
+	    </RelativeLayout>
+	    
+	    <!-- Ip message for audio -->
+	    <LinearLayout
+	        android:id="@+id/dlg_ip_audio"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:minWidth="120dip"
+	        android:layout_marginBottom="7dip"
+	        android:orientation="horizontal"
+	        android:visibility="gone" >
+	        <ImageView
+	            android:id="@+id/dlg_ip_audio_icon"
+	            android:layout_width="21dp"
+	            android:src="@drawable/ipmsg_chat_sound"
+	            android:layout_marginRight="4dip"
+	            android:layout_height="wrap_content" />
+	        <TextView
+	            android:id="@+id/dlg_audio_info"
+	            android:layout_width="0dip"
+	            android:layout_height="wrap_content"
+	            android:layout_gravity="center"
+	            android:layout_weight="1.0"
+	            android:singleLine="true"
+	            android:layout_marginRight="10dip"
+	            android:textColor="#555555"
+	            android:textSize="12sp" />
+	        <ProgressBar
+	            android:id="@+id/dlg_audio_downLoad_progress"
+	            style="?android:attr/progressBarStyleHorizontal"
+	            android:layout_width="0dip"
+	            android:layout_height="wrap_content"
+	            android:layout_marginRight="10dip"
+	            android:layout_weight="1.0"
+	            android:progress="100"
+	            android:visibility="gone" />
+	    </LinearLayout>
+	    
+	    <View
+	        android:id="@+id/dlg_caption_separator"
+	        style="@style/bubble_name_separator_style"
+	        android:visibility="gone" />
+	    <TextView android:id="@+id/dlg_text_caption"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:textSize="16sp"
+	        android:visibility="gone" />
+	    <!-- IP message for vCard -->
+	    <LinearLayout
+	        android:id="@+id/dlg_ip_vcard"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:minWidth="120dip"
+	        android:orientation="horizontal"
+	        android:visibility="gone" >
+	        <ImageView
+	            android:id="@+id/dlg_ip_vcard_icon"
+	            android:layout_width="32dp"
+	            android:layout_marginRight="4dip"
+	            android:layout_height="wrap_content" 
+	            android:src="@drawable/ipmsg_chat_contact_vcard"/>
+	        <TextView
+	            android:id="@+id/dlg_vcard_info"
+	            android:layout_width="0dip"
+	            android:layout_height="wrap_content"
+	            android:layout_gravity="center"
+	            android:layout_weight="1.0"
+	            android:layout_marginRight="10dip"
+	            android:singleLine="true"
+	            android:textColor="#222222"
+	            android:textSize="14sp" />
+	    </LinearLayout>
+	    <!-- IP message for vCalendar -->
+	    <LinearLayout
+	        android:id="@+id/dlg_ip_vcalendar"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:minWidth="120dip"
+	        android:orientation="horizontal"
+	        android:visibility="gone" >
+	        <ImageView
+	            android:layout_width="32dp"
+	            android:layout_height="32dp"
+	            android:layout_marginRight="4dip"
+	            android:src="@drawable/ipmsg_chat_contact_calendar"/>
+	        <TextView
+	            android:id="@+id/dlg_vcalendar_info"
+	            android:layout_width="0dip"
+	            android:layout_height="wrap_content"
+	            android:layout_gravity="center"
+	            android:layout_weight="1.0"
+	            android:layout_marginRight="10dip"
+	            android:singleLine="true"
+	            android:textColor="#222222"
+	            android:textSize="14sp" />
+	    </LinearLayout>
+</RelativeLayout> 

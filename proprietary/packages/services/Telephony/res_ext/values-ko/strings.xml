@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2007 The Android Open Source Project
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+          http://www.apache.org/licenses/LICENSE-2.0
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="incall_status_dialed_mmi" msgid="3672498861336189563">"MMI 시퀀스 시작 중..."</string>
+    <string name="dual_mic_title">노이즈 감쇠</string>
+    <string name="dual_mic_summary">통화 중 주변 소음을 억제합니다</string>
+    <string name="fdn_errorcode_unknown_info">실패했습니다. 알 수 없는 오류. 나중에 다시 시도하세요.</string>
+    <string name="fdn_errorcode_number_info">실패했습니다. 연락처 번호의 길이가 너무 깁니다.</string>
+    <string name="fdn_errorcode_name_info">실패했습니다. 연락처 이름의 길이가 너무 깁니다.</string>
+    <string name="fdn_errorcode_storage_info">실패했습니다. 저장 공간이 가득 찼습니다.</string>
+    <string name="fdn_errorcode_phb_info">실패했습니다. 지금 전화번호부가 준비되지 않았습니다. 나중에 다시 시도하세요.</string>
+    <string name="fdn_errorcode_pin2_info">실패했습니다. 잘못된 PIN2입니다.</string>
+    <string name="fdn_contact_number_invalid">잘못된 연락처 번호.</string>
+    <string name="fdn_puk_need_tips">PIN2가 차단되었습니다. PIN2를 변경하고 다시 시도하십시오!</string>
+    <string name="fdn_phone_book_busy">현재 전화번호부가 사용 중입니다. 나중에 시도하십시오.</string>
+    <string name="retries_left"> <xliff:g id="number">%d</xliff:g>회의 재시도 남음 </string>
+    <string name="cdma_labelCFU">"항상 착신전환"</string>
+    <string name="cdma_labelCFB">"통화 중일 경우"</string>
+    <string name="cdma_labelCFNRy">"받지 않은 경우"</string>
+    <string name="cdma_labelCFNRc">"받을 수 없는 경우"</string>
+    <string name="cdma_labelCFC">모든 착신 전환 취소</string>
+    <string name="cdma_cnir_title">CNIR</string>
+    <string name="cdma_cnir_turnoff">발신자 번호 식별 제한 사용 안 함</string>
+    <string name="cdma_cnir_turnon">발신자 번호 식별 제한 사용</string>
+    <string name="volte_is_adding_participants">컨퍼런스 구성원을 추가하는 중입니다. 기다려 주십시오…</string>
+    <string name="volte_fail_to_invit_participants">컨퍼런스에 모든 구성원을 추가하는 데 실패했습니다.</string>
+    <string name="volte_conf_member_reach_max">전화 회의가 이미 최대 구성원에 도달했습니다.</string>
+    <string name="wfc_wifi_call_drop">Wi-Fi 전환 끊김</string>
+    <string name="wfc_internet_connection_lost">인터넷 연결이 손실됨</string>
+    <string name="wfc_no_network">사용 가능한 정규화된 모바일 네트워크가 없음</string>
+    <string name="volte_ss_not_available_tips">작업을 완료하려면, <xliff:g id="sub_name">%s</xliff:g>의 데이터 연결을 열어야 합니다.</string>
+    <string name="volte_ss_not_available_tips_data">작업을 완료하려면 <xliff:g id="sub_name">%s</xliff:g>의 데이터 연결을 켜야 합니다.</string>
+    <string name="volte_ss_not_available_tips_roaming">작업을 완료하려면 <xliff:g id="sub_name">%s</xliff:g>의 데이터 로밍을 켜야 합니다.</string>
+    <string name="volte_ss_not_available_tips_data_roaming">작업을 완료하려면 <xliff:g id="sub_name">%s</xliff:g>의 데이터 연결과 데이터 로밍을 켜야 합니다.</string>
+    <string name="vilte_srvcc_tip">네트워크 사정으로 음성 통화로 전환합니다.</string>
+    <string name="vilte_to_voice_call">음성 통화로 전환됨</string>
+    <string name="volte_ss_not_available_tips_data_traffic">약간의 <xliff:g id="sub_name">%s</xliff:g>셀룰러 데이터가 임시로 사용됩니다. 계속하시겠습니까?</string>
+    <string name="labelCFVoice">음성 통화 전달</string>
+    <string name="actionBarCFVoice">음성 통화 전달(<xliff:g id="subscriptionlabel" example="Verizon">%s</xliff:g>)</string>
+    <string name="labelCFVideo">영상 통화 전달</string>
+    <string name="actionBarCFVideo">영상 통화 전달(<xliff:g id="subscriptionlabel" example="Verizon">%s</xliff:g>)</string>
+    <string name="labelCBVoice">음성 통화 차단</string>
+    <string name="actionBarCBVoice">음성 통화 차단(<xliff:g id="subscriptionlabel" example="Verizon">%s</xliff:g>)</string>
+    <string name="labelCBVideo">영상 통화 차단</string>
+    <string name="actionBarCBVideo">영상 통화 차단(<xliff:g id="subscriptionlabel" example="Verizon">%s</xliff:g>)</string>
+    <string name="alert_turn_off_volte">작동을 완료하려면 VoLTE를 꺼야 합니다.</string>
+    <string name="alert_volte_no_service">현재 <xliff:g id="sub_name">%s</xliff:g> VoLTE 및 통화 서비스를 사용할 수 없습니다. VoLTE를 끄시겠습니까?</string>
+</resources>

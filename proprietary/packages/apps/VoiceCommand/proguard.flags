@@ -1,0 +1,243 @@
+-keep class * extends android.app.Activity
+-keep class com.mediatek.voicecommand.R
+-keep class com.mediatek.voicecommand.R$attr
+-keep class com.mediatek.voicecommand.R$drawable {
+    public static final int btn_playback_ic_pause_small;
+    public static final int btn_playback_ic_play_small;
+    public static final int btn_playback_small_pressed;
+    public static final int btn_playback_small_selected;
+    public static final int btn_playing_background_small;
+    public static final int ic_menu_alarm;
+    public static final int ic_menu_call;
+    public static final int ic_menu_camera;
+    public static final int ic_volume_small;
+    public static final int icon;
+}
+-keep class com.mediatek.voicecommand.R$id {
+    public static final int command_preference_title;
+    public static final int custom_preference;
+    public static final int imageView;
+    public static final int playpause;
+    public static final int progress;
+    public static final int radiobutton;
+    public static final int title;
+    public static final int titleandbuttons;
+}
+-keep class com.mediatek.voicecommand.R$layout {
+    public static final int custom_switch_preference;
+    public static final int pwd_preview;
+    public static final int voice_ui_preference_image;
+    public static final int voice_ui_preference_radio_button;
+    public static final int voice_ui_preference_title;
+}
+-keep class com.mediatek.voicecommand.R$mipmap {
+    public static final int ic_launcher_settings;
+}
+-keep class com.mediatek.voicecommand.R$string {
+    public static final int alarm_app_name;
+    public static final int alarm_command_summary_format;
+    public static final int app_name;
+    public static final int camera_app_name;
+    public static final int camera_command_summary_format;
+    public static final int cancel;
+    public static final int confirm_dialog_message;
+    public static final int confirm_dialog_title;
+    public static final int incoming_call_app_name;
+    public static final int incomming_command_summary_format;
+    public static final int music_app_name;
+    public static final int music_command_summary_format;
+    public static final int ok;
+    public static final int playback_failed;
+    public static final int voice_app_command;
+    public static final int voice_app_wakeup;
+    public static final int voice_ui_alarm_command_title;
+    public static final int voice_ui_app_category;
+    public static final int voice_ui_camera_command_title;
+    public static final int voice_ui_command_title_format;
+    public static final int voice_ui_commands;
+    public static final int voice_ui_language_title;
+    public static final int voice_ui_phone_command_title;
+    public static final int voice_ui_setting_category;
+    public static final int voice_ui_title;
+    public static final int voice_wakeup_missing;
+    public static final int voice_wakeup_title;
+    public static final int wakeup_by_anyone_summary;
+    public static final int wakeup_by_command_summary;
+}
+-keep class com.mediatek.voicecommand.R$xml {
+    public static final int voice_ui_available_langs;
+    public static final int voice_ui_available_preference;
+    public static final int voice_ui_settings;
+    public static final int voicecommandpath;
+    public static final int voicecustomization;
+    public static final int voicelanguage;
+    public static final int voiceprocessinfo;
+}
+-keep public class com.mediatek.voicecommand.adapter.IVoiceAdapter {
+    public abstract boolean isNativePrepared();
+    public abstract int stopVoicePWRecognition(java.lang.String,int);
+    public abstract int initVoiceWakeup(int,int,int[],java.lang.String,int,java.lang.String,java.lang.String,int,java.lang.String,java.lang.String,java.lang.String,java.lang.String);
+    public abstract int sendVoiceWakeupMode(int,java.lang.String);
+    public abstract int sendVoiceWakeupCmdStatus(int);
+    public abstract int startVoiceWakeup(java.lang.String,int);
+}
+-keep public class com.mediatek.voicecommand.adapter.JNICommandAdapter {
+    private static final int MODE_VOICE_UNKNOW;
+    private static final int NATIVE_MODE_VOICE_UI;
+    private static final int NATIVE_MODE_VOICE_TRAINING;
+    private static final int NATIVE_MODE_VOICE_RECOGNITION;
+    private static final int NATIVE_MODE_VOICE_CONTACTS;
+    private static final int NATIVE_MODE_VOICE_WAKEUP;
+    private static final int NOTIFY_VOICE_ERROR;
+    private static final int NOTIFY_VOICE_UI;
+    private static final int NOTIFY_VOICE_TRAINING;
+    private static final int NOTIFY_VOICE_RECOGNITION;
+    private static final int NOTIFY_VOICE_CONTACTS;
+    private static final int NOTIFY_VOICE_WAKEUP;
+    private static final int VOICE_NORMAL_MODE;
+    private static final int VOICE_HEADSET_MODE;
+    private static final int NOTIFY_VOICE_TRAINING_FINISHED;
+    private static final int NOTIFY_VOICE_TRAINING_EXIST_PSWD;
+    private static final int NOTIFY_VOICE_TRAINING_TIMEOUT;
+    private static final int NOTIFY_VOICE_TRAINING_OK_CONFIDENCE;
+    private static final int NOTIFY_VOICE_HEADSET_PLUG;
+    private static final int NOTIFY_VOICE_CONTACTS_COMMANDARRAY;
+    private static final int NOTIFY_VOICE_CONTACTS_SPEECHDETECTED;
+    private static void postEventFromNative(java.lang.Object,int,int,int,java.lang.Object);
+    public int initVoiceWakeup(int,int,int[],java.lang.String,int,java.lang.String,java.lang.String,int,java.lang.String,java.lang.String,java.lang.String,java.lang.String);
+    public int sendVoiceWakeupMode(int,java.lang.String);
+    public int sendVoiceWakeupCmdStatus(int);
+    public int startVoiceWakeup(java.lang.String,int);
+}
+-keep public class com.mediatek.voicecommand.adapter.JNITestAdapter {
+    private final int MODE_VOICE_UNKNOW;
+    private final int mDelaytime;
+    public JNITestAdapter(com.mediatek.voicecommand.mgr.IMessageDispatcher,com.mediatek.voicecommand.mgr.ConfigurationManager);
+    private void sendVoiceUICommand(int,com.mediatek.voicecommand.cfg.VoiceProcessInfo);
+    private void sendVoiceContactsCommand(int,com.mediatek.voicecommand.cfg.VoiceProcessInfo);
+    private void sendVoiceTrainingCommand(int,com.mediatek.voicecommand.cfg.VoiceProcessInfo);
+}
+-keep public class com.mediatek.voicecommand.adapter.RecognitionResult {
+    public static final int VOICE_UNLOCK_ACCESS_FAIL;
+    public static final int VOICE_UNLOCK_ACCESS_SUCCESS;
+    public static final int VOICE_UNLOCK_TOO_NOISY;
+    public static final int VOID_UNLOCK_VOICE_LOW;
+    public RecognitionResult();
+    public RecognitionResult(int,int);
+    public RecognitionResult(com.mediatek.voicecommand.adapter.RecognitionResult);
+    public void set(int,int);
+}
+-keep public class com.mediatek.voicecommand.business.VoiceCommandBusiness {
+    public static final int ACTION_MAIN_VOICE_SERVICE;
+    public static final int ACTION_VOICE_SERVICE_PROCESSEXIT;
+    public static final int ACTION_VOICE_SERVICE_SELFEXIT;
+    public static final int ACTION_MAIN_VOICE_BROADCAST;
+    public static final int ACTION_MAIN_VOICE_BROADCAST_BOOT_COMPLETED;
+    public static final int ACTION_MAIN_VOICE_BOOT_COMPLETED;
+    public static final int ACTION_VOICE_BROADCAST_HEADSETPLUGIN;
+    public static final int ACTION_VOICE_BROADCAST_HEADSETPLUGOUT;
+}
+-keep public class com.mediatek.voicecommand.business.VoiceContacts {
+    private static final int VOICE_CONTACTS_RECOGNITION_DISABLE;
+    private static final int VOICE_CONTACTS_RECOGNITION_ENABLE;
+}
+-keep public class com.mediatek.voicecommand.business.VoiceContactsObserver {
+    private static final int MSG_GET_CONTACTS_NAME;
+}
+-keep public class com.mediatek.voicecommand.business.VoiceWakeup {
+    public static final int MSG_GET_WAKEUP_INIT;
+    public static final int MSG_GET_WAKEUP_MODE;
+    public static final int MSG_GET_WAKEUP_COMMAND_STATUS;
+    public static final boolean MTK_VOW_SUPPORT;
+    private int handleWakeupStart(com.mediatek.voicecommand.mgr.VoiceMessage);
+    private int handleWakeupInit(com.mediatek.voicecommand.mgr.VoiceMessage);
+    private int handleWakeupMode(com.mediatek.voicecommand.mgr.VoiceMessage);
+    private int handleWakeupCmdStatus(com.mediatek.voicecommand.mgr.VoiceMessage);
+}
+-keep public class com.mediatek.voicecommand.cfg.ConfigurationXML {
+    static final java.lang.String TAG;
+    public static final java.lang.String sPublicFeatureName;
+}
+-keep public class com.mediatek.voicecommand.cfg.VoiceProcessInfo {
+    public static final java.lang.String TAG;
+}
+-keep public class com.mediatek.voicecommand.data.DataPackage {
+    private DataPackage();
+    public static android.os.Bundle packageResultInfo(int,java.lang.String[],int);
+}
+-keep public class com.mediatek.voicecommand.mgr.AppDataManager {
+    public void setUpDispatcher(com.mediatek.voicecommand.mgr.IMessageDispatcher);
+}
+-keep public class com.mediatek.voicecommand.mgr.ConfigurationManager {
+    public int getUiFeatureNumber();
+    public com.mediatek.voicecommand.cfg.VoiceProcessInfo getProcessInfo(java.lang.String);
+    public void setWakeupMode(int);
+    public void setWakeupStatus(int);
+}
+-keep public class com.mediatek.voicecommand.mgr.IMessageDispatcher {
+    public abstract void setDownDispatcher(com.mediatek.voicecommand.mgr.IMessageDispatcher);
+    public abstract void setUpDispatcher(com.mediatek.voicecommand.mgr.IMessageDispatcher);
+}
+-keep public class com.mediatek.voicecommand.mgr.NativeDataManager {
+    private static final java.lang.String PROP_SYS_BOOT_COMPLETED;
+    private static final java.lang.String SYS_BOOT_COMPLETED;
+    private static final int DELAY_MILLIS;
+    public void setDownDispatcher(com.mediatek.voicecommand.mgr.IMessageDispatcher);
+}
+-keep public class com.mediatek.voicecommand.mgr.VoiceMessage {
+    public com.mediatek.voicecommand.mgr.VoiceMessage copySelf(boolean);
+}
+-keep public class com.mediatek.voicecommand.service.VoiceCommandManagerStub {
+    public static final java.lang.String TAG;
+    static final boolean DBG;
+}
+-keep public class com.mediatek.voicecommand.ui.settings.CommandPlayPreference {
+    private static final java.lang.String TAG;
+}
+-keep public class com.mediatek.voicecommand.ui.settings.RadioButtonPreference {
+    private static final java.lang.String TAG;
+    public RadioButtonPreference(android.content.Context);
+    public RadioButtonPreference(android.content.Context,android.util.AttributeSet);
+}
+-keep public class com.mediatek.voicecommand.ui.settings.VoiceUiAvailableLanguageActivity {
+    private static final java.lang.String TAG;
+}
+-keep public class com.mediatek.voicecommand.ui.settings.VoiceUiCommandPlay {
+    private static final java.lang.String TAG;
+    private static final java.lang.String KEY_VOICE_UI_FOR_COMMAND_PLAY;
+    private static final java.lang.String KEY_VOICE_UI_FOR_COMMAND_CATEGORY;
+}
+-keep public class com.mediatek.voicecommand.ui.settings.VoiceUiResUtil {
+    private static final java.lang.String TAG;
+    private static final int APP_PHONE;
+    private static final int APP_GALLERY3D;
+    private static final int APP_DESKCLOCK;
+    private static final int APP_MUSIC;
+    public VoiceUiResUtil();
+}
+-keep public class com.mediatek.voicecommand.ui.settings.VoiceUiSettings {
+    private static final java.lang.String TAG;
+    public static final java.lang.String KEY_VOICE_UI_FOR_PLAY_COMMAND;
+    public static final java.lang.String KEY_VOICE_WAKEUP_FOR_PLAY_COMMAND;
+    private static final java.lang.String KEY_VOICE_APP_COMMAND_CATEGORY;
+    private static final java.lang.String KEY_VOICE_APP_WAKEUP_CATEGORY;
+    private static final java.lang.String KEY_VOICE_UI_LANGUAGE;
+    private static final java.lang.String KEY_VOICE_UI_FOR_APP_CATEGORY;
+    private static final java.lang.String KEY_VOICE_APP_WAKEUP;
+    private java.lang.String[] mSupportWeakups;
+    public static final java.lang.String KEY_COMMAND_ID;
+    public static final java.lang.String KEY_COMMAND_PACKAGENAME;
+    public static final java.lang.String KEY_COMMAND_CLASSNAME;
+    public static final java.lang.String KEY_COMMAND_KEYWORD;
+    public static final java.lang.String KEY_COMMAND_VALUE;
+    public static final java.lang.String KEY_COMMAND_TYPE;
+    public static final int COMMAND_TYPE_RECORD;
+    public static final java.lang.String KEY_COMMAND_MODE;
+    public static final java.lang.String KEY_COMMAND_LISTS;
+}
+-keep public class com.mediatek.voicecommand.ui.unlock.PswPreview {
+    static final java.lang.String KEY_COMMAND_SUMMARY;
+    static final java.lang.String KEY_COMMAND_ID;
+    static final java.lang.String KEY_COMMAND_MODE;
+    public void onDurationUpdate(android.media.MediaPlayer,int);
+}

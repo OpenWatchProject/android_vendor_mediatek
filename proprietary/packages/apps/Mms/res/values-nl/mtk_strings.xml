@@ -1,0 +1,658 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+/*
+ * Copyright (C) 2007-2008 Esmertec AG.
+ * Copyright (C) 2007-2008 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+ --><resources xmlns:android="http://schemas.android.com/apk/res/android" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+<!-- MTK Resources -->
+    
+    <!-- wap push string begin -->
+    <!-- The type of wap push message, used in message details -->
+    <string name="wp_msg_type">"Dienstbericht"</string>
+    <string name="wp_msg_created_label">Created:\u0020</string>
+    <string name="wp_msg_created_unknown">Onbekend</string>
+    <string name="wp_msg_priority_label">"Prioriteit:\u0020"</string>
+    <!-- Wappush message priority -->
+    <string name="wp_msg_priority_low">"laag"</string>
+    <string name="wp_msg_priority_medium">"Gemiddeld"</string>
+    <string name="wp_msg_priority_high">"Hoog"</string>
+    <!-- Context menu item -->
+    <string name="menu_goto_browser">"Browser openen"</string>
+    <string name="menu_add_to_bookmark">"Aan bladwijzers toevoegen"</string>
+    <!-- Wappush message content label -->
+    <string name="wp_msg_expiration_label">Verlopen: <xliff:g id="DATE">%s</xliff:g></string>
+    
+    <string name="error_unsupported_scheme">"Die actie wordt momenteel niet ondersteund."</string>
+    <!-- wap push string end -->
+    <string name="create_new_message" msgid="8735943333953093860">"Nieuw bericht opstellen"</string>
+    <string name="menu_undelivered_messages" msgid="3896857623211780616">"Niet-afgeleverde berichten"</string>
+    <string name="broadcast_from_to" msgid="2050376286109362539">"<xliff:g id="SENDER">%1$s</xliff:g> aan <xliff:g id="RECIPIENT">%2$s</xliff:g>"</string>
+    <string name="anonymous_recipient" msgid="2501437626187039034">"Anoniem"</string>
+    <string name="view_picture" msgid="4356315935277709195">"Foto weergeven"</string>
+    <string name="sent_on" msgid="5868288548564632354">"Verzonden: <xliff:g id="DATE">%s</xliff:g>"</string>
+    <string name="received_on" msgid="5868288548564632354">"Ontvangen: <xliff:g id="DATE">%s</xliff:g>"</string>
+    <string name="name_colon" msgid="7069560650889479120"><b>"<xliff:g id="NAME">%s</xliff:g>"</b>": "</string>
+    <string name="compose_title" msgid="558578836596816068">"Opstellen"</string>
+    <string name="image_too_large" msgid="261880224164478061">"Foto te groot"</string>
+    <string name="ask_for_automatically_resize" msgid="7657603662407738758">"Formaat van foto automatisch aanpassen vóór verzending?"</string>
+    <string name="cannot_load_message" msgid="2577010607550849892">"Kan bericht niet laden."</string>
+    <string name="locked_message_cannot_be_deleted" msgid="6369452071783350219">"Vergrendeld bericht kan niet worden verwijderd."</string>
+    <string name="multiple_recipients" msgid="8747754491343248141">"<xliff:g id="RECIPIENTCOUNT">%1$s</xliff:g> ontvangers"</string>
+    <string name="resize" msgid="4308912589984220360">"Formaat aanpassen"</string>
+    <string name="to_label" msgid="2355268818058389047">"Aan "</string>
+    <string name="confirm_delete_all_messages" msgid="5836389073199814660">"De volledige thread wordt verwijderd."</string>
+    <string name="mms_priority_label">"Prioriteit"</string>
+    <string name="menu_retry_sending" msgid="3146582005568302643">"Nieuwe verzendpoging"</string>
+    <string name="menu_retry_sending_all" msgid="1870529976966340616">"Nieuwe verzendpoging voor alles"</string>
+    <string name="retrying_dialog_body" msgid="4738260459043003431">"Dit bericht <xliff:g id="MESSAGE">%s</xliff:g> is niet verzonden vanwege een verbindingsprobleem."\n"Nieuwe verzendpoging…"</string>
+    <string name="dl_expired_notification" msgid="950390029992535809">"Dit bericht is verlopen en wordt verwijderd."</string>
+    <string name="add_contacts">"Contacten"</string>
+    <string name="add_attachment_activity" msgid="5324811371129695320">"Bijlage toevoegen:"</string>
+    <string name="select_layout_activity" msgid="5041916695464513848">"Indeling selecteren"</string>
+    <string name="edit_text_activity" msgid="5915226413346879213">"Tekst bewerken"</string>
+    <string name="pick_numbers_activity" msgid="2083330191224178637">"Nummers kiezen"</string>
+    <string name="send_using_mms_activity" msgid="3703434556280345726">"Verzenden als MMS..."</string>
+    <string name="select_contact_method_activity" msgid="1743384358979323991">"Contactmethode selecteren"</string>
+    <string name="me" msgid="341726346007839961">"Ik"</string>
+    <string name="set_service_center_OK">instellen SMS-servicecentrum gelukt</string>
+    <string name="set_service_center_fail">instellen SMS-servicecentrum mislukt</string>
+    <string name="OK">OK</string>
+    <string name="Cancel">"Annuleren"</string>
+    <string name="sms_save_location">SMS-opslaglocatie</string>
+    <string name="sms_service_center">SMS-servicecentrum</string>
+    <string name="service_center_label">Servicecentrum:\u0020</string>
+    <string name="cu_subject">Lemei-onderwerp</string> 
+    <string name="pref_title_mms_creation_mode">Aanmaakmodus</string>
+    <string name="pref_summary_mms_creation_mode">MMS-aanmaakmodus voor samenstellen bericht</string>
+    <string name="pref_title_mms_size_limit">Groottelimiet</string>
+    <string name="pref_summary_mms_size_limit">Limiet MMS-grootte voor samenstellen bericht</string>
+    <string name="confirm_restricted_audio">Beperkt audio-inhoudstype. Wilt u deze toch in bijlage toevoegen?</string>
+    <string name="confirm_restricted_image">Beperkt beeldinhoudstype. Wilt u deze toch in bijlage toevoegen?</string>
+    <string name="confirm_restricted_video">Beperkt video-inhoudstype. Wilt u deze toch in bijlage toevoegen?</string>
+    <string name="unsupport_media_type">Niet-ondersteund mediatype</string>
+    <string name="select_different_media_type">Verschillende media selecteren</string>
+    <string name="image_resolution_too_large">De beeldresolutie is te groot om te worden ingevoegd.</string>
+    <string name="pref_title_wappush_settings">Instelling servicebericht</string>
+    <string name="pref_title_wappush_enable">WAP PUSH inschakelen</string>
+    <string name="pref_summary_wappush_enable">Ontvangen van WAP PUSH inschakelen</string>
+    <string name="pref_title_wappush_sl_autoloading">SL automatisch starten</string>
+    <string name="pref_summary_wappush_sl_autoloading">Bericht SL automatisch laden bij ontvangst</string>
+    <string name="menu_omacp">Configuratiebericht</string>
+    <string name="save_message_to_sim">Bericht opslaan op SIM-kaart</string>
+    <string name="cannot_add_recipient">Limiet geadresseerden bereikt. U kunt geen geadresseerden meer toevoegen.</string>
+    <string name="attach_ringtone">Beltoon</string>
+    <string name="notification_multiple_cb"><xliff:g id="count">%s</xliff:g> ongelezen CB-berichten</string>
+    <string name="notification_multiple_cb_title">Nieuwe Cell Broadcast-berichten</string>
+    <string name="fdn_enabled">FDN ingeschakeld</string>
+    <string name="cannot_send_message_reason_no_content">Geen te verzenden inhoud</string>
+    <string name="cb_read_message">CB-bericht lezen</string>
+    <string name="cb_read_message2">Cell Broadcast-bericht lezen</string>
+    <string name="cb_message">Cell Broadcast-bericht</string>
+    <string name="cb_default_channel_name">Van kanaal</string>
+    <string name="message_open_email_fail">Stel eerst uw e-mailaccount in.</string>
+    <string name="send_by_sim2">Verzenden via SIM2</string>
+    <string name="send_by_sim1">Verzenden via SIM1</string>
+    <string name="menu_item_send_by">Verzenden via</string>
+    <string name="data_connected_confirm_title">Verzenden bevestigen</string>
+    <string name="data_connected_confirm_message">Het verzenden van een MMS via deze SIM kan ervoor zorgen dat het downloaden van uw huidige gegevens tijdelijk wordt onderbroken. Doorgaan?</string>
+    <string name="menu_item_sim1">SIM 1</string>
+    <string name="menu_item_sim2">SIM 2</string>
+    <string name="no_sim_1">SIM is niet aangesloten.</string>
+    <string name="no_sim_2">SIM is niet aangesloten.</string>
+    <string name="sim1_full_title">SIM-kaart 1 vol</string>
+    <string name="sim2_full_title">SIM-kaart 2 vol</string>
+    <string name="select_all">"Alles selecteren"</string>
+    <string name="confirm_delete_selected_messages">De geselecteerde berichten worden verwijderd.</string>
+    <string name="confirm_delete_selected_theads">De geselecteerde threads worden verwijderd.</string>
+    <string name="restricted_forward_title">"MMS-bericht"</string>
+    <string name="restricted_forward_message">Deze media worden mogelijk niet correct weergegeven aan geadresseerden. Doorgaan?</string>
+    <string name="strOk">Bericht verzonden</string>
+    <string name="strFail">Verzenden bericht is mislukt</string>
+    <string name="menu_insert_text_vcard">Contactpersoon invoegen</string>
+    <string name="contact_name">Naam</string>
+    <string name="contact_tel">Tel:</string>
+    <string name="contact_email">E-mail</string>
+    <string name="contact_organization">Organisatie</string>
+    <string name="contact_address">Adres</string> 
+    <string name="max_recipients_title">Max. aantal bereikt</string>
+    <string name="max_recipients_message">MMS staat max. <xliff:g id="maxLimit">%s</xliff:g> geadresseerden toe. Sommige geadresseerden zullen worden verwijderd. Wilt u doorgaan?</string>
+    <string name="via_without_time_for_send">via</string>
+    <string name="via_without_time_for_recieve">via</string>
+    <string name="sim_selected_dialog_title">SIM selecteren</string>
+    <string name="add_contact_dialog_message">"Nummer %s toevoegen aan bestaande of aan nieuwe contactpersoon?"</string>
+    <string name="add_contact_dialog_new">Nieuw</string>
+    <string name="add_contact_dialog_existing">Bestaand</string>
+    <string name="deleting">Verwijderen</string>
+    <string name="pref_title_mms_enable_to_send_delivery_reports">Verzendrapport sturen</string>
+    <string name="pref_summary_mms_enable_to_send_delivery_reports">Stuur een verzendrapport voor elk bericht dat u ontvangt</string>
+    <string name="pref_summary_mms_auto_reply_read_reports">Stuur een leesrapport als dit door de afzender van de MMS gevraagd is</string>
+    <string name="pref_title_mms_auto_reply_read_reports">Leesrapport verzenden</string>
+    <plurals name="read_report_toast_msg">
+        <item quantity="one">Verzendt %d leesrapport</item>
+        <item quantity="other">Verzendt %d leesrapporten</item>
+    </plurals>
+    <string name="unselect_all">Alle selecties opheffen</string>
+    <!-- add for vcard -->
+    <string name="forward_byself">"Ik"</string>
+   <string name="file_attachment_vcard_name">vCard(<xliff:g id="text">%s</xliff:g>)</string>
+    <string name="attach_vcalendar" msgid="5452708708398908131">"Agenda"</string>
+   <string name="file_attachment_import_vcard">vCard importeren</string>
+   <string name="attach_vcard">Contact</string>
+   <string name="type_common_file">bestand</string>
+   <string name="failed_to_parse_vcard">Ontleden van vCard-bestand mislukt!</string>
+   <string name="empty_vcard">Geen contacten in vCard</string>
+   <string name="parse_vcard">vCard ontleden</string>
+   <string name="vcard_no_details">Geen aanvullende informatie voor deze contact"</string>
+   <string name="call_custom"><xliff:g id="custom">%s</xliff:g></string>
+   <string name="call_home">thuis</string>
+   <string name="call_mobile">mobiel</string>
+   <string name="call_work">werk</string>
+   <string name="call_fax_work">fax werk</string>
+   <string name="call_fax_home">fax thuis</string>
+   <string name="call_pager">pieper</string>
+   <string name="call_callback">terugbellen</string>
+   <string name="call_car">auto</string>
+   <string name="call_company_main">bedrijf, algemeen</string>
+   <string name="call_isdn">ISDN</string>
+   <string name="call_radio">radio</string>
+   <string name="call_telex">telex</string>
+   <string name="call_tty_tdd">TTY/TDD</string>
+   <string name="call_work_mobile">werk mobiel</string>
+   <string name="call_work_pager">werk pieper</string>
+   <string name="call_assistant"><xliff:g id="assistant">%s</xliff:g></string>
+   <string name="call_mms">MMS</string>
+   <string name="email_home">E-mail thuis</string>
+   <string name="email_mobile">E-mail mobiel</string>
+   <string name="email_work">E-mail werk</string>
+   <string name="email_custom">e-mail <xliff:g id="custom">%s</xliff:g></string>
+   <string name="map_home">Huisadres weergeven</string>
+   <string name="map_work">Werkadres weergeven</string>
+   <string name="map_other">Adres weergeven</string>
+   <string name="map_custom"><xliff:g id="custom">%s</xliff:g> adres weergeven</string>
+   <string name="chat_aim">Chatten met AIM</string>
+   <string name="chat_msn">Chatten met Windows Live</string>
+   <string name="chat_yahoo">Chatten met Yahoo</string>
+   <string name="chat_skype">Chatten met Skype</string>
+   <string name="chat_qq">Chatten met QQ</string>
+   <string name="chat_gtalk">Chatten met Google Talk</string>
+   <string name="chat_icq">Chatten met ICQ</string>
+   <string name="chat_jabber">Chatten met Jabber</string>
+   <string name="chat">Chatten</string>
+   <string name="please_wait">"Een ogenblik geduld..."</string>
+   <string name="note">notitie</string>
+   <string name="organization">Organisatie</string>
+   <string name="website">Website:\u0020</string>
+   <string name="nickname">Bijnaam</string>
+   <string name="call_other">overige</string>
+   <string name="call_main">Main</string>
+   <string name="call_other_fax">fax</string>
+   <string name="email_other">E-mail</string>
+   <string name="email">E-mail</string>
+   <!-- add for vcard -->
+    <string name="invalid_contact_message" msgid="8215051456181842274">"Het contact bestaat niet."</string>
+
+   <string name="menu_sim_sms">SIM SMS</string>  
+    <!-- Cell broadcast SMS strings -->  
+    <!-- Import/Export mms/sms from/to sdcard-->  
+    <string name="pref_title_io_settings">SMS importeren/exporteren</string>  
+    <string name="pref_summary_import_msg">SMS van SD-kaart importeren</string>  
+    <string name="pref_title_import_msg">SMS importeren</string>  
+    <string name="pref_summary_export_msg">SMS naar SD-kaart exporteren</string>  
+    <string name="pref_title_export_msg">SMS exporteren</string>  
+    <string name="no_sd_card">SD-kaart is niet gereed</string>  
+    <string name="export_message_ongoing">SMS naar SD-kaart exporteren, een ogenblik....</string>  
+    <string name="import_message_ongoing">SMS van SD-kaart importeren, een ogenblik....</string>  
+    <string name="export_message_success">SMS naar SD-kaart exporteren geslaagd</string>  
+    <string name="import_message_success">SMS van SD-kaart importeren geslaagd</string>  
+    <string name="import_message_fail">SMS van SD-kaart importeren mislukt</string>  
+    <string name="export_message_fail">SMS naar SD-kaart exporteren mislukt</string>  
+    <string name="import_message_list">SMS DB lijst in SD-kaart</string>  
+    <string name="import_message_list_empty">Geen SMS DB-bestanden op SD-kaart</string>  
+    <string name="export_message_empty">Geen SMS om te exporteren.</string>  
+    <string name="whether_export_item">Wilt u SMS exporteren?</string>  
+    <string name="whether_import_item">Wilt u importeren</string>  
+    <string name="export_disk_problem">SD kaart vol of kan niet worden beschreven</string> 
+    <string name="call_video_call">Videogesprek</string>
+    <string name="error_add_attachment">"Onbekende fout, kan <xliff:g id="name">%1$s</xliff:g> niet aan het bericht toevoegen."</string>
+    <string name="save_message_to_sim_successful">Opslaan geslaagd</string>  
+    <string name="save_message_to_sim_unsuccessful">Opslaan mislukt</string>  
+    <string name="transmission_transiently_failed">Fout in overdracht We proberen het later opnieuw.</string>  
+    <string name="download_failed_due_to_full_memory">Downloaden bericht mislukt: geheugen vol.</string>  
+    <string name="status_expired">Verlopen</string>  
+    <string name="status_deferred">Uitgesteld</string>  
+    <string name="status_unrecognized">Niet herkend</string>  
+    <string name="status_indeterminate">Onbepaald</string>  
+    <string name="status_unreachable">Onbereikbaar</string>  
+    <plurals name="message_view_selected_message_count"> 
+        <item quantity="one"><xliff:g id="message_count" example="1">%d</xliff:g> geselecteerd</item>  
+        <item quantity="other"><xliff:g id="message_count" example="9">%d</xliff:g> geselecteerd</item> 
+    </plurals>  
+    <string name="sms_input_mode_title">Invoermodus</string>  
+    <string name="sms_input_mode_dialog_title">Invoermodus selecteren</string>  
+    <string name="sms_input_mode_summary">SMS-invoermodus voor het samenstellen van berichten</string>  
+    <string name="by_card">Door:</string>  
+    <string name="page">Pagina %d</string>  
+    <string name="space_not_enough">Er is niet voldoende ruimte over om video op te nemen</string>  
+    <string name="no_messages">“Geen berichten”</string>  
+    <string name="storage_dialog_mms_size">Grootte MMS:\u0020</string>
+    <string name="space_not_enough_for_audio">Er is niet voldoende ruimte over om audio op te nemen</string> 
+    <string name="sync_mms_to_db">Wordt geladen...</string>
+    <string name="finish">"Gereed"</string>
+     <string name="pref_title_long_press_operation_guide">LANG INDRUKKEN GEBRUIKSAANWIJZING</string>  
+    <string name="pref_title_watch_animation">Animatie weergeven</string>  
+    <string name="long_press_conversationlist_title">Berichten verwijderen</string>  
+    <string name="long_press_conversationlist_content">Lang indrukken om berichten te wissen.</string>  
+    <string name="long_press_composer_content">Lang indrukken voor meer opties.</string>
+    <string name="menu_show_icc_sms_capacity">Capaciteit weergeven</string>  
+    <string name="show_icc_sms_capacity_title">Capaciteit</string>  
+    <string name="icc_sms_used">Gebruikt:</string>
+    <string name="select_text">Tekst selecteren</string> 
+    <string name="icc_sms_total">Totaal:</string>  
+    <string name="get_icc_sms_capacity_failed">Ophalen SIM-capaciteit mislukt.</string> 
+    <string name="menu_reply">"Reageren"</string>
+    <string name="failed_to_add_image">Limiet berichtgrootte bereikt, sommige delen zijn niet toegevoegd.</string>
+    <string name="ipmsg_conversation_list_all">Bericht</string>  
+    <string name="ipmsg_conversation_list_important">Belangrijk</string>  
+    <string name="ipmsg_conversation_list_group_chats">Groepchats</string>  
+    <string name="ipmsg_conversation_list_spam">Spam</string>  
+    <string name="ipmsg_create_group_chat">Groepchat maken</string>  
+    <string name="ipmsg_send_invitation">Uitnodigingen verzenden</string>  
+    <string name="str_ipmsg_download_history_dlg">Downloaden...</string>  
+    <string name="to_hint_ipmsg">"Typ naam of nummer van persoon"</string>  
+    <string name="type_to_compose_text_enter_to_send_ipmsg">"Typ SMS/iSMS bericht"</string>  
+    <string name="ipmsg_ipmsg_hint">"Typ iSMS bericht"</string>  
+    <string name="ipmsg_sms_hint">"Typ SMS-bericht"</string>  
+    <string name="ipmsg_caption_hint">"Typ bijschriften"</string>  
+    <string name="ipmsg_cancel">"Annuleren"</string>  
+    <string name="ipmsg_invite_chat_frequently"><b>Chat u regelmatig met %s ?</b>\nWaarom nodigt u %s niet uit om iSMS te gebruiken zodat u beiden geld uitspaart?</string>  
+    <string name="ipmsg_enable_chat_frequently"><b>%s gebruikt iSMS!</b>\nWaarom schakelt u uw iSMS-dienst niet in zodat u beiden geld uitspaart?</string>  
+    <string name="ipmsg_invite">"Uitnodigen"</string>  
+    <string name="ipmsg_dismiss">"Negeren"</string>  
+    <string name="ipmsg_enable">"Inschakelen"</string>  
+    <string name="ipmsg_enable_notice">Weet u zeker dat u de iSMS-dienst wilt inschakelen?</string>  
+    <string name="ipmsg_activate">Activeren</string>  
+    <string name="ipmsg_activate_chat_frequently"><b>Chat u regelmatig met vrienden?</b>\nWaarom schakelt u de iSMS-dienst niet in om te chatten zonder SMS-tarief?</string>  
+    <string name="ipmsg_activate_note">Weet u zeker dat u iSMS wilt inschakelen?</string>  
+    <string name="ipmsg_dismiss_content">Weet u zeker dat u de notitie wilt wegwerpen?</string>  
+    <string name="ipmsg_send_exception">Fout bij verzenden</string>  
+    <string name="ipmsg_ipmsg">IP-bericht</string>  
+    <string name="ipmsg_dailog_multi_forward">Berichten doorsturen</string>  
+    <string name="ipmsg_dialog_send_result">Verzendresultaat</string>  
+    <string name="ipmsg_dlg_send_all">Alles: %s</string>  
+    <string name="ipmsg_dlg_send_sucess">Verzonden: %s</string>  
+    <string name="ipmsg_dlg_send_failed">Mislukt: %s</string>  
+    <string name="multi_forward_sim_info">SIM-info ophalen</string>  
+    <string name="ipmsg_multi_forward_no_sim">Geen SIM-info</string>  
+    <string name="ipmsg_divider_online">%s zijn er Online</string>  
+    <string name="ipmsg_divider_offline">Laatste tijdstip online %s</string>  
+    <string name="ipmsg_divider_never_online">Nooit online</string>  
+    <string name="ipmsg_vcard_file_name">%s contacten</string>  
+    <string name="ipmsg_getsim_failed">Ophalen SIM-info mislukt</string>  
+    <string name="ipmsg_sim_status_error">Statusfout SIM</string>  
+    <string name="ipmsg_forward_failed">Doorsturen mislukt</string>  
+    <string name="ipmsg_forward_norecipients">Geen ontvanger(s) voor doorsturen bericht</string>  
+    <string name="ipmsg_multiforward_no_message">Geen bericht(en) om door te sturen</string>  
+    <string name="ipmsg_need_input_recipients">Voeg eerst minstens één ontvanger toe</string>  
+    <string name="str_ipmsg_unread_format">%1$d ongelezen berichten</string>  
+    <string name="str_ipmsg_not_delivered_title">Nog niet bezorgd</string>  
+    <string name="str_ipmsg_failed_title">Mislukt</string>  
+    <string name="str_ipmsg_cant_share">SD-kaart is niet beschikbaar, delen van MMS-bericht niet mogelijk</string>  
+    <string name="str_ipmsg_file_limit">te groot</string>  
+    <string name="str_ipmsg_no_app">"Geen enkele app kan deze actie uitvoeren."</string>  
+    <string name="str_ipmsg_today">Vandaag</string>  
+    <string name="str_ipmsg_yesterday">"gisteren"</string>  
+    <string name="ip_message_typing_text">Typen</string>  
+    <string name="ipmsg_try_again">"Opnieuw proberen"</string>  
+    <string name="ipmsg_try_all_again">Alles opnieuw proberen</string>  
+    <string name="ipmsg_resend_via_sms">Via SMS verzenden</string>  
+    <string name="ipmsg_resend_via_mms">Via MMS verzenden</string>  
+    <string name="str_ipmsg_no_such_file">"Zo'n bestand bestaat niet"</string>  
+    <string name="str_ipmsg_over_file_limit">Het bestand is te groot</string>  
+    <string name="str_ipmsg_invalid_file_type">Dit type wordt niet ondersteund</string>  
+    <string name="invite_friends_to_ipmsg">Vrienden uitnodigen om iSMS te gebruiken</string>  
+    <string name="invite_friends_to_chat">Vrienden uitnodigen voor een chat</string>  
+    <string name="invite_friends_to_ipmsg_dialog_msg">Om een uitnodiging te sturen, wordt het bericht verwijderd dat u schrijft.</string>  
+    <string name="invite_friends_to_ipmsg_content">He, iSMS is een cool chat-programma. Het is gratis en eenvoudig. Kijk maar eens op http://isms.hissage.com als je meer wilt weten.</string>  
+    <string name="export">"Exporteren"</string>  
+    <string name="mark_as_spam">Als spam markeren</string>  
+    <string name="mark_as_spam_tips">Berichten die als Spam zijn gemarkeerd, worden naar de Spam-lijst verplaatst en de melding wordt automatisch uitgeschakeld.</string>  
+    <string name="remove_frome_spam">Uit spam-lijst verwijderen</string>  
+    <string name="add_shortcut">Snelkoppeling toevoegen</string>  
+    <string name="view_all_media">Alle media weergeven</string>  
+    <string name="view_all_location">Alle locaties weergeven</string>  
+    <string name="ipmsg_export_to_sdcard">Naar SD-kaart exporteren</string>  
+    <string name="ipmsg_copy">"Kopiëren"</string>  
+    <string name="ipmsg_send_via_text_msg">Via SMS verzenden</string>  
+    <string name="ipmsg_send_via_mms">Via MMS verzenden</string>  
+    <string name="ipmsg_retry">Opnieuw</string>  
+    <string name="ipmsg_delete">"Delete"</string>  
+    <string name="ipmsg_share">"Delen"</string>  
+    <string name="ipmsg_mark_as_important">Als belangrijk markeren</string>  
+    <string name="ipmsg_remove_from_important">Uit onbelangrijk verwijderen</string>  
+    <string name="str_ipmsg_save_file">Bestand opgeslagen naar %1$s</string>  
+    <string name="continue_str">Doorgaan</string>  
+    <string name="convert_to_mms">Naar MMS converteren.</string>  
+    <string name="convert_to_sms">Naar SMS converteren.</string>  
+    <string name="ipmsg_convert_to_ipmsg">Naar iSMS converteren.</string>
+    <string name="ip_message_convert_to_mms_message_for_service">De iSMS-dienst is niet beschikbaar op deze geselecteerde SIM-kaart. Dit bericht kan alleen via MMS worden verzonden met deze SIM-kaart. Toch doorgaan?</string>  
+    <string name="ip_message_convert_to_sms_message_for_service">De iSMS-dienst is niet beschikbaar op deze geselecteerde SIM-kaart. Dit bericht kan alleen via SMS worden verzonden met deze SIM-kaart. Toch doorgaan?</string>  
+    <string name="ip_message_convert_to_mms_message_for_recipients">De ontvanger(s) is (zijn) geen iSMS-gebruiker(s). Dit bericht kan alleen worden verzonden via MMS. Toch doorgaan?</string>  
+    <string name="ip_message_convert_to_sms_message_for_recipients">De ontvanger(s) is (zijn) geen iSMS-gebruiker(s). Dit bericht kan alleen worden verzonden via SMS. Toch doorgaan?</string>  
+    <string name="ipmsg_sms_convert_to_ipmsg">De iSMS-dienst is beschikbaar op deze geselecteerde SIM-kaart. Om op SMS-kosten te besparen, wordt aangeraden om het bericht via iSMS te sturen. Nu overzetten?</string>
+    <string name="ipmsg_mms_convert_to_ipmsg">De iSMS-dienst is beschikbaar op deze geselecteerde SIM-kaart. Om op MMS-kosten te besparen, wordt aangeraden om het bericht via iSMS te sturen. Nu overzetten?</string>
+    <string name="keep_mms">MMS behouden</string>  
+    <string name="keep_sms">SMS behouden</string>  
+    <string name="switch_ipmsg">Overzetten</string>  
+    <string name="ip_message_load_all_message">Alle berichten laden</string>  
+    <string name="pref_title_display_preference_settings">WEERGAVE EN VOORKEUR</string>  
+    <string name="pref_chat_wallpaper">Chat-achtergrond</string>  
+    <string name="pref_auto_rotation">Automatisch draaien</string>  
+    <string name="pref_show_email_address">E-mailadres weergeven</string>  
+    <string name="pref_summary_show_email_address">E-mailadres opnemen in contactresultaten</string>  
+    <string name="pref_title_backup_restore_settings">BACK-UP EN HERSTELLEN</string>  
+    <string name="pref_backage_message">Back-up van bericht</string>  
+    <string name="pref_summary_backup_message">Laatste back-up:Nooit</string>  
+    <string name="pref_restore_message">Bericht herstellen</string>  
+    <string name="pref_summary_restore_message">Berichten uit de back-up herstellen</string>  
+    <string name="pref_mute">"Dempen"</string>  
+    <string name="pref_summary_mute">"uit"</string>  
+    <string name="pref_vibrate">"Trillen"</string>  
+    <string name="pref_summary_vibrate">Trillen als meldingen worden ontvangen</string>  
+    <string name="pref_popup_notification">Pop-up melding</string>  
+    <string name="pref_summary_popup_notification">Pop-up weergeven voor push-meldingen</string>  
+    <string name="pref_title_display_settings">"Weergave"</string>  
+    <string name="pref_title_actions_settings">Acties</string>  
+    <string name="pref_download_chat_history">Chat-geschiedenis downloaden</string>  
+    <string name="pref_summary_download_chat_history">In de indeling zip opslaan op de SD-kaart</string>  
+    <string name="pref_email_chat_history">E-mail chat-geschiedenis</string>  
+    <string name="pref_summary_email_chat_history">E-mail chat-geschiedenis als zip</string>  
+    <string name="pref_clear_chat_history">Chat-geschiedenis wissen</string>  
+    <string name="pref_summary_notification_ringtone">Een beltoon selecteren voor nieuwe meldingen</string>  
+    <string name="pref_setting_title">Instellingen voor berichten</string>  
+    <string name="pref_setting_sms">Tekstbericht(SMS)</string>  
+    <string name="pref_setting_mms">Multimediabericht(MMS)</string>  
+    <string name="pref_setting_notification">"Meldingen"</string>  
+    <string name="pref_setting_general">"Algemeen"</string>  
+    <string name="pref_setting_chat">Chat-instellingen</string>  
+    <string name="chat_setting_saving">Bezig met opslaan…</string>  
+    <string name="chat_setting_updating">updaten...</string>  
+    <string name="chat_setting_sending">"Verzenden..."</string>  
+    <string name="dialog_save_title">Opslaan op SD-kaart</string>  
+    <string name="dialog_save_description">Deze chat-reeks als zip-bestand op SD-kaart opslaan</string>  
+    <string name="dialog_email_title">Delen via e-mail</string>  
+    <string name="dialog_email_description">Deze chat-reeks als bijlage via e-mail als zip</string>  
+    <string name="dialog_clear_title">"Wissen"</string>  
+    <string name="dialog_clear_description">Alle chat-geschiedenis wordt verwijderd uit deze chat-ruimte</string>  
+    <string name="dialog_wallpaper_chooser_wallpapers">Achtergronden</string>  
+    <string name="dialog_wallpaper_chooser_gallery">"Galerij"</string>  
+    <string name="dialog_wallpaper_chooser_take">"Een foto maken"</string>  
+    <string name="dialog_wallpaper_chooser_default">"Standaard"</string>  
+    <string name="dialog_wallpaper_title">Achtergrond kiezen</string>  
+    <string name="mute_one_hour">1 uur</string>  
+    <string name="mute_four_hours">4 uur</string>  
+    <string name="mute_eight_hours">8 uur</string>  
+    <string name="save_chat_history_failed">Opslaan mislukt</string>  
+    <string name="send_chat_history_failed">E-mail mislukt</string>  
+    <string name="actionbar_sms_setting">SMS-instellingen</string>  
+    <string name="actionbar_mms_setting">MMS-instellingen</string>  
+    <string name="actionbar_notification_setting">"Meldingsinstellingen"</string>  
+    <string name="actionbar_general_setting">Algemene instellingen</string>  
+    <string name="save_history_file">opslaan als</string>  
+    <string name="no_sdcard_suggestion">"Geen SD-kaart"</string>  
+    <string name="save_wallpaper_success">Achtergrond veranderd.</string>  
+    <string name="save_wallpaper_fail">Kan achtergrond niet veranderen.</string>  
+    <string name="ip_message_delete_important">"Berichten gemarkeerd als belangrijk eveneens opnemen"</string>  
+    <string name="str_ipmsg_spam_empty">Er is geen spam-conversatie. \nSPAM verzamelt alle conversaties die als spam zijn gemarkeerd. Standaard worden meldingen uitgeschakeld. Hierdoor wordt u niet onnodig gestoord. \n\nU kunt een afzender als spam markeren door een conversatie te voeren en op het pictogram Als spam markeren te klikken. Als een conversatie als spam is gemarkeerd, verschijnt automatisch een pictogram Melding-uit en wordt de conversatie hier geplaatst.</string>  
+    <string name="str_ipmsg_spam_example_from">+86123456789</string>  
+    <string name="str_ipmsg_spam_example_subject">Dit is een voorbeeld van een spambericht.</string>  
+    <string name="str_ipmsg_groupchat_empty">Er is geen groepchatbericht. \nGROEPSCHATS verzamelt alle groepsberichten die door u zijn gemaakt of waar u deel aan neemt. Hierdoor kunt u eenvoudig uw groepchats opzoeken en beheren. \n\nTik om een groepschat te maken op de knop Groepschat maken onderaan dit scherm en nodig vrienden uit bij de groep.</string>  
+    <string name="str_ipmsg_group_example_from">"Groepsnaam"</string>  
+    <string name="str_ipmsg_group_example_subject">Uw vriend:\nIk vind die groepschatoptie geweldig!</string>  
+    <string name="str_ipmsg_important_empty">Er zijn geen belangrijke berichten. \nBELANGRIJK verzamelt alle berichten die als belangrijk zijn gemarkeerd. Hierdoor kunt u snel belangrijke berichten vinden. \n\nU kunt een bericht als belangrijk markeren door een bericht vast te houden en Als belangrijk markeren in het menu Opties te selecteren. Als een bericht als belangrijk is gemarkeerd, verschijnt een rode vlag zoals hieronder.</string>  
+    <string name="str_ipmsg_important_example_title">Dit is een voorbeeld van een bericht dat als belangrijk is gemarkeerd. Een rode vlag verschijnt.</string>  
+    <string name="str_ipmsg_important_example_time">10:55 AM</string>  
+    <string name="str_ipmsg_allchat_empty">"Geen conversaties"</string>  
+    <string name="str_ipmsg_empty_activate_content">Om deze optie te gebruiken, moet u eerst de iSMS-dienst activeren. Als de dienst u niet bevat, kunt u deze altijd uitschakelen in Instellingen. Probeer het nu!</string>  
+    <string name="str_ipmsg_empty_activate_title">iSMS activeren</string>  
+    <string name="str_ipmsg_service_title">iSMS-dienstcentrum</string>  
+    <string name="str_ipmsg_introduction">Met iSMS kunt u direct gratis berichten afleveren en het houdt de chat-geschiedenis op één plek. Druk op een knop om de nieuwe ervaring mee te maken!</string>  
+    <string name="time_now">Onbekende artiestnaam</string>  
+    <string name="str_ipmsg_active">iSMS activeren</string>  
+    <string name="str_ipmsg_welcome_active">Welkom bij iSMS</string>  
+    <string name="str_ipmsg_term_warn_welcome">De iSMS-dienst stelt u in staat om te chatten en multimedia-bestanden met vrienden te delen, op elk moment en op elke plek, via WiFi of een gegevensverbinding.\n\nSlechts 3 stappen om de activering af te ronden.\n\n Gebruiksvoorwaarden\n</string>  
+    <string name="str_ipmsg_term_warn_activate">Deze optie wordt alleen ondersteun door de iSMS-dienst.\n\nDe iSMS-dienst stelt u in staat om te chatten en multimedia-bestanden met vrienden te delen, op elk moment en op elke plek, via WiFi of een gegevensverbinding.\n\n Gebruiksvoorwaarden</string>  
+    <string name="str_ipmsg_term_key">Gebruiksvoorwaarden</string>  
+    <string name="str_ipmsg_agree_and_continue">Accepteren en doorgaan</string>  
+    <string name="no_sim_card">Geen SIM-kaart!</string>  
+    <string name="ip_message_activate_title">iSMS activeren</string>  
+    <string name="ip_message_current_sim_enabled">De huidige SIM-kaart is ingeschakeld.</string>  
+    <string name="sim_selected_dialog_title_for_activate">Selecteer SIM-kaart om iSMS te activeren</string>  
+    <string name="ip_message_activate_message">Deze optie wordt alleen ondersteund door de iSMS-dienst. Uw iSMS-account nu activeren?</string>  
+    <string name="typing">"Typen…"</string>  
+    <string name="ip_message_enable_title">iSMS inschakelen</string>  
+    <string name="ip_message_enable_message">Deze optie wordt alleen ondersteund door de iSMS-dienst. Uw iSMS-account nu activeren?</string>  
+    <string name="sim_selected_dialog_title_for_enable">Selecteer SIM-kaart om iSMS in te schakelen</string>  
+    <string name="ip_message_switch_sim_title">Van SIM wisselen</string>  
+    <string name="ip_message_switch_sim_message">De huidige SIM-kaart ondersteunt iSMS niet. Naar andere SIM-kaart wisselen?</string>  
+    <string name="ip_message_switch_sim_button">Overzetten</string>  
+    <string name="ip_message_switch_sim_successfully">Met succes te schakelen SIM!</string>  
+    <string name="close">Kanaal sluiten</string>  
+    <string name="nointernet">"Geen actieve internetverbinding gevonden. Probeer het later nogmaals."</string>  
+    <plurals name="deleted_conversations"> 
+        <item quantity="one">Een conversatie is verwijderd</item>  
+        <item quantity="other"><xliff:g id="number" example="15">%1$s</xliff:g> conversaties zijn verwijderd</item> 
+    </plurals> 
+<string name="more_recipients">ontvanger(s)</string>
+    <string name="Insert_sdcard">Plaats een sd-kaart</string>
+    <string name="sms_validity_period">Geldigheidsperiode SMS</string>
+    <string name="sms_validity_period_nosetting">Niet ingesteld</string>
+    <string name="sms_validity_period_1hour">1 uur</string>
+    <string name="sms_validity_period_6hours">6 uur</string>
+    <string name="sms_validity_period_12hours">12 uur</string>
+    <string name="sms_validity_period_1day">1 dag</string>
+    <string name="sms_validity_period_max">Maximaal</string>
+    <string name="mms_too_big_to_download">Bericht te groot om van netwerk te downloaden.</string>
+    <string name="suggested">Voorgesteld</string>
+    <string name="pref_title_storage_status">Gebruik huidige opslag</string>
+    <string name="storage_dialog_mms"> MMS:\u0020 <xliff:g id="number">%s</xliff:g> item(s) </string>
+    <string name="storage_dialog_sms"> SMS:\u0020 <xliff:g id="number">%s</xliff:g> item(s) </string>
+    <string name="storage_dialog_attachments">MMS-bijlagen:\u0020</string>
+    <string name="storage_dialog_database">Database:\u0020</string>
+    <string name="storage_dialog_available_space">Beschikbare ruimte:\u0020</string>
+    <string name="exceed_subject_length_limitation">Max. lengte bereikt</string>
+    <string name="disable_notifications_dialog_message" msgid="7644011234972074096">"Dubbele sms-meldingen van standaardapp voor berichten stoppen?"</string>
+    <string name="forward_from">Doorgezonden door:</string>
+    <string name="sms_forward_setting">Instelling SMS doorsturen</string>
+    <string name="sms_forward_setting_summary">SMS doorsturen met naam en nummer afzender</string>
+    <string name="file_attachment_vcalendar_name"> vCalendar( <xliff:g id="text">%s</xliff:g> ) </string>
+    <string name="inbox">"Postvak IN"</string>
+    <string name="outbox">"Postvak UIT"</string>
+    <string name="draftbox">Concepten</string>
+    <string name="sentbox">Verzonden</string>
+    <string name="simbox">SIM-vak</string>
+    <string name="changeview">Van modus veranderen</string>
+    <string name="viewer_title_sms">"Sms"</string>
+    <string name="viewer_title_wappush">Wappush</string>
+    <string name="slideshow_details">Berichtdetails</string>
+    <string name="open">"Open"</string>
+    <string name="delete_all_confirm">"Alle berichten in het vak wissen?"</string>
+    <string name="folder_recipient">Ontvanger:</string>
+    <string name="folder_recieve_date">Datum:</string>
+    <string name="folder_download">MMS downloadt</string>
+    <string name="confirm_download_message">“downloaden bericht bevestigen”</string>
+    <string name="play_as_slideshow">MMS als diavoorstelling weergeven</string>
+    <string name="no_application_response">“Geen applicatie om de aanvraag te verwerken”</string>
+    <string name="cdma_not_support">CDMA ondersteunt deze functie niet</string>
+    <string name="allmessage">“Servergegevens beschadigd, alle berichten worden opnieuw gesynchroniseerd”</string>
+    <string name="select_message">Bericht selecteren</string>
+    <string name="confirm_delete_allmessage">“Alle berichten worden verwijderd.”</string>
+    <string name="mark_as_read_btn_str">"Markeren als gelezen"</string>
+    <string name="delete_btn_str">Verwijderen</string>
+    <string name="reply_send">"Verzenden"</string>
+    <string name="via_test">Oproep via SIM1</string>
+    <string name="received_header">"Ontvangen:"</string>
+    <string name="no_item_selected">Geen item geselecteerd.</string>
+    <string name="pref_title_font_size_setting">INSTELLING TEKENGROOTTE</string>
+    <string name="pref_title_message_font_size">Tekengrootte bericht</string>
+    <string name="pref_summary_message_font_size">Tekengrootte bericht</string>
+    <string name="message_font_size_dialog_title">Tekengrootte bericht</string>
+    <string name="message_font_size_dialog_cancel">Annuleren</string>
+    <string name="change">Wijzigen</string>
+    <string name="ipmsg_accept">"Accepteren"</string>
+    <string name="ipmsg_resend">Opnieuw verzenden</string>
+    <string name="menu_send_sms">Bericht sturen aan <xliff:g id="name">%s</xliff:g></string>
+    <string name="viewer_title_cb">Cell broadcast</string>
+    <string name="change_default_disk">Onvoldoende ruimte in de telefoonopslag. Maak ruimte vrij of verander de "standaard schijf voor wegschrijven" in de instellingen.</string>
+    <string name="ipmsg_reject">"Weigeren"</string>
+    <string name="discard_mms_title">MMS weggooien</string>
+    <string name="discard_mms_content">Alle MMS in het meervoudig doorgestuurde bericht worden verwijderd</string>
+    <string name="toast_sms_forward">Geen SMS doorgestuurd</string>
+    <string name="dialog_continue">Doorgaan</string>
+    <string name="sms_size_limit">Groottelimiet bereikt</string>
+    <string name="dialog_sms_limit">Groottelimiet bericht bereikt. Het overschreden bericht wordt verwijderd</string>
+    <string name="sum_search_networks">"Alle beschikbare netwerken zoeken"</string>
+    <string name="str_ipmsg_replace_attach">Bijlage vervangen</string>
+    <string name="str_ipmsg_replace_attach_msg">Er is reeds een bijlage, vervangen?</string>
+    <string name="ipmsg_err_file">Bestand kan niet worden geopend</string>
+    <string name="forward_tips_title">"MMS-melding verwijderen"</string>
+    <string name="forward_tips_body">"MMS-melding ondersteunt doorsturen niet, wordt verwijderd."</string>
+    <string name="ipmsg_resend_discard_message">Om dit bericht opnieuw te verzenden, wordt de huidige indeling van het bericht gewist.</string>
+    <string name="type_to_quick_text">"Typ sneltekst"</string>
+    <string name="menu_wappush">"Wappush berichten"</string>
+    <string name="visit_website">"Bezoek website"</string>
+    <string name="meet_emoticon_limit">Voeldoe aan grenzen emoticons</string>
+    <string name="view_mms_notification">Kan mms-melding niet zien</string>
+    <string name="ipmsg_multi_forward_tips_content">Om aan meerdere ontvangers door te sturen,  moeten sommige iSMS eerst worden gedownload.</string>
+    <string name="multi_forward_failed_all">Download mislukt, niet aan meerdere ontvangers doorgezonden.</string>
+    <string name="ipmsg_multi_forward_failed_part">Doorzenden van sommige iSMS mislukt.</string>
+    <string name="confirm_delete_allwappush">"Alle wap-pushberichten worden verwijderd."</string>
+    <string name="confirm_delete_selected_wappush">"Geselecteerde wap-pushberichten worden verwijderd."</string>
+    <string name="menu_delete_allwappush">Alles verwijderen</string>
+    <string name="duplicated_recipient">Dubbele ontvanger</string>
+
+<string name="ok">"OK"</string>
+    <string name="cancel">"Annuleren"</string>
+    <string name="enable">"Inschakelen"</string>
+    <string name="disable">"Uitschakelen"</string>
+    <string name="cell_broadcast_setting">Cell broadcast-instellingen</string>
+    <string name="cb_menu_language">"Taal"</string>
+    <string name="cb_menu_add_channel">Kanaal toevoegen</string>
+    <string name="cb_menu_channel_list">Kanalenlijst</string>
+    <string name="cb_dialog_title_language_choice">Taal selecteren</string>
+    <string name="cb_channel_dialog_channel_name">Kanaalnaam(1-10 tekens)</string>
+    <string name="cb_channel_dialog_channel_number">Kanaalnummer (0 - 65534)</string>
+    <string name="cb_channel_dialog_channel_state">Het kanaal inschakelen</string>
+    <string name="cb_channel_dialog_edit_channel">Kanaal bewerken</string>
+    <string name="cb_menu_edit">"Bewerken"</string>
+    <string name="cb_menu_delete">"Delete"</string>
+    <string name="cb_error_channel_num">Kanaalnummer invoeren (0 - 65534).</string>
+    <string name="cb_error_channel_name">Onjuiste lengte kanaalnaam (1-10 tekens).</string>
+    <string name="cb_error_language_select">Selecteer minstens één taal.</string>
+    <string name="cb_error_channel_id_exist">De kanaal-ID bestaat.</string>
+    <string name="cb_all_languages">Alle talen</string>
+    <string name="cb_default_new_channel_name">Nieuw kanaal</string>
+    <string name="sum_cell_broadcast_control_on">Cell broadcast inschakelen</string>
+    <string name="sum_cell_broadcast_control_off">Cell broadcast uitschakelen</string>
+    <string name="sum_cell_broadcast_setting">Taal- en kanaalinstelling voor cell broadcast</string>
+    <string name="close_dialog">OK</string>
+    <string name="updating_title">"Oproepinstellingen"</string>
+    <string name="error_updating_title">"Fout met oproepinstellingen"</string>
+    <string name="reading_settings">"Instellingen lezen..."</string>
+    <string name="updating_settings">"Instellingen bijwerken..."</string>
+    <string name="reverting_settings">"Instellingen terugzetten..."</string>
+    <string name="exception_error">"Netwerk- of SIM-kaartfout."</string>
+    <string name="no_sim">SIM-kaart %d is niet geplaatst.</string>
+    <string name="sms_not_ready">SMS-module is bezig met initialiseren. Een ogenblik…</string>
+    <string name="label_full_name">Naam</string>
+    <string name="label_phone">Telefoon</string>
+    <string name="label_email">"E-mail"</string>
+    <string name="label_postal">"Adres"</string>
+    <string name="label_organization">"Organisatie"</string>
+    <string name="label_im">"Chat"</string>
+    <string name="label_website">Website</string>
+    <string name="label_sip_address">"Internetoproep"</string>
+    <string name="label_nick_name">"Bijnaam"</string>
+    <string name="label_notes">"Opmerkingen"</string>
+    <string name="label_event">"Afspraken"</string>
+    <string name="search_time_period_label">Periode</string>
+    <string name="done_text">"Gereed"</string>
+    <string-array name="language_list_values" translatable="false">
+        <item>Alle talen</item>
+        <item>Duits</item>
+        <item>Engels</item>
+        <item>Italiaans</item>
+        <item>Frans</item>
+        <item>Spaans</item>
+        <item>Nederlands</item>
+        <item>Zweeds</item>
+        <item>Deens</item>
+        <item>Portugees</item>
+        <item>Fins</item>
+        <item>Noors</item>
+        <item>Grieks</item>
+        <item>Turks</item>
+        <item>Hongaars</item>
+        <item>Pools</item>
+        <item>Overig</item>
+        <item>Tsjechisch</item>
+        <item>Hebreeuws</item>
+        <item>Arabisch</item>
+        <item>Russisch</item>
+        <item>Ijslands</item>
+    </string-array>
+    <string name="add_duplicate_recipients">Dubbele ontvanger</string>
+
+    <!-- begin of mwi -->
+    <string name="mwi_title">Gesproken berichten</string>
+    <string name="type_voice_msg">Gesproken bericht </string>
+    <string name="type_video_msg">Videobericht</string>
+    <string name="type_fax_msg">Fasbericht</string>
+    <string name="type_text_msg">"Sms"</string>
+    <string name="priority_urgent">Dringend</string>
+    <string name="date_label">Datum:\u0020</string>
+    <string name="message_id_label">Bericht-ID:\u0020</string>
+    <string name="voice_message_count_notification"><xliff:g id="number" example="3">%1$s</xliff:g> nieuwe gesproken berichten</string>
+    <string name="confirm_delete_allmwi">"Alle gesproken berichten worden verwijderd."</string>
+    <string name="confirm_delete_selected_mwi">"De geselecteerde gesproken berichten worden verwijderd."</string>
+    <!-- end of mwi -->
+
+    <string name="download_disabled_toast">Downloaden mislukt. Geen standaard SMS-app.</string>
+    <string name="adding_wallpaper_title">Achtergrond opslaan…</string>
+    <string name="sms_priority_setting">UIM-prioriteit</string>
+    <string name="sms_priority_Interactive">Interactief</string>
+    <string name="sms_priority_Urgent">Dringend</string>
+    <string name="sms_priority_Emergency">Noodgeval</string>
+    <string name="empty_sim_name">SIM-sleuf <xliff:g id="subId" example="2">%1$d</xliff:g></string>
+
+    <string name="drm_not_support">Tegen kopiëren beveiligde inhoud wordt niet ondersteund door MMS.</string>
+    <string name="user_has_no_premission">De gebruiker mag SMS niet gebruiken</string>
+    <string name="wfc_no_cellular_network">Geen mobiel netwerk</string>
+    <string name="wfc_connect_to_available_wifi">Verbinding maken met beschikbare Wi-Fi om berichten te sturen</string>
+    <string name="wfc_notification_title">Verbinding maken met Wi-Fi om berichten te sturen</string>
+    <string name="ct_om_switch_notification"><xliff:g id="op1">%s</xliff:g> is tijdelijk buiten werking, en elk standaard gesprek, SMS, gegevens op  <xliff:g id="op2">%s</xliff:g> zal worden veranderd in <xliff:g id="op3">%s</xliff:g>.</string>
+    <string name="can_not_switch_account_during_call">Kantijdenseengespreknietwisselennaarvoorkeurs-SIMvoorSMS-berichten.</string>
+    <string name="can_not_switch_account_temporarily">Kanvoorkeurs-SIMniettijdelijkschakelenvoorSMS.</string>
+    <string name="omh_exceed_message_size_limitation">R-UIMlimietberichtgroottebereikt</string>
+    <string name="omh_failed_to_add_image">Limiet grootte R-UIM-bericht bereikt, verwijder een aantal onderdelen.</string>
+    <string name="missing_required_permission">Toestemming geweigerd. U kunt dit wijzigen in Instellingen &gt; Apps.</string>
+    <string name="manage_card_msg_title">UIM/SIM-kaartberichten beheren</string>
+    <string name="manage_card_msg_summary">Berichten beheren die zijn opgeslagen op uw UIM/SIM-kaart</string>
+    <string name="disable_delivery_report">Tijdens roamen is inschakelen niet mogelijk.</string>
+    <string name="fore_service_notify_title">Berichten overbrengen</string>
+    <string name="fore_service_notify_content">Er worden berichten overgebracht.</string>
+    <string name="smart_req_mms_indicator">MMS is niet toegestaan, probeer het nogmaals met SMS.</string>
+</resources>

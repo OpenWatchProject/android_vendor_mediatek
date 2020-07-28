@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    id="Gallery2Raw"
+    name="Gallery2Raw"
+    version="1"
+    xmlns="http://www.plugin.com"
+    xsi:schemaLocation="http://www.plugin.com ../../../plugin/assets/plugin.xsd" >
+
+    <extension
+        id="RawMember"
+        name="Show indicator for raw image"
+        class="com.mediatek.galleryraw.RawMember"
+        plugin-id="Gallery2Root"
+        point-id="MediaMember" >
+    </extension>
+
+    <extension
+        id="RawAlbumSlotRenderer"
+        name="Show raw icon for raw image at album slot view"
+        class="com.mediatek.galleryraw.RawAlbumSlotRenderer"
+        plugin-id="Gallery2Root"
+        point-id="IAlbumSlotRenderer" >
+    </extension>
+
+</plugin>

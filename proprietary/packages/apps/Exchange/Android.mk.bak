@@ -1,0 +1,67 @@
+#
+# Copyright (C) 2014 MediaTek Inc.
+# Modification based on code covered by the mentioned copyright
+# and/or permission notice(s).
+#
+# Copyright 2008, The Android Open Source Project
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+ifneq ($(strip $(MTK_A1_FEATURE)),yes)
+
+LOCAL_PATH:= $(call my-dir)
+include $(CLEAR_VARS)
+
+#
+# Exchange2
+#
+LOCAL_MODULE_TAGS := optional
+
+# Include res dir from emailcommon
+emailcommon_dir := $(PWD)/vendor/mediatek/proprietary/packages/apps/Email/emailcommon
+res_dir := res
+
+LOCAL_RESOURCE_DIR := $(addprefix $(LOCAL_PATH)/, $(res_dir))
+LOCAL_RESOURCE_DIR +=$(emailcommon_dir)/res
+
+LOCAL_AAPT_FLAGS := --auto-add-overlay
+LOCAL_AAPT_FLAGS += --extra-packages com.android.emailcommon
+
+LOCAL_SRC_FILES := $(call all-java-files-under, src)
+LOCAL_SRC_FILES += $(call all-java-files-under, build/src)
+
+LOCAL_STATIC_JAVA_LIBRARIES := android-common com.android.emailcommon.mtk
+LOCAL_STATIC_JAVA_LIBRARIES += calendar-common
+LOCAL_STATIC_JAVA_LIBRARIES += android-support-v4
+
+# M: add java library org.apache.http.legacy.boot
+LOCAL_JAVA_LIBRARIES := org.apache.http.legacy.boot
+LOCAL_PRIVATE_PLATFORM_APIS := true
+LOCAL_PACKAGE_NAME := Exchange2
+LOCAL_OVERRIDES_PACKAGES := Exchange
+
+LOCAL_PROGUARD_FLAG_FILES := proguard.flags
+
+# M: For read/write secondary storage
+LOCAL_CERTIFICATE := platform
+LOCAL_EMMA_COVERAGE_FILTER += +com.android.exchange.*
+
+LOCAL_PROPRIETARY_MODULE := false
+LOCAL_MODULE_OWNER := mtk
+
+include $(BUILD_PACKAGE)
+
+# additionally, build unit tests in a separate .apk
+include $(call all-makefiles-under,$(LOCAL_PATH))
+
+endif

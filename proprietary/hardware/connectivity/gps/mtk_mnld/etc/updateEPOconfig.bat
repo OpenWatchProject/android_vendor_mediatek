@@ -1,0 +1,1 @@
+adb push gps.conf /data/vendor/gps/gps.conf

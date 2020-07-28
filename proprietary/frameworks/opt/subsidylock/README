@@ -1,0 +1,28 @@
+Library of MTK telephony extension interfaces. These interfaces extends the
+original interface with MSIM functionality.
+
+This library is pre-built by MediaTek internal.
+
+
+WHAT IT DOES?
+=============
+libsubsidylock shared library contains Mediatek developed OEM layer for RJIL
+remote sim lock feature. SLC module can use these interfaces to communicate
+with modem side.
+
+HOW IT WAS BUILT?
+==================
+It needs the following library from AOSP:
+1. N/A
+
+and the following libs from MediaTek:
+1. N/A
+
+HOW TO USE IT?
+==============
+We provide two interfaces as following:
+1. update sim lock blob.
+2. get modem status.
+Applications can call related interface to finish their requirement.
+
+All the source code of this library were written by MediaTek co..

@@ -1,0 +1,9 @@
+service vendor.muxreport-daemon /vendor/bin/muxreport
+    class core
+    user radio
+    group radio cache inet misc
+    disabled
+    oneshot
+
+on property:vendor.ril.muxreport=1
+    start vendor.muxreport-daemon

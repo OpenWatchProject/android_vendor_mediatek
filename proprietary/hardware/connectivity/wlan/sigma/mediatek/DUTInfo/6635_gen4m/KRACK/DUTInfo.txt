@@ -1,0 +1,50 @@
+#$! File Type: TScript
+#
+# Copyright (c) 2017 Wi-Fi Alliance
+# 
+# 
+# THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES 
+# WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF 
+# MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY 
+# SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER 
+# RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT,
+# NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE
+# USE OR PERFORMANCE OF THIS SOFTWARE.
+#
+#
+# Description  : This file hold all CAPI commands used for specific test process
+#                as per testplan. It is part of test operation, and may send
+#                command to dut also to the testbed device as per testplan
+#                requirement.
+# Note         :  
+#                
+# Program      : SVD
+# Version      : 0.0.1
+# Release date : Nov, 2017
+#  
+############################################################################ZZZ
+
+#######################################################################
+
+## THIS TEST DOES NOT USE DUTINFO... PLEASE IGNORE UNLESS DUT SUPPORTS WTS...
+
+#### Wi-Fi Test Suite Control Agent Support on DUT ########
+
+# 1-If Wi-Fi Test Suite Control Agent is supported by DUT
+# 0-If not supported by DUT.
+
+define!$WTS_ControlAgent_Support!0!
+
+
+
+######### DUT Information (Default) #########################
+
+# DUTType : WPA2-Personal or WPA2-Enterprise
+DUTType!WPA2-Personal!
+
+#DUT Category : c1 or c2 or c3 if device is WPA2-Enterprise
+DUTCategory!c1!
+
+# DUT Band : ABG or BG or B (B only) or ABGN or GN or AC
+DUTBand!AC!
+

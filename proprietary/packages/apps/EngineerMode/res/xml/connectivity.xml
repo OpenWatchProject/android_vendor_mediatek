@@ -1,0 +1,71 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Bluetooth -->
+    <Preference android:key="bluetooth" android:title="@string/Bluetooth"
+        android:persistent="false">
+        <intent android:action="android.intent.action.MAIN"
+            android:targetPackage="com.mediatek.engineermode"
+            android:targetClass="com.mediatek.engineermode.bluetooth.BtList" />
+    </Preference>
+    <!-- Bluetooth Test Tool -->
+    <Preference android:key="bt_test_tool" android:title="@string/bt_test_tool"
+        android:persistent="false">
+        <intent android:action="android.intent.action.MAIN"
+            android:targetPackage="com.mediatek.engineermode"
+            android:targetClass="com.mediatek.engineermode.bluetooth.BtTestTool" />
+    </Preference>
+    <!-- CDS Information -->
+    <Preference android:key="cds_information" android:title="@string/cds_information"
+        android:persistent="false">
+        <intent android:action="android.intent.action.MAIN"
+            android:targetPackage="com.mediatek.connectivity"
+            android:targetClass="com.mediatek.connectivity.CdsInfoActivity" />
+    </Preference>
+    <!-- Connsys Patch Information -->
+    <Preference android:key="connsys_patch_info" android:title="@string/connsys_patch_info"
+        android:persistent="false">
+        <intent android:action="android.intent.action.MAIN"
+            android:targetPackage="com.mediatek.engineermode"
+            android:targetClass="com.mediatek.engineermode.connsyspatchinfo.ConnsysPatchInfoActivity" />
+    </Preference>
+    <!-- FM Receiver -->
+    <Preference android:key="fm_receiver" android:title="@string/fm_receiver"
+        android:persistent="false">
+        <intent android:action="android.intent.action.MAIN"
+            android:targetPackage="com.android.fmradio" android:targetClass="com.android.fmradio.FmEmActivity" />
+    </Preference>
+    <!-- FM Transmitter -->
+    <Preference android:key="fm_transmitter" android:title="@string/fm_transmitter"
+        android:persistent="false">
+        <intent android:action="android.intent.action.MAIN"
+            android:targetPackage="com.mediatek.FMTransmitter"
+            android:targetClass="com.mediatek.FMTransmitter.FMTxEMActivity" />
+    </Preference>
+    <!-- NFC(STMicro) -->
+    <Preference android:key="nfc_st" android:title="@string/nfc_st"
+        android:persistent="false">
+        <intent android:action="android.intent.action.MAIN"
+            android:targetPackage="com.mediatek.engineermode"
+            android:targetClass="com.mediatek.engineermode.hqanfc.NfcMainPage" />
+    </Preference>
+    <!-- WiFi -->
+    <Preference android:key="wifi" android:title="@string/wifi"
+        android:persistent="false">
+        <intent android:action="android.intent.action.MAIN"
+            android:targetPackage="com.mediatek.engineermode"
+            android:targetClass="com.mediatek.engineermode.wifi.WiFi" />
+    </Preference>
+    <!-- WiFi CTIA -->
+    <Preference android:key="wifi_ctia" android:title="@string/wifi_ctia"
+        android:persistent="false">
+        <intent android:action="android.intent.action.MAIN"
+            android:targetPackage="com.mediatek.engineermode"
+            android:targetClass="com.mediatek.engineermode.wifi.WifiTestSetting" />
+    </Preference>
+    <!-- WiFi Display -->
+    <Preference android:key="wfd_settings" android:title="@string/wfd_settings"
+        android:persistent="false">
+        <intent android:action="android.intent.action.MAIN"
+            android:targetPackage="com.mediatek.engineermode"
+            android:targetClass="com.mediatek.engineermode.wfdsettings.WfdList" />
+    </Preference>
+</PreferenceScreen>

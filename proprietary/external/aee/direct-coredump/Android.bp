@@ -1,0 +1,9 @@
+cc_library_shared {
+    name: "libdirect-coredump",
+    vendor_available: true,
+    srcs: ["direct-coredump.c"],
+    shared_libs: [
+        "libcutils",
+        "libdl",
+    ],
+}

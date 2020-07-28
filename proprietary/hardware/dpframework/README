@@ -1,0 +1,39 @@
+The library 'libdpframework.so' is a proprietary library.
+This library is pre-built by MediaTek internally.
+
+
+WHAT IT DOES?
+=============
+
+libdpframework.so is the user interface of MediaTek hardware accelerator for image resizing, rotation, and color space transform.
+It gets requests from multi-media services and HW composer, and it sends control commands to cmdq kernel driver.
+
+
+HOW IT WAS BUILT?
+==================
+
+It needs the following library from AOSP:
+1.  libutils.so
+2.  libion.so
+3.  libcutils.so
+4.  libsync.so
+5.  libdl.so
+6.  libbinder.so
+
+and the following libs from MediaTek:
+1.  libion_mtk.so
+2.  libm4u.so
+3.  libgralloc_extra.so
+4.  libpqservice.so
+5.  libpq_prot.so
+
+All source/dependency modules of this module are already put in
+'vendor/mediatek/libs' folder.
+
+
+HOW TO USE IT?
+==============
+
+This library is used by mtkcam, libJpgDecPipe, and MediaTek hwcomposer, to do image processing and video enhancement.
+Mostly applications will use this library via those modules, which are all under HAL.
+

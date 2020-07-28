@@ -1,0 +1,16 @@
+#
+# volte_uce_ua specific system properties
+#
+#on property:sys.boot_completed=1
+#        start volte_uce_ua
+
+#
+# volte_uce_ua specific system service and socket information
+#
+#service volte_uce_ua /vendor/bin/volte_uce_ua
+#    class hal
+#    socket volte_uce stream 666 root system
+#    user system
+#    group system log inet radio
+#    disabled
+

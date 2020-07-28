@@ -1,0 +1,30 @@
+This module creates the MDMI (Modem Diagnostic Monitoring Interface) shared
+library for MDMI commands.
+
+This library is pre-built by MediaTek internally.
+
+
+WHAT IT DOES?
+=============
+libVzw_mdmi_commands.so invokes MDMI commands.
+
+
+HOW IT WAS BUILT?
+==================
+
+It needs the following library from AOSP:
+1.  libcutils.so
+
+and the following libs from MediaTek:
+1.  libmdmi-core.so
+
+All source/dependency modules of this module are already put in
+'vendor/mediatek/libs' folder.
+
+HOW TO USE IT?
+==============
+
+The libmdmi-device.so library should only be used by the authorized test apk.
+(vendor/mediatek/proprietary/framework/opt/mdm/libmdmi/libmdmi_commands).
+
+The source code for this library is written by MediaTek.

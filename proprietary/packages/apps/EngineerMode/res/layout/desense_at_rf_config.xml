@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+    <LinearLayout
+        android:id="@+id/gsmCategory"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="3pt"
+            android:textSize="8pt"
+            android:text="@string/rf_desense_tx_test_gsm" >
+        </TextView>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="2pt"
+            android:layout_marginLeft="3pt"
+            android:background="#FF909090">
+        </TextView>
+        <ListView
+            android:id="@+id/desense_at_gsm_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    
+    <LinearLayout
+        android:id="@+id/tddCategory"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="3pt"
+            android:textSize="8pt"
+            android:text="@string/rf_desense_tx_test_td" >
+        </TextView>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="2pt"
+            android:layout_marginLeft="3pt"
+            android:background="#FF909090">
+        </TextView>
+        <ListView
+            android:id="@+id/desense_at_tdd_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout> 
+    
+    <LinearLayout
+        android:id="@+id/fddCategory"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="3pt"
+            android:textSize="8pt"
+            android:text="@string/rf_desense_tx_test_fd" >
+        </TextView>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="2pt"
+            android:layout_marginLeft="3pt"
+            android:background="#FF909090">
+        </TextView>            
+        <ListView
+            android:id="@+id/desense_at_fdd_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/cdmaCategory"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="3pt"
+            android:textSize="8pt"
+            android:text="@string/rf_desense_tx_test_cdma" >
+        </TextView>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="2pt"
+            android:layout_marginLeft="3pt"
+            android:background="#FF909090">
+        </TextView>             
+        <ListView
+            android:id="@+id/desense_at_cdma_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    
+    <LinearLayout
+        android:id="@+id/lteCategory"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="3pt"
+            android:textSize="8pt"
+            android:text="@string/desense_at_lte" >
+        </TextView>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="2pt"
+            android:layout_marginLeft="3pt"
+            android:background="#FF909090">
+        </TextView>             
+        <ListView
+            android:id="@+id/desense_at_lte_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    </LinearLayout>
+</ScrollView>

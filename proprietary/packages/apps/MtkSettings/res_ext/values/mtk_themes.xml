@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+
+    <!-- SIM Settings start -->
+    <style name="Theme.AlertDialog.Base.SIM" parent="@style/Theme.AppCompat.DayNight.Dialog.Alert">
+        <item name="colorAccent">@*android:color/accent_device_default_light</item>
+    </style>
+
+    <style name="Theme.AlertDialog.SIM" parent="Theme.AlertDialog.Base.SIM">
+        <item name="android:windowSoftInputMode">adjustResize</item>
+
+        <!-- Redefine the ActionBar style for contentInsetStart -->
+        <item name="android:actionBarStyle">@style/Widget.ActionBar</item>
+
+        <!-- copied from Theme.DeviceDefault.Dialog.Alert -->
+        <item name="dialogCornerRadius">@*android:dimen/config_dialogCornerRadius</item>
+        <item name="android:windowTitleStyle">@*android:style/DialogWindowTitle.DeviceDefault</item>
+        <item name="android:textAppearanceMedium">@style/TextAppearance.DialogMessage</item>
+        <item name="buttonBarButtonStyle">@*android:style/Widget.DeviceDefault.Button.ButtonBar.AlertDialog</item>
+    </style>
+    <!-- SIM Settings end -->
+
+</resources>

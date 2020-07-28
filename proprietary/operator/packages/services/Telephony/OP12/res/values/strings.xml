@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--* Copyright Statement:
+ *
+ * This software/firmware and related documentation ("MediaTek Software") are
+ * protected under relevant copyright laws. The information contained herein
+ * is confidential and proprietary to MediaTek Inc. and/or its licensors.
+ * Without the prior written permission of MediaTek inc. and/or its licensors,
+ * any reproduction, modification, use or disclosure of MediaTek Software,
+ * and information contained herein, in whole or in part, shall be strictly prohibited.
+ *
+ * MediaTek Inc. (C) 2017. All rights reserved.
+ *
+ * BY OPENING THIS FILE, RECEIVER HEREBY UNEQUIVOCALLY ACKNOWLEDGES AND AGREES
+ * THAT THE SOFTWARE/FIRMWARE AND ITS DOCUMENTATIONS ("MEDIATEK SOFTWARE")
+ * RECEIVED FROM MEDIATEK AND/OR ITS REPRESENTATIVES ARE PROVIDED TO RECEIVER ON
+ * AN "AS-IS" BASIS ONLY. MEDIATEK EXPRESSLY DISCLAIMS ANY AND ALL WARRANTIES,
+ * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE OR NONINFRINGEMENT.
+ * NEITHER DOES MEDIATEK PROVIDE ANY WARRANTY WHATSOEVER WITH RESPECT TO THE
+ * SOFTWARE OF ANY THIRD PARTY WHICH MAY BE USED BY, INCORPORATED IN, OR
+ * SUPPLIED WITH THE MEDIATEK SOFTWARE, AND RECEIVER AGREES TO LOOK ONLY TO SUCH
+ * THIRD PARTY FOR ANY WARRANTY CLAIM RELATING THERETO. RECEIVER EXPRESSLY ACKNOWLEDGES
+ * THAT IT IS RECEIVER'S SOLE RESPONSIBILITY TO OBTAIN FROM ANY THIRD PARTY ALL PROPER LICENSES
+ * CONTAINED IN MEDIATEK SOFTWARE. MEDIATEK SHALL ALSO NOT BE RESPONSIBLE FOR ANY MEDIATEK
+ * SOFTWARE RELEASES MADE TO RECEIVER'S SPECIFICATION OR TO CONFORM TO A PARTICULAR
+ * STANDARD OR OPEN FORUM. RECEIVER'S SOLE AND EXCLUSIVE REMEDY AND MEDIATEK'S ENTIRE AND
+ * CUMULATIVE LIABILITY WITH RESPECT TO THE MEDIATEK SOFTWARE RELEASED HEREUNDER WILL BE,
+ * AT MEDIATEK'S OPTION, TO REVISE OR REPLACE THE MEDIATEK SOFTWARE AT ISSUE,
+ * OR REFUND ANY SOFTWARE LICENSE FEES OR SERVICE CHARGE PAID BY RECEIVER TO
+ * MEDIATEK FOR SUCH MEDIATEK SOFTWARE AT ISSUE.
+ *
+ * The following software/firmware and/or related documentation ("MediaTek Software")
+ * have been modified by MediaTek Inc. All revisions are subject to any receiver's
+ * applicable license agreements with MediaTek Inc.
+ */  -->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="app_label">Operator Plugin APK</string>
+
+    <!-- ECM: Dialog box message for exiting from the notifications screen start -->
+    <plurals name="alert_dialog_exit_ecm">
+        <!-- number of minutes is one -->
+        <item quantity="one">The phone will be in Emergency Callback mode for <xliff:g id="count">%s</xliff:g> minute. Do you want to exit now?</item>
+        <!-- number of minutes is not equal to one -->
+        <item quantity="other">The phone will be in Emergency Callback mode for <xliff:g id="count">%s</xliff:g> minutes. Do you want to exit now?</item>
+    </plurals>
+    <!-- ECM: Dialog box message for exiting from the notifications screen end -->
+
+    <!-- MTK Advanced Calling settings start -->
+    <string name="advanced_calling_title">Advanced Calling</string>
+    <string name="activate_advanced_calling_summary">Upgrade Service to HD Voice and Video calling</string>
+    <string name="activated_advanced_calling_summary">Service upgraded to HD Voice and Video calling</string>
+    <string name="advanced_calling_summary">Turn on/off HD Voice and Video Calling</string>
+    <string name="activate_advanced_calling">Activate Advanced Calling</string>
+    <string name="activate_wifi_calling_title">Activate Wi-Fi Calling</string>
+    <string name="wifi_calling_title">Wi-Fi Calling</string>
+    <string name="activate_wifi_calling_title_summary">Use Wi-Fi when the mobile network is not available</string>
+    <string name="turn_on_video">Video Calling is turned off.\nWould you like to turn it back on?\n</string>
+    <string name="advanced_settings_menu">Turn on Video Calling</string>
+    <string name="note">Note</string>
+    <string name="lvc_disable">Your Video Calling Service on your account was turned off.\n\nPlease contact customer care to have the service turned on.</string>
+    <string name="video_calling_title">Turn on video calling</string>
+    <string name="video_message_data">Mobile Data is turned off. Would you like to turn it back on?</string>
+    <string name="mobile_data_settings">Turn on Mobile Data</string>
+    <string name="volte_disable">Advanced Calling is turned off. Would you like to turn it back on?</string>
+    <string name="volte_calling_title">Turn on Advanced Calling</string>
+    <!-- MTK Advanced Calling settings end -->
+
+    <!-- Emergency SMS Callback Mode (SCM) start -->
+    <string name="notification_channel_scbm">Emergency SMS callback mode</string>
+    <string name="scm_exit_dialog">ScmExitDialog</string>
+    <!-- SCM: Status bar notification message -->
+    <string name="phone_entered_scm_text">Entered Emergency SMS Callback Mode</string>
+    <!-- SCM: Notification title -->
+    <string name="phone_in_scm_notification_title">Emergency SMS Callback Mode</string>
+    <!-- SCM: Notification body -->
+    <string name="phone_in_scm_call_notification_text">Data connection disabled</string>
+    <!-- SCM: Displays the time when SCM will end, Example: "No Data Connection until 10:45 AM" -->
+    <string name="phone_in_scm_notification_complete_time">No data connection until <xliff:g id="completeTime">%s</xliff:g></string>
+    <!-- SCM: Dialog box message for exiting from the notifications screen -->
+
+    <!-- SCM: Dialog box message while in emergency call -->
+    <string name="alert_dialog_in_scm_call">The selected action isn\'t available while in an emergency call.</string>
+    <!-- SCM: Progress text -->
+    <string name="progress_dialog_exiting_scm">Exiting Emergency SMS Callback mode</string>
+    <!-- SCM: SCM exit dialog choice -->
+    <string name="alert_dialog_yes">Yes</string>
+    <!-- SCM: SCM exit dialog choice -->
+    <string name="alert_dialog_no">No</string>
+    <!-- SCM: SCM exit dialog choice -->
+    <string name="alert_dialog_dismiss">Dismiss</string>
+    <!-- Emergency SMS Callback Mode (SCBM) -->
+    <string name="scbm_exit_dialog">ScmExitDialog</string>
+
+    <!-- SCM: Dialog box message for exiting from the notifications screen start -->
+    <plurals name="alert_dialog_exit_scm">
+        <!-- number of minutes is one -->
+        <item quantity="one">The phone will be in Emergency SMS Callback mode for <xliff:g id="count">%s</xliff:g> minute. Do you want to exit now?</item>
+        <!-- number of minutes is not equal to one -->
+        <item quantity="other">The phone will be in Emergency SMS Callback mode for <xliff:g id="count">%s</xliff:g> minutes. Do you want to exit now?</item>
+    </plurals>
+    <!-- SCM: Dialog box message for exiting from the notifications screen end -->
+    <!-- Emergency SMS Callback Mode (SCM) end -->
+</resources>

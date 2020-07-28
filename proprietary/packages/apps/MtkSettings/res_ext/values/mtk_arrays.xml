@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+**
+** Copyright 2007 The Android Open Source Project
+**
+** Licensed under the Apache License, Version 2.0 (the "License");
+** you may not use this file except in compliance with the License.
+** You may obtain a copy of the License at
+**
+**     http://www.apache.org/licenses/LICENSE-2.0
+**
+** Unless required by applicable law or agreed to in writing, software
+** distributed under the License is distributed on an "AS IS" BASIS,
+** WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+** See the License for the specific language governing permissions and
+** limitations under the License.
+*/
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <!-- MTK HDMI Settings start -->
+    <string-array name="hdmi_video_resolution_entries" translatable="false">
+        <item>480p</item>
+        <item>576p</item>
+        <item>720p_60Hz</item>
+        <item>720p_50Hz</item>
+        <item>1080i_60Hz</item>
+        <item>1080i_50Hz</item>
+        <item>1080p_30Hz</item>
+        <item>1080p_25Hz</item>
+        <item>1080p_24Hz</item>
+        <item>1080p_23Hz</item>
+        <item>1080p_29Hz</item>
+        <item>1080p_60Hz</item>
+        <item>1080p_50Hz</item>
+        <item>720p3d_60Hz</item>
+        <item>720p3d_50Hz</item>
+        <item>1080i3d_60Hz</item>
+        <item>1080i3d_50Hz</item>
+        <item>1080p3d_24Hz</item>
+        <item>1080p3d_23Hz</item>
+        <item>2160p_30Hz</item>
+        <item>2160p_24Hz</item>
+    </string-array>
+
+    <string-array name="hdmi_video_resolution_entry_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+        <item>13</item>
+        <item>14</item>
+        <item>15</item>
+        <item>16</item>
+        <item>17</item>
+        <item>18</item>
+        <item>19</item>
+        <item>20</item>
+    </string-array>
+
+    <string-array name="hdmi_box_video_resolution_entries" translatable="false">
+        <item>480I_60Hz</item>
+        <item>576I_50Hz</item>
+        <item>480P_60Hz</item>
+        <item>576P_50Hz</item>
+        <item>720P_60Hz</item>
+        <item>720P_50Hz</item>
+        <item>1080I_60Hz</item>
+        <item>1080I_50Hz</item>
+        <item>1080P_30Hz</item>
+        <item>1080P_25Hz</item>
+        <item>1080P_24Hz</item>
+        <item>1080P_23Hz</item>
+        <item>1080P_29Hz</item>
+        <item>1080P_60Hz</item>
+        <item>1080P_50Hz</item>
+        <item>720P3D_60Hz</item>
+        <item>720P3D_50Hz</item>
+        <item>1080I3D_60Hz</item>
+        <item>1080I3D_50Hz</item>
+        <item>1080P3D_24Hz</item>
+        <item>1080P3D_23Hz</item>
+        <item>2160P23_976Hz</item>
+        <item>2160P_24Hz</item>
+        <item>2160P_25Hz</item>
+        <item>2160P19_97Hz</item>
+        <item>2160P_30HZ</item>
+        <item>2161P_24Hz</item>
+        <item>2160P_60HZ</item>
+        <item>2160P_50HZ</item>
+        <item>2161P_60Hz</item>
+        <item>2161P_50HZ</item>
+    </string-array>
+
+    <string-array name="hdmi_box_video_resolution_entry_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+        <item>13</item>
+        <item>14</item>
+        <item>15</item>
+        <item>16</item>
+        <item>17</item>
+        <item>18</item>
+        <item>19</item>
+        <item>20</item>
+        <item>21</item>
+        <item>22</item>
+        <item>23</item>
+        <item>24</item>
+        <item>25</item>
+        <item>26</item>
+        <item>27</item>
+        <item>28</item>
+        <item>29</item>
+        <item>30</item>
+    </string-array>
+
+    <string-array name="hdmi_video_scale_entries" translatable="false">
+        <item>@string/hdmi_scale_no_scale</item>
+        <item>@string/hdmi_scale_scale_down</item>
+        <item>@string/hdmi_scale_scale_down</item>
+    </string-array>
+
+    <string-array name="hdmi_video_scale_entry_values" translatable="false">
+        <item>0</item>
+        <item>2</item>
+        <item>4</item>
+    </string-array>
+
+    <string-array name="hdmi_audio_output_entries" translatable="false">
+        <item>@string/hdmi_audio_output_stereo</item>
+        <item>@string/hdmi_audio_output_multi_channel</item>
+    </string-array>
+
+    <string-array name="hdmi_audio_output_entry_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+    </string-array>
+    <!-- MTK HDMI Settings end -->
+    
+    <!-- MTK Feature auto time list start -->
+    <string-array name="auto_time_entries">
+        <item>Use network-provided time</item>
+        <item>Use GPS-provided time</item>
+        <item>Off</item>
+    </string-array>
+
+    <string-array name="auto_time_entries_value" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+    <!-- MTK Feature auto time list end -->
+
+    <!-- MTK WIFI Settings EAP multi sim start -->
+    <string-array name="sim_slot">
+        <item>Sim Slot 1</item>
+        <item>Sim Slot 2</item>
+    </string-array>
+    <!-- MTK WIFI Settings EAP multi sim end -->
+
+    <!-- MTK WIFI Settings WAPI start -->
+    <!-- Match this with the constants in AccessPoint. --> <skip />
+    <!-- Wi-Fi security choices used when manually added a Wi-Fi network -->
+    <string-array name="wapi_security">
+        <!-- The Wi-Fi network does not have any security. -->
+        <item>@string/wifi_security_none</item>
+        <!-- Do not translate. -->
+        <item>@string/wifi_security_wep</item>
+        <!-- Do not translate. -->
+        <item>@string/wifi_security_psk_generic</item>
+        <!-- Do not translate. -->
+        <item>@string/wifi_security_eap</item>
+        <!-- Do not translate. -->
+        <item>WAPI PSK</item>
+        <!-- Do not translate. -->
+        <item>@string/wifi_security_wapi_certificate</item>
+    </string-array>
+
+    <string-array name="wapi_only_security" translatable="false">
+        <item>@string/wifi_security_none</item>
+        <item>WAPI PSK</item>
+        <item>@string/wifi_security_wapi_certificate</item>
+    </string-array>
+    <!-- MTK WIFI Settings WAPI end -->
+
+    <!-- PLMN settings start -->
+    <string-array name="plmn_network_type_entries" translatable="false">
+        <item>2G</item>
+        <item>3G</item>
+        <item>4G</item>
+    </string-array>
+    <string-array name="plmn_network_type_values" translatable="false">
+        <item>1</item>
+        <item>4</item>
+        <item>8</item>
+    </string-array>
+    <!-- PLMN settings start -->
+
+    <!-- OP12 Verizon Wifi Settings start[SKIP COMMENT] -->
+    <string-array name="roaming_mode_choices">
+        <item>Prefer Other Cellular Networks(Roaming charges may apply)</item>
+        <item>Prefer Wi-Fi</item>
+    </string-array>
+
+    <string-array name="roaming_mode_values" translatable="false">
+        <item>"1"</item>
+        <item>"2"</item>
+    </string-array>
+    <!--OP12 Verizon Wifi Settings end[SKIP COMMENT] -->
+
+</resources>

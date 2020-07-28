@@ -1,0 +1,27 @@
+Library of MTK ViLTE features, controlling  downlink data path
+
+WHAT IT DOES?
+=============
+libsink.so control the downlink video playback
+
+HOW IT WAS BUILT?
+==================
+It needs the following library from AOSP:
+libcutils.so         
+libstagefright_foundation.so
+libutils.so
+libstagefright.so
+libbinder.so
+libmedia.so
+libutils.so
+
+and the following libs from MediaTek:
+
+libcomutils.so
+libvt_avsync.so
+
+
+HOW TO USE IT?
+==============
+used by the libimsma module to do the donwlink data process
+

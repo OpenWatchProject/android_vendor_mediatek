@@ -1,0 +1,790 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/info_layout" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="@string/antenna_diversity_3g" >
+        </TextView>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1dip"
+            android:background="#FFF39A1E" >
+        </View>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <ToggleButton
+                android:id="@+id/antenna_diversity_3g_prx"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:textOff="@string/antenna_diversity_prx"
+                android:textOn="@string/antenna_diversity_prx" >
+            </ToggleButton>
+
+            <ToggleButton
+                android:id="@+id/antenna_diversity_3g_drx"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:textOff="@string/antenna_diversity_drx"
+                android:textOn="@string/antenna_diversity_drx" >
+            </ToggleButton>
+
+            <ToggleButton
+                android:id="@+id/antenna_diversity_3g_prx_drx"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:textOff="@string/antenna_diversity_prx_drx"
+                android:textOn="@string/antenna_diversity_prx_drx" >
+            </ToggleButton>
+        </LinearLayout>
+
+        <TableLayout
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <TableRow
+                android:layout_marginTop="3dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+
+                    android:gravity="center" >
+                </TextView>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+
+                    android:gravity="center"
+                    android:text="@string/antenna_diversity_ant0" >
+                </TextView>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+
+                    android:gravity="center"
+                    android:text="@string/antenna_diversity_ant1" >
+                </TextView>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+
+                    android:gravity="center"
+                    android:text="@string/antenna_diversity_combined" >
+                </TextView>
+            </TableRow>
+
+            <TableRow
+                android:layout_marginTop="6dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:textColor="#FFFF0000"
+
+                    android:gravity="center"
+                    android:text="@string/antenna_diversity_rscp" >
+                </TextView>
+
+                <TextView
+                    android:id="@+id/antenna_diversity_rscp_ant0"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:textColor="#FFFF0000"
+
+                    android:gravity="center"
+                    android:text="@string/antenna_diversity_default" >
+                </TextView>
+
+                <TextView
+                    android:id="@+id/antenna_diversity_rscp_ant1"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:textColor="#FFFF0000"
+
+                    android:gravity="center"
+                    android:text="@string/antenna_diversity_default" >
+                </TextView>
+
+                <TextView
+                    android:id="@+id/antenna_diversity_rscp_combined"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:textColor="#FFFF0000"
+
+                    android:gravity="center"
+                    android:text="@string/antenna_diversity_default" >
+                </TextView>
+            </TableRow>
+
+            <TableRow
+                android:layout_marginTop="6dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:textColor="#FF00FF00"
+
+                    android:gravity="center"
+                    android:text="@string/antenna_diversity_pssi" >
+                </TextView>
+
+                <TextView
+                    android:id="@+id/antenna_diversity_pssi_ant0"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:textColor="#FF00FF00"
+
+                    android:gravity="center"
+                    android:text="@string/antenna_diversity_default" >
+                </TextView>
+
+                <TextView
+                    android:id="@+id/antenna_diversity_pssi_ant1"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:textColor="#FF00FF00"
+
+                    android:gravity="center"
+                    android:text="@string/antenna_diversity_default" >
+                </TextView>
+
+                <TextView
+                    android:id="@+id/antenna_diversity_pssi_combined"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:textColor="#FF00FF00"
+
+                    android:gravity="center"
+                    android:text="@string/antenna_diversity_default" >
+                </TextView>
+            </TableRow>
+        </TableLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+
+            android:text="@string/antenna_diversity_4g" >
+        </TextView>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1dip"
+            android:background="#FFF39A1E" >
+        </View>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <ToggleButton
+                android:id="@+id/antenna_diversity_4g_prx"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:textOff="@string/antenna_diversity_prx"
+                android:textOn="@string/antenna_diversity_prx" >
+            </ToggleButton>
+
+            <ToggleButton
+                android:id="@+id/antenna_diversity_4g_drx"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:textOff="@string/antenna_diversity_drx"
+                android:textOn="@string/antenna_diversity_drx" >
+            </ToggleButton>
+
+            <ToggleButton
+                android:id="@+id/antenna_diversity_4g_prx_drx"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:textOff="@string/antenna_diversity_prx_drx"
+                android:textOn="@string/antenna_diversity_prx_drx" >
+            </ToggleButton>
+        </LinearLayout>
+
+        <TableLayout
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <TableRow
+                android:layout_marginTop="3dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+
+                    android:gravity="center" >
+                </TextView>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+
+                    android:gravity="center"
+                    android:text="@string/antenna_diversity_ant0" >
+                </TextView>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+
+                    android:gravity="center"
+                    android:text="@string/antenna_diversity_ant1" >
+                </TextView>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+
+                    android:gravity="center"
+                    android:text="@string/antenna_diversity_combined" >
+                </TextView>
+            </TableRow>
+
+            <TableRow
+                android:layout_marginTop="6dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:textColor="#FFFF0000"
+
+                    android:gravity="center"
+                    android:text="@string/antenna_diversity_rsrp" >
+                </TextView>
+
+                <TextView
+                    android:id="@+id/antenna_diversity_rsrp_ant0"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:textColor="#FFFF0000"
+
+                    android:gravity="center"
+                    android:text="@string/antenna_diversity_default" >
+                </TextView>
+
+                <TextView
+                    android:id="@+id/antenna_diversity_rsrp_ant1"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:textColor="#FFFF0000"
+
+                    android:gravity="center"
+                    android:text="@string/antenna_diversity_default" >
+                </TextView>
+
+                <TextView
+                    android:id="@+id/antenna_diversity_rsrp_combined"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:textColor="#FFFF0000"
+
+                    android:gravity="center"
+                    android:text="@string/antenna_diversity_default" >
+                </TextView>
+            </TableRow>
+
+            <TableRow
+                android:layout_marginTop="6dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:textColor="#FF00FF00"
+
+                    android:gravity="center"
+                    android:text="@string/antenna_diversity_rsrq" >
+                </TextView>
+
+                <TextView
+                    android:id="@+id/antenna_diversity_rsrq_ant0"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:textColor="#FF00FF00"
+
+                    android:gravity="center"
+                    android:text="@string/antenna_diversity_default" >
+                </TextView>
+
+                <TextView
+                    android:id="@+id/antenna_diversity_rsrq_ant1"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:textColor="#FF00FF00"
+
+                    android:gravity="center"
+                    android:text="@string/antenna_diversity_default" >
+                </TextView>
+
+                <TextView
+                    android:id="@+id/antenna_diversity_rsrq_combined"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:textColor="#FF00FF00"
+
+                    android:gravity="center"
+                    android:text="@string/antenna_diversity_default" >
+                </TextView>
+            </TableRow>
+
+            <TableRow
+                android:layout_marginTop="6dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:textColor="#FF00FFFF"
+
+                    android:gravity="center"
+                    android:text="@string/antenna_diversity_rssi" >
+                </TextView>
+
+                <TextView
+                    android:id="@+id/antenna_diversity_rssi_ant0"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:textColor="#FF00FFFF"
+
+                    android:gravity="center"
+                    android:text="@string/antenna_diversity_default" >
+                </TextView>
+
+                <TextView
+                    android:id="@+id/antenna_diversity_rssi_ant1"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:textColor="#FF00FFFF"
+
+                    android:gravity="center"
+                    android:text="@string/antenna_diversity_default" >
+                </TextView>
+
+                <TextView
+                    android:id="@+id/antenna_diversity_rssi_combined"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:textColor="#FF00FFFF"
+
+                    android:gravity="center"
+                    android:text="@string/antenna_diversity_default" >
+                </TextView>
+            </TableRow>
+
+            <TableRow
+                android:layout_marginTop="6dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:textColor="#FFFFFF00"
+
+                    android:gravity="center"
+                    android:text="@string/antenna_diversity_sinr" >
+                </TextView>
+
+                <TextView
+                    android:id="@+id/antenna_diversity_sinr_ant0"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:textColor="#FFFFFF00"
+
+                    android:gravity="center"
+                    android:text="@string/antenna_diversity_default" >
+                </TextView>
+
+                <TextView
+                    android:id="@+id/antenna_diversity_sinr_ant1"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:textColor="#FFFFFF00"
+
+                    android:gravity="center"
+                    android:text="@string/antenna_diversity_default" >
+                </TextView>
+
+                <TextView
+                    android:id="@+id/antenna_diversity_sinr_combined"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:textColor="#FFFFFF00"
+
+                    android:gravity="center"
+                    android:text="@string/antenna_diversity_default" >
+                </TextView>
+            </TableRow>
+        </TableLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/antenna_diversity_1x" >
+        </TextView>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1dip"
+            android:background="#FFF39A1E" >
+        </View>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <ToggleButton
+                android:id="@+id/antenna_diversity_1x_prx"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:textOff="@string/antenna_diversity_prx"
+                android:textOn="@string/antenna_diversity_prx" >
+            </ToggleButton>
+
+            <ToggleButton
+                android:id="@+id/antenna_diversity_1x_drx"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:textOff="@string/antenna_diversity_drx"
+                android:textOn="@string/antenna_diversity_drx" >
+            </ToggleButton>
+
+            <ToggleButton
+                android:id="@+id/antenna_diversity_1x_prx_drx"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:textOff="@string/antenna_diversity_prx_drx"
+                android:textOn="@string/antenna_diversity_prx_drx" >
+            </ToggleButton>
+        </LinearLayout>
+
+        <TableLayout
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <TableRow
+                android:layout_marginTop="3dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+
+                    android:gravity="center" >
+                </TextView>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+
+                    android:gravity="center"
+                    android:text="@string/antenna_diversity_ant0" >
+                </TextView>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+
+                    android:gravity="center"
+                    android:text="@string/antenna_diversity_ant1" >
+                </TextView>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+
+                    android:gravity="center"
+                    android:text="@string/antenna_diversity_combined" >
+                </TextView>
+            </TableRow>
+
+            <TableRow
+                android:layout_marginTop="6dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:textColor="#FFFF0000"
+
+                    android:gravity="center"
+                    android:text="@string/antenna_diversity_rssi" >
+                </TextView>
+
+                <TextView
+                    android:id="@+id/antenna_diversity_1x_rssi_ant0"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:textColor="#FFFF0000"
+
+                    android:gravity="center"
+                    android:text="@string/antenna_diversity_default" >
+                </TextView>
+
+                <TextView
+                    android:id="@+id/antenna_diversity_1x_rssi_ant1"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:textColor="#FFFF0000"
+
+                    android:gravity="center"
+                    android:text="@string/antenna_diversity_default" >
+                </TextView>
+
+                <TextView
+                    android:id="@+id/antenna_diversity_1x_rssi_combined"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:textColor="#FFFF0000"
+
+                    android:gravity="center"
+                    android:text="@string/antenna_diversity_default" >
+                </TextView>
+            </TableRow>
+        </TableLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/antenna_diversity_evdo" >
+        </TextView>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1dip"
+            android:background="#FFF39A1E" >
+        </View>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <ToggleButton
+                android:id="@+id/antenna_diversity_evdo_prx"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:textOff="@string/antenna_diversity_prx"
+                android:textOn="@string/antenna_diversity_prx" >
+            </ToggleButton>
+
+            <ToggleButton
+                android:id="@+id/antenna_diversity_evdo_drx"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:textOff="@string/antenna_diversity_drx"
+                android:textOn="@string/antenna_diversity_drx" >
+            </ToggleButton>
+
+            <ToggleButton
+                android:id="@+id/antenna_diversity_evdo_prx_drx"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:textOff="@string/antenna_diversity_prx_drx"
+                android:textOn="@string/antenna_diversity_prx_drx" >
+            </ToggleButton>
+        </LinearLayout>
+
+        <TableLayout
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <TableRow
+                android:layout_marginTop="3dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+
+                    android:gravity="center" >
+                </TextView>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+
+                    android:gravity="center"
+                    android:text="@string/antenna_diversity_ant0" >
+                </TextView>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+
+                    android:gravity="center"
+                    android:text="@string/antenna_diversity_ant1" >
+                </TextView>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+
+                    android:gravity="center"
+                    android:text="@string/antenna_diversity_combined" >
+                </TextView>
+            </TableRow>
+
+            <TableRow
+                android:layout_marginTop="6dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:textColor="#FFFF0000"
+
+                    android:gravity="center"
+                    android:text="@string/antenna_diversity_rssi" >
+                </TextView>
+
+                <TextView
+                    android:id="@+id/antenna_diversity_evdo_rssi_ant0"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:textColor="#FFFF0000"
+
+                    android:gravity="center"
+                    android:text="@string/antenna_diversity_default" >
+                </TextView>
+
+                <TextView
+                    android:id="@+id/antenna_diversity_evdo_rssi_ant1"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:textColor="#FFFF0000"
+
+                    android:gravity="center"
+                    android:text="@string/antenna_diversity_default" >
+                </TextView>
+
+                <TextView
+                    android:id="@+id/antenna_diversity_evdo_rssi_combined"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:textColor="#FFFF0000"
+
+                    android:gravity="center"
+                    android:text="@string/antenna_diversity_default" >
+                </TextView>
+            </TableRow>
+        </TableLayout>
+    </LinearLayout>
+</ScrollView>

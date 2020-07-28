@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+ * Copyright (C) 2007-2008 Esmertec AG.
+ * Copyright (C) 2007-2008 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+--><resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+   <string name="alerts">Figyelmeztetések</string>
+    <string name="select_all">"Az összes kijelölése"</string>
+    <string name="unselect_all">"Az összes kijelölés törlése"</string>
+    <string name="delete">"Delete"</string>
+    <string name="select_cellbroadcasts">Vészhelyzet figyelmeztetés kiválasztása</string>
+    <plurals name="message_view_selected_message_count">
+        <item quantity="one"><xliff:g id="message_count" example="1">%d</xliff:g> kiválasztva</item>
+        <item quantity="other"><xliff:g id="message_count" example="9">%d</xliff:g> kiválasztva</item>
+    </plurals>
+    <plurals name="confirm_delete_broadcast">
+        <item quantity="one">1 kijelölt figyelmeztető üzenet törlésre kerül</item>
+        <item quantity="other"><xliff:g id="number" example="15">%1$s</xliff:g> kijelölt figyelmeztető üzenet törlésre kerül</item>
+    </plurals>
+    <string name="enable_cmas_presidential_threat_alerts_title">Elnöki riasztás mutatása</string>
+    <string name="enable_cmas_presidential_threat_alerts_summary">elnöki szintű riasztások megjelenítése</string>
+    <string name="enable_cmas_imminent_threat_alerts_title">Fenyegetésre vonatkozó figyelmeztetés</string>
+    <string name="enable_cmas_imminent_threat_alerts_summary">Életet és tulajdont fenyegető veszélyre való figyelmeztetés megjelenítése</string>
+    <string name="cmas_preview_alert_tone_title">Figyelmeztető hang tesztje</string>
+    <string name="cmas_preview_alert_tone_summary">A figyelmeztető hangjelzés tesztelése</string>
+    <string name="cmas_change_settings">Biztosan módosítani akarja a beállításokat?</string>
+    <string name="cmas_disable_cmas">Nem fog figyelmeztetést kapni, ha letiltja a híváskörzet-információkat.</string>
+    <string name="cmas_enable_cmas_failed">Sikertelen megnyitás.</string>
+    <string name="enable_repeat_alert_title">Figyelmeztetés ismétlése</string>
+    <string name="enable_repeat_alert_summary">A felhasználó emlékeztetése bizonyos időközönként az olvasatlan figyelmeztetésre</string>
+    <string name="enable_all_alert_title">Minden figyelmeztetés be</string>
+    <string name="enable_all_imminent_alerts_title">Minden fenyegető figyelmeztetésre vonatkozó üzenet</string>
+    <string name="enable_cell_broadcast_title">Vészhelyzeti figyelmeztetések</string>
+    <string name="alert_sound_volume">Riasztási hangerő</string>
+    <string name="alert_volume_summary">Riasztási hangerő beállítása</string>
+</resources>

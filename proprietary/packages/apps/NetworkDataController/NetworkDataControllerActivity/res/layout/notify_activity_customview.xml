@@ -1,0 +1,62 @@
+<com.mediatek.security.ManualLayoutFrame
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:clipChildren="false"
+    android:clipToPadding="false"
+    android:paddingBottom="@*android:dimen/floating_window_margin_bottom"
+    android:paddingLeft="@*android:dimen/floating_window_margin_left"
+    android:paddingRight="@*android:dimen/floating_window_margin_right"
+    android:paddingTop="@*android:dimen/floating_window_margin_top" >
+
+    <LinearLayout
+        android:id="@+id/dialog_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/dialog_background"
+        android:elevation="@*android:dimen/floating_window_z"
+        android:orientation="vertical" >
+
+        <include
+            android:id="@+id/content"
+            layout="@layout/notify_dialog_customview" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal" >
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:visibility="invisible" >
+            </Space>
+
+            <Button
+                android:id="@+id/permission_deny_button"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/deny_perm" >
+            </Button>
+
+            <Button
+                android:id="@+id/permission_allow_button"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/accept_perm" >
+            </Button>
+
+            <Button
+                android:id="@+id/permission_wifi_button"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/wifi_only" >
+            </Button>
+        </LinearLayout>
+    </LinearLayout>
+
+</com.mediatek.security.ManualLayoutFrame>

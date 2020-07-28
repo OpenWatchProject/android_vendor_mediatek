@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EccTable>
+    <!--
+        Configure emergency numbers for China Unicom(OP02) load. For the emergey numbers defined in
+        3GPP TS 22.101 (112/911 when SIM/USIM present and 112/911/000/08/110/118/119/999
+        when SIM/USIM not present) it will be configure in default emergency number source,
+        so no need to configure here if there is no special request for these numbers.
+
+        The attribute definition for tag EccEntry:
+        - Ecc: the emergnecy number
+        - Category: the service category (From 3GPP TS24.008)
+            - Bit 1 (1): Police
+            - Bit 2 (2): Ambulance
+            - Bit 3 (4): Fire Brigade
+            - Bit 4 (8): Marine Guard
+            - Bit 5 (16): Mountain Rescue
+            - Bit 6 (32): Manually initiated eCall
+            - Bit 7 (64): Automatically initiated eCall
+            - Bit 8 (128): is spare and set to "0"
+        - Condition: there are following values:
+            - 0: ecc only when no sim
+            - 1: ecc always
+            - 2: MMI will show ecc but send to nw as normal call
+        - Plmn: Operator PLMN which contains MCC+MNC.
+                Use FFF or FF for all operators under same country
+                Ex: 460 FFF means all operators in China
+    -->
+
+    <!-- Add for CT 2/3G network -->
+    <EccEntry Ecc="110" Category="0" Condition="1" Plmn="460 03"/>
+    <EccEntry Ecc="119" Category="0" Condition="1" Plmn="460 03"/>
+    <EccEntry Ecc="120" Category="0" Condition="1" Plmn="460 03"/>
+    <EccEntry Ecc="122" Category="0" Condition="1" Plmn="460 03"/>
+    <EccEntry Ecc="999" Category="0" Condition="1" Plmn="460 03"/>
+
+    <!-- Add for CT VOLTE requirement -->
+    <EccEntry Ecc="110" Category="1" Condition="1" Plmn="460 11"/>
+    <EccEntry Ecc="119" Category="4" Condition="1" Plmn="460 11"/>
+    <EccEntry Ecc="120" Category="2" Condition="1" Plmn="460 11"/>
+    <EccEntry Ecc="122" Category="8" Condition="1" Plmn="460 11"/>
+    <EccEntry Ecc="999" Category="0" Condition="1" Plmn="460 11"/>
+
+    <!-- China CTA emergency numbers for GSM operators -->
+    <EccEntry Ecc="110" Category="0" Condition="2"/>
+    <EccEntry Ecc="119" Category="0" Condition="2"/>
+    <EccEntry Ecc="120" Category="0" Condition="2"/>
+    <EccEntry Ecc="122" Category="0" Condition="2"/>
+    <!-- Support dial 999 under G+N/A case because CT network don't support
+         dial 999 without no CT SIM
+    -->
+    <EccEntry Ecc="999" Category="0" Condition="2"/>
+</EccTable>

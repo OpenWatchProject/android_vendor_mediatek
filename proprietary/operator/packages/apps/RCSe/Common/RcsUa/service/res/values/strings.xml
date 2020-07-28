@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--* Copyright Statement:
+ *
+ * This software/firmware and related documentation ("MediaTek Software") are
+ * protected under relevant copyright laws. The information contained herein
+ * is confidential and proprietary to MediaTek Inc. and/or its licensors.
+ * Without the prior written permission of MediaTek inc. and/or its licensors,
+ * any reproduction, modification, use or disclosure of MediaTek Software,
+ * and information contained herein, in whole or in part, shall be strictly prohibited.
+ *
+ * MediaTek Inc. (C) 2018. All rights reserved.
+ *
+ * BY OPENING THIS FILE, RECEIVER HEREBY UNEQUIVOCALLY ACKNOWLEDGES AND AGREES
+ * THAT THE SOFTWARE/FIRMWARE AND ITS DOCUMENTATIONS ("MEDIATEK SOFTWARE")
+ * RECEIVED FROM MEDIATEK AND/OR ITS REPRESENTATIVES ARE PROVIDED TO RECEIVER ON
+ * AN "AS-IS" BASIS ONLY. MEDIATEK EXPRESSLY DISCLAIMS ANY AND ALL WARRANTIES,
+ * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE OR NONINFRINGEMENT.
+ * NEITHER DOES MEDIATEK PROVIDE ANY WARRANTY WHATSOEVER WITH RESPECT TO THE
+ * SOFTWARE OF ANY THIRD PARTY WHICH MAY BE USED BY, INCORPORATED IN, OR
+ * SUPPLIED WITH THE MEDIATEK SOFTWARE, AND RECEIVER AGREES TO LOOK ONLY TO SUCH
+ * THIRD PARTY FOR ANY WARRANTY CLAIM RELATING THERETO. RECEIVER EXPRESSLY ACKNOWLEDGES
+ * THAT IT IS RECEIVER'S SOLE RESPONSIBILITY TO OBTAIN FROM ANY THIRD PARTY ALL PROPER LICENSES
+ * CONTAINED IN MEDIATEK SOFTWARE. MEDIATEK SHALL ALSO NOT BE RESPONSIBLE FOR ANY MEDIATEK
+ * SOFTWARE RELEASES MADE TO RECEIVER'S SPECIFICATION OR TO CONFORM TO A PARTICULAR
+ * STANDARD OR OPEN FORUM. RECEIVER'S SOLE AND EXCLUSIVE REMEDY AND MEDIATEK'S ENTIRE AND
+ * CUMULATIVE LIABILITY WITH RESPECT TO THE MEDIATEK SOFTWARE RELEASED HEREUNDER WILL BE,
+ * AT MEDIATEK'S OPTION, TO REVISE OR REPLACE THE MEDIATEK SOFTWARE AT ISSUE,
+ * OR REFUND ANY SOFTWARE LICENSE FEES OR SERVICE CHARGE PAID BY RECEIVER TO
+ * MEDIATEK FOR SUCH MEDIATEK SOFTWARE AT ISSUE.
+ *
+ * The following software/firmware and/or related documentation ("MediaTek Software")
+ * have been modified by MediaTek Inc. All revisions are subject to any receiver's
+ * applicable license agreements with MediaTek Inc.
+ */  -->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- Add by MTK: mtk optr mapping table in the form of
+         "start_mcc_mnc", "end mcc_mnc", "Optr number" -->
+    <string-array translatable="false" name="operator_list">
+        <!-- OP07 AT&T -->
+        <!-- United States -->
+        <item>310030, 310030, 07</item>
+        <item>310070, 310070, 07</item>
+        <item>310090, 310090, 07</item>
+        <item>310680, 310680, 07</item>
+        <!-- OP145 Cricket: OP07 + SBP ID 145 -->
+        <item>310150, 310150, 07, 145</item>
+        <item>310170, 310170, 07</item>
+        <item>310280, 310280, 07</item>
+        <item>310380, 310380, 07</item>
+        <item>310410, 310410, 07</item>
+        <item>310560, 310560, 07</item>
+        <item>310950, 310950, 07</item>
+        <item>311180, 311180, 07</item>
+        <!-- OP196 FirstNet: OP07 + SBP ID 196 -->
+        <item>312670, 312670, 07, 196</item>
+        <item>313100, 313100, 07, 196</item>
+        <item>313110, 313110, 07, 196</item>
+        <item>313120, 313120, 07, 196</item>
+        <item>313130, 313130, 07, 196</item>
+        <item>313140, 313140, 07, 196</item>
+        <!-- Mexico -->
+        <item>334050, 334050, 07</item>
+        <item>334090, 334090, 07</item>
+
+        <!-- OP08 United States-->
+        <item>310230, 310230, 08</item>
+        <item>31031, 31032, 08</item>
+        <item>310220, 310220, 08</item>
+        <item>310270, 310270, 08</item>
+        <item>310210, 310210, 08</item>
+        <item>310260, 310260, 08</item>
+        <item>310200, 310200, 08</item>
+        <item>310250, 310250, 08</item>
+        <item>310160, 310160, 08</item>
+        <item>310240, 310240, 08</item>
+        <item>310660, 310660, 08</item>
+        <item>310300, 310300, 08</item>
+        <item>310330, 310330, 08</item>
+        <item>310800, 310800, 08</item>
+        <item>310310, 310310, 08</item>
+        <item>310490, 310490, 08</item>
+        <item>310580, 310580, 08</item>
+
+        <!-- OP12 Verizon -->
+        <!-- United States -->
+        <item>310004, 310006, 12</item>
+        <item>310010, 310010, 12</item>
+        <item>310012, 310013, 12</item>
+        <item>310590, 310590, 12</item>
+        <item>310890, 310890, 12</item>
+        <item>310910, 310910, 12</item>
+        <item>311012, 311012, 12</item>
+        <item>311110, 311110, 12</item>
+        <item>311270, 311289, 12</item>
+        <item>311390, 311390, 12</item>
+        <item>311480, 311489, 12</item>
+
+        <!-- test sim -->
+        <!-- United States -->
+        <item>00101, 00101, 01</item>
+    </string-array>
+</resources>

@@ -1,0 +1,26 @@
+Executable binary for MediaTek camera VPU driver test.
+
+This binary is pre-built by MediaTek internal.
+
+
+WHAT IT DOES?
+=============
+vpu_test is used to test post process data path of MediaTek camera
+VPU driver
+
+HOW IT WAS BUILT?
+==================
+It needs the following library from AOSP:
+1.  libcutils.so
+2.  libstdc++.so
+3.  libion.so
+
+and the following libs from MediaTek:
+1.  libion_mtk.so
+2.  libvpu.so
+
+HOW TO USE IT?
+==============
+Provide test cases to verify VPU driver.
+
+All the source code of this library were written by MediaTek co..

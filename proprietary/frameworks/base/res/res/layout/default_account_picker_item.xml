@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/account_item_container"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:orientation="horizontal" >
+
+    <RadioButton
+        android:id="@+id/account_radio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dip"
+        android:clickable="false"
+        android:focusable="false" />
+
+    <com.mediatek.widget.AccountItemView
+        android:id="@+id/account_item"
+        android:layout_width="wrap_content"
+        android:layout_height="50dip"
+        android:gravity="center_vertical" />
+
+</LinearLayout>

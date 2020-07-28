@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+>
+
+<LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" >
+<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1" android:text="@string/locale" />
+<EditText android:id="@+id/EditText_addr" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1" android:maxLength="15" android:width="200dp" >
+</EditText>
+</LinearLayout>
+
+<LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" >
+<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/select" />
+<Spinner android:id="@+id/spinner_locList" android:layout_width="0dip" android:layout_height="wrap_content" android:layout_weight="1" />
+</LinearLayout>
+
+<LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent" android:gravity="center">
+<Button            android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/Button_ok" android:text="@string/ok" android:width="150dp"/>
+<Button            android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/Button_cancel" android:text="@string/cancel" android:width="150dp"/>
+</LinearLayout>
+
+</LinearLayout>

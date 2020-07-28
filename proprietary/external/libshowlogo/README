@@ -1,0 +1,26 @@
+Library of MTK logo showing, including kernel logo and charging animation.
+
+WHAT IT DOES?
+=============
+libshowlogo.so is an important module of kernel logo and charging animation,
+encapsulates zlib decompress method and some common method of drawing picture.
+
+HOW IT WAS BUILT?
+==================
+It needs the following library from AOSP:
+1. libcutils.so
+2. libutils.so
+3. libc.so
+4. libstdc++.so
+5. libdl.so
+6. liblog.so
+7. libz.so
+8. libgui.so
+9. libui.so
+
+[Build Method]
+mmm vendor/mediatek/proprietary/external/libshowlogo
+
+HOW TO USE IT?
+==============
+Is called by boot_logo_updater, charger and ipod.

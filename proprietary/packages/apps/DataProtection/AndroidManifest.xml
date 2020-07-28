@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.mediatek.dataprotection"
+    coreApp="true"
+    android:sharedUserId="android.uid.system"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <!-- <uses-permission android:name="android.permission.MANAGE_DOCUMENTS" /> -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_MEDIA_STORAGE" />
+    <uses-permission android:name="android.permission.INTERACT_ACROSS_USERS_FULL" />
+    <uses-permission android:name="android.permission.MANAGE_USERS" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+
+    <application
+        android:name=".DataProtectionApplication"
+        android:icon="@mipmap/ic_launcher_settings"
+        android:label="@string/app_name"
+        android:allowClearUserData="false"
+        android:theme="@style/Theme.DataProtection"
+        android:resizeableActivity="false">
+        <activity
+            android:name=".ViewLockedFilesActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize|mcc|mnc"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:taskAffinity="com.mediatek.dataprotection"
+            android:launchMode="singleTask"
+            android:screenOrientation="unspecified"
+            android:excludeFromRecents="true">
+            <intent-filter>
+                <action android:name="com.mediatek.dataprotection.ACTION_START_MAIN" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.mediatek.dataprotection.ACTION_START_MAIN_PATTERN_INPUT" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".AddFileToLockActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize|mcc|mnc"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:launchMode="singleTop" >
+
+            <intent-filter>
+                <action android:name="com.mediatek.dataprotection.ACTION_START_ADD" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".UnlockHistoryActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize|mcc|mnc"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:launchMode="singleTop" >
+
+            <intent-filter>
+                <action android:name="com.mediatek.dataprotection.ACTION_START_UNLOCKHISTORY" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".DecryptFailHistoryActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize|mcc|mnc"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:launchMode="singleTop" >
+        </activity>
+        <activity
+            android:name=".DataProtectionStarter"
+            android:configChanges="orientation|screenSize"
+            android:excludeFromRecents="true"
+            android:exported="false"
+            android:launchMode="singleTop"
+            android:screenOrientation="sensorPortrait"
+            android:taskAffinity=""
+            android:theme="@style/Theme.Material.Translucent.NoActionBar" >
+        </activity>
+
+        <service android:name="DataProtectionService" >
+        </service>
+    </application>
+
+</manifest>

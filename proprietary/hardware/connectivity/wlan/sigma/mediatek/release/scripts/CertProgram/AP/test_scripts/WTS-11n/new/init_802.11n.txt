@@ -1,0 +1,218 @@
+info! 11n Testbed Qualification !
+#
+#Loading Enviornment
+info![Initializing the Test]!
+wfa_test_commands_init!STA_MAC_Addresses.txt!
+wfa_test_commands_init!AP_MAC_Addresses.txt!
+wfa_test_commands_init!InitEnv.txt!
+wfa_test_commands!EAP-Credentials.txt!
+wfa_test_commands!AP_Interface_selection.txt!
+
+######### DUT (Device Under Test) #########################
+
+## DUT can be - STAUT or APUT
+define!$DUT!APUT!
+
+info!Connecting to DUT Control Agent!
+
+#------- DUT parameters for both APUT and STAUT -------
+
+## DUT Control Agent
+wfa_control_agent_dut!ipaddr=192.168.250.82,port=9000!
+#wfa_control_agent_dut!ipaddr=192.168.250.20,port=7000!
+
+## Wireless IP of DUT
+dut_wireless_ip!192.165.100.82!
+#dut_wireless_ip!192.165.122.1!
+
+
+
+#------- DUT parameters specific to APUT -------
+
+## Name of the APUT
+define!$DUT_Name!Broadcom11nAP!
+
+## Port number at which APUT is connected to in power switch
+define!$APUTPowerSwitchPort!4!
+
+define!$APUT_uname!!
+define!$APUT_pword!admin!
+define!$APUT_hostname!#!
+
+## APUT 2.4GHz MAC Address
+define!$DutMacAddress_24G!00:90:4C:09:00:BD!
+
+## APUT 5 GHz MAC Address
+define!$DutMacAddress_5G!00:90:4c:13:00:BD!
+
+
+
+#------- DUT parameters specific to STAUT -------
+
+### STAUT MAC Address ###
+define!$DutMacAddress!60:D8:19:10:AF:E8!
+
+
+### STAUT Supplicant name (optional) ###
+#define!$SupplicantName!Default!
+
+
+######### PC Endpoint (WFA Traffic generator console) #####
+
+info!Connecting to PC Endpoint!
+
+# Control IP Address for Console
+wfa_console_ctrl!ipaddr=192.168.250.30,port=9003!
+
+# Traffic generator IP Address for Console
+wfa_console_tg!192.165.100.35!
+
+info!Connecting to Environment PC Endpoint!
+env_pce_control_agent_ip!ipaddr=192.168.250.30,port=9003!
+env_pce_wireless_ip!192.165.100.35!
+
+###########    Test Bed STAs ################################
+
+info!Connecting to Testbed Station Endpoints!
+
+
+# STA1 - Realtek
+wfa_control_agent_realtek11n_sta!ipaddr=192.168.250.92,port=9000!
+realtek11n_sta_wireless_ip!192.165.100.92!
+
+# STA2 - Broadcom
+wfa_control_agent_broadcomvht_sta!ipaddr=192.168.250.82,port=9000!
+broadcomvht_sta_wireless_ip!192.165.100.82!
+
+# STA3 - Intel
+wfa_control_agent_intel11n_sta!ipaddr=192.168.250.72,port=9000!
+intel11n_sta_wireless_ip!192.165.100.72!
+
+
+# STA4 - Marvell VHT
+wfa_control_agent_marvellvht_sta!ipaddr=192.168.250.13,port=9000!
+marvellvht_sta_wireless_ip!192.165.100.13!
+
+
+
+###########    Testbed AP Configuration #######################
+wfa_test_commands_init!802.11n-Testbed-APs.txt!
+### Atheros PMF AP, needed to run 5.2.55 tests############
+info!Connecting to Atheros PMF AP!
+wfa_control_agent_atherospmf_ap!ipaddr=192.165.180.1,port=9000!
+
+
+info!Connecting to Atheros AP model CA-65-Y9345-LCT!
+wfa_control_agent_Atheros11n_ap!ipaddr=192.165.100.123,port=9000!
+
+define!Atheros11nAPIPAddress!192.165.100.123!
+
+# Power Switch port number at which AP is connected
+define!Atheros11nAPPowerSwitchPort!8!
+
+
+#################### SNIFFER ##################################
+info!Connecting to the 11n sniffer!
+wfa_sniffer!ipaddr=192.168.250.5,port=9999!
+
+#Ubuntu Sniffer: needed for few test cases. Refer to 11n test plan for more details.
+info!Connecting to Ubuntu Sniffer!
+wfa_sniffer1!ipaddr=192.168.250.7,port=9999!
+# To enable the sniffing during all the test execution,set this variable to 1.
+# NOTE - Sniffer logs occupy large disk space. So make sure to clean the logs on
+#        Snifffer machine if choose to enable this option
+
+sniffer_enable!1!
+
+##################Display Names#########################
+
+#Loading Display Names
+wfa_test_commands_init!DisplayNames.txt!
+
+##### WFAEMT #####
+
+info!Connecting to WFAEMT Control Agent!
+
+
+# Control IP Address for WFAEMT
+wfa_wfaemt_control_agent!ipaddr=192.168.250.100,port=9000!
+
+#WFAEMT wireless Interface Name
+define!WfaEmtIface!wlan0!
+
+# WFAEMT wireless Address when acting as a STA/AP
+define!$WFAEMTWirlessIP!192.165.100.21!
+
+
+########### Pre-Configuration for test #######################
+wfa_test_commands!Pre-config.txt!
+
+
+
+###### 11N MAX HT FRAME RATE FOR ENDPOINT Traffic ##########################
+
+define!$MaxHtRate!25000!
+
+###### WMM STREAM DATA CALCULATION ##########################
+
+info!Calculating stream data!
+
+############## Maximum Throughput in Mbps ###############################
+#Max Throughput for 11n DUT
+max_throughput!45!
+
+#Max Throughput for 11abg DUT
+#max_throughput!34!
+
+#Max Throughput for 11b DUT
+#max_throughput!8!
+
+#########################################################################
+
+#Payload Size in Bytes
+payloadValue!1000!
+
+#Stream percentage distribution. Specify the percentage of Maximum throughput for each stream
+# For example, to specify stream 1 as 40% stream 2 as 40% and stream 3 as 45%
+#		stream1!40!
+#		stream2!40!
+#		stream3!45!
+#INFO : Total percentage should exceed 100 for saturation of bandwidth
+
+stream1!37!
+stream2!33!
+stream3!33!
+
+#For testcase 1
+stream_mt!100!
+
+#For Transaction stream
+stream_trans!5!
+
+#Test Network Netmask
+define!$netmask!255.255.0.0!
+
+
+### Stream Durations ####
+define!$DT1_Duration!90!
+define!$DT2_Duration!90!
+define!$DT3_Duration!90!
+define!$DT4_Duration!90!
+define!$HT_Duration!30!
+define!$HT_High_Duration!90!
+
+
+#Multicast IP Address
+define!$multicast_ip_addr!224.0.0.5!
+
+########## ASD ###############
+# Set 0 to enable the best effort frame rate
+define!$MaxFrameRate!0!
+
+info!Check and reset STA in testbed!
+wfa_test_commands!11n-testbed-reset.txt!
+
+# For Validating Testbed Devices
+define!$TB_Check!1!
+
+  

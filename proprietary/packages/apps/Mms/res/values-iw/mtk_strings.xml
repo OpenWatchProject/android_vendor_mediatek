@@ -1,0 +1,648 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+/*
+ * Copyright (C) 2007-2008 Esmertec AG.
+ * Copyright (C) 2007-2008 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+ --><resources xmlns:android="http://schemas.android.com/apk/res/android" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+<!-- MTK Resources -->
+    <string name="create_new_message" msgid="8735943333953093860">"חבר הודעה חדשה"</string>
+    <string name="menu_undelivered_messages" msgid="3896857623211780616">"הודעות שלא נמסרו"</string>
+    <string name="broadcast_from_to" msgid="2050376286109362539">"<xliff:g id="SENDER">%1$s</xliff:g> אל <xliff:g id="RECIPIENT">%2$s</xliff:g>"</string>
+    <string name="anonymous_recipient" msgid="2501437626187039034">"אנונימי"</string>
+    <string name="view_picture" msgid="4356315935277709195">"הצג תמונה"</string>
+    <string name="sent_on" msgid="5868288548564632354">"נשלח: <xliff:g id="DATE">%s</xliff:g>"</string>
+    <string name="name_colon" msgid="7069560650889479120"><b>"<xliff:g id="NAME">%s</xliff:g>"</b>": "</string>
+    <string name="compose_title" msgid="558578836596816068">"חבר הודעה"</string>
+    <string name="image_too_large" msgid="261880224164478061">"התמונה גדולה מדי"</string>
+    <string name="ask_for_automatically_resize" msgid="7657603662407738758">"לשנות את גודל התמונה באופן אוטומטי לפני השליחה?"</string>
+    <string name="cannot_load_message" msgid="2577010607550849892">"אין אפשרות לטעון את ההודעה."</string>
+    <string name="locked_message_cannot_be_deleted" msgid="6369452071783350219">"לא ניתן למחוק הודעה נעולה."</string>
+    <string name="multiple_recipients" msgid="8747754491343248141">"<xliff:g id="RECIPIENTCOUNT">%1$s</xliff:g> נמענים"</string>
+    <string name="resize" msgid="4308912589984220360">"שנה גודל"</string>
+    <string name="to_label" msgid="2355268818058389047">"אל "</string>
+    <string name="confirm_delete_all_messages" msgid="5836389073199814660">"השרשור כולו יימחק."</string>
+    <string name="mms_priority_label">"עדיפות"</string>
+    <string name="menu_retry_sending" msgid="3146582005568302643">"נסה לשלוח שוב"</string>
+    <string name="menu_retry_sending_all" msgid="1870529976966340616">"נסה לשלוח הכל שוב"</string>
+    <string name="retrying_dialog_body" msgid="4738260459043003431">"הודעה זו <xliff:g id="MESSAGE">%s</xliff:g> לא נשלחה עקב בעיה בחיבור."\n"מנסה שוב לשלוח…"</string>
+    <string name="dl_expired_notification" msgid="950390029992535809">"פג תוקפה של הודעה זו והיא תימחק."</string>
+    <string name="add_attachment_activity" msgid="5324811371129695320">"הוסף קובץ מצורף:"</string>
+    <string name="select_layout_activity" msgid="5041916695464513848">"בחר פריסה"</string>
+    <string name="send_using_mms_activity" msgid="3703434556280345726">"שלח כהודעת מולטימדיה…"</string>
+    <string name="select_contact_method_activity" msgid="1743384358979323991">"בחר שיטת ליצירת קשר"</string>
+    <string name="me" msgid="341726346007839961">"אני"</string>
+    <string name="invalid_contact_message" msgid="8215051456181842274">"איש הקשר לא קיים."</string>
+    <string name="finish">"סיום"</string>
+    <string name="pref_title_long_press_operation_guide">מדריך הפעלת לחיצה ארוכה</string>  
+    <string name="pref_title_watch_animation">צפה בהנפשה</string>  
+    <string name="long_press_conversationlist_title">מחק הודעות</string>  
+    <string name="long_press_conversationlist_content">למחיקת הודעות, לחץ עליהן לחיצה ארוכה.</string>  
+    <string name="long_press_composer_content">להצגת אפשרויות נוספות, לחץ לחיצה ארוכה.</string>
+    <string name="OK">אישור</string> 
+     <string name="menu_show_icc_sms_capacity">הצג קיבולת</string>  
+    <string name="show_icc_sms_capacity_title">קיבולת</string>  
+    <string name="icc_sms_used">בשימוש:</string>
+    <string name="select_text">בחר טקסט</string>  
+    <string name="menu_sim_sms">"SIM SMS"</string>
+    <string name="icc_sms_total">סה"כ:</string>  
+    <string name="get_icc_sms_capacity_failed">בדיקת קיבולת SIM נכשלה.</string>
+    <string name="menu_reply">"השב"</string>
+    <string translatable="false" name="prefDefault_vibrateWhen">never</string>
+  <string translatable="false" name="prefDefault_vibrate_true">always</string>
+  <string translatable="false" name="prefDefault_vibrate_false">never</string>
+  <string-array translatable="false" name="prefValues_vibrateWhen">
+    <item>always</item>
+    <item>silent</item>
+    <item>never</item>
+  </string-array>
+  <string name="more_recipients">נמען/ים</string>
+  <string name="Insert_sdcard">הכנס כרטיס SD!</string>
+  <string name="pref_title_mms_enable_to_send_delivery_reports">שלח דוח מסירה</string>
+  <string name="pref_summary_mms_enable_to_send_delivery_reports">שלח אישור מסירה עבור כל הודעה שהתקבלה</string>
+  <string name="set_service_center_OK">הגדרת מרכז שירות SMS הצליחה</string>
+  <string name="set_service_center_fail">הגדרת מרכז שירות SMS נכשלה</string>
+  <string name="Cancel">"ביטול"</string>
+  <string name="sms_save_location">מיקום אמצעי אחסון SMS</string>
+  <string name="gemini_3g_indic" translatable="false">3G</string>
+  <string name="sms_service_center">מרכז שירות SMS</string>
+  <string name="sms_validity_period">תוקף SMS</string>
+  <string name="sms_validity_period_nosetting">לא נקבע</string>
+  <string name="sms_validity_period_1hour">שעה אחת</string>
+  <string name="sms_validity_period_6hours">6 שעות</string>
+  <string name="sms_validity_period_12hours">12 שעות</string>
+  <string name="sms_validity_period_1day">יום אחד</string>
+  <string name="sms_validity_period_max">מקסימום</string>
+  <string name="service_center_label">מרכז שירות:\u0020</string>
+  <string name="cu_subject">נושא Lemei</string>
+  <string name="pref_title_mms_creation_mode">מצב יצירה</string>
+  <string name="pref_summary_mms_creation_mode">מצב יצירת MMS לחיבור הודעה</string>
+  <string name="pref_title_mms_size_limit">הגבלת גודל</string>
+  <string name="pref_summary_mms_size_limit">הגבלת גודל MMS לחיבור הודעה</string>
+  <string name="confirm_restricted_audio">סוג תוכן שמע מוגבל, האם לצרף בכל זאת?</string>
+  <string name="confirm_restricted_image">סוג תוכן תמונה מוגבל, האם לצרף בכל זאת?</string>
+  <string name="confirm_restricted_video">סוג תוכן וידאו מוגבל, האם לצרף בכל זאת?</string>
+  <string name="unsupport_media_type">סוג מדיה שאינו נתמך</string>
+  <string name="select_different_media_type">בחר מדיה שונה</string>
+  <string name="image_resolution_too_large">רזולוציית התמונה גדולה מדי ולא ניתן להוסיפה</string>
+  <string name="wp_msg_type">הודעת שירות</string>
+  <string name="wp_msg_created_label">נוצר:\u0020</string>
+  <string name="wp_msg_created_unknown">לא ידוע</string>
+  <string name="wp_msg_priority_label">עדיפות:\u0020</string>
+  <string name="wp_msg_priority_low">נמוך</string>
+  <string name="wp_msg_priority_medium">בינונית</string>
+  <string name="wp_msg_priority_high">גבוה</string>
+  <string name="menu_goto_browser">פתח דפדפן</string>
+  <string name="menu_add_to_bookmark">הוסף לסימניות</string>
+  <string name="wp_msg_expiration_label"> <g id="DATE">%s</g> </string>
+  <string name="error_unsupported_scheme">פעולה זו אינה נתמכת כעת.</string>
+  <string name="pref_title_wappush_settings">הגדרות הודעת שירות</string>
+  <string name="pref_title_wappush_enable">אפשר WAP PUSH</string>
+  <string name="pref_summary_wappush_enable">אפשר קבלת WAP PUSH</string>
+  <string name="pref_title_wappush_sl_autoloading">הפעלה אוטומטית של SL</string>
+  <string name="pref_summary_wappush_sl_autoloading">הפעל אוטומטית את הודעת טעינת השירות (SL) כאשר היא מתקבלת</string>
+  <string name="menu_send_sms"> <g id="name">%s</g> </string>
+  <string name="menu_omacp">הודעת תצורה</string>
+  <string name="save_message_to_sim">שמור הודעה בכרטיס ה-SIM</string>
+  <string name="received_on"> <g id="date">%s</g> </string>
+  <string name="save_message_to_sim_successful">נשמר בהצלחה</string>
+  <string name="save_message_to_sim_unsuccessful">השמירה נכשלה</string>
+  <string name="transmission_transiently_failed">שגיאה בהעברת הנתונים. המערכת תנסה שנית מאוחר יותר.</string>
+  <string name="download_failed_due_to_full_memory">הורדת ההודעה נכשלה משום שאין מקום פנוי בזיכרון.</string>
+  <string name="mms_too_big_to_download">ההודעה גדולה מדי להורדה מהרשת.</string>
+  <string name="cannot_add_recipient">חריגה מהגבלת מספר נמענים. לא ניתן להוסיף נמענים.</string>
+  <string name="status_expired">פג תוקף</string>
+  <string name="status_deferred">נדחה</string>
+  <string name="status_unrecognized">לא זוהה</string>
+  <string name="status_indeterminate">לא מוגדר</string>
+  <string name="status_unreachable">אינו ניתן להשגה</string>
+  <string name="attach_ringtone">רינגטון</string>
+  <string name="notification_multiple_cb"> <g id="count">%s</g> </string>
+  <string name="notification_multiple_cb_title">הודעות שידור סלולרי חדשות</string>
+  <string name="edit_text_activity">ערוך טקסט</string>
+  <string name="pick_numbers_activity">בחר מספרים</string>
+  <string name="fdn_enabled">FDN מאופשר</string>
+  <string name="cannot_send_message_reason_no_content">אין תוכן לשליחה</string>
+  <string name="cb_read_message">קרא הודעת CB</string>
+  <string name="cb_read_message2">קרא הודעת שידור סלולרי</string>
+  <string name="cb_message">הודעת שידור סלולרי</string>
+  <string name="cb_default_channel_name">מערוץ</string>
+  <string name="message_open_email_fail">מצטערים, תחילה עליך להגדיר את חשבון הדואר האלקטרוני שלך.</string>
+  <string name="add_contacts">אנשי קשר</string>
+  <string name="send_by_sim2">נשלח על ידי SIM2</string>
+  <string name="send_by_sim1">נשלח על ידי SIM1</string>
+  <string name="menu_item_send_by">נשלח על ידי</string>
+  <string name="data_connected_confirm_title">אשר שליחה</string>
+  <string name="data_connected_confirm_message">שליחת הודעת MMS זו באמצעות כרטיס SIM זה עלולה לגרום להשהיית הורדת הנתונים המתבצעת למשך זמן מה. האם להמשיך?</string>
+  <string name="menu_item_sim1">SIM 1</string>
+  <string name="menu_item_sim2">SIM 2</string>
+  <string name="no_sim_1">SIM 1 אינו מחובר.</string>
+  <string name="no_sim_2">SIM 2 אינו מחובר.</string>
+  <string name="sim1_full_title">כרטיס SIM 1 מלא</string>
+  <string name="sim2_full_title">כרטיס SIM 2 מלא</string>
+  <string name="select_all">"בחר הכול"</string>
+  <string name="confirm_delete_selected_messages">ההודעות הנבחרות תימחקנה.</string>
+  <string name="confirm_delete_selected_theads">השרשורים הנבחרים יימחקו.</string>
+  <string name="restricted_forward_title">"הודעת מולטימדיה"</string>
+  <string name="restricted_forward_message">ייתכן שמדיה זו לא תוצג באופן תקין בפני הנמענים. האם להמשיך?</string>
+  <string name="strOk">ההודעה נשלחה</string>
+  <string name="strFail">תקלה בשליחת ההודעה</string>
+  <string name="menu_insert_text_vcard">הוסף איש קשר</string>
+  <string name="contact_name">"שם"</string>
+  <string name="contact_tel">טלפון</string>
+  <string name="contact_email">"דוא\"ל"</string>
+  <string name="contact_organization">ארגון</string>
+  <string name="contact_address">כתובת</string>
+  <string name="max_recipients_title">חריגה ממספר מרבי מותר</string>
+  <string name="max_recipients_message"> <g id="maxLimit">%s</g> </string>
+  <string name="via_without_time_for_send">באמצעות</string>
+  <string name="via_without_time_for_recieve">באמצעות</string>
+  <string name="sim_selected_dialog_title">בחר כרטיס SIM</string>
+  <string name="suggested">מוצע</string>
+  <string name="add_contact_dialog_message">"להוסיף את המספר %s לאיש קשר קיים או חדש?"</string>
+  <string name="add_contact_dialog_new">חדש</string>
+  <string name="add_contact_dialog_existing">קיים</string>
+  <string name="deleting">מוחק</string>
+  <string name="pref_title_storage_status">שימוש נוכחי באמצעי האחסון</string>
+  <string name="storage_dialog_mms"> <g id="number">%s</g> </string>
+  <string name="storage_dialog_sms"> <g id="number">%s</g> </string>
+  <string name="storage_dialog_attachments">קובצי Mms מצורפים:\u0020</string>
+  <string name="storage_dialog_database">בסיס נתונים:\u0020</string>
+  <string name="storage_dialog_available_space">מקום פנוי:\u0020</string>
+  <plurals name="read_report_toast_msg">
+    <item quantity="one">שולח %d דוחות קריאה</item>
+    <item quantity="other">שולח %d דוחות קריאה</item>
+  </plurals>
+  <string name="pref_title_mms_auto_reply_read_reports">שלח דוח קריאה</string>
+  <string name="pref_summary_mms_auto_reply_read_reports">שלח דוח קריאה אם שולח ה-MMS ביקש זאת</string>
+  <string name="exceed_subject_length_limitation">חריגה מאורך מרבי</string>
+  <plurals name="message_view_selected_message_count">
+    <item quantity="one"><xliff:g id="message_count" example="1">%d</xliff:g>נבחר</item>
+    <item quantity="other"><xliff:g id="message_count" example="9">%d</xliff:g> נבחרו</item>
+  </plurals>
+  <string name="sms_input_mode_title">מצב קלט</string>
+  <string name="sms_input_mode_dialog_title">בחר מצב קלט</string>
+  <string name="sms_input_mode_summary">מצב קלט SMS לחיבור הודעה</string>
+  <string name="pref_title_io_settings">ייבא/ייצא SMS</string>
+  <string name="pref_summary_import_msg">ייבא SMS מכרטיס SD</string>
+  <string name="pref_title_import_msg">ייבא SMS</string>
+  <string name="pref_summary_export_msg">ייצא SMS אל כרטיס SD</string>
+  <string name="pref_title_export_msg">ייצא SMS</string>
+  <string name="no_sd_card">כרטיס ה-SD אינו מוכן</string>
+  <string name="export_message_ongoing">ייצוא SMS אל כרטיס SD, נא להמתין...</string>
+  <string name="import_message_ongoing">ייבוא SMS מכרטיס SD, נא להמתין...</string>
+  <string name="export_message_success">ייצוא SMS אל כרטיס SD הצליח</string>
+  <string name="import_message_success">ייבוא SMS מכרטיס SD הצליח</string>
+  <string name="import_message_fail">ייבוא SMS מכרטיס SD נכשל</string>
+  <string name="export_message_fail">ייצוא SMS אל כרטיס SD נכשל</string>
+  <string name="import_message_list">רשימת SMS DB בכרטיס SD</string>
+  <string name="import_message_list_empty">אין קובצי SMS DB בכרטיס ה-SD</string>
+  <string name="export_message_empty">אין הודעת SMS לייצוא!</string>
+  <string name="whether_export_item">האם לייצא SMS?</string>
+  <string name="whether_import_item">האם לייבא</string>
+  <string name="export_disk_problem">כרטיס ה-SD מלא או שלא ניתן לכתוב לו</string>
+  <string name="unselect_all">בטל בחירה בהכל</string>
+  <string name="forward_from">העבר מ:</string>
+  <string name="sms_forward_setting">הגדרות העברת SMS</string>
+  <string name="sms_forward_setting_summary">העבר SMS עם שם השולח והמספר</string>
+    <string name="forward_byself">"אני"</string>
+  <string name="file_attachment_vcalendar_name"> <g id="text">%s</g> </string>
+  <string name="file_attachment_vcard_name"> <g id="text">%s</g> </string>
+  <string name="attach_vcalendar">לוח שנה</string>
+  <string name="file_attachment_import_vcard">יבא vCard</string>
+  <string name="attach_vcard">איש קשר</string>
+  <string name="type_common_file">קובץ</string>
+  <string name="please_wait">"נא להמתין..."</string>
+  <string name="failed_to_parse_vcard">שגיאה בפירוש קובץ vCard!</string>
+  <string name="empty_vcard">אין אנשי קשר ב-vCard</string>
+  <string name="parse_vcard">פרש vCard</string>
+  <string name="vcard_no_details">אין פרטים נוספים עבור איש קשר זה"</string>
+  <string name="note">שים לב</string>
+  <string name="organization">ארגון</string>
+  <string name="website">אתר אינטרנט:\u0020</string>
+  <string name="nickname">כינוי</string>
+  <string name="call_custom"> <g id="custom">%s</g> </string>
+  <string name="call_home">בית</string>
+  <string name="call_mobile">נייד</string>
+  <string name="call_work">עבודה</string>
+  <string name="call_fax_work">פקס בעבודה</string>
+  <string name="call_fax_home">פקס בבית</string>
+  <string name="call_pager">ביפר</string>
+  <string name="call_other">אחר</string>
+  <string name="call_callback">השב שיחה</string>
+  <string name="call_car">רכב</string>
+  <string name="call_company_main">חברה ראשי</string>
+  <string name="call_isdn">ISDN</string>
+  <string name="call_main">ראשי</string>
+  <string name="call_other_fax">פקס</string>
+  <string name="call_radio">רדיו</string>
+  <string name="call_telex">טלקס</string>
+  <string name="call_tty_tdd">TTY/TDD</string>
+  <string name="call_work_mobile">נייד עבודה</string>
+  <string name="call_work_pager">ביפר עבודה</string>
+  <string name="call_assistant"> <g id="assistant">%s</g> </string>
+  <string name="call_mms">MMS</string>
+  <string name="email_home">דואר אלקטרוני בבית</string>
+  <string name="email_mobile">דואר אלקטרוני נייד</string>
+  <string name="email_work">כתובת דואר אלקטרוני בעבודה</string>
+  <string name="email_other">"דוא\"ל"</string>
+  <string name="email_custom"> <g id="custom">%s</g> </string>
+  <string name="email">"דוא\"ל"</string>
+  <string name="map_home">הצג כתובת בית</string>
+  <string name="map_work">הצג כתובת עבודה</string>
+  <string name="map_other">הצג כתובת</string>
+  <string name="map_custom"> <g id="custom">%s</g> </string>
+  <string name="chat_aim">"התחל צ'אט באמצעות AIM"</string>
+  <string name="chat_msn">"התחל צ'אט באמצעות Windows Live"</string>
+  <string name="chat_yahoo">"התחל צ'אט באמצעות Yahoo"</string>
+  <string name="chat_skype">"התחל צ'אט באמצעות Skype"</string>
+  <string name="chat_qq">"התחל צ'אט באמצעות QQ"</string>
+  <string name="chat_gtalk">"התחל צ'אט באמצעות Google Talk"</string>
+  <string name="chat_icq">"התחל צ'אט באמצעות ICQ"</string>
+  <string name="chat_jabber">"התחל צ'אט באמצעות Jabber"</string>
+  <string name="chat">"צ'אט"</string>
+  <string name="inbox">"תיבת דואר נכנס"</string>
+  <string name="outbox">"תיבת דואר יוצא"</string>
+  <string name="draftbox">Draftbox</string>
+  <string name="sentbox">Sentbox</string>
+  <string name="simbox">SIMbox</string>
+  <string name="changeview">שנה מצב</string>
+  <string name="viewer_title_sms">SMS</string>
+  <string name="viewer_title_wappush">Wappush</string>
+  <string name="viewer_title_cb">שידור סלולרי</string>
+  <string name="slideshow_details">פרטי הודעה</string>
+  <string name="open">פתח</string>
+  <string name="delete_all_confirm">"למחוק את כל ההודעות בתיבה?"</string>
+  <string name="folder_recipient">נמען :</string>
+  <string name="folder_recieve_date">תאריך:</string>
+  <string name="folder_download">mms יורדת</string>
+  <string name="confirm_download_message">"אשר הורדת הודעה"</string>
+  <string name="play_as_slideshow">הצג MMS כמצגת</string>
+  <string name="by_card">על ידי:</string>
+  <string name="page">עמוד %d</string>
+  <string name="space_not_enough">אין מספיק מקום פנוי לצילום וידאו</string>
+  <string name="space_not_enough_for_audio">אין מספיק מקום פנוי להקלטת שמע</string>
+  <string name="no_messages">"אין הודעות"</string>
+  <string name="call_video_call">שיחת וידאו</string>
+  <string name="storage_dialog_mms_size">גודל MMS:\u0020</string>
+  <string name="error_add_attachment"> <g id="name">%1$s</g> </string>
+  <string name="no_application_response">"אין יישום לטיפול בבקשה"</string>
+  <string name="cdma_not_support">תכונה זו אינה נתמכת ב-CDMA</string>
+  <string name="allmessage">"שלח את כל ההודעות"</string>
+  <string name="select_message">בחר הודעה</string>
+  <string name="confirm_delete_allmessage">"כל ההודעות תימחקנה."</string>
+  <string name="mark_as_read_btn_str">סמן כנקרא</string>
+  <string name="delete_btn_str">"מחק"</string>
+  <string name="reply_send">"שלח"</string>
+  <string name="via_test">"הורד באופן אוטומטי קבצים מצורפים להודעות שהתקבלו לאחרונה באמצעות WiFi"</string>
+  <string name="received_header">התקבל:</string>
+  <string name="no_item_selected">לא נבחר פריט.</string>
+  <string name="sync_mms_to_db">טוען...</string>
+  <string name="pref_title_font_size_setting">הגדרות גודל גופן</string>
+  <string name="pref_title_message_font_size">גודל גופן הודעה</string>
+  <string name="pref_summary_message_font_size">גודל גופן הודעה</string>
+  <string name="message_font_size_dialog_title">גודל גופן הודעה</string>
+  <string name="message_font_size_dialog_cancel">"ביטול"</string>
+  <string name="failed_to_add_image">מגבלת גודל הודעה הגיעה, בחלקים מסוימים לא הוסיפו.</string>
+    <string name="ipmsg_conversation_list_all">הודעות</string>  
+    <string name="ipmsg_conversation_list_important">חשוב</string>  
+    <string name="ipmsg_conversation_list_group_chats">"צ'אטים בקבוצה"</string>  
+    <string name="ipmsg_conversation_list_spam">הודעת זבל</string>  
+    <string name="ipmsg_create_group_chat">"צור צ'אט בקבוצה"</string>  
+    <string name="ipmsg_send_invitation">שלח הזמנות</string>  
+    <string name="str_ipmsg_download_history_dlg">מוריד...</string>  
+    <string name="to_hint_ipmsg">"הקלד את השם או המספר של האדם"</string>  
+    <string name="type_to_compose_text_enter_to_send_ipmsg">"הקלד הודעת SMS/iSMS"</string>  
+    <string name="ipmsg_ipmsg_hint">"הקלד הודעת iSMS"</string>  
+    <string name="ipmsg_sms_hint">"הקלד הודעת טקסט"</string>  
+    <string name="ipmsg_caption_hint">"הקלד כיתובים"</string>  
+    <string name="ipmsg_cancel">"ביטול"</string>  
+    <string name="ipmsg_enable_chat_frequently"><b>%s משתמש ב-iSMS!‏</b>\nמדוע שלא תהפוך את שירות iSMS לזמין ותחסוך לשניכם כסף?</string>  
+    <string name="ipmsg_invite">"הזמן"</string>  
+    <string name="ipmsg_dismiss">"שחרר"</string>  
+    <string name="ipmsg_enable">"הפעל"</string>  
+    <string name="ipmsg_enable_notice">האם אתה בטוח שברצונך להפוך את שירות iSMS לזמין?</string>  
+    <string name="ipmsg_activate">הפעל</string>  
+    <string name="ipmsg_activate_note">האם אתה בטוח שברצונך להפעיל את iSMS?</string>  
+    <string name="ipmsg_dismiss_content">האם אתה בטוח שברצונך למחוק פתק זה?</string>  
+    <string name="ipmsg_send_exception">שגיאת שליחה</string>  
+    <string name="ipmsg_ipmsg">הודעת IP</string>  
+    <string name="ipmsg_dailog_multi_forward">מעביר הודעות</string>  
+    <string name="ipmsg_dialog_send_result">תוצאת שליחה</string>  
+    <string name="ipmsg_dlg_send_all">הכל: %s</string>  
+    <string name="ipmsg_dlg_send_sucess">נשלחו: %s</string>  
+    <string name="ipmsg_dlg_send_failed">נכשלו: %s</string>  
+    <string name="multi_forward_sim_info">קבלת פרטי SIM</string>  
+    <string name="ipmsg_multi_forward_no_sim">אין פרטי SIM</string>  
+    <string name="ipmsg_divider_online">%s אינו מקוון</string>  
+    <string name="ipmsg_divider_offline">היה מקוון בפעם האחרונה ב %s</string>  
+    <string name="ipmsg_divider_never_online">לא מקוון אף פעם</string>  
+    <string name="ipmsg_vcard_file_name">%s אנשי קשר</string>  
+    <string name="ipmsg_getsim_failed">קבלת פרטי SIM נכשלה</string>  
+    <string name="ipmsg_sim_status_error">שגיאת סטטוס SIM</string>  
+    <string name="ipmsg_forward_failed">ההעברה נכשלה</string>  
+    <string name="ipmsg_forward_norecipients">אין נמענים להעברת ההודעה</string>  
+    <string name="ipmsg_multiforward_no_message">אין הודעות להעברה</string>  
+    <string name="ipmsg_need_input_recipients">ציין לפחות נמען אחד</string>  
+    <string name="str_ipmsg_unread_format">%1$d הודעות שלא נקראו</string>  
+    <string name="str_ipmsg_not_delivered_title">עדיין לא נמסרה</string>  
+    <string name="str_ipmsg_failed_title">נכשלה</string>  
+    <string name="str_ipmsg_cant_share">כרטיס SD לא זמין, לא ניתן לשתף הודעת מדיה</string>  
+    <string name="str_ipmsg_file_limit">גדול מדי</string>  
+    <string name="str_ipmsg_no_app">"אין יישומים שיכולים לבצע פעולה זו."</string>  
+    <string name="str_ipmsg_today">היום</string>  
+    <string name="str_ipmsg_yesterday">"אתמול"</string>  
+    <string name="ip_message_typing_text">מקליד</string>  
+    <string name="ipmsg_try_again">"נסה שוב"</string>  
+    <string name="ipmsg_try_all_again">נסה הכל שוב</string>  
+    <string name="ipmsg_resend_via_sms">שלח ב-SMS</string>  
+    <string name="ipmsg_resend_via_mms">שלח ב-MMS</string>  
+    <string name="str_ipmsg_no_such_file">אין קובץ כזה</string>  
+    <string name="str_ipmsg_over_file_limit">גודל הקובץ חורג מהמגבלה</string>  
+    <string name="str_ipmsg_invalid_file_type">לא תומך בסוג זה</string>  
+    <string name="invite_friends_to_ipmsg">הזמן חברים להשתמש ב-iSMS</string>  
+    <string name="invite_friends_to_chat">"הזמן חברים לצ'אט"</string>  
+    <string name="invite_friends_to_ipmsg_dialog_msg">לשליחת הזמנה, ההודעות שאתה כותב יימחקו.</string>  
+    <string name="invite_friends_to_ipmsg_content">"הי, iSMS הוא כלי מגניב לצ'אטים. הוא חינם ונוח. לפרטים נוספים, עבור אל http://isms.hissage.com"</string>  
+    <string name="export">"ייצא"</string>  
+    <string name="mark_as_spam">סמן כהודעת זבל</string>  
+    <string name="mark_as_spam_tips">הודעות המסומנות בתור הודעות זבל יועברו לרשימת הזבל ויוסרו אוטומטית מההתראות.</string>  
+    <string name="remove_frome_spam">הסר מרשימת הודעות הזבל</string>  
+    <string name="add_shortcut">הוסף קיצור דרך</string>  
+    <string name="view_all_media">הצג את כל המדיה</string>  
+    <string name="view_all_location">הצג את כל המיקומים</string>  
+    <string name="ipmsg_export_to_sdcard">יצא לכרטיס SD</string>  
+    <string name="ipmsg_copy">"העתק"</string>  
+    <string name="ipmsg_send_via_text_msg">שלח בהודעת טקסט</string>  
+    <string name="ipmsg_send_via_mms">שלח בהודעת מולטימדיה</string>  
+    <string name="ipmsg_retry">נסה שוב</string>  
+    <string name="ipmsg_delete">"מחק"</string>  
+    <string name="ipmsg_share">"שיתוף"</string>  
+    <string name="ipmsg_mark_as_important">סמן כחשוב</string>  
+    <string name="ipmsg_remove_from_important">הסר מרשימת הפריטים החשובים</string>  
+    <string name="str_ipmsg_save_file">הקובץ נשמר ב-%1$s</string>  
+    <string name="continue_str">המשך</string>  
+    <string name="convert_to_mms">המר ל-MMS.</string>  
+    <string name="convert_to_sms">המר ל-SMS.</string>  
+    <string name="ipmsg_convert_to_ipmsg">המר ל-iSMS.</string>
+    <string name="ip_message_convert_to_mms_message_for_service">שירות iSMS אינו זמין בכרטיס ה-SIM שנבחר. ניתן לשלוח הודעה זו רק באמצעות MMS בכרטיס SIM זה. להמשיך בכל זאת?</string>  
+    <string name="ip_message_convert_to_sms_message_for_service">שירות iSMS אינו זמין בכרטיס ה-SIM שנבחר. ניתן לשלוח הודעה זו רק באמצעות SMS בכרטיס SIM זה. להמשיך בכל זאת?</string>  
+    <string name="ip_message_convert_to_mms_message_for_recipients">הנמענים אינם משתמשי iSMS. ניתן לשלוח הודעה זו רק באמצעות MMS. להמשיך בכל זאת?</string>  
+    <string name="ip_message_convert_to_sms_message_for_recipients">הנמענים אינם משתמשי iSMS. ניתן לשלוח הודעה זו רק באמצעות SMS. להמשיך בכל זאת?</string>  
+    <string name="ipmsg_sms_convert_to_ipmsg">שירות iSMS זמין בכרטיס ה-SIM הזה שנבחר. כדי לחסוך בהוצאה על שליחת הודעות SMS, מומלץ להעביר את ההודעה ל-iSMS. להעביר כעת?</string>
+    <string name="ipmsg_mms_convert_to_ipmsg">שירות iSMS זמין בכרטיס ה-SIM הזה שנבחר. כדי לחסוך בהוצאה על שליחת הודעות MMS, מומלץ להחליף את ההודעה ל-iSMS. להחליף כעת?</string>
+    <string name="keep_mms">המשך להשתמש ב-MMS</string>  
+    <string name="keep_sms">המשך להשתמש ב-SMS</string>  
+    <string name="switch_ipmsg">החלף</string>  
+    <string name="ip_message_load_all_message">טען את כל ההודעה</string>  
+    <string name="pref_title_display_preference_settings">תצוגה והעדפות</string>  
+    <string name="pref_chat_wallpaper">"טפט של צ'אט"</string>  
+    <string name="pref_auto_rotation">סיבוב אוטומטי</string>  
+    <string name="pref_show_email_address">הצג כתובת דוא"ל</string>  
+    <string name="pref_summary_show_email_address">כלול כתובת דוא"ל בתוצאות אנשי קשר</string>  
+    <string name="pref_title_backup_restore_settings">גיבוי ושחזור</string>  
+    <string name="pref_backage_message">הודעת גיבוי</string>  
+    <string name="pref_summary_backup_message">גיבוי אחרון:אף פעם</string>  
+    <string name="pref_restore_message">הודעת שחזור</string>  
+    <string name="pref_summary_restore_message">שחזר את ההודעות המגובות שלך</string>  
+    <string name="pref_mute">"השתק"</string>  
+    <string name="pref_summary_mute">"כבוי"</string>  
+    <string name="pref_vibrate">רטט</string>  
+    <string name="pref_summary_vibrate">הפעל רטט כשמתקבלות הודעות</string>  
+    <string name="pref_popup_notification">הודעה מוקפצת</string>  
+    <string name="pref_summary_popup_notification">הצג חלון מוקפץ להודעות בדחיפה</string>  
+    <string name="pref_title_display_settings">"תצוגה"</string>  
+    <string name="pref_title_actions_settings">פעולות</string>  
+    <string name="pref_download_chat_history">"הורד היסטוריית צ'אט"</string>  
+    <string name="pref_summary_download_chat_history">שמור בכרטיס SD בתבנית zip</string>  
+    <string name="pref_email_chat_history">"שלח היסטוריית צ'אט בדוא"ל"</string>  
+    <string name="pref_summary_email_chat_history">"שלח היסטוריית צ'אט בדוא"ל בתבנית zip"</string>  
+    <string name="pref_clear_chat_history">"נקה היסטוריית צ'אט"</string>  
+    <string name="pref_summary_notification_ringtone">הגדר רינגטון להודעות חדשות</string>  
+    <string name="pref_setting_title">הגדרת הודעה</string>  
+    <string name="pref_setting_sms">הודעת טקסט (SMS)</string>  
+    <string name="pref_setting_mms">הודעת מולטימדיה (MMS)</string>  
+    <string name="pref_setting_notification">"התראות"</string>  
+    <string name="pref_setting_general">"כללי"</string>  
+    <string name="pref_setting_chat">"הגדרות צ'אט"</string>  
+    <string name="chat_setting_saving">שומר...</string>  
+    <string name="chat_setting_updating">מעדכן...</string>  
+    <string name="chat_setting_sending">"שולח..."</string>  
+    <string name="dialog_save_title">שמור בכרטיס SD</string>  
+    <string name="dialog_save_description">"שמור שרשור צ'אט זה בכרטיס SD כקובץ zip"</string>  
+    <string name="dialog_email_title">שתף בדוא"ל</string>  
+    <string name="dialog_email_description">"שתף שרשור צ'אט זה כקובץ מצורף בהודעת דוא"ל בתבנית zip"</string>  
+    <string name="dialog_clear_title">"נקה"</string>  
+    <string name="dialog_clear_description">"כל היסטוריית הצ'אט תנוקה מחדר צ'אט זה"</string>  
+    <string name="dialog_wallpaper_chooser_wallpapers">טפטים</string>  
+    <string name="dialog_wallpaper_chooser_gallery">"גלריה"</string>  
+    <string name="dialog_wallpaper_chooser_take">"צלם תמונה"</string>  
+    <string name="dialog_wallpaper_chooser_default">"ברירת מחדל"</string>  
+    <string name="dialog_wallpaper_title">בחר טפט</string>  
+    <string name="mute_one_hour">שעה אחת</string>  
+    <string name="mute_four_hours">4 שעות</string>  
+    <string name="mute_eight_hours">8 שעות</string>  
+    <string name="save_chat_history_failed">השמירה נכשלה</string>  
+    <string name="send_chat_history_failed">שליחת הודעת דוא"ל נכשלה</string>  
+    <string name="actionbar_sms_setting">הגדרת SMS</string>  
+    <string name="actionbar_mms_setting">הגדרות MMS</string>  
+    <string name="actionbar_notification_setting">"הגדרות התראה"</string>  
+    <string name="actionbar_general_setting">הגדרות כלליות</string>  
+    <string name="save_history_file">שמור בשם</string>  
+    <string name="no_sdcard_suggestion">"אין כרטיס SD"</string>  
+    <string name="save_wallpaper_success">הטפט השתנה.</string>  
+    <string name="save_wallpaper_fail">לא ניתן לשנות טפט.</string>  
+    <string name="ip_message_delete_important">"כלול הודעות שסומנו בדגל כחשובות"</string>  
+    <string name="str_ipmsg_spam_empty">"אין לך שיחות זבל. \nהרשימה 'זבל' אוספת את כל השיחות המסומנות כזבל. ההתראות יכובו כברירת מחדל. הדבר ימנע הפרעות מיותרות. \n\nאתה יכול לסמן שולח כזבל על ידי החזקת שיחה ובחירה בסמל 'סמן כזבל'. כאשר שיחה מסומנת כזבל, סמל התראה כבויה יוצג אוטומטית והשיחה תועבר לכאן."</string>  
+    <string name="str_ipmsg_spam_example_from">+86123456789</string>  
+    <string name="str_ipmsg_spam_example_subject">להלן דוגמה להודעת זבל.</string>  
+    <string name="str_ipmsg_groupchat_empty">"אין לך שיחות הודעת צ'אט בקבוצה. \nהרשימה 'צ'אטים בקבוצה' אוספת את כל ההודעות מצ'אטים בקבוצה שנוצרו על ידך או שהצטרפת אליהם. הדבר מאפשר לך לחפש ולנהל בקלות את הצ'אטים שלך בקבוצה. \n\nליצירת צ'אט בקבוצה, תוכל להקיש על הלחצן 'צור צ'אט בקבוצה' בתחתית המסך ולהזמין את חבריך להצטרף לקבוצה."</string>  
+    <string name="str_ipmsg_group_example_from">"שם קבוצה"</string>  
+    <string name="str_ipmsg_group_example_subject">"החבר שלך:\nאוהב את תכונת הצ'אט בקבוצה!"</string>  
+    <string name="str_ipmsg_important_empty">"אין לך הודעות חשובות. \nהרשימה 'חשובות' אוספת את כל ההודעות המסומנות בדגל כחשובות. הדבר מאפשר לך לחפש בקלות הודעות חשובות. \n\nתוכל לסמן הודעה בגדל כחשובה על ידי החזקת ההודעה ובחירה באפשרות 'סמן בדגל כחשובה' בתפריט 'אפשרויות'. כשהודעה מסומנת בדגל כחשובה, יופיע דגל אדום מתחתיה."</string>  
+    <string name="str_ipmsg_important_example_title">להלן דוגמה להודעה שסומנה בדגל כחשובה. יופיע דגל אדום.</string>  
+    <string name="str_ipmsg_important_example_time">10:55 AM</string>  
+    <string name="str_ipmsg_allchat_empty">"אין שיחות"</string>  
+    <string name="str_ipmsg_empty_activate_content">"כדי להשתמש בתכונה זו, עליך להפעיל ראשית את שירות iSMS. אל דאגה - אם אינך אוהב את השירות, תוכל תמיד לכבותו ב'הגדרות'. נסה אותו כעת!"</string>  
+    <string name="str_ipmsg_empty_activate_title">הפעל iSMS</string>  
+    <string name="str_ipmsg_service_title">מרכז שירות iSMS</string>  
+    <string name="str_ipmsg_introduction">"באמצעות iSMS, תוכל לשלוח הודעות מיידיות חינם ולשמור את היסטוריית הצ'אטים שלך במקום אחד. לחץ על לחצן אחד וגלה את החוויה החדשה!"</string>  
+    <string name="time_now">שם אמן לא ידוע</string>  
+    <string name="str_ipmsg_active">הפעל iSMS</string>  
+    <string name="str_ipmsg_welcome_active">ברוך הבא ל-iSMS</string>  
+    <string name="str_ipmsg_term_warn_welcome">"שירות iSMS מאפשר לך לשוחח בצ'אט ולשתף קובצי מולטימדיה עם חבריך בכל מקום ובכל עת באמצעות חיבור WIFI או נתונים.\n\nנדרשים שלושה שלבים בלבד להשלמת ההפעלה!\n\n תנאי שימוש\n"</string>  
+    <string name="str_ipmsg_term_warn_activate">"תכונה זו נתמכת רק על ידי שירות iSMS.‏\n\nשירות iSMS מאפשר לך לשוחח בצ'אט ולשתף קובצי מולטימדיה עם חבריך בכל מקום ובכל עת באמצעות חיבור WIFI או נתונים.\n\n תנאי שימוש"</string>  
+    <string name="str_ipmsg_term_key">תנאי שימוש</string>  
+    <string name="str_ipmsg_agree_and_continue">מסכים והמשך</string>  
+    <string name="no_sim_card">אין כרטיס SIM!</string>  
+    <string name="ip_message_activate_title">הפעל iSMS</string>  
+    <string name="ip_message_current_sim_enabled">כרטיס ה-SIM הנוכחי זמין.</string>  
+    <string name="sim_selected_dialog_title_for_activate">בחר SIM להפעלת iSMS</string>  
+    <string name="ip_message_activate_message">תכונה זו נתמכת רק על ידי שירות iSMS. להפעיל כעת את חשבון iSMS שלך?</string>  
+    <string name="typing">"מקליד..."</string>  
+    <string name="ip_message_enable_title">הפוך את iSMS לזמין</string>  
+    <string name="ip_message_enable_message">תכונה זו נתמכת רק על ידי שירות iSMS. להפוך כעת את חשבון iSMS שלך לזמין?</string>  
+    <string name="sim_selected_dialog_title_for_enable">בחר SIM להפיכת iSMS לזמין</string>  
+    <string name="ip_message_switch_sim_title">החלף SIM</string>  
+    <string name="ip_message_switch_sim_message">כרטיס ה-SIM הנוכחי אינו תומך ב-iSMS. להחליף ל-SIM אחר?</string>  
+    <string name="ip_message_switch_sim_button">החלף</string>  
+    <string name="ip_message_switch_sim_successfully">החלפת SIM הצליחה!</string>  
+    <string name="close">סגור ערוץ</string>  
+    <string name="nointernet">"לא נמצא חיבור אינטרנט פעיל! נסה שוב מאוחר יותר."</string>  
+    <plurals name="deleted_conversations"> 
+        <item quantity="one">שיחה אחת נמחקה</item>  
+        <item quantity="other"><xliff:g id="number" example="15">%1$s</xliff:g> שיחות נמחקו</item> 
+    </plurals> 
+    <string name="disable_notifications_dialog_message" msgid="7644011234972074096">"האם להפסיק התראות כפולות על הודעות טקסט ביישום העברת ההודעות המוגדר כברירת מחדל?"</string>
+    <string name="change">שנה</string>
+    <string name="ipmsg_invite_chat_frequently">"<b>משוחח לעתים קרובות בצ\'אט עם %s ‏?</b>‏\nמדוע שלא תזמין את %s להשתמש ב-iSMS כדי לחסוך לשניכם כסף?"</string>
+    <string name="ipmsg_activate_chat_frequently">"<b>משוחח לעתים קרובות עם חברים בצ\'אט?</b>‏\nמדוע שלא תפעיל את שירות iSMS כדי לשוחח בלי לשלם עבור הודעות SMS?"</string>
+    <string name="ipmsg_resend">שלח שוב</string>
+    <string name="change_default_disk">אין מספיק מקום בזיכרון של הטלפון. פנה מקום או שנה את "כונן ברירת מחדל לכתיבה" בהגדרות.</string>
+    <string name="ipmsg_reject">דחה</string>
+    <string name="discard_mms_title">מחק MMS</string>
+    <string name="discard_mms_content">של הודעות ה-MMS בהודעת ההעברה המרובה שלך יימחקו</string>
+    <string name="toast_sms_forward">לא הועברו הודעות SMS</string>
+    <string name="dialog_continue">המשך</string>
+    <string name="sms_size_limit">הגעת למגבלת הגודל</string>
+    <string name="dialog_sms_limit">הגעת למגבלת גודל ההודעה. החלק של ההודעה שחרג יימחק</string>
+    <string name="sum_search_networks">"חפש את כל הרשתות הזמינות"</string>
+    <string name="str_ipmsg_replace_attach">החלף קובץ מצורף</string>
+    <string name="str_ipmsg_replace_attach_msg">קיים קובץ מצורף. האם להחליפו?</string>
+    <string name="ipmsg_err_file">פתיחת הקובץ נכשלה</string>
+    <string name="ipmsg_accept">"קבל"</string>
+    <string name="forward_tips_title">"מחק הודעת MMS"</string>
+    <string name="forward_tips_body">"הודעת ה-MMS לא תומכת בהעברה, והיא תימחק."</string>
+    <string name="ipmsg_resend_discard_message">כדי לשלוח שוב את ההודעה, ההודעה שאתה כותב כעת תימחק.</string>
+    <string name="type_to_quick_text">"הקלד טקסט מהיר"</string>
+    <string name="menu_wappush">"הודעות WAP בדחיפה"</string>
+    <string name="visit_website">"בקר באתר"</string>
+    <string name="meet_emoticon_limit">עמוד במגבלות של פרצופונים</string>
+    <string name="view_mms_notification">לא ניתן להציג הודעת MMS</string>
+    <string name="ipmsg_multi_forward_tips_content">כדי לבצע העברה של פריטים מרובים, יש להוריד תחילה כמה הודעות iSMS.</string>
+    <string name="multi_forward_failed_all">ההורדה נכשלה, ההעברה של פריטים מרובים בוטלה.</string>
+    <string name="ipmsg_multi_forward_failed_part">העברה של חלק מהודעות ה-iSMS נכשלה.</string>
+    <string name="confirm_delete_allwappush">"כל ההודעות בדחיפת WAP יימחקו."</string>
+    <string name="confirm_delete_selected_wappush">"ההודעות בדחיפת WAP שנבחרו יימחקו."</string>
+    <string name="menu_delete_allwappush">מחק הכל</string>
+    <string name="duplicated_recipient">נמענים כפולים</string>
+
+<string name="ok">"אישור"</string>
+    <string name="cancel">"ביטול"</string>
+    <string name="enable">"הפעל"</string>
+    <string name="disable">"השבת"</string>
+    <string name="cell_broadcast_setting">"הגדרות שידורים סלולריים"</string>
+    <string name="cb_menu_language">"שפה"</string>
+    <string name="cb_menu_add_channel">הוסף ערוץ</string>
+    <string name="cb_menu_channel_list">רשימת תחנות</string>
+    <string name="cb_dialog_title_language_choice">בחר שפה</string>
+    <string name="cb_channel_dialog_channel_name">שם ערוץ (1-10 סימנים)</string>
+    <string name="cb_channel_dialog_channel_number">מספר ערוץ (0-65534)</string>
+    <string name="cb_channel_dialog_channel_state">אפשר את הערוץ</string>
+    <string name="cb_channel_dialog_edit_channel">ערוך תחנה</string>
+    <string name="cb_menu_edit">"ערוך"</string>
+    <string name="cb_menu_delete">"מחק"</string>
+    <string name="cb_error_channel_num">הזן מספר ערוץ (0-65534).</string>
+    <string name="cb_error_channel_name">אורך שם הערוץ שגוי (1-10 סימנים).</string>
+    <string name="cb_error_language_select">בחר שפה אחת לפחות.</string>
+    <string name="cb_error_channel_id_exist">מזהה הערוץ קיים</string>
+    <string name="cb_all_languages">"כל השפות"</string>
+    <string name="cb_default_new_channel_name">תחנה חדשה</string>
+    <string name="sum_cell_broadcast_control_on">אפשר שידור סלולרי</string>
+    <string name="sum_cell_broadcast_control_off">בטל שידור סלולרי</string>
+    <string name="sum_cell_broadcast_setting">הגדרות שפה וערוץ לשידור סלולרי</string>
+    <string name="close_dialog">אישור</string>
+    <string name="updating_title">"הגדרות שיחה"</string>
+    <string name="error_updating_title">"שגיאה בהגדרות שיחה"</string>
+    <string name="reading_settings">"קורא הגדרות…"</string>
+    <string name="updating_settings">"מעדכן הגדרות..."</string>
+    <string name="reverting_settings">"מאחזר הגדרות הקודמות…"</string>
+    <string name="exception_error">"שגיאת רשת או שגיאה של כרטיס SIM."</string>
+    <string name="no_sim">ה-SIM ‏%d אינו מוכנס.</string>
+    <string name="sms_not_ready">מודול ה-SMS מאותחל, המתן...</string>
+    <string name="label_full_name">"שם"</string>
+    <string name="label_phone">"טלפון"</string>
+    <string name="label_email">"דוא\"ל"</string>
+    <string name="label_postal">"כתובת"</string>
+    <string name="label_organization">"ארגון"</string>
+    <string name="label_im">"הודעה מיידית"</string>
+    <string name="label_website">אתר אינטרנט</string>
+    <string name="label_sip_address">"שיחת אינטרנט"</string>
+    <string name="label_nick_name">"כינוי"</string>
+    <string name="label_notes">"הערות"</string>
+    <string name="label_event">"אירועים"</string>
+    <string name="search_time_period_label">פרק זמן</string>
+    <string name="done_text">"סיום"</string>
+    <string-array name="language_list_values" translatable="false">
+        <item>כל השפות</item>
+        <item>גרמנית</item>
+        <item>אנגלית</item>
+        <item>איטלקית</item>
+        <item>צרפתית</item>
+        <item>ספרדית</item>
+        <item>הולנדית</item>
+        <item>שוודית</item>
+        <item>דנית</item>
+        <item>פורטוגזית</item>
+        <item>פינית</item>
+        <item>נורבגית</item>
+        <item>יוונית</item>
+        <item>תורכית</item>
+        <item>הונגרית</item>
+        <item>פולנית</item>
+        <item>אחרים</item>
+        <item>"צ'כית"</item>
+        <item>עברית</item>
+        <item>ערבית</item>
+        <item>רוסית</item>
+        <item>איסלנדית</item>
+    </string-array>
+    <string name="add_duplicate_recipients">נמענים כפולים</string>
+
+    <!-- begin of mwi -->
+    <string name="mwi_title">הודעות קוליות</string>
+    <string name="type_voice_msg">הודעה קולית</string>
+    <string name="type_video_msg">הודעת וידאו</string>
+    <string name="type_fax_msg">הודעת פקס</string>
+    <string name="type_text_msg">"הודעת טקסט"</string>
+    <string name="priority_urgent">דחוף</string>
+    <string name="date_label">תאריך:\u0020</string>
+    <string name="message_id_label">מזהה-הודעה:\u0020</string>
+    <string name="voice_message_count_notification"><xliff:g id="number" example="3">%1$s</xliff:g> הודעות קוליות חדשות</string>
+    <string name="confirm_delete_allmwi">"כל ההודעות הקוליות תימחקנה."</string>
+    <string name="confirm_delete_selected_mwi">"ההודעות הקוליות הנבחרות תימחקנה."</string>
+    <!-- end of mwi -->
+
+    <string name="download_disabled_toast">לא ניתן להוריד. אף אפליקציה אינה מוגדרת כברירת מחדל לשליחת הודעות טקסט.</string>
+    <string name="adding_wallpaper_title">שומר טפט...</string>
+    <string name="sms_priority_setting">עדיפות UIM</string>
+    <string name="sms_priority_Interactive">אינטראקטיבי</string>
+    <string name="sms_priority_Urgent">דחוף</string>
+    <string name="sms_priority_Emergency">חירום</string>
+    <string name="empty_sim_name">חריץ SIM <xliff:g id="subId" example="2">%1$d</xliff:g></string>
+
+    <string name="drm_not_support">הודעת מולטימדיה אינה יכולה לכלול תוכן המוגן בזכויות יוצרים.</string>
+    <string name="user_has_no_premission">משתמש זה אינו רשאי להשתמש ב-SMS</string>
+    <string name="wfc_no_cellular_network">אין רשת סלולרית</string>
+    <string name="wfc_connect_to_available_wifi">לשליחת הודעות, התחבר לרשת Wi-Fi זמינה.</string>
+    <string name="wfc_notification_title">לשליחת הודעות, התחבר לרשת Wi-Fi</string>
+    <string name="ct_om_switch_notification"><xliff:g id="op1">%s</xliff:g> לא תפעל זמנית ואם קיימות שיחה, SMS או רשת נתונים של ברירת מחדל ב-<xliff:g id="op2">%s</xliff:g> הם ישתנו ל-<xliff:g id="op3">%s</xliff:g> בהתאם.</string>
+    <string name="can_not_switch_account_during_call">לאניתןלהחליףאתה-SIMהמועדףל-SMSבמהלךשיחה.</string>
+    <string name="can_not_switch_account_temporarily">זמניתלאניתןלעבורלכרטיסה-SIMהמועדףלהודעותטקסט.</string>
+    <string name="omh_exceed_message_size_limitation">הגעתלמגבלתגודלהודעתR-UIM</string>
+    <string name="omh_failed_to_add_image">הגעת למגבלת גודל ההודעה של R-UIM, הסר כמה חלקים.</string>
+    <string name="smart_req_mms_indicator">לא ניתן להשתמש בהודעות מולטימדיה (MMS), נסה שוב במסרון (SMS)</string>
+</resources>

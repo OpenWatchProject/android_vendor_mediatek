@@ -1,0 +1,70 @@
+/*
+ * Copyright (C) 2016 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package vendor.mediatek.hardware.camera.callbackclient@1.0;
+
+import android.hardware.camera.common@1.0::types;
+import android.hardware.graphics.common@1.0::types;
+
+/*
+ * This is used to CallbackClient.
+ */
+
+interface IMtkBufferCallback{
+    /**
+     * Acquire a buffer to write a callback buffer into.
+     *
+     * @return status The status code for this operation. If not OK, then
+     *     buffer and stride must not be used.
+     * @return bufferId A unique ID for the returned buffer.
+     * @return buffer A handle to the buffer to write into. Must be non-null if the bufferId has not
+     *     been seen by HAL before. Must be null if the bufferId is seen before. HAL must keep track
+     *     of the bufferId to actual buffer handle mapping.
+     * @return stride The stride between two rows of pixels in this buffer.
+     */
+    dequeueBuffer(int32_t msgType) generates (Status status, uint64_t bufferId, handle buffer, uint32_t stride);
+
+    /**
+     * Send a filled callback buffer to its consumer.
+     *
+     * @param bufferId The bufferId of the callback buffer
+     * @return status The status code for this operation.
+     */
+    enqueueBuffer(int32_t msgType, uint64_t bufferId) generates (Status status);
+
+    /**
+     * Return a callback buffer unfilled. This buffer must not be sent on to the
+     * callback consumer as a valid buffer, but may be reused as if it were
+     * empty.
+     *
+     * @param bufferId The bufferId of the callback buffer
+     * @return status The status code for this operation.
+     */
+    cancelBuffer(int32_t msgType, uint64_t bufferId) generates (Status status);
+
+    /**
+     * Set the timestamp for the next buffer to enqueue
+     *
+     * Timestamps are measured in nanoseconds, and must be comparable
+     * and monotonically increasing between two frames in the same
+     * callback stream. They do not need to be comparable between
+     * consecutive or parallel callback streams, cameras, or app runs.
+     *
+     * @param timestamp The timestamp to set for future buffers.
+     * @return Status The status code for this operation.
+     */
+    setTimestamp(int32_t msgType, int64_t timestamp) generates (Status status);
+};

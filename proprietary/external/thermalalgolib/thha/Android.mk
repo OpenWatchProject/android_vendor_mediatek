@@ -1,0 +1,14 @@
+LOCAL_PATH:= $(call my-dir)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := libthha
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_OWNER := mtk
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+LOCAL_SRC_FILES_arm := lib/libthha.so
+LOCAL_SRC_FILES_arm64 := lib64/libthha.so
+LOCAL_MODULE_SUFFIX := .so
+LOCAL_MULTILIB := both
+include $(BUILD_PREBUILT)
+
+

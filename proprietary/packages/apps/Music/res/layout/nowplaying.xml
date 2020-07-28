@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+**
+** Copyright 2008, The Android Open Source Project
+**
+** Licensed under the Apache License, Version 2.0 (the "License");
+** you may not use this file except in compliance with the License.
+** You may obtain a copy of the License at
+**
+**     http://www.apache.org/licenses/LICENSE-2.0
+**
+** Unless required by applicable law or agreed to in writing, software
+** distributed under the License is distributed on an "AS IS" BASIS,
+** WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+** See the License for the specific language governing permissions and
+** limitations under the License.
+*/
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/nowplaying_parent"
+    android:layout_width="match_parent"
+    android:layout_height="64dip"
+    android:layout_alignParentBottom="true"
+    android:background="@drawable/music_bottom_playback_bg"
+    android:gravity="center_horizontal"
+    android:orientation="horizontal"
+    android:splitMotionEvents="false"
+    android:visibility="gone" >
+
+    <LinearLayout
+        android:id="@+id/nowplaying"
+        android:layout_width="0dip"
+        android:layout_height="match_parent"
+        android:layout_gravity="right"
+        android:layout_weight="99"
+        android:background="@drawable/btn_nowplaying_background_small"
+        android:focusable="true"
+        android:gravity="center_vertical"
+        android:orientation="vertical"
+        android:paddingLeft="9dip"
+        android:paddingRight="9dip"
+        android:visibility="gone" >
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="marquee"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:singleLine="true"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="#f8f8ff"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/artist"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:textColor="#f8f8ff"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+    </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/search_menu_nowplaying"
+        style="?android:attr/buttonBarButtonStyle"
+        android:layout_width="64dip"
+        android:layout_height="64dip"
+        android:layout_gravity="right"
+        android:layout_weight="1"
+        android:contentDescription="@string/menu_search"
+        android:src="@android:drawable/ic_menu_search"/>
+
+    <LinearLayout
+        android:id="@+id/blank_between_search_and_overflow"
+        android:layout_width="64dip"
+        android:layout_height="64dip"
+        android:layout_weight="99"
+        android:visibility="gone" >
+    </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/overflow_menu_nowplaying"
+        style="?android:attr/buttonBarButtonStyle"
+        android:layout_width="64dip"
+        android:layout_height="64dip"
+        android:layout_gravity="left"
+        android:layout_weight="1"
+        android:contentDescription="@string/musicbrowserlabel"
+        android:src="@drawable/ic_menu_overflow"
+        android:visibility="gone" />
+
+</LinearLayout>

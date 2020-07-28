@@ -1,0 +1,83 @@
+extern char tc00_frame_1_rsc_apli_c_frame_01[];
+#define tc00_frame_1_rsc_apli_c_frame_01_size 8
+extern char tc00_frame_1_rsc_apli_p_frame_01[];
+#define tc00_frame_1_rsc_apli_p_frame_01_size 8
+extern char tc00_frame_1_rsc_bvo_frame_01_00[];
+#define tc00_frame_1_rsc_bvo_frame_01_00_size 98304
+extern char tc00_frame_1_rsc_bvo_frame_01_01[];
+#define tc00_frame_1_rsc_bvo_frame_01_01_size 98304
+extern char tc00_frame_1_rsc_bvo_frame_01_02[];
+#define tc00_frame_1_rsc_bvo_frame_01_02_size 98304
+extern char tc00_frame_1_rsc_bvo_frame_01_03[];
+#define tc00_frame_1_rsc_bvo_frame_01_03_size 98304
+extern char tc00_frame_1_rsc_bvo_frame_01_04[];
+#define tc00_frame_1_rsc_bvo_frame_01_04_size 98304
+extern char tc00_frame_1_rsc_bvo_frame_01_05[];
+#define tc00_frame_1_rsc_bvo_frame_01_05_size 98304
+extern char tc00_frame_1_rsc_bvo_frame_01_06[];
+#define tc00_frame_1_rsc_bvo_frame_01_06_size 98304
+extern char tc00_frame_1_rsc_bvo_frame_01_07[];
+#define tc00_frame_1_rsc_bvo_frame_01_07_size 98304
+extern char tc00_frame_1_rsc_bvo_frame_01_08[];
+#define tc00_frame_1_rsc_bvo_frame_01_08_size 98304
+extern char tc00_frame_1_rsc_bvo_frame_01_09[];
+#define tc00_frame_1_rsc_bvo_frame_01_09_size 98304
+extern char tc00_frame_1_rsc_bvo_frame_01_10[];
+#define tc00_frame_1_rsc_bvo_frame_01_10_size 98304
+extern char tc00_frame_1_rsc_bvo_frame_01_11[];
+#define tc00_frame_1_rsc_bvo_frame_01_11_size 98304
+extern char tc00_frame_1_rsc_bvo_frame_01_12[];
+#define tc00_frame_1_rsc_bvo_frame_01_12_size 98304
+extern char tc00_frame_1_rsc_bvo_frame_01_13[];
+#define tc00_frame_1_rsc_bvo_frame_01_13_size 98304
+extern char tc00_frame_1_rsc_bvo_frame_01_14[];
+#define tc00_frame_1_rsc_bvo_frame_01_14_size 98304
+extern char tc00_frame_1_rsc_imgi_c_frame_01[];
+#define tc00_frame_1_rsc_imgi_c_frame_01_size 228928
+extern char tc00_frame_1_rsc_imgi_p_frame_01[];
+#define tc00_frame_1_rsc_imgi_p_frame_01_size 171696
+extern char tc00_frame_1_rsc_mvi_frame_01[];
+#define tc00_frame_1_rsc_mvi_frame_01_size 147456
+extern char tc00_frame_1_rsc_mvo_frame_01_00[];
+#define tc00_frame_1_rsc_mvo_frame_01_00_size 122880
+extern char tc00_frame_1_rsc_mvo_frame_01_01[];
+#define tc00_frame_1_rsc_mvo_frame_01_01_size 122880
+extern char tc00_frame_1_rsc_mvo_frame_01_02[];
+#define tc00_frame_1_rsc_mvo_frame_01_02_size 122880
+extern char tc00_frame_1_rsc_mvo_frame_01_03[];
+#define tc00_frame_1_rsc_mvo_frame_01_03_size 122880
+extern char tc00_frame_1_rsc_mvo_frame_01_04[];
+#define tc00_frame_1_rsc_mvo_frame_01_04_size 122880
+extern char tc00_frame_1_rsc_mvo_frame_01_05[];
+#define tc00_frame_1_rsc_mvo_frame_01_05_size 122880
+extern char tc00_frame_1_rsc_mvo_frame_01_06[];
+#define tc00_frame_1_rsc_mvo_frame_01_06_size 122880
+extern char tc00_frame_1_rsc_mvo_frame_01_07[];
+#define tc00_frame_1_rsc_mvo_frame_01_07_size 122880
+extern char tc00_frame_1_rsc_mvo_frame_01_08[];
+#define tc00_frame_1_rsc_mvo_frame_01_08_size 122880
+extern char tc00_frame_1_rsc_mvo_frame_01_09[];
+#define tc00_frame_1_rsc_mvo_frame_01_09_size 122880
+extern char tc00_frame_1_rsc_mvo_frame_01_10[];
+#define tc00_frame_1_rsc_mvo_frame_01_10_size 122880
+extern char tc00_frame_1_rsc_mvo_frame_01_11[];
+#define tc00_frame_1_rsc_mvo_frame_01_11_size 122880
+extern char tc00_frame_1_rsc_mvo_frame_01_12[];
+#define tc00_frame_1_rsc_mvo_frame_01_12_size 122880
+extern char tc00_frame_1_rsc_mvo_frame_01_13[];
+#define tc00_frame_1_rsc_mvo_frame_01_13_size 122880
+extern char tc00_frame_1_rsc_mvo_frame_01_14[];
+#define tc00_frame_1_rsc_mvo_frame_01_14_size 122880
+/*
+extern void getframe_1GoldPointer(
+	unsigned long* golden_dpe_dvo_l_frame,
+	unsigned long* golden_dpe_dvo_r_frame,
+	unsigned long* golden_dpe_confo_l_frame,
+	unsigned long* golden_dpe_confo_r_frame,
+	unsigned long* golden_dpe_respo_l_frame,
+	unsigned long* golden_dpe_respo_r_frame,
+	unsigned long* golden_dpe_wmf_dpo_frame_0,
+	unsigned long* golden_dpe_wmf_dpo_frame_1,
+	unsigned long* golden_dpe_wmf_dpo_frame_2
+);
+*/

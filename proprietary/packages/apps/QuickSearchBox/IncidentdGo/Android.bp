@@ -1,0 +1,10 @@
+cc_binary {
+    name: "IncidentdGo",
+		overrides: [
+        "incidentd",
+    ],
+    srcs: [
+        "empty.cpp",
+    ],
+    init_rc: ["incidentd.rc"],
+}

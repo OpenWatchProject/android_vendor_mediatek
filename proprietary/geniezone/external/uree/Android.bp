@@ -1,0 +1,64 @@
+cc_library {
+    name: "libgz_uree",
+    proprietary: true,
+    owner: "mtk",
+    cflags: [
+        "-Wall",
+        "-Werror",
+        "-Wno-unused-parameter",
+        "-Wno-unused-function",
+    ],
+    srcs: [
+        "libgz_uree/uree.c",
+        "libgz_uree/uree_mem.c"
+    ],
+    local_include_dirs: ["include"],
+    export_include_dirs: ["include"],
+    shared_libs: [
+        "liblog",
+    ],
+}
+
+cc_library_headers {
+    name: "libgz_uree_headers",
+    proprietary: true,
+    export_include_dirs: ["include"],
+}
+
+cc_test {
+    name: "uree_test",
+    proprietary: true,
+    owner: "mtk",
+    cflags: [
+        "-Wall",
+        "-Werror",
+        "-Wno-unused-parameter",
+        "-Wno-unused-function",
+    ],
+    compile_multilib: "both",
+    defaults: ["mtk_uree_defaults"],
+    srcs: [
+        "uree_test/test.c",
+    ],
+    include_dirs: [
+        "device/mediatek/common/kernel-headers",
+    ],
+    local_include_dirs: ["include"],
+}
+
+mtk_uree_defaults {
+    name: "mtk_uree_defaults",
+}
+
+bootstrap_go_package {
+    name: "soong-uree-mediatek",
+    pkgPath: "android/soong/uree/mediatek",
+    deps: [
+        "soong-android",
+        "soong-cc",
+    ],
+    srcs: [
+        "uree.go",
+    ],
+    pluginFor: ["soong_build"],
+}

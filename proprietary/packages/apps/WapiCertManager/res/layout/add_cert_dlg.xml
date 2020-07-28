@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="25dp"
+        android:text="@string/text_sel_user_cert" />
+
+    <Spinner
+        android:id="@+id/sp_sel_user_cert"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="17dp" />
+
+    <TextView
+        android:id="@+id/p12_password_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="25dp"
+        android:text="@string/enter_p12_password" />
+
+    <EditText
+        android:id="@+id/p12_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:password="true"
+        android:singleLine="true"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textSize="16sp" />
+    <!-- android:hint="@string/enter_p12_password" -->
+
+</LinearLayout>

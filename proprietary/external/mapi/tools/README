@@ -1,0 +1,10 @@
+===============================
+ HOW TO USE IT?
+===============================
+1. Open 01_start_redirector.bat, 02_sub_redirector_common.bat & 03_stop_redirector.bat in editor.
+2. Change the ADB_PATH to the adb.exe path on your PC.
+3. Change the NC_PATH to the netcat execution binary path on your PC.
+3. Run 01_start_redirector.bat to start redirector. Wait for sometime till it shows adb recording, please "Don't close this window", tool dumps data to the file OUTPUT_FILE_NAME (adb_raw.bin).
+4. Run 02_sub_redirector_common.bat to subscribe all OIDs together. This window can be closed after finished.
+5. Do some testing like browse internet, etc. Logs will be dumped to output file OUTPUT_FILE_NAME (adb_raw.bin).
+6. Run 03_stop_redirector.bat to stop redirector and check the raw data from output file.

@@ -1,0 +1,38 @@
+Unit-test cases of MTK camera denoise effect hal
+
+
+WHAT IT DOES?
+=============
+This contains the unit test cases for camera denoise effect hal
+
+HOW IT WAS BUILT?
+==================
+It needs the following library from AOSP:
+- liblog.so
+- libui.so
+- libutils.so
+- libcutils.so
+- libstdc++.so
+
+
+
+and the following libs from MediaTek:
+- libfeature.vsdof.hal
+- libeffecthal.base
+- libgralloc_extra
+- libfeature.face
+- libmtkcam_metadata
+- libmtkcam.featurepipe.bmdenoise
+- libion
+- libion_mtk
+- libmtkcam_stdutils
+- libmtkcam_imgbuf
+- libmtkcam_modulehelper
+
+
+All source/dependency modules of this module are already put in
+'vendor/mediatek/libs' folder.
+
+HOW TO USE IT?
+==============
+This should not be used directly by an application developer.

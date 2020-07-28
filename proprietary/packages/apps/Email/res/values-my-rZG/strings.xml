@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2008 The Android Open Source Project
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+          http://www.apache.org/licenses/LICENSE-2.0
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="permission_read_attachment_label">အီးေမးလ္ပါ ပူးတြဲမ်ား ဖတ္သည္</string>
+    <string name="permission_read_attachment_desc">ပ႐ိုဂရမ္အား သင့္အီးေမးလ္ပါ ပူးတြဲမ်ားကို ဖတ္ခြင့္ျပဳပါ။</string>
+    <string name="permission_access_provider_label">အခ်က္အလက္ အေထာက္အပံ့ေပးသူ အီးေမးလ္ ဆက္သြယ္ရယူမႈ</string>
+    <string name="permission_access_provider_desc">ပ႐ိုဂရမ္အား လက္ခံခဲ့ေသာ မက္ေဆ့ခ်္မ်ား၊ ပို႔ခဲ့ေသာမက္ေဆ့ခ်္မ်ား၊ အသံုးျပဳသူ အမည္မ်ားႏွင့္ စကားဝွက္မ်ား အပါအဝင္ သင္၏ အီးေမးလ္ ေဒတာေဘ့စ္ကို အသံုးျပဳခြင့္ျပဳပါ။</string>
+    <string name="app_name">အီးေမး(လ္)</string>
+    <skip/>
+    <string name="okay_action">အိုေက</string>
+    <string name="cancel_action">မလုပ္ပါ</string>
+    <string name="create_action">အသစ္ ဖန္တီးပါ</string>
+    <string name="quick_responses_empty_view">အျမန္တံု႔ျပန္မႈမ်ားမရွိ။</string>
+    <string name="account_settings_action">အေကာင့္ အျပင္အဆင္မ်ား</string>
+    <string name="mailbox_name_display_inbox">စာဝင္ပံုး</string>
+    <string name="mailbox_name_display_outbox">စာထြက္ပံုး</string>
+    <string name="mailbox_name_display_drafts">အၾကမ္း</string>
+    <string name="mailbox_name_display_trash">အမိႈက္</string>
+    <string name="mailbox_name_display_sent">ေပးပို႔ၿပီး</string>
+    <string name="mailbox_name_display_junk">ေပးပို႔လာေသာ မလိုသည့္ ေၾကာ္ျငာမ်ား</string>
+    <string name="mailbox_name_display_starred">ၾကယ္ျပဳလုပ္သည္</string>
+    <string name="mailbox_name_display_unread">မဖတ္ရေသးပါ</string>
+    <string name="debug_title">ခ်ဳိ႕ယြင္းခ်က္ဖယ္ရွားပါ</string>
+    <string name="mailbox_list_account_selector_combined_view">တြဲၿပီး ၾကည့္သည္</string>
+    <string name="message_compose_fwd_header_fmt">\n\n-------- မူရင္း မက္ေဆ့(ခ်္)--------\nSubject-  <xliff:g id="subject">%1$s</xliff:g>\nFrom:  <xliff:g id="sender">%2$s</xliff:g>\nသုိ႔-  <xliff:g id="to">%3$s</xliff:g>\nCC:  <xliff:g id="cc">%4$s</xliff:g>\n\n </string>
+    <string name="message_compose_insert_quick_response_list_title">အျမန္ တံု႔ျပန္မႈ ထည့္သြင္းပါ</string>
+    <string name="message_compose_insert_quick_response_menu_title">အျမန္ တံု႔ျပန္မႈ ထည့္သြင္းပါ</string>
+    <string name="message_view_attachment_background_load">စာပို႔ေသာအခါ သင္၏လက္ဆင့္ကမ္း ပို႔ၿပီးသည့္ မက္ေဆ့ခ်္ရွိ ပူးတြဲမ်ားကို ေဒါင္းလုဒ္လုပ္လိမ့္မည္။</string>
+    <string name="message_decode_error">မက္ေဆ့ခ်္ကို အနက္အဓိပၸာယ္ေဖာ္ ေနစဥ္ အမွား ျဖစ္ေပၚခဲ့သည္။</string>
+    <string name="forward_download_failed_ticker">တစ္ခု သို႔မဟုတ္ တစ္ခုထက္ပိုေသာ ပူးတြဲမ်ားကို တဆင့္မေပးပို႔ႏိုင္ခဲ့ပါ။</string>
+    <string name="forward_download_failed_title">ပူးတြဲကို တစ္ဆင့္ မေပးပို႔ႏိုင္ခဲ့ပါ</string>
+    <string name="login_failed_ticker"><xliff:g id="account_name">%s</xliff:g> ဝင္ရန္ မေအာင္ျမင္ပါ။</string>
+    <string name="login_failed_title">အေကာင့္သို႔ မဝင္ႏိုင္ခဲ့ပါ</string>
+    <string name="account_setup_basics_title">အေကာင့္ ဖြဲ႕စည္းပံု</string>
+    <string name="oauth_authentication_title">မွန္ကန္ေၾကာင္း စစ္ေဆးျခင္းကို ေတာင္းဆိုျခင္း</string>
+    <string name="sign_in_title">ဝင္ပါ</string>
+    <string name="oauth_error_description">မွန္ကန္ေၾကာင္း မစစ္ေဆးႏိုင္ပါ</string>
+    <string name="password_warning_label">အီးေမးလ္လိပ္စာ သို႔မဟုတ္ စကားဝွက္ မမွန္ပါ</string>
+    <string name="email_confirmation_label">အီးေမးလ္လိပ္စာ-</string>
+    <string name="account_setup_basics_headline">အီးေမးလ္ အေကာင့္</string>
+    <string name="accounts_welcome">သင္၏အေကာင့္ကို အဆင့္အနည္းငယ္ ျပဳလုပ္ၿပီး တည္ေဆာက္ႏိုင္သည္။</string>
+    <string name="account_setup_basics_email_label">အီးေမးလ္ လိပ္စာ</string>
+    <string name="or_label">သို႔မဟုတ္</string>
+    <string name="sign_in_with_google">Google ႏွင့္ ဝင္ပါ</string>
+    <string name="account_setup_basics_password_label">စကားဝွက္</string>
+    <string name="password_hint">စကားဝွက္</string>
+    <string name="signed_in_with_service_label">%s ႏွင့္ ဝင္ပါ</string>
+    <string name="authentication_label">မွန္ေၾကာင္း စစ္ေဆးျခင္း</string>
+    <string name="add_authentication_label">မွန္ကန္ေၾကာင္း စစ္ေဆးျခင္း ထည့္ပါ</string>
+    <string name="clear_authentication_label">မွန္ကန္ေၾကာင္း စစ္ေဆးျခင္း ရွင္းပါ</string>
+    <string name="account_setup_basics_manual_setup_action">ကိုယ္တိုင္ တပ္ဆင္ပါ</string>
+    <string name="account_setup_username_password_toast">အက်ဳံးဝင္ေသာ အီးေမးလ္လိပ္စာ ႏွင့္ စကားဝွက္ကို ႐ိုက္ထည့္ပါ။</string>
+    <string name="account_duplicate_dlg_title">မူပြားထားခဲ့ေသာ အေကာင့္</string>
+    <string name="account_duplicate_dlg_message_fmt">\"  <xliff:g id="duplicate">%s</xliff:g>\" အေကာင့္အတြက္ ဤအသံုးျပဳသူအမည္ကို သင္ အသံုးျပဳ ေနၿပီးသား ျဖစ္သည္။ </string>
+    <string name="account_setup_check_settings_retr_info_msg">အေကာင့္ သတင္း အခ်က္အလက္ကို ျပန္လည္ရရွိေနသည္ \u2026</string>
+    <string name="account_setup_check_settings_check_incoming_msg">ဆာဗာအဆင္အျပင္မ်ားကို မွန္မမွန္ စစ္ေဆးေနသည္\u2026</string>
+    <string name="account_setup_check_settings_check_outgoing_msg">smtp အဆင္အျပင္မ်ားကို မွန္မမွန္ စစ္ေဆးေနသည္\u2026</string>
+    <string name="account_setup_creating_account_msg">အေကာင့္ ဖန္တီးေနသည္\u2026</string>
+    <string name="account_setup_ab_headline">အေကာင့္အမ်ဳိးအစားကို အတည္ျပဳပါ</string>
+    <string name="account_setup_ab_instructions_format"><xliff:g id="email">%1$s</xliff:g> သည္ <xliff:g id="userProtocol">%2$s</xliff:g> ကို အသံုးျပဳထားသည္ဟု သင္ညႊန္ျပခဲ့ေသာ္လည္း အေကာင့္သည္ <xliff:g id="providerProtocol">%3$s</xliff:g>ကို အသံုးျပဳေနႏိုင္သည္</string>
+    <string name="account_setup_names_headline">သင့္အေကာင့္ကို တည္ေဆာက္ၿပီးျဖစ္၍ အီးေမးလ္ကို သံုးႏိုင္ၿပီ။</string>
+    <string name="account_setup_names_account_name_label">ဤအေကာင့္ကို အမည္တစ္ခု ေပးသည္ (ေရြးခ်ယ္စရာ)</string>
+    <string name="account_setup_names_user_name_label">သင့္ အမည္ (အထြက္ မက္ေဆ့ခ်္မ်ား တြင္ ေဖာ္ျပခဲ့သည္)</string>
+    <string name="account_setup_account_type_headline">အေကာင့္ အမ်ဳိးအစား</string>
+    <string name="account_setup_account_type_instructions">ထိုအရာသည္ မည္သည့္ အေကာင့္ အမ်ဳိးအစားနည္း။</string>
+    <string name="account_setup_incoming_headline">အဝင္ ဆာဗာ အျပင္အဆင္မ်ား</string>
+    <string name="account_setup_incoming_username_label">အသုံးျပဳသူအမည္</string>
+    <string name="account_setup_incoming_password_label">စကားဝွက္</string>
+    <string name="account_setup_password_subheading">စကားဝွက္</string>
+    <string name="account_setup_incoming_server_label">ဆာဗာ</string>
+    <string name="account_setup_incoming_port_label">ပို႔(တ္) </string>
+    <string name="account_setup_incoming_security_label">လံုျခံဳေရး အမ်ဳိးအစား</string>
+    <string name="account_setup_incoming_security_none_label">အသံတိတ္</string>
+    <string name="account_setup_incoming_security_ssl_trust_certificates_label">SSL/TLS (သက္ေသခံ လက္မွတ္မ်ားအားလံုး လက္ခံသည္)</string>
+    <string name="account_setup_incoming_security_ssl_label">SSL/TLS</string>
+    <string name="account_setup_incoming_security_tls_trust_certificates_label">STARTTLS (သက္ေသခံ လက္မွတ္မ်ားအားလံုး လက္ခံသည္)</string>
+    <string name="account_setup_incoming_security_tls_label">STARTTLS</string>
+    <string name="account_setup_incoming_delete_policy_label">ဆာဗာ မွ အီးေမးလ္ကို ဖ်က္ပစ္သည္</string>
+    <string name="account_setup_incoming_delete_policy_never_label">ဘယ္ေတာ့မွ်</string>
+    <string name="account_setup_incoming_delete_policy_delete_label">အဝင္စာပံုးမွ ကၽြႏု္ပ္ ဖ်က္ပစ္ေသာအခါ</string>
+    <string name="account_setup_incoming_imap_path_prefix_label">IMAP လမ္းေၾကာင္း ေရွ႕ဆက္စာလံုး</string>
+    <string name="account_setup_incoming_imap_path_prefix_hint">ေရြးခ်ယ္စရာ</string>
+    <string name="account_setup_outgoing_headline">အထြက္ ဆာဗာ အျပင္အဆင္မ်ား</string>
+    <string name="account_setup_outgoing_smtp_server_label">SMTP ဆာဗာ</string>
+    <string name="account_setup_outgoing_port_label">ပို႔(တ္) </string>
+    <string name="account_setup_outgoing_security_label">လံုျခံဳေရး အမ်ဳိးအစား</string>
+    <string name="account_setup_outgoing_require_login_label">ဝင္ရန္လိုအပ္သည္</string>
+    <string name="account_setup_outgoing_username_label">အသုံးျပဳသူအမည္</string>
+    <string name="account_setup_exchange_certificate_title">သံုးစြဲသူ သက္ေသခံလက္မွတ္</string>
+    <string name="account_setup_exchange_select_certificate">ေရြးခ်ယ္ပါ</string>
+    <string name="account_setup_exchange_use_certificate">သံုးစြဲသူ သက္ေသခံလက္မွတ္ သံုးပါ</string>
+    <string name="account_setup_exchange_remove_certificate">ဖယ္ရွားပါ</string>
+    <string name="account_setup_exchange_no_certificate">အသံတိတ္</string>
+    <string name="account_setup_exchange_device_id_label">မိုဘိုင္း စက္ ID</string>
+    <string name="account_setup_options_headline">အေကာင့္ ေရြးခ်ယ္စရာမ်ား</string>
+    <string name="account_setup_options_mail_check_frequency_label">အဝင္စာပံုး ႀကိမ္ႏႈန္း စစ္ေဆးသည္</string>
+    <string name="account_setup_options_mail_check_frequency_never">ဘယ္ေတာ့မွ်</string>
+    <string name="account_setup_options_mail_check_frequency_push">အလိုအေလ်ာက္ (တြန္းသည္)</string>
+    <string name="account_setup_options_mail_check_frequency_5min">၅ မိနစ္တိုင္း</string>
+    <string name="account_setup_options_mail_check_frequency_10min">၁၀ မိနစ္တိုင္း</string>
+    <string name="account_setup_options_mail_check_frequency_15min">၁၅ မိနစ္တိုင္း</string>
+    <string name="account_setup_options_mail_check_frequency_30min">၃၀ မိနစ္တိုင္း</string>
+    <string name="account_setup_options_mail_check_frequency_1hour">နာရီတိုင္း</string>
+    <string name="account_setup_options_notify_label">အီးေမးလ္ ေရာက္ရွိေသာအခါ ကၽြႏု္ပ္ကို အေၾကာင္းၾကားသည္။</string>
+    <string name="account_setup_options_sync_contacts_label">ဤအေကာင့္မွ တစ္မ်ဳိးတည္းျဖစ္ေအာင္ ျပဳလုပ္ျခင္း အဆက္အသြယ္မ်ား။</string>
+    <string name="account_setup_options_sync_calendar_label">ဤအေကာင့္မွ တစ္မ်ဳိးတည္းျဖစ္ေအာင္ ျပဳလုပ္ျခင္း ျပကၡဒိန္။</string>
+    <string name="account_setup_options_sync_email_label">ဤအေကာင့္မွ တစ္မ်ဳိးတည္းျဖစ္ေအာင္ ျပဳလုပ္ျခင္း အီးေမးလ္။</string>
+    <string name="account_setup_options_background_attachments_label">ဝိုင္-ဖိုင္ သို႔ ခ်ိတ္ဆက္ေသာအခါ ပူးတြဲမ်ားကို အလိုအေလ်ာက္ ေဒါင္းလုဒ္ လုပ္သည္</string>
+    <string name="account_setup_failed_dlg_title">မၿပီးႏိုင္ေသးပါ</string>
+    <string name="account_setup_options_mail_window_label">တစ္မ်ဳိးတည္းျဖစ္ေအာင္ ျပဳလုပ္ရန္ ရက္မ်ား</string>
+    <string name="account_setup_options_mail_window_auto">အလိုအေလ်ာက္</string>
+    <string name="account_setup_options_mail_window_1day">ယမန္ေန႔</string>
+    <string name="account_setup_options_mail_window_3days">လြန္ခဲ့ေသာသံုးရက္</string>
+    <string name="account_setup_options_mail_window_1week">လြန္ခဲ့ေသာတစ္ပတ္</string>
+    <string name="account_setup_options_mail_window_2weeks">လြန္ခဲ့ေသာႏွစ္ပတ္</string>
+    <string name="account_setup_options_mail_window_1month">ယခင္လ</string>
+    <string name="account_setup_options_mail_window_all">အားလံုး</string>
+    <string name="account_setup_options_mail_window_default">အေကာင့္ကို ပံုေသသံုးပါ</string>
+    <string name="account_setup_failed_dlg_auth_message">အသံုးျပဳသူအမည္ သို႔မဟုတ္ စကားဝွက္ မမွန္ပါ။</string>
+    <string name="account_setup_autodiscover_dlg_authfail_title">အေကာင့္ တည္ေဆာက္မႈေၾကာင့္ ျပႆနာ</string>
+    <string name="account_setup_autodiscover_dlg_authfail_message">သံုးစြဲသူအမည္၊ စကားဝွက္ႏွင့္ အေကာင့္ အဆင္အျပင္မ်ား မွန္ေၾကာင္း အတည္ျပဳပါ။</string>
+    <string name="account_setup_failed_dlg_certificate_message">ဆာဗာသို႔ လံုျခံဳစြာ မခ်ိတ္ဆက္ႏိုင္ပါ။</string>
+    <string name="account_setup_failed_dlg_certificate_message_fmt">ဆာဗာသို႔ လံုျခံဳစြာ မခ်ိတ္ဆက္ႏိုင္ပါ။\n(  <xliff:g id="error">%s</xliff:g>) </string>
+    <string name="account_setup_failed_certificate_required">သံုးစြဲသူ အေထာက္အထား လိုအပ္သည္။ ဆာဗာသို႔ သံုးစြဲသူ အေထာက္အထားတစ္ခုႏွင့္ ခ်ိတ္ဆက္လို ပါသလား။</string>
+    <string name="account_setup_failed_certificate_inaccessible">အေထာက္အထားမမွန္ပါ သို႔မဟုတ္ အသံုးမျပဳႏိုင္ပါ။</string>
+    <string name="account_setup_failed_check_credentials_message">ဆာဗာသည္ အမွားႏွင့္တံု႔ျပန္ခဲ့သည္။ သင္၏ အသံုးျပဳသူအမည္ႏွင့္ စကားဝွက္ကို စစ္ေဆးၿပီး ထပ္ႀကဳိးစားၾကည့္ပါ။</string>
+    <string name="account_setup_failed_dlg_server_message">ဆာဗာသို႔ မခ်ိတ္ဆက္ႏိုင္ပါ။</string>
+    <string name="account_setup_failed_dlg_server_message_fmt">ဆာဗာသို႔ မခ်ိတ္ဆက္ႏိုင္ပါ။\n(  <xliff:g id="error">%s</xliff:g>) </string>
+    <string name="account_setup_failed_tls_required">TLS လိုအပ္ေသာ္လည္း ဆာဗာမွ အေထာက္အပံ့ မေပးခဲ့ပါ။</string>
+    <string name="account_setup_failed_auth_required">စစ္မွန္ေၾကာင္း သက္ေသျပျခင္း နည္းလမ္းမ်ားသည္ ဆာဗာမွ အေထာက္အပံ့ မေပးခဲ့ပါ။</string>
+    <string name="account_setup_failed_security">လံုျခံဳမႈ အမွားေၾကာင့္ ဆာဗာသို႔ ခ်ိတ္ဆက္ျခင္း မဖြင့္ႏိုင္ခဲ့ပါ။</string>
+    <string name="account_setup_failed_ioerror">ဆာဗာသို႔ ခ်ိတ္ဆက္ျခင္း မဖြင့္ႏိုင္ခဲ့ပါ။</string>
+    <string name="account_setup_failed_protocol_unsupported">သင္ မမွန္ေသာ ဆာဗာလိပ္စာကို ႐ိုက္ထည့္ခဲ့ျခင္း သို႔မဟုတ္ အီးေမးလ္ အေထာက္အပံ့ မျပဳေသာ ပ႐ိုတိုေကာမူကြဲကို ဆာဗာမွ လိုအပ္ျခင္း ျဖစ္သည္။</string>
+    <string name="account_setup_failed_access_denied">ဤဆာဗာျဖင့္ တစ္မ်ဳိးတည္းျဖစ္ေအာင္ ျပဳလုပ္ရန္ ခြင့္ျပဳခ်က္ သင္ မရရွိပါ။ ေနာက္ထပ္ သတင္းအခ်က္အလက္အတြက္ သင့္ဆာဗာ၏ အုပ္ခ်ဳပ္ေရးမႈးကို ဆက္သြယ္ပါ။</string>
+    <string name="account_setup_security_required_title">တသီးတျခားျဖစ္ေသာ လံုျခံဳေရး စီမံခန္႔ခြဲျခင္း</string>
+    <string name="account_setup_security_policies_required_fmt">ဆာဗာ <xliff:g id="server">%s</xliff:g> မွ သင့္ အန္းဒ႐ိုက္ စက္၏ လံုျခံဳေရး အသြင္အျပင္အခ်ဳိ႕ကို ၎အား အေဝးမွထိန္းခ်ဳပ္ျခင္းကို သင္ ခြင့္ျပဳရန္ ေတာင္းဆိုသည္။ ဤအေကာင့္ကို တည္ေဆာက္ျခင္းၿပီးစီးလိုပါသလား။</string>
+    <string name="account_setup_failed_security_policies_unsupported">  <xliff:g id="error">%s</xliff:g>အပါအဝင္- သင့္ အန္းဒ႐ိုက္စက္မွ အေထာက္အကူ မေပးေသာ လံုျခံဳေရး အစီအစဥ္မ်ားကို ဆာဗာမွ ေတာင္းဆိုသည္ </string>
+    <string name="disable_admin_warning">သတိေပးခ်က္ - သင့္စက္ကို အုပ္ခ်ဳပ္ရန္ အီးေမးလ္ လုပ္ငန္းသံုး ပ႐ိုဂရမ္အခြင့္အား အသက္ဝင္ေအာင္ မျပဳလုပ္ျခင္းသည္ ၎တို႔၏ အီးေမးလ္၊ အဆက္အသြယ္မ်ား၊ ျပကၡဒိန္ ျဖစ္ရပ္မ်ား ႏွင့္ အျခား အခ်က္အလက္မ်ားႏွင့္အတူ အီးေမးလ္အေကာင့္မ်ားအားလံုးကို ဖ်က္ပစ္လိမ့္မည္။</string>
+    <string name="account_security_dialog_title">လံုျခံဳေရး အသစ္ျပင္ဆင္မႈ</string>
+    <string name="account_security_dialog_content_fmt">သင္၏ လံုျခံဳေရး အျပင္အဆင္မ်ားကို အသစ္ျပင္ဆင္မႈျပဳလုပ္ရန္  <xliff:g id="account">%s</xliff:g> မွ လိုအပ္သည္။ </string>
+    <string name="security_unsupported_ticker_fmt">လံုျခံဳေရးလိုအပ္ခ်က္မ်ားေၾကာင့္ အေကာင့္ \"<xliff:g id="account">%s</xliff:g>\" ကို တစ္မ်ဳိးတည္းျဖစ္ေအာင္ မလုပ္ႏိုင္ပါ။</string>
+    <string name="security_needed_ticker_fmt">အေကာင့္ \"  <xliff:g id="account">%s</xliff:g>\" မွ လံုျခံဳေရး အျပင္အဆင္မ်ားကို အသစ္ျပင္ဆင္မႈ ျပဳလုပ္ရန္ လိုအပ္သည္။ </string>
+    <string name="security_changed_ticker_fmt">အေကာင့္ \"<xliff:g id="account">%s</xliff:g>\" သည့္ ၎၏ လံုျခံဳေရး အဆင္အျပင္မ်ားကို ေျပာင္းခဲ့သည္၊ အသံုးျပဳသူ လုပ္ေဆာင္ခ်က္ မလိုအပ္ပါ။</string>
+    <string name="security_notification_content_update_title">လံုျခံဳေရး အသစ္ျပင္ဆင္မႈ လိုအပ္ခဲ့သည္</string>
+    <string name="security_notification_content_change_title">လံုျခံဳေရးမူဝါဒမ်ား ေျပာင္းၿပီးၿပီ။</string>
+    <string name="security_notification_content_unsupported_title">လံုျခံဳေရးမူဝါဒမ်ား မကိုက္ပါ </string>
+    <string name="account_security_title">စက္ လံုျခံဳေရး</string>
+    <string name="account_security_policy_explanation_fmt">ဆာဗာ  <xliff:g id="server">%s</xliff:g> မွ သင့္ အန္းဒ႐ိုက္ စက္၏ လံုျခံဳေရး အသြင္အျပင္အခ်ဳိ႕ကို ၎အား အေဝးမွ ထိန္းခ်ဳပ္ျခင္းကို သင္ ခြင့္ျပဳရန္ ေတာင္းဆိုသည္။ </string>
+    <string name="account_setup_failed_dlg_edit_details_action">အေသးစိတ္ ျပင္ဆင္ပါ</string>
+    <string name="password_expire_warning_ticker_fmt">သင္၏ ေသာ့ခတ္ထားေသာ ဖန္သားျပင္ PIN သို႔မဟုတ္ စကားဝွက္ကို ေျပာင္းလဲရန္ \"  <xliff:g id="account">%s</xliff:g>\" မွ ေတာင္းဆိုသည္။ </string>
+    <string name="password_expire_warning_content_title">ေသာ့ခတ္ထားေသာ ဖန္သားျပင္ စကားဝွက္ သက္တမ္း ကုန္ေနသည္</string>
+    <string name="password_expired_ticker">သင္၏ ေသာ့ခတ္ထားေသာ ဖန္သားျပင္ PIN သို႔မဟုတ္ စကားဝွက္ သက္တမ္းကုန္ၿပီ။</string>
+    <string name="password_expired_content_title">ေသာ့ခတ္ထားေသာ ဖန္သားျပင္ စကားဝွက္ သက္တမ္းကုန္ခဲ့သည္</string>
+    <string name="password_expire_warning_dialog_title">ေသာ့ခတ္ထားေသာ ဖန္သားျပင္ စကားဝွက္ သက္တမ္း ကုန္ေနသည္</string>
+    <string name="password_expire_warning_dialog_content_fmt">ေလာ့(ခ္)ခ်ထားေသာ ဖန္သားျပင္ PIN သို႔မဟုတ္ စကားဝွက္ကို မၾကာမီ ေျပာင္းရန္လိုအပ္သည္၊ သို႔မဟုတ္ပါက <xliff:g id="account">%s</xliff:g> အတြက္ အခ်က္အလက္ကို ဖ်က္ပစ္လိုက္လိမ့္မည္ ယခု ၎ကို ေျပာင္းလိုပါသလား။</string>
+    <string name="password_expired_dialog_title">ေသာ့ခတ္ထားေသာ ဖန္သားျပင္ စကားဝွက္ သက္တမ္းကုန္ခဲ့သည္</string>
+    <string name="password_expired_dialog_content_fmt"><xliff:g id="account">%s</xliff:g> အတြက္ အခ်က္အလက္ကို သင့္စက္မွ ဖ်က္ပစ္ေနသည္။ သင္၏ေလာ့(ခ္)ခ်ထားေသာ ဖန္သားျပင္ PIN သို႔မဟုတ္ စကားဝွက္ကို ေျပာင္းျခင္းျဖင့္ ၎ကို ျပန္ရယူႏိုင္သည္။ ယခု ၎ကို ေျပာင္းလိုပါသလား။</string>
+    <string name="account_settings_exit_server_settings">မသိမ္းဆည္းရေသးေသာ ေျပာင္းလဲမႈမ်ားကို ျဖတ္ခ်မလား။</string>
+    <string name="account_settings_background_attachments_label">ပူးတြဲမ်ား ေဒါင္းလုဒ္ လုပ္သည္</string>
+    <string name="account_settings_background_attachments_summary">ဝိုင္-ဖိုင္ မွတစ္ဆင့္ မၾကာေသးမီက ပူးတြဲ မက္ေဆ့ခ်္မ်ားကို အလိုအေလ်ာက္ ေဒါင္းလုဒ္ လုပ္သည္</string>
+    <string name="account_settings_notify_label">အီးေမးလ္ အေၾကာင္းၾကားခ်က္မ်ား</string>
+    <string name="account_settings_summary">ႀကိမ္ႏႈန္း တစ္မ်ဳိးတည္းျဖစ္ေအာင္ ျပဳလုပ္ျခင္း၊ အေၾကာင္းၾကားခ်က္မ်ား စသည္။</string>
+    <string name="account_settings_notify_summary">အီးေမးလ္ ေရာက္ေသာအခါ အေၾကာင္းၾကားခ်က္ ပို႔ပါ</string>
+    <string name="account_settings_mail_check_frequency_label">တစ္မ်ဳိးတည္းျဖစ္ေအာင္ ျပဳလုပ္ျခင္းႀကိမ္ႏႈန္း</string>
+    <string name="account_settings_incoming_label">အဝင္ အျပင္အဆင္မ်ား</string>
+    <string name="account_settings_incoming_summary">အသံုးျပဳသူ အမည္၊ စကားဝွက္ ႏွင့္ အျခား အဝင္ ဆာဗာ အျပင္အဆင္မ်ား</string>
+    <string name="account_settings_outgoing_label">အထြက္ အျပင္အဆင္မ်ား</string>
+    <string name="account_settings_outgoing_summary">အသံုးျပဳသူ အမည္၊ စကားဝွက္ ႏွင့္ အျခား အထြက္ ဆာဗာ အျပင္အဆင္မ်ား</string>
+    <string name="account_settings_enforced_label">ျပဌာန္းထားေသာ မူဝါဒမ်ား</string>
+    <string name="account_settings_enforced_summary">အသံတိတ္</string>
+    <string name="account_settings_unsupported_label">မေထာက္ပံ့ေသာ မူဝါဒမ်ား</string>
+    <string name="account_settings_unsupported_summary">အသံတိတ္</string>
+    <string name="account_settings_retry_label">တစ္မ်ဳိးတည္းျဖစ္ေအာင္ ျပဳလုပ္ပါ</string>
+    <string name="account_settings_retry_summary">ဤအေကာင့္ကို တစ္မ်ဳိးတည္းျဖစ္ေအာင္ ျပဳလုပ္ရန္ ဤေနရာကို ထိပါ</string>
+    <string name="account_settings_description_label">အေကာင့္ အမည္</string>
+    <string name="account_settings_name_label">သင္၏ အမည္</string>
+    <string name="account_settings_edit_quick_responses_label">အျမန္ျပန္ၾကားခ်က္မ်ား</string>
+    <string name="account_settings_edit_quick_responses_summary">အီးေမးလ္ေရးေသာအခါ မၾကာခဏေရးသြင္းေသာစာသားကို တည္းျဖတ္ပါ</string>
+    <string name="account_settings_notifications">ပ႐ိုဂရမ္ဆိုင္ရာ သတင္းအခ်က္အလက္</string>
+    <string name="account_settings_data_usage">အခ်က္အလက္ အသံုးခ်မႈ</string>
+    <string name="account_settings_policies">လံုျခံဳေရး မူဝါဒမ်ား</string>
+    <string name="system_folders_title">စနစ္ဖိုဒါမ်ား</string>
+    <string name="system_folders_trash_title">အမိႈက္ဖိုဒါ</string>
+    <string name="system_folders_trash_summary">သင့္ဆာဗာ၏ အမိႈက္ဖိုဒါကို ေရြးပါ</string>
+    <string name="system_folders_trash_dlg">သင့္ဆာဗာ၏ အမိႈက္ဖိုဒါကို ေရြးပါ</string>
+    <string name="system_folders_sent_title">ပို႔ၿပီးပစၥည္းမ်ားဖိုဒါ</string>
+    <string name="system_folders_sent_summary">သင့္ဆာဗာ၏ ပို႔ၿပီးပစၥည္းမ်ားဖိုဒါကို ေရြးပါ</string>
+    <string name="system_folders_sent_dlg">သင့္ဆာဗာ၏ ပို႔ၿပီးပစၥည္းမ်ားဖိုဒါကို ေရြးပါ</string>
+    <string name="edit_quick_response_dialog">အျမန္ျပန္ၾကားခ်က္မ်ား</string>
+    <string name="save_action">သိမ္းဆည္းပါ</string>
+    <string name="account_settings_sync_contacts_enable">အဆက္အသြယ္မ်ား တစ္မ်ဳိးတည္းျဖစ္ေအာင္ ျပဳလုပ္ပါ</string>
+    <string name="account_settings_sync_contacts_summary">ဤအေကာင့္အတြက္ အဆက္အသြယ္မ်ား တစ္မ်ဳိးတည္း ျဖစ္ေအာင္ ျပဳလုပ္ပါ</string>
+        <string name="account_settings_sync_calendar_enable">ျပကၡဒိန္ တစ္မ်ဳိးတည္းျဖစ္ေအာင္ ျပဳလုပ္ပါ</string>
+    <string name="account_settings_sync_calendar_summary">ျပကၡဒိန္ျဖစ္ရပ္ကို ဤအေကာင့္အတြက္ စည္းညႇိပါ</string>
+    <string name="account_settings_sync_email_enable">အီးေမးလ္ တစ္မ်ဳိးတည္းျဖစ္ေအာင္ ျပဳလုပ္ပါ</string>
+    <string name="account_settings_sync_email_summary">ဤအေကာင့္အတြက္ အီးေမးလ္ တစ္မ်ဳိးတည္းျဖစ္ေအာင္ ျပဳလုပ္သည္</string>
+    <string name="label_notification_vibrate_title">တုန္ခါပါ</string>
+    <string name="account_settings_ringtone">ဖုန္းျမည္သံ ေရြးခ်ယ္သည္</string>
+    <string name="account_settings_servers">ဆာဗာ အျပင္အဆင္မ်ား</string>
+    <string name="mailbox_settings_activity_title">တစ္မ်ဳိးတည္းျဖစ္ေအာင္ ျပဳလုပ္ျခင္း ေရြးခ်ယ္စရာမ်ား</string>
+    <string name="mailbox_settings_activity_title_with_mailbox">တစ္မ်ဳိးတည္းျဖစ္ေအာင္ ျပဳလုပ္ျခင္း ေရြးခ်ယ္စရာမ်ား (  <xliff:g id="mailboxx_name" example="Family">%s</xliff:g>) </string>
+    <string name="mailbox_settings_sync_enabled_label">ဤဖိုဒါကို စည္းညႇိပါ</string>
+    <string name="mailbox_settings_sync_enabled_summary">ခ်ိတ္ဆက္ၿပီးေသာအခါ မက္ေဆ့ခ်္မ်ားကို ေဒါင္းလုဒ္လုပ္လိမ့္မည္</string>
+    <string name="mailbox_settings_mailbox_sync_window_label">တစ္မ်ဳိးတည္းျဖစ္ေအာင္ ျပဳလုပ္ရန္ ေမးလ္၏ရက္မ်ား</string>
+    <string name="provider_note_t_online">ဤအီးေမးလ္ အေကာင့္ကို အျပင္အဆင္မ်ား မျပဳလုပ္မီ၊ T-အြန္လိုင္း ဝက္ဘ္ဆိုဒ္ ကို သြားေရာက္ၿပီး POP3 အီးေမးလ္ ဝင္ေရာက္မႈအတြက္ စကားဝွက္ ဖန္တီးပါ။</string>
+    <string name="exchange_name_alternate">မိုက္ခ႐ိုေဆာ့ဖ္ကို သက္ဝင္ လႈပ္ရွားမႈရွိေသာ တစ္မ်ဳိးတည္း ျဖစ္ေအာင္ျပဳလုပ္ျခင္း လဲလွယ္သည္</string>
+    <string name="system_account_create_failed">အေကာင့္ကို ဖန္းတီးမရႏိုင္ပါ။ ေနာက္တစ္ႀကိမ္ ႀကိဳးစားပါ။</string>
+    <string name="device_admin_label">အီးေမး(လ္)</string>
+    <string name="device_admin_description">ဆာဗာ- တိက်ေသာ လံုျခံဳေရး မူဝါဒ စတင္လုပ္ေဆာင္သည္</string>
+    <string name="policy_dont_allow_camera">သင့္စက္၏ ကင္မရာအသံုးျပဳမႈကို ခြင့္မျပဳပါ</string>
+    <string name="policy_require_password">စက္၏စကားဝွက္ လိုအပ္သည္</string>
+    <string name="policy_password_history">လတ္တေလာ စကားဝွက္မ်ား ျပန္သံုးမႈကို ကန္႔သတ္ထားသည္</string>
+    <string name="policy_password_expiration">သက္တမ္းကုန္ရန္ စကားဝွက္မ်ား လိုအပ္သည္</string>
+    <string name="policy_screen_timeout">စက္၏ဖန္သားျပင္ကို ေလာ့(ခ္)ခ်ရန္ စက္အားေနရန္ လိုသည္</string>
+    <string name="policy_calendar_age">စည္းညႇိမည့္ ျပကၡဒိန္ျဖစ္ရပ္ အေရအတြက္ ကန္႔သတ္ထားသည္</string>
+    <string name="policy_email_age">ခ်ိန္ညႇိမည့္ အီးေမးလ္ အေရအတြက္ကို ကန္႔သတ္ထားသည္</string>
+    <string name="quick_1">ေက်းဇူးတင္ပါသည္။</string>
+    <string name="quick_2">ေကာင္းေသာ တံု႔ျပန္မႈမ်ား</string>
+    <string name="quick_3">ဤအရာကို ေနာက္မွ ဖတ္ၿပီး သင့္ထံသို႔ ျပန္ပ႔ို႔လိုက္မည္။</string>
+    <string name="quick_4">ဤအရာကို ေဆြးေႏြးရန္ အစည္းအေဝးတစ္ခု ျပဳလုပ္ၾကစို႔။</string>
+    <string name="confirm_response">တံု႔ျပန္မႈကို ပို႔ေနသည္…</string>
+    <string name="imap_name">IMAP</string>
+    <string name="pop3_name">POP3</string>
+    <string name="trash_folder_selection_title"><xliff:g id="account">%s</xliff:g> အတြက္ ဆာဗာအမိႈက္ဖိုဒါကို ေရြး</string>
+    <string name="sent_folder_selection_title"><xliff:g id="account">%s</xliff:g> အတြက္ ဆာဗာပို႔ၿပီးပစၥည္းမ်ားဖိုဒါေရြး</string>
+    <string name="account_waiting_for_folders_msg">ဖုိဒါစာရင္းကို တင္ေနသည္…</string>
+    <string name="no_quick_responses">ဘာမွ မရႏိုင္</string>
+    <string name="gmail_name">Gmail</string>
+    <string name="folder_sync_settings_pref_title">ဖိုဒါ ခ်ိန္ညိႇျခင္း ဆက္တင္မ်ား</string>
+</resources>

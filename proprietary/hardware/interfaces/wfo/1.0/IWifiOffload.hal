@@ -1,0 +1,166 @@
+/*
+ * Copyright (C) 2016 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package vendor.mediatek.hardware.wfo@1.0;
+
+import IWifiOffloadCallback;
+
+interface IWifiOffload {
+    /*
+     * Set call back function for WifiOffload HIDL service
+     *
+     * @param wifiOffloadCallback Object containing WifiOffload callback functions
+     */
+    oneway setWifiOffloadCallback(IWifiOffloadCallback wifiOffloadCallback);
+
+    /*
+     * WifiOffload HIDL service initialization
+     *
+     */
+    oneway nativeInit();
+
+    /*
+     * WifiOffload HIDL service de-initialization
+     *
+     */
+    oneway nativeClose();
+
+    /*
+     * Get Rat type from MAL
+     *
+     * @param simIdx SIM index
+     * @return result Operation completion status.
+     */
+    nativeGetRatType(uint8_t simIdx) generates (int32_t result);
+
+    /*
+     * Set WifiOffload service profile to MAL
+     *
+     * @param simId SIM index
+     * @param volteEnabled Volte setting enable/disable value
+     * @param wfcEnabled Wi-Fi Calling setting enable/disable value
+     * @param vilteEnabled Vilte setting enable/disable value
+     * @param fqdn FQDN setting value
+     * @param wifiEnabled Wi-Fi enable/disable status
+     * @param wfcMode Wi-Fi Calling prefer mode
+     * @param dataRoaming_enabled Data roaming enable/disable value
+     * @param isAllowTurnOffIms Allow/deny turn off IMS value
+     */
+    oneway nativeSetWosProfile(uint8_t simId, bool volteEnabled, bool wfcEnabled,
+            bool vilteEnabled, string fqdn, bool wifiEnabled, uint8_t wfcMode,
+            uint8_t dataRoaming_enabled, bool isAllowTurnOffIms);
+
+    /*
+     * Set Wi-Fi status to MAL
+     *
+     * @param wifiConnected Wi-Fi connection status
+     * @param ifName Wi-Fi interface name
+     * @param ipv4 Wi-Fi ipv4 address
+     * @param ipv6 Wi-Fi ipv6 address
+     * @param mac Wi-Fi MAC address
+     */
+    oneway nativeSetWifiStatus(bool wifiConnected, string ifName, string ipv4, string ipv6, string mac);
+
+    /*
+     * Set call state to MAL
+     *
+     * @param simIdx SIM index
+     * @param callId Call id
+     * @param callType Call type
+     * @param callState Call state
+     */
+    oneway nativeSetCallState(uint8_t simIdx, int32_t callId, int32_t callType, int32_t callState);
+
+    /*
+     * Set service state to MAL
+     *
+     * @param mdIdx MD index
+     * @param simIdx SIM index
+     * @param isDataRoaming Data roaming enable/disable value
+     * @param ratType Rat type
+     * @param serviceState Service state
+     * @param locatedPlmn PLMN identified by MCC MNC and described in the GSM 02-series of spec.
+     */
+    oneway nativeSetServiceState(uint8_t mdIdx, uint8_t simIdx, bool isDataRoaming,
+            uint8_t ratType, uint8_t serviceState, string locatedPlmn);
+
+    /*
+     * Set voice registration state to MAL
+     *
+     * @param mdIdx MD index
+     * @param simIdx SIM index
+     * @param isVoiceRoaming if voice roaming
+     * @param voiceRatType voice rat type
+     * @param voiceRegState voice registration state
+     */
+    oneway nativeSetVoiceState(uint8_t mdIdx, uint8_t simIdx,
+            bool isVoiceRoaming, uint8_t voiceRatType, uint8_t voiceRegState);
+
+    /*
+     * Set SIM information to MAL
+     *
+     * @param simId SIM index
+     * @param imei IMEI
+     * @param imsi IMSI
+     * @param mccMnc Mobile conuntry code & network code
+     * @param impi IMPI
+     * @param simType SIM type
+     * @param simReady Is SIM ready
+     * @param isMainSim Is main SIM
+     */
+    oneway nativeSetSimInfo(uint8_t simId, string imei, string imsi, string mccMnc,
+            string impi, int32_t simType, bool simReady, bool isMainSim);
+
+    /*
+     * Set Wi-Fi quality to MAL
+     *
+     * @param rssi RSSI value
+     * @param snr SNR value
+     */
+    oneway nativeSetWifiQuality(uint32_t rssi, uint32_t snr);
+
+    /*
+     * Set Wi-Fi calling support status to MAL
+     *
+     * @param simId SIM index
+     * @param isWfcSupported Support Wi-Fi calling or not
+     */
+    oneway nativeSetWfcSupported(uint8_t simId, int32_t isWfcSupported);
+
+    /*
+     * Set radio state to MAL
+     *
+     * @param simId SIM index
+     * @param mdIdx MD index
+     * @param radioState Radio state
+     */
+    oneway nativeSetRadioState(uint8_t simId, uint8_t mdIdx, uint8_t radioState);
+
+    /*
+     * Set location information to MAL
+     *
+     * @param simId SIM index
+     * @param countryId Two-letter country code defined by ISO 3166-1
+     */
+    oneway nativeSetLocationInfo(uint8_t simId, string countryId);
+
+    /*
+     * Try to connect to MAL
+     *
+     * @return result Operation completion status.
+     */
+    nativeConnectToMal() generates (int32_t result);
+};

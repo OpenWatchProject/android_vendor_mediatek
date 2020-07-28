@@ -1,0 +1,87 @@
+/*
+ * Copyright (C) 2016 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package vendor.mediatek.hardware.camera.vpuclient@2.0;
+
+import android.hardware.camera.common@1.0::types;
+import android.hardware.graphics.common@1.0::types;
+import IMtkVpuBuffer;
+import types;
+/*
+ * This is used to VpuClient.
+ */
+
+interface IMtkVpuClient{
+
+    /**
+     *   check if VpuClient is existence
+    */
+    existVpuClient() generates (Status status);
+
+    /**
+     *   create VpuClient
+    */
+    createVpuClient(int64_t timestamp) generates (Status status);
+
+    /**
+     *   create VpuClient instance
+    */
+    createinstanceVpuClient(vec<int64_t> vpuStreamIns, VpuBuffer_t vpuBuffer, handle hidlShareFd) generates (Status status);
+	createInstance(string callername) generates (Status status);
+	destroyInstance(string callername) generates (Status status);
+	/*
+	*	getAlgo(string stringname) generates (Status status);
+	*/
+	getAlgo(string stringname) generates (uint64_t algo);
+	/*
+	*acquire() generates (Status status);
+	*/
+	acquire(uint64_t algo) generates (uint64_t request);
+	/*
+	 *	addBuffer(VpuBuffer_t vpuBuffer, handle hidlShareFd) generates (Status status);
+	 *	setProperty(int32_t sett, int32_t id) generates (Status status);
+	 *	setPropertyMem(memory propertyMem) generates (Status status);
+	 *	setExtraParam(VpuExtraParam_t extra_param) generates (Status status);
+	*/
+	addBuffer(uint64_t request, VpuBuffer_t vpuBuffer, handle hidlShareFd, handle hidlShareFd1, handle hidlShareFd2) generates (Status status);
+	setProperty(uint64_t request, int32_t sett, int32_t id) generates (Status status);
+	setPropertyMem(uint64_t request, memory propertyMem) generates (Status status);
+	setExtraParam(uint64_t request, VpuExtraParam_t extra_param) generates (Status status);
+	
+	getVpuStatus() generates (Status status, vec<VpuStatus_t> vecVpuStatus);    
+	/*
+	 *	enque(VpuRequest_t request, uint32_t core_index) generates (Status status);
+	 *	deque() generates (Status status);
+	*/
+	enque(uint64_t request, uint32_t core_index) generates (Status status);
+	/*
+		deque(uint64_t request) generates (Status status);
+	*/
+	deque() generates (uint64_t request);
+	/*
+	 *	release(VpuRequest_t request) generates (Status status);
+	*/
+	release(uint64_t request) generates (Status status);
+
+    /**
+     *   setOutputSurfaces to VpuClient
+    */
+    setOutputSurfaces(int64_t timestamp, IMtkVpuBuffer bufferCB, vec<int32_t> msgType) generates (Status status);
+    /**
+     *   destroy VpuClient
+    */
+    destroyVpuClient(int64_t timestamp) generates (Status status);
+};

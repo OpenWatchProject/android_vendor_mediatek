@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:padding="4dip"
+    android:gravity="center_horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <CheckBox
+        android:id="@+id/cb_apc_enable"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/apc_enable"
+        android:textAppearance="?android:attr/textAppearanceListItemSmall"
+        android:paddingStart="?android:attr/listPreferredItemPaddingStart"
+        android:paddingEnd="?android:attr/listPreferredItemPaddingEnd"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:button="@null"
+        android:drawableRight="?android:attr/listChoiceIndicatorMultiple">
+    </CheckBox>
+
+    <CheckBox
+        android:id="@+id/cb_report_enable"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/apc_report_enable"
+        android:textAppearance="?android:attr/textAppearanceListItemSmall"
+        android:paddingStart="?android:attr/listPreferredItemPaddingStart"
+        android:paddingEnd="?android:attr/listPreferredItemPaddingEnd"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:button="@null"
+        android:drawableRight="?android:attr/listChoiceIndicatorMultiple">
+    </CheckBox>
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal" >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="?android:attr/listPreferredItemPaddingStart"
+            android:layout_marginTop="5dp"
+            android:text="@string/apc_report_timer" />
+
+        <EditText
+            android:id="@+id/apc_report_timer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingEnd="?android:attr/listPreferredItemPaddingEnd"
+            android:layout_marginTop="5dp"
+            android:inputType="number" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/apc_set"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="@string/apc_set" />
+
+</LinearLayout>

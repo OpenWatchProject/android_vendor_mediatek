@@ -1,0 +1,14 @@
+Ims\ext is  interface to provide operator customization mechanism.
+
+WHAT IT DOES?
+=============
+It contains interface and default implementation of operator customization.
+
+HOW IT WAS BUILT?
+==================
+Ims\ext is compiled as static lib when ImsService.apk is built.
+
+HOW TO USE IT?
+==============
+It is used by operator plugins by including following in plugin make file:
+LOCAL_JAVA_LIBRARIES += com.mediatek.ims.ext

@@ -1,0 +1,8 @@
+cc_library_static {
+    name: "libMST",
+    proprietary: true,
+    owner: "mtk",
+    srcs: ["MIDISeektable.c"],
+    header_libs: ["liblog_headers"],
+    export_include_dirs: ["."],
+}

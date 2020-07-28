@@ -1,0 +1,4 @@
+on init
+    setprop libc.debug.malloc.options "backtrace=5 guard=8 fill_on_free=16 abort_on_error"
+
+    #setprop libc.debug.malloc.options "backtrace=5 guard=8 fill_on_free=16 free_track=2046"

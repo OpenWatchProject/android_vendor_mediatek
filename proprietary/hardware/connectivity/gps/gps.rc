@@ -1,0 +1,23 @@
+# GPS
+    mkdir /data/vendor/gps 0770 gps system
+
+#/dev/ttyMT1 for GPS 3337 usage
+    chmod 0660 /dev/ttyMT1
+    chown system system /dev/ttyMT1
+
+# GPS EMI
+    chmod 666 /dev/gps_emi
+
+# GPS
+service mnld /vendor/bin/mnld
+    class main
+    user gps
+    group gps inet misc sdcard_rw sdcard_r media_rw system radio
+    socket mnld stream 660 gps system
+
+# LBS Debug Process
+service lbs_dbg /system/bin/lbs_dbg
+    class main
+    user system gps
+    group gps inet misc sdcard_rw sdcard_r media_rw system radio
+    socket lbs_dbg stream 660 gps system

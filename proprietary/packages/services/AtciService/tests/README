@@ -1,0 +1,24 @@
+The test apk is a application which used to test atci_service apk resides at java layer.
+Atci_service apk resides at java layer and receive AT commands belongs to Java layer.
+Atcid will send these commands to java layer and atci_service apk will receive it.
+This test apk is pre-built by MediaTek internal.
+
+
+WHAT IT DOES?
+=============
+
+The test apk is a application which used to test atci_service apk resides at java layer.
+Atci_service apk resides at java layer and receive AT commands belongs to Java layer.
+Atcid will send these commands to java layer and atci_service apk will receive it.
+
+HOW IT WAS BUILT?
+==================
+It will pre-built automatically by build process.
+
+
+HOW TO USE IT?
+==============
+Enable atci and connect with atcid. Send AT command by pctools. Such as hyperterminal.
+AT commands need to implement by java layer will send to atci_service resides at java layer.
+
+All the source code of this library were written by MediaTek co..

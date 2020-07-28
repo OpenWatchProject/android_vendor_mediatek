@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+    <TextView
+        android:id="@+id/amr_wb_hint"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:text="@string/amr_wb_hint" />
+
+    <CheckBox
+        android:id="@+id/amr_wb_gsm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:text="@string/amr_wb_gsm" >
+    </CheckBox>
+
+    <CheckBox
+        android:id="@+id/amr_wb_umts"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:text="@string/amr_wb_umts" >
+    </CheckBox>
+</LinearLayout>

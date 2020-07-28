@@ -1,0 +1,7 @@
+service modemdbfilter_service /vendor/bin/hw/modemdbfilter_service
+    interface vendor.mediatek.hardware.modemdbfilter@1.0::ICopyDBFilter ModemDBFilterHidlServer
+    class hal
+    oneshot
+    disabled
+    user system
+    group system

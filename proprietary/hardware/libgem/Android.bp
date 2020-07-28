@@ -1,0 +1,55 @@
+mtk_lib_gedkpi_defaults {
+    name: "mtk_lib_gedkpi_defaults",
+}
+
+bootstrap_go_package {
+    name: "soong-lib-gedkpi-mediatek",
+    pkgPath: "android/soong/lib_gedkpi/mediatek",
+    deps: [
+        "soong-android",
+        "soong-cc",
+    ],
+    srcs: [
+        "lib_gedkpi.go",
+    ],
+    pluginFor: ["soong_build"],
+}
+
+cc_library_headers {
+    name: "lib_gedkpi_headers",
+    vendor_available: true,
+    export_include_dirs: ["inc"],
+    proprietary: false,
+}
+
+cc_library_shared {
+    name: "libged_kpi",
+    //vendor_available: false,
+
+    cflags: [
+        "-Wall",
+        "-Werror",
+    ],
+
+    srcs: [
+        "lib/gedkpi/GedKpiWrap.cpp",
+    ],
+
+    local_include_dirs: [
+        "inc",
+    ],
+
+    shared_libs: [
+        "liblog",
+	    //"libhidlbase",
+	    //"vendor.mediatek.hardware.gpu@1.0",
+	    //"libhidltransport",
+	    "libutils",
+	    "libcutils",
+	    "libged_sys"
+    ],
+
+    defaults: ["mtk_lib_gedkpi_defaults"],
+    proprietary: false,
+    owner: "mtk",
+}

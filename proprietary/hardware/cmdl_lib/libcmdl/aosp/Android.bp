@@ -1,0 +1,30 @@
+cc_prebuilt_library_shared {
+    arch: {
+        arm: {
+            shared_libs: [
+                "liblog",
+            ],
+            srcs: [
+                "arm/libcmdl.so",
+            ],
+        },
+        arm64: {
+            shared_libs: [
+                "liblog",
+            ],
+            srcs: [
+                "arm64/libcmdl.so",
+            ],
+        },
+    },
+    export_include_dirs: [
+        "include",
+    ],
+    name: "libcmdl@MTK,aosp",
+    owner: "mtk",
+    proprietary: true,
+    strip: {
+        none: true,
+    },
+}
+

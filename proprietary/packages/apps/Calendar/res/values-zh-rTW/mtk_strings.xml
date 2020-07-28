@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="valid_date_range">"日期範圍在 1970 1 月到 2036 年 12 月"</string>
+    <string name="shareEvent">分享事件</string>
+    <string name="share_label">共用</string>  
+    <string name="loading_failed">載入失敗。</string>  
+    <string name="operation_failed">操作失敗。請檢查\"Calendar Storage\"是否已停止。</string>  
+
+	<!--M: add new string resource for clear events in the calendar @{ -->
+	<!-- clear the events in the calendar -->
+	<string name="clear_events">清除所有事件</string>
+	<!--     select the accounts of calendar to clear events. -->
+	<string name="select_clear_calendars_title">選擇帳號</string>
+    <string name="clear_all_selected_events_title">所選帳號的全部事件將被刪除。</string>
+    <string name="delete_completed">刪除作業完成。</string>
+	<string name="delete_certain">確定</string>
+    <string name="wait_deleting_tip">"正在刪除，請稍候..."</string>
+	<!-- @} -->
+    <string name="attendees_invalid_tip">"某些參與者有誤"</string>
+    <string name="unread_reminders">"%d 未閱讀提醒。"</string>
+    <string name="click_to_view_all">"點選查看全部"</string>
+    <string name="search_setting_description">"行事歷內的事件"</string>
+
+        <!-- #Lunar# -->
+    <!-- M:add for lunar calendar,only be used in zh-rCN. @{ -->
+    <string name="lunar_radio_text" >"農曆"</string>
+    <string name="gregorian_radio_text">"公曆"</string>
+    
+    <string name="date_picker_dialog_title">農曆日期設定</string>
+    <!-- Name of the button in the date/time picker to accept the date/time change -->
+    <string name="date_time_done">設定</string>
+    <string name="cancel">取消</string>
+    <!-- @} -->
+
+    <string name="quick_response_error_already_exist">文本已經存在</string>
+    <string name="quick_response_error_null">輸入不能為空</string>
+    <string name="no_event_tip">無事件。</string>
+    <string name="preferences_alerts_vibrateWhen_summary">以振動提醒</string>
+    <string name="go_to">前往</string>
+    <string name="search_hint">搜尋行事歷</string>
+    <string name="noApplications">無應用程式可用於執行此一動作。</string>
+    <string name="low_storage_save_failed">"空間不足，儲存失敗"</string>
+</resources>

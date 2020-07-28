@@ -1,0 +1,29 @@
+The bin file factory is a service.
+This bin is pre-built by MediaTek internal.
+
+
+WHAT IT DOES?
+=============
+
+touchfilter is native service to improve touch input data.
+
+
+HOW IT WAS BUILT?
+==================
+
+It needs the following library from AOSP:
+1.    libcutils
+2.    liblog
+3.    libmtk_drvb
+4.    libutils
+5.    libinput
+6.    libc 
+
+All source/dependency modules of this module are already put in
+'vendor/mediatek/libs' folder.
+
+
+HOW TO USE IT?
+==============
+
+This bin file is automatically started by system.img

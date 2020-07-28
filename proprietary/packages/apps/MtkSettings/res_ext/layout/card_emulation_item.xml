@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?android:attr/selectableItemBackground"
+    android:gravity="center_vertical"
+    android:minHeight="?android:attr/listPreferredItemHeight"
+    android:paddingEnd="?android:attr/scrollbarSize"
+    android:paddingStart="@*android:dimen/preference_item_padding_side" >
+
+    <RadioButton
+        android:id="@+id/preference_radiobutton"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:focusable="false"
+        android:gravity="center_vertical"
+        android:orientation="vertical"
+        android:paddingBottom="6dip"
+        android:paddingTop="6dip" />
+    <TextView
+        android:id="@+id/preference_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ellipsize="marquee"
+        android:fadingEdge="horizontal"
+        android:focusable="false"
+        android:singleLine="true"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+</LinearLayout>

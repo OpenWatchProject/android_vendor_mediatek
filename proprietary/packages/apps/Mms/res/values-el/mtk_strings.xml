@@ -1,0 +1,663 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+/*
+ * Copyright (C) 2007-2008 Esmertec AG.
+ * Copyright (C) 2007-2008 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+ --><resources xmlns:android="http://schemas.android.com/apk/res/android" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+  <!-- MTK Resources-->
+    
+    <!-- wap push string begin -->
+    <!-- The type of wap push message, used in message details -->
+    <string name="wp_msg_type">"Μήνυμα υπηρεσίας"</string>
+    <string name="wp_msg_created_label">Created:\u0020</string>
+    <string name="wp_msg_created_unknown">Άγνωστο</string>
+    <string name="wp_msg_priority_label">"Προτεραιότητα:\u0020"</string>
+    <!-- Wappush message priority -->
+    <string name="wp_msg_priority_low">"Χαμηλή"</string>
+    <string name="wp_msg_priority_medium">"Μεσαία"</string>
+    <string name="wp_msg_priority_high">"Υψηλή"</string>
+    <!-- Context menu item -->
+    <string name="menu_goto_browser">"Άνοιγμα προγράμματος περιήγησης"</string>
+    <string name="menu_add_to_bookmark">"Προσθήκη σε σελιδοδείκτη"</string>
+    <!-- Wappush message content label -->
+    <string name="wp_msg_expiration_label">Έχει λήξει: <xliff:g id="DATE">%s</xliff:g></string>
+    
+    <string name="error_unsupported_scheme">"Αυτή η ενέργεια δεν υποστηρίζεται αυτήν τη στιγμή."</string>
+    <!-- wap push string end -->
+    <string name="create_new_message" msgid="8735943333953093860">"Σύνθεση νέου μηνύματος"</string>
+    <string name="menu_undelivered_messages" msgid="3896857623211780616">"Μηνύματα που δεν έχουν παραδοθεί"</string>
+    <string name="broadcast_from_to" msgid="2050376286109362539">"<xliff:g id="SENDER">%1$s</xliff:g> προς <xliff:g id="RECIPIENT">%2$s</xliff:g>"</string>
+    <string name="anonymous_recipient" msgid="2501437626187039034">"Ανώνυμος"</string>
+    <string name="view_picture" msgid="4356315935277709195">"Προβολή εικόνας"</string>
+    <string name="sent_on" msgid="5868288548564632354">"Ημερομηνία αποστολής: <xliff:g id="DATE">%s</xliff:g>"</string>
+    <string name="received_on" msgid="5868288548564632354">"Ληφθέντα: <xliff:g id="DATE">%s</xliff:g>"</string>
+    <string name="name_colon" msgid="7069560650889479120"><b>"<xliff:g id="NAME">%s</xliff:g>"</b>": "</string>
+    <string name="compose_title" msgid="558578836596816068">"Σύνθεση"</string>
+    <string name="image_too_large" msgid="261880224164478061">"Η εικόνα είναι υπερβολικά μεγάλη"</string>
+    <string name="ask_for_automatically_resize" msgid="7657603662407738758">"Αυτόματη προσαρμογή μεγέθους εικόνας πριν την αποστολή;"</string>
+    <string name="cannot_load_message" msgid="2577010607550849892">"Δεν είναι δυνατή η φόρτωση του μηνύματος."</string>
+    <string name="locked_message_cannot_be_deleted" msgid="6369452071783350219">"Δεν είναι δυνατή η διαγραφή κλειδωμένου μηνύματος."</string>
+    <string name="multiple_recipients" msgid="8747754491343248141">"<xliff:g id="RECIPIENTCOUNT">%1$s</xliff:g> παραλήπτες"</string>
+    <string name="resize" msgid="4308912589984220360">"Προσαρμογή μεγέθους"</string>
+    <string name="to_label" msgid="2355268818058389047">"Προς "</string>
+    <string name="confirm_delete_all_messages" msgid="5836389073199814660">"Θα διαγραφεί ολόκληρο το νήμα."</string>
+    <string name="mms_priority_label">"Προτεραιότητα"</string>
+    <string name="menu_retry_sending" msgid="3146582005568302643">"Επανάληψη αποστολής"</string>
+    <string name="menu_retry_sending_all" msgid="1870529976966340616">"Επανάληψη αποστολής όλων"</string>
+    <string name="retrying_dialog_body" msgid="4738260459043003431">"Δεν έγινε αποστολή του μηνύματος <xliff:g id="MESSAGE">%s</xliff:g> λόγω προβλήματος σύνδεσης."\n"Επανάληψη αποστολής..."</string>
+    <string name="dl_expired_notification" msgid="950390029992535809">"Αυτό το μήνυμα έχει λήξει και θα διαγραφεί."</string>
+    <string name="add_contacts">"Επαφές"</string>
+    <string name="add_attachment_activity" msgid="5324811371129695320">"Προσθήκη επισύναψης:"</string>
+    <string name="select_layout_activity" msgid="5041916695464513848">"Επιλογή διάταξης"</string>
+    <string name="edit_text_activity" msgid="5915226413346879213">"Επεξεργασία κειμένου"</string>
+    <string name="pick_numbers_activity" msgid="2083330191224178637">"Επιλογή αριθμών"</string>
+    <string name="send_using_mms_activity" msgid="3703434556280345726">"Αποστολή ως μηνύματος πολυμέσων..."</string>
+    <string name="select_contact_method_activity" msgid="1743384358979323991">"Επιλογή μεθόδου επικοινωνίας"</string>
+    <string name="me" msgid="341726346007839961">"Εγώ"</string>
+    <string name="more_recipients">παραλήπτες</string>
+    <string name="Insert_sdcard">Εισαγάγετε κάρτα SD!</string>
+    <string name="set_service_center_OK">Ορισμός OK Κέντρου υπηρεσίας SMS</string>
+    <string name="set_service_center_fail">Ορισμός αποτυχίας Κέντρου Υπηρεσίας SMS</string>
+    <string name="OK">OK</string>
+    <string name="Cancel">"Ακύρωση"</string>
+    <string name="sms_save_location">Θέση αποθήκευσης SMS</string>
+    <string name="gemini_3g_indic">3G</string>
+    <string name="sms_service_center">Κέντρο υπηρεσίας SMS</string>
+    <string name="service_center_label">Κέντρο υπηρεσίας:\u0020</string>
+    <string name="test_operator">προεπιλογή</string>
+    <string name="test_number">1234</string>
+    <string name="test_status">προεπιλογή</string>
+    <string name="cu_subject">Θέμα Λεμέι</string>
+    <string name="pref_key_mms_priority">Προτεραιότητα Mms</string>
+    <string name="pref_title_mms_creation_mode">Λειτουργία δημιουργίας</string>
+    <string name="pref_summary_mms_creation_mode">Λειτουργία δημιουργίας MMS για σύνθεση μηνύματος</string>
+    <string name="pref_title_mms_size_limit">Όριο μεγέθους</string>
+    <string name="pref_summary_mms_size_limit">Όριο μεγέθους MMS για σύνθεση μηνύματος</string>
+    <string name="confirm_restricted_audio">Περιορισμένος τύπος περιεχομένου ήχου, επιθυμείτε να συνεχίσετε την επισύναψη?</string>
+    <string name="confirm_restricted_image">Περιορισμένος τύπος περιεχομένου εικόνας, επιθυμείτε να συνεχίσετε την επισύναψη?</string>
+    <string name="confirm_restricted_video">Περιορισμένος τύπος περιεχομένου βίντεο, επιθυμείτε να συνεχίσετε την επισύναψη?</string>
+    <string name="unsupport_media_type">Μη υποστηριζόμενος τύπος πολυμέσων</string>
+    <string name="select_different_media_type">Επιλογή διαφορετικών πολυμέσων</string>
+    <string name="image_resolution_too_large">Η ανάλυση εικόνας είναι πολύ μεγάλη για εισαγωγή</string>
+    <string name="pref_title_wappush_settings">Ρύθμιση μηνύματος υπηρεσίας</string>
+    <string name="pref_title_wappush_enable">Ενεργοποίηση μηνύματος υπηρεσίας</string>
+    <string name="pref_summary_wappush_enable">Ενεργοποίηση λήψης μηνύματος υπηρεσίας</string>
+    <string name="pref_title_wappush_sl_autoloading">Αυτόματη εκκίνηση υπηρεσίας SL</string>
+    <string name="pref_summary_wappush_sl_autoloading">Αυτόματη εκκίνηση μηνύματος υπηρεσίας SL κατά τη λήψη</string>
+    <string name="menu_send_sms">Αποστολή μηνύματος σε <xliff:g id="name">%s</xliff:g></string>
+    <string name="menu_omacp">Μήνυμα ρύθμισης παραμέτρων</string>
+    <string name="save_message_to_sim">Αποθήκευση μηνύματος στην κάρτα SIM</string>
+    <string name="save_message_to_sim_successful">Αποθηκεύθηκε με επιτυχία</string>
+    <string name="save_message_to_sim_unsuccessful">Η αποθήκευση απέτυχε</string>
+    <string name="transmission_transiently_failed">Αποτυχία μετάδοσης. Θα γίνει νέα προσπάθεια αργότερα.</string>
+    <string name="download_failed_due_to_full_memory">Η λήψη μηνύματος απέτυχε λόγω πλήρους μνήμης.</string>
+    <string name="mms_too_big_to_download">Το μήνυμα είναι πολύ μεγάλο για λήψη από το δίκτυο.</string>
+    <string name="cannot_add_recipient">Οι παραλήπτες έφτασαν το όριο. Δεν είναι δυνατή η προσθήκη επιπλέον παραληπτών.</string>
+    <string name="attach_ringtone">Ήχος κλήσης</string>
+    <string name="notification_multiple_cb"><xliff:g id="count">%s</xliff:g> Μη αναγνωσμένα μηνύματα CB</string>
+    <string name="notification_multiple_cb_title">Νέα μηνύματα εκπομπής κυψέλης</string>
+    <string name="fdn_enabled">Η λειτουργία FDN ενεργοποιήθηκε</string>
+    <string name="cannot_send_message_reason_no_content">Δεν υπάρχει περιεχόμενο για αποστολή</string>
+    <string name="cb_read_message">Ανάγνωση μηνύματος CB</string>
+    <string name="cb_read_message2">Ανάγνωση μηνύματος εκπομπής κυψέλης</string>
+    <string name="cb_message">Μήνυμα εκπομπής κυψέλης</string>
+    <string name="cb_default_channel_name">Από κανάλι</string>
+    <string name="message_open_email_fail">Αρχικά ορίστε το e-mail σας.</string>
+    <string name="send_by_sim2">Έχει σταλεί από SIM2</string>
+    <string name="send_by_sim1">Έχει σταλεί από SIM1</string>
+    <string name="menu_item_send_by">Έχει σταλεί από </string>
+    <string name="data_connected_confirm_title">Έχει σταλεί επιβεβαίωση</string>
+    <string name="data_connected_confirm_message">Η αποστολή MMS από αυτή την κάρτα SIM ενδέχεται να αναστείλει για λίγο την τρέχουσα λήψη δεδομένων σας. Συνέχεια;</string>
+    <string name="menu_item_sim1">SIM 1</string>
+    <string name="menu_item_sim2">SIM 2</string>
+    <string name="no_sim_1">Η κάρτα SIM δεν είναι συνδεδεμένη.</string>
+    <string name="no_sim_2">Η κάρτα SIM δεν είναι συνδεδεμένη.</string>
+    <string name="sim1_full_title">Η κάρτα SIM 1 είναι πλήρης.</string>
+    <string name="sim2_full_title">Η κάρτα SIM 2 είναι πλήρης.</string>
+    <string name="select_all">"Επιλογή όλων"</string>
+    <string name="confirm_delete_selected_messages">Τα επιλεγμένα μηνύματα θα διαγραφούν.</string>
+    <string name="confirm_delete_selected_theads">Οι επιλεγμένες συνομιλίες θα διαγραφούν.</string>
+    <string name="restricted_forward_title">"Μήνυμα πολυμέσων"</string>
+    <string name="restricted_forward_message">Αυτό το πολυμέσο ενδέχεται να μην εμφανίζεται σωστά στους παραλήπτες. Συνέχεια;</string>
+    <string name="strOk">Το μήνυμα έχει σταλεί</string>
+    <string name="strFail">Η αποστολή μηνύματος απέτυχε</string>
+    <string name="menu_insert_text_vcard">Εισαγωγή επαφής</string>
+    <string name="contact_name">Όνομα </string>
+    <string name="contact_tel">Τηλ</string>
+    <string name="contact_email">E-mail</string>
+    <string name="contact_organization">Εταιρεία</string>
+    <string name="contact_address">Διεύθ</string>
+    <string name="string_via">"μέσω"</string>
+    <string name="max_recipients_title">Συμπληρώθηκε ο μέγιστος αριθμός</string>
+    <string name="max_recipients_message">Τα MMS επιτρέπουν ένα μέγιστο <xliff:g id="maxLimit">%s</xliff:g> παραληπτών. Κάποιοι από τους παραλήπτες θα καταργηθούν. Θέλετε να συνεχίσετε;</string>
+    <string name="via_without_time_for_send">μέσω</string>
+    <string name="via_without_time_for_recieve">μέσω</string>
+    <string name="sim_selected_dialog_title">Επιλογή SIM</string>
+    <string name="suggested">Προτεινόμενη</string>
+    <string name="add_contact_dialog_message">"Προσθήκη αριθμού %s σε υπάρχουσα ή νέα επαφή;"</string>
+    <string name="add_contact_dialog_new">Νέα</string>
+    <string name="add_contact_dialog_existing">Υπάρχουσα</string>
+    <string name="deleting">Διαγραφή</string>
+    <string name="pref_title_storage_status">Τρέχουσα χρήση χώρου αποθήκευσης</string>
+    <string name="storage_dialog_mms">Mms:\u0020<xliff:g id="number">%s</xliff:g> στοιχεία</string>
+    <string name="storage_dialog_sms">Sms:\u0020<xliff:g id="number">%s</xliff:g> στοιχεία</string>
+    <string name="storage_dialog_attachments">Συνημμένα Mms:\u0020</string>
+    <string name="storage_dialog_database">Βάση δεδομένων:\u0020</string>
+    <string name="storage_dialog_available_space">Διαθέσιμος χώρος:\u0020</string>
+    <string name="pref_title_mms_enable_to_send_delivery_reports">Αποστολή αναφοράς παράδοσης</string>
+    <string name="pref_summary_mms_enable_to_send_delivery_reports">Αποστολή αναφοράς παράδοσης για κάθε εισερχόμενο μήνυμα</string>
+    <string name="pref_summary_mms_auto_reply_read_reports">Αποστολή αναφοράς ανάγνωσης εάν απαιτείται από τον αποστολέα MMS</string>
+    <string name="pref_title_mms_auto_reply_read_reports">Αποστολή αναφ. ανάγνωσης</string>
+    <plurals name="read_report_toast_msg">
+        <item quantity="one">Αποστολή %d αναφοράς ανάγνωσης</item>
+        <item quantity="other">Αποστολή %d αναφορών ανάγνωσης</item>
+    </plurals>
+    <string name="unselect_all">Κατάργηση επιλογής όλων</string>
+    <!-- add for vcard -->
+    <string name="forward_byself">"Για εμένα"</string>
+   <string name="file_attachment_vcard_name">Κάρτα vCard(<xliff:g id="text">%s</xliff:g>)</string>
+    <string name="attach_vcalendar" msgid="5452708708398908131">"Ημερολόγιο"</string>
+   <string name="file_attachment_import_vcard">Εισαγωγή κάρτας vCard</string>
+   <string name="attach_vcard">Επαφή</string>
+   <string name="type_common_file">αρχείο</string>
+   <string name="failed_to_parse_vcard">Η ανάλυση της κάρτας vCard απέτυχε!</string>
+   <string name="empty_vcard">Δεν υπάρχουν επαφές στην κάρτα vCard</string>
+   <string name="parse_vcard">Ανάλυση κάρτας vCard</string>
+   <string name="vcard_no_details">Καμία πρόσθετη πληροφορία για αυτή την επαφή"</string>
+   <string name="call_custom"><xliff:g id="custom">%s</xliff:g></string>
+   <string name="call_home">οικία</string>
+   <string name="call_mobile">κινητό</string>
+   <string name="call_work">εργασία</string>
+   <string name="call_fax_work">φαξ εργασίας</string>
+   <string name="call_fax_home">φαξ οικίας</string>
+   <string name="call_pager">βομβητής</string>
+   <string name="call_callback">επιστροφή κλήσης</string>
+   <string name="call_car">αυτοκίνητο</string>
+   <string name="call_company_main">κύρια εταιρική γραμμή</string>
+   <string name="call_isdn">ISDN</string>
+   <string name="call_radio">ραδιόφωνο</string>
+   <string name="call_telex">τέλεξ</string>
+   <string name="call_tty_tdd">TTY/TDD</string>
+   <string name="call_work_mobile">κινητό εργασίας</string>
+   <string name="call_work_pager">βομβητής εργασίας</string>
+   <string name="call_assistant"><xliff:g id="assistant">%s</xliff:g></string>
+   <string name="call_mms">MMS</string>
+   <string name="email_home">Email προς οικία</string>
+   <string name="email_mobile">Email προς κινητή συσκευή</string>
+   <string name="email_work">Email προς εργασία</string>
+   <string name="email_custom">Email <xliff:g id="custom">%s</xliff:g></string>
+   <string name="map_home">Προβολή διεύθυνσης οικίας</string>
+   <string name="map_work">Προβολή διεύθυνσης εργασίας</string>
+   <string name="map_other">Προβολή διεύθυνσης</string>
+   <string name="map_custom">Προβολή διεύθυνσης <xliff:g id="custom">%s</xliff:g></string>
+   <string name="chat_aim">Συνομιλία μέσω AIM</string>
+   <string name="chat_msn">Συνομιλία μέσω Windows Live</string>
+   <string name="chat_yahoo">Συνομιλία μέσω Yahoo</string>
+   <string name="chat_skype">Συνομιλία μέσω Skype</string>
+   <string name="chat_qq">Συνομιλία μέσω QQ</string>
+   <string name="chat_gtalk">Συνομιλία μέσω Google Talk</string>
+   <string name="chat_icq">Συνομιλία μέσω ICQ</string>
+   <string name="chat_jabber">Συνομιλία μέσω Jabber</string>
+   <string name="chat">Συνομιλία</string>
+   <string name="please_wait">"Περιμένετε..."</string>
+   <string name="note">Σημείωση</string>
+   <string name="organization">Οργανισμός</string>
+   <string name="website">Τοποθεσία Web:\u0020</string>
+   <string name="nickname">Ψευδώνυμο</string>
+   <string name="call_other">άλλο</string>
+   <string name="call_main">κύριος αριθμός</string>
+   <string name="call_other_fax">φαξ</string>
+   <string name="email_other">Email</string>
+   <string name="email">Email</string>
+   <!-- add for vcard -->
+    <string name="invalid_contact_message">"Η επαφή δεν υπάρχει."</string>
+
+    <string name="menu_sim_sms">SMS από SIM</string>  
+    <!-- Cell broadcast SMS strings -->  
+    <!-- Import/Export mms/sms from/to sdcard-->  
+    <string name="pref_title_io_settings">Εισαγωγή/Εξαγωγή SMS</string>  
+    <string name="pref_summary_import_msg">Εισαγωγή SMS από κάρτα SD</string>  
+    <string name="pref_title_import_msg">Εισαγωγή SMS</string>  
+    <string name="pref_summary_export_msg">Εξαγωγή SMS σε κάρτα SD</string>  
+    <string name="pref_title_export_msg">Εξαγωγή SMS</string>  
+    <string name="no_sd_card">Η κάρτα SD δεν είναι έτοιμη</string>  
+    <string name="export_message_ongoing">Εξαγωγή SMS σε κάρτα SD, περιμένετε…</string>  
+    <string name="import_message_ongoing">Εισαγωγή SMS από κάρτα SD, περιμένετε…</string>  
+    <string name="export_message_success">Επιτυχία εξαγωγής SMS σε κάρτα SD</string>  
+    <string name="import_message_success">Επιτυχία εισαγωγής SMS από κάρτα SD</string>  
+    <string name="import_message_fail">Αποτυχία εισαγωγής SMS από κάρτα SD</string>  
+    <string name="export_message_fail">Αποτυχία εξαγωγής SMS σε κάρτα SD</string>  
+    <string name="import_message_list">Λίστα DB SMS στην κάρτα SD</string>  
+    <string name="import_message_list_empty">Δεν υπάρχουν αρχεία DB SMS σε κάρτα SD</string>  
+    <string name="export_message_empty">Δεν υπάρχει SMS για εξαγωγή!</string>  
+    <string name="whether_export_item">Θέλετε να κάνετε εξαγωγή SMS?</string>  
+    <string name="whether_import_item">Θέλετε να κάνετε εισαγωγή</string>  
+    <string name="export_disk_problem">Η κάρτα SD είναι πλήρης ή δεν είναι δυνατή η εγγραφή</string> 
+    <string name="error_add_attachment">"Άγνωστο σφάλμα, δεν είναι δυνατή η προσθήκη του στοιχείου <xliff:g id="name">%1$s</xliff:g> στο μήνυμά σας."</string>
+    <string name="status_expired">Έχει λήξει</string>  
+    <string name="status_deferred">Έχει αναβληθεί</string>  
+    <string name="status_unrecognized">Δεν αναγνωρίζεται</string>  
+    <string name="status_indeterminate">Δεν έχει καθοριστεί</string>  
+    <string name="status_unreachable">Δεν έχει επιτευχθεί</string>  
+    <plurals name="message_view_selected_message_count"> 
+        <item quantity="one"><xliff:g id="message_count" example="1">%d</xliff:g> έχει επιλεγεί</item>  
+        <item quantity="other"><xliff:g id="message_count" example="9">%d</xliff:g> έχουν επιλεγεί</item> 
+    </plurals>  
+    <string name="sms_input_mode_title">Λειτουργία εισαγωγής</string>  
+    <string name="sms_input_mode_dialog_title">Επιλογή λειτουργίας εισαγωγής</string>  
+    <string name="sms_input_mode_summary">Λειτουργία εισαγωγής SMS για σύνθεση μηνύματος</string>  
+    <string name="by_card">Από:</string>  
+    <string name="page">Σελίδα %d</string>  
+    <string name="space_not_enough">Ο χώρος που απομένει δεν είναι αρκετός για λήψη βίντεο</string>  
+    <string name="no_messages">"Κανένα μήνυμα"</string>  
+    <string name="call_video_call">Κλήση βίντεο</string>  
+    <string name="storage_dialog_mms_size">Μέγεθος MMS:\u0020</string>
+    <string name="space_not_enough_for_audio">Ο χώρος που απομένει δεν είναι αρκετός για εγγραφή ήχου</string> 
+    <string name="sync_mms_to_db">Φόρτωση…</string>
+    <string name="finish">"Τέλος"</string>
+    <string name="pref_title_long_press_operation_guide">ΟΔΗΓΟΣ ΛΕΙΤΟΥΡΓΙΑΣ ΠΑΡΑΤΕΤΑΜΕΝΟΥ ΠΑΤΗΜΑΤΟΣ</string>  
+    <string name="pref_title_watch_animation">Παρακολούθηση κινούμενων σχεδίων</string>  
+    <string name="long_press_conversationlist_title">Διαγραφή μηνυμάτων</string>  
+    <string name="long_press_conversationlist_content">Για διαγραφή μηνυμάτων, πιέστε παρατεταμένα επάνω τους.</string>  
+    <string name="long_press_composer_content">Για προβολή περισσότερων επιλογών, πιέστε παρατεταμένα επάνω του.</string> 
+    <string name="menu_show_icc_sms_capacity">Προβολή χωρητικότητας</string>  
+    <string name="show_icc_sms_capacity_title">Χωρητικότητα</string>  
+    <string name="icc_sms_used">Σε χρήση:</string>
+    <string name="select_text">Επιλογή κειμένου</string>  
+    <string name="icc_sms_total">Σύνολο:</string>  
+    <string name="get_icc_sms_capacity_failed">Η λήψη χωρητικότητας κάρτας SIM απέτυχε.</string>
+    <string name="menu_reply">"Απάντηση"</string> 
+    <string name="failed_to_add_image">Συμπληρώθηκε το όριο μεγέθους μηνυμάτων και δεν έχουν προστεθεί ορισμένα τμήματα.</string>
+    <string name="ipmsg_conversation_list_all">Μηνύματα</string>  
+    <string name="ipmsg_conversation_list_important">Σημαντικά</string>  
+    <string name="ipmsg_conversation_list_group_chats">Συνομιλίες ομάδας</string>  
+    <string name="ipmsg_conversation_list_spam">Ανεπιθύμητα</string>  
+    <string name="ipmsg_create_group_chat">Δημιουργία συνομιλίας ομάδας</string>  
+    <string name="ipmsg_send_invitation">Αποστολή προσκλήσεων</string>  
+    <string name="str_ipmsg_download_history_dlg">Λήψη...</string>  
+    <string name="to_hint_ipmsg">"Πληκτρολογήστε το όνομα ή τον αριθμό του ατόμου"</string>  
+    <string name="type_to_compose_text_enter_to_send_ipmsg">"Πληκτρολογήστε μήνυμα SMS/iSMS"</string>  
+    <string name="ipmsg_ipmsg_hint">"Πληκτρολογήστε μήνυμα iSMS"</string>  
+    <string name="ipmsg_sms_hint">"Πληκτρολογήστε μήνυμα κειμένου"</string>  
+    <string name="ipmsg_caption_hint">"Πληκτρολογήστε λεζάντες"</string>  
+    <string name="ipmsg_cancel">"Ακύρωση"</string>  
+    <string name="ipmsg_invite_chat_frequently"><b>Συνομιλείτε συχνά με το χρήστη %s ;</b>\nΓιατί δεν προσκαλείτε το χρήστη %s να χρησιμοποιήσει iSMS για να εξοικονομήσετε χρήματα και οι δύο;</string>  
+    <string name="ipmsg_enable_chat_frequently">Ο χρήστης <b>%s χρησιμοποιεί iSMS!</b>\nΓιατί δεν ενεργοποιείτε την υπηρεσία iSMS για να εξοικονομήσετε χρήματα και οι δύο;</string>  
+    <string name="ipmsg_invite">"Πρόσκληση"</string>  
+    <string name="ipmsg_dismiss">"Παράβλεψη"</string>  
+    <string name="ipmsg_enable">"Ενεργοποίηση"</string>  
+    <string name="ipmsg_enable_notice">Είστε βέβαιοι ότι θέλετε να ενεργοποιήσετε την υπηρεσία iSMS;</string>  
+    <string name="ipmsg_activate">Ενεργοποίηση</string>  
+    <string name="ipmsg_activate_chat_frequently"><b>Συνομιλείτε συχνά με φίλους;</b>\nΓιατί δεν ενεργοποιείτε την υπηρεσία iSMS για να συνομιλείτε χωρίς τη χρέωση των SMS;</string>  
+    <string name="ipmsg_activate_note">Σίγουρα θέλετε να ενεργοποιήσετε την υπηρεσία iSMS;</string>  
+    <string name="ipmsg_dismiss_content">Σίγουρα θέλετε να κλείσετε αυτήν τη σημείωση;</string>  
+    <string name="ipmsg_send_exception">Σφάλμα αποστολής</string>  
+    <string name="ipmsg_ipmsg">Μήνυμα IP</string>  
+    <string name="ipmsg_dailog_multi_forward">Προώθηση μηνυμάτων</string>  
+    <string name="ipmsg_dialog_send_result">Αποτέλεσμα αποστολής</string>  
+    <string name="ipmsg_dlg_send_all">Όλα: %s</string>  
+    <string name="ipmsg_dlg_send_sucess">Απεσταλμένα: %s</string>  
+    <string name="ipmsg_dlg_send_failed">Αποτυχίες: %s</string>  
+    <string name="multi_forward_sim_info">Λήψη πληροφοριών κάρτας SIM</string>  
+    <string name="ipmsg_multi_forward_no_sim">Δεν υπάρχουν πληροφορίες κάρτας SIM</string>  
+    <string name="ipmsg_divider_online">Ο χρήστης %s είναι συνδεδεμένος</string>  
+    <string name="ipmsg_divider_offline">Τελευταία σύνδεση στις %s</string>  
+    <string name="ipmsg_divider_never_online">Ποτέ σε σύνδεση</string>  
+    <string name="ipmsg_vcard_file_name">%s επαφές</string>  
+    <string name="ipmsg_getsim_failed">Η λήψη πληροφοριών κάρτας SIM απέτυχε</string>  
+    <string name="ipmsg_sim_status_error">Σφάλμα κατάστασης κάρτας SIM</string>  
+    <string name="ipmsg_forward_failed">Η προώθηση απέτυχε</string>  
+    <string name="ipmsg_forward_norecipients">Δεν υπάρχουν παραλήπτες για την προώθηση μηνύματος</string>  
+    <string name="ipmsg_multiforward_no_message">Δεν υπάρχει μήνυμα για προώθηση</string>  
+    <string name="ipmsg_need_input_recipients">Πρώτα, καθορίστε τουλάχιστον έναν παραλήπτη</string>  
+    <string name="str_ipmsg_unread_format">%1$d μη αναγνωσμένα μηνύματα</string>  
+    <string name="str_ipmsg_not_delivered_title">Δεν έχουν παραδοθεί ακόμα</string>  
+    <string name="str_ipmsg_failed_title">Απέτυχε</string>  
+    <string name="str_ipmsg_cant_share">Η κάρτα SD δεν είναι διαθέσιμη. Δεν είναι δυνατή η κοινή χρήση μηνυμάτων πολυμέσων</string>  
+    <string name="str_ipmsg_file_limit">πολύ μεγάλο</string>  
+    <string name="str_ipmsg_no_app">"Δεν υπάρχουν εφαρμογές, οι οποίες μπορούν να εκτελέσουν αυτήν την ενέργεια."</string>  
+    <string name="str_ipmsg_today">Σήμερα</string>  
+    <string name="str_ipmsg_yesterday">"χθες"</string>  
+    <string name="ip_message_typing_text">πληκτρολόγηση</string>  
+    <string name="ipmsg_try_again">"Προσπαθήστε ξανά"</string>  
+    <string name="ipmsg_try_all_again">Επαναλάβετε την προσπάθεια</string>  
+    <string name="ipmsg_resend_via_sms">Αποστολή μέσω SMS</string>  
+    <string name="ipmsg_resend_via_mms">Αποστολή μέσω MMS</string>  
+    <string name="str_ipmsg_no_such_file">Δεν υπάρχει τέτοιο αρχείο</string>  
+    <string name="str_ipmsg_over_file_limit">Το μέγεθος του αρχείου υπερβαίνει το όριο</string>  
+    <string name="str_ipmsg_invalid_file_type">Ο τύπος δεν υποστηρίζεται</string>  
+    <string name="invite_friends_to_ipmsg">Πρόσκληση φίλων για χρήση iSMS</string>  
+    <string name="invite_friends_to_chat">Πρόσκληση φίλων σε συνομιλία</string>  
+    <string name="invite_friends_to_ipmsg_dialog_msg">Το μήνυμα που συντάσσετε θα απορριφθεί, για να αποσταλεί η πρόσκληση.</string>  
+    <string name="invite_friends_to_ipmsg_content">Γεια σας, το iSMS είναι ένα εύκολο εργαλείο συνομιλίας. Είναι δωρεάν και βολικό. Ανατρέξτε στη διεύθυνση http://isms.hissage.com για να μάθετε περισσότερα.</string>  
+    <string name="export">"Εξαγωγή"</string>  
+    <string name="mark_as_spam">Σήμανση ως ανεπιθύμητου</string>  
+    <string name="mark_as_spam_tips">Τα μηνύματα που έχουν επισημανθεί ως Ανεπιθύμητα μετακινούνται στη λίστα ανεπιθύμητων και η ειδοποίηση απενεργοποιείται αυτόματα.</string>  
+    <string name="remove_frome_spam">Κατάργηση από τα ανεπιθύμητα</string>  
+    <string name="add_shortcut">Προσθήκη συντόμευσης</string>  
+    <string name="view_all_media">Προβολή όλων των πολυμέσων</string>  
+    <string name="view_all_location">Προβολή όλων των τοποθεσιών</string>  
+    <string name="ipmsg_export_to_sdcard">Εξαγωγή σε κάρτα SD</string>  
+    <string name="ipmsg_copy">"Αντιγραφή"</string>  
+    <string name="ipmsg_send_via_text_msg">Αποστολή μέσω μηνύματος κειμένου</string>  
+    <string name="ipmsg_send_via_mms">Αποστολή μέσω μηνύματος πολυμέσων</string>  
+    <string name="ipmsg_retry">Νέα προσπάθεια</string>  
+    <string name="ipmsg_delete">ΔΙΑΓΡΑΦΗ</string>  
+    <string name="ipmsg_share">"Κοινή χρήση"</string>  
+    <string name="ipmsg_mark_as_important">Σήμανση ως σημαντικού</string>  
+    <string name="ipmsg_remove_from_important">Κατάργηση από τα σημαντικά</string>  
+    <string name="str_ipmsg_save_file">Το αρχείο αποθηκεύτηκε στη θέση %1$s</string>  
+    <string name="continue_str">Συνέχεια</string>  
+    <string name="convert_to_mms">Μετατροπή σε MMS.</string>  
+    <string name="convert_to_sms">Μετατροπή σε SMS.</string>  
+    <string name="ipmsg_convert_to_ipmsg">Μετατροπή σε iSMS.</string>
+    <string name="ip_message_convert_to_mms_message_for_service">Η υπηρεσία iSMS δεν είναι διαθέσιμη σε αυτήν την επιλεγμένη κάρτα SIM. Αυτό το μήνυμα μπορεί να αποσταλεί μόνο μέσω MMS σε αυτήν την κάρτα SIM. Συνέχεια οπωσδήποτε;</string>
+    <string name="ip_message_convert_to_sms_message_for_service">Η υπηρεσία iSMS δεν είναι διαθέσιμη σε αυτήν την επιλεγμένη κάρτα SIM. Αυτό το μήνυμα μπορεί να αποσταλεί μόνο μέσω SMS σε αυτήν την κάρτα SIM. Συνέχεια οπωσδήποτε;</string>
+    <string name="ip_message_convert_to_mms_message_for_recipients">Οι παραλήπτες δεν χρησιμοποιούν iSMS. Αυτό το μήνυμα μπορεί να αποσταλεί μόνο μέσω MMS. Συνέχεια οπωσδήποτε;</string>
+    <string name="ip_message_convert_to_sms_message_for_recipients">Οι παραλήπτες δεν χρησιμοποιούν iSMS. Αυτό το μήνυμα μπορεί να αποσταλεί μόνο μέσω SMS. Συνέχεια οπωσδήποτε;</string>
+    <string name="ipmsg_sms_convert_to_ipmsg">Η υπηρεσία iSMS είναι διαθέσιμη σε αυτήν την επιλεγμένη κάρτα SIM. Για να εξοικονομήσετε τη χρέωση των SMS, προτείνεται η εναλλαγή του μηνύματος σε iSMS. Εναλλαγή τώρα;</string>
+    <string name="ipmsg_mms_convert_to_ipmsg">Η υπηρεσία iSMS είναι διαθέσιμη σε αυτήν την επιλεγμένη κάρτα SIM. Για να εξοικονομήσετε τη χρέωση των MMS, προτείνεται η εναλλαγή του μηνύματος σε iSMS. Εναλλαγή τώρα;</string>
+    <string name="keep_mms">Διατήρηση MMS</string>  
+    <string name="keep_sms">Διατήρηση SMS</string>  
+    <string name="switch_ipmsg">Εναλλαγή</string>  
+    <string name="ip_message_load_all_message">Φόρτωση όλων των μηνυμάτων</string>  
+    <string name="pref_title_display_preference_settings">ΟΘΟΝΗ &amp; ΠΡΟΤΙΜΗΣΕΙΣ</string>  
+    <string name="pref_chat_wallpaper">Ταπετσαρία συνομιλίας</string>  
+    <string name="pref_auto_rotation">Αυτόματη περιστροφή</string>  
+    <string name="pref_show_email_address">Εμφάνιση διεύθυνσης E-mail</string>  
+    <string name="pref_summary_show_email_address">Συμπερίληψη διεύθυνσης E-mail στα αποτελέσματα επαφών</string>  
+    <string name="pref_title_backup_restore_settings">ΔΗΜΙΟΥΡΓΙΑ ΑΝΤΙΓΡΑΦΟΥ ΑΣΦΑΛΕΙΑΣ &amp; ΕΠΑΝΑΦΟΡΑ</string>  
+    <string name="pref_backage_message">Δημιουργία αντιγράφων ασφαλείας του μηνύματος</string>  
+    <string name="pref_summary_backup_message">Τελευταία δημιουργία αντιγράφων ασφαλείας:Ποτέ</string>  
+    <string name="pref_restore_message">Επαναφορά μηνύματος</string>  
+    <string name="pref_summary_restore_message">Επαναφορά των μηνυμάτων αντιγράφων ασφαλείας</string>  
+    <string name="pref_mute">"Σίγαση"</string>  
+    <string name="pref_summary_mute">"απενεργοποιημένη"</string>  
+    <string name="pref_vibrate">Δόνηση</string>  
+    <string name="pref_summary_vibrate">Δόνηση κατά τη λήψη ειδοποιήσεων</string>  
+    <string name="pref_popup_notification">Αναδυόμενη ειδοποίηση</string>  
+    <string name="pref_summary_popup_notification">Εμφάνιση αναδυόμενων ειδοποιήσεων για τις ειδοποιήσεις προώθησης</string>  
+    <string name="pref_title_display_settings">"Προβολή"</string>  
+    <string name="pref_title_actions_settings">Ενέργειες</string>  
+    <string name="pref_download_chat_history">Λήψη ιστορικού συνομιλιών</string>  
+    <string name="pref_summary_download_chat_history">Αποθήκευση στην κάρτα SD σε μορφή zip</string>  
+    <string name="pref_email_chat_history">Ιστορικό συνομιλιών E-Mail</string>  
+    <string name="pref_summary_email_chat_history">Ιστορικό συνομιλιών E-Mail σε μορφή zip</string>  
+    <string name="pref_clear_chat_history">Εκκαθάριση ιστορικού συνομιλιών</string>  
+    <string name="pref_summary_notification_ringtone">Ορισμός ήχου κλήσης για νέες ειδοποιήσεις</string>  
+    <string name="pref_setting_title">Ρύθμιση μηνύματος</string>  
+    <string name="pref_setting_sms">Μήνυμα κειμένου (SMS)</string>  
+    <string name="pref_setting_mms">Μήνυμα πολυμέσων (MMS)</string>  
+    <string name="pref_setting_notification">"Ειδοποιήσεις"</string>  
+    <string name="pref_setting_general">"Γενικές"</string>  
+    <string name="pref_setting_chat">Ρυθμίσεις συνομιλίας</string>  
+    <string name="chat_setting_saving">Αποθήκευση…</string>  
+    <string name="chat_setting_updating">ενημέρωση...</string>  
+    <string name="chat_setting_sending">"Αποστολή..."</string>  
+    <string name="dialog_save_title">Αποθήκευση σε κάρτα SD</string>  
+    <string name="dialog_save_description">Αποθήκευση αυτού του νήματος συνομιλίας στην κάρτα SD με μορφή zip</string>  
+    <string name="dialog_email_title">Κοινή χρήση μέσω E-Mail</string>  
+    <string name="dialog_email_description">Κοινή χρήση αυτού του νήματος συνομιλίας ως συνημμένου μέσω E-Mail σε μορφή zip</string>  
+    <string name="dialog_clear_title">"Εκκαθάριση"</string>  
+    <string name="dialog_clear_description">Ολόκληρο το ιστορικό συνομιλιών σε αυτήν την αίθουσα συνομιλιών θα εκκαθαριστεί</string>  
+    <string name="dialog_wallpaper_chooser_wallpapers">Ταπετσαρίες</string>  
+    <string name="dialog_wallpaper_chooser_gallery">"Συλλογή"</string>  
+    <string name="dialog_wallpaper_chooser_take">"Λήψη φωτογραφίας"</string>  
+    <string name="dialog_wallpaper_chooser_default">"Προεπιλογή"</string>  
+    <string name="dialog_wallpaper_title">Επιλογή ταπετσαρίας</string>  
+    <string name="mute_one_hour">1 ώρα</string>  
+    <string name="mute_four_hours">4 ώρες</string>  
+    <string name="mute_eight_hours">8 ώρες</string>  
+    <string name="save_chat_history_failed">Η αποθήκευση απέτυχε</string>  
+    <string name="send_chat_history_failed">Το E-mail απέτυχε</string>  
+    <string name="actionbar_sms_setting">Ρυθμίσεις SMS</string>  
+    <string name="actionbar_mms_setting">Ρυθμίσεις MMS</string>  
+    <string name="actionbar_notification_setting">"Ρυθμίσεις ειδοποιήσεων"</string>  
+    <string name="actionbar_general_setting">Γενικές ρυθμίσεις</string>  
+    <string name="save_history_file">αποθήκευση ως</string>  
+    <string name="no_sdcard_suggestion">"Δεν υπάρχει κάρτα SD"</string>  
+    <string name="save_wallpaper_success">Η ταπετσαρία έχει αλλάξει.</string>  
+    <string name="save_wallpaper_fail">Δεν ήταν δυνατή η αλλαγή ταπετσαρίας.</string>  
+    <string name="ip_message_delete_important">"Συμπερίληψη μηνυμάτων που έχουν επισημανθεί ως σημαντικά"</string>  
+    <string name="str_ipmsg_spam_empty">Δεν έχετε καμία ανεπιθύμητη συνομιλία. \nΟ φάκελος ΑΝΕΠΙΘΥΜΗΤΑ συλλέγει όλες τις συνομιλίες που έχουν επισημανθεί ως ανεπιθύμητες. Η ειδοποίηση θα απενεργοποιηθεί από προεπιλογή. Αυτό θα σας γλιτώσει από την άσκοπη ενόχληση. \n\nΜπορείτε να επισημάνετε έναν αποστολέα ως ανεπιθύμητο επιλέγοντας μια συνομιλία και, στη συνέχεια, επιλέγοντας το εικονίδιο Σήμανση ως ανεπιθύμητου. Όταν μια συνομιλία επισημαίνεται ως ανεπιθύμητη, εμφανίζεται αυτόματα ένα εικονίδιο απενεργοποίησης των ειδοποιήσεων και οι συνομιλίες τοποθετούνται εδώ.</string>  
+    <string name="str_ipmsg_spam_example_from">+86123456789</string>  
+    <string name="str_ipmsg_spam_example_subject">Αυτό είναι ένα παράδειγμα ανεπιθύμητου μηνύματος.</string>  
+    <string name="str_ipmsg_groupchat_empty">Δεν έχετε κανένα μήνυμα συνομιλίας ομάδας. \nΟ φάκελος ΣΥΝΟΜΙΛΙΕΣ ΟΜΑΔΑΣ συλλέγει όλα τα μηνύματα συνομιλίας ομάδας που έχουν δημιουργηθεί από εσάς ή στα οποία έχετε συμμετάσχει. Το γεγονός αυτό σας επιτρέπει την εύκολη εύρεση και διαχείριση των συνομιλιών ομάδας. \n\nΓια να δημιουργήσετε μια συνομιλία ομάδας, μπορείτε να αγγίξετε το κουμπί Δημιουργία συνομιλίας ομάδας σε αυτήν την οθόνη και να προσκαλέσετε τους φίλους σας να συμμετάσχουν στην ομάδα.</string>  
+    <string name="str_ipmsg_group_example_from">"Όν. ομάδ."</string>  
+    <string name="str_ipmsg_group_example_subject">Ο φίλος σας:\nΜου αρέσει χαρακτηριστικό ομάδα συνομιλίας!</string>  
+    <string name="str_ipmsg_important_empty">Δεν έχετε κανένα σημαντικό μήνυμα. \nΟ φάκελος ΣΗΜΑΝΤΙΚΑ συλλέγει όλα τα μηνύματα που έχουν επισημανθεί ως σημαντικά. Το γεγονός αυτό σας επιτρέπει την εύκολη εύρεση των μηνυμάτων. \n\nΜπορείτε να επισημάνετε ένα μήνυμα ως σημαντικό επιλέγοντας ένα μήνυμα και, στη συνέχεια, ενεργοποιώντας την επιλογή Σήμανση ως σημαντικού από το μενού Επιλογή. Όταν ένα μήνυμα έχει επισημανθεί ως σημαντικό, εμφανίζεται ένα εικονίδιο με κόκκινη σημαία όπως αυτό που βλέπετε στη συνέχεια.</string>  
+    <string name="str_ipmsg_important_example_title">Αυτό είναι ένα παράδειγμα ενός μηνύματος που έχει επισημανθεί ως σημαντικό. Εμφανίζεται μια κόκκινη σημαία.</string>  
+    <string name="str_ipmsg_important_example_time">10:55 AM</string>  
+    <string name="str_ipmsg_allchat_empty">"Δεν υπάρχουν συνομιλίες."</string>  
+    <string name="str_ipmsg_empty_activate_content">Για να χρησιμοποιήσετε αυτή τη δυνατότητα θα πρέπει πρώτα να ενεργοποιήσετε την υπηρεσία iSMS. Μην ανησυχείτε. Εάν η υπηρεσία δεν σας ικανοποιεί μπορείτε να την απενεργοποιήσετε οποιαδήποτε στιγμή από τις Ρυθμίσεις. Κάντε μια δοκιμή τώρα!</string>  
+    <string name="str_ipmsg_empty_activate_title">Ενεργοποίηση iSMS</string>  
+    <string name="str_ipmsg_service_title">Κέντρο υπηρεσίας iSMS</string>  
+    <string name="str_ipmsg_introduction">Με τα iSMS, μπορείτε να αποστείλετε άμεσα δωρεάν μηνύματα και να διατηρήσετε το ιστορικό των συνομιλιών σας σε ένα μέρος. Πιέστε ένα κουμπί για να αποκτήσετε τη νέα εμπειρία!</string>  
+    <string name="time_now">Άγνωστο όνομα καλλιτέχνη</string>  
+    <string name="str_ipmsg_active">Ενεργοποίηση iSMS</string>  
+    <string name="str_ipmsg_welcome_active">Καλώς ορίσατε στην υπηρεσία iSMS</string>  
+    <string name="str_ipmsg_term_warn_welcome">Η υπηρεσία iSMS σάς επιτρέπει να συνομιλείτε και να κάνετε κοινή χρήση αρχείων πολυμέσων με τους φίλους σας οποιαδήποτε στιγμή και από οποιοδήποτε μέρος μέσω WIFI ή σύνδεσης δεδομένων.\n\nΧρειάζονται μόνο 3 βήματα για να ολοκληρώσετε την ενεργοποίηση!\n\n Όροι και προϋποθέσεις\n</string>  
+    <string name="str_ipmsg_term_warn_activate">Αυτή η δυνατότητα υποστηρίζεται μόνο από την υπηρεσία iSMS.\n\nΗ υπηρεσία iSMS σάς επιτρέπει να συνομιλείτε και να κάνετε κοινή χρήση αρχείων πολυμέσων με τους φίλους σας οποιαδήποτε στιγμή και από οποιοδήποτε μέρος μέσω WIFI ή σύνδεσης δεδομένων.\n\n Όροι και προϋποθέσεις</string>  
+    <string name="str_ipmsg_term_key">Όροι και προϋποθέσεις</string>  
+    <string name="str_ipmsg_agree_and_continue">Αποδοχή και συνέχιση</string>  
+    <string name="no_sim_card">Δεν υπάρχει κάρτα SIM!</string>  
+    <string name="ip_message_activate_title">Ενεργοποίηση iSMS</string>  
+    <string name="ip_message_current_sim_enabled">Η τρέχουσα κάρτα SIM έχει ενεργοποιηθεί.</string>  
+    <string name="sim_selected_dialog_title_for_activate">Επιλογή κάρτας SIM για ενεργοποίηση iSMS</string>  
+    <string name="ip_message_activate_message">Αυτή η δυνατότητα υποστηρίζεται μόνο από την υπηρεσία iSMS. Δραστηριοποιώ του λογαριασμού iSMS τώρα;</string>  
+    <string name="typing">"Πληκτρολόγηση..."</string>  
+    <string name="ip_message_enable_title">Ενεργοποίηση iSMS</string>  
+    <string name="ip_message_enable_message">Αυτή η δυνατότητα υποστηρίζεται μόνο από την υπηρεσία iSMS. Ενεργοποίηση του λογαριασμού iSMS τώρα;</string>  
+    <string name="sim_selected_dialog_title_for_enable">Επιλογή κάρτας SIM για ενεργοποίηση iSMS</string>  
+    <string name="ip_message_switch_sim_title">Εναλλαγή κάρτας SIM</string>  
+    <string name="ip_message_switch_sim_message">Η τρέχουσα κάρτα SIM δεν υποστηρίζει iSMS. Εναλλαγή σε άλλη κάρτα SIM;</string>  
+    <string name="ip_message_switch_sim_button">Εναλλαγή</string>  
+    <string name="ip_message_switch_sim_successfully">Η εναλλαγή κάρτας SIM ολοκληρώθηκε με επιτυχία!</string>  
+    <string name="close">Κλείσιμο καναλιού</string>  
+    <string name="nointernet">"Δεν έχει βρεθεί σύνδεση Internet η οποία να λειτουργεί! Προσπαθήστε ξανά αργότερα."</string>  
+    <plurals name="deleted_conversations"> 
+        <item quantity="one">Έχει διαγραφεί μία συνομιλία</item>  
+        <item quantity="other"><xliff:g id="number" example="15">%1$s</xliff:g> συνομιλίες έχουν διαγραφεί</item> 
+    </plurals> 
+    <string name="sms_validity_period">Περίοδος ισχύος SMS</string>
+    <string name="sms_validity_period_nosetting">Δεν έχει οριστεί</string>
+    <string name="sms_validity_period_1hour">1 ώρα</string>
+    <string name="sms_validity_period_6hours">6 ώρες</string>
+    <string name="sms_validity_period_12hours">12 ώρες</string>
+    <string name="sms_validity_period_1day">1 ημέρα</string>
+    <string name="sms_validity_period_max">Μέγιστο δυνατό</string>
+    <string name="exceed_subject_length_limitation">Συμπληρώθηκε μέγιστη διάρκεια</string>
+    <string name="disable_notifications_dialog_message" msgid="7644011234972074096">"Διακοπή ειδοποιήσεων διπλού μηνύματος κειμένου από την προεπιλεγμένη εφαρμογή ανταλλαγής μηνυμάτων;"</string>
+    <string name="forward_from">Προώθηση από:</string>
+    <string name="sms_forward_setting">Ρύθμιση προώθησης SMS</string>
+    <string name="sms_forward_setting_summary">Προώθηση SMS με όνομα και διεύθυνση αποστολέα</string>
+    <string name="file_attachment_vcalendar_name"> vCalendar( <xliff:g id="text">%s</xliff:g> ) </string>
+    <string name="inbox">"Εισερχόμενα"</string>
+    <string name="outbox">"Εξερχόμενα"</string>
+    <string name="draftbox">Πρόχειρα</string>
+    <string name="sentbox">Απεσταλμένα</string>
+    <string name="simbox">SIMbox</string>
+    <string name="changeview">Αλλαγή λειτουργίας</string>
+    <string name="viewer_title_sms">"SMS"</string>
+    <string name="viewer_title_wappush">Wap Push</string>
+    <string name="slideshow_details">Λεπτομέρειες μηνύματος</string>
+    <string name="open">"Άνοιγμα"</string>
+    <string name="delete_all_confirm">"Διαγραφή όλων των μηνυμάτων στο πλαίσιο;"</string>
+    <string name="folder_recipient">Παραλήπτης:</string>
+    <string name="folder_recieve_date">Ημερομηνία:</string>
+    <string name="folder_download">Λήψη MMS</string>
+    <string name="confirm_download_message">"επιβεβαίωση λήψης μηνύματος"</string>
+    <string name="play_as_slideshow">Αναπαραγωγή MMS ως παρουσίαση διαφανειών</string>
+    <string name="no_application_response">"Δεν υπάρχει εφαρμογή για τη διαχείριση του αιτήματος"</string>
+    <string name="cdma_not_support">Το CDMA δεν υποστηρίζει αυτή τη δυνατότητα</string>
+    <string name="allmessage">"Τα δεδομένα διακομιστή έχουν καταστραφεί. Θα γίνει νέος συγχρονισμός όλων των μηνυμάτων"</string>
+    <string name="select_message">Επιλογή μηνύματος</string>
+    <string name="confirm_delete_allmessage">"Όλα τα μηνύματα θα διαγραφούν."</string>
+    <string name="mark_as_read_btn_str">"Επισήμανση ως αναγνωσμένο"</string>
+    <string name="delete_btn_str">Διαγραφή</string>
+    <string name="reply_send">"Αποστολή"</string>
+    <string name="via_test">Κλήση μέσω SIM1</string>
+    <string name="received_header">"Λήφθηκε:"</string>
+    <string name="no_item_selected">Δεν υπάρχει επιλεγμένο στοιχείο.</string>
+    <string name="pref_title_font_size_setting">ΡΥΘΜΙΣΗ ΜΕΓΕΘΟΥΣ ΓΡΑΜΜΑΤΟΣΕΙΡΑΣ</string>
+    <string name="pref_title_message_font_size">Μέγεθος γραμματοσειράς μηνύματος</string>
+    <string name="pref_summary_message_font_size">Μέγεθος γραμματοσειράς μηνύματος</string>
+    <string name="message_font_size_dialog_title">Μέγεθος γραμματοσειράς μηνύματος</string>
+    <string name="message_font_size_dialog_cancel">Άκυρο</string>
+    <string name="change">Αλλαγή</string>
+    <string name="ipmsg_accept">"Αποδοχή"</string>
+    <string name="ipmsg_resend">Νέα αποστολή</string>
+    <string name="viewer_title_cb">Εκπομπή κυψέλης</string>
+    <string name="change_default_disk">Ο χώρος αποθήκευσης του τηλεφώνου δεν έχει αρκετό χώρο.  Απελευθερώστε λίγο χώρο αποθήκευσης ή αλλάξτε "τον προεπιλεγμένο δίσκο" εγγραφής από τις ρυθμίσεις.</string>
+    <string name="ipmsg_reject">Απόρριψη</string>
+    <string name="discard_mms_title">Απόρριψη MMS</string>
+    <string name="discard_mms_content">Θα γίνει απόρριψη ΟΛΩΝ των MMS στο μήνυμα πολλαπλής προώθησης</string>
+    <string name="toast_sms_forward">Δεν έχει προωθηθεί κανένα SMS</string>
+    <string name="dialog_continue">Συνέχεια</string>
+    <string name="sms_size_limit">Έχει συμπληρωθεί το όριο μεγέθους</string>
+    <string name="dialog_sms_limit">Έχει συμπληρωθεί το όριο μεγέθους μηνύματος. Το μήνυμα που υπερβαίνει το όριο θα απορριφθεί</string>
+    <string name="str_ipmsg_replace_attach">Αντικατάσταση συνημμένου</string>
+    <string name="str_ipmsg_replace_attach_msg">Δεν υπάρχει συνημμένο, αντικατάσταση;</string>
+    <string name="ipmsg_err_file">Δεν ήταν δυνατό το άνοιγμα το αρχείου</string>
+    <string name="forward_tips_title">"Απόρριψη ειδοποίησης MMS"</string>
+    <string name="forward_tips_body">"Η ειδοποίηση MMS δεν υποστηρίζει τη λειτουργία προώθησης, θα απορριφθεί."</string>
+    <string name="ipmsg_resend_discard_message">Για νέα αποστολή του μηνύματος, θα γίνει απόρριψη της τρέχουσας σύνθεσης μηνύματος.</string>
+    <string name="type_to_quick_text">"Πληκτρολόγηση γρήγορου κειμένου"</string>
+    <string name="menu_wappush">"Μηνύματα Wap Push"</string>
+    <string name="visit_website">"Επίσκεψη τοποθεσίας Web"</string>
+    <string name="meet_emoticon_limit">Συμπλήρωση ορίων emoticon</string>
+    <string name="view_mms_notification">Δεν είναι δυνατή η προβολή ειδοποίησης MMS</string>
+    <string name="ipmsg_multi_forward_tips_content">Για πολλαπλή προώθηση, πρέπει πρώτα να γίνει λήψη ορισμένων iSMS.</string>
+    <string name="multi_forward_failed_all">Η λήψη απέτυχε και η πολλαπλή προώθηση έχει απορριφθεί.</string>
+    <string name="ipmsg_multi_forward_failed_part">Η προώθηση ορισμένων iSMS απέτυχε.</string>
+    <string name="confirm_delete_allwappush">"Όλα τα μηνύματα Wap Push θα διαγραφούν."</string>
+    <string name="confirm_delete_selected_wappush">"Τα επιλεγμένα μηνύματα Wap Push θα διαγραφούν."</string>
+    <string name="menu_delete_allwappush">Διαγραφή όλων</string>
+    <string name="duplicated_recipient">Έχει δημιουργηθεί διπλότυπο του παραλήπτη</string>
+
+<string name="ok">"ΟΚ"</string>
+    <string name="cancel">"Ακύρωση"</string>
+    <string name="enable">"Ενεργοποίηση"</string>
+    <string name="disable">"Απενεργοποίηση"</string>
+    <string name="cell_broadcast_setting">Ρυθμίσεις γλώσσας και καναλιού για εκπομπή κυψέλης</string>
+    <string name="cb_menu_language">"Γλώσσα"</string>
+    <string name="cb_menu_add_channel">Προσθήκη καναλιού</string>
+    <string name="cb_menu_channel_list">Λίστα καναλιών</string>
+    <string name="cb_dialog_title_language_choice">Επιλογή γλώσσας</string>
+    <string name="cb_channel_dialog_channel_name">Όνομα καναλιού (1-10 χαρακτήρες)</string>
+    <string name="cb_channel_dialog_channel_number">Αριθμός καναλιού (0-65534)</string>
+    <string name="cb_channel_dialog_channel_state">Ενεργοποίηση καναλιού</string>
+    <string name="cb_channel_dialog_edit_channel">Επεξεργασία καναλιού</string>
+    <string name="cb_menu_edit">"Επεξεργασία"</string>
+    <string name="cb_menu_delete">ΔΙΑΓΡΑΦΗ</string>
+    <string name="cb_error_channel_num">Εισαγάγετε αριθμό καναλιού(0-65534).</string>
+    <string name="cb_error_channel_name">Το μήκος του ονόματος καναλιού δεν είναι σωστό(1-10χαρακτήρες).</string>
+    <string name="cb_error_language_select">Επιλέξτε τουλάχιστον μία γλώσσα.</string>
+    <string name="cb_error_channel_id_exist">Το αναγνωριστικό καναλιού υπάρχει.</string>
+    <string name="cb_all_languages">Όλες οι γλώσσες</string>
+    <string name="cb_default_new_channel_name">Νέο κανάλι</string>
+    <string name="sum_cell_broadcast_control_on">Ενεργοποίηση εκπομπής κυψέλης</string>
+    <string name="sum_cell_broadcast_control_off">Απενεργοποίηση εκπομπής κυψέλης</string>
+    <string name="sum_cell_broadcast_setting">Ρυθμίσεις γλώσσας και καναλιού για εκπομπή κυψέλης</string>
+    <string name="close_dialog">OK</string>
+    <string name="updating_title">"Ρυθμίσεις κλήσης"</string>
+    <string name="error_updating_title">"Σφάλμα ρυθμίσεων κλήσης"</string>
+    <string name="reading_settings">"Ανάγνωση ρυθμίσεων…"</string>
+    <string name="updating_settings">"Ενημέρωση ρυθμίσεων..."</string>
+    <string name="reverting_settings">"Επαναφορά ρυθμίσεων…"</string>
+    <string name="exception_error">"Σφάλμα δικτύου ή κάρτας SIM."</string>
+    <string name="no_sim">Η κάρτα SIM %d δεν είναι συνδεδεμένη.</string>
+    <string name="sum_search_networks">"Αναζήτηση διαθέσιμων δικτύων"</string>
+    <string name="sms_not_ready">Γίνεται προετοιμασία της λειτουργικής μονάδας SMS, περιμένετε…</string>
+    <string name="label_full_name">Όνομα </string>
+    <string name="label_phone">Τηλέφωνο</string>
+    <string name="label_email">"Διεύθυνση ηλεκτρονικού ταχυδρομείου"</string>
+    <string name="label_postal">"Διεύθυνση"</string>
+    <string name="label_organization">"Εταιρεία"</string>
+    <string name="label_im">"Ανταλ.άμεσων μην.(IM)"</string>
+    <string name="label_website">Τοποθεσία Web</string>
+    <string name="label_sip_address">"Κλήση Διαδικτύου"</string>
+    <string name="label_nick_name">"Ψευδώνυμο"</string>
+    <string name="label_notes">"Σημειώσεις"</string>
+    <string name="label_event">"Συμβάντα"</string>
+    <string name="search_time_period_label">Χρονική περίοδος</string>
+    <string name="done_text">"Τέλος"</string>
+    <string-array name="language_list_values" translatable="false">
+        <item>Όλες οι γλώσσες</item>
+        <item>Γερμανικά</item>
+        <item>Αγγλικά</item>
+        <item>Ιταλικά</item>
+        <item>Γαλλικά</item>
+        <item>Ισπανικά</item>
+        <item>Ολλανδικά</item>
+        <item>Σουηδικά</item>
+        <item>Δανέζικα</item>
+        <item>Πορτογαλικά</item>
+        <item>Φινλανδικά</item>
+        <item>Νορβηγικά</item>
+        <item>Ελληνικά</item>
+        <item>Τούρκικα</item>
+        <item>Ουγγρικά</item>
+        <item>Πολωνικά</item>
+        <item>Άλλες</item>
+        <item>Τσέχικα</item>
+        <item>Εβραϊκά</item>
+        <item>Αραβικά</item>
+        <item>Ρωσικά</item>
+        <item>Ισλανδικά</item>
+    </string-array>
+    <string name="add_duplicate_recipients">Έχει δημιουργηθεί διπλότυπο του παραλήπτη</string>
+
+    <!-- begin of mwi -->
+    <string name="mwi_title">Φωνητικά μηνύματα</string>
+    <string name="type_voice_msg">Φωνητικό μήνυμα</string>
+    <string name="type_video_msg">Μήνυμα βίντεο</string>
+    <string name="type_fax_msg">Μήνυμα φαξ</string>
+    <string name="type_text_msg">"Μήνυμα κειμένου"</string>
+    <string name="priority_urgent">Επείγον</string>
+    <string name="date_label">Ημερομηνία:\u0020</string>
+    <string name="message_id_label">Αναγνωριστικό μηνύματος:\u0020</string>
+    <string name="voice_message_count_notification"><xliff:g id="number" example="3">%1$s</xliff:g> νέα φωνητικά μηνύματα</string>
+    <string name="confirm_delete_allmwi">"Όλα τα φωνητικά μηνύματα θα διαγραφούν."</string>
+    <string name="confirm_delete_selected_mwi">"Τα επιλεγμένα φωνητικά μηνύματα θα διαγραφούν."</string>
+    <!-- end of mwi -->
+
+    <string name="download_disabled_toast">Αδύνατη η λήψη. Μη προεπιλεγμένη εφαρμογή SMS.</string>
+    <string name="adding_wallpaper_title">Αποθήκευση του φόντου επιφάνειας εργασίας…</string>
+    <string name="sms_priority_setting">Προτεραιότητα UIM</string>
+    <string name="sms_priority_Interactive">Διαδραστικό</string>
+    <string name="sms_priority_Urgent">Επείγον</string>
+    <string name="sms_priority_Emergency">Επείγον</string>
+    <string name="empty_sim_name">Υποδοχή κάρτας SIM <xliff:g id="subId" example="2">%1$d</xliff:g></string>
+
+    <string name="drm_not_support">Περιεχόμενο που διαθέτει προστασία αντιγραφής δεν υποστηρίζεται από το MMS. </string>
+    <string name="user_has_no_premission">"Η χρήση SMS δεν επιτρέπεται γι'\αυτόν το χρήστη."</string>
+    <string name="wfc_no_cellular_network">Δεν υπάρχει δίκτυο κινητής τηλεφωνίας</string>
+    <string name="wfc_connect_to_available_wifi">Σύνδεση σε διαθέσιμο δίκτυο Wi-Fi για ανταλλαγή μηνυμάτων.</string>
+    <string name="wfc_notification_title">Σύνδεση σε δίκτυο Wi-Fi για ανταλλαγή μηνυμάτων.</string>
+    <string name="ct_om_switch_notification"><xliff:g id="op1">%s</xliff:g> δεν λειτουργεί προσωρινά και τυχόν προεπιλεγμένες κλήσεις, SMS, δεδομένα στο <xliff:g id="op2">%s</xliff:g> θα αλλάξουν σε <xliff:g id="op3">%s</xliff:g> καταλλήλως.</string>
+    <string name="can_not_switch_account_during_call">ΔενείναιδυνατήηαλλαγήστηνπροτιμώμενηSIMγιαSMSκατάτηδιάρκειατηςκλήσης.</string>
+    <string name="can_not_switch_account_temporarily">ΔενμπορείνααλλάξειστηνπροτιμώμενηSIMγιαSMSπροσωρινά.</string>
+    <string name="omh_exceed_message_size_limitation">ΈχετεφτάσειτοόριομεγέθουςμηνύματοςR-UIM</string>
+    <string name="omh_failed_to_add_image">Επετεύχθη το μέγιστο όριο μεγέθους μηνυμάτων R-UIM, διαγράψτε μερικά τμήματα.</string>
+    <string name="missing_required_permission">Απόρριψη αδειών. Μπορείτε να τις αλλάξετε στις Ρυθμίσεις &gt; Εφαρμογές.</string>
+    <string name="manage_card_msg_title">Διαχείριση μηνυμάτων κάρτας UIM/SIM</string>
+    <string name="manage_card_msg_summary">Διαχείριση μηνυμάτων που είναι αποθηκευμένα στην κάρτα UIM/SIM</string>
+    <string name="disable_delivery_report">Δεν είναι δυνατή η ενεργοποίηση κατά την περιαγωγή.</string>
+    <string name="fore_service_notify_title">Μεταφορά μηνυμάτων</string>
+    <string name="fore_service_notify_content">Υπάρχουν μηνύματα υπό μεταφορά.</string>
+    <string name="smart_req_mms_indicator">Τα MMS δεν επιτρέπονται. Δοκιμάστε ξανά να στείλετε SMS.</string>
+</resources>

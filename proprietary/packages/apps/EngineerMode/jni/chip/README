@@ -1,0 +1,29 @@
+JNI Library of engineermode chip/feature support, which contain the api
+to query the platform chip and feature information
+
+This library is pre-built by MediaTek internal.
+
+WHAT IT DOES?
+=============
+libem_support_jni provide jni interface to EngineerMode to 
+access the platform chip and feature information
+
+HOW IT WAS BUILT?
+==================
+It needs the following library from AOSP:
+1. libutils
+2. libcutils
+
+and the following libs from MediaTek:
+None
+
+All source/dependency modules of this module are already put in
+'vendor/mediatek/libs' folder.
+
+HOW TO USE IT?
+==============
+
+provide jni interface to EngineerMode to access platform chip and feature information
+all api interface are at (vendor/mediatek/proprietary/packages/apps/EngineerMode/jni/chip)
+
+All the source code of this library were written by MediaTek co..

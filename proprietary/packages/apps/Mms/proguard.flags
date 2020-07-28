@@ -1,0 +1,46 @@
+-keep class com.android.mms.ui.AdvancedSearchView {
+*;
+}
+
+-keep class com.android.mms.ui.MmsThumbnailPresenter {
+*;
+}
+
+-keep class com.android.mms.ui.SlideshowPresenter {
+*;
+}
+
+-keep class com.mediatek.mms.callback.** {
+*;
+}
+
+-keep class com.mediatek.mms.ext.** {
+*;
+}
+
+-keep class com.android.vcard.VCardEntryConstructor{
+*;
+}
+
+-keep class com.android.vcard.VCardParser_V21{
+*;
+}
+
+-keep class com.android.vcard.VCardParser_V21{
+*;
+}
+
+-keep class com.android.vcard.VCardEntry{
+*;
+}
+
+-keep class com.android.vcard.VCardEntry.*{
+*;
+}
+
+-keep class com.android.mms.data.Contact {
+*;
+}
+
+-dontwarn com.android.mms.ui.**
+-ignorewarnings

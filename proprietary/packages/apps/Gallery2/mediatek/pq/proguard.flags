@@ -1,0 +1,12 @@
+-dontwarn org.apache.http.client.HttpClient
+-dontwarn org.apache.http.params.CoreProtocolPNames
+-dontwarn org.apache.http.conn.params.ConnManagerParams
+-dontwarn org.apache.http.HttpVersion
+-dontwarn android.media.MediaPlayer
+-dontwarn android.os.PowerManager
+-dontwarn com.mediatek.common.util.*
+-dontwarn com.mediatek.storage.StorageManagerEx
+-dontskipnonpubliclibraryclassmembers
+
+-keep class com.mediatek.galleryfeature.picturequality.** { *; }
+-keep class com.mediatek.gallerybasic.** { *; }

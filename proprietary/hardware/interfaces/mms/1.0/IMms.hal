@@ -1,0 +1,92 @@
+/*
+ * Copyright (C) 2016 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package vendor.mediatek.hardware.mms@1.0;
+
+import types;
+
+/*
+ * Interface declaring display quality enhancement.
+ */
+
+interface IMms {
+
+    /**
+    * isCopybitSupportedOutFormat:
+    *   call isCopybitSupportedOutFormat to check whether the copybit
+    *   supports this format.
+    *
+    * @param pixel format
+    *
+    * @return support format is true, else is false
+    */
+    isCopybitSupportedOutFormat(int32_t format) generates (bool sucess);
+
+    /**
+    * getCopybitDefaultOutFormat:
+    *   call getCopybitDefaultOutFormat to get copybit default output format.
+    *
+    * @return default format
+    */
+    getCopybitDefaultOutFormat() generates (int32_t format);
+
+    /**
+    * getCopybitOutUsage:
+    *   call getCopybitOutUsage to get copybit output usage.
+    *
+    * @param usage
+    */
+    getCopybitOutUsage(uint32_t usage) generates (int32_t usg);
+
+    /**
+    * copybit:
+    *   call copybit func to convert inputHandle src file to outputHandle dst file
+    *
+    * @param copybitparam include rotation, flipMirror, inputimage, outputimage
+    *
+    * @return copybit result
+    */
+    copybit(HwCopybitParam copybitparam) generates (int32_t result);
+
+    /**
+    * jpegencode:
+    *   call jpegencode func to encode inputHandle src file to outputHandle dst file
+    *
+    * @param cfg HwJpegEncoderConfig type
+    *
+    * @return encode result and size
+    */
+    jpegencode(HwJpegEncoderConfig cfg) generates (uint64_t size, int32_t result);
+
+    /**
+    * jpegOpenClient:
+    *   call jpegOpenClient func to open jpegencoder client
+    *
+    * @param width
+    * @param height
+    *
+    * @return jpegOpenClient result
+    */
+    jpegOpenClient(uint32_t width,uint32_t height) generates (int32_t result);
+
+    /**
+    * jpegCloseClient:
+    *   call jpegCloseClient func to close jpegencoder client
+    *
+    * @return jpegCloseClient result
+    */
+    jpegCloseClient() generates (int32_t result);
+};

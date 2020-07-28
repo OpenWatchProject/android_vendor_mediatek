@@ -1,0 +1,12 @@
+java_library_static {
+    name: "com.mediatek.systemui.ext",
+    srcs: [
+        "src/**/*.java",
+    ],
+
+    libs: [
+        "mediatek-framework",
+        "mediatek-common",
+        "com.mediatek.systemui.statusbar.extcb",
+    ],
+}

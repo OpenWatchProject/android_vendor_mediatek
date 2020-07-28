@@ -1,0 +1,22 @@
+WHAT IT DOES?
+=============
+This is using to process preview frame and output frame with color effect
+
+
+HOW IT WAS BUILT?
+==================
+Build command:mmm vendor/mediatek/proprietary/packages/apps/Camera2/
+feature/setting/matrixdisplay/matrixdisplay_ext
+
+
+HOW TO USE IT?
+==============
+Firstly, using getInstance() method ot create an object. Then, using
+initialize() method to set the size and format of preview frame buffer
+which is going to be processed later to native, and set effect
+numbers to native, using setBuffers() to set buffers pointer to native
+and using setSurface() to set surface to native.
+
+Above is a preparation, then, using process() to process frame buffer
+repeatly, call release() to stop processing and release all the resource
+when wanting to stop

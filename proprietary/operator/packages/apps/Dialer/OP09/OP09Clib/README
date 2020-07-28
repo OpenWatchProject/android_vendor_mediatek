@@ -1,0 +1,23 @@
+OP09 Clib Dialer customization features.
+
+This apk is pre-built by MediaTek internal.
+
+
+WHAT IT DOES?
+=============
+It is a plugin apk which contains the OP09 6M customization for Dialer App (dialer, incallui)
+
+HOW IT WAS BUILT?
+==================
+It needs the following library from Mediatek:
+1. mediatek-common.jar
+2. Host App api interface,for example:com.mediatek.incallui.ext
+All the OP09 customization for dialer will be built as OP09Dialer.apk  installed under system/app/
+
+HOW TO USE IT?
+==============
+Implement the interface provided by dialer to do customization.
+all api interface are at packages/apps/Dialer/plugin.
+when run time, framework will find the OP09ClibDialer customization implementation via OpInCallUICustomizationFactoryBase.sOpFactoryInfos and OpDialerCustomizationUtils.sOperatorFactoryInfoList.
+
+All the source code of  were written by MediaTek.

@@ -1,0 +1,22 @@
+The WfoService apk is a service for communication between Java layer and MAL module to achieve
+Wifi-Offload functionality.
+
+WHAT IT DOES?
+=============
+The main tasks of WfoService are
+ - Passes user profiles such as VoLTE enabled, WifiCalling enabled and WifiCalling mode informations
+   to MAL module.
+ - Passes Wifi states such as MAC address, IP address and interface name to MAL module.
+ - Provides API to get ran type from MAL.
+ - Provides listener registration to receive handover events.
+
+HOW IT WAS BUILT?
+==================
+WfoService apk is built from MTK internal build process if ePDG feature is enable.
+
+HOW TO USE IT?
+==============
+It's a persist apk. It will be launched by AMS and add WifiOffloadService when application is
+created. Client can get WifiOffloadService by
+ServiceManager.getService(WifiOffloadManager.WFO_SERVICE),and use it by interfaces defined in
+wfo-common library.

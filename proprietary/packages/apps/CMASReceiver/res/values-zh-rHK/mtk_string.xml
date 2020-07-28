@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+ * Copyright (C) 2007-2008 Esmertec AG.
+ * Copyright (C) 2007-2008 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+   <string name="alerts">警示</string>
+    <string name="select_all">選擇全部</string>
+    <string name="unselect_all">"全部不選"</string>
+    <string name="delete">"刪除"</string>
+    <string name="select_cellbroadcasts">選擇緊急警示</string>
+    <plurals name="message_view_selected_message_count">
+        <item quantity="one">已選擇<xliff:g id="message_count" example="1">%d</xliff:g></item>
+        <item quantity="other"><xliff:g id="message_count" example="9">%d</xliff:g> 已選</item>
+    </plurals>
+    <plurals name="confirm_delete_broadcast">
+        <item quantity="one">1個已選的警示會被刪除</item>
+        <item quantity="other"><xliff:g id="number" example="15">%1$s</xliff:g>所選的警示會被刪除</item>
+    </plurals>
+    <string name="enable_cmas_presidential_threat_alerts_title">顯示總統警示</string>
+    <string name="enable_cmas_presidential_threat_alerts_summary">顯示總統級數警示</string>
+    <string name="enable_cmas_imminent_threat_alerts_title">當頭的警示</string>
+    <string name="enable_cmas_imminent_threat_alerts_summary">顯示當頭影響到生命與財產的警示</string>
+    <string name="cmas_preview_alert_tone_title">警示鈴聲預覽</string>
+    <string name="cmas_preview_alert_tone_summary">預覽警示鈴聲</string>
+    <string name="cmas_change_settings">你確定要更改設定嗎？</string>
+    <string name="cmas_disable_cmas">如果你關閉信息廣播你將不會受到任何警示。</string>
+    <string name="cmas_enable_cmas_failed">未能打開。</string>
+    <string name="enable_repeat_alert_title">重複警示</string>
+    <string name="enable_repeat_alert_summary">間歇性地提醒使用者未查看的警示</string>
+    <string name="enable_all_alert_title">所有警示打開。</string>
+    <string name="enable_all_imminent_alerts_title">所有當頭威脅信息</string>
+    <string name="enable_cell_broadcast_title">緊急警示</string>
+    <string name="alert_sound_volume">警報聲音大小</string>
+    <string name="alert_volume_summary">調教警報聲音大小</string>
+</resources>

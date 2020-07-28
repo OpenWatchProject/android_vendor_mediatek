@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    coreApp="true"
+    package="com.mediatek.security.service"
+    android:sharedUserId="android.uid.system">
+    <uses-sdk android:minSdkVersion="23" android:targetSdkVersion="28"/>
+
+    <protected-broadcast android:name="com.mediatek.security.action.NETWORK_DATA_UPDATE" />
+
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+    <uses-permission android:name="com.mediatek.security.SYSTEM_NETWORK_DATA_ACTIVITY"/>
+
+    <permission
+        android:name="com.mediatek.security.permission.ACCESS_PERMISSION_CONTROL"
+        android:description="@string/app_name"
+        android:label="@string/app_name"
+        android:protectionLevel="signatureOrSystem" >
+    </permission>
+
+    <application
+        android:taskAffinity=""
+        android:label="@string/app_name"
+        android:theme="@android:style/Theme.Material.Settings"
+        android:supportsRtl="true"
+        android:directBootAware="true"
+        android:persistent="true"
+        android:defaultToDeviceProtectedStorage="true"
+        android:allowClearUserData="false" >
+        <service
+            android:name="com.mediatek.security.service.NetworkDataControllerService"
+            android:permission="com.mediatek.security.permission.ACCESS_PERMISSION_CONTROL"
+            android:directBootAware="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <action android:name="com.mediatek.security.START_SERVICE" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+         </service>
+    </application>
+</manifest>

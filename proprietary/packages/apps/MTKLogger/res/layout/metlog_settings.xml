@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" 
+    android:key="metlog_preference_screen"
+    android:title="@string/met_log_name">
+ 
+    <EditTextPreference
+        android:defaultValue="200"
+        android:key="metlog_logsize"
+        android:summary="@string/limit_metlog_size_summary"
+        android:title="@string/limit_metlog_size_title" />
+
+    <EditTextPreference
+            android:defaultValue="200"
+            android:key="sspmlog_logsize"
+            android:summary="@string/limit_sspmlog_size_summary"
+            android:title="@string/limit_sspmlog_size_title" />
+    
+    <EditTextPreference
+	        android:defaultValue="20"
+	        android:key="metlog_period"
+	        android:summary="@string/metlog_period_summary"
+	        android:title="@string/metlog_period_title" />
+    
+     <EditTextPreference
+	        android:defaultValue="512"
+	        android:key="metlog_cpu_buffer"
+	        android:summary="@string/metlog_cpu_buffer_summary"
+	        android:title="@string/metlog_cpu_buffer_title" />
+     
+     <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="metlog_heavy_load_recording"
+            android:summary="@string/metlog_heavy_load_recording_summary"
+            android:title="@string/metlog_heavy_load_recording_title" />
+
+    
+</PreferenceScreen>

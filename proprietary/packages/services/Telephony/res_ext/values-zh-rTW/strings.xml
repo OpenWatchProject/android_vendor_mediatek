@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2007 The Android Open Source Project
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+          http://www.apache.org/licenses/LICENSE-2.0
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="incall_status_dialed_mmi" msgid="3672498861336189563">"開始 MMI 序列…"</string>
+    <string name="dual_mic_title">減少雜訊</string>
+    <string name="dual_mic_summary">通話中壓制背景雜訊</string>
+    <string name="fdn_errorcode_unknown_info">失敗，發生不明錯誤，請稍後再試。</string>
+    <string name="fdn_errorcode_number_info">失敗，聯絡人電話號碼太長。</string>
+    <string name="fdn_errorcode_name_info">失敗，聯絡人名字太長。</string>
+    <string name="fdn_errorcode_storage_info">失敗，儲存空間已滿。</string>
+    <string name="fdn_errorcode_phb_info">失敗，電話簿尚未就緒，請稍後再試。</string>
+    <string name="fdn_errorcode_pin2_info">失敗，PIN2 無效。</string>
+    <string name="fdn_contact_number_invalid">聯絡人號碼無效。</string>
+    <string name="fdn_puk_need_tips">PIN2 遭鎖定，請更改 PIN2 後再試！</string>
+    <string name="fdn_phone_book_busy">"电话簿忙碌中，请稍候再试。"</string>
+    <string name="retries_left">"剩餘"<xliff:g id="number">%d</xliff:g>"次"</string>
+
+    <!-- support for C2K Call Settings -->
+    <string name="cdma_labelCFU">"一律轉接"</string>
+    <string name="cdma_labelCFB">"忙線時轉接"</string>
+    <string name="cdma_labelCFNRy">"未接聽時轉接"</string>
+    <string name="cdma_labelCFNRc">"未能接通時轉接"</string>
+    <string name="cdma_labelCFC">取消所有轉寄</string>
+    <string name="cdma_cnir_title">CNIR</string>
+    <string name="cdma_cnir_turnoff">停用撥號程式數字辨識限制</string>
+    <string name="cdma_cnir_turnon">啟用撥號程式數字辨識限制</string>
+
+    <!-- Add for [VoLTE_SS] Roaming-->
+    <string name="volte_ss_not_available_tips">請先開啟數據連接 <xliff:g id="sub_name">%s</xliff:g> 才能完成作業。</string>
+    <string name="volte_ss_not_available_tips_data">請先開啟數據連接 <xliff:g id="sub_name">%s</xliff:g> 才能完成作業。</string>
+    <string name="volte_ss_not_available_tips_roaming">請先開啟數據漫遊 <xliff:g id="sub_name">%s</xliff:g> 才能完成作業。</string>
+    <string name="volte_ss_not_available_tips_data_roaming">請先開啟數據連接和數據漫遊 <xliff:g id="sub_name">%s</xliff:g> 才能完成作業。</string>
+    <string name="volte_ss_not_available_tips_data_traffic">臨時使用<xliff:g id="sub_name">%s</xliff:g>數據並產生少量數據流量。是否繼續？</string>
+
+    <!-- Add for VILTE -->
+    <string name="vilte_srvcc_tip">網絡原因，切換至語音通話。</string>
+    <string name="vilte_to_voice_call">已轉為語音通話</string>
+
+    <!-- Add for [VoLTE_conference] -->
+    <string name="volte_is_adding_participants">正在新增與會者，請稍候...</string>
+    <string name="volte_fail_to_invit_participants">無法加入全部與會者到會議中。</string>
+    <string name="volte_conf_member_reach_max">會議電話已達人數上限。</string>
+
+    <!-- Add for WFC -->
+    <string name="wfc_wifi_call_drop">Wi-Fi 通話中斷</string>
+    <string name="wfc_internet_connection_lost">網際網路連線中斷</string>
+    <string name="wfc_no_network">無可用的適當行動網路</string>
+
+    <!-- for ViLTE SS @{ -->
+    <string name="labelCFVoice">語音通話來電轉接</string>
+    <string name="actionBarCFVoice">語音通話來電轉接 (<xliff:g id="subscriptionlabel" example="Verizon">%s</xliff:g>)</string>
+    <string name="labelCFVideo">視像通話來電轉接</string>
+    <string name="actionBarCFVideo">視像通話來電轉接 (<xliff:g id="subscriptionlabel" example="Verizon">%s</xliff:g>)</string>
+    <string name="labelCBVoice">語音通話限制</string>
+    <string name="actionBarCBVoice">語音通話限制 (<xliff:g id="subscriptionlabel" example="Verizon">%s</xliff:g>)</string>
+    <string name="labelCBVideo">視像通話限制</string>
+    <string name="actionBarCBVideo">視像通話限制 (<xliff:g id="subscriptionlabel" example="Verizon">%s</xliff:g>)</string>
+    <!-- @} -->
+
+	<!-- CT VOLTE -->
+    <string name="alert_turn_off_volte">請關閉VoLTE以完成操作。</string>
+    <string name="alert_volte_no_service"><xliff:g id="sub_name">%s</xliff:g>目前無VoLTE服務，該卡無法正常通話，是否關閉該卡VoLTE功能？</string>
+</resources>

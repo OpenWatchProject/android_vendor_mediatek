@@ -1,0 +1,127 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <style name="AppTheme" parent="android:Theme.Light" />
+    
+    <style name="ActionBarStyle" parent="android:style/Widget.Holo.Light.ActionBar.Solid">
+        <item name="android:displayOptions">showCustom</item>
+    </style>
+    
+    <style name="EditInfoActivity.WithActionBar" parent="android:Theme.Holo.Light">
+        <item name="android:windowNoTitle">false</item>
+        <item name="android:windowActionBar">true</item>
+        <item name="android:windowBackground">@color/background_color</item>
+        <item name="android:actionBarStyle">@style/ActionBarStyle</item>
+    </style>
+    
+    <style name="CustomActionButton" parent="android:style/Widget.Holo.Light.ActionButton">
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:focusable">true</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+    
+    <style name="CustomActionButton2" parent="android:style/Widget.Holo.Light.ActionButton">
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:focusable">true</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+    
+    <style name="CustomActionButtonImage">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:padding">4dp</item>
+    </style>
+
+    <style name="CustomActionButtonText">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:textAppearance">?android:attr/actionMenuTextAppearance</item>
+        <item name="android:textColor">?android:attr/actionMenuTextColor</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:ellipsize">none</item>
+        <item name="android:padding">4dp</item>
+    </style>
+    
+    <style name="EditInfoItemLabel">
+        <item name="android:textSize">18sp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_marginTop">10dip</item>
+    </style>
+    <style name="EditInfoItemContent">
+        <item name="android:textSize">16sp</item>
+        <item name="android:layout_marginLeft">10dip</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+    </style>
+    
+    <!-- For attachment and basic info group, which are un-editable and hiden by default -->
+    <style name="EditInfoHideItemLabel">
+        <item name="android:textSize">16sp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_marginTop">0dip</item>
+    </style>
+    <style name="EditInfoHideItemContent">
+        <item name="android:textSize">14sp</item>
+        <item name="android:layout_marginLeft">10dip</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+    </style>
+    
+    <style name="SelectorButton" parent="android:style/Widget.Holo.Light.ActionButton">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:focusable">true</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+    
+    <!-- Add for uploading indicator dialog begin-->
+    <style name="UploadingIndicatorStageLabel">
+        <item name="android:textSize">18sp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_marginTop">5dip</item>
+    </style>
+    <style name="UploadingIndicatorStatusIcon">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_marginRight">5dip</item>
+    </style>
+    <!-- Add for uploading indicator dialog end-->
+    
+    <!-- Add for login page begin -->
+     <style name="LoginPageInputField">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_marginLeft">20dip</item>
+        <item name="android:layout_marginRight">20dip</item>
+        <item name="android:layout_marginTop">30dip</item>
+    </style>
+    <style name="LoginDialogItemLabel">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_marginLeft">20dip</item>
+        <item name="android:layout_marginRight">20dip</item>
+        <item name="android:layout_marginTop">10dip</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+    <style name="LoginDialogItemContent">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_marginLeft">20dip</item>
+        <item name="android:layout_marginRight">20dip</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+    <!-- Add for login page end -->
+    
+    <!-- Long string feature for ImageSwitch , copy from MTK code base-->  
+    <style name="ImageSwitch">
+        <item name="android:switchMinWidth">80dp</item>
+        <item name="android:thumbTextPadding">20dp</item>
+        <item name="android:thumb">@drawable/imageswitch</item>
+    </style>
+</resources>

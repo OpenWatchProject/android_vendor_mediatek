@@ -1,0 +1,22 @@
+# All the implements of IFeatureEntry are called with Java reflection.
+-keep class * implements com.mediatek.camera.common.loader.IFeatureEntry {
+  <init>(...);
+}
+
+-keep class com.mediatek.camera.common.jpeg.HwJpegDecodeImpl { *; }
+-keep class com.mediatek.camera.common.storage.MediaSaver { *; }
+-keep class com.mediatek.camera.common.device.CameraDeviceManagerFactory { *; }
+-keep class com.mediatek.camera.common.setting.SettingManagerFactory { *; }
+-keep class com.mediatek.camera.common.setting.SettingTable { *; }
+-keep class com.mediatek.camera.common.relation.StatusMonitor$StatusResponder { *; }
+
+-keep class com.mediatek.camera.common.device.v2.Camera2Proxy {*;}
+-keep class com.mediatek.camera.common.device.v2.Camera2CaptureSessionProxy {*;}
+-keep class com.mediatek.camera.common.device.v1.CameraProxy {*;}
+-keep class com.mediatek.accessor.* {*;}
+
+-dontwarn com.mediatek.mmsdk.*
+-dontwarn com.mediatek.pq.*
+-dontwarn com.mediatek.storage.*
+-dontwarn com.mediatek.matrixeffect.*
+-dontwarn com.mediatek.mmsdk.callback.*

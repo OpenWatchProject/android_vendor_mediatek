@@ -1,0 +1,19 @@
+
+android_app {
+    name: "TraceurGo",
+    overrides: [
+        "Traceur",
+    ],
+    platform_apis: true,
+    certificate: "platform",
+    required: ["notify_traceur.override.sh"],
+    static_libs: [
+        "android-common",
+    ],
+    init_rc: ["traceur.rc"],
+}
+
+sh_binary {
+    name: "notify_traceur.override.sh",
+    src: "notify_traceur.sh",
+}

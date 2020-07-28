@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:id="@+id/Layout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="1"
+        android:baselineAligned="false"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:text="@string/rtn_scrtn_main"
+            android:textSize="36sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/Layout3"
+        android:layout_width="match_parent"
+        android:layout_below="@+id/Layout1"
+        android:layout_height="match_parent"
+        android:weightSum="1"
+        android:baselineAligned="false"
+        android:orientation="vertical">
+        <Button
+            android:id="@+id/View_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.11"
+            android:text="@string/rtn_view"
+            android:textSize="30sp" />
+
+        <Button
+            android:id="@+id/Reset_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.11"
+            android:text="@string/rtn_reset"
+            android:textSize="30sp" />
+
+        <Button
+            android:id="@+id/Scrtn_reset"
+            android:layout_width="wrap_content"
+            android:layout_weight="0.11"
+            android:layout_height="wrap_content"
+            android:textSize="30sp"
+            android:text="@string/scrtn_reset" />
+
+        <Button
+            android:id="@+id/Uicc_update"
+            android:layout_width="wrap_content"
+            android:layout_weight="0.11"
+            android:layout_height="wrap_content"
+            android:textSize="30sp"
+            android:text="@string/uicc_update" />
+
+        <Button
+            android:id="@+id/Update_operation"
+            android:layout_width="wrap_content"
+            android:layout_weight="0.11"
+            android:layout_height="wrap_content"
+            android:textSize="30sp"
+            android:text="@string/update_menu" />
+
+        <Button
+            android:id="@+id/Profile_update"
+            android:layout_width="wrap_content"
+            android:layout_weight="0.11"
+            android:layout_height="wrap_content"
+            android:textSize="30sp"
+            android:text="@string/profile_update" />
+
+        <Button
+            android:id="@+id/Prl_update"
+            android:layout_width="wrap_content"
+            android:layout_weight="0.11"
+            android:layout_height="wrap_content"
+            android:textSize="30sp"
+            android:text="@string/prl_update" />
+    </LinearLayout>
+</RelativeLayout>

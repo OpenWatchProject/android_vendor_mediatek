@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.android.camera.v2.ui.SettingVirtualLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:camera="http://schemas.android.com/apk/res/com.mediatek.camera0"
+    style="@style/ScreenOnMargin"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" 
+    android:splitMotionEvents="false">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:splitMotionEvents="false">
+        <com.android.camera.v2.ui.MaxLinearLayout
+            android:id="@+id/container"
+            style="@style/SettingContainer2"
+            camera:maxHeight="@dimen/setting_container2_height_max">
+            <ListView android:id="@+id/settingList"
+                style="@style/SettingItemList" />
+        </com.android.camera.v2.ui.MaxLinearLayout>
+    </RelativeLayout>
+</com.android.camera.v2.ui.SettingVirtualLayout>

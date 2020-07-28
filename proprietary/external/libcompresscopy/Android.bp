@@ -1,0 +1,24 @@
+cc_prebuilt_library_shared {
+    name: "libcompress_copy",
+
+    vendor: false,
+
+    owner: "mtk",
+
+    arch: {
+        arm: {
+            srcs: ["lib/libcompress.so"],
+        },
+        arm64: {
+            srcs: ["lib64/libcompress.so"],
+        },
+    },
+
+    strip: {
+        none:true,
+    },
+
+    compile_multilib: "both",
+
+}
+

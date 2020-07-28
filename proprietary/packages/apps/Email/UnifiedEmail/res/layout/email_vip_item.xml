@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  This software/firmware and related documentation ("MediaTek Software") are
+  protected under relevant copyright laws. The information contained herein
+  is confidential and proprietary to MediaTek Inc. and/or its licensors.
+  Without the prior written permission of MediaTek inc. and/or its licensors,
+  any reproduction, modification, use or disclosure of MediaTek Software,
+  and information contained herein, in whole or in part, shall be strictly prohibited.
+
+  MediaTek Inc. (C) 2011. All rights reserved.
+
+  BY OPENING THIS FILE, RECEIVER HEREBY UNEQUIVOCALLY ACKNOWLEDGES AND AGREES
+  THAT THE SOFTWARE/FIRMWARE AND ITS DOCUMENTATIONS ("MEDIATEK SOFTWARE")
+  RECEIVED FROM MEDIATEK AND/OR ITS REPRESENTATIVES ARE PROVIDED TO RECEIVER ON
+  AN "AS-IS" BASIS ONLY. MEDIATEK EXPRESSLY DISCLAIMS ANY AND ALL WARRANTIES,
+  EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF
+  MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE OR NONINFRINGEMENT.
+  NEITHER DOES MEDIATEK PROVIDE ANY WARRANTY WHATSOEVER WITH RESPECT TO THE
+  SOFTWARE OF ANY THIRD PARTY WHICH MAY BE USED BY, INCORPORATED IN, OR
+  SUPPLIED WITH THE MEDIATEK SOFTWARE, AND RECEIVER AGREES TO LOOK ONLY TO SUCH
+  THIRD PARTY FOR ANY WARRANTY CLAIM RELATING THERETO. RECEIVER EXPRESSLY ACKNOWLEDGES
+  THAT IT IS RECEIVER'S SOLE RESPONSIBILITY TO OBTAIN FROM ANY THIRD PARTY ALL PROPER LICENSES
+  CONTAINED IN MEDIATEK SOFTWARE. MEDIATEK SHALL ALSO NOT BE RESPONSIBLE FOR ANY MEDIATEK
+  SOFTWARE RELEASES MADE TO RECEIVER'S SPECIFICATION OR TO CONFORM TO A PARTICULAR
+  STANDARD OR OPEN FORUM. RECEIVER'S SOLE AND EXCLUSIVE REMEDY AND MEDIATEK'S ENTIRE AND
+  CUMULATIVE LIABILITY WITH RESPECT TO THE MEDIATEK SOFTWARE RELEASED HEREUNDER WILL BE,
+  AT MEDIATEK'S OPTION, TO REVISE OR REPLACE THE MEDIATEK SOFTWARE AT ISSUE,
+  OR REFUND ANY SOFTWARE LICENSE FEES OR SERVICE CHARGE PAID BY RECEIVER TO
+  MEDIATEK FOR SUCH MEDIATEK SOFTWARE AT ISSUE.
+
+  The following software/firmware and/or related documentation ("MediaTek Software")
+  have been modified by MediaTek Inc. All revisions are subject to any receiver's
+  applicable license agreements with MediaTek Inc.
+-->
+
+<!-- M: Modified item's background and view's textColor to make UI display perfect in SmartBook.-->
+<com.mediatek.mail.vip.activity.VipListItem
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:minHeight="48dip"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:background="@drawable/conversation_item_background">
+    <LinearLayout
+        android:layout_width="0dip"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="vertical"
+        android:layout_weight="1">
+        <TextView android:id="@+id/contact_name"
+                  android:textSize="18sp"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:paddingLeft="16dip"
+                  android:singleLine="true"
+                  android:ellipsize="end" />
+        <TextView android:id="@+id/email_address"
+                  android:textSize="14sp"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:paddingLeft="16dip"
+                  android:singleLine="true"
+                  android:ellipsize="end"
+                  android:layout_marginTop="-4dip" />
+    </LinearLayout>
+    <QuickContactBadge
+        android:id="@+id/contact_icon"
+        android:layout_width="60dip"
+        android:layout_height="60dip"
+        android:layout_marginLeft="12dip"
+        android:src="@drawable/ic_contact_picture"
+        android:cropToPadding="true"
+        android:scaleType="centerCrop" />
+    <!-- Remove button -->
+    <ImageView android:id="@+id/remove_vip"
+        android:src="@drawable/ic_cancel_holo_light"
+        android:background="@drawable/conversation_item_background"
+        android:layout_width="48dip"
+        android:layout_height="60dip"
+        android:layout_alignParentRight="true"
+        android:clickable="true"
+        android:scaleType="center"
+        android:layout_centerVertical="true"/>
+</com.mediatek.mail.vip.activity.VipListItem>

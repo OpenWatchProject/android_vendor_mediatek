@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2006 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<resources>
+    <style name="LockPatternStyle">
+        <item name="*android:regularColor">@color/lock_pattern_view_regular_color</item>
+        <item name="*android:successColor">@color/lock_pattern_view_success_color</item>
+        <item name="*android:errorColor">@color/lock_pattern_view_error_color</item>
+        <item name="*android:pathColor">@color/lock_pattern_view_error_color</item>
+    </style>
+
+    <style name="Theme.DataProtection" parent="@android:style/Theme.Material.Settings">
+        <item name="android:windowCloseOnTouchOutside">false</item>
+            <!-- LockPatternView colors -->
+        <item name="*android:lockPatternStyle">@style/LockPatternStyle</item>
+        <item name="*android:textColorSecondary">@color/textColorMiddle</item>
+        <item name="*android:textColorPrimary">@color/theme_accent</item>
+        <item name="*android:textColorTertiary">@color/textColorMiddle</item>
+        <item name="*android:textColorHint">@color/textColorMiddle</item>
+        <item name="*android:actionMenuTextColor">@color/theme_accent</item>
+    </style>
+
+    <style name="PatternButtonStyle">
+        <item name="android:layout_width">0dip</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:ellipsize">marquee</item>
+        <item name="android:singleLine">true</item>
+    </style>
+
+    <style name="SecurityPreferenceButton" parent="@android:style/Widget.Material.Button.Borderless">
+        <item name="android:layout_width">0dip</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:ellipsize">marquee</item>
+        <item name="android:singleLine">true</item>
+    </style>
+
+    <style name="SecurityPreferenceButtonContainer" parent="@android:style/Widget.Material.SegmentedButton">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:weightSum">2</item>
+        <item name="android:dividerPadding">8dip</item>
+    </style>
+
+    <style name="Theme.Material.Translucent.NoActionBar" parent="@android:style/Theme.Material.NoActionBar">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation</item>
+    </style>
+</resources>

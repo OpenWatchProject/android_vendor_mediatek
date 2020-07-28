@@ -1,0 +1,628 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Copyright (C) 2007 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">  
+    <string name="app_name">گیلری</string>  
+    <!-- Title for picture frame gadget to show in list of all available gadgets -->  
+    <string name="gadget_title">تصویری فریم</string>  
+    <!-- Used to format short video duration in Details dialog. minutes:seconds e.g. 00:30 -->  
+    <string name="details_ms">%1$02d:%2$02d</string>  
+    <!-- Used to format video duration in Details dialog. hours:minutes:seconds e.g. 0:21:30 -->  
+    <string name="details_hms">%1$d:%2$02d:%3$02d</string>  
+    <!-- Activity label. This might show up in the activity-picker -->  
+    <string name="movie_view_label">ویڈیو پلئیر</string>  
+    <!-- shown in the video player view while the video is being loaded, before it starts playing -->  
+    <string name="loading_video">ویڈيو لوڈ کررہا ہے\u2026</string>  
+    <string name="loading_image">تصویر لوڈ کررہا ہے\u2026</string>  
+    <!-- Message shown on the progress dialog to indicate we're loading the
+            account info [CHAR LIMIT=30] -->  
+    <string name="loading_account">اکاؤنٹ لوڈ کررہا ہے\u2026</string>  
+    <!-- Movie View Resume Playing dialog title -->  
+    <string name="resume_playing_title">ویڈيو بحال کریں</string>  
+    <!-- Movie View Start Playing dialog title -->  
+    <string name="resume_playing_message">%s سے چلانا بحال کریں ؟</string>  
+    <!-- Movie View Start Playing button "Resume from bookmark" -->  
+    <string name="resume_playing_resume">چلنا بحال کریں</string>  
+    <!-- Displayed in the title of those albums that are being loaded -->  
+    <string name="loading">لوڈنگ\u2026</string>  
+    <!-- Displayed in the title of those pictures that fails to be loaded
+         [CHAR LIMIT=50]-->  
+    <string name="fail_to_load">لوڈ کرنے سے قاصر</string>  
+    <!-- Displayed in place of the picture when we fail to get the thumbnail of it.
+         [CHAR LIMIT=50]-->  
+    <string name="no_thumbnail">تھمب نیل نہیں بنا سکتا</string>
+    <!-- Movie View Start Playing button "Beginning" -->  
+    <string name="resume_playing_restart">دوبارہ شروع کریں</string>  
+    <!-- Title of a menu item to indicate performing the image crop operation
+         [CHAR LIMIT=20] -->  
+    <string name="crop_save_text">کاٹیں</string>  
+    <!-- Button indicating that the cropped image should be reverted back to the original -->  
+    <!-- Hint that appears when cropping an image with more than one face -->  
+    <string name="multiface_crop_help">شروع کرنے کے لئے کوئی چہرہ چھوئيں۔</string>  
+    <!-- Toast/alert that the image is being saved to the SD card -->  
+    <string name="saving_image">تصویر محفوظ کررہا ہے\u2026</string>  
+    <!-- Eorror toast message that the image cannot be saved [CHAR LIMIT=40]-->  
+    <string name="save_error">کاٹی گئی تصویر محفوظ کرنے سے قاصر</string>  
+    <!-- menu pick: crop the currently selected image -->  
+    <string name="crop_label">تصویر کاٹیں</string>  
+    <!-- Toast/alert that the face detection is being run -->  
+    <!-- Title prompted for user to choose a photo item [CHAR LIMIT=20] -->  
+    <string name="select_image">تصویر منتخب کریں</string>  
+    <!-- Title prompted for user to choose a video item [CHAR LIMIT=20] -->  
+    <string name="select_video">"ویڈیو منتخب کرنا"</string>  
+    <!-- Title prompted for user to choose a media object [CHAR LIMIT=20] -->  
+    <string name="select_item">آئیٹم منتخب کریں</string>  
+    <!-- Title prompted for user to choose an album [CHAR LIMIT=20] -->  
+    <string name="select_album">البم منتخب کریں</string>  
+    <!-- Title prompted for user to choose a group [CHAR LIMIT=20] -->  
+    <string name="select_group">گروپ منتخب کریں</string>  
+    <!-- Displayed in the title of the dialog for things to do with a picture
+             that is to be "set as" (e.g. set as contact photo or set as wallpaper) -->  
+    <string name="set_image">تصویر کو مرتب کریں بطور</string>  
+    <!-- Toast/alert after saving wallpaper -->  
+    <string name="wallpaper">دیواری کاغذ سیٹ کررہا ہے\u2026</string>  
+    <string name="camera_setas_wallpaper">وال پیپر</string>  
+    <!-- Details dialog "OK" button. Dismisses dialog. -->  
+    <string name="delete">مٹائيں</string>  
+    <string name="confirm_delete">مٹائيں</string>  
+    <string name="cancel">منسوخ کریں</string>  
+    <string name="share">تقسیم کریں</string>  
+    <!-- String indicating more actions are available -->  
+    <string name="select_all">سب کو منتخب کريں</string>  
+    <string name="deselect_all">تمام غیرمنتخب کریں</string>  
+    <string name="slideshow">سلائڈ شو</string>  
+    <string name="details">تفصیلات</string>  
+    <string name="details_title">%2$d میں سے %1$d آئیٹم:</string>  
+    <string name="close">بند کریں</string>  
+    <!-- Title of a menu item to switch from Gallery to Camera app [CHAR LIMIT=30] -->  
+    <string name="switch_to_camera">کیمرے پر تبدیل کریں</string>  
+    <!-- String indicating how many media item(s) is(are) selected
+            eg. 1 selected [CHAR LIMIT=30] -->  
+    <plurals name="number_of_items_selected"> 
+        <item quantity="zero">%1$d منتخب</item>  
+        <item quantity="one">%1$d منتخب</item>  
+        <item quantity="other">%1$d منتخب</item> 
+    </plurals>  
+    <!-- String indicating how many media album(s) is(are) selected
+            eg. 1 selected [CHAR LIMIT=30] -->  
+    <plurals name="number_of_albums_selected"> 
+        <item quantity="zero">%1$d منتخب</item>  
+        <item quantity="one">%1$d منتخب</item>  
+        <item quantity="other">%1$d منتخب</item> 
+    </plurals>  
+    <!-- String indicating how many media group(s) is(are) selected
+            eg. 1 selected [CHAR LIMIT=30] -->  
+    <plurals name="number_of_groups_selected"> 
+        <item quantity="zero">%1$d منتخب</item>  
+        <item quantity="one">%1$d منتخب</item>  
+        <item quantity="other">%1$d منتخب</item> 
+    </plurals>  
+    <!-- String indicating timestamp of photo or video -->  
+    <string name="show_on_map">نقشے پر دکھائیں</string>  
+    <string name="rotate_left">بائيں گھمائيں</string>  
+    <string name="rotate_right">دائيں گھمائيں</string>  
+    <!-- Toast message prompted when the specified item is not found [CHAR LIMIT=40]-->  
+    <string name="no_such_item">آئیٹم تلاش کرنے سے قاصر</string>  
+    <!-- String used as a menu label. The suer can choose to edit the image
+         [CHAR_LIMIT=20]-->  
+    <string name="edit">ترمیم کريں</string>  
+    <!-- String used in a toast message indicating there is no application
+         available to handle a request [CHAR LIMIT=50] -->  
+    <string name="activity_not_found">عمل مکمل کرنے کے لئے کوئی ایپ دستیاب نہيں ہے.</string>  
+    <!-- String used as a title of a progress dialog. The user can
+         choose to cache some Picasa picture albums on device, so it can
+         be viewed offline. This string is shown when the request is being
+         processed. [CHAR LIMIT=50] -->  
+    <string name="process_caching_requests">کیش کرنے کی درخواستیں پراسیس کررہا ہے</string>  
+    <!-- String used as a small notification label above a Picasa album.
+         It means the pictures of the Picasa album is currently being
+         transferred to local storage, so the pictures can later be viewed
+         offline. [CHAR LIMIT=15] -->  
+    <string name="caching_label">کیش کررہا ہے\u2026</string>  
+    <string name="crop_action">کاٹیں</string>  
+    <string name="set_as">بطور مرتب کریں</string>  
+    <!-- String indicating an approximate location eg. Around Palo Alto, CA -->  
+    <string name="video_err">ویڈيو چلانے سے قاصر</string>  
+    <!-- Strings for grouping operations in the menu. The photos can be grouped
+         by their location, taken time, or tags. -->  
+    <!-- The title of the menu item to let user choose the grouping rule, when
+         pressed, a submenu will shown and user can choose one grouping rule
+         from the submenu. -->  
+    <!-- Title of a menu item to group photo by location [CHAR LIMIT=30] -->  
+    <string name="group_by_location">بمطابق مقام</string>  
+    <!-- Title of a menu tiem to group photo by taken date [CHAR LIMIT=30]-->  
+    <string name="group_by_time">بمطابق وقت</string>  
+    <!-- Title of a menu item to group photo by tags [CHAR LIMIT=30]-->  
+    <string name="group_by_tags">بمطابق ٹیگ</string>  
+    <!-- Title of a menu item to group photo by faces [CHAR LIMIT=30]-->  
+    <string name="group_by_faces">بمطابق افراد</string>  
+    <!-- Title of a menu item to group photo by albums [CHAR LIMIT=30]-->  
+    <string name="group_by_album">بمطابق البم</string>  
+    <!-- Title of a menu item to group photo by size [CHAR LIMIT=30]-->  
+    <string name="group_by_size">بمطابق سائز</string>  
+    <!-- When grouping photos by tags, the label used for photos without tags
+         [CHAR LIMIT=20]-->  
+    <string name="untagged">ٹیگ نہيں کیا گيا</string>  
+    <!-- When grouping photos by locations, the label used for photos that don't
+         have location information in them [CHAR LIMIT=20]-->  
+    <string name="no_location">کوئی مقام نہيں</string>  
+    <!-- This toast message is shown when network connection is lost while doing clustering -->  
+    <string name="no_connectivity">نیٹورک کے مسائل کی وجہ سے مقامات کی شناخت ممکن نہيں.</string>  
+    <!-- This toast message is shown when failed to load the album data. [CHAR LIMIT=NONE] -->  
+    <string name="sync_album_error">اس البم کی تصویریں ڈاؤن لوڈ کرنا ناکام، بعد میں کوشش کریں.</string>  
+    <!-- This toast message is shown when failed to load the album list data. [CHAR LIMIT=NONE] -->  
+    <string name="sync_album_set_error">البم کی فہرست ڈاؤن لوڈ کرنا ناکام۔ بعد میں کوشش کرین۔</string>  
+    <!-- The title of the menu item to let user choose the which portion of
+         the media items the user wants to see. When pressed, a submenu will
+         appear and user can choose one of "show images only",
+         "show videos only", or "show all" from the submenu. -->  
+    <!-- Title of a menu item to show images only [CHAR LIMIT=30]-->  
+    <string name="show_images_only">صرف تصویریں</string>  
+    <!-- Title of a menu item to show videos only [CHAR LIMIT=30]-->  
+    <string name="show_videos_only">صرف ویڈیو</string>  
+    <!-- Title of a menu item to show all (both images and videos) [CHAR LIMIT=30]-->  
+    <string name="show_all">تصویریں اور ویڈیو</string>  
+    <!-- Title of the StackView AppWidget -->  
+    <string name="appwidget_title">تصویری گیلری</string>  
+    <!-- Text for the empty state of the StackView AppWidget [CHAR LIMIT=30] -->  
+    <string name="appwidget_empty_text">کوئی تصویریں نہيں.</string>  
+    <!-- Toast message shown when the cropped image has been saved in the
+         download folder [CHAR LIMIT=50]-->  
+    <string name="crop_saved">کاٹی گئی تصویروں کو ڈاؤن لوڈ میں محفوظ کیا گیا.</string>  
+    <!-- Toast message shown when the cropped image is not saved
+         [CHAR LIMIT=50]-->  
+    <string name="crop_not_saved">کاٹی گئی تصویر کو محفوظ نہيں کیا گیا.</string>  
+    <!-- Toast message shown when there is no albums available [CHAR LIMIT=50]-->  
+    <string name="no_albums_alert">کوئی البم دستیاب نہيں.</string>  
+    <!-- Toast message shown when we close the AlbumPage because it is empty
+            [CHAR LIMIT=50] -->  
+    <string name="empty_album">O تصویریں/ویڈیو دستیاب.</string>  
+    <!-- Album label used to indicate the collection of PWA Buzz/Post photos -->  
+    <string name="picasa_posts">پوسٹ</string>  
+    <!-- A label describing that the current screen is for the user to pick
+         some albums to be viewable offline [CHAR LIMIT=30] -->  
+    <string name="make_available_offline">آف لائن دستیاب کروائيں</string>  
+    <!-- A label of a menu item for user to sync the content [CHAR LIMIT=30] -->  
+    <string name="sync_picasa_albums">ریفریش کرنا</string>  
+    <!-- A label on a button. The user clicks this button after he has
+         finished selection. [CHAR LIMIT=15] -->  
+    <string name="done">ہوگیا</string>  
+    <!-- String indicating the sequence of currently selected item in the
+            media set eg. 3 of 5 items [CHAR LIMIT=30] -->  
+    <string name="sequence_in_set">%2$d میں سے %1$d آئیٹم:</string>  
+    <!-- Text indicating the title of a media item in details window [CHAR LIMIT=14] -->  
+    <string name="title">عنوان</string>  
+    <!-- Text indicating the description of a media item in details window [CHAR LIMIT=14] -->  
+    <string name="description">وضاحت</string>  
+    <!-- Text indicating the creation time of a media item in details window [CHAR LIMIT=14] -->  
+    <string name="time">وقت</string>  
+    <!-- Text indicating the location of a media item in details window [CHAR LIMIT=14] -->  
+    <string name="location">مقام</string>  
+    <!-- Text indicating the path of a media item in details window [CHAR LIMIT=14] -->  
+    <string name="path">پاتھ</string>  
+    <!-- Text indicating the width of a media item in details window [CHAR LIMIT=14] -->  
+    <string name="width">چوڑائی</string>  
+    <!-- Text indicating the height of a media item in details window [CHAR LIMIT=14] -->  
+    <string name="height">اونچائی</string>  
+    <!-- Text indicating the orientation of a media item in details window [CHAR LIMIT=14] -->  
+    <string name="orientation">سمت</string>  
+    <!-- Text indicating the duration of a video item in details window [CHAR LIMIT=14] -->  
+    <string name="duration">دورانیہ</string>  
+    <!-- Text indicating the mime type of a media item in details window [CHAR LIMIT=14] -->  
+    <string name="mimetype">MIME کی قسم</string>  
+    <!-- Text indicating the file size of a media item in details window [CHAR LIMIT=14] -->  
+    <string name="file_size">فائل سائز</string>  
+    <!-- Text indicating the maker of a media item in details window [CHAR LIMIT=14] -->  
+    <string name="maker">بنانے والا</string>  
+    <!-- Text indicating the model of a media item in details window [CHAR LIMIT=14] -->  
+    <string name="model">ماڈل</string>  
+    <!-- Text indicating flash info of a media item in details window [CHAR LIMIT=14] -->  
+    <string name="flash">فلیش</string>  
+    <!-- Text indicating aperture of a media item in details window [CHAR LIMIT=14] -->  
+    <string name="aperture">سوراخ</string>  
+    <!-- Text indicating the focal length of a media item in details window [CHAR LIMIT=14] -->  
+    <string name="focal_length">فوکس کی لمبائ</string>  
+    <!-- Text indicating the white balance of a media item in details window [CHAR LIMIT=14] -->  
+    <string name="white_balance">سفید توازن</string>  
+    <!-- Text indicating the exposure time of a media item in details window [CHAR LIMIT=14] -->  
+    <string name="exposure_time">ایکسپوژر کا وقت</string>  
+    <!-- Text indicating the ISO speed rating of a media item in details window [CHAR LIMIT=14] -->  
+    <string name="iso">ISO</string>  
+    <!-- String indicating the time units in seconds. [CHAR LIMIT=8] -->  
+    <!-- String indicating the length units in milli-meters. [CHAR LIMIT=8] -->  
+    <string name="unit_mm">ملی میٹر</string>  
+    <!-- String indicating how camera shooting feature is used. [CHAR LIMIT=8] -->  
+    <string name="manual">دستی</string>  
+    <!-- String indicating how camera shooting feature is used. [CHAR LIMIT=8] -->  
+    <string name="auto">خودکار</string>  
+    <!-- String indicating camera flash is fired. [CHAR LIMIT=14] -->  
+    <string name="flash_on">فلیش فائر کیا گیا</string>  
+    <!-- String indicating camera flash is not used. [CHAR LIMIT=14] -->  
+    <string name="flash_off">کوئی فلیش نہيں</string>  
+    <!-- Toast message shown after we make some album(s) available offline [CHAR LIMIT=50] -->  
+    <plurals name="make_albums_available_offline"> 
+        <item quantity="one">البم کو آف لائن دستیاب کررہا ہے.</item>  
+        <item quantity="other">البم کو آف لائن دستیاب کررہا ہے.</item> 
+    </plurals>  
+    <!-- Toast message shown after we try to make a local album available offline
+         [CHAR LIMIT=150] -->  
+    <string name="try_to_set_local_album_available_offline">یہ آئیٹم مقامی طور پر محفوظ ہے اور آف لائن دستیاب ہے.</string>  
+    <!-- A label shown on the action bar. It indicates that the user is
+         viewing all available albums [CHAR LIMIT=20] -->  
+    <string name="set_label_all_albums">تمام البم</string>  
+    <!-- A label shown on the action bar. It indicates that the user is
+         viewing albums stored locally on the device [CHAR LIMIT=20] -->  
+    <string name="set_label_local_albums">مقامی البم</string>  
+    <!-- A label shown on the action bar. It indicates that the user is
+         viewing MTP devices connected (like other digital cameras).
+         [CHAR LIMIT=20] -->  
+    <string name="set_label_mtp_devices">MTP آلات</string>  
+    <!-- A label shown on the action bar. It indicates that the user is
+         viewing Picasa albums [CHAR LIMIT=20] -->  
+    <string name="set_label_picasa_albums">Picasa البم</string>  
+    <!-- Label indicating the amount on free space on the device. The parameter
+         is a string representation of the amount of free space, eg. "20MB".
+         [CHAR LIMIT=20]
+    -->  
+    <string name="free_space_format"> 
+        <xliff:g id="bytes">%s</xliff:g> مفت
+    </string>  
+    <!-- Label of a group of pictures. The size of each picture in this group is
+         less than a certain amount. The parameter is a string representation
+         of that amount, eg. "10MB".
+         [CHAR LIMIT=20]
+    -->  
+    <string name="size_below"> 
+        <xliff:g id="size">%1$s</xliff:g> یا نیچے
+    </string>  
+    <!-- Label of a group of pictures. The size of each picture in this group is
+         more than a certain amount. The parameter is a string representation
+         of that amount, eg. "10MB".
+         [CHAR LIMIT=20]
+    -->  
+    <string name="size_above"> 
+        <xliff:g id="size">%1$s</xliff:g> یا اس سے زیادہ
+    </string>  
+    <!-- Label of a group of pictures. The size of each picture in this group is
+         between two amounts. The parameters are string representations of the two
+         amounts, eg. "10MB", "100MB".
+         [CHAR LIMIT=20]
+    -->  
+    <string name="size_between"> 
+        <xliff:g id="min_size">%1$s</xliff:g> تا 
+        <xliff:g id="max_size">%2$s</xliff:g> 
+    </string>  
+    <!-- A label shown on the action bar. It indicates that the operation
+         to import media item(s) [CHAR LIMIT=20] -->  
+    <string name="Import">درآمد</string>  
+    <!-- A label shown on the action bar. It indicates whether the import
+         operation succeeds or fails. [CHAR LIMIT=20] -->  
+    <string name="import_complete">درآمد کرنا مکمل</string>  
+    <string name="import_fail">درآمد کرنا ناکام</string>  
+    <!-- A toast indicating a camera is connected to the device [CHAR LIMIT=30]-->  
+    <string name="camera_connected">کیمرہ متصل.</string>  
+    <!-- A toast indicating a camera is disconnected [CHAR LIMIT=30] -->  
+    <string name="camera_disconnected">کیمرہ غیرمتصل.</string>  
+    <!-- A label shown on MTP albums thumbnail to instruct users to import
+        [CHAR LIMIT=40] -->  
+    <string name="click_import">درآمد کرنے کے لئے یہاں چھوئيں</string>  
+    <!-- The label on the radio button for the widget type that shows the images randomly. [CHAR LIMIT=30]-->  
+    <string name="widget_type_album">کوئی البم منتخب کریں</string>  
+    <!-- The label on the radio button for the widget type that shows the images in an album. [CHAR LIMIT=30]-->  
+    <string name="widget_type_shuffle">تمام تصویریں شفل کریں</string>  
+    <!-- The label on the radio button for the widget type that shows only one image. [CHAR LIMIT=30]-->  
+    <string name="widget_type_photo">تصویر منتخب کریں</string>  
+    <!-- The title of the dialog for choosing the type of widget. [CHAR LIMIT=20] -->  
+    <string name="widget_type">تصویریں منتخب کریں</string>  
+    <!-- Title of the Android Dreams slideshow screensaver. [CHAR LIMIT=20] -->  
+    <string name="slideshow_dream_name">سلائيڈ شو</string>  
+    <!-- Group by Albums tab on Action Bar. [CHAR LIMIT=12] -->  
+    <string name="albums">البم</string>  
+    <!-- Group by Times tab on Action Bar. [CHAR LIMIT=12] -->  
+    <string name="times">اوقات</string>  
+    <!-- Group by Locations tab on Action Bar. [CHAR LIMIT=12] -->  
+    <string name="locations">مقامات</string>  
+    <!-- Group by People tab on Action Bar. [CHAR LIMIT=12] -->  
+    <string name="people">افراد</string>  
+    <!-- Group by Tags tab on Action Bar. [CHAR LIMIT=12] -->  
+    <string name="tags">ٹیگ</string>  
+    <!-- Group by menu item. [CHAR LIMIT=20] -->  
+    <string name="group_by">بمطابق گروپ کریں</string>  
+    <!-- The title of the menu item which enable the settings [CHAR LIMIT=20] -->  
+    <string name="settings">ترتیبات</string>  
+    <!-- The title of menu item where user can add a new account -->  
+    <string name="add_account">اکاؤنٹ شامل کریں</string>  
+    <string name="fail_to_load_image">تصویر لوڈ نہیں ہوسکی</string>  
+    <string name="ok">کاٹیں</string>  
+    <string name="set_wallpaper">وال پیپر متعین کریں</string>  
+    <plurals name="delete_selection"> 
+        <item quantity="one">منتخب آئٹم حذف کریں؟</item>  
+        <item quantity="other">منتخب کردہ آئٹمز حذف کریں؟</item> 
+    </plurals>  
+    <string name="confirm">ٹھیک ہے</string>  
+    <string name="deleted">حذف کردہ</string>  
+    <string name="undo">رد کریں</string>  
+    <string name="folder_camera">کیمرا</string>  
+    <string name="folder_download">ڈاؤن لوڈ</string>  
+    <string name="folder_imported">درآمد کیا گیا</string>  
+    <string name="folder_screenshot">اسکرین شاٹ</string>  
+    <string name="help">مدد</string> 
+
+<string name="menu_camera">کیمرا</string>
+    <string name="menu_search">تلاش</string>
+    <string name="filtershow_saving_image">تصویر <xliff:g id="album_name">%1$s</xliff:g> \u2026 میں محفوظ کر رہا ہے</string>
+    <string name="trim_label">ویڈیو کو تراشیں</string>
+    <string name="share_panorama">ارضی منظر کا اشتراک کریں</string>
+    <string name="share_as_photo">تصویر کے بطور اشتراک کریں</string>
+    <string name="simple_edit">معمولی ترمیم۔</string>
+    <string name="trim_action">تراشیں</string>
+    <string name="mute_action">خاموش</string>
+    <string name="video_mute_err">ویڈیو خاموش نہیں کیا جاسکتا۔</string>
+    <string name="unknown">نا معلوم</string>
+    <string name="ffx_original">اصل</string>
+    <string name="ffx_vintage">نادر و نایاب</string>
+    <string name="ffx_instant">فوری</string>
+    <string name="ffx_bleach">بلیچ</string>
+    <string name="ffx_blue_crush">نیلا</string>
+    <string name="ffx_bw_contrast">B/W</string>
+    <string name="ffx_punch">پنچ</string>
+    <string name="ffx_x_process">X پروسیس</string>
+    <string name="ffx_washout">لیٹھ</string>
+    <string name="ffx_washout_color">لیتھو</string>
+    <string name="folder_edited_online_photos">تدوین کردہ آن لائن تصاویر</string>
+    <string name="no_external_storage_title">کوئی اسٹوریج نہیں</string>
+    <string name="no_external_storage">کوئی خارجی اسٹوریج دستیاب نہیں ہے</string>
+    <string name="switch_photo_filmstrip">فلمی پٹی کامنظر</string>
+    <string name="switch_photo_grid">جالی دار منظر</string>
+    <string name="switch_photo_fullscreen">پوری اسکرین کا منظر</string>
+    <string name="trimming">تراش رہا ہے</string>
+    <string name="muting">خاموش کرنا</string>
+    <string name="please_wait">براہ کرم ا نتظار کریں</string>
+    <string name="save_into">ویڈیو کو <xliff:g id="album_name">%1$s</xliff:g> \u2026 میں محفوظ کر رہا ہے</string>
+    <string name="trim_too_short">تراش نہیں سکتا : اہدافی ویڈیو کافی چھوٹا ہے</string>
+    <string name="pano_progress_text">ارضی منظر کی منتقلی ہورہی ہے</string>
+    <string name="save">محفوظ کریں</string>
+    <string name="ingest_scanning">مواد اسکین کر رہا ہے…</string>
+    <plurals name="ingest_number_of_items_scanned">
+     <item quantity="zero">%1$d آئٹمز اسکین ہوگئے</item>
+     <item quantity="one">%1$d آئٹم اسکین ہوگیا</item>
+   <item quantity="other">%1$d آئٹمز اسکین ہوگئے</item>
+   </plurals>
+    <string name="ingest_sorting">ترتیب دے رہا ہے…</string>
+    <string name="ingest_scanning_done">اسکیننگ ہوگئی</string>
+    <string name="ingest_importing">درآمد کر رہا ہے…</string>
+    <string name="ingest_empty_device">اس آلے پر درآمد کرنے کیلئے کوئی مواد دستیاب نہیں ہے۔</string>
+    <string name="ingest_no_device">کوئی MTP آلہ مربوط نہیں ہے</string>
+    <string name="pref_camera_flashmode_label_on">فلیش آن</string>
+    <string name="pref_camera_flashmode_label_off">فلیش آف</string>
+    <string name="pref_camera_whitebalance_label_auto">خودکار</string>
+    <string name="pref_camera_whitebalance_label_incandescent">چمکدار</string>
+    <string name="pref_camera_whitebalance_label_daylight">دن کی روشنی</string>
+    <string name="pref_camera_whitebalance_label_fluorescent">فلوریسنٹ</string>
+    <string name="pref_camera_whitebalance_label_cloudy">ابرآلود</string>
+    <string name="pref_camera_id_label_back">سامنے کا کیمرا</string>
+    <string name="pref_camera_id_label_front">پیچھے کا کیمرا</string>
+    <string name="accessibility_review_retake">ری ٹیک کا جائزہ لیں</string>
+    <string name="accessibility_play_video">ویڈیو چلائیں</string>
+    <string name="accessibility_pause_video">ویڈیو روکیں</string>
+    <string name="accessibility_reload_video">ویڈیو دوبارہ لوڈ کریں</string>
+    <string name="accessibility_time_bar">ویڈیو پلیئر کا ٹائم بار</string>
+    <string name="count_down_title_text">تصویر لینے کیلئے الٹی گنتی ہو رہی ہے</string>
+    <string name="remember_location_title">تصویر کے مقامات یاد رکھیں؟</string>
+    <string name="remember_location_prompt">آپ کی تصویریں اور ویڈیوز جہاں لیے گئے تھے ان مقامات کے ساتھ انہیں ٹیگ کریں۔\n\nدوسرے ایپلیکیشنز آپ کی محفوظ کردہ تصاویر کے ساتھ اس معلومات تک رسائی حاصل کرسکتے ہیں۔</string>
+    <string name="remember_location_no">نہیں شکریہ</string>
+    <string name="remember_location_yes">ہاں</string>
+    <string name="tab_photos">تصویریں</string>
+    <string name="tab_albums">البم</string>
+    <string name="camera_menu_more_label">مزید آپشنز</string>
+    <string name="camera_menu_settings_label">ترتیبات</string>
+    <plurals name="number_of_photos">
+     <item quantity="one">%1$d تصویر</item>
+     <item quantity="other">%1$d تصاویر</item>
+   </plurals>
+    <string name="camera_error_title">کیمرے کا نقص</string>
+	<string name="cannot_connect_camera">کیمرے سے مربوط نہیں ہوسکتا۔</string>
+	<string name="camera_disabled">حفاظتی پالیسیوں کے سبب کیمرا غیرفعال ہوگیا۔</string>
+	<string name="camera_label">کیمرا</string>
+	<string name="wait">"برائے مہربانی انتظار کریں\u2026"</string>
+	<string name="no_storage" product="nosdcard">کیمرا استعمال کرنے سے پہلے USB اسٹوریج لگائیں۔</string>
+	<string name="no_storage" product="default">کیمرا استعمال کرنے سے پہلے ایک SD کارڈ داخل کریں۔</string>
+	<string name="preparing_sd" product="nosdcard">USB اسٹوریج تیار کیا جارہا ہے \u2026</string>
+	<string name="preparing_sd" product="default">SD کارڈ تیار کررہا ہے\u2026</string>
+	<string name="access_sd_fail" product="nosdcard">USB اسٹوریج تک رسائی نہیں ہوسکتی۔</string>
+	<string name="access_sd_fail" product="default">کارڈ تک رسائی کرنے سے قاصرSD۔</string>
+	<string name="review_cancel">منسوخ کریں</string>
+	<string name="review_ok">ہوگیا</string>
+	<string name="time_lapse_title">وقت کے لیپس کی ریکارڈنگ</string>
+	<string name="pref_camera_id_title">کیمرا چنیں</string>
+	<string name="pref_camera_id_entry_back">واپس</string>
+	<string name="pref_camera_id_entry_front">اگلا</string>
+	<string name="pref_camera_recordlocation_title">ذخیرہ کا مقام</string>
+	<string name="pref_camera_location_label">مقام</string>
+	<string name="pref_camera_timer_title">"الٹی گنتی کا ٹائمر"</string>
+	<plurals name="pref_camera_timer_entry">    
+	    <item quantity="one"> 1 سیکنڈ</item>    
+	    <item quantity="other">%d سیکنڈ</item> 
+	</plurals>
+	<string name="pref_camera_timer_sound_title">"الٹی گنتی کے دوران بیپ"</string>
+	<string name="setting_off">بند</string>
+	<string name="setting_on">چالو</string>
+	<string name="pref_video_quality_title">ویڈيو کا معیار</string>
+	<string name="pref_video_quality_entry_high">"اعلی"</string>
+	<string name="pref_video_quality_entry_low">"کم"</string>
+	<string name="pref_video_time_lapse_frame_interval_title">"ٹائم لیپس"</string>
+	<string name="pref_camera_settings_category">کیمرے کی ترتیبات</string>
+	<string name="pref_camcorder_settings_category">کیم کارڈر کی ترتیبات</string>
+	<string name="pref_camera_picturesize_title">تصویر کا سائز</string>
+	<string name="pref_camera_picturesize_entry_13mp">13M پکسلز</string>
+	<string name="pref_camera_picturesize_entry_8mp">8M پکسل</string>
+	<string name="pref_camera_picturesize_entry_5mp">5M پکسلز</string>
+	<string name="pref_camera_picturesize_entry_4mp">4M پکسل</string>
+	<string name="pref_camera_picturesize_entry_3mp">3M پکسلز</string>
+	<string name="pref_camera_picturesize_entry_2mp">2M پکسلز</string>
+	<string name="pref_camera_picturesize_entry_2mp_wide">2M پکسلز (16:9)</string>
+	<string name="pref_camera_picturesize_entry_1_3mp">1.3M پکسلز</string>
+	<string name="pref_camera_picturesize_entry_1mp">1M پکسل</string>
+	<string name="pref_camera_picturesize_entry_vga">VGA</string>
+	<string name="pref_camera_picturesize_entry_qvga">QVGA</string>
+	<string name="pref_camera_focusmode_title">فوکس کی وضع</string>
+	<string name="pref_camera_focusmode_entry_auto">خودکار</string>
+	<string name="pref_camera_focusmode_entry_infinity">لامحدود</string>
+	<string name="pref_camera_focusmode_entry_macro">میکرو</string>
+	<string name="pref_camera_focusmode_label_auto">خودکار</string>
+	<string name="pref_camera_focusmode_label_infinity">لامحدود</string>
+	<string name="pref_camera_focusmode_label_macro">میکرو</string>
+	<string name="pref_camera_flashmode_title">فلیش کی وضع</string>
+	<string name="pref_camera_flashmode_label">فلیش کی وضع</string>
+	<string name="pref_camera_flashmode_entry_auto">خودکار</string>
+	<string name="pref_camera_flashmode_entry_on">چالو</string>
+	<string name="pref_camera_flashmode_entry_off">بند</string>
+	<string name="pref_camera_flashmode_label_auto">"فلیش آٹو"</string>
+	<string name="pref_camera_whitebalance_title">سفید توازن</string>
+	<string name="pref_camera_whitebalance_label">سفید توازن</string>
+	<string name="pref_camera_whitebalance_entry_auto">خودکار</string>
+	<string name="pref_camera_whitebalance_entry_incandescent">چمکدار</string>
+	<string name="pref_camera_whitebalance_entry_daylight">دن کی روشنی</string>
+	<string name="pref_camera_whitebalance_entry_fluorescent">فلوریسنٹ</string>
+	<string name="pref_camera_whitebalance_entry_cloudy">ابرآلود</string>
+	<string name="pref_camera_scenemode_title">سین وضع</string>
+	<string name="pref_camera_scenemode_entry_auto">خودکار</string>
+	<string name="pref_camera_scenemode_entry_hdr">HDR</string>
+	<string name="pref_camera_scenemode_entry_action">کارروائی</string>
+	<string name="pref_camera_scenemode_entry_night">رات</string>
+	<string name="pref_camera_scenemode_entry_sunset">مغرب</string>
+	<string name="pref_camera_scenemode_entry_party">پارٹی</string>
+	<string name="pref_camera_scenemode_label_auto">کوئی نہیں</string>
+	<string name="pref_camera_scenemode_label_action">کارروائی</string>
+	<string name="pref_camera_scenemode_label_night">رات</string>
+	<string name="pref_camera_scenemode_label_sunset">مغرب</string>
+	<string name="pref_camera_scenemode_label_party">پارٹی</string>
+	<string name="pref_camera_countdown_label">"الٹی گنتی کا ٹائمر"</string>
+	<string name="pref_camera_countdown_label_off">"ٹائمر آف"</string>
+	<string name="pref_camera_countdown_label_one"> 1 سیکنڈ</string>
+	<string name="pref_camera_countdown_label_three">3 سیکنڈ</string>
+	<string name="pref_camera_countdown_label_ten">10 سیکنڈ</string>
+	<string name="pref_camera_countdown_label_fifteen">"15 سیکنڈ"</string>
+	<string name="not_selectable_in_scene_mode">سین وضع میں قابل انتخاب نہيں۔</string>
+	<string name="pref_exposure_title">ایکسپوژر</string>
+	<string name="pref_exposure_label">ایکسپوژر</string>
+	<string name="pref_camera_hdr_label">HDR</string>
+	<string name="dialog_ok">کاٹیں</string>
+	<string name="spaceIsLow_content" product="nosdcard">آپ کے ‏USB‏ اسٹوریج میں ‏جگہ نہیں ہے۔‎ ‎معیار کی ترتیب ‏تبدیل کریں یا کچھ تصاویر یا ‏دیگر فائلیں حذف کریں۔</string>
+	<string name="spaceIsLow_content" product="default">آپ کے ‏SD‏ کارڈ میں جگہ ‏نہیں ہے۔‎ ‎معیار کی ترتیب ‏تبدیل کریں یا کچھ تصاویر یا ‏دیگر فائلیں حذف کریں۔</string>
+	<string name="video_reach_size_limit">سائز کی حد تجاوز۔</string>
+	<string name="pano_too_fast_prompt">بہت تیز</string>
+	<string name="pano_dialog_prepare_preview">پینوراما تیار کررہا ہے</string>
+	<string name="pano_dialog_panorama_failed">پینوراما محفوظ کرنے سے قاصر۔</string>
+	<string name="pano_dialog_title">پینوراما</string>
+	<string name="pano_capture_indication">پینوراما کھینچ رہا ہے</string>
+	<string name="pano_dialog_waiting_previous">پچھلے منظر کا انتظار ہے</string>
+	<string name="pano_review_saving_indication_str">تصویر محفوظ کررہا ہے\u2026</string>
+	<string name="pano_review_rendering">ارضی منظر کی منتقلی ہورہی ہے</string>
+	<string name="tap_to_focus">فوکس کرنے کے لئے چھوئيں</string>
+	<string name="pref_video_effect_title">اثرات</string>
+	<string name="effect_none">کوئی نہیں</string>
+	<string name="effect_goofy_face_squeeze">گھسائيں</string>
+	<string name="effect_goofy_face_big_eyes">بڑی آنکھیں</string>
+	<string name="effect_goofy_face_big_mouth">بڑا منہ</string>
+	<string name="effect_goofy_face_small_mouth">چھوٹا منہ</string>
+	<string name="effect_goofy_face_big_nose">بڑی ناک</string>
+	<string name="effect_goofy_face_small_eyes">چھوٹی آنکھیں</string>
+	<string name="effect_backdropper_space">خلا میں</string>
+	<string name="effect_backdropper_sunset">مغرب</string>
+	<string name="effect_backdropper_gallery">آپ کا ویڈیو</string>
+	<string name="bg_replacement_message">اپنے آلے کو نیچے سیٹ کریں۔\nایک لمحے کے لیے منظر سے غائب۔</string>
+	<string name="video_snapshot_hint">ریکارڈنگ کے دوران تصویر لینے کیلئے دبائیں۔</string>
+	<string name="video_recording_started">"ویڈیو ریکارڈنگ شروع ہو گئی ہے۔"</string>
+	<string name="video_recording_stopped">"ویڈیو ریکارڈنگ بند ہو گئی ہے۔"</string>
+	<string name="disable_video_snapshot_hint">خصوصی اثرات آن ہونے پر ویڈیو اسنیپ شاٹ کو غیرفعال کیا جاتا ہے۔</string>
+	<string name="clear_effects">اثرات صاف کریں</string>
+	<string name="effect_silly_faces">عجیب شکلیں</string>
+	<string name="effect_background">پس منظر</string>
+	<string name="accessibility_shutter_button">شٹر کا بٹن</string>
+	<string name="accessibility_menu_button">"مینو بٹن"</string>
+	<string name="accessibility_review_thumbnail">حالیہ ترین تصویر</string>
+	<string name="accessibility_camera_picker">اگلا اور پچھلا کیمرہ کا سوئچ</string>
+	<string name="accessibility_mode_picker">کیمرہ، ویڈیو یا پینوراما منتخب کنندہ</string>
+	<string name="accessibility_second_level_indicators">مزید ترتیب کے کنٹرول</string>
+	<string name="accessibility_back_to_first_level">ترتیب کے کنٹرول بند کریں</string>
+	<string name="accessibility_zoom_control">زوم کنٹرول</string>
+	<string name="accessibility_decrement">کم کریں %1$s</string>
+	<string name="accessibility_increment">پڑھائيں %1$s</string>
+	<string name="accessibility_check_box">"‏%1$s چیک باکس"</string>
+	<string name="accessibility_switch_to_camera">"تصویر پر سوئچ کریں"</string>
+	<string name="accessibility_switch_to_video">"ویڈیو پر سوئچ کریں"</string>
+	<string name="accessibility_switch_to_panorama">"پینوراما پر سوئچ کریں"</string>
+	<string name="accessibility_switch_to_new_panorama">ایک نئے منظر میں سوئچ کریں</string>
+	<string name="accessibility_switch_to_refocus">"دوبارہ فوکس وضع میں سوئچ کریں"</string>
+	<string name="accessibility_review_cancel">"منسوخ کیے جانے والے کا جائزہ لیں"</string>
+	<string name="accessibility_review_ok">"جائزہ مکمل ہو گیا"</string>
+	<string name="capital_on">چالو</string>
+	<string name="capital_off">بند</string>
+	<string name="pref_video_time_lapse_frame_interval_off">بند</string>
+	<string name="pref_video_time_lapse_frame_interval_500">"0.5 سیکنڈ"</string>
+	<string name="pref_video_time_lapse_frame_interval_1000"> 1 سیکنڈ</string>
+	<string name="pref_video_time_lapse_frame_interval_1500">1,5 سیکنڈز</string>
+	<string name="pref_video_time_lapse_frame_interval_2000">2  سیکنڈ</string>
+	<string name="pref_video_time_lapse_frame_interval_2500">2,5 سیکنڈز</string>
+	<string name="pref_video_time_lapse_frame_interval_3000">3 سیکنڈ</string>
+	<string name="pref_video_time_lapse_frame_interval_4000">4 سیکنڈز</string>
+	<string name="pref_video_time_lapse_frame_interval_5000">5 سیکنڈ</string>
+	<string name="pref_video_time_lapse_frame_interval_6000">6 سیکنڈز</string>
+	<string name="pref_video_time_lapse_frame_interval_10000">10 سیکنڈ</string>
+	<string name="pref_video_time_lapse_frame_interval_12000">"12 سیکنڈز"</string>
+	<string name="pref_video_time_lapse_frame_interval_15000">"15 سیکنڈ"</string>
+	<string name="pref_video_time_lapse_frame_interval_24000">"24 سیکنڈز"</string>
+	<string name="pref_video_time_lapse_frame_interval_30000">"0.5 منٹ"</string>
+	<string name="pref_video_time_lapse_frame_interval_60000">"1 منٹ"</string>
+	<string name="pref_video_time_lapse_frame_interval_90000">"1.5 منٹ"</string>
+	<string name="pref_video_time_lapse_frame_interval_120000">"2 منٹ"</string>
+	<string name="pref_video_time_lapse_frame_interval_150000">"2.5 منٹ"</string>
+	<string name="pref_video_time_lapse_frame_interval_180000">"3 منٹ"</string>
+	<string name="pref_video_time_lapse_frame_interval_240000">"4 منٹ"</string>
+	<string name="pref_video_time_lapse_frame_interval_300000">5 منٹ</string>
+	<string name="pref_video_time_lapse_frame_interval_360000">"6 منٹ"</string>
+	<string name="pref_video_time_lapse_frame_interval_600000">"10 منٹ"</string>
+	<string name="pref_video_time_lapse_frame_interval_720000">"12 منٹ"</string>
+	<string name="pref_video_time_lapse_frame_interval_900000">"15 منٹ"</string>
+	<string name="pref_video_time_lapse_frame_interval_1440000">"24 منٹ"</string>
+	<string name="pref_video_time_lapse_frame_interval_1800000">"0.5 گھنٹے"</string>
+	<string name="pref_video_time_lapse_frame_interval_3600000">"1 گھنٹہ"</string>
+	<string name="pref_video_time_lapse_frame_interval_5400000">"1.5 گھنٹہ"</string>
+	<string name="pref_video_time_lapse_frame_interval_7200000">"2 گھنٹے"</string>
+	<string name="pref_video_time_lapse_frame_interval_9000000">"2.5 گھنٹے"</string>
+	<string name="pref_video_time_lapse_frame_interval_10800000">"3 گھنٹے"</string>
+	<string name="pref_video_time_lapse_frame_interval_14400000">"4 گھنٹے"</string>
+	<string name="pref_video_time_lapse_frame_interval_18000000">"5 گھنٹے"</string>
+	<string name="pref_video_time_lapse_frame_interval_21600000">6 گھنٹے</string>
+	<string name="pref_video_time_lapse_frame_interval_36000000">"10 گھنٹے"</string>
+	<string name="pref_video_time_lapse_frame_interval_43200000">12 گھنٹے</string>
+	<string name="pref_video_time_lapse_frame_interval_54000000">"15 گھنٹے"</string>
+	<string name="pref_video_time_lapse_frame_interval_86400000">"24 گھنٹے"</string>
+	<string name="time_lapse_seconds">"سیکنڈز"</string>
+	<string name="time_lapse_minutes">"منٹ"</string>
+	<string name="time_lapse_hours">"گھنٹے"</string>
+	<string name="time_lapse_interval_set">ہوگیا</string>
+	<string name="set_time_interval">"وقت کا وقفہ سیٹ کریں"</string>
+	<string name="set_time_interval_help">"ٹائم لیپس خصوصیت آف ہے۔ وقت کا وقفہ سیٹ کرنے کیلئے اسے آن کریں۔"</string>
+	<string name="set_timer_help">الٹی گنتی والا ٹائمر بند ہے۔ تصویر لینے سے قبل الٹی گنتی کرنے کے لیے اسے آن کریں۔</string>
+	<string name="set_duration">"سیکنڈ میں دورانیہ سیٹ کریں"</string>
+    <plurals name="ingest_number_of_items_selected">
+        <item quantity="zero">%1$d آئیٹم منتخب</item>
+        <item quantity="one">%1$d آئیٹم منتخب</item>
+        <item quantity="other">%1$d آئیٹم منتخب</item>
+    </plurals>
+</resources>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="ActivityTheme">
+    <item name="android:actionBarStyle">@style/DialerActionBarBaseStyle</item>
+    <item name="android:actionBarSize">56dp</item>
+    <item name="android:colorAccent">@color/theme_color</item>
+    <item name="android:colorPrimaryDark">@color/dialer_theme_color_dark</item>
+    <item name="android:alertDialogTheme">@style/AlertDialogTheme</item>
+  </style>
+
+  <style name="ActionBarTitleText"
+    parent="@android:style/TextAppearance.Material.Widget.ActionBar.Title">
+    <item name="android:textColor">@color/actionbar_text_color</item>
+  </style>
+   <style name="DialerActionBarBaseStyle"
+      parent="@style/Widget.AppCompat.Light.ActionBar.Solid.Inverse">
+    <item name="android:background">@color/theme_color</item>
+    <item name="android:titleTextStyle">@style/ActionBarTitleText</item>
+  </style>
+    <style name="DialerActionBarBaseTheme"
+      parent="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+    <item name="android:background">@color/theme_color</item>
+  </style>
+
+  <style name="AlertDialogTheme" parent="Theme.AppCompat.Light.Dialog.Alert">
+    <item name="android:textColorPrimary">@color/dialer_primary_text_color</item>
+    <item name="android:colorAccent">@color/dialer_theme_color</item>
+    <item name="android:textColorSecondary">@color/dialer_secondary_text_color</item>
+  </style>
+</resources>

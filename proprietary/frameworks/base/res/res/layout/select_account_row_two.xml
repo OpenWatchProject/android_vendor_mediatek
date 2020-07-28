@@ -1,0 +1,29 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/select_account_row_two_container"
+    android:visibility="gone"
+    android:layout_width="match_parent"
+    android:layout_height="75dp"
+    android:layout_gravity="center"
+    android:orientation="horizontal" >
+
+    <include
+        android:id="@+id/account_four_container"
+        android:visibility="invisible" 
+        layout="@layout/account_four" />
+
+    <include
+        android:id="@+id/account_five_container"
+        android:visibility="invisible" 
+        layout="@layout/account_five" />
+
+    <include
+        android:id="@+id/account_six_container"
+        android:visibility="invisible" 
+        layout="@layout/account_six" />
+
+    <include
+        android:id="@+id/account_seven_container"
+        android:visibility="invisible" 
+        layout="@layout/account_seven" />
+
+</LinearLayout>

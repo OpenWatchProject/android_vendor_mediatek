@@ -1,0 +1,21 @@
+Library of MTK performance feature.
+
+This library is pre-built by MediaTek internal.
+
+
+WHAT IT DOES?
+=============
+libmmprofile.so contains MediaTek developed performance enhancement.
+User can record tag infromation in kernel driver.
+
+HOW IT WAS BUILT?
+==================
+It needs the following libs from AOSP:
+1.  libcutils.so
+
+HOW TO USE IT?
+==============
+Provide api for user space to record performance.
+all api interface are at (vendor/mediatek/proprietary/external/perfservicenative/)
+
+All the source code of this library were written by MediaTek co..

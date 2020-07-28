@@ -1,0 +1,19 @@
+
+
+
+WHAT IT DOES?
+=============
+libmeta_apeditor is a static library which offer a interface for meta tool to access nvram
+
+
+HOW IT WAS BUILT?
+==================
+depend on library libc libnvram libft
+need to include header file in  
+$(MTK_PATH_SOURCE)/external/meta/common/inc\
+$(MTK_PATH_SOURCE)/external/nvram/libnvram
+
+HOW TO USE IT?
+==============
+
+include this staic library by adding BUILD_STATIC_LIBRARY in your Android.mk

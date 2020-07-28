@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TabHost xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@android:id/tabhost"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:splitMotionEvents="false" >
+
+    <LinearLayout
+        android:id="@+id/sd_error"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
+        android:orientation="vertical"
+        android:splitMotionEvents="false"
+        android:visibility="gone" >
+
+        <include layout="@layout/sd_error" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/normal_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:splitMotionEvents="false" >
+
+        <TabWidget
+            android:id="@android:id/tabs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:splitMotionEvents="false" >
+        </TabWidget>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:splitMotionEvents="false" >
+
+            <android.support.v4.view.ViewPager
+                android:id="@+id/viewpage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/nowplaying_parent"
+                android:splitMotionEvents="false" />
+
+            <!-- android:layout_height="380dip" -->
+
+            <include layout="@layout/nowplaying" />
+        </RelativeLayout>
+
+        <FrameLayout
+            android:id="@android:id/tabcontent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone" >
+        </FrameLayout>
+    </LinearLayout>
+
+</TabHost>

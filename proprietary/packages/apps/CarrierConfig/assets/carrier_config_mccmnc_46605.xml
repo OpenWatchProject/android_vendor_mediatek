@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<carrier_config_list>
+    <carrier_config>
+        <!-- Supplementary Service WWOP Config -->
+        <boolean name="mtk_carrier_ss_tb_clir" value="true" />
+        <boolean name="mtk_domestic_roaming_enabled_only_by_mobile_data_setting" value="true" />
+        <string-array name="mtk_domestic_roaming_enabled_only_by_mobile_data_setting_check_nw_plmn" num="1">
+            <item value="46697" />
+        </string-array>
+    </carrier_config>
+</carrier_config_list>

@@ -1,0 +1,224 @@
+/*
+ * Copyright (C) 2016 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+package vendor.mediatek.hardware.power@1.1;
+
+import android.hardware.power@1.0::types;
+
+enum MtkPowerHint : uint32_t {
+    MTK_POWER_HINT_NONE                 = 0,
+
+    /* Google default power hint */
+    MTK_POWER_HINT_VSYNC                = 1,
+    MTK_POWER_HINT_INTERACTION          = 2,
+    MTK_POWER_HINT_VIDEO_ENCODE         = 3,
+    MTK_POWER_HINT_VIDEO_DECODE         = 4,
+    MTK_POWER_HINT_LOW_POWER            = 5,
+    MTK_POWER_HINT_SP                   = 6,
+    MTK_POWER_HINT_VR                   = 7,
+    MTK_POWER_HINT_LAUNCH               = 8,
+
+    /* MTK extension */
+    MTK_POWER_HINT_BASE                 = 9,
+    MTK_POWER_HINT_PROCESS_CREATE       = 10,
+    MTK_POWER_HINT_PACK_SWITCH          = 11,
+    MTK_POWER_HINT_ACT_SWITCH           = 12,
+    MTK_POWER_HINT_GAME_LAUNCH          = 13,
+    MTK_POWER_HINT_APP_ROTATE           = 14,
+    MTK_POWER_HINT_APP_TOUCH            = 15,
+    MTK_POWER_HINT_FRAME_UPDATE         = 16,
+    MTK_POWER_HINT_GAMING               = 17,
+    MTK_POWER_HINT_GALLERY_BOOST        = 18,
+    MTK_POWER_HINT_GALLERY_STEREO_BOOST = 19,
+    MTK_POWER_HINT_SPORTS               = 20,
+    MTK_POWER_HINT_TEST_MODE            = 21,
+    MTK_POWER_HINT_FPSGO                = 22,
+    MTK_POWER_HINT_PMS_INSTALL          = 23,
+    MTK_POWER_HINT_EXT_LAUNCH           = 24,
+    MTK_POWER_HINT_WIPHY_SPEED_DL       = 25,
+    MTK_POWER_HINT_RESV_I               = 26,
+    MTK_POWER_HINT_RESV_II              = 27,
+    MTK_POWER_HINT_RESV_III             = 28,
+    MTK_POWER_HINT_RESV_IV              = 29,
+    MTK_POWER_HINT_RESV_V               = 30,
+    MTK_POWER_HINT_RESV_VI              = 31,
+    MTK_POWER_HINT_RESV_VII             = 32,
+    MTK_POWER_HINT_RESV_VIII            = 33,
+    MTK_POWER_HINT_RESV_IX              = 34,
+    MTK_POWER_HINT_RESV_X               = 35,
+    MTK_POWER_HINT_NUM                  = 36,
+};
+
+enum MtkHintOp : int32_t {
+    MTK_HINT_ALWAYS_ENABLE = 0x0FFFFFFF,
+};
+
+enum MtkCusPowerHint : uint32_t {
+    /* MTK extension */
+    MTK_CUS_AUDIO_LATENCY_DL        = 0,
+    MTK_CUS_AUDIO_LATENCY_UL        = 1,
+    MTK_CUS_AUDIO_Power_DL          = 2,
+    MTK_CUS_HINT_NUM                = 3,
+};
+
+enum MtkQueryCmd : uint32_t {
+    CMD_GET_CLUSTER_NUM             = 1,
+    CMD_GET_CLUSTER_CPU_NUM         = 2,
+    CMD_GET_CLUSTER_CPU_FREQ_MIN    = 3,
+    CMD_GET_CLUSTER_CPU_FREQ_MAX    = 4,
+    CMD_GET_GPU_FREQ_COUNT          = 5,
+    CMD_GET_FOREGROUND_PID          = 6,
+    CMD_GET_FOREGROUND_TYPE         = 7,
+    CMD_GET_WALT_FOLLOW             = 8,
+    CMD_GET_WALT_DURATION           = 9,
+};
+
+enum MtkPowerCmd : uint32_t {
+    /* cpu */
+    CMD_SET_CLUSTER_CPU_CORE_MIN        = 1,
+    CMD_SET_CLUSTER_CPU_CORE_MAX        = 2,
+    CMD_SET_CLUSTER_CPU_FREQ_MIN        = 3,
+    CMD_SET_CLUSTER_CPU_FREQ_MAX        = 4,
+    CMD_SET_CPU_PERF_MODE               = 5,
+
+    /* gpu */
+    CMD_SET_GPU_FREQ_MIN                = 6,
+    CMD_SET_GPU_FREQ_MAX                = 7,
+
+    /* vcore */
+    CMD_SET_VCORE_BW_THRES              = 8,
+    CMD_SET_VCORE_BW_ENABLED            = 9,
+    CMD_SET_VCORE_MIN                   = 10,
+
+    /* state */
+    CMD_SET_SCREEN_OFF_STATE            = 11,
+
+    /* DVFS */
+    CMD_SET_CPUFREQ_HISPEED_FREQ        = 12,
+    CMD_SET_CPUFREQ_MIN_SAMPLE_TIME     = 13,
+    CMD_SET_CPUFREQ_ABOVE_HISPEED_DELAY = 14,
+    CMD_SET_DVFS_POWER_MODE             = 15,
+
+    /* HPS */
+    CMD_SET_HPS_UP_THRESHOLD            = 16,
+    CMD_SET_HPS_DOWN_THRESHOLD          = 17,
+    CMD_SET_HPS_UP_TIMES                = 18,
+    CMD_SET_HPS_DOWN_TIMES              = 19,
+    CMD_SET_HPS_RUSH_BOOST              = 20,
+    CMD_SET_HPS_HEAVY_TASK              = 21,
+    CMD_SET_HPS_POWER_MODE              = 22,
+
+    /* PPM */
+    CMD_SET_PPM_ROOT_CLUSTER            = 23,
+    CMD_SET_PPM_NORMALIZED_PERF_INDEX   = 24,
+    CMD_SET_PPM_MODE                    = 25,
+    CMD_SET_PPM_HICA_VAR                = 26,
+
+    /* sched */
+    CMD_SET_SCHED_HTASK_THRESH          = 27,
+    CMD_SET_SCHED_AVG_HTASK_AC          = 28,
+    CMD_SET_SCHED_AVG_HTASK_THRESH      = 29,
+    CMD_SET_SCHED_MODE                  = 30,
+    CMD_SET_IDLE_PREFER                 = 31,
+    CMD_SET_SCHED_LB_ENABLE             = 32,
+    CMD_SET_GLOBAL_CPUSET               = 33,
+    CMD_SET_ROOT_BOOST_VALUE            = 34,
+    CMD_SET_TA_BOOST_VALUE              = 35,
+    CMD_SET_FG_BOOST_VALUE              = 36,
+    CMD_SET_BG_BOOST_VALUE              = 37,
+
+    /* customized */
+    CMD_SET_PACK_BOOST_MODE             = 38,
+    CMD_SET_PACK_BOOST_TIMEOUT          = 39,
+    CMD_SET_DFPS                        = 40,
+    CMD_SET_SPORTS_MODE                 = 41,
+    CMD_SET_PPM_HOLD_TIME_L_ONLY        = 42,
+    CMD_SET_VCORE_BW_THRES_DDR3         = 43,
+    CMD_SET_VCORE_MIN_DDR3              = 44,
+    CMD_SET_VCORE                       = 45,
+    CMD_SET_PPM_LIMIT_BIG               = 46,
+    CMD_SET_PPM_SPORTS_MODE             = 47,
+    CMD_SET_PPM_HOLD_TIME_LL_ONLY       = 48,
+    CMD_SET_HPS_RBOOST_THRESH           = 49,
+    CMD_SET_SMART_FORCE_ISOLATE         = 50,
+    CMD_SET_STUNE_THRESH                = 51,
+    CMD_SET_DCM_MODE                    = 52,
+    CMD_SET_DCS_MODE                    = 53,
+    CMD_SET_FSTB_FPS                    = 54,
+    CMD_SET_FPSGO_ENABLE                = 55,
+    CMD_SET_FSTB_FORCE_VAG              = 56,
+    CMD_SET_GED_BENCHMARK_ON            = 57,
+    CMD_SET_GX_BOOST                    = 58,
+    CMD_SET_FBT_FLOOR_BOUND             = 59,
+    CMD_SET_FBT_KMIN                    = 60,
+    CMD_SET_VIDEO_MODE                  = 61,
+    CMD_SET_OPP_DDR                     = 62,
+    CMD_SET_EXT_LAUNCH_MON              = 63,
+    CMD_SET_WALT_FOLLOW                 = 64,
+    CMD_SET_MTK_PREFER_IDLE             = 65,
+    CMD_SET_STUNE_TA_PERFER_IDLE        = 66,
+    CMD_SET_STUNE_FG_PERFER_IDLE        = 67,
+    CMD_SET_DISP_DECOUPLE               = 68,
+    CMD_SET_IO_BOOST_VALUE              = 69,
+    CMD_SET_WIPHY_CAM                   = 70,
+    CMD_SET_SPCOND_RESV_I               = 71,
+    CMD_SET_SPCOND_RESV_II              = 72,
+    CMD_SET_SPCOND_RESV_III             = 73,
+    CMD_SET_SPCOND_RESV_IV              = 74,
+    CMD_SET_SPCOND_RESV_V               = 75,
+    CMD_SET_SPCOND_RESV_VI              = 76,
+    CMD_SET_SPCOND_RESV_VII             = 77,
+    CMD_SET_SPCOND_RESV_VIII            = 78,
+    CMD_SET_SPCOND_RESV_IX              = 79,
+    CMD_SET_SPCOND_RESV_X               = 80,
+    CMD_SET_SPCOND_RESV_XI              = 81,
+    CMD_SET_SPCOND_RESV_XII             = 82,
+    CMD_SET_SPCOND_RESV_XIII            = 83,
+    CMD_SET_SPCOND_RESV_XIV             = 84,
+    CMD_SET_SPCOND_RESV_XV              = 85,
+    CMD_SET_SPCOND_RESV_XVI             = 86,
+    CMD_SET_SPCOND_RESV_XVII            = 87,
+    CMD_SET_SPCOND_RESV_XVIII           = 88,
+    CMD_SET_SPCOND_RESV_XIX             = 89,
+    CMD_SET_SPCOND_RESV_XX              = 90,
+};
+
+enum MtkActState : uint32_t {
+    STATE_PAUSED    = 0,
+    STATE_RESUMED   = 1,
+    STATE_DESTORYED = 2,
+    STATE_DEAD      = 3,
+    STATE_STOPPED   = 4,
+};
+
+enum MtkScreenState : uint32_t {
+    SCREEN_OFF_DISABLE      = 0,
+    SCREEN_OFF_ENABLE       = 1,
+    SCREEN_OFF_WAIT_RESTORE = 2,
+};
+
+enum MtkDfpsMode : uint32_t {
+    DFPS_MODE_DEFAULT     = 0,
+    DFPS_MODE_FRR         = 1,
+    DFPS_MODE_ARR         = 2,
+    DFPS_MODE_INTERNAL_SW = 3,
+    DFPS_MODE_MAXIMUM     = 4,
+};
+
+enum MtkDispMode : uint32_t {
+    DISP_MODE_DEFAULT = 0,
+    DISP_MODE_EN      = 1,
+    DISP_MODE_NUM     = 2,
+};

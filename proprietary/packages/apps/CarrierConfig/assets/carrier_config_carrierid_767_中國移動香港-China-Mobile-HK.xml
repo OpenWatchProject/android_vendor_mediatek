@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<carrier_config>
+    <!-- Supplementary Service WWOP Config -->
+    <boolean name="mtk_carrier_ss_gsm_ut_support" value="true" />
+    <boolean name="mtk_carrier_ss_not_support_call_identity" value="true" />
+    <boolean name="mtk_carrier_ss_not_support_ocb" value="true" />
+
+    <string-array name="support_tdscdma_roaming_networks_string_array" num="4">
+        <item value="46000"/>
+        <item value="46002"/>
+        <item value="46007"/>
+        <item value="46008"/>
+    </string-array>
+    <boolean name="mtk_support_vt_ss_bool" value="true"/>
+    <boolean name="vilte_data_is_metered_bool" value="false" />
+    <boolean name="ignore_data_enabled_changed_for_video_calls" value="true" />
+</carrier_config>

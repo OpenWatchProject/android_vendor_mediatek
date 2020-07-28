@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/camera_shutter"
+    style="@style/ShutterGroup" >
+    <com.android.camera.ui.ShutterButton
+        android:id="@+id/shutter_button_video"
+        style="@style/ShutterButton"
+        android:layout_gravity="center"
+        android:contentDescription="@string/accessibility_video_shutter_button"
+        android:src="@drawable/btn_video" />
+</LinearLayout>

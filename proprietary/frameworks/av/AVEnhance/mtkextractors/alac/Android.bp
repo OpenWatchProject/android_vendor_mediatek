@@ -1,0 +1,46 @@
+cc_library_shared {
+    srcs: [
+        "CAFExtractor.cpp",
+    ],
+
+    include_dirs: [
+        "frameworks/av/media/libstagefright/include",
+        "vendor/mediatek/proprietary/frameworks/av/AVEnhance/libmtkavenhancements",
+    ],
+
+    shared_libs: [
+        "libmtkavenhancements",
+        "liblog",
+        "libmediandk",
+        "libcutils",
+        "libstagefright_foundation",
+        "libmedia",
+    ],
+
+    static_libs: [
+        "libfifo",
+        "libutils",
+        "libavextensions",
+    ],
+
+    name: "libmtkalacextractor",
+    owner: "mtk",
+    relative_install_path: "extractors",
+
+    compile_multilib: "first",
+
+    cflags: [
+        "-Werror",
+        "-Wall",
+        "-fvisibility=hidden",
+    ],
+    version_script: "exports.lds",
+
+    sanitize: {
+        cfi: true,
+        misc_undefined: [
+            "unsigned-integer-overflow",
+            "signed-integer-overflow",
+        ],
+    },
+}

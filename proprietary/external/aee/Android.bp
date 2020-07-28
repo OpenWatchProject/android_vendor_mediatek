@@ -1,0 +1,16 @@
+mtk_aee_defaults {
+    name: "mtk_libaed_defaults",
+    // cflags, shared_libs in aee.go
+}
+
+mtk_aee_vendor_defaults {
+    name: "mtk_libaedv_defaults",
+    // cflags, shared_libs in aee.go
+}
+
+subdirs = [
+    "binary",
+    "build",
+    "direct-coredump",
+    "mrdump",
+]

@@ -1,0 +1,387 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+ * Copyright (C) 2007-2008 Esmertec AG.
+ * Copyright (C) 2007-2008 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="app_label">Хабар алмасу</string>
+    <string name="new_message">Жаңа хабар</string>
+    <string name="menu_call_back"><xliff:g id="name">%s</xliff:g> қоңырау шалу</string>
+    <string name="menu_send_email"><xliff:g id="name">%s</xliff:g> электрондық хат жіберу</string>
+    <string name="menu_compose_new">Жасау</string>
+    <string name="menu_preferences">Параметрлер</string>
+    <string name="menu_add_address_to_contacts"><xliff:g id="contactEmailOrNumber">%s</xliff:g> Контактілер тізіміне қосу</string>
+    <string name="menu_call">Қоңырау шалу</string>
+    <string name="menu_search">Іздеу</string>
+    <string name="menu_delete_all">Барлық тізбектерді жою</string>
+    <string name="menu_delete">Тізбекті жою</string>
+    <string name="menu_view">Тізбекті көрсету</string>
+    <string name="menu_debug_dump">ДАМПТЫҢ КҮЙІН КЕЛТІРУ</string>
+    <string name="refreshing">Жаңарту\u2026</string>
+    <string name="menu_cell_broadcasts">Хабарларды кеңінен тарату торабы</string>
+    <string name="has_draft">Нобай</string>
+    <string name="no_subject_view">(Тақырып жоқ)</string>
+    <string name="messagelist_sender_self">Мен</string>
+    <string name="view_slideshow">Слайдшоуды көрсету</string>
+    <string name="view_message_details">Мәліметтерді көрсету</string>
+    <string name="view_delivery_report">Есепті көрсету</string>
+    <string name="delete_message">Жою</string>
+    <string name="expire_on">"Мерзімі өтуде: <xliff:g id="date">%s</xliff:g>"</string>
+    <string name="kilobyte">кб</string>
+    <string name="undelivered_msg_dialog_title">Жеткізілмеген хабар</string>
+    <string name="undelivered_msg_dialog_body">Бұл хабарды жіберу мүмкін емес.\nЖасау талпынысы: <xliff:g id="message">%s</xliff:g>.</string>
+    <string name="undelivered_sms_dialog_body">Бұл хабарды жіберу мүмкін емес.</string>
+    <string name="delete_thread">Тізбекті жою</string>
+    <string name="menu_forward">Қайта жіберу</string>
+    <string name="download">Жүктеу</string>
+    <string name="downloading">Жүктеу</string>
+    <string name="inline_subject">&lt;Тақырып: <xliff:g id="subject">%s</xliff:g>&gt;</string>
+    <string name="drm_protected_text">"* DRM құжатымен қорғалған мәтін *"</string>
+    <string name="insufficient_drm_rights">Анықталған DRM құқықтары жеткіліксіз.</string>
+    <string name="copy_message_text">Мәтінді көшіру</string>
+    <string name="message_options">Хабар опциялары</string>
+    <string name="slideshow_options">Слайдшоу опциялары</string>
+    <string name="done">Дайын</string>
+    <string name="move_up">Жоғары тасымалдау</string>
+    <string name="move_down">Төмен тасымалдау</string>
+    <string name="remove_slide">Слайдты жою</string>
+    <string name="add_slide">Слайд қосу</string>
+    <string name="add_slide_hint">Жаңа слайд жасау үшін, таңдаңыз.</string>
+    <string name="discard_slideshow">Слайдшоуды жою</string>
+    <string name="slide_show_part"><xliff:g id="part">%1$s</xliff:g>/<xliff:g id="total">%2$s</xliff:g> бөлімі</string>
+    <string name="remove_text">Мәтінді жою</string>
+    <string name="add_picture">Сурет қосу</string>
+    <string name="remove_picture">Суретті жою</string>
+    <string name="add_music">Музыка қосу</string>
+    <string name="remove_music">Музыканы жою</string>
+    <string name="add_video">Бейне қосу</string>
+    <string name="remove_video">Бейнені жою</string>
+    <string name="to_hint">Кімге</string>
+    <string name="subject_hint">Тақырып</string>
+    <string name="add_attachment">Тіркеу</string>
+    <string name="add_subject">Тақырыпты қосу</string>
+    <string name="discard">Жою</string>
+    <string name="view">Көрсету</string>
+    <string name="replace">Ауыстыру</string>
+    <string name="remove">Жою</string>
+    <string name="send">Жіберу</string>
+    <string name="mms">MMS</string>
+    <string name="send_mms">MMS жіберу</string>
+    <string name="all_threads">Барлық тізбектер</string>
+    <string name="type_to_compose_text_enter_to_send">Хабарды енгізу</string>
+    <string name="open_keyboard_to_compose_message">Хабарды енгізу үшін, пернетақтаны ашу</string>
+    <string name="sending_disabled_not_default_app">Жіберу өшірілді</string>
+    <string name="compose_disabled_toast">Жасау мүмкін емес. Әдепкі SMS бағдарламасы емес.</string>
+    <string name="compressing">Сурет тым үлкен. Қысылуда\u2026</string>
+    <string name="unsupported_media_format"><xliff:g id="name">%1$s</xliff:g> қолдалмайтын пішім</string>
+    <string name="select_different_media"><xliff:g id="name">%1$s</xliff:g> таңдауды өзгертіңіз.</string>
+    <string name="exceed_message_size_limitation">Хабар өлшемі шегіне жетті.</string>
+    <string name="message_too_big_for_video">Бейнені тіркеу үшін, хабар тым үлкен.</string>
+    <string name="failed_to_add_media"><xliff:g id="name">%1$s</xliff:g> хабарға қосу мүмкін емес.</string>
+    <string name="failed_to_resize_image">Суреттің өлшемін өзгерту мүмкін болмады.</string>
+    <string name="resize_image_error_information">Бұл суреттің өлшемі өзгертілсе де, жіберу үшін тым үлкен.</string>
+    <string name="forward_prefix">Fwd:\u0020</string>
+    <string name="discard_message">Жою</string>
+    <string name="discard_message_reason">Нақты алушылар көрсетілмегендіктен, хабар жойылады.</string>
+    <string name="has_invalid_recipient">&lt;<xliff:g id="name">%1$s</xliff:g>&gt;</string>
+    <string name="invalid_destination">Жарамсыз тағайындалған мекенжай.</string>
+    <string name="service_not_activated">Қызмет желіде белсендірілмеген.</string>
+    <string name="service_message_not_found">Хабардың мерзімі өткен немесе қолжетімсіз.</string>
+    <string name="service_network_problem">Желі қатесі.</string>
+    <string name="invalid_recipient_message">Алушыларды дұрыс көрсетіңіз, әйтпесе олар хабарды алмайды.</string>
+    <string name="cannot_send_message">Бұл хабарды жіберу мүмкін емес</string>
+    <string name="cannot_send_message_reason">Хабардың нақты алушылары жоқ.</string>
+    <string name="cannot_forward_drm_obj">Хабарға қосылған DRM нысанын қайта жіберу мүмкін емес.</string>
+    <string name="converting_to_picture_message">Мультимедиа хабарына түрлендіру\u2026</string>
+    <string name="converting_to_text_message">Мәтіндік хабарға түрлендіру\u2026</string>
+    <string name="cannot_add_slide_anymore">Қосымша слайдтарды қосу мүмкін емес.</string>
+    <string name="cannot_add_picture_and_video">Бір слайдқа бейнені және суретті қосу мүмкін емес.</string>
+    <string name="cannot_save_message">Хабарды сақтау мүмкін емес.</string>
+    <string name="message_saved_as_draft">Хабар нобай ретінде сақталды.</string>
+    <string name="too_many_recipients">Бұл хабарда көп алушылар бар (<xliff:g id="currentCount">%1$s</xliff:g>). Алушылардың максималды саны <xliff:g id="maxLimit">%2$s</xliff:g>.</string>
+    <string name="too_many_attachments">Тіркемелердің <xliff:g id="maxLimit">%1$s</xliff:g> шегі орнатылған. Тек бастапқы <xliff:g id="currentCount">%2$s</xliff:g> тіркеме қосылады.</string>
+    <string name="adding_attachments_title">Тіркемелерді қосу</string>
+    <string name="adding_attachments">Элементтер слайдшоуға қосылғанша, күтіңіз.</string>
+    <string name="building_slideshow_title">Слайдшоу жасау</string>
+    <string name="cannot_play_audio">Аудионы ойнату мүмкін емес.</string>
+    <string name="preview">Алдын-ала көру</string>
+    <string name="preview_slideshow">Алдын-ала көру</string>
+    <string name="replace_image">Суретті ауыстыру</string>
+    <string name="duration_sec">Ұзақтығы (<xliff:g id="duration">%s</xliff:g> сек.) </string>
+    <string name="duration_selector_title">"Слайд көрсету ұзақтығы"</string>
+    <string name="layout_selector_title">"Слайдшоу макеті"</string>
+    <string name="layout_top">Орналасу (жоғары)</string>
+    <string name="layout_bottom">Орналасу (төмен)</string>
+    <string name="type_to_compose_text_or_leave_blank">Хабарды енгізу немесе орынды бос қалдыру</string>
+    <string name="duration_not_a_number">Ұзақтық санмен берілуі тиіс</string>
+    <string name="duration_zero">Ұзақтық нөл секундтан үлкен болуы тиіс</string>
+    <string name="secs">секунд</string>
+    <string-array name="select_dialog_items">
+         <item>1 секунд</item>
+         <item>2 секунд</item>
+         <item>3 секунд</item>
+         <item>4 секунд</item>
+         <item>5 секунд</item>
+         <item>6 секунд</item>
+         <item>7 секунд</item>
+         <item>8 секунд</item>
+         <item>9 секунд</item>
+         <item>10 секунд</item>
+         <item>Басқа желілер\u2026</item>
+    </string-array>
+    <string name="menu_view_contact">Контактіні көру</string>
+    <string name="menu_add_to_contacts">Контактілер тізіміне қосу</string>
+    <string name="hidden_sender_address">Жіберушінің мекенжайы жасырулы</string>
+    <string name="yes">OK</string>
+    <string name="no">Болдырмау</string>
+    <string name="set">Орнату</string>
+    <string name="play">Ойнату</string>
+    <string name="edit">Өңдеу</string>
+    <string name="try_to_send">Жіберіп көру</string>
+    <string name="preferences_title">A-GPS параметрлері</string>
+    <string name="restore_default">"Әдепкі параметрлерді қалпына келтіру"</string>
+    <string name="pref_notification_settings_title">Хабарландыру параметрлері</string>
+    <string name="pref_mms_settings_title">"Мультимедиа хабарының параметрлері"</string>
+    <string name="pref_sms_settings_title">"Мәтін хабарының (SMS) параметрлері"</string>
+    <string name="pref_sms_storage_title">жад параметрлері</string>
+    <string name="pref_title_sms_disabled">SMS өшірілді</string>
+    <string name="pref_summary_sms_disabled">Әдепкі SMS бағдарламасында хабар алмасу жасау үшін түртіңіз</string>
+    <string name="pref_title_sms_enabled">SMS қосылды</string>
+    <string name="pref_summary_sms_enabled">Әдепкі SMS бағдарламасын өзгерту үшін түртіңіз</string>
+    <string name="pref_summary_manage_sim_messages">SIM картаңызда сақталған хабарларды басқару</string>
+    <string name="pref_summary_mms_delivery_reports">Әр жіберген хабар үшін жеткізу туралы есепті сұрау</string>
+    <string name="pref_summary_mms_read_reports">Әр жіберген хабар үшін оқу туралы есепті сұрау</string>
+    <string name="pref_summary_sms_delivery_reports">Әр жіберген хабар үшін жеткізу туралы есепті сұрау</string>
+    <string name="pref_summary_auto_delete">Шектік мәнге келгенде ескі хабарларды жою</string>
+    <string name="pref_summary_delete_limit">Әр  әңгіме үшін <xliff:g id="count">%1$s</xliff:g> хабар</string>
+    <string name="pref_summary_mms_group_mms">Алушылар бірнеше болғанда бір хабар жіберу үшін MMS пайдаланыңыз</string>
+    <string name="pref_title_manage_sim_messages">SIM карта хабарларын басқару</string>
+    <string name="pref_title_mms_delivery_reports">Жеткізу туралы есепті сұрау</string>
+    <string name="pref_title_mms_group_mms">Топтық хабар жіберу</string>
+    <string name="pref_title_mms_read_reports">Оқу туралы есепті сұрау</string>
+    <string name="pref_title_sms_delivery_reports">Жеткізу туралы есепті сұрау</string>
+    <string name="pref_title_auto_delete">Ескі хабарларды жою</string>
+    <string name="pref_title_sms_delete">Мәтіндік хабар шегі</string>
+    <string name="pref_title_mms_delete">Мультимедиа хабарының шегі</string>
+    <string name="pref_title_notification_enabled">Хабарландырулар</string>
+    <string name="pref_title_notification_vibrateWhen">Діріл</string>
+    <string name="pref_title_notification_ringtone">Дыбыс</string>
+    <string name="pref_messages_to_save">Сақталуы қажет хабарлар санын орнатыңыз</string>
+    <string name="silent_ringtone">Дыбыссыз</string>
+    <string name="prefDialogTitle_vibrateWhen">Діріл</string>
+    <string name="pref_title_mms_auto_retrieval">Автоматты түрде жүктеу</string>
+    <string name="pref_summary_mms_auto_retrieval">Хабарларды автоматты түрде қабылдау</string>
+    <string name="pref_title_mms_retrieval_during_roaming">Роумингте автоматты түрде жүктеу</string>
+    <string name="pref_summary_mms_retrieval_during_roaming">Роуминг кезінде хабарларды автоматты түрде алу</string>
+    <string name="confirm_dialog_title">Жою</string>
+    <string name="confirm_dialog_locked_title">Құлыпталған хабарды жою қажет пе?</string>
+    <plurals name="confirm_delete_conversation">
+        <item quantity="one">Бір әңгіме жойылады</item>
+        <item quantity="other"><xliff:g id="number" example="15">%1$s</xliff:g> әңгіме жойылады</item>
+    </plurals>
+    <string name="confirm_delete_conversation">Барлық тізбек жойылады.</string>
+    <string name="confirm_delete_all_conversations">Барлық тізбек жойылады.</string>
+    <string name="confirm_delete_message">Хабар жойылады.</string>
+    <string name="confirm_delete_locked_message">Осы құлыпталған хабарды жою қажет пе?</string>
+    <string name="confirm_delete_all_SIM_messages">SIM картадағы барлық хабар жойылады.</string>
+    <string name="confirm_delete_SIM_message">SIM картадағы бұл хабар жойылады.</string>
+    <string name="delete_unlocked">Құлыпталған хабарларды жою</string>
+    <string name="delete">Жою</string>
+    <string name="select_conversations">Әңгімелерді таңдау</string>
+    <string name="no_conversations">Әңгімелер жоқ</string>
+    <string name="loading_conversations">Әңгімелер жүктеліп жатыр.</string>
+    <string name="cannot_get_details">Толық мәлімет алу мүмкін емес</string>
+    <string name="message_details_title">Хабар мәліметтері</string>
+    <string name="message_type_label">Түрі:\u0020</string>
+    <string name="text_message">Мәтіндік хабар</string>
+    <string name="multimedia_message">Мультимедиа хабары</string>
+    <string name="multimedia_notification">Мультимедиа хабары туралы хабарландыру</string>
+    <string name="from_label">Кімнен:\u0020</string>
+    <string name="to_address_label">Кімге:\u0020</string>
+    <string name="bcc_label">Жасырын көшірме:\u0020</string>
+    <string name="sent_label">Жіберілді:\u0020</string>
+    <string name="received_label">Қабылданды:\u0020</string>
+    <string name="saved_label">Сақталды:\u0020</string>
+    <string name="subject_label">Тақырыбы:\u0020</string>
+    <string name="message_size_label">Хабар көлемі:\u0020</string>
+    <string name="priority_label">Басымдылық:\u0020</string>
+    <string name="priority_high">Жоғары</string>
+    <string name="priority_normal">Қалыпты</string>
+    <string name="priority_low">Төмен</string>
+    <string name="message_class_label">Хабар класы:\u0020</string>
+    <string name="error_code_label">Қате коды:\u0020</string>
+   <string name="menu_edit">Өңдеу</string>
+   <string name="menu_delete_messages">Хабарларды жою</string>
+   <string name="menu_delete_all_messages">Барлық хабарларды жою</string>
+   <string name="menu_lock">Құлыптау</string>
+   <string name="menu_unlock">Құлыптан босату</string>
+    <string name="sim_copy_to_phone_memory" product="tablet">Планшет жадына көшіру</string>
+    <string name="sim_copy_to_phone_memory" product="default">Телефон жадына көшіру</string>
+    <string name="sim_delete">Жою</string>
+    <string name="sim_manage_messages_title">SIM картадағы мәтіндік хабарлар</string>
+    <string name="sim_view">Көрсету</string>
+    <string name="sim_empty">SIM картада хабарлар жоқ.</string>
+    <string name="delivery_header_title">Есеп хат</string>
+    <string name="status_none">(Жоқ)</string>
+    <string name="status_pending">Күтуде</string>
+    <string name="status_read">Оқылғандар</string>
+    <string name="status_received">Қабылданды</string>
+    <string name="status_failed">Сәтсіз</string>
+    <string name="status_unread">Оқылмағандар</string>
+    <string name="status_rejected">Қабылданбағандар</string>
+    <string name="recipient_label">Алушы:\u0020</string>
+    <string name="status_label">Күй:\u0020</string>
+    <string name="delivered_label">Жеткізілді:\u0020</string>
+    <string name="attach_image">Суреттер</string>
+    <string name="attach_take_photo">Суретке түсіру</string>
+    <string name="attach_video">Видео</string>
+    <string name="attach_record_video">Видеоға түсіру</string>
+    <string name="attach_sound">Аудио</string>
+    <string name="attach_record_sound">Аудио жазу</string>
+    <string name="attach_slideshow">Слайд-шоу</string>
+    <string name="select_bottom_text">Төмендегі мәтін</string>
+    <string name="select_top_text">Жоғарыдағы мәтін</string>
+    <string name="delivery_toast_body">Хабарды қабылдаған %s </string>
+    <plurals name="notification_multiple">
+        <item quantity="one">Оқылмаған хабар %d.</item>
+        <item quantity="other">Оқылмаған хабарлар %d.</item>
+    </plurals>
+    <string name="notification_multiple_title">Жаңа хабар</string>
+    <string name="notification_failed_multiple"><xliff:g id="count">%s</xliff:g> хабарды жіберу мүмкін болмады.</string>
+    <string name="notification_failed_multiple_title">Хабарлар жіберілмеді</string>
+    <string name="sim_full_title">SIM карта толды</string>
+    <string name="sim_full_body">Біраз орынды босату үшін кейбір хабарларды жойыңыз.</string>
+    <string name="sms_full_title">Хабар жады толды</string>
+    <string name="sms_full_body">Жадтың толып кетуіне байланысты кіріс хабарлары қабылданбады. Ескі хабарларды жойыңыз.</string>
+    <string name="sms_rejected_title">Мәтін хабары қабылданбады</string>
+    <string name="sms_rejected_body">Белгісіз себептерге байланысты кіріс хабар қабылданбады.</string>
+    <string name="type_audio">Аудио</string>
+    <string name="type_picture">Сурет</string>
+    <string name="type_video">Видео</string>
+    <string name="confirm">Растаңыз</string>
+    <string name="message_send_read_report">Оқылғандығы туралы есеп жіберіледі.</string>
+    <string name="message_queued">Хабарды қазір жіберу мүмкін емес. Қызмет көрсету аясы қолжетімді болғанда жіберіледі.</string>
+    <string name="fdn_check_failure">Хабарларды тек рұқсат етілген нөмірлерге жібере аласыз.</string>
+    <string name="no_subject">(Тақырып жоқ)</string>
+    <string name="unknown_sender">Белгісіз жіберуші</string>
+    <string name="dl_failure_notification"> <xliff:g id="subject">%1$s</xliff:g> тақырыбындағы хабарды <xliff:g id="from">%2$s</xliff:g> жүктеп алу сәтсіз аяқталды.</string>
+    <string name="rate_limit_surpassed">Растаңыз</string>
+    <string name="confirm_rate_limit">Жіберілетін мультимедиалық хабарлар өте көп. Жалғастыру қажет пе?</string>
+    <string name="message_download_failed_title">Хабар жүктеп алынбады</string>
+    <string name="message_send_failed_title">Хабар жіберілмеді</string>
+    <string name="message_failed_body">Хабарды көру үшін таңдаңыз және әрекетті қайталаңыз.</string>
+    <string name="download_later">қазірше жүктеп алу мүмкін емес. Кейінірек әрекеттеніп көріңіз.</string>
+    <string name="no_apn">Құрылғыда APN көрсетілмеген.</string>
+    <string name="select_audio">Аудио таңдау</string>
+    <string name="copy_to_sdcard">Тіркемені сақтау</string>
+    <string name="copy_to_sdcard_success">Тіркеме сақталды</string>
+    <string name="copy_to_sdcard_fail">Тіркемені сақтау мүмкін емес</string>
+    <string name="save_ringtone">Рингтон ретінде сақтау</string>
+    <string name="saved_ringtone">Рингтон сақталды</string>
+    <string name="saved_ringtone_fail">Рингтонды сақтау сәтсіз аяқталды</string>
+    <string name="menu_insert_smiley">Смайлик енгізу</string>
+    <string name="menu_group_participants">Қатысушылар тобы</string>
+    <string name="select_link_title">Әрекетті таңдау</string>
+    <string name="slide_number">Слайд <xliff:g id="number" example="5">%s</xliff:g></string>
+    <plurals name="slide_duration">
+        <item quantity="one"><xliff:g id="number" example="1">%s</xliff:g> секунд</item>
+        <item quantity="few"><xliff:g id="number" example="2">%s</xliff:g> секунд</item>
+        <item quantity="other"><xliff:g id="number" example="15">%s</xliff:g> секунд</item>
+    </plurals>
+    <string name="delivery_report_activity">Жеткізу туралы есеп</string>
+    <string name="storage_limits_activity">Жад шектеуі</string>
+    <string name="change_duration_activity">Ұзақтықты өзгерту</string>
+    <string name="edit_slideshow_activity">Слайд-шоуды өңдеу</string>
+    <string name="recipient_list_activity">Қатысушылар тобы</string>
+    <string name="edit_slide_activity">Слайдты өңдеу</string>
+    <string name="slideshow_activity">Слайд-шоу</string>
+    <string name="class_0_message_activity">0-дік класс хабары</string>
+    <string name="search_label">Хабар алмасу</string>
+    <string name="search_hint">Хабарды іздеу</string>
+    <string name="search">Хабар алмасу</string>
+    <string name="search_setting_description">Хабарыңыздағы мәтін</string>
+    <string name="search_empty">Сәйкестік жоқ</string>
+    <plurals name="search_results_title">
+        <item quantity="one">\"<xliff:g id="search" example="???">%2$s</xliff:g>\" іздеу нәтижесі <xliff:g id="number" example="1">%1$s</xliff:g></item>
+        <item quantity="other">\"<xliff:g id="search" example="???">%2$s</xliff:g>\" іздеу нәтижесі <xliff:g id="number" example="15">%1$s</xliff:g> </item>
+    </plurals>
+    <string name="search_history"> \"<xliff:g id="search">%2$s</xliff:g>\" іздеу нәтижесі <xliff:g id="count">%1$s</xliff:g>  </string>
+    <string name="confirm_clear_search_title">Тазалау</string>
+    <string name="confirm_clear_search_text">Іздеу тарихы тазартылады.</string>
+    <string name="pref_mms_clear_search_history_title">Іздеу тарихын тазалау</string>
+    <string name="pref_mms_clear_search_history_summary">Алдыңғы хабар іздеу әрекетерін көрсетілген іздеу ұяшығынан жою</string>
+    <string name="save">Сақтау</string>
+    <string name="storage_limits_title">Хабарлар санын шектеу</string>
+    <string name="storage_limits_message">Әр сөйлесу үшін сақтаған хабарлардың санын шектеу қажет пе?</string>
+    <string name="storage_limits_setting">Шектеулер орнату</string>
+    <string name="storage_limits_setting_dismiss">Шектеусіз</string>
+    <string name="too_many_unsent_mms">Қазір хабар жіберу мүмкін емес. Жіберілмеген мультимедиалық хабарлар саны өте көп.</string>
+    <string name="sending_message">Жіберілуде\u2026</string>
+    <string name="pick_too_many_recipients">Алушылар саны өте көп</string>
+    <string name="adding_recipients">Алушыларды қосу \u2026</string>
+    <string name="draft_separator">,\u0020</string>
+    <string name="message_count_format">\u00a0<xliff:g id="number" example="1">%1$s</xliff:g></string>
+    <string name="message_count_notification"><xliff:g id="number" example="3">%1$s</xliff:g> жаңа хабар</string>
+    <plurals name="message_count_notification_overflow">
+        <item quantity="one"><xliff:g id="number" example="15">%1$s</xliff:g> басқа хабарлар"</item>
+        <item quantity="other"><xliff:g id="number" example="15">%1$s</xliff:g> басқа хабарлар"</item>
+    </plurals>
+    <string name="error_state">Сәйкес келмейтін күй</string>
+    <string name="error_state_text">тредтер мен алушылардың күйі сәйкес келмейді. Экранды суретке түсіріп, http://go/droidanizer арқылы жіберіңіз</string>
+    <plurals name="recipient_count">
+        <item quantity="other"><xliff:g id="number" example="15">%1$s</xliff:g> адам</item>
+    </plurals>
+    <string name="view_more_conversations">Басқа да хабарларды көрсету</string>
+    <string name="attachment_audio">Аудио</string>
+    <string name="attachment_slideshow">Слайд-шоу</string>
+    <string name="attachment_video">Видео</string>
+    <string name="attachment_picture">Сурет</string>
+    <string name="notification_separator">\u0020\u2014\u0020</string>
+    <string name="enumeration_comma">,\u0020</string>
+    <string name="message_timestamp_format"><xliff:g id="string" example="FredFlinstone">%1$s</xliff:g>\u0020-\u0020<xliff:g id="string" example="9:39AM">%2$s</xliff:g></string>
+    <string name="storage_warning_title">"Телефон жады толық"</string>
+    <string name="storage_warning_content">"Жаңа SMS/MMS хабарламаларды алмайсыз"</string>
+    <string name="cell_broadcast">Ұялы хабарлау</string>
+    <string name="cell_broadcast_title">Ұялы хабарлау параметрлері</string>
+    <string name="cell_broadcast_settings">SIM картаның ақпараттық хабарлар параметрлері</string>
+    <string name="menu_insert_quick_text">Жылдам мәтін енгізу</string>
+    <string name="select_quick_text">Жылдам мәтін таңдау</string>
+    <string name="add">Қосу</string>
+    <string name="quick_text_editor">Жылдам мәтінді өңдеу</string>
+    <string name="modify_successful">Сәтті өзгертілді</string>
+    <string name="modify_unsuccessful">Өзгерту сәтсіз аяқталды!</string>
+    <string name="delete_successful">Сәтті жойылды</string>
+    <string name="delete_unsuccessful">Жою сәтсіз аяқталды</string>
+    <string name="add_quick_text_successful">Жылдам мәтін енгізу сәтті аяқталды</string>
+    <string name="already_have_quick_text">Мұндай жылдам мәтін бұрыннан бар!</string>
+    <string name="file_attachment_common_name">Мульти файл(<xliff:g id="text">%s</xliff:g>)</string>
+    <string name="file_attachment_contains">қамтиды</string>
+    <string name="file_attachment_files">файлдар</string>
+    <string name="save_attachment">Тіркемені сақтау</string>
+    <string name="save_multi_attachment_notes">Мульти файлда бірнеше файл бар. Оларды тексеріп, сақтау қажет пе?</string>
+    <string name="save_single_attachment_notes">Мұндай формат MMS-те қолдау таппайды. Filemanager ішіне сақтау қажет пе?</string>
+    <string name="multi_files">Мультифайлдар</string>
+    <string name="save_single_supportformat_attachment_notes">Filemanager ішіне сақтау қажет пе?</string>
+    <string name="exceed_editor_size_limitation">Мәтін шегіне жетті.</string>
+    <string name="add_top_slide">Жоғарыға слайд қосу</string>
+    <string name="add_bottom_slide">Төменге слайд қосу</string>
+    <string name="label_mms_send_outbox_msg">MMS белсендіру</string>
+    <string name="desc_mms_send_outbox_msg">Шығыс жәшігіндегі барлық MMS хабарламаларды желіге жібереді</string>
+    <string name="banner_sms_promo_title_initial">Хабар алмасу сіздің SMS бағдарламаңыз емес</string>
+    <string name="banner_sms_promo_title_application"><xliff:g id="appName">%s</xliff:g> - сіздің SMS бағдарламаңыз</string>
+    <string name="banner_sms_promo_message">Оны Параметрлер ішінде өзгертуге болады.</string>
+</resources>

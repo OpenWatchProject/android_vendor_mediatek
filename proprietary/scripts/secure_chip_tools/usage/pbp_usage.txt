@@ -1,0 +1,75 @@
+==========================
+#sign(oem)
+==========================
+===========
+#legacy
+===========
+python pbp.py -i settings/pbp/pl_key.ini -g settings/pbp/pl_gfh_config_legacy.ini -func sign -o out/pbp/preloader-signed.bin prebuilt/pbp/preloader_NO_GFH.bin
+===========
+#pss
+===========
+python pbp.py -i settings/pbp/pl_key.ini -g settings/pbp/pl_gfh_config_pss.ini -func sign -o out/pbp/preloader-signed.bin prebuilt/pbp/preloader_NO_GFH.bin
+===========
+#cert chain
+===========
+python pbp.py -i settings/pbp/pl_key.ini -k out/pbp/key_cert.bin -g settings/pbp/pl_gfh_config_cert_chain.ini -c settings/pbp/pl_content.ini -func sign -o out/pbp/preloader-signed.bin prebuilt/pbp/preloader_NO_GFH.bin
+
+==========================
+#sign(image owner)
+==========================
+#for legacy/pss, the command is the same as sign(oem)
+===========
+#cert chain
+===========
+python pbp.py -k prebuilt/pbp/key_cert.bin -g settings/pbp/pl_gfh_config_cert_chain.ini -c settings/pbp/pl_content.ini -func sign -o out/pbp/preloader-signed.bin prebuilt/pbp/preloader_NO_GFH.bin
+
+==========================
+#resign(oem)
+==========================
+===========
+#legacy
+===========
+python pbp.py -i settings/pbp/pl_key.ini -k out/pbp/key_cert.bin -g settings/pbp/pl_gfh_config_legacy.ini -func sign -o out/pbp/preloader-signed.bin prebuilt/pbp/preloader.bin
+===========
+#pss
+===========
+python pbp.py -i settings/pbp/pl_key.ini -g settings/pbp/pl_gfh_config_pss.ini -func sign -o out/pbp/preloader-signed.bin prebuilt/pbp/preloader.bin
+===========
+#cert chain
+===========
+python pbp.py -i settings/pbp/pl_key.ini -k out/pbp/key_cert.bin -g settings/pbp/pl_gfh_config_cert_chain.ini -c settings/pbp/pl_content.ini -func sign -o out/pbp/preloader-signed.bin prebuilt/pbp/preloader.bin
+
+==========================
+#resign(image owner)
+==========================
+#for legacy/pss, the command is the same as sign(oem)
+===========
+#cert chain
+===========
+python pbp.py -k prebuilt/pbp/key_cert.bin -g settings/pbp/pl_gfh_config_cert_chain.ini -c settings/pbp/pl_content.ini -func sign -o out/pbp/preloader-signed.bin prebuilt/pbp/preloader.bin
+
+=============================================
+#generate ct_key image(oem only)
+=============================================
+===========
+#legacy
+===========
+python pbp.py -j keys/pbp/root_prvk.pem -func keybin_legacy -o out/pbp/ct_key.bin
+===========
+#pss
+===========
+python pbp.py -j keys/pbp/root_prvk.pem -func keybin_pss -o out/pbp/ct_key.bin
+===========
+
+=============================================
+#generate ct_key image hash(oem only)
+=============================================
+===========
+#legacy
+===========
+python pbp.py -j keys/pbp/root_prvk.pem -func keyhash_legacy -o out/pbp/ct_key_hash.bin
+===========
+#pss
+===========
+python pbp.py -j keys/pbp/root_prvk.pem -func keyhash_pss -o out/pbp/ct_key_hash.bin
+===========

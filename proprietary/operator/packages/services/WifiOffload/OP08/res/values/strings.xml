@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <!-- Displayed when WFC registration fails -->
+    <string name="wfcRegErrorTitle">Wi-Fi Calling</string>
+    <!-- WFC Operator Error Codes -->
+    <string-array name="wfcOperatorErrorCodes" translatable="false">
+        <item>100</item>     <!-- CODE_WFC_DEFAULT -->
+        <item>2006</item>    <!-- CODE_WFC_RNS_ALLOWED_RADIO_DENY -->
+        <item>2007</item>    <!-- CODE_WFC_RNS_ALLOWED_RADIO_NONE -->
+        <item>1201</item>    <!-- CODE_WFC_DNS_RECV_NAPTR_QUERY_RSP_ERROR -->
+        <item>1202</item>    <!-- CODE_WFC_DNS_RECV_RSP_SRV_QUERY_ERROR -->
+        <item>1203</item>    <!-- CODE_WFC_DNS_RECV_RSP_QUERY_ERROR -->
+        <item>1041</item>    <!-- CODE_WFC_DNS_RESOLVE_FQDN_ERROR -->
+        <item>1301</item>    <!-- CODE_WFC_INCORRECT_SIM_CARD_ERROR -->
+        <item>1401</item>    <!-- CODE_WFC_LOCAL_OR_NULL_PTR_ERROR -->
+        <item>1081</item>    <!-- CODE_WFC_EPDG_CON_OR_LOCAL_OR_NULL_PTR_ERROR -->
+        <item>1082</item>    <!-- CODE_WFC_EPDG_IPSEC_SETUP_ERROR -->
+        <item>1405</item>    <!-- CODE_WFC_TLS_CONN_ERROR -->
+        <item>1010</item>    <!-- CODE_WFC_SERVER_CERT_VALIDATION_ERROR -->
+        <item>1101</item>    <!-- CODE_WFC_SERVER_IPSEC_CERT_VALIDATION_ERROR -->
+        <item>1111</item>    <!-- CODE_WFC_SERVER_IPSEC_CERT_INVALID_ERROR -->
+        <item>1011</item>    <!-- CODE_WFC_SERVER_CERT_INVALID_ERROR -->
+        <item>1040</item>    <!-- ER04-DNS Error: Unable to receive response to A query -->
+    </string-array>
+
+    <!-- WFC Operator Error Messages showed as alerts -->
+    <string-array name="wfcOperatorErrorAlertMessages">
+        <item>Wi-Fi calling off</item>       <!-- CODE_WFC_DEFAULT -->
+        <item>No cellular network available. Connect to an available Wi-Fi Network to make calls.</item>    <!-- CODE_WFC_RNS_ALLOWED_RADIO_DENY -->
+        <item>String to be decided</item>    <!-- CODE_WFC_RNS_ALLOWED_RADIO_NONE -->
+        <item>Error02: DNS Error</item>      <!-- CODE_WFC_DNS_RECV_NAPTR_QUERY_RSP_ERROR -->
+        <item>Error03: DNS Error</item>      <!-- CODE_WFC_DNS_RECV_RSP_SRV_QUERY_ERROR -->
+        <item>Error04: DNS Error</item>      <!-- CODE_WFC_DNS_RECV_RSP_QUERY_ERROR -->
+        <item>Error041: DNS Error</item>     <!-- CODE_WFC_DNS_RESOLVE_FQDN_ERROR -->
+        <item>Error05: Invalid SIM card</item>   <!-- CODE_WFC_INCORRECT_SIM_CARD_ERROR -->
+        <item>Error07: Unable to Connect</item>  <!-- CODE_WFC_LOCAL_OR_NULL_PTR_ERROR -->
+        <item>Error081: Unable to connect</item> <!-- CODE_WFC_EPDG_CON_OR_LOCAL_OR_NULL_PTR_ERROR -->
+        <item>Error082: Unable to Connect</item> <!-- CODE_WFC_EPDG_IPSEC_SETUP_ERROR -->
+        <item>Error08: Unable to Connect</item>  <!-- CODE_WFC_TLS_CONN_ERROR -->
+        <item>Error010: Invalid Certificate</item>    <!-- CODE_WFC_SERVER_CERT_VALIDATION_ERROR -->
+        <item>Error101: Invalid Certificate</item>    <!-- CODE_WFC_SERVER_IPSEC_CERT_VALIDATION_ERROR -->
+        <item>Error111: Invalid Certificate</item>    <!-- CODE_WFC_SERVER_IPSEC_CERT_INVALID_ERROR -->
+        <item>Error011: Invalid Certificate</item>    <!-- CODE_WFC_SERVER_CERT_INVALID_ERROR -->
+        <item>Error04: DNS Error</item>    <!-- ER04-DNS Error: Unable to receive response to A query -->
+    </string-array>
+
+    <!-- WFC Operator Error Messages showed as notifications -->
+    <string-array name="wfcOperatorErrorNotificationMessages">
+        <item>Wi-Fi calling off</item>       <!-- CODE_WFC_DEFAULT -->
+        <item>No cellular network available. Connect to an available Wi-Fi Network to make calls.</item>    <!-- CODE_WFC_RNS_ALLOWED_RADIO_DENY -->
+        <item>String to be decided</item>    <!-- CODE_WFC_RNS_ALLOWED_RADIO_NONE -->
+        <item>Error02: DNS Error</item>      <!-- CODE_WFC_DNS_RECV_NAPTR_QUERY_RSP_ERROR -->
+        <item>Error03: DNS Error</item>      <!-- CODE_WFC_DNS_RECV_RSP_SRV_QUERY_ERROR -->
+        <item>Error04: DNS Error</item>      <!-- CODE_WFC_DNS_RECV_RSP_QUERY_ERROR -->
+        <item>Error041: DNS Error</item>     <!-- CODE_WFC_DNS_RESOLVE_FQDN_ERROR -->
+        <item>Error05: Invalid SIM card</item>   <!-- CODE_WFC_INCORRECT_SIM_CARD_ERROR -->
+        <item>Error07: Unable to Connect</item>  <!-- CODE_WFC_LOCAL_OR_NULL_PTR_ERROR -->
+        <item>Error081: Unable to connect</item> <!-- CODE_WFC_EPDG_CON_OR_LOCAL_OR_NULL_PTR_ERROR -->
+        <item>Error082: Unable to Connect</item> <!-- CODE_WFC_EPDG_IPSEC_SETUP_ERROR -->
+        <item>Error08: Unable to Connect</item>  <!-- CODE_WFC_TLS_CONN_ERROR -->
+        <item>Error010: Invalid Certificate</item>    <!-- CODE_WFC_SERVER_CERT_VALIDATION_ERROR -->
+        <item>Error101: Invalid Certificate</item>    <!-- CODE_WFC_SERVER_IPSEC_CERT_VALIDATION_ERROR -->
+        <item>Error111: Invalid Certificate</item>    <!-- CODE_WFC_SERVER_IPSEC_CERT_INVALID_ERROR -->
+        <item>Error011: Invalid Certificate</item>    <!-- CODE_WFC_SERVER_CERT_INVALID_ERROR -->
+        <item>Error04: DNS Error</item>    <!-- ER04-DNS Error: Unable to receive response to A query -->
+    </string-array>
+
+    <string name="wfcDefaultErrorMessage">REG99: Unable to Connect</string>  <!-- CODE_UNSPECIFIED -->
+    <string name="channel_name">WiFi Calling</string>
+    <string name="channel_description">WiFi Calling PDN Error Message</string>
+</resources>

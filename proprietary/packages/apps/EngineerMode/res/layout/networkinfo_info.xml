@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+
+        <Button
+            android:id="@+id/NetworkInfo_PageUp"
+            android:layout_width="160dip"
+            android:layout_height="wrap_content"
+            android:text="@string/NetworkInfo_PageUp" >
+        </Button>
+
+        <Button
+            android:id="@+id/NetworkInfo_PageDown"
+            android:layout_width="160dip"
+            android:layout_height="wrap_content"
+            android:text="@string/NetworkInfo_PageDown" >
+        </Button>
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" >
+        <ScrollView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" >
+
+            <TextView
+                android:id="@+id/NetworkInfo_Info"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent" >
+            </TextView>
+        </ScrollView>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/NetworkInfo_List_Header"
+                android:visibility="gone"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent" >
+            </TextView>
+            <ListView
+                android:id="@+id/NetworkInfo_List"
+                android:visibility="gone"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:dividerHeight="1dp"
+                android:divider="#FF303030" >
+            </ListView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/NetworkInfo_tx"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/page_info"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent" >
+            </TextView>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="10dp"
+                android:background="#FF909090" >
+            </View>
+            <TextView
+                android:id="@+id/current_force_tx_ant"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:text="@string/current_force_tx_ant" >
+            </TextView>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="10dp"
+                android:background="#FF909090" >
+            </View>
+            <TextView
+                android:id="@+id/current_tx_ant"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:text="@string/current_tx_ant" >
+            </TextView>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="10dp"
+                android:background="#FF909090" >
+            </View>
+            <TextView
+                android:id="@+id/force_tx_ant_to"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:text="@string/force_tx_ant_to" >
+            </TextView>
+            <RadioGroup
+                android:id="@+id/tx_radio_group"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:orientation="vertical" >
+                <RadioButton
+                    android:id="@+id/tx_radio_0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/force_tx_ant_radio0" >
+                </RadioButton>
+
+                <RadioButton
+                    android:id="@+id/tx_radio_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/force_tx_ant_radio1" >
+                </RadioButton>
+            </RadioGroup>
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                    <Button
+                        android:id="@+id/tx_set"
+                        android:layout_width="160dip"
+                        android:layout_height="wrap_content"
+                        android:text="@string/force_tx_ant_set" >
+                    </Button>
+                    <Button
+                        android:id="@+id/tx_enable"
+                        android:layout_width="160dip"
+                        android:layout_height="wrap_content"
+                        android:text="@string/force_tx_ant_disable" >
+                    </Button>
+            </LinearLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="10dp"
+                android:background="#FF909090" >
+            </View>
+        </LinearLayout>
+    </FrameLayout>
+</LinearLayout>

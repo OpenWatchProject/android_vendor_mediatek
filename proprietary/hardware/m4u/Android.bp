@@ -1,0 +1,40 @@
+bootstrap_go_package {
+    name: "soong-libm4u-mediatek",
+    pkgPath: "android/soong/libm4u/mediatek",
+    deps: [
+        "soong-android",
+        "soong-cc",
+    ],
+    srcs: [
+        "libm4u.go",
+    ],
+    pluginFor: ["soong_build"],
+}
+
+mtk_libm4u_defaults {
+    name: "libm4u_defaults",
+    srcs: [
+        "2.0/m4u_lib.cpp",
+    ],
+    product_variables: {
+        eng: {
+            cflags: [
+                "-DM4U_DBG",
+            ],
+        },
+    },
+}
+
+cc_library_shared {
+    name: "libm4u",
+    proprietary: true,
+    owner: "mtk",
+    shared_libs: [
+        "libutils",
+        "liblog",
+    ],
+    compile_multilib: "both",
+    defaults: [
+        "libm4u_defaults",
+    ],
+}

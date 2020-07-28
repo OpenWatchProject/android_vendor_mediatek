@@ -1,0 +1,7 @@
+  ptr->writeReg(0x0198 , 0x0,CAM_A);
+  ptr->writeReg(0x019c , 0x0,CAM_A);
+  ptr->writeReg(0x0194 , 0x10,CAM_A);
+  ptr->writeReg(0x118c , 0x80000020,CAM_A);
+  ptr->writeReg(0x11ec , 0x80000020,CAM_A);
+  ptr->writeReg(0x0190 , 0x10,CAM_A);
+  ptr->writeReg(0x1018 , 0x0,CAM_A);

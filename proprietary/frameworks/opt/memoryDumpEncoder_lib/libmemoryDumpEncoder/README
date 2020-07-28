@@ -1,0 +1,30 @@
+The lib file libmemoryDumpEncoder is shared library file.
+This lib is pre-built by MediaTek internal.
+
+
+WHAT IT DOES?
+=============
+
+The lib file supports memory dump raw data encrypted.
+
+
+HOW IT WAS BUILT?
+==================
+
+It needs the following library from AOSP:
+1.  libutils.so
+2.  libcutils.so
+3.  liblog.so
+
+All source/dependency modules of this module are already put in
+'vendor/mediatek/libs' folder.
+
+
+HOW TO USE IT?
+==============
+
+This lib is the default memory dump encoder implementation.
+If customer wants to encrypt modem memory dump by themselves, they have to 
+implement their own encryption lib, and replace the default lib with their
+new lib.
+

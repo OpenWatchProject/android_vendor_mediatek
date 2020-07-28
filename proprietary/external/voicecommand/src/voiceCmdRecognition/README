@@ -1,0 +1,22 @@
+This module creates the libvoicerecognition.so libary file.
+
+WHAT IT DOES?
+=============
+libvie is the main native library in voice features. voice ui, voice unlock, voice contact search, vow all use it
+it controls libaudiostream library to record pcm.
+it calls swip to recognize the different command and return the result to java service.
+
+HOW IT WAS BUILT?
+==================
+It needs the following library from AOSP:
+
+    libcutils, libutils, libstlport, libgui, libdl, libsqlite
+
+and the following libs from MediaTek:
+
+    libstagefright, libmedia, libaudiostream, libvoiceunlock, libvoiceui, libmtk_drvb, libmtk_drvb
+
+HOW TO USE IT?
+==============
+
+user can call the fuctions in this library by JNI layer.

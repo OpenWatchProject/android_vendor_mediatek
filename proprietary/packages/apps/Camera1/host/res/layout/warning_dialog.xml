@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.mediatek.camera.common.widget.RotateLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rotate_dialog_root_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:splitMotionEvents="false"
+    android:clickable="false"
+    android:focusableInTouchMode="false">
+
+    <RelativeLayout
+        android:id="@+id/dialog_layout_parent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#AA000000"
+        android:gravity="center">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="#FF282828"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/alert_dialog_title_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:dividerPadding="0dip"
+                    android:gravity="center"
+                    android:minHeight="48dp"
+                    android:orientation="horizontal"
+                    android:showDividers="middle">
+
+                    <ImageView
+                        android:id="@+id/alert_dialog_title_icon"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="6dp"
+                        android:layout_marginRight="6dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:maxLines="2"
+                        android:minHeight="48dp" />
+
+                    <TextView
+                        android:id="@+id/alert_dialog_title_name"
+                        style="@android:style/TextAppearance.Holo.DialogWindowTitle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="6dip"
+                        android:layout_marginRight="6dip"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:textSize="20sp"
+                        android:textColor="#FFFFFFFF"
+                        android:text="@string/pref_thermal_dialog_title"/>
+
+                    <TextView
+                        android:id="@+id/alert_dialog_time"
+                        style="@android:style/TextAppearance.Holo.Medium"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="36dip"
+                        android:layout_marginRight="16dip"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:maxLines="2"
+                        android:minHeight="48dp"
+                        android:textSize="14sp"
+                        android:textColor="#FFFFFFFF"/>
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="#FFFFFFFF"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/alert_dialog_content_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="100dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/alert_dialog_content"
+                    style="@android:style/TextAppearance.Holo.DialogWindowTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dip"
+                    android:layout_marginRight="16dip"
+                    android:ellipsize="end"
+                    android:gravity="center_vertical"
+                    android:minHeight="86dp"
+                    android:textSize="16sp"
+                    android:textColor="#FFFFFFFF"
+                    android:text="@string/pref_thermal_dialog_content"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="#FFFFFFFF"
+                    android:visibility="visible"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/alert_dialog_button_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:dividerPadding="0dip"
+                android:orientation="horizontal"
+                android:showDividers="middle">
+
+                <Button
+                    android:id="@+id/alert_dialog_button"
+                    style="@android:style/Widget.Holo.Button.Borderless"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:maxLines="2"
+                    android:minHeight="48dp"
+                    android:textSize="14sp"
+                    android:text="@android:string/ok"/>
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+</com.mediatek.camera.common.widget.RotateLayout>

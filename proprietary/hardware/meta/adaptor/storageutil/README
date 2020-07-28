@@ -1,0 +1,32 @@
+This directory contains libstorageutil library
+
+
+WHAT IT DOES?
+=============
+It provide partition state or mount related api for meta mode test.
+
+HOW IT WAS BUILT?
+==================
+
+It needs the following libs from AOSP:
+N/A
+
+and the following libs from MediaTek:
+N/A
+
+All source/dependency modules of this module are already put in
+'vendor/mediatek/libs' folder.
+
+
+HOW TO USE IT?
+==============
+
+Files in this directory is used to
+generate a library which's name is 'libstorageutil'
+
+
+
+The lib 'libstorageutil' is loaded when meta_tst and related libs,
+which for doing volume state or mount/unmount related test
+
+

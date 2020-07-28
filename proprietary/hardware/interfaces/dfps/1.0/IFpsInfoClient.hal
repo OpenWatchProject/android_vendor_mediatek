@@ -1,0 +1,25 @@
+package vendor.mediatek.hardware.dfps@1.0;
+
+import IFpsInfo;
+
+interface IFpsInfoClient {
+
+    regInfo(IFpsInfo info, uint64_t id) generates (Error error);
+
+    unregInfo(uint64_t id) generates (Error error);
+
+    setSingleLayer(int32_t single) generates (Error error);
+
+    setNumberDisplay(int32_t num) generates (Error error);
+
+    setHwcInfo(HwcInfo info) generates (Error error);
+
+    setInputWindows(string name, SimpleInputWindowInfo info) generates (Error error);
+
+    setForegroundInfo(int32_t pid, string packageName) generates (Error error);
+
+    setWindowFlag(int32_t flag, int32_t mask) generates (Error error);
+
+    forbidAdjustingVsync(int32_t forbid) generates (Error error);
+
+};

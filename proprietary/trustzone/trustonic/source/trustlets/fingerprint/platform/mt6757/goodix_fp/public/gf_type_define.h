@@ -1,0 +1,147 @@
+#ifndef __GF_TYPE_DEFINE_H__
+#define __GF_TYPE_DEFINE_H__
+
+#include <stdint.h>
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+#define GF_OPERATION_ID 1
+#define GF_USER_OPERATION_ID 2
+
+typedef enum {
+    GF_SENSOR_FACING_BACK = 0, //
+    GF_SENSOR_FACING_FRONT,
+} gf_sensor_facing_t;
+
+typedef enum {
+    GF_SAFE_CLASS_HIGH = 0, //
+    GF_SAFE_CLASS_MEDIUM,
+    GF_SAFE_CLASS_LOW,
+    GF_SAVE_CLASS_MAX, ///< The number of safe class. can't set this value.
+} gf_safe_class_t;
+
+typedef enum {
+    GF_NAV_MODE_NONE = 0, //
+    GF_NAV_MODE_ALL_DIRECTIONS = 1, ///<
+    GF_NAV_MODE_HOR_DIRECTIONS, ///<
+    GF_NAV_MODE_VER_DIRECTIONS,
+    GF_NAV_MODE_MAX
+} gf_nav_mode_t;
+
+typedef enum {
+    GF_SENSOR_316M = 0, //
+    GF_SENSOR_318M,
+    GF_SENSOR_3118M,
+    GF_SENSOR_516M,
+    GF_SENSOR_518M,
+    GF_SENSOR_5118M,
+    GF_SENSOR_816M,
+    GF_SENSOR_316,
+    GF_SENSOR_318,
+    GF_SENSOR_516,
+    GF_SENSOR_518,
+    GF_SENSOR_3208, ///< milan-f
+    GF_SENSOR_5216,
+} gf_sensor_type_t;
+
+typedef enum {
+    CMD_TEST_ENUMERATE = 0,
+    CMD_TEST_DRIVER,
+    CMD_TEST_SENSOR,
+    CMD_TEST_BAD_POINT,
+    CMD_TEST_PERFORMANCE,
+    CMD_TEST_SPI_PERFORMANCE,
+    CMD_TEST_SPI,
+    CMD_TEST_GET_VERSION,
+    CMD_TEST_DUMP_DATA,
+    CMD_TEST_CANCEL_DUMP_DATA,
+    CMD_TEST_FRR_FAR_GET_CHIP_TYPE,
+    CMD_TEST_FRR_FAR_RECORD_BASE_FRAME,
+    CMD_TEST_FRR_FAR_RECORD_ENROLL,
+    CMD_TEST_FRR_FAR_RECORD_AUTHENTICATE,
+    CMD_TEST_FRR_FAR_RECORD_AUTHENTICATE_FINISH,
+    CMD_TEST_FRR_FAR_PLAY_BASE_FRAME,
+    CMD_TEST_FRR_FAR_PLAY_ENROLL,
+    CMD_TEST_FRR_FAR_PLAY_AUTHENTICATE,
+    CMD_TEST_FRR_FAR_ENROLL_FINISH,
+    CMD_TEST_CANCEL_FRR_FAR,
+    CMD_TEST_RESET_PIN,
+    CMD_TEST_CANCEL,
+} gf_cmd_test_id_t;
+
+enum {
+    TEST_TOKEN_ERROR_CODE = 100,
+    TEST_TOKEN_SENSOR_TYPE,
+    TEST_TOKEN_ALGO_VERSION = 200,
+    TEST_TOKEN_PREPROCESS_VERSION,
+    TEST_TOKEN_FW_VERSION,
+    TEST_TOKEN_TEE_VERSION,
+    TEST_TOKEN_TA_VERSION,
+    TEST_TOKEN_CHIP_ID,
+    TEST_TOKEN_VENDOR_ID,
+    TEST_TOKEN_SENSOR_ID,
+    TEST_TOKEN_PRODUCTION_DATE,
+    TEST_TOKEN_AVG_DIFF_VAL = 300,
+    TEST_TOKEN_NOISE,
+    TEST_TOKEN_BAD_PIXEL_NUM,
+    TEST_TOKEN_LOCAL_BAD_PIXEL_NUM,
+    TEST_TOKEN_ALL_TILT_ANGLE,
+    TEST_TOKEN_BLOCK_TILT_ANGLE_MAX,
+    TEST_TOKEN_LOCAL_WORST,
+    TEST_TOKEN_SINGULAR,
+    TEST_TOKEN_IN_CIRCLE,
+    TEST_TOKEN_BIG_BUBBLE,
+    TEST_TOKEN_LINE,
+    TEST_TOKEN_GET_DR_TIMESTAMP_TIME = 400,
+    TEST_TOKEN_GET_MODE_TIME,
+    TEST_TOKEN_GET_CHIP_ID_TIME,
+    TEST_TOKEN_GET_VENDOR_ID_TIME,
+    TEST_TOKEN_GET_SENSOR_ID_TIME,
+    TEST_TOKEN_GET_FW_VERSION_TIME,
+    TEST_TOKEN_GET_IMAGE_TIME,
+    TEST_TOKEN_RAW_DATA_LEN,
+    TEST_TOKEN_IMAGE_QUALITY = 500,
+    TEST_TOKEN_VALID_AREA,
+    TEST_TOKEN_KEY_POINT_NUM,
+    TEST_TOKEN_INCREATE_RATE,
+    TEST_TOKEN_OVERLAY,
+    TEST_TOKEN_GET_RAW_DATA_TIME,
+    TEST_TOKEN_PREPROCESS_TIME,
+    TEST_TOKEN_ALGO_START_TIME,
+    TEST_TOKEN_GET_FEATURE_TIME,
+    TEST_TOKEN_ENROLL_TIME,
+    TEST_TOKEN_AUTHENTICATE_TIME,
+    TEST_TOKEN_AUTHENTICATE_ID,
+    TEST_TOKEN_AUTHENTICATE_UPDATE_FLAG,
+    TEST_TOKEN_AUTHENTICATE_FINGER_COUNT,
+    TEST_TOKEN_AUTHENTICATE_FINGER_ITME,
+    TEST_TOKEN_TOTAL_TIME,
+    TEST_TOKEN_RESET_FLAG = 600,
+    TEST_TOKEN_RAW_DATA = 700
+};
+
+typedef struct __attribute__((packed)) {
+    uint8_t version; // Current version is 0
+    uint64_t challenge;
+    uint64_t user_id; // secure user ID, not Android user ID
+    uint64_t authenticator_id; // secure authenticator ID
+    uint32_t authenticator_type; // hw_authenticator_type_t, in network order
+    uint64_t timestamp; // in network order
+    uint8_t hmac[32];
+} gf_hw_auth_token_t;
+
+typedef enum {
+    GF_HW_AUTH_NONE = 0,
+    GF_HW_AUTH_PASSWORD = (int)(1 << 0),
+    GF_HW_AUTH_FINGERPRINT = (int)(1 << 1),
+    // Additional entries should be powers of 2.
+    GF_HW_AUTH_ANY = (int)UINT32_MAX,
+} gf_hw_authenticator_type_t;
+
+#ifdef __cplusplus
+}
+#endif
+
+#endif // __GF_TYPE_DEFINE_H__

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+ * Copyright (C) 2007-2008 Esmertec AG.
+ * Copyright (C) 2007-2008 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+--><resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+   <string name="alerts">התרעות</string>
+    <string name="select_all">"בחר הכול"</string>
+    <string name="unselect_all">"בטל בחירה של הכול"</string>
+    <string name="delete">"מחק"</string>
+    <string name="select_cellbroadcasts">בחר התרעת חירום</string>
+    <plurals name="message_view_selected_message_count">
+        <item quantity="one"><xliff:g id="message_count" example="1">%d</xliff:g>נבחר</item>
+        <item quantity="other"><xliff:g id="message_count" example="9">%d</xliff:g> נבחרו</item>
+    </plurals>
+    <plurals name="confirm_delete_broadcast">
+        <item quantity="one">הודעת התרעה אחת נבחרה ותימחק</item>
+        <item quantity="other"><xliff:g id="number" example="15">%1$s</xliff:g> הודעות התרעות נבחרו ויימחקו</item>
+    </plurals>
+    <string name="enable_cmas_presidential_threat_alerts_title">הצג התרעה נשיאותית</string>
+    <string name="enable_cmas_presidential_threat_alerts_summary">הצג התרעות רמת כוננות נשיאותית</string>
+    <string name="enable_cmas_imminent_threat_alerts_title">התרעת סכנה מידית</string>
+    <string name="enable_cmas_imminent_threat_alerts_summary">הצג התרעות על סכנה מידית לנפש ולרכוש</string>
+    <string name="cmas_preview_alert_tone_title">תצוגה מקדימה של צליל ההתרעה</string>
+    <string name="cmas_preview_alert_tone_summary">הצג תצוגה מקדימה של צליל ההתרעה</string>
+    <string name="cmas_change_settings">האם אתה בטוח שברצונך לשנות את ההגדרות?</string>
+    <string name="cmas_disable_cmas">לא תקבל אף התרעה אם תשבית את השידור הסלולרי.</string>
+    <string name="cmas_enable_cmas_failed">הפתיחה נכשלה.</string>
+    <string name="enable_repeat_alert_title">השמע שוב את צלצול ההשכמה</string>
+    <string name="enable_repeat_alert_summary">להזכיר למשתמש שקיימת התרעה מקוטעת שלא נקראה</string>
+    <string name="enable_all_alert_title">כל ההתרעות פועלות</string>
+    <string name="enable_all_imminent_alerts_title">כל ההודעות על סכנה מידית</string>
+    <string name="enable_cell_broadcast_title">התרעות חירום</string>
+    <string name="alert_sound_volume">עוצמת קול של צלילי התרעה</string>
+    <string name="alert_volume_summary">שנה את עוצמת צליל ההתרעה</string>
+</resources>

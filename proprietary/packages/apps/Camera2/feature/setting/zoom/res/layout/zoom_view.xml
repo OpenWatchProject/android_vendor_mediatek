@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.mediatek.camera.common.widget.RotateLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/zoom_rotate_layout"
+    style="@style/ZoomScreenLayout">
+
+    <RelativeLayout
+        android:id="@+id/zoom_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/zoom_ratio"
+            style="@style/ZoomTextStyle" />
+    </RelativeLayout>
+</com.mediatek.camera.common.widget.RotateLayout>

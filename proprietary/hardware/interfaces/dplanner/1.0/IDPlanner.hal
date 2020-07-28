@@ -1,0 +1,7 @@
+package vendor.mediatek.hardware.dplanner@1.0;
+
+interface IDPlanner {
+    getConfig() generates (string config, string log);
+    setConfig(string config) generates (bool done, string log);
+    clearConfig() generates (bool done);
+};

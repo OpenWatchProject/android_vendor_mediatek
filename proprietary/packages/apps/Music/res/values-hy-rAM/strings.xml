@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+** Copyright 2007, The Android Open Source Project
+**
+** Licensed under the Apache License, Version 2.0 (the "License"); 
+** you may not use this file except in compliance with the License. 
+** You may obtain a copy of the License at 
+**
+**     http://www.apache.org/licenses/LICENSE-2.0 
+**
+** Unless required by applicable law or agreed to in writing, software 
+** distributed under the License is distributed on an "AS IS" BASIS, 
+** WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. 
+** See the License for the specific language governing permissions and 
+** limitations under the License.
+*/
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="onesong">1 երգ</string>
+    <plurals name="Nsongs">
+        <item quantity="other"><xliff:g id="count">%d</xliff:g> երգ</item>
+    </plurals>
+    <plurals name="Nsongscomp">
+        <item quantity="other"><xliff:g id="count_for_artist">%2$d</xliff:g> երգ՝ <xliff:g id="total_count">%1$d</xliff:g>-ից</item>
+    </plurals>
+    <plurals name="Nalbums">
+        <item quantity="one">1 ալբոմ</item>
+        <item quantity="other"><xliff:g id="count">%d</xliff:g> ալբոմ</item>
+    </plurals>
+    <skip/>
+    <string name="goto_start">Դարան</string>
+    <string name="party_shuffle">Երեկույթի նվագացուցակ</string>
+    <string name="party_shuffle_off">Երեկույթի նվագացուցակն անջատված է</string>
+    <string name="delete_item">"Ջնջել"</string>
+    <string name="shuffle_all">Խառնել բոլորը</string>
+    <string name="play_all">Նվագարկել բոլորը</string>
+    <string name="delete_artist_desc"><xliff:g id="artist">%s</xliff:g>-ի բոլոր երգերը ջնջվելու են:</string>
+    <string name="delete_artist_desc_nosdcard">Մշտապես ջնջե՞լ <xliff:g id="artist">%s</xliff:g>-ի բոլոր երգերը USB հիշողությունից:</string>
+    <string name="delete_album_desc">Ամբողջությամբ ջնջվելու է \"<xliff:g id="album">%s</xliff:g>\" ալբոմը:</string>
+    <string name="delete_album_desc_nosdcard">Մշտապես ջնջե՞լ \"<xliff:g id="album">%s</xliff:g>\" ալբոմը USB հիշողությունից ամբողջությամբ:</string>
+    <string name="delete_song_desc">\"<xliff:g id="song">%s</xliff:g>\" երգը ջնջվելու է:</string>
+    <string name="delete_song_desc_nosdcard">Մշտապես ջնջե՞լ \"<xliff:g id="song">%s</xliff:g>\" երգը USB հիշողությունից:</string>
+    <string name="delete_confirm_button_text">"Լավ"</string>
+    <plurals name="NNNtracksdeleted">
+        <item quantity="one">Ջնջվել է 1 երգ:</item>
+        <item quantity="other">Ջնջվել է <xliff:g id="songs_to_delete">%d</xliff:g>երգ:</item>
+    </plurals>
+    <string name="scanning">"SD քարտը սկանավորվում է` մեդիա գտնելու համար..."</string>
+    <string name="scanning_nosdcard">USB հիշողության զննում\u2026</string>
+    <string name="nowplaying_title">Այժմ նվագարկվող</string>
+    <string name="partyshuffle_title">Երեկույթի նվագացուցակ</string>
+    <string name="artists_title">Կատարողներ</string>
+    <string name="albums_menu">"Ալբոմներ"</string>
+    <string name="albums_title">"Ալբոմներ"</string>
+    <string name="tracks_menu">Երգեր</string>
+    <string name="tracks_title">Երգեր</string>
+    <string name="playlists_menu">Նվագացուցակներ</string>
+    <string name="playlists_title">Նվագացուցակներ</string>
+    <string name="videos_title">"Տեսանյութեր"</string>
+    <string name="all_title">Ողջ մեդիան</string>
+    <string name="browse_menu">Կատարողներ</string>
+    <string name="search_title">"Որոնել"</string>
+    <string name="no_tracks_title">Երգեր չկան</string>
+    <string name="no_videos_title">Տեսանյութեր չկան</string>
+    <string name="no_playlists_title">Նվագացուցակներ չկան</string>
+    <string name="delete_playlist_menu">"Ջնջել"</string>
+    <string name="edit_playlist_menu">"Խմբագրել"</string>
+    <string name="rename_playlist_menu">"Վերանվանել"</string>
+    <string name="playlist_deleted_message">Նվագացուցակը ջնջվեց:</string>
+    <string name="playlist_renamed_message">Նվագացուցակը վերանվանվեց:</string>
+    <string name="recentlyadded">Վերջերս հավելված</string>
+    <string name="recentlyadded_title">Վերջերս հավելված</string>
+    <string name="podcasts_listitem">Պոդքաստներ</string>
+    <string name="podcasts_title">Պոդքաստներ</string>
+    <string name="sdcard_missing_title">SD քարտ առկա չէ</string>
+    <string name="sdcard_missing_title_nosdcard">USB հիշողություն չկա</string>
+    <string name="sdcard_missing_message">Ձեր հեռախոսում SD քարտ տեղադրված չէ:</string>
+    <string name="sdcard_missing_message_nosdcard">Ձեր հեռախոսը USB հիշողություն չունի:</string>
+    <string name="sdcard_busy_title">SD քարտը առկա չէ</string>
+    <string name="sdcard_busy_title_nosdcard">USB պահոցը առկա չէ</string>
+    <string name="sdcard_busy_message">Ձեր մեդիա հիշողությունը զբաղված է:</string>
+    <string name="sdcard_busy_message_nosdcard">Ձեր USB հիշողությունը զբաղված է:</string>
+    <string name="sdcard_error_title">SD քարտի սխալ</string>
+    <string name="sdcard_error_title_nosdcard">USB հիշողության սխալ</string>
+    <string name="sdcard_error_message">Ձեր SD քարտում առաջացել է սխալ:</string>
+    <string name="sdcard_error_message_nosdcard">Ձեր USB հիշողությունում առաջացել է սխալ:</string>
+    <string name="unknown_artist_name">Անհայտ կատարող</string>
+    <string name="unknown_album_name">Անհայտ ալբոմ</string>
+    <string name="shuffle_on_notif">Խառնելը միացված է:</string>
+    <string name="shuffle_off_notif">Խառնելն անջատված է:</string>
+    <string name="repeat_off_notif">Կրկնումն անջատված է:</string>
+    <string name="repeat_current_notif">Ընթացիկ երգի կրկնում:</string>
+    <string name="repeat_all_notif">Բոլոր երգերի կրկնում:</string>
+    <string name="ringtone_menu">Օգտագործել որպես հեռախոսի զանգի ազդանշան</string>
+    <string name="ringtone_menu_short">Օգտագործել որպես զանգի ազդանշան</string>
+    <string name="ringtone_set">\"<xliff:g id="name" example="AlarmBell">%s</xliff:g>\"-ը տեղակայված է որպես հեռախոսի զանգի ազդանշան:</string>
+    <string name="play_selection">"Նվագարկել"</string>
+    <string name="add_to_playlist">Հավելել նվագացուցակում</string>
+    <string name="queue">Ընթացիկ նվագացուցակ</string>
+    <string name="new_playlist">"նոր"</string>
+    <string name="new_playlist_name_template">Նոր նվագացուցակ <xliff:g id="number">%d</xliff:g></string>
+    <plurals name="NNNtrackstoplaylist">
+        <item quantity="one">Նվագացուցակում հավելվեց 1 երգ</item>
+        <item quantity="other">Նվագացուցակում հավելվեց <xliff:g id="number" example="27">%d</xliff:g> երգ:</item>
+    </plurals>
+    <string name="emptyplaylist">Ընտրված նվագացուցակը դատարկ է:</string>
+    <string name="create_playlist_create_text">"Պահել"</string>
+    <string name="create_playlist_overwrite_text">Վրագրել</string>
+    <string name="service_start_error_title">Նվագարկման խնդիր</string>
+    <string name="service_start_error_msg">Անհնար է նվագարկել երգը:</string>
+    <string name="service_start_error_button">"Լավ"</string>
+    <string-array name="weeklist">
+        <item>"1 շաբաթ"</item>
+        <item>"2 շաբաթ"</item>
+        <item>"3 շաբաթ"</item>
+        <item>"4 շաբաթ"</item>
+        <item>"5 շաբաթ"</item>
+        <item>"6 շաբաթ"</item>
+        <item>"7 շաբաթ"</item>
+        <item>"8 շաբաթ"</item>
+        <item>"9 շաբաթ"</item>
+        <item>"10 շաբաթ"</item>
+        <item>"11 շաբաթ"</item>
+        <item>"12 շաբաթ"</item>
+    </string-array>
+    <string name="weekpicker_set">"Կատարված է"</string>
+    <string name="weekpicker_title">"Սահմանել ժամը"</string>
+    <color name="dragndrop_background">#e0103010</color>
+    <color name="expanding_child_background">#ff404040</color>
+    <string name="save_as_playlist">Պահել որպես նվագացուցակ</string>
+    <string name="clear_playlist">Մաքրել նվագացուցակը</string>
+    <string name="musicbrowserlabel">"Երաժշտություն"</string>
+    <string name="musicshortcutlabel">Երաժշտության նվագացուցակ</string>
+    <string name="mediaplaybacklabel">"Երաժշտություն"</string>
+    <string name="videobrowserlabel">"Տեսանյութեր"</string>
+    <string name="mediapickerlabel">"Երաժշտություն"</string>
+    <string name="playback_failed">Ներողություն, ֆայլի բացումը ձախողվեց:</string>
+    <string name="cancel">"Չեղարկել"</string>
+    <string name="remove_from_playlist">Հեռացնել նվագացուցակից</string>
+    <string name="streamloadingtext">Կապակցվում է <xliff:g id="host">%s</xliff:g>-ին\u2026</string>
+    <string name="mediasearch"><xliff:g id="term" example="Beethoven">%s</xliff:g>-ի որոնում հետևյալի միջոցով՝</string>
+    <string name="working_artists">Կատարողներ\u2026</string>
+    <string name="working_albums">Ալբոմներ\u2026</string>
+    <string name="working_songs">Երգեր\u2026</string>
+    <string name="working_playlists">Նվագացուցակներ\u2026</string>
+    <string name="loading">Բեռնվում է\u2026</string>
+    <string name="sort_by_track">Երիզներ</string>
+    <string name="sort_by_album">"Ալբոմներ"</string>
+    <string name="sort_by_artist">Կատարողներ</string>
+    <string name="music_picker_title">Երաժշտական երիզի ընտրում</string>
+    <string name="search_settings_description">Կատարողներ, ալբոմներ և երիզներ</string>
+    <string name="search_hint">Որոնել երաժշտություն</string>
+    <string name="fast_scroll_alphabet">\u0020ABCDEFGHIJKLMNOPQRSTUVWXYZ</string>
+    <string name="widget_initial_text">Հպեք՝ երաժշտություն ընտրելու համար:</string>
+    <string name="effectspanel">Ձայնային էֆեկտներ</string>
+</resources>

@@ -1,0 +1,490 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2011 Google Inc.
+     Licensed to The Android Open Source Project.
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+          http://www.apache.org/licenses/LICENSE-2.0
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="from">မွ</string>
+    <string name="to">သို႔</string>
+    <string name="cc">တဆင့္ပို႔ျခင္းသို႔</string>
+    <string name="bcc">ဖုန္းကြယ္တဆင့္ပို႔ျခင္းသို႔</string>
+    <string name="subject_hint">အေၾကာင္းအရာ</string>
+    <string name="body_hint">အီးေမးလ္ ေရးသားသည္</string>
+    <string name="add_file_attachment">ဖိုင္ ပူးတြဲပါ</string>
+    <string name="add_photo_attachment">ပံုကို တြဲပါ</string>
+    <string name="save_draft">အၾကမ္းကို သိမ္းပါ</string>
+    <string name="discard">ျဖဳတ္ခ်ပါ</string>
+    <string name="compose">စကားေျပာထားသည့္ မွတ္တမ္း အားလံုးအား ဤစကားေျပာခန္းမွ ရွင္းလင္းမည္</string>
+    <string name="compose_title">စကားေျပာထားသည့္ မွတ္တမ္း အားလံုးအား ဤစကားေျပာခန္းမွ ရွင္းလင္းမည္</string>
+    <string-array name="compose_modes">
+        <item>အေၾကာင္းျပန္ပါ</item>
+        <item>အားလံုးကို စာျပန္ပါ</item>
+        <item>လက္ဆင့္ကမ္းပါ</item>
+    </string-array>
+    <string name="reply_attribution"><xliff:g id="date">%s</xliff:g> တြင္ <xliff:g id="person">%s</xliff:g> ေရးခဲ့သည္ -</string>
+    <string name="forward_attribution"> ---------- လက္ဆင့္ကမ္းပို႔ၿပီး မက္ေဆ့ခ်္----------<br/>မွ - <xliff:g id="from">%1$s</xliff:g><br/>ရက္စြဲ -<xliff:g id="date">%2$s</xliff:g><br/>အေၾကာင္းအရာ -<xliff:g id="subject">%3$s</xliff:g><br/>သို႔ -<xliff:g id="to">%4$s</xliff:g>&lt;br&gt;</string>
+    <string name="forward_attribution_no_headers"> ---------- လက္ဆင့္ကမ္းပို႔ၿပီး မက္ေဆ့ခ်္----------</string>
+    <string name="cc_attribution">တဆင့္ပို႔ျခင္းသို႔ - <xliff:g id="cc">%1$s</xliff:g>&lt;br&gt;</string>
+    <string name="select_attachment_type">ပူးတြဲအမ်ဳိးအစားကို ေရြးပါ</string>
+    <string name="too_large_to_attach_single"><xliff:g id="maxSize">%1$s</xliff:g> ထက္ ေက်ာ္ေသာ ဖိုင္ကို မပူးတြဲႏိုင္ပါ။</string>
+    <string name="too_large_to_attach_multiple">ဖိုင္ တစ္ခု သို႔မဟုတ္ တစ္ခုထက္ပိုၿပီး မပူးတြဲခဲ့ပါ။ ဖိုင္ <xliff:g id="maxSize">%1$s</xliff:g> ဖိုင္ ကန္႔သတ္ထားသည္။</string>
+    <string name="too_large_to_attach_additional">ဖိုင္ကို မပူးတြဲခဲ့ပါ။ ကန္႔သတ္ထားေသာ ဖိုင္ <xliff:g id="maxSize">%1$s</xliff:g> ဖိုင္သို႔ ေရာက္္ေနၿပီ။</string>
+    <string name="generic_attachment_problem">ဖိုင္ကို မပူးတြဲႏိုင္ခဲ့ပါ။</string>
+    <string name="attachment_permission_denied">ပူးတြဲအတြက္ ခြင့္ျပဳခ်က္ ျငင္းပယ္ထားသည္</string>
+    <string name="recipient_needed">အနည္းဆံုး လက္ခံသူတစ္ဦး ထည့္ပါ။</string>
+    <string name="confirm_send_message_with_no_subject">မက္ေဆ့ခ်္ အေၾကာင္းအရာတြင္ မည္သည့္စာသားမွ မရွိပါ။</string>
+    <string name="confirm_send_message_with_no_body">မက္ေဆ့ခ်္ကိုယ္ထည္တြင္ မည္သည့္စာသားမွ မရွိပါ။</string>
+    <string name="confirm_send_message">ဤမက္ေဆ့ခ်္ကို ပို႔မလား။</string>
+    <string name="message_discarded">မက္ေဆ့ခ်္ကို ပယ္ဖ်က္ခဲ့သည္။</string>
+    <string name="signature">\n\n<xliff:g id="signature">%s</xliff:g></string>
+    <string name="custom_from_account_label">အျဖစ္ေမးလ္ပို႔ပါ-</string>
+    <string name="send">ပို႔ပါ</string>
+    <string name="mark_read">ဖတ္ၿပီးသည္ကို မွတ္သားထားပါ</string>
+    <string name="mark_unread">မဖတ္ရေသးသည္ကို မွတ္သားထားပါ</string>
+    <string name="toggle_read_unread">ဖတ္ၿပီး၊ မဖတ္ရေသး ခလုတ္</string>
+    <string name="mute">အသံေဖ်ာက္ပါ</string>
+    <string name="add_star">ၾကယ္ကို ေပါင္းထည့္ပါ</string>
+    <string name="remove_star">ၾကယ္ကို ဖယ္ရွားပါ</string>
+    <string name="remove_folder"><xliff:g id="folderName">%1$s</xliff:g> မွ ဖယ္ရွားပါ</string>
+    <string name="archive">ေမာ္ကြန္းတင္ပါ</string>
+    <string name="report_spam">အသံုးမဝင္ဟု တင္ျပပါ</string>
+    <string name="mark_not_spam">အသံုးမဝင္မဟုတ္ဟု တင္ျပပါ</string>
+    <string name="report_phishing">ကာကြယ္ထားမႈ တင္ျပပါ</string>
+    <string name="delete">ဖ်က္ပါ</string>
+    <string name="discard_drafts">အၾကမ္းမ်ား ဖ်က္ခ်ပါ</string>
+    <string name="discard_failed">စြန္႔ပစ္ျခင္း မေအာင္ျမင္ပါ</string>
+    <string name="refresh">ျပန္လည္ဆန္းသစ္ပါ</string>
+    <string name="reply">အေၾကာင္းျပန္ပါ</string>
+    <string name="reply_all">အားလံုးကို စာျပန္ပါ</string>
+    <string name="resume_draft">တည္းျဖတ္ပါ</string>
+    <string name="forward">လက္ဆင့္ကမ္းပါ</string>
+    <string name="menu_compose">စကားေျပာထားသည့္ မွတ္တမ္း အားလံုးအား ဤစကားေျပာခန္းမွ ရွင္းလင္းမည္</string>
+    <string name="menu_change_folders">ဖိုဒါမ်ားေျပာင္းပါ</string>
+    <string name="menu_move_to">သို႔ ေရႊ႕ပါ</string>
+    <string name="menu_move_to_inbox">စာဝင္ပံုးသို႔ ေရႊ႕ပါ</string>
+    <string name="menu_manage_folders">ဖိုဒါအဆင္အျပင္မ်ား</string>
+    <string name="menu_show_original">မူလ အရြယ္ညႇိျခင္း သို႔ျပန္ထား</string>
+    <string name="menu_settings">အျပင္အဆင္မ်ား</string>
+    <string name="menu_search">ရွာေဖြပါ</string>
+    <string name="menu_toggle_drawer">ခလုတ္အစုလိုက္</string>
+    <string name="drawer_title">သြားလာရန္</string>
+    <string name="mark_important">အေရးႀကီးဟု မွတ္သားထားပါ</string>
+    <string name="mark_not_important">အေရးမႀကီးဟု မွတ္သားထားပါ</string>
+    <string name="add_cc_label">တဆင့္ပို႔ျခင္းသို႔/ဖုန္းကြယ္တဆင့္ပို႔ျခင္းသို႔ ေပါင္းထည့္ပါ</string>
+    <string name="add_bcc_label">Bcc ထပ္ထည့္ပါ</string>
+    <string name="quoted_text">ကိုးကားခဲ့သည့္ စာသား ပါဝင္သည္</string>
+    <string name="quoted_text_label">စာသားကို ကိုးကားပါ</string>
+    <string name="respond_inline">လိုက္ေလ်ာညီစြာ တံု႔ျပန္သည္</string>
+    <string name="bytes"><xliff:g id="count">%s</xliff:g> B</string>
+    <string name="kilobytes"><xliff:g id="count">%s</xliff:g> KB</string>
+    <string name="megabytes"><xliff:g id="count">%s</xliff:g> MB</string>
+    <string name="attachment_image">ပံု</string>
+    <string name="attachment_video">ဗီဒီယို</string>
+    <string name="attachment_audio">အသံ</string>
+    <string name="attachment_text">စာသား ေပးပို႔သည္</string>
+    <string name="attachment_application_msword">စာရြက္စာတမ္း</string>
+    <string name="attachment_application_vnd_ms_powerpoint">စီစဥ္တင္ျပမႈ</string>
+    <string name="attachment_application_vnd_ms_excel">စာရင္းဇယား</string>
+    <string name="attachment_application_pdf">PDF</string>
+    <string name="attachment_unknown"><xliff:g id="attachmentExtension">%s</xliff:g> ဖိုင္</string>
+    <string name="preview_attachment">ျပန္လည္ၾကည့္႐ႈခ်က္</string>
+    <string name="save_attachment">သိမ္းဆည္းပါ</string>
+    <string name="download_again">ေဒါင္းလုဒ္ ထပ္လုပ္ပါ</string>
+    <string name="remove_attachment_desc">ပူးတြဲ <xliff:g id="attachmentName">%s</xliff:g> ကို ဖယ္ရွားပါ</string>
+    <string name="more_info_attachment">သတင္းအခ်က္အလက္</string>
+    <string name="no_application_found">ဤပူးတြဲကို ၾကည့္ရန္ ဖြင့္ႏိုင္သည့္ ပ႐ိုဂရမ္မရွိပါ။</string>
+    <string name="fetching_attachment">ပူးတြဲရယူျခင္း</string>
+    <string name="please_wait">ေစာင့္ဆိုင္းပါ\u2026</string>
+    <string name="saved">သိမ္းခဲ့သည္၊ <xliff:g id="size">%s</xliff:g></string>
+    <string name="download_failed">ေဒါင္းလုဒ္ မလုပ္ႏိုင္ခဲ့ပါ။ ထပ္ႀကိဳးစားရန္ တို႔ထိပါ။</string>
+    <string name="menu_photo_save_all">အားလံုးသိမ္းပါ</string>
+    <string name="menu_photo_share">ေဝမွ်ပါ</string>
+    <string name="menu_photo_share_all">အားလံုးကို ေဝမွ်ပါ</string>
+    <string name="menu_photo_print">ပရင့္ထုတ္ပါ</string>
+    <string name="saving"/>
+    <string name="choosertitle_sharevia">မွတစ္ဆင့္ေဝမွ်ပါ</string>
+    <string name="contextmenu_openlink">ဘေရာက္ဆာတြင္ ဖြင့္ပါ</string>
+    <string name="contextmenu_copy">ကူးပါ</string>
+    <string name="contextmenu_copylink">URL လင့္ခ္ကို ကူးယူပါ</string>
+    <string name="contextmenu_view_image">႐ုပ္ပံုကို ၾကည့္႐ႈပါ</string>
+    <string name="contextmenu_dial_dot">ေခၚဆိုပါ\u2026</string>
+    <string name="contextmenu_sms_dot">SMS\u2026</string>
+    <string name="contextmenu_add_contact">အဆက္အသြယ္ကို ေပါင္းထည့္သည္</string>
+    <string name="contextmenu_send_mail">အီးေမးလ္ေပးပို႔ပါ</string>
+    <string name="contextmenu_map">ေျမပံု</string>
+    <string name="contextmenu_sharelink">လင့္ခ္ကို ေဝမွ်ပါ</string>
+    <string name="content_description"><xliff:g id="subject">%2$s</xliff:g> အေၾကာင္း <xliff:g id="sender">%1$s</xliff:g>၊ <xliff:g id="date">%4$s</xliff:g> ရက္ေန႔တြင္ <xliff:g id="snippet">%3$s</xliff:g>၊ <xliff:g id="readstate">%5$s</xliff:g></string>
+    <string name="content_description_today"><xliff:g id="subject">%2$s</xliff:g> အေၾကာင္း <xliff:g id="sender">%1$s</xliff:g>၊ <xliff:g id="time">%4$s</xliff:g> အခ်ိန္တြင္ <xliff:g id="snippet">%3$s</xliff:g>၊ <xliff:g id="readstate">%5$s</xliff:g></string>
+    <string name="content_description_with_folders"><xliff:g id="subject">%3$s</xliff:g> အေၾကာင္း <xliff:g id="toHeader">%1$s</xliff:g><xliff:g id="participant">%2$s</xliff:g> ၊ <xliff:g id="date">%5$s</xliff:g>၊ <xliff:g id="readstate">%6$s</xliff:g> တြင္ <xliff:g id="snippet">%4$s</xliff:g> ၊ ေလဘယ္မ်ား- <xliff:g id="folders">%7$s</xliff:g></string>
+    <string name="content_description_today_with_folders"> <xliff:g id="subject">%3$s</xliff:g> အေၾကာင္း <xliff:g id="toHeader">%1$s</xliff:g><xliff:g id="participant">%2$s</xliff:g> ၊ <xliff:g id="time">%5$s</xliff:g>၊ <xliff:g id="readstate">%6$s</xliff:g>တြင္ <xliff:g id="snippet">%4$s</xliff:g>၊ အညႊန္းမ်ား/ေလဘယ္မ်ား- <xliff:g id="folders">%7$s</xliff:g></string>
+    <string name="read_string">ဖတ္ၿပီးေသာ စကားေျပာဆိုခ်က္</string>
+    <string name="unread_string">မဖတ္ရေသးေသာ စကားေျပာဆိုခ်က္</string>
+    <string name="filtered_tag">[<xliff:g id="tag">%1$s</xliff:g>]<xliff:g id="subject">%2$s</xliff:g></string>
+    <string name="badge_and_subject"><xliff:g id="contact_name">%1$s</xliff:g> (<xliff:g id="phone_label">%2$s</xliff:g>) အျမန္ေခၚဆိုမႈသို႔ ေပါင္းထည့္ျပီး  <xliff:g id="key">%3$s</xliff:g></string>
+    <plurals name="draft">
+        <item quantity="one">ပံုၾကမ္း</item>
+        <item quantity="other">အၾကမ္း</item>
+    </plurals>
+    <string name="sending">ေပးပို႔ေနဆဲ\u2026</string>
+    <string name="message_retrying">"ျပန္ေခၚဆိုေနဆဲ..."</string>
+    <string name="message_failed">မေအာင္ျမင္ခဲ့ပါ</string>
+    <string name="send_failed">မက္ေဆ့ခ်္ကို မပို႔ခဲ့ပါ။</string>
+    <string name="me_object_pronoun">မိမိ</string>
+    <string name="me_subject_pronoun">မိမိ</string>
+    <plurals name="confirm_delete_conversation">
+        <item quantity="one">ဤစကားေျပာခ်က္ကို ဖ်က္မလား။</item>
+        <item quantity="other">ဤစကားေျပာခ်က္ <xliff:g id="count">%1$d</xliff:g> ခုကို ဖ်က္မလား။</item>
+    </plurals>
+    <plurals name="confirm_archive_conversation">
+        <item quantity="one">ဤစကားေျပာခ်က္ကို ေမာ္ကြန္းတင္မလား။</item>
+        <item quantity="other">ဤစကားေျပာခ်က္ <xliff:g id="count">%1$d</xliff:g> ခုကို ေမာ္ကြန္းတင္မလား။</item>
+    </plurals>
+    <plurals name="confirm_discard_drafts_conversation">
+        <item quantity="one">ဤမက္ေဆ့ခ်္ကို ဖ်က္ခ်မလား။</item>
+        <item quantity="other">ဤစကားေျပာခ်က္ <xliff:g id="count">%1$d</xliff:g> ခုမွ အၾကမ္းမ်ားကို ဖ်က္ခ်မလား။</item>
+    </plurals>
+    <string name="confirm_discard_text">ဤမက္ေဆ့ခ်္ကို ဖ်က္ခ်မလား။</string>
+    <string name="loading_conversations">ဖြင့္ေနဆဲ\u2026</string>
+    <string name="empty_inbox">သင္ အားလုံး လုပ္ၿပီးသြားၿပီ။ ေက်းဇူးျပဳၿပီး ေပ်ာ္ေပ်ာ္ ေနလိုက္စမ္းပါ။</string>
+    <string name="empty_search">အူပ္စ္! \"<xliff:g id="search_query">%1$s</xliff:g>\" အတြက္ ဘာကိုမွ ကၽြႏ္ုပ္တို႔ ရွာမေတြ႕ခဲ့ပါ။</string>
+    <string name="empty_spam_folder">ဟူးေရး၊ ဒီမွာ စပမ္ မရွိေတာ့ပါ!</string>
+    <string name="empty_trash_folder">အမႈိက္ မရွိေတာ့ပါ။ ျပန္သုံးတဲ့ အတြက္ ေက်းဇူးပဲ!</string>
+    <string name="empty_folder">ဤေနရာမွာ စာ မရွိပါ။</string>
+    <string name="getting_messages">သင္၏ စာမ်ားကို ရယူေန</string>
+    <string name="undo">မလုပ္ပါ</string>
+    <plurals name="conversation_unstarred">
+        <item quantity="one">စကားေျပာခ်က္ <xliff:g id="count">%1$d</xliff:g> ခုကို ၾကယ္ျပန္ျဖဳတ္ေနသည္။</item>
+        <item quantity="other">စကားေျပာခ်က္မ်ား <xliff:g id="count">%1$d</xliff:g> ခုကို ၾကယ္ျပန္ျဖဳတ္ေနသည္။</item>
+    </plurals>
+    <skip/>
+    <plurals name="conversation_muted">
+        <item quantity="one"><b><xliff:g id="count">%1$d</xliff:g></b> ခုကို မွိန္ထားၿပီး။</item>
+        <item quantity="other"><b><xliff:g id="count">%1$d</xliff:g></b> ခုကို မွိန္ထားၿပီး။</item>
+    </plurals>
+    <plurals name="conversation_spammed">
+        <item quantity="one"><b><xliff:g id="count">%1$d</xliff:g></b> ကို စပမ္းအျဖစ္ အစီရင္ခံခဲ့ၿပီး။</item>
+        <item quantity="other"><b><xliff:g id="count">%1$d</xliff:g></b> ကို စပမ္းအျဖစ္ အစီရင္ခံခဲ့ၿပီး။</item>
+    </plurals>
+    <plurals name="conversation_not_spam">
+        <item quantity="one"><b><xliff:g id="count">%1$d</xliff:g></b> ကို စပမ္းမဟုတ္ဟု အစီရင္ခံခဲ့ၿပီး။</item>
+        <item quantity="other"><b><xliff:g id="count">%1$d</xliff:g></b> ကို စပမ္းမဟုတ္ဟု အစီရင္ခံခဲ့ၿပီး။</item>
+    </plurals>
+    <plurals name="conversation_not_important">
+        <item quantity="one"><b><xliff:g id="count">%1$d</xliff:g></b> ခုကို အေရးမႀကီးဟု အမွတ္အသားျပဳၿပီး။</item>
+        <item quantity="other"><b><xliff:g id="count">%1$d</xliff:g></b> ခုကို အေရးမႀကီးဟု အမွတ္အသားျပဳၿပီး။</item>
+    </plurals>
+    <plurals name="conversation_phished">
+        <item quantity="one"><b><xliff:g id="count">%1$d</xliff:g></b> ခုကို အေယာင္ေဆာင္ပို႔ျခင္းအျဖစ္ အစီရင္ခံၿပီး။</item>
+        <item quantity="other"><b><xliff:g id="count">%1$d</xliff:g></b> ခုကို အေယာင္ေဆာင္ပို႔ျခင္းအျဖစ္ အစီရင္ခံၿပီး။</item>
+    </plurals>
+    <plurals name="conversation_archived">
+        <item quantity="one"><b><xliff:g id="count">%1$d</xliff:g></b> ခုကို ေမာ္ကြန္းတင္ၿပီး။</item>
+        <item quantity="other"><b><xliff:g id="count">%1$d</xliff:g></b> ခုကို ေမာ္ကြန္းတင္ၿပီး။</item>
+    </plurals>
+    <plurals name="conversation_deleted">
+        <item quantity="one"><b><xliff:g id="count">%1$d</xliff:g></b> ခုကို ဖ်က္ၿပီး။</item>
+        <item quantity="other"><b><xliff:g id="count">%1$d</xliff:g></b> ခုကို ဖ်က္ၿပီး။</item>
+    </plurals>
+    <string name="deleted">ဖ်က္ၿပီး</string>
+    <string name="archived">ေမာ္ကြန္းတင္ၿပီး</string>
+    <string name="folder_removed"><xliff:g id="folderName">%1$s</xliff:g> မွ ဖယ္ရွားပါ</string>
+    <plurals name="conversation_folder_changed">
+        <item quantity="one">ဖိုဒါေျပာင္းခဲ့သည္။</item>
+        <item quantity="other">ဖိုဒါေျပာင္းခဲ့သည္။</item>
+    </plurals>
+    <string name="conversation_folder_moved"><xliff:g id="folderName">%1$s</xliff:g> သို႔ ေရႊ႕ပါ</string>
+    <string name="search_results_header">ရလဒ္မ်ား</string>
+    <string name="search_unsupported">ရွာေဖြျခင္းကို ဤအေကာင့္တြင္ မေထာက္ပံ့ပါ။</string>
+    <string name="search_suggestion_desc">အၾကံျပဳခ်က္-<xliff:g id="suggestion">%s</xliff:g></string>
+    <string name="add_label">ဖိုဒါ ထပ္ထည့္ပါ</string>
+    <plurals name="new_incoming_messages">
+        <item quantity="one">မက္ေဆ့ခ်္အသစ္ <xliff:g id="count">%1$d</xliff:g>ေစာင္</item>
+        <item quantity="other">မက္ေဆ့ခ်္အသစ္မ်ား <xliff:g id="count">%1$d</xliff:g> </item>
+    </plurals>
+    <string name="date_and_view_details">"<xliff:g id="date">%1$s</xliff:g> <a href="'http://www.example.com'">ေသးစိတ္ ၾကည့္</a>"</string>
+    <string name="hide_details">အေသးစိတ္မ်ား ဝွက္ထားရန္</string>
+    <string name="to_message_header"><xliff:g id="recipients">%1$s</xliff:g> ထံသို႔</string>
+    <string name="bcc_header_for_recipient_summary">Bcc-\u0020</string>
+    <string name="contact_info_string"><xliff:g id="name">%1$s</xliff:g> အတြက္ အဆက္အသြယ္ သတင္းအခ်က္အလက္ကို ျပပါ</string>
+    <string name="contact_info_string_default">အဆက္အသြယ္ သတင္းအခ်က္အလက္ကို ျပပါ</string>
+    <plurals name="show_messages_read">
+        <item quantity="other">ပို၍ေရွးက်ေသာ မက္ေဆ့ခ်္ <xliff:g id="count" example="4">%1$d</xliff:g> ေစာင္</item>
+    </plurals>
+    <plurals name="super_collapsed_block_accessibility_announcement">
+        <item quantity="other">ပို၍ေရွးက်ေသာ မက္ေဆ့ခ်္ <xliff:g id="count" example="4">%1$d</xliff:g> ေစာင္</item>
+    </plurals>
+    <string name="from_heading">မွ-</string>
+    <string name="replyto_heading">သို႔ ျပန္ၾကားခ်က္-\u0020</string>
+    <string name="to_heading">သို႔-\u0020</string>
+    <string name="to_heading_no_space">သို႔-</string>
+    <string name="cc_heading">Cc:\u0020</string>
+    <string name="bcc_heading">Bcc-\u0020</string>
+    <string name="date_heading">ရက္စြဲ-\u0020</string>
+    <string name="show_images">႐ုပ္ပံုမ်ား ျပပါ</string>
+    <string name="always_show_images">ဤေပးပို႔သူမွ ႐ုပ္ပံုမ်ားကို အျမဲတမ္း ျပပါ</string>
+    <string name="always_show_images_toast">ဤေပးပို႔သူမွ ႐ုပ္ပံုမ်ားကို အလိုအေလ်ာက္ ျပလိမ့္မည္။</string>
+    <string name="address_display_format"><xliff:g id="name">%1$s</xliff:g> <xliff:g id="email">%2$s</xliff:g></string>
+    <string name="address_display_format_with_via_domain"><xliff:g id="via_domain">%3$s</xliff:g> မွတဆင့္ <xliff:g id="name">%1$s</xliff:g> <xliff:g id="email">%2$s</xliff:g></string>
+    <string name="message_saved">မက္ေဆ့ခ်္ကို အၾကမ္းကဲ့သို႔ သိမ္းခဲ့သည္။</string>
+    <string name="sending_message">မက္ေဆ့ခ်္ပို႔ေနသည္\u2026</string>
+    <string name="invalid_recipient">လိပ္စာ <xliff:g id="wrongemail" example="foo@@gmail..com">%s</xliff:g> သည္ မမွန္ပါ။</string>
+    <string name="show_elided">\u25B6 ကိုးကားစာသားကို ျပပါ</string>
+    <string name="hide_elided">\u25BC ကိုးကားစာသားကို ဝွက္ပါ</string>
+    <string name="message_invite_title">ျပကၡဒိန္ကို ထည့္သြင္းသည္</string>
+    <string name="message_invite_calendar_view">ျပကၡဒိန္တြင္ ျမင္ကြင္း</string>
+    <string name="message_invite_label_attending">သြားမည္လား။</string>
+    <string name="message_invite_accept">ဟုတ္ပါသည္</string>
+    <string name="message_invite_tentative">တက္ခ်င္တက္မည္</string>
+    <string name="message_invite_decline">မဟုတ္ပါ</string>
+    <string name="enumeration_comma">,\u0020</string>
+    <string name="send_anyway">ဘာဘဲျဖစ္ျဖစ္ ပို႔ရန္</string>
+    <string name="ok">အိုေက</string>
+    <string name="done">ၿပီးၿပီ</string>
+    <string name="cancel">မလုပ္ပါ</string>
+    <string name="clear">ရွင္းလင္းပါ</string>
+    <string name="next">ေရွ႕သို႔</string>
+    <string name="previous">အရင္တစ္ခုသို႔</string>
+    <string-array name="sync_status">
+        <item>ေအာင္ျမင္သည္</item>
+        <item>ခ်ိတ္ဆက္မႈမရွိပါ</item>
+        <item>အေကာင့္သို႔ မဝင္ႏိုင္ခဲ့ပါ</item>
+        <item>လံုျခံဳေရး အမွား</item>
+        <item>တစ္မ်ဳိးတည္းျဖစ္ေအာင္ မျပဳလုပ္ႏိုင္</item>
+        <item>အတြင္း အမွား</item>
+        <item>ဆာဗား အမွား</item>
+    </string-array>
+    <string name="tap_to_configure">တည္ေဆာက္ရန္ ထိပါ</string>
+    <string name="non_synced_folder_description">စကားေျပာခ်က္မ်ားကို ၾကည့္ရန္ ဤဖိုဒါကို ခ်ိန္ညႇိပါ</string>
+    <string name="tap_to_configure_folder_sync">ဖိုဒါကို ခ်ိန္ညႇိပါ</string>
+    <string name="widget_large_unread_count">%d+</string>
+    <string name="large_unseen_count"><xliff:g id="count" example="99">%d</xliff:g>+ သစ္</string>
+    <string name="unseen_count"><xliff:g id="count" example="4">%d</xliff:g> သစ္</string>
+    <plurals name="actionbar_unread_messages">
+        <item quantity="other"><xliff:g id="count" example="4">%1$d</xliff:g> ေစာင္ မဖတ္ရေသး</item>
+    </plurals>
+    <string name="view_more_conversations">ေနာက္ထပ္စကားေျပာခ်က္မ်ားကို ၾကည့္ပါ</string>
+    <string name="loading_conversation">ဖြင့္ေနဆဲ\u2026</string>
+    <string name="activity_mailbox_selection">အေကာင့္ေရြးခ်ယ္ပါ</string>
+    <string name="activity_folder_selection">ဖိုဒါကို ေရြးပါ</string>
+    <string name="folder_shortcut_widget_label">အီးေမးလ္ဖိုဒါ</string>
+    <string name="change_folders_selection_dialog_title">ဖိုဒါမ်ားေျပာင္းပါ</string>
+    <string name="move_to_selection_dialog_title">သို႔ ေရႊ႕ပါ</string>
+    <string name="search_hint">ရွာေဖြပါ</string>
+    <string name="search_results_loaded"><xliff:g id="searchCount">%1$d</xliff:g></string>
+    <string name="voice_search_not_supported">အသံျဖင့္ရွာေဖြမႈကို ဤကိရိယာတြင္ မေထာက္ပံ့ထားပါ။</string>
+    <string name="search_back_desc">ရွာေဖြမႈကို ပိတ္ပါ</string>
+    <string name="search_voice_desc">အသံျဖင့္ ရွာေဖြျခင္း စတင္ပါ</string>
+    <string name="search_clear_desc">ရွာေဖြသည့္စာသားကို ရွင္းပါ</string>
+    <string name="network_error">ခ်ိတ္ဆက္မႈမရွိပါ</string>
+    <string name="retry">ျပန္ႀကိဳးစားသည္</string>
+    <string name="load_more">ေနာက္ထပ္ တင္ပါ</string>
+    <string name="shortcut_name_title">ဖိုဒါအတိုနည္းကို အမည္ေပးျခင္း</string>
+    <string name="wait_for_sync_title">တစ္မ်ဳိးတည္းျဖစ္ေအာင္ ျပဳလုပ္ျခင္း အတြက္ ေစာင့္ဆိုင္းေနသည္</string>
+    <string name="not_synced_title">တစ္မ်ဳိးတည္းျဖစ္ေအာင္ မလုပ္ရေသးေသာ အေကာင့္</string>
+    <string name="wait_for_manual_sync_body">ဤအေကာင့္ကို အလိုအေလ်ာက္ ခ်ိန္ညႇိရန္ မတည္ေဆာက္ထားပါ။\nေမးလ္းကို ခ်ိန္ညႇိရန္ <b>ယခု ခ်ိန္ညႇိပါ</b> ကို တစ္ႀကိမ္ တို႔ထိပါ၊ သို႔မဟုတ္ ေမးလ္းကို အလိုအေလ်ာက္ ခ်ိန္ညႇိရန္ ဤအေကာင့္ကို တည္ေဆာက္ရန္ <b>ခ်ိန္ညႇိအျပင္အဆင္မ်ားကို ေျပာင္းပါ</b> ကို တို႔ထိပါ။</string>
+    <string name="manual_sync">ယခုတစ္ၿပိဳင္နက္ ျဖစ္ေပၚေစရန္ ျပဳလုပ္ပါ</string>
+    <string name="change_sync_settings">ခ်ိန္ညႇိျခင္း ဆက္တင္ကိုေျပာင္း</string>
+    <string name="photo_load_failed">ပံုကို မတင္ႏိုင္ခဲ့ပါ။</string>
+    <string name="cant_move_or_change_labels">ေရြးခ်ယ္ျခင္းတြင္ ဆတိုး အေကာင့္မ်ား ပါဝင္ျခင္းေၾကာင့္ မေရႊ႕ႏိုင္ပါ။</string>
+    <string name="multiple_new_message_notification_item"><b><xliff:g id="sender">%1$s</xliff:g></b>\u0020\u0020\u0020<xliff:g id="subject">%2$s</xliff:g></string>
+    <string name="single_new_message_notification_big_text"><xliff:g id="subject">%1$s</xliff:g>\n<xliff:g id="snippet">%2$s</xliff:g></string>
+    <string name="ignore_spam_warning">လစ္လ်ဴ႐ႈပါ၊ မက္ေဆ့ခ်္ကိုယံုသည္</string>
+    <string name="via_domain"><xliff:g id="viaDomain">%1$s</xliff:g> မွတဆင့္</string>
+    <string name="signin">ဝင္ရန္</string>
+    <string name="info">သတင္းအခ်က္အလက္</string>
+    <string name="report">ရီပို႔တ္</string>
+    <string name="show">ျပပါ</string>
+    <string name="sync_error">မခ်ိန္ညိႇႏိုင္ခဲ့ပါ။</string>
+    <string name="sync_error_message">သင့္ကိရိယာတြင္ ခ်ိန္ညိႇရန္ သိုေလွာင္ေနရာ ေနရာလြတ္ မလံုေလာက္ပါ။</string>
+    <string name="storage">သိမ္းဆည္းမႈ</string>
+    <string name="senders_split_token">၊\u00A0</string>
+    <string name="draft_count_format">\u00A0(<xliff:g id="count">%1$s</xliff:g>)</string>
+    <string name="all_folders_heading">ဖိုဒါမ်ား အားလံုး</string>
+    <string name="recent_folders_heading">မၾကာေသးမီက သြားခဲ့ေသာ ဖိုဒါမ်ား</string>
+    <string name="message_details_title">မက္ေဆ့ခ်္ အေသးစိတ္</string>
+    <string name="preference_advance_to_title">အလိုအေလ်ာက္- တိုးတက္မႈ</string>
+    <string-array name="prefEntries_autoAdvance">
+        <item>ပို၍သစ္ေသာ</item>
+        <item>ပိုေဟာင္းေသာ</item>
+        <item>စကားေျပာဆိုမႈစာရင္း</item>
+    </string-array>
+    <string-array name="prefSummaries_autoAdvance">
+        <item>သင္ဖ်က္ၿပီးေသာအခါ ပိုသစ္ေသာ စကားေျပာဆိုခ်က္ကို ျပပါ</item>
+        <item>သင္ဖ်က္ၿပီးေသာအခါ ပိုေဟာင္းေသာ စကားေျပာဆိုခ်က္ကို ျပပါ</item>
+        <item>သင္ဖ်က္ၿပီးေသာအခါ စကားေျပာဆိုမႈ စာရင္းကို ျပပါ</item>
+    </string-array>
+    <string name="prefDialogTitle_autoAdvance">တိုးတက္မႈ သို႔</string>
+    <string name="clear_display_images_whitelist_title">ပံုျဖင့္ သေဘာတူညီမႈမ်ားကို ရွင္းမလား။</string>
+    <string name="clear_display_images_whitelist_dialog_title">ပံုျဖင့္ သေဘာတူညီမႈမ်ားကို ရွင္းမလား။</string>
+    <string name="clear_display_images_whitelist_dialog_message">သင္ယခင္က ခြင့္ျပဳခဲ့ေသာ ေပးပို႔သူမ်ားမွ အတြင္းပံုမ်ား ေဖာ္ျပျခင္းကို ရပ္ပါ။</string>
+    <string name="sender_whitelist_cleared">ပံုမ်ားကို အလိုအေလ်ာက္ ျပသလိမ့္မည္ မဟုတ္ပါ။</string>
+    <string name="preferences_signature_title">လက္မွတ္</string>
+    <string name="preferences_signature_dialog_title">လက္မွတ္</string>
+    <string name="preferences_signature_summary_not_set">မသတ္မွတ္ပါ</string>
+    <string name="notification_action_reply">အေၾကာင္းျပန္ပါ</string>
+    <string name="notification_action_reply_all">အားလံုးကို စာျပန္ပါ</string>
+    <string name="notification_action_archive">ေမာ္ကြန္းတင္ပါ</string>
+    <string name="notification_action_remove_label">အညႊန္းကို ဖယ္ရွားပါ</string>
+    <string name="notification_action_delete">ဖ်က္ပါ</string>
+    <string name="notification_action_undo_archive">ေမာ္ကြန္းတင္ၿပီး</string>
+    <string name="notification_action_undo_remove_label">အညႊန္းဖယ္ရွားၿပီး</string>
+    <string name="notification_action_undo_delete">ဖ်က္ၿပီး</string>
+    <string name="veiled_address"/>
+    <string name="veiled_alternate_text"/>
+    <string name="veiled_alternate_text_unknown_person"/>
+    <string name="veiled_summary_unknown_person"/>
+    <string name="label_notification_ticker">"<xliff:g id="label">%s</xliff:g>- <xliff:g id="notification">%s</xliff:g>"</string>
+    <plurals name="new_messages">
+        <item quantity="one">မက္ေဆ့ခ်္အသစ္ <xliff:g id="count">%1$d</xliff:g>ေစာင္</item>
+        <item quantity="other">မက္ေဆ့ခ်္အသစ္မ်ား <xliff:g id="count">%1$d</xliff:g> </item>
+    </plurals>
+    <string name="single_new_message_notification_title"><xliff:g id="sender">%1$s</xliff:g>- <xliff:g id="subject">%2$s</xliff:g></string>
+    <string name="silent_ringtone">အသံတိတ္</string>
+    <string name="preference_removal_action_title">လုပ္ေဆာင္ခ်က္မ်ားကို ေမာ္ကြန္းတင္ပါ ႏွင့္ ဖ်က္ပါ</string>
+    <string-array name="prefEntries_removal_action">
+        <item>ေမာ္ကြန္းတင္ပါ</item>
+        <item>ဖ်က္ပါ</item>
+    </string-array>
+    <string-array name="prefSummaries_removal_action_summary">
+        <item>ေမာ္ကြန္းတင္ပါ</item>
+        <item>ဖ်က္ပါ</item>
+    </string-array>
+    <string name="prefDialogTitle_removal_action">လုပ္ေဆာင္ခ်က္မ်ားကို ေမာ္ကြန္းတင္ပါ ႏွင့္ ဖ်က္ပါ</string>
+    <string name="preferences_default_reply_all_title">အားလံုးကို စာျပန္ပါ</string>
+    <string name="preferences_default_reply_all_summary_impl">မက္ေဆ့ခ်္ျပန္ၾကားခ်က္မ်ားအတြက္ ပံုေသအျဖစ္ သံုးပါ</string>
+    <string name="preference_swipe_title">လုပ္ေဆာင္ခ်က္မ်ား</string>
+    <string name="preference_swipe_description">စကားေျပာမႈစာရင္းတြင္</string>
+    <string name="preference_sender_image_title">ေပးပို႔သူပံု</string>
+    <string name="preference_sender_image_description">စကားေျပာမႈစာရင္းတြင္အမည္ေဘးတြင္ ျပပါ</string>
+    <string name="empty_trash">အမိႈက္ပံုးကိုရွင္းပါ</string>
+    <string name="empty_spam">အသံုးမဝင္သည္မ်ားကို ရွင္းပါ</string>
+    <string name="empty_trash_dialog_title">အမိႈက္ပံုးကို ရွင္းမလား။</string>
+    <string name="empty_spam_dialog_title">အသံုးမဝင္သည္မ်ားကို ရွင္းမလား။</string>
+    <plurals name="empty_folder_dialog_message">
+        <item quantity="one">မက္ေဆ့ခ်္ <xliff:g id="count">%1$d</xliff:g> ေစာင္ကို အၿပီးဖ်က္လိုက္ လိမ့္မည္။</item>
+        <item quantity="other">မက္ေဆ့ခ်္မ်ား <xliff:g id="count">%1$d</xliff:g> ေစာင္ကို အၿပီးဖ်က္လိုက္ လိမ့္မည္။</item>
+    </plurals>
+    <string name="drawer_open">လမ္းညႊန္ေရးဆြဲသည့္ အရာကို ဖြင့္ပါ</string>
+    <string name="drawer_close">လမ္းညႊန္ေရးဆြဲသည့္ အရာကို ပိတ္ပါ</string>
+    <string name="conversation_photo_welcome_text">ထိုစကားေျပာခ်က္ကို ေရြးရန္ ေပးပို႔သူပံုကို ထိပါ။</string>
+    <string name="long_press_to_select_tip">စကားေျပာခ်က္ တစ္ခုကို ေရြးရန္ ထိကိုင္ထားၿပီး ေနာက္ထပ္ေရြးရန္ ထိပါ။</string>
+    <string name="folder_icon_desc">ဖိုဒါအိုက္ကြန္</string>
+    <string name="add_account">အေကာင့္ကို ေပါင္းထည့္သည္</string>
+    <string name="dismiss_tip_hover_text">အၾကံျပဳခ်က္ကို ဖယ္ထုတ္ပါ</string>
+    <string name="auto_sync_off">အလိုအေလ်ာက္-တစ္မ်ဳိးတည္းျဖစ္ေအာင္ျပဳလုပ္ျခင္းကို ပိတ္ထားသည္</string>
+    <string name="account_sync_off">အေကာင့္ တစ္မ်ဳိးတည္းျဖစ္ေအာင္ ျပဳလုပ္ျခင္းကို ပိတ္ထားသည္။</string>
+    <string name="unsent_messages_in_outbox"><xliff:g id="outbox">%2$s</xliff:g> တြင္ <xliff:g id="number">%1$s</xliff:g> ေစာင္ မပို႔ရေသး</string>
+    <string name="turn_auto_sync_on_dialog_title">အလိုအေလ်ာက္- တစ္မ်ဳိးတည္း ျဖစ္ေအာင္ျပဳလုပ္ျခင္းကို ဖြင့္မလား။</string>
+    <string name="turn_auto_sync_on_dialog_body">ပ႐ုိဂရမ္မ်ားႏွင့္ Gmail သာမက အေကာင့္မ်ားအားလံုးသို႔ သင္ျပဳလုပ္ခဲ့ေသာ ေျပာင္းလဲမႈမ်ားကို ဝက္ဘ္ႏွင့္ သင္၏ အျခားကိရိယာမ်ားႏွင့္ သင္၏ <xliff:g id="phone_or_tablet">%1$s</xliff:g> အၾကားတြင္ ခ်ိန္ညႇိလိမ့္မည္။</string>
+    <string name="phone">ဖုန္း</string>
+    <string name="tablet">တက္ဘလက္</string>
+    <string name="turn_auto_sync_on_dialog_confirm_btn">ဖြင့္ပါ</string>
+    <string name="show_n_more_folders">ေနာက္ထပ္ ဖိုဒါမ်ား <xliff:g id="number">%1$s</xliff:g> ခုကို ျပပါ</string>
+    <string name="hide_folders">ဖိုဒါမ်ားကို ဝွက္ပါ</string>
+    <string name="print">ပရင့္ထုတ္ပါ</string>
+    <string name="print_all">အားလုံးကို ပရင့္ထုတ္ရန္</string>
+    <plurals name="num_messages">
+        <item quantity="one">စာ <xliff:g id="count">%1$d</xliff:g> ေစာင္</item>
+        <item quantity="other">ပို၍ေရွးက်ေသာ မက္ေဆ့ခ်္ <xliff:g id="count" example="4">%1$d</xliff:g> ေစာင္</item>
+    </plurals>
+    <string name="date_message_received_print"><xliff:g id="day_and_date">%1$s</xliff:g> <xliff:g id="time">%2$s</xliff:g> တြင္</string>
+    <string name="draft_to_heading">သို႔ မူၾကမ္း:</string>
+    <string name="draft_heading">ပံုၾကမ္း</string>
+    <string name="quoted_text_hidden_print">ကိုးကား စာသားကို ဝွက္ထားရန္</string>
+    <plurals name="num_attachments">
+        <item quantity="one">ပူးတြဲမႈ <xliff:g id="count">%1$d</xliff:g></item>
+        <item quantity="other">ပူးတြဲမႈမ်ား <xliff:g id="count">%1$d</xliff:g></item>
+    </plurals>
+    <string name="no_subject">(အေၾကာင္းအရာမရွိ)</string>
+    <string name="vacation_responder">အပန္းေျဖမႈ တုံ႔ျပန္သူ</string>
+    <string name="preferences_vacation_responder_title">အပန္းေျဖမႈ တုံ႔ျပန္သူ</string>
+    <string name="vacation_responder_body_hint_text">မက္ေဆ့ခ်္</string>
+    <string name="send_to_contacts_text">ကၽြႏ္ုပ္၏ အဆက္အသြယ္မ်ားသို႔သာ ပို႔ရန္</string>
+    <string name="send_to_domain_text"><xliff:g id="domain">%1$s</xliff:g> သို႔သာ ပို႔ရန္</string>
+    <string name="pick_start_date_title">စတင္ခ်ိန္</string>
+    <string name="pick_end_date_title">ၿပီးဆုံး (လိုခ်င္မွ လုပ္ရန္)</string>
+    <string name="date_not_set">မသတ္မွတ္ပါ</string>
+    <string name="set_end_date_dialog_title">ၿပီးဆုံး ရက္စြဲ (လိုခ်င္မွ ထည့္ရန္)</string>
+    <string name="custom_date">စိတ္ႀကိဳက္</string>
+    <string name="date_none">အသံတိတ္</string>
+    <string name="discard_changes">ေျပာင္းလဲမႈမ်ားကို စြန္႔ပစ္မလား?</string>
+    <string name="vacation_responder_changes_saved">အပန္းေျဖမႈ တုံ႔ျပန္သူ အေျပာင္းအလဲမ်ား သိမ္းဆည္းခဲ့</string>
+    <string name="vacation_responder_changes_discarded">အပန္းေျဖမႈ တုံ႔ျပန္သူ အေျပာင္းအလဲမ်ား စြန္႔ပစ္ၿပီး</string>
+    <string name="vacation_responder_off">ပိတ္သည္</string>
+    <string name="vacation_responder_on"><xliff:g id="date">%1$s</xliff:g>ေန႔မွ ဖြင့္ရန္</string>
+    <string name="vacation_responder_on_with_end_date"><xliff:g id="start-date">%1$s</xliff:g> မွ <xliff:g id="end-date">%2$s</xliff:g> အထိ ဖြင့္ထား</string>
+    <string name="vacation_responder_empty_subject_and_body_warning">အေၾကာင္းအရာ သို႔မဟုတ္ စာကို ထည့္ရန္</string>
+    <string name="view_entire_message">စာ တစ္ေစာင္လုံးကို ၾကည့္႐ႈရန္</string>
+    <string name="eml_loader_error_toast">ဤဖိုင္ကို မဖြင့္ႏိုင္</string>
+    <string name="help_and_info">အကူအညီ</string>
+    <string name="help_and_feedback">အကူအညီ</string>
+    <string name="feedback">တံု႔ျပန္ခ်က္ပို႔ပါ</string>
+    <string name="copyright">©<xliff:g id="year" example="2010">%1$d</xliff:g> Google Inc.</string>
+    <string name="version"><xliff:g id="app_name" example="Email">%1$s</xliff:g> ဗားရွင္း <xliff:g id="version" example="2.2.1">%2$s</xliff:g></string>
+    <string name="view_app_page"/>
+    <string name="print_dialog">ပရင့္ ထုတ္ရန္\u2026</string>
+    <string name="copyright_information">မူပိုင္ခြင့္ အခ်က္လက္မ်ား</string>
+    <string name="privacy_policy">ကိုယ္ေရး မူဝါဒ</string>
+    <string name="open_source_licenses">အိုးပင္းဆုိ႔စ္လုိင္စင္မ်ား</string>
+    <string name="reply_choice_yes">ဟုတ္ပါသည္</string>
+    <string name="reply_choice_no">မဟုတ္ပါ</string>
+    <string name="reply_choice_ok">အိုေက</string>
+    <string name="reply_choice_hehe">ဟဲဟဲ</string>
+    <string name="reply_choice_thanks">ေက်းဇူးပဲ</string>
+    <string name="reply_choice_i_agree">ကၽြႏ္ုပ္ သေဘာတူသည္</string>
+    <string name="reply_choice_nice">ေကာင္း</string>
+    <string name="reply_on_my_way">ကၽြႏ္ုပ္၏ လမ္းေပၚမွာ</string>
+    <string name="reply_choice_later">အိုေက၊ ကၽြႏ္ုပ္ ျပန္ေျဖပါရေစ</string>
+    <string name="reply_choice_smiling_face"/>
+    <string name="reply_choice_frowning_face"/>
+    <array name="reply_choices">
+        <item>@string/reply_choice_yes</item>
+        <item>@string/reply_choice_no</item>
+        <item>@string/reply_choice_ok</item>
+        <item>@string/reply_choice_hehe</item>
+        <item>@string/reply_choice_thanks</item>
+        <item>@string/reply_choice_i_agree</item>
+        <item>@string/reply_choice_nice</item>
+        <item>@string/reply_on_my_way</item>
+        <item>@string/reply_choice_later</item>
+        <item>@string/reply_choice_smiling_face</item>
+        <item>@string/reply_choice_frowning_face</item>
+    </array>
+    <string name="preference_header_action_confirmations">လုပ္ေဆာင္ခ်က္ အတည္ျပဳမႈမ်ား</string>
+    <string name="preference_confirm_before_delete_title">မဖ်က္မီ အတည္ျပဳပါ</string>
+    <string name="preference_confirm_before_archive_title">ေမာ္ကြန္း မတင္မီ အတည္ျပဳရန္</string>
+    <string name="preference_confirm_before_send_title">မပို႔မီ အတည္ျပဳပါ</string>
+    <string name="preferences_conversation_mode_title">ေအာ္တို-အံကိုက္ စာမ်ား</string>
+    <string name="preferences_conversation_mode_summary">စာမ်ားကို မ်က္ႏွာျပင္ႏွင့္ အံကိုက္ေစရန္ ခ်ဳံ႕ပါ</string>
+    <string name="preferences_disable_snap_headers_title">စာလုပ္ေဆာင္ခ်က္မ်ား</string>
+    <string-array name="prefSummaries_snapHeader">
+        <item>စာ လုပ္ေဆာင္ခ်က္မ်ားကို မ်က္ႏွာျပင္ ထိပ္မွာ အၿမဲ ျပရန္</item>
+        <item>ပုံတူႏွင့္ ဆက္စပ္မွသာ စာ လုပ္ေဆာင္ခ်က္မ်ားကို မ်က္ႏွာျပင္ ထိပ္မွာ အၿမဲ ျပရန္</item>
+        <item>စာ လုပ္ေဆာင္ခ်က္မ်ားကို စာ၏ ေခါင္းစီး အျပင္မွာ မျပပါႏွင့္</item>
+    </string-array>
+    <string-array name="prefEntries_snapHeader">
+        <item>အျမဲတမ္း ျပပါ</item>
+        <item>ပုံတူ ထဲမွာသာ ျပရန္</item>
+        <item>မျပပါႏွင့္</item>
+    </string-array>
+    <string name="clear_history_title">ရွာေဖြမႈမွတ္တမ္းကို ရွင္းလင္းပါ</string>
+    <string name="search_history_cleared">ရွာေဖြေရးမွတ္တမ္း ရွင္းၿပီးၿပီ။</string>
+    <string name="clear_history_dialog_title">ရွာေဖြမႈ မွတ္တမ္းကို ရွင္းရမလား?</string>
+    <string name="clear_history_dialog_message">သင္ အရင္တုန္းက လုပ္ခဲ့သည့္ ရွာေဖြမႈ အားလုံး ဖယ္ရွားခံရမည္၊</string>
+    <string name="manage_accounts_menu_item">အေကာင့္မ်ားကို စီမံခန္႔ခြဲရန္</string>
+    <string name="general_preferences_title">စကားေျပာထားသည့္ မွတ္တမ္း အားလံုးအား ဤစကားေျပာခန္းမွ ရွင္းလင္းမည္</string>
+    <string name="activity_preferences">အျပင္အဆင္မ်ား</string>
+    <string name="overflow_description">ေနာက္ထပ္ ေရြးခ်ယ္စရာမ်ား</string>
+    <string name="security_hold_required_text"><xliff:g id="email_address">%1$s</xliff:g>အတြက္ လံုျခံဳေရး မြမ္းမံမႈ လိုအပ္သည္</string>
+    <string name="update_security_text">ယခု အဆင့္ျမႇင့္ပါ</string>
+    <string name="forms_are_disabled">ပံုစံမ်ားကို Gmail တြင္ ပိတ္ထားသည္</string>
+</resources>

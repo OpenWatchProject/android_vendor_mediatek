@@ -1,0 +1,34 @@
+test-policy, test-switchfps-arr and test-switchfps-frr are the unit tests for FpsPolicyService.
+They use to test FpsPolicyService's function.
+
+WHAT IT DOES?
+=============
+
+test-policy provides the sample code to know how to use the API of FpsPolicyService.
+test-switchfps-arr use to test the ARR function. ARR shall switch different fps successfully.
+test-switchfps-frr use to test the FRR function. FRR shall switch different fps successfully.
+
+HOW IT WAS BUILT?
+==================
+
+It needs the following libs from AOSP:
+1.  libutils.so
+2.  libcutils.so
+3.  libui.so
+4.  libgui.so
+5.  libbinder.so
+
+and the following libs from MediaTek:
+1.  libfpspolicy.so
+
+All source/dependency modules of this module are already put in
+'vendor/mediatek/proprietary/hardware/libgem/' folder.
+
+
+HOW TO USE IT?
+==============
+
+just execute the test-policy, test-switchfps-arr or test-switchfps-frr
+
+test-policy, test-switchfps-arr and test-switchfps-frr source code in this library were written
+by MediaTek co..

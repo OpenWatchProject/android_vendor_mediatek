@@ -1,0 +1,32 @@
+Library of MTK Wav/Raw decode omx component.
+
+This library is pre-built by MediaTek internal.
+
+
+WHAT IT DOES?
+=============
+libMtkOmxRawDec contains MediaTek developed Raw Pcm decode omx component.  
+Without it, Raw Pcm will not decode.
+
+HOW IT WAS BUILT?
+==================
+It needs the following library from AOSP:
+1.libutils                
+2.libcutils               
+3.libdl                   
+4.libui			  
+5.libbinder
+
+and the following libs from MediaTek:
+1.libMtkOmxOsalUtils.a
+2.libMtkOmxAudioDecBase.a
+
+All source/dependency modules of this module are already put in
+'vendor/mediatek/proprietary/hardware/libomx/audio/MtkOmxRawDec' folder.
+
+HOW TO USE IT?
+==============
+
+use openmax api.
+
+All the source code of this library were written by MediaTek co..

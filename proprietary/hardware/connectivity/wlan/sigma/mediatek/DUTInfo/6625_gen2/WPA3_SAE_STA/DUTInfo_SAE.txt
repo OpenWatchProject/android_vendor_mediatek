@@ -1,0 +1,80 @@
+#$! File Type: TScript
+#
+# Copyright (c) 2017 Wi-Fi Alliance
+# 
+# 
+# THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES 
+# WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF 
+# MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY 
+# SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER 
+# RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT,
+# NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE
+# USE OR PERFORMANCE OF THIS SOFTWARE.
+#
+#
+# Description  : This file hold all CAPI commands used for specific test process
+#                as per testplan. It is part of test operation, and may send
+#                command to dut also to the testbed device as per testplan
+#                requirement.
+# Note         :  
+#                
+# Program      : WPA3 - SAE
+# Version      : 0.0.7
+# Release date : Aug, 2017
+#  
+############################################################################ZZZ
+
+######### DUT (Device Under Test) Information #########################
+
+#### Wi-Fi Test Suite Control Agent Support ########
+# 1-If DUT has Wi-Fi Test Suite Control Agent support. 0-If not supported.
+define!$WTS_ControlAgent_Support!1!
+
+
+# DUT MACAddress 
+define!$DUT_MACAddress!00:0C:E7:24:24:24!
+
+# DUTType : WPA2-Personal or WPA2-Enterprise
+DUTType!WPA2-Personal!
+
+
+#DUT Category : c1 or c2 or c3 if device is WPA2-Enterprise
+DUTCategory!c1!
+
+# DUT Band : ABG or BG or B (B only) or ABGN or GN or AC
+DUTBand!ABGN!
+#injector works only with 2.4
+#Supported EAP Methods 0-No 1-Yes
+TLS!1!
+TTLS!1!
+PEAP0!0!
+PEAP1!0!
+SIM!0!
+AKA!0!
+FAST!0!
+AKA'!0!
+PWD!0!
+
+
+#Dual band support 0-No : it is single band,  1-Yes : it support 2.4/5G
+define!$Dual_Band!1!
+
+#APUT has ability to enable SAE separately from provisioning a password/passphrase
+define!$EnableSAEwithoutPW!0!
+
+#APUT set threshold for Anti-Clogging token
+define!$threshold!10!
+
+#Select SAE Groups(FCC/ECC) that DUT supports
+#Set 1 if supports, Set 0 if not supports
+define!$group20!1!
+define!$group21!1!
+
+#   256-bit Random ECP Group                                |   19
+#   384-bit Random ECP Group                                |   20
+#   521-bit Random ECP Group                                |   21
+#   1024-bit MODP Group with 160-bit Prime Order Subgroup   |   22
+#   2048-bit MODP Group with 224-bit Prime Order Subgroup   |   23
+#   2048-bit MODP Group with 256-bit Prime Order Subgroup   |   24
+#   192-bit Random ECP Group                                |   25
+#   224-bit Random ECP Group                                |   26

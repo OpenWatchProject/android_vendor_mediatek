@@ -1,0 +1,11 @@
+// Build MtkTelephonyAssist apk
+android_app {
+    name: "MtkTelephonyAssist",
+    srcs: ["src/**/*.java"],
+    resource_dirs: ["res"],
+    libs: ["telephony-common"],
+    static_libs: ["vendor.mediatek.hardware.mtkradioex-V1.0-java"],
+    platform_apis: true,
+    certificate: "platform",
+    privileged: true,
+}

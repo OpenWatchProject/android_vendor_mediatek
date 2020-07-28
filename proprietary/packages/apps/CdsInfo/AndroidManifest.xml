@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.mediatek.connectivity"
+    android:sharedUserId="android.uid.system"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <permission
+        android:name="com.mediatek.connectivity.permission.CDS_INFO"
+        android:label="@string/app_name"
+        android:protectionLevel="signatureOrSystem" />
+
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CONNECTIVITY_INTERNAL" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.MODIFY_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WRITE_APN_SETTINGS" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+
+    <application
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name">
+        <activity
+            android:name="com.mediatek.connectivity.CdsInfoActivity"
+            android:permission="com.mediatek.connectivity.permission.CDS_INFO"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.mediatek.connectivity.CdsFrameworkSrvActivity"
+            android:label="@string/cds_common_tab_framework"
+            android:exported="false"
+            android:configChanges="orientation|keyboardHidden|screenSize" >
+        </activity>
+        <activity
+            android:name="com.mediatek.connectivity.CdsWifiInfoActivity"
+            android:label="@string/cds_wifi_info"
+            android:exported="false"
+            android:configChanges="orientation|keyboardHidden|screenSize" >
+        </activity>
+        <activity
+            android:name="com.mediatek.connectivity.CdsRadioMenuActivity"
+            android:label="@string/cds_radio_menu_info"
+            android:exported="false"
+            android:process="com.android.phone"
+            android:configChanges="orientation|keyboardHidden|screenSize" >
+        </activity>
+        <activity
+            android:name="com.mediatek.connectivity.CdsRadioInfoActivity"
+            android:permission="com.mediatek.connectivity.permission.CDS_INFO"
+            android:label="@string/cds_radio_info"
+            android:process="com.android.phone"
+            android:exported="true"
+            android:configChanges="orientation|keyboardHidden|screenSize" >
+        </activity>
+        <activity
+            android:name="com.mediatek.connectivity.CdsUtilityActivity"
+            android:label="@string/cds_utility_info"
+            android:exported="false"
+            android:configChanges="orientation|keyboardHidden|screenSize" >
+        </activity>
+        <activity
+            android:name="com.mediatek.connectivity.CdsPdpActivity"
+            android:exported="false"
+            android:label="@string/cds_pdp_info" >
+        </activity>
+        <activity
+            android:name="com.mediatek.connectivity.CdsConnectivityActivity"
+            android:exported="false"
+            android:label="@string/cds_connectivity_info" >
+        </activity>
+        <activity
+            android:name="com.mediatek.connectivity.CdsPsControlActivity"
+            android:exported="false"
+            android:label="@string/ps_data_flow" >
+        </activity>
+        <service
+            android:name="com.mediatek.connectivity.CdsPdpService"
+            android:exported="false"
+        >
+        </service>
+        <service
+            android:name="com.mediatek.connectivity.CdsPingService"
+            android:exported="false"
+        >
+        </service>
+    </application>
+</manifest>

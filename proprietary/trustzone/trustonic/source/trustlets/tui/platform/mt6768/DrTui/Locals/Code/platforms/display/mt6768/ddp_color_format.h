@@ -1,0 +1,145 @@
+/* Copyright Statement:
+ *
+ * This software/firmware and related documentation ("MediaTek Software") are
+ * protected under relevant copyright laws. The information contained herein is
+ * confidential and proprietary to MediaTek Inc. and/or its licensors. Without
+ * the prior written permission of MediaTek inc. and/or its licensors, any
+ * reproduction, modification, use or disclosure of MediaTek Software, and
+ * information contained herein, in whole or in part, shall be strictly
+ * prohibited.
+ *
+ * MediaTek Inc. (C) 2019. All rights reserved.
+ *
+ * BY OPENING THIS FILE, RECEIVER HEREBY UNEQUIVOCALLY ACKNOWLEDGES AND AGREES
+ * THAT THE SOFTWARE/FIRMWARE AND ITS DOCUMENTATIONS ("MEDIATEK SOFTWARE")
+ * RECEIVED FROM MEDIATEK AND/OR ITS REPRESENTATIVES ARE PROVIDED TO RECEIVER
+ * ON AN "AS-IS" BASIS ONLY. MEDIATEK EXPRESSLY DISCLAIMS ANY AND ALL
+ * WARRANTIES, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED
+ * WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE OR
+ * NONINFRINGEMENT. NEITHER DOES MEDIATEK PROVIDE ANY WARRANTY WHATSOEVER WITH
+ * RESPECT TO THE SOFTWARE OF ANY THIRD PARTY WHICH MAY BE USED BY,
+ * INCORPORATED IN, OR SUPPLIED WITH THE MEDIATEK SOFTWARE, AND RECEIVER AGREES
+ * TO LOOK ONLY TO SUCH THIRD PARTY FOR ANY WARRANTY CLAIM RELATING THERETO.
+ * RECEIVER EXPRESSLY ACKNOWLEDGES THAT IT IS RECEIVER'S SOLE RESPONSIBILITY TO
+ * OBTAIN FROM ANY THIRD PARTY ALL PROPER LICENSES CONTAINED IN MEDIATEK
+ * SOFTWARE. MEDIATEK SHALL ALSO NOT BE RESPONSIBLE FOR ANY MEDIATEK SOFTWARE
+ * RELEASES MADE TO RECEIVER'S SPECIFICATION OR TO CONFORM TO A PARTICULAR
+ * STANDARD OR OPEN FORUM. RECEIVER'S SOLE AND EXCLUSIVE REMEDY AND MEDIATEK'S
+ * ENTIRE AND CUMULATIVE LIABILITY WITH RESPECT TO THE MEDIATEK SOFTWARE
+ * RELEASED HEREUNDER WILL BE, AT MEDIATEK'S OPTION, TO REVISE OR REPLACE THE
+ * MEDIATEK SOFTWARE AT ISSUE, OR REFUND ANY SOFTWARE LICENSE FEES OR SERVICE
+ * CHARGE PAID BY RECEIVER TO MEDIATEK FOR SUCH MEDIATEK SOFTWARE AT ISSUE.
+ *
+ * The following software/firmware and/or related documentation ("MediaTek
+ * Software") have been modified by MediaTek Inc. All revisions are subject to
+ * any receiver's applicable license agreements with MediaTek Inc.
+ */
+
+#ifndef _H_DDP_COLOR_FORMAT_
+#define _H_DDP_COLOR_FORMAT_
+
+#include "disp_session.h"
+
+#define _UFMT_ID_SHIFT			0
+#define _UFMT_ID_WIDTH			8
+#define _UFMT_RGBSWAP_SHIFT		(_UFMT_ID_SHIFT+_UFMT_ID_WIDTH)
+#define _UFMT_RGBSWAP_WIDTH		1
+#define _UFMT_BYTESWAP_SHIFT		(_UFMT_RGBSWAP_SHIFT+_UFMT_RGBSWAP_WIDTH)
+#define _UFMT_BYTESWAP_WIDTH		1
+#define _UFMT_FORMAT_SHIFT		(_UFMT_BYTESWAP_SHIFT+_UFMT_BYTESWAP_WIDTH)
+#define _UFMT_FORMAT_WIDTH		5
+#define _UFMT_VDO_SHIFT			(_UFMT_FORMAT_SHIFT+_UFMT_FORMAT_WIDTH)
+#define _UFMT_VDO_WIDTH			1
+#define _UFMT_BLOCK_SHIT		(_UFMT_VDO_SHIFT+_UFMT_VDO_WIDTH)
+#define _UFMT_BLOCK_WIDTH		1
+#define _UFMT_bpp_SHIFT			(_UFMT_BLOCK_SHIT+_UFMT_BLOCK_WIDTH)
+#define _UFMT_bpp_WIDTH			6
+#define _UFMT_RGB_SHIFT			(_UFMT_bpp_SHIFT+_UFMT_bpp_WIDTH)
+#define _UFMT_RGB_WIDTH			1
+
+#define _MASK_SHIFT(val, width, shift) (((val)>>(shift)) & ((1<<(width))-1))
+
+#define MAKE_UNIFIED_COLOR_FMT(rgb, bpp, block, vdo, format, byteswap, rgbswap, id) \
+	( \
+	((rgb)			<< _UFMT_RGB_SHIFT)	| \
+	((bpp)			<< _UFMT_bpp_SHIFT)	| \
+	((block)		<< _UFMT_BLOCK_SHIT)	| \
+	((vdo)			<< _UFMT_VDO_SHIFT)	| \
+	((format)		<< _UFMT_FORMAT_SHIFT)	| \
+	((byteswap)		<< _UFMT_BYTESWAP_SHIFT)	| \
+	((rgbswap)		<< _UFMT_RGBSWAP_SHIFT)	| \
+	((id)			<< _UFMT_ID_SHIFT))
+
+#define UFMT_GET_RGB(fmt)		_MASK_SHIFT(fmt, _UFMT_RGB_WIDTH, _UFMT_RGB_SHIFT)
+#define UFMT_GET_bpp(fmt)		_MASK_SHIFT(fmt, _UFMT_bpp_WIDTH, _UFMT_bpp_SHIFT)
+#define UFMT_GET_BLOCK(fmt)		_MASK_SHIFT(fmt, _UFMT_BLOCK_WIDTH, _UFMT_BLOCK_SHIT)
+#define UFMT_GET_VDO(fmt)		_MASK_SHIFT(fmt, _UFMT_VDO_WIDTH, _UFMT_VDO_SHIFT)
+#define UFMT_GET_FORMAT(fmt)		_MASK_SHIFT(fmt, _UFMT_FORMAT_WIDTH, _UFMT_FORMAT_SHIFT)
+#define UFMT_GET_BYTESWAP(fmt)		_MASK_SHIFT(fmt, _UFMT_BYTESWAP_WIDTH, _UFMT_BYTESWAP_SHIFT)
+#define UFMT_GET_RGBSWAP(fmt)		_MASK_SHIFT(fmt, _UFMT_RGBSWAP_WIDTH, _UFMT_RGBSWAP_SHIFT)
+#define UFMT_GET_ID(fmt)		_MASK_SHIFT(fmt, _UFMT_ID_WIDTH, _UFMT_ID_SHIFT)
+#define UFMT_GET_Bpp(fmt)		(UFMT_GET_bpp(fmt)/8)
+
+unsigned int ufmt_get_rgb(unsigned int fmt);
+unsigned int ufmt_get_bpp(unsigned int fmt);
+unsigned int ufmt_get_block(unsigned int fmt);
+unsigned int ufmt_get_vdo(unsigned int fmt);
+unsigned int ufmt_get_format(unsigned int fmt);
+unsigned int ufmt_get_byteswap(unsigned int fmt);
+unsigned int ufmt_get_rgbswap(unsigned int fmt);
+unsigned int ufmt_get_id(unsigned int fmt);
+unsigned int ufmt_get_Bpp(unsigned int fmt);
+unsigned int ufmt_is_old_fmt(unsigned int fmt);
+
+enum UNIFIED_COLOR_FMT {
+	UFMT_UNKNOWN = 0,
+	UFMT_Y8 = MAKE_UNIFIED_COLOR_FMT(0, 8, 0, 0, 7, 0, 0, 1),
+	UFMT_RGBA4444 = MAKE_UNIFIED_COLOR_FMT(1, 16, 0, 0, 0, 0, 0, 2),
+	UFMT_RGBA5551 = MAKE_UNIFIED_COLOR_FMT(1, 16, 0, 0, 0, 0, 0, 3),
+	UFMT_RGB565 = MAKE_UNIFIED_COLOR_FMT(1, 16, 0, 0, 0, 0, 0, 4),
+	UFMT_BGR565 = MAKE_UNIFIED_COLOR_FMT(1, 16, 0, 0, 0, 1, 0, 5),
+	UFMT_RGB888 = MAKE_UNIFIED_COLOR_FMT(1, 24, 0, 0, 1, 1, 0, 6),
+	UFMT_BGR888 = MAKE_UNIFIED_COLOR_FMT(1, 24, 0, 0, 1, 0, 0, 7),
+	UFMT_RGBA8888 = MAKE_UNIFIED_COLOR_FMT(1, 32, 0, 0, 2, 1, 0, 8),
+	UFMT_BGRA8888 = MAKE_UNIFIED_COLOR_FMT(1, 32, 0, 0, 2, 0, 0, 9),
+	UFMT_ARGB8888 = MAKE_UNIFIED_COLOR_FMT(1, 32, 0, 0, 3, 1, 0, 10),
+	UFMT_ABGR8888 = MAKE_UNIFIED_COLOR_FMT(1, 32, 0, 0, 3, 0, 0, 11),
+	UFMT_RGBX8888 = MAKE_UNIFIED_COLOR_FMT(1, 32, 0, 0, 0, 0, 0, 12),
+	UFMT_BGRX8888 = MAKE_UNIFIED_COLOR_FMT(1, 32, 0, 0, 0, 0, 0, 13),
+	UFMT_XRGB8888 = MAKE_UNIFIED_COLOR_FMT(1, 32, 0, 0, 0, 0, 0, 14),
+	UFMT_XBGR8888 = MAKE_UNIFIED_COLOR_FMT(1, 32, 0, 0, 0, 0, 0, 15),
+	UFMT_AYUV = MAKE_UNIFIED_COLOR_FMT(0, 0, 0, 0, 0, 0, 0, 16),
+	UFMT_YUV = MAKE_UNIFIED_COLOR_FMT(0, 0, 0, 0, 0, 0, 0, 17),
+	UFMT_UYVY = MAKE_UNIFIED_COLOR_FMT(0, 16, 0, 0, 4, 0, 0, 18),
+	UFMT_VYUY = MAKE_UNIFIED_COLOR_FMT(0, 16, 0, 0, 4, 1, 0, 19),
+	UFMT_YUYV = MAKE_UNIFIED_COLOR_FMT(0, 16, 0, 0, 5, 0, 0, 20),
+	UFMT_YVYU = MAKE_UNIFIED_COLOR_FMT(0, 16, 0, 0, 5, 1, 0, 21),
+	UFMT_UYVY_BLK = MAKE_UNIFIED_COLOR_FMT(0, 16, 1, 0, 4, 0, 0, 22),
+	UFMT_VYUY_BLK = MAKE_UNIFIED_COLOR_FMT(0, 16, 1, 0, 4, 1, 0, 23),
+	UFMT_YUY2_BLK = MAKE_UNIFIED_COLOR_FMT(0, 16, 1, 0, 5, 0, 0, 24),
+	UFMT_YVYU_BLK = MAKE_UNIFIED_COLOR_FMT(0, 16, 1, 0, 5, 1, 0, 25),
+	UFMT_YV12 = MAKE_UNIFIED_COLOR_FMT(0, 8, 0, 0, 8, 1, 0, 26),
+	UFMT_I420 = MAKE_UNIFIED_COLOR_FMT(0, 8, 0, 0, 8, 0, 0, 27),
+	UFMT_YV16 = MAKE_UNIFIED_COLOR_FMT(0, 8, 0, 0, 9, 1, 0, 28),
+	UFMT_I422 = MAKE_UNIFIED_COLOR_FMT(0, 8, 0, 0, 9, 0, 0, 29),
+	UFMT_YV24 = MAKE_UNIFIED_COLOR_FMT(0, 8, 0, 0, 10, 1, 0, 30),
+	UFMT_I444 = MAKE_UNIFIED_COLOR_FMT(0, 8, 0, 0, 10, 0, 0, 31),
+	UFMT_NV12 = MAKE_UNIFIED_COLOR_FMT(0, 8, 0, 0, 12, 0, 0, 32),
+	UFMT_NV21 = MAKE_UNIFIED_COLOR_FMT(0, 8, 0, 0, 12, 1, 0, 33),
+	UFMT_NV12_BLK = MAKE_UNIFIED_COLOR_FMT(0, 8, 1, 0, 12, 0, 0, 34),
+	UFMT_NV21_BLK = MAKE_UNIFIED_COLOR_FMT(0, 8, 1, 0, 12, 1, 0, 35),
+	UFMT_NV12_BLK_FLD = MAKE_UNIFIED_COLOR_FMT(0, 8, 1, 1, 12, 0, 0, 36),
+	UFMT_NV21_BLK_FLD = MAKE_UNIFIED_COLOR_FMT(0, 8, 1, 1, 12, 1, 0, 37),
+	UFMT_NV16 = MAKE_UNIFIED_COLOR_FMT(0, 8, 0, 0, 13, 0, 0, 38),
+	UFMT_NV61 = MAKE_UNIFIED_COLOR_FMT(0, 8, 0, 0, 13, 1, 0, 39),
+	UFMT_NV24 = MAKE_UNIFIED_COLOR_FMT(0, 8, 0, 0, 14, 0, 0, 40),
+	UFMT_NV42 = MAKE_UNIFIED_COLOR_FMT(0, 8, 0, 0, 14, 1, 0, 41),
+	UFMT_PARGB8888 = MAKE_UNIFIED_COLOR_FMT(1, 32, 0, 0, 3, 1, 0, 42),
+	UFMT_PABGR8888 = MAKE_UNIFIED_COLOR_FMT(1, 32, 0, 0, 3, 1, 1, 43),
+	UFMT_PRGBA8888 = MAKE_UNIFIED_COLOR_FMT(1, 32, 0, 0, 3, 0, 1, 44),
+	UFMT_PBGRA8888 = MAKE_UNIFIED_COLOR_FMT(1, 32, 0, 0, 3, 0, 0, 45),
+};
+
+enum UNIFIED_COLOR_FMT display_fmt_reg_to_unified_fmt(int fmt_reg_val, int byteswap, int rgbswap);
+char *unified_color_fmt_name(enum UNIFIED_COLOR_FMT fmt);
+#endif

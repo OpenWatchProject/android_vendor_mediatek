@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- The source code provided herein is for optimizing power and performance of gaming software and
+certain applications (e.g. Sina Weibo, QQ) only and should not be used and/or included in any
+software that is unrelated to enhancing end-user experience. -->
+<WHITELIST>
+    <PerfService>
+        <Package name="com.imangi.templerun2">
+            <Activity name="Common">
+                <PERF_RES_CPUCORE_MIN_CLUSTER_0 Param1="3"/>
+            </Activity>
+        </Package>
+        <Package name="com.tencent.tmgp.sgame">
+            <Activity name="Common">
+                <PERF_RES_POWERHAL_WHITELIST_APP_LAUNCH_TIME_COLD Param1="28"/>
+                <PERF_RES_CPUCORE_MIN_CLUSTER_0 Param1="2"/>
+                <PERF_RES_CPUFREQ_MIN_CLUSTER_0 Param1="1950000"/>
+                <PERF_RES_CPUCORE_MIN_CLUSTER_1 Param1="2"/>
+                <PERF_RES_CPUFREQ_MIN_CLUSTER_1 Param1="1950000"/>
+                <PERF_RES_POWER_HPS_THRESH_UP Param1="60"/>
+                <PERF_RES_POWER_HPS_THRESH_DOWN Param1="50"/>
+                <PERF_RES_POWER_PPM_HICA_VAR Param1="0"/>
+            </Activity>
+        </Package>
+        <Package name="com.tencent.tmgp.sgamece">
+            <Activity name="Common">
+                <PERF_RES_CPUCORE_MIN_CLUSTER_0 Param1="2"/>
+                <PERF_RES_CPUFREQ_MIN_CLUSTER_0 Param1="1950000"/>
+                <PERF_RES_CPUCORE_MIN_CLUSTER_1 Param1="2"/>
+                <PERF_RES_CPUFREQ_MIN_CLUSTER_1 Param1="1950000"/>
+                <PERF_RES_POWER_HPS_THRESH_UP Param1="60"/>
+                <PERF_RES_POWER_HPS_THRESH_DOWN Param1="50"/>
+                <PERF_RES_POWER_PPM_HICA_VAR Param1="0"/>
+            </Activity>
+        </Package>
+        <Package name="com.taobao.taobao">
+            <Activity name="Common">
+                <PERF_RES_POWERHAL_WHITELIST_APP_LAUNCH_TIME_COLD Param1="8"/>
+            </Activity>
+        </Package>
+    </PerfService>
+</WHITELIST>

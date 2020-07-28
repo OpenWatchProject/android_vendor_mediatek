@@ -1,0 +1,78 @@
+This directory contains the meta_tst binary, which is the main daemon in meta mode.
+And it also contains the static library libft, which is called by meta_tst daemon.
+
+WHAT IT DOES?
+=============
+This runs in the user-space and is used to receive and parse the data from PC side or send data to PC via USB or UART.
+If the parsed frame is used for modem side, all of raw data will transfer to modem side via CCCI interface, and TST task of Modem side will call FT task to finish the related test.
+If the parsed frame is used for AP side, the FT task is called to link with AP related module.
+libft contains API that the meta_tst can call to dispatch the AP data according to request id for different driver module.
+It also contains API for driver module to write data to PC side. Libft contains the test function for AP NVRAM Editor, vibrator,
+lcd, sdcard,adc,gps,wifi,bluetooth,fm,emmc,msensor,alsps sensor,gsensor,gyroscope,touch panel,audio,matv,nfc,cryptfs,hdcp,drmkey
+and camera in meta mode.
+
+HOW IT WAS BUILT?
+==================
+It needs the following libs from AOSP:
+1. libc.so
+2. libcutils.so
+3. liblog.so
+4. libutils.so
+5. libext4_utils_static
+6. libz
+7. libdl.so
+8. libsparse.so
+9. libselinux
+10. libsparse_static
+11. libfft
+12. libtz_uree
+
+and the following libs from MediaTek:
+1. libft
+2. libnvram.so
+3. libfile_op.so
+4. libmedia.so
+5. libhwm.so
+6. libhardware_legacy.so 
+7. libmeta_apeditor
+8. libmeta_vibrator
+9. libmeta_lcd
+10. libmeta_lcdbk
+11. libmeta_sdcard
+12. libmeta_adc_old
+13. libmeta_gps
+14. libmeta_wifi
+15. libmeta_bluetooth
+16. libmeta_clr_emmc
+17. libmeta_msensor
+18. libmeta_alsps
+19. libmeta_gsensor
+20. libmeta_gyroscope
+21. libccap
+22. libmeta_touch
+23. libmeta_audio
+24. libmeta_fm
+25. libstorageutil
+26. libmeta_cryptfs
+27. libmeta_nfc
+28. libmeta_keypadbk
+29. libmeta_matv.so
+30. libmeta_hdcp
+31. libnetutils.so
+32. libmtknfc_dynamic_load_jni.so
+33. liburee_meta_drmkeyinstall
+
+the following libs from 3rd party Discretix:
+1. libDxHdcp.so
+
+
+This module is released in source code format in 'vendor/mediatek/proprietary/hardware/meta' folder.
+
+
+HOW TO USE IT?
+==============
+meta_tst is used to read data from USB/UART device. Then parse the data and dispatch AP data to FT module which will send data 
+to different driver modules via request id number, dispatch modem data to AP CCCI device. After driver modules perform the 
+corresponding operation, it will call FT module API WriteDataToPC to send data to PC side. And if CCCI has modem data, 
+meta_tst will parse the received data and send it to PC side.
+libft provides API that will send data to different driver modules via request id number.

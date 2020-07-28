@@ -1,0 +1,26 @@
+Library of MTK M4U driver, for user space interface.
+
+WHAT IT DOES?
+=============
+libm4u.so provide multimedia hardware use non-physical continuous memory.
+The multimedia driver need use M4U API to enable this function and allocate/free MVA.
+
+HOW IT WAS BUILT?
+==================
+It needs the following library from AOSP:
+1.  libcutils.so
+2.  liblog.so
+
+and the following libs from MediaTek:
+1.  libm4u.so
+2.  libmhaldrv.so
+
+HOW TO USE IT?
+==============
+Provide api for multimedia driver to use MVA. (multi-media virtual address)
+all api interfaces are at m4u_lib.h
+
+[Build Method]
+mmm vendor/mediatek/proprietary/hardware/m4u/1.0/ut/
+
+All the source code of this library were written by MediaTek co..

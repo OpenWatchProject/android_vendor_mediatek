@@ -1,0 +1,7 @@
+on init
+
+service hdmi-1-0 /vendor/bin/hw/vendor.mediatek.hardware.hdmi@1.0-service
+    class main
+    user system
+    group system
+

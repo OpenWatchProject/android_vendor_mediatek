@@ -1,0 +1,84 @@
+/*
+ * Copyright (C) 2016 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package vendor.mediatek.hardware.nvram@1.0;
+
+
+/*
+ * Purpose:
+ * Nvram hidl interface is used by java layer to access nvram file
+ * Note:
+ * Support nvram file list in nvram@1.0 was listed as below
+ * Please update nvram interface and versoin if new nvram file need to be supported
+ *
+  /vendor/nvdata/APCFG/APRDEB/BT_Addr
+  /vendor/nvdata/APCFG/APRDCL/AUXADC
+  /vendor/nvdata/media/CAMERA_Para
+  /vendor/nvdata/media/CAMERA_3A
+  /vendor/nvdata/media/CAMERA_SHADING
+  /vendor/nvdata/media/CAMERA_DEFECT
+  /vendor/nvdata/media/CAMERA_SENSOR
+  /vendor/nvdata/media/CAMERA_LENS
+  /vendor/nvdata/APCFG/APRDCL/UART
+  /vendor/nvdata/APCFG/APRDCL/FACTORY
+  /vendor/nvdata/APCFG/APRDCL/BWCS
+  /vendor/nvdata/APCFG/APRDCL/HWMON_ACC
+  /vendor/nvdata/APCFG/APRDCL/HWMON_GYRO
+  /vendor/nvdata/media/Voice_Recognize_Param
+  /vendor/nvdata/media/Audio_AudEnh_Control_Opt
+  /vendor/nvdata/media/Audio_VOIP_Param
+  /vendor/nvdata/APCFG/APRDCL/HWMON_PS
+  /vendor/nvdata/APCFG/APRDCL/MD_Type
+  /vendor/nvdata/APCFG/APRDCL/EXT_MD_Type
+  /vendor/nvdata/APCFG/APRDCL/SDIO
+  /vendor/nvdata/media/CAMERA_VERSION
+  /vendor/nvdata/media/CAMERA_FEATURE
+  /vendor/nvdata/media/CAMERA_GEOMETRY
+  /vendor/nvdata/APCFG/APRDCL/MD_SBP
+  /vendor/nvdata/media/CAMERA_SHADING2
+  /vendor/nvdata/media/CAMERA_PLINE
+  /vendor/nvdata/media/CAMERA_AF
+  /vendor/nvdata/media/CAMERA_FLASH_CALIBRATION
+  /vendor/nvdata/media/Audio_Sph
+  /vendor/nvdata/APCFG/APRDEB/GPS
+  /vendor/nvdata/media/Audio_CompFlt
+  /vendor/nvdata/media/Audio_Effect
+  /vendor/nvdata/APCFG/APRDEB/WIFI
+  /vendor/nvdata/APCFG/APRDEB/WIFI_CUSTOM
+  /vendor/nvdata/media/Audio_Sph_Med
+  /vendor/nvdata/media/Audio_Vol_custom
+  /vendor/nvdata/media/Sph_Dual_Mic
+  /vendor/nvdata/media/Audio_Wb_Sph
+  /vendor/nvdata/APCFG/APRDEB/PRODUCT_INFO
+  /vendor/nvdata/media/Headphone_CompFlt
+  /vendor/nvdata/media/Audio_gain_table
+  /vendor/nvdata/media/Audio_ver1_Vol_custom
+  /vendor/nvdata/media/Audio_Hd_Record_Param
+  /vendor/nvdata/media/Audio_Hd_Record_Scene_Table
+  /vendor/nvdata/media/Audio_Buffer_DC_Calibration_Param
+  /vendor/nvdata/media/VibSpk_CompFlt
+  /vendor/nvdata/media/MusicDRC_CompFlt
+  /vendor/nvdata/media/RingToneDRC_CompFlt
+  /vendor/nvdata/media/Audio_MAGI_CONFERENCE
+  /vendor/nvdata/media/Audio_HAC_Param
+ */
+
+interface INvram {
+    readFileByName(string filename, uint32_t size)
+            generates (string data);
+    writeFileByNamevec(string filename, uint32_t size, vec<uint8_t> data)
+            generates (int8_t retval);
+};

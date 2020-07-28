@@ -1,0 +1,73 @@
+cc_prebuilt_library_shared {
+    arch: {
+        arm: {
+            cortex_a53: {
+                shared_libs: [
+                    "libcutils",
+                    "liblog",
+                    "libdl",
+                    "libnativewindow",
+                ],
+                srcs: [
+                    "arm_armv8-a_cortex-a53/libGLES_meow.so",
+                ],
+            },
+            cortex_a55: {
+                shared_libs: [
+                    "libcutils",
+                    "liblog",
+                    "libdl",
+                    "libnativewindow",
+                ],
+                srcs: [
+                    "arm_armv8-2a_cortex-a55/libGLES_meow.so",
+                ],
+            },
+            cortex_a7: {
+                shared_libs: [
+                    "libcutils",
+                    "liblog",
+                    "libdl",
+                    "libnativewindow",
+                ],
+                srcs: [
+                    "arm_armv7-a-neon_cortex-a7/libGLES_meow.so",
+                ],
+            },
+        },
+        arm64: {
+            cortex_a53: {
+                shared_libs: [
+                    "libcutils",
+                    "liblog",
+                    "libdl",
+                    "libnativewindow",
+                ],
+                srcs: [
+                    "arm64_armv8-a_cortex-a53/libGLES_meow.so",
+                ],
+            },
+            cortex_a55: {
+                shared_libs: [
+                    "libcutils",
+                    "liblog",
+                    "libdl",
+                    "libnativewindow",
+                ],
+                srcs: [
+                    "arm64_armv8-2a_cortex-a55/libGLES_meow.so",
+                ],
+            },
+        },
+    },
+    export_include_dirs: [
+        "include",
+    ],
+    name: "libGLES_meow@MTK,smart_phone",
+    proprietary: true,
+    relative_install_path: "egl",
+    strip: {
+        none: true,
+    },
+}
+

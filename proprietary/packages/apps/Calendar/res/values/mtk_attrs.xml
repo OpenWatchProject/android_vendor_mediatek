@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- #Lunar# -->
+    <declare-styleable name="LunarDatePicker">
+        <!-- The first year (inclusive), for example "1940". -->
+        <attr format="integer" name="startYear" />
+        <!-- The last year (inclusive), for example "2010". -->
+        <attr format="integer" name="endYear" />
+        <!-- Whether the spinners are shown. -->
+        <attr format="boolean" name="spinnersShown" />
+        <!-- Whether the calendar view is shown. -->
+        <attr format="boolean" name="calendarViewShown" />
+        <!-- The minimal date shown by this calendar view in mm/dd/yyyy format. -->
+        <attr format="string" name="minDate" />
+        <!-- The minimal date shown by this calendar view in mm/dd/yyyy format. -->
+        <attr format="string" name="maxDate" />
+    </declare-styleable>
+    <!-- The DatePicker style. -->
+    <attr format="reference" name="datePickerStyle" />
+</resources>

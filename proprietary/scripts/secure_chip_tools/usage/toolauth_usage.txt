@@ -1,0 +1,7 @@
+==================
+generate tool auth
+==================
+#legacy
+python toolauth.py -i settings/toolauth/toolauth_key.ini -g settings/toolauth/toolauth_gfh_config_legacy.ini out/toolauth/auth_sv5.auth
+#pss
+python toolauth.py -i settings/toolauth/toolauth_key.ini -g settings/toolauth/toolauth_gfh_config_pss.ini out/toolauth/auth_sv5.auth

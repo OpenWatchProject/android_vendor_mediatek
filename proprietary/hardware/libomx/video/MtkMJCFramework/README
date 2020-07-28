@@ -1,0 +1,30 @@
+Library of MTK ClearMotion features, icluding frame-rate detection, frame-rate conversion.
+
+This library is pre-built by MediaTek internal.
+
+
+WHAT IT DOES?
+=============
+libClearMotionFW.so contains MediaTek developed ClearMotion related post-processing modules.
+Without them, ClearMotion functionalities will not work¡¨
+
+HOW IT WAS BUILT?
+==================
+It needs the following library from AOSP:
+1.  liblog.so
+2.  libcutils.so
+
+and the following libs from MediaTek:
+1.  libMtkOmxVdec.so
+2.  libmet-tag.so
+
+All source/dependency modules of this module are already put in
+'vendor/mediatek/libs' folder.
+
+HOW TO USE IT?
+==============
+
+Provide api for ClearMotion feature called from libMtkOmxVdec.
+all api interfaces are at (vendor/mediatek/proprietary/protect-bsp/hardware/omx/video)
+
+All the source code of this library were written by MediaTek co..

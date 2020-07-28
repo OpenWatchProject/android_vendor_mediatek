@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+                  android:key="allowed_devices_settings"
+                  android:title="@string/allowed_devices">
+
+    <CheckBoxPreference
+        android:key="allow_all_devices_checkBox"
+        android:title="@string/allow_all_devices"
+        android:defaultValue="true"
+        android:persistent="true" />
+
+    <PreferenceCategory
+        android:key="allowed_device_list"
+        android:title="@string/allowed_device_list"
+        android:persistent="false"/>
+</PreferenceScreen>

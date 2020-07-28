@@ -1,0 +1,490 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2011 Google Inc.
+     Licensed to The Android Open Source Project.
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+          http://www.apache.org/licenses/LICENSE-2.0
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="from">থেকে</string>
+    <string name="to">প্রতি</string>
+    <string name="cc">সিসি</string>
+    <string name="bcc">বিসিসি</string>
+    <string name="subject_hint">বিষয়</string>
+    <string name="body_hint">ইমেইল লিখুন</string>
+    <string name="add_file_attachment">ফাইল সংযুক্ত করুন</string>
+    <string name="add_photo_attachment">ছবি সংযুক্ত করুন</string>
+    <string name="save_draft">খসড়া সংরক্ষণ করুন</string>
+    <string name="discard">বাতিল করুন</string>
+    <string name="compose">লিখুন</string>
+    <string name="compose_title">লিখুন</string>
+    <string-array name="compose_modes">
+        <item>উত্তর দিন</item>
+        <item>সবাইকে উত্তর দিন</item>
+        <item>ফরওয়ার্ড করুন</item>
+    </string-array>
+    <string name="reply_attribution"><xliff:g id="date">%s</xliff:g>, <xliff:g id="person">%s</xliff:g> তে লিখুন:</string>
+    <string name="forward_attribution">---------- ফরোয়ার্ডকৃত বার্তা ----------<br/>থেকে: <xliff:g id="from">%1$s</xliff:g><br/>তারিখ: <xliff:g id="date">%2$s</xliff:g><br/>বিষয়: <xliff:g id="subject">%3$s</xliff:g><br/>প্রতি: <xliff:g id="to">%4$s</xliff:g>&lt;br&gt;</string>
+    <string name="forward_attribution_no_headers">---------- ফরোয়ার্ডকৃত বার্তা ---------</string>
+    <string name="cc_attribution">সিসি: <xliff:g id="cc">%1$s</xliff:g>&lt;br&gt;</string>
+    <string name="select_attachment_type">সংযুক্তির ধরন বাছাই করুন</string>
+    <string name="too_large_to_attach_single">ফাইল সংযুক্ত করা যাবে না <xliff:g id="maxSize">%1$s</xliff:g> বেশি আয়তনের। </string>
+    <string name="too_large_to_attach_multiple">এক বা একাধিক ফাইল সংযুক্ত করা হয়নি। সীমা <xliff:g id="maxSize">%1$s</xliff:g>.</string>
+    <string name="too_large_to_attach_additional">ফাইল সংযুক্ত করা হয়নি। <xliff:g id="maxSize">%1$s</xliff:g> সর্বোচ্চ সীমায় পৌঁছেছে।</string>
+    <string name="generic_attachment_problem">ফাইল সংযুক্ত করতে পারেনি।</string>
+    <string name="attachment_permission_denied">সংযুক্তিটির জন্য অনুমতি দিতে অস্বীকার করা হয়েছে।</string>
+    <string name="recipient_needed">অন্তত একজন প্রাপক যোগ করুন।</string>
+    <string name="confirm_send_message_with_no_subject">বার্তার বিষয়বস্তুতে কোন লেখা নেই।</string>
+    <string name="confirm_send_message_with_no_body">বার্তার মূল অংশে কোন লেখা নেই।</string>
+    <string name="confirm_send_message">বার্তা পাঠাবেন?</string>
+    <string name="message_discarded">বার্তাটি বাতিল করা হয়েছে।</string>
+    <string name="signature">\n\n<xliff:g id="signature">%s</xliff:g></string>
+    <string name="custom_from_account_label">বার্তা পাঠান:</string>
+    <string name="send">"পাঠান"</string>
+    <string name="mark_read">পঠিত হিসাবে চিহ্নিত করুন</string>
+    <string name="mark_unread">অপঠিত হিসাবে চিহ্নিত করুন</string>
+    <string name="toggle_read_unread">পঠিত অপঠিত টোগল করুন</string>
+    <string name="mute">নিঃশব্দ</string>
+    <string name="add_star">তারকা যুক্ত করুন</string>
+    <string name="remove_star">তারকা সরিয়ে ফেলুন</string>
+    <string name="remove_folder"><xliff:g id="folderName">%1$s</xliff:g> থেকে সরান</string>
+    <string name="archive">আর্কাইভে রাখুন</string>
+    <string name="report_spam">স্প্যাম হিসেবে রিপোর্ট করুন</string>
+    <string name="mark_not_spam">স্প্যাম নয় হিসেবে রিপোর্ট করুন</string>
+    <string name="report_phishing">ফিশিং হিসেবে রিপোর্ট করুন</string>
+    <string name="delete">"মুছুন"</string>
+    <string name="discard_drafts">খসড়া বাতিল করুন</string>
+    <string name="discard_failed">বাতিল করতে ব্যর্থ হয়েছে</string>
+    <string name="refresh">রিফ্রেশ করুন</string>
+    <string name="reply">উত্তর দিন</string>
+    <string name="reply_all">সবাইকে উত্তর দিন</string>
+    <string name="resume_draft">সম্পাদনা করুন</string>
+    <string name="forward">ফরওয়ার্ড করুন</string>
+    <string name="menu_compose">লিখুন</string>
+    <string name="menu_change_folders">ফোল্ডার পরিবর্তন করুন</string>
+    <string name="menu_move_to">সরান</string>
+    <string name="menu_move_to_inbox">ইনবক্সে সরান</string>
+    <string name="menu_manage_folders">ফোল্ডার সেটিং</string>
+    <string name="menu_show_original">অটো-সাইজিংয়ে ফিরে যান</string>
+    <string name="menu_settings">সেটিং</string>
+    <string name="menu_search">"অনুসন্ধান করুন"</string>
+    <string name="menu_toggle_drawer">ড্রয়ার টোগল করুন</string>
+    <string name="drawer_title">নেভিগেশন</string>
+    <string name="mark_important">গুরুত্বপূর্ণ হিসেবে চিহ্নিত করুন</string>
+    <string name="mark_not_important">গুরুত্বপূর্ণ নয় বলে চিহ্নিত করুন</string>
+    <string name="add_cc_label">সিসি/বিসিসি যোগ করুন</string>
+    <string name="add_bcc_label">বিসিসি যোগ করুন</string>
+    <string name="quoted_text">উদ্ধৃত টেক্সট অন্তর্ভুক্ত করুন</string>
+    <string name="quoted_text_label">টেক্সট উদ্ধৃত করুন</string>
+    <string name="respond_inline">ইনলাইনে জবাব দিন</string>
+    <string name="bytes"><xliff:g id="count">%s</xliff:g> বি</string>
+    <string name="kilobytes"><xliff:g id="count">%s</xliff:g> কেবি</string>
+    <string name="megabytes"><xliff:g id="count">%s</xliff:g> এমবি</string>
+    <string name="attachment_image">ছবি</string>
+    <string name="attachment_video">ভিডিও</string>
+    <string name="attachment_audio">অডিও</string>
+    <string name="attachment_text">বার্তা</string>
+    <string name="attachment_application_msword">ডকুমেন্ট</string>
+    <string name="attachment_application_vnd_ms_powerpoint">উপস্থাপনা</string>
+    <string name="attachment_application_vnd_ms_excel">স্প্রেডশিট</string>
+    <string name="attachment_application_pdf">পিডিএফ</string>
+    <string name="attachment_unknown"><xliff:g id="attachmentExtension">%s</xliff:g> ফাইল</string>
+    <string name="preview_attachment">প্রাকবীক্ষণ</string>
+    <string name="save_attachment">সংরক্ষণ করুন</string>
+    <string name="download_again">আবার ডাউনলোড করুন</string>
+    <string name="remove_attachment_desc"><xliff:g id="attachmentName">%s</xliff:g> সংযুক্তি সরিয়ে ফেলুন</string>
+    <string name="more_info_attachment">তথ্য</string>
+    <string name="no_application_found">কোন অ্যাপ এই সংযুক্তিকে দেখার জন্য খুলতে পারছে না </string>
+    <string name="fetching_attachment">সংযুক্তি আনা হচ্ছে</string>
+    <string name="please_wait">"অপেক্ষা করুন\u2026"</string>
+    <string name="saved">সংরক্ষণ করা হয়েছে, <xliff:g id="size">%s</xliff:g></string>
+    <string name="download_failed">ডাউনলোড করতে পারেনি। পুনরায় চেষ্টা করতে স্পর্শ করুন।</string>
+    <string name="menu_photo_save_all">সব সংরক্ষণ করুন</string>
+    <string name="menu_photo_share">শেয়ার করুন</string>
+    <string name="menu_photo_share_all">সব শেয়ার করুন</string>
+    <string name="menu_photo_print">প্রিন্ট করুন</string>
+    <string name="saving"/>
+    <string name="choosertitle_sharevia">মাধ্যমে শেয়ার করুন</string>
+    <string name="contextmenu_openlink">ব্রাউজারে খুলুন</string>
+    <string name="contextmenu_copy">কপি করুন</string>
+    <string name="contextmenu_copylink">লিঙ্ক ইউআরএল কপি করুন</string>
+    <string name="contextmenu_view_image">ছবি দেখুন</string>
+    <string name="contextmenu_dial_dot">ডায়াল করুন\u2026</string>
+    <string name="contextmenu_sms_dot">SMS\u2026</string>
+    <string name="contextmenu_add_contact">পরিচিতজন যোগ করুন</string>
+    <string name="contextmenu_send_mail">ইমেইল পাঠান</string>
+    <string name="contextmenu_map">মানচিত্র</string>
+    <string name="contextmenu_sharelink">লিঙ্ক শেয়ার করুন</string>
+    <string name="content_description"><xliff:g id="sender">%1$s</xliff:g> সম্পর্কে <xliff:g id="subject">%2$s</xliff:g>, <xliff:g id="snippet">%3$s</xliff:g> চালু করুন <xliff:g id="date">%4$s</xliff:g>, <xliff:g id="readstate">%5$s</xliff:g></string>
+    <string name="content_description_today"><xliff:g id="sender">%1$s</xliff:g> সম্পর্কে <xliff:g id="subject">%2$s</xliff:g>, <xliff:g id="snippet">%3$s</xliff:g> এ <xliff:g id="date">%4$s</xliff:g>, <xliff:g id="readstate">%5$s</xliff:g></string>
+    <string name="content_description_with_folders"><xliff:g id="toHeader">%1$s</xliff:g><xliff:g id="participant">%2$s</xliff:g> সম্পর্কে <xliff:g id="subject">%3$s</xliff:g>, <xliff:g id="snippet">%4$s</xliff:g> তারিখে <xliff:g id="date">%5$s</xliff:g>, <xliff:g id="readstate">%6$s</xliff:g>, লেবেল: <xliff:g id="folders">%7$s</xliff:g></string>
+    <string name="content_description_today_with_folders"><xliff:g id="toHeader">%1$s</xliff:g><xliff:g id="participant">%2$s</xliff:g> সম্পর্কে <xliff:g id="subject">%3$s</xliff:g>, <xliff:g id="snippet">%4$s</xliff:g> টায় <xliff:g id="time">%5$s</xliff:g>, <xliff:g id="readstate">%6$s</xliff:g>, লেবেল: <xliff:g id="folders">%7$s</xliff:g></string>
+    <string name="read_string">পঠিত আলাপচারিতা</string>
+    <string name="unread_string">অপঠিত আলাপচারিতা</string>
+    <string name="filtered_tag">[<xliff:g id="tag">%1$s</xliff:g>]<xliff:g id="subject">%2$s</xliff:g></string>
+    <string name="badge_and_subject"><xliff:g id="contact_name">%1$s</xliff:g> (<xliff:g id="phone_label">%2$s</xliff:g>) স্পিড ডায়ালে যোগ করা হয়েছে <xliff:g id="key">%3$s</xliff:g></string>
+    <plurals name="draft">
+        <item quantity="one">খসড়া</item>
+        <item quantity="other">খসড়া</item>
+    </plurals>
+    <string name="sending">পাঠানো হচ্ছে\u2026</string>
+    <string name="message_retrying">পুনরায় চেষ্টা করা\u2026</string>
+    <string name="message_failed">ব্যর্থ হয়েছে</string>
+    <string name="send_failed">বার্তা পাঠানো হয়েছিল না।</string>
+    <string name="me_object_pronoun">আমি</string>
+    <string name="me_subject_pronoun">আমি</string>
+    <plurals name="confirm_delete_conversation">
+        <item quantity="one">এই আলাপচারিতাটি মুছে ফেলবেন?</item>
+        <item quantity="other">এই <xliff:g id="count">%1$d</xliff:g> আলাপচারিতাগুলো মুছবেন?</item>
+    </plurals>
+    <plurals name="confirm_archive_conversation">
+        <item quantity="one">এই আলাপচারিতা আর্কাইভে রাখবেন?</item>
+        <item quantity="other">এই <xliff:g id="count">%1$d</xliff:g> আলাপচারিতাগুলো আর্কাইভে রাখবেন?</item>
+    </plurals>
+    <plurals name="confirm_discard_drafts_conversation">
+        <item quantity="one">এই বার্তাটি বাতিল করবেন?</item>
+        <item quantity="other">এই <xliff:g id="count">%1$d</xliff:g> আলাপচারিতাগুলো থেকে খসড়াগুলো বাদ করে দেবেন? </item>
+    </plurals>
+    <string name="confirm_discard_text">এই বার্তাটি বাতিল করবেন?</string>
+    <string name="loading_conversations">লোড হচ্ছে\u2026</string>
+    <string name="empty_inbox"> আপনি সব করে ফেলেছেন! আপনার দিনটি উপভোগ করুন।</string>
+    <string name="empty_search">ওহো! আমরা \"<xliff:g id="search_query">%1$s</xliff:g>\"-এর জন্য কিছু পাইনি। </string>
+    <string name="empty_spam_folder">হুররে, এখানে কোন স্পাম্প নেই!</string>
+    <string name="empty_trash_folder">এখানে কোন ট্র্যাশ নেই। রিসাইকেল করার জন্য ধন্যবাদ!</string>
+    <string name="empty_folder">এখানে কোন মেইল নেই।</string>
+    <string name="getting_messages"> আপনার বার্তা পাচ্ছি</string>
+    <string name="undo">আনডু</string>
+    <plurals name="conversation_unstarred">
+        <item quantity="one"><xliff:g id="count">%1$d</xliff:g> তারকাচিহ্নমুক্ত করুন।</item>
+        <item quantity="other"><xliff:g id="count">%1$d</xliff:g> আলাপচারিতা তারকাচিহ্নমুক্ত করুন।</item>
+    </plurals>
+    <skip/>
+    <plurals name="conversation_muted">
+        <item quantity="one"><b><xliff:g id="count">%1$d</xliff:g></b> নিঃশব্দ করা আছে।</item>
+        <item quantity="other"><b><xliff:g id="count">%1$d</xliff:g></b> নিঃশব্দ করা আছে।</item>
+    </plurals>
+    <plurals name="conversation_spammed">
+        <item quantity="one"><b><xliff:g id="count">%1$d</xliff:g></b> স্পাম্প হিসেবে রিপোর্ট করা হয়েছে।</item>
+        <item quantity="other"><b><xliff:g id="count">%1$d</xliff:g></b> স্পাম্প হিসেবে রিপোর্ট করা হয়েছে।</item>
+    </plurals>
+    <plurals name="conversation_not_spam">
+        <item quantity="one"><b><xliff:g id="count">%1$d</xliff:g></b> স্পাম্প নয় হিসেবে রিপোর্ট করা আছে।</item>
+        <item quantity="other"><b><xliff:g id="count">%1$d</xliff:g></b> স্পাম্প নয় হিসেবে রিপোর্ট করা আছে।</item>
+    </plurals>
+    <plurals name="conversation_not_important">
+        <item quantity="one"><b><xliff:g id="count">%1$d</xliff:g></b> গুরুত্বপূর্ণ নয় হিসেবে চিহ্নিত করা আছে।</item>
+        <item quantity="other"><b><xliff:g id="count">%1$d</xliff:g></b> গুরুত্বপূর্ণ নয় হিসেবে চিহ্নিত করা আছে।</item>
+    </plurals>
+    <plurals name="conversation_phished">
+        <item quantity="one"><b><xliff:g id="count">%1$d</xliff:g></b> ফিশিং হিসেবে রিপোর্ট করা হয়েছে।</item>
+        <item quantity="other"><b><xliff:g id="count">%1$d</xliff:g></b> ফিশিং হিসেবে রিপোর্ট করা হয়েছে।</item>
+    </plurals>
+    <plurals name="conversation_archived">
+        <item quantity="one"><b><xliff:g id="count">%1$d</xliff:g></b> আর্কাইভে রাখা হয়েছে।</item>
+        <item quantity="other"><b><xliff:g id="count">%1$d</xliff:g></b> আর্কাইভে রাখা হয়েছে।</item>
+    </plurals>
+    <plurals name="conversation_deleted">
+        <item quantity="one"><b><xliff:g id="count">%1$d</xliff:g></b> মুছে ফেলা হয়েছে।</item>
+        <item quantity="other"><b><xliff:g id="count">%1$d</xliff:g></b> মুছে ফেলা হয়েছে।</item>
+    </plurals>
+    <string name="deleted">মুছে ফেলা হয়েছে</string>
+    <string name="archived">আর্কাইভে রাখা হয়েছে</string>
+    <string name="folder_removed"><xliff:g id="folderName">%1$s</xliff:g> থেকে সরিয়ে ফেলুন</string>
+    <plurals name="conversation_folder_changed">
+        <item quantity="one">পরিবর্তিত ফোল্ডার।</item>
+        <item quantity="other">পরিবর্তিত ফোল্ডার।</item>
+    </plurals>
+    <string name="conversation_folder_moved"><xliff:g id="folderName">%1$s</xliff:g> তে সরান</string>
+    <string name="search_results_header">\"  <xliff:g example="search query">%1$s</xliff:g>\" ফলাফলের জন্য অনুসন্ধান করুন </string>
+    <string name="search_unsupported">এই একাউন্টে অনুসন্ধান সমর্থনীয় নয়।</string>
+    <string name="search_suggestion_desc">পরামর্শ: <xliff:g id="suggestion">%s</xliff:g></string>
+    <string name="add_label">ফোল্ডার যোগ করুন</string>
+    <plurals name="new_incoming_messages">
+        <item quantity="one"><xliff:g id="count">%1$d</xliff:g> নতুন বার্তা</item>
+        <item quantity="other"><xliff:g id="count">%1$d</xliff:g> নতুন বার্তা</item>
+    </plurals>
+    <string name="date_and_view_details">"<xliff:g id="date">%1$s</xliff:g> <a href="'http://www.example.com'">বিস্তারিত দেখুন</a>"</string>
+    <string name="hide_details">বিস্তারিত লুকান</string>
+    <string name="to_message_header">প্রতি <xliff:g id="recipients">%1$s</xliff:g></string>
+    <string name="bcc_header_for_recipient_summary">বিসিসি:\u0020</string>
+    <string name="contact_info_string"><xliff:g id="name">%1$s</xliff:g> -এর যোগাযোগের তথ্য দেখান</string>
+    <string name="contact_info_string_default">যোগাযোগের তথ্য দেখান</string>
+    <plurals name="show_messages_read">
+        <item quantity="other"><xliff:g id="count" example="4">%1$d</xliff:g> পুরাতন বার্তা</item>
+    </plurals>
+    <plurals name="super_collapsed_block_accessibility_announcement">
+        <item quantity="other"><xliff:g id="count" example="4">%1$d</xliff:g> পুরাতন বার্তা</item>
+    </plurals>
+    <string name="from_heading">থেকে:\u0020</string>
+    <string name="replyto_heading">জবাব দেবেন যাকে:\u0020</string>
+    <string name="to_heading">প্রতি:\u0020</string>
+    <string name="to_heading_no_space">প্রতি:</string>
+    <string name="cc_heading">Cc:\u0020</string>
+    <string name="bcc_heading">বিসিসি:\u0020</string>
+    <string name="date_heading">তারিখ:\u0020</string>
+    <string name="show_images">ছবি দেখান</string>
+    <string name="always_show_images">এই প্রেরক থেকে আসা ছবি সবসময় দেখান</string>
+    <string name="always_show_images_toast">এই প্রেরক থেকে আসা ছবি স্বয়ংক্রিয়ভাবে দেখা যাবে।</string>
+    <string name="address_display_format"><xliff:g id="name">%1$s</xliff:g> <xliff:g id="email">%2$s</xliff:g></string>
+    <string name="address_display_format_with_via_domain"><xliff:g id="name">%1$s</xliff:g> <xliff:g id="email">%2$s</xliff:g> মাধ্যমে <xliff:g id="via_domain">%3$s</xliff:g></string>
+    <string name="message_saved"> বার্তা খসড়া হিসেবে সংরক্ষিত হয়েছে।</string>
+    <string name="sending_message">বার্তা পাঠানো হচ্ছে\u2026</string>
+    <string name="invalid_recipient"><xliff:g id="wrongemail" example="foo@@gmail..com">%s</xliff:g> ঠিকানাটি অকার্যকর।</string>
+    <string name="show_elided">\u25B6 উদ্ধৃতি দেখান</string>
+    <string name="hide_elided">\u25BC উদ্ধৃতি লুকান</string>
+    <string name="message_invite_title">দিনপঞ্জিতে আমন্ত্রণ</string>
+    <string name="message_invite_calendar_view">দিনপঞ্জিতে দেখুন</string>
+    <string name="message_invite_label_attending">যাচ্ছেন?</string>
+    <string name="message_invite_accept">হ্যা</string>
+    <string name="message_invite_tentative">হয়ত</string>
+    <string name="message_invite_decline">না </string>
+    <string name="enumeration_comma">,\u0020</string>
+    <string name="send_anyway">যাহোক পাঠান</string>
+    <string name="ok">ঠিক আছে</string>
+    <string name="done">"সম্পন্ন"</string>
+    <string name="cancel">"বাতিল করুন"</string>
+    <string name="clear">মুছুন</string>
+    <string name="next">পরবর্তী</string>
+    <string name="previous">পূর্ববর্তী</string>
+    <string-array name="sync_status">
+        <item>সাফল্য</item>
+        <item>সংযোগ নেই</item>
+        <item>সাইনইন করা যাচ্ছে না</item>
+        <item>নিরাপত্তা ত্রুটি</item>
+        <item>সিঙ্ক করতে পারেনি</item>
+        <item>অভ্যন্তরীণ ত্রুটি</item>
+        <item>"সার্ভারে ত্রুটি"</item>
+    </string-array>
+    <string name="tap_to_configure">সেট আপ করতে স্পর্শ করুন</string>
+    <string name="non_synced_folder_description">আলাপচারিতা দেখতে, এই ফোল্ডারটি সিঙ্ক করুন</string>
+    <string name="tap_to_configure_folder_sync">ফোল্ডার সিঙ্ক করুন</string>
+    <string name="widget_large_unread_count">%d+</string>
+    <string name="large_unseen_count"><xliff:g id="count" example="99">%d</xliff:g>+ নতুন</string>
+    <string name="unseen_count"><xliff:g id="count" example="4">%d</xliff:g> নতুন</string>
+    <plurals name="actionbar_unread_messages">
+        <item quantity="other"><xliff:g id="count" example="4">%1$d</xliff:g> অপঠিত</item>
+    </plurals>
+    <string name="view_more_conversations">আরো আলাপচারিতা দেখুন</string>
+    <string name="loading_conversation">লোড হচ্ছে\u2026</string>
+    <string name="activity_mailbox_selection">একটি একাউন্ট বাছাই করুন</string>
+    <string name="activity_folder_selection">ফোল্ডার বাছাই করুন</string>
+    <string name="folder_shortcut_widget_label">ইমেইল ফোল্ডার</string>
+    <string name="change_folders_selection_dialog_title">ফোল্ডার পরিবর্তন করুন</string>
+    <string name="move_to_selection_dialog_title">সরান</string>
+    <string name="search_hint">"অনুসন্ধান করুন"</string>
+    <string name="search_results_loaded"><xliff:g id="searchCount">%1$d</xliff:g></string>
+    <string name="voice_search_not_supported">এই ডিভাইস ভয়েস অনুসন্ধান সমর্থন করে না।</string>
+    <string name="search_back_desc">অনুসন্ধান বন্ধ করুন</string>
+    <string name="search_voice_desc">ভয়েস অনুসন্ধান শুরু করুন</string>
+    <string name="search_clear_desc">অনুসন্ধানের লেখা মুছুন</string>
+    <string name="network_error">সংযোগ নেই</string>
+    <string name="retry">পুনরায় চেষ্টা করুন</string>
+    <string name="load_more">আরো লোড করুন</string>
+    <string name="shortcut_name_title">ফোল্ডার শর্টকাটের নামকরণ করুন</string>
+    <string name="wait_for_sync_title">সিঙ্কের জন্য অপেক্ষা করছে</string>
+    <string name="not_synced_title">একাউন্ট সিঙ্ক করা হয়নি।</string>
+    <string name="wait_for_manual_sync_body">এই একাউন্ট স্বয়ংক্রিয়ভাবে সিঙ্ক হবার জন্য সেট আপ করা হয়নি।\nস্পর্শ করুন <b>এখন সিঙ্ক করুন</b> একবার মেইল সিঙ্ক করতে, বা <b> সিঙ্ক সেটিং পরিবর্তন করতে</b> মেইল স্বয়ংক্রিয়ভাবে সিঙ্ক করার জন্য এই একাউন্ট সেট আপ করতে।</string>
+    <string name="manual_sync">এখনই সিঙ্ক. করুন</string>
+    <string name="change_sync_settings">সিঙ্ক সেটিং পরিবর্তন করুন</string>
+    <string name="photo_load_failed">ছবি লোড করতে পারেনি</string>
+    <string name="cant_move_or_change_labels">সরানো যাচ্ছে না কারণ নির্বাচিত অংশে একাধিক একাউন্ট আছে।</string>
+    <string name="multiple_new_message_notification_item"><b><xliff:g id="sender">%1$s</xliff:g></b>\u0020\u0020\u0020<xliff:g id="subject">%2$s</xliff:g></string>
+    <string name="single_new_message_notification_big_text"><xliff:g id="subject">%1$s</xliff:g>\n<xliff:g id="snippet">%2$s</xliff:g></string>
+    <string name="ignore_spam_warning">অগ্রাহ্য করুন, আমি এই বার্তায় বিশ্বাস করি</string>
+    <string name="via_domain">মাধ্যমে <xliff:g id="viaDomain">%1$s</xliff:g></string>
+    <string name="signin">সাইন-ইন</string>
+    <string name="info">তথ্য</string>
+    <string name="report">প্রতিবেদন</string>
+    <string name="show">দেখান</string>
+    <string name="sync_error">সিঙ্ক করতে পারেনি।</string>
+    <string name="sync_error_message">আপনার ডিভাইসে সিঙ্ক করার মত যথেষ্ট জায়গা নেই।</string>
+    <string name="storage">স্টোরেজ</string>
+    <string name="senders_split_token">,\u00A0</string>
+    <string name="draft_count_format">\u00A0(<xliff:g id="count">%1$s</xliff:g>)</string>
+    <string name="all_folders_heading">সব ফোল্ডার</string>
+    <string name="recent_folders_heading">সাম্প্রতিক ফোল্ডার</string>
+    <string name="message_details_title"> বিস্তারিত বার্তা</string>
+    <string name="preference_advance_to_title">অটো-অ্যাডভান্স</string>
+    <string-array name="prefEntries_autoAdvance">
+        <item>নতুন</item>
+        <item>পুরাতন</item>
+        <item>আলাপচারিতার তালিকা</item>
+    </string-array>
+    <string-array name="prefSummaries_autoAdvance">
+        <item>আপনি মুছে ফেলার পর নতুন আলাপচারিতার দেখান</item>
+        <item>আপনি মুছে ফেলার পর পুরাতন আলাপচারিতার দেখান</item>
+        <item>আপনি মুছে ফেলার পর আলাপচারিতার তালিকা দেখান</item>
+    </string-array>
+    <string name="prefDialogTitle_autoAdvance">যান</string>
+    <string name="clear_display_images_whitelist_title">ছবির অনুমতি বাতিল করুন</string>
+    <string name="clear_display_images_whitelist_dialog_title">ছবির অনুমতি বাতিল করবেন?</string>
+    <string name="clear_display_images_whitelist_dialog_message">আপনি পূর্বে অনুমতি দিয়েছিলেন সেইসব প্রেরকের কাছ থেকে ইনলাইন ছবি প্রদর্শন বন্ধ করুন।</string>
+    <string name="sender_whitelist_cleared">ছবি স্বয়ংক্রিয়ভাবে দেখানো হবে না।</string>
+    <string name="preferences_signature_title">স্বাক্ষর</string>
+    <string name="preferences_signature_dialog_title">স্বাক্ষর</string>
+    <string name="preferences_signature_summary_not_set">সেট করা নেই</string>
+    <string name="notification_action_reply">উত্তর দিন</string>
+    <string name="notification_action_reply_all">সবাইকে উত্তর দিন</string>
+    <string name="notification_action_archive">আর্কাইভে রাখুন</string>
+    <string name="notification_action_remove_label">লেবেল সরিয়ে ফেলুন</string>
+    <string name="notification_action_delete">"মুছুন"</string>
+    <string name="notification_action_undo_archive">আর্কাইভে রাখা হয়েছে</string>
+    <string name="notification_action_undo_remove_label">লেবেল সরিয়ে ফেলা হয়েছে</string>
+    <string name="notification_action_undo_delete">মুছে ফেলা হয়েছে</string>
+    <string name="veiled_address"/>
+    <string name="veiled_alternate_text"/>
+    <string name="veiled_alternate_text_unknown_person"/>
+    <string name="veiled_summary_unknown_person"/>
+    <string name="label_notification_ticker">"<xliff:g id="label">%s</xliff:g>: <xliff:g id="notification">%s</xliff:g>"</string>
+    <plurals name="new_messages">
+        <item quantity="one"><xliff:g id="count">%1$d</xliff:g> নতুন বার্তা</item>
+        <item quantity="other"><xliff:g id="count">%1$d</xliff:g> নতুন বার্তা</item>
+    </plurals>
+    <string name="single_new_message_notification_title"><xliff:g id="sender">%1$s</xliff:g>: <xliff:g id="subject">%2$s</xliff:g></string>
+    <string name="silent_ringtone">"নীরব"</string>
+    <string name="preference_removal_action_title">কাজগুলো আর্কাইভে রাখুন ও মুছে ফেলুন</string>
+    <string-array name="prefEntries_removal_action">
+        <item>আর্কাইভে রাখুন</item>
+        <item>"মুছুন"</item>
+    </string-array>
+    <string-array name="prefSummaries_removal_action_summary">
+        <item>আর্কাইভে রাখুন</item>
+        <item>"মুছুন"</item>
+    </string-array>
+    <string name="prefDialogTitle_removal_action">কাজগুলো আর্কাইভে রাখুন ও মুছে ফেলুন</string>
+    <string name="preferences_default_reply_all_title">সবাইকে উত্তর দিন</string>
+    <string name="preferences_default_reply_all_summary_impl">বার্তার জবাবের জন্য ডিফল্ট হিসেবে ব্যবহার করুন</string>
+    <string name="preference_swipe_title">অ্যাকশন সোয়াইপ করুন</string>
+    <string name="preference_swipe_description">আলাপচারিতার তালিকায় </string>
+    <string name="preference_sender_image_title">প্রেরকের ছবি</string>
+    <string name="preference_sender_image_description">আলাপচারিতার তালিকায় নামের পাশে দেখান</string>
+    <string name="empty_trash">খালি ট্র্যাশ</string>
+    <string name="empty_spam">খালি স্পাম্প</string>
+    <string name="empty_trash_dialog_title">ট্র্যাশ খালি?</string>
+    <string name="empty_spam_dialog_title">স্পাম্প খালি?</string>
+    <plurals name="empty_folder_dialog_message">
+        <item quantity="one"><xliff:g id="count">%1$d</xliff:g> বার্তা স্থায়ীভাবে মুছে ফেলা হবে।</item>
+        <item quantity="other"><xliff:g id="count">%1$d</xliff:g> বার্তা স্থায়ীভাবে মুছে ফেলা হবে।</item>
+    </plurals>
+    <string name="drawer_open">নেভিগেশন ড্রয়ার খুলুন</string>
+    <string name="drawer_close">নেভিগেশন ড্রয়ার বন্ধ করুন</string>
+    <string name="conversation_photo_welcome_text">সেই আলাপচারিতা নির্বাচন করতে প্রেরকের ছবি স্পর্শ করুন।</string>
+    <string name="long_press_to_select_tip">একটি আলাপচারিতা নির্বাচন করতে স্পর্শ করে ধরে রাখুন, তারপর আরো নির্বাচন করতে স্পর্শ করুন।</string>
+    <string name="folder_icon_desc">ফোল্ডার আইকন</string>
+    <string name="add_account">একাউন্ট যোগ করুন</string>
+    <string name="dismiss_tip_hover_text">টিপ বাতিল করুন</string>
+    <string name="auto_sync_off">স্বয়ংক্রিয়-সিঙ্ক বন্ধ।</string>
+    <string name="account_sync_off">"একাউন্ট সিঙ্ক বন্ধ।<a href="'http://www.example.com'"> মধ্যে চালু করুন একাউন্ট\u00A0সেটিং।</a>"</string>
+    <string name="unsent_messages_in_outbox"><xliff:g id="number">%1$s</xliff:g> <xliff:g id="outbox">%2$s</xliff:g> এ পাঠানো হয়নি</string>
+    <string name="turn_auto_sync_on_dialog_title">স্বয়ংক্রিয়-সিঙ্ক চালু করবেন?</string>
+    <string name="turn_auto_sync_on_dialog_body">কেবল Gmail নয়, সব অ্যাপ এবং একাউন্টে আপনি যেসব পরিবর্তন এনেছেন সেগুলো সিনক্রোনাইজ হবে ওয়েব, আপনার অন্যান্য ডিভাইস এবং আপনার <xliff:g id="phone_or_tablet">%1$s</xliff:g> মধ্যে।</string>
+    <string name="phone">ফোন</string>
+    <string name="tablet">ট্যাবলেট</string>
+    <string name="turn_auto_sync_on_dialog_confirm_btn">চালু করুন</string>
+    <string name="show_n_more_folders">আরো <xliff:g id="number">%1$s</xliff:g> ফোল্ডার দেখান</string>
+    <string name="hide_folders">ফোল্ডার লুকান</string>
+    <string name="print">প্রিন্ট করুন</string>
+    <string name="print_all">সব প্রিন্ট করুন</string>
+    <plurals name="num_messages">
+        <item quantity="one"><xliff:g id="count">%1$d</xliff:g> বার্তা</item>
+        <item quantity="other"><xliff:g id="count" example="4">%1$d</xliff:g> পুরাতন বার্তা</item>
+    </plurals>
+    <string name="date_message_received_print"><xliff:g id="day_and_date">%1$s</xliff:g> at <xliff:g id="time">%2$s</xliff:g></string>
+    <string name="draft_to_heading">খসড়া করা হয়েছে:</string>
+    <string name="draft_heading">খসড়া</string>
+    <string name="quoted_text_hidden_print">উদ্ধৃতির লেখা লুকায়িত</string>
+    <plurals name="num_attachments">
+        <item quantity="one"><xliff:g id="count">%1$d</xliff:g> সংযুক্তি</item>
+        <item quantity="other"><xliff:g id="count">%1$d</xliff:g> সংযুক্তি</item>
+    </plurals>
+    <string name="no_subject">(কোন বিষয় নেই)</string>
+    <string name="vacation_responder">অবকাশে সাড়াদানকারী</string>
+    <string name="preferences_vacation_responder_title">অবকাশে সাড়াদানকারী</string>
+    <string name="vacation_responder_body_hint_text">বার্তা</string>
+    <string name="send_to_contacts_text">কেবল আমার পরিচিতজনদেরকে পাঠান</string>
+    <string name="send_to_domain_text">কেবল <xliff:g id="domain">%1$s</xliff:g>-কে পাঠান</string>
+    <string name="pick_start_date_title">শুরু হয়</string>
+    <string name="pick_end_date_title">সমাপ্ত (ঐচ্ছিক)</string>
+    <string name="date_not_set">সেট করা নেই</string>
+    <string name="set_end_date_dialog_title">সমাপ্তির তারিখ (ঐচ্ছিক)</string>
+    <string name="custom_date">কাস্টম</string>
+    <string name="date_none">কোনটি নয়</string>
+    <string name="discard_changes">পরিবর্তন বাতিল করবেন?</string>
+    <string name="vacation_responder_changes_saved">অবকাশে সাড়াদানকারীতে পরিবর্তনগুলো সংরক্ষণ করা হয়েছে</string>
+    <string name="vacation_responder_changes_discarded">অবকাশে সাড়াদানকারীতে পরিবর্তনগুলো বাতিল করা হয়েছে</string>
+    <string name="vacation_responder_off">বন্ধ</string>
+    <string name="vacation_responder_on">তারিখে, থেকে <xliff:g id="date">%1$s</xliff:g></string>
+    <string name="vacation_responder_on_with_end_date">তারিখে, থেকে <xliff:g id="start-date">%1$s</xliff:g> to <xliff:g id="end-date">%2$s</xliff:g></string>
+    <string name="vacation_responder_empty_subject_and_body_warning">বিষয়বস্তু বা বার্তা যোগ করুন</string>
+    <string name="view_entire_message">পুরো বার্তাটি দেখুন</string>
+    <string name="eml_loader_error_toast">এই ফাইল খুলতে পারছি না</string>
+    <string name="help_and_info">সাহায্য</string>
+    <string name="help_and_feedback">সাহায্য করুন</string>
+    <string name="feedback">ফিডব্যাক পাঠান</string>
+    <string name="copyright">©<xliff:g id="year" example="2010">%1$d</xliff:g> Google Inc.</string>
+    <string name="version"><xliff:g id="app_name" example="Email">%1$s</xliff:g> version <xliff:g id="version" example="2.2.1">%2$s</xliff:g></string>
+    <string name="view_app_page"/>
+    <string name="print_dialog">প্রিন্ট করুন\u2026</string>
+    <string name="copyright_information">কপিরাইটের তথ্য</string>
+    <string name="privacy_policy">গোপনীয়তার নীতি</string>
+    <string name="open_source_licenses">অপেন সোর্স লাইসেন্স</string>
+    <string name="reply_choice_yes">হ্যা</string>
+    <string name="reply_choice_no">না </string>
+    <string name="reply_choice_ok">ঠিক আছে</string>
+    <string name="reply_choice_hehe">হিহি</string>
+    <string name="reply_choice_thanks">ধন্যবাদ</string>
+    <string name="reply_choice_i_agree">আমি একমত</string>
+    <string name="reply_choice_nice">সুন্দর</string>
+    <string name="reply_on_my_way">আমার পথে</string>
+    <string name="reply_choice_later">ঠিক আছে, আপনার কাছে ফিরে আসতে দিন আমাকে</string>
+    <string name="reply_choice_smiling_face"/>
+    <string name="reply_choice_frowning_face"/>
+    <array name="reply_choices">
+        <item>@string/reply_choice_yes</item>
+        <item>@string/reply_choice_no</item>
+        <item>@string/reply_choice_ok</item>
+        <item>@string/reply_choice_hehe</item>
+        <item>@string/reply_choice_thanks</item>
+        <item>@string/reply_choice_i_agree</item>
+        <item>@string/reply_choice_nice</item>
+        <item>@string/reply_on_my_way</item>
+        <item>@string/reply_choice_later</item>
+        <item>@string/reply_choice_smiling_face</item>
+        <item>@string/reply_choice_frowning_face</item>
+    </array>
+    <string name="preference_header_action_confirmations">কাজ নিশ্চিতকরণ</string>
+    <string name="preference_confirm_before_delete_title">মুছে ফেলার আগে নিশ্চিত করুন</string>
+    <string name="preference_confirm_before_archive_title">আর্কাভেইয়ে রাখার আগে নিশ্চিত করুন</string>
+    <string name="preference_confirm_before_send_title">পাঠানোর আগে নিশ্চিত করুন</string>
+    <string name="preferences_conversation_mode_title">স্বয়ংক্রিয়ভাবে-ফিট বার্তা</string>
+    <string name="preferences_conversation_mode_summary"> স্ক্রিনের সাথে সামঞ্জস্য বিধানের জন্য বার্তা সংকুচিত করুন</string>
+    <string name="preferences_disable_snap_headers_title"> বার্তার কার্যক্রম</string>
+    <string-array name="prefSummaries_snapHeader">
+        <item> স্ক্রিনের একেবারে ওপরে সবসময় বার্তার কাজগুলো প্রদর্শন করুন</item>
+        <item>পোর্ট্রেইটে আবর্তনের সময় স্ক্রিনের একেবারে ওপরে বার্তার কাজগুলো প্রদর্শন করুন</item>
+        <item> বার্তার হেডারের বাইরে বার্তার কাজগুলো প্রদর্শন করবেন না</item>
+    </string-array>
+    <string-array name="prefEntries_snapHeader">
+        <item>সবসময় দেখান</item>
+        <item>কেবল পোর্ট্রেইটে দেখান</item>
+        <item>দেখাবেন না</item>
+    </string-array>
+    <string name="clear_history_title">অনুসন্ধানের ইতিহাস মুছে ফেলুন</string>
+    <string name="search_history_cleared">অনুসন্ধান ইতিহাস মুছুন।</string>
+    <string name="clear_history_dialog_title">অনুসন্ধানের ইতিহাস মুছে ফেলবেন?</string>
+    <string name="clear_history_dialog_message">আপনি আগে যেসব অনুসন্ধান করেছেন সেগুলো সব সরিয়ে ফেলা হবে।</string>
+    <string name="manage_accounts_menu_item">একাউন্টের ব্যবস্থাপনা করুন</string>
+    <string name="general_preferences_title">সাধারণ সেটিং</string>
+    <string name="activity_preferences">সেটিং</string>
+    <string name="overflow_description">আরো বিকল্প</string>
+    <string name="security_hold_required_text"><xliff:g id="email_address">%1$s</xliff:g> জন্য নিরাপত্তা আপডেট আবশ্যক</string>
+    <string name="update_security_text">এখন আপডেট করুন</string>
+    <string name="forms_are_disabled">Gmail-এ ফরমগুরো নিষ্ক্রিয় রয়েছে।</string>
+</resources>

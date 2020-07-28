@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.widget.RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.mediatek.op08.settings.ActivateNew">
+
+
+
+    <TextView
+        android:id="@+id/activateNewTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="49dp"
+        android:text="@string/enter_line" />
+
+    <EditText
+        android:id="@+id/editTextNewLineNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/activateNewTv"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="38dp"
+        android:ems="10"
+        android:hint="@string/enter_line_number"
+        android:inputType="phone" />
+
+    <Button
+        android:id="@+id/requestButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/editTextNewLineNumber"
+        android:layout_below="@+id/editTextNewLineNumber"
+        android:layout_marginTop="58dp"
+        android:text="@string/request_use" />
+</android.widget.RelativeLayout>

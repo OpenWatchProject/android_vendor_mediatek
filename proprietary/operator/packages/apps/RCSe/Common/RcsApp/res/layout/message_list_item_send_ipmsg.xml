@@ -1,0 +1,395 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+ * Copyright (C) 2008 Esmertec AG.
+ * Copyright (C) 2008 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+-->
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/msg_list_item_send"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#00000000"
+    android:orientation="vertical">
+<include android:id="@+id/time_divider"
+    layout="@layout/time_divider_item" />
+<include android:id="@+id/unread_divider"
+    layout="@layout/unread_divider_item" />
+<LinearLayout
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+    <CheckBox android:id="@+id/select_check_box"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_vertical"
+        android:focusable="false"
+        android:clickable="false"
+        android:gravity="center_vertical"
+        android:visibility="gone" />
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+        <LinearLayout android:id="@+id/mms_layout_view_parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/listitem_background_send_ip_message"
+            android:layout_marginLeft="45dip"
+            android:layout_marginRight="10dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="24dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:gravity="left">
+            <TextView android:id="@+id/text_view"
+                android:autoLink="all"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:linksClickable="false"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:adjustViewBounds="true"
+                android:textColor="#222222"
+                android:textSize="14sp" />
+
+            <!-- Ip message for image or video -->
+            <RelativeLayout
+                android:id="@+id/ip_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:layout_gravity="center_horizontal"
+                android:visibility="gone" >
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true" >
+                    <ImageView
+                        android:id="@+id/image_content"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:minHeight="@dimen/img_minwidth"
+                        android:minWidth="@dimen/img_minwidth" />
+                     <ImageView
+                        android:id="@+id/video_media_paly"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:layout_gravity="center"
+                        android:visibility="gone"
+                        android:src="@drawable/media_play" />
+                </FrameLayout>
+                <LinearLayout
+                    android:id="@+id/image_size_bg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:gravity="center_vertical"
+                    android:minWidth="@dimen/img_minwidth"
+                    android:visibility="gone"
+                    android:orientation="horizontal" >
+                    <ImageView
+                        android:id="@+id/action_btn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"
+                        android:src="@drawable/stop" />
+                    <TextView
+                        android:id="@+id/content_size"
+                        android:layout_width="0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="4dip"
+                        android:layout_weight="1.0"
+                        android:singleLine="true"
+                        android:textColor="#FFFFFF"
+                        android:textSize="10sp"
+                        android:visibility="gone" />
+                    <ProgressBar
+                        android:id="@+id/downLoad_progress"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="4dip"
+                        android:layout_weight="1.0"
+                        android:progress="100"
+                        android:visibility="gone" />
+                </LinearLayout>
+            </RelativeLayout>
+
+            <!-- Ip message for audio -->
+            <LinearLayout
+                android:id="@+id/ip_audio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minWidth="120dip"
+                android:orientation="horizontal"
+                android:visibility="gone" >
+                <ImageView
+                    android:id="@+id/ip_audio_icon"
+                    android:layout_width="21dp"
+                    android:src="@drawable/ipmsg_chat_sound"
+                    android:layout_marginRight="4dip"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/audio_info"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1.0"
+                    android:singleLine="true"
+                    android:layout_marginRight="10dip"
+                    android:textColor="#555555"
+                    android:textSize="12sp" />
+                <ProgressBar
+                    android:id="@+id/audio_downLoad_progress"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dip"
+                    android:layout_weight="1.0"
+                    android:progress="100"
+                    android:visibility="gone" />
+            </LinearLayout>
+            <TextView android:id="@+id/text_caption"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dip"
+                android:textColor="#222222"
+                android:textSize="14sp"
+                android:visibility="gone" />
+
+            <!-- Ip message for vcard -->
+            <LinearLayout
+                android:id="@+id/ip_vcard"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minWidth="120dip"
+                android:orientation="horizontal"
+                android:visibility="gone" >
+                <ImageView
+                    android:id="@+id/ip_vcard_icon"
+                    android:layout_width="32dp"
+                    android:layout_marginRight="4dip"
+                    android:layout_height="wrap_content" 
+                    android:src="@drawable/ipmsg_chat_contact_vcard"/>
+                <TextView
+                    android:id="@+id/vcard_info"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1.0"
+                    android:layout_marginRight="10dip"
+                    android:singleLine="true"
+                    android:textColor="#222222"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <!-- IP message for vCalendar -->
+            <LinearLayout
+                android:id="@+id/ip_vcalendar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minWidth="120dip"
+                android:orientation="horizontal"
+                android:visibility="gone" >
+                <ImageView
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_marginRight="4dip"
+                    android:src="@drawable/ipmsg_chat_contact_calendar"/>
+                <TextView
+                    android:id="@+id/vcalendar_info"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1.0"
+                    android:layout_marginRight="10dip"
+                    android:singleLine="true"
+                    android:textColor="#222222"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <!-- IP message for downloading file -->
+            <LinearLayout
+                android:id="@+id/ipmsg_file_downloading_controller_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:visibility="gone" >
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="8dip"
+                    android:layout_marginRight="8dip" >
+                    <TextView
+                        android:id="@+id/ipmsg_resend"
+                        android:background="@drawable/btn_cling_normal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/ipmsg_resend"
+                        android:layout_gravity="center"
+                        android:textColor="#222222"
+                        android:textSize="18sp" />
+                </FrameLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ipmsg_file_download"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minWidth="120dip"
+                android:orientation="vertical"
+                android:visibility="gone" >
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:id="@+id/ipmsg_download_file_size"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1.0"
+                        android:singleLine="true"
+                        android:layout_marginRight="10dip"
+                        android:textColor="#555555"
+                        android:textSize="12sp" />
+                    <ImageView
+	                    android:id="@+id/ipmsg_download_file_resume"
+	                    android:layout_width="wrap_content"
+	                    android:layout_marginRight="6dip"
+	                    android:layout_height="wrap_content" />
+                    <ImageView
+                        android:id="@+id/ipmsg_download_file_cancel"
+                        android:layout_width="wrap_content"
+                        android:layout_marginRight="4dip"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+                <ProgressBar
+                    android:id="@+id/ipmsg_download_file_progress"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dip"
+                    android:layout_weight="1.0"
+                    android:progress="0" />
+            </LinearLayout>
+            <!-- IP message for downloading file end -->
+
+            <!-- message status -->
+            <LinearLayout
+                android:id="@+id/status_panel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dip" >
+                <ImageView
+                 android:id="@+id/account_icon"
+                 android:layout_width="18dp"
+                 android:layout_height="18dp"
+                 android:layout_gravity="center_vertical"
+                 android:paddingBottom="4dip"
+                 android:scaleType="centerInside" />
+                
+                <TextView android:id="@+id/sim_status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:linksClickable="false"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textColor="#ffffffff"
+                    android:textSize="9dip"
+                    android:layout_gravity="left" />
+                <TextView android:id="@+id/date_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#555555"
+                    android:textSize="10sp"
+                    android:paddingLeft="4dip"
+                    android:layout_gravity="left" />
+                <ImageView android:id="@+id/delivered_sending"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/im_meg_status_sending"
+                            android:paddingLeft="4dip"
+                            android:paddingTop="3dip"
+                            android:layout_gravity="left"
+                            android:visibility="gone" />                       
+        
+                        <ImageView android:id="@+id/delivered_success"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/im_meg_status_out"
+                            android:paddingLeft="4dip"
+                            android:paddingTop="3dip"
+                            android:layout_gravity="left"
+                            android:visibility="gone" />                        
+        
+                        <ImageView android:id="@+id/delivered_failed"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_list_alert_sms_failed"
+                            android:paddingLeft="4dip"
+                            android:paddingTop="3dip"
+                            android:layout_gravity="left"
+                            android:visibility="gone" />                        
+                
+                <ImageView android:id="@+id/delivered_indicator"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/im_meg_status_reach"
+                    android:paddingLeft="4dip"
+                    android:layout_gravity="left"
+                    android:visibility="gone" />
+                <ImageView android:id="@+id/displayed_indicator"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/im_meg_status_read"
+                    android:paddingLeft="4dip"
+                    android:layout_gravity="left"
+                    android:visibility="gone" />
+                <ImageView android:id="@+id/details_indicator"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_sms_mms_details"
+                    android:paddingLeft="4dip"
+                    android:layout_gravity="left"
+                    android:visibility="gone" />
+                <ImageView android:id="@+id/locked_indicator"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_lock_message_sms"
+                    android:paddingLeft="4dp"
+                    android:layout_gravity="left"
+                    android:visibility="gone" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+<!--     <ViewStub android:id="@+id/mms_downloading_view_stub" -->
+<!--         android:layout="@layout/mms_downloading_view" -->
+<!--         android:layout_gravity="center_vertical" -->
+<!--         android:layout_width="wrap_content" -->
+<!--         android:layout_height="wrap_content"/> -->
+</LinearLayout>
+<include android:id="@+id/on_line_divider"
+    layout="@layout/on_line_divider_item" />
+</LinearLayout>

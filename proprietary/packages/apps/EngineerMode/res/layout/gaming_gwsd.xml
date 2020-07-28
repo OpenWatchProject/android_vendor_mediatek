@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView android:id="@+id/gwsd_setting"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dip"
+        android:layout_marginTop="10dip"
+        android:textSize = "20sp"
+        android:text="@string/gwsd_setting"/>
+
+    <Switch android:id="@+id/gwsd_switch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/gwsd_setting"
+        android:layout_marginRight="10dip"/>
+
+    <TextView android:id="@+id/gwsd_dual_sim_setting"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/gwsd_setting"
+        android:layout_alignLeft="@+id/gwsd_setting"
+        android:layout_marginTop="30dip"
+        android:textSize = "20sp"
+        android:text="@string/gwsd_dual_sim_setting"/>
+
+    <Switch android:id="@+id/gwsd_dual_sim_switch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/gwsd_dual_sim_setting"
+        android:layout_marginRight="10dip"/>
+
+    <TextView
+        android:id="@+id/gwsd_auto_reject"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/gwsd_setting"
+        android:layout_alignLeft="@+id/gwsd_dual_sim_setting"
+        android:layout_marginTop="30dip"
+        android:textSize = "20sp"
+        android:text="@string/gwsd_auto_reject_title"/>
+
+    <Switch
+        android:id="@+id/gwsd_auto_reject_switch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/gwsd_auto_reject"
+        android:layout_marginRight="10dip"/>
+
+    <TextView
+        android:id="@+id/gwsd_call_valid_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/gwsd_auto_reject_switch"
+        android:layout_alignLeft="@+id/gwsd_setting"
+        android:layout_marginTop="15dip"
+        android:textSize = "20sp"
+        android:text="@string/gwsd_call_valid_title"/>
+
+    <EditText
+        android:id="@+id/gwsd_call_valid_edit"
+        android:layout_width="80dip"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/gwsd_call_valid_title"
+        android:layout_toRightOf="@+id/gwsd_call_valid_title"
+        android:inputType="number"
+        android:layout_marginLeft="5dip"
+        android:textSize = "20sp"/>
+
+    <Button
+        android:id="@+id/gwsd_call_valid_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="40dip"
+        android:layout_alignTop="@+id/gwsd_call_valid_title"
+        android:layout_alignLeft="@+id/gwsd_auto_reject_switch"
+        android:text="@string/gwsd_btn_set"/>
+
+    <TextView
+        android:id="@+id/gwsd_ignore_same_number_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/gwsd_call_valid_title"
+        android:layout_alignLeft="@+id/gwsd_setting"
+        android:layout_marginTop="15dip"
+        android:textSize = "20sp"
+        android:text="@string/gwsd_ignore_same_number_interval_title"/>
+
+    <EditText
+        android:id="@+id/gwsd_ignore_same_number_edit"
+        android:layout_width="80dip"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/gwsd_ignore_same_number_title"
+        android:layout_alignLeft="@+id/gwsd_ignore_same_number_title"
+        android:inputType="number"
+        android:textSize = "20sp"/>
+
+    <Button
+        android:id="@+id/gwsd_ignore_same_number_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="40dip"
+        android:layout_alignTop="@+id/gwsd_ignore_same_number_edit"
+        android:layout_toRightOf="@+id/gwsd_ignore_same_number_edit"
+        android:layout_marginLeft="5dip"
+        android:text="@string/gwsd_btn_set"/>
+</RelativeLayout>

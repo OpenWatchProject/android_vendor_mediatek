@@ -1,0 +1,29 @@
+cc_library {
+    name: "libTeeiClient",
+    proprietary: true,
+    owner: "mtk",
+    cflags: [
+        "-Wall",
+        "-Werror",
+        "-Wno-unused-parameter",
+        "-Wno-unused-function",
+        "-DDEBUGLEVEL_1",
+        "-DBINARY_PREFIX=\"TEEC\"",
+        /* "-DDEFAULT_TEE_GPTEE", */
+    ],
+    srcs: [
+        "libteec/src/tee_client_api.cpp",
+        "libteec/src/teec_trace.cpp",
+    ],
+    local_include_dirs: [
+        "public",
+        "libteec/include",
+        "libteec/src",
+    ],
+    export_include_dirs: [
+        "public"
+    ],
+    shared_libs: [
+        "libutils",
+    ],
+}

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/* //device/apps/common/assets/res/any/strings.xml
+**
+** Copyright 2006, The Android Open Source Project
+**
+** Licensed under the Apache License, Version 2.0 (the "License");
+** you may not use this file except in compliance with the License.
+** You may obtain a copy of the License at
+**
+**     http://www.apache.org/licenses/LICENSE-2.0
+**
+** Unless required by applicable law or agreed to in writing, software
+** distributed under the License is distributed on an "AS IS" BASIS,
+** WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+** See the License for the specific language governing permissions and
+** limitations under the License.
+*/
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- Telephony -->
+    <string name="invalidPuk">"Введите 8 цифр."</string>
+    <string name="keyguard_password_enter_new_pin_code">"Введите новый код PIN"</string>
+    <string name="keyguard_password_Confirm_pin_code">"Подтвердите новый PIN-код"</string>
+    <string name="sim_permanently_locked">"PUK-код был введен более 10 раз, SIM-карта безвозвратно заблокирована"</string>
+    <string name="retries_left">"Осталось:<xliff:g id="number">%d</xliff:g>"</string>
+    <string name="simlock_slot_locked_message">Слот заблокирован навсегда."</string>
+    <string name="simlock_entersimmelock">"Введите специальный код устройства"</string>
+    <string name="slot_id">Слот <xliff:g id="number">%d</xliff:g>:</string>
+    <string name="new_simcard">Новая SIM-карта</string>
+    <string name="lockscreen_missing_sim_dialog_message">"SIM-карта извлечена. Проверьте правильность установки SIM-карты."</string>
+    <string name="sim_card_changed_dialog_title">SIM-карта изменена</string>
+    <string name="change_setting_for_onenewsim">Обнаружена новая SIM-карта. Новые настройки SIM-карты по умолчанию:</string>
+    <string name="change_setting_for_twonewsim">Обнаружена новая SIM-карта. Новые настройки SIM-карты по умолчанию:</string>
+    <string name="sim_card_removed">SIM-карта извлечена</string>
+    <string name="sim_card_swapped">SIM-карта заменена</string>
+    <string name="change_settings">Изменить</string>
+    <string name="keyguard_sms">SMS:</string>
+    <string name="keyguard_data">Соединение для передачи данных:</string>
+    <string name="dismiss">Отбой</string>
+    <string name="keyguard_wrong_code_input">Неверный код.</string>
+    <string name="keyguard_code_length_prompt">Введите 4–8 цифр.</string>
+    <string name="keyguard_code_donnot_mismatch">Коды не должны совпадать.</string>
+    <string name="network_searching">Поиск новой сети</string>
+    <string name="searching_simcard">Поиск…</string>
+    <string name="keyguard_close">Закрыть</string>
+    <string name="default_sim_setting_prompt">Новые настройки SIM-карты по умолчанию:</string>
+    <string name="invalid_sim_title">Недопустимая SIM-карта</string>
+    <string name="invalid_sim_message">UIM/SIM-карта не распознана</string>
+    <!-- Tablet -->
+    <string name="sd_accessing_swtich_user_title">Переключить пользователя?</string>
+    <string name="sd_accessing_swtich_user_message">Все несохраненные данные учетной записи владельца будут утеряны или повреждены.</string>
+    <!-- Misc -->
+    <string name="ppl_prompt">Для деблокирования введите пароль режима Privacy Protection (Защита конфиденциальности).</string>
+    <string name="kg_emergency_call_label">Экстренный вызов</string>
+    <string name="kg_detecting_simcard">Поиск…</string>
+    <string name="kg_new_simcard">Новая SIM-карта</string>
+    <string name="kg_slot_id">Слот <xliff:g id="number">%d</xliff:g>:\u0020</string>
+</resources>

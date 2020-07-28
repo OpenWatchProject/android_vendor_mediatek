@@ -1,0 +1,100 @@
+/*
+ * Copyright (C) 2016 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package vendor.mediatek.hardware.radio_op@1.1;
+
+import android.hardware.radio@1.0::IRadio;
+import android.hardware.radio@1.0::types;
+
+/*
+ * Interface declaring response functions to solicited radio requests.
+ * Response functions defined in this interface are as per following convention:
+ * <xyz>Response is response to IRadio.<xyz>
+ */
+interface IImsRadioResponseOp {
+
+    /**
+     * The response of setRttMode
+     * Command: RIL_REQUEST_SET_RTT_MODE
+     * @param info Response info struct containing response type, serial no. and error.
+     */
+    oneway setRttModeResponse(RadioResponseInfo info);
+
+    /**
+     * The response of sendRttModifyRequest
+     * Command: RIL_REQUEST_SEND_RTT_MODIFY_REQUEST
+     * @param info Response info struct containing response type, serial no. and error.
+     */
+    oneway sendRttModifyRequestResponse(RadioResponseInfo info);
+
+    /**
+     * The response of sendRttText
+     * Command: RIL_REQUEST_SEND_RTT_TEXT
+     * @param info Response info struct containing response type, serial no. and error.
+     */
+    oneway sendRttTextResponse(RadioResponseInfo info);
+
+    /**
+     * The response of rttModifyRequestResponse
+     * Command: RIL_REQUEST_RTT_MODIFY_REQUEST
+     * @param info Response info struct containing response type, serial no. and error.
+     */
+    oneway rttModifyRequestResponseResponse(RadioResponseInfo info);
+
+    /**
+     * The response of dialFrom
+     * Command: RIL_REQUEST_DIAL_FROM
+     * @param info Response info struct containing response type, serial no. and error
+     */
+    oneway dialFromResponse(RadioResponseInfo info);
+
+    /**
+     * The response of sendUssiFrom
+     * Command: RIL_REQUEST_SEND_USSI_FROM
+     * @param info Response info struct containing response type, serial no. and error.
+     */
+    oneway sendUssiFromResponse(RadioResponseInfo info);
+
+    /**
+     * The response of cancelUssiFrom
+     * Command: RIL_REQUEST_CANCEL_USSI_FROM
+     * @param info Response info struct containing response type, serial no. and error.
+     */
+    oneway cancelUssiFromResponse(RadioResponseInfo info);
+
+    /**
+     * The response of setEmergencyCallConfig
+     * Command: RIL_REQUEST_SET_EMERGENCY_CALL_CONFIG
+     * @param info Response info struct containing response type, serial no. and error.
+     */
+    oneway setEmergencyCallConfigResponse(RadioResponseInfo info);
+
+    /**
+     * Response of device switch
+     *
+     * Command: RIL_REQUEST_DEVICE_SWITCH
+     * @param info Response info struct containing response type, serial no. and error.
+     */
+    oneway deviceSwitchResponse(RadioResponseInfo info);
+
+    /**
+     * Response of cancel device switch
+     *
+     * Command: RIL_REQUEST_CANCEL_DEVICE_SWITCH
+     * @param info Response info struct containing response type, serial no. and error.
+     */
+    oneway cancelDeviceSwitchResponse(RadioResponseInfo info);
+};

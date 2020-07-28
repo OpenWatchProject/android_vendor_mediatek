@@ -1,0 +1,60 @@
+bootstrap_go_package {
+    name: "soong-android-mediatek",
+    pkgPath: "android/soong/android/mediatek",
+    srcs: [
+        "android/config.go",
+    ],
+    pluginFor: ["soong_build"],
+}
+
+bootstrap_go_package {
+    name: "soong-cc-mediatek",
+    pkgPath: "android/soong/cc/mediatek",
+    deps: [
+        "soong-android",
+        "soong-cc",
+        "soong-android-mediatek",
+    ],
+    srcs: [
+        "cc/makevars.go",
+        "cc/prebuilt.go",
+    ],
+    pluginFor: ["soong_build"],
+}
+
+/*
+mtk_global_defaults {
+    name: "mtk_global_defaults",
+    defaults: [
+        "mtk_global_define_defaults",
+        "mtk_global_cgen_defaults",
+    ],
+}
+*/
+
+mtk_global_define_defaults {
+    name: "mtk_global_define_defaults",
+}
+
+mtk_global_cgen_defaults {
+    name: "mtk_global_cgen_defaults",
+}
+
+bootstrap_go_package {
+    name: "soong-repocheck-mediatek",
+    pkgPath: "android/soong/repocheck/mediatek",
+    deps: [
+        "soong-android",
+    ],
+    srcs: [
+        "repocheck/repocheck.go",
+    ],
+    pluginFor: ["soong_build"],
+}
+
+// FIXME
+kernel_headers {
+    name: "device_kernel_headers_sys",
+    vendor: false,
+}
+

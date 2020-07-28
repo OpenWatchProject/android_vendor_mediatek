@@ -1,0 +1,10 @@
+const ISP_NVRAM_COLOR_PARAM_T COLOR_PARAM_%04d = {
+    0,  //DC OFFSET
+    4,  //LUM SPEED
+    4,  //HUE SPEED
+    4,  //SAT SPEED
+    30, //LSP LV TH
+    0,  //OUTDOOR EN
+    4,  //OUTDOOR SPEED
+    16  //OUTDOOR RATIO
+};

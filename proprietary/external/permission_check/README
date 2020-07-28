@@ -1,0 +1,20 @@
+The bin file 'permission_check' is a daemon service.
+This bin is pre-built by MediaTek internal.
+
+
+WHAT IT DOES?
+=============
+
+permission_check is used to chmod ccci nvram file attribute after mota upgrading.
+
+HOW IT WAS BUILT?
+==================
+
+This module is released in binary format in 'vendor/mediatek/proprietary/external/permission_check' folder.
+
+
+
+HOW TO USE IT?
+==============
+
+The bin file is a system service, and it's started at system booting up while parsing init.modem.rc.

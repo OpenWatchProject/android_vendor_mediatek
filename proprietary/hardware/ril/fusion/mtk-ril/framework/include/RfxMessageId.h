@@ -1,0 +1,132 @@
+/* Copyright Statement:
+ *
+ * This software/firmware and related documentation ("MediaTek Software") are
+ * protected under relevant copyright laws. The information contained herein
+ * is confidential and proprietary to MediaTek Inc. and/or its licensors.
+ * Without the prior written permission of MediaTek inc. and/or its licensors,
+ * any reproduction, modification, use or disclosure of MediaTek Software,
+ * and information contained herein, in whole or in part, shall be strictly prohibited.
+ *
+ * MediaTek Inc. (C) 2016. All rights reserved.
+ *
+ * BY OPENING THIS FILE, RECEIVER HEREBY UNEQUIVOCALLY ACKNOWLEDGES AND AGREES
+ * THAT THE SOFTWARE/FIRMWARE AND ITS DOCUMENTATIONS ("MEDIATEK SOFTWARE")
+ * RECEIVED FROM MEDIATEK AND/OR ITS REPRESENTATIVES ARE PROVIDED TO RECEIVER ON
+ * AN "AS-IS" BASIS ONLY. MEDIATEK EXPRESSLY DISCLAIMS ANY AND ALL WARRANTIES,
+ * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE OR NONINFRINGEMENT.
+ * NEITHER DOES MEDIATEK PROVIDE ANY WARRANTY WHATSOEVER WITH RESPECT TO THE
+ * SOFTWARE OF ANY THIRD PARTY WHICH MAY BE USED BY, INCORPORATED IN, OR
+ * SUPPLIED WITH THE MEDIATEK SOFTWARE, AND RECEIVER AGREES TO LOOK ONLY TO SUCH
+ * THIRD PARTY FOR ANY WARRANTY CLAIM RELATING THERETO. RECEIVER EXPRESSLY ACKNOWLEDGES
+ * THAT IT IS RECEIVER'S SOLE RESPONSIBILITY TO OBTAIN FROM ANY THIRD PARTY ALL PROPER LICENSES
+ * CONTAINED IN MEDIATEK SOFTWARE. MEDIATEK SHALL ALSO NOT BE RESPONSIBLE FOR ANY MEDIATEK
+ * SOFTWARE RELEASES MADE TO RECEIVER'S SPECIFICATION OR TO CONFORM TO A PARTICULAR
+ * STANDARD OR OPEN FORUM. RECEIVER'S SOLE AND EXCLUSIVE REMEDY AND MEDIATEK'S ENTIRE AND
+ * CUMULATIVE LIABILITY WITH RESPECT TO THE MEDIATEK SOFTWARE RELEASED HEREUNDER WILL BE,
+ * AT MEDIATEK'S OPTION, TO REVISE OR REPLACE THE MEDIATEK SOFTWARE AT ISSUE,
+ * OR REFUND ANY SOFTWARE LICENSE FEES OR SERVICE CHARGE PAID BY RECEIVER TO
+ * MEDIATEK FOR SUCH MEDIATEK SOFTWARE AT ISSUE.
+ *
+ * The following software/firmware and/or related documentation ("MediaTek Software")
+ * have been modified by MediaTek Inc. All revisions are subject to any receiver's
+ * applicable license agreements with MediaTek Inc.
+ */
+
+#ifndef __RFX_MESSAGE_ID_HEADER__
+#define __RFX_MESSAGE_ID_HEADER__
+
+#define RFX_MSG_ID_EXPN(id) id,
+#define DEFAULT_MSG_RANGE 500
+
+typedef enum {
+    RFX_MESSAGE_ID_BEGIN = 50000,
+    /* Please add your event id file below this line */
+    RFX_MSG_HELLO_START,
+    #include "RfxHelloMessageId.h"
+    RFX_MSG_HELLO_END = RFX_MSG_HELLO_START + DEFAULT_MSG_RANGE,
+    RFX_MSG_FOO_START,
+    #include "RfxFooMessageId.h"
+    RFX_MSG_FOO_END = RFX_MSG_FOO_START + DEFAULT_MSG_RANGE,
+    RFX_MSG_SIM_START,
+    #include "RfxSimMessageId.h"
+    RFX_MSG_SIM_END = RFX_MSG_SIM_START + DEFAULT_MSG_RANGE,
+    RFX_MSG_NW_START,
+    #include "RfxNwMessageId.h"
+    RFX_MSG_NW_END = RFX_MSG_NW_START + DEFAULT_MSG_RANGE,
+    RFX_MSG_CC_START,
+    #include "RfxCallControlMessageId.h"
+    RFX_MSG_CC_END = RFX_MSG_CC_START + DEFAULT_MSG_RANGE,
+    RFX_MSG_CAPABILITY_SWITCH_START,
+    #include "RfxCapabilitySwitchMessageId.h"
+    RFX_MSG_CAPABILITY_SWITCH_END = RFX_MSG_CAPABILITY_SWITCH_START + DEFAULT_MSG_RANGE,
+    RFX_MSG_DATA_START,
+    #include "RfxDataMessageId.h"
+    RFX_MSG_DATA_END = RFX_MSG_DATA_START + DEFAULT_MSG_RANGE,
+    RFX_MSG_IMS_START,
+    #include "RfxImsMessageId.h"
+    RFX_MSG_IMS_END = RFX_MSG_IMS_START + DEFAULT_MSG_RANGE,
+    RFX_MSG_ATCI_START,
+    #include "RfxAtciMessageId.h"
+    RFX_MSG_ATCI_END = RFX_MSG_ATCI_START + DEFAULT_MSG_RANGE,
+    RFX_MSG_SS_START,
+    #include "RfxSuppServMessageId.h"
+    RFX_MSG_SS_END = RFX_MSG_SS_START + DEFAULT_MSG_RANGE,
+    RFX_MSG_GBA_START,
+    #include "RfxGbaMessageId.h"
+    RFX_MSG_GBA_END = RFX_MSG_GBA_START + DEFAULT_MSG_RANGE,
+    RFX_MSG_OEM_START,
+    #include "RfxOemMessageId.h"
+    RFX_MSG_OEM_END = RFX_MSG_OEM_START + DEFAULT_MSG_RANGE,
+    // M: eMBMS
+    RFX_MSG_EMBMS_START,
+    #include "RfxEmbmsMessageId.h"
+    RFX_MSG_EMBMS_END = RFX_MSG_EMBMS_START + DEFAULT_MSG_RANGE,
+    RFX_MSG_POWER_START,
+    #include "RfxPowerMessageId.h"
+    RFX_MSG_POWER_END = RFX_MSG_POWER_START + DEFAULT_MSG_RANGE,
+    RFX_MSG_MODE_CONTROLLER_START,
+    #include "RfxModeControllerMessageId.h"
+    RFX_MSG_MODE_CONTROLLER_END = RFX_MSG_MODE_CONTROLLER_START + DEFAULT_MSG_RANGE,
+    RFX_MSG_SMS_START,
+    #include "RfxGsmSmsMessageId.h"
+    #include "RfxImsSmsMessageId.h"
+    RFX_MSG_SMS_END = RFX_MSG_SMS_START + DEFAULT_MSG_RANGE,
+    RFX_MSG_CDMA_SMS_START,
+    #include "RfxCdmaSmsMessageId.h"
+    RFX_MSG_CDMA_SMS_END = RFX_MSG_CDMA_SMS_START + DEFAULT_MSG_RANGE,
+    RFX_MSG_PHB_START,
+    #include "RfxPhbMessageId.h"
+    RFX_MSG_PHB_END = RFX_MSG_PHB_START + DEFAULT_MSG_RANGE,
+    RDX_MSG_WORLD_MODE_START,
+    #include "RfxWpMessageId.h"
+    RFX_MSG_WORLD_MODE_END = RDX_MSG_WORLD_MODE_START + DEFAULT_MSG_RANGE,
+    RFX_MSG_VT_START,
+    #include "RfxVtMessageId.h"
+    RFX_MSG_VT_END = RFX_MSG_VT_START + DEFAULT_MSG_RANGE,
+    RFX_MSG_CAT_START,
+    #include "RfxCatMessageId.h"
+    RFX_MSG_CAT_END = RFX_MSG_CAT_START + DEFAULT_MSG_RANGE,
+    RFX_MSG_MWI_START,
+    #include "RfxMwisMessageId.h"
+    RFX_MSG_MWI_END = RFX_MSG_MWI_START + DEFAULT_MSG_RANGE,
+    RFX_MSG_AGPS_START,
+    #include "RfxAgpsMessageId.h"
+    RFX_MSG_AGPS_END = RFX_MSG_AGPS_START + DEFAULT_MSG_RANGE,
+    RDX_MSG_PHB_SIM_IO_START,
+    #include "RfxPhbSimIoMessageId.h"
+    RFX_MSG_PHB_SIM_IO_END = RDX_MSG_PHB_SIM_IO_START + DEFAULT_MSG_RANGE,
+    RFX_MSG_RCS_START,
+    #include "RfxRcsMessageId.h"
+    RFX_MSG_RCS_END = RFX_MSG_RCS_START + DEFAULT_MSG_RANGE,
+
+    /* Please add your default value above this line */
+#ifdef MTK_OPERATOR_ADDON
+    RFX_MSG_OP_ID_START,
+    #include "RfxMessageOpId.h"
+    RFX_MSG_OP_END = RFX_MSG_OP_ID_START + DEFAULT_MSG_RANGE,
+#endif
+    RFX_MESSAGE_ID_END
+} RFX_MESSAGE_ID;
+
+#endif

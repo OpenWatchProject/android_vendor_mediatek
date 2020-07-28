@@ -1,0 +1,186 @@
+apply plugin: 'com.android.application'
+apply from: 'jacoco.gradle'
+
+def buildTime() {
+    return new Date().format("yyyy-MM-dd-HH-mm-ss", TimeZone.getTimeZone("GMT+8"));
+}
+
+android {
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    lintOptions {
+        abortOnError false
+    }
+    compileSdkVersion 28
+    buildToolsVersion "28.0.3"
+    defaultConfig {
+        applicationId "com.mediatek.camera"
+        minSdkVersion 24
+        targetSdkVersion 28
+        multiDexEnabled true
+        versionCode 60030
+        versionName "1.1.60030"
+//        testApplicationId "com.mediatek.camera.tests"
+
+        renderscriptTargetApi 19
+        renderscriptSupportModeEnabled true
+        vectorDrawables.useSupportLibrary = true
+//        testInstrumentationRunner 'android.test.InstrumentationTestRunner'
+    }/*
+    applicationVariants.all { variant ->
+        variant.outputs.each { output ->
+            def outputFile = output.outputFile
+            def fileName
+            if (outputFile != null && outputFile.name.endsWith('.apk')) {
+                if (variant.buildType.name.equals('release')) {
+                    //Ex. Camera_v1.1.60030.apk
+                    fileName = "Camera_v${defaultConfig.versionName}.apk"
+                } else if (variant.buildType.name.equals('debug')) {
+                    //Ex. Camera_v1.1.60030_2016-08-29-17-39-49_debug.apk
+                    fileName = "Camera_v${defaultConfig.versionName}_${buildTime()}_debug.apk"
+                }
+                output.outputFile = new File(outputFile.parent, fileName)
+            }
+        }
+    }*/
+    buildTypes {
+//        debug {
+//            testCoverageEnabled true
+//        }
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    aaptOptions {
+        additionalParameters "--no-version-vectors"
+    }
+    sourceSets {
+        main {
+            manifest.srcFile "AndroidManifest.xml"
+            res.srcDirs = ["res",
+                           "../feature/setting/cameraswitcher/res",
+                           "../feature/setting/continuousshot/res",
+                           "../feature/setting/hdr/res",
+                           "../feature/setting/flash/res",
+                           "../feature/setting/focus/res",
+                           "../feature/setting/exposure/res",
+                           "../feature/setting/zoom/res",
+                           "../feature/setting/dualcamerazoom/res",
+                           "../feature/setting/dng/res",
+                           "../feature/setting/selftimer/res",
+                           "../feature/setting/facedetection/res",
+                           "../feature/setting/matrixdisplay/res",
+                           "../feature/setting/picturesize/res",
+                           "../feature/setting/scenemode/res",
+                           "../feature/setting/whitebalance/res",
+                           "../feature/setting/imageproperties/res",
+                           "../feature/setting/antiflicker/res",
+                           "../feature/setting/focusmode/res",
+                           "../feature/setting/microphone/res",
+                           "../feature/setting/noisereduction/res",
+                           "../feature/setting/fps60/res",
+                           "../feature/setting/eis/res",
+                           "../feature/setting/ais/res",
+                           "../feature/setting/zsd/res",
+                           "../feature/setting/iso/res",
+                           "../feature/setting/videoquality/res",
+                           "../feature/setting/aaaroidebug/res",
+                           "../feature/setting/shutterspeed/res",
+                           "../feature/mode/pip/res",
+                           "../feature/mode/vsdof/res",
+                           "../feature/mode/slowmotion/res",
+                           "../feature/mode/longexposure/res",
+                           "../feature/mode/hdr/res",
+                           "../feature/mode/panorama/res",
+                           "../feature/setting/formats/res",
+                           "../feature/setting/previewmode/res",
+                           "../feature/setting/slowmotionquality/res",
+                           "../feature/mode/dof/res",
+                           "../feature/mode/matrixdisplay/res",
+                           "../feature/mode/facebeauty/res",
+                           "../feature/mode/vfacebeauty/res"]
+            assets.srcDirs =["assets"]
+            java.srcDirs = ["src",
+                            "../common/src",
+                            "../feature/setting/cameraswitcher/src",
+                            "../feature/setting/continuousshot/src",
+                            "../feature/setting/hdr/src",
+                            "../feature/setting/flash/src",
+                            "../feature/setting/focus/src",
+                            "../feature/setting/exposure/src",
+                            "../feature/setting/zoom/src",
+                            "../feature/setting/dualcamerazoom/src",
+                            "../feature/setting/superdenoise/src",
+                            "../feature/setting/dng/src",
+                            "../feature/setting/selftimer/src",
+                            "../feature/setting/facedetection/src",
+                            "../feature/setting/matrixdisplay/src",
+                            "../feature/setting/picturesize/src",
+                            "../feature/setting/postview/src",
+                            "../feature/setting/scenemode/src",
+                            "../feature/setting/whitebalance/src",
+                            "../feature/setting/imageproperties/src",
+                            "../feature/setting/antiflicker/src",
+                            "../feature/setting/focusmode/src",
+                            "../feature/setting/microphone/src",
+                            "../feature/setting/noisereduction/src",
+                            "../feature/setting/fps60/src",
+                            "../feature/setting/eis/src",
+                            "../feature/setting/ais/src",
+                            "../feature/setting/zsd/src",
+                            "../feature/setting/iso/src",
+                            "../feature/setting/videoquality/src",
+                            "../feature/setting/aaaroidebug/src",
+                            "../feature/setting/shutterspeed/src",
+                            "../feature/setting/mtkcammode/src",
+                            "../feature/mode/pip/src",
+                            "../feature/mode/vsdof/src",
+                            "../feature/mode/slowmotion/src",
+                            "../feature/mode/longexposure/src",
+                            "../feature/mode/hdr/src",
+                            "../feature/mode/panorama/src",
+                            "../feature/setting/formats/src",
+                            "../feature/setting/previewmode/src",
+                            "../feature/setting/slowmotionquality/src",
+                            "../feature/mode/dof/src",
+                            "../feature/mode/matrixdisplay/src",
+                            "../feature/mode/facebeauty/src",
+                            "../feature/mode/vfacebeauty/src"]
+        }
+
+//        androidTest {
+//            manifest.srcFile "../tests/AndroidManifest.xml"
+//            res.srcDirs = ["../tests/res"]
+//            java.srcDirs = ["../tests/src"]
+//            assets.srcDirs = ["../tests/assets"]
+//            aidl.srcDirs = ["../tests/src"]
+//        }
+    }
+}
+
+
+afterEvaluate {
+    assembleDebug.dependsOn assembleDebugAndroidTest
+}
+
+dependencies {
+//    implementation project(":camerapostalgo:interface:java")
+//    implementation fileTree(include: ['*.jar'], dir: '/proj/srv_gghpap10/libs_camera/matrixdisplay')
+    implementation fileTree(include: ['*.jar'], dir: '../common/libs')
+//    implementation fileTree(include: ['*.jar'], dir: '/proj/srv_gghpap10/libs_camera/android-support')
+    implementation 'com.android.support:appcompat-v7:26.0.0-alpha1'
+    implementation 'com.google.code.findbugs:jsr305:3.0.0'
+    implementation 'com.android.support:recyclerview-v7:26.0.0-alpha1'
+    implementation 'com.google.guava:guava:26.0-jre'
+//    androidTestCompile 'com.android.support:support-v4:24.2.0'
+//    androidTestCompile 'com.android.support.test:runner:0.5'
+//    androidTestCompile 'com.android.support.test:rules:0.5'
+//    androidTestCompile 'org.hamcrest:hamcrest-library:1.3'
+//    androidTestCompile 'org.mockito:mockito-core:1.10.19'
+//    androidTestCompile 'com.google.dexmaker:dexmaker:1.2'
+//    androidTestCompile 'com.google.dexmaker:dexmaker-mockito:1.2'
+//    androidTestCompile 'com.android.support.test.uiautomator:uiautomator-v18:2.1.2'
+}

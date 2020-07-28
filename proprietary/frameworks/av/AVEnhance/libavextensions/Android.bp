@@ -1,0 +1,45 @@
+cc_library_static {
+    name: "libavextensions",
+    vendor_available: true,
+    owner: "mtk",
+
+    srcs: [
+        "stagefright/AVStageFactory.cpp",
+        "stagefright/AVStageUtils.cpp",
+        "stagefright/MediaDefs_MTK.cpp",
+    ],
+
+    include_dirs: [
+        "frameworks/av/include",
+        "frameworks/av/media/libstagefright",
+        "frameworks/av/media/libmedia/include",
+        "frameworks/av/media/ndk/include",
+        "vendor/mediatek/proprietary/frameworks/av/AVEnhance/libavextensions",
+    ],
+
+    shared_libs: [
+        "libutils",
+        "liblog",
+        "libbinder",
+        "libmedia_omx",
+        "libnativewindow",
+        "android.hidl.allocator@1.0",
+        "android.hidl.memory@1.0",
+        "android.hidl.token@1.0-utils",
+    ],
+
+    static_libs: [
+    	"libarect",
+    ],
+
+    header_libs: [
+    	"media_plugin_headers",
+    ],
+
+    cflags: [
+        "-Wno-multichar",
+        "-Werror",
+        "-Wall",
+        "-DMTK_AV_ENHANCEMENTS",
+    ],
+}

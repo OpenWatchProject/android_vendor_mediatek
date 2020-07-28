@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+/*
+ * Copyright (C) 2007-2008 Esmertec AG.
+ * Copyright (C) 2007-2008 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+ -->
+
+<resources xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <string name="app_label">پیغام رسانی</string>
+    <string name="new_message">نیا پیغام</string>
+    <string name="menu_call_back">کال <xliff:g id="name">%s</xliff:g></string>
+    <string name="menu_send_email">کو <xliff:g id="name">%s</xliff:g></string>
+    <string name="menu_compose_new">کمپوز کریں</string>
+    <string name="menu_preferences">ترتیبات</string>
+    <string name="menu_add_address_to_contacts"><xliff:g id="contactEmailOrNumber">%s</xliff:g> کو رابطوں میں شامل کریں</string>
+    <string name="menu_call">کال کریں</string>
+    <string name="menu_search">تلاش</string>
+    <string name="menu_delete_all">سبھی سلسلے حذف کریں</string>
+    <string name="menu_delete">سلسلہ حذف کریں</string>
+    <string name="menu_view">سلسلہ دیکھیں</string>
+    <string name="menu_debug_dump">ڈی بگ ڈمپ</string>
+    <string name="refreshing">\u2026 کی تازہ کاری ہورہی ہے</string>
+    <string name="menu_cell_broadcasts">سیل نشریہ</string>
+    <string name="has_draft">مسودہ</string>
+    <string name="no_subject_view">(کوئی موضوع نہيں)</string>
+    <string name="messagelist_sender_self">میں</string>
+    <string name="view_slideshow">سلائڈ شو دیکھیں</string>
+    <string name="view_message_details">تفصیلات دیکھیں</string>
+    <string name="view_delivery_report">رپورٹ دیکھیں</string>
+    <string name="delete_message">رابطہ مٹائيں</string>
+    <string name="expire_on">"مدت ختم ہوتی ہے: <xliff:g id="date">%s</xliff:g>"</string>
+    <string name="kilobyte">KB</string>
+    <string name="undelivered_msg_dialog_title">غیرمرسلہ پیغام</string>
+    <string name="undelivered_msg_dialog_body"> اس پیغام کو بھیجنے میں ناکام۔ \nکوششیں کی گئیں: <xliff:g id="message">%s</xliff:g>.</string>
+    <string name="undelivered_sms_dialog_body">اس پیغام کو بھیجنے میں ناکام۔</string>
+    <string name="delete_thread">سلسلہ حذف کریں</string>
+    <string name="menu_forward">آگے بڑھائيں</string>
+    <string name="download">ڈاؤن لوڈ</string>
+    <string name="downloading">ڈاؤن لوڈ کررہا ہے</string>
+    <string name="inline_subject">&lt;موضوع: <xliff:g id="subject">%s</xliff:g>&gt;</string>
+    <string name="drm_protected_text">"٭ DRMسے تحفظ یافتہ عبارت ٭"</string>
+    <string name="insufficient_drm_rights">ناکافی DRM حقوق کا پتہ چلا ہے۔</string>
+    <string name="copy_message_text">عبارت نقل کریں</string>
+    <string name="message_options">پیغام کے اختیارات</string>
+    <string name="slideshow_options">سلائڈ شو کے اختیارات</string>
+    <string name="done">ہوگيا</string>
+    <string name="move_up">اوپر لے جائیں</string>
+    <string name="move_down">نیچے لے جائیں</string>
+    <string name="remove_slide">سلائڈ ہٹائیں</string>
+    <string name="add_slide">سلائڈ شامل کریں</string>
+    <string name="add_slide_hint">نیا سلائڈ بنانے کیلئے منتخب کریں۔</string>
+    <string name="discard_slideshow">سلائڈ شو رد کریں</string>
+    <string name="slide_show_part">حصہ  <xliff:g id="part">%1$s</xliff:g>/<xliff:g id="total">%2$s</xliff:g></string>
+    <string name="remove_text">عبارت ہٹادیں</string>
+    <string name="add_picture">تصویر شامل کریں</string>
+    <string name="remove_picture">تصویر ہٹا دیں</string>
+    <string name="add_music">موسیقی شامل کریں</string>
+    <string name="remove_music">موسیقی ہٹائیں</string>
+    <string name="add_video">ویڈیو شامل کریں</string>
+    <string name="remove_video">ویڈیو ہٹائیں</string>
+    <string name="to_hint">بطرف</string>
+    <string name="subject_hint">موضوع</string>
+    <string name="add_attachment">منسلکہ</string>
+    <string name="add_subject">موضوع شامل کریں</string>
+    <string name="discard">رد کریں</string>
+    <string name="view">ویو</string>
+    <string name="replace">بدلیں</string>
+    <string name="remove">ہٹائيں</string>
+    <string name="send">"بھیجنا"</string>
+    <string name="mms">MMS</string>
+    <string name="send_mms">MMS بھیجیں</string>
+    <string name="all_threads">سبھی تھریڈز</string>
+    <string name="type_to_compose_text_enter_to_send">پیغام ٹائپ کریں</string>
+    <string name="open_keyboard_to_compose_message">پیغام ٹائپ کرنے کیلئے کی بورڈ کھولیں</string>
+    <string name="sending_disabled_not_default_app">ترسیل غیر فعال ہوگئی</string>
+    <string name="compose_disabled_toast">تحریر نہیں کرسکتا۔ کوئی ڈیفالٹ SMS ایپ نہیں ہے۔</string>
+    <string name="compressing">تصویر کافی بڑی ہے۔ \u2026 کو مختصر کیا جارہا ہے</string>
+    <string name="unsupported_media_format">غیر معاون <xliff:g id="name">%1$s</xliff:g> شکل</string>
+    <string name="select_different_media">براہ کرم ایک مختلف<xliff:g id="message">%s</xliff:g> چنیں۔</string>
+    <string name="exceed_message_size_limitation">پیغام کی جسامت کی حد آگئی۔</string>
+    <string name="message_too_big_for_video">ویڈیو منسلک کرنے کیلئے یہ پیغام کافی بڑا ہے۔</string>
+    <string name="failed_to_add_media">افسوس، آپ اس <xliff:g id="name">%1$s</xliff:g> کو اپنے پیغام میں شامل نہیں کرسکتے۔</string>
+    <string name="failed_to_resize_image">تصویر کی جسامت تبدیل نہیں ہوئی۔</string>
+    <string name="resize_image_error_information">افسوس، جسامت تبدیل کرنے کے باوجود یہ تصویر بھیجنے کیلئے کافی بڑی ہے۔</string>
+    <string name="forward_prefix">آگے بھیجیں:\u0020</string>
+    <string name="discard_message">رد کریں</string>
+    <string name="discard_message_reason">آپ کا پیغام رد کردیا جائے گا کیونکہ اس کے درست وصول کنندگان نہیں ہیں۔</string>
+    <string name="has_invalid_recipient">&lt;<xliff:g id="name">%1$s</xliff:g>&gt;</string>
+    <string name="invalid_destination">غلط اہدافی پتہ۔</string>
+    <string name="service_not_activated">سروس نیٹ ورک پر فعال نہیں کیا گیا۔</string>
+    <string name="service_message_not_found">پیغام کی مدت ختم ہوگئی یا یہ دستیاب نہیں ہے۔</string>
+    <string name="service_network_problem">خرابی نیٹ ورک کا مسئلہ۔</string>
+    <string name="invalid_recipient_message">براہ کرم وصول کنندہ (کنندگان) کو درست کریں یا پھر انہیں پیغام وصول نہیں ہوگا۔</string>
+    <string name="cannot_send_message">اس پیغام کو نہیں بھیجا جاسکتا</string>
+    <string name="cannot_send_message_reason">آپ کے پیغام کے درست وصول کنندگان نہیں ہیں۔</string>
+    <string name="cannot_forward_drm_obj">پیغام میں شامل DRM شئی کو آگے نہیں بھیجا جاسکتا۔</string>
+    <string name="converting_to_picture_message">ملٹی میڈیا پیغام میں تبدیل کر رہا ہے\u2026</string>
+    <string name="converting_to_text_message">متنی پیغام میں تبدیل کر رہا ہے\u2026</string>
+    <string name="cannot_add_slide_anymore">مزید سلائڈز شامل نہیں کئے جاسکتے۔</string>
+    <string name="cannot_add_picture_and_video">ایک سلائڈ میں ویڈیو اور تصویر شامل نہیں کیا جاسکتا۔</string>
+    <string name="cannot_save_message">پیغام محفوظ نہیں کیا جاسکتا۔</string>
+    <string name="message_saved_as_draft">پیغام کو بطور مسودہ محفوظ کیا گيا۔</string>
+    <string name="too_many_recipients">اس پیغام کے کافی زیادہ وصول کنندگان ہیں(<xliff:g id="currentCount">%1$s</xliff:g>)۔  <xliff:g id="maxLimit">%2$s</xliff:g>  وصول کنندگان کی حد مقرر ہے۔</string>
+    <string name="too_many_attachments"> <xliff:g id="maxLimit">%1$s</xliff:g>منسلکات کی حد مقرر ہے۔ صرف پہلا <xliff:g id="currentCount">%2$s</xliff:g> شامل کیا جائے گا۔</string>
+    <string name="adding_attachments_title">منسلکات شامل کئے جارہے ہیں</string>
+    <string name="adding_attachments">آئٹمز کے سلائڈ شو میں شامل کئے جانے تک براہ کرم انتظار کریں۔</string>
+    <string name="building_slideshow_title">سلائڈ شو بنارہا ہے</string>
+    <string name="cannot_play_audio">آڈیو نہیں چلایا جاسکتا۔</string>
+    <string name="preview">پیش منظر</string>
+    <string name="preview_slideshow">پیش منظر</string>
+    <string name="replace_image">تصویر کو بدلیں</string>
+    <string name="duration_sec">مدت  (<xliff:g id="duration">%s</xliff:g> sec)</string>
+    <string name="duration_selector_title">"سلائڈ کی مدت"</string>
+    <string name="layout_selector_title">"سلائڈ شو کا خاکہ"</string>
+    <string name="layout_top">خاکہ بندی (اوپر)</string>
+    <string name="layout_bottom">خاکہ بندی (نیچے)</string>
+    <string name="type_to_compose_text_or_leave_blank">پیغام ٹائپ کریں، یا خالی چھوڑ دیں</string>
+    <string name="duration_not_a_number">مدت لازمی طور پر عدد ہونا چاہیے</string>
+    <string name="duration_zero">مدت لازمی طور پر صفر سیکنڈز سے زیادہ ہونی چاہیے</string>
+    <string name="secs">سیکنڈ</string>
+    <string-array name="select_dialog_items">
+         <item> 1 سیکنڈ</item>
+         <item>2 سیکنڈز</item>
+         <item>3 سیکنڈز</item>
+         <item>4 سیکنڈز</item>
+         <item>5 سیکنڈز</item>
+         <item>6 سیکنڈز</item>
+         <item>7 سیکنڈز</item>
+         <item>8 سیکنڈز</item>
+         <item>9 سیکنڈز</item>
+         <item>10 سیکنڈز</item>
+         <item>دیگر نیٹ ورکس\u2026</item>
+    </string-array>
+    <string name="menu_view_contact">رابطہ دیکھیں</string>
+    <string name="menu_add_to_contacts">روابط میں شامل کریں</string>
+    <string name="hidden_sender_address">مرسل کا مخفی پتہ</string>
+    <string name="yes">ٹھیک ہے</string>
+    <string name="no">منسوخ</string>
+    <string name="set">سیٹ کریں</string>
+    <string name="play">چلائيں</string>
+    <string name="edit">رابطہ ترمیم کریں</string>
+    <string name="try_to_send">بھیجنے کی کوشش کریں</string>
+    <string name="preferences_title">"سیٹنگز"</string>
+    <string name="restore_default">طے شدہ سیٹنگز لاگو کر دیں</string>
+    <string name="pref_notification_settings_title">اطلاعی ترتیبات</string>
+    <string name="pref_mms_settings_title">"ملٹی میڈیا پیغام (MMS) کی ترتیبات"</string>
+    <string name="pref_sms_settings_title">"متنی پیغام (SMS) کی ترتیبات"</string>
+    <string name="pref_sms_storage_title">ذخیرے کی ترتیبات</string>
+    <string name="pref_title_sms_disabled">SMS غیر فعال ہوگیا</string>
+    <string name="pref_summary_sms_disabled">پیغام رسانی کو اپنا ڈیفالٹ SMS ایپلیکشن بنانے کیلئے مس کریں</string>
+    <string name="pref_title_sms_enabled">SMS فعال ہوگیا</string>
+    <string name="pref_summary_sms_enabled">اپنے ڈیفالٹ SMS ایپلیکشن کو تبدیل کرنے کیلئے مس کریں</string>
+    <string name="pref_summary_manage_sim_messages">اپنے SIM کارڈ پر جمع کردہ پیغامات کا نظم کریں</string>
+    <string name="pref_summary_mms_delivery_reports">اپنے بھیجے ہوئے ہر پیغام کیلئے ترسیل کی رپورٹ طلب کریں</string>
+    <string name="pref_summary_mms_read_reports">اپنے بھیجے ہوئے ہر پیغام کیلئے پڑھے جانے کی رپورٹ طلب کریں</string>
+    <string name="pref_summary_sms_delivery_reports">اپنے بھیجے ہوئے ہر پیغام کیلئے ترسیل کی رپورٹ طلب کریں</string>
+    <string name="pref_summary_auto_delete">پرانے پیغامات حذف کردیں کیونکہ حد آچکی ہے</string>
+    <string name="pref_summary_delete_limit"><xliff:g id="count">%1$s</xliff:g> پیغامات فی گفتگو</string>
+    <string name="pref_summary_mms_group_mms">کئی ایک وصول کنندگان ہونے پر ایک واحد پیغام بھیجنے کیلئے MMS کا استعمال کریں</string>
+    <string name="pref_title_manage_sim_messages">SIM کارڈ پیغامات کا نظم کریں</string>
+    <string name="pref_title_mms_delivery_reports">ترسیل کی اطلاع طلب کریں</string>
+    <string name="pref_title_mms_group_mms">گروپ پیغام رسانی</string>
+    <string name="pref_title_mms_read_reports">پڑھنے کی اطلاع طلب کریں</string>
+    <string name="pref_title_sms_delivery_reports">ترسیل کی اطلاع طلب کریں</string>
+    <string name="pref_title_auto_delete">پرانے پیغامات حذف کریں</string>
+    <string name="pref_title_sms_delete">متنی پیغام کی حد</string>
+    <string name="pref_title_mms_delete">ملٹی میڈیا پیغام کی حد</string>
+    <string name="pref_title_notification_enabled">پیغام کی اطلاعات</string>
+    <string name="pref_title_notification_vibrateWhen">وائبریٹ</string>
+    <string name="pref_title_notification_ringtone">آواز کی ترتیبات</string>
+    <string name="pref_messages_to_save">محفوظ کئے جانے کیلئے پیغامات کی تعداد متعین کریں</string>
+    <string name="silent_ringtone">خاموش</string>
+    <string name="prefDialogTitle_vibrateWhen">وائبریٹ</string>
+    <string name="pref_title_mms_auto_retrieval">از خود بازیافت</string>
+    <string name="pref_summary_mms_auto_retrieval">از خود پیغامات کی بازیافت کریں</string>
+    <string name="pref_title_mms_retrieval_during_roaming">رومنگ از خود بازیافت</string>
+    <string name="pref_summary_mms_retrieval_during_roaming">رومنگ کے دوران خود کار طور پر پیغامات کی بازیافت کریں</string>
+    <string name="confirm_dialog_title">رابطہ مٹائيں</string>
+    <string name="confirm_dialog_locked_title">مقفل پیغام حذف کریں؟</string>
+    <plurals name="confirm_delete_conversation">
+        <item quantity="one">ایک گفتگو کو مٹایا جائے گآ</item>
+        <item quantity="other"><xliff:g id="number" example="15">%1$s</xliff:g>  بات چیت حذف کردی جائے گی</item>
+    </plurals>
+    <string name="confirm_delete_conversation">مکمل تھريڈ کو مٹایا جائے گآ،</string>
+    <string name="confirm_delete_all_conversations">سبھی سلسلے حذف کردیے جائیں گے۔</string>
+    <string name="confirm_delete_message">پیغام حذف کردیا جائے گا۔</string>
+    <string name="confirm_delete_locked_message">کیا آپ واقعی اس مقفل پیغام کو حذف کرنا چاہتے ہیں؟</string>
+    <string name="confirm_delete_all_SIM_messages">SIM پر موجود سبھی پیغامات کو حذف کردیا جائے گا۔</string>
+    <string name="confirm_delete_SIM_message">SIM پر موجود اس پیغام کو حذف کردیا جائے گا۔</string>
+    <string name="delete_unlocked">مقفل پیغامات حذف کریں</string>
+    <string name="delete">رابطہ مٹائيں</string>
+    <string name="select_conversations">مکالمہ منتخب کریں</string>
+    <string name="no_conversations">کوئی مکالمہ نہیں</string>
+    <string name="loading_conversations">گفتگو لوڈ کی جارہی ہے۔</string>
+    <string name="cannot_get_details">تفصیلات حاصل نہیں کرسکتا</string>
+    <string name="message_details_title">پیغام کی تفصیلات</string>
+    <string name="message_type_label">ٹائپ:\u0020</string>
+    <string name="text_message">ٹیکسٹ پیغام</string>
+    <string name="multimedia_message">ملٹی میڈیا پیغام</string>
+    <string name="multimedia_notification">ملٹی میڈیا پیغام کی اطلاع</string>
+    <string name="from_label">منجانب:\u0020</string>
+    <string name="to_address_label">منجانب:\u0020</string>
+    <string name="bcc_label">نقل ثانی:\u0020</string>
+    <string name="sent_label">بھیج دیا گیا:\u0020</string>
+    <string name="received_label">وصول کردہ:\u0020</string>
+    <string name="saved_label">محفوظ کردہ:\u0020</string>
+    <string name="subject_label">موضوع:\u0020</string>
+    <string name="message_size_label">پیغام کی جسامت:\u0020</string>
+    <string name="priority_label">ترجیح:\u0020</string>
+    <string name="priority_high">اعلی</string>
+    <string name="priority_normal">عام</string>
+    <string name="priority_low">کم</string>
+    <string name="message_class_label">پیغام کا درجہ:\u0020</string>
+    <string name="error_code_label">غلطی کا کوڈ: \u0020</string>
+   <string name="menu_edit">رابطہ ترمیم کریں</string>
+   <string name="menu_delete_messages">پیغامات حذف کریں</string>
+   <string name="menu_delete_all_messages">سبھی پیغامات حذف کریں</string>
+   <string name="menu_lock">مقفل</string>
+   <string name="menu_unlock">غیرمقفل کریں</string>
+    <string name="sim_copy_to_phone_memory" product="tablet">ٹیبلٹ کی میموری میں کاپی کریں</string>
+    <string name="sim_copy_to_phone_memory" product="default">فون میموری میں نقل کریں</string>
+    <string name="sim_delete">رابطہ مٹائيں</string>
+    <string name="sim_manage_messages_title">SIM کارڈ پر ٹیکسٹ پیغامات</string>
+    <string name="sim_view">ویو</string>
+    <string name="sim_empty">SIM کارڈ پر کوئی پیغامات نہيں ہیں</string>
+    <string name="delivery_header_title">رپورٹ</string>
+    <string name="status_none">(کوئی نہيں)</string>
+    <string name="status_pending">منتظر</string>
+    <string name="status_read">خواندہ</string>
+    <string name="status_received">موصولہ</string>
+    <string name="status_failed">ناکام</string>
+    <string name="status_unread">بغیر پڑھا ہوا</string>
+    <string name="status_rejected">مسترد</string>
+    <string name="recipient_label">وصول کنندہ:/u0020</string>
+    <string name="status_label">کیفیت:/u0020</string>
+    <string name="delivered_label">سپردگی: ‏‎/u002‎</string>
+    <string name="attach_image">تصویریں</string>
+    <string name="attach_take_photo">تصویر کھینچيں</string>
+    <string name="attach_video">ویڈیو</string>
+    <string name="attach_record_video">ویڈیو کھینچیں</string>
+    <string name="attach_sound">آڈیو</string>
+    <string name="attach_record_sound">آڈیو رکارڈ کرنا</string>
+    <string name="attach_slideshow">سلائڈ شو</string>
+    <string name="select_bottom_text">نیچے موجود ٹیکسٹ</string>
+    <string name="select_top_text">اوپر موجود ٹیکسٹ</string>
+    <string name="delivery_toast_body">%s کے ذریعے پیغام موصول کیا گيا</string>
+    <plurals name="notification_multiple">
+        <item quantity="one">‎%d‏ بغیر پڑھا ہوا پیغام۔‏</item>
+        <item quantity="other">%d بغیر پڑھا ہوا پیغام۔</item>
+    </plurals>
+    <string name="notification_multiple_title">نئے پیغامات</string>
+    <string name="notification_failed_multiple"><xliff:g id="count">%s</xliff:g> پیغامات کو بھیجا نہيں جاسکا۔</string>
+    <string name="notification_failed_multiple_title">پیغامات نہيں بھیجے گئے</string>
+    <string name="sim_full_title">SIM کارڈ بھرگیا</string>
+    <string name="sim_full_body">اور کے لئے جگہ بنانے کے لئے کچھ پیغامات مٹائيں</string>
+    <string name="sms_full_title">پیغام کی میموری بھری ہوئی ہے</string>
+    <string name="sms_full_body">آنے والے پیغام کو میموری بھر جانے کی وجہ سے مسترد کیا گيا۔ برائے مہربانی پرانے پیغامات مٹائيں۔</string>
+    <string name="sms_rejected_title">ٹیکسٹ پیغام مسترد کیا گيا</string>
+    <string name="sms_rejected_body">آنے والے پیغام کو نامعلوم وجہ کی بنا پر مسترد کیا گیا۔</string>
+    <string name="type_audio">آڈیو</string>
+    <string name="type_picture">تصویر</string>
+    <string name="type_video">ویڈیو</string>
+    <string name="confirm">ٹھیک ہے</string>
+    <string name="message_send_read_report">خواندگی کی رپورٹ بھیجی جائے گی۔</string>
+    <string name="message_queued">اس وقت آپ کا پیغام بھیجنے سے قاصر۔ اسے خدمت دستیاب ہونے پر بھیجا جائے گا۔</string>
+    <string name="fdn_check_failure">آپ صرف اپنے فکسڈ ڈائلنگ نمبروں پر پیغامات بھیج سکتے ہيں۔</string>
+    <string name="no_subject">(کوئی موضوع نہيں)</string>
+    <string name="unknown_sender">نامعلوم مرسل</string>
+    <string name="dl_failure_notification">پیغام <xliff:g id="subject">%1$s</xliff:g> from <xliff:g id="from">%2$s</xliff:g> کو مٹانا ناکام ہوا۔</string>
+    <string name="rate_limit_surpassed">ٹھیک ہے</string>
+    <string name="confirm_rate_limit">ملٹی میڈیا پیغامات کی بڑی تعداد بھیجی جاری ہے۔ کیا یہ ٹھیک ہے؟</string>
+    <string name="message_download_failed_title">پیغام ڈاؤن لوڈ نہيں کیا گيا</string>
+    <string name="message_send_failed_title">پیغام بھیجا نہيں گیا</string>
+    <string name="message_failed_body">پیغام کا جائزہ لے کر دوبارہ کوشش کرنے کے لئے منتخب کریں۔</string>
+    <string name="download_later">اس وقت ڈاؤن لوڈ کرنے سے قاصر۔ برائے مہربانی بعد میں کوشش کريں۔</string>
+    <string name="no_apn">آلے پر کوئی APN متعین نہیں کیا گیا ہے۔</string>
+    <string name="select_audio">آڈیو منتخب کریں</string>
+    <string name="copy_to_sdcard">منسلکہ محفوظ کریں</string>
+    <string name="copy_to_sdcard_success">منسلکہ محفوظ کیا گيا</string>
+    <string name="copy_to_sdcard_fail">منسلکہ محفوظ کرنے سے قاصر</string>
+    <string name="save_ringtone">بطور رنگ ٹون محفوظ کریں</string>
+    <string name="saved_ringtone">رنگ ٹون محفوظ کی گئی</string>
+    <string name="saved_ringtone_fail">رنگ ٹون محفوظ کرنا ناکام</string>
+    <string name="menu_insert_smiley">جذباتی چہرہ شامل کریں</string>
+    <string name="menu_group_participants">گروپ شرکت کنندگان</string>
+    <string name="select_link_title">عمل منتخب کریں</string>
+    <string name="slide_number">سلائڈ <xliff:g id="number" example="5">%s</xliff:g></string>
+    <plurals name="slide_duration">
+        <item quantity="one"><xliff:g id="number" example="1">%s</xliff:g> سیکنڈ</item>
+        <item quantity="few"><xliff:g id="number" example="2">%s</xliff:g> سیکنڈ</item>
+        <item quantity="other"><xliff:g id="number" example="15">%s</xliff:g> سیکنڈ</item>
+    </plurals>
+    <string name="delivery_report_activity">حوالگی کی رپورٹ</string>
+    <string name="storage_limits_activity">ذخیرے کی تعداد</string>
+    <string name="change_duration_activity">دورانیہ تبدیل کریں</string>
+    <string name="edit_slideshow_activity">سلائڈ شو ترمیم کریں</string>
+    <string name="recipient_list_activity">گروپ شرکت کنندگان</string>
+    <string name="edit_slide_activity">سلائڈ ترمیم کریں</string>
+    <string name="slideshow_activity">سلائڈ شو</string>
+    <string name="class_0_message_activity">کلاس 0 پیغام</string>
+    <string name="search_label">پیغام رسانی</string>
+    <string name="search_hint">پیغام رسانی میں تلاش کریں</string>
+    <string name="search">پیغام رسانی</string>
+    <string name="search_setting_description">آپ کے پیغامات میں ٹیکسٹ</string>
+    <string name="search_empty">کوئی مماثلتیں نہیں ہیں</string>
+    <plurals name="search_results_title">
+        <item quantity="one"><xliff:g id="number" example="1">%1$s</xliff:g> کا نتیجہ \"<xliff:g id="search" example="???">%2$s</xliff:g>\"</item>
+        <item quantity="other"><xliff:g id="number" example="15">%1$s</xliff:g> کے نتائج \"<xliff:g id="search" example="???">%2$s</xliff:g>\"</item>
+    </plurals>
+    <string name="search_history"><xliff:g id="count">%1$s</xliff:g> کے نتائج \"<xliff:g id="search">%2$s</xliff:g>\"</string>
+    <string name="confirm_clear_search_title">صاف کریں</string>
+    <string name="confirm_clear_search_text">تلاش کی ہسٹری کو صاف کیا جائے گا۔</string>
+    <string name="pref_mms_clear_search_history_title">تلاش ہسٹری ختم کریں</string>
+    <string name="pref_mms_clear_search_history_summary">سابقہ پیغام رسانی کی تلاشوں کو تلاش کے باکس میں ظاہر ہونے سے صاف کریں</string>
+    <string name="save">محفوظ</string>
+    <string name="storage_limits_title">پیغامات محدود کریں</string>
+    <string name="storage_limits_message">کیا آپ فی گفتگو محفوظ ہونے والے پیغامات کی تعداد کو محدود کرنا چاہتے ہيں؟</string>
+    <string name="storage_limits_setting">حدود سیٹ کریں</string>
+    <string name="storage_limits_setting_dismiss">کوئی حدود نہيں</string>
+    <string name="too_many_unsent_mms">پیغام فوری طور پر نہیں بھیج سکتے۔ کافی سارے غیر مرسلہ ملٹی میڈیا پیغامات ہیں۔</string>
+    <string name="sending_message">بھیجا جارہا ہے\u2026</string>
+    <string name="pick_too_many_recipients">کافی زیادہ وصول کنندگان</string>
+    <string name="adding_recipients">وصول کنندگان شامل کئے جارہے ہیں\u2026</string>
+    <string name="draft_separator">,\u0020</string>
+    <string name="message_count_format">\u00a0<xliff:g id="number" example="1">%1$s</xliff:g></string>
+    <string name="message_count_notification">‎</string>
+    <plurals name="message_count_notification_overflow">
+	<item quantity="one"><xliff:g id="number" example="15">%1$s</xliff:g> ‎دیگر پیغامات‎\"</item>
+        <item quantity="other"><xliff:g id="number" example="15">%1$s</xliff:g>  بات چیت حذف کردی جائے گی</item>
+    </plurals>
+    <string name="error_state">غیرمتواتر حالت</string>
+    <string name="error_state_text">تھریڈ اور وصول کنندگان کی کیفیت غیرمتواتر ہے۔ برائے مہربانی مسائل کی رپورٹ بنا کرکے اسے android-sms-bugs@google.com پر بھیجیں۔</string>
+    <plurals name="recipient_count">
+        <item quantity="other"><xliff:g id="number" example="15">%1$s</xliff:g> لوگ</item>
+    </plurals>
+    <string name="view_more_conversations">مزید بات چیت دیکھیں</string>
+    <string name="attachment_audio">آڈیو</string>
+    <string name="attachment_slideshow">سلائڈ شو</string>
+    <string name="attachment_video">ویڈیو</string>
+    <string name="attachment_picture">تصویر</string>
+    <string name="notification_separator">\u0020\u0020</string>
+    <string name="enumeration_comma">,\u0020</string>
+    <string name="message_timestamp_format"><xliff:g id="string" example="FredFlinstone">%1$s</xliff:g>\u0020-\u0020<xliff:g id="string" example="9:39AM">%2$s</xliff:g></string>
+    <string name="storage_warning_title">"آپ کے فون کا اسٹوریج بھر گیا ہے"</string>
+    <string name="storage_warning_content">"آپ کو نئے SMS/MMS پیغامات وصول نہیں ہوں گے"</string>
+    <string name="cell_broadcast">سیل کی نشریات</string>
+    <string name="cell_broadcast_title">سیل براڈکاسٹ کی ترتیبات</string>
+    <string name="cell_broadcast_settings">سم کارڈ سیل براڈ کاسٹ کی سیٹنگ</string>
+    <string name="menu_insert_quick_text">فوری ٹیکسٹ داخل کریں</string>
+    <string name="select_quick_text">فوری ٹیکسٹ منتخب کریں</string>
+    <string name="add">شامل</string>
+    <string name="quick_text_editor">فوری ٹیکسٹ ترمیم کریں</string>
+    <string name="modify_successful">کامیابی کے ساتھ ترمیم</string>
+    <string name="modify_unsuccessful">ناکام تبدیلی!‏</string>
+    <string name="delete_successful">کامیابی کے ساتھ حذف</string>
+    <string name="delete_unsuccessful">حذف کرنا ناکام!</string>
+    <string name="add_quick_text_successful">فوری متن کامیابی کے ساتھ شامل</string>
+    <string name="already_have_quick_text">آپ کے پاس پہلے ہی سے یہ فوری ٹیکسٹ موجود ہے!</string>
+    <string name="file_attachment_common_name">ملٹی فائل(<xliff:g id="text">%s</xliff:g>)</string>
+    <string name="file_attachment_contains">مشتمل ہے</string>
+    <string name="file_attachment_files">فائلیں</string>
+    <string name="save_attachment">منسلکہ محفوظ کریں</string>
+    <string name="save_multi_attachment_notes">ملٹی فائل متعدد فائلوں پر مشتمل ہوتی ہے۔ انہیں چیک اور محفوظ کریں؟ </string>
+    <string name="save_single_attachment_notes">یہ MMS میں غیر تعاون یافتہ فائل کی شکل ہے۔ اسے فائل منیجر میں محفوظ کریں؟</string>
+    <string name="multi_files">ملٹی فائلز</string>
+    <string name="save_single_supportformat_attachment_notes">اسے فائل منیجر میں محفوظ کریں؟</string>
+    <string name="exceed_editor_size_limitation">متن کی حد کو پہنچ گیا۔</string>
+    <string name="add_top_slide">سلائیڈ اوپر شامل کریں</string>
+    <string name="add_bottom_slide">سلائیڈ نیچے شامل کریں</string>
+    <string name="label_mms_send_outbox_msg">MMS ویک اپ</string>
+    <string name="desc_mms_send_outbox_msg">سبھی MMS آؤٹ باکس سے نیٹ ورک کو بھیجیں</string>
+    <string name="banner_sms_promo_title_initial">پیغام رسانی آپ کا SMS ایپلیکیشن نہیں ہے</string>
+    <string name="banner_sms_promo_title_application"><xliff:g id="appName">%s</xliff:g> آپ کا SMS ایپلیکشن ہے</string>
+    <string name="banner_sms_promo_message">آپ ترتیبات میں اسے تبدیل کرسکتے ہیں</string>
+    <string name="omh_exceed_message_size_limitation">R-UIM پیغام کے سائز کی حد پہنچ گئی</string>
+</resources>

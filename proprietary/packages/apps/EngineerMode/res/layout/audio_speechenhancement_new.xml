@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <Spinner
+        android:id="@+id/Audio_SpEnhancement_ModeType"
+        android:layout_width="240dip"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dip"
+        android:layout_marginTop="10dip" >
+    </Spinner>
+
+    <Spinner
+        android:id="@+id/Audio_SpEnhancement_ParaType"
+        android:layout_width="240dip"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dip"
+        android:layout_marginTop="10dip"
+        android:visibility="gone" >
+    </Spinner>
+    <Spinner
+        android:id="@+id/Audio_SpEnhancement_Vol_spin"
+        android:layout_width="240dip"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dip"
+        android:layout_marginTop="10dip"
+        android:visibility="gone" >
+    </Spinner>
+    <ListView
+        android:id="@+id/Audio_SpEnhancement_ListView"
+        android:layout_width="240dip"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginLeft="10dip"
+        android:layout_marginTop="10dip" >
+    </ListView>
+
+    <Button
+        android:id="@+id/Audio_SpEnhancement_Button"
+        android:layout_width="240dip"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dip"
+        android:layout_marginTop="10dip"
+        android:text="@string/Audio_SpEnhancement_Button" >
+    </Button>
+</LinearLayout>

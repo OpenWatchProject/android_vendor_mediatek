@@ -1,0 +1,45 @@
+#!/bin/bash
+IN=$1
+PREFIX=$2
+ARRAY=$3
+
+function help() {
+>&2 cat <<EoF
+NAME
+        enum2str : gethering enums that have the same prefix to a string array
+SYNOPSIS
+        enum2str in prefix array_name
+OPTIONS
+        in
+          input header file
+        prefix
+          prefix that will be gethered
+        array_name
+          array_name that stored strings
+EoF
+}
+
+
+
+
+if [ ! -f "$IN" ]; then
+    >&2 echo "error: <$IN> file not found!!"
+    help
+    exit -1
+fi
+
+if [[ ! $PREFIX =~ ^[a-zA-Z][a-zA-Z0-9_]* ]]; then
+    >&2 echo "error: <$PREFIX> is NOT a valid c/c++ symbol"
+    help
+    exit -1
+fi
+
+if [[ ! $ARRAY =~ ^[a-zA-Z][a-zA-Z0-9_]* ]]; then
+    >&2 echo "error: <$ARRAY> is NOT a valid c/c++ symbol"
+    help
+    exit -1
+fi
+
+echo "static const char * const $ARRAY[] = {"
+grep -E "^\s*$PREFIX" $IN | sed -nr "s/^\s*$PREFIX([a-zA-Z0-9_]+).*$/    \"\1\",/p" || { >&2 echo "error: format error!!"; help; exit -1; }
+echo "};"

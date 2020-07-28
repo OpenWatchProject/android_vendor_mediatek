@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Copyright Statement:
+
+    This software/firmware and related documentation ("MediaTek Software") are
+    protected under relevant copyright laws. The information contained herein
+    is confidential and proprietary to MediaTek Inc. and/or its licensors.
+    Without the prior written permission of MediaTek inc. and/or its licensors,
+    any reproduction, modification, use or disclosure of MediaTek Software,
+    and information contained herein, in whole or in part, shall be strictly prohibited.
+
+    MediaTek Inc. (C) 2012. All rights reserved.
+
+    BY OPENING THIS FILE, RECEIVER HEREBY UNEQUIVOCALLY ACKNOWLEDGES AND AGREES
+    THAT THE SOFTWARE/FIRMWARE AND ITS DOCUMENTATIONS ("MEDIATEK SOFTWARE")
+    RECEIVED FROM MEDIATEK AND/OR ITS REPRESENTATIVES ARE PROVIDED TO RECEIVER ON
+    AN "AS-IS" BASIS ONLY. MEDIATEK EXPRESSLY DISCLAIMS ANY AND ALL WARRANTIES,
+    EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF
+    MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE OR NONINFRINGEMENT.
+    NEITHER DOES MEDIATEK PROVIDE ANY WARRANTY WHATSOEVER WITH RESPECT TO THE
+    SOFTWARE OF ANY THIRD PARTY WHICH MAY BE USED BY, INCORPORATED IN, OR
+    SUPPLIED WITH THE MEDIATEK SOFTWARE, AND RECEIVER AGREES TO LOOK ONLY TO SUCH
+    THIRD PARTY FOR ANY WARRANTY CLAIM RELATING THERETO. RECEIVER EXPRESSLY ACKNOWLEDGES
+    THAT IT IS RECEIVER'S SOLE RESPONSIBILITY TO OBTAIN FROM ANY THIRD PARTY ALL PROPER LICENSES
+    CONTAINED IN MEDIATEK SOFTWARE. MEDIATEK SHALL ALSO NOT BE RESPONSIBLE FOR ANY MEDIATEK
+    SOFTWARE RELEASES MADE TO RECEIVER'S SPECIFICATION OR TO CONFORM TO A PARTICULAR
+    STANDARD OR OPEN FORUM. RECEIVER'S SOLE AND EXCLUSIVE REMEDY AND MEDIATEK'S ENTIRE AND
+    CUMULATIVE LIABILITY WITH RESPECT TO THE MEDIATEK SOFTWARE RELEASED HEREUNDER WILL BE,
+    AT MEDIATEK'S OPTION, TO REVISE OR REPLACE THE MEDIATEK SOFTWARE AT ISSUE,
+    OR REFUND ANY SOFTWARE LICENSE FEES OR SERVICE CHARGE PAID BY RECEIVER TO
+    MEDIATEK FOR SUCH MEDIATEK SOFTWARE AT ISSUE.
+
+    The following software/firmware and/or related documentation ("MediaTek Software")
+    have been modified by MediaTek Inc. All revisions are subject to any receiver's
+    applicable license agreements with MediaTek Inc.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">  
+    <string name="not_add_more_text">"Több szöveg nem adható hozzá"</string>  
+    <!-- message compose add attachment -->  
+    <string name="attach_image">Fotó</string>  
+    <string name="attach_video">Videó</string>  
+    <string name="attach_sound">Zene</string>  
+    <string name="attach_contact">Partnerek</string>  
+    <string name="attach_file">Fájl</string>  
+    <string name="attach_calender">Naptár</string>  
+    <string name="attach_error_occurred">Az ilyen mellékletet egyik alkalmazás sem támogatja.</string>  
+    <!-- Toast for telling user the email service stopped when low storage -->  
+    <string name="low_storage_service_stop">Az e-mail szolgáltatás leállt, mert nincs elegendő tárhely.</string>  
+    <!-- Toast for hint user to delete unused emails to reclaim storage -->  
+    <string name="low_storage_hint_delete_mail">Tárhely felszabadításához törölheti a fölösleges e-maileket vagy alkalmazásokat.</string>  
+    <!-- Toast for telling user the email service started when storage ok-->  
+    <string name="low_storage_service_start">Az e-mail szolgáltatás újraindult, mert egyelőre van elegendő tárhely.</string>  
+    <!-- Toast for telling user can not download attachment due to low storage -->  
+    <string name="low_storage_attachment_cannot_download">A melléklet nem tölthető be, mert nincs elegendő tárhely.</string>  
+    <!-- Toast for telling user can not view attachment due to low storage -->  
+    <string name="low_storage_attachment_cannot_view">A melléklet nem tekinthető meg, mert nincs elegendő tárhely.</string>  
+    <!-- Download remaining of the message when view a partial downloaded message -->  
+    <string name="download_remaining">Fennmaradó letöltés</string>  
+    <string name="downloading_remaining">Betölté …</string>  
+    <!-- Dialog title when user syncing manually without active network -->  
+    <string name="unable_to_connect">Nem lehet kapcsolódni</string>  
+    <!-- Dialog text when user syncing manually without active network  -->  
+    <string name="need_connection_prompt">"Az alkalmazás használatához hálózati kapcsolat szükséges. Kérjük, kapcsolja be a mobilhálózatot vagy a WiFi-t a Beállítások menüben."</string> 
+    <!-- Dialog text when user syncing manually without active wifi network  -->
+    <string name="need_wifi_connection_prompt">"Az alkalmazás használatához hálózati kapcsolat szükséges. Kapcsolja be a WiFi-t a Beállítások menüben."</string>
+    <!-- Button text in the connection alert dialog -->  
+    <string name="connection_settings">"Beállítások"</string>  
+    <!-- limit of attachment number, when share more than 100+ attachments -->  
+    <string name="too_many_attachments">Túl sok melléklet hozzáadása nem lehetséges. Kizárólag az első 
+        <xliff:g id="currentCount">%1$d</xliff:g> melléklet lesz hozzáadva.
+    </string>  
+    <!-- limit of attachment number, when the current number >100 -->  
+    <string name="not_add_more_attachments">Több melléklet nem adható hozzá. Legfeljebb 
+        <xliff:g id="maxLimit">%1$d</xliff:g> melléklet engedélyezett.
+    </string>  
+    <string name="attachment_overflow">Melléklet túlcsordulás</string>  
+    <!-- String which used to show toast when some attachment cannot be attached -->  
+    <string name="cannot_add_this_attachment">A melléklet nem adható hozzá.</string>  
+    <string name="loading_attachment">Mellékletek betöltése...</string>  
+    <!-- Open eml message -->  
+    <string name="open_message_parsing">Az üzenet elemzése…</string>  
+    <string name="open_message_update_db">Az adatbázis frissítése…</string>  
+    <string name="open_message_update_ui">Az üzenet betöltése…</string>  
+    <string name="please_wait">Művelet folyamatban. Kérjük, várjon...</string> 
+    <string name="delete_message_dialog_title">Üzenet törlése</string>
+    <string name="delete_message_confirm">Törli az üzenetet?</string> 
+    <string name="attachment_info_deleted">"Ez a melléklet nem menthető és nem nyitható meg, mert lehet, hogy törölték."</string>  
+    <string name="send_failed_ticker"> 
+        <xliff:g id="account_name">%s</xliff:g> sikertelenül kézbesítette az e-mailt.
+    </string>  
+    <!-- Notification title when email sent fails [CHAR LIMIT=30]-->  
+    <string name="send_failed_title">Az e-mail elküldése nem sikerült</string>  
+    <string name="always_bcc_myself">Titkos másolat küldése saját magamnak mindig</string>  
+    <string name="always_bcc_myself_summary">Mindig kapjak titkos másolatot, ha szerkesztek, válaszolok és továbbítok</string> 
+    <string name="remote_search_failed">A kiszolgálókeresés sikertelen.</string>
+    <string name="searching_on_server">Keresés a szerveren</string>  
+    <string name="searching_on_server_title">\" 
+        <xliff:g id="account_name">%s</xliff:g>\" keresése a szerveren
+    </string>  
+    <string name="search_field_subject">Tárgy</string>  
+    <string name="search_field_receiver">Címzett</string>  
+    <string name="search_field_sender">Feladó</string>  
+    <string name="search_field_body">Törzs</string>  
+    <string name="search_field_all">"Összes"</string>
+    <string name="searching_all_fields_on_sever">Minden mező keresése a szerveren</string>
+    <string name="select_all">"Az összes kijelölése"</string>
+    <string name="deselect_all">"Az összes kijelölés törlése"</string>
+
+    <string name="vip_settings">VIP-BEÁLLÍTÁSOK</string>  
+    <string name="vip_members">VIP-tagok</string>  
+    <string name="vip_notifications">VIP-értesítések</string>  
+    <string name="vip_settings_notify_summary">Értesítés a Rendszersávon, ha VIP e-mail érkezik</string>  
+    <string name="vip_members_count">VIP-tagok (<xliff:g example="2">%1$d</xliff:g>)</string>  
+    <string name="vip_remove_title">Eltávolítás VIP-ből</string>
+    <string name="vip_remove_prompt">Megtörténik <xliff:g example="2">%1$s</xliff:g> eltávolítása a VIP-tagok közül.</string>  
+    <string name="not_add_duplicate_vip">A duplikált partner nem kerül a VIP-listára.</string>  
+    <string name="vip_settings_ringtone">"Válasszon csengőhangot"</string>  
+    <string name="vip_settings_vibrate_label">Rezgés</string>  
+    <string name="vip_settings_vibrate_summary">Rezgés is, ha VIP e-mail érkezik</string>  
+    <string name="global_search_label">"E-mail"</string>  
+    <string name="global_search_hint">"E-mail keresése"</string>  
+    <string name="global_search_description">Feladók, tárgyak és szövegtörzsek</string>  
+    <string name="account_settings_oof_time_alert">Későbbinek kell lennie, mint a pontos idő.</string>
+    <string name="account_settings_oof_label">Házon kívül</string>  
+    <string name="account_settings_oof_unchecked_summary">Az irodában vagyok</string>  
+    <string name="account_settings_oof_checked_summary">Házon kívüli vagyok</string>  
+    <string name="account_settings_oof_from_label">"Kezdete:"</string>  
+    <string name="account_settings_oof_to_label">"Címzett"</string>  
+    <string name="account_settings_oof_auto_reply_label">Házon kívüli automata válaszok</string>  
+    <string name="account_settings_oof_auto_reply_summary">Válasz automatikus küldése minden feladónak</string>  
+    <string name="account_settings_oof_external_server_label">Automatikus válasz küldése a külső szervernek</string>  
+    <string name="account_settings_oof_get_status">Állapot lekérése a szerverről</string>  
+    <string name="account_settings_oof_save_sets">Beállítások mentése a szerveren</string>  
+    <string name="account_settings_oof_get_status_fail">Az állapot lekérése nem lehetséges</string>
+    <string name="account_settings_oof_get_status_fail_summary">Pillanatnyilag nem kérhető le az állapot a szerverről. Próbálja újra később.</string>
+    <string name="account_settings_oof_cancel">Mentés nélkül?</string>  
+    <string name="account_settings_oof_cancel_summary">Minden módosítás elvetésre kerül.</string>  
+    <string name="account_settings_oof_save_fail">A mentés nem lehetséges</string>  
+    <string name="account_settings_oof_save_fail_summary">Nem lehet menteni a beállításokat a szerveren. Lehet, hogy a szerver nem elérhető, az automata válaszai meghaladták a korlátot a szerveren, vagy az eszközén nem pontos a dátum vagy idő beállítása.</string>  
+    <string name="account_setup_options_mail_check_frequency_smartpush">Intelligens push</string>
+    <string name="smart_push_alert_dialog_title">Energiagazdálkodási lehetőség</string>
+    <string name="smart_push_alert_dialog_message">" Az energiatakarékosság érdekében ritkábban tölti le az e-maileket. Ha ezt a módot használja, az e-maileket időben fogja megkapni.\n\nBármikor módosíthatja a beállítások menüben."</string>
+    <string name="not_add_more_recipients">Egyszerre maximum <xliff:g id="maxLimit">%1$d</xliff:g> címzett hozzáadása lehetséges.</string>
+    <string name="vip_choose_contact">Hozzáadás VIP-hez</string>
+    <string name="can_not_add_vip_over_99">Maximum 99 VIP-tagot lehet hozzáadni</string>
+    <string name="no_application_response">Az alkalmazást letiltották</string>
+    <string name="vip_emails_from_accounts_fmt">E-mailek <xliff:g id="vipAccountCount">%d</xliff:g> fiókból</string>
+    <string name="notification_multiple_new_vip_messages_fmt"><xliff:g example="2">%1$d</xliff:g> új VIP e-mail</string>
+    <string name="send_attachment_fail">A melléklet küldése sikertelen.</string>
+    <string name="cannot_move_multiple_mailbox_toast">Egyes e-mailek áthelyezése folyik. Kérjük, próbálja meg később.</string>
+    <string name="certificate_request_ssl">A klienstanúsítványhoz biztonságos kapcsolat szükséges.</string>
+    <string name="auto_clear_cache_title">Gyorsítótár automatikus ürítése</string>
+    <string name="auto_clear_cache_description">A helyileg gyorsítótárazott mellékletek rendszeres törlése</string>
+    <string name="edit_quoted_dialog_title">Maximális karakterek száma</string>
+    <string name="edit_quoted_not_append_all">Ön elérte a maximális karakterek számát. A régi tartalom egy része el fog veszni. Folytatja?</string>
+    <string name="single_message_view_attachment_saved">Melléklet mentve itt: <xliff:g id="filename">%s</xliff:g></string>
+    <string name="choose_attachment_dialog_title">"Melléklet kiválasztása"</string>
+    <string name="message_compose_error_invalid_email">"Egyes e-mail címek érvénytelenek."</string>
+    <string name="extension_choose_provider_title">Levelező szolgáltató választása</string>
+    <string name="message_view_status_sdcard_not_enough">Nincs elegendő hely az SD-kártyán a melléklet mentéséhez.</string>
+    <string name="message_body_too_large">A teljes tartalmat nem lehet betölteni, mivel az üzenet túl hosszú.</string>
+</resources>

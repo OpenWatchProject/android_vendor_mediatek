@@ -1,0 +1,29 @@
+Sensor calibration tool
+
+WHAT IT DOES?
+=============
+This tool used for calibrating gsensor or gyroscope.
+
+HOW IT WAS BUILT?
+==================
+It needs the following library from AOSP:
+libutils libcutils
+
+and the following libs from MediaTek:
+libhwm
+
+HOW TO USE IT?
+==============
+Usage:[options] <period> <count> <tolerance> <trace>
+Options:
+-h  Show the help information for this tool.
+-gs This option to calibrate gsensor.
+-gy This option to calibrate gyroscope.
+-c  This option used to clear driver and nvram data.
+-w  This option used to write calibration result to driver and nvram.
+
+Parameters:
+<period>: Delay time of read sensor data.
+<count>: Count of read sensor data.
+<tolerance>: Tolerance(20 or 40) of calibration fail.
+<trace>: Unused.

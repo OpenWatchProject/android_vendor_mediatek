@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--* Copyright Statement:
+ *
+ * This software/firmware and related documentation ("MediaTek Software") are
+ * protected under relevant copyright laws. The information contained herein
+ * is confidential and proprietary to MediaTek Inc. and/or its licensors.
+ * Without the prior written permission of MediaTek inc. and/or its licensors,
+ * any reproduction, modification, use or disclosure of MediaTek Software,
+ * and information contained herein, in whole or in part, shall be strictly prohibited.
+ *
+ * MediaTek Inc. (C) 2012. All rights reserved.
+ *
+ * BY OPENING THIS FILE, RECEIVER HEREBY UNEQUIVOCALLY ACKNOWLEDGES AND AGREES
+ * THAT THE SOFTWARE/FIRMWARE AND ITS DOCUMENTATIONS ("MEDIATEK SOFTWARE")
+ * RECEIVED FROM MEDIATEK AND/OR ITS REPRESENTATIVES ARE PROVIDED TO RECEIVER ON
+ * AN "AS-IS" BASIS ONLY. MEDIATEK EXPRESSLY DISCLAIMS ANY AND ALL WARRANTIES,
+ * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE OR NONINFRINGEMENT.
+ * NEITHER DOES MEDIATEK PROVIDE ANY WARRANTY WHATSOEVER WITH RESPECT TO THE
+ * SOFTWARE OF ANY THIRD PARTY WHICH MAY BE USED BY, INCORPORATED IN, OR
+ * SUPPLIED WITH THE MEDIATEK SOFTWARE, AND RECEIVER AGREES TO LOOK ONLY TO SUCH
+ * THIRD PARTY FOR ANY WARRANTY CLAIM RELATING THERETO. RECEIVER EXPRESSLY ACKNOWLEDGES
+ * THAT IT IS RECEIVER'S SOLE RESPONSIBILITY TO OBTAIN FROM ANY THIRD PARTY ALL PROPER LICENSES
+ * CONTAINED IN MEDIATEK SOFTWARE. MEDIATEK SHALL ALSO NOT BE RESPONSIBLE FOR ANY MEDIATEK
+ * SOFTWARE RELEASES MADE TO RECEIVER'S SPECIFICATION OR TO CONFORM TO A PARTICULAR
+ * STANDARD OR OPEN FORUM. RECEIVER'S SOLE AND EXCLUSIVE REMEDY AND MEDIATEK'S ENTIRE AND
+ * CUMULATIVE LIABILITY WITH RESPECT TO THE MEDIATEK SOFTWARE RELEASED HEREUNDER WILL BE,
+ * AT MEDIATEK'S OPTION, TO REVISE OR REPLACE THE MEDIATEK SOFTWARE AT ISSUE,
+ * OR REFUND ANY SOFTWARE LICENSE FEES OR SERVICE CHARGE PAID BY RECEIVER TO
+ * MEDIATEK FOR SUCH MEDIATEK SOFTWARE AT ISSUE.
+ *
+ * The following software/firmware and/or related documentation ("MediaTek Software")
+ * have been modified by MediaTek Inc. All revisions are subject to any receiver's
+ * applicable license agreements with MediaTek Inc.
+ */  -->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="app_label">Operator Plugin APK</string>
+
+    <!-- Emergency Address start-->
+    <string name="emergency_description1">IMPORTANT - EMERGENCY 911 REQUIRED\nTo turn on Wi-Fi Calling, enter the U.S. address where you want emergency services sent if you call 911. You can go to Settings and change this address at any time. It is very important to update this address whenever you change your location.</string>
+    <string name="address_number">Address Number</string>
+    <string name="street">Street</string>
+    <string name="apt_etc">Apt, Suite, etc.</string>
+    <string name="city">City</string>
+    <string name="state">State</string>
+    <string name="zip">Zip</string>
+    <string name="emergency_description2">WARNING - EMERGENCY 911 CALL LIMITATION\nWhen calling 911, always tell the operator where you are. Your 911 call will go over Wi-Fi only if the cellular network is unavailable. 911 calls made over Wi-Fi may be delayed or unsuccessful; for example, if the 911 system doesn’t recognize the address, electrical power is out, or your Wi-Fi connection isn’t working. Emergency services will be sent to the address you provided above, so please update it as you change locations.</string>
+    <string name="cancel">Cancel</string>
+    <string name="save">Save</string>
+    <string name="continue_text">Continue</string>
+    <string name="emergency_activity_title">Emergency Location Information</string>
+    <string name="loading_message">This may take a few moments...</string>
+    <string name="no_alt_address_found">We could not find the address that you entered because the street address could not be found, or the city, state, and zip code may not be correct.\n\nIf your city, state, and zip are not correct tap Edit Address, otherwise tap Save Anyway.</string>
+    <string name="alt_address_found">We could not find the address that you entered:</string>
+    <string name="did_you_mean">Did you mean:</string>
+    <string name="confirmation_save_invalid_address_text1">The address entered could not be validated by Emergency Service Providers.</string>
+    <string name="confirmation_save_invalid_address_text2">Are you sure you want to use this address in case of an emergency?</string>
+    <string name="city_state_incorrect">The city, state, or zip code that you entered may not be correct.\n\nPlease check the address and try again.</string>
+    <string name="save_anyway">Save Anyway</string>
+    <string name="edit_address">Edit Address</string>
+    <string name="unable_to_activate_wfc">Unable to activate Wi-Fi calling at this time.\nPlease try again later.</string>
+    <string name="unable_to_update_wfc">Unable to update the current emergency address at this time.\nPlease try again later.</string>
+    <string name="wfc_turned_on">Wi-Fi Calling turned on</string>
+    <string name="e911_address_updated">Emergency address updated</string>
+    <string name="tc_text">Wi-Fi Calling lets you to make calls using Wi-Fi when the mobile network is not available.\n\nTo set up Wi-Fi Calling you will need to enter a US address. This address will be used by emergency services as your location if you make an emergency (E911) call over Wi-Fi from this phone within the US.\n\nWe recommend you change this address when you make calls using a different Wi-Fi network so your location information is accurate. You can change your location any time by going to Wi-Fi Calling in the Advanced Calling settings menu.</string>
+    <string name="terms_and_conditions">Terms and Conditions</string>
+    <string name="united_states_country">US</string>
+    <string name="default_state_value">Select</string>
+    <string name="tc_text_link">I accept <![CDATA[<a href=\"http://www.verizonwireless.com/support/wifi-calling-legal/\">Terms and Conditions</a>]]> </string>
+    <!-- Emergency Address end-->
+
+    <!-- MTK Advanced Calling settings start -->
+    <string name="advanced_calling_title">Advanced Calling</string>
+    <string name="activate_advanced_calling_summary">Upgrade Service to HD Voice and Video calling</string>
+    <string name="activated_advanced_calling_summary">Service upgraded to HD Voice and Video calling</string>
+    <string name="advanced_calling_summary">Turn on/off HD Voice and Video Calling</string>
+    <string name="activate_advanced_calling">Activate Advanced Calling</string>
+    <string name="activate_wifi_calling_title">Activate Wi-Fi Calling</string>
+    <string name="wifi_calling_title">Wi-Fi Calling</string>
+    <string name="activate_wifi_calling_title_summary">Use Wi-Fi when the mobile network is not available</string>
+    <string name="turn_on_video">Video Calling is turned off.\nWould you like to turn it back on?\n</string>
+    <string name="advanced_settings_menu">Turn on Video Calling</string>
+    <string name="note">Note</string>
+    <string name="lvc_disable">Your Video Calling Service on your account was turned off.\n\nPlease contact customer care to have the service turned on.</string>
+    <string name="video_calling_title">Turn on video calling</string>
+    <!-- MTK Advanced Calling settings end -->
+
+    <string name="gathering_information">In order to enable wfc.\n You will fill in some information to operators:\n Address Number, Street, City, Apt, Suite, State.</string>
+    <string name="gathering_information_confirm">OKAY, GOT IT.</string>
+
+</resources>

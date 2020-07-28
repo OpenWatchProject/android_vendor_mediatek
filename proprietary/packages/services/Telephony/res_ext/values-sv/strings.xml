@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2007 The Android Open Source Project
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+          http://www.apache.org/licenses/LICENSE-2.0
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="incall_status_dialed_mmi" msgid="3672498861336189563">"Startar sekvens för MMI-kod…"</string>
+    <string name="dual_mic_title">Brusreducering</string>
+    <string name="dual_mic_summary">Dämpar ditt bakgrundsljud under samtal</string>
+    <string name="fdn_errorcode_unknown_info">Misslyckades, ett okänt fel har inträffat. Försök igen senare.</string>
+    <string name="fdn_errorcode_number_info">Misslyckades, kontaktnumrets längd är för lång.</string>
+    <string name="fdn_errorcode_name_info">Misslyckades, kontaktnumret är för långt.</string>
+    <string name="fdn_errorcode_storage_info">Misslyckades, lagringsutrymmet är fullt.</string>
+    <string name="fdn_errorcode_phb_info">Misslyckades, telefonboken är inte redo. Försök igen senare.</string>
+    <string name="fdn_errorcode_pin2_info">Misslyckades, ogiltig PIN2.</string>
+    <string name="fdn_contact_number_invalid">Ogiltigt kontaktnummer.</string>
+    <string name="fdn_puk_need_tips">PIN2 blockerad. Ändra PIN2 och försök igen!</string>
+    <string name="fdn_phone_book_busy">Telefonboken är upptagen, försök igen senare.</string>
+    <string name="retries_left"><xliff:g id="number">%d</xliff:g> försök kvar</string>
+    <string name="cdma_labelCFU">"Vidarebefordra alltid"</string>
+    <string name="cdma_labelCFB">"Vidarebefordra vid upptaget"</string>
+    <string name="cdma_labelCFNRy">"Vidarebefordra vid ej svar"</string>
+    <string name="cdma_labelCFNRc">"Vidarebefordra när du inte är tillgänglig"</string>
+    <string name="cdma_labelCFC">Avbryt all vidarekoppling</string>
+    <string name="cdma_cnir_title">CNIR</string>
+    <string name="cdma_cnir_turnoff">Inaktivera begränsning för nummerpresentation</string>
+    <string name="cdma_cnir_turnon">Aktivera begränsning för nummerpresentation</string>
+    <string name="volte_is_adding_participants">Lägger till konferensmedlem(mar), vänligen vänta…</string>
+    <string name="volte_fail_to_invit_participants">Kunde inte lägga till alla medlemmar till konferensen.</string>
+    <string name="volte_conf_member_reach_max">Konferensen har redan uppnåt max. antal deltagare.</string>
+    <string name="wfc_wifi_call_drop">Wi-Fi-samtal bröts</string>
+    <string name="wfc_internet_connection_lost">Internetanslutning tappades</string>
+    <string name="wfc_no_network">Inga kvalificerade mobila nätverk finns tillgängliga</string>
+    <string name="volte_ss_not_available_tips">För att slutföra åtgärden måste du öppna dataanslutningen för <xliff:g id="sub_name">%s</xliff:g>.</string>
+    <string name="volte_ss_not_available_tips_data">För att slutföra operationen måste du aktivera dataanslutning för <xliff:g id="sub_name">%s</xliff:g>.</string>
+    <string name="volte_ss_not_available_tips_roaming">För att slutföra operationen måste du aktivera dataroaming för <xliff:g id="sub_name">%s</xliff:g>.</string>
+    <string name="volte_ss_not_available_tips_data_roaming">För att slutföra operationen måste du aktivera dataanslutning och dataroaming för <xliff:g id="sub_name">%s</xliff:g>.</string>
+    <string name="vilte_srvcc_tip">Nätverksanledning, växlat till röstsamtal.</string>
+    <string name="vilte_to_voice_call">Växlat till röstsamtal</string>
+    <string name="volte_ss_not_available_tips_data_traffic">Viss <xliff:g id="sub_name">%s</xliff:g> mobildata kommer temporärt att användas. Vill du fortsätta?</string>
+    <string name="labelCFVoice">Vidarekoppling av röstsamtal</string>
+    <string name="actionBarCFVoice">Vidarekoppling av röstsamtal (<xliff:g id="subscriptionlabel" example="Verizon">%s</xliff:g>)</string>
+    <string name="labelCFVideo">Vidarekoppling av videosamtal</string>
+    <string name="actionBarCFVideo">Vidarekoppling av videosamtal (<xliff:g id="subscriptionlabel" example="Verizon">%s</xliff:g>)</string>
+    <string name="labelCBVoice">Spärra röstsamtal</string>
+    <string name="actionBarCBVoice">Spärra röstsamtal (<xliff:g id="subscriptionlabel" example="Verizon">%s</xliff:g>)</string>
+    <string name="labelCBVideo">Spärra videosamtal</string>
+    <string name="actionBarCBVideo">Spärra röstsamtal (<xliff:g id="subscriptionlabel" example="Verizon">%s</xliff:g>)</string>
+    <string name="alert_turn_off_volte">För att slutföra åtgärden måste du stänga av VoLTE.</string>
+    <string name="alert_volte_no_service"><xliff:g id="sub_name">%s</xliff:g> VoLTE och samtalstjänster är för närvarande ej tillgängligt. Vill du stänga av VoLTE?</string>
+</resources>

@@ -1,0 +1,22 @@
+OP08 customization features.
+This apk is pre-built by MediaTek internal.
+
+
+WHAT IT DOES?
+=============
+It is a plugin apk which contains the OP08 customization for dialer
+
+HOW IT WAS BUILT?
+==================
+It needs the following library from Mediatek:
+1. mtk_RCSTapi16
+2. Host App api interface,for example:com.mediatek.dialer.ext.IDialPadExtension
+All the OP08 customization for dialer will be built as OP08Dialer.apk  installed under system/app/ or custom/app/
+
+HOW TO USE IT?
+==============
+Implement the interface provided by dialer to do customization.
+all api interface are at packages/apps/Dialer/plugin.
+when run time, framework will find the OP08Dialer customization implementation via OpInCallUICustomizationFactoryBase.sOpFactoryInfos and OpDialerCustomizationUtils.sOperatorFactoryInfoList.
+
+All the source code of  were written by MediaTek.

@@ -1,0 +1,32 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:androidprv="http://schemas.android.com/apk/prv/res/android"
+        package="com.mediatek.telephony"
+        coreApp="true"
+        android:sharedUserId="android.uid.phone">
+
+    <uses-sdk android:targetSdkVersion="29" android:minSdkVersion="29" />
+
+    <permission
+        android:name="com.mediatek.telephony.ASSIST"
+        android:protectionLevel="signatureOrSystem" />
+
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.READ_PRIVILEGED_PHONE_STATE" />
+
+    <application android:label="@string/app_name"
+        android:process="com.android.phone"
+        android:directBootAware="true"
+        android:allowBackup="false">
+        <receiver android:name=".MtkPhoneAssistBroadcastReceiver"
+            android:permission="com.mediatek.telephony.ASSIST">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.LOCKED_BOOT_COMPLETED" />
+                <action android:name="android.telephony.action.SIM_CARD_STATE_CHANGED" />
+            </intent-filter>
+        </receiver>
+
+        <service android:name=".MtkTelephonyAssistService"
+            android:exported="false"/>
+    </application>
+</manifest>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="app_name">使用權限控制</string>
+    <string name="manage_permission_app_label">應用程式使用權限</string>
+        <!-- auto boot part begin -->
+    <string name="auto_boot_pref_title">自動啟動管理</string>
+    <string name="auto_boot_pref_summary">允許或拒絕應用程式在系統開機期間自動啟動</string>
+    <string name="no_auto_boot_app">無應用程式自動啟動</string>
+
+    <string  name="trigger_history_pref_title">權限申請</string>
+    <string  name="trigger_history_pref_summary">顯示應用程式權限申請記錄</string>
+
+    <string  name="no_permission_request">內容為空</string>
+    <string  name="loading">載入中</string>
+    <string  name="refresh">刷新</string>
+    <string  name="on">開啓</string>
+    <string  name="off">關閉</string>
+
+    <plurals name="autoboot_app_desc_allow">
+        <item quantity="one">已允許<xliff:g id="app_count">%1$d</xliff:g> 應用程式，</item>
+        <item quantity="other">已允許<xliff:g id="app_count">%1$d</xliff:g>應用程式，</item>
+    </plurals>
+    <plurals name="autoboot_app_desc_deny">
+        <item quantity="one">已拒絕<xliff:g id="app_count">%1$d</xliff:g>應用程式。</item>
+        <item quantity="other">已拒絕<xliff:g id="app_count">%1$d</xliff:g>應用程式。</item>
+    </plurals>
+    <!-- auto boot part end -->
+</resources>

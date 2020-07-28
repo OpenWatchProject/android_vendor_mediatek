@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2007 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+  
+          http://www.apache.org/licenses/LICENSE-2.0
+  
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- M: site navigation start @{ -->   
+    <string name="sitenavigation_add">Add website</string>
+    <string name="tab_site_navigation">Навигация в сайта</string>
+    <string-array name="pref_homepage_choices_site_navigation">
+        <item msgid="844041670142910837">"Текущата страница"</item>
+    	<item msgid="4430498748295169195">"Празна страница"</item>
+        <item msgid="5747608191946904074">"Страницата по подразбиране"</item>
+        <item msgid="6092441301001006473">"Най-посещаваните сайтове"</item>
+        <item>Навигация в сайта</item>
+        <item msgid="6569304572171444894">"Друго"</item>
+    </string-array>
+    <!-- @} -->   
+
+    <!-- M: Option menu change string: Bookmarks -> Bookmarks/History -->
+    <string name="bookmarks_history">Отметки/История</string>
+
+    <string name="close">"Затваряне"</string>
+    <string name="pref_content_search_engine_consistency">Устойчивост на търсачката</string>
+    <string name="pref_search_engine_unify">Унифициране на търсачката</string>
+    <string name="save_content">"Запазване"</string>
+    <string name="open_content">"Отваряне"</string>
+    <string name="delete">"Изтриване"</string>
+    <string name="edit">"Редактиране"</string>
+    <string name="add">"Добавяне"</string>
+    <string name="site_navigation_name">"Име"</string>
+    <string name="site_navigation_edit_button">"Редактиране"</string>
+    <string name="save_webpage">"Запазване"</string>
+    <string name="delete_folder_warning">Да изтрием ли папка \"<xliff:g id="bookmark">%s</xliff:g>\"?</string>
+    <string name="contextmenu_savelinkbookmark">Запис на линка като маркер</string>
+    <string name="download_path_unavailable_dlg_title">Каталог за сваляне недостъпен</string>
+    <string name="download_path_unavailable_dlg_msg">Променете каталога за сваляне на браузера</string>
+    <string name="home">Изходна</string>
+    <string name="option">Опция</string>
+    <string name="minimize">Минимизиране</string>
+    <string name="quit">Изход</string>
+    <string name="pref_download_title">Настройки сваляне</string>
+    <string name="pref_extras_set_download_directory_title">Задаване каталог за сваляне</string>
+    <string name="permlab_readHomepage">четене основна страница на браузера</string>
+    <string name="permdesc_readHomepage">Разрешава на приложението да чете информацията от основната страница на браузера без ваше вмешателство.</string>
+    <string name="permlab_writeHomepage">промяна основна страница на браузера</string>
+    <string name="permdesc_writeHomepage">Разрешава на приложението да променя информацията от основната страница на браузера без ваше вмешателство.</string>
+    <string name="duplicated_bookmark">Дублиран маркер</string>
+    <string name="duplicated_bookmark_warning">Има вече маркер със същото име или адрес, да го пренапишем ли?</string>
+    <string name="duplicated_folder_warning">Има вече папка със същото име или адрес.</string>
+    <string name="pref_search_engine_unify_summary">Приложете промените на търсачката в QuickSearchBox</string>
+    <string name="download_or_open_content">Кое действие избирате?</string>
+    <string name="no_voice_search_alert_dialog_title">Гласово търсене</string>
+    <string name="no_voice_search_alert_dialog_msg">Гласовото търсене не е достъпно - няма приложение за това търсене. Трябва първо да се инсталира.</string>
+    <string name="delete_site_navigation_msg">Да изтрием ли този елемент?</string>
+    <string name="site_navigation_address">Адрес</string>
+    <string name="website_needs_title">"Уебсайтът трябва да има име."</string>
+    <string name="website_needs_url">"Уебсайтът трябва да има адрес."</string>
+    <string name="site_navigation_cannot_save_url">Този URL не може да е уебсайт.</string>
+    <string name="add_site_navigation">Add website</string>
+    <string name="edit_site_navigation">От <xliff:g id="text">%s</xliff:g> съобщение</string>
+    <string name="duplicate_site_navigation_url">От <xliff:g id="text">%s</xliff:g> съобщение</string>
+    <string name="max_input_browser_search">От <xliff:g id="text">%s</xliff:g> съобщение</string>
+    <string name="max_input_browser_search_title">От <xliff:g id="text">%s</xliff:g> съобщение</string>
+    <string name="max_input_browser_search_button">"OK"</string>
+    <string name="save_bookmark">"Запазване на отметка"</string>
+    <string name="tabs">"Tab"</string>
+    <string name="open_saved_page_failed">Записаната страница не може да се отвори.</string>
+    <!-- M: add for save page -->
+    <string name="saved_page_failed">Неуспешно запомняне на уеб страница.</string>
+    <string name="saved_page_complete">Свалянето завършено.</string>
+    <string name="saved_page_fail">"Неуспешно запазване "</string>
+    <string name="create_folder_fail">Не мога да създам папка за запомняне на страници</string>
+    <string name="saving_page">Запомняне на уеб страница</string>
+    <string name="duplicate_site_navigation_title">Този етикет вече съществува</string>
+    <string name="need_login_email">Първо регистрирайте своя имейл акаунт.</string>
+    <string name="folder_needs_title">"Папката трябва да има име."</string>
+    <string name="denied_required_permission">Разрешение отказано. Можете да ги промените в Настройки &gt; Приложения.</string>
+</resources>

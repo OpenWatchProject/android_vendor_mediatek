@@ -1,0 +1,14 @@
+cc_binary {
+    srcs: ["main.c", "filemonitor/file_monitor.c"],
+    shared_libs: [
+        "libc",
+        "liblog",
+        "libcutils",
+        "libnl",
+    ],
+
+    name: "wlan_assistant",
+    proprietary: true,
+    owner: "mtk",
+    init_rc: ["wlan_assistant.rc"],
+}

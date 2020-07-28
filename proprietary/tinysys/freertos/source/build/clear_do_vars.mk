@@ -1,0 +1,9 @@
+DO_NAME     :=
+DO_CONFIG   :=
+DO_ID       :=
+DO_INCLUDES :=
+DO_C_FILES  :=
+DO_S_FILES  :=
+DO_LIBFLAGS :=
+DO_CFLAGS   :=
+DO_FEATURES :=

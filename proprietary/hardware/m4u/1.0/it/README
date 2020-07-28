@@ -1,0 +1,29 @@
+MTK M4U driver IT test case.
+
+WHAT IT DOES?
+=============
+MTK M4U driver IT test used to test m4u driver basic function.
+
+HOW IT WAS BUILT?
+==================
+It needs the following library from AOSP:
+1.  libcutils.so
+2.  liblog.so
+3.  libutils.so
+
+and the following libs from MediaTek:
+1.  libm4u.so
+2.  libmhalpipe.so
+3.  libmhaldrv.so
+4.  libmhalscenario.so
+5.  libhardware.so
+6.  libmhal.so
+
+[Build Method]
+mmm vendor/mediatek/proprietary/hardware/m4u/1.0/it/
+
+HOW TO USE IT?
+==============
+Is used by MTK M4U driver.
+
+All the source code of this library were written by MediaTek co..

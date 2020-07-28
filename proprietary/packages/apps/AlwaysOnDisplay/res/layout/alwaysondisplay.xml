@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2016 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:dc="http://schemas.android.com/apk/res-auto"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:background="#000000"
+  android:gravity="center_vertical"
+  android:orientation="vertical" >
+  
+    <!--  Extra layout to let the clock float in the window -->
+    <LinearLayout
+        android:id="@+id/main_clock"
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" 
+        android:baselineAligned="true">
+
+        <!--
+        <TextClock
+            android:id="@+id/am_pm"
+            style="@style/am_pm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/am_pm_bottom_margin"
+            android:ellipsize="none"
+            android:format12Hour="@string/time_format_am_pm"
+            android:format24Hour="@string/clock_24_hours_format"
+            android:gravity="right"
+            android:singleLine="true"
+            android:background="@color/yellow2"
+            android:textColor="@color/clock_white"/>
+        -->
+            
+        <TextClock
+            android:id="@+id/dig_cloc"
+            style="@style/big_thin"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/clock_max_height"
+            android:layout_marginTop="@dimen/top_text_spacing_digital"
+            android:layout_marginBottom="@dimen/bottom_text_spacing_digital"
+            android:ellipsize="none"
+            android:format12Hour="@string/time_format_12_mode"
+            android:format24Hour="@string/clock_24_hours_format"
+            android:gravity="bottom"
+            android:background="@color/yellow1"
+            android:textColor="@color/clock_white"/>
+            
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center_horizontal"
+            android:baselineAligned="false">
+
+            <TextView
+                android:id="@+id/date"
+                style="@style/label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:textColor="@color/clock_white"
+                android:layout_gravity="top"
+                android:gravity="top"
+                android:layout_marginTop="@dimen/date_margin_top"/>
+                
+            <LinearLayout
+                android:id="@+id/notif_layout"
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:layout_marginLeft="@dimen/gap_between"
+	            android:orientation="horizontal"
+	            android:baselineAligned="false">
+
+	            <ImageView android:id="@+id/call_icon"
+	                android:layout_width="@dimen/icon_size"
+	                android:layout_height="@dimen/icon_size"
+	                android:layout_gravity="top"
+	                android:background="@color/lime"
+	                android:src="@drawable/ic_call_icon" />
+	
+	            <TextView
+	                android:id="@+id/call_count"
+	                style="@style/notification"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:singleLine="true"
+	                android:layout_gravity="top"
+	                android:gravity="left"
+	                android:background="@color/lime_yellow"
+	                android:textColor="@color/clock_white"
+	                android:layout_marginTop="@dimen/notification_margin_top"
+	                android:layout_marginLeft="@dimen/gap_between_icon_text"/>
+	
+	            <ImageView android:id="@+id/sms_icon"
+	                android:layout_width="@dimen/icon_size"
+	                android:layout_height="@dimen/icon_size"
+	                android:layout_gravity="top"
+	                android:background="@color/lime"
+	                android:src="@drawable/ic_sms_icon" 
+	                android:layout_marginLeft="@dimen/gap_between_icon_text1"/>
+	
+	            <TextView
+	                android:id="@+id/sms_count"
+	                style="@style/notification"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:singleLine="true"
+	                android:layout_gravity="top"
+	                android:gravity="left"
+	                android:background="@color/lime_yellow"
+	                android:textColor="@color/clock_white"
+	                android:layout_marginTop="@dimen/notification_margin_top"
+	                android:layout_marginLeft="@dimen/gap_between_icon_text"/>
+        	</LinearLayout>
+        </LinearLayout>
+<!--
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:baselineAligned="false">
+
+            <TextView
+                android:id="@+id/date"
+                style="@style/label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:textColor="@color/clock_white"
+                android:layout_marginTop="@dimen/date_margin_top"
+                android:gravity="top"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"/>
+
+            <ImageView android:id="@+id/call_icon"
+                android:layout_width="@dimen/icon_size"
+                android:layout_height="@dimen/icon_size"
+                android:layout_alignParentTop="true"
+                android:background="@color/lime"
+                android:src="@drawable/ic_call_icon"
+                android:layout_toLeftOf="@+id/call_count"/>
+
+            <TextView
+                android:id="@+id/call_count"
+                style="@style/notification"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:layout_alignParentTop="true"
+                android:gravity="top"
+                android:background="@color/lime_yellow"
+                android:textColor="@color/clock_white"
+                android:layout_marginTop="@dimen/notification_margin_top"
+                android:layout_marginLeft="@dimen/gap_between_icon_text"
+                android:layout_toLeftOf="@+id/sms_icon"/>
+
+            <ImageView android:id="@+id/sms_icon"
+                android:layout_width="@dimen/icon_size"
+                android:layout_height="@dimen/icon_size"
+                android:layout_alignParentTop="true"
+                android:background="@color/lime"
+                android:src="@drawable/ic_sms_icon" 
+                android:layout_marginLeft="@dimen/gap_between_icon_text1"
+                android:layout_toLeftOf="@+id/sms_count"/>
+
+            <TextView
+                android:id="@+id/sms_count"
+                style="@style/notification"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:layout_alignParentTop="true"
+                android:gravity="left"
+                android:background="@color/lime_yellow"
+                android:textColor="@color/clock_white"
+                android:layout_marginTop="@dimen/notification_margin_top"
+                android:layout_marginLeft="@dimen/gap_between_icon_text"
+                android:layout_alignParentRight="true"/>
+        </RelativeLayout>
+-->        
+    </LinearLayout>
+</LinearLayout>

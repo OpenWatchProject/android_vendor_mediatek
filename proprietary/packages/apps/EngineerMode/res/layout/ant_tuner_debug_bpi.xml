@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        android:layout_weight="8"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/bpi_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/ant_tuner_debug_bpi" />
+
+        <TableLayout
+            android:id="@+id/TableLayout01"
+            style="@style/list_content_style"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" >
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <RadioGroup
+                    android:id="@+id/bpi_code_rgroup"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" >
+
+                    <RadioButton
+                        android:id="@+id/bpi_hex"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:text="@string/ant_tuner_debug_bpi_hex" />
+
+                    <RadioButton
+                        android:id="@+id/bpi_binary"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/ant_tuner_debug_bpi_binary" />
+                </RadioGroup>
+            </TableRow>
+
+            <ImageView
+                style="@style/list_spiner_style"
+                android:contentDescription="@null" />
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" >
+
+                <Button
+                    android:id="@+id/bpi_signaling"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/ant_tuner_debug_signaling" />
+
+                <Button
+                    android:id="@+id/bpi_non_signaling"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/ant_tuner_debug_non_signaling" />
+            </TableRow>
+
+            <ImageView
+                style="@style/list_spiner_style"
+                android:contentDescription="@null" />
+
+            <TableRow
+                android:id="@+id/BpiTableRow01"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp" >
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/ant_tuner_debug_bpi_data1" >
+                </TextView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/ant_tuner_debug_0x" >
+                </TextView>
+
+                <EditText
+                    android:id="@+id/ant_tuner_debug_bpi_data1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/selector_edit_frame"
+                    android:singleLine="true" >
+                </EditText>
+            </TableRow>
+
+            <ImageView
+                style="@style/list_spiner_style"
+                android:contentDescription="@null"
+                android:id="@+id/BpiHexSpiner" />
+
+            <TableRow
+                android:id="@+id/BpiTableRow02"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp" >
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/ant_tuner_debug_bpi_data2" >
+                </TextView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/ant_tuner_debug_0x" >
+                </TextView>
+
+                <EditText
+                    android:id="@+id/ant_tuner_debug_bpi_data2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/selector_edit_frame"
+                    android:singleLine="true" >
+                </EditText>
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/BpiTableRow03"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:visibility="gone" >
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/ant_tuner_debug_bpi_quantity" >
+                </TextView>
+
+                <Spinner
+                    android:id="@+id/ant_tuner_debug_bpi_quantity"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" >
+                </Spinner>
+            </TableRow>
+
+            <ImageView
+                style="@style/list_spiner_style"
+                android:contentDescription="@null"
+                android:id="@+id/BpiBinarySpiner"
+                android:visibility="gone" />
+
+            <ListView
+                android:id="@+id/ant_tuner_debug_bpi_list"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:visibility="gone" />
+        </TableLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="80dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_weight="1"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/ant_tuner_debug_bpi_read"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/ant_tuner_debug_bpi_read" />
+
+        <Button
+            android:id="@+id/ant_tuner_debug_bpi_write"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/ant_tuner_debug_bpi_write" />
+    </LinearLayout>
+
+</LinearLayout>

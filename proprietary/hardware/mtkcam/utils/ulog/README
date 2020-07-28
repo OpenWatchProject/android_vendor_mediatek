@@ -1,0 +1,18 @@
+WHAT IT DOES?
+=============
+The unified log system of camera.
+
+
+HOW IT WAS BUILT?
+==================
+Build with project.
+
+
+HOW TO USE IT?
+==============
+#include <mtkcam/utils/std/ULog.h>
+
+Add following into Android.mk:
+LOCAL_SHARED_LIBRARIES += libmtkcam_ulog
+
+Refer to the API manual for more details.

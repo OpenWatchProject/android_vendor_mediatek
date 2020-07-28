@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<flashtool-config version="2.0">
+  <general>
+    <chip-name>MT6755</chip-name>
+    <storage-type>EMMC</storage-type>
+    <download-agent>
+      MT6755.bin
+    </download-agent>
+    <scatter>
+      MT6755_Android_scatter.txt
+    </scatter>
+    <rom-list>
+      <rom index="0" enable="true">
+        preloader_k50sv1_bsp.bin
+      </rom>
+    </rom-list>
+    <connection
+      type="BromUSB"
+      high-speed="false"
+      without-battery="false" />
+  </general>
+  <commands>
+    <efuse>
+      <magic-key 
+        key1="87654321"
+        key2="ABCDEF90" />
+      <common-ctrl
+	    USB_download_type="0"
+        Disable_EMMC_boot="false"
+        Disable_NAND_boot="false"
+        Disable_NAND_boot_speedup="false" />
+      <secure-ctrl
+        Disable_DBGPORT_LOCK="false"
+        Enable_ACC="false"
+        Enable_ACK="false"
+        Enable_SBC="false"
+        Enable_SLA="false"
+        Enable_DAA="false"
+        Disable_JTAG="false"
+        Enable_Root_Cert="false"
+        Enable_SW_JTAG_CON="false" />
+      <sbc-pub-key>
+        <pub-key-e></pub-key-e>
+        <pub-key-n></pub-key-n>
+      </sbc-pub-key>
+      <common-lock
+        com_ctrl_lock="false"
+        usb_id_lock="false" />
+      <secure-lock
+        sec_attr_lock="false"
+        ackey_lock="false"
+        sbc_pubk_hash_lock="false" />
+      <usb-id
+        vid="0000"
+        pid="0000" />
+      <c_lock
+        c_ctrl1_lock="false"
+        c_ctrl0_lock="false"
+        c_data1_lock="false"
+        c_data0_lock="false" />
+      <c_ctrl_0
+        c2k_sbc_en="false"
+        md1_sbc_en="false"
+        disable_self_blow="false" />
+      <c_ctrl1>0000</c_ctrl1>
+      <c_data_0>0000000000000000</c_data_0>
+      <c_data_1>0000000000000000</c_data_1>
+      <ac-key>00000000000000000000000000000000</ac-key>
+      <read-back
+        dir="."
+        name="efuse_dump.txt"
+        time-prefix="false" />
+    </efuse>
+  </commands>
+</flashtool-config>

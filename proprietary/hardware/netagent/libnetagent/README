@@ -1,0 +1,21 @@
+This module creates the netagent library.
+
+This library is pre-built by MediaTek internally.
+
+WHAT IT DOES?
+=============
+The netagent library is in native which is used to communicate with
+Modem and NetAgentService in rild.
+
+HOW IT WAS BUILT?
+==================
+It needs the following library from AOSP:
+libc and libcutils
+
+This module is source code released.
+
+HOW TO USE IT?
+==============
+The netagent library is started by NetAgentService in rild process.
+
+All the source code of this folder were written by MediaTek co..

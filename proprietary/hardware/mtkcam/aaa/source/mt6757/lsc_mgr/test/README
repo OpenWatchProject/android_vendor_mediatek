@@ -1,0 +1,23 @@
+WHAT IT DOES?
+=============
+lsc test related files.
+
+
+HOW IT WAS BUILT?
+==================
+It can build the following:
+Executable test file
+
+It needs the following library from MediaTek:
+LOCAL_SHARED_LIBRARIES := \
+    liblog.so
+    libcutils.so
+    libutils.so
+    libcam.hal3a.v3.so
+
+
+HOW TO USE IT?
+==============
+Provide related lsc test api
+
+All the source code of this library were written by MediaTek co..

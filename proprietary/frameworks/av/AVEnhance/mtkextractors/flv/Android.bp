@@ -1,0 +1,64 @@
+cc_library_shared {
+    include_dirs: [
+        "vendor/mediatek/proprietary/frameworks/av/AVEnhance/libavextensions/stagefright",
+        "frameworks/av/media/libstagefright/include",
+        "vendor/mediatek/proprietary/frameworks/av/AVEnhance/libmtkavenhancements",
+    ],
+
+    shared_libs: [
+        "liblog",
+        "libutils",
+        "libmedia",
+        "libmediandk",
+        "libstagefright",
+        "libstagefright_foundation",
+        "libcutils",
+    ],
+
+    static_libs: [
+        "libavextensions",
+        "libmtkavenhancements_metadatautils",
+    ],
+
+    name: "libmtkflvextractor",
+    owner: "mtk",
+    relative_install_path: "extractors",
+
+    compile_multilib: "first",
+
+    cflags: [
+        "-Werror",
+        "-Wall",
+        "-fvisibility=hidden",
+    ],
+    version_script: "exports.lds",
+
+    sanitize: {
+        cfi: true,
+        misc_undefined: [
+            "unsigned-integer-overflow",
+            "signed-integer-overflow",
+        ],
+    },
+
+    defaults: [
+        "mtk_flvextractor_defaults",
+    ],
+}
+
+bootstrap_go_package {
+    name:"soong-flv-mediatek",
+    pkgPath:"android/soong/flv/mediatek",
+    deps:[
+        "soong-android",
+        "soong-cc",
+    ],
+    srcs:[
+        "flv.go",
+    ],
+    pluginFor:["soong_build"],
+}
+
+mtk_flvextractor_defaults {
+    name: "mtk_flvextractor_defaults",
+}

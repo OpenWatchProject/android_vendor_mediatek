@@ -1,0 +1,4 @@
+service lbs_hidl_service /vendor/bin/lbs_hidl_service
+    class hal
+    user system
+    group system gps radio inet sdcard_r sdcard_rw

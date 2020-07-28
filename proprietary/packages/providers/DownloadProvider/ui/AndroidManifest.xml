@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+        package="com.android.providers.downloads.ui"
+        android:sharedUserId="android.media">
+
+    <uses-permission android:name="android.permission.SEND_DOWNLOAD_COMPLETED_INTENTS" />
+    <uses-permission android:name="android.permission.ACCESS_ALL_DOWNLOADS" />
+    <uses-permission android:name="android.permission.START_ACTIVITIES_FROM_BACKGROUND" />
+
+    <application android:process="android.process.media"
+                 android:label="@string/app_label"
+                 android:icon="@mipmap/ic_launcher_download"
+                 android:hardwareAccelerated="true"
+                 android:supportsRtl="true"
+                 android:requiredForAllUsers="true"
+                 android:usesCleartextTraffic="true"
+                 android:networkSecurityConfig="@xml/network_security_config">
+
+
+        <receiver android:name=".OMADLOpenDownloadReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.DOWNLOAD_NOTIFICATION_CLICKED"/>
+            </intent-filter>
+        </receiver>
+
+
+        <activity
+            android:name=".TrampolineActivity"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:permission="android.permission.MANAGE_DOCUMENTS">
+            <intent-filter>
+                <action android:name="android.provider.action.MANAGE_DOCUMENT" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data
+                    android:scheme="content"
+                    android:host="com.android.providers.downloads.documents"
+                    android:mimeType="*/*" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".OmaDownloadActivity"
+                  android:launchMode="singleTask"
+                  android:configChanges="orientation|keyboardHidden|screenSize">
+            <intent-filter>
+                <action android:name="com.mtk.ACTION_OMA_DL_DIALOG" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+    </application>
+</manifest>

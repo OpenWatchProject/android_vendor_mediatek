@@ -1,0 +1,57 @@
+
+#---------- System Variable define begin ---------
+ifneq ($(filter MTK_MT6628,$(MTK_BT_CHIP)),)
+LOCAL_CFLAGS += -DMTK_MT6628
+endif
+ifneq ($(filter MTK_MT6630,$(MTK_BT_CHIP)),)
+LOCAL_CFLAGS += -DMTK_MT6630
+endif
+ifneq ($(filter MTK_MT6632,$(MTK_BT_CHIP)),)
+LOCAL_CFLAGS += -DMTK_MT6632
+endif
+ifneq ($(filter MTK_MT8167,$(MTK_BT_CHIP)),)
+LOCAL_CFLAGS += -DMTK_MT8167
+endif
+ifneq ($(filter MTK_CONSYS_MT8163,$(MTK_BT_CHIP)),)
+LOCAL_CFLAGS += -DMTK_CONSYS_MT8163
+endif
+ifneq ($(filter MTK_CONSYS_MT8127,$(MTK_BT_CHIP)),)
+LOCAL_CFLAGS += -DMTK_CONSYS_MT8127
+endif
+ifneq ($(filter MTK_CONSYS_MT8167,$(MTK_BT_CHIP)),)
+LOCAL_CFLAGS += -DMTK_CONSYS_MT8167
+endif
+ifneq ($(filter MTK_CONSYS_MT6582,$(MTK_BT_CHIP)),)
+LOCAL_CFLAGS += -DMTK_CONSYS_MT6582
+endif
+ifneq ($(filter MTK_CONSYS_MT6592,$(MTK_BT_CHIP)),)
+LOCAL_CFLAGS += -DMTK_CONSYS_MT6592
+endif
+ifneq ($(filter MTK_CONSYS_MT6752,$(MTK_BT_CHIP)),)
+LOCAL_CFLAGS += -DMTK_CONSYS_MT6752
+endif
+ifneq ($(filter MTK_CONSYS_MT6735,$(MTK_BT_CHIP)),)
+LOCAL_CFLAGS += -DMTK_CONSYS_MT6735
+endif
+ifneq ($(filter MTK_CONSYS_MT6580,$(MTK_BT_CHIP)),)
+LOCAL_CFLAGS += -DMTK_CONSYS_MT6580
+endif
+ifneq ($(filter MTK_CONSYS_MT6755,$(MTK_BT_CHIP)),)
+LOCAL_CFLAGS += -DMTK_CONSYS_MT6755
+endif
+ifneq ($(filter MTK_CONSYS_MT6797,$(MTK_BT_CHIP)),)
+LOCAL_CFLAGS += -DMTK_CONSYS_MT6797
+endif
+ifneq ($(filter MTK_CONSYS_MT6757,$(MTK_BT_CHIP)),)
+LOCAL_CFLAGS += -DMTK_CONSYS_MT6757
+endif
+ifeq ($(MTK_MERGE_INTERFACE_SUPPORT), yes)
+LOCAL_CFLAGS += -D__MTK_MERGE_INTERFACE_SUPPORT__
+endif
+
+ifeq ($(TARGET_BUILD_VARIANT), eng)
+LOCAL_CFLAGS += -DBD_ADDR_AUTOGEN
+endif
+#---------- System Variable define end -----------
+
+

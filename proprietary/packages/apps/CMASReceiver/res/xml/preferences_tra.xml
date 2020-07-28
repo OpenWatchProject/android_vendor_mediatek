@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+ * Copyright (C) 2011 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+-->
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+     <PreferenceCategory
+        android:key="category_cell_broadcast_settings"
+        android:title="@string/sms_cb_settings" >
+        <!-- Enable Cell broadcast -->
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:enabled="false"
+            android:key="enable_cell_broadcast"
+            android:summary="@string/enable_cell_broadcast_summary"
+            android:title="@string/enable_cell_broadcast_title" />
+     </PreferenceCategory>
+
+     <PreferenceCategory
+        android:key="category_alert_settings"
+        android:title="@string/emergency_alert_settings_title" >
+        <!-- Enable Class1 Alerts -->
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:enabled="false"
+            android:key="enable_tra_class1_alerts"
+            android:summary="@string/enable_tra_class1_threat_alerts_summary"
+            android:title="@string/enable_tra_class1_threat_alerts_title" />
+        <!-- Enable Class2 alerts -->
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:enabled="false"
+            android:key="enable_cmas_extreme_threat_alerts"
+            android:summary="@string/enable_tra_class2_threat_alerts_summary"
+            android:title="@string/enable_tra_class2_threat_alerts_title" />
+        <!-- Enable Class3 alerts -->
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:enabled="false"
+            android:key="enable_cmas_severe_threat_alerts"
+            android:summary="@string/enable_tra_class3_threat_alerts_summary"
+            android:title="@string/enable_tra_class3_threat_alerts_title" />
+          <!-- Enable Class4 alerts -->
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:enabled="true"
+            android:key="enable_cmas_amber_threat_alerts"
+            android:summary="@string/enable_tra_class4_threat_alerts_summary"
+            android:title="@string/enable_tra_class4_threat_alerts_title" />
+          <!-- Enable Class5 alerts -->
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:enabled="true"
+            android:key="enable_cmas_rmt_support"
+            android:summary="@string/enable_tra_class5_threat_alerts_summary"
+            android:title="@string/enable_tra_class5_threat_alerts_title" />
+          <!-- Enable Class6 alerts -->
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:enabled="false"
+            android:key="enable_cmas_exercise_support"
+            android:summary="@string/enable_tra_class6_threat_alerts_summary"
+            android:title="@string/enable_tra_class6_threat_alerts_title" />
+     </PreferenceCategory>
+
+     <PreferenceCategory
+        android:key="category_other_settings"
+        android:title="@string/emergency_other_settings_title" >
+        <!-- Enable Speak alert message -->
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="enable_cmas_speech_threat_alerts"
+            android:summary="@string/enable_alert_speech_summary"
+            android:title="@string/enable_alert_speech_title" />
+        <!-- Enable Alert Tone repeat -->
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="enable_cmas_repeat_alert"
+            android:summary="@string/enable_repeat_alert_summary"
+            android:title="@string/enable_repeat_alert_title" />
+        <!-- Alert Tone Preview -->
+        <com.mediatek.cellbroadcastreceiver.AlertTonePreviewDialog
+            android:defaultValue="true"
+            android:key="cmas_preview_alert_tone"
+            android:summary="@string/cmas_preview_alert_tone_summary"
+            android:title="@string/cmas_preview_alert_tone_title" />
+     </PreferenceCategory>
+
+</PreferenceScreen>

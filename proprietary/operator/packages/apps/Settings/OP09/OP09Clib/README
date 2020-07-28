@@ -1,0 +1,23 @@
+OP09 C lib Settings customization features.
+
+This apk is pre-built by MediaTek internal.
+
+
+WHAT IT DOES?
+=============
+It is a plugin apk which contains the OP09 C lib customization for Host App (Settings).
+
+HOW IT WAS BUILT?
+==================
+It needs the following library from Mediatek:
+1. mediatek-common.jar
+2. Host App api interface, for example: com.mediatek.settings.ext
+All the OP09 C lib customization for Settings will be built as OP09ClibSettings.apk installed under system/app.
+
+HOW TO USE IT?
+==============
+Implement the interface provided by host app (Settings) to do customization.
+all api interface are at (packages/apps/Settings/ext).
+when run time, framework will find the OP09ClibSettings customization implementation.
+
+All the source code of  were written by MediaTek.

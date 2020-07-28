@@ -1,0 +1,22 @@
+Binary of MTK NFC test tool(meta tool).
+
+WHAT IT DOES?
+=============
+meta_nfc_test contains MediaTek developed NFC test modules.  
+Without them, NFC test(meta test) will not work
+
+HOW IT WAS BUILT?
+==================
+It needs the following library from AOSP:
+1.  libc.so
+2.  libcutils.so
+
+and the following libs from MediaTek:
+1.  libmeta_nfc.a
+
+HOW TO USE IT?
+==============
+
+Provide binary(EXECUTABLE) for meta-tool to control the NFC features.
+
+All the source code of this library were written by MediaTek co..

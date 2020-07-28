@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin
+    id="panoramaplugin"
+    name="panorama"
+    version="1">
+
+    <extension
+        id="panorama"
+        name="panorama extension"
+        class="com.mediatek.camera.feature.mode.panorama.PanoramaEntry"
+        plugin-id="cameraplugin"
+        point-id="FeatureEntryBase">
+    </extension>
+</plugin>
