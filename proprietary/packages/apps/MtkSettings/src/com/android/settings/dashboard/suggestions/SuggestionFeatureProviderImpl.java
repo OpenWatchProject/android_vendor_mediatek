@@ -48,7 +48,14 @@ public class SuggestionFeatureProviderImpl implements SuggestionFeatureProvider 
     public boolean isSuggestionEnabled(Context context) {
         final ActivityManager am =
                 (ActivityManager) context.getSystemService(Context.ACTIVITY_SERVICE);
-        return !am.isLowRamDevice();
+		boolean enabled;
+		if (am.isLowRamDevice() == true || context.getResources().getBoolean(
+                com.android.settings.R.bool.config_disable_suggestions) == true){
+			enabled = false;
+		} else {
+			enabled = true;
+		}
+        return enabled;
     }
 
     @Override
