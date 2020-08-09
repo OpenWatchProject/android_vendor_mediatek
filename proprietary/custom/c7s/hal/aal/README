@@ -1,0 +1,12 @@
+WHAT IT DOES?
+=============
+libaal_config.a contains the customization parameters of MediaTek AAL.
+
+HOW IT WAS BUILT?
+==================
+It needs the following library from AOSP:
+1.  libcutils.so
+
+HOW TO USE IT?
+==============
+Modify cust_aal.cpp, will be linked into libaal_cust.so
