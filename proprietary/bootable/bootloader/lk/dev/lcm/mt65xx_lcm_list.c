@@ -404,6 +404,7 @@ extern LCM_DRIVER nt36672c_fhdp_dsi_vdo_auo_cphy_90hz_jdi_lcm_drv;
 extern LCM_DRIVER nt36672c_fhdp_dsi_vdo_auo_cphy_90hz_tianma_lcm_drv;
 extern LCM_DRIVER nt36672c_fhdp_dsi_vdo_auo_cphy_90hz_jdi_hfp_lcm_drv;
 extern LCM_DRIVER nt36672c_fhdp_dsi_vdo_auo_cphy_90hz_tianma_hfp_lcm_drv;
+extern LCM_DRIVER st7797_400x400_dsi_vdo_lcm_drv;
 
 LCM_DRIVER *lcm_driver_list[] = {
 
@@ -1787,6 +1788,10 @@ LCM_DRIVER *lcm_driver_list[] = {
 
 #if defined(NT36672C_FHDP_DSI_VDO_AUO_CPHY_90HZ_TIANMA_HFP)
 	&nt36672c_fhdp_dsi_vdo_auo_cphy_90hz_tianma_hfp_lcm_drv,
+#endif
+
+#if defined (ST7797_400X400_DSI_VDO)
+	&st7797_400x400_dsi_vdo_lcm_drv,
 #endif
 };
 
