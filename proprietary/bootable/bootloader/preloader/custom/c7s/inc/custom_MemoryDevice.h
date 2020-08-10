@@ -104,6 +104,8 @@
 
 #define BOARD_ID                MT6739_EVB
 
-#define CS_PART_NUMBER[0]       H9CCNNNBJTMLAR
+#define CS_PART_NUMBER[0]       KMRX1000BM_B614
+#define CS_PART_NUMBER[1]       KMR21000BM_B809
+#define CS_PART_NUMBER[2]       KMGX6001BM_B514
 
 #endif /* __CUSTOM_MEMORYDEVICE__ */
