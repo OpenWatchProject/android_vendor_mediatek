@@ -13,7 +13,8 @@
 #define MT65XX_BOOT_MENU_KEY       17     /* KEY_VOLUMEUP */
 #endif
 
-#define MT65XX_MENU_SELECT_KEY     MT65XX_BOOT_MENU_KEY
+/* Override KEY_VOLUMEUP with power key on our 2 key watch */
+#define MT65XX_MENU_SELECT_KEY     MTK_PMIC_PWR_KEY
 
 #ifdef MT65XX_FACTORY_KEY
 #define MT65XX_MENU_OK_KEY         MT65XX_FACTORY_KEY     /* KEY_VOLUMEDOWN */
