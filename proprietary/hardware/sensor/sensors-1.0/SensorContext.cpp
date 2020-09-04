@@ -68,6 +68,7 @@
 #include "Fusion.h"
 #include "Biometric.h"
 #include "WakeUpSet.h"
+#include "HeartRate.h"
 
 #undef LOG_TAG
 #define LOG_TAG "SensorContext"
@@ -165,6 +166,8 @@ static int handleToDriver(int handle) {
             return bio;
         case ID_STEP_DETECTOR_WAKEUP:
             return wakeupset;
+        case ID_HEART_RATE:
+            return heartrate;
         default:
             break;
     }
@@ -267,6 +270,11 @@ sensors_poll_context_t::sensors_poll_context_t()
     mPollFds[wakeupset].fd = mSensors[wakeupset]->getFd();
     mPollFds[wakeupset].events = POLLIN;
     mPollFds[wakeupset].revents = 0;
+
+    mSensors[heartrate] = new HeartRateSensor();
+    mPollFds[heartrate].fd = mSensors[heartrate]->getFd();
+    mPollFds[heartrate].events = POLLIN;
+    mPollFds[heartrate].revents = 0;
 }
 
 sensors_poll_context_t::~sensors_poll_context_t() {

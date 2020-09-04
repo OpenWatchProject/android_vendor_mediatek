@@ -46,6 +46,7 @@
 #include <dirent.h>
 #include <linux/input.h>
 #include <math.h>
+#include <unistd.h>
 
 #include "common.h"
 #include "miniui.h"

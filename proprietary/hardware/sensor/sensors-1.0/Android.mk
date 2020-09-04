@@ -36,6 +36,19 @@ LOCAL_PATH := $(call my-dir)
 
 ifeq ($(MTK_SENSORS_1_0), yes)
 
+ifeq ($(CUSTOM_KERNEL_HEART), yes)
+    ifeq ($(MTK_PAH8001), yes)
+        include $(CLEAR_VARS)
+        LOCAL_MODULE := libpaw8001motion_s
+        LOCAL_SRC_FILES := pixart/pah8001/lib/$(TARGET_ARCH)/libpaw8001motion_s.a
+        LOCAL_MODULE_CLASS := STATIC_LIBRARIES
+        LOCAL_MODULE_SUFFIX := .a
+        LOCAL_EXPORT_C_INCLUDE_DIRS := $(LOCAL_PATH)/pixart/pah8001/lib
+        LOCAL_PROPRIETARY_MODULE := true
+        include $(BUILD_PREBUILT)
+    endif
+endif
+
 # HAL module implemenation, not prelinked and stored in
 # hw/<SENSORS_HARDWARE_MODULE_ID>.<ro.hardware>.so
 include $(CLEAR_VARS)
@@ -88,6 +101,15 @@ LOCAL_SRC_FILES := \
     Fusion.cpp \
     Biometric.cpp \
     WakeUpSet.cpp 
+
+ifeq ($(CUSTOM_KERNEL_HEART), yes)
+    ifeq ($(MTK_PAH8001), yes)
+        LOCAL_STATIC_LIBRARIES := libpaw8001motion_s
+        LOCAL_SRC_FILES += pixart/pah8001/HeartRate.cpp
+    else
+        LOCAL_SRC_FILES += HeartRate.cpp
+    endif
+endif
 
 LOCAL_C_INCLUDES += \
         $(MTK_PATH_SOURCE)/hardware/sensor/ \
