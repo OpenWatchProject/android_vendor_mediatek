@@ -183,9 +183,14 @@ void HeartRateSensor::processEvent(struct sensor_event const *event)
 {
     if (event->flush_action == DATA_ACTION) {
         int ret;
-        uint8_t *ptr = (uint8_t *) event->word;
-        uint8_t *HRD_Data = &ptr[0];
-        float *MEMS_Data = (float *) &ptr[13];
+        static uint8_t HRD_Data[13] = {0};
+        static float MEMS_Data[3] = {0};
+
+        if (event->word[5] == 0x00) { // Reporting HeartRate Data
+            memcpy(HRD_Data, event->word, sizeof(HRD_Data));
+        } else if (event->word[5] == 0x01) { // Reporting Accelerometer Data
+            memcpy(MEMS_Data, event->word, sizeof(MEMS_Data));
+        }
 
         ret = PxiAlg_Process(HRD_Data, MEMS_Data);
         if (ret == FLAG_DATA_READY) {
