@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--dct_version="2.5" buid_sn="161102" dws_modification_time="07.21.2017.16:47:42"-->
+<!--dct_version="2.5" buid_sn="161102" dws_modification_time="09.01.2020.19:58:08"-->
 <dct_cfg>
     <general chip="MT6739">
         <proj>MT6739</proj>
@@ -312,7 +312,18 @@
                 <ies>true</ies>
             </gpio12>
             <gpio13>
+                <eint_mode>true</eint_mode>
+                <def_mode>0</def_mode>
+                <mode_arr>10000000</mode_arr>
+                <inpull_en>true</inpull_en>
+                <inpull_selhigh>false</inpull_selhigh>
+                <def_dir>IN</def_dir>
+                <in>true</in>
+                <out>false</out>
+                <out_high>false</out_high>
+                <varName0>GPIO_SPK_AMP_EN</varName0>
                 <smt>true</smt>
+                <ies>true</ies>
             </gpio13>
             <gpio14>
                 <eint_mode>true</eint_mode>
@@ -368,34 +379,6 @@
                 <smt>false</smt>
                 <ies>true</ies>
             </gpio17>
-            <gpio18>
-                <eint_mode>false</eint_mode>
-                <def_mode>2</def_mode>
-                <mode_arr>10100000</mode_arr>
-                <inpull_en>true</inpull_en>
-                <inpull_selhigh>true</inpull_selhigh>
-                <def_dir>IN</def_dir>
-                <in>true</in>
-                <out>false</out>
-                <out_high>false</out_high>
-                <varName0>GPIO_SIM1_HOT_PLUG</varName0>
-                <smt>false</smt>
-                <ies>true</ies>
-            </gpio18>
-            <gpio19>
-                <eint_mode>false</eint_mode>
-                <def_mode>2</def_mode>
-                <mode_arr>10100000</mode_arr>
-                <inpull_en>true</inpull_en>
-                <inpull_selhigh>true</inpull_selhigh>
-                <def_dir>IN</def_dir>
-                <in>true</in>
-                <out>false</out>
-                <out_high>false</out_high>
-                <varName0>GPIO_SIM2_HOT_PLUG</varName0>
-                <smt>false</smt>
-                <ies>true</ies>
-            </gpio19>
             <gpio20>
                 <eint_mode>false</eint_mode>
                 <def_mode>1</def_mode>
@@ -452,20 +435,6 @@
                 <smt>false</smt>
                 <ies>true</ies>
             </gpio23>
-            <gpio24>
-                <eint_mode>false</eint_mode>
-                <def_mode>0</def_mode>
-                <mode_arr>10000000</mode_arr>
-                <inpull_en>true</inpull_en>
-                <inpull_selhigh>false</inpull_selhigh>
-                <def_dir>OUT</def_dir>
-                <in>false</in>
-                <out>true</out>
-                <out_high>false</out_high>
-                <varName0>GPIO_SPK_AMP_EN</varName0>
-                <smt>false</smt>
-                <ies>true</ies>
-            </gpio24>
             <gpio25>
                 <eint_mode>true</eint_mode>
                 <def_mode>0</def_mode>
@@ -2399,7 +2368,7 @@
             <device7>
                 <varName>GSENSOR</varName>
                 <channel>I2C_CHANNEL_1</channel>
-                <address>0x4C</address>
+                <address>0x4D</address>
             </device7>
             <device8>
                 <varName>ALSPS</varName>
@@ -2426,29 +2395,19 @@
                 <channel>I2C_CHANNEL_3</channel>
                 <address>0x08</address>
             </device12>
+            <device13>
+                <varName>CAMERA_MAIN_EEPROM</varName>
+                <channel>I2C_CHANNEL_2</channel>
+                <address>0x11</address>
+            </device13>
+            <device14>
+                <varName>CAMERA_SUB_EEPROM</varName>
+                <channel>I2C_CHANNEL_2</channel>
+                <address>0x37</address>
+            </device14>
         </module>
         <module name="md1_eint">
             <count>3</count>
-            <eint0>
-                <varName>MD1_SIM1_HOT_PLUG_EINT</varName>
-                <debounce_time>100</debounce_time>
-                <polarity>High</polarity>
-                <sensitive_level>Level</sensitive_level>
-                <debounce_en>Enable</debounce_en>
-                <dedicated_en>Disable</dedicated_en>
-                <srcPin ref_gpio="GPIO18">PAD_SPI1_MI</srcPin>
-                <socketType>0</socketType>
-            </eint0>
-            <eint1>
-                <varName>MD1_SIM2_HOT_PLUG_EINT</varName>
-                <debounce_time>100</debounce_time>
-                <polarity>High</polarity>
-                <sensitive_level>Level</sensitive_level>
-                <debounce_en>Enable</debounce_en>
-                <dedicated_en>Disable</dedicated_en>
-                <srcPin ref_gpio="GPIO19">PAD_SPI1_MO</srcPin>
-                <socketType>0</socketType>
-            </eint1>
         </module>
         <module name="pmic">
             <chip>PMIC_MT6357PMUMP</chip>
@@ -2489,7 +2448,7 @@
         <module name="kpd">
             <row>8</row>
             <column>9</column>
-            <keyMatrix>VOLUMEDOWN NC NC NC NC NC NC NC NC
+            <keyMatrix>BACK NC NC NC NC NC NC NC NC
 				NC NC NC NC NC NC NC NC NC
 				NC NC NC NC NC NC NC NC NC
 				NC NC NC NC NC NC NC NC NC
@@ -2500,8 +2459,8 @@
             <keyMatrix_ext>NC NC NC NC
 				NC NC NC NC
 				NC NC NC NC</keyMatrix_ext>
-            <downloadKey>VOLUMEUP VOLUMEDOWN POWER</downloadKey>
-            <modeKey>NC VOLUMEUP VOLUMEDOWN</modeKey>
+            <downloadKey>VOLUMEUP BACK POWER</downloadKey>
+            <modeKey>NC BACK VOLUMEUP</modeKey>
             <pwrKeyEint_gpioNum>0</pwrKeyEint_gpioNum>
             <pwrKeyUtility>POWER</pwrKeyUtility>
             <home_key>VOLUMEUP</home_key>
