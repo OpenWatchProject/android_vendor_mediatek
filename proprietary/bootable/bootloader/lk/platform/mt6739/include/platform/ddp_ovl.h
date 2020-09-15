@@ -79,6 +79,7 @@ int OVLLayerConfig(DISP_MODULE_ENUM module,
                    unsigned int key,
                    unsigned int aen,
                    unsigned char alpha,// trancparency
+                   unsigned char hw_rotation,
                    void * handle);
 
 int OVL3DConfig(DISP_MODULE_ENUM module,

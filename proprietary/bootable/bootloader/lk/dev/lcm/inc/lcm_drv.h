@@ -631,6 +631,8 @@ typedef struct {
 	unsigned int PHY_SEL2;
 	unsigned int PHY_SEL3;
 
+	unsigned char hw_rotation;
+
 } LCM_DSI_PARAMS;
 
 /* --------------------------------------------------------------------------- */

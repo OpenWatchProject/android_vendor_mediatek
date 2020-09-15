@@ -346,6 +346,7 @@ int OVLLayerConfig(DISP_MODULE_ENUM module,
                    unsigned int key,   // color key
                    unsigned int aen,       // alpha enable
                    unsigned char alpha,
+                   unsigned char hw_rotation,
                    void * handle)
 {
 
@@ -363,9 +364,7 @@ int OVLLayerConfig(DISP_MODULE_ENUM module,
 	unsigned int idx_offset  = idx*DISP_INDEX_OFFSET;
 	unsigned int layer_offset = idx_offset + layer * 0x20;
 
-#ifdef MTK_LCM_PHYSICAL_ROTATION_HW
 	unsigned int bg_h, bg_w;
-#endif
 
 	ASSERT((dst_w <= OVL_MAX_WIDTH) &&
 	       (dst_h <= OVL_MAX_HEIGHT) &&
@@ -419,25 +418,24 @@ int OVLLayerConfig(DISP_MODULE_ENUM module,
 	if (space == OVL_COLOR_SPACE_YUV)
 		value = value | REG_FLD_VAL((L_CON_FLD_MTX), (color_matrix));
 
-#ifdef MTK_LCM_PHYSICAL_ROTATION_HW
-	value |= (REG_FLD_VAL((L_CON_FLD_VIRTICAL_FLIP), 1) |
+	if (hw_rotation)
+		value |= (REG_FLD_VAL((L_CON_FLD_VIRTICAL_FLIP), 1) |
 	          REG_FLD_VAL((L_CON_FLD_HORI_FLIP), 1));
-#endif
 
 	DISP_REG_SET(handle, DISP_REG_OVL_L0_CON+layer_offset, value);
 
-#ifdef MTK_LCM_PHYSICAL_ROTATION_HW
-	bg_h = DISP_REG_GET(idx_offset + DISP_REG_OVL_ROI_SIZE);
-	bg_w = bg_h & 0xFFFF;
-	bg_h = bg_h >> 16;
-	DISP_REG_SET(handle, DISP_REG_OVL_L0_OFFSET+layer_offset,
-	             (bg_h-dst_h-dst_y)<<16 | (bg_w-dst_w-dst_x));
-	offset = (src_x+dst_w+1)*bpp + (src_y+dst_h-1)*src_pitch - 1;
-#else
-	DISP_REG_SET(handle, DISP_REG_OVL_L0_OFFSET+layer_offset,
-	             dst_y<<16 | dst_x);
-	offset = src_x*bpp+src_y*src_pitch;
-#endif
+	if (hw_rotation) {
+		bg_h = DISP_REG_GET(idx_offset + DISP_REG_OVL_ROI_SIZE);
+		bg_w = bg_h & 0xFFFF;
+		bg_h = bg_h >> 16;
+		DISP_REG_SET(handle, DISP_REG_OVL_L0_OFFSET+layer_offset,
+		             (bg_h-dst_h-dst_y)<<16 | (bg_w-dst_w-dst_x));
+		offset = (src_x+dst_w+1)*bpp + (src_y+dst_h-1)*src_pitch - 1;
+	} else {
+		DISP_REG_SET(handle, DISP_REG_OVL_L0_OFFSET+layer_offset,
+		             dst_y<<16 | dst_x);
+		offset = src_x*bpp+src_y*src_pitch;
+	}
 
 	DISP_REG_SET(handle, DISP_REG_OVL_L0_ADDR+layer_offset,
 	             addr+offset);
@@ -1065,6 +1063,7 @@ static int OVLConfig_l(DISP_MODULE_ENUM module, disp_ddp_path_config* pConfig, v
 			       ovl_cfg->key,
 			       ovl_cfg->aen,
 			       ovl_cfg->alpha,
+			       pConfig->dsi_config.hw_rotation,
 			       handle);
 //	 	print_layer_config_args(module, local_layer, ovl_cfg);
 //		ovl_layer_config(module, local_layer, has_sec_layer, ovl_cfg, handle);
