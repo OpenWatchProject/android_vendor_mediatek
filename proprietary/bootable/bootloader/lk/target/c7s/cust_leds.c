@@ -5,7 +5,7 @@
 
 //extern int DISP_SetBacklight(int level);
 
-extern int disp_bls_set_backlight(unsigned int level);
+extern int primary_display_setbacklight(unsigned int level);
 enum led_brightness backlight_default_level = LED_FULL;
 
 
@@ -29,7 +29,7 @@ static struct cust_mt65xx_led cust_led_list[MT65XX_LED_TYPE_TOTAL] = {
 	{"jogball-backlight", MT65XX_LED_MODE_NONE, -1,{0,0,0,0,0}},
 	{"keyboard-backlight",MT65XX_LED_MODE_NONE, -1,{0,0,0,0,0}},
 	{"button-backlight",  MT65XX_LED_MODE_NONE, -1,{0,0,0,0,0}},
-	{"lcd-backlight",	  MT65XX_LED_MODE_CUST_BLS_PWM, (int)disp_bls_set_backlight,{0}},
+	{"lcd-backlight",	  MT65XX_LED_MODE_CUST_LCM, (int)primary_display_setbacklight,{0}},
 };
 
 enum led_brightness get_cust_led_default_level(void)
