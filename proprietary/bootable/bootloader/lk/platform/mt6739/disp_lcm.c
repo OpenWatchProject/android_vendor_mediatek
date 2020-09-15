@@ -32,6 +32,7 @@
 #include "lcm_drv.h"
 #include "lcm_define.h"
 #include <platform/ddp_manager.h>
+#include <platform/ddp_pwm.h>
 #include <platform/disp_lcm.h>
 #include <platform/disp_drv_platform.h>
 #include <platform/disp_drv_log.h>
@@ -1281,8 +1282,8 @@ int disp_lcm_set_backlight(disp_lcm_handle *plcm, int level)
 		if (lcm_drv->set_backlight) {
 			lcm_drv->set_backlight(level);
 		} else {
-			DISPERR("FATAL ERROR, lcm_drv->esd_check is null\n");
-			return -1;
+			DISPERR("lcm_drv->set_backlight is null, using disp_bls_set_backlight\n");
+			return disp_bls_set_backlight(level);
 		}
 
 		return 0;
