@@ -173,7 +173,24 @@ static void lcm_resume(void)
 
 static unsigned int lcm_compare_id(void)
 {
-	return 1;
+	unsigned int id = 0;
+	unsigned char buffer[4];
+	unsigned int array[1];
+
+	SET_RESET_PIN(0);
+	MDELAY(120);
+	SET_RESET_PIN(1);
+	MDELAY(100);
+
+	array[0] = 0x00043700;
+	dsi_set_cmdq(array, 1, 1);
+	MDELAY(2);
+
+	dsi_dcs_read_lcm_reg_v2(0xD3, buffer, 4);
+
+	id = (buffer[1] << 8) | buffer[2];
+
+	return (0x7797 == id) ? 1 : 0;
 }
 
 LCM_DRIVER st7797_400x400_dsi_vdo_lcm_drv = {
