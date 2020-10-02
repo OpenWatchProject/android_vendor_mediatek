@@ -46,10 +46,8 @@ typedef enum {
 	SigGradeThr,
 	SupportSigGradeCheckSigLevel,
 	FlagCheckNotStableFirstHR,
-
 	// HR Tracking
 	HrSpeedMode = 0x1000,
-
 	// PXI internal
 	SupportSportMode = 0x8000,
 	FastOutputFlag,
@@ -57,7 +55,6 @@ typedef enum {
 	AutoModeFlag,
 	TrackingModeFlag,
 } PXI_PARAM2;
-
 
 typedef enum {
 	FLAG_DATA_READY = 0,
@@ -73,7 +70,6 @@ typedef enum {
 	FLAG_SG_UPDATE,
 } PXI_STATUS_FLAG;
 
-
 typedef enum {
 	_quick_report_rms_gs_th = 0, // 0
 	_hr_speed_mode, // 1
@@ -83,7 +79,6 @@ typedef enum {
 	_set_switch_mems_large_energy_num_th, // 5
 	_set_switch_mn_fft_energy_lo_thr, // 6
 	_set_switch_mn_fft_energy_hi_thr, // 7
-
 	_ppg_large_energy_num_th, // 8
 	_max_hr_idx_th, // 9
 	_min_hr_idx_th, // 10
@@ -107,7 +102,6 @@ typedef enum {
 	_get_switch_mems_large_energy_num_th, // 5
 	_get_switch_mn_fft_energy_lo_thr, // 6
 	_get_switch_mn_fft_energy_hi_thr, // 7
-
 	_hr_sample_count, // 8
 	_ppg_large_energy_num, // 9
 	_signal_grade_motion_frm, // 10
@@ -120,7 +114,6 @@ typedef enum {
 	_flag_signal_grade_ready_go, // 17
 	_motion_flag, // 18
 	_get_reg_shake_count_th0, // 19
-
 } PXI_PARAM_GET;
 
 #if FW == 1

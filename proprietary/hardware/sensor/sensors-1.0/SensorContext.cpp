@@ -69,6 +69,7 @@
 #include "Biometric.h"
 #include "WakeUpSet.h"
 #include "HeartRate.h"
+#include "TiltDetector.h"
 
 #undef LOG_TAG
 #define LOG_TAG "SensorContext"
@@ -157,6 +158,7 @@ static int handleToDriver(int handle) {
         case ID_PICK_UP_GESTURE:
         case ID_GLANCE_GESTURE:
         case ID_TILT_DETECTOR:
+            return tiltdetector;
         case ID_FLAT:
         case ID_SAR:
             return situation;
@@ -275,6 +277,11 @@ sensors_poll_context_t::sensors_poll_context_t()
     mPollFds[heartrate].fd = mSensors[heartrate]->getFd();
     mPollFds[heartrate].events = POLLIN;
     mPollFds[heartrate].revents = 0;
+
+    mSensors[tiltdetector] = new TiltDetectorSensor();
+    mPollFds[tiltdetector].fd = mSensors[heartrate]->getFd();
+    mPollFds[tiltdetector].events = POLLIN;
+    mPollFds[tiltdetector].revents = 0;
 }
 
 sensors_poll_context_t::~sensors_poll_context_t() {

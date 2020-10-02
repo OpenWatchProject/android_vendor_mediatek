@@ -36,17 +36,15 @@ LOCAL_PATH := $(call my-dir)
 
 ifeq ($(MTK_SENSORS_1_0), yes)
 
-ifeq ($(CUSTOM_KERNEL_HEART), yes)
-    ifeq ($(MTK_PAH8001), yes)
-        include $(CLEAR_VARS)
-        LOCAL_MODULE := libpaw8001motion_s
-        LOCAL_SRC_FILES := pixart/pah8001/lib/$(TARGET_ARCH)/libpaw8001motion_s.a
-        LOCAL_MODULE_CLASS := STATIC_LIBRARIES
-        LOCAL_MODULE_SUFFIX := .a
-        LOCAL_EXPORT_C_INCLUDE_DIRS := $(LOCAL_PATH)/pixart/pah8001/lib
-        LOCAL_PROPRIETARY_MODULE := true
-        include $(BUILD_PREBUILT)
-    endif
+ifeq ($(MTK_PAH8001), yes)
+    include $(CLEAR_VARS)
+    LOCAL_MODULE := libpaw8001motion_s
+    LOCAL_SRC_FILES := pixart/pah8001/lib/$(TARGET_ARCH)/libpaw8001motion_s.a
+    LOCAL_MODULE_CLASS := STATIC_LIBRARIES
+    LOCAL_MODULE_SUFFIX := .a
+    LOCAL_EXPORT_C_INCLUDE_DIRS := $(LOCAL_PATH)/pixart/pah8001/lib
+    LOCAL_PROPRIETARY_MODULE := true
+    include $(BUILD_PREBUILT)
 endif
 
 # HAL module implemenation, not prelinked and stored in
@@ -100,15 +98,14 @@ LOCAL_SRC_FILES := \
     Situation.cpp \
     Fusion.cpp \
     Biometric.cpp \
-    WakeUpSet.cpp 
+    WakeUpSet.cpp \
+    TiltDetector.cpp
 
-ifeq ($(CUSTOM_KERNEL_HEART), yes)
-    ifeq ($(MTK_PAH8001), yes)
-        LOCAL_STATIC_LIBRARIES := libpaw8001motion_s
-        LOCAL_SRC_FILES += pixart/pah8001/HeartRate.cpp
-    else
-        LOCAL_SRC_FILES += HeartRate.cpp
-    endif
+ifeq ($(MTK_PAH8001), yes)
+    LOCAL_STATIC_LIBRARIES := libpaw8001motion_s
+    LOCAL_SRC_FILES += pixart/pah8001/HeartRate.cpp
+else
+    LOCAL_SRC_FILES += HeartRate.cpp
 endif
 
 LOCAL_C_INCLUDES += \
@@ -193,8 +190,8 @@ endif
 ifeq ($(CUSTOM_KERNEL_GMRV_SENSOR), yes)
     LOCAL_CFLAGS += -DCUSTOM_KERNEL_GMRV_SENSOR
 endif
-ifeq ($(CUSTOM_KERNEL_HEART), yes)
-    LOCAL_CFLAGS += -DCUSTOM_KERNEL_HEART
+ifeq ($(CUSTOM_KERNEL_HEART_RATE_SENSOR), yes)
+    LOCAL_CFLAGS += -DCUSTOM_KERNEL_HEART_RATE_SENSOR
 endif
 ifeq ($(CUSTOM_KERNEL_TILT_DETECTOR_SENSOR), yes)
     LOCAL_CFLAGS += -DCUSTOM_KERNEL_TILT_DETECTOR_SENSOR

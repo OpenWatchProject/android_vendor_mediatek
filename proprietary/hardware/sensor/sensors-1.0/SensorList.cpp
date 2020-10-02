@@ -842,7 +842,7 @@
     #endif
 #endif
 
-#ifdef CUSTOM_KERNEL_HEART
+#ifdef CUSTOM_KERNEL_HEART_RATE_SENSOR
     #ifndef HEART_RATE
         #define HEART_RATE                           "HEART_RATE"
     #endif
@@ -1871,6 +1871,8 @@ enum {
     ps,
     baro,
     sar,
+    hrs,
+    tilt,
     maxhandle,
 };
 
@@ -1931,6 +1933,12 @@ static inline int handle_to_sensor(int handle)
         break;
     case sar:
         sensor = ID_SAR;
+        break;
+    case hrs:
+        sensor = ID_HEART_RATE;
+        break;
+    case tilt:
+        sensor = ID_TILT_DETECTOR;
         break;
     }
     return sensor;
@@ -2368,7 +2376,7 @@ void SensorList::initSensorList(void) {
     mSensorList.push_back(sensor);
 #endif
 
-#ifdef CUSTOM_KERNEL_HEART
+#ifdef CUSTOM_KERNEL_HEART_RATE_SENSOR
     memset(&sensor, 0, sizeof(struct sensor_t));
     sensor.name = HEART_RATE;
     sensor.vendor = HEART_RATE_VENDER;
